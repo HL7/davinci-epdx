@@ -27,7 +27,11 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-376.html">ePDx Coverage</a></td>
+<td><a href="StructureDefinition-PDex-Da-Vinci-Allergy-Intolerance.html">PDex Da Vinci Allergy Intolerance</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-PDex-Medication-Statement.html">PDex Medication Statement</a></td>
 <td></td>
 </tr>
 </tbody>

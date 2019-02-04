@@ -1,7 +1,7 @@
 {
 	"tool": "jekyll",
-	"source": "implementationguide/davinci-epdx.xml",
-	"npm-name": "davinci-epdx-npm",
+	"source": "implementationguide/davinci-pdex.xml",
+	"npm-name": "davinci-pdex-npm",
 	"license": "CC0-1.0",
 	"paths": {
 		"qa": "generated_output/qa",
@@ -27,7 +27,7 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
-	"canonicalBase": "http://hl7.org/fhir/us",
+	"canonicalBase": "http://hl7.org/fhir/us/davinci-pdex",
 	"defaults": {
 		"Location": {
 			"template-base": "ex.html"
@@ -94,17 +94,14 @@
 		}
 	},
 	"resources": {
-		"StructureDefinition/376": {
-			"base": "StructureDefinition-376.html",
-			"defns": "StructureDefinition-376-definitions.html"
+		"StructureDefinition/PDex-Medication-Statement": {
+			"base": "StructureDefinition-PDex-Medication-Statement.html",
+			"defns": "StructureDefinition-PDex-Medication-Statement-definitions.html"
+		},
+		"StructureDefinition/PDex-Da-Vinci-Allergy-Intolerance": {
+			"base": "StructureDefinition-PDex-Da-Vinci-Allergy-Intolerance.html",
+			"defns": "StructureDefinition-PDex-Da-Vinci-Allergy-Intolerance-definitions.html"
 		}
 	},
-	"version": "3.0.1",
-	"dependencyList": [
-		{
-			"location": "https://hl7.org/fhir/us/davinci-ehrx",
-			"name": "ehrx",
-			"version": "current"
-		}
-	]
+	"dependencyList": []
 }

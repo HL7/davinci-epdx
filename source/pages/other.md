@@ -25,7 +25,7 @@ active: other
 <tbody>
 <tr>
 <td>ImplementationGuide</td>
-<td><a href="CapabilityStatement-davinci-epdx.html">Da Vinci Electronic Payer Data Exchange</a></td>
+<td><a href="CapabilityStatement-davinci-pdex.html">Da Vinci Payer Data Exchange</a></td>
 </tr>
 </tbody>
 </table>
