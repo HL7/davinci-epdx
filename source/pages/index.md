@@ -20,4 +20,5 @@ active: home
 This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.
 
+See the [Table of Contents](/toc.html) for more information.
 

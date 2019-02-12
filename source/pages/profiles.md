@@ -16,25 +16,3 @@ active: profiles
 ---
 <br />
 
-### Profiles
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="StructureDefinition-PDex-Da-Vinci-Allergy-Intolerance.html">PDex Da Vinci Allergy Intolerance</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="StructureDefinition-PDex-Medication-Statement.html">PDex Medication Statement</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-
