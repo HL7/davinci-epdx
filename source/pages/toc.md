@@ -15,7 +15,7 @@ active: toc
         * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
         * <a href="HRex_Profiles.html">HRex Profiles</a>
         * <a href="US_Core_STU2_(FHIR_STU3)_Profiles.html">US Core STU2 (FHIR STU3) Profiles</a>
-        * <a href="Argonaut_FHIR_DSTU2)_Profiles.html">Argonaut FHIR DSTU2) Profiles</a>
+        * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
         * <a href="Extensions.html">Extensions</a>
     * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
         * <a href="New_Patient_at_Primary_Care_Provider.html">New Patient at Primary Care Provider</a>

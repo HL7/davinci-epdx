@@ -11,5 +11,3 @@ The implementation guide is organized into the following sections:
 **Resources**: introduces and provides links to the FHIR R4, STU3 and DSTU2 profiles, search parameters and other FHIR artifacts used in this implementation guide as well as examples
 **Downloads**: allows download of this and other specifications as well as other useful files
 **Credits**: identifies the individuals and organizations involved in developing this implementation guide
-
-
