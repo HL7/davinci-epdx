@@ -14,6 +14,7 @@ active: toc
     * <a href="Da_Vinci_Profiles.html">Da Vinci Profiles</a>
         * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
         * <a href="HRex_Profiles.html">HRex Profiles</a>
+            * <a href="HRex_Profiles_for_FHIR_DSTU2_.html">HRex Profiles for FHIR DSTU2 </a>
         * <a href="US_Core_STU2_(FHIR_STU3)_Profiles.html">US Core STU2 (FHIR STU3) Profiles</a>
         * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
         * <a href="Extensions.html">Extensions</a>
@@ -21,9 +22,7 @@ active: toc
         * <a href="New_Patient_at_Primary_Care_Provider.html">New Patient at Primary Care Provider</a>
         * <a href="Returning_Patient.html">Returning Patient</a>
         * <a href="New_Patient_at_Specialist.html">New Patient at Specialist</a>
-        * <a href="Medication_Order.html">Medication Order</a>
-        * <a href="Order_Review.html">Order Review</a>
-    * <a href="Provider-controlled_Information_Filtering.html">Provider-controlled Information Filtering</a>
+    * <a href="Provider-controlled_Information_Requests_and_Filtering.html">Provider-controlled Information Requests and Filtering</a>
     * <a href="CDS-Hooks.html">CDS-Hooks</a>
         * <a href="Support_for_R4.html">Support for R4</a>
         * <a href="Additional_Hooks.html">Additional Hooks</a>

@@ -4,12 +4,14 @@ layout: default
 active: Da Vinci Profiles
 ---
 
-This implementation guide is dependent on other specifications. Please submit any comments you have on these base specifications as follows:
+The PDex Implementation Guide uses profiles defined in:
 
-* Feedback on CDS Hooks should be posted to the CDS Hooks [GitHub Issue List](https://github.com/cds-hooks/docs/issues)
-* Feedback on the FHIR core specification should be submitted to the [FHIR gForge tracker](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) with "FHIR Core" as the specification.
-* Feedback on the US core profiles should be submitted to the [FHIR gForge tracker](http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&tracker_id=677) with "US Core" as the specification.
-* Individuals interested in participating in Payer Data exchange (PDex) or other HL7 Da Vinci projects can find information about Da Vinci [here](http://www.hl7.org/about/davinci).
+* US Core STU3 (based on FHIR R4) 
+* Da Vinci HRex IG
 
-There are a few places in this implementation guide marked as ToDo. All such areas represent supplementary content such as examples, additional background or context or other non-definitional content. I.e. they do not change any of the conformance expectations on implementers. Where ToDo appears, such content will be created and included in the implementation guide prior to publication as a Standard for Trial Use.
+Additional references will be made to profiles based on earlier releases of FHIR. This includes:
+
+* US Core STU2 (based on FHIR STU3)
+* Argonaut (based on FHIR DSTU2)
+
 

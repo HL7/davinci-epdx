@@ -10,3 +10,4 @@ This request can be triggered in one of two ways:
 1.	When an appointment is being confirmed
 2.	When the patient checks-in for the appointment
 
+These triggers will be configured as CDS-Hooks that are initiated as part of provider workflows. 
