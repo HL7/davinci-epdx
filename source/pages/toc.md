@@ -5,26 +5,20 @@ active: toc
 ---
 
 * Table of Contents
-    * <a href="Home_Page.html">Home Page</a>
-        * <a href="Overview.html">Overview</a>
     * <a href="Introduction.html">Introduction</a>
-        * <a href="FHIR.html">FHIR</a>
-        * <a href="Content_and_Organization.html">Content and Organization</a>
-        * <a href="Supporting_Specifications.html">Supporting Specifications</a>
-    * <a href="Da_Vinci_Profiles.html">Da Vinci Profiles</a>
-        * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
-        * <a href="HRex_Profiles.html">HRex Profiles</a>
-            * <a href="HRex_Profiles_for_FHIR_DSTU2_.html">HRex Profiles for FHIR DSTU2 </a>
-        * <a href="US_Core_STU2_(FHIR_STU3)_Profiles.html">US Core STU2 (FHIR STU3) Profiles</a>
-        * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
-        * <a href="Extensions.html">Extensions</a>
-    * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
-        * <a href="New_Patient_at_Primary_Care_Provider.html">New Patient at Primary Care Provider</a>
-        * <a href="Returning_Patient.html">Returning Patient</a>
-        * <a href="New_Patient_at_Specialist.html">New Patient at Specialist</a>
-    * <a href="Provider-controlled_Information_Requests_and_Filtering.html">Provider-controlled Information Requests and Filtering</a>
-    * <a href="CDS-Hooks.html">CDS-Hooks</a>
-        * <a href="Support_for_R4.html">Support for R4</a>
-        * <a href="Additional_Hooks.html">Additional Hooks</a>
-        * <a href="Configuration.html">Configuration</a>
-    * <a href="Credits.html">Credits</a>
+    * <a href="Dependencies.html">Dependencies</a>
+        * <a href="FHIR_R4_Dependencies.html">FHIR R4 Dependencies</a>
+        * <a href="FHIR_STU3_Dependencies.html">FHIR STU3 Dependencies</a>
+        * <a href="FHIR_DSTU_2_(aka_Argonaut)_Dependencies.html">FHIR DSTU 2 (aka Argonaut) Dependencies</a>
+    * <a href="HRex_Profiles.html">HRex Profiles</a>
+    * <a href="HRex_Interactions.html">HRex Interactions</a>
+        * <a href="Push.html">Push</a>
+        * <a href="Pull.html">Pull</a>
+        * <a href="Request.html">Request</a>
+        * <a href="Subscribe.html">Subscribe</a>
+        * <a href="Bulk_Data.html">Bulk Data</a>
+        * <a href="CDS_Hooks.html">CDS Hooks</a>
+        * <a href="Operations.html">Operations</a>
+        * <a href="Rational_Combinations.html">Rational Combinations</a>
+        * <a href="Validation.html">Validation</a>
+    * <a href="Security.html">Security</a>

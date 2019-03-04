@@ -1,7 +1,7 @@
 {
 	"tool": "jekyll",
-	"source": "implementationguide/davinci-pdex.xml",
-	"npm-name": "hl7.fhir.us.davinci-pdex",
+	"source": "implementationguide/davinci-hrex.xml",
+	"npm-name": "hl7.fhir.us.davinci-hrex",
 	"license": "CC0-1.0",
 	"paths": {
 		"qa": "generated_output/qa",
@@ -27,7 +27,7 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
-	"canonicalBase": "http://hl7.org/fhir/us/davinci-pdex",
+	"canonicalBase": "http://hl7.org/fhir/us/davinci-hrex",
 	"defaults": {
 		"Location": {
 			"template-base": "ex.html"
@@ -93,6 +93,33 @@
 			"template-base": "ex.html"
 		}
 	},
-	"resources": {},
-	"dependencyList": []
+	"resources": {
+		"StructureDefinition/hrex-coverage": {
+			"base": "StructureDefinition-hrex-coverage.html",
+			"defns": "StructureDefinition-hrex-coverage-definitions.html"
+		},
+		"StructureDefinition/hrex-provenance": {
+			"base": "StructureDefinition-hrex-provenance.html",
+			"defns": "StructureDefinition-hrex-provenance-definitions.html"
+		},
+		"StructureDefinition/hrex-practitioner": {
+			"base": "StructureDefinition-hrex-practitioner.html",
+			"defns": "StructureDefinition-hrex-practitioner-definitions.html"
+		},
+		"StructureDefinition/hrex-practitionerrole": {
+			"base": "StructureDefinition-hrex-practitionerrole.html",
+			"defns": "StructureDefinition-hrex-practitionerrole-definitions.html"
+		},
+		"StructureDefinition/hrex-organization": {
+			"base": "StructureDefinition-hrex-organization.html",
+			"defns": "StructureDefinition-hrex-organization-definitions.html"
+		}
+	},
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/core-r4",
+			"name": "USCoreR4",
+			"version": "current"
+		}
+	]
 }
