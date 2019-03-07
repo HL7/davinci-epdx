@@ -4,13 +4,10 @@ layout: default
 active: Introduction
 ---
 
-The Da Vinci Payer Health Record exchange (HRex) initiative is specifying the FHIR profiles, functions, operations, such as CDS-Hooks and other aspects of Da Vinci Use Cases that are common across more than a single use case. 
+The Da Vinci Payer Data exchange (PDex) initiative is specifying the FHIR profiles that will be used to support interoperable communication from Payers to Providers and health plan members that a practitioner is caring for.
 
-Da Vinci HRex Implementation Guide (IG) will make use of US Core profiles that are based on the FHIR R4 specification wherever practicable. The HRex IG will use the HL7 FHIR Release 4/US Core STU3 specification as its base, but will provide additional guidance and documentation to support implementations that follow the HL7 FHIR STU3/US Core STU2 and HL7 FHIR DSTU2/Argonaut specifications. 
+Whereas the Blue Button 2.0 initiative is specifying the profiles used to communicate between health plans and their members. The PDex specification is focused on presenting member health and claims information available to the health plan in FHIR clinical profiles that are more easily handled by provider Electronic Medical Records (EMR) systems. Wherever possible, PDex will use established US Core or Argonaut FHIR Profiles. Where information must be presented in FHIR resources that fall outside of the Argonaut/US Core implementation guides the HL7 Da Vinci Health Record exchange (HRex) Implementatin Guide will define the necessary Da Vinci FHIR profiles. 
 
-The HRex profiles documented in this IG will be used to transmit data between payer and provider systems. The mechanisms used for this interaction will be based upon the CDS-Hooks specification and on other standard FHIR operations. 
+The PDex Implementation Guide (IG) will use the HL7 FHIR Release 4/US Core STU3 specification as its base, but will provide additional guidance and documentation to support implementations that follow the HL7 FHIR STU3/US Core STU2 and HL7 FHIR DSTU2/Argonaut specifications. 
 
-The HRex IG will define any new hooks that are currently outside of the core CDS-Hooks specification. These hooks may be deprecated in the future if/when the hooks defined in this IG are migrated to the core CDS-Hooks specification.
-
-
-
+The HRex/PDex profiles documented in this IG will be used to transmit data to provider systems. The mechanism used for this interaction will be based upon the CDS-Hooks specification.  Providers will be able to initiate a request for information to a health plan as part of their normal workflows. The CDS-Hooks interface will be used to pass information about the Patient. This information will be used to match the patient to the Health Plans member records and return relevant claims and associated health information to the providers EMR using appropriate FHIR clinical resources.
