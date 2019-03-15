@@ -19,9 +19,8 @@ PDex supports three types of scenarios:
 - Patient returns to Provider
 - Patient presents at Specialist
 
-The hooks interactions for these scenarios are:
-- appointment-booking
-- encounter-start
+The hook interaction for these scenarios is:
+* encounter-start
 
 The provider may pass search parameters to the hook. These parameters can include:
 - Period (Start and optionally End date)

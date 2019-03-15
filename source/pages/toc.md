@@ -33,4 +33,5 @@ active: toc
             * <a href="Systems.html">Systems</a>
             * <a href="FHIR_Profiles_and_CDS_Hooks.html">FHIR Profiles and CDS Hooks</a>
             * <a href="CDS_Hooks_Customization.html">CDS Hooks Customization</a>
+                * <a href="Hooks.html">Hooks</a>
     * <a href="Credits.html">Credits</a>
