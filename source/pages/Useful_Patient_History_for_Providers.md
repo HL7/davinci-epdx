@@ -49,60 +49,63 @@ These types of data can be mapped to FHIR clinical resources as follows:
 	<tr><td>Data type</td><td>FHIR R4/US Core STU3 profile</td></tr>
   <tr>
 		<td>Consultation</td>
-		<td>[Encounter](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html)</td>
+		<td>Encounter: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html"></td>
 	</tr>	
 	<tr>
 		<td>Practitioners who the patient has seen</td>
-		<td>[CareTeam](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html)</td>
+		<td>CareTeam: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html"></td>
 	</tr>	
 	<tr>
 		<td>Care Plan</td>
-		<td>[CarePlan](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html)</td>
+		<td>CarePlan: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html"></td>
 	</tr>	
   <tr>
     <td>Lab test results</td>
-    <td>[DiagnosticReport](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html)</td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></td>
   </tr> 
   <tr>
     <td>Image studies</td>
-    <td>[DocumentReference](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html)</td>
+    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html"></td>
   </tr> 
   <tr>
     <td>Medical Devices</td>
-    <td>[Device](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html)</td>
+    <td>Device: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html"></td>
   </tr> 
 	  <tr>
     <td>Procedures</td>
-    <td>[Procedure](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html)</td>
+    <td>Procedure: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html"></td>
   </tr> 
 	  <tr>
     <td>Diagnoses</td>
-    <td>[DiagnosticReport](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html)</td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></td>
   </tr> 
 	  <tr>
     <td>Vital signs</td>
-    <td>[Observation](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html)</td>
+    <td>Observation: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html"></td>
   </tr> 
 	    <tr>
     <td>Medications</td>
-    <td>[MedicationStatement](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html)</td>
+    <td>MedicationStatement: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html"></td>
   </tr> 
     <tr>
     <td>Immunizations</td>
-    <td>[Immunization](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html)</td>
+    <td>Immunization: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html"></td>
   </tr> 
     <tr>
     <td>Allergies</td>
-    <td>[AllergyIntolerance](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html)</td>
+    <td>AllergyIntolerance: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html"></td>
   </tr> 
     <tr>
     <td>Notes</td>
-    <td>[DiagnosticReport](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html)</td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></td>
   </tr> 
  <tr>
     <td>FamilyHistory</td>
-    <td>[DocumentReference](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html)</td>
+    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html"></td>
   </tr> 
 </table>
+<br/>
+<br/>
+
 
 
