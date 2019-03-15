@@ -46,7 +46,10 @@ These types of data can be mapped to FHIR clinical resources as follows:
 </table>
 
 <table style="width:100%">
-	<tr><td>Data type</td><td>FHIR R4/US Core STU3 profile</td></tr>
+	<tr>
+		<td><b>Data type</b></td>
+		<td><b>FHIR R4/US Core STU3 profile</b></td>
+	</tr>
   <tr>
 		<td>Consultation</td>
 		<td>Encounter: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html"></a></td>
