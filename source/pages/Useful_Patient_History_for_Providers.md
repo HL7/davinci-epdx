@@ -52,59 +52,59 @@ These types of data can be mapped to FHIR clinical resources as follows:
 	</tr>
   <tr>
 		<td>Consultation</td>
-		<td>Encounter: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html"></a></td>
+		<td>Encounter: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html</a></td>
 	</tr>	
 	<tr>
 		<td>Practitioners who the patient has seen</td>
-		<td>CareTeam: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html"></a></td>
+		<td>CareTeam: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html</a></td>
 	</tr>	
 	<tr>
 		<td>Care Plan</td>
-		<td>CarePlan: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html"></a></td>
+		<td>CarePlan: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html"</a></td>
 	</tr>	
   <tr>
     <td>Lab test results</td>
-    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></a></td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html</a></td>
   </tr> 
   <tr>
     <td>Image studies</td>
-    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html"></a></td>
+    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html</a></td>
   </tr> 
   <tr>
     <td>Medical Devices</td>
-    <td>Device: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html"></a></td>
+    <td>Device: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html</a></td>
   </tr> 
 	  <tr>
     <td>Procedures</td>
-    <td>Procedure: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html"></a></td>
+    <td>Procedure: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html</a></td>
   </tr> 
 	  <tr>
     <td>Diagnoses</td>
-    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></a></td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html</a></td>
   </tr> 
 	  <tr>
     <td>Vital signs</td>
-    <td>Observation: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html"></a></td>
+    <td>Observation: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html</a></td>
   </tr> 
 	    <tr>
     <td>Medications</td>
-    <td>MedicationStatement: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html"></a></td>
+    <td>MedicationStatement: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html</a></td>
   </tr> 
     <tr>
     <td>Immunizations</td>
-    <td>Immunization: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html"></a></td>
+    <td>Immunization: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html</a></td>
   </tr> 
     <tr>
     <td>Allergies</td>
-    <td>AllergyIntolerance: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html"></a></td>
+    <td>AllergyIntolerance: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html</a></td>
   </tr> 
     <tr>
     <td>Notes</td>
-    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html"></a></td>
+    <td>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html</a></td>
   </tr> 
  <tr>
     <td>FamilyHistory</td>
-    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html"></a></td>
+    <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html</a></td>
   </tr> 
 </table>
 <br/>
