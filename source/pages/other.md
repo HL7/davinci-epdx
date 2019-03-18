@@ -13,19 +13,3 @@ active: other
 
 <!-- end TOC -->
 
-### Other Resources
-
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ImplementationGuide</td>
-<td><a href="CapabilityStatement-davinci-pdex.html">Da Vinci Payer Data exchange</a></td>
-</tr>
-</tbody>
-</table>

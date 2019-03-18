@@ -27,7 +27,7 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
-	"canonicalBase": "http://build.fhir.org/ig/HL7/davinci-epdx",
+	"canonicalBase": "http://hl7.org/fhir/us/davinci-pdex",
 	"defaults": {
 		"Location": {
 			"template-base": "ex.html"
@@ -94,5 +94,13 @@
 		}
 	},
 	"resources": {},
-	"dependencyList": []
+	"version": "4.0.0",
+	"fixed-business-version": "4.0.0",
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/davinci-hrex",
+			"name": "DaVinciHRex",
+			"version": "current"
+		}
+	]
 }
