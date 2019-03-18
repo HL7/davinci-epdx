@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-pdex"/>
     <meta>
-        <versionId value="54"/>
-        <lastUpdated value="2019-03-17T23:56:23.000-04:00"/>
+        <versionId value="56"/>
+        <lastUpdated value="2019-03-18T00:41:43.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
     <version value="0.0.6"/>
@@ -22,6 +22,15 @@
         <version value="current"/>
     </dependsOn>
     <definition>
+        <resource>
+            <reference>
+                <reference value="Patient/pdex-patient"/>
+                <display value="Patient Amy V. Shaw"/>
+            </reference>
+            <name value="ExamplePatient"/>
+            <description value="Example basic Patient resource to fulfill IG resource content requirement. "/>
+            <exampleBoolean value="true"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
