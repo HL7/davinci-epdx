@@ -13,3 +13,19 @@ active: other
 
 <!-- end TOC -->
 
+### Other Resources
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patient</td>
+<td><a href="Patient-pdex-patient.html">pdex-patient</a></td>
+</tr>
+</tbody>
+</table>
