@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-pdex"/>
     <meta>
-        <versionId value="56"/>
-        <lastUpdated value="2019-03-18T00:41:43.000-04:00"/>
+        <versionId value="59"/>
+        <lastUpdated value="2019-03-19T14:30:39.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
     <version value="0.0.6"/>
@@ -22,15 +22,6 @@
         <version value="current"/>
     </dependsOn>
     <definition>
-        <resource>
-            <reference>
-                <reference value="Patient/pdex-patient"/>
-                <display value="Patient Amy V. Shaw"/>
-            </reference>
-            <name value="ExamplePatient"/>
-            <description value="Example basic Patient resource to fulfill IG resource content requirement. "/>
-            <exampleBoolean value="true"/>
-        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -49,6 +40,11 @@
                 <nameUrl value="Introduction.html"/>
                 <title value="Introduction"/>
                 <generation value="markdown"/>
+                <page>
+                    <nameUrl value="Implementation_Guide_Scope.html"/>
+                    <title value="Implementation Guide Scope"/>
+                    <generation value="markdown"/>
+                </page>
                 <page>
                     <nameUrl value="Conventions.html"/>
                     <title value="Conventions"/>
@@ -110,6 +106,11 @@
                 <title value="Use Case Scenarios"/>
                 <generation value="markdown"/>
                 <page>
+                    <nameUrl value="Patient_Persona.html"/>
+                    <title value="Patient Persona"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
                     <nameUrl value="Useful_Patient_History_for_Providers.html"/>
                     <title value="Useful Patient History for Providers"/>
                     <generation value="markdown"/>
@@ -155,17 +156,12 @@
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="Specification.html"/>
-                    <title value="Specification"/>
+                    <nameUrl value="Workflow_example.html"/>
+                    <title value="Workflow example"/>
                     <generation value="markdown"/>
                     <page>
                         <nameUrl value="Systems.html"/>
                         <title value="Systems"/>
-                        <generation value="markdown"/>
-                    </page>
-                    <page>
-                        <nameUrl value="FHIR_Profiles_and_CDS_Hooks.html"/>
-                        <title value="FHIR Profiles and CDS Hooks"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
@@ -177,6 +173,11 @@
                             <title value="Hooks"/>
                             <generation value="markdown"/>
                         </page>
+                    </page>
+                    <page>
+                        <nameUrl value="FHIR_Profiles_and_CDS_Hooks_Context.html"/>
+                        <title value="FHIR Profiles and CDS Hooks Context"/>
+                        <generation value="markdown"/>
                     </page>
                 </page>
             </page>
