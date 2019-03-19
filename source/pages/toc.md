@@ -8,6 +8,7 @@ active: toc
     * <a href="Home_Page.html">Home Page</a>
         * <a href="Overview.html">Overview</a>
     * <a href="Introduction.html">Introduction</a>
+        * <a href="Implementation_Guide_Scope.html">Implementation Guide Scope</a>
         * <a href="Conventions.html">Conventions</a>
         * <a href="FHIR.html">FHIR</a>
         * <a href="Content_and_Organization.html">Content and Organization</a>
@@ -20,6 +21,7 @@ active: toc
         * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
         * <a href="Extensions.html">Extensions</a>
     * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
+        * <a href="Patient_Persona.html">Patient Persona</a>
         * <a href="Useful_Patient_History_for_Providers.html">Useful Patient History for Providers</a>
         * <a href="New_Patient_at_Primary_Care_Provider.html">New Patient at Primary Care Provider</a>
         * <a href="Returning_Patient.html">Returning Patient</a>
@@ -29,9 +31,9 @@ active: toc
         * <a href="Support_for_R4.html">Support for R4</a>
         * <a href="Additional_Hooks.html">Additional Hooks</a>
         * <a href="Configuration.html">Configuration</a>
-        * <a href="Specification.html">Specification</a>
+        * <a href="Workflow_example.html">Workflow example</a>
             * <a href="Systems.html">Systems</a>
-            * <a href="FHIR_Profiles_and_CDS_Hooks.html">FHIR Profiles and CDS Hooks</a>
             * <a href="CDS_Hooks_Customization.html">CDS Hooks Customization</a>
                 * <a href="Hooks.html">Hooks</a>
+            * <a href="FHIR_Profiles_and_CDS_Hooks_Context.html">FHIR Profiles and CDS Hooks Context</a>
     * <a href="Credits.html">Credits</a>

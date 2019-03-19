@@ -19,3 +19,8 @@ The examples used in this guide are based on Payers providing claims from events
 	</i></td></tr>	
 </table>
 
+Three example data requests from Providers to Health Plans are covered in this IG:
+1. What Encounters has the patient had since mm/dd/yyyy, excluding encounters at my organization.
+2. What procedures has the patient had?
+3. What medications has the patient received (i.e. A claim for a medication has been settled by the health plan)
+
