@@ -12,7 +12,7 @@ The CDS Hooks call provides the Practitioner, Patient and Encounter identifiers.
 
 These are used to perform a pre-fetch of the Patient and  Coverage records.
 
-<code>
+<pre>
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
   "fhirServer": "http://fhir.example.com",
@@ -87,7 +87,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
            }
        ] 
 } 
-</code>
+</pre>
 
 
 
