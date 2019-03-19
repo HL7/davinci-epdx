@@ -38,7 +38,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "encounter" : "654",
        "performerType" : "56542007",
        "input" : [{
-           "type: : "hustoryRange",
+           "type: : "historyRange",
            "valuePeriod" : {
               "start" : "YYYY-MM-DD",
               "end" : "YYYY-MM-DD"
@@ -61,7 +61,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "encounter" : "654",
        "performerType" : "56542007",
        "input" : [{
-           "type: : "hustoryRange",
+           "type: : "historyRange",
            "valuePeriod" : {
               "start" : "YYYY-MM-DD",
               "end" : "YYYY-MM-DD"
@@ -80,7 +80,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "encounter" : "654",
        "performerType" : "56542007",
        "input" : [{
-           "type: : "hustoryRange",
+           "type: : "historyRange",
            "valuePeriod" : {
               "start" : "YYYY-MM-DD",
               "end" : "YYYY-MM-DD"
