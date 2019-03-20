@@ -24,8 +24,3 @@ If any part of an Encounter records Encounter.period spans the required period r
 
 The MemberHistory-Encounter Task can also specify one or more Practitioner, Organization or Locations to be excluded from the returned set of Encounter records. The task.MemberHistory-Encounter.input.valueExpression contains the exclusion value to be applied.
 
-
-
-
-
-
