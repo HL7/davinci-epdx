@@ -36,4 +36,5 @@ active: toc
             * <a href="CDS_Hooks_Customization.html">CDS Hooks Customization</a>
                 * <a href="Hooks.html">Hooks</a>
             * <a href="FHIR_Profiles_and_CDS_Hooks_Context.html">FHIR Profiles and CDS Hooks Context</a>
+                * <a href="Member_Encounter_History_Response.html">Member Encounter History Response</a>
     * <a href="Credits.html">Credits</a>
