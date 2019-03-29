@@ -6,7 +6,7 @@ active: Member Medication History Response
 
 When a Health Plan's CDS Service receives a data request that includes a Task with task.code = "MemberHistory-Medication" the Health Plan constructs a response. The response is a FHIR bundle of US Core MedicationDispense records. 
 
-The Procedure records will require other US Core Profiles:
+The MedicationDispense records will require other US Core Profiles:
 
 * Patient
 * Practitioner

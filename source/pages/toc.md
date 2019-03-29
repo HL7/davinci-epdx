@@ -9,6 +9,7 @@ active: toc
         * <a href="Overview.html">Overview</a>
     * <a href="Introduction.html">Introduction</a>
         * <a href="Implementation_Guide_Scope.html">Implementation Guide Scope</a>
+        * <a href="Patient_Consent.html">Patient Consent</a>
         * <a href="Conventions.html">Conventions</a>
         * <a href="FHIR.html">FHIR</a>
         * <a href="Content_and_Organization.html">Content and Organization</a>
@@ -26,6 +27,7 @@ active: toc
         * <a href="New_Patient_at_Primary_Care_Provider.html">New Patient at Primary Care Provider</a>
         * <a href="Returning_Patient.html">Returning Patient</a>
         * <a href="New_Patient_at_Specialist.html">New Patient at Specialist</a>
+        * <a href="Patient-mediated_Payer_to_Payer_Exchange.html">Patient-mediated Payer to Payer Exchange</a>
     * <a href="Provider-controlled_Information_Requests_and_Filtering.html">Provider-controlled Information Requests and Filtering</a>
     * <a href="CDS-Hooks.html">CDS-Hooks</a>
         * <a href="Support_for_R4.html">Support for R4</a>
