@@ -12,6 +12,10 @@ The CDS Hooks call provides the Practitioner, Patient and Encounter identifiers.
 
 These are used to perform a pre-fetch of the Patient and  Coverage records.
 
+* patientId is used to identify the patient/subject in the EMR system
+* subscriberId is used to describe the unique identifier for a health plan member. This identifier can be found in the Coverage resource as subscriber.id.
+
+
 <pre>
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
@@ -20,12 +24,13 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
   "user": "Practitioner/example",
   "context": {
     "userId" : "Practitioner/A12365498",
-    "patientId" : "1239876",
+    "patientId" : "EMR1239876",
+		"subscriberId": "HP567123489",
     "encounter" : "654"
   },
   "prefetch" : {
-    "healthPlanMember" : "Patient/{{Patient.id}}",
-    "healthPlanCoverage" : "Coverage/?beneficiary=Patient/{{Patient.Id}}",
+    "healthPlanMember" : "Patient/{\{Patient.id}\}",
+    "healthPlanCoverage" : "Coverage/?beneficiary=Patient/{\{Patient.Id}\}",
     "MemberEncounterHistory" : {
        "resourceType" : "Task",
        "identifier" : [{ "value" : "e1577a69-dfca-44eb-be6d-1a05a953b2db"}],
@@ -33,7 +38,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "intent" : "proposal",
        "code" : "MemberHistory-Encounter".
        "description" : "Request for Member Encounter History",
-       "focus" : "Patient/{{Patient.Id}}",
+       "focus" : "Patient/{\{Patient.Id}\}",
        "for" : "Practitioner/A12365498",
        "encounter" : "654",
        "performerType" : "56542007",
@@ -56,7 +61,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "intent" : "proposal",
        "code" : "MemberHistory-Procedure",
        "description" : "Request for Member Procedure History",
-       "focus" : "Patient/{{Patient.Id}}",
+       "focus" : "Patient/{\{Patient.Id}\}",
        "for" : "Practitioner/A12365498",
        "encounter" : "654",
        "performerType" : "56542007",
@@ -75,7 +80,7 @@ These are used to perform a pre-fetch of the Patient and  Coverage records.
        "intent" : "proposal",
        "code" : "MemberHistory-Medication",
        "description" : "Request for Member Medication History",
-       "focus" : "Patient/{{Patient.Id}}",
+       "focus" : "Patient/{\{Patient.Id}\}",
        "for" : "Practitioner/A12365498",
        "encounter" : "654",
        "performerType" : "56542007",

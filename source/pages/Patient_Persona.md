@@ -13,4 +13,6 @@ Arthur is in reasonable health but is managing a number of conditions:
 * He is taking medication for hypertension. 
 * He had a knee replacement 5 years ago. 
 * He had a procedure seven years ago to correct a problem with a disc in his lower back.
+* A history of a normal colonoscooy 5 years earlier
+* A history of a pneumovax and zostavax 4 years earlier.
 
