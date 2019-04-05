@@ -12,6 +12,7 @@ The first release of the PDex IG will focus on the following in scope items. Ite
 	* Request for Encounter History
 	* Request for Procedure History
 	* Request for Medication recent history
+* Patient-mediated Payer-to-Payer information exchange	
 
 ## Deferred Scope
 * In Patient Care Provider queries

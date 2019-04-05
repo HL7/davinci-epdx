@@ -41,4 +41,7 @@ active: toc
                 * <a href="Member_Encounter_History_Response.html">Member Encounter History Response</a>
                 * <a href="Member_Procedure_History_Response.html">Member Procedure History Response</a>
                 * <a href="Member_Medication_History_Response.html">Member Medication History Response</a>
+                * <a href="Payload_returned_by_CDS_Hooks.html">Payload returned by CDS Hooks</a>
+                * <a href="SMART-on-FHIR_app_for_Provider_data_selection.html">SMART-on-FHIR app for Provider data selection</a>
+                * <a href="Providing_data_provenance_.html">Providing data provenance </a>
     * <a href="Credits.html">Credits</a>

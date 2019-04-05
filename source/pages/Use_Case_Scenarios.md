@@ -4,15 +4,18 @@ layout: default
 active: Use Case Scenarios
 ---
 
-This implementation guide addresses three use cases:
+This implementation guide addresses three similar Provider-to-Payer use cases:
 * New Patient at Primary Care Provider
 * Returning Patient at Primary Care Provider
 * New Patient at Specialist
 
-The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider.
+The other use case is for Consumer/Patient-mediated Payer-to-Payer Exchange:
+* Consumer enrolls with new health plan and accesses their prior health plan to authorize sharing of the health history that the prior health plan holds on the consumer.
+
+The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider or when a member switches health plans.
 
 <table style="background-color:rgb(195,231,244);width:100%">
-	<tr><td>Question_For_Comment(Q_F_01):</td></tr>
+	<tr><td>Question_For_Comment(Q_F_02):</td></tr>
   <tr><td><i>
 		What other claims or categories of data available to payers should be converted to FHIR clinical resources to release to providers? <br/>
 		In what sequence should these other categories of data be tackled?

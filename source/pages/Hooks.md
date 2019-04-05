@@ -12,7 +12,7 @@ This hook is described in the CDS Hook specification [here](https://cds-hooks.or
 
 
 <table style="background-color:rgb(195,231,244);width:100%;">
-	<tr><td>Question_For_Comment (Q_F_05):</td></tr>
+	<tr><td>Question_For_Comment (Q_F_07):</td></tr>
   <tr><td><i>
 		Should health plans include the patient portal URL on the health plan coverage card issued to members and then should CDS  Hooks discovery be at {baseURI}/cds-services where {BaseURI} is the patient portal address provided on the insurance card.
 		</i></td></tr>	

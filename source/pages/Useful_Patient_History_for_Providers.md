@@ -13,7 +13,7 @@ When providers are building a health history for a new patient the information t
 The PDex Implementation Guide will focus on examples related to Ambulatory events.
 
 <table style="background-color:rgb(195,231,244);width:100%">
-	<tr><td>Question_For_Comment(Q_F_C02):</td></tr>
+	<tr><td>Question_For_Comment(Q_F_C03):</td></tr>
   <tr><td><i>
 		Are there other categories of clinical data that providers wish to see?
 	</i></td></tr>	
@@ -39,7 +39,7 @@ As part of an event or episode of care the provider will be interested in the fo
 These types of data can be mapped to FHIR clinical resources as follows:
 
 <table style="background-color:rgb(195,231,244);width:100%">
-	<tr><td>Question_For_Comment(Q_F_C03):</td></tr>
+	<tr><td>Question_For_Comment(Q_F_C04):</td></tr>
   <tr><td><i>
 		Are these mappings from data types to FHIR R4/US Core profiles appropriate?
 	</i></td></tr>	

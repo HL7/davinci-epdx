@@ -18,6 +18,7 @@ The profiles referenced in this implementation Guide include:
 * [US Core Immunization Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-immunization.html)
 * [US Core Location Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-location.html)
 * [US Core Medication Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-medication.html)
+* [US Core MedicationDispense Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-medicationdispense.html)
 * [US Core MedicationStatement Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-medicationstatement.html)
 * [US Core ObservationResults Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-observationresults.html)
 * [US Core Organization Profile](http://hl7.org/fhir/us/core/STU2/StructureDefinition-us-core-organization.html)

@@ -11,3 +11,5 @@ In the returning patient workflow the provider will apply additional filtering c
 Examples of these filters are:
 * Provide patient information since the date of their last visit with me
 * Provide patient information excluding encounters at my Organization or Location
+
+The information to submit to the Payer CDS- Hooks service can be compiled via a SMART-on-FHIR app that is registered with the Provider's EMR.
