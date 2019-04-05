@@ -16,6 +16,7 @@ The profiles referenced in this implementation Guide include:
 * [Argonaut DocumentReference Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-documentreference.html)
 * [Argonaut Immunization Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-immunization.html)
 * [Argonaut Medication Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-medication.html)
+* [Argonaut MedicationDispense Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-medicationdispense.html)
 * [Argonaut MedicationStatement Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-medicationstatement.html)
 * [Argonaut ObservationResults Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-observationresults.html)
 * [Argonaut Patient Profile](http://www.fhir.org/guides/argonaut/r2/StructureDefinition-argo-patient.html)

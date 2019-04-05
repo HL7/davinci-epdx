@@ -24,6 +24,7 @@ Claim-related information will be transformed into clinical resources:
 * [US Core Encounter Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html)
 * [US Core Immunization Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html)
 * [US Core Medication Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html)
+* [US Core MedicationDispense Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationdispense.html)
 * [US Core MedicationStatement Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html)
 * [US Core ObservationResults Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observationresults.html)
 * [US Core Procedure Profile](http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html)
