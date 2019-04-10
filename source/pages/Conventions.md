@@ -4,7 +4,7 @@ layout: default
 active: Conventions
 ---
 
-This implementation guide uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
+This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
 SHALL indicates requirements that must be met to be conformant with the specification.
 

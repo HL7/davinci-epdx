@@ -24,12 +24,13 @@ The fields in the context of the CDS Hooks call are used as follows:
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
   "fhirServer": "http://fhir.example.com",
-  "hook": "encounter-start",
+  "hook": "appointment-book",
   "user": "Practitioner/example",
   "context": {
     "userId" : "Practitioner/A12365498",
     "patientId" : "EMR1239876",
-    "encounter" : "654",
+    "encounterId" : "654",
+    "appointments" : [],
     "subscriberId" : "HP567123489",
     "Tasks" : [
        {
@@ -37,7 +38,7 @@ The fields in the context of the CDS Hooks call are used as follows:
        "identifier" : [{ "value" : "e1577a69-dfca-44eb-be6d-1a05a953b2db"}],
        "status" : "requested",
        "intent" : "proposal",
-       "code" : "MemberHistory-Encounter".
+       "code" : "MemberHistory-Encounter",
        "description" : "Request for Member Encounter History",
        "focus" : "Patient/{\{Patient.Id}\}",
        "for" : "Practitioner/A12365498",
@@ -54,7 +55,7 @@ The fields in the context of the CDS Hooks call are used as follows:
               "end" : "YYYY-MM-DD"
            },
            {
-           "type" : "organizationExcluded",
+           "type" : "entityExcluded",
            "valueExpression" : "organization:not=XYZ123ABC"
            },
         {

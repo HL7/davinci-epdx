@@ -4,7 +4,7 @@ layout: default
 active: Member Encounter History Response
 ---
 
-When a Health Plan's CDS Service receives a data request that includes a Task with task.code = "MemberHistory-Encounter" the Health Plan constructs a response. The response is a FHIR bundle of US Core Encounter records and subsidiary related resources. 
+When a Health Plan's CDS Service receives a data request that includes a Task with task.code = "MemberHistory-Encounter" the Health Plan shall construct a response. The response shall be a FHIR bundle of US Core Encounter records and subsidiary related resources. 
 
 The Encounter records will require other US Core Profiles:
 

@@ -4,7 +4,7 @@ layout: default
 active: Member Procedure History Response
 ---
 
-When a Health Plan's CDS Service receives a data request that includes a Task with task.code = "MemberHistory-Procedure" the Health Plan constructs a response. The response is a FHIR bundle of US Core Procedure and related records. 
+When a Health Plan's CDS Service receives a data request that includes a Task with task.code = "MemberHistory-Procedure" the Health Plan shall constructs  response. The response shall be a FHIR bundle of US Core Procedure and related records. 
 
 The Procedure records will require other US Core Profiles:
 
