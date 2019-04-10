@@ -4,7 +4,7 @@ layout: default
 active: Configuration
 ---
 
-Each CDS Hook service provided by a payer might support multiple different types of patient/member enquiry. For example, a payer might return information about:
+Each CDS Hook service provided by a health plan shall support multiple different types of patient/member enquiry. For example, a health plan might return information about:
 
 - Patient demographics
 - patient care history
@@ -20,9 +20,9 @@ PDex supports three types of scenarios:
 - Patient presents at Specialist
 
 The hook interaction for these scenarios is:
-* encounter-start
+* appointment-book
 
-The provider may pass search parameters to the hook. These parameters can include:
+The provider may pass search parameters to the hook. These parameters shall be set as defaults and passed to the hook as one or more task resources. The parameters will in the Task resource will be used to construct search parameters in the health plan's system that can limit a search by:
 - Period (Start and optionally End date)
 - Excluded Practitioner(s)
 - Excluded Organization(s)

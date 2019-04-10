@@ -4,7 +4,7 @@ layout: default
 active: CDS-Hooks
 ---
 
-This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) implementation guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
+This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 
 The bulk of the functionality of this specification is implemented using CDS Hooks. The [Hooks specification](https://cds-hooks.org/) is small. Implementers should read and be familiar with all of it.
 
@@ -14,6 +14,6 @@ To meet requirements identified by Da Vinci project participants, it is necessar
 
 Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification either in the initial release or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.
 
-This implementation guide should be used in conjunction with the Da Vinci Health Record Exchange (HRex) Implementation Guide. The HRex IG defines CDS Hooks that are used across one or more Da Vinci Use Case-related IG. The PDex IG defines the payload(s) that are required to support each PDex use case using the relevant HRex defined Hooks.  
+This IG should be used in conjunction with the Da Vinci Health Record Exchange (HRex) Implementation Guide. The HRex IG defines CDS Hooks that are used across one or more Da Vinci Use Case-related IG. The PDex IG defines the payload(s) that are required to support each PDex use case using the relevant HRex defined Hooks.  
 
 This implementation guide extends/customizes CDS Hooks in 4 ways: support for R4, extending the encounter-start hook, a hook configuration mechanism and additional response capabilities. Each are described below:

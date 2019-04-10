@@ -10,7 +10,7 @@ It is possible that the actual list of R4 resources provided for the hooks will 
 
 The CDS Hooks payload can include DSTU2, STU3 or R4 resources. The Payer's CDS Hooks service should be able to handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources.
 
-The Payer's CDS Hooks service will compile a Transaction bundle using FHIR R4 resources based on US Core Profiles.
+The health plan's CDS Hooks service shall compile a Transaction bundle using FHIR R4 resources based on US Core Profiles.
 
-The SMART-on-FHIR app that is called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. Instead the app will create a document reference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the payer that the provider has selected to commit to the patient's record.
+The SMART-on-FHIR app that is called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. Instead the app shall create a document reference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
 
