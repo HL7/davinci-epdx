@@ -8,8 +8,8 @@ This specification makes significant use of FHIR profiles, search parameter defi
 
 The profiles referenced in this implementation guide use Argonaut (based on FHIR DSTU2) and US Core (based on STU3 and R4) or, where profiles are not defined in those specifications, profiles defined in the HRex Implementation Guide.
 
-The CDS Hooks call provides the Practitioner, Patient and Encounter identifiers.
-Optional fields in the CDS Hooks context include:
+The CDS Hooks Appointment-book call provides the Practitioner (UserId), Patient, Encounter identifiers and an appointments object.
+Optional fields in the CDS Hooks for PDex context include:
 * subscriberId
 * tasks
 
@@ -27,84 +27,106 @@ The fields in the context of the CDS Hooks call are used as follows:
   "hook": "appointment-book",
   "user": "Practitioner/example",
   "context": {
-    "userId" : "Practitioner/A12365498",
-    "patientId" : "EMR1239876",
-    "encounterId" : "654",
-    "appointments" : [],
-    "subscriberId" : "HP567123489",
-    "Tasks" : [
-       {
-       "resourceType" : "Task",
-       "identifier" : [{ "value" : "e1577a69-dfca-44eb-be6d-1a05a953b2db"}],
-       "status" : "requested",
-       "intent" : "proposal",
-       "code" : "MemberHistory-Encounter",
-       "description" : "Request for Member Encounter History",
-       "focus" : "Patient/{\{Patient.Id}\}",
-       "for" : "Practitioner/A12365498",
-       "encounter" : "654",
-       "performerType" : "56542007",
-       "input" : [{
-           "type: : "resourceType",
-           "valueString" : "Encounter"
-           },
-           {
-           "type: : "historyRange",
-           "valuePeriod" : {
-              "start" : "YYYY-MM-DD",
-              "end" : "YYYY-MM-DD"
-           },
-           {
-           "type" : "entityExcluded",
-           "valueExpression" : "organization:not=XYZ123ABC"
-           },
-        {
-       "resourceType" : "Task",
-       "identifier" : [{ "value" : "e1577a69-dfcb-44ec-be6d-2a05a953b2bc"}],
-       "status" : "requested",
-       "intent" : "proposal",
-       "code" : "MemberHistory-Procedure",
-       "description" : "Request for Member Procedure History",
-       "focus" : "Patient/{\{Patient.Id}\}",
-       "for" : "Practitioner/A12365498",
-       "encounter" : "654",
-       "performerType" : "56542007",
-       "input" : [{
-           "type: : "resourceType",
-           "valueString" : "Procedure"
-           },
+    "userId": "Practitioner/A12365498",
+    "patientId": "EMR1239876",
+    "encounterId": "654",
+    "appointments": [],
+    "subscriberId": "HP567123489",
+    "Tasks": [
+      {
+        "resourceType": "Task",
+        "identifier": [
           {
-           "type: : "historyRange",
-           "valuePeriod" : {
-              "start" : "YYYY-MM-DD",
-              "end" : "YYYY-MM-DD"
-             }
-       }]
-    },
-    {
-       "resourceType" : "Task",
-       "identifier" : [{ "value" : "e1577a69-dfcc-44ed-be6d-3a05a953b2cb"}],
-       "status" : "requested",
-       "intent" : "proposal",
-       "code" : "MemberHistory-Medication",
-       "description" : "Request for Member Medication History",
-       "focus" : "Patient/{\{Patient.Id}\}",
-       "for" : "Practitioner/A12365498",
-       "encounter" : "654",
-       "performerType" : "56542007",
-       "input" : [{
-           "type: : "resourceType",
-           "valueString" : "medicationDispense"
-           },
-           {
-           "type: : "historyRange",
-           "valuePeriod" : {
-              "start" : "YYYY-MM-DD",
-              "end" : "YYYY-MM-DD"
-           }
-       }]
-    }]
+            "value": "e1577a69-dfca-44eb-be6d-1a05a953b2db"
+          }
+        ],
+        "status": "requested",
+        "intent": "proposal",
+        "code": "MemberHistory-Encounter",
+        "description": "Request for Member Encounter History",
+        "focus": "Patient/{{Patient.Id}}",
+        "for": "Practitioner/A12365498",
+        "encounter": "654",
+        "performerType": "56542007",
+        "input": [
+          {
+            "type": "resourceType",
+            "valueString": "Encounter"
+          },
+          {
+            "type": "historyRange",
+            "valuePeriod": {
+              "start": "YYYY-MM-DD",
+              "end": "YYYY-MM-DD"
+            }
+          },
+          {
+            "type": "entityExcluded",
+            "valueExpression": "organization:not\u003dXYZ123ABC"
+          }
+        ]
+      },
+      {
+        "resourceType": "Task",
+        "identifier": [
+          {
+            "value": "e1577a69-dfcb-44ec-be6d-2a05a953b2bc"
+          }
+        ],
+        "status": "requested",
+        "intent": "proposal",
+        "code": "MemberHistory-Procedure",
+        "description": "Request for Member Procedure History",
+        "focus": "Patient/{{Patient.Id}}",
+        "for": "Practitioner/A12365498",
+        "encounter": "654",
+        "performerType": "56542007",
+        "input": [
+          {
+            "type": "resourceType",
+            "valueString": "Procedure"
+          },
+          {
+            "type": "historyRange",
+            "valuePeriod": {
+              "start": "YYYY-MM-DD",
+              "end": "YYYY-MM-DD"
+            }
+          }
+        ]
+      },
+      {
+        "resourceType": "Task",
+        "identifier": [
+          {
+            "value": "e1577a69-dfcc-44ed-be6d-3a05a953b2cb"
+          }
+        ],
+        "status": "requested",
+        "intent": "proposal",
+        "code": "MemberHistory-Medication",
+        "description": "Request for Member Medication History",
+        "focus": "Patient/{{Patient.Id}}",
+        "for": "Practitioner/A12365498",
+        "encounter": "654",
+        "performerType": "56542007",
+        "input": [
+          {
+            "type": "resourceType",
+            "valueString": "medicationDispense"
+          },
+          {
+            "type": "historyRange",
+            "valuePeriod": {
+              "start": "YYYY-MM-DD",
+              "end": "YYYY-MM-DD"
+            }
+          }
+        ]
+      }
+    ]
   }
+}
 </pre>
 
 
