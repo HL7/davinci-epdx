@@ -29,6 +29,7 @@ Two additional fields are appended to the context segment of the appointment-boo
 	<tr>
 		<td>Tasks</td>
 		<td>Optional</td>
+		<td>Yes</td>
 		<td>object</td>
 		<td>An array of tasks that define the resource entry point for a member enquiry to a health plan and the scope of the search parameters for that enquiry.</td> 
 	</tr>
