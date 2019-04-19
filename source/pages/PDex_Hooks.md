@@ -22,6 +22,13 @@ A sample of the CDS Hook for appointment-book is included below:
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
   "fhirServer": "http://fhir.example.com",
+  "fhirAuthorization" : {
+       "access_token" : "some-opaque-fhir-access-token",
+       "token_type" : "Bearer",
+       "expires_in" : 300,
+       "scope" : "patient/Patient.read patient/Observation.read",
+       "subject" : "cds-service4"
+     },
   "hook": "appointment-book",
   "user": "Practitioner/example",
   "context": {
@@ -30,7 +37,7 @@ A sample of the CDS Hook for appointment-book is included below:
     "encounterId" : "654",
     "appointments" : [],
     "subscriberId" : "HP567123489",
-   "AccessJwt" : { JWT for access to EMR }
 		}
   }
 </pre>
+
