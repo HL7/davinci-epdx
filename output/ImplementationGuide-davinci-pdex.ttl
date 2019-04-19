@@ -1,0 +1,225 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.0> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "hl7.fhir.us.davinci-pdex-0.0.9.0"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "99" ];
+     fhir:Meta.lastUpdated [ fhir:value "2019-04-19T10:24:13.000-04:00"^^xsd:dateTime ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n</div></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"];
+  fhir:ImplementationGuide.version [ fhir:value "0.0.9.0"];
+  fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
+  fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:ImplementationGuide.publisher [ fhir:value "HL7 Da Vinci"];
+  fhir:ImplementationGuide.description [ fhir:value "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nSee the [Table of Contents](toc.html) for more information."];
+  fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.us.davinci-pdex"];
+  fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
+  fhir:ImplementationGuide.fhirVersion [
+     fhir:value "4.0.0";
+     fhir:index 0
+  ];
+  fhir:ImplementationGuide.dependsOn [
+     fhir:index 0;
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex";
+       fhir:link <http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex>
+     ];
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.us.davinci-hrex" ];
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "current" ]
+  ];
+  fhir:ImplementationGuide.definition [
+     fhir:ImplementationGuide.definition.page [
+       fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.md" ];
+       fhir:ImplementationGuide.definition.page.title [ fhir:value "Table of Contents" ];
+       fhir:ImplementationGuide.definition.page.generation [ fhir:value "generated" ];
+       fhir:ImplementationGuide.definition.page.page [
+         fhir:index 0;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Home_Page.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Home Page" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Overview.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Overview" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Introduction.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Introduction" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Implementation_Guide_Scope.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Guide Scope" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 1;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Member_Consent.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Member Consent" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 2;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Conventions.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Conventions" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 3;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "FHIR.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "FHIR" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 4;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Supporting_Specifications.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Supporting Specifications" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 5;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Implementation_Assumptions.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Assumptions" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 6;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Implementation_Hierarchy_and_Priorities.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Hierarchy and Priorities" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 7;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "PDex_Data_Payloads.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "PDex Data Payloads" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "PDex Implementation Actors, Interactions, Data Payloads and Methods" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Actors.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Actors" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 1;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Exchange_Interactions.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Exchange Interactions" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 2;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Data_Payloads.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Data Payloads" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 3;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Interaction_Methods.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Interaction Methods" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 4;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Interaction_and_Payload_Matrix.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Interaction and Payload Matrix" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Use_Case_Scenarios.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Use Case Scenarios" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Patient_Persona.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Patient Persona" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 1;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Useful_Patient_History_for_Providers.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Useful Patient History for Providers" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ]
+       ], [
+         fhir:index 4;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Provider-controlled_Information_Requests_and_Filtering.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Provider-controlled Information Requests and Filtering" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 5;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "CDS-Hooks.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "CDS-Hooks" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+         fhir:ImplementationGuide.definition.page.page [
+           fhir:index 0;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Support_for_FHIR_R4.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Support for FHIR R4" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 1;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Additional_Hooks.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Additional Hooks" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 2;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "PDex_Hooks.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "PDex Hooks" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 3;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Hook_Configuration.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Hook Configuration" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 4;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Systems.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Systems" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+         ], [
+           fhir:index 5;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Workflow_Examples.html" ];
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "Workflow Examples" ];
+           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+           fhir:ImplementationGuide.definition.page.page [
+             fhir:index 0;
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "FHIR_Profiles_and_CDS_Hooks_Context.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "FHIR Profiles and CDS Hooks Context" ];
+             fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
+             fhir:ImplementationGuide.definition.page.page [
+               fhir:index 0;
+               fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "SMART-on-FHIR_app_for_Provider_data_selection.html" ];
+               fhir:ImplementationGuide.definition.page.title [ fhir:value "SMART-on-FHIR app for Provider data selection" ];
+               fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+             ], [
+               fhir:index 1;
+               fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Providing_Data_Provenance_.html" ];
+               fhir:ImplementationGuide.definition.page.title [ fhir:value "Providing Data Provenance " ];
+               fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+             ]
+           ]
+         ]
+       ], [
+         fhir:index 6;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Credits.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Credits" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.0.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.0.ttl> .
+
+# -------------------------------------------------------------------------------------
+

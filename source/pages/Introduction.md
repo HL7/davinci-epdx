@@ -4,23 +4,15 @@ layout: default
 active: Introduction
 ---
 
-The Da Vinci Payer Data exchange (PDex) initiative is specifying the FHIR profiles that will be used to support interoperable communication from Payers to Providers and health plan members that a practitioner is caring for.
-
-Whereas the Blue Button 2.0 initiative is specifying the profiles used to communicate between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting member health and claims information available to the health plan in FHIR clinical profiles that are more easily handled by provider Electronic Medical Records (EMR) systems. The IG also addresses the transfer of the same information from a member's old health plan to a new health plan under a patient-mediated exchange workflow.
-
-Wherever possible, PDex will use established US Core Profiles. Where information must be presented in FHIR resources that fall outside of the Argonaut/US Core implementation guides the HL7 Da Vinci Health Record exchange (HRex) Implementation Guide will define the necessary Da Vinci FHIR profiles. 
-
-The PDex Implementation Guide (IG) will use the HL7 FHIR Release 4/US Core STU3 specification as its base, but will provide additional guidance and documentation to support implementations that follow the HL7 FHIR STU3/US Core STU2 and HL7 FHIR DSTU2/Argonaut specifications. 
-
-This guide supports two workflows:
-1. Provider - Payer interaction
-2. Member-mediated Payer-to-Payer exchange
-
-## 1. Provider - Payer Interaction
-The HRex/PDex profiles documented in this IG will be used to transmit data to provider systems. The mechanism used for this interaction will be based upon the CDS-Hooks specification.  Providers will be able to initiate a request for information to a payer/health plan as part of their normal workflows. The CDS-Hooks interface will be used to pass information about the Patient. This information will be used to match the patient to the Health Plan's member records and return relevant claims and associated health information to the providers EMR using appropriate FHIR clinical resources. Provenance resources will also be transmitted to provide information to the provider on the orginal source of the information and the type of conversion processes used to present the data in FHIR resources. 
-
-The Provider will be able to select data to be committed to their EMR from the information returned from the health plan. 
-
-## 2. Member-mediated Payer-to-Payer exchange
-This interaction will use the OAuth2.0 authorization process to enable a Member to authorize the exchange of their health data between their old and new health plans. The member will have the option to choose to share their behavioral health information as part of this exchange. The payload that can be retrieved by the new health plan from the old health plan will use the same HRex/PDex profiles used in workflow 1 for Provider to Payer Interactions.
-
+                                                                                                                                                   
+The PDex IG identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that **SHALL** be communicated. 
+                                                                                                                                                    
+Whereas the Blue Button 2.0 initiative is specifying the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a members health and claims information in FHIR clinical profiles that are more easily consumed by Electronic Medical Records (EMR) systems. 
+                                                                                                                                                   
+The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information that will be exchanged between health plans when authorized by a health plan member.
+                                                                                                                                                   
+While the authorization and communication mechanisms may differ between the provider-to-payer exchange (P2HPX) and the member-authorized  Payer-to-Payer exchange (MauthHPX) or member-authorized Payer to Third-Party Application exchange (Mauth3PX)  the payload of member history will be the same.  
+                                                                                                                                                   
+The objective with the above approach is to:
+- Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested in development and implementation
+- Consolidate the number of operational interfaces that health plans and  EMR systems need to maintain in order to meet regulatory requirements.

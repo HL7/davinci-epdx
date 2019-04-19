@@ -3,20 +3,20 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="davinci-pdex"/>
   <meta>
-    <versionId value="94"/>
-    <lastUpdated value="2019-04-12T01:26:39.000-04:00"/>
+    <versionId value="99"/>
+    <lastUpdated value="2019-04-19T10:24:13.000-04:00"/>
   </meta>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Windows\Temp\tmp-5356XpcVW86SKu4w\source\resources"/>
+    <valueString value="C:\Windows\Temp\tmp-5356MfQTsOTjC937\source\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Windows\Temp\tmp-5356XpcVW86SKu4w\framework"/>
+    <valueString value="C:\Windows\Temp\tmp-5356MfQTsOTjC937\framework"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Windows\Temp\tmp-5356XpcVW86SKu4w\source\pages"/>
+    <valueString value="C:\Windows\Temp\tmp-5356MfQTsOTjC937\source\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-  <version value="0.0.8.2"/>
+  <version value="0.0.9.0"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
@@ -57,8 +57,8 @@
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Patient_Consent.html"/>
-          <title value="Patient Consent"/>
+          <nameUrl value="Member_Consent.html"/>
+          <title value="Member Consent"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -72,48 +72,53 @@
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Content_and_Organization.html"/>
-          <title value="Content and Organization"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
           <nameUrl value="Supporting_Specifications.html"/>
           <title value="Supporting Specifications"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <nameUrl value="Implementation_Assumptions.html"/>
+          <title value="Implementation Assumptions"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Implementation_Hierarchy_and_Priorities.html"/>
+          <title value="Implementation Hierarchy and Priorities"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="PDex_Data_Payloads.html"/>
+          <title value="PDex Data Payloads"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
-        <nameUrl value="Da_Vinci_Profiles.html"/>
-        <title value="Da Vinci Profiles"/>
+        <nameUrl value="PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html"/>
+        <title value="PDex Implementation Actors, Interactions, Data Payloads and Methods"/>
         <generation value="markdown"/>
         <page>
-          <nameUrl value="US_Core_STU3_(FHIR_R4)_Profiles.html"/>
-          <title value="US Core STU3 (FHIR R4) Profiles"/>
+          <nameUrl value="Actors.html"/>
+          <title value="Actors"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="HRex_Profiles.html"/>
-          <title value="HRex Profiles"/>
-          <generation value="markdown"/>
-          <page>
-            <nameUrl value="HRex_Profiles_for_FHIR_DSTU2_.html"/>
-            <title value="HRex Profiles for FHIR DSTU2 "/>
-            <generation value="markdown"/>
-          </page>
-        </page>
-        <page>
-          <nameUrl value="US_Core_STU2_(FHIR_STU3)_Profiles.html"/>
-          <title value="US Core STU2 (FHIR STU3) Profiles"/>
+          <nameUrl value="Exchange_Interactions.html"/>
+          <title value="Exchange Interactions"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Argonaut_FHIR_(DSTU2)_Profiles.html"/>
-          <title value="Argonaut FHIR (DSTU2) Profiles"/>
+          <nameUrl value="Data_Payloads.html"/>
+          <title value="Data Payloads"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Extensions.html"/>
-          <title value="Extensions"/>
+          <nameUrl value="Interaction_Methods.html"/>
+          <title value="Interaction Methods"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Interaction_and_Payload_Matrix.html"/>
+          <title value="Interaction and Payload Matrix"/>
           <generation value="markdown"/>
         </page>
       </page>
@@ -131,26 +136,6 @@
           <title value="Useful Patient History for Providers"/>
           <generation value="markdown"/>
         </page>
-        <page>
-          <nameUrl value="New_Patient_at_Primary_Care_Provider.html"/>
-          <title value="New Patient at Primary Care Provider"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="Returning_Patient.html"/>
-          <title value="Returning Patient"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="New_Patient_at_Specialist.html"/>
-          <title value="New Patient at Specialist"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="Patient-mediated_Payer_to_Payer_Exchange.html"/>
-          <title value="Patient-mediated Payer to Payer Exchange"/>
-          <generation value="markdown"/>
-        </page>
       </page>
       <page>
         <nameUrl value="Provider-controlled_Information_Requests_and_Filtering.html"/>
@@ -162,8 +147,8 @@
         <title value="CDS-Hooks"/>
         <generation value="markdown"/>
         <page>
-          <nameUrl value="Support_for_R4.html"/>
-          <title value="Support for R4"/>
+          <nameUrl value="Support_for_FHIR_R4.html"/>
+          <title value="Support for FHIR R4"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -172,61 +157,36 @@
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Configuration.html"/>
-          <title value="Configuration"/>
+          <nameUrl value="PDex_Hooks.html"/>
+          <title value="PDex Hooks"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="Workflow_example.html"/>
-          <title value="Workflow example"/>
+          <nameUrl value="Hook_Configuration.html"/>
+          <title value="Hook Configuration"/>
           <generation value="markdown"/>
-          <page>
-            <nameUrl value="Systems.html"/>
-            <title value="Systems"/>
-            <generation value="markdown"/>
-          </page>
-          <page>
-            <nameUrl value="CDS_Hooks_Customization.html"/>
-            <title value="CDS Hooks Customization"/>
-            <generation value="markdown"/>
-            <page>
-              <nameUrl value="Hooks.html"/>
-              <title value="Hooks"/>
-              <generation value="markdown"/>
-            </page>
-          </page>
+        </page>
+        <page>
+          <nameUrl value="Systems.html"/>
+          <title value="Systems"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Workflow_Examples.html"/>
+          <title value="Workflow Examples"/>
+          <generation value="markdown"/>
           <page>
             <nameUrl value="FHIR_Profiles_and_CDS_Hooks_Context.html"/>
             <title value="FHIR Profiles and CDS Hooks Context"/>
             <generation value="markdown"/>
-            <page>
-              <nameUrl value="Member_Encounter_History_Response.html"/>
-              <title value="Member Encounter History Response"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="Member_Procedure_History_Response.html"/>
-              <title value="Member Procedure History Response"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="Member_Medication_History_Response.html"/>
-              <title value="Member Medication History Response"/>
-              <generation value="markdown"/>
-            </page>
-            <page>
-              <nameUrl value="Payload_returned_by_CDS_Hooks.html"/>
-              <title value="Payload returned by CDS Hooks"/>
-              <generation value="markdown"/>
-            </page>
             <page>
               <nameUrl value="SMART-on-FHIR_app_for_Provider_data_selection.html"/>
               <title value="SMART-on-FHIR app for Provider data selection"/>
               <generation value="markdown"/>
             </page>
             <page>
-              <nameUrl value="Providing_data_provenance_.html"/>
-              <title value="Providing data provenance "/>
+              <nameUrl value="Providing_Data_Provenance_.html"/>
+              <title value="Providing Data Provenance "/>
               <generation value="markdown"/>
             </page>
           </page>
