@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.fhir.us.davinci-pdex-0.0.9.0"/>
+  <meta>
+    <versionId value="99"/>
+    <lastUpdated value="2019-04-19T10:24:13.000-04:00"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
+Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>
+<p>See the <a href="toc.html">Table of Contents</a> for more information.</p>
+</div></div>
+  </text>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
+  <version value="0.0.9.0"/>
+  <name value="DaVinciPayerDataExchange"/>
+  <title value="Da Vinci Payer Data exchange"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 Da Vinci"/>
+  <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information."/>
+  <packageId value="hl7.fhir.us.davinci-pdex"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.0"/>
+  <dependsOn>
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
+    <packageId value="hl7.fhir.us.davinci-hrex"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <page>
+      <nameUrl value="toc.md"/>
+      <title value="Table of Contents"/>
+      <generation value="generated"/>
+      <page>
+        <nameUrl value="Home_Page.html"/>
+        <title value="Home Page"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="Overview.html"/>
+          <title value="Overview"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="Introduction.html"/>
+        <title value="Introduction"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="Implementation_Guide_Scope.html"/>
+          <title value="Implementation Guide Scope"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Member_Consent.html"/>
+          <title value="Member Consent"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Conventions.html"/>
+          <title value="Conventions"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="FHIR.html"/>
+          <title value="FHIR"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Supporting_Specifications.html"/>
+          <title value="Supporting Specifications"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Implementation_Assumptions.html"/>
+          <title value="Implementation Assumptions"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Implementation_Hierarchy_and_Priorities.html"/>
+          <title value="Implementation Hierarchy and Priorities"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="PDex_Data_Payloads.html"/>
+          <title value="PDex Data Payloads"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html"/>
+        <title value="PDex Implementation Actors, Interactions, Data Payloads and Methods"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="Actors.html"/>
+          <title value="Actors"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Exchange_Interactions.html"/>
+          <title value="Exchange Interactions"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Data_Payloads.html"/>
+          <title value="Data Payloads"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Interaction_Methods.html"/>
+          <title value="Interaction Methods"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Interaction_and_Payload_Matrix.html"/>
+          <title value="Interaction and Payload Matrix"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="Use_Case_Scenarios.html"/>
+        <title value="Use Case Scenarios"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="Patient_Persona.html"/>
+          <title value="Patient Persona"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Useful_Patient_History_for_Providers.html"/>
+          <title value="Useful Patient History for Providers"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="Provider-controlled_Information_Requests_and_Filtering.html"/>
+        <title value="Provider-controlled Information Requests and Filtering"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="CDS-Hooks.html"/>
+        <title value="CDS-Hooks"/>
+        <generation value="markdown"/>
+        <page>
+          <nameUrl value="Support_for_FHIR_R4.html"/>
+          <title value="Support for FHIR R4"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Additional_Hooks.html"/>
+          <title value="Additional Hooks"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="PDex_Hooks.html"/>
+          <title value="PDex Hooks"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Hook_Configuration.html"/>
+          <title value="Hook Configuration"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Systems.html"/>
+          <title value="Systems"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="Workflow_Examples.html"/>
+          <title value="Workflow Examples"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="FHIR_Profiles_and_CDS_Hooks_Context.html"/>
+            <title value="FHIR Profiles and CDS Hooks Context"/>
+            <generation value="markdown"/>
+            <page>
+              <nameUrl value="SMART-on-FHIR_app_for_Provider_data_selection.html"/>
+              <title value="SMART-on-FHIR app for Provider data selection"/>
+              <generation value="markdown"/>
+            </page>
+            <page>
+              <nameUrl value="Providing_Data_Provenance_.html"/>
+              <title value="Providing Data Provenance "/>
+              <generation value="markdown"/>
+            </page>
+          </page>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="Credits.html"/>
+        <title value="Credits"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+  </definition>
+</ImplementationGuide>

@@ -1,10 +1,10 @@
 ---
-title: Providing data provenance 
+title: Providing Data Provenance 
 layout: default
-active: Providing data provenance 
+active: Providing Data Provenance 
 ---
 
-A Provenance resource should be provided with each Encounter, Medication and Procedure resource to identify the source of the information. The Provenance resource should also identify whether the data came via a clinical record or a claim record or was subject to manual transcription.
+A Provenance resource should be provided with each resource provided by the Health Plan's FHIR API. This **SHOULD** be used to identify the source of the information. The Provenance resource **SHOULD** also identify whether the data came via a clinical record or a claim record or was subject to manual transcription or other interpretive transformation.
 
 The Provenance record shall be populated as follows:
 <table>
@@ -45,3 +45,4 @@ The Provenance record shall be populated as follows:
 	<td>Organization | Practitioner or other resource identifying the entity providing the source information</td>
 	</tr>
 </table>
+

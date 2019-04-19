@@ -6,18 +6,18 @@ active: Implementation Guide Scope
 
 The first release of the PDex IG will focus on the following in scope items. Items in the deferred scope category will be considered for future iterations of the IG, or will be accommodated via an alternative Da Vinci Use Case project. Out of scope items are not being considered at this time.
 
-## In Scope
-* Ambulatory Care Provider queries
-* Outpatient encounter
-	* Request for Encounter History
-	* Request for Procedure History
-	* Request for Medication recent history
-* Patient-mediated Payer-to-Payer information exchange	
+### In Scope
 
-## Deferred Scope
-* In Patient Care Provider queries
-* Provider initiated data push 
+- Ambulatory Care Provider queries
+- Outpatient encounter
+- Member-mediated Payer-to-Payer information exchange
+- Member-mediated Payer-to-Third-Party-Application information exchange
 
-## Out of Scope
-* Wearable device data
+### Deferred Scope
 
+- In Patient Care Provider queries
+- Provider initiated data push
+
+### Out of Scope
+
+- Wearable device data

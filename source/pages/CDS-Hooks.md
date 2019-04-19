@@ -16,4 +16,4 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 This IG should be used in conjunction with the Da Vinci Health Record Exchange (HRex) Implementation Guide. The HRex IG defines CDS Hooks that are used across one or more Da Vinci Use Case-related IG. The PDex IG defines the payload(s) that are required to support each PDex use case using the relevant HRex defined Hooks.  
 
-This implementation guide extends/customizes CDS Hooks in 4 ways: support for R4, extending the encounter-start hook, a hook configuration mechanism and additional response capabilities. Each are described below:
+This implementation guide extends/customizes CDS Hooks in 4 ways: support for R4, extending the appointment-book hook, a hook configuration mechanism and additional response capabilities. Each are described below:

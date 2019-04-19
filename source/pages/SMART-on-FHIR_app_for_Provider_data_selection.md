@@ -4,14 +4,24 @@ layout: default
 active: SMART-on-FHIR app for Provider data selection
 ---
 
-The SMART app shall retrieve the Transaction Bundle(s) from the Health Plan system using the access token provided.
-The SMART app shall retrieve the ConformanceStatement/CapabilityStatement/Metadata from the Provider's EMR system. It shall evaluate the record returned to determine which resources can be written to the EMR.
+When a SMART-on-FHIR App is provided as a link in the content returned from the CDS Hooks it **SHALL** receive:
 
-The Provider selects records to be committed to their EMR system. 
-After selecting the relevant data the provider triggers the write to the EMR. 
+- The URL entrypoint to the Health Plan's FHIR API
+- An access token to enable secure access to the Member's health history via the FHIR API
+- An access token to enable the app to write data to the Provider's EMR system.
 
-In the write step the app determines if the records can be written to the EMR.  If any resources are unable to be written the resources should be added into a document bundle and submitted as a write to the EMR as a DocumentReference. 
 
-Since the Health Plan implementation is based on FHIR R4 and the EMR implementation for the Connectathon may be based on DSTU2 (Argonaut) there will be differences in the profile definitions.
+The SMART App **SHALL** retrieve the CapabilityStatement/Metadata from the Health Plan's FHIR API.
+ 
+The SMART App **SHALL** retrieve the ConformanceStatement/CapabilityStatement/Metadata from the Provider's EMR system. 
 
-The SMART app shall **not** transform records between versions. Instead the SMART app should create a documentReference and incorporate a Document Bundle and a human readable PDF of the resources being committed. The document reference should be committed to the patient's record in the EMR.
+The Provider **MAY** select records from the Health Plan's FHIR API to be committed to their EMR system.  After selecting the relevant data the provider **MAY** triggers a write of the selected data to their EMR system. 
+
+The SMART App **SHALL** use the EMRs Metadata to determine what records **MAY** be written to the EMR system. 
+
+The SMART App **SHALL** not convert records from one FHIR version to another.
+
+If the Provider's EMR system does not support FHIR R4 the SMART App **MAY** create a DocumentReference record and incorporate a FHIR bundle of the selected records and a Human Readable PDF of the selected records and write the DocumentReference record to the Patient record in the EMR system, 
+    
+If the Provider's EMR system supports FHIR R4 the SMART App **SHALL** determine which resources may be written to the Patient's record in the EMR system. It will write these records to the EMR. Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** be placed in a FHIR bundle and a Human Readable PDF of those selected records **SHOULD** be generated and the bundle and PDf committed to the Patient's record in the EMR using a DocumentReference record.
+

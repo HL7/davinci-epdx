@@ -4,13 +4,9 @@ layout: default
 active: Home Page
 ---
 
-<table>
-	<tr>
-		<td>
-This is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version. 
-	</td>
-	</tr>
-</table>
+<p id="publish-box">
+This is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.
+</p>
 
 This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 
