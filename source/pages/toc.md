@@ -35,5 +35,5 @@ active: toc
         * <a href="Workflow_Examples.html">Workflow Examples</a>
             * <a href="FHIR_Profiles_and_CDS_Hooks_Context.html">FHIR Profiles and CDS Hooks Context</a>
                 * <a href="SMART-on-FHIR_app_for_Provider_data_selection.html">SMART-on-FHIR app for Provider data selection</a>
-                * <a href="Providing_Data_Provenance_.html">Providing Data Provenance </a>
+        * <a href="Providing_Data_Provenance.html">Providing Data Provenance</a>
     * <a href="Credits.html">Credits</a>
