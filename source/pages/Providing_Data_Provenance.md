@@ -22,7 +22,7 @@ The Provenance record shall be populated as follows:
 	<td>Time of this transaction</td>
 </tr>
 <tr>
-	<td>agent.[0].type<.td>
+	<td>agent.[0].type</td>
 	<td>AMENDER (for conversion of claims data to clinical resources) | TRANS (for information taken from manual input)| REVIEWER (for clinical resources)</td>
 </tr>
 <tr>
