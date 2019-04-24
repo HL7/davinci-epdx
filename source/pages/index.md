@@ -23,6 +23,9 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- Change Section Number format to fix links from Table of Contents 
+- Number sections for easier reference during comment period
+- Remove duplicated Data Payload section and refer back to Section 2.8 (PDex Data Payloads)
 - Replace CatalogEntry with MedicationKnowledge for Prescription Drug Formulary resource.
 - Apply subset of Validated Healthcare Directory Resources for use as Healthcare Network Directory.
 
