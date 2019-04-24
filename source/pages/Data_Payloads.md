@@ -383,20 +383,21 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 ### 2. Healthcare Network Directory 
 
-The provision of a Member-accessible Healthcare Directory API for a health plan's network **SHALL** use the profiles and other stipulations detailed in the [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/index.html) (VHDir IG). The profiles defined in the VHDir IG are:
+The provision of a Member-accessible Healthcare Directory API for a health plan's network **SHALL** use a subset of profiles and other stipulations detailed in the [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/index.html) (VHDir IG). 
 
+The following profiles from the VHDir IG **SHOULD** be used:
+- [VhDir Insurance Plan](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-insuranceplan.html)
+- [VhDir Network](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-network.html)
+- [VhDir Practitioner Role](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitionerrole.html)
+- [VhDir Practitioner](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitioner.html)
+- [VhDir Organization Affiliation](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organizationaffiliation.html)
+- [VhDir Organization](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organization.html)
+- [VhDir Location](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-location.html)
+- [VhDir Healthcare Service](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html)
+
+The following profiles from the VHDir IG **MAY** be used:
 - [VhDir Care Team](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-careteam.html)
 - [VhDir Endpoint](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-endpoint.html)
-- [VhDir Healthcare Service](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html)
-- [VhDir Insurance Plan](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-insuranceplan.html)
-- [VhDir Location](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-location.html)
-- [VhDir Network](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-network.html)
-- [VhDir Organization](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organization.html)
-- [VhDir Organization Affiliation](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organizationaffiliation.html)
-- [VhDir Practitioner](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitioner.html)
-- [VhDir Practitioner Role](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitionerrole.html)
-- [VhDir Restriction](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-restriction.html)
-- [VhDir Validation](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-validation.html)
 
 #### CapabilityStatement
 
@@ -416,7 +417,7 @@ When a Health Plan provides prescription drug coverage the list of covered medic
 
 The Health Plan formulary **SHALL** be provided as a Member-accessible API using the following FHIR resources:
 
-- [CatalogEntry](https://www.hl7.org/fhir/R4/catalogentry.html)
+- [MedicationKnowledge](https://build.fhir.org/medicationknowledge.html)
 - [US Core Device Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html)
 - [VhDir Healthcare Service](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html)
 - [US Core Medication Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html)
@@ -440,8 +441,8 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
     <th> History </th>
   </tr>
   <tr>
-    <td>CatalogEntry</td>
-    <td>https://www.hl7.org/fhir/R4/catalogentry.html</td>
+    <td>MedicationKnowledge</td>
+    <td>https://build.fhir.org/medicationknowledge.html</td>
     <td>Y</td>
     <td>Y</td>
     <td>Y</td>

@@ -22,3 +22,8 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 
 See the [Table of Contents](toc.html) for more information.
 
+#### Latest Changes
+- Replace CatalogEntry with MedicationKnowledge for Prescription Drug Formulary resource.
+- Apply subset of Validated Healthcare Directory Resources for use as Healthcare Network Directory.
+
+
