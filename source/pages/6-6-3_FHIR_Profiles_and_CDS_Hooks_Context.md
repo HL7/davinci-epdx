@@ -58,10 +58,19 @@ The Provider **MAY** select records from the Health Plan's FHIR API to be commit
 
 The SMART App **SHALL** use the EMRs Metadata to determine what records **MAY** be written to the EMR system. 
 
-The SMART App **SHALL** not convert records from one FHIR version to another.
+The SMART App **SHALL NOT** convert records from one FHIR version to another.
 
-If the Provider's EMR system does not support FHIR R4 the SMART App **MAY** create a DocumentReference record and incorporate a FHIR bundle of the selected records and a Human Readable PDF of the selected records and write the DocumentReference record to the Patient record in the EMR system, 
+If the Provider's EMR system supports FHIR R4 the SMART App **SHALL** determine which resources may be written to the Patient's record in the EMR system. It will write these records to the Provider's EMR System. 
+
+Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** take one of the actions identified in [section 6-6-3-2](#6-6-3-2-writing-records-using-documentreference), below.
+
+If the Provider's EMR system does not support FHIR R4 the SMART App **SHOULD** create a DocumentReference record and write the selected records to the Provider's EMR System using one of the actions identified in  [section 6-6-3-2](#6-6-3-2-writing-records-using-documentreference), below.
     
-If the Provider's EMR system supports FHIR R4 the SMART App **SHALL** determine which resources may be written to the Patient's record in the EMR system. It will write these records to the EMR. Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** be placed in a FHIR bundle and a Human Readable PDF of those selected records **SHOULD** be generated and the bundle and PDf committed to the Patient's record in the EMR using a DocumentReference record.
+#### 6-6-3-2 Writing Records Using DocumentReference
 
+The format used to write information to a DocumentReference resource in the Provider's EMR System **SHOULD** be written in order of descending preference identified below:
+
+1. Place the remaining selected records in a FHIR bundle and create a Human Readable PDF of those selected records and write both items to a DocumentReference record for the Patient.
+2. Convert the remaining records to an XHTML document and write to a DocumentReference record for the Patient.
+3. Convert the remaining records to an ASCII text document and write to a DocumentReference record for the Patient.
 

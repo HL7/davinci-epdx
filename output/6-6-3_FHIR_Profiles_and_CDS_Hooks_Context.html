@@ -286,11 +286,23 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 
 <p>The SMART App <strong>SHALL</strong> use the EMRs Metadata to determine what records <strong>MAY</strong> be written to the EMR system.</p>
 
-<p>The SMART App <strong>SHALL</strong> not convert records from one FHIR version to another.</p>
+<p>The SMART App <strong>SHALL NOT</strong> convert records from one FHIR version to another.</p>
 
-<p>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>MAY</strong> create a DocumentReference record and incorporate a FHIR bundle of the selected records and a Human Readable PDF of the selected records and write the DocumentReference record to the Patient record in the EMR system,</p>
+<p>If the Provider’s EMR system supports FHIR R4 the SMART App <strong>SHALL</strong> determine which resources may be written to the Patient’s record in the EMR system. It will write these records to the Provider’s EMR System.</p>
 
-<p>If the Provider’s EMR system supports FHIR R4 the SMART App <strong>SHALL</strong> determine which resources may be written to the Patient’s record in the EMR system. It will write these records to the EMR. Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> be placed in a FHIR bundle and a Human Readable PDF of those selected records <strong>SHOULD</strong> be generated and the bundle and PDf committed to the Patient’s record in the EMR using a DocumentReference record.</p>
+<p>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+
+<p>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in  <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+
+<h4 id="6-6-3-2-writing-records-using-documentreference">6-6-3-2 Writing Records Using DocumentReference</h4>
+
+<p>The format used to write information to a DocumentReference resource in the Provider’s EMR System <strong>SHOULD</strong> be written in order of descending preference identified below:</p>
+
+<ol>
+  <li>Place the remaining selected records in a FHIR bundle and create a Human Readable PDF of those selected records and write both items to a DocumentReference record for the Patient.</li>
+  <li>Convert the remaining records to an XHTML document and write to a DocumentReference record for the Patient.</li>
+  <li>Convert the remaining records to an ASCII text document and write to a DocumentReference record for the Patient.</li>
+</ol>
 
 
 
@@ -322,7 +334,7 @@ Optional fields in the CDS Hooks for PDex context include:</p>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.7  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Apr 24, 2019 11:29-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.8  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Apr 24, 2019 21:05-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
