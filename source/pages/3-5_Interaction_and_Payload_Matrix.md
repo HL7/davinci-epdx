@@ -48,17 +48,5 @@ Application (Mauth3PX) - OAuth2.0 + FHIR </td>
 <td align="center" valign="top">Y<br>
 </td>
 </tr>
-<tr>
-<td valign="top"><br>
-</td>
-<td valign="top"><br>
-</td>
-<td valign="top"><br>
-</td>
-<td valign="top"><br>
-</td>
-<td valign="top"><br>
-</td>
-</tr>
 </tbody>
 </table>
