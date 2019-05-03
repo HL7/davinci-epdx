@@ -2,10 +2,10 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
    <meta charset="UTF-8"/>
-  <title>DaVinciPayerDataExchange</title>
+  <title>Da Vinci Payer Data exchange</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="DaVinciPayerDataExchange Implemenation Guide"/>
+<meta name="description" content="Da Vinci Payer Data exchange Implemenation Guide"/>
 <meta name="author" content="HL7 Da Vinci"/>
   <link rel="stylesheet" href="fhir.css"/>
 
@@ -68,7 +68,7 @@ can only resize using html  or css ;-( -->
       <div id="project-status" class="project-status">   <!-- ig title text -->
 
       
-      <strong>DaVinciPayerDataExchange Implementation Guide CI Build</strong>
+      <strong>Da Vinci Payer Data exchange Implementation Guide CI Build</strong>
       
 
     </div>  <!-- end ig title text -->
@@ -268,7 +268,7 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
 
 <ul>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html"> HRex Coverage</a></li>
-  <li><a name="2032356a-323d-4878-b9dc-a2a5f1d78f60">​</a><a href="null">HRex MedicationDispense</a> <strong><em>TODO</em></strong></li>
+  <li><a name="b174bc00-4e0f-49c5-a22f-ae80bfdb2215">​</a><a href="null">HRex MedicationDispense</a> <strong><em>TODO</em></strong></li>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html">HRex Provenance</a></li>
 </ul>
 
@@ -603,110 +603,22 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
 
 <h3 id="2-8-2-healthcare-network-directory">2-8-2 Healthcare Network Directory</h3>
 
-<p>The provision of a Member-accessible Healthcare Directory API for a health plan’s network <strong>SHALL</strong> use the profiles and other stipulations detailed in the <a href="http://build.fhir.org/ig/HL7/VhDir/index.html">Validated Healthcare Directory Implementation Guide</a> (VHDir IG).</p>
+<p>The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG).</p>
 
-<p>The following profiles from the VHDir IG <strong>SHALL</strong> be used, if required:</p>
-<ul>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-insuranceplan.html">VhDir Insurance Plan</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-network.html">VhDir Network</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitionerrole.html">VhDir Practitioner Role</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitioner.html">VhDir Practitioner</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organizationaffiliation.html">VhDir Organization Affiliation</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organization.html">VhDir Organization</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-location.html">VhDir Location</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html">VhDir Healthcare Service</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-endpoint.html">VhDir Endpoint</a></li>
-</ul>
-
-<h4 id="2-8-2-1-capabilitystatement">2-8-2-1 CapabilityStatement</h4>
-
-<p>The <a href="http://build.fhir.org/ig/HL7/VhDir/index.html">Validated Healthcare Directory Implementation Guide</a> (VHDir IG) is detailed here: <a href="http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html">http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html</a></p>
+<p>The Latest build of the PDex-plan-net IG can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</p>
 
 <h3 id="2-8-3-pharmacy-network-directory">2-8-3 Pharmacy Network Directory</h3>
 
-<p>The Pharmacy Network Directory API <strong>SHALL</strong> be provided as a sub-set of the Member-accessible Healthcare Directory.</p>
+<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG). A Health Plan’s Pharmacy Network <strong>SHALL</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory.</p>
 
-<h4 id="2-8-3-1-capabilitystatement">2-8-3-1 CapabilityStatement</h4>
-
-<p>The Pharmacy Network Directory API can be exposed as a sub-set of the Healthcare Directory. The CapabilityStatement is detailed here: <a href="http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html">http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html</a></p>
+<p>The Latest build of the PDex-plan-net IG which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</p>
 
 <h3 id="2-8-4-medication-formulary">2-8-4 Medication Formulary</h3>
 
-<p>When a Health Plan provides prescription drug coverage the list of covered medications is known as a “Formulary.”</p>
+<p>When a Health Plan provides prescription drug coverage the list of covered medications is known as a “Formulary.”  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (PDex-formulary IG.</p>
 
-<p>The Health Plan formulary <strong>SHALL</strong> be provided as a Member-accessible API using the following FHIR resources:</p>
+<p>The Latest build of the PDex-formulary IG can be found at http://build.fhir.org/ig/HL7/davinci-pdex-formulary/</p>
 
-<ul>
-  <li><a href="https://www.hl7.org/fhir/R4/medicationknowledge.html">MedicationKnowledge</a></li>
-  <li><a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html">US Core Device Profile</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html">VhDir Healthcare Service</a></li>
-  <li><a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html">US Core Medication Profile</a></li>
-</ul>
-
-<h4 id="2-8-4-1-capabilitystatement">2-8-4-1 CapabilityStatement</h4>
-
-<p>The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.</p>
-
-<p>The Permitted Operations for the FHIR Profiles covered in this payload section are defined as follows:</p>
-
-<table>
-  <tr>
-    <th> Resource Type </th>
-    <th> Profile </th>
-    <th> Read </th>
-    <th> V-Read </th>
-    <th> Search </th>
-    <th> Update </th>
-    <th> Create </th>
-    <th> Updates </th>
-    <th> History </th>
-  </tr>
-  <tr>
-    <td>MedicationKnowledge</td>
-    <td>https://www.hl7.org/fhir/R4/medicationknowledge.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr> 
-  <tr>
-    <td>Device</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>HealthcareService</td>
-    <td>http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>Medication</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
- 
-</table>
 
 
 
@@ -737,7 +649,7 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.8  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Apr 24, 2019 21:05-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.8  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, May 2, 2019 22:46-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

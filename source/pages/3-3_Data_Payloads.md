@@ -13,6 +13,5 @@ The PDex IG defines four types of data payload:
 
 All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
-
 See [Section 2-8](./2-8_PDex_Data_Payloads.html) for details of the Data Payloads.
 

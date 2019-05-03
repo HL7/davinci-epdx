@@ -383,103 +383,19 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 ### 2-8-2 Healthcare Network Directory 
 
-The provision of a Member-accessible Healthcare Directory API for a health plan's network **SHALL** use the profiles and other stipulations detailed in the [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/index.html) (VHDir IG). 
+The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG).
 
-The following profiles from the VHDir IG **SHALL** be used, if required:
-- [VhDir Insurance Plan](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-insuranceplan.html)
-- [VhDir Network](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-network.html)
-- [VhDir Practitioner Role](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitionerrole.html)
-- [VhDir Practitioner](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-practitioner.html)
-- [VhDir Organization Affiliation](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organizationaffiliation.html)
-- [VhDir Organization](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-organization.html)
-- [VhDir Location](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-location.html)
-- [VhDir Healthcare Service](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html)
-- [VhDir Endpoint](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-endpoint.html)
-
-#### 2-8-2-1 CapabilityStatement
-
-The [Validated Healthcare Directory Implementation Guide](http://build.fhir.org/ig/HL7/VhDir/index.html) (VHDir IG) is detailed here: [http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html](http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html)
+The Latest build of the PDex-plan-net IG can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 
 ### 2-8-3 Pharmacy Network Directory
 
-The Pharmacy Network Directory API **SHALL** be provided as a sub-set of the Member-accessible Healthcare Directory.
+The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG). A Health Plan's Pharmacy Network **SHALL** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
 
-#### 2-8-3-1 CapabilityStatement
-
-The Pharmacy Network Directory API can be exposed as a sub-set of the Healthcare Directory. The CapabilityStatement is detailed here: [http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html](http://build.fhir.org/ig/HL7/VhDir/CapabilityStatement-vhdir-server.html) 
+The Latest build of the PDex-plan-net IG which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 
 ### 2-8-4 Medication Formulary
 
-When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  
+When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (PDex-formulary IG.
 
-The Health Plan formulary **SHALL** be provided as a Member-accessible API using the following FHIR resources:
+The Latest build of the PDex-formulary IG can be found at http://build.fhir.org/ig/HL7/davinci-pdex-formulary/
 
-- [MedicationKnowledge](https://www.hl7.org/fhir/R4/medicationknowledge.html)
-- [US Core Device Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html)
-- [VhDir Healthcare Service](http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html)
-- [US Core Medication Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html)
-
-#### 2-8-4-1 CapabilityStatement
-
-The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.
-
-The Permitted Operations for the FHIR Profiles covered in this payload section are defined as follows:
-
-<table>
-  <tr>
-    <th> Resource Type </th>
-    <th> Profile </th>
-    <th> Read </th>
-    <th> V-Read </th>
-    <th> Search </th>
-    <th> Update </th>
-    <th> Create </th>
-    <th> Updates </th>
-    <th> History </th>
-  </tr>
-  <tr>
-    <td>MedicationKnowledge</td>
-    <td>https://www.hl7.org/fhir/R4/medicationknowledge.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr> 
-  <tr>
-    <td>Device</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>HealthcareService</td>
-    <td>http://build.fhir.org/ig/HL7/VhDir/StructureDefinition-vhdir-healthcareservice.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>Medication</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
- 
-</table>
