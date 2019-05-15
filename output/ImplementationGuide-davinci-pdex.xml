@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="hl7.fhir.us.davinci-pdex-0.0.9.8"/>
+  <id value="hl7.fhir.us.davinci-pdex-0.0.9.10"/>
   <meta>
-    <versionId value="128"/>
-    <lastUpdated value="2019-05-02T22:38:11.000-04:00"/>
+    <versionId value="135"/>
+    <lastUpdated value="2019-05-14T23:52:19.000-04:00"/>
   </meta>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
@@ -12,24 +12,22 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 <p>See the <a href="toc.html">Table of Contents</a> for more information.</p>
 <h4>Latest Changes</h4>
 <ul>
+<li>Added Data Mapping section for Patient and Coverage</li>
 <li>Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3</li>
 <li>Fixed link from Section 3.3 to 2.8</li>
 <li>Change Section Number format to fix links from Table of Contents</li>
 <li>Number sections for easier reference during comment period</li>
-<li>Remove duplicated Data Payload section and refer back to Section 2.8 (PDex Data Payloads)</li>
-<li>Replace CatalogEntry with MedicationKnowledge for Prescription Drug Formulary resource.</li>
-<li>Apply subset of Validated Healthcare Directory Resources for use as Healthcare Network Directory.</li>
 </ul>
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-  <version value="0.0.9.8"/>
+  <version value="0.0.9.10"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
   <experimental value="true"/>
   <publisher value="HL7 Da Vinci"/>
-  <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;- Remove duplicated Data Payload section and refer back to Section 2.8 (PDex Data Payloads)&#xA;- Replace CatalogEntry with MedicationKnowledge for Prescription Drug Formulary resource.&#xA;- Apply subset of Validated Healthcare Directory Resources for use as Healthcare Network Directory.&#xA;"/>
+  <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA; - Added Data Mapping section for Patient and Coverage&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;"/>
   <packageId value="hl7.fhir.us.davinci-pdex"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.0"/>
@@ -126,6 +124,21 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
           <nameUrl value="3-5_Interaction_and_Payload_Matrix.html"/>
           <title value="3-5 Interaction and Payload Matrix"/>
           <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="3-6_Data_Mapping.html"/>
+          <title value="3-6 Data Mapping"/>
+          <generation value="markdown"/>
+          <page>
+            <nameUrl value="3-6-1_US_Core_Patient.html"/>
+            <title value="3-6-1 US Core Patient"/>
+            <generation value="markdown"/>
+          </page>
+          <page>
+            <nameUrl value="3-6-2_Coverage.html"/>
+            <title value="3-6-2 Coverage"/>
+            <generation value="markdown"/>
+          </page>
         </page>
       </page>
       <page>

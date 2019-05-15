@@ -22,6 +22,9 @@ active: toc
         * <a href="3-3_Data_Payloads.html">3-3 Data Payloads</a>
         * <a href="3-4_Interaction_Methods.html">3-4 Interaction Methods</a>
         * <a href="3-5_Interaction_and_Payload_Matrix.html">3-5 Interaction and Payload Matrix</a>
+        * <a href="3-6_Data_Mapping.html">3-6 Data Mapping</a>
+            * <a href="3-6-1_US_Core_Patient.html">3-6-1 US Core Patient</a>
+            * <a href="3-6-2_Coverage.html">3-6-2 Coverage</a>
     * <a href="4_Use_Case_Scenarios.html">4 Use Case Scenarios</a>
         * <a href="4-1_Patient_Persona.html">4-1 Patient Persona</a>
         * <a href="4-2_Useful_Patient_History_for_Providers.html">4-2 Useful Patient History for Providers</a>
