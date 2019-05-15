@@ -23,12 +23,10 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+	- Added Data Mapping section for Patient and Coverage
 - Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3
 - Fixed link from Section 3.3 to 2.8
 - Change Section Number format to fix links from Table of Contents 
 - Number sections for easier reference during comment period
-- Remove duplicated Data Payload section and refer back to Section 2.8 (PDex Data Payloads)
-- Replace CatalogEntry with MedicationKnowledge for Prescription Drug Formulary resource.
-- Apply subset of Validated Healthcare Directory Resources for use as Healthcare Network Directory.
 
 

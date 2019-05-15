@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">2-4 FHIR</span>
+      <span class="breadcrumb-item active">3-6-1 US Core Patient</span>
     
     
 
@@ -224,26 +224,188 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>2-4 FHIR</h1>
+<h1>3-6-1 US Core Patient</h1>
 
-<!--page source: 2-4_FHIR.md-->
+<!--page source: 3-6-1_US_Core_Patient.md-->
 
-<p>This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, its important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.</p>
+<p>An example mapping of Health Plan data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html">US Core Patient profile</a> is shown below:</p>
 
-<ul>
-  <li><a href="http://build.fhir.org/overview.html">FHIR overview</a></li>
-  <li><a href="http://build.fhir.org/overview-dev.html">Developer’s Introduction</a></li>
-  <li><a href="http://build.fhir.org/overview-clinical.html">Clinical Introduction</a></li>
-  <li><a href="http://build.fhir.org/datatypes.html">FHIR data types</a></li>
-  <li><a href="http://build.fhir.org/terminologies.html">Using codes</a></li>
-  <li>
-    <p><a href="http://build.fhir.org/references.html">References between resources</a></p>
-  </li>
-  <li><a href="http://build.fhir.org/formats.html">How to read resource and profile
-definitions</a></li>
-  <li><a href="http://build.fhir.org/resource.html">Base resource</a></li>
-</ul>
-
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>Payer Source</th>
+      <th>Payer Source Field</th>
+      <th>Data DescripTor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.1</td>
+      <td>Member</td>
+      <td>BENE_ID</td>
+      <td>Patientid</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Member</td>
+      <td>DOB_DT</td>
+      <td>Date of birth</td>
+      <td>US Core Patient</td>
+      <td>.birthDate</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Date of Death</td>
+      <td>US Core Patient</td>
+      <td>.deceased[dateTime]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4.1</td>
+      <td>Member</td>
+      <td>BENE_COUNTY_CD</td>
+      <td>County</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.district</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Member</td>
+      <td>BENE_STATE_CD</td>
+      <td>State</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.state</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6.1</td>
+      <td>Member</td>
+      <td>BENE_CNTY_CD</td>
+      <td>Country</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.country</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Member</td>
+      <td>BENE_RACE_CD</td>
+      <td>Race code</td>
+      <td>US Core Patient</td>
+      <td>.us-core-race</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Ethnicity</td>
+      <td>US Core Patient</td>
+      <td>.us-core-ethnicity</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9.1</td>
+      <td>Member</td>
+      <td>GNDR_CD</td>
+      <td>Gender code</td>
+      <td>US Core Patient</td>
+      <td>.gender</td>
+      <td>http://build.fhir.org/valueset-administrative-gender.html</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Name</td>
+      <td>US Core Patient</td>
+      <td>.name</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11.1</td>
+      <td>Member</td>
+      <td>BENE_MLG_CNTCT_ZIP_CD</td>
+      <td>Zip code</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.postalCode</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Patient account number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Medical record number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>F.1</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Birth sex</td>
+      <td>US Core Patient</td>
+      <td>.us-core-birthsex</td>
+      <td>http://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html</td>
+      <td>UNK</td>
+    </tr>
+    <tr>
+      <td>F.2</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Telecom</td>
+      <td>US Core Patient</td>
+      <td>.telecom</td>
+      <td> </td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td>F.3</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Language</td>
+      <td>US Core Patient</td>
+      <td>.communication</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 
 

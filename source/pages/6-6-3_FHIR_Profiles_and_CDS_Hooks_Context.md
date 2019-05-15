@@ -42,14 +42,90 @@ The fields in the context of the CDS Hooks call are used as follows:
 }
 </pre>
 
-#### 6-6-3-1 SMART-on-FHIR app for Provider data selection
+#### 6-6-3-1 SMART-on-FHIR app Parameters
 When a SMART-on-FHIR App is provided as a link in the content returned from the CDS Hooks it **SHALL** receive:
 
 - The URL entrypoint to the Health Plan's FHIR API
 - An access token to enable secure access to the Member's health history via the FHIR API
 - An access token to enable the app to write data to the Provider's EMR system.
 
+#### 6-6-3-2 SMART-on-FHIR app default search queries
 
+The SMART App **SHOULD** provide the capability for a Provider, Organization, Implementer or administrator of a Provider's EMR System to define a set of valid FHIR search queries that can be executed against a Health Plan's FHIR API. This capability enables a Provider or Organization to define the boundaries for the information they are interested in receiving from a Health Plan's FHIR API.
+
+The SMART App **SHALL** import an object from a configuration file containing one or more search queries. The search queries **SHALL** support replaceable parameters that will be exchanged for appropriate values when the query is executed.
+
+The replaceable parameters supported by the SMART App **SHALL** include:
+
+<table>
+  <tr>
+		<th>Replaceable Parameter</th>
+		<th>Purpose</th>
+	</tr>
+	<tr>
+		<td>[Health_Plan_Member_ID]</td>
+		<td>The FHIR ID of the Member from the Patient Resource in the Payers system</td>
+	</tr>
+	<tr>
+		<td>[Patient_ID]</td>
+		<td>The FHIR ID of the Patient from the Provider's EMR System</td>
+	</tr>	
+  <tr>
+    <td>[Health_Plan_Practitioner_ID]</td>
+    <td>The Practitioner ID in the Health Plan's system</td>
+  </tr>
+  <tr>
+    <td>[Practitioner_ID]</td>
+    <td>The Practitioner ID in the Provider's EMR System</td>
+  </tr>
+	<tr>
+    <td>[Health_Plan_Organization_ID]</td>
+    <td>The Organization ID in the Health Plan's system</td>
+  </tr>
+  <tr>
+    <td>[Organization_ID]</td>
+    <td>The Organization ID in the Provider's EMR System</td>
+  </tr>
+  <tr>
+    <td>[Health_Plan_Location_ID]</td>
+    <td>The Location ID in the Health Plan's system</td>
+  </tr>
+	  <tr>
+    <td>[Location_ID]</td>
+    <td>The Location ID in the Provider's EMR system</td>
+  </tr>
+  <tr>
+    <td>[TODAY]</td>
+    <td>Today's Date</td>
+  </tr>
+  <tr>
+    <td>[TODAY-NNN]</td>
+    <td>A Calculated Date derived from Today's Date adjusted by a number of Days </td>
+  </tr>
+</table>	
+
+Examples of search queries with replaceable parameters are shown in the table below. Search queries can be created for any resources profiled in the US Core, Da Vinci HRex or Da Vinci PDex IG. A limited sample of these queries are:
+
+<table>
+	<tr>
+		<th>Search Example</th>
+		<th>FHIR Search Query</th>	
+	</tr>	
+	<tr>
+		<td>Patient Record</td>
+		<td>Patient?_id=[Health_Plan_Member_ID]</td>
+	</tr>	
+  <tr>
+    <td>Encounters for Patient updated since a January 1, 2019 and excluding my Location</td>
+    <td>Encounter?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-365]&location=ne[Health_Plan_Location_ID]</td>                                                                                            
+  </tr> 
+  <tr>
+    <td>MedicationDispense for Patient created/updated in the last 3 months</td>
+    <td>MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-90]</td>
+  </tr> 
+</table>	
+
+#### 6-6-3-3 SMART-on-FHIR app for Provider data selection
 The SMART App **SHALL** retrieve the CapabilityStatement/Metadata from the Health Plan's FHIR API.
  
 The SMART App **SHALL** retrieve the ConformanceStatement/CapabilityStatement/Metadata from the Provider's EMR system. 
@@ -66,7 +142,7 @@ Any remaining selected records, where write operations are not permitted by the 
 
 If the Provider's EMR system does not support FHIR R4 the SMART App **SHOULD** create a DocumentReference record and write the selected records to the Provider's EMR System using one of the actions identified in  [section 6-6-3-2](#6-6-3-2-writing-records-using-documentreference), below.
     
-#### 6-6-3-2 Writing Records Using DocumentReference
+#### 6-6-3-4 Writing Records Using DocumentReference
 
 The format used to write information to a DocumentReference resource in the Provider's EMR System **SHOULD** be written in order of descending preference identified below:
 
