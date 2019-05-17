@@ -2,29 +2,31 @@
   "resourceType" : "ImplementationGuide",
   "id" : "davinci-pdex",
   "meta" : {
-    "versionId" : "135",
-    "lastUpdated" : "2019-05-14T23:52:19.000-04:00"
+    "versionId" : "148",
+    "lastUpdated" : "2019-05-16T23:34:07.000-04:00"
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044iD7mzN8v3Btc\\source\\resources"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044dfRQCzq8RadC\\source\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044iD7mzN8v3Btc\\framework"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044dfRQCzq8RadC\\framework"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044iD7mzN8v3Btc\\source\\pages"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044dfRQCzq8RadC\\source\\pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex",
-  "version" : "0.0.9.10",
+  "version" : "0.0.9.147",
   "name" : "DaVinciPayerDataExchange",
   "title" : "Da Vinci Payer Data exchange",
   "status" : "draft",
-  "experimental" : true,
   "publisher" : "HL7 Da Vinci",
-  "description" : "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n - Added Data Mapping section for Patient and Coverage\n- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3\n- Fixed link from Section 3.3 to 2.8\n- Change Section Number format to fix links from Table of Contents \n- Number sections for easier reference during comment period\n",
+  "contact" : [{
+    "name" : "Mark Scrimshire"
+  }],
+  "description" : "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance\n- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient \n- Added Data Mapping section for Patient and Coverage\n- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3\n- Fixed link from Section 3.3 to 2.8\n- Change Section Number format to fix links from Table of Contents \n- Number sections for easier reference during comment period\n",
   "packageId" : "hl7.fhir.us.davinci-pdex",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.0",
@@ -34,8 +36,23 @@
     "uri" : "http://hl7.org/fhir/us/davinci-hrex",
     "packageId" : "hl7.fhir.us.davinci-hrex",
     "version" : "current"
+  },
+  {
+    "id" : "USCoreR4",
+    "uri" : "http://hl7.org/fhir/us/core",
+    "packageId" : "hl7.fhir.us.core",
+    "version" : "current"
   }],
   "definition" : {
+    "resource" : [{
+      "reference" : {
+        "reference" : "StructureDefinition/pdex-medicationdispense",
+        "display" : "PDexMedicationDispense"
+      },
+      "name" : "PDex MedicationDispense",
+      "description" : "Exchange Pharmacy Claims",
+      "exampleBoolean" : false
+    }],
     "page" : {
       "nameUrl" : "toc.md",
       "title" : "Table of Contents",
@@ -137,6 +154,31 @@
             "nameUrl" : "3-6-2_Coverage.html",
             "title" : "3-6-2 Coverage",
             "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-3_US_Core_Encounter.html",
+            "title" : "3-6-3 US Core Encounter",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-4_US_Core_Location.html",
+            "title" : "3-6-4 US Core Location",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-5_MedicationDispense.html",
+            "title" : "3-6-5 MedicationDispense",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-6_US_Core_Practitioner.html",
+            "title" : "3-6-6 US Core Practitioner",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-7_US_Core_Procedure.html",
+            "title" : "3-6-7 US Core Procedure",
+            "generation" : "markdown"
           }]
         }]
       },
@@ -210,8 +252,8 @@
           }]
         },
         {
-          "nameUrl" : "6-7_Providing_Data_Provenance.html",
-          "title" : "6-7 Providing Data Provenance",
+          "nameUrl" : "6-7_Handling_Data_Provenance.html",
+          "title" : "6-7 Handling Data Provenance",
           "generation" : "markdown"
         }]
       },

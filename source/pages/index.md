@@ -23,10 +23,30 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
-	- Added Data Mapping section for Patient and Coverage
+- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance
+- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient 
+- Added Data Mapping section for Patient and Coverage
 - Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3
 - Fixed link from Section 3.3 to 2.8
 - Change Section Number format to fix links from Table of Contents 
 - Number sections for easier reference during comment period
+
+
+### Authors
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mark Scrimshire</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
