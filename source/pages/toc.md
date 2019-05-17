@@ -25,6 +25,11 @@ active: toc
         * <a href="3-6_Data_Mapping.html">3-6 Data Mapping</a>
             * <a href="3-6-1_US_Core_Patient.html">3-6-1 US Core Patient</a>
             * <a href="3-6-2_Coverage.html">3-6-2 Coverage</a>
+            * <a href="3-6-3_US_Core_Encounter.html">3-6-3 US Core Encounter</a>
+            * <a href="3-6-4_US_Core_Location.html">3-6-4 US Core Location</a>
+            * <a href="3-6-5_MedicationDispense.html">3-6-5 MedicationDispense</a>
+            * <a href="3-6-6_US_Core_Practitioner.html">3-6-6 US Core Practitioner</a>
+            * <a href="3-6-7_US_Core_Procedure.html">3-6-7 US Core Procedure</a>
     * <a href="4_Use_Case_Scenarios.html">4 Use Case Scenarios</a>
         * <a href="4-1_Patient_Persona.html">4-1 Patient Persona</a>
         * <a href="4-2_Useful_Patient_History_for_Providers.html">4-2 Useful Patient History for Providers</a>
@@ -39,5 +44,5 @@ active: toc
             * <a href="6-6-1_First_Visit_with_New_Provider.html">6-6-1 First Visit with New Provider</a>
             * <a href="6-6-2_Return_Visit_with_Provider.html">6-6-2 Return Visit with Provider</a>
             * <a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html">6-6-3 FHIR Profiles and CDS Hooks Context</a>
-        * <a href="6-7_Providing_Data_Provenance.html">6-7 Providing Data Provenance</a>
+        * <a href="6-7_Handling_Data_Provenance.html">6-7 Handling Data Provenance</a>
     * <a href="7_Credits.html">7 Credits</a>

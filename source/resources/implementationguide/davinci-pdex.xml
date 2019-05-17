@@ -3,17 +3,19 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-pdex"/>
     <meta>
-        <versionId value="135"/>
-        <lastUpdated value="2019-05-14T23:52:19.000-04:00"/>
+        <versionId value="148"/>
+        <lastUpdated value="2019-05-16T23:34:07.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-    <version value="0.0.9.10"/>
+    <version value="0.0.9.147"/>
     <name value="DaVinciPayerDataExchange"/>
     <title value="Da Vinci Payer Data exchange"/>
     <status value="draft"/>
-    <experimental value="true"/>
     <publisher value="HL7 Da Vinci"/>
-    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;	- Added Data Mapping section for Patient and Coverage&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;"/>
+    <contact>
+        <name value="Mark Scrimshire"/>
+    </contact>
+    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance&#xA;- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient &#xA;- Added Data Mapping section for Patient and Coverage&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
@@ -21,7 +23,21 @@
         <packageId value="hl7.fhir.us.davinci-hrex"/>
         <version value="current"/>
     </dependsOn>
+    <dependsOn>
+        <uri value="http://hl7.org/fhir/us/core-r4/ImplementationGuide/ig"/>
+        <packageId value="hl7.fhir.us.core.r4"/>
+        <version value="current"/>
+    </dependsOn>
     <definition>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/pdex-medicationdispense"/>
+                <display value="PDexMedicationDispense"/>
+            </reference>
+            <name value="PDex MedicationDispense"/>
+            <description value="Exchange Pharmacy Claims"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -124,6 +140,31 @@
                         <title value="3-6-2 Coverage"/>
                         <generation value="markdown"/>
                     </page>
+                    <page>
+                        <nameUrl value="3-6-3_US_Core_Encounter.html"/>
+                        <title value="3-6-3 US Core Encounter"/>
+                        <generation value="markdown"/>
+                    </page>
+                    <page>
+                        <nameUrl value="3-6-4_US_Core_Location.html"/>
+                        <title value="3-6-4 US Core Location"/>
+                        <generation value="markdown"/>
+                    </page>
+                    <page>
+                        <nameUrl value="3-6-5_MedicationDispense.html"/>
+                        <title value="3-6-5 MedicationDispense"/>
+                        <generation value="markdown"/>
+                    </page>
+                    <page>
+                        <nameUrl value="3-6-6_US_Core_Practitioner.html"/>
+                        <title value="3-6-6 US Core Practitioner"/>
+                        <generation value="markdown"/>
+                    </page>
+                    <page>
+                        <nameUrl value="3-6-7_US_Core_Procedure.html"/>
+                        <title value="3-6-7 US Core Procedure"/>
+                        <generation value="markdown"/>
+                    </page>
                 </page>
             </page>
             <page>
@@ -196,8 +237,8 @@
                     </page>
                 </page>
                 <page>
-                    <nameUrl value="6-7_Providing_Data_Provenance.html"/>
-                    <title value="6-7 Providing Data Provenance"/>
+                    <nameUrl value="6-7_Handling_Data_Provenance.html"/>
+                    <title value="6-7 Handling Data Provenance"/>
                     <generation value="markdown"/>
                 </page>
             </page>
