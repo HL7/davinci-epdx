@@ -10,7 +10,7 @@ Health Plans **SHALL** accept and retain Provenance records received with data f
 
 When a Health Plan forwards information as a FHIR Resource it **SHALL** create or update a related Provenance record to reflect the original source, any subsequent data handlers or transformers and the action taken by the Health Plan in it's handling of the data. 
 
-A Provenance resource **SHALL** be provided with each member-relaated resource provided by the Health Plan's FHIR API. This **SHALL** be used to:
+A Provenance resource **SHALL** be provided with each member-related resource provided by the Health Plan's FHIR API. This **SHALL** be used to:
 - identify the source of the information. 
 - whether the data came via a clinical record or a claim record. 
 - Whether the data was subject to manual transcription or other interpretive transformation.
