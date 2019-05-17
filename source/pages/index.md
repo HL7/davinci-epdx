@@ -23,6 +23,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (148) Add Patient-everything operation as payload option
 - (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance
 - (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient 
 - Added Data Mapping section for Patient and Coverage

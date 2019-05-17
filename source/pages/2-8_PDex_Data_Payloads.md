@@ -15,7 +15,7 @@ All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR 
 
 ### 2-8-1 Member Clinical and Claims-derived History
 
-The FHIR Resources that comprise the Member Clinical and Claims-derived history SHOULD include the following profiles:
+The FHIR Resources that comprise the Member Clinical and Claims-derived history **SHOULD** include the following profiles:
 
 #### 2-8-1-1 US Core
 
@@ -45,10 +45,12 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history 
 - [US Core Smoking Status Observation Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-smokingstatus.html)
 In addition US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
-#### 2-8-1-2 Da Vinci HRex
+In addition the Patient-everything operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of  FHIR resources for a member to be returned as a bundle. The Patient-everything operation is defined here: https://www.hl7.org/fhir/operation-patient-everything.html. 
+
+#### 2-8-1-2 Da Vinci PDex / HRex
 
 - [ HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
-- [HRex MedicationDispense]() **_TODO_**
+- [PDex MedicationDispense]() **_TODO_** (Add Link)
 - [HRex Provenance](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html)
 
 #### 2-8-1-3 CapabilityStatement
@@ -57,328 +59,36 @@ The FHIR CapabilityStatement defines the resources and operations permitted on t
 
 The Permitted Operations for the FHIR Profiles covered in this payload section are defined as follows:
 
-<table>
-  <tr>
-    <th> Resource Type </th>
-    <th> Profile </th>
-    <th> Read </th>
-    <th> V-Read </th>
-    <th> Search </th>
-    <th> Update </th>
-    <th> Create </th>
-    <th> Updates </th>
-    <th> History </th>
-  </tr>
-  <tr>
-    <td>AllergyIntolerance</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-allergyintolerance.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>CarePlan</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careplan.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>CareTeam</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careteam.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>Condition</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-condition.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>Coverage</td>
-    <td>http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>Device</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-  <tr>
-    <td>DiagnosticReport</td>
-    <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-diagnosticreport.html</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td>Y</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Y</td>
-  </tr>  
-   <tr>
-     <td>DiagnosticReport for report and Note Exchange</td>
-     <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-new-us-core-diagnosticreport.html</td>
-     <td>Y</td>
-     <td>Y</td>
-     <td>Y</td>
-     <td></td>
-     <td></td>
-     <td></td>
-     <td>Y</td>
-   </tr>  
-   <tr>
-      <td>DocumentReference</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-documentreference.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-   <tr>
-      <td>Encounter</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Goal</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Immunization</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-immunization.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Location</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Medication</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>MedicationDispense</td>
-      <td></td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>MedicationRequest</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationrequest.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>MedicationStatement</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationstatement.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Organization</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-organization.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Patient</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Pediatric BMI Observation</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-pediatric-bmi.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Pediatric Weight Observation</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-pediatric-weight.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Practitioner</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>PractitionerRole</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitionerrole.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Procedure</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Provenance</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-provenance.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Result Observation</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-observationresults.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-    <tr>
-      <td>Smoking Status Observation</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-smokingstatus.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Vital Signs</td>
-      <td>http://hl7.org/fhir/R4/observation-vitalsigns.html</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td>Y</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Y</td>
-    </tr>  
-
-</table>
+| Resource Type                                 | Profile                                                                                        | Read | V-Read | Search | Update | Create | Updates | History |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|--------|--------|---------|---------|
+| AllergyIntolerance                            | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y      |        |        |         | Y       |
+| CarePlan                                      | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      |        |        |         | Y       |
+| CareTeam                                      | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y      |        |        |         | Y       |
+| Condition                                     | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-condition.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Coverage                                      | http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      |        |        |         | Y       |
+| Device                                        | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html               | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport                              | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-diagnosticreport.html     | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport for report and Note Exchange | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-new-us-core-diagnosticreport.html | Y    | Y      | Y      |        |        |         | Y       |
+| DocumentReference                             | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y      |        |        |         | Y       |
+| Encounter                                     | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Goal                                          | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y      |        |        |         | Y       |
+| Immunization                                  | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      |        |        |         | Y       |
+| Location                                      | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html             | Y    | Y      | Y      |        |        |         | Y       |
+| Medication                                    | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationDispense                            |                                                                                                | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationRequest                             | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationrequest.html    | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationStatement                           | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationstatement.html  | Y    | Y      | Y      |        |        |         | Y       |
+| Organization                                  | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-organization.html         | Y    | Y      | Y      |        |        |         | Y       |
+| Patient                                       | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric BMI Observation                     | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-pediatric-bmi.html        | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric Weight Observation                  | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-pediatric-weight.html     | Y    | Y      | Y      |        |        |         | Y       |
+| Practitioner                                  | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      |        |        |         | Y       |
+| PractitionerRole                              | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      |        |        |         | Y       |
+| Procedure                                     | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Provenance                                    | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      |        |        |         | Y       |
+| Result Observation                            | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-observationresults.html   | Y    | Y      | Y      |        |        |         | Y       |
+| Smoking Status Observation                    | https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y      |        |        |         | Y       |
+| Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y      |        |        |         | Y       |
 
 
 ### 2-8-2 Healthcare Network Directory 
