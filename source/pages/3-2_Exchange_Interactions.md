@@ -18,3 +18,5 @@ Two subsidiary Payer Data exchange Implementation Guides address the Member-auth
 These subsidiary IGs are:
 - Payer Data exchange Plan Network Directory (PDex-plan-net) IG covering Healthcare and Pharmacy networks.
 - Payer Data exchange Drug formulary (PDex-formulart) IG covering prescription drug formulary.
+
+

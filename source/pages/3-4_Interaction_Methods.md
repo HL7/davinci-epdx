@@ -6,9 +6,10 @@ active: 3-4 Interaction Methods
 
 The PDex IG specifies two interaction methods. Their use depends upon the Actors involved and the Data Payloads being exchanged.
 
-The two interaction methods are:
+There are three potential interaction methods:
 1. CDS Hooks with SMART on FHIR
 2. OAuth 2.0 and FHIR API
+3. Patient-everything via alternate secure transport
 
 ### 3-4-1 CDS Hooks with SMART on FHIR
 
@@ -46,3 +47,17 @@ The Authorization screen **MAY** provide options to allow the Member to limit th
 After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application. 
 
 The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. 
+
+### 3-4-3 Patient-everything via alternate secure transport
+
+The FHIR Specification provides for a [Patient-everything operation](https://www.hl7.org/fhir/operation-patient-everything.html). 
+Two formats are supported:
+
+- URL: [base]/Patient/$everything
+- URL: [base]/Patient/[id]/$everything
+
+This operation is intended to simplify requests from a client application when requesting records for a patient. 
+
+A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: https://www.hl7.org/fhir/operation-patient-everything.html
+
+The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity.
