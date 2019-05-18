@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">2-6 Implementation Assumptions</span>
+      <span class="breadcrumb-item active">1-2 Conventions</span>
     
     
 
@@ -224,13 +224,30 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>2-6 Implementation Assumptions</h1>
+<h1>1-2 Conventions</h1>
 
-<!--page source: 2-6_Implementation_Assumptions.md-->
+<!--page source: 1-2_Conventions.md-->
 
-<p>Wherever possible, the PDex IG will use established US Core Profiles. Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.</p>
+<p>This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:</p>
 
-<p>Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in the PDex-IG itself.</p>
+<p><strong>SHALL</strong> indicates requirements that must be met to be conformant with the specification.</p>
+
+<p><strong>SHOULD</strong> indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance.</p>
+
+<p><strong>MAY</strong> describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.</p>
+
+<p>It is important to differentiate in the Implementation Guide between identifiers used by the Provider/EMR and those used by the Payer/Health Plan to identify the patient/subject/member.</p>
+
+<p>For the purposes of this IG we will use the following terms:</p>
+
+<ul>
+  <li>
+    <p><strong>patient</strong> or <strong>subject</strong> id will be used to express the identifier used by the provider to identify a patient/subject.</p>
+  </li>
+  <li>
+    <p><strong>subscriber</strong> or <strong>member</strong> id will be used to express the identifier used by the payer/health plan to identify a member.</p>
+  </li>
+</ul>
 
 
 
@@ -262,7 +279,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

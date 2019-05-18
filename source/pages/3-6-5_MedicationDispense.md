@@ -4,7 +4,7 @@ layout: default
 active: 3-6-5 MedicationDispense
 ---
 
-An example mapping of Health Plan data for Members to the [HRex MedicationDispense profile]() is shown below:
+An example mapping of Health Plan data for Members to the [PDex MedicationDispense profile]() is shown below:
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor             | FHIR Profile              | Profile Field                                                          | ValueSet                                                | Notes                          |
 |------|-------------------|------------------|-----------------------------|---------------------------|------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------|

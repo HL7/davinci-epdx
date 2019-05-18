@@ -1,7 +1,7 @@
 ---
-title: 2-8 PDex Data Payloads
+title: 2-7 PDex Data Payloads
 layout: default
-active: 2-8 PDex Data Payloads
+active: 2-7 PDex Data Payloads
 ---
 
 The PDex IG defines four types of data payload:
@@ -13,11 +13,11 @@ The PDex IG defines four types of data payload:
 
 All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
-### 2-8-1 Member Clinical and Claims-derived History
+### 2-7-1 Member Clinical and Claims-derived History
 
 The FHIR Resources that comprise the Member Clinical and Claims-derived history **SHOULD** include the following profiles:
 
-#### 2-8-1-1 US Core
+#### 2-7-1-1 US Core
 
 - [US Core AllergyIntolerance Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-allergyintolerance.html)
 - [US Core CarePlan Profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careplan.html)
@@ -47,13 +47,13 @@ In addition US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observ
 
 In addition the Patient-everything operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of  FHIR resources for a member to be returned as a bundle. The Patient-everything operation is defined here: https://www.hl7.org/fhir/operation-patient-everything.html. 
 
-#### 2-8-1-2 Da Vinci PDex / HRex
+#### 2-7-1-2 Da Vinci PDex / HRex
 
 - [ HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
 - [PDex MedicationDispense]() **_TODO_** (Add Link)
 - [HRex Provenance](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html)
 
-#### 2-8-1-3 CapabilityStatement
+#### 2-7-1-3 CapabilityStatement
 
 The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.
 
@@ -91,19 +91,19 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y      |        |        |         | Y       |
 
 
-### 2-8-2 Healthcare Network Directory 
+### 2-7-2 Healthcare Network Directory 
 
 The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG).
 
 The Latest build of the PDex-plan-net IG can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 
-### 2-8-3 Pharmacy Network Directory
+### 2-7-3 Pharmacy Network Directory
 
 The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG). A Health Plan's Pharmacy Network **SHALL** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
 
 The Latest build of the PDex-plan-net IG which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 
-### 2-8-4 Medication Formulary
+### 2-7-4 Medication Formulary
 
 When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (PDex-formulary IG.
 

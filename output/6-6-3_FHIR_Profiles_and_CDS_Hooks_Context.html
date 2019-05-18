@@ -278,71 +278,79 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 <p>The replaceable parameters supported by the SMART App <strong>SHALL</strong> include:</p>
 
 <table>
-  <tr>
-		<th>Replaceable Parameter</th>
-		<th>Purpose</th>
-	</tr>
-	<tr>
-		<td>[Health_Plan_Member_ID]</td>
-		<td>The FHIR ID of the Member from the Patient Resource in the Payers system</td>
-	</tr>
-	<tr>
-		<td>[Patient_ID]</td>
-		<td>The FHIR ID of the Patient from the Provider's EMR System</td>
-	</tr>	
-  <tr>
-    <td>[Health_Plan_Practitioner_ID]</td>
-    <td>The Practitioner ID in the Health Plan's system</td>
-  </tr>
-  <tr>
-    <td>[Practitioner_ID]</td>
-    <td>The Practitioner ID in the Provider's EMR System</td>
-  </tr>
-	<tr>
-    <td>[Health_Plan_Organization_ID]</td>
-    <td>The Organization ID in the Health Plan's system</td>
-  </tr>
-  <tr>
-    <td>[Organization_ID]</td>
-    <td>The Organization ID in the Provider's EMR System</td>
-  </tr>
-  <tr>
-    <td>[Health_Plan_Location_ID]</td>
-    <td>The Location ID in the Health Plan's system</td>
-  </tr>
-	  <tr>
-    <td>[Location_ID]</td>
-    <td>The Location ID in the Provider's EMR system</td>
-  </tr>
-  <tr>
-    <td>[TODAY]</td>
-    <td>Today's Date</td>
-  </tr>
-  <tr>
-    <td>[TODAY-NNN]</td>
-    <td>A Calculated Date derived from Today's Date adjusted by a number of Days </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Replaceable Parameter</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Health_Plan_Member_ID]</td>
+      <td>The FHIR ID of the Member from the Patient Resource in the Payers system</td>
+    </tr>
+    <tr>
+      <td>[Patient_ID]</td>
+      <td>The FHIR ID of the Patient from the Provider’s EMR System</td>
+    </tr>
+    <tr>
+      <td>[Health_Plan_Practitioner_ID]</td>
+      <td>The Practitioner ID in the Health Plan’s system</td>
+    </tr>
+    <tr>
+      <td>[Practitioner_ID]</td>
+      <td>The Practitioner ID in the Provider’s EMR System</td>
+    </tr>
+    <tr>
+      <td>[Health_Plan_Organization_ID]</td>
+      <td>The Organization ID in the Health Plan’s system</td>
+    </tr>
+    <tr>
+      <td>[Organization_ID]</td>
+      <td>The Organization ID in the Provider’s EMR System</td>
+    </tr>
+    <tr>
+      <td>[Health_Plan_Location_ID]</td>
+      <td>The Location ID in the Health Plan’s system</td>
+    </tr>
+    <tr>
+      <td>[Location_ID]</td>
+      <td>The Location ID in the Provider’s EMR system</td>
+    </tr>
+    <tr>
+      <td>[TODAY]</td>
+      <td>Today’s Date</td>
+    </tr>
+    <tr>
+      <td>[TODAY-NNN]</td>
+      <td>A Calculated Date derived from Today’s Date adjusted by a number of Days</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>Examples of search queries with replaceable parameters are shown in the table below. Search queries can be created for any resources profiled in the US Core, Da Vinci HRex or Da Vinci PDex IG. A limited sample of these queries are:</p>
 
 <table>
-	<tr>
-		<th>Search Example</th>
-		<th>FHIR Search Query</th>	
-	</tr>	
-	<tr>
-		<td>Patient Record</td>
-		<td>Patient?_id=[Health_Plan_Member_ID]</td>
-	</tr>	
-  <tr>
-    <td>Encounters for Patient updated since a January 1, 2019 and excluding my Location</td>
-    <td>Encounter?subject=Patient/[Health_Plan_Member_ID]&amp;_lastUpdated=gt[TODAY-365]&amp;location=ne[Health_Plan_Location_ID]</td>                                                                                            
-  </tr> 
-  <tr>
-    <td>MedicationDispense for Patient created/updated in the last 3 months</td>
-    <td>MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&amp;_lastUpdated=gt[TODAY-90]</td>
-  </tr> 
+  <thead>
+    <tr>
+      <th>Search Example</th>
+      <th>FHIR Search Query</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient Record</td>
+      <td>Patient?_id=[Health_Plan_Member_ID]</td>
+    </tr>
+    <tr>
+      <td>Encounters for Patient updated since a January 1, 2019 and excluding my Location</td>
+      <td>Encounter?subject=Patient/[Health_Plan_Member_ID]&amp;_lastUpdated=gt[TODAY-365]&amp;location=ne[Health_Plan_Location_ID]</td>
+    </tr>
+    <tr>
+      <td>MedicationDispense for Patient created/updated in the last 3 months</td>
+      <td>MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&amp;_lastUpdated=gt[TODAY-90]</td>
+    </tr>
+  </tbody>
 </table>
 
 <h4 id="6-6-3-3-smart-on-fhir-app-for-provider-data-selection">6-6-3-3 SMART-on-FHIR app for Provider data selection</h4>
@@ -358,9 +366,9 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 
 <p>If the Provider’s EMR system supports FHIR R4 the SMART App <strong>SHALL</strong> determine which resources may be written to the Patient’s record in the EMR system. It will write these records to the Provider’s EMR System.</p>
 
-<p><a name="2be8135c-e008-4528-bc7d-8f4704e53261">​</a>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+<p><a name="cda8afea-2736-4b72-9603-9604c1c979e3">​</a>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
 
-<p><a name="8154aac6-5d48-428a-8dd3-11a68165aafe">​</a>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in  <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+<p><a name="93ed605a-1c1e-4b4e-ae4e-10aa5f13fd19">​</a>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in  <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
 
 <h4 id="6-6-3-4-writing-records-using-documentreference">6-6-3-4 Writing Records Using DocumentReference</h4>
 
@@ -402,7 +410,7 @@ Optional fields in the CDS Hooks for PDex context include:</p>
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

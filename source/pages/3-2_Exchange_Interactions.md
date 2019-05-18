@@ -16,7 +16,6 @@ Two subsidiary Payer Data exchange Implementation Guides address the Member-auth
 - Prescription Drug Formulary.
 
 These subsidiary IGs are:
-- Payer Data exchange Plan Network Directory (PDex-plan-net) IG covering Healthcare and Pharmacy networks.
-- Payer Data exchange Drug formulary (PDex-formulart) IG covering prescription drug formulary.
-
+- Payer Data exchange Plan Network Directory (PDex-plan-net) IG covering Healthcare and Pharmacy networks: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
+- Payer Data exchange Drug formulary (PDex-formulart) IG covering prescription drug formulary: http://build.fhir.org/ig/HL7/davinci-pdex-formulary/
 

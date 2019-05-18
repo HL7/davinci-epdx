@@ -57,73 +57,26 @@ The SMART App **SHALL** import an object from a configuration file containing on
 
 The replaceable parameters supported by the SMART App **SHALL** include:
 
-<table>
-  <tr>
-		<th>Replaceable Parameter</th>
-		<th>Purpose</th>
-	</tr>
-	<tr>
-		<td>[Health_Plan_Member_ID]</td>
-		<td>The FHIR ID of the Member from the Patient Resource in the Payers system</td>
-	</tr>
-	<tr>
-		<td>[Patient_ID]</td>
-		<td>The FHIR ID of the Patient from the Provider's EMR System</td>
-	</tr>	
-  <tr>
-    <td>[Health_Plan_Practitioner_ID]</td>
-    <td>The Practitioner ID in the Health Plan's system</td>
-  </tr>
-  <tr>
-    <td>[Practitioner_ID]</td>
-    <td>The Practitioner ID in the Provider's EMR System</td>
-  </tr>
-	<tr>
-    <td>[Health_Plan_Organization_ID]</td>
-    <td>The Organization ID in the Health Plan's system</td>
-  </tr>
-  <tr>
-    <td>[Organization_ID]</td>
-    <td>The Organization ID in the Provider's EMR System</td>
-  </tr>
-  <tr>
-    <td>[Health_Plan_Location_ID]</td>
-    <td>The Location ID in the Health Plan's system</td>
-  </tr>
-	  <tr>
-    <td>[Location_ID]</td>
-    <td>The Location ID in the Provider's EMR system</td>
-  </tr>
-  <tr>
-    <td>[TODAY]</td>
-    <td>Today's Date</td>
-  </tr>
-  <tr>
-    <td>[TODAY-NNN]</td>
-    <td>A Calculated Date derived from Today's Date adjusted by a number of Days </td>
-  </tr>
-</table>	
+| Replaceable Parameter         | Purpose                                                                  |
+|-------------------------------|--------------------------------------------------------------------------|
+| [Health_Plan_Member_ID]       | The FHIR ID of the Member from the Patient Resource in the Payers system |
+| [Patient_ID]                  | The FHIR ID of the Patient from the Provider's EMR System                |
+| [Health_Plan_Practitioner_ID] | The Practitioner ID in the Health Plan's system                          |
+| [Practitioner_ID]             | The Practitioner ID in the Provider's EMR System                         |
+| [Health_Plan_Organization_ID] | The Organization ID in the Health Plan's system                          |
+| [Organization_ID]             | The Organization ID in the Provider's EMR System                         |
+| [Health_Plan_Location_ID]     | The Location ID in the Health Plan's system                              |
+| [Location_ID]                 | The Location ID in the Provider's EMR system                             |
+| [TODAY]                       | Today's Date                                                             |
+| [TODAY-NNN]                   | A Calculated Date derived from Today's Date adjusted by a number of Days |
 
 Examples of search queries with replaceable parameters are shown in the table below. Search queries can be created for any resources profiled in the US Core, Da Vinci HRex or Da Vinci PDex IG. A limited sample of these queries are:
 
-<table>
-	<tr>
-		<th>Search Example</th>
-		<th>FHIR Search Query</th>	
-	</tr>	
-	<tr>
-		<td>Patient Record</td>
-		<td>Patient?_id=[Health_Plan_Member_ID]</td>
-	</tr>	
-  <tr>
-    <td>Encounters for Patient updated since a January 1, 2019 and excluding my Location</td>
-    <td>Encounter?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-365]&location=ne[Health_Plan_Location_ID]</td>                                                                                            
-  </tr> 
-  <tr>
-    <td>MedicationDispense for Patient created/updated in the last 3 months</td>
-    <td>MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-90]</td>
-  </tr> 
-</table>	
+| Search Example                                                                   | FHIR Search Query                                                                                                 |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Patient Record                                                                   | Patient?_id=[Health_Plan_Member_ID]                                                                               |
+| Encounters for Patient updated since a January 1, 2019 and excluding my Location | Encounter?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-365]&location=ne[Health_Plan_Location_ID] |
+| MedicationDispense for Patient created/updated in the last 3 months              | MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-90]                              |
 
 #### 6-6-3-3 SMART-on-FHIR app for Provider data selection
 The SMART App **SHALL** retrieve the CapabilityStatement/Metadata from the Health Plan's FHIR API.

@@ -241,18 +241,22 @@ can only resize using html  or css ;-(
 
 <h3 id="2-2-2-member-mediated-information-exchange">2-2-2 Member-mediated Information Exchange</h3>
 
-<p>The CMS Notice For Proposed Rule Making for Patient access and Interoperability requires that a subscriber to a new health plan <strong>SHOULD</strong> be able to request their information to be passed from their old health plan to their new health plan.</p>
+<p>The CMS Notice For Proposed Rule Making for Patient access and Interoperability requires that a subscriber to a new health plan <strong>SHALL</strong> be able to request their information to be passed from their old health plan to their new health plan.</p>
 
-<p>A Member will also be able to use APIs to share information with Third Party Applications. This includes:</p>
+<p>A Member <strong>SHALL</strong> also be able to use APIs to share information with Third Party Applications. This includes:</p>
 
 <ul>
   <li>Their health history</li>
-  <li>Healthcare network information</li>
-  <li>Pharmacy network information</li>
+  <li>Healthcare network/directory information</li>
+  <li>Pharmacy network/directory information</li>
   <li>Prescription Drug Formulary information</li>
 </ul>
 
 <p>The Member-mediated Information Exchange method will build upon established OAuth2.0 protocols for patient access to their health and claims information that enables the sharing of information with third-party applications. The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.</p>
+
+<p>The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the <a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a>.
+The exchange of Prescription drug formulary information is covered in the <a href="http://build.fhir.org/ig/HL7/davinci-pdex-formulary/">PDex-formulary IG</a>.</p>
+
 
 
 
@@ -283,7 +287,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">2-4 FHIR</span>
+      <span class="breadcrumb-item active">6-2 Additional or Modified Hooks</span>
     
     
 
@@ -224,25 +224,32 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>2-4 FHIR</h1>
+<h1>6-2 Additional or Modified Hooks</h1>
 
-<!--page source: 2-4_FHIR.md-->
+<!--page source: 6-2_Additional_or_Modified_Hooks.md-->
 
-<p>This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, its important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.</p>
+<p>The base CDS hooks 1.0 specification defines the following hooks:</p>
 
 <ul>
-  <li><a href="http://build.fhir.org/overview.html">FHIR overview</a></li>
-  <li><a href="http://build.fhir.org/overview-dev.html">Developer’s Introduction</a></li>
-  <li><a href="http://build.fhir.org/overview-clinical.html">Clinical Introduction</a></li>
-  <li><a href="http://build.fhir.org/datatypes.html">FHIR data types</a></li>
-  <li><a href="http://build.fhir.org/terminologies.html">Using codes</a></li>
-  <li>
-    <p><a href="http://build.fhir.org/references.html">References between resources</a></p>
-  </li>
-  <li><a href="http://build.fhir.org/formats.html">How to read resource and profile
-definitions</a></li>
-  <li><a href="http://build.fhir.org/resource.html">Base resource</a></li>
+  <li>patient-view</li>
+  <li>medication-prescribe</li>
+  <li>order-review</li>
+  <li>order-select</li>
+  <li>order-sign</li>
+  <li>appointment-book</li>
+  <li>encounter-start</li>
+  <li>encounter-discharge</li>
 </ul>
+
+<p>The expectation is that new hooks will be defined by and eventually formally approved by the community. The formal process for this proposal and maturity development process is still evolving. Individuals interested in this process can provide feedback <a href="https://cds-hooks.hl7.org">here</a>.</p>
+
+<h3 id="6-2-1-additional-hooks">6-2-1 Additional Hooks</h3>
+
+<p>Defining new hooks is an expected part of the CDS Hooks specification and there is no need for hooks to be officially registered with the community for them to be used. However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide. The project is proposing hooks that build on proposals made in the Da Vinci CRD IG.</p>
+
+<h3 id="6-2-2-modified-hooks">6-2-2 Modified Hooks</h3>
+
+<p>This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field. Subscriber Id <strong>SHOULD</strong> be taken from the Patient’s Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.</p>
 
 
 
@@ -274,7 +281,7 @@ definitions</a></li>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

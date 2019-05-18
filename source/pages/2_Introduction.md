@@ -10,6 +10,8 @@ The PDex IG identifies three actors and specifies three interactions that occur.
 Whereas the Blue Button 2.0 initiative is specifying the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a members health and claims information in FHIR clinical profiles that are more easily consumed by Electronic Medical Records (EMR) systems. 
                                                                                                                                                    
 The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information that will be exchanged between health plans when authorized by a health plan member.
+
+The Patient-everything operation is also included as part of this implementation. This is included to provide Health Plans with the ability to push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
                                                                                                                                                    
 While the authorization and communication mechanisms may differ between the provider-to-payer exchange (P2HPX) and the member-authorized  Payer-to-Payer exchange (MauthHPX) or member-authorized Payer to Third-Party Application exchange (Mauth3PX)  the payload of member history will be the same.  
                                                                                                                                                    

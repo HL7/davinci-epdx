@@ -60,4 +60,6 @@ This operation is intended to simplify requests from a client application when r
 
 A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: https://www.hl7.org/fhir/operation-patient-everything.html
 
+The Patient-everything operation **SHOULD** be available as an operation via the Health Plan's FHIR API. 
+
 The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity.

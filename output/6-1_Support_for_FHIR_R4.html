@@ -234,9 +234,23 @@ can only resize using html  or css ;-(
 
 <p>The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. The Payer’s CDS Hooks service <strong>SHALL</strong> handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources.</p>
 
-<p>The health plan’s CDS Hooks service <strong>SHALL</strong> provide access to FHIR R4 resources based on Profiles identified in the US Core and Da Vinci HRex IGs.</p>
+<p>The health plan’s CDS Hooks service <strong>SHALL</strong> provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs.</p>
 
-<p>The SMART-on-FHIR App that <strong>MAY</strong> be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App <strong>SHALL</strong> create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient’s record.</p>
+<p>The SMART-on-FHIR App that <strong>MAY</strong> be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR.</p>
+
+<p>When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System’s CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. Where the EMR’s FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. The remaining selected records <strong>SHALL</strong> be compiled into a FHIR bundle, a PDF <strong>SHALL</strong> be created to provide a human-readable version of the bundle and both documents <strong>SHALL</strong> be attached as a DocumentReference and commited to the patient’s record.</p>
+
+<p>Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP <strong>SHALL</strong> attempt to write the selected records based upon the options listed below for graceful write degradation.</p>
+
+<h3 id="6-1-1-graceful-write-degradation">6-1-1 Graceful write degradation</h3>
+
+<p>When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App <strong>SHALL</strong> create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient’s record.</p>
+
+<p>Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App <strong>SHALL</strong> create a human readable PDF version of the selected resources and attach this document to the DocumentReference and commit to the patient’s record.</p>
+
+<p>Where the EMR does not support the attachment of PDF Documents to a DocumentRefernece record the SMART App <strong>SHALL</strong> create an HTML or XHTML document that contains the selected resources and attach this document to the DocumentReference and commit to the patient’s record.</p>
+
+<p>Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentRefernece record the SMART App <strong>SHALL</strong> create a human readable ASCII text version of the selected resources and attach this to the DocumentReference and commit to the patient’s record.</p>
 
 
 
@@ -268,7 +282,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

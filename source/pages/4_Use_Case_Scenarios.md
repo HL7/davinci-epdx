@@ -18,7 +18,7 @@ The examples used in this guide are based on Payers providing claims from events
 <table style="background-color:rgb(195,231,244);width:100%">
 
 <tr>
-<td>Question_For_Comment(Q_F_02):</td>
+<td>Question_For_Comment(Q_F_01):</td>
 <\tr>
 <tr><td>
 <i>
@@ -28,8 +28,13 @@ What other claims or categories of data available to payers should be converted 
 </td></tr>	
 </table>
 
-Three example data requests from Providers to Health Plans are covered in this IG:
+Three example data requests from Providers to Health Plans are covered in this IG and the associated Reference Implementation:
 
 1. What Encounters has the patient had since mm/dd/yyyy, excluding encounters at my organization.
 2. What procedures has the patient had?
 3. What medications has the patient received (i.e. A claim for a medication has been settled by the health plan)
+
+Reference Implementations can be found in the Da Vinci Github account:
+	- [PDex SMART-on-FHIR+CDS-Hook Patient Import App](https://github.com/HL7-DaVinci/PDex-Patient-Import-App)
+	- **TODO** Member-authorized Payer-to-Payer Exchange App
+	

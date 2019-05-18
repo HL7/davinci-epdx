@@ -40,7 +40,201 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/
 An example mapping of a Patient resource is shown here:
 
 <pre>
-TODO: Add Patient Resource in JSON format
+{
+  "resourceType" : "Patient",
+  "id" : "example",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>
+				<b>Generated Narrative with Details</b>
+			</p>
+			<p>
+				<b>id</b>: example</p>
+			<p>
+				<b>identifier</b>: Medical Record Number = 1032702 (USUAL)</p>
+			<p>
+				<b>identifier</b>: Health Plan Member Number = 987654321 (USUAL)</p>
+			<p>
+				<b>active</b>: true</p>
+			<p>
+				<b>name</b>: Arthur B. Dent </p>
+			<p>
+				<b>telecom</b>: ph: 555-555-5555(HOME), amy.shaw@example.com</p>
+			<p>
+				<b>gender</b>: </p>
+			<p>
+				<b>birthsex</b>: Male</p>
+			<p>
+				<b>birthDate</b>: Jan 22, 1953</p>
+			<p>
+				<b>address</b>: 6518 Meadowridge Rd, Elkridge, MD 21075 US </p>
+			<p>
+				<b>race</b>: White, American Indian or Alaska Native, Asian, Shoshone, Filipino</p>
+			<p>
+				<b>ethnicity</b>: Hispanic or Latino, Dominican, Mexican</p>
+		</div>"
+  },
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2106-3",
+            "display" : "White"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1002-5",
+            "display" : "American Indian or Alaska Native"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2028-9",
+            "display" : "Asian"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1586-7",
+            "display" : "Shoshone"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2036-2",
+            "display" : "Filipino"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Mixed"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2135-2",
+            "display" : "Hispanic or Latino"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2184-0",
+            "display" : "Dominican"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2148-5",
+            "display" : "Mexican"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode" : "M"
+    }
+  ],
+  "identifier" : [
+    {
+      "use" : "subscriber",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    },
+    {
+      "use" : "usual",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MR",
+            "display" : "Medical Record Number"
+          }
+        ],
+        "text" : "Medical Record Number"
+      },
+      "system" : "http://hospital.smarthealthit.org",
+      "value" : "1032702"
+    }
+  ],
+  "active" : true,
+  "name" : [
+    {
+      "family" : "Dent",
+      "given" : [
+        "Arthur",
+        "B."
+      ]
+    }
+  ],
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "555-555-5555",
+      "use" : "home"
+    },
+    {
+      "system" : "email",
+      "value" : "arthur.dent@example.com"
+    }
+  ],
+  "gender" : "male",
+  "birthDate" : "1953-01-22",
+  "address" : [
+    {
+      "line" : [
+        "6518 Meadowridge Rd"
+      ],
+      "city" : "Elkridge",
+      "state" : "MD",
+      "postalCode" : "21075",
+      "country" : "US"
+    }
+  ]
+}
 </pre>
 
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [Patient Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html).

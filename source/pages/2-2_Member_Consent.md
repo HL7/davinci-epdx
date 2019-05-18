@@ -15,13 +15,18 @@ Provider-Health Plan exchange of data is covered by the Health Insurance Portabi
 
 ### 2-2-2 Member-mediated Information Exchange
 
-The CMS Notice For Proposed Rule Making for Patient access and Interoperability requires that a subscriber to a new health plan **SHOULD** be able to request their information to be passed from their old health plan to their new health plan.
+The CMS Notice For Proposed Rule Making for Patient access and Interoperability requires that a subscriber to a new health plan **SHALL** be able to request their information to be passed from their old health plan to their new health plan.
 
-A Member will also be able to use APIs to share information with Third Party Applications. This includes:
+A Member **SHALL** also be able to use APIs to share information with Third Party Applications. This includes:
 
 - Their health history
-- Healthcare network information
-- Pharmacy network information
+- Healthcare network/directory information
+- Pharmacy network/directory information
 - Prescription Drug Formulary information
 
 The Member-mediated Information Exchange method will build upon established OAuth2.0 protocols for patient access to their health and claims information that enables the sharing of information with third-party applications. The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.
+
+The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/).
+The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/).
+
+

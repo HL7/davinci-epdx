@@ -25,10 +25,24 @@ When a Card is returned from the CDS Hooks appointment-book service by a Health 
 
 The SMART-on-FHIR App **MAY** be configured with default FHIR search queries that can be set by the Clinician, or their organization. 
  
- Examples of preset search queries parameters **MAY** include:
+ Examples of preset search queries parameters **MAY** include, but are not limited to:
 - Period (Start and optionally End date)
 - Excluded Practitioner(s)
 - Excluded Organization(s)
 - Excluded Location(s)
 
 The later three items are used to enable the Provider to exclude information that they may already have in their system.
+These query parameters are examples of FHIR API queries. Any valid FHIR search query for a Patient **MAY** be constructed by the Provider.
+The potentially valid search query parameters will be limited by the options provided in the Health Plan's FHIR API CapabilityStatement.
+
+As a minimum the Health Plan's FHIR API **SHALL** limit returned results to the records that are related to the Patient/Member that is:
+- The subject of the Provider query.
+- The member authorizing the sharing of their information.
+
+As a minimum searches of FHIR Resources **SHOULD** support the following query parameters where appropriate for a Resource Type:
+
+- \_lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss
+- Period (ie. Date / Time filters)
+- Inclusions or exclusions based upon Organization, Location or Practitioners
+
+
