@@ -45,7 +45,7 @@ See the [Table of Contents](toc.html) for more information.
 </thead>
 <tbody>
 <tr>
-<td>Mark Scrimshire</td>
+<td>Mark Scrimshire (mark@ekivemark.com)</td>
 <td></td>
 </tr>
 </tbody>
