@@ -23,6 +23,8 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (159) Fix section 6-2 for invalid title syntax
+- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review
 - (149) Removing MedicationDispense to enable IG Build
 - (148) Add Patient-everything operation as payload option
 - (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance

@@ -12,6 +12,10 @@ The first release of the PDex IG will focus on the following in scope items. Ite
 - Outpatient encounter
 - Member-mediated Payer-to-Payer information exchange
 - Member-mediated Payer-to-Third-Party-Application information exchange
+- Use of Patient-everything operation to enable Payer Push via secure transport
+- Member access to Health Plan Directory API (Defined in subsidiary PDex-plan-net Directory IG)
+- Member access to Pharmacy Directory API (Defined in subsidiary PDex-plan-net Directory IG)
+- Member access to Plan Drug Formulary API (Defined in subsidiary PDex-formulary IG)
 
 ### 2-1-2 Deferred Scope
 

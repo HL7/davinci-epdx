@@ -7,15 +7,15 @@ active: toc
 * Table of Contents
     * <a href="1_Home_Page.html">1 Home Page</a>
         * <a href="1-1_Overview.html">1-1 Overview</a>
+        * <a href="1-2_Conventions.html">1-2 Conventions</a>
     * <a href="2_Introduction.html">2 Introduction</a>
         * <a href="2-1_Implementation_Guide_Scope.html">2-1 Implementation Guide Scope</a>
         * <a href="2-2_Member_Consent.html">2-2 Member Consent</a>
-        * <a href="2-3_Conventions.html">2-3 Conventions</a>
-        * <a href="2-4_FHIR.html">2-4 FHIR</a>
-        * <a href="2-5_Supporting_Specifications.html">2-5 Supporting Specifications</a>
-        * <a href="2-6_Implementation_Assumptions.html">2-6 Implementation Assumptions</a>
-        * <a href="2-7_Implementation_Hierarchy_and_Priorities.html">2-7 Implementation Hierarchy and Priorities</a>
-        * <a href="2-8_PDex_Data_Payloads.html">2-8 PDex Data Payloads</a>
+        * <a href="2-3_FHIR.html">2-3 FHIR</a>
+        * <a href="2-4_Supporting_Specifications.html">2-4 Supporting Specifications</a>
+        * <a href="2-5_Implementation_Assumptions.html">2-5 Implementation Assumptions</a>
+        * <a href="2-6_Implementation_Hierarchy_and_Priorities.html">2-6 Implementation Hierarchy and Priorities</a>
+        * <a href="2-7_PDex_Data_Payloads.html">2-7 PDex Data Payloads</a>
     * <a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html">3 PDex Implementation Actors, Interactions, Data Payloads and Methods</a>
         * <a href="3-1_Actors.html">3-1 Actors</a>
         * <a href="3-2_Exchange_Interactions.html">3-2 Exchange Interactions</a>
@@ -36,7 +36,7 @@ active: toc
     * <a href="5_Provider-controlled_Information_Requests_and_Filtering.html">5 Provider-controlled Information Requests and Filtering</a>
     * <a href="6_CDS-Hooks.html">6 CDS-Hooks</a>
         * <a href="6-1_Support_for_FHIR_R4.html">6-1 Support for FHIR R4</a>
-        * <a href="6-2_Additional_Hooks.html">6-2 Additional Hooks</a>
+        * <a href="6-2_Additional_or_Modified_Hooks.html">6-2 Additional or Modified Hooks</a>
         * <a href="6-3_PDex_Hooks.html">6-3 PDex Hooks</a>
         * <a href="6-4_Hook_Configuration.html">6-4 Hook Configuration</a>
         * <a href="6-5_Systems.html">6-5 Systems</a>

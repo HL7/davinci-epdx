@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="hl7.fhir.us.davinci-pdex-0.0.9.149"/>
+  <id value="hl7.fhir.us.davinci-pdex-0.0.9.159"/>
   <meta>
-    <versionId value="157"/>
-    <lastUpdated value="2019-05-18T09:27:26.000-04:00"/>
+    <versionId value="161"/>
+    <lastUpdated value="2019-05-18T15:17:04.000-04:00"/>
   </meta>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
@@ -12,6 +12,8 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 <p>See the <a href="toc.html">Table of Contents</a> for more information.</p>
 <h4>Latest Changes</h4>
 <ul>
+<li>(159) Fix section 6-2 for invalid title syntax</li>
+<li>(158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review</li>
 <li>(149) Removing MedicationDispense to enable IG Build</li>
 <li>(148) Add Patient-everything operation as payload option</li>
 <li>(147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance</li>
@@ -25,7 +27,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-  <version value="0.0.9.149"/>
+  <version value="0.0.9.159"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
@@ -33,7 +35,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
   <contact>
     <name value="Mark Scrimshire (mark@ekivemark.com)"/>
   </contact>
-  <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (149) Removing MedicationDispense to enable IG Build&#xA;- (148) Add Patient-everything operation as payload option&#xA;- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance&#xA;- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient &#xA;- Added Data Mapping section for Patient and Coverage&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;"/>
+  <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (159) Fix section 6-2 for invalid title syntax&#xA;- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review&#xA;- (149) Removing MedicationDispense to enable IG Build&#xA;- (148) Add Patient-everything operation as payload option&#xA;- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance&#xA;- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient &#xA;- Added Data Mapping section for Patient and Coverage&#xA;- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3&#xA;- Fixed link from Section 3.3 to 2.8&#xA;- Change Section Number format to fix links from Table of Contents &#xA;- Number sections for easier reference during comment period&#xA;"/>
   <packageId value="hl7.fhir.us.davinci-pdex"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.0"/>
@@ -61,6 +63,11 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
           <title value="1-1 Overview"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <nameUrl value="1-2_Conventions.html"/>
+          <title value="1-2 Conventions"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
         <nameUrl value="2_Introduction.html"/>
@@ -77,33 +84,28 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="2-3_Conventions.html"/>
-          <title value="2-3 Conventions"/>
+          <nameUrl value="2-3_FHIR.html"/>
+          <title value="2-3 FHIR"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="2-4_FHIR.html"/>
-          <title value="2-4 FHIR"/>
+          <nameUrl value="2-4_Supporting_Specifications.html"/>
+          <title value="2-4 Supporting Specifications"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="2-5_Supporting_Specifications.html"/>
-          <title value="2-5 Supporting Specifications"/>
+          <nameUrl value="2-5_Implementation_Assumptions.html"/>
+          <title value="2-5 Implementation Assumptions"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="2-6_Implementation_Assumptions.html"/>
-          <title value="2-6 Implementation Assumptions"/>
+          <nameUrl value="2-6_Implementation_Hierarchy_and_Priorities.html"/>
+          <title value="2-6 Implementation Hierarchy and Priorities"/>
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="2-7_Implementation_Hierarchy_and_Priorities.html"/>
-          <title value="2-7 Implementation Hierarchy and Priorities"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="2-8_PDex_Data_Payloads.html"/>
-          <title value="2-8 PDex Data Payloads"/>
+          <nameUrl value="2-7_PDex_Data_Payloads.html"/>
+          <title value="2-7 PDex Data Payloads"/>
           <generation value="markdown"/>
         </page>
       </page>
@@ -207,8 +209,8 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="6-2_Additional_Hooks.html"/>
-          <title value="6-2 Additional Hooks"/>
+          <nameUrl value="6-2_Additional_or_Modified_Hooks.html"/>
+          <title value="6-2 Additional or Modified Hooks"/>
           <generation value="markdown"/>
         </page>
         <page>

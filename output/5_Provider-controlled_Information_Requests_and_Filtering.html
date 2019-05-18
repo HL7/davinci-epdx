@@ -237,11 +237,11 @@ can only resize using html  or css ;-(
 </td></tr>
 </table>
 
-<p>The Payer Data exchange Implementation Guide defines methods for Providers to request information from Payers.</p>
+<p>The Payer Data exchange Implementation Guide defines methods for Providers to request information from Health Plans.</p>
 
-<p>This IG does not cover the Payer-initiated transfer of unsolicited information to a provider. All transfers will be initiated as part of a Provider workflow, such as when a new patient presents for an appointment, using CDS-Hooks.</p>
+<p>This IG does not cover the Payer-initiated transfer of unsolicited information to a provider. All transfers will be initiated as part of a Provider workflow, such as when a new patient presents for an appointment, using CDS-Hooks or triggered via a manual interaction with a SMART-on-FHIR app that generates the necessary CDS-Hook.</p>
 
-<p>All search parameters and subsequent filtering of returned information is controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider.</p>
+<p>All search parameters and subsequent filtering of returned information <strong>SHALL</strong> be controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider.</p>
 
 
 
@@ -273,7 +273,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

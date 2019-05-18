@@ -1,7 +1,7 @@
 ---
-title: 2-3 Conventions
+title: 1-2 Conventions
 layout: default
-active: 2-3 Conventions
+active: 1-2 Conventions
 ---
 
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
@@ -19,3 +19,4 @@ For the purposes of this IG we will use the following terms:
 * **patient** or **subject** id will be used to express the identifier used by the provider to identify a patient/subject.
 
 * **subscriber** or **member** id will be used to express the identifier used by the payer/health plan to identify a member.
+

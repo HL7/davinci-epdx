@@ -254,7 +254,7 @@ can only resize using html  or css ;-(
 
 <p>The SMART-on-FHIR App <strong>MAY</strong> be configured with default FHIR search queries that can be set by the Clinician, or their organization.</p>
 
-<p>Examples of preset search queries parameters <strong>MAY</strong> include:</p>
+<p>Examples of preset search queries parameters <strong>MAY</strong> include, but are not limited to:</p>
 <ul>
   <li>Period (Start and optionally End date)</li>
   <li>Excluded Practitioner(s)</li>
@@ -262,7 +262,24 @@ can only resize using html  or css ;-(
   <li>Excluded Location(s)</li>
 </ul>
 
-<p>The later three items are used to enable the Provider to exclude information that they may already have in their system.</p>
+<p>The later three items are used to enable the Provider to exclude information that they may already have in their system.
+These query parameters are examples of FHIR API queries. Any valid FHIR search query for a Patient <strong>MAY</strong> be constructed by the Provider.
+The potentially valid search query parameters will be limited by the options provided in the Health Plan’s FHIR API CapabilityStatement.</p>
+
+<p>As a minimum the Health Plan’s FHIR API <strong>SHALL</strong> limit returned results to the records that are related to the Patient/Member that is:</p>
+<ul>
+  <li>The subject of the Provider query.</li>
+  <li>The member authorizing the sharing of their information.</li>
+</ul>
+
+<p>As a minimum searches of FHIR Resources <strong>SHOULD</strong> support the following query parameters where appropriate for a Resource Type:</p>
+
+<ul>
+  <li>_lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss</li>
+  <li>Period (ie. Date / Time filters)</li>
+  <li>Inclusions or exclusions based upon Organization, Location or Practitioners</li>
+</ul>
+
 
 
 
@@ -293,7 +310,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.149  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 09:30-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
