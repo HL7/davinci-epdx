@@ -18,3 +18,4 @@ While the authorization and communication mechanisms may differ between the prov
 The objective with the above approach is to:
 - Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested in development and implementation
 - Consolidate the number of operational interfaces that health plans and  EMR systems need to maintain in order to meet regulatory requirements.
+
