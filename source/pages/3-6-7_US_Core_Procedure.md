@@ -28,6 +28,18 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/
 
+The minimum fields to be provided in the US Core Practitioner resource are:
+
+| R4 Hierarchical Name      | R4 Name      | Card. | Type                                                                                         |
+|---------------------------|--------------|-------|----------------------------------------------------------------------------------------------|
+| Procedure                 | Procedure    | 0..*  |                                                                                              |
+| Procedure.id              | id           | 0..1  | id                                                                                           |
+| Procedure.status          | status       | 1..1  | code                                                                                         |
+| Procedure.code            | code         | 1..1  | CodeableConcept                                                                              |
+| Procedure.subject         | subject      | 1..1  | Reference(US Core Patient Profile)                                                           |
+| Procedure.performed[x]    | performed[x] | 1..1  | dateTime, Period                                                                             |
+| Procedure.performer.actor | actor        | 1..1  | Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device) |
+
 #### 3-6-7-1 Example Procedure Resource
 
 An example mapping of an Procedure resource is shown here:

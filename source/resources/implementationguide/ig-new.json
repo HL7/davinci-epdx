@@ -2,20 +2,24 @@
   "resourceType" : "ImplementationGuide",
   "id" : "davinci-pdex",
   "meta" : {
-    "versionId" : "161",
-    "lastUpdated" : "2019-05-18T15:17:04.000-04:00"
+    "versionId" : "165",
+    "lastUpdated" : "2019-05-22T00:07:08.000-04:00",
+    "security" : [{
+      "system" : "https://trifolia-fhir.lantanagroup.com/security",
+      "code" : "everyone^read"
+    }]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044nvs6Ez8WKver\\source\\resources"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044i5TBsQIjAZNz\\source\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044nvs6Ez8WKver\\framework"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044i5TBsQIjAZNz\\framework"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Windows\\Temp\\tmp-5044nvs6Ez8WKver\\source\\pages"
+    "valueString" : "C:\\Windows\\Temp\\tmp-5044i5TBsQIjAZNz\\source\\pages"
   }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex",
   "version" : "0.0.9.159",
@@ -26,7 +30,7 @@
   "contact" : [{
     "name" : "Mark Scrimshire (mark@ekivemark.com)"
   }],
-  "description" : "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n- (159) Fix section 6-2 for invalid title syntax\n- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review\n- (149) Removing MedicationDispense to enable IG Build\n- (148) Add Patient-everything operation as payload option\n- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance\n- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient \n- Added Data Mapping section for Patient and Coverage\n- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3\n- Fixed link from Section 3.3 to 2.8\n- Change Section Number format to fix links from Table of Contents \n- Number sections for easier reference during comment period\n",
+  "description" : "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping\n- (159) Fix section 6-2 for invalid title syntax\n- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review\n- (149) Removing MedicationDispense to enable IG Build\n- (148) Add Patient-everything operation as payload option\n- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance\n- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient \n- Added Data Mapping section for Patient and Coverage\n- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3\n- Fixed link from Section 3.3 to 2.8\n- Change Section Number format to fix links from Table of Contents \n- Number sections for easier reference during comment period\n",
   "packageId" : "hl7.fhir.us.davinci-pdex",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.0",
@@ -169,6 +173,36 @@
           {
             "nameUrl" : "3-6-7_US_Core_Procedure.html",
             "title" : "3-6-7 US Core Procedure",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-8_US_Core_Condition.html",
+            "title" : "3-6-8 US Core Condition",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-9_US_Core_AllergyIntolerance.html",
+            "title" : "3-6-9 US Core AllergyIntolerance",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-10_US_Core_Immunization.html",
+            "title" : "3-6-10 US Core Immunization",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-11_US_Core_DiagnosticReport.html",
+            "title" : "3-6-11 US Core DiagnosticReport",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-12_US_Core_Observation.html",
+            "title" : "3-6-12 US Core Observation",
+            "generation" : "markdown"
+          },
+          {
+            "nameUrl" : "3-6-13_US_Core_DocumentReference.html",
+            "title" : "3-6-13 US Core DocumentReference",
             "generation" : "markdown"
           }]
         }]

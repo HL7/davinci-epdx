@@ -375,6 +375,103 @@ can only resize using html  or css ;-(
 
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/</p>
 
+<p>The minimum fields to be provided in the Coverage resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Coverage</td>
+      <td>Coverage</td>
+      <td> </td>
+      <td>DomainResource</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.identifier</td>
+      <td>identifier</td>
+      <td>0..*</td>
+      <td>Identifier</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.status</td>
+      <td>status</td>
+      <td>0..1</td>
+      <td>code</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.beneficiary</td>
+      <td>beneficiary</td>
+      <td>0..1</td>
+      <td>Reference(Patient)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.payor</td>
+      <td>payor</td>
+      <td>0..*</td>
+      <td>Reference(Organization</td>
+      <td>Patient</td>
+      <td>RelatedPerson)</td>
+    </tr>
+    <tr>
+      <td>Coverage.class</td>
+      <td>class</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.class.type</td>
+      <td>type</td>
+      <td>1..1</td>
+      <td>Coding</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.class.value</td>
+      <td>value</td>
+      <td>1..1</td>
+      <td>string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.costToBeneficiary.value[x]</td>
+      <td>value[x]</td>
+      <td>1..1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Coverage.costToBeneficiary.exception.type</td>
+      <td>type</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="3-6-1-2-example-coverage-resource">3-6-1-2 Example Coverage Resource</h4>
 
 <p>An example mapping of a Coverage resource is shown here:</p>
@@ -413,7 +510,7 @@ TODO: Add Coverage Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 22, 2019 00:26-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

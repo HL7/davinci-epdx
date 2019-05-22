@@ -27,6 +27,19 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/
 
+The minimum fields to be provided in the US Core Practitioner resource are:
+
+| R4 Hierarchical Name            | R4 Name      | Card. | Type            |
+|---------------------------------|--------------|-------|-----------------|
+| Practitioner                    | Practitioner | 0..*  |                 |
+| Practitioner.id                 | id           | 0..1  | id              |
+| Practitioner.identifier         | identifier   | 1..*  | Identifier      |
+| Practitioner.identifier.system  | system       | 1..1  | uri             |
+| Practitioner.identifier.value   | value        | 1..1  | string          |
+| Practitioner.name               | name         | 1..1  | HumanName       |
+| Practitioner.name.family        | family       | 1..1  | string          |
+| Practitioner.qualification.code | code         | 1..1  | CodeableConcept |
+
 #### 3-6-6-1 Example Practitioner Resource
 
 An example mapping of an Practitioner resource is shown here:

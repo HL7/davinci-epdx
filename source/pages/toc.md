@@ -30,6 +30,12 @@ active: toc
             * <a href="3-6-5_MedicationDispense.html">3-6-5 MedicationDispense</a>
             * <a href="3-6-6_US_Core_Practitioner.html">3-6-6 US Core Practitioner</a>
             * <a href="3-6-7_US_Core_Procedure.html">3-6-7 US Core Procedure</a>
+            * <a href="3-6-8_US_Core_Condition.html">3-6-8 US Core Condition</a>
+            * <a href="3-6-9_US_Core_AllergyIntolerance.html">3-6-9 US Core AllergyIntolerance</a>
+            * <a href="3-6-10_US_Core_Immunization.html">3-6-10 US Core Immunization</a>
+            * <a href="3-6-11_US_Core_DiagnosticReport.html">3-6-11 US Core DiagnosticReport</a>
+            * <a href="3-6-12_US_Core_Observation.html">3-6-12 US Core Observation</a>
+            * <a href="3-6-13_US_Core_DocumentReference.html">3-6-13 US Core DocumentReference</a>
     * <a href="4_Use_Case_Scenarios.html">4 Use Case Scenarios</a>
         * <a href="4-1_Patient_Persona.html">4-1 Patient Persona</a>
         * <a href="4-2_Useful_Patient_History_for_Providers.html">4-2 Useful Patient History for Providers</a>

@@ -30,6 +30,21 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 
 https://bluebutton.cms.gov/resources/variables/bene_id/
 
+The minimum fields to be provided in the Coverage resource are:
+
+| R4 Hierarchical Name                      | R4 Name     | Card. | Type                                             |
+|-------------------------------------------|-------------|-------|--------------------------------------------------|
+| Coverage                                  | Coverage    |       | DomainResource                                   |
+| Coverage.identifier                       | identifier  | 0..*  | Identifier                                       |
+| Coverage.status                           | status      | 0..1  | code                                             |
+| Coverage.beneficiary                      | beneficiary | 0..1  | Reference(Patient)                               |
+| Coverage.payor                            | payor       | 0..*  | Reference(Organization| Patient | RelatedPerson) |
+| Coverage.class                            | class       | 0..*  | BackboneElement                                  |
+| Coverage.class.type                       | type        | 1..1  | Coding                                           |
+| Coverage.class.value                      | value       | 1..1  | string                                           |
+| Coverage.costToBeneficiary.value[x]       | value[x]    | 1..1  |                                                  |
+| Coverage.costToBeneficiary.exception.type | type        | 1..1  | CodeableConcept                                  |
+
 #### 3-6-1-2 Example Coverage Resource
 
 An example mapping of a Coverage resource is shown here:

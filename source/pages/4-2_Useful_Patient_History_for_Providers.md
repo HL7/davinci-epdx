@@ -37,7 +37,7 @@ As part of an event or episode of care the provider will be interested in the fo
 * Notes 
 * Family History
 
-These types of data can be mapped to FHIR clinical resources as follows:
+These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 
 | Data type                              | FHIR R4/US Core STU3 profile                                                                                  |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------|

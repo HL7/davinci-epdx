@@ -25,6 +25,25 @@ An example mapping of Health Plan data for Members to the [US Core Patient profi
 | F.2  | R4          |                       | Telecom                | US Core Patient | .telecom                    |                                                                | Provide If Available |
 | F.3  | R4          |                       | Language               | US Core Patient | .communication              |                                                                | Provide If Available |
 
+The minimum fields to be provided in the US Core Patient resource are:
+
+| R4 Hierarchical Name           | R4 Name           | Card. | Type            |
+|--------------------------------|-------------------|-------|-----------------|
+| Patient                        | Patient           | 0..*  |                 |
+| Patient.id                     | id                | 0..1  | id              |
+| Patient.us-core-race           | us-core-race      | 0..1  | (Complex)       |
+| Patient.us-core-ethnicity      | us-core-ethnicity | 0..1  | (Complex)       |
+| Patient.us-core-birthsex       | us-core-birthsex  | 0..1  | code            |
+| Patient.identifier             | identifier        | 1..*  | Identifier      |
+| Patient.identifier.system      | system            | 1..1  | uri             |
+| Patient.identifier.value       | value             | 1..1  | string          |
+| Patient.name                   | name              | 1..*  | HumanName       |
+| Patient.name.family            | family            | 1..1  | string          |
+| Patient.name.given             | given             | 1..*  | string          |
+| Patient.gender                 | gender            | 1..1  | code            |
+| Patient.birthDate              | birthDate         | 0..1  | date            |
+| Patient.communication          | communication     | 0..*  | BackboneElement |
+| Patient.communication.language | language          | 1..1  | CodeableConcept |
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
 

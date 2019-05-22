@@ -436,6 +436,204 @@ can only resize using html  or css ;-(
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
+<p>The minimum fields to be provided in the US Core Encounter resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R4 Element</td>
+      <td>R4/US Core</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter</td>
+      <td>Encounter</td>
+      <td>0..*</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.system</td>
+      <td>system</td>
+      <td>1..1</td>
+      <td>uri</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.value</td>
+      <td>value</td>
+      <td>1..1</td>
+      <td>string</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.statusHistory.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.statusHistory.period</td>
+      <td>period</td>
+      <td>1..1</td>
+      <td>Period</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.class</td>
+      <td>class</td>
+      <td>1..1</td>
+      <td>Coding</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.class</td>
+      <td>class</td>
+      <td>1..1</td>
+      <td>Coding</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.period</td>
+      <td>period</td>
+      <td>1..1</td>
+      <td>Period</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.type</td>
+      <td>type</td>
+      <td>1..*</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.subject</td>
+      <td>subject</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.participant</td>
+      <td>participant</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.type</td>
+      <td>type</td>
+      <td>0..*</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.period</td>
+      <td>period</td>
+      <td>0..1</td>
+      <td>Period</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.individual</td>
+      <td>individual</td>
+      <td>0..1</td>
+      <td>Reference(US Core Practitioner Profile)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.period</td>
+      <td>period</td>
+      <td>0..1</td>
+      <td>Period</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.reasonCode</td>
+      <td>reasonCode</td>
+      <td>0..*</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.diagnosis</td>
+      <td>diagnosis</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.diagnosis.condition</td>
+      <td>condition</td>
+      <td>1..1</td>
+      <td>Reference(US Core Condition Profile</td>
+      <td>US Core Procedure Profile)</td>
+    </tr>
+    <tr>
+      <td>Encounter.diagnosis.rank</td>
+      <td>rank</td>
+      <td>0..1</td>
+      <td>positiveInt</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization</td>
+      <td>hospitalization</td>
+      <td>0..1</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization.dischargeDisposition</td>
+      <td>dischargeDisposition</td>
+      <td>0..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.location</td>
+      <td>location</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.location.location</td>
+      <td>location</td>
+      <td>1..1</td>
+      <td>Reference(US Core Location Profile)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="3-6-3-1-example-encounter-resource">3-6-3-1 Example Encounter Resource</h4>
 
 <p>An example mapping of an Encounter resource is shown here:</p>
@@ -476,7 +674,7 @@ TODO: Add Encounter Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 22, 2019 00:26-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

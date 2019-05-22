@@ -219,7 +219,7 @@ can only resize using html  or css ;-( -->
 
   <!-- page source: 3-6-5_MedicationDispense.md -->
 
-<p><a name="8d97695a-3b04-4321-ac1b-ff8b1971ccdf">​</a>An example mapping of Health Plan data for Members to the <a href="null">PDex MedicationDispense profile</a> is shown below:</p>
+<p><a name="9dff427d-b983-4b2c-8db8-53c323f003f5">​</a>An example mapping of Health Plan data for Members to the <a href="null">PDex MedicationDispense profile</a> is shown below:</p>
 
 <table>
   <thead>
@@ -347,6 +347,57 @@ can only resize using html  or css ;-( -->
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
+<p>The minimum fields to be provided in the MedicationDispense resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MedicationDispense</td>
+      <td>MedicationDispense</td>
+      <td>&nbsp;</td>
+      <td>DomainResource</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MedicationDispense.identifier</td>
+      <td>identifier</td>
+      <td>0..*</td>
+      <td>Identifier</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MedicationDispense.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MedicationDispense.medication[x]</td>
+      <td>medication[x]</td>
+      <td>1..1</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>MedicationDispense.subject</td>
+      <td>subject</td>
+      <td>0..1</td>
+      <td>Reference(Patient</td>
+      <td>Group)</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="3-6-5-1-example-medicationdispense-resource">3-6-5-1 Example MedicationDispense Resource</h4>
 
 <p>An example mapping of a MedicationDispense resource is shown here:</p>
@@ -385,7 +436,7 @@ TODO: Add MedicationDispense Resource in JSON format
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 22, 2019 00:26-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         
