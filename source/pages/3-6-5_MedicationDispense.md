@@ -28,6 +28,16 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/
 
+The minimum fields to be provided in the MedicationDispense resource are:
+
+| R4 Hierarchical Name             | R4 Name            | Card. | Type                       |
+|----------------------------------|--------------------|-------|----------------------------|
+| MedicationDispense               | MedicationDispense |       | DomainResource             |
+| MedicationDispense.identifier    | identifier         | 0..*  | Identifier                 |
+| MedicationDispense.status        | status             | 1..1  | code                       |
+| MedicationDispense.medication[x] | medication[x]      | 1..1  |                            |
+| MedicationDispense.subject       | subject            | 0..1  | Reference(Patient | Group) |
+
 #### 3-6-5-1 Example MedicationDispense Resource
 
 An example mapping of a MedicationDispense resource is shown here:

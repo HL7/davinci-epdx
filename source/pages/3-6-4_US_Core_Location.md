@@ -22,6 +22,22 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/
 
+The minimum fields to be provided in the US Core Location resource are:
+
+| R4 Hierarchical Name          | R4 Name              | Card. | Type                                    |
+|-------------------------------|----------------------|-------|-----------------------------------------|
+| Location                      | Location             | 0..*  |                                         |
+| Location.id                   | id                   | 0..1  | id                                      |
+| Location.status               | status               | 0..1  | code                                    |
+| Location.name                 | name                 | 1..1  | string                                  |
+| Location.telecom              | telecom              | 0..*  | ContactPoint                            |
+| Location.address              | address              | 0..1  | Address                                 |
+| Location.address.line         | line                 | 0..*  | string                                  |
+| Location.address.city         | city                 | 0..1  | string                                  |
+| Location.address.state        | state                | 0..1  | string                                  |
+| Location.address.postalCode   | postalCode           | 0..1  | string                                  |
+| Location.managingOrganization | managingOrganization | 0..1  | Reference(US Core Organization Profile) |
+
 #### 3-6-4-1 Example Location Resource
 
 An example mapping of a Location resource is shown here:

@@ -36,6 +36,38 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/
 
+The minimum fields to be provided in the US Core Encounter resource are:
+
+| R4 Hierarchical Name                           | R4 Name              | Card. | Type                                                             |
+|------------------------------------------------|----------------------|-------|------------------------------------------------------------------|
+| R4 Element                                     | R4/US Core           |       |                                                                  |
+| Encounter                                      | Encounter            | 0..*  |                                                                  |
+| Encounter.id                                   | id                   | 0..1  | id                                                               |
+| Encounter.identifier.system                    | system               | 1..1  | uri                                                              |
+| Encounter.identifier.value                     | value                | 1..1  | string                                                           |
+| Encounter.status                               | status               | 1..1  | code                                                             |
+| Encounter.statusHistory.status                 | status               | 1..1  | code                                                             |
+| Encounter.statusHistory.period                 | period               | 1..1  | Period                                                           |
+| Encounter.class                                | class                | 1..1  | Coding                                                           |
+| Encounter.classHistory.class                   | class                | 1..1  | Coding                                                           |
+| Encounter.classHistory.period                  | period               | 1..1  | Period                                                           |
+| Encounter.type                                 | type                 | 1..*  | CodeableConcept                                                  |
+| Encounter.subject                              | subject              | 1..1  | Reference(US Core Patient Profile)                               |
+| Encounter.participant                          | participant          | 0..*  | BackboneElement                                                  |
+| Encounter.participant.type                     | type                 | 0..*  | CodeableConcept                                                  |
+| Encounter.participant.period                   | period               | 0..1  | Period                                                           |
+| Encounter.participant.individual               | individual           | 0..1  | Reference(US Core Practitioner Profile)                          |
+| Encounter.period                               | period               | 0..1  | Period                                                           |
+| Encounter.reasonCode                           | reasonCode           | 0..*  | CodeableConcept                                                  |
+| Encounter.diagnosis                            | diagnosis            | 0..*  | BackboneElement                                                  |
+| Encounter.diagnosis.condition                  | condition            | 1..1  | Reference(US Core Condition Profile | US Core Procedure Profile) |
+| Encounter.diagnosis.rank                       | rank                 | 0..1  | positiveInt                                                      |
+| Encounter.hospitalization                      | hospitalization      | 0..1  | BackboneElement                                                  |
+| Encounter.hospitalization.dischargeDisposition | dischargeDisposition | 0..1  | CodeableConcept                                                  |
+| Encounter.location                             | location             | 0..*  | BackboneElement                                                  |
+| Encounter.location.location                    | location             | 1..1  | Reference(US Core Location Profile)                              |
+
+
 #### 3-6-3-1 Example Encounter Resource
 
 An example mapping of an Encounter resource is shown here:

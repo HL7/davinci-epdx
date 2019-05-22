@@ -296,6 +296,87 @@ can only resize using html  or css ;-(
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
+<p>The minimum fields to be provided in the US Core Location resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Location</td>
+      <td>Location</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Location.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Location.status</td>
+      <td>status</td>
+      <td>0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Location.name</td>
+      <td>name</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.telecom</td>
+      <td>telecom</td>
+      <td>0..*</td>
+      <td>ContactPoint</td>
+    </tr>
+    <tr>
+      <td>Location.address</td>
+      <td>address</td>
+      <td>0..1</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Location.address.line</td>
+      <td>line</td>
+      <td>0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.city</td>
+      <td>city</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.state</td>
+      <td>state</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.postalCode</td>
+      <td>postalCode</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.managingOrganization</td>
+      <td>managingOrganization</td>
+      <td>0..1</td>
+      <td>Reference(US Core Organization Profile)</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="3-6-4-1-example-location-resource">3-6-4-1 Example Location Resource</h4>
 
 <p>An example mapping of a Location resource is shown here:</p>
@@ -336,7 +417,7 @@ TODO: Add Location Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 22, 2019 00:26-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

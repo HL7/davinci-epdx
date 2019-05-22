@@ -407,6 +407,111 @@ can only resize using html  or css ;-(
   </tbody>
 </table>
 
+<p>The minimum fields to be provided in the US Core Patient resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient</td>
+      <td>Patient</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-race</td>
+      <td>us-core-race</td>
+      <td>0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-ethnicity</td>
+      <td>us-core-ethnicity</td>
+      <td>0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-birthsex</td>
+      <td>us-core-birthsex</td>
+      <td>0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier</td>
+      <td>identifier</td>
+      <td>1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.system</td>
+      <td>system</td>
+      <td>1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.value</td>
+      <td>value</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name</td>
+      <td>name</td>
+      <td>1..*</td>
+      <td>HumanName</td>
+    </tr>
+    <tr>
+      <td>Patient.name.family</td>
+      <td>family</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name.given</td>
+      <td>given</td>
+      <td>1..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.gender</td>
+      <td>gender</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.birthDate</td>
+      <td>birthDate</td>
+      <td>0..1</td>
+      <td>date</td>
+    </tr>
+    <tr>
+      <td>Patient.communication</td>
+      <td>communication</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Patient.communication.language</td>
+      <td>language</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+  </tbody>
+</table>
+
 <p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
 
 <p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
@@ -650,7 +755,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Sat, May 18, 2019 15:19-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 22, 2019 00:26-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
