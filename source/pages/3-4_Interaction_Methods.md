@@ -60,6 +60,10 @@ This operation is intended to simplify requests from a client application when r
 
 A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: https://www.hl7.org/fhir/operation-patient-everything.html
 
+The Patient-everything operation is provided in this IG as a method to address the uncertainty in the February 11, 2019 publication of the CMS Interoperability Notice of Proposed Rule Making (NPRM). The NPRM makes reference to a possible Payer push of member-authorized health data. The Patient-everything operation is identified as a potential method to package all of a member's health history into a records bundle for transmission. 
+
 The Patient-everything operation **SHOULD** be available as an operation via the Health Plan's FHIR API. 
 
-The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity.
+Member-authorized sharing of their health history **MAY** utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member's information. The OAuth2.0 access token used to give access to a Member's records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided by the relevant patient. In practical terms this means that a call to the [base]/Patient/$everything endpoint will return the same bundle of information as a call to the [base]/Patient/[id]/$everything because the authorization controls for member-authorized sharing only grant access to a single member's records.
+
+The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity such as another Health Plan.

@@ -23,6 +23,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section
 - (167) Add image of transformation flows to Overview section
 - (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping
 - (159) Fix section 6-2 for invalid title syntax
@@ -31,11 +32,7 @@ See the [Table of Contents](toc.html) for more information.
 - (148) Add Patient-everything operation as payload option
 - (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance
 - (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient 
-- Added Data Mapping section for Patient and Coverage
-- Changed definition of SMART-on-FHIR write to Provider EMR to support graceful degradation of capability for written data -  section 6-6-3
-- Fixed link from Section 3.3 to 2.8
-- Change Section Number format to fix links from Table of Contents 
-- Number sections for easier reference during comment period
+
 
 
 ### Authors
