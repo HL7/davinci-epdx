@@ -23,6 +23,8 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (171) Add example of ADT to FHIR conversion.
+- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.
 - (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section
 - (167) Add image of transformation flows to Overview section
 - (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping

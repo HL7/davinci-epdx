@@ -278,10 +278,9 @@ can only resize using html  or css ;-(
 <h3 id="3-4-3-patient-everything-via-alternate-secure-transport">3-4-3 Patient-everything via alternate secure transport</h3>
 
 <p>The FHIR Specification provides for a <a href="https://www.hl7.org/fhir/operation-patient-everything.html">Patient-everything operation</a>. 
-Two formats are supported:</p>
+The supported format is:</p>
 
 <ul>
-  <li>URL: [base]/Patient/$everything</li>
   <li>URL: [base]/Patient/[id]/$everything</li>
 </ul>
 
@@ -293,7 +292,7 @@ Two formats are supported:</p>
 
 <p>The Patient-everything operation <strong>SHOULD</strong> be available as an operation via the Health Plan’s FHIR API.</p>
 
-<p>Member-authorized sharing of their health history <strong>MAY</strong> utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member’s information. The OAuth2.0 access token used to give access to a Member’s records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided by the relevant patient. In practical terms this means that a call to the [base]/Patient/$everything endpoint will return the same bundle of information as a call to the [base]/Patient/[id]/$everything because the authorization controls for member-authorized sharing only grant access to a single member’s records.</p>
+<p>Member-authorized sharing of their health history <strong>MAY</strong> utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member’s information. The OAuth2.0 access token used to give access to a Member’s records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided by the relevant patient.</p>
 
 <p>The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans <strong>MAY</strong> enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity such as another Health Plan.</p>
 
@@ -326,7 +325,7 @@ Two formats are supported:</p>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.159  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, May 24, 2019 11:46-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.171  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Tue, May 28, 2019 15:14-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
