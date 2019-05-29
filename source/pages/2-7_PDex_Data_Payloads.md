@@ -6,7 +6,7 @@ active: 2-7 PDex Data Payloads
 
 The PDex IG defines four types of data payload:
 
-1. Member Clinical and Claims-derived History
+1. Member Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
 2. Healthcare Network Directory 
 3. Pharmacy Network Directory
 4. Medication Formulary
@@ -15,7 +15,7 @@ All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR 
 
 ### 2-7-1 Member Clinical and Claims-derived History
 
-The FHIR Resources that comprise the Member Clinical and Claims-derived history **SHOULD** include the following profiles:
+The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History"  **SHOULD** include the following profiles:
 
 #### 2-7-1-1 US Core
 
@@ -46,6 +46,8 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history 
 In addition US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
 In addition the Patient-everything operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of  FHIR resources for a member to be returned as a bundle. The Patient-everything operation is defined here: https://www.hl7.org/fhir/operation-patient-everything.html. 
+
+The FHIR bundle that is the output of the Patient-everything operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
 
 #### 2-7-1-2 Da Vinci PDex / HRex
 

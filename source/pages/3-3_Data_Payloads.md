@@ -6,7 +6,7 @@ active: 3-3 Data Payloads
 
 The PDex IG defines four types of data payload:
 
-1. Member Clinical and Claims-derived History
+1. Member Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
 2. Healthcare Network Directory 
 3. Pharmacy Network Directory
 4. Medication Formulary
