@@ -450,13 +450,6 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   </thead>
   <tbody>
     <tr>
-      <td>R4 Element</td>
-      <td>R4/US Core</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter</td>
       <td>Encounter</td>
       <td>0..*</td>
@@ -468,6 +461,13 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
       <td>id</td>
       <td>0..1</td>
       <td>id</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier</td>
+      <td>identifier</td>
+      <td>0..*</td>
+      <td>Identifier</td>
       <td> </td>
     </tr>
     <tr>
@@ -492,38 +492,10 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.statusHistory.status</td>
-      <td>status</td>
-      <td>1..1</td>
-      <td>code</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.statusHistory.period</td>
-      <td>period</td>
-      <td>1..1</td>
-      <td>Period</td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.class</td>
       <td>class</td>
       <td>1..1</td>
       <td>Coding</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.classHistory.class</td>
-      <td>class</td>
-      <td>1..1</td>
-      <td>Coding</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.classHistory.period</td>
-      <td>period</td>
-      <td>1..1</td>
-      <td>Period</td>
       <td> </td>
     </tr>
     <tr>
@@ -674,7 +646,7 @@ TODO: Add Encounter Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.171  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Tue, May 28, 2019 15:14-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.172  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 29, 2019 09:14-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

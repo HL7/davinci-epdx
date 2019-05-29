@@ -40,17 +40,13 @@ The minimum fields to be provided in the US Core Encounter resource are:
 
 | R4 Hierarchical Name                           | R4 Name              | Card. | Type                                                             |
 |------------------------------------------------|----------------------|-------|------------------------------------------------------------------|
-| R4 Element                                     | R4/US Core           |       |                                                                  |
 | Encounter                                      | Encounter            | 0..*  |                                                                  |
 | Encounter.id                                   | id                   | 0..1  | id                                                               |
+| Encounter.identifier                           | identifier           | 0..*  | Identifier                                                       |
 | Encounter.identifier.system                    | system               | 1..1  | uri                                                              |
 | Encounter.identifier.value                     | value                | 1..1  | string                                                           |
 | Encounter.status                               | status               | 1..1  | code                                                             |
-| Encounter.statusHistory.status                 | status               | 1..1  | code                                                             |
-| Encounter.statusHistory.period                 | period               | 1..1  | Period                                                           |
 | Encounter.class                                | class                | 1..1  | Coding                                                           |
-| Encounter.classHistory.class                   | class                | 1..1  | Coding                                                           |
-| Encounter.classHistory.period                  | period               | 1..1  | Period                                                           |
 | Encounter.type                                 | type                 | 1..*  | CodeableConcept                                                  |
 | Encounter.subject                              | subject              | 1..1  | Reference(US Core Patient Profile)                               |
 | Encounter.participant                          | participant          | 0..*  | BackboneElement                                                  |
@@ -66,7 +62,6 @@ The minimum fields to be provided in the US Core Encounter resource are:
 | Encounter.hospitalization.dischargeDisposition | dischargeDisposition | 0..1  | CodeableConcept                                                  |
 | Encounter.location                             | location             | 0..*  | BackboneElement                                                  |
 | Encounter.location.location                    | location             | 1..1  | Reference(US Core Location Profile)                              |
-
 
 #### 3-6-3-1 Example Encounter Resource
 
