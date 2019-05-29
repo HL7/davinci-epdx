@@ -233,6 +233,21 @@ Where A US Core FHIR R4 Resource is not defined Health Plans <strong>SHALL</stro
 
 <p>The mapping of patient, coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.</p>
 
+<p>Mapping is also required when data is exchanged between systems. The PDex IG exchanges are centered around Member/Patients. FHIR Platforms generate their own Identifiers when creating resources. Consequently a Patient resource in one system can have a different FHIR Resource ID from a Patient in another system. When a bundle of resources are retrieved from a Health Plan’s FHIR API it will be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything FHIR bundle.</p>
+
+<p>In the steps below “Received” refers to the information requested from a Health Plan’s FHIR API. “Target” refers to the target FHIR API of the organization making the request. In the Payer to Payer exchange scenario the New Plan is the Target and the Old Health Plan provides the “Received” bundle.</p>
+
+<ol>
+  <li>Use the received Patient resource to match to the target Patient resource. Use the Target Patient Resource ID for any Patient references used in subsequently imported records from the Received bundle.</li>
+  <li>Update the Target Patient Resource to add the Received Patient Identifiers from the Received Patient Resource.</li>
+  <li>Identify Received Practitioner resources in the bundle and use NPI, where available, to map to the Target Practitioner Resources. If the Practitioner is not found in the Target system create a record. Use the Target Practitioner Resource ID for any references to this Practitioner in the received bundle.</li>
+  <li>Identify Received Organization resources in the bundle and use NPI, where available, to map to the Target Organization Resources. If the Organization is not found in the Target system create a record. Use the Target Organization Resource ID for any references to this Organization in the received bundle.</li>
+  <li>Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system create a record. Use the Target Organization Resource ID for any references to this Location in the received bundle.</li>
+</ol>
+
+<p>It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.</p>
+
+
 
 
   <!-- ==============END CONTENT END CONTENT=================== -->
@@ -262,7 +277,7 @@ Where A US Core FHIR R4 Resource is not defined Health Plans <strong>SHALL</stro
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.180  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 29, 2019 15:40-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.180  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 29, 2019 16:42-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
