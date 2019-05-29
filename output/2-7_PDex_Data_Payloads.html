@@ -222,7 +222,7 @@ can only resize using html  or css ;-( -->
 <p>The PDex IG defines four types of data payload:</p>
 
 <ol>
-  <li>Member Clinical and Claims-derived History</li>
+  <li>Member Clinical and Claims-derived History. Referred to in this IG as the “Member Health History”</li>
   <li>Healthcare Network Directory</li>
   <li>Pharmacy Network Directory</li>
   <li>Medication Formulary</li>
@@ -232,7 +232,7 @@ can only resize using html  or css ;-( -->
 
 <h3 id="2-7-1-member-clinical-and-claims-derived-history">2-7-1 Member Clinical and Claims-derived History</h3>
 
-<p>The FHIR Resources that comprise the Member Clinical and Claims-derived history <strong>SHOULD</strong> include the following profiles:</p>
+<p>The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the “Member Health History”  <strong>SHOULD</strong> include the following profiles:</p>
 
 <h4 id="2-7-1-1-us-core">2-7-1-1 US Core</h4>
 
@@ -266,11 +266,13 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
 
 <p>In addition the Patient-everything operation <strong>SHOULD</strong> be supported to enable a client application to request all, or a date-defined subset of  FHIR resources for a member to be returned as a bundle. The Patient-everything operation is defined here: https://www.hl7.org/fhir/operation-patient-everything.html.</p>
 
+<p>The FHIR bundle that is the output of the Patient-everything operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle <strong>SHOULD</strong> be compiled as a non-paged bundle.</p>
+
 <h4 id="2-7-1-2-da-vinci-pdex--hrex">2-7-1-2 Da Vinci PDex / HRex</h4>
 
 <ul>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html"> HRex Coverage</a></li>
-  <li><a name="1a375b39-5db0-49bf-a646-d81a16031218">​</a><a href="null">PDex MedicationDispense</a> <strong><em>TODO</em></strong> (Add Link)</li>
+  <li><a name="647bb910-aab0-40ed-9354-6bc5fda9c0f2">​</a><a href="null">PDex MedicationDispense</a> <strong><em>TODO</em></strong> (Add Link)</li>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html">HRex Provenance</a></li>
 </ul>
 
@@ -654,7 +656,7 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.172  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 29, 2019 09:14-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.180  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, May 29, 2019 15:40-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

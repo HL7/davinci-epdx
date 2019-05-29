@@ -23,6 +23,9 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.
+- (174) Add use of NDJson Bulk FHIR format to Patient-everything. 
+- (173) Member Health History reference in Payloads section
 - (172) Minor changes to Encounter table of US Core Essential fields.
 - (171) Add example of ADT to FHIR conversion.
 - (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.
