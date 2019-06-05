@@ -1,7 +1,7 @@
 ---
-title: 7 Credits
+title: 8 Credits
 layout: default
-active: 7 Credits
+active: 8 Credits
 ---
 
 **Primary authors:**

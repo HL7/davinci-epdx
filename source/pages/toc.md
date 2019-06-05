@@ -51,4 +51,5 @@ active: toc
             * <a href="6-6-2_Return_Visit_with_Provider.html">6-6-2 Return Visit with Provider</a>
             * <a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html">6-6-3 FHIR Profiles and CDS Hooks Context</a>
         * <a href="6-7_Handling_Data_Provenance.html">6-7 Handling Data Provenance</a>
-    * <a href="7_Credits.html">7 Credits</a>
+    * <a href="7_Member-Authorized_OAuth2_Exchange.html">7 Member-Authorized OAuth2 Exchange</a>
+    * <a href="8_Credits.html">8 Credits</a>
