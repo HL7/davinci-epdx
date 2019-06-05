@@ -1,0 +1,88 @@
+{
+	"resourceType": "StructureDefinition",
+	"id": "hrex-provenance",
+	"meta": {
+		"versionId": "14",
+		"lastUpdated": "2019-03-01T01:48:50.000-05:00",
+		"security": [
+			{
+				"system": "https://trifolia-fhir.lantanagroup.com/security",
+				"code": "everyone^write"
+			},
+			{
+				"system": "https://trifolia-fhir.lantanagroup.com/security",
+				"code": "everyone^read"
+			}
+		]
+	},
+	"extension": [],
+	"url": "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-provenance",
+	"name": "HRex Provenance",
+	"status": "draft",
+	"fhirVersion": "4.0.0",
+	"kind": "resource",
+	"abstract": false,
+	"type": "Provenance",
+	"baseDefinition": "http://hl7.org/fhir/StructureDefinition/Provenance",
+	"derivation": "constraint",
+	"differential": {
+		"element": [
+			{
+				"id": "Provenance",
+				"path": "Provenance"
+			},
+			{
+				"id": "Provenance.occurred[x]",
+				"path": "Provenance.occurred[x]",
+				"min": 1,
+				"mustSupport": true
+			},
+			{
+				"id": "Provenance.agent",
+				"path": "Provenance.agent",
+				"mustSupport": true
+			},
+			{
+				"id": "Provenance.agent.who",
+				"path": "Provenance.agent.who",
+				"type": [
+					{
+						"code": "Reference",
+						"targetProfile": [
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitioner",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitionerrole",
+							"http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-patient",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-device",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-organization"
+						]
+					}
+				],
+				"mustSupport": true
+			},
+			{
+				"id": "Provenance.agent.onBehalfOf",
+				"path": "Provenance.agent.onBehalfOf",
+				"type": [
+					{
+						"code": "Reference",
+						"targetProfile": [
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitioner",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-practitionerrole",
+							"http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-patient",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-device",
+							"http://hl7.org/fhir/us/core-r4/StructureDefinition/us-core-organization"
+						]
+					}
+				],
+				"mustSupport": true
+			},
+			{
+				"id": "Provenance.signature",
+				"path": "Provenance.signature",
+				"mustSupport": true
+			}
+		]
+	}
+}
