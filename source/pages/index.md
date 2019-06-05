@@ -23,6 +23,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (186) Value Sets to be resolved later
 - (184) Raise OAuth2.0 to higher level in IG
 - (181) Add section on mapping of IDs in bundles (section 3-6)
 - (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.
