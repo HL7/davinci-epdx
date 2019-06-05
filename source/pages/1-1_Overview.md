@@ -12,7 +12,7 @@ The purpose of this Implementation Guide is to enable data to be exchanged betwe
 
 The Health Plan **SHALL** transform data received from both clinical and claims sources that they store in their Systems of Record into HL7 FHIR R4 resources for the purposes of this exchange.
 
-The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with  [X12](http://www.x12.org).  
+The Value Sets and coding sets used to express data are subject to review and reconciliation with code sets from standards such as [X12](http://www.x12.org).  
 
 The schematic shown below provides an overview of this transformation.
 
