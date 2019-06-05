@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-pdex"/>
     <meta>
-        <versionId value="184"/>
-        <lastUpdated value="2019-06-04T23:26:02.000-04:00"/>
+        <versionId value="190"/>
+        <lastUpdated value="2019-06-05T10:48:28.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^write"/>
@@ -15,7 +15,7 @@
         </security>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-    <version value="0.0.9.183"/>
+    <version value="0.0.9.189"/>
     <name value="DaVinciPayerDataExchange"/>
     <title value="Da Vinci Payer Data exchange"/>
     <status value="draft"/>
@@ -23,7 +23,7 @@
     <contact>
         <name value="Mark Scrimshire (mark@ekivemark.com)"/>
     </contact>
-    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (183) Raise OAuth2.0 to higher level in IG&#xA;- (181) Add section on mapping of IDs in bundles (section 3-6)&#xA;- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.&#xA;- (174) Add use of NDJson Bulk FHIR format to Patient-everything. &#xA;- (173) Member Health History reference in Payloads section&#xA;- (172) Minor changes to Encounter table of US Core Essential fields.&#xA;- (171) Add example of ADT to FHIR conversion.&#xA;- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.&#xA;- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section&#xA;- (167) Add image of transformation flows to Overview section&#xA;- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping&#xA;- (159) Fix section 6-2 for invalid title syntax&#xA;- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review&#xA;- (149) Removing MedicationDispense to enable IG Build&#xA;- (148) Add Patient-everything operation as payload option&#xA;- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance&#xA;- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient &#xA;&#xA;"/>
+    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;The Payer Data Exchange (PDex) Implementation Guide covers the exchange of:&#xA;- Claims-based information&#xA;- Clinical Information (such as Lab Results, Allergies and Conditions)&#xA;&#xA;The IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. &#xA;&#xA;This IG covers the exchange of a Member's Health History in the following scenarios:&#xA;- Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR&#xA;- Member-authorized Health Plan to Health Plan exchange&#xA;- Member-authorized Health Plan to Third-Party Application exchange&#xA;&#xA;The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.&#xA;&#xA;There are items in this guide that will be updated during ballot resolution. This includes:&#xA;- Value Sets&#xA;- X12 Vocabulary&#xA;- Examples&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (186) Items to be resolved. Update Home Page&#xA;- (184) Raise OAuth2.0 to higher level in IG&#xA;- (181) Add section on mapping of IDs in bundles (section 3-6)&#xA;- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.&#xA;- (174) Add use of NDJson Bulk FHIR format to Patient-everything. &#xA;- (173) Member Health History reference in Payloads section&#xA;- (172) Minor changes to Encounter table of US Core Essential fields.&#xA;- (171) Add example of ADT to FHIR conversion.&#xA;- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.&#xA;- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section&#xA;- (167) Add image of transformation flows to Overview section&#xA;- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping&#xA;- (159) Fix section 6-2 for invalid title syntax&#xA;- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review&#xA;- (149) Removing MedicationDispense to enable IG Build&#xA;- (148) Add Patient-everything operation as payload option&#xA;- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance&#xA;- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient &#xA;&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
@@ -37,6 +37,14 @@
         <version value="current"/>
     </dependsOn>
     <definition>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/hrex-provenance"/>
+                <display value="HRex Provenance"/>
+            </reference>
+            <name value="HRex Provenance"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
