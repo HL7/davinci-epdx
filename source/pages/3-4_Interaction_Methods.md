@@ -17,6 +17,11 @@ Clinical systems will use the specification and workflows defined by [CDS Hooks]
 
 SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two principle ways:
 
+1. When a new patient books an appointment
+2. When a patient returns for an appointment after a significant period (for example, after wintering in a different region).
+
+The CDS Hooks and SMART-on-FHIR application configuration is detailed in [Section 6](/6_CDS-Hooks.html).
+
 #### 3-4-1-1 Ad-hoc PDex Member History Request
 
 CDS Hooks provides a mechanism for providers/clinicians to request a medical history for their patient from the Health Plan as part of their regular workflow - when scheduling an appointment. However, sometimes clinicians may be interested updating the patient's medical history without going through the appointment booking steps within their EMR. I.e. They dont want to actually create an appointment, they just want to ask the question Has anything new happened to my patient at some other location?"
@@ -40,7 +45,6 @@ An overview of the transaction flow is shown below:
 	</tr>	
 </table>
 	
-
  
 #### 3-4-1-2 Hook Actions
 
@@ -59,6 +63,8 @@ The Authorization screen **MAY** provide options to allow the Member to limit th
 After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application. 
 
 The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. 
+
+The OAuth2.0 Member-authorized exchange is detailed in [Section 7](/7_Member-Authorized OAuth2 Exchange.html).
 
 An overview of the OAuth2.0 Flow using the FHIR API is shown below:
 <table>

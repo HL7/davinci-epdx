@@ -29,4 +29,6 @@ The Member-mediated Information Exchange method will build upon established OAut
 The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/).
 The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/).
 
+The OAuth2.0-based exchange is covered in detail in [Section 7]()
+
 
