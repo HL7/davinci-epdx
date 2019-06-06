@@ -20,27 +20,32 @@ active: home
 This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.
 
-The Payer Data Exchange (PDex) Implementation Guide covers the exchange of:
+The Payer Data Exchange (PDex) Implementation Guide (IG) covers the exchange of:
 - Claims-based information
 - Clinical Information (such as Lab Results, Allergies and Conditions)
 
 The IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. 
 
 This IG covers the exchange of a Member's Health History in the following scenarios:
-- Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR
+- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR
 - Member-authorized Health Plan to Health Plan exchange
 - Member-authorized Health Plan to Third-Party Application exchange
 
 The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.
 
-There are items in this guide that will be updated during ballot resolution. This includes:
+**There are items in this guide that are subject to update**. This includes:
 - Value Sets
-- X12 Vocabulary
+- Vocabularies (X12, NUBC etc.)
 - Examples
+
+**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).
 
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (204) Image updates. Minor changes through 3-5.
+- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram
+- (191) testing build issues
 - (186) Items to be resolved. Update Home Page
 - (184) Raise OAuth2.0 to higher level in IG
 - (181) Add section on mapping of IDs in bundles (section 3-6)
@@ -53,12 +58,6 @@ See the [Table of Contents](toc.html) for more information.
 - (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section
 - (167) Add image of transformation flows to Overview section
 - (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping
-- (159) Fix section 6-2 for invalid title syntax
-- (158) Minor changes in Introduction section, Added DocumentReference Graceful write degradation, full IG review
-- (149) Removing MedicationDispense to enable IG Build
-- (148) Add Patient-everything operation as payload option
-- (147) Add MedicationDispense Resource, Add additional sections for Data Mapping, Expand on Data Provenance
-- (146) Add link to CMS BB2.0 Field Glossary, Add example TODO to Patient 
 
 
 
