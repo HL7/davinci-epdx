@@ -20,11 +20,15 @@ active: home
 This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.
 
-The Payer Data Exchange (PDex) Implementation Guide (IG) covers the exchange of:
+**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**
+
+This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans and with Third-Party Applications.
+
+This IG covers the exchange of:
 - Claims-based information
 - Clinical Information (such as Lab Results, Allergies and Conditions)
 
-The IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. 
+This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. 
 
 This IG covers the exchange of a Member's Health History in the following scenarios:
 - Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR

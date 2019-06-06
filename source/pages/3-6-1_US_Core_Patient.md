@@ -30,7 +30,7 @@ The Member Number will be entered in the ***identifier** field. The code **MB** 
 
 <pre>
 {
-      "use" : member",
+      "use" : "member",
       "type" : {
         "coding" : [
           {
@@ -48,6 +48,7 @@ The Member Number will be entered in the ***identifier** field. The code **MB** 
 
 
 #### 3-6-1-1 Health Plan Mapping Assistance
+
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Patient profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html). This is shown below as an assistance  to implementers:
 
 | Line | PayerSource | CMS BB 2.0 Field      | Data Descriptor        | FHIR Profile    | Profile Field               | ValueSet                                                       | Notes                |
@@ -213,7 +214,7 @@ An example mapping of a Patient resource is shown here:
   ],
   "identifier" : [
     {
-      "use" : member",
+      "use" : "member",
       "type" : {
         "coding" : [
           {

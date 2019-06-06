@@ -4,9 +4,9 @@ layout: default
 active: 3-6-10 US Core Immunization
 ---
 
-If a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the Immunization resource.
+Where a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the [US Core Immunization](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-immunization.html) resource.
 
-The minimum fields to be provided in the US Core Immunization resource are:
+The essential fields to be provided in the US Core Immunization resource are:
 
 | R4 Hierarchical Name                       | R4 Name       | Card. | Type                                                      |
 |--------------------------------------------|---------------|-------|-----------------------------------------------------------|
@@ -20,3 +20,47 @@ The minimum fields to be provided in the US Core Immunization resource are:
 | Immunization.primarySource                 | primarySource | 1..1  | boolean                                                   |
 | Immunization.performer.actor               | actor         | 1..1  | Reference(Practitioner | PractitionerRole | Organization) |
 | Immunization.protocolApplied.doseNumber[x] | doseNumber[x] | 1..1  | positiveInt, string                                       |
+
+
+#### 3-6-10-1 Example Immunization Resource:
+
+An example mapping of an Immunization resource is shown below:
+
+<pre>
+{
+  "resourceType" : "Immunization",
+  "id" : "imm-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: imm-1</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: influenza, injectable, quadrivalent, contains preservative <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/sid/cvx code '158' = 'influenza, injectable, quadrivalent', given as 'influenza, injectable, quadrivalent, contains preservative'}; {http://hl7.org/fhir/sid/ndc code '49281-0621-15' = '49281-0621-15', given as 'FLUZONE QUADRIVALENT'})</span></p><p><b>patient</b>: <a href=\"Patient-example.html\">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007</a></p><p><b>occurrence</b>: Jan 8, 2016, 12:00:00 AM</p><p><b>primarySource</b>: false</p></div>"
+  },
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [
+      {
+        "system" : "http://hl7.org/fhir/sid/cvx",
+        "code" : "158",
+        "display" : "influenza, injectable, quadrivalent, contains preservative"
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/ndc",
+        "code" : "49281-0621-15",
+        "display" : "FLUZONE QUADRIVALENT"
+      }
+    ]
+  },
+  "patient" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "occurrenceDateTime" : "2016-01-08",
+  "primarySource" : false
+}
+</pre>
+
+
