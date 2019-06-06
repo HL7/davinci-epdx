@@ -4,7 +4,26 @@ layout: default
 active: 3-6-2 Coverage
 ---
 
-An example mapping of Health Plan data for Members to the [HRex Coverage profile] is shown below:
+The Coverage resource is profiled in the Da Vinci HRex IG. **TODO** Include link to profile.
+
+The minimum fields to be provided in the Coverage resource are:
+
+| R4 Hierarchical Name                      | R4 Name     | Card. | Type                                             |
+|-------------------------------------------|-------------|-------|--------------------------------------------------|
+| Coverage                                  | Coverage    |       | DomainResource                                   |
+| Coverage.identifier                       | identifier  | 0..*  | Identifier                                       |
+| Coverage.status                           | status      | 0..1  | code                                             |
+| Coverage.beneficiary                      | beneficiary | 0..1  | Reference(Patient)                               |
+| Coverage.payor                            | payor       | 0..*  | Reference(Organization| Patient | RelatedPerson) |
+| Coverage.class                            | class       | 0..*  | BackboneElement                                  |
+| Coverage.class.type                       | type        | 1..1  | Coding                                           |
+| Coverage.class.value                      | value       | 1..1  | string                                           |
+| Coverage.costToBeneficiary.value[x]       | value[x]    | 1..1  |                                                  |
+| Coverage.costToBeneficiary.exception.type | type        | 1..1  | CodeableConcept                                  |
+
+
+#### 3-6-2-1 Health Plan Mapping Assistance
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
 
 | Line | Payer Source Record | Payer Source Field | Data Descriptor             | FHIR Profile | Profile Field | ValueSet                                              | Notes                   |
 |------|-------------------|--------------------|----------------------------|--------------|---------------|-------------------------------------------------------|-------------------------|
@@ -23,33 +42,206 @@ An example mapping of Health Plan data for Members to the [HRex Coverage profile
 
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
 https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
 
 Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
 https://bluebutton.cms.gov/resources/variables/bene_id/
 
-The minimum fields to be provided in the Coverage resource are:
 
-| R4 Hierarchical Name                      | R4 Name     | Card. | Type                                             |
-|-------------------------------------------|-------------|-------|--------------------------------------------------|
-| Coverage                                  | Coverage    |       | DomainResource                                   |
-| Coverage.identifier                       | identifier  | 0..*  | Identifier                                       |
-| Coverage.status                           | status      | 0..1  | code                                             |
-| Coverage.beneficiary                      | beneficiary | 0..1  | Reference(Patient)                               |
-| Coverage.payor                            | payor       | 0..*  | Reference(Organization| Patient | RelatedPerson) |
-| Coverage.class                            | class       | 0..*  | BackboneElement                                  |
-| Coverage.class.type                       | type        | 1..1  | Coding                                           |
-| Coverage.class.value                      | value       | 1..1  | string                                           |
-| Coverage.costToBeneficiary.value[x]       | value[x]    | 1..1  |                                                  |
-| Coverage.costToBeneficiary.exception.type | type        | 1..1  | CodeableConcept                                  |
-
-#### 3-6-1-2 Example Coverage Resource
+#### 3-6-2-2 Example Coverage Resource
 
 An example mapping of a Coverage resource is shown here:
 
 <pre>
-TODO: Add Coverage Resource in JSON format
+{
+  "resourceType": "Coverage",
+  "id": "9876B1",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the coverage</div>"
+  },
+  "identifier": [
+    {
+      "system": "http://benefitsinc.com/certificate",
+      "value": "12345"
+    }
+  ],
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "EHCPOL",
+        "display": "extended healthcare"
+      }
+    ]
+  },
+  "policyHolder": {
+    "reference": "http://benefitsinc.com/FHIR/Organization/CBI35"
+  },
+  "subscriber": {
+    "reference": "Patient/4"
+  },
+  "beneficiary": {
+    "reference": "Patient/4"
+  },
+  "dependent": "0",
+  "relationship": {
+    "coding": [
+      {
+        "code": "self"
+      }
+    ]
+  },
+  "period": {
+    "start": "2011-05-23",
+    "end": "2012-05-23"
+  },
+  "payor": [
+    {
+      "reference": "Organization/2"
+    }
+  ],
+  "class": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "group"
+          }
+        ]
+      },
+      "value": "CB135",
+      "name": "Corporate Baker's Inc. Local #35"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "subgroup"
+          }
+        ]
+      },
+      "value": "123",
+      "name": "Trainee Part-time Benefits"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "plan"
+          }
+        ]
+      },
+      "value": "B37FC",
+      "name": "Full Coverage: Medical, Dental, Pharmacy, Vision, EHC"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "subplan"
+          }
+        ]
+      },
+      "value": "P7",
+      "name": "Includes afterlife benefits"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "class"
+          }
+        ]
+      },
+      "value": "SILVER",
+      "name": "Silver: Family Plan spouse only"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "subclass"
+          }
+        ]
+      },
+      "value": "Tier2",
+      "name": "Low deductable, max $20 copay"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "sequence"
+          }
+        ]
+      },
+      "value": "9"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "rxid"
+          }
+        ]
+      },
+      "value": "MDF12345"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "rxbin"
+          }
+        ]
+      },
+      "value": "987654"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "rxgroup"
+          }
+        ]
+      },
+      "value": "M35PT"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "rxpcn"
+          }
+        ]
+      },
+      "value": "234516"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+            "code": "sequence"
+          }
+        ]
+      },
+      "value": "9"
+    }
+  ]
+}
 </pre>
 

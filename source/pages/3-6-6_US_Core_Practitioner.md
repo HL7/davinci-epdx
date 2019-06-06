@@ -4,30 +4,9 @@ layout: default
 active: 3-6-6 US Core Practitioner
 ---
 
-An example mapping of Health Plan data for Members to the [US Core Practitioner profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html) is shown below:
+The  [US Core Practitioner profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
-| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile         | Profile Field     | ValueSet | Notes |
-|------|-------------------|------------------|-------------------------------|----------------------|-------------------|----------|-------|
-| 1.1  | Claim-Provider    |                  | Claim billing provider NPI    | US Core Practitioner | .identifier.value |          |       |
-| 3.1  | Claim-Provider    |                  | Claim attending physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 6.1  | Claim-Provider    |                  | Claim referring provider NPI  | US Core Practitioner | .identifier.value |          |       |
-| 8.1  | Claim-Provider    |                  | Claim performing provider NPI | US Core Practitioner | .identifier.value |          |       |
-| 10.1 | Claim-Provider    |                  | Claim operating physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 12.1 | Claim-Provider    |                  | Claim other physician NPI     | US Core Practitioner | .identifier.value |          |       |
-| 14.1 | Claim-Provider    |                  | Claim rendering physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 17.1 | Claim-Provider    |                  | Claim PCP                     | US Core Practitioner | .identifier.value |          |       |
-
-
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
-https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/
-
-The minimum fields to be provided in the US Core Practitioner resource are:
+The essential fields to be provided in the US Core Practitioner resource are:
 
 | R4 Hierarchical Name            | R4 Name      | Card. | Type            |
 |---------------------------------|--------------|-------|-----------------|
@@ -40,12 +19,81 @@ The minimum fields to be provided in the US Core Practitioner resource are:
 | Practitioner.name.family        | family       | 1..1  | string          |
 | Practitioner.qualification.code | code         | 1..1  | CodeableConcept |
 
-#### 3-6-6-1 Example Practitioner Resource
+
+#### 3-6-6-1 Health Plan Mapping Assistance
+
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Practitioner profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html). This is shown below as an assistance  to implementers:
+
+| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile         | Profile Field     | ValueSet | Notes |
+|------|-------------------|------------------|-------------------------------|----------------------|-------------------|----------|-------|
+| 1.1  | Claim-Provider    |                  | Claim billing provider NPI    | US Core Practitioner | .identifier.value |          |       |
+| 3.1  | Claim-Provider    |                  | Claim attending physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 6.1  | Claim-Provider    |                  | Claim referring provider NPI  | US Core Practitioner | .identifier.value |          |       |
+| 8.1  | Claim-Provider    |                  | Claim performing provider NPI | US Core Practitioner | .identifier.value |          |       |
+| 10.1 | Claim-Provider    |                  | Claim operating physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 12.1 | Claim-Provider    |                  | Claim other physician NPI     | US Core Practitioner | .identifier.value |          |       |
+| 14.1 | Claim-Provider    |                  | Claim rendering physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 17.1 | Claim-Provider    |                  | Claim PCP                     | US Core Practitioner | .identifier.value |          |       |
+
+Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
+
+https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
+
+Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
+
+https://bluebutton.cms.gov/resources/variables/bene_id/
+https://bluebutton.cms.gov/resources/variables/dob_dt/
+
+#### 3-6-6-2 Example Practitioner Resource
 
 An example mapping of an Practitioner resource is shown here:
 
 <pre>
-TODO: Add Practitioner Resource in JSON format
+{
+  "resourceType" : "Practitioner",
+  "id" : "practitioner-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: practitioner-1</p><p><b>meta</b>: </p><p><b>identifier</b>: 9941339108, 25456</p><p><b>name</b>: Ronald Bone </p><p><b>address</b>: 1003 Healthcare Drive Amherst MA 01002 (HOME)</p></div>"
+  },
+  "identifier" : [
+    {
+      "system" : "http://hl7.org.fhir/sid/us-npi",
+      "value" : "9941339108"
+    },
+    {
+      "system" : "http://www.acme.org/practitioners",
+      "value" : "25456"
+    }
+  ],
+  "name" : [
+    {
+      "family" : "Bone",
+      "given" : [
+        "Ronald"
+      ],
+      "prefix" : [
+        "Dr"
+      ]
+    }
+  ],
+  "address" : [
+    {
+      "use" : "home",
+      "line" : [
+        "1003 Healthcare Drive"
+      ],
+      "city" : "Amherst",
+      "state" : "MA",
+      "postalCode" : "01002"
+    }
+  ]
+}
 </pre>
 
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Practitioner Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html).

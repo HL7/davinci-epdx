@@ -16,7 +16,7 @@ The fields in the context of the CDS Hooks call are used as follows:
 - userid: used to identify the provider requesting the information
 - patientId: used to identify the patient/subject in the EMR system
 - encounterid: used to identify the encounter in the provider's EMR
-- subscriberId: used to describe the unique identifier for a health plan member. This identifier can be found in the Coverage resource as subscriber.id.
+- memberId: used to describe the unique identifier for a health plan member. This identifier can be found in the Coverage resource as subscriber.id.
 - accessJwt: Used to provide secure access into the Provider's EMR system in order to access the Patient record.
 
 <pre>
@@ -37,7 +37,7 @@ The fields in the context of the CDS Hooks call are used as follows:
     "patientId": "EMR1239876",
     "encounterId": "654",
     "appointments": [],
-    "subscriberId": "HP567123489",
+    "memberId": "HP567123489",
   }
 }
 </pre>

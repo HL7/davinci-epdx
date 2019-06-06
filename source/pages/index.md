@@ -43,6 +43,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (207) Data mapping updates.
 - (204) Image updates. Minor changes through 3-5.
 - (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram
 - (191) testing build issues

@@ -247,6 +247,9 @@ Where A US Core FHIR R4 Resource is not defined Health Plans <strong>SHALL</stro
 
 <p>It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.</p>
 
+<p><strong>Providing data in sub-element fields</strong></p>
+
+<p>In this data mapping section each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required the Health Plan <strong>SHOULD</strong> populate the field, or use a <a href="https://www.hl7.org/fhir/v3/NullFlavor/cs.html">NULL Flavor</a>, unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of “0..1” or “0..*” the sub-element field does not need to be populated.</p>
 
 
 
@@ -277,7 +280,7 @@ Where A US Core FHIR R4 Resource is not defined Health Plans <strong>SHALL</stro
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.206  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Jun 5, 2019 21:51-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.207  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 01:29-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

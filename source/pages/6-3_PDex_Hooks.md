@@ -24,7 +24,7 @@ It is possible that this hook will change over the course of the review/approval
 
 This IG defines an extension to the appointment-book hook. The additional optional context fields are:
 
-- SubscirberId (optional): The number that identifies the unique person in the health plan system
+- MemberId (optional): The number that identifies the unique person in the health plan system
 
 NOTE: Even pre-existing hooks are not yet locked down as normative and similar changes are possible, though perhaps less likely.
 
@@ -48,7 +48,7 @@ A sample of the CDS Hook for appointment-book is included below:
     "patientId" : "EMR1239876",
     "encounterId" : "654",
     "appointments" : [],
-    "subscriberId" : "HP567123489",
+    "memberId" : "HP567123489",
 		}
   }
 </pre>
