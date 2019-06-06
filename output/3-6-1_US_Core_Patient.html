@@ -228,186 +228,9 @@ can only resize using html  or css ;-(
 
 <!--page source: 3-6-1_US_Core_Patient.md-->
 
-<p>An example mapping of Health Plan data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html">US Core Patient profile</a> is shown below:</p>
+<p>The  <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html">US Core Patient profile</a>  <strong>SHALL</strong> be used to express a members demographic information.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Line</th>
-      <th>PayerSource</th>
-      <th>CMS BB 2.0 Field</th>
-      <th>Data Descriptor</th>
-      <th>FHIR Profile</th>
-      <th>Profile Field</th>
-      <th>ValueSet</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.1</td>
-      <td>Member</td>
-      <td>BENE_ID</td>
-      <td>Patientid</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>2.1</td>
-      <td>Member</td>
-      <td>DOB_DT</td>
-      <td>Date of birth</td>
-      <td>US Core Patient</td>
-      <td>.birthDate</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>3.1</td>
-      <td>Member</td>
-      <td> </td>
-      <td>Date of Death</td>
-      <td>US Core Patient</td>
-      <td>.deceased[dateTime]</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>4.1</td>
-      <td>Member</td>
-      <td>BENE_COUNTY_CD</td>
-      <td>County</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.district</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>5.1</td>
-      <td>Member</td>
-      <td>BENE_STATE_CD</td>
-      <td>State</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.state</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>6.1</td>
-      <td>Member</td>
-      <td>BENE_CNTY_CD</td>
-      <td>Country</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.country</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>7.1</td>
-      <td>Member</td>
-      <td>BENE_RACE_CD</td>
-      <td>Race code</td>
-      <td>US Core Patient</td>
-      <td>.us-core-race</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>8.1</td>
-      <td>Member</td>
-      <td> </td>
-      <td>Ethnicity</td>
-      <td>US Core Patient</td>
-      <td>.us-core-ethnicity</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>9.1</td>
-      <td>Member</td>
-      <td>GNDR_CD</td>
-      <td>Gender code</td>
-      <td>US Core Patient</td>
-      <td>.gender</td>
-      <td>http://build.fhir.org/valueset-administrative-gender.html</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>10.1</td>
-      <td>Member</td>
-      <td> </td>
-      <td>Name</td>
-      <td>US Core Patient</td>
-      <td>.name</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>11.1</td>
-      <td>Member</td>
-      <td>BENE_MLG_CNTCT_ZIP_CD</td>
-      <td>Zip code</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.postalCode</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>7.1</td>
-      <td>Claim</td>
-      <td> </td>
-      <td>Patient account number</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>8.1</td>
-      <td>Claim</td>
-      <td> </td>
-      <td>Medical record number</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>F.1</td>
-      <td>R4</td>
-      <td> </td>
-      <td>Birth sex</td>
-      <td>US Core Patient</td>
-      <td>.us-core-birthsex</td>
-      <td>http://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html</td>
-      <td>UNK</td>
-    </tr>
-    <tr>
-      <td>F.2</td>
-      <td>R4</td>
-      <td> </td>
-      <td>Telecom</td>
-      <td>US Core Patient</td>
-      <td>.telecom</td>
-      <td> </td>
-      <td>Provide If Available</td>
-    </tr>
-    <tr>
-      <td>F.3</td>
-      <td>R4</td>
-      <td> </td>
-      <td>Language</td>
-      <td>US Core Patient</td>
-      <td>.communication</td>
-      <td> </td>
-      <td>Provide If Available</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The minimum fields to be provided in the US Core Patient resource are:</p>
+<p>The essential fields in the Patient profile are:</p>
 
 <table>
   <thead>
@@ -512,7 +335,207 @@ can only resize using html  or css ;-(
   </tbody>
 </table>
 
-<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
+<p>The Member Number will be entered in the <strong>*identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
+
+<pre>
+{
+      "use" : member",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    }
+</pre>
+
+<h4 id="3-6-1-1-health-plan-mapping-assistance">3-6-1-1 Health Plan Mapping Assistance</h4>
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html">US Core Patient profile</a>. This is shown below as an assistance  to implementers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>PayerSource</th>
+      <th>CMS BB 2.0 Field</th>
+      <th>Data Descriptor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.1</td>
+      <td>Member</td>
+      <td>BENE_ID</td>
+      <td>Patientid</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Member</td>
+      <td>DOB_DT</td>
+      <td>Date of birth</td>
+      <td>US Core Patient</td>
+      <td>.birthDate</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Date of Death</td>
+      <td>US Core Patient</td>
+      <td>.deceased[dateTime]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4.1</td>
+      <td>Member</td>
+      <td>BENE_COUNTY_CD</td>
+      <td>County</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.district</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Member</td>
+      <td>BENE_STATE_CD</td>
+      <td>State</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.state</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6.1</td>
+      <td>Member</td>
+      <td>BENE_CNTY_CD</td>
+      <td>Country</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.country</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Member</td>
+      <td>BENE_RACE_CD</td>
+      <td>Race code</td>
+      <td>US Core Patient</td>
+      <td>.us-core-race</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Ethnicity</td>
+      <td>US Core Patient</td>
+      <td>.us-core-ethnicity</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9.1</td>
+      <td>Member</td>
+      <td>GNDR_CD</td>
+      <td>Gender code</td>
+      <td>US Core Patient</td>
+      <td>.gender</td>
+      <td><a href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">Valueset-administrative-gender - FHIR v3.0.1</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Name</td>
+      <td>US Core Patient</td>
+      <td>.name</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11.1</td>
+      <td>Member</td>
+      <td>BENE_MLG_CNTCT_ZIP_CD</td>
+      <td>Zip code</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.postalCode</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Patient account number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Medical record number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>F.1</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Birth sex</td>
+      <td>US Core Patient</td>
+      <td>.us-core-birthsex</td>
+      <td><a href="https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html">US-Core-R4/ValueSet-birthsex</a></td>
+      <td>UNK</td>
+    </tr>
+    <tr>
+      <td>F.2</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Telecom</td>
+      <td>US Core Patient</td>
+      <td>.telecom</td>
+      <td> </td>
+      <td>Provide If Available</td>
+    </tr>
+    <tr>
+      <td>F.3</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Language</td>
+      <td>US Core Patient</td>
+      <td>.communication</td>
+      <td> </td>
+      <td>Provide If Available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where an entry is provided in the CMS BB2.0 FIELD column  above the definition of the field can be reviewed using the following URL:</p>
 
 <p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
 
@@ -521,7 +544,7 @@ can only resize using html  or css ;-(
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
-<h4 id="3-6-1-1-example-patient-resource">3-6-1-1 Example Patient Resource</h4>
+<h4 id="3-6-1-2-example-patient-resource">3-6-1-2 Example Patient Resource</h4>
 
 <p>An example mapping of a Patient resource is shown here:</p>
 
@@ -656,7 +679,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   ],
   "identifier" : [
     {
-      "use" : "subscriber",
+      "use" : member",
       "type" : {
         "coding" : [
           {
@@ -755,7 +778,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.206  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Jun 5, 2019 21:51-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.207  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 01:29-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

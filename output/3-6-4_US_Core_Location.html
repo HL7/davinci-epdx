@@ -228,75 +228,9 @@ can only resize using html  or css ;-(
 
 <!--page source: 3-6-4_US_Core_Location.md-->
 
-<p>An example mapping of Health Plan data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html">US Core Encounter profile</a> is shown below:</p>
+<p>The  <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html">US Core Location profile</a>  <strong>SHALL</strong> be used to record location/facility-specific information.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Line</th>
-      <th>PayerSourceRecord</th>
-      <th>CMS BB 2.0 Field</th>
-      <th>Data Descriptor</th>
-      <th>FHIR Profile</th>
-      <th>Profile Field</th>
-      <th>ValueSet</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>15.1</td>
-      <td>Claim</td>
-      <td> </td>
-      <td>Claim bill facility type code</td>
-      <td>US Core Location</td>
-      <td>.type</td>
-      <td>http://build.fhir.org/v3/ServiceDeliveryLocationRoleType/vs.html</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>5.1</td>
-      <td>Claim-Provider</td>
-      <td> </td>
-      <td>Claim site of service NPI</td>
-      <td>US Core Location</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>16.1</td>
-      <td>Claim-Provider</td>
-      <td> </td>
-      <td>Claim service location NPI</td>
-      <td>US Core Location</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>7.1</td>
-      <td>Claim-Pharmacy</td>
-      <td> </td>
-      <td>Pharmacy service type code</td>
-      <td>US Core Location</td>
-      <td>.type</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
-
-<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
-
-<p>The minimum fields to be provided in the US Core Location resource are:</p>
+<p>The essential fields to be provided in the US Core Location resource are:</p>
 
 <table>
   <thead>
@@ -377,12 +311,125 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   </tbody>
 </table>
 
-<h4 id="3-6-4-1-example-location-resource">3-6-4-1 Example Location Resource</h4>
+<h4 id="3-6-4-1-health-plan-mapping-assistance">3-6-4-1 Health Plan Mapping Assistance</h4>
+
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html">US Core Location profile</a>. This is shown below as an assistance  to implementers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>PayerSourceRecord</th>
+      <th>CMS BB 2.0 Field</th>
+      <th>Data Descriptor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>15.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Claim bill facility type code</td>
+      <td>US Core Location</td>
+      <td>.type</td>
+      <td>http://build.fhir.org/v3/ServiceDeliveryLocationRoleType/vs.html</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Claim-Provider</td>
+      <td> </td>
+      <td>Claim site of service NPI</td>
+      <td>US Core Location</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>16.1</td>
+      <td>Claim-Provider</td>
+      <td> </td>
+      <td>Claim service location NPI</td>
+      <td>US Core Location</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Claim-Pharmacy</td>
+      <td> </td>
+      <td>Pharmacy service type code</td>
+      <td>US Core Location</td>
+      <td>.type</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
+
+<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/bene_id/
+https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
+
+<h4 id="3-6-4-2-example-location-resource">3-6-4-2 Example Location Resource</h4>
 
 <p>An example mapping of a Location resource is shown here:</p>
 
 <pre>
-TODO: Add Location Resource in JSON format
+{
+  "resourceType" : "Location",
+  "id" : "hl7east",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: hl7east</p><p><b>meta</b>: </p><p><b>identifier</b>: 29</p><p><b>status</b>: active</p><p><b>name</b>: Health Level Seven International - Amherst</p><p><b>description</b>: HL7 Headquarters - East</p><p><b>telecom</b>: ph: (+1) 734-677-7777</p><p><b>address</b>: 3300 Washtenaw Avenue, Suite 227 Amherst MA 01002 USA </p><h3>Positions</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td>*</td><td>-72.519854</td><td>42.373222</td></tr>&lt;/table&gt;<p><b>managingOrganization</b>: Health Level Seven International</p>&lt;/div&gt;"
+  },
+  "identifier" : [
+    {
+      "system" : "http://www.acme.org/location",
+      "value" : "29"
+    }
+  ],
+  "status" : "active",
+  "name" : "Health Level Seven International - Amherst",
+  "description" : "HL7 Headquarters - East",
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "(+1) 734-677-7777"
+    }
+  ],
+  "address" : {
+    "line" : [
+      "3300 Washtenaw Avenue, Suite 227"
+    ],
+    "city" : "Amherst",
+    "state" : "MA",
+    "postalCode" : "01002",
+    "country" : "USA"
+  },
+  "position" : {
+    "longitude" : -72.519854,
+    "latitude" : 42.373222
+  },
+  "managingOrganization" : {
+    "display" : "Health Level Seven International"
+  }
+}
 </pre>
 
 <p>Refer to the US Core Additional examples of the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/">US Core R4 Implementation Guide</a> for further examples of completed <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html">US Core Location Profiles </a>.</p>
@@ -417,7 +464,7 @@ TODO: Add Location Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.206  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Jun 5, 2019 21:51-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.207  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 01:29-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

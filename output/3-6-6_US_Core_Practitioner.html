@@ -228,7 +228,74 @@ can only resize using html  or css ;-(
 
 <!--page source: 3-6-6_US_Core_Practitioner.md-->
 
-<p>An example mapping of Health Plan data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html">US Core Practitioner profile</a> is shown below:</p>
+<p>The  <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html">US Core Practitioner profile</a>  <strong>SHALL</strong> be used to record information about Practitioners.</p>
+
+<p>The essential fields to be provided in the US Core Practitioner resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Practitioner</td>
+      <td>Practitioner</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Practitioner.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Practitioner.identifier</td>
+      <td>identifier</td>
+      <td>1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Practitioner.identifier.system</td>
+      <td>system</td>
+      <td>1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Practitioner.identifier.value</td>
+      <td>value</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Practitioner.name</td>
+      <td>name</td>
+      <td>1..1</td>
+      <td>HumanName</td>
+    </tr>
+    <tr>
+      <td>Practitioner.name.family</td>
+      <td>family</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Practitioner.qualification.code</td>
+      <td>code</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-6-6-1-health-plan-mapping-assistance">3-6-6-1 Health Plan Mapping Assistance</h4>
+
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html">US Core Practitioner profile</a>. This is shown below as an assistance  to implementers:</p>
 
 <table>
   <thead>
@@ -336,75 +403,56 @@ can only resize using html  or css ;-(
 <p>https://bluebutton.cms.gov/resources/variables/bene_id/
 https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
-<p>The minimum fields to be provided in the US Core Practitioner resource are:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Card.</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Practitioner</td>
-      <td>Practitioner</td>
-      <td>0..*</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Practitioner.id</td>
-      <td>id</td>
-      <td>0..1</td>
-      <td>id</td>
-    </tr>
-    <tr>
-      <td>Practitioner.identifier</td>
-      <td>identifier</td>
-      <td>1..*</td>
-      <td>Identifier</td>
-    </tr>
-    <tr>
-      <td>Practitioner.identifier.system</td>
-      <td>system</td>
-      <td>1..1</td>
-      <td>uri</td>
-    </tr>
-    <tr>
-      <td>Practitioner.identifier.value</td>
-      <td>value</td>
-      <td>1..1</td>
-      <td>string</td>
-    </tr>
-    <tr>
-      <td>Practitioner.name</td>
-      <td>name</td>
-      <td>1..1</td>
-      <td>HumanName</td>
-    </tr>
-    <tr>
-      <td>Practitioner.name.family</td>
-      <td>family</td>
-      <td>1..1</td>
-      <td>string</td>
-    </tr>
-    <tr>
-      <td>Practitioner.qualification.code</td>
-      <td>code</td>
-      <td>1..1</td>
-      <td>CodeableConcept</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="3-6-6-1-example-practitioner-resource">3-6-6-1 Example Practitioner Resource</h4>
+<h4 id="3-6-6-2-example-practitioner-resource">3-6-6-2 Example Practitioner Resource</h4>
 
 <p>An example mapping of an Practitioner resource is shown here:</p>
 
 <pre>
-TODO: Add Practitioner Resource in JSON format
+{
+  "resourceType" : "Practitioner",
+  "id" : "practitioner-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: practitioner-1</p><p><b>meta</b>: </p><p><b>identifier</b>: 9941339108, 25456</p><p><b>name</b>: Ronald Bone </p><p><b>address</b>: 1003 Healthcare Drive Amherst MA 01002 (HOME)</p>&lt;/div&gt;"
+  },
+  "identifier" : [
+    {
+      "system" : "http://hl7.org.fhir/sid/us-npi",
+      "value" : "9941339108"
+    },
+    {
+      "system" : "http://www.acme.org/practitioners",
+      "value" : "25456"
+    }
+  ],
+  "name" : [
+    {
+      "family" : "Bone",
+      "given" : [
+        "Ronald"
+      ],
+      "prefix" : [
+        "Dr"
+      ]
+    }
+  ],
+  "address" : [
+    {
+      "use" : "home",
+      "line" : [
+        "1003 Healthcare Drive"
+      ],
+      "city" : "Amherst",
+      "state" : "MA",
+      "postalCode" : "01002"
+    }
+  ]
+}
 </pre>
 
 <p>Refer to the US Core Additional examples of the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/">US Core R4 Implementation Guide</a> for further examples of completed <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html">US Core Practitioner Profiles </a>.</p>
@@ -439,7 +487,7 @@ TODO: Add Practitioner Resource in JSON format
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.206  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Wed, Jun 5, 2019 21:51-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.207  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 01:29-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

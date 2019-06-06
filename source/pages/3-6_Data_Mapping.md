@@ -21,4 +21,6 @@ In the steps below "Received" refers to the information requested from a Health 
 
 It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
 
+**Providing data in sub-element fields**
 
+In this data mapping section each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required the Health Plan **SHOULD** populate the field, or use a [NULL Flavor](https://www.hl7.org/fhir/v3/NullFlavor/cs.html), unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of "0..1" or "0..\*" the sub-element field does not need to be populated.
