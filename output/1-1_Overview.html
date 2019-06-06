@@ -223,7 +223,7 @@ can only resize using html  or css ;-( -->
 
 <p>Implementers of this specification therefore need to understand some basic information about these specifications, which act as building blocks for this Implementation Guide.</p>
 
-<p>The purpose of this Implementation Guide is to enable data to be exchanged between Health Plans (Payers) and Practitioners (Providers) and via Member-authorized exchange between Health Plans and Third Party Applications.</p>
+<p>The purpose of this Implementation Guide is to enable data to be exchanged between Health Plans (Payers) and Practitioners (Providers) and via Member-authorized exchange between Health Plans and Third Party Applications. Health Plans <strong>SHOULD</strong> wherever possible present the information using vocabularies that are understood by the Provider.</p>
 
 <p>The Health Plan <strong>SHALL</strong> transform data received from both clinical and claims sources that they store in their Systems of Record into HL7 FHIR R4 resources for the purposes of this exchange.</p>
 
@@ -308,7 +308,7 @@ can only resize using html  or css ;-( -->
 
 <p>Health Plans <strong>SHALL</strong> maintain provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan shall create FHIR Provenance record(s) to identify the source of the information being received and the actions that is taken on the data, such as converting from one format to another. Health Plans <strong>SHALL</strong> pass on Provenance records in any PDex information exchange.</p>
 
-<p><a name="a45bea70-5b0e-4fa4-be2f-4c302737a685">​</a>Provenance is covered in more detail in <a href="./6-7_Handling_Data_Provenance.html">Section 6-7 Handling Data Provenance</a>.</p>
+<p><a name="b208d9b4-850f-4318-a43b-27d5545be9fd">​</a>Provenance is covered in more detail in <a href="./6-7_Handling_Data_Provenance.html">Section 6-7 Handling Data Provenance</a>.</p>
 
 
 
@@ -340,7 +340,7 @@ can only resize using html  or css ;-( -->
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.207  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 01:29-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.212  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 16:17-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

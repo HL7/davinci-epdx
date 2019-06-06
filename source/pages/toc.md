@@ -36,6 +36,15 @@ active: toc
             * <a href="3-6-11_US_Core_DiagnosticReport.html">3-6-11 US Core DiagnosticReport</a>
             * <a href="3-6-12_US_Core_Observation.html">3-6-12 US Core Observation</a>
             * <a href="3-6-13_US_Core_DocumentReference.html">3-6-13 US Core DocumentReference</a>
+            * <a href="3-6-14_US_Core_PractitionerRole.html">3-6-14 US Core PractitionerRole</a>
+            * <a href="3-6-15_US_Core_Device.html">3-6-15 US Core Device</a>
+            * <a href="3-6-16_US_Core_Organization.html">3-6-16 US Core Organization</a>
+            * <a href="3-6-17_US_Core_CarePlan_-todo-.html">3-6-17 US Core CarePlan -todo-</a>
+            * <a href="3-6-18_US_Core_CareTeam_-todo-.html">3-6-18 US Core CareTeam -todo-</a>
+            * <a href="3-6-19_US_Core_Medication_-todo-.html">3-6-19 US Core Medication -todo-</a>
+            * <a href="3-6-20_US_Core_MedicationRequest_-todo-.html">3-6-20 US Core MedicationRequest -todo-</a>
+            * <a href="3-6-21_US_Core_MedicationStatement_-todo-.html">3-6-21 US Core MedicationStatement -todo-</a>
+            * <a href="3-6-22_US_Core_Goal_Profile_-todo-.html">3-6-22 US Core Goal Profile -todo-</a>
     * <a href="4_Use_Case_Scenarios.html">4 Use Case Scenarios</a>
         * <a href="4-1_Patient_Persona.html">4-1 Patient Persona</a>
         * <a href="4-2_Useful_Patient_History_for_Providers.html">4-2 Useful Patient History for Providers</a>

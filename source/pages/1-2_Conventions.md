@@ -18,5 +18,14 @@ For the purposes of this IG we will use the following terms:
 
 * **patient** or **subject** id will be used to express the identifier used by the provider to identify a patient/subject.
 
-* **subscriber** or **member** id will be used to express the identifier used by the payer/health plan to identify a member.
+* **subscriber** or **member** id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:
+* Member
+* Subscriber
+* Beneficiary
+* Dependent
+* Group Member
+* Plan Member
+* Covered Party
+* Subject of Care
+
 
