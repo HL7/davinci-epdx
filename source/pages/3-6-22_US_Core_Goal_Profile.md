@@ -1,7 +1,7 @@
 ---
-title: 2-1 Implementation Guide Scope
+title: 3-6-22 US Core Goal Profile
 layout: default
-active: 2-1 Implementation Guide Scope
+active: 3-6-22 US Core Goal Profile
 ---
 
 Where a Health Plan has access to a Member's health goal information they **SHALL** make the information available using the [US Core Goal](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html) resource.

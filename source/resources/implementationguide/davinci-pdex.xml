@@ -3,19 +3,19 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-pdex"/>
     <meta>
-        <versionId value="221"/>
-        <lastUpdated value="2019-06-06T16:14:31.000-04:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
+        <versionId value="227"/>
+        <lastUpdated value="2019-06-07T10:19:08.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
         </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"/>
-    <version value="0.0.9.212"/>
+    <version value="0.0.9.226"/>
     <name value="DaVinciPayerDataExchange"/>
     <title value="Da Vinci Payer Data exchange"/>
     <status value="draft"/>
@@ -23,7 +23,7 @@
     <contact>
         <name value="Mark Scrimshire (mark@ekivemark.com)"/>
     </contact>
-    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**&#xA;&#xA;This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications.&#xA;&#xA;This IG covers the exchange of:&#xA;- Claims-based information&#xA;- Clinical Information (such as Lab Results, Allergies and Conditions)&#xA;&#xA;This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. &#xA;&#xA;This IG covers the exchange of a Member's Health History in the following scenarios:&#xA;- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR&#xA;- Member-authorized Health Plan to Health Plan exchange&#xA;- Member-authorized Health Plan to Third-Party Application exchange&#xA;&#xA;The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.&#xA;&#xA;**There are items in this guide that are subject to update**. This includes:&#xA;- Value Sets&#xA;- Vocabularies (X12, NUBC etc.)&#xA;- Examples&#xA;&#xA;**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (207) Data mapping updates.&#xA;- (204) Image updates. Minor changes through 3-5.&#xA;- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram&#xA;- (191) testing build issues&#xA;- (186) Items to be resolved. Update Home Page&#xA;- (184) Raise OAuth2.0 to higher level in IG&#xA;- (181) Add section on mapping of IDs in bundles (section 3-6)&#xA;- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.&#xA;- (174) Add use of NDJson Bulk FHIR format to Patient-everything. &#xA;- (173) Member Health History reference in Payloads section&#xA;- (172) Minor changes to Encounter table of US Core Essential fields.&#xA;- (171) Add example of ADT to FHIR conversion.&#xA;- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.&#xA;- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section&#xA;- (167) Add image of transformation flows to Overview section&#xA;- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping&#xA;&#xA;"/>
+    <description value="This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.&#xA;Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.&#xA;&#xA;**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**&#xA;&#xA;This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications.&#xA;&#xA;This IG covers the exchange of:&#xA;- Claims-based information&#xA;- Clinical Information (such as Lab Results, Allergies and Conditions)&#xA;&#xA;This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. &#xA;&#xA;This IG covers the exchange of a Member's Health History in the following scenarios:&#xA;- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR&#xA;- Member-authorized Health Plan to Health Plan exchange&#xA;- Member-authorized Health Plan to Third-Party Application exchange&#xA;&#xA;The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.&#xA;&#xA;**There are items in this guide that are subject to update**. This includes:&#xA;- Value Sets&#xA;- Vocabularies (X12, NUBC etc.)&#xA;- Examples&#xA;&#xA;**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).&#xA;&#xA;See the [Table of Contents](toc.html) for more information.&#xA;&#xA;#### Latest Changes&#xA;- (221) Fix relative links&#xA;- (207) Data mapping updates.&#xA;- (204) Image updates. Minor changes through 3-5.&#xA;- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram&#xA;- (191) testing build issues&#xA;- (186) Items to be resolved. Update Home Page&#xA;- (184) Raise OAuth2.0 to higher level in IG&#xA;- (181) Add section on mapping of IDs in bundles (section 3-6)&#xA;- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.&#xA;- (174) Add use of NDJson Bulk FHIR format to Patient-everything. &#xA;- (173) Member Health History reference in Payloads section&#xA;- (172) Minor changes to Encounter table of US Core Essential fields.&#xA;- (171) Add example of ADT to FHIR conversion.&#xA;- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.&#xA;- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section&#xA;- (167) Add image of transformation flows to Overview section&#xA;- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping&#xA;&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-pdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
@@ -210,33 +210,33 @@
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-17_US_Core_CarePlan_-todo-.html"/>
-                        <title value="3-6-17 US Core CarePlan -todo-"/>
+                        <nameUrl value="3-6-17_US_Core_CarePlan.html"/>
+                        <title value="3-6-17 US Core CarePlan"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-18_US_Core_CareTeam_-todo-.html"/>
-                        <title value="3-6-18 US Core CareTeam -todo-"/>
+                        <nameUrl value="3-6-18_US_Core_CareTeam.html"/>
+                        <title value="3-6-18 US Core CareTeam"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-19_US_Core_Medication_-todo-.html"/>
-                        <title value="3-6-19 US Core Medication -todo-"/>
+                        <nameUrl value="3-6-19_US_Core_Medication.html"/>
+                        <title value="3-6-19 US Core Medication"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-20_US_Core_MedicationRequest_-todo-.html"/>
-                        <title value="3-6-20 US Core MedicationRequest -todo-"/>
+                        <nameUrl value="3-6-20_US_Core_MedicationRequest.html"/>
+                        <title value="3-6-20 US Core MedicationRequest"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-21_US_Core_MedicationStatement_-todo-.html"/>
-                        <title value="3-6-21 US Core MedicationStatement -todo-"/>
+                        <nameUrl value="3-6-21_US_Core_MedicationStatement.html"/>
+                        <title value="3-6-21 US Core MedicationStatement"/>
                         <generation value="markdown"/>
                     </page>
                     <page>
-                        <nameUrl value="3-6-22_US_Core_Goal_Profile_-todo-.html"/>
-                        <title value="3-6-22 US Core Goal Profile -todo-"/>
+                        <nameUrl value="3-6-22_US_Core_Goal_Profile.html"/>
+                        <title value="3-6-22 US Core Goal Profile"/>
                         <generation value="markdown"/>
                     </page>
                 </page>

@@ -5,28 +5,28 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.212> a fhir:ImplementationGuide;
+<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.226> a fhir:ImplementationGuide;
   fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "hl7.fhir.us.davinci-pdex-0.0.9.212"];
+  fhir:Resource.id [ fhir:value "hl7.fhir.us.davinci-pdex-0.0.9.226"];
   fhir:Resource.meta [
-     fhir:Meta.versionId [ fhir:value "221" ];
-     fhir:Meta.lastUpdated [ fhir:value "2019-06-06T16:14:31.000-04:00"^^xsd:dateTime ];
+     fhir:Meta.versionId [ fhir:value "227" ];
+     fhir:Meta.lastUpdated [ fhir:value "2019-06-07T10:19:08.000-04:00"^^xsd:dateTime ];
      fhir:Meta.security [
        fhir:index 0;
        fhir:Coding.system [ fhir:value "https://trifolia-fhir.lantanagroup.com/security" ];
-       fhir:Coding.code [ fhir:value "everyone^write" ]
+       fhir:Coding.code [ fhir:value "everyone^read" ]
      ], [
        fhir:index 1;
        fhir:Coding.system [ fhir:value "https://trifolia-fhir.lantanagroup.com/security" ];
-       fhir:Coding.code [ fhir:value "everyone^read" ]
+       fhir:Coding.code [ fhir:value "everyone^write" ]
      ]
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n<h4>Latest Changes</h4>\n<ul>\n<li>(207) Data mapping updates.</li>\n<li>(204) Image updates. Minor changes through 3-5.</li>\n<li>(200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram</li>\n<li>(191) testing build issues</li>\n<li>(186) Items to be resolved. Update Home Page</li>\n<li>(184) Raise OAuth2.0 to higher level in IG</li>\n<li>(181) Add section on mapping of IDs in bundles (section 3-6)</li>\n<li>(180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.</li>\n<li>(174) Add use of NDJson Bulk FHIR format to Patient-everything.</li>\n<li>(173) Member Health History reference in Payloads section</li>\n<li>(172) Minor changes to Encounter table of US Core Essential fields.</li>\n<li>(171) Add example of ADT to FHIR conversion.</li>\n<li>(170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.</li>\n<li>(168) Refine Patient-everything operation details: section 3-4-3. Update Credits section</li>\n<li>(167) Add image of transformation flows to Overview section</li>\n<li>(163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping</li>\n</ul>\n</div></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n<h4>Latest Changes</h4>\n<ul>\n<li>(221) Fix relative links</li>\n<li>(207) Data mapping updates.</li>\n<li>(204) Image updates. Minor changes through 3-5.</li>\n<li>(200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram</li>\n<li>(191) testing build issues</li>\n<li>(186) Items to be resolved. Update Home Page</li>\n<li>(184) Raise OAuth2.0 to higher level in IG</li>\n<li>(181) Add section on mapping of IDs in bundles (section 3-6)</li>\n<li>(180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.</li>\n<li>(174) Add use of NDJson Bulk FHIR format to Patient-everything.</li>\n<li>(173) Member Health History reference in Payloads section</li>\n<li>(172) Minor changes to Encounter table of US Core Essential fields.</li>\n<li>(171) Add example of ADT to FHIR conversion.</li>\n<li>(170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.</li>\n<li>(168) Refine Patient-everything operation details: section 3-4-3. Update Credits section</li>\n<li>(167) Add image of transformation flows to Overview section</li>\n<li>(163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping</li>\n</ul>\n</div></div>"
   ];
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"];
-  fhir:ImplementationGuide.version [ fhir:value "0.0.9.212"];
+  fhir:ImplementationGuide.version [ fhir:value "0.0.9.226"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
@@ -35,7 +35,7 @@
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark@ekivemark.com)" ]
   ];
-  fhir:ImplementationGuide.description [ fhir:value "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\n**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**\n\nThis IG uses the same Member Health History \"payload\" for member-authorized exchange of information with other Health Plans and with Third-Party Applications.\n\nThis IG covers the exchange of:\n- Claims-based information\n- Clinical Information (such as Lab Results, Allergies and Conditions)\n\nThis IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. \n\nThis IG covers the exchange of a Member's Health History in the following scenarios:\n- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR\n- Member-authorized Health Plan to Health Plan exchange\n- Member-authorized Health Plan to Third-Party Application exchange\n\nThe latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.\n\n**There are items in this guide that are subject to update**. This includes:\n- Value Sets\n- Vocabularies (X12, NUBC etc.)\n- Examples\n\n**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n- (207) Data mapping updates.\n- (204) Image updates. Minor changes through 3-5.\n- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram\n- (191) testing build issues\n- (186) Items to be resolved. Update Home Page\n- (184) Raise OAuth2.0 to higher level in IG\n- (181) Add section on mapping of IDs in bundles (section 3-6)\n- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.\n- (174) Add use of NDJson Bulk FHIR format to Patient-everything. \n- (173) Member Health History reference in Payloads section\n- (172) Minor changes to Encounter table of US Core Essential fields.\n- (171) Add example of ADT to FHIR conversion.\n- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.\n- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section\n- (167) Add image of transformation flows to Overview section\n- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping\n\n"];
+  fhir:ImplementationGuide.description [ fhir:value "This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\n**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**\n\nThis IG uses the same Member Health History \"payload\" for member-authorized exchange of information with other Health Plans and with Third-Party Applications.\n\nThis IG covers the exchange of:\n- Claims-based information\n- Clinical Information (such as Lab Results, Allergies and Conditions)\n\nThis IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. \n\nThis IG covers the exchange of a Member's Health History in the following scenarios:\n- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR\n- Member-authorized Health Plan to Health Plan exchange\n- Member-authorized Health Plan to Third-Party Application exchange\n\nThe latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.\n\n**There are items in this guide that are subject to update**. This includes:\n- Value Sets\n- Vocabularies (X12, NUBC etc.)\n- Examples\n\n**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).\n\nSee the [Table of Contents](toc.html) for more information.\n\n#### Latest Changes\n- (221) Fix relative links\n- (207) Data mapping updates.\n- (204) Image updates. Minor changes through 3-5.\n- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram\n- (191) testing build issues\n- (186) Items to be resolved. Update Home Page\n- (184) Raise OAuth2.0 to higher level in IG\n- (181) Add section on mapping of IDs in bundles (section 3-6)\n- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.\n- (174) Add use of NDJson Bulk FHIR format to Patient-everything. \n- (173) Member Health History reference in Payloads section\n- (172) Minor changes to Encounter table of US Core Essential fields.\n- (171) Add example of ADT to FHIR conversion.\n- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.\n- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section\n- (167) Add image of transformation flows to Overview section\n- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping\n\n"];
   fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.us.davinci-pdex"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -238,33 +238,33 @@
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 16;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-17_US_Core_CarePlan_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-17 US Core CarePlan -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-17_US_Core_CarePlan.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-17 US Core CarePlan" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 17;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-18_US_Core_CareTeam_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-18 US Core CareTeam -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-18_US_Core_CareTeam.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-18 US Core CareTeam" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 18;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-19_US_Core_Medication_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-19 US Core Medication -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-19_US_Core_Medication.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-19 US Core Medication" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 19;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-20_US_Core_MedicationRequest_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-20 US Core MedicationRequest -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-20_US_Core_MedicationRequest.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-20 US Core MedicationRequest" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 20;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-21_US_Core_MedicationStatement_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-21 US Core MedicationStatement -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-21_US_Core_MedicationStatement.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-21 US Core MedicationStatement" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ], [
              fhir:index 21;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-22_US_Core_Goal_Profile_-todo-.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-22 US Core Goal Profile -todo-" ];
+             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "3-6-22_US_Core_Goal_Profile.html" ];
+             fhir:ImplementationGuide.definition.page.title [ fhir:value "3-6-22 US Core Goal Profile" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ]
          ]
@@ -362,9 +362,9 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.212.ttl> a owl:Ontology;
+<http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.226.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl;
-  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.212.ttl> .
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex-0.0.9.226.ttl> .
 
 # -------------------------------------------------------------------------------------
 

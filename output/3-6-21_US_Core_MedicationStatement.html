@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">3-6-17 US Core CarePlan -todo-</span>
+      <span class="breadcrumb-item active">3-6-21 US Core MedicationStatement</span>
     
     
 
@@ -224,11 +224,132 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>3-6-17 US Core CarePlan -todo-</h1>
+<h1>3-6-21 US Core MedicationStatement</h1>
 
-<!--page source: 3-6-17_US_Core_CarePlan_-todo-.md-->
+<!--page source: 3-6-21_US_Core_MedicationStatement.md-->
 
-<p>No page content yet</p>
+<p>Where a Health Plan has access to medication information for a member they <strong>SHALL</strong> make the information available using the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationstatement.html">US Core MedicationStatement</a> resource.</p>
+
+<p>The essential fields to be provided in the MedicationStatement resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MedicationStatement</td>
+      <td>MedicationStatement</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.id</td>
+      <td>id</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.status</td>
+      <td>status</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.medication[x]</td>
+      <td>medication[x]</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>CodeableConcept, Reference(US Core Medication Profile)</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.subject</td>
+      <td>subject</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.effective[x]</td>
+      <td>effective[x]</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>dateTime, Period</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.dateAsserted</td>
+      <td>dateAsserted</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>dateTime</td>
+    </tr>
+    <tr>
+      <td>MedicationStatement.derivedFrom</td>
+      <td>derivedFrom</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>Reference(Resource)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-6-21-1-example-medicationstatement-resource">3-6-21-1 Example MedicationStatement Resource</h4>
+
+<p>An example mapping of a MedicationStatement is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "uscore-ms2",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationstatement"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: uscore-ms2</p><p><b>meta</b>: </p><p><b>contained</b>: </p><p><b>status</b>: active</p><p><b>medication</b>: lisinopril oral 10 mg. Generated Summary: unknown resource contained</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><p><b>effective</b>: May 1, 2010, 12:00:00 AM --&gt; (ongoing)</p><p><b>dateAsserted</b>: May 1, 2016, 4:13:03 PM</p>&lt;/div&gt;"
+  },
+  "contained" : [
+    {
+      "resourceType" : "Medication",
+      "id" : "med1",
+      "code" : {
+        "coding" : [
+          {
+            "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code" : "206765",
+            "display" : "Lisinopril 10 MG Oral Tablet [Prinivil]"
+          }
+        ],
+        "text" : "lisinopril oral 10 mg"
+      }
+    }
+  ],
+  "status" : "active",
+  "medicationReference" : {
+    "reference" : "#med1",
+    "display" : "lisinopril oral 10 mg"
+  },
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "effectivePeriod" : {
+    "start" : "2010-05-01"
+  },
+  "dateAsserted" : "2016-05-01T16:13:03Z"
+}
+</pre>
 
 
 
@@ -259,7 +380,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.212  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 16:17-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.226  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, Jun 7, 2019 10:22-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>
