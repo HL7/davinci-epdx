@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">3-6-22 US Core Goal Profile -todo-</span>
+      <span class="breadcrumb-item active">3-6-22 US Core Goal Profile</span>
     
     
 
@@ -224,11 +224,123 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>3-6-22 US Core Goal Profile -todo-</h1>
+<h1>3-6-22 US Core Goal Profile</h1>
 
-<!--page source: 3-6-22_US_Core_Goal_Profile_-todo-.md-->
+<!--page source: 3-6-22_US_Core_Goal_Profile.md-->
 
-<p>No page content yet</p>
+<p>Where a Health Plan has access to a Member’s health goal information they <strong>SHALL</strong> make the information available using the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html">US Core Goal</a> resource.</p>
+
+<p>The essential fields to be provided in the Goal resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Goal</td>
+      <td>Goal</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Goal.id</td>
+      <td>id</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Goal.lifecycleStatus</td>
+      <td>lifecycleStatus</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Goal.description</td>
+      <td>description</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Goal.subject</td>
+      <td>subject</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+    <tr>
+      <td>Goal.target</td>
+      <td>target</td>
+      <td>SI</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Goal.target.due[x]</td>
+      <td>due[x]</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>date, Duration</td>
+    </tr>
+    <tr>
+      <td>Goal.outcomeCode</td>
+      <td>outcomeCode</td>
+      <td> </td>
+      <td>0..*</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Goal.outcomeReference</td>
+      <td>outcomeReference</td>
+      <td> </td>
+      <td>0..*</td>
+      <td>Reference(Observation)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-6-22-1-example-goal-resource">3-6-22-1 Example Goal Resource</h4>
+
+<p>An example mapping of a Goal is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Goal",
+  "id" : "goal-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: goal-1</p><p><b>meta</b>: </p><p><b>lifecycleStatus</b>: active</p><p><b>description</b>: Patient is targeting a pulse oximetry of 92% and a weight of 195 lbs &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details )&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><h3>Targets</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Due[x]</b></td></tr><tr><td>*</td><td>Apr 5, 2016</td></tr>&lt;/table&gt;&lt;/div&gt;"
+  },
+  "lifecycleStatus" : "active",
+  "description" : {
+    "text" : "Patient is targeting a pulse oximetry of 92% and a weight of 195 lbs"
+  },
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "target" : [
+    {
+      "dueDate" : "2016-04-05"
+    }
+  ]
+}
+</pre>
 
 
 
@@ -259,7 +371,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.212  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 16:17-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.226  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, Jun 7, 2019 10:22-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

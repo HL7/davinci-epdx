@@ -214,7 +214,7 @@ can only resize using html  or css ;-(
     
       <a class="breadcrumb-item btn btn-link btn-sm" href="toc.html">TOC</a><a class="breadcrumb-item" href="index.html">Home</a>
       /
-      <span class="breadcrumb-item active">3-6-18 US Core CareTeam -todo-</span>
+      <span class="breadcrumb-item active">3-6-19 US Core Medication</span>
     
     
 
@@ -224,11 +224,129 @@ can only resize using html  or css ;-(
 
   <!-- ============CONTENT CONTENT=============== -->
 
-<h1>3-6-18 US Core CareTeam -todo-</h1>
+<h1>3-6-19 US Core Medication</h1>
 
-<!--page source: 3-6-18_US_Core_CareTeam_-todo-.md-->
+<!--page source: 3-6-19_US_Core_Medication.md-->
 
-<p>No page content yet</p>
+<p>Where a Health Plan has access to Medication information they <strong>SHALL</strong> make the information available using the <a href="https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html">US Core Medication</a> resource.</p>
+
+<p>The essential fields to be provided in the Medication resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Medication</td>
+      <td>Medication</td>
+      <td>0..*</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medication.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medication.code</td>
+      <td>code</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medication.ingredient</td>
+      <td>ingredient</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medication.ingredient.item[x]</td>
+      <td>item[x]</td>
+      <td>1..1</td>
+      <td>CodeableConcept, Reference(Substance</td>
+      <td>Medication)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-6-19-1-example-medication-resource">3-6-19-1 Example Medication Resource</h4>
+
+<p>An example mapping of a Medication is shown below:</p>
+
+<pre>
+{
+  "resourceType": "Medication",
+  "id": "med0311",
+  "text": {
+    "status": "generated",
+    "div": "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: med0311</p><p><b>contained</b>: </p><p><b>code</b>: Prednisone 5mg tablet (Product) <span>(Details : {SNOMED CT code '373994007' = 'Prednisone 5mg tablet', given as 'Prednisone 5mg tablet (Product)'})</span></p><p><b>form</b>: Tablet dose form (qualifier value) <span>(Details : {SNOMED CT code '385055001' = 'Tablet', given as 'Tablet dose form (qualifier value)'})</span></p><h3>Ingredients</h3><table><tr><td>-</td><td><b>Item[x]</b></td><td><b>Strength</b></td></tr><tr><td>*</td><td>id: sub03; Prednisone (substance) <span>(Details : {SNOMED CT code '116602009' = 'Prednisone', given as 'Prednisone (substance)'})</span></td><td>5 mg<span> (Details: UCUM code mg = 'mg')</span>/1 TAB<span> (Details: http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm code TAB = 'Tablet')</span></td></tr></table>&lt;/div&gt;"
+  },
+  "contained": [
+    {
+      "resourceType": "Substance",
+      "id": "sub03",
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "116602009",
+            "display": "Prednisone (substance)"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "373994007",
+        "display": "Prednisone 5mg tablet (Product)"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385055001",
+        "display": "Tablet dose form (qualifier value)"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemReference": {
+        "reference": "#sub03"
+      },
+      "strength": {
+        "numerator": {
+          "value": 5,
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+          "code": "TAB"
+        }
+      }
+    }
+  ]
+}
+</pre>
 
 
 
@@ -259,7 +377,7 @@ can only resize using html  or css ;-(
   <div class="container">  <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.212  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Thu, Jun 6, 2019 16:17-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.226  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, Jun 7, 2019 10:22-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a>
         </span>

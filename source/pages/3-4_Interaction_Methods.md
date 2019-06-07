@@ -20,7 +20,7 @@ SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two princi
 1. When a new patient books an appointment
 2. When a patient returns for an appointment after a significant period (for example, after wintering in a different region).
 
-The CDS Hooks and SMART-on-FHIR application configuration is detailed in [Section 6](/6_CDS-Hooks.html).
+The CDS Hooks and SMART-on-FHIR application configuration is detailed in [Section 6](./6_CDS-Hooks.html).
 
 #### 3-4-1-1 Ad-hoc PDex Member History Request
 
@@ -64,7 +64,7 @@ After successfully authorizing an application an Access Token and Optional Refre
 
 The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. 
 
-The OAuth2.0 Member-authorized exchange is detailed in [Section 7](/7_Member-Authorized_OAuth2_Exchange.html).
+The OAuth2.0 Member-authorized exchange is detailed in [Section 7](./7_Member-Authorized_OAuth2_Exchange.html).
 
 An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third Party Application Exchange:
 <table>
