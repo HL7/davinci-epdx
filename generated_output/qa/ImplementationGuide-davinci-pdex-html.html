@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+  <title>ImplementationGuide-davinci-pdex-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<div xmlns="http://www.w3.org/1999/xhtml"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
+Feedback is welcome and may be submitted through the FHIR gForge tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>
+<p><a href="https://confluence.hl7.org/display/FM/Financial+Management+Home">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>
+<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>
+<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications.</p>
+<p>This IG covers the exchange of:</p>
+<ul>
+<li>Claims-based information</li>
+<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>
+</ul>
+<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>
+<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>
+<ul>
+<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>
+<li>Member-authorized Health Plan to Health Plan exchange</li>
+<li>Member-authorized Health Plan to Third-Party Application exchange</li>
+</ul>
+<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>
+<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>
+<ul>
+<li>Value Sets</li>
+<li>Vocabularies (X12, NUBC etc.)</li>
+<li>Examples</li>
+</ul>
+<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href="http://www.x12.org">X12</a>.</p>
+<p>See the <a href="toc.html">Table of Contents</a> for more information.</p>
+<h4>Latest Changes</h4>
+<ul>
+<li>(245) Add section 4-8 sub-content links</li>
+<li>(243) Add FM as sponsoring workgroup to description</li>
+<li>(241) Section 3 sub-content link</li>
+<li>(238) Section 3 content links</li>
+<li>(235) Section 2 content links</li>
+<li>(234) Updating Capability Statement Page</li>
+<li>(228) Add MedicationDispense</li>
+<li>(221) Fix relative links</li>
+<li>(207) Data mapping updates.</li>
+<li>(204) Image updates. Minor changes through 3-5.</li>
+<li>(200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram</li>
+<li>(191) testing build issues</li>
+<li>(186) Items to be resolved. Update Home Page</li>
+<li>(184) Raise OAuth2.0 to higher level in IG</li>
+<li>(181) Add section on mapping of IDs in bundles (section 3-6)</li>
+<li>(180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.</li>
+<li>(174) Add use of NDJson Bulk FHIR format to Patient-everything.</li>
+<li>(173) Member Health History reference in Payloads section</li>
+<li>(172) Minor changes to Encounter table of US Core Essential fields.</li>
+<li>(171) Add example of ADT to FHIR conversion.</li>
+<li>(170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.</li>
+<li>(168) Refine Patient-everything operation details: section 3-4-3. Update Credits section</li>
+<li>(167) Add image of transformation flows to Overview section</li>
+<li>(163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping</li>
+</ul>
+</div></div></body>
+</html>

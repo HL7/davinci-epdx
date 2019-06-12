@@ -1,0 +1,60 @@
+{
+	"resourceType": "StructureDefinition",
+	"id": "pdex-medicationdispense",
+	"meta": {
+		"versionId": "11",
+		"lastUpdated": "2019-06-11T11:43:27.000-04:00",
+		"security": [
+			{
+				"system": "https://trifolia-fhir.lantanagroup.com/security",
+				"code": "everyone^read"
+			},
+			{
+				"system": "https://trifolia-fhir.lantanagroup.com/security",
+				"code": "everyone^write"
+			}
+		]
+	},
+	"text": {
+		"status": "additional",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">The MedicationDispense resource is used to identify the prescription drugs paid for by a Health Plan for a Member.</div>"
+	},
+	"url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
+	"version": "0.1",
+	"name": "PDexMedicationDispense",
+	"title": "PDex MedicationDispense Profile",
+	"status": "active",
+	"experimental": false,
+	"publisher": "HL7 International",
+	"contact": [
+		{
+			"name": "Mark Scrimshire (mark@ekivemark.com)",
+			"telecom": [
+				{
+					"system": "email",
+					"value": "mark@ekivemark.com"
+				},
+				{
+					"system": "email",
+					"value": "mark.scrimshire@newwave.io"
+				}
+			]
+		}
+	],
+	"description": "The MedicationDispense record identifies the prescription drug issued to a member and paid for under their Health Insurance Drug Plan.\n",
+	"purpose": "A Resource is needed to express the prescription drugs issued to a health plan member under the terms of their health insurance plan.",
+	"fhirVersion": "4.0.0",
+	"kind": "resource",
+	"abstract": false,
+	"type": "MedicationDispense",
+	"baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
+	"derivation": "constraint",
+	"differential": {
+		"element": [
+			{
+				"id": "MedicationDispense",
+				"path": "MedicationDispense"
+			}
+		]
+	}
+}
