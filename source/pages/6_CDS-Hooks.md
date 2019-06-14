@@ -21,6 +21,10 @@ active: 6 CDS-Hooks
 
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 
+This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR.
+
+CDS Hooks enables the Health Plan to be queried either via an on-demand transaction triggered from a SMRT-on-FHIR app, or from a workflow event in the EMR that triggers the hook, such as when an apppointment is booked for a patient.
+
 The bulk of the functionality of this specification is implemented using CDS Hooks. The [Hooks specification](https://cds-hooks.org/) is small. Implementers should read and be familiar with all of it.
 
 CDS Hooks is a relatively new technology. It is considered a Standard for Trial Use, meaning that it will continue to evolve based on implementer feedback and may change in ways that are not compatible with the current draft. As well, the initial version of the specification has focused on the core architecture and a relatively simple set of capabilities. Additional capabilities will be introduced in future versions.

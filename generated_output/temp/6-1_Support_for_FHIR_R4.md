@@ -35,13 +35,21 @@ Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a Do
 
 ### 6-1-1 Graceful write degradation
 
-When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL** create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
+When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL** , where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
 
 Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human readable PDF version of the selected resources and attach this document to the DocumentReference and commit to the patient's record.
 
 Where the EMR does not support the attachment of PDF Documents to a DocumentRefernece record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources and attach this document to the DocumentReference and commit to the patient's record.
 
 Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentRefernece record the SMART App **SHALL** create a human readable ASCII text version of the selected resources and attach this to the DocumentReference and commit to the patient's record.
+
+To summarize this graceful degradation in functionality the priority for writing information to a target EMR should be:
+
+1. Write to information to the respective target resources
+2. Where data can't be written to target resources then create a Document Reference that comprises a FHIR bundle and a human readable PDF of the records being committed.
+3. Where the DocumentReference resource does not support committing a FHIR bundle store the PDF document.
+4. Where the DocumentReference does not support writing a PDF store an HTML or XHTML version.
+5. Where the DocumentReference does not support HTML or XHTML content write an ASCII text version.
 
 
 

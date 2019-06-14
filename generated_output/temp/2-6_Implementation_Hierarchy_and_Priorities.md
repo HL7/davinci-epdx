@@ -24,6 +24,6 @@ The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in th
 4. HL7 FHIR US Core STU2 (based on FHIR STU3 - http://hl7.org/fhir/us/core/STU2/ )
 
 
-This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4.
+This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
 
 Amongst Health Plans there has been limited adoption of FHIR APIs. Therefore for Health Plan APIs identified in this IG the FHIR R4 version **SHALL** be used.

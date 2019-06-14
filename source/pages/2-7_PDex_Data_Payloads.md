@@ -23,6 +23,8 @@ The PDex IG defines four types of data payload:
 3. Pharmacy Network Directory
 4. Medication Formulary
 
+The Directory and Formulary data payloads are covered in their respective subsidiary PDex IGs.
+
 All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
 ### 2-7-1 Member Clinical and Claims-derived History

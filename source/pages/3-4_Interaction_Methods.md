@@ -45,6 +45,10 @@ The PDex IG uses a similar approach to enable a CDS Hook. The CDS Hook used by P
 
 - Appointment-book
 
+This IG also proposes the creation of a new CDS Hook for the interaction defined in this IG. This hook would be:
+
+- Request-member-history
+
 An overview of the transaction flow is shown below:
 <table>
 	<tr>
@@ -115,4 +119,4 @@ Member-authorized sharing of their health history **MAY** utilize the Patient-ev
 
 The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity such as another Health Plan. 
 
-The Patient-everything operation supports the use of the [bulk FHIR data format Specification](https://www.hl7.org/fhir/formats.html#bulk). A Health Plan **MAY** format the Patient-everything records to be exchanged using the ND-Json format.
+The Patient-everything operation supports the use of the [bulk FHIR data format Specification](https://www.hl7.org/fhir/formats.html#bulk). A Health Plan **MAY** format the Patient-everything records to be exchanged using the ND-Json format. 

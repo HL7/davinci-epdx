@@ -24,7 +24,7 @@ Feedback is welcome and may be submitted through the FHIR gForge tracker indicat
 
 **The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**
 
-This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans and with Third-Party Applications.
+This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patters that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.
 
 This IG covers the exchange of:
 - Claims-based information
@@ -49,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (254) Add CDS Hooks Justification, revisions per review comments. 
 - (245) Add section 4-8 sub-content links
 - (243) Add FM as sponsoring workgroup to description
 - (241) Section 3 sub-content link
