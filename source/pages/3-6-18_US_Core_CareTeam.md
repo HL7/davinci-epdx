@@ -4,6 +4,8 @@ layout: default
 active: 3-6-18 US Core CareTeam
 ---
 
+[Previous Page](3-6-17_US_Core_CarePlan.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -148,3 +150,6 @@ An example mapping of a CareTeam is shown below:
   ]
 }
 </pre>
+
+
+[Next Page](3-6-19_US_Core_Medication.html)

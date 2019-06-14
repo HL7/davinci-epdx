@@ -4,6 +4,8 @@ layout: default
 active: 8 Credits
 ---
 
+[Previous Page](7_Member-Authorized_OAuth2_Exchange.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./8_Credits.html" id="markdown-toc-credits">8 Credits</a></li>
@@ -38,3 +40,6 @@ This implementation guide was the work of the Da Vinci Project PDex work group (
 * Newwave (Mark Scrimshire, Santhi Chebrolu)
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
+
+
+[Next Page](capstatements.html)

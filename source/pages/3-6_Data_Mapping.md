@@ -4,6 +4,8 @@ layout: default
 active: 3-6 Data Mapping
 ---
 
+[Previous Page](3-5_Interaction_and_Payload_Matrix.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -75,3 +77,6 @@ It is recommended that the Identifier field in a resource be used to record the 
 **Providing data in sub-element fields**
 
 In this data mapping section each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required the Health Plan **SHOULD** populate the field, or use a [NULL Flavor](https://www.hl7.org/fhir/v3/NullFlavor/cs.html), unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of "0..1" or "0..\*" the sub-element field does not need to be populated.
+
+
+[Next Page](3-6-1_US_Core_Patient.html)

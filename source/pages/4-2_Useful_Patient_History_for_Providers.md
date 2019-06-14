@@ -4,6 +4,8 @@ layout: default
 active: 4-2 Useful Patient History for Providers
 ---
 
+[Previous Page](4-1_Patient_Persona.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
@@ -65,3 +67,6 @@ These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 
 
 
+
+
+[Next Page](5_Provider-controlled_Information_Requests_and_Filtering.html)

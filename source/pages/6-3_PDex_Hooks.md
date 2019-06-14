@@ -4,6 +4,8 @@ layout: default
 active: 6-3 PDex Hooks
 ---
 
+[Previous Page](6-2_Additional_or_Modified_Hooks.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -69,3 +71,6 @@ A sample of the CDS Hook for appointment-book is included below:
 </pre>
 
 SubscriberId **SHOULD** be taken from the FHIR Coverage record for the Patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App.
+
+
+[Next Page](6-4_Hook_Configuration.html)

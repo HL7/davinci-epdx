@@ -4,6 +4,8 @@ layout: default
 active: 6-6-1 First Visit with New Provider
 ---
 
+[Previous Page](6-6_Workflow_Examples.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -25,3 +27,6 @@ The receptionist in the doctors office collects their personal information, heal
 
 The creation of an appointment activates a CDS Hook transaction: appointment-book. 
 
+
+
+[Next Page](6-6-2_Return_Visit_with_Provider.html)

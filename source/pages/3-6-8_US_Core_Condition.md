@@ -4,6 +4,8 @@ layout: default
 active: 3-6-8 US Core Condition
 ---
 
+[Previous Page](3-6-7_US_Core_Procedure.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -135,3 +137,6 @@ An example mapping of a problem using the Condition is shown below:
 }
 </pre>
 
+
+
+[Next Page](3-6-9_US_Core_AllergyIntolerance.html)

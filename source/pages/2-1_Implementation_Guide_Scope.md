@@ -4,6 +4,8 @@ layout: default
 active: 2-1 Implementation Guide Scope
 ---
 
+[Previous Page](2_Introduction.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -103,3 +105,6 @@ An example mapping of a Goal is shown below:
   ]
 }
 </pre>
+
+
+[Next Page](2-2_Member_Consent.html)

@@ -4,6 +4,8 @@ layout: default
 active: 3-6-11 US Core DiagnosticReport
 ---
 
+[Previous Page](3-6-10_US_Core_Immunization.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -202,3 +204,6 @@ An example mapping of a DiagnosticReport for urinalysis is shown below:
 }
 </pre>
 
+
+
+[Next Page](3-6-12_US_Core_Observation.html)

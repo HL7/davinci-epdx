@@ -4,6 +4,8 @@ layout: default
 active: 2 Introduction
 ---
 
+[Previous Page](1-2_Conventions.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -40,3 +42,6 @@ The objective with the above approach is to:
 - Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested in development and implementation
 - Consolidate the number of operational interfaces that health plans and  EMR systems need to maintain in order to meet regulatory requirements.
 
+
+
+[Next Page](2-1_Implementation_Guide_Scope.html)

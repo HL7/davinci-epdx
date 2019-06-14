@@ -4,6 +4,8 @@ layout: default
 active: 2-7 PDex Data Payloads
 ---
 
+[Previous Page](2-6_Implementation_Hierarchy_and_Priorities.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -125,3 +127,6 @@ When a Health Plan provides prescription drug coverage the list of covered medic
 
 The Latest build of the PDex-formulary IG can be found at http://build.fhir.org/ig/HL7/davinci-pdex-formulary/
 
+
+
+[Next Page](3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html)

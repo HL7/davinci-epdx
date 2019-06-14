@@ -4,6 +4,8 @@ layout: default
 active: 2-5 Implementation Assumptions
 ---
 
+[Previous Page](2-4_Supporting_Specifications.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -20,3 +22,6 @@ Wherever possible, the PDex IG will use established US Core Profiles. Where info
 
 Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in the PDex-IG itself.
 
+
+
+[Next Page](2-6_Implementation_Hierarchy_and_Priorities.html)

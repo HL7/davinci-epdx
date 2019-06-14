@@ -4,6 +4,8 @@ layout: default
 active: 6-5 Systems
 ---
 
+[Previous Page](6-4_Hook_Configuration.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -31,3 +33,6 @@ Client systems are electronic medical records, pharmacy systems and other clinic
 Payer systems are systems run by health plans/insurers that provide insurance coverage to the patient and can provide claims history clinical information and benefits information about the patient.
 
 The requirements and expectations described here are not intended to be exhaustive. Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
+
+
+[Next Page](6-6_Workflow_Examples.html)

@@ -4,6 +4,8 @@ layout: default
 active: 3-6-17 US Core CarePlan
 ---
 
+[Previous Page](3-6-16_US_Core_Organization.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -108,3 +110,6 @@ An example mapping of a CarePlan for a colonoscopy is shown below:
   }
 }
 </pre>
+
+
+[Next Page](3-6-18_US_Core_CareTeam.html)

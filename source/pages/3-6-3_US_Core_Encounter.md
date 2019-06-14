@@ -4,6 +4,8 @@ layout: default
 active: 3-6-3 US Core Encounter
 ---
 
+[Previous Page](3-6-2_Coverage.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -126,3 +128,6 @@ TODO: Add Encounter Resource in JSON format
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [Encounter Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html).
 
 
+
+
+[Next Page](3-6-4_US_Core_Location.html)

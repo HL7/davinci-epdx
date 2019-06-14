@@ -4,6 +4,8 @@ layout: default
 active: 3-6-1 US Core Patient
 ---
 
+[Previous Page](3-6_Data_Mapping.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -337,3 +339,6 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
+
+
+[Next Page](3-6-2_Coverage.html)

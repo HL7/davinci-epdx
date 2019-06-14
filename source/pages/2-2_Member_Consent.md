@@ -4,6 +4,8 @@ layout: default
 active: 2-2 Member Consent
 ---
 
+[Previous Page](2-1_Implementation_Guide_Scope.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -44,3 +46,6 @@ The exchange of Prescription drug formulary information is covered in the [PDex-
 The OAuth2.0-based exchange is covered in detail in [Section 7]()
 
 
+
+
+[Next Page](2-3_FHIR.html)

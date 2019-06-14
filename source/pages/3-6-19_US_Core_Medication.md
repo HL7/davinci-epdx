@@ -4,6 +4,8 @@ layout: default
 active: 3-6-19 US Core Medication
 ---
 
+[Previous Page](3-6-18_US_Core_CareTeam.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -134,3 +136,6 @@ An example mapping of a Medication is shown below:
   ]
 }
 </pre>
+
+
+[Next Page](3-6-20_US_Core_MedicationRequest.html)
