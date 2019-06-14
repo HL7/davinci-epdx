@@ -49,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (270) reformat section 2-1
 - (269) Fix corrupted section 2-1
 - (266) Add remaining previous/next links to narrative
 - (255) Adding Previous / Next Page Links to narrative thru section 3
