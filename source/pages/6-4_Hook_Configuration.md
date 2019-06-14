@@ -61,3 +61,7 @@ As a minimum searches of FHIR Resources **SHOULD** support the following query p
 - Inclusions or exclusions based upon Organization, Location or Practitioners
 
 
+<ul>
+  <li><a href="6-3_PDex_Hooks.html" >Previous</a></li>
+  <li><a href="6-5_Systems.html" >Next</a></li>
+</ul>

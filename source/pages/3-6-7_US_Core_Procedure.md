@@ -157,4 +157,7 @@ An example mapping of an Procedure resource for a medical impiant is shown here:
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Procedure Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html).
 
 
-
+<ul>
+  <li><a href="3-6-6_US_Core_Practitioner.html" >Previous</a></li>
+  <li><a href="3-6-8_US_Core_Condition.html" >Next</a></li>
+</ul>

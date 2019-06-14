@@ -45,3 +45,7 @@ Applications are registered with the API Endpoint. The application owner **MAY**
 - Another Covered Entity, such as a Provider.
 
 
+<ul>
+  <li><a href="6-7_Handling_Data_Provenance.html" >Previous</a></li>
+  <li><a href="8_Credits.html" >Next</a></li>
+</ul>

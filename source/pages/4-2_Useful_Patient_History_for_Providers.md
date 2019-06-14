@@ -7,8 +7,8 @@ active: 4-2 Useful Patient History for Providers
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
-  <li><a href="./4-1_Patient_Persona.html" id="markdown-toc-persona"></a>4-1 Patient Persona</li>
-  <li><a href="./4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history"></a>4-2 Useful Patient History for Providers</li>
+  <li><a href="./4-1_Patient_Persona.html" id="markdown-toc-persona">4-1 Patient Persona</a></li>
+  <li><a href="./4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history">4-2 Useful Patient History for Providers</a></li>
 </ul>
 
 When providers are building a health history for a new patient the information they are interested in **MAY** include:
@@ -64,4 +64,7 @@ These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 | FamilyHistory                          | DocumentReference: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html     |
 
 
-
+<ul>
+  <li><a href="4-1_Patient_Persona.html" >Previous</a></li>
+  <li><a href="5_Provider-controlled_Information_Requests_and_Filtering.html" >Next</a></li>
+</ul>

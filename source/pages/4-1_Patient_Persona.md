@@ -7,8 +7,8 @@ active: 4-1 Patient Persona
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
-  <li><a href="./4-1_Patient_Persona.html" id="markdown-toc-persona"></a>4-1 Patient Persona</li>
-  <li><a href="./4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history"></a>4-2 Useful Patient History for Providers</li>
+  <li><a href="./4-1_Patient_Persona.html" id="markdown-toc-persona">4-1 Patient Persona</a></li>
+  <li><a href="./4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history">4-2 Useful Patient History for Providers</a></li>
 </ul>
 
 ### 4-1-1 Provider to Health Plan scenario:
@@ -34,3 +34,7 @@ He has recently switched from Medicare Advantage Plan A and enrolled in Medicare
 
 In this scenario, Arthur has signed up for a new  Medicare advantage plan with payer C during the open enrollment period. Before the initiation of his coverage beginning January 1, payer C has established communication with the patient and has provided the patient with a secure log in to the payer C patient portal. Patient continues to have an active login to payer B patient portal.
 
+<ul>
+  <li><a href="4_Use_Case_Scenarios.html" >Previous</a></li>
+  <li><a href="4-2_Useful_Patient_History_for_Providers.html" >Next</a></li>
+</ul>

@@ -336,7 +336,6 @@ An example mapping of a Patient resource is shown here:
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [Patient Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html).
 
 
-
 <ul>
   <li><a href="3-6_Data_Mapping.html" >Previous</a></li>
   <li><a href="3-6-2_Coverage.html" >Next</a></li>

@@ -24,6 +24,6 @@ active: 3-5 Interaction and Payload Matrix
 
 
 <ul>
-  <li><a href="3-4_Interaction_Methods.html"" >Previous</a></li>
+  <li><a href="3-4_Interaction_Methods.html" >Previous</a></li>
   <li><a href="3-6_Data_Mapping.html" >Next</a></li>
 </ul>

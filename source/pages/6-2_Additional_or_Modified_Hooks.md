@@ -40,3 +40,7 @@ Defining new hooks is an expected part of the CDS Hooks specification and there 
 
 This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field. Subscriber Id **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.
 
+<ul>
+  <li><a href="6-1_Support_for_FHIR_R4.html" >Previous</a></li>
+  <li><a href="6-3_PDex_Hooks.html" >Next</a></li>
+</ul>

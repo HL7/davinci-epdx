@@ -69,3 +69,8 @@ A sample of the CDS Hook for appointment-book is included below:
 </pre>
 
 SubscriberId **SHOULD** be taken from the FHIR Coverage record for the Patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App.
+
+<ul>
+  <li><a href="6-2_Additional_or_Modified_Hooks.html" >Previous</a></li>
+  <li><a href="6-4_Hook_Configuration.html" >Next</a></li>
+</ul>

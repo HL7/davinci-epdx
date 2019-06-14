@@ -221,17 +221,17 @@ can only resize using html  or css ;-( -->
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a name="b60ee1ee-d938-4b9c-b3c1-b30c5a1c4766">​</a><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
-  <li><a name="17777b1d-c221-4eed-bc4e-a75b68adbccd">​</a><a href="./6-1_Support_for_FHIR_R4.html" id="markdown-toc-r4-support">6-1 Support for FHIR R4</a></li>
-  <li><a name="49d95b9d-3f88-46f3-abd2-c3c95dca600c">​</a><a href="./6-2_Additional_or_Modified_Hooks.html" id="markdown-toc-additional">6-2 Additional or Modified Hooks</a></li>
-  <li><a name="591353bf-bcf9-4a81-aadf-46bf9acccb72">​</a><a href="./6-3_PDex_Hooks.html" id="markdown-toc-pdex-hooks">6-3 PDex Hooks</a></li>
-  <li><a name="c7844f6b-05f7-4784-bb0f-bcda4b7bcf27">​</a><a href="./6-4_Hook_Configuration.html" id="markdown-toc-hook-configuration">6-4 Hook Configuration</a></li>
-	<li><a name="0203ceee-6ccd-4f7d-9fef-ef49312a06ed">​</a><a href="./6-5_Systems.html" id="markdown-toc-systems">6-5 Systems</a></li>
-	<li><a name="a5e773b1-091d-49ac-a03e-96e6483a50f5">​</a><a href="./6-6_Workflow_Examples.html" id="markdown-toc-examples">6-6 Workflow Examples</a></li>
-	<li><a name="7c9a9813-f7b0-4d7f-ab12-47295f014b52">​</a><a href="./6-6-1_First_Visit_with_New_Provider.html" id="markdown-toc-first-visit">6-6-1 First Visit with New Provider</a></li>
-	<li><a name="03355324-b854-43a4-8ee7-100ead9df8c4">​</a><a href="./6-6-2_Return_Visit_with_Provider.html" id="markdown-toc-return-visit">6-6-2 Return Visit with Provider</a></li>
-<li><a name="02eec74d-0f7b-4ee5-b7c4-e8a8e5b6f3f6">​</a><a href="./6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" id="markdown-toc-profiles-and-context">6-6-3 FHIR Profiles and CDS Hooks Context</a></li>
-	<li><a name="6f4fbba0-dae9-4219-b70b-fec08f4a7509">​</a><a href="./6-7_Handling_Data_Provenance.html" id="markdown-toc-provenance">6-7 Handling Data Provenance</a></li>
+  <li><a name="4a378730-1865-4dd1-8bb5-a8ede7a1b21a">​</a><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
+  <li><a name="b10c1f9f-f457-4672-93ff-ec1f3a64366f">​</a><a href="./6-1_Support_for_FHIR_R4.html" id="markdown-toc-r4-support">6-1 Support for FHIR R4</a></li>
+  <li><a name="febc8fed-8c6e-45ba-9cc6-9c650d4eb5b6">​</a><a href="./6-2_Additional_or_Modified_Hooks.html" id="markdown-toc-additional">6-2 Additional or Modified Hooks</a></li>
+  <li><a name="b6b94049-c83b-4202-a01e-df7e50e174db">​</a><a href="./6-3_PDex_Hooks.html" id="markdown-toc-pdex-hooks">6-3 PDex Hooks</a></li>
+  <li><a name="093235c2-6e5c-42ad-b276-d00dd3c70ced">​</a><a href="./6-4_Hook_Configuration.html" id="markdown-toc-hook-configuration">6-4 Hook Configuration</a></li>
+	<li><a name="412b11cb-a9bd-4bc7-8cbe-751e5bfe1cfb">​</a><a href="./6-5_Systems.html" id="markdown-toc-systems">6-5 Systems</a></li>
+	<li><a name="32b39f48-de1e-4a6f-911c-b556a2a08570">​</a><a href="./6-6_Workflow_Examples.html" id="markdown-toc-examples">6-6 Workflow Examples</a></li>
+	<li><a name="efe7effe-aa09-40a4-a979-3d34a696f3d6">​</a><a href="./6-6-1_First_Visit_with_New_Provider.html" id="markdown-toc-first-visit">6-6-1 First Visit with New Provider</a></li>
+	<li><a name="24e20c9f-837e-40ea-9e58-f498128e0c1e">​</a><a href="./6-6-2_Return_Visit_with_Provider.html" id="markdown-toc-return-visit">6-6-2 Return Visit with Provider</a></li>
+<li><a name="ff9a57d6-2ea9-4e9f-a9e5-256b90b3aea0">​</a><a href="./6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" id="markdown-toc-profiles-and-context">6-6-3 FHIR Profiles and CDS Hooks Context</a></li>
+	<li><a name="4e7228ed-a4d0-4203-a608-6a2df4532c5d">​</a><a href="./6-7_Handling_Data_Provenance.html" id="markdown-toc-provenance">6-7 Handling Data Provenance</a></li>
 </ul>
 
 <p>The PDex IG makes significant use of established FHIR profiles. These <strong>MAY</strong> be qualified with search parameter definitions and terminology artifacts to describe the content to be shared as part of CDS Hook calls. The output from the CDS Hooks service will use FHIR R4 profiles identified in the US Core and Da Vinci HRex IGs.</p>
@@ -381,9 +381,9 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 
 <p>If the Provider’s EMR system supports FHIR R4 the SMART App <strong>SHALL</strong> determine which resources may be written to the Patient’s record in the EMR system. It will write these records to the Provider’s EMR System.</p>
 
-<p><a name="3ae76b09-4c0d-4c57-b123-353819ef7c8b">​</a>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+<p><a name="51325789-4d3d-4a42-aa47-89e99912d6ab">​</a>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
 
-<p><a name="c645c3ac-6d8e-4a05-ae85-1f5dc1fcb776">​</a>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in  <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
+<p><a name="a5b07630-4a16-47ff-bbb7-45995bcfdfb3">​</a>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in  <a href="#6-6-3-2-writing-records-using-documentreference">section 6-6-3-2</a>, below.</p>
 
 <h4 id="6-6-3-4-writing-records-using-documentreference">6-6-3-4 Writing Records Using DocumentReference</h4>
 
@@ -395,6 +395,10 @@ Optional fields in the CDS Hooks for PDex context include:</p>
   <li>Convert the remaining records to an ASCII text document and write to a DocumentReference record for the Patient.</li>
 </ol>
 
+<ul>
+  <li><a href="6-6-2_Return_Visit_with_Provider.html">Previous</a></li>
+  <li><a href="6-7_Handling_Data_Provenance.html">Next</a></li>
+</ul>
 
 
 
@@ -425,7 +429,7 @@ Optional fields in the CDS Hooks for PDex context include:</p>
   <div class="container">    <!-- container -->
    <div class="inner-wrapper">
     <p>
-      DaVinciPayerDataExchange Version: 0.0.9.260  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, Jun 14, 2019 12:00-0400.
+      DaVinciPayerDataExchange Version: 0.0.9.269  &reg;&copy; <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR Version: 4.0.0</a> (IG Publisher v4.0.0-a53ec6ee1b) generated on Fri, Jun 14, 2019 15:17-0400.
       | <a style="color: #81BEF7" href="https://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677">Propose a change</a>
         <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a>
         

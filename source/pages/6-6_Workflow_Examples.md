@@ -24,3 +24,7 @@ There are two Provider/Clinician workflow examples:
 1. First Visit with new Provider
 2. Return visit with new Provider
 
+<ul>
+  <li><a href="6-5_Systems.html" >Previous</a></li>
+  <li><a href="6-6-1_First_Visit_with_New_Provider.html" >Next</a></li>
+</ul>

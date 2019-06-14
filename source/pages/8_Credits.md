@@ -38,3 +38,7 @@ This implementation guide was the work of the Da Vinci Project PDex work group (
 * Newwave (Mark Scrimshire, Santhi Chebrolu)
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
+
+<ul>
+  <li><a href="7_Member-Authorized_OAuth2_Exchange.html" >Previous</a></li>
+</ul>

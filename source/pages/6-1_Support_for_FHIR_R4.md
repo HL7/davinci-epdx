@@ -52,6 +52,7 @@ To summarize this graceful degradation in functionality the priority for writing
 5. Where the DocumentReference does not support HTML or XHTML content write an ASCII text version.
 
 
-
-
-
+<ul>
+  <li><a href="6_CDS-Hooks.html" >Previous</a></li>
+  <li><a href="6-2_Additional_or_Modified_Hooks.html" >Next</a></li>
+</ul>

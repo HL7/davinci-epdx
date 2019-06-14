@@ -27,3 +27,8 @@ All search parameters and subsequent filtering of returned information **SHALL**
 Health Plans should only restrict provider access to a member's data where that access is required in accordance with State or FEderal regulations.  
 
 Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an OAuth2.0 Authorization.
+
+<ul>
+  <li><a href="4-2_Useful_Patient_History_for_Providers.html" >Previous</a></li>
+  <li><a href="6_CDS-Hooks.html" >Next</a></li>
+</ul>

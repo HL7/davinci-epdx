@@ -49,6 +49,8 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (269) Fix corrupted section 2-1
+- (266) Add remaining previous/next links to narrative
 - (255) Adding Previous / Next Page Links to narrative thru section 3
 - (254) Add CDS Hooks Justification, revisions per review comments. 
 - (245) Add section 4-8 sub-content links
