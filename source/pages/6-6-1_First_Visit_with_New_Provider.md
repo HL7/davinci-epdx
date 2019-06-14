@@ -25,3 +25,7 @@ The receptionist in the doctors office collects their personal information, heal
 
 The creation of an appointment activates a CDS Hook transaction: appointment-book. 
 
+<ul>
+  <li><a href="6-6_Workflow_Examples.html" >Previous</a></li>
+  <li><a href="6-6-2_Return_Visit_with_Provider.html" >Next</a></li>
+</ul>

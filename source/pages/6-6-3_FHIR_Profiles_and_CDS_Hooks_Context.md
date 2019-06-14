@@ -118,3 +118,7 @@ The format used to write information to a DocumentReference resource in the Prov
 2. Convert the remaining records to an XHTML document and write to a DocumentReference record for the Patient.
 3. Convert the remaining records to an ASCII text document and write to a DocumentReference record for the Patient.
 
+<ul>
+  <li><a href="6-6-2_Return_Visit_with_Provider.html" >Previous</a></li>
+  <li><a href="6-7_Handling_Data_Provenance.html" >Next</a></li>
+</ul>

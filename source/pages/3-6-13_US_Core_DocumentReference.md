@@ -163,5 +163,5 @@ An example mapping of a DocumentReference for an episode of care is shown below:
 
 <ul>
   <li><a href="3-6-12_US_Core_Observation.html" >Previous</a></li>
-  <li><a href="3-6-13_US_Core_DocumentReference.html" >Next</a></li>
+  <li><a href="3-6-14_US_Core_PractitionerRole.html" >Next</a></li>
 </ul>

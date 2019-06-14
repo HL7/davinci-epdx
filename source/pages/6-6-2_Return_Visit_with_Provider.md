@@ -28,3 +28,7 @@ The creation of an appointment activates a CDS Hook transaction: appointment-boo
 In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system.
 
 
+<ul>
+  <li><a href="6-6-1_First_Visit_with_New_Provider.html" >Previous</a></li>
+  <li><a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" >Next</a></li>
+</ul>

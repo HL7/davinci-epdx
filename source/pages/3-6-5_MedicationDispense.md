@@ -232,7 +232,6 @@ An example mapping of a MedicationDispense resource is shown here for a Dispense
 
 
 
-
 <ul>
   <li><a href="3-6-4_US_Core_Location.html" >Previous</a></li>
   <li><a href="3-6-6_US_Core_Practitioner.html" >Next</a></li>
