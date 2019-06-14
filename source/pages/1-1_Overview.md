@@ -16,7 +16,7 @@ Implementers of this specification therefore need to understand some basic infor
 
 The purpose of this Implementation Guide is to enable data to be exchanged between Health Plans (Payers) and Practitioners (Providers) and via Member-authorized exchange between Health Plans and Third Party Applications. Health Plans **SHOULD** wherever possible present the information using vocabularies that are understood by the Provider.
 
-The Health Plan **SHALL** transform data received from both clinical and claims sources that they store in their Systems of Record into HL7 FHIR R4 resources for the purposes of this exchange. 
+All data exchanged by Health Plans using the interactions covered in this IG **SHALL** be transformed to FHIR R4 resources.  Health Plans **MAY** have both data from clinical and claims sources that they store in their Systems of Record. This IG does not require Health Plans to store this data in FHIR formats, only to be able to transform it to FHIR resources for the purposes of data exchange with Providers, other Health Plans and Third Party Applications for the interactions covered in this IG.
 
 **There are items in this guide that are subject to update**. This includes:
 - Value Sets

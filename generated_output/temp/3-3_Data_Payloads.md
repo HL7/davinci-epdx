@@ -26,3 +26,4 @@ All resources and operations available via a FHIR API endpoint **SHALL** be decl
 
 See [Section 2-7](./2-7_PDex_Data_Payloads.html) for details of the Data Payloads and operations.
 
+The Network Directory and Medication Formulary data payloads are defined in their respective subsidiary PDex IGs.
