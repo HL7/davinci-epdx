@@ -4,6 +4,8 @@ layout: default
 active: 3-2 Exchange Interactions
 ---
 
+[Previous Page](3-1_Actors.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -30,3 +32,6 @@ These subsidiary IGs are:
 - Payer Data exchange Plan Network Directory (PDex-plan-net) IG covering Healthcare and Pharmacy networks: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 - Payer Data exchange Drug formulary (PDex-formulart) IG covering prescription drug formulary: http://build.fhir.org/ig/HL7/davinci-pdex-formulary/
 
+
+
+[Next Page](3-3_Data_Payloads.html)

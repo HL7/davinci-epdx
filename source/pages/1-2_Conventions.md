@@ -4,6 +4,8 @@ layout: default
 active: 1-2 Conventions
 ---
 
+[Previous Page](1-1_Overview.html)
+
 <ul id="markdown-toc">
 		Section Guide:
   <li><a href="./1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
@@ -39,3 +41,6 @@ For the purposes of this IG we will use the following terms:
    <li><a href="./1-1_Overview.html" id="markdown-toc-overview">Previous</a></li>
   <li><a href="./2_Introduction.html" id="markdown-toc-conventions">Next</a></li>
 </ul>
+
+
+[Next Page](2_Introduction.html)

@@ -4,6 +4,8 @@ layout: default
 active: 6-6-3 FHIR Profiles and CDS Hooks Context
 ---
 
+[Previous Page](6-6-2_Return_Visit_with_Provider.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -118,3 +120,6 @@ The format used to write information to a DocumentReference resource in the Prov
 2. Convert the remaining records to an XHTML document and write to a DocumentReference record for the Patient.
 3. Convert the remaining records to an ASCII text document and write to a DocumentReference record for the Patient.
 
+
+
+[Next Page](6-7_Handling_Data_Provenance.html)

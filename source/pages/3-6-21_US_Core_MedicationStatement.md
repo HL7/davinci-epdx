@@ -4,6 +4,8 @@ layout: default
 active: 3-6-21 US Core MedicationStatement
 ---
 
+[Previous Page](3-6-20_US_Core_MedicationRequest.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -119,3 +121,6 @@ An example mapping of a MedicationStatement is shown below:
   "dateAsserted" : "2016-05-01T16:13:03Z"
 }
 </pre>
+
+
+[Next Page](3-6-22_US_Core_Goal_Profile.html)

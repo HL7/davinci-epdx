@@ -4,6 +4,8 @@ layout: default
 active: 3-6-7 US Core Procedure
 ---
 
+[Previous Page](3-6-6_US_Core_Practitioner.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -158,3 +160,6 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
+
+
+[Next Page](3-6-8_US_Core_Condition.html)

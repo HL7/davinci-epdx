@@ -4,6 +4,8 @@ layout: default
 active: 3-6-5 MedicationDispense
 ---
 
+[Previous Page](3-6-4_US_Core_Location.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -233,3 +235,6 @@ An example mapping of a MedicationDispense resource is shown here for a Dispense
 
 
 
+
+
+[Next Page](3-6-6_US_Core_Practitioner.html)

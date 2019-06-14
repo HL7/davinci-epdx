@@ -4,6 +4,8 @@ layout: default
 active: 4-1 Patient Persona
 ---
 
+[Previous Page](4_Use_Case_Scenarios.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
@@ -34,3 +36,6 @@ He has recently switched from Medicare Advantage Plan A and enrolled in Medicare
 
 In this scenario, Arthur has signed up for a new  Medicare advantage plan with payer C during the open enrollment period. Before the initiation of his coverage beginning January 1, payer C has established communication with the patient and has provided the patient with a secure log in to the payer C patient portal. Patient continues to have an active login to payer B patient portal.
 
+
+
+[Next Page](4-2_Useful_Patient_History_for_Providers.html)

@@ -4,6 +4,8 @@ layout: default
 active: 6 CDS-Hooks
 ---
 
+[Previous Page](5_Provider-controlled_Information_Requests_and_Filtering.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -36,3 +38,6 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 This IG **SHOULD** be used in conjunction with the Da Vinci Health Record Exchange (HRex) Implementation Guide. The HRex IG defines CDS Hooks that are used across one or more Da Vinci Use Case-related IG. The PDex IG defines the payload(s) that are required to support each PDex use case using the relevant HRex defined Hooks.  
 
 This implementation guide extends/customizes CDS Hooks in 4 ways: support for FHIR R4, extending the appointment-book hook, a hook configuration mechanism and additional response capabilities. Each are described below:
+
+
+[Next Page](6-1_Support_for_FHIR_R4.html)

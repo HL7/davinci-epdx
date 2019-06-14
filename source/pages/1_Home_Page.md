@@ -4,6 +4,8 @@ layout: default
 active: 1 Home Page
 ---
 
+[Previous Page](toc.html)
+
 <p id="publish-box">
 This is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.
 </p>
@@ -22,3 +24,5 @@ Feedback is welcome and may be submitted through the [FHIR gForge tracker](http:
   <li><a href="./1_Home_Page.html" id="markdown-toc-homepage">Previous</a></li>
   <li><a href="./1-1_Overview.html" id="markdown-toc-overview">Next</a></li>
  </ul>
+
+[Next Page](1-1_Overview.html)

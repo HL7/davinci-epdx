@@ -4,6 +4,8 @@ layout: default
 active: 6-2 Additional or Modified Hooks
 ---
 
+[Previous Page](6-1_Support_for_FHIR_R4.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -40,3 +42,6 @@ Defining new hooks is an expected part of the CDS Hooks specification and there 
 
 This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field. Subscriber Id **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.
 
+
+
+[Next Page](6-3_PDex_Hooks.html)

@@ -4,6 +4,8 @@ layout: default
 active: 3-6-14 US Core PractitionerRole
 ---
 
+[Previous Page](3-6-13_US_Core_DocumentReference.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -342,3 +344,6 @@ An example mapping of an PractitionerRole resource is shown here:
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Practitioner Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html).
 
 
+
+
+[Next Page](3-6-15_US_Core_Device.html)

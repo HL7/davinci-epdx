@@ -4,6 +4,8 @@ layout: default
 active: 3-6-15 US Core Device
 ---
 
+[Previous Page](3-6-14_US_Core_PractitionerRole.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -112,3 +114,6 @@ An example mapping of a device resource is shown below:
   }
 }
 </pre>
+
+
+[Next Page](3-6-16_US_Core_Organization.html)

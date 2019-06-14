@@ -4,6 +4,8 @@ layout: default
 active: 2-6 Implementation Hierarchy and Priorities
 ---
 
+[Previous Page](2-5_Implementation_Assumptions.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -27,3 +29,6 @@ The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in th
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
 
 Amongst Health Plans there has been limited adoption of FHIR APIs. Therefore for Health Plan APIs identified in this IG the FHIR R4 version **SHALL** be used.
+
+
+[Next Page](2-7_PDex_Data_Payloads.html)

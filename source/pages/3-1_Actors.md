@@ -4,6 +4,8 @@ layout: default
 active: 3-1 Actors
 ---
 
+[Previous Page](3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -25,3 +27,6 @@ The following actors are recognized in the PDex IG:
 For the purposes of this IG there is nothing to prevent a covered entity, such as a Provider, from creating an integration interface or application that they submit for approval and connection to a Health Plan API. In that situation the covered entity operates under the same conditions and authorization processes as any other Third Party Application where any sharing of Member information requires explicit authorization to be given by the member via OAuth2.0.
 
 
+
+
+[Next Page](3-2_Exchange_Interactions.html)

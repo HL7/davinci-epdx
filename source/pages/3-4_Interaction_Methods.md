@@ -4,6 +4,8 @@ layout: default
 active: 3-4 Interaction Methods
 ---
 
+[Previous Page](3-3_Data_Payloads.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -120,3 +122,6 @@ Member-authorized sharing of their health history **MAY** utilize the Patient-ev
 The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity such as another Health Plan. 
 
 The Patient-everything operation supports the use of the [bulk FHIR data format Specification](https://www.hl7.org/fhir/formats.html#bulk). A Health Plan **MAY** format the Patient-everything records to be exchanged using the ND-Json format. 
+
+
+[Next Page](3-5_Interaction_and_Payload_Matrix.html)

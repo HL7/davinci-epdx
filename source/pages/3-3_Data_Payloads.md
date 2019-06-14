@@ -4,6 +4,8 @@ layout: default
 active: 3-3 Data Payloads
 ---
 
+[Previous Page](3-2_Exchange_Interactions.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -27,3 +29,6 @@ All resources and operations available via a FHIR API endpoint **SHALL** be decl
 See [Section 2-7](./2-7_PDex_Data_Payloads.html) for details of the Data Payloads and operations.
 
 The Network Directory and Medication Formulary data payloads are defined in their respective subsidiary PDex IGs.
+
+
+[Next Page](3-4_Interaction_Methods.html)

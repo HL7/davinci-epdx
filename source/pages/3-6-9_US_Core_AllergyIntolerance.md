@@ -4,6 +4,8 @@ layout: default
 active: 3-6-9 US Core AllergyIntolerance
 ---
 
+[Previous Page](3-6-8_US_Core_Condition.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -140,3 +142,6 @@ An example mapping of an AllergyIntolerance resource is shown below:
   ]
 }
 </pre>
+
+
+[Next Page](3-6-10_US_Core_Immunization.html)

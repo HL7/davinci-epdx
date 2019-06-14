@@ -4,6 +4,8 @@ layout: default
 active: 3-6-22 US Core Goal Profile
 ---
 
+[Previous Page](3-6-21_US_Core_MedicationStatement.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -103,3 +105,6 @@ An example mapping of a Goal is shown below:
   ]
 }
 </pre>
+
+
+[Next Page](4_Use_Case_Scenarios.html)

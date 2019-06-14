@@ -49,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (255) Adding Previous / Next Page Links to narrative
 - (254) Add CDS Hooks Justification, revisions per review comments. 
 - (245) Add section 4-8 sub-content links
 - (243) Add FM as sponsoring workgroup to description
@@ -61,19 +62,6 @@ See the [Table of Contents](toc.html) for more information.
 - (207) Data mapping updates.
 - (204) Image updates. Minor changes through 3-5.
 - (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram
-- (191) testing build issues
-- (186) Items to be resolved. Update Home Page
-- (184) Raise OAuth2.0 to higher level in IG
-- (181) Add section on mapping of IDs in bundles (section 3-6)
-- (180) Update diagrams. Add SMART-on-FHIR flow diagram. Add Oauth2.0+FHIR flow diagram.
-- (174) Add use of NDJson Bulk FHIR format to Patient-everything. 
-- (173) Member Health History reference in Payloads section
-- (172) Minor changes to Encounter table of US Core Essential fields.
-- (171) Add example of ADT to FHIR conversion.
-- (170) Remove Patient/$everything support. Retain Patient/[ID]/$everything.
-- (168) Refine Patient-everything operation details: section 3-4-3. Update Credits section
-- (167) Add image of transformation flows to Overview section
-- (163) Add information on minimum fields to be supplied for clinical resources. Added sub-sections to 3-6 Data Mapping
 
 
 

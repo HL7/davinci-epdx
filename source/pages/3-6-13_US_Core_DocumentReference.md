@@ -4,6 +4,8 @@ layout: default
 active: 3-6-13 US Core DocumentReference
 ---
 
+[Previous Page](3-6-12_US_Core_Observation.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -160,3 +162,5 @@ An example mapping of a DocumentReference for an episode of care is shown below:
   }
 }
 </pre>
+
+[Next Page](3-6-14_US_Core_PractitionerRole.html)

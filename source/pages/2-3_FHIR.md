@@ -4,6 +4,8 @@ layout: default
 active: 2-3 FHIR
 ---
 
+[Previous Page](2-2_Member_Consent.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -30,3 +32,6 @@ This implementation guide uses terminology, notations and design principles that
 definitions](http://build.fhir.org/formats.html)
 * [Base resource](http://build.fhir.org/resource.html)
 
+
+
+[Next Page](2-4_Supporting_Specifications.html)
