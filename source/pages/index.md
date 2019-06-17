@@ -49,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (271) Change Business Version to 1.0.0
 - (270) reformat section 2-1
 - (269) Fix corrupted section 2-1
 - (266) Add remaining previous/next links to narrative
@@ -80,7 +81,7 @@ See the [Table of Contents](toc.html) for more information.
 <tbody>
 <tr>
 <td>Mark Scrimshire (mark@ekivemark.com)</td>
-<td></td>
+<td><a href="mailto:mark@ekivemark.com">mark@ekivemark.com</a></td>
 </tr>
 </tbody>
 </table>
