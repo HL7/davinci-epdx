@@ -6,14 +6,14 @@ active: 2-2 Member Consent
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="./2-1_Implementation_Guide_Scope.html" id="markdown-toc-scope">- Implementation Guide Scope</a></li>
-  <li><a href="./2-2_Member_Consent.html" id="markdown-toc-consent">- Member Consent</a></li>
-	<li><a href="./2-3_FHIR.html" id="markdown-toc-fhir">- FHIR</a></li>
-	<li><a href="./2-4_Supporting_Specifications.html" id="markdown-toc-supportingspecifications">- Supporting Specifications</a></li>
-	<li><a href="./2-5_Implementation_Assumptions.html" id="markdown-toc-assumptions">- Implementation Assumptions</a></li>
-	<li><a href="./2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
-	<li><a href="./2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
+  <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="2-1_Implementation_Guide_Scope.html" id="markdown-toc-scope">- Implementation Guide Scope</a></li>
+  <li><a href="2-2_Member_Consent.html" id="markdown-toc-consent">- Member Consent</a></li>
+	<li><a href="2-3_FHIR.html" id="markdown-toc-fhir">- FHIR</a></li>
+	<li><a href="2-4_Supporting_Specifications.html" id="markdown-toc-supportingspecifications">- Supporting Specifications</a></li>
+	<li><a href="2-5_Implementation_Assumptions.html" id="markdown-toc-assumptions">- Implementation Assumptions</a></li>
+	<li><a href="2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
+	<li><a href="2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
 </ul>
 
 Member/Patient Consent for scenarios covered in this Implementation Guide fall into two areas:
@@ -41,7 +41,7 @@ The Member-mediated Information Exchange method will build upon established OAut
 The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/).
 The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/).
 
-The OAuth2.0-based exchange is covered in detail in [Section 7]()
+The OAuth2.0-based exchange is covered in detail in [Section 7](7_Member-Authorized_OAuth2_Exchange.html)
 
 
 <ul>

@@ -6,14 +6,14 @@ active: 2-7 PDex Data Payloads
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="./2-1_Implementation_Guide_Scope.html" id="markdown-toc-scope">- Implementation Guide Scope</a></li>
-  <li><a href="./2-2_Member_Consent.html" id="markdown-toc-consent">- Member Consent</a></li>
-	<li><a href="./2-3_FHIR.html" id="markdown-toc-fhir">- FHIR</a></li>
-	<li><a href="./2-4_Supporting_Specifications.html" id="markdown-toc-supportingspecifications">- Supporting Specifications</a></li>
-	<li><a href="./2-5_Implementation_Assumptions.html" id="markdown-toc-assumptions">- Implementation Assumptions</a></li>
-	<li><a href="./2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
-	<li><a href="./2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
+  <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="2-1_Implementation_Guide_Scope.html" id="markdown-toc-scope">- Implementation Guide Scope</a></li>
+  <li><a href="2-2_Member_Consent.html" id="markdown-toc-consent">- Member Consent</a></li>
+	<li><a href="2-3_FHIR.html" id="markdown-toc-fhir">- FHIR</a></li>
+	<li><a href="2-4_Supporting_Specifications.html" id="markdown-toc-supportingspecifications">- Supporting Specifications</a></li>
+	<li><a href="2-5_Implementation_Assumptions.html" id="markdown-toc-assumptions">- Implementation Assumptions</a></li>
+	<li><a href="2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
+	<li><a href="2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
 </ul>
 
 The PDex IG defines four types of data payload:
@@ -66,7 +66,7 @@ The FHIR bundle that is the output of the Patient-everything operation can be re
 #### 2-7-1-2 Da Vinci PDex / HRex
 
 - [ HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
-- [PDex MedicationDispense]() **_TODO_** (Add Link)
+- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
 - [HRex Provenance](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html)
 
 #### 2-7-1-3 CapabilityStatement

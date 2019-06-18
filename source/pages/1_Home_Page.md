@@ -9,9 +9,9 @@ This is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. 
 </p>
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
-  <li><a href="./1-1_Overview.html" id="markdown-toc-overview">- Overview</a></li>
-  <li><a href="./1-2_Conventions.html" id="markdown-toc-conventions">- Conventions</a></li>
+  <li><a href="1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
+  <li><a href="1-1_Overview.html" id="markdown-toc-overview">- Overview</a></li>
+  <li><a href="1-2_Conventions.html" id="markdown-toc-conventions">- Conventions</a></li>
 </ul>
 This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 
@@ -19,6 +19,6 @@ Feedback is welcome and may be submitted through the [FHIR gForge tracker](http:
 
 
 <ul >
-  <li><a href="./1_Home_Page.html" >Previous</a></li>
-  <li><a href="./1-1_Overview.html" >Next</a></li>
+  <li><a href="1_Home_Page.html" >Previous</a></li>
+  <li><a href="1-1_Overview.html" >Next</a></li>
  </ul>

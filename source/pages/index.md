@@ -49,6 +49,9 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (280) fix more links
+- (275) fix links
+- (274) Change Business Version to 0.1.0, Change navigation links
 - (271) Change Business Version to 1.0.0
 - (270) reformat section 2-1
 - (269) Fix corrupted section 2-1
@@ -57,16 +60,6 @@ See the [Table of Contents](toc.html) for more information.
 - (254) Add CDS Hooks Justification, revisions per review comments. 
 - (245) Add section 4-8 sub-content links
 - (243) Add FM as sponsoring workgroup to description
-- (241) Section 3 sub-content link
-- (238) Section 3 content links
-- (235) Section 2 content links
-- (234) Updating Capability Statement Page
-- (228) Add MedicationDispense
-- (221) Fix relative links
-- (207) Data mapping updates.
-- (204) Image updates. Minor changes through 3-5.
-- (200) Added to section 7. Updated OAuth2.0 Member-authorized exchange diagram
-
 
 
 ### Authors

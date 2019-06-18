@@ -6,17 +6,17 @@ active: 6-6-3 FHIR Profiles and CDS Hooks Context
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
-  <li><a href="./6-1_Support_for_FHIR_R4.html" id="markdown-toc-r4-support">6-1 Support for FHIR R4</a></li>
-  <li><a href="./6-2_Additional_or_Modified_Hooks.html" id="markdown-toc-additional">6-2 Additional or Modified Hooks</a></li>
-  <li><a href="./6-3_PDex_Hooks.html" id="markdown-toc-pdex-hooks">6-3 PDex Hooks</a></li>
-  <li><a href="./6-4_Hook_Configuration.html" id="markdown-toc-hook-configuration">6-4 Hook Configuration</a></li>
-	<li><a href="./6-5_Systems.html" id="markdown-toc-systems">6-5 Systems</a></li>
-	<li><a href="./6-6_Workflow_Examples.html" id="markdown-toc-examples">6-6 Workflow Examples</a></li>
-	<li><a href="./6-6-1_First_Visit_with_New_Provider.html" id="markdown-toc-first-visit">6-6-1 First Visit with New Provider</a></li>
-	<li><a href="./6-6-2_Return_Visit_with_Provider.html" id="markdown-toc-return-visit">6-6-2 Return Visit with Provider</a></li>
-<li><a href="./6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" id="markdown-toc-profiles-and-context">6-6-3 FHIR Profiles and CDS Hooks Context</a></li>
-	<li><a href="./6-7_Handling_Data_Provenance.html" id="markdown-toc-provenance">6-7 Handling Data Provenance</a></li>
+  <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
+  <li><a href="6-1_Support_for_FHIR_R4.html" id="markdown-toc-r4-support">6-1 Support for FHIR R4</a></li>
+  <li><a href="6-2_Additional_or_Modified_Hooks.html" id="markdown-toc-additional">6-2 Additional or Modified Hooks</a></li>
+  <li><a href="6-3_PDex_Hooks.html" id="markdown-toc-pdex-hooks">6-3 PDex Hooks</a></li>
+  <li><a href="6-4_Hook_Configuration.html" id="markdown-toc-hook-configuration">6-4 Hook Configuration</a></li>
+	<li><a href="6-5_Systems.html" id="markdown-toc-systems">6-5 Systems</a></li>
+	<li><a href="6-6_Workflow_Examples.html" id="markdown-toc-examples">6-6 Workflow Examples</a></li>
+	<li><a href="6-6-1_First_Visit_with_New_Provider.html" id="markdown-toc-first-visit">6-6-1 First Visit with New Provider</a></li>
+	<li><a href="6-6-2_Return_Visit_with_Provider.html" id="markdown-toc-return-visit">6-6-2 Return Visit with Provider</a></li>
+  <li><a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" id="markdown-toc-profiles-and-context">6-6-3 FHIR Profiles and CDS Hooks Context</a></li>
+	<li><a href="6-7_Handling_Data_Provenance.html" id="markdown-toc-provenance">6-7 Handling Data Provenance</a></li>
 </ul>
 
 The PDex IG makes significant use of established FHIR profiles. These **MAY** be qualified with search parameter definitions and terminology artifacts to describe the content to be shared as part of CDS Hook calls. The output from the CDS Hooks service will use FHIR R4 profiles identified in the US Core and Da Vinci HRex IGs.
@@ -106,9 +106,9 @@ The SMART App **SHALL NOT** convert records from one FHIR version to another.
 
 If the Provider's EMR system supports FHIR R4 the SMART App **SHALL** determine which resources may be written to the Patient's record in the EMR system. It will write these records to the Provider's EMR System. 
 
-Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** take one of the actions identified in [section 6-6-3-2](#6-6-3-2-writing-records-using-documentreference), below.
+Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** take one of the actions identified in [section 6-6-3-4](#6-6-3-4-writing-records-using-documentreference), below.
 
-If the Provider's EMR system does not support FHIR R4 the SMART App **SHOULD** create a DocumentReference record and write the selected records to the Provider's EMR System using one of the actions identified in  [section 6-6-3-2](#6-6-3-2-writing-records-using-documentreference), below.
+If the Provider's EMR system does not support FHIR R4 the SMART App **SHOULD** create a DocumentReference record and write the selected records to the Provider's EMR System using one of the actions identified in  [section 6-6-3-4](#6-6-3-4-writing-records-using-documentreference), below.
     
 #### 6-6-3-4 Writing Records Using DocumentReference
 

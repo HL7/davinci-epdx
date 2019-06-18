@@ -6,9 +6,9 @@ active: 1-1 Overview
 
 <ul id="markdown-toc">
 		Section Guide:
-  <li><a href="./1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
-  <li><a href="./1-1_Overview.html" id="markdown-toc-overview">- Overview</a></li>
-  <li><a href="./1-2_Conventions.html" id="markdown-toc-conventions">- Conventions</a></li>
+  <li><a href="1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
+  <li><a href="1-1_Overview.html" id="markdown-toc-overview">- Overview</a></li>
+  <li><a href="1-2_Conventions.html" id="markdown-toc-conventions">- Conventions</a></li>
 </ul>
 This guide is based on the [HL7 FHIR](http://build.fhir.org/index.html) standard, as well as the [CDS Hooks](https://cds-hooks.org/),  [SMART on FHIR](http://docs.smarthealthit.org/) and [OAuth2.0](https://oauth.net/2/) standards, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
@@ -98,9 +98,9 @@ Since Health Plans compile information from many sources to create a Member's He
 
 Health Plans **SHALL** maintain provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan shall create FHIR Provenance record(s) to identify the source of the information being received and the actions that is taken on the data, such as converting from one format to another. Health Plans **SHALL** pass on Provenance records in any PDex information exchange. 
 
-Provenance is covered in more detail in [Section 6-7 Handling Data Provenance](./6-7_Handling_Data_Provenance.html).
+Provenance is covered in more detail in [Section 6-7 Handling Data Provenance](6-7_Handling_Data_Provenance.html).
 
 <ul >
-  <li><a href="./1_Home_Page.html" >Previous</a></li>
-  <li><a href="./1-2_Conventions.html" >Next</a></li>
+  <li><a href="1_Home_Page.html" >Previous</a></li>
+  <li><a href="1-2_Conventions.html" >Next</a></li>
 </ul>

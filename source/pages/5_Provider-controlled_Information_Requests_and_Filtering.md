@@ -6,7 +6,7 @@ active: 5 Provider-controlled Information Requests and Filtering
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./5_Provider-controlled_Information_Requests_and_Filtering.html" id="markdown-toc-section5">5 Provider-controlled Information Requests and Filtering</a></li>
+  <li><a href="5_Provider-controlled_Information_Requests_and_Filtering.html" id="markdown-toc-section5">5 Provider-controlled Information Requests and Filtering</a></li>
 </ul>
 
 <table style="background-color:rgb(195,231,244);width:100%;">
