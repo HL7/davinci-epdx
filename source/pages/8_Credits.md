@@ -6,7 +6,7 @@ active: 8 Credits
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./8_Credits.html" id="markdown-toc-credits">8 Credits</a></li>
+  <li><a href="8_Credits.html" id="markdown-toc-credits">8 Credits</a></li>
 </ul>
 
 **Primary authors:**

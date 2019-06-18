@@ -6,7 +6,7 @@ active: 7 Member-Authorized OAuth2 Exchange
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./7_Member-Authorized_OAuth2_Exchange.html" id="markdown-toc-member-authorized">7 Member-Authorized OAuth2 Exchange</a></li>
+  <li><a href="7_Member-Authorized_OAuth2_Exchange.html" id="markdown-toc-member-authorized">7 Member-Authorized OAuth2 Exchange</a></li>
 </ul>
 
 This IG provides a mechanism for Member-authorized exchange of their Health History:

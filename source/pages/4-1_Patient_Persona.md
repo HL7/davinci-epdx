@@ -6,9 +6,9 @@ active: 4-1 Patient Persona
 
 <ul id="markdown-toc">
 	Section Guide:
-  <li><a href="./4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
-  <li><a href="./4-1_Patient_Persona.html" id="markdown-toc-persona">4-1 Patient Persona</a></li>
-  <li><a href="./4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history">4-2 Useful Patient History for Providers</a></li>
+  <li><a href="4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
+  <li><a href="4-1_Patient_Persona.html" id="markdown-toc-persona">4-1 Patient Persona</a></li>
+  <li><a href="4-2_Useful_Patient_History_for_Providers.html" id="markdown-toc-useful-history">4-2 Useful Patient History for Providers</a></li>
 </ul>
 
 ### 4-1-1 Provider to Health Plan scenario:
