@@ -55,7 +55,7 @@ active: 3-6-22 US Core Goal Profile
 	</table>
 </ul>
 
-Where a Health Plan has access to a Member's health goal information they **SHALL** make the information available using the [US Core Goal](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html) resource.
+Where a Health Plan has access to a Member's health goal information they **SHALL** make the information available using the [US Core Goal](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-goal.html) resource.
 
 The essential fields to be provided in the Goal resource are:
 

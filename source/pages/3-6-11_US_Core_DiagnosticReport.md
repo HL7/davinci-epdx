@@ -56,7 +56,7 @@ active: 3-6-11 US Core DiagnosticReport
 </ul>
 
 
-Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
+Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
 
 The essential fields to be provided in the US Core DiagnosticReport resource are:
 

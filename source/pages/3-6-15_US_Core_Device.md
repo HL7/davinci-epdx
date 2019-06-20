@@ -56,7 +56,7 @@ active: 3-6-15 US Core Device
 </ul>
 
 
-Where a Health Plan has information about devices used by the Member that information **SHOULD** be published using the [US Core DEvice](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-device.html) resource. 
+Where a Health Plan has information about devices used by the Member that information **SHOULD** be published using the [US Core DEvice](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-device.html) resource. 
 
 The essential fields to be provided in the US Core Device resource are:
 
