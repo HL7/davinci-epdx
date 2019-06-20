@@ -145,7 +145,7 @@ An example mapping of a Location resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/) for further examples of completed [US Core Location Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-location.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [US Core Location Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-location.html).
 
 
 
