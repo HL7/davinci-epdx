@@ -19,7 +19,7 @@ active: 2-6 Implementation Hierarchy and Priorities
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
  
 1. Da Vinci HRex IG profiles (based on FHIR R4 - http://build.fhir.org/ig/HL7/davinci-hrex/index.html )
-2. HL7 FHIR US Core STU3 (based on FHIR R4 - https://build.fhir.org/ig/HL7/US-Core-R4/ ) 
+2. HL7 FHIR US Core STU3 (based on FHIR R4 - http://hl7.org/fhir/us/core/STU3/ ) 
 3. HL7 Argonaut Profiles (based on FHIR DSTU2 - http://www.fhir.org/guides/argonaut/r2/ )
 4. HL7 FHIR US Core STU2 (based on FHIR STU3 - http://hl7.org/fhir/us/core/STU2/ )
 

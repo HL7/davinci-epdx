@@ -56,7 +56,7 @@ active: 3-6-6 US Core Practitioner
 </ul>
 
 
-The  [US Core Practitioner profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
+The  [US Core Practitioner profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
 The essential fields to be provided in the US Core Practitioner resource are:
 
@@ -74,7 +74,7 @@ The essential fields to be provided in the US Core Practitioner resource are:
 
 #### 3-6-6-1 Health Plan Mapping Assistance
 
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Practitioner profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Practitioner profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html). This is shown below as an assistance  to implementers:
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile         | Profile Field     | ValueSet | Notes |
 |------|-------------------|------------------|-------------------------------|----------------------|-------------------|----------|-------|
@@ -148,7 +148,7 @@ An example mapping of an Practitioner resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Practitioner Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-practitioner.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/) for further examples of completed [US Core Practitioner Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html).
 
 
 
