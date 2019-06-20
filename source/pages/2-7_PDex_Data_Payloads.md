@@ -38,8 +38,8 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core CareTeam Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careteam.html)
 - [US Core Condition Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-condition.html)
 - [US Core Device Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-device.html)
-- [US Core DiagnosticReport Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport.html)
-- [US Core Diagnostic Report Profile for Report and Note exchange](http://hl7.org/fhir/us/core/STU3/StructureDefinition-new-us-core-diagnosticreport.html)
+- [US Core DiagnosticReport Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html)
+- [US Core Diagnostic Report Profile for Report and Note exchange](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
 - [US Core DocumentReference Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html)
 - [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html)
 - [US Core Goal Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-goal.html)
@@ -50,12 +50,12 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core MedicationStatement Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationstatement.html)
 - [US Core Organization Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-organization.html)
 - [US Core Patient Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html)
-- [US Core Pediatric BMI Observation Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-pediatric-bmi.html)
-- [US Core Pediatric Weight Observation Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-pediatric-weight.html)
+- [US Core Pediatric BMI Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html)
+- [US Core Pediatric Weight Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html)
 - [US Core Practitioner Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html)
 - [US Core PractitionerRole Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html)
 - [US Core Procedure Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html)
-- [US Core Result Observation Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-observationresults.html)
+- [US Core Result Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)
 - [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-smokingstatus.html)
 In addition US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
@@ -83,8 +83,8 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Condition                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-condition.html            | Y    | Y      | Y      |        |        |         | Y       |
 | Coverage                                      | http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      |        |        |         | Y       |
 | Device                                        | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-device.html               | Y    | Y      | Y      |        |        |         | Y       |
-| DiagnosticReport                              | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport.html     | Y    | Y      | Y      |        |        |         | Y       |
-| DiagnosticReport for report and Note Exchange | http://hl7.org/fhir/us/core/STU3/StructureDefinition-new-us-core-diagnosticreport.html | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport                              | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html     | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport for report and Note Exchange | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      |        |        |         | Y       |
 | DocumentReference                             | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y      |        |        |         | Y       |
 | Encounter                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y      |        |        |         | Y       |
 | Goal                                          | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y      |        |        |         | Y       |
@@ -96,13 +96,13 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | MedicationStatement                           | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationstatement.html  | Y    | Y      | Y      |        |        |         | Y       |
 | Organization                                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-organization.html         | Y    | Y      | Y      |        |        |         | Y       |
 | Patient                                       | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      |        |        |         | Y       |
-| Pediatric BMI Observation                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-pediatric-bmi.html        | Y    | Y      | Y      |        |        |         | Y       |
-| Pediatric Weight Observation                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-pediatric-weight.html     | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric BMI Observation                     | http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html        | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric Weight Observation                  | http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html     | Y    | Y      | Y      |        |        |         | Y       |
 | Practitioner                                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      |        |        |         | Y       |
 | PractitionerRole                              | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      |        |        |         | Y       |
 | Procedure                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y      |        |        |         | Y       |
 | Provenance                                    | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      |        |        |         | Y       |
-| Result Observation                            | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-observationresults.html   | Y    | Y      | Y      |        |        |         | Y       |
+| Result Observation                            | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html   | Y    | Y      | Y      |        |        |         | Y       |
 | Smoking Status Observation                    | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y      |        |        |         | Y       |
 | Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y      |        |        |         | Y       |
 
