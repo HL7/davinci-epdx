@@ -154,7 +154,7 @@ An example mapping of an Procedure resource for a medical impiant is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/) for further examples of completed [US Core Procedure Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [US Core Procedure Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html).
 
 
 <ul>

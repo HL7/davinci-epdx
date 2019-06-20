@@ -123,7 +123,7 @@ An example mapping of an Encounter resource is shown here:
 TODO: Add Encounter Resource in JSON format
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html).
 
 
 <ul>
