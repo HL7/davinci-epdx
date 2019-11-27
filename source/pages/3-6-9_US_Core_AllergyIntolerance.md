@@ -58,7 +58,11 @@ active: 3-6-9 US Core AllergyIntolerance
 </ul>
 
 
+<<<<<<< HEAD
 Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
+=======
+Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 
 The essential fields to be provided in the US Core AllergyIntolerance resource are:

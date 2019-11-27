@@ -57,7 +57,11 @@ active: 3-6-13 US Core DocumentReference
 	</table>
 </ul>
 
+<<<<<<< HEAD
 The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html) resource to exchange: 
+=======
+The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html) resource to exchange: 
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
  
 - Unstructured data
 - Imaging data

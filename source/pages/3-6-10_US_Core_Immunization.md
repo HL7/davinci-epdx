@@ -58,7 +58,11 @@ active: 3-6-10 US Core Immunization
 </ul>
 
 
+<<<<<<< HEAD
 Where a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource.
+=======
+Where a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-immunization.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the US Core Immunization resource are:
 

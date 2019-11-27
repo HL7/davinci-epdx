@@ -58,7 +58,11 @@ active: 3-6-20 US Core MedicationRequest
 </ul>
 
 
+<<<<<<< HEAD
 Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
+=======
+Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationrequest.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the MedicationRequest resource are:
 

@@ -58,7 +58,11 @@ active: 3-6-1 US Core Patient
 </ul>
 
 
+<<<<<<< HEAD
 The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
+=======
+The  [US Core Patient profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields in the Patient profile are:
 
@@ -103,7 +107,11 @@ The Member Number will be entered in the ***identifier** field. The code **MB** 
 
 #### 3-6-1-1 Health Plan Mapping Assistance
 
+<<<<<<< HEAD
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html). This is shown below as an assistance  to implementers:
+=======
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Patient profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html). This is shown below as an assistance  to implementers:
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 | Line | PayerSource | CMS BB 2.0 Field      | Data Descriptor        | FHIR Profile    | Profile Field               | ValueSet                                                       | Notes                |
 |------|-------------|-----------------------|------------------------|-----------------|-----------------------------|----------------------------------------------------------------|----------------------|
@@ -120,7 +128,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | 11.1 | Member      | BENE_MLG_CNTCT_ZIP_CD | Zip code               | US Core Patient | .contact.address.postalCode |                                                                |                      |
 | 7.1  | Claim       |                       | Patient account number | US Core Patient | .identifier.value           |                                                                |                      |
 | 8.1  | Claim       |                       | Medical record number  | US Core Patient | .identifier.value           |                                                                |                      |
-| F.1  | R4          |                       | Birth sex              | US Core Patient | .us-core-birthsex           | [US-Core-R4/ValueSet-birthsex](https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html)| UNK                  |
+| F.1  | R4          |                       | Birth sex              | US Core Patient | .us-core-birthsex           | [US-Core-R4/ValueSet-birthsex](http://hl7.org/fhir/us/core/STU3/ValueSet-birthsex.html)| UNK                  |
 | F.2  | R4          |                       | Telecom                | US Core Patient | .telecom                    |                                                                | Provide If Available |
 | F.3  | R4          |                       | Language               | US Core Patient | .communication              |                                                                | Provide If Available |
 
@@ -335,7 +343,11 @@ An example mapping of a Patient resource is shown here:
 }
 </pre>
 
+<<<<<<< HEAD
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html).
+=======
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html).
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 
 <ul>
