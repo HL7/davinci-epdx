@@ -58,7 +58,11 @@ active: 3-6-18 US Core CareTeam
 </ul>
 
 
+<<<<<<< HEAD
 Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource.
+=======
+Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careteam.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the CareTeam resource are:
 

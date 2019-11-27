@@ -58,7 +58,11 @@ active: 3-6-3 US Core Encounter
 </ul>
 
 
+<<<<<<< HEAD
 An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) is shown below:
+=======
+An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html) is shown below:
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor                       | FHIR Profile      | Profile Field                                                            | ValueSet                                                                      | Notes                              |
 |------|-------------------|------------------|---------------------------------------|-------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------|------------------------------------|
@@ -71,7 +75,7 @@ An example mapping of Health Plan data for Members to the [US Core Encounter pro
 | 9.1  | Claim             |                  | Claim unique identifier               | US Core Encounter | .identifier.id                                                           |                                                                               |                                    |
 | 12.1 | Claim             |                  | Claim diagnosis related group         | US Core Encounter | .diagnosis.id                                                            |                                                                               | .diagnosis.use                     |
 | 13.1 | Claim             |                  | Claim inpatient source admission code | US Core Encounter | .class                                                                   | http://build.fhir.org/v3/ActEncounterCode/vs.html                             |                                    |
-| 14.1 | Claim             |                  | Claim inpatient admission type code   | US Core Encounter | .type                                                                    | https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-encounter-type.html | CPT Coding                         |
+| 14.1 | Claim             |                  | Claim inpatient admission type code   | US Core Encounter | .type                                                                    | http://hl7.org/fhir/us/core/STU3/ValueSet-us-core-encounter-type.html | CPT Coding                         |
 | 21.1 | Claim             |                  | Patient discharge status code         | US Core Encounter | .hospitalization.dischargeDisposition                                    |                                                                               |                                    |
 | 2.1  | Claim-Line        |                  | Line number                           | US Core Encounter | .diagnosis.id                                                            |                                                                               |                                    |
 | 3.1  | Claim-Line        |                  | Service to date                       | US Core Encounter | .diagnosis.condition.Reference(Procedure).occurence.occurrencePeriod.end |                                                                               |                                    |
@@ -125,7 +129,11 @@ An example mapping of an Encounter resource is shown here:
 TODO: Add Encounter Resource in JSON format
 </pre>
 
+<<<<<<< HEAD
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html).
+=======
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html).
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 
 <ul>

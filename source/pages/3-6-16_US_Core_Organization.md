@@ -58,7 +58,11 @@ active: 3-6-16 US Core Organization
 </ul>
 
 
+<<<<<<< HEAD
 When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
+=======
+When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-organization.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the US Core Organization resource are:
 

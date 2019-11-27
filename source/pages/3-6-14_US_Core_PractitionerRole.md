@@ -58,7 +58,11 @@ active: 3-6-14 US Core PractitionerRole
 </ul>
 
 
+<<<<<<< HEAD
 The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
+=======
+The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the US Core PractitionerRole resource are:
 
@@ -341,7 +345,11 @@ An example mapping of an PractitionerRole resource is shown here:
 }
 </pre>
 
+<<<<<<< HEAD
 Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [US Core Practitioner Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html).
+=======
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/STU3/index.html) for further examples of completed [US Core Practitioner Profiles ](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html).
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 
 <ul>

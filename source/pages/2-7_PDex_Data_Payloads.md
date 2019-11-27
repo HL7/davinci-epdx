@@ -35,6 +35,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 
 #### 2-7-1-1 US Core
 
+<<<<<<< HEAD
 - [US Core AllergyIntolerance Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)
 - [US Core CarePlan Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html)
 - [US Core CareTeam Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html)
@@ -59,6 +60,32 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core Procedure Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)
 - [US Core Result Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults.html)
 - [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html)
+=======
+- [US Core AllergyIntolerance Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-allergyintolerance.html)
+- [US Core CarePlan Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careplan.html)
+- [US Core CareTeam Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careteam.html)
+- [US Core Condition Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-condition.html)
+- [US Core Device Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-device.html)
+- [US Core DiagnosticReport Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html)
+- [US Core Diagnostic Report Profile for Report and Note exchange](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
+- [US Core DocumentReference Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html)
+- [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html)
+- [US Core Goal Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-goal.html)
+- [US Core Immunization Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-immunization.html)
+- [US Core Location Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-location.html)
+- [US Core Medication Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medication.html)
+- [US Core MedicationRequest Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationrequest.html)
+- [US Core MedicationStatement Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationstatement.html)
+- [US Core Organization Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-organization.html)
+- [US Core Patient Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html)
+- [US Core Pediatric BMI Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html)
+- [US Core Pediatric Weight Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html)
+- [US Core Practitioner Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html)
+- [US Core PractitionerRole Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html)
+- [US Core Procedure Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html)
+- [US Core Result Observation Profile](http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)
+- [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-smokingstatus.html)
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 In addition US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
 In addition the Patient-everything operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of  FHIR resources for a member to be returned as a bundle. The Patient-everything operation is defined here: https://www.hl7.org/fhir/operation-patient-everything.html. 
@@ -79,6 +106,7 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 | Resource Type                                 | Profile                                                                                        | Read | V-Read | Search | Update | Create | Updates | History |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|--------|--------|---------|---------|
+<<<<<<< HEAD
 | AllergyIntolerance                            | http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y      |        |        |         | Y       |
 | CarePlan                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      |        |        |         | Y       |
 | CareTeam                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y      |        |        |         | Y       |
@@ -106,6 +134,35 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Provenance                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      |        |        |         | Y       |
 | Result Observation                            | http://hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults.html   | Y    | Y      | Y      |        |        |         | Y       |
 | Smoking Status Observation                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y      |        |        |         | Y       |
+=======
+| AllergyIntolerance                            | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y      |        |        |         | Y       |
+| CarePlan                                      | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      |        |        |         | Y       |
+| CareTeam                                      | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y      |        |        |         | Y       |
+| Condition                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-condition.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Coverage                                      | http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      |        |        |         | Y       |
+| Device                                        | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-device.html               | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport                              | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html     | Y    | Y      | Y      |        |        |         | Y       |
+| DiagnosticReport for report and Note Exchange | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      |        |        |         | Y       |
+| DocumentReference                             | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y      |        |        |         | Y       |
+| Encounter                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Goal                                          | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y      |        |        |         | Y       |
+| Immunization                                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      |        |        |         | Y       |
+| Location                                      | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-location.html             | Y    | Y      | Y      |        |        |         | Y       |
+| Medication                                    | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationDispense                            |                                                                                                | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationRequest                             | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationrequest.html    | Y    | Y      | Y      |        |        |         | Y       |
+| MedicationStatement                           | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationstatement.html  | Y    | Y      | Y      |        |        |         | Y       |
+| Organization                                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-organization.html         | Y    | Y      | Y      |        |        |         | Y       |
+| Patient                                       | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric BMI Observation                     | http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html        | Y    | Y      | Y      |        |        |         | Y       |
+| Pediatric Weight Observation                  | http://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html     | Y    | Y      | Y      |        |        |         | Y       |
+| Practitioner                                  | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      |        |        |         | Y       |
+| PractitionerRole                              | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      |        |        |         | Y       |
+| Procedure                                     | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y      |        |        |         | Y       |
+| Provenance                                    | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      |        |        |         | Y       |
+| Result Observation                            | http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html   | Y    | Y      | Y      |        |        |         | Y       |
+| Smoking Status Observation                    | http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y      |        |        |         | Y       |
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 | Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y      |        |        |         | Y       |
 
 
