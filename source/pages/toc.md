@@ -4,7 +4,7 @@ layout: default
 active: toc
 ---
 
-* Table of Contents
+* <a href="toc.html">Table of Contents</a>
     * <a href="1_Home_Page.html">1 Home Page</a>
         * <a href="1-1_Overview.html">1-1 Overview</a>
         * <a href="1-2_Conventions.html">1-2 Conventions</a>

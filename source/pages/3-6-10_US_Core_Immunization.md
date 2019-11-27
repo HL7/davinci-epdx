@@ -4,6 +4,8 @@ layout: default
 active: 3-6-10 US Core Immunization
 ---
 
+[Previous Page](3-6-9_US_Core_AllergyIntolerance.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-10 US Core Immunization
 </ul>
 
 
-Where a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the [US Core Immunization](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-immunization.html) resource.
+Where a Health Plan has access to Immunization information for a member the health plan **SHOULD** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource.
 
 The essential fields to be provided in the US Core Immunization resource are:
 
@@ -120,3 +122,5 @@ An example mapping of an Immunization resource is shown below:
   <li><a href="3-6-9_US_Core_AllergyIntolerance.html" >Previous</a></li>
   <li><a href="3-6-11_US_Core_DiagnosticReport.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-11_US_Core_DiagnosticReport.html)

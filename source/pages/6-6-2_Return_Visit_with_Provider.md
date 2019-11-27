@@ -4,6 +4,8 @@ layout: default
 active: 6-6-2 Return Visit with Provider
 ---
 
+[Previous Page](6-6-1_First_Visit_with_New_Provider.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -32,3 +34,5 @@ In this scenario the Clinician that reviews the Member History is only intereste
   <li><a href="6-6-1_First_Visit_with_New_Provider.html" >Previous</a></li>
   <li><a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" >Next</a></li>
 </ul>
+
+[Next Page](6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html)

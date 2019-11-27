@@ -4,6 +4,8 @@ layout: default
 active: 3-5 Interaction and Payload Matrix
 ---
 
+[Previous Page](3-4_Interaction_Methods.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -27,3 +29,5 @@ active: 3-5 Interaction and Payload Matrix
   <li><a href="3-4_Interaction_Methods.html" >Previous</a></li>
   <li><a href="3-6_Data_Mapping.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6_Data_Mapping.html)

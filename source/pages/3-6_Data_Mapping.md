@@ -4,6 +4,8 @@ layout: default
 active: 3-6 Data Mapping
 ---
 
+[Previous Page](3-5_Interaction_and_Payload_Matrix.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6 Data Mapping
 </ul>
 
 Health Plans **SHALL** map claims and clinical information for a member to US Core FHIR Resources based on R4.
-Where A US Core FHIR R4 Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, subsidiary PDex IGs (PDex Plan Network and PDex Plan Formulary IGs) or the Da Vinci HRex IG.
+Where A [US Core FHIR R4](http://hl7.org/fhir/us/core/) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, subsidiary PDex IGs (PDex Plan Network and PDex Plan Formulary IGs) or the Da Vinci HRex IG.
 
 The mapping of patient, coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
@@ -80,3 +82,5 @@ In this data mapping section each profile has a listing of the minimum essential
   <li><a href="3-5_Interaction_and_Payload_Matrix.html" >Previous</a></li>
   <li><a href="3-6-1_US_Core_Patient.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-1_US_Core_Patient.html)

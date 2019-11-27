@@ -4,6 +4,8 @@ layout: default
 active: 6-4 Hook Configuration
 ---
 
+[Previous Page](6-3_PDex_Hooks.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -65,3 +67,5 @@ As a minimum searches of FHIR Resources **SHOULD** support the following query p
   <li><a href="6-3_PDex_Hooks.html" >Previous</a></li>
   <li><a href="6-5_Systems.html" >Next</a></li>
 </ul>
+
+[Next Page](6-5_Systems.html)

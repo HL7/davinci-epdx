@@ -4,6 +4,8 @@ layout: default
 active: 2-1 Implementation Guide Scope
 ---
 
+[Previous Page](2_Introduction.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -42,3 +44,5 @@ The first release of the PDex IG will focus on the following in scope items. Ite
   <li><a href="2_Introduction.html" >Previous</a></li>
   <li><a href="2-2_Member_Consent.html" >Next</a></li>
 </ul>
+
+[Next Page](2-2_Member_Consent.html)

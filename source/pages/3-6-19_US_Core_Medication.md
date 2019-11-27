@@ -4,6 +4,8 @@ layout: default
 active: 3-6-19 US Core Medication
 ---
 
+[Previous Page](3-6-18_US_Core_CareTeam.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-19 US Core Medication
 </ul>
 
 
-Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medication.html) resource.
+Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
 
 The essential fields to be provided in the Medication resource are:
 
@@ -139,3 +141,5 @@ An example mapping of a Medication is shown below:
   <li><a href="3-6-18_US_Core_CareTeam.html" >Previous</a></li>
   <li><a href="3-6-20_US_Core_MedicationRequest.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-20_US_Core_MedicationRequest.html)

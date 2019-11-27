@@ -4,6 +4,8 @@ layout: default
 active: 2-4 Supporting Specifications
 ---
 
+[Previous Page](2-3_FHIR.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -12,7 +14,7 @@ active: 2-4 Supporting Specifications
 	<li><a href="2-3_FHIR.html" id="markdown-toc-fhir">- FHIR</a></li>
 	<li><a href="2-4_Supporting_Specifications.html" id="markdown-toc-supportingspecifications">- Supporting Specifications</a></li>
 	<li><a href="2-5_Implementation_Assumptions.html" id="markdown-toc-assumptions">- Implementation Assumptions</a></li>
-	<li><a href=2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
+	<li><a href="2-6_Implementation_Hierarchy_and_Priorities.html" id="markdown-toc-hierarchy">- Implementation Hierarchy and Priorities</a></li>
 	<li><a href="2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
 </ul>
 
@@ -33,3 +35,5 @@ There are a few places in this implementation guide marked as **TODO**. All such
   <li><a href="2-3_FHIR.html" >Previous</a></li>
   <li><a href="2-5_Implementation_Assumptions.html" >Next</a></li>
 </ul>
+
+[Next Page](2-5_Implementation_Assumptions.html)

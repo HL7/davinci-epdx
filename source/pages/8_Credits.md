@@ -4,6 +4,8 @@ layout: default
 active: 8 Credits
 ---
 
+[Previous Page](7_Member-Authorized_OAuth2_Exchange.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="8_Credits.html" id="markdown-toc-credits">8 Credits</a></li>
@@ -42,3 +44,5 @@ Our thanks to these and to the many others not explicitly listed who contributed
 <ul>
   <li><a href="7_Member-Authorized_OAuth2_Exchange.html" >Previous</a></li>
 </ul>
+
+[Next Page](capstatements.html)

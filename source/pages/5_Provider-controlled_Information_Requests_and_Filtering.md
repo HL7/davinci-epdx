@@ -4,6 +4,8 @@ layout: default
 active: 5 Provider-controlled Information Requests and Filtering
 ---
 
+[Previous Page](4-2_Useful_Patient_History_for_Providers.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="5_Provider-controlled_Information_Requests_and_Filtering.html" id="markdown-toc-section5">5 Provider-controlled Information Requests and Filtering</a></li>
@@ -32,3 +34,5 @@ Health Plan to Health Plan or Third-Party Application exchange is controlled by 
   <li><a href="4-2_Useful_Patient_History_for_Providers.html" >Previous</a></li>
   <li><a href="6_CDS-Hooks.html" >Next</a></li>
 </ul>
+
+[Next Page](6_CDS-Hooks.html)

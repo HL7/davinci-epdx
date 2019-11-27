@@ -4,6 +4,8 @@ layout: default
 active: 3-6-20 US Core MedicationRequest
 ---
 
+[Previous Page](3-6-19_US_Core_Medication.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-20 US Core MedicationRequest
 </ul>
 
 
-Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationrequest.html) resource.
+Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 
 The essential fields to be provided in the MedicationRequest resource are:
 
@@ -348,3 +350,5 @@ An example mapping of a MedicationRequest is shown below:
   <li><a href="3-6-19_US_Core_Medication.html" >Previous</a></li>
   <li><a href="3-6-21_US_Core_MedicationStatement.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-21_US_Core_MedicationStatement.html)

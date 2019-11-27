@@ -4,6 +4,8 @@ layout: default
 active: 3-4 Interaction Methods
 ---
 
+[Previous Page](3-3_Data_Payloads.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -125,3 +127,5 @@ The Patient-everything operation supports the use of the [bulk FHIR data format 
   <li><a href="3-3_Data_Payloads.html" >Previous</a></li>
   <li><a href="3-5_Interaction_and_Payload_Matrix.html" >Next</a></li>
 </ul>
+
+[Next Page](3-5_Interaction_and_Payload_Matrix.html)
