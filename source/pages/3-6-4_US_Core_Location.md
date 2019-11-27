@@ -4,6 +4,8 @@ layout: default
 active: 3-6-4 US Core Location
 ---
 
+[Previous Page](3-6-3_US_Core_Encounter.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-4 US Core Location
 </ul>
 
 
-The  [US Core Location profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
+The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 
 The essential fields to be provided in the US Core Location resource are:
 
@@ -76,7 +78,7 @@ The essential fields to be provided in the US Core Location resource are:
 
 #### 3-6-4-1 Health Plan Mapping Assistance
 
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Location profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html). This is shown below as an assistance  to implementers:
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile     | Profile Field     | ValueSet                                                         | Notes |
 |------|-------------------|------------------|-------------------------------|------------------|-------------------|------------------------------------------------------------------|-------|
@@ -145,7 +147,7 @@ An example mapping of a Location resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Location Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-location.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [US Core Location Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html).
 
 
 
@@ -153,3 +155,5 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
   <li><a href="3-6-3_US_Core_Encounter.html" >Previous</a></li>
   <li><a href="3-6-5_MedicationDispense.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-5_MedicationDispense.html)

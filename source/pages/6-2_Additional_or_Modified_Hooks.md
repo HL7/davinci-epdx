@@ -4,6 +4,8 @@ layout: default
 active: 6-2 Additional or Modified Hooks
 ---
 
+[Previous Page](6-1_Support_for_FHIR_R4.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -44,3 +46,5 @@ This IG uses a modified appointment-book hook. Subscriber Id is declared as an O
   <li><a href="6-1_Support_for_FHIR_R4.html" >Previous</a></li>
   <li><a href="6-3_PDex_Hooks.html" >Next</a></li>
 </ul>
+
+[Next Page](6-3_PDex_Hooks.html)

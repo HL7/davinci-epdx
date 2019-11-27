@@ -4,6 +4,8 @@ layout: default
 active: 4 Use Case Scenarios
 ---
 
+[Previous Page](3-6-22_US_Core_Goal_Profile.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
@@ -51,3 +53,5 @@ Reference Implementations can be found in the Da Vinci Github account:
   <li><a href="3-6-22_US_Core_Goal_Profile.html" >Previous</a></li>
   <li><a href="4-1_Patient_Persona.html" >Next</a></li>
 </ul>
+
+[Next Page](4-1_Patient_Persona.html)

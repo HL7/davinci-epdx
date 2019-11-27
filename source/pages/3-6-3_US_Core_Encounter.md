@@ -4,6 +4,8 @@ layout: default
 active: 3-6-3 US Core Encounter
 ---
 
+[Previous Page](3-6-2_Coverage.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-3 US Core Encounter
 </ul>
 
 
-An example mapping of Health Plan data for Members to the [US Core Encounter profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html) is shown below:
+An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) is shown below:
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor                       | FHIR Profile      | Profile Field                                                            | ValueSet                                                                      | Notes                              |
 |------|-------------------|------------------|---------------------------------------|-------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------|------------------------------------|
@@ -123,10 +125,12 @@ An example mapping of an Encounter resource is shown here:
 TODO: Add Encounter Resource in JSON format
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [Encounter Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-encounter.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html).
 
 
 <ul>
   <li><a href="3-6-2_Coverage.html" >Previous</a></li>
   <li><a href="3-6-4_US_Core_Location.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-4_US_Core_Location.html)

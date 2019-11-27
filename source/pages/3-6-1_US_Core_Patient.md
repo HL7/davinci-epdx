@@ -4,6 +4,8 @@ layout: default
 active: 3-6-1 US Core Patient
 ---
 
+[Previous Page](3-6_Data_Mapping.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-1 US Core Patient
 </ul>
 
 
-The  [US Core Patient profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
+The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
 
 The essential fields in the Patient profile are:
 
@@ -101,7 +103,7 @@ The Member Number will be entered in the ***identifier** field. The code **MB** 
 
 #### 3-6-1-1 Health Plan Mapping Assistance
 
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Patient profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html). This is shown below as an assistance  to implementers:
 
 | Line | PayerSource | CMS BB 2.0 Field      | Data Descriptor        | FHIR Profile    | Profile Field               | ValueSet                                                       | Notes                |
 |------|-------------|-----------------------|------------------------|-----------------|-----------------------------|----------------------------------------------------------------|----------------------|
@@ -333,10 +335,12 @@ An example mapping of a Patient resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [Patient Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-patient.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html).
 
 
 <ul>
   <li><a href="3-6_Data_Mapping.html" >Previous</a></li>
   <li><a href="3-6-2_Coverage.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-2_Coverage.html)

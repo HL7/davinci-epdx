@@ -11,3 +11,15 @@ active: terminology
 
 <br/>
 
+### Value Sets
+
+**No value sets are defined for this implementation guide**
+
+
+
+### Code Systems
+
+**No code systems are defined for this implementation guide**
+
+
+

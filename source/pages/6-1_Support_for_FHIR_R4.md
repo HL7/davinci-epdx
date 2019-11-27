@@ -4,6 +4,8 @@ layout: default
 active: 6-1 Support for FHIR R4
 ---
 
+[Previous Page](6_CDS-Hooks.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -56,3 +58,5 @@ To summarize this graceful degradation in functionality the priority for writing
   <li><a href="6_CDS-Hooks.html" >Previous</a></li>
   <li><a href="6-2_Additional_or_Modified_Hooks.html" >Next</a></li>
 </ul>
+
+[Next Page](6-2_Additional_or_Modified_Hooks.html)

@@ -4,6 +4,8 @@ layout: default
 active: 3-6-9 US Core AllergyIntolerance
 ---
 
+[Previous Page](3-6-8_US_Core_Condition.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-9 US Core AllergyIntolerance
 </ul>
 
 
-Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
+Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
 
 
 The essential fields to be provided in the US Core AllergyIntolerance resource are:
@@ -145,3 +147,5 @@ An example mapping of an AllergyIntolerance resource is shown below:
   <li><a href="3-6-8_US_Core_Condition.html" >Previous</a></li>
   <li><a href="3-6-10_US_Core_Immunization.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-10_US_Core_Immunization.html)

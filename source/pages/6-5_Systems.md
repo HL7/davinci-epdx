@@ -4,6 +4,8 @@ layout: default
 active: 6-5 Systems
 ---
 
+[Previous Page](6-4_Hook_Configuration.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -36,3 +38,5 @@ The requirements and expectations described here are not intended to be exhausti
   <li><a href="6-4_Hook_Configuration.html" >Previous</a></li>
   <li><a href="6-6_Workflow_Examples.html" >Next</a></li>
 </ul>
+
+[Next Page](6-6_Workflow_Examples.html)

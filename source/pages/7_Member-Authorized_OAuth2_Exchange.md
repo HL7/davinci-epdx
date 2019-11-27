@@ -4,6 +4,8 @@ layout: default
 active: 7 Member-Authorized OAuth2 Exchange
 ---
 
+[Previous Page](6-7_Handling_Data_Provenance.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="7_Member-Authorized_OAuth2_Exchange.html" id="markdown-toc-member-authorized">7 Member-Authorized OAuth2 Exchange</a></li>
@@ -49,3 +51,5 @@ Applications are registered with the API Endpoint. The application owner **MAY**
   <li><a href="6-7_Handling_Data_Provenance.html" >Previous</a></li>
   <li><a href="8_Credits.html" >Next</a></li>
 </ul>
+
+[Next Page](8_Credits.html)

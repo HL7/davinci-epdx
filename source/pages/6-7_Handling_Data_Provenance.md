@@ -4,6 +4,8 @@ layout: default
 active: 6-7 Handling Data Provenance
 ---
 
+[Previous Page](6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -161,3 +163,5 @@ An example Provenance record is shown below:
   <li><a href="6-6-3_FHIR_Profiles_and_CDS_Hooks_Context.html" >Previous</a></li>
   <li><a href="7_Member-Authorized_OAuth2_Exchange.html" >Next</a></li>
 </ul>
+
+[Next Page](7_Member-Authorized_OAuth2_Exchange.html)

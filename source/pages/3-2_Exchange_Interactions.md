@@ -4,6 +4,8 @@ layout: default
 active: 3-2 Exchange Interactions
 ---
 
+[Previous Page](3-1_Actors.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -34,3 +36,5 @@ These subsidiary IGs are:
   <li><a href="3-1_Actors.html" >Previous</a></li>
   <li><a href="3-3_Data_Payloads.html" >Next</a></li>
 </ul>
+
+[Next Page](3-3_Data_Payloads.html)

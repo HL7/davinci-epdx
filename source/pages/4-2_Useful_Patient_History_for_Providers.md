@@ -4,6 +4,8 @@ layout: default
 active: 4-2 Useful Patient History for Providers
 ---
 
+[Previous Page](4-1_Patient_Persona.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="4_Use_Case_Scenarios.html" id="markdown-toc-scenarios">4 Use Case Scenarios</a></li>
@@ -48,23 +50,25 @@ These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 
 | Data type                              | FHIR R4/US Core STU3 profile                                                                                  |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| Consultation                           | Encounter: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html                     |
-| Practitioners who the patient has seen | CareTeam: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careteam.html                       |
-| Care Plan                              | CarePlan: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-careplan.html"                      |
-| Lab test results                       | DiagnosticReport: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html       |
-| Image studies                          | DocumentReference: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html     |
-| Medical Devices                        | Device: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html                           |
-| Procedures                             | Procedure: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html                     |
-| Diagnoses                              | DiagnosticReport: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html       |
-| Vital signs                            | Observation: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observation.html                 |
+| Consultation                           | Encounter: http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html                     |
+| Practitioners who the patient has seen | CareTeam: http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html                       |
+| Care Plan                              | CarePlan: http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html"                      |
+| Lab test results                       | DiagnosticReport: http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html       |
+| Image studies                          | DocumentReference: http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html     |
+| Medical Devices                        | Device: http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html                           |
+| Procedures                             | Procedure: http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html                     |
+| Diagnoses                              | DiagnosticReport: http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html       |
+| Vital signs                            | Observation: http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html                 |
 | Medications                            | MedicationDispense: http://hl7.org/fhir/R4/medicationdispense.html |
-| Immunizations                          | Immunization: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html               |
-| Allergies                              | AllergyIntolerance: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html   |
-| Notes                                  | DiagnosticReport: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html       |
-| FamilyHistory                          | DocumentReference: http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-documentreference.html     |
+| Immunizations                          | Immunization: http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html               |
+| Allergies                              | AllergyIntolerance: http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   |
+| Notes                                  | DiagnosticReport: http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html       |
+| FamilyHistory                          | DocumentReference: http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html     |
 
 
 <ul>
   <li><a href="4-1_Patient_Persona.html" >Previous</a></li>
   <li><a href="5_Provider-controlled_Information_Requests_and_Filtering.html" >Next</a></li>
 </ul>
+
+[Next Page](5_Provider-controlled_Information_Requests_and_Filtering.html)

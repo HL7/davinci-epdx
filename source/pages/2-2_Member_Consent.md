@@ -4,6 +4,8 @@ layout: default
 active: 2-2 Member Consent
 ---
 
+[Previous Page](2-1_Implementation_Guide_Scope.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -48,3 +50,5 @@ The OAuth2.0-based exchange is covered in detail in [Section 7](7_Member-Authori
   <li><a href="2-1_Implementation_Guide_Scope.html" >Previous</a></li>
   <li><a href="2-3_FHIR.html" >Next</a></li>
 </ul>
+
+[Next Page](2-3_FHIR.html)

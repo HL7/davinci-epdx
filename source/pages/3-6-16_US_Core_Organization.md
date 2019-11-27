@@ -4,6 +4,8 @@ layout: default
 active: 3-6-16 US Core Organization
 ---
 
+[Previous Page](3-6-15_US_Core_Device.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-16 US Core Organization
 </ul>
 
 
-When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-organization.html) resource.
+When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
 
 The essential fields to be provided in the US Core Organization resource are:
 
@@ -169,3 +171,5 @@ An example mapping of an Organization resource is shown below:
   <li><a href="3-6-15_US_Core_Device.html" >Previous</a></li>
   <li><a href="3-6-17_US_Core_CarePlan.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-17_US_Core_CarePlan.html)

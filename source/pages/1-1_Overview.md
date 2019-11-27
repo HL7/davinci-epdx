@@ -4,6 +4,8 @@ layout: default
 active: 1-1 Overview
 ---
 
+[Previous Page](1_Home_Page.html)
+
 <ul id="markdown-toc">
 		Section Guide:
   <li><a href="1_Home_Page.html" id="markdown-toc-homepage">Home Page</a></li>
@@ -104,3 +106,5 @@ Provenance is covered in more detail in [Section 6-7 Handling Data Provenance](6
   <li><a href="1_Home_Page.html" >Previous</a></li>
   <li><a href="1-2_Conventions.html" >Next</a></li>
 </ul>
+
+[Next Page](1-2_Conventions.html)

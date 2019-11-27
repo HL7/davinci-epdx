@@ -4,6 +4,8 @@ layout: default
 active: 3-3 Data Payloads
 ---
 
+[Previous Page](3-2_Exchange_Interactions.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -32,3 +34,5 @@ The Network Directory and Medication Formulary data payloads are defined in thei
   <li><a href="3-2_Exchange_Interactions.html" >Previous</a></li>
   <li><a href="3-4_Interaction_Methods.html" >Next</a></li>
 </ul>
+
+[Next Page](3-4_Interaction_Methods.html)

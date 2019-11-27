@@ -4,6 +4,8 @@ layout: default
 active: 3-1 Actors
 ---
 
+[Previous Page](3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" id="markdown-toc-section3">Implementation...</a></li>
@@ -29,3 +31,5 @@ For the purposes of this IG there is nothing to prevent a covered entity, such a
   <li><a href="3_PDex_Implementation_Actors,_Interactions,_Data_Payloads_and_Methods.html" >Previous</a></li>
   <li><a href="3-2_Exchange_Interactions.html" >Next</a></li>
 </ul>
+
+[Next Page](3-2_Exchange_Interactions.html)

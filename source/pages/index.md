@@ -1,5 +1,5 @@
 ---
-title: Implementation Guide HomePage
+title: Implementation Guide Home Page
 layout: default
 active: home
 ---
@@ -49,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (284) Change US Core references
 - (283) rebuild to test broken CI process
 - (280) fix more links
 - (275) fix links

@@ -4,6 +4,8 @@ layout: default
 active: 6-6-3 FHIR Profiles and CDS Hooks Context
 ---
 
+[Previous Page](6-6-2_Return_Visit_with_Provider.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -122,3 +124,5 @@ The format used to write information to a DocumentReference resource in the Prov
   <li><a href="6-6-2_Return_Visit_with_Provider.html" >Previous</a></li>
   <li><a href="6-7_Handling_Data_Provenance.html" >Next</a></li>
 </ul>
+
+[Next Page](6-7_Handling_Data_Provenance.html)

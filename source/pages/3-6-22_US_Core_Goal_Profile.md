@@ -4,6 +4,8 @@ layout: default
 active: 3-6-22 US Core Goal Profile
 ---
 
+[Previous Page](3-6-21_US_Core_MedicationStatement.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -55,7 +57,7 @@ active: 3-6-22 US Core Goal Profile
 	</table>
 </ul>
 
-Where a Health Plan has access to a Member's health goal information they **SHALL** make the information available using the [US Core Goal](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-goal.html) resource.
+Where a Health Plan has access to a Member's health goal information they **SHALL** make the information available using the [US Core Goal](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html) resource.
 
 The essential fields to be provided in the Goal resource are:
 
@@ -108,3 +110,5 @@ An example mapping of a Goal is shown below:
   <li><a href="3-6-21_US_Core_MedicationStatement.html" >Previous</a></li>
   <li><a href="4_Use_Case_Scenarios.html" >Next</a></li>
 </ul>
+
+[Next Page](4_Use_Case_Scenarios.html)

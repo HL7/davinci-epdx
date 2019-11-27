@@ -4,6 +4,8 @@ layout: default
 active: 3-6-13 US Core DocumentReference
 ---
 
+[Previous Page](3-6-12_US_Core_Observation.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -55,7 +57,7 @@ active: 3-6-13 US Core DocumentReference
 	</table>
 </ul>
 
-The Health Plan **SHALL** use the [US Core DocumentReference](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-documentreference.html) resource to exchange: 
+The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html) resource to exchange: 
  
 - Unstructured data
 - Imaging data
@@ -165,3 +167,5 @@ An example mapping of a DocumentReference for an episode of care is shown below:
   <li><a href="3-6-12_US_Core_Observation.html" >Previous</a></li>
   <li><a href="3-6-14_US_Core_PractitionerRole.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-14_US_Core_PractitionerRole.html)

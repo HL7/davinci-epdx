@@ -4,6 +4,8 @@ layout: default
 active: 3-6-12 US Core Observation
 ---
 
+[Previous Page](3-6-11_US_Core_DiagnosticReport.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -135,3 +137,5 @@ The essential fields to be provided in the US Core Observation resource are:
   <li><a href="3-6-11_US_Core_DiagnosticReport.html" >Previous</a></li>
   <li><a href="3-6-13_US_Core_DocumentReference.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-13_US_Core_DocumentReference.html)

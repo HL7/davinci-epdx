@@ -4,6 +4,8 @@ layout: default
 active: 2-5 Implementation Assumptions
 ---
 
+[Previous Page](2-4_Supporting_Specifications.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="2_Introduction.html" id="markdown-toc-introduction">Introduction</a></li>
@@ -16,7 +18,7 @@ active: 2-5 Implementation Assumptions
 	<li><a href="2-7_PDex_Data_Payloads.html" id="markdown-toc-payloads">- PDex Data Payloads</a></li>
 </ul>
 
-Wherever possible, the PDex IG will use established US Core Profiles. Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
+Wherever possible, the PDex IG will use established [US Core Profiles](http://hl7.org/fhir/us/core/). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
 Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in the PDex-IG itself.
 
@@ -24,3 +26,5 @@ Where profiles are specific to the PDex use case and are not shared with other D
   <li><a href="2-4_Supporting_Specifications.html" >Previous</a></li>
   <li><a href="2-6_Implementation_Hierarchy_and_Priorities.html" >Next</a></li>
 </ul>
+
+[Next Page](2-6_Implementation_Hierarchy_and_Priorities.html)

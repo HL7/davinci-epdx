@@ -4,6 +4,8 @@ layout: default
 active: 3-6-7 US Core Procedure
 ---
 
+[Previous Page](3-6-6_US_Core_Practitioner.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,7 @@ active: 3-6-7 US Core Procedure
 </ul>
 
 
-The  [US Core Procedure profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
+The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
 
 The essential fields to be provided in the US Core Procedure resource are:
 
@@ -72,7 +74,7 @@ The essential fields to be provided in the US Core Procedure resource are:
 
 
 #### 3-6-3-1 Health Plan Mapping Assistance
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor     | FHIR Profile      | Profile Field                     | ValueSet | Notes              |
 |------|-------------------|------------------|---------------------|-------------------|-----------------------------------|----------|--------------------|
@@ -154,10 +156,12 @@ An example mapping of an Procedure resource for a medical impiant is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](https://build.fhir.org/ig/HL7/US-Core-R4/) for further examples of completed [US Core Procedure Profiles ](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-procedure.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [US Core Procedure Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html).
 
 
 <ul>
   <li><a href="3-6-6_US_Core_Practitioner.html" >Previous</a></li>
   <li><a href="3-6-8_US_Core_Condition.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-8_US_Core_Condition.html)

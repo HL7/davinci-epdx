@@ -4,6 +4,8 @@ layout: default
 active: 6 CDS-Hooks
 ---
 
+[Previous Page](5_Provider-controlled_Information_Requests_and_Filtering.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <li><a href="6_CDS-Hooks.html" id="markdown-toc-cds-hooks">6 CDS-Hooks</a></li>
@@ -41,3 +43,5 @@ This implementation guide extends/customizes CDS Hooks in 4 ways: support for FH
   <li><a href="5_Provider-controlled_Information_Requests_and_Filtering.html" >Previous</a></li>
   <li><a href="6-1_Support_for_FHIR_R4.html" >Next</a></li>
 </ul>
+
+[Next Page](6-1_Support_for_FHIR_R4.html)
