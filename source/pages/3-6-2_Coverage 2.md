@@ -4,6 +4,8 @@ layout: default
 active: 3-6-2 Coverage
 ---
 
+[Previous Page](3-6-1_US_Core_Patient.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -301,3 +303,5 @@ An example mapping of a Coverage resource is shown here:
   <li><a href="3-6-1_US_Core_Patient.html" >Previous</a></li>
   <li><a href="3-6-3_US_Core_Encounter.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-3_US_Core_Encounter.html)

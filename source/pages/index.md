@@ -4,6 +4,8 @@ layout: default
 active: home
 ---
 
+{% include publish-box.html %}
+
 <!-- { :.no_toc } -->
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
@@ -47,6 +49,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 #### Latest Changes
+- (285) Revert temporary changes
 - (284) Change US Core references
 - (283) rebuild to test broken CI process
 - (280) fix more links

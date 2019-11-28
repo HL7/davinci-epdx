@@ -4,6 +4,8 @@ layout: default
 active: 3-6-11 US Core DiagnosticReport
 ---
 
+[Previous Page](3-6-10_US_Core_Immunization.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,11 @@ active: 3-6-11 US Core DiagnosticReport
 </ul>
 
 
-Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
+<<<<<<< HEAD
+Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
+=======
+Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the US Core DiagnosticReport resource are:
 
@@ -206,3 +212,5 @@ An example mapping of a DiagnosticReport for urinalysis is shown below:
   <li><a href="3-6-10_US_Core_Immunization.html" >Previous</a></li>
   <li><a href="3-6-12_US_Core_Observation.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-12_US_Core_Observation.html)
