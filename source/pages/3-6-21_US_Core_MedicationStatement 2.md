@@ -4,6 +4,8 @@ layout: default
 active: 3-6-21 US Core MedicationStatement
 ---
 
+[Previous Page](3-6-20_US_Core_MedicationRequest.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,11 @@ active: 3-6-21 US Core MedicationStatement
 </ul>
 
 
-Where a Health Plan has access to medication information for a member they **SHALL** make the information available using the [US Core MedicationStatement](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-medicationstatement.html) resource.
+<<<<<<< HEAD
+Where a Health Plan has access to medication information for a member they **SHALL** make the information available using the [US Core MedicationStatement](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationstatement.html) resource.
+=======
+Where a Health Plan has access to medication information for a member they **SHALL** make the information available using the [US Core MedicationStatement](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medicationstatement.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the MedicationStatement resource are:
 
@@ -124,3 +130,5 @@ An example mapping of a MedicationStatement is shown below:
   <li><a href="3-6-20_US_Core_MedicationRequest.html" >Previous</a></li>
   <li><a href="3-6-22_US_Core_Goal_Profile.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-22_US_Core_Goal_Profile.html)

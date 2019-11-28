@@ -58,11 +58,7 @@ active: 3-6-19 US Core Medication
 </ul>
 
 
-<<<<<<< HEAD
 Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
-=======
-Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-medication.html) resource.
->>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the Medication resource are:
 

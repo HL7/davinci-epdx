@@ -4,6 +4,8 @@ layout: default
 active: 3-6-17 US Core CarePlan
 ---
 
+[Previous Page](3-6-16_US_Core_Organization.html)
+
 <ul id="markdown-toc">
 	Section Guide:
   <table>
@@ -56,7 +58,11 @@ active: 3-6-17 US Core CarePlan
 </ul>
 
 
-Where a Health Plan has access to Care Plan information for a member they **SHALL** make the information available using the [US Core CarePlan](https://build.fhir.org/ig/HL7/US-Core-R4/StructureDefinition-us-core-careplan.html) resource.
+<<<<<<< HEAD
+Where a Health Plan has access to Care Plan information for a member they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
+=======
+Where a Health Plan has access to Care Plan information for a member they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-careplan.html) resource.
+>>>>>>> 1aa5b274a3cd68f250b556457bc83699490f4480
 
 The essential fields to be provided in the CarePla  resource are:
 
@@ -113,3 +119,5 @@ An example mapping of a CarePlan for a colonoscopy is shown below:
   <li><a href="3-6-16_US_Core_Organization.html" >Previous</a></li>
   <li><a href="3-6-18_US_Core_CareTeam.html" >Next</a></li>
 </ul>
+
+[Next Page](3-6-18_US_Core_CareTeam.html)
