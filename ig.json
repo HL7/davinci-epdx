@@ -20,6 +20,7 @@
 	"pages": [
 		"pages"
 	],
+	"version": "4.0.1",
 	"extension-domains": [
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
@@ -27,6 +28,9 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
+	"extraTemplates": [
+		"mappings"
+	],
 	"canonicalBase": "http://hl7.org/fhir/us/davinci-pdex",
 	"defaults": {
 		"Location": {
@@ -47,7 +51,8 @@
 		"StructureDefinition": {
 			"template-mappings": "sd-mappings.html",
 			"template-base": "sd.html",
-			"template-defns": "sd-definitions.html"
+			"template-defns": "sd-definitions.html",
+			"mappings": "StructureDefinition-{{[id]}}-mappings.html"
 		},
 		"Immunization": {
 			"template-base": "ex.html"
@@ -99,8 +104,7 @@
 			"defns": "StructureDefinition-pdex-medicationdispense-definitions.html"
 		}
 	},
-	"version": "4.0.0",
-	"fixed-business-version": "0.1.0",
+	"fixed-business-version": "0.2.0",
 	"dependencyList": [
 		{
 			"location": "http://hl7.org/fhir/us/davinci-hrex",
