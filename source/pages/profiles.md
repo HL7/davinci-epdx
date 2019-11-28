@@ -28,8 +28,7 @@ active: profiles
 <tbody>
 <tr>
 <td><a href="StructureDefinition-pdex-medicationdispense.html">PDexMedicationDispense</a></td>
-<td>The MedicationDispense record identifies the prescription drug issued to a member and paid for under their Health Insurance Drug Plan.
-</td>
+<td>{% capture profile-intro %}{% include pdex-medicationdispense-intro.md id="{{[id]}}" %}{% endcapture %}{{ profile-intro | markdownify }}</td>
 </tr>
 </tbody>
 </table>
