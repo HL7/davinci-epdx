@@ -1,0 +1,530 @@
+I"�1
+<div class="markdown-toc">
+
+</div>
+<p><a href="DataMapping.html">Previous Page - Data Mapping</a></p>
+
+<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient profile</a>  <strong>SHALL</strong> be used to express a members demographic information.</p>
+
+<p>The essential fields in the Patient profile are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient</td>
+      <td>Patient</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Patient.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-race</td>
+      <td>us-core-race</td>
+      <td>0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-ethnicity</td>
+      <td>us-core-ethnicity</td>
+      <td>0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-birthsex</td>
+      <td>us-core-birthsex</td>
+      <td>0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier</td>
+      <td>identifier</td>
+      <td>1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.system</td>
+      <td>system</td>
+      <td>1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.value</td>
+      <td>value</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name</td>
+      <td>name</td>
+      <td>1..*</td>
+      <td>HumanName</td>
+    </tr>
+    <tr>
+      <td>Patient.name.family</td>
+      <td>family</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name.given</td>
+      <td>given</td>
+      <td>1..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.gender</td>
+      <td>gender</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.birthDate</td>
+      <td>birthDate</td>
+      <td>0..1</td>
+      <td>date</td>
+    </tr>
+    <tr>
+      <td>Patient.communication</td>
+      <td>communication</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Patient.communication.language</td>
+      <td>language</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Member Number will be entered in the <strong>*identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
+
+<pre>
+{
+      "use" : "member",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    }
+</pre>
+
+<h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
+
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient profile</a>. This is shown below as an assistance  to implementers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>PayerSource</th>
+      <th>CMS BB 2.0 Field</th>
+      <th>Data Descriptor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.1</td>
+      <td>Member</td>
+      <td>BENE_ID</td>
+      <td>Patientid</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Member</td>
+      <td>DOB_DT</td>
+      <td>Date of birth</td>
+      <td>US Core Patient</td>
+      <td>.birthDate</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Date of Death</td>
+      <td>US Core Patient</td>
+      <td>.deceased[dateTime]</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4.1</td>
+      <td>Member</td>
+      <td>BENE_COUNTY_CD</td>
+      <td>County</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.district</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Member</td>
+      <td>BENE_STATE_CD</td>
+      <td>State</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.state</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6.1</td>
+      <td>Member</td>
+      <td>BENE_CNTY_CD</td>
+      <td>Country</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.country</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Member</td>
+      <td>BENE_RACE_CD</td>
+      <td>Race code</td>
+      <td>US Core Patient</td>
+      <td>.us-core-race</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Ethnicity</td>
+      <td>US Core Patient</td>
+      <td>.us-core-ethnicity</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9.1</td>
+      <td>Member</td>
+      <td>GNDR_CD</td>
+      <td>Gender code</td>
+      <td>US Core Patient</td>
+      <td>.gender</td>
+      <td><a href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">Valueset-administrative-gender - FHIR v3.0.1</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10.1</td>
+      <td>Member</td>
+      <td> </td>
+      <td>Name</td>
+      <td>US Core Patient</td>
+      <td>.name</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11.1</td>
+      <td>Member</td>
+      <td>BENE_MLG_CNTCT_ZIP_CD</td>
+      <td>Zip code</td>
+      <td>US Core Patient</td>
+      <td>.contact.address.postalCode</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Patient account number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Medical record number</td>
+      <td>US Core Patient</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>F.1</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Birth sex</td>
+      <td>US Core Patient</td>
+      <td>.us-core-birthsex</td>
+      <td><a href="https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html">US-Core-R4/ValueSet-birthsex</a></td>
+      <td>UNK</td>
+    </tr>
+    <tr>
+      <td>F.2</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Telecom</td>
+      <td>US Core Patient</td>
+      <td>.telecom</td>
+      <td> </td>
+      <td>Provide If Available</td>
+    </tr>
+    <tr>
+      <td>F.3</td>
+      <td>R4</td>
+      <td> </td>
+      <td>Language</td>
+      <td>US Core Patient</td>
+      <td>.communication</td>
+      <td> </td>
+      <td>Provide If Available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where an entry is provided in the CMS BB2.0 FIELD column  above the definition of the field can be reviewed using the following URL:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
+
+<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/bene_id/
+https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
+
+<h4 id="example-patient-resource">Example Patient Resource</h4>
+
+<p>An example mapping of a Patient resource is shown here:</p>
+
+<pre>
+{
+  "resourceType" : "Patient",
+  "id" : "example",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>
+				<b>Generated Narrative with Details</b>
+			</p>
+			<p>
+				<b>id</b>: example</p>
+			<p>
+				<b>identifier</b>: Medical Record Number = 1032702 (USUAL)</p>
+			<p>
+				<b>identifier</b>: Health Plan Member Number = 987654321 (USUAL)</p>
+			<p>
+				<b>active</b>: true</p>
+			<p>
+				<b>name</b>: Arthur B. Dent </p>
+			<p>
+				<b>telecom</b>: ph: 555-555-5555(HOME), amy.shaw@example.com</p>
+			<p>
+				<b>gender</b>: </p>
+			<p>
+				<b>birthsex</b>: Male</p>
+			<p>
+				<b>birthDate</b>: Jan 22, 1953</p>
+			<p>
+				<b>address</b>: 6518 Meadowridge Rd, Elkridge, MD 21075 US </p>
+			<p>
+				<b>race</b>: White, American Indian or Alaska Native, Asian, Shoshone, Filipino</p>
+			<p>
+				<b>ethnicity</b>: Hispanic or Latino, Dominican, Mexican</p>
+		</div>"
+  },
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2106-3",
+            "display" : "White"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1002-5",
+            "display" : "American Indian or Alaska Native"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2028-9",
+            "display" : "Asian"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1586-7",
+            "display" : "Shoshone"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2036-2",
+            "display" : "Filipino"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Mixed"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2135-2",
+            "display" : "Hispanic or Latino"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2184-0",
+            "display" : "Dominican"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2148-5",
+            "display" : "Mexican"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode" : "M"
+    }
+  ],
+  "identifier" : [
+    {
+      "use" : "member",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    },
+    {
+      "use" : "usual",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MR",
+            "display" : "Medical Record Number"
+          }
+        ],
+        "text" : "Medical Record Number"
+      },
+      "system" : "http://hospital.smarthealthit.org",
+      "value" : "1032702"
+    }
+  ],
+  "active" : true,
+  "name" : [
+    {
+      "family" : "Dent",
+      "given" : [
+        "Arthur",
+        "B."
+      ]
+    }
+  ],
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "555-555-5555",
+      "use" : "home"
+    },
+    {
+      "system" : "email",
+      "value" : "arthur.dent@example.com"
+    }
+  ],
+  "gender" : "male",
+  "birthDate" : "1953-01-22",
+  "address" : [
+    {
+      "line" : [
+        "6518 Meadowridge Rd"
+      ],
+      "city" : "Elkridge",
+      "state" : "MD",
+      "postalCode" : "21075",
+      "country" : "US"
+    }
+  ]
+}
+</pre>
+
+<p>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">Patient Profiles </a>.</p>
+
+<p><a href="Coverage.html">Next Page - Coverage</a></p>
+
+:ET

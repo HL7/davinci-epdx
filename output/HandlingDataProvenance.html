@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\Handling Data Provenance - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"2.6.7"}
+    h3,h4,h5,h6{--heading-prefix:"2.6.7"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+        
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.2.1 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
+
+  <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
+
+  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+
+  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+</ul>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><b>Handling Data Provenance</b></li>
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.2.1). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Handling Data Provenance</h2>
+  
+  
+  
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#6-7-1-example-provenance-record-for-chain-of-custody" id="markdown-toc-6-7-1-example-provenance-record-for-chain-of-custody">6-7-1 Example Provenance Record for chain of custody</a></li>
+  <li><a href="#example-provenance-record" id="markdown-toc-example-provenance-record">Example Provenance Record</a></li>
+</ul>
+
+</div>
+<p><a href="FHIRProfilesandCDSHooksContext.html">Previous Page - FHIR Profiles and CDS Hooks Context</a></p>
+
+<p>Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.</p>
+
+<p>Health Plans <strong>SHOULD</strong> accept and retain Provenance records received with data from other sources such as a Member-authorized Payer-to-Payer exchange.</p>
+
+<p>When a Health Plan forwards information as a FHIR Resource it <strong>SHOULD</strong> create or update a related Provenance record to reflect the original source, any subsequent data handlers or transformers and the action taken by the Health Plan in its handling of the data.</p>
+
+<p>A Provenance resource <strong>SHOULD</strong> be provided with each member-related resource provided by the Health Plan’s FHIR API.</p>
+
+<p>This <strong>SHOULD</strong> be used to:</p>
+<ul>
+  <li>identify the source of the information.</li>
+  <li>whether the data came via a clinical record or a claim record.</li>
+  <li>Whether the data was subject to manual transcription or other interpretive transformation.</li>
+</ul>
+
+<p>The FHIR R4 Provenance resource is documented here: http://hl7.org/fhir/R4/provenance.html</p>
+
+<p>The Provenance record <strong>SHOULD</strong> be populated with the following essential fields as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>occurredPeriod or occurredDataTime</td>
+      <td>dateTime or Period of the encounter/procedure/medication being provided</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>recorded</td>
+      <td>Time of this transaction</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>agent.[0].type</td>
+      <td>AMENDER (for conversion of claims data to clinical resources)</td>
+      <td>TRANS (for information taken from manual input)</td>
+      <td>REVIEWER (for clinical resources)</td>
+    </tr>
+    <tr>
+      <td>agent.[0].role</td>
+      <td>informant</td>
+      <td>custodian</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>agent.[0].who</td>
+      <td>Organization resource identifying the health plan</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>agent.[1].type</td>
+      <td>SOURCE</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>agent.[1].role</td>
+      <td>enterer</td>
+      <td>performer</td>
+      <td>author</td>
+    </tr>
+    <tr>
+      <td>agent.[1].who</td>
+      <td>Organization</td>
+      <td>Practitioner or other resource identifying the entity providing the source information</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="6-7-1-example-provenance-record-for-chain-of-custody">6-7-1 Example Provenance Record for chain of custody</h3>
+
+<p>Three examples are provided to deal with four different scenarios:</p>
+
+<ol>
+  <li>Health Plan receives clinical document (C-CDA) or FHIR Clinical Resource (Encounter, Procedure, Observation, DiagnosticReport, etc.) from a Provider with Provenance resource attached.</li>
+  <li>Health Plan receives clinical document or FHIR Clinical Resource from a Provider with NO Provenance resource attached.</li>
+  <li>Health Plan receives FHIR Resource from another Health Plan as part of a member-authorized exchange of their health history.</li>
+  <li>Health Plan receive a claim from a provider and renders the data into FHIR clinical resources in order to pass information to a provider.</li>
+</ol>
+
+<h4 id="clinical-information-with-provenance">Clinical Information with Provenance</h4>
+
+<p>The Health Plan <strong>SHOULD</strong> store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
+The Health Plan <strong>SHOULD</strong> update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
+The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+
+<h4 id="clinical-information-without-provenance">Clinical Information without Provenance</h4>
+
+<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.
+The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+
+<h4 id="fhir-resource-from-prior-health-plan">FHIR Resource from prior Health Plan</h4>
+
+<p>The Health Plan <strong>SHOULD</strong> store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
+The Health Plan <strong>SHOULD</strong> update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
+The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+
+<h4 id="claim-information-from-provider">Claim Information from Provider</h4>
+
+<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.
+The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+
+<h3 id="example-provenance-record">Example Provenance Record</h3>
+
+<p>An example Provenance record is shown below:</p>
+
+<pre>
+{
+  "resourceType": "Provenance",
+  "id": "example",
+  "text": {
+    "status": "generated",
+    "div": "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;procedure record authored on 27-June 2015 by Harold Hippocrates, MD Content extracted from XDS managed CDA Referral received 26-June as authorized by a referenced Consent.&lt;/div&gt;"
+  },
+  "target": [
+    {
+      "reference": "Procedure/example/_history/1"
+    }
+  ],
+  "occurredPeriod": {
+    "start": "2015-06-27",
+    "end": "2015-06-28"
+  },
+  "recorded": "2015-06-27T08:39:24+10:00",
+  "policy": [
+    "http://acme.com/fhir/Consent/25"
+  ],
+  "location": {
+    "reference": "Location/1"
+  },
+  "reason": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "3457005",
+          "display": "Referral"
+        }
+      ]
+    }
+  ],
+  "agent": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "AUT"
+          }
+        ]
+      },
+      "who": {
+        "reference": "Practitioner/xcda-author"
+      }
+    },
+    {
+      "id": "a1",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "DEV"
+          }
+        ]
+      },
+      "who": {
+        "reference": "Device/software"
+      }
+    }
+  ],
+  "entity": [
+    {
+      "role": "source",
+      "what": {
+        "reference": "DocumentReference/example",
+        "display": "CDA Document in XDS repository"
+      }
+    }
+  ]
+}
+
+</pre>
+
+<p><a href="Member-AuthorizedOAuth2Exchange.html">Next Page - Member-Authorized OAuth2 Exchange</a></p>
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="d7cc8183-9bf5-43b1-befe-89d6b8f6533a">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

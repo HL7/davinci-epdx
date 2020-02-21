@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\Useful Patient History for Providers - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"2.4.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.4.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+        
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.2.1 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
+
+  <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
+
+  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+
+  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+</ul>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="UseCaseScenarios.html"><b>Use Case Scenarios</b></a></li><li><b>Useful Patient History for Providers</b></li>
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.2.1). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Useful Patient History for Providers</h2>
+  
+  
+  
+<div class="markdown-toc">
+
+</div>
+<p><a href="PatientPersona.html">Previous Page - Patient Persona</a></p>
+
+<p>When providers are building a health history for a new patient the information they are interested in <strong>MAY</strong> include:</p>
+
+<ul>
+  <li>Ambulatory events</li>
+  <li>In-patient events</li>
+  <li>Medications</li>
+  <li>Procedures</li>
+</ul>
+
+<p>The PDex Implementation Guide will focus on examples related to Ambulatory events.</p>
+
+<table style="background-color:rgb(195,231,244);width:100%">
+	<tr><td>Question_For_Comment(Q_F_C03):</td></tr>
+  <tr><td><i>
+		Are there other categories of clinical data that providers wish to see?
+	</i></td></tr>	
+</table>
+
+<p>As part of an event or episode of care the provider will be interested in the following types of data:</p>
+
+<ul>
+  <li>Consultations</li>
+  <li>Practitioners who the patient has seen</li>
+  <li>Care Plan</li>
+  <li>Laboratory test results</li>
+  <li>Image Studies</li>
+  <li>Medical Devices</li>
+  <li>Procedures</li>
+  <li>Diagnoses</li>
+  <li>Vital Signs</li>
+  <li>Medications</li>
+  <li>Immunizations</li>
+  <li>Allergies</li>
+  <li>Notes</li>
+  <li>Family History</li>
+</ul>
+
+<p>These types of data <strong>SHALL</strong> be mapped to FHIR clinical resources as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data type</th>
+      <th>FHIR R4/US Core STU3 profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Consultation</td>
+      <td>Encounter: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html</a></td>
+    </tr>
+    <tr>
+      <td>Practitioners who the patient has seen</td>
+      <td>CareTeam: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html</a></td>
+    </tr>
+    <tr>
+      <td>Care Plan</td>
+      <td>CarePlan: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html</a></td>
+    </tr>
+    <tr>
+      <td>Laboratory test results</td>
+      <td><a name="6a3bb800-7146-4a84-8f90-d3a2ad1bc8dd">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+    </tr>
+    <tr>
+      <td>Result Observation</td>
+      <td>ResultObservation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html</a></td>
+    </tr>
+    <tr>
+      <td>Image studies</td>
+      <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html</a></td>
+    </tr>
+    <tr>
+      <td>Medical Devices</td>
+      <td><a name="3ea5991c-f434-442f-b55a-28a86c7bdc6e">​</a>Device: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html</a></td>
+    </tr>
+    <tr>
+      <td>Procedures</td>
+      <td>Procedure: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html</a></td>
+    </tr>
+    <tr>
+      <td>Diagnoses</td>
+      <td><a name="88f8fbe3-3eac-4a0f-b455-f28a23f60f31">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+    </tr>
+    <tr>
+      <td>Vital signs</td>
+      <td><a name="9ece946a-20b1-492c-b135-d35b8e5fe711">​</a>Observation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html</a></td>
+    </tr>
+    <tr>
+      <td>Medications</td>
+      <td>MedicationDispense: <a href="http://hl7.org/fhir/medicationdispense.html">http://hl7.org/fhir/medicationdispense.html</a></td>
+    </tr>
+    <tr>
+      <td>Immunizations</td>
+      <td>Immunization: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html</a></td>
+    </tr>
+    <tr>
+      <td>Allergies</td>
+      <td>AllergyIntolerance: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html</a></td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td><a name="6a322833-e701-4e41-91bf-41105d61606b">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+    </tr>
+    <tr>
+      <td>FamilyHistory</td>
+      <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="Provider-controlledInformationRequestsandFiltering.html">Next Page - Provider-controlled Information Requests and Filtering</a></p>
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="7588fb21-b40f-4a75-abb6-569a1ac9102d">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
