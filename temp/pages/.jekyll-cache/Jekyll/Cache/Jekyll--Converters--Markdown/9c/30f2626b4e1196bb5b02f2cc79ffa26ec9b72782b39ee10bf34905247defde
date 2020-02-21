@@ -1,0 +1,155 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreOrganization.html">Previous Page - US Core Organization</a></p>
+
+<p>Where a Health Plan has access to Care Plan information for a member they <strong>SHALL</strong> make the information available using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html">US Core CarePlan</a> resource.</p>
+
+<p>The essential fields to be provided in the CarePlan  resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CarePlan</td>
+      <td>CarePlan</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CarePlan.id</td>
+      <td>id</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>CarePlan.text</td>
+      <td>text</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Narrative</td>
+    </tr>
+    <tr>
+      <td>CarePlan.text.status</td>
+      <td>status</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>CarePlan.text.div</td>
+      <td>div</td>
+      <td>I</td>
+      <td>1..1</td>
+      <td>xhtml</td>
+    </tr>
+    <tr>
+      <td>CarePlan.status</td>
+      <td>status</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>CarePlan.intent</td>
+      <td>intent</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>CarePlan.category</td>
+      <td>category</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>CarePlan.subject</td>
+      <td>subject</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+    <tr>
+      <td>CarePlan.activity.detail.status</td>
+      <td>status</td>
+      <td>?!</td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-careplan-resource">Example CarePlan Resource</h4>
+
+<p>An example mapping of a CarePlan for a colonoscopy is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "CarePlan",
+  "id" : "colonoscopy",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan"
+    ]
+  },
+  "text" : {
+    "status" : "additional",
+				"div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;      
+				            <strong>Assessment</strong>
+				            <ol><li>Recurrent GI bleed of unknown etiology; hypotension perhaps secondary to this but as likely secondary to polypharmacy.</li>
+										       <li>Acute on chronic anemia secondary to #1.</li>
+													 <li>Azotemia, acute renal failure with volume loss secondary to #1.</li>
+													 <li>Hyperkalemia secondary to #3 and on ACE and K+ supplement.</li>
+													 <li>Other chronic diagnoses as noted above, currently stable.</li>
+										</ol>
+										<table>
+										      <thead>
+													    <tr>
+															     <th>Planned Activity</th>
+																	 <th>Planned Date</th>
+														 </tr>
+												 </thead>
+												<tbody>
+												    <tr>
+														     <td>Colonoscopy</td>
+																 <td>April 21, 2000</td>
+													</tr>
+										 </tbody>
+							</table>
+							&lt;/div&gt;"
+  },
+  "status" : "active",
+  "intent" : "order",
+  "category" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://hl7.org/fhir/us/core/CodeSystem/careplan-category",
+          "code" : "assess-plan"
+        }
+      ]
+    }
+  ],
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  }
+}
+</pre>
+
+<p><a href="USCoreCareTeam.html">Next Page - US Core CareTeam</a></p>
+
+:ET

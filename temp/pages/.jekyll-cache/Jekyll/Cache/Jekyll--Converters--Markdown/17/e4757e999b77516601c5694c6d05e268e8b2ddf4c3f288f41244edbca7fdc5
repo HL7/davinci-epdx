@@ -1,0 +1,40 @@
+I"Ù
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#additional-hooks" id="markdown-toc-additional-hooks">Additional Hooks</a></li>
+  <li><a href="#modified-hooks" id="markdown-toc-modified-hooks">Modified Hooks</a></li>
+</ul>
+
+</div>
+<p><a href="SupportforFHIRR4.html">Previous Page - Support for FHIR R4</a></p>
+
+<p>The base CDS hooks 1.0 specification defines the following hooks:</p>
+
+<ul>
+  <li>patient-view</li>
+  <li>medication-prescribe</li>
+  <li>order-review</li>
+  <li>order-select</li>
+  <li>order-sign</li>
+  <li>appointment-book</li>
+  <li>encounter-start</li>
+  <li>encounter-discharge</li>
+</ul>
+
+<p>The expectation is that new hooks will be defined by and eventually formally approved by the community. The formal process for this proposal and maturity development process is still evolving. Individuals interested in this process can provide feedback <a href="https://cds-hooks.hl7.org">here</a>.</p>
+
+<h3 id="additional-hooks">Additional Hooks</h3>
+
+<p>Defining new hooks is an expected part of the CDS Hooks specification and there is no need for hooks to be officially registered with the community for them to be used. However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide. The project is proposing hooks that build on proposals made in the Da Vinci CRD IG.</p>
+
+<h3 id="modified-hooks">Modified Hooks</h3>
+
+<p>This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field.</p>
+
+<p>Subscriber Id or Member Id, if available, <strong>SHOULD</strong> be taken from the Patientâ€™s Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.</p>
+
+<p>If the Member Id is not available the Subscriber ID and the patient information from the Coverage.beneficiary element <strong>SHOULD</strong> be used to uniquely identify the member.</p>
+
+<p><a href="PDexHooks.html">Next Page - PDex Hooks</a></p>
+
+:ET

@@ -1,0 +1,207 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreDevice.html">Previous Page - US Core Device</a></p>
+
+<p>When a Health Plan is documenting information about organizations in relation to the Member’s Health History they <strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html">US Core Organization</a> resource.</p>
+
+<p>The essential fields to be provided in the US Core Organization resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Organization</td>
+      <td>Organization</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Organization.id</td>
+      <td>id</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier</td>
+      <td>identifier</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier.system</td>
+      <td>system</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Organization.active</td>
+      <td>active</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>Organization.name</td>
+      <td>name</td>
+      <td>SI</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.telecom</td>
+      <td>telecom</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>ContactPoint</td>
+    </tr>
+    <tr>
+      <td>Organization.address</td>
+      <td>address</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Organization.address.line</td>
+      <td>line</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.city</td>
+      <td>city</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.state</td>
+      <td>state</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.postalCode</td>
+      <td>postalCode</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.endpoint</td>
+      <td>endpoint</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>Reference(Endpoint)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-organization-resource">Example Organization resource</h4>
+
+<p>An example mapping of an Organization resource is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Organization",
+  "id" : "saint-luke-w-endpoint",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n            <h1>Organization</h1>\n            <div>\n                <p>ID: 393872</p>\n                <p>Name: Saint Luke's Hospital of Kansas City </p>\n                <p>NPI: 1063494177</p>\n                <p>Phone:(816)932-2000</p>\n                <p>Address:4401 Wornall Rd,, MO, 64111</p>\n            </div>\n        &lt;/div&gt;"
+  },
+  "contained" : [
+    {
+      "resourceType" : "Endpoint",
+      "id" : "75",
+      "status" : "active",
+      "connectionType" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+        "code" : "direct-project"
+      },
+      "name" : "Dr. Ronald Bone Direct Address",
+      "managingOrganization" : {
+        "reference" : "Organization/example-organization-2"
+      },
+      "payloadType" : [
+        {
+          "coding" : [
+            {
+              "system" : "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+              "code" : "urn:hl7-org:sdwg:ccda-structuredBody:1.1"
+            }
+          ]
+        }
+      ],
+      "payloadMimeType" : [
+        "text/xml"
+      ],
+      "address" : "mailto:Interoperability@DirectAddress.com"
+    }
+  ],
+  "identifier" : [
+    {
+      "system" : "http://example.org/fhir/sid/us-npi",
+      "value" : "1063494177"
+    },
+    {
+      "system" : "http://example.org/fhir/us/argo/sid/us-ein",
+      "value" : "00-0000000"
+    }
+  ],
+  "active" : true,
+  "name" : "Saint Luke's Hospital of Kansas City",
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "(816)932-2000",
+      "use" : "work"
+    },
+    {
+      "system" : "other",
+      "value" : "http://www.saintlukeshealthsystem.org/locations/saint-lukes-hospital-kansas-city",
+      "use" : "work"
+    }
+  ],
+  "address" : [
+    {
+      "text" : "3300 Washtenaw Avenue, Suite 227 Amherst MA 01002",
+      "line" : [
+        "4401 Wornall Rd,"
+      ],
+      "city" : "Amherst",
+      "state" : "MA",
+      "postalCode" : "64111"
+    }
+  ],
+  "endpoint" : [
+    {
+      "reference" : "#75"
+    }
+  ]
+}
+</pre>
+
+<p><a href="USCoreCarePlan.html">Next Page - US Core CarePlan</a></p>
+
+:ET

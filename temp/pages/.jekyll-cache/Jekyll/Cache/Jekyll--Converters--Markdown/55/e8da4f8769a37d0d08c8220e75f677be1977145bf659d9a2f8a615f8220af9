@@ -1,0 +1,132 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreCondition.html">Previous Page - US Core Condition</a></p>
+
+<p>Where a Health Plan has information about a member’s allergies the  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance profile</a>  <strong>SHALL</strong> be used to record them.</p>
+
+<p>The essential fields to be provided in the US Core AllergyIntolerance resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AllergyIntolerance</td>
+      <td>AllergyIntolerance</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AllergyIntolerance.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>AllergyIntolerance.clinicalStatus</td>
+      <td>clinicalStatus</td>
+      <td>0..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>AllergyIntolerance.verificationStatus</td>
+      <td>verificationStatus</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>AllergyIntolerance.code</td>
+      <td>code</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>AllergyIntolerance.patient</td>
+      <td>patient</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-allergyintolerance-resource">Example AllergyIntolerance Resource</h4>
+
+<p>An example mapping of an AllergyIntolerance resource is shown below:</p>
+<pre>
+{
+  "resourceType" : "AllergyIntolerance",
+  "id" : "example",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: example</p><p><b>meta</b>: </p><p><b>clinicalStatus</b>: Active &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical code 'active' = 'Active)&lt;/span&gt;</p><p><b>verificationStatus</b>: Confirmed &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://terminology.hl7.org/CodeSystem/allergyintolerance-verification code 'confirmed' = 'Confirmed)&lt;/span&gt;</p><p><b>category</b>: medication</p><p><b>criticality</b>: high</p><p><b>code</b>: sulfonamide antibacterial &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {SNOMED CT code '387406002' = 'Sulfonamide (substance)', given as 'Sulfonamide (substance)'})&lt;/span&gt;</p><p><b>patient</b>: &lt;a href=\"Patient-example.html\"&gt;Amy V. Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><h3>Reactions</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td>*</td><td>skin rash &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {SNOMED CT code '271807003' = 'Eruption of skin (disorder)', given as 'skin rash'})&lt;/span&gt;</td><td>mild</td></tr>&lt;/table&gt;&lt;/div&gt;"
+  },
+  "clinicalStatus" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code" : "active"
+      }
+    ]
+  },
+  "verificationStatus" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code" : "confirmed"
+      }
+    ]
+  },
+  "category" : [
+    "medication"
+  ],
+  "criticality" : "high",
+  "code" : {
+    "coding" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "387406002",
+        "display" : "Sulfonamide (substance)"
+      }
+    ],
+    "text" : "sulfonamide antibacterial"
+  },
+  "patient" : {
+    "reference" : "Patient/example",
+    "display" : "Amy V. Shaw"
+  },
+  "reaction" : [
+    {
+      "manifestation" : [
+        {
+          "coding" : [
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "271807003",
+              "display" : "skin rash"
+            }
+          ],
+          "text" : "skin rash"
+        }
+      ],
+      "severity" : "mild"
+    }
+  ]
+}
+</pre>
+
+<p><a href="USCoreImmunization.html">Next Page - US Core Immunization</a></p>
+
+:ET

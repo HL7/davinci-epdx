@@ -1,0 +1,149 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreAllergyIntolerance.html">Previous Page - US Core AllergyIntolerance</a></p>
+
+<p>Where a Health Plan has access to structured and coded Immunization information for a member the health plan <strong>SHALL</strong> present the information using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html">US Core Immunization</a> resource when information is available in a structured and coded form.</p>
+
+<p>The essential fields to be provided in the US Core Immunization resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Immunization</td>
+      <td>Immunization</td>
+      <td>0..*</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.statusReason</td>
+      <td>statusReason</td>
+      <td>0..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.vaccineCode</td>
+      <td>vaccineCode</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.patient</td>
+      <td>patient</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.occurrence[x]</td>
+      <td>occurrence[x]</td>
+      <td>1..1</td>
+      <td>dateTime, string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.primarySource</td>
+      <td>primarySource</td>
+      <td>1..1</td>
+      <td>boolean</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Immunization.performer.actor</td>
+      <td>actor</td>
+      <td>1..1</td>
+      <td>Reference(Practitioner</td>
+      <td>PractitionerRole</td>
+      <td>Organization)</td>
+    </tr>
+    <tr>
+      <td>Immunization.protocolApplied.doseNumber[x]</td>
+      <td>doseNumber[x]</td>
+      <td>1..1</td>
+      <td>positiveInt, string</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-immunization-resource">Example Immunization Resource:</h4>
+
+<p>An example mapping of an Immunization resource is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Immunization",
+  "id" : "imm-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: imm-1</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: influenza, injectable, quadrivalent, contains preservative &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://hl7.org/fhir/sid/cvx code '158' = 'influenza, injectable, quadrivalent', given as 'influenza, injectable, quadrivalent, contains preservative'}; {http://hl7.org/fhir/sid/ndc code '49281-0621-15' = '49281-0621-15', given as 'FLUZONE QUADRIVALENT'})&lt;/span&gt;</p><p><b>patient</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><p><b>occurrence</b>: Jan 8, 2016, 12:00:00 AM</p><p><b>primarySource</b>: false</p>&lt;/div&gt;"
+  },
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [
+      {
+        "system" : "http://hl7.org/fhir/sid/cvx",
+        "code" : "158",
+        "display" : "influenza, injectable, quadrivalent, contains preservative"
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/ndc",
+        "code" : "49281-0621-15",
+        "display" : "FLUZONE QUADRIVALENT"
+      }
+    ]
+  },
+  "patient" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "occurrenceDateTime" : "2016-01-08",
+  "primarySource" : false
+}
+</pre>
+
+<p><a href="USCoreDiagnosticReport.html">Next Page - US Core DiagnosticReport</a></p>
+
+:ET

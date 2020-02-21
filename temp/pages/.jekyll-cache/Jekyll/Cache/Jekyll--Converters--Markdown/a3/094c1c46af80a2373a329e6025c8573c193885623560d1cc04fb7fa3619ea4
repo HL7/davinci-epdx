@@ -1,0 +1,215 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreEncounter.html">Previous Page - US Core Encounter</a></p>
+
+<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html">US Core Location profile</a>  <strong>SHALL</strong> be used to record location/facility-specific information.</p>
+
+<p>The essential fields to be provided in the US Core Location resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Location</td>
+      <td>Location</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Location.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Location.status</td>
+      <td>status</td>
+      <td>0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Location.name</td>
+      <td>name</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.telecom</td>
+      <td>telecom</td>
+      <td>0..*</td>
+      <td>ContactPoint</td>
+    </tr>
+    <tr>
+      <td>Location.address</td>
+      <td>address</td>
+      <td>0..1</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Location.address.line</td>
+      <td>line</td>
+      <td>0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.city</td>
+      <td>city</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.state</td>
+      <td>state</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.address.postalCode</td>
+      <td>postalCode</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Location.managingOrganization</td>
+      <td>managingOrganization</td>
+      <td>0..1</td>
+      <td>Reference(US Core Organization Profile)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
+
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html">US Core Location profile</a>. This is shown below as an assistance  to implementers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>PayerSourceRecord</th>
+      <th>CMS BB 2.0 Field</th>
+      <th>Data Descriptor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>15.1</td>
+      <td>Claim</td>
+      <td> </td>
+      <td>Claim bill facility type code</td>
+      <td>US Core Location</td>
+      <td>.type</td>
+      <td>http://build.fhir.org/v3/ServiceDeliveryLocationRoleType/vs.html</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Claim-Provider</td>
+      <td> </td>
+      <td>Claim site of service NPI</td>
+      <td>US Core Location</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>16.1</td>
+      <td>Claim-Provider</td>
+      <td> </td>
+      <td>Claim service location NPI</td>
+      <td>US Core Location</td>
+      <td>.identifier.value</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Claim-Pharmacy</td>
+      <td> </td>
+      <td>Pharmacy service type code</td>
+      <td>US Core Location</td>
+      <td>.type</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
+
+<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/bene_id/
+https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
+
+<h4 id="example-location-resource">Example Location Resource</h4>
+
+<p>An example mapping of a Location resource is shown here:</p>
+
+<pre>
+{
+  "resourceType" : "Location",
+  "id" : "hl7east",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: hl7east</p><p><b>meta</b>: </p><p><b>identifier</b>: 29</p><p><b>status</b>: active</p><p><b>name</b>: Health Level Seven International - Amherst</p><p><b>description</b>: HL7 Headquarters - East</p><p><b>telecom</b>: ph: (+1) 734-677-7777</p><p><b>address</b>: 3300 Washtenaw Avenue, Suite 227 Amherst MA 01002 USA </p><h3>Positions</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td>*</td><td>-72.519854</td><td>42.373222</td></tr>&lt;/table&gt;<p><b>managingOrganization</b>: Health Level Seven International</p>&lt;/div&gt;"
+  },
+  "identifier" : [
+    {
+      "system" : "http://www.acme.org/location",
+      "value" : "29"
+    }
+  ],
+  "status" : "active",
+  "name" : "Health Level Seven International - Amherst",
+  "description" : "HL7 Headquarters - East",
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "(+1) 734-677-7777"
+    }
+  ],
+  "address" : {
+    "line" : [
+      "3300 Washtenaw Avenue, Suite 227"
+    ],
+    "city" : "Amherst",
+    "state" : "MA",
+    "postalCode" : "01002",
+    "country" : "USA"
+  },
+  "position" : {
+    "longitude" : -72.519854,
+    "latitude" : 42.373222
+  },
+  "managingOrganization" : {
+    "display" : "Health Level Seven International"
+  }
+}
+</pre>
+
+<p>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html">US Core Location Profiles </a>.</p>
+
+<p><a href="MedicationDispense.html">Next Page - MedicationDispense</a></p>
+
+:ET

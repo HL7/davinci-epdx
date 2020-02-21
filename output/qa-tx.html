@@ -1,2 +1,30 @@
 <html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2>
+<hr/><a name="l1"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;coding&quot;/&gt;&lt;valueCoding&gt;&lt;code value=&quot;http://hl7.org/fhirpath/System.String&quot;/&gt;&lt;/valueCoding&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;defined-types&quot;/&gt;&lt;meta&gt;&lt;lastUpdated value=&quot;2019-10-31T22:29:23.356+00:00&quot;/&gt;&lt;profile value=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;&lt;/meta&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;&gt;&lt;valueCode value=&quot;fhir&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/valueset-special-status&quot;&gt;&lt;valueString value=&quot;This Value Set is normative - it is generated based on the information defined in this specification. The definition will remain fixed  across versions, but the actual contents will change from version to version&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;&gt;&lt;valueCode value=&quot;normative&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version&quot;&gt;&lt;valueCode value=&quot;4.0.0&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;&gt;&lt;valueInteger value=&quot;5&quot;/&gt;&lt;/extension&gt;&lt;url value=&quot;http://hl7.org/fhir/ValueSet/defined-types&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.4.642.3.24&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;4.0.1&quot;/&gt;&lt;name value=&quot;FHIRDefinedType&quot;/&gt;&lt;title value=&quot;FHIRDefinedType&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;experimental value=&quot;false&quot;/&gt;&lt;date value=&quot;2019-10-31T22:29:23+00:00&quot;/&gt;&lt;publisher value=&quot;HL7 (FHIR Project)&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;telecom&gt;&lt;system value=&quot;email&quot;/&gt;&lt;value value=&quot;fhir@lists.hl7.org&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;A list of all the concrete types defined in this version of the FHIR specification - Data Types and Resource Types.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://hl7.org/fhir/data-types&quot;/&gt;&lt;/include&gt;&lt;include&gt;&lt;system value=&quot;http://hl7.org/fhir/resource-types&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 539
+Cache-control: public, max-age=600
+Date: Fri, 21 Feb 2020 15:31:05 GMT
+Pragma: no-cache
+X-Request-Id: 260-225897
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Fri, 21 Feb 2020 15:31:05 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;http://hl7.org/fhirpath/System.String&amp;quot;); The code provided (#http://hl7.org/fhirpath/System.String) is not  valid in the value set FHIRDefinedType&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;Unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
 </head></html>

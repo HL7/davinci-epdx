@@ -1,0 +1,138 @@
+I"�
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCorePractitionerRole.html">Previous Page - US Core PractitionerRole</a></p>
+
+<p>Where a Health Plan has information about devices used by the Member that information SHALL be published using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">US Core Device</a> resource when the information is structured and coded.</p>
+
+<p>In future versions of this IG there is a desire to ensure that all Device identification information is exchanged using the Device resource.</p>
+
+<p>The essential fields to be provided in the US Core Device resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Device</td>
+      <td>Device</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Device.id</td>
+      <td>id</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Device.udiCarrier</td>
+      <td>udiCarrier</td>
+      <td>SI</td>
+      <td>1..1</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Device.deviceName.name</td>
+      <td>name</td>
+      <td> </td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Device.deviceName.type</td>
+      <td>type</td>
+      <td> </td>
+      <td>1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Device.type</td>
+      <td>type</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Device.specialization.systemType</td>
+      <td>systemType</td>
+      <td> </td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Device.version.value</td>
+      <td>value</td>
+      <td> </td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Device.property.type</td>
+      <td>type</td>
+      <td> </td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Device.patient</td>
+      <td>patient</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-device-resource">Example Device Resource</h4>
+
+<p>An example mapping of a device resource is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Device",
+  "id" : "udi-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-device"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: udi-1</p><p><b>meta</b>: </p><h3>UdiCarriers</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>CarrierHRF</b></td></tr><tr><td>*</td><td>(01)09504000059118(17)141120(10)7654321D(21)10987654d321</td></tr>&lt;/table&gt;<p><b>status</b>: active</p><p><b>type</b>: Coated femoral stem prosthesis, modular &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {SNOMED CT code '468063009' = 'Coated femoral stem prosthesis, modular (physical object)', given as 'Coated femoral stem prosthesis, modular'})&lt;/span&gt;</p><p><b>patient</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p>&lt;/div&gt;"
+  },
+  "udiCarrier" : [
+    {
+      "carrierHRF" : "(01)09504000059118(17)141120(10)7654321D(21)10987654d321"
+    }
+  ],
+  "status" : "active",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "468063009",
+        "display" : "Coated femoral stem prosthesis, modular"
+      }
+    ]
+  },
+  "patient" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  }
+}
+</pre>
+
+<p><a href="USCoreOrganization.html">Next Page - US Core Organization</a></p>
+
+:ET

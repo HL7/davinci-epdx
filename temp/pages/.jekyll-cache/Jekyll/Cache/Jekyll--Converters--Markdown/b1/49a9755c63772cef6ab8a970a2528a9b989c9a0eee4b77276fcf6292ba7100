@@ -1,0 +1,237 @@
+I"a7
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCoreImmunization.html">Previous Page - US Core Immunization</a></p>
+
+<p>Where a Health Plan has access to Laboratory Results and other diagnostic information they <strong>SHALL</strong> make the information available using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport</a> resource.</p>
+
+<p>The essential fields to be provided in the US Core DiagnosticReport resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DiagnosticReport</td>
+      <td>DiagnosticReport</td>
+      <td>0..*</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.category</td>
+      <td>category</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.code</td>
+      <td>code</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.subject</td>
+      <td>subject</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.effective[x]</td>
+      <td>effective[x]</td>
+      <td>1..1</td>
+      <td>dateTime, Period</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.issued</td>
+      <td>issued</td>
+      <td>1..1</td>
+      <td>instant</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.performer</td>
+      <td>performer</td>
+      <td>0..*</td>
+      <td>Reference(US Core Practitioner Profile</td>
+      <td>US Core Organization Profile)</td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.result</td>
+      <td>result</td>
+      <td>0..*</td>
+      <td>Reference(US Core Result Observation Profile)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.media</td>
+      <td>media</td>
+      <td>0..*</td>
+      <td>BackboneElement</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DiagnosticReport.presentedForm</td>
+      <td>presentedForm</td>
+      <td>0..*</td>
+      <td>Attachment</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-diagnosticreport-resource">Example DiagnosticReport Resource</h4>
+
+<p>An example mapping of a DiagnosticReport for urinalysis is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "urinalysis",
+  "meta" : {
+    "versionId" : "209563",
+    "lastUpdated" : "2016-04-19T17:28:11.308+00:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: urinalysis</p><p><b>meta</b>: </p><p><b>status</b>: final</p><p><b>category</b>: Laboratory &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://terminology.hl7.org/CodeSystem/v2-0074 code 'LAB' = 'Laboratory', given as 'Laboratory'})&lt;/span&gt;</p><p><b>code</b>: Complete Urinalysis &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {LOINC code '24356-8' = 'Urinalysis complete panel - Urine', given as 'Urinalysis complete panel - Urine'})&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><p><b>effective</b>: Jul 5, 2005, 12:00:00 AM</p><p><b>issued</b>: Jul 6, 2005, 12:45:33 AM</p><p><b>performer</b>: &lt;a href=\"Organization-acme-lab.html\"&gt;Acme Laboratory, Inc. Generated Summary: id: acme-lab; 1144221847, 2523423456; active; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/organization-type prov}\"&gt;Healthcare Provider&lt;/span&gt;; name: Acme Labs; ph: (+1) 734-677-7777, hq@acme.org&lt;/a&gt;</p><p><b>result</b>: </p><ul><li>&lt;a href=\"Observation-urine-color.html\"&gt;COLOR=Yellow. Generated Summary: id: urine-color; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5778-6}\"&gt;COLOR&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.inbnm,fo/sct 371244009}\"&gt;Yellow&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-clarity.html\"&gt;APPEARANCE=Hazy. Generated Summary: id: urine-clarity; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 32167-9}\"&gt;APPEARANCE&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 81858005}\"&gt;Hazy&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-glucose.html\"&gt;GLUCOSE=Negative. Generated Summary: id: urine-glucose; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 25428-4}\"&gt;GLUCOSE&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260385009}\"&gt;Negative&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-bilirubin.html\"&gt;BILIRUBIN=Negative. Generated Summary: id: urine-bilirubin; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5770-3}\"&gt;BILIRUBIN&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260385009}\"&gt;Negative&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-ketone.html\"&gt;KETONE=Negative. Generated Summary: id: urine-ketone; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 2514-8}\"&gt;KETONE&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260385009}\"&gt;Negative&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-usg.html\"&gt;SPEC GRAV=1.017. Generated Summary: id: usg; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5811-5}\"&gt;SPEC GRAV&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; 1.017 {urine specific gravity}&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-ph.html\"&gt;PH=6 (pH). Generated Summary: id: urine-ph; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5803-2}\"&gt;PH&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; 6.0 (pH)&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-protein.html\"&gt;PROTEIN=Negative. Generated Summary: id: urine-protein; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 20454-5}\"&gt;PROTEIN&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260385009}\"&gt;Negative&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urobilinogen.html\"&gt;UROBILINOGEN=0.3 mg/dL. Generated Summary: id: urobilinogen; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 20405-7}\"&gt;UROBILINOGEN&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; 0.3 mg/dL&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-nitrite.html\"&gt;NITRITE=Positive. Generated Summary: id: urine-nitrite; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5802-4}\"&gt;NITRITE&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 10828004}\"&gt;Positive&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-hemoglobin.html\"&gt;BLOOD=Trace. Generated Summary: id: urine-hemoglobin; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5794-3}\"&gt;BLOOD&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260405006}\"&gt;Trace&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-leukocyte-esterase.html\"&gt;LEUK ESTERASE=2+e. Generated Summary: id: urine-leukocyte-esterase; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5799-2}\"&gt;LEUK ESTERASE&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260348001}\"&gt;2+&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-sediment.html\"&gt;COMMENT=Recommend Urine Culture. Generated Summary: id: urine-sediment; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 11279-7}\"&gt;COMMENT&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; value: Recommend Urine Culture&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-bacteria.html\"&gt;BACTERIA=4+. Generated Summary: id: urine-bacteria; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 25145-4}\"&gt;BACTERIA&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 260350009}\"&gt;4+&lt;/span&gt;&lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-epi-cells.html\"&gt;EPITHELIAL CELLS=1-5 cells/HPF. Generated Summary: id: urine-epi-cells; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5787-7}\"&gt;EPITHELIAL CELLS&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-wbcs.html\"&gt;WBC=20-30 cells/HPF. Generated Summary: id: urine-wbcs; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 5821-4}\"&gt;WBC&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;/a&gt;</li><li>&lt;a href=\"Observation-urine-rbcs.html\"&gt;RBC=Occasional cells/HPF. Generated Summary: id: urine-rbcs; &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\"&gt;Laboratory&lt;/span&gt;; &lt;span title=\"Codes: {http://loinc.org 13945-1}\"&gt;RBC&lt;/span&gt;; effective: Jul 5, 2005, 12:00:00 AM; &lt;span title=\"Codes: {http://snomed.info/sct 84638005}\"&gt;Occasional&lt;/span&gt;&lt;/a&gt;</li></ul>&lt;/div&gt;"
+  },
+  "status" : "final",
+  "category" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code" : "LAB",
+          "display" : "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code" : {
+    "coding" : [
+      {
+        "system" : "http://loinc.org",
+        "code" : "24356-8",
+        "display" : "Urinalysis complete panel - Urine"
+      }
+    ],
+    "text" : "Complete Urinalysis"
+  },
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "effectiveDateTime" : "2005-07-05",
+  "issued" : "2005-07-06T11:45:33+11:00",
+  "performer" : [
+    {
+      "reference" : "Organization/acme-lab",
+      "display" : "Acme Laboratory, Inc"
+    }
+  ],
+  "result" : [
+    {
+      "reference" : "Observation/urine-color",
+      "display" : "COLOR=Yellow"
+    },
+    {
+      "reference" : "Observation/urine-clarity",
+      "display" : "APPEARANCE=Hazy"
+    },
+    {
+      "reference" : "Observation/urine-glucose",
+      "display" : "GLUCOSE=Negative"
+    },
+    {
+      "reference" : "Observation/urine-bilirubin",
+      "display" : "BILIRUBIN=Negative"
+    },
+    {
+      "reference" : "Observation/urine-ketone",
+      "display" : "KETONE=Negative"
+    },
+    {
+      "reference" : "Observation/usg",
+      "display" : "SPEC GRAV=1.017"
+    },
+    {
+      "reference" : "Observation/urine-ph",
+      "display" : "PH=6 (pH)"
+    },
+    {
+      "reference" : "Observation/urine-protein",
+      "display" : "PROTEIN=Negative"
+    },
+    {
+      "reference" : "Observation/urobilinogen",
+      "display" : "UROBILINOGEN=0.3 mg/dL"
+    },
+    {
+      "reference" : "Observation/urine-nitrite",
+      "display" : "NITRITE=Positive"
+    },
+    {
+      "reference" : "Observation/urine-hemoglobin",
+      "display" : "BLOOD=Trace"
+    },
+    {
+      "reference" : "Observation/urine-leukocyte-esterase",
+      "display" : "LEUK ESTERASE=2+e"
+    },
+    {
+      "reference" : "Observation/urine-sediment",
+      "display" : "COMMENT=Recommend Urine Culture"
+    },
+    {
+      "reference" : "Observation/urine-bacteria",
+      "display" : "BACTERIA=4+"
+    },
+    {
+      "reference" : "Observation/urine-epi-cells",
+      "display" : "EPITHELIAL CELLS=1-5 cells/HPF"
+    },
+    {
+      "reference" : "Observation/urine-wbcs",
+      "display" : "WBC=20-30 cells/HPF"
+    },
+    {
+      "reference" : "Observation/urine-rbcs",
+      "display" : "RBC=Occasional cells/HPF"
+    }
+  ]
+}
+</pre>
+
+<p><a href="USCoreObservation.html">Next Page - US Core Observation</a></p>
+
+:ET
