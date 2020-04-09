@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.6.6.3"}
-    h3,h4,h5,h6{--heading-prefix:"2.6.6.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.6.3"}
+    h3,h4,h5,h6{--heading-prefix:"7.6.3"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><a href="WorkflowExamples.html"><b>Workflow Examples</b></a></li><li><b>FHIR Profiles and CDS Hooks Context</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><a href="WorkflowExamples.html"><b>Workflow Examples</b></a></li><li><b>FHIR Profiles and CDS Hooks Context</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -170,6 +168,11 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 </pre>
 
 <h4 id="smart-on-fhir-app-parameters">SMART-on-FHIR app Parameters</h4>
+
+<p>The SMART-on-FHIR app or service initiating the request to the Health Plan’s CDS-Hooks service <strong>SHALL</strong> provide a callback URI to enable the CDS Hooks service to notify the SMART-on-FHIR App of the presence of a card.</p>
+
+<p>In the case of an automated call to the Health Plan’s CDS Hooks service the card will contain the token(s) needed to access the Health Plan and the card will link to a provider’s SMART-on-FHIR app that <strong>SHALL</strong> recognize the Provider and the EMR system the app is connected to.</p>
+
 <p>When a SMART-on-FHIR App is provided as a link in the content returned from the CDS Hooks it <strong>SHALL</strong> receive:</p>
 
 <ul>
@@ -179,6 +182,8 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 </ul>
 
 <h4 id="smart-on-fhir-app-default-search-queries">SMART-on-FHIR app default search queries</h4>
+
+<p>This IG utilizes US Core Profiles whereever practicable. As such this IG supports the search parameters identified in the <a href="https://www.hl7.org/fhir/us/core/">US Core IG</a>.</p>
 
 <p>The SMART App <strong>SHOULD</strong> provide the capability for a Provider, Organization, Implementer or administrator of a Provider’s EMR System to define a set of valid FHIR search queries that can be executed against a Health Plan’s FHIR API. This capability enables a Provider or Organization to define the boundaries for the information they are interested in receiving from a Health Plan’s FHIR API.</p>
 
@@ -263,11 +268,12 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 </table>
 
 <h4 id="smart-on-fhir-app-for-provider-data-selection">SMART-on-FHIR app for Provider data selection</h4>
+
 <p>The SMART App <strong>SHALL</strong> retrieve the CapabilityStatement/Metadata from the Health Plan’s FHIR API.</p>
 
 <p>The SMART App <strong>SHALL</strong> retrieve the ConformanceStatement/CapabilityStatement/Metadata from the Provider’s EMR system.</p>
 
-<p>The Provider <strong>MAY</strong> select records from the Health Plan’s FHIR API to be committed to their EMR system.  After selecting the relevant data the provider <strong>MAY</strong> trigger a write of the selected data to their EMR system.</p>
+<p>The Provider <strong>MAY</strong> select records from the Health Plan’s FHIR API to be committed to their EMR system. After selecting the relevant data the provider <strong>MAY</strong> trigger a write of the selected data to their EMR system. Alternatively the Provider’s organization <strong>MAY</strong> implement automated selection rules to commit data received to the EMR.</p>
 
 <p>The SMART App <strong>SHALL</strong> use the EMRs Metadata to determine what records <strong>MAY</strong> be written to the EMR system.</p>
 
@@ -275,7 +281,7 @@ Optional fields in the CDS Hooks for PDex context include:</p>
 
 <p>If the Provider’s EMR system supports FHIR R4 the SMART App <strong>SHALL</strong> determine which resources may be written to the Patient’s record in the EMR system. It will write these records to the Provider’s EMR System.</p>
 
-<p>Any remaining selected records, where write operations are not permitted by the EMR system’s FHIR API <strong>SHOULD</strong> take one of the actions identified in <a href="#writing-records-using-documentreference">writing records usingdocumentreference</a>, below.</p>
+<p>The set of records selected by the Provider to commit to the EMR shall be written to the EMR, as per the write rules enforced by the EMR. The remaining selected records that can’t be written directly to the EMR shall be written as a DocumentReference per the format selection hierarchy identified in the following section <a href="#writing-records-using-documentreference">writing records usingdocumentreference</a>.</p>
 
 <p>If the Provider’s EMR system does not support FHIR R4 the SMART App <strong>SHOULD</strong> create a DocumentReference record and write the selected records to the Provider’s EMR System using one of the actions identified in <a href="#writing-records-using-documentreference">writing records usingdocumentreference</a>, below.</p>
 
@@ -302,8 +308,8 @@ Optional fields in the CDS Hooks for PDex context include:</p>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="db759e07-e1d2-4372-b53b-aca511cf6b92">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="3aa73651-241f-4aea-8ad9-112a629e46eb">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

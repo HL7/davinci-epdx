@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.3.6.7"}
-    h3,h4,h5,h6{--heading-prefix:"2.3.6.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.6.7"}
+    h3,h4,h5,h6{--heading-prefix:"4.6.7"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation Actors, Interactions, Data Payloads and Methods</b></a></li><li><a href="DataMapping.html"><b>Data Mapping</b></a></li><li><b>US Core Procedure</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation Actors, Interactions, Data Payloads and Methods</b></a></li><li><a href="DataMapping.html"><b>Data Mapping</b></a></li><li><b>US Core Procedure</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -247,7 +245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>1.4</td>
       <td>Member</td>
-      <td>BENE_ID</td>
+      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_id">BENE_ID</a></td>
       <td>Patientid</td>
       <td>US Core Procedure</td>
       <td>.subject</td>
@@ -257,7 +255,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>1.1</td>
       <td>Claim-Line</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Service (from) date</td>
       <td>US Core Procedure</td>
       <td>.occurence.occurrencePeriod.start</td>
@@ -267,7 +265,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>1.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Procedure code</td>
       <td>US Core Procedure</td>
       <td>.code</td>
@@ -277,7 +275,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>2.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Procedure date</td>
       <td>US Core Procedure</td>
       <td>.performed.dateTime</td>
@@ -287,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>3.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Procedure code type</td>
       <td>US Core Procedure</td>
       <td>.category</td>
@@ -297,7 +295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>4.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Procedure type</td>
       <td>US Core Procedure</td>
       <td>.code.coding.system</td>
@@ -307,7 +305,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>5.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Modifier Code -1</td>
       <td>US Core Procedure</td>
       <td>.modifierExtension</td>
@@ -317,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>6.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Modifier Code -2</td>
       <td>US Core Procedure</td>
       <td>.modifierExtension</td>
@@ -327,7 +325,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>7.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Modifier Code -3</td>
       <td>US Core Procedure</td>
       <td>.modifierExtension</td>
@@ -337,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>8.1</td>
       <td>Procedure</td>
-      <td>&nbsp;</td>
+      <td>N/A</td>
       <td>Modifier Code -4</td>
       <td>US Core Procedure</td>
       <td>.modifierExtension</td>
@@ -413,7 +411,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 }
 </pre>
 
-<p><a name="54c9cae1-b9d0-4d45-b39f-ce1588350040">​</a>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure Profiles </a>.</p>
+<p><a name="e05852df-1118-47e9-8173-65a069ce1dae">​</a>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure Profiles </a>.</p>
 
 <p><a href="USCoreCondition.html">Next Page - US Core Condition</a></p>
 
@@ -428,8 +426,8 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="0e64cb87-26fc-458e-955b-aaac2b93ddff">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="7d3b852b-17cc-48c7-9dc1-765b8f7cbaae">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

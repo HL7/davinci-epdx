@@ -8,7 +8,9 @@ The following actors are recognized in the PDex IG:
 - **Provider**: The practitioner or clinician, or their representative, that initiates a data access request to retrieve member data from a health plan.
 - **Third Party Application**: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.
 
-For the purposes of this IG there is nothing to prevent a covered entity, such as a Provider, from creating an integration interface or application that conforms to the requirements in this IG, based upon the SMART-on-FHIR framework for OAuth2.0, and that they submit for approval and connection to the Health Plan API. In that situation the covered entity operates under the same conditions and authorization processes as any other Third Party Application where any sharing of Member information requires explicit authorization to be given by the member via OAuth2.0.
+There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example the subscriber may be the primary family member on a plan that covers the entire family. Therefore the term Member will will be used through out this guide to identify the indivudal subject of the "member health history".
+
+For the purposes of this IG a covered entity, such as a Provider, may create an application for connection to a Health Plan FHIR API.
 
 
 

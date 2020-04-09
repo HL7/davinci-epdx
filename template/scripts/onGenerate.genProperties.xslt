@@ -5,8 +5,21 @@
     <xsl:variable name="id" select="f:id/@value"/>
     <xsl:variable name="org" select="substring-before($id, '.')"/>
     <xsl:variable name="family" select="substring-before(substring-after($id, '.'), '.')"/>
-    <xsl:variable name="realm" select="substring-before(substring-after($id, concat($family, '.')), '.')"/>
-    <xsl:variable name="code" select="substring-after($id, concat($realm, '.'))"/>
+    <xsl:variable name="realm">
+      <xsl:if test="contains(substring-after($id, concat($family, '.')), '.')">
+        <xsl:value-of select="substring-before(substring-after($id, concat($family, '.')), '.')"/>
+      </xsl:if>
+    </xsl:variable>
+    <xsl:variable name="code">
+      <xsl:choose>
+        <xsl:when test="$realm!=''">
+          <xsl:value-of select="substring-after($id, concat($realm, '.'))"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="substring-after($id, concat($family, '.'))"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:if test="not($org='hl7')">
       <xsl:message terminate="yes">
         <xsl:value-of select="concat('When using the HL7 template, the IG id must start with &quot;hl7.&quot; - found ', $id)"/>

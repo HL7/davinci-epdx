@@ -3,14 +3,19 @@
 
 The PDex IG defines four types of data payload:
 
-1. Member Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
+1. Member Membership, Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
 2. Healthcare Network Directory 
 3. Pharmacy Network Directory
 4. Medication Formulary
 
+The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transfered from one plan to another the receiving health plan is only obligated to share data received from another health plan in the electronic form and format it was received in.   
+
 The Directory and Formulary data payloads are covered in their respective subsidiary PDex IGs.
 
 All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
+
+The FHIR CapabilityStatement defines the resources and operations supported on the resources exposed via the FHIR API.
+The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. The V-Read and History operations **MAY** be supported.
 
 ### Member Clinical and Claims-derived History
 
@@ -53,7 +58,7 @@ The FHIR bundle that is the output of the Patient-everything operation can be re
 
 - [ HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
-- [HRex Provenance](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html)
+- [HRex Provenance](http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-provenance.html)
 
 #### CapabilityStatement
 
@@ -95,21 +100,21 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 ### Healthcare Network Directory 
 
-The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG).
+The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net)).
 
-The Latest build of the PDex-plan-net IG can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
+The Latest build of the [PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/) can be found at: [http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/)
 
 ### Pharmacy Network Directory
 
-The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG). A Health Plan's Pharmacy Network **SHALL** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
+The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/)). A Health Plan's Pharmacy Network **SHALL** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
 
-The Latest build of the PDex-plan-net IG which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
+The Latest build of the [PDex-plan-net IG](http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/) which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/
 
 ### Medication Formulary
 
-When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (PDex-formulary IG.
+When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide ([PDex-formulary IG](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/)).
 
-The Latest build of the PDex-formulary IG can be found at http://build.fhir.org/ig/HL7/davinci-pdex-formulary/
+The Latest build of the [PDex-formulary IG](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/) can be found at [http://build.fhir.org/ig/HL7/davinci-pdex-formulary/](http://build.fhir.org/ig/HL7/davinci-pdex-formulary/)
 
 
 

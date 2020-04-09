@@ -22,18 +22,18 @@
     <xsl:variable name="wg" select="/root/workgroups/workgroup[@webcode=$wgWebCode]/@key"/>
     <xsl:if test="$wg=''">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://', $committeePageBase, $wgWebCode)"/>
+        <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://', $committeePageBase, $wgWebCode, '.  If that URL resolves, please contact the HL7 webmaster.')"/>
       </xsl:message>
     </xsl:if>
-    <xsl:for-each select="/root/package[not(@status='ci-build' or @status='ballot' or @status='draft' or @status='trial-use' or @status='normative')]">
+    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='ballot' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
       <xsl:message terminate="yes">
         <xsl:value-of select="concat('Unrecognized package-list status: ', @status, ' for release ', @version)"/>
       </xsl:message>
     </xsl:for-each>
     <xsl:variable name="version">
       <xsl:choose>
-        <xsl:when test="/root/package-list/package[@status='trial-use' or @status='normative']">
-          <xsl:value-of select="/root/package-list/package[@status='trial-use' or @status='normative'][1]/@version"/>
+        <xsl:when test="/root/package-list/package[@status='trial-use' or @status='update' or @status='normative' or @status='trial-use+normative']">
+          <xsl:value-of select="/root/package-list/package[@status='trial-use' or @status='update' or @status='normative' or @status='trial-use+normative'][1]/@version"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="/root/package-list/package[1]/@version"/>
@@ -45,7 +45,7 @@
         <xsl:value-of select="concat('Version specified in the IG (', $version, ') does not correspond to any of the versions listed in the package-list.json')"/>
       </xsl:message>
     </xsl:if>
-    <xsl:variable name="ballotUrl" select="/root/package-list/package[@status='draft' or @status='ballot'][1]/@path"/>
+    <xsl:variable name="ballotUrl" select="/root/package-list/package[@status='preview' or @status='ballot'][1]/@path"/>
     <specification url="{$url}" ciUrl="{$ciUrl}" defaultWorkgroup="{$wg}" defaultVersion="{$version}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd">
       <xsl:if test="$ballotUrl!=''">
         <xsl:attribute name="ballotUrl">
@@ -54,7 +54,7 @@
       </xsl:if>
       <xsl:for-each select="/root/package-list/package">
         <version code="{@version}" url="{@path}">
-          <xsl:if test="((@status='ballot' or @status='draft') and preceding-sibling::package[@status='ballot' or @status='draft']) or /root/specification/version[@code=current()/@version]/@deprecated">
+          <xsl:if test="((@status='preview' or @status='ballot') and preceding-sibling::package[@status='preview' or @status='ballot']) or /root/specification/version[@code=current()/@version]/@deprecated">
             <xsl:attribute name="deprecated">true</xsl:attribute>
           </xsl:if>
         </version>
@@ -66,9 +66,10 @@
         <xsl:variable name="baseId" select="substring-after(f:reference/f:reference/@value, '/')"/>
         <xsl:variable name="artifactId" select="concat(substring-before(f:reference/f:reference/@value, '/'), '-', $baseId)"/>
         <xsl:variable name="name" select="f:name/@value"/>
-        <artifact name="{$name}" key="{$artifactId}">
+        <xsl:variable name="ref" select="f:reference/f:reference/@value"/>
+        <artifact name="{$name}" key="{$artifactId}" id="{$ref}">
           <xsl:for-each select="/root/specification/artifact[@id=$artifactId or @id=$baseId or @name=$name or normalize-space(substring-before(@name, '('))=$name]">
-            <xsl:copy-of select="@*"/>
+            <xsl:copy-of select="@*[not(local-name(.)='id')]"/>
           </xsl:for-each>
         </artifact>
       </xsl:for-each>

@@ -22,16 +22,16 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor     | FHIR Profile      | Profile Field                     | ValueSet | Notes              |
 |------|-------------------|------------------|---------------------|-------------------|-----------------------------------|----------|--------------------|
-| 1.4  | Member            | BENE_ID          | Patientid           | US Core Procedure | .subject                          |          | Reference(Patient) |
-| 1.1  | Claim-Line        |                  | Service (from) date | US Core Procedure | .occurence.occurrencePeriod.start |          |                    |
-| 1.1  | Procedure         |                  | Procedure code      | US Core Procedure | .code                             |          |                    |
-| 2.1  | Procedure         |                  | Procedure date      | US Core Procedure | .performed.dateTime               |          |                    |
-| 3.1  | Procedure         |                  | Procedure code type | US Core Procedure | .category                         |          |                    |
-| 4.1  | Procedure         |                  | Procedure type      | US Core Procedure | .code.coding.system               |          |                    |
-| 5.1  | Procedure         |                  | Modifier Code -1    | US Core Procedure | .modifierExtension                |          |                    |
-| 6.1  | Procedure         |                  | Modifier Code -2    | US Core Procedure | .modifierExtension                |          |                    |
-| 7.1  | Procedure         |                  | Modifier Code -3    | US Core Procedure | .modifierExtension                |          |                    |
-| 8.1  | Procedure         |                  | Modifier Code -4    | US Core Procedure | .modifierExtension                |          |                    |
+| 1.4  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)          | Patientid           | US Core Procedure | .subject                          |          | Reference(Patient) |
+| 1.1  | Claim-Line        | N/A                 | Service (from) date | US Core Procedure | .occurence.occurrencePeriod.start |          |                    |
+| 1.1  | Procedure         | N/A                 | Procedure code      | US Core Procedure | .code                             |          |                    |
+| 2.1  | Procedure         | N/A                 | Procedure date      | US Core Procedure | .performed.dateTime               |          |                    |
+| 3.1  | Procedure         | N/A                 | Procedure code type | US Core Procedure | .category                         |          |                    |
+| 4.1  | Procedure         | N/A                 | Procedure type      | US Core Procedure | .code.coding.system               |          |                    |
+| 5.1  | Procedure         | N/A                 | Modifier Code -1    | US Core Procedure | .modifierExtension                |          |                    |
+| 6.1  | Procedure         | N/A                 | Modifier Code -2    | US Core Procedure | .modifierExtension                |          |                    |
+| 7.1  | Procedure         | N/A                 | Modifier Code -3    | US Core Procedure | .modifierExtension                |          |                    |
+| 8.1  | Procedure         | N/A                 | Modifier Code -4    | US Core Procedure | .modifierExtension                |          |                    |
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
 

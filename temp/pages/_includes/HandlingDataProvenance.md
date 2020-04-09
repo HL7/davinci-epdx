@@ -3,6 +3,10 @@
 
 Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.
 
+The PDex IG will define Provenance examples that meet the needs of Health Plans. The value sets, including any new codes required, used to enable Health Plans to express Provenance Records will be supplied to the Security Work Group and others developing Provenance profiles as examples of real world requirements.
+
+Provenance requirements for the Payer Community may be a super-set of those of the Provider focused-argonaut community.
+
 Health Plans **SHOULD** accept and retain Provenance records received with data from other sources such as a Member-authorized Payer-to-Payer exchange.
 
 When a Health Plan forwards information as a FHIR Resource it **SHOULD** create or update a related Provenance record to reflect the original source, any subsequent data handlers or transformers and the action taken by the Health Plan in its handling of the data. 
@@ -40,24 +44,30 @@ Three examples are provided to deal with four different scenarios:
 
 #### Clinical Information with Provenance
 
-The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
-The Health Plan **SHOULD** update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
-The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.   
+The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities. 
+The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 
+Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide. 
+
+This guide shall define extensions to the provenance value sets as required to document the provenance of the information exchange.
 
 #### Clinical Information without Provenance
 
 The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.
-The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.   
+
+The updated Provenance record **SHOULD** be passed on to any downstream entity that requests Provenance information for the records they request.   
 
 #### FHIR Resource from prior Health Plan
 
 The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
-The Health Plan **SHOULD** update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
+
+The Health Plan **SHOULD** update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data.
+
 The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.   
 
 #### Claim Information from Provider
 
 The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.
+
 The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.   
 
 ### Example Provenance Record

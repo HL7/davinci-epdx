@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.3.1"}
-    h3,h4,h5,h6{--heading-prefix:"2.3.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.1"}
+    h3,h4,h5,h6{--heading-prefix:"4.1"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Actors</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Actors</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -137,7 +135,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Third Party Application</strong>: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.</li>
 </ul>
 
-<p>For the purposes of this IG there is nothing to prevent a covered entity, such as a Provider, from creating an integration interface or application that conforms to the requirements in this IG, based upon the SMART-on-FHIR framework for OAuth2.0, and that they submit for approval and connection to the Health Plan API. In that situation the covered entity operates under the same conditions and authorization processes as any other Third Party Application where any sharing of Member information requires explicit authorization to be given by the member via OAuth2.0.</p>
+<p>There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example the subscriber may be the primary family member on a plan that covers the entire family. Therefore the term Member will will be used through out this guide to identify the indivudal subject of the “member health history”.</p>
+
+<p>For the purposes of this IG a covered entity, such as a Provider, may create an application for connection to a Health Plan FHIR API.</p>
 
 <p><a href="ExchangeInteractions.html">Next Page - Exchange Interactions</a></p>
 
@@ -152,8 +152,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="44fdac69-e9df-46bd-8f6c-aed1cde60698">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="385d90be-4b6d-447f-96af-f10e9e686d03">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

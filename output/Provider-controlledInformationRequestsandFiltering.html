@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.5"}
-    h3,h4,h5,h6{--heading-prefix:"2.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><b>Provider-controlled Information Requests and Filtering</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Provider-controlled Information Requests and Filtering</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -128,20 +126,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p><a href="UsefulPatientHistoryforProviders.html">Previous Page - Useful Patient History for Providers</a></p>
 
-<table style="background-color:rgb(195,231,244);width:100%;">
-<tr><td>Question_For_Comment (Q_F_05):</td></tr>
-<tr><td>
-    <i>
-	How could Health Plan initiated data exchange be handled?
-    </i>
-</td></tr>
-</table>
-
 <p>The Payer Data exchange Implementation Guide defines methods for Providers to request information from Health Plans.</p>
 
 <p>This IG does not cover the Payer-initiated transfer of unsolicited information to a provider. All Provider-oriented exchanges will be initiated as part of a Provider workflow, such as when a new patient presents for an appointment, using CDS-Hooks or triggered via a manual interaction with a SMART-on-FHIR app that generates the necessary CDS-Hook.</p>
 
-<p>All search parameters and subsequent filtering of returned information <strong>SHALL</strong> be controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider.</p>
+<p>All search parameters and subsequent filtering of returned information <strong>SHALL</strong> be controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider except for the application of any restrictions based on the scopes of the access token issued to the Provider per applicable law.</p>
 
 <p>Health Plans should only restrict provider access to a member’s data where that access is required in accordance with State or Federal regulations.</p>
 
@@ -160,8 +149,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="2f3463d1-c0b5-4320-8703-e3c0edc91737">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="d63c6f98-903f-4060-802d-76eadb814c55">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
