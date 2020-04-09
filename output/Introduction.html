@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.2"}
-    h3,h4,h5,h6{--heading-prefix:"2.2.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><b>Introduction</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Introduction</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -126,7 +124,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 
 </div>
-<p><a href="Conventions.html">Previous Page - Conventions</a></p>
+<p><a href="Overview.html">Previous Page - Overview</a></p>
 
 <p>The PDex IG identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that <strong>SHALL</strong> be communicated.</p>
 
@@ -144,13 +142,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Member-authorized Health Plan to Third Party Applications</li>
 </ol>
 
-<p>Whereas the Blue Button 2.0 initiative is specifying the profiles used to communicate claims information between health plans and their members, the PDex Implementation Guide (IG) is focused on presenting a members health and claims information in FHIR clinical profiles that are more easily consumed by Electronic Medical Records (EMR) systems.</p>
+<p>The Blue Button 2.0 initiative (The CMS Blue Button 2.0 API and the CARIN Consumer-Directed Exchange IG) specifies the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a member’s health and claims information as FHIR clinical profiles (based on US Core) that are more easily consumed by Electronic Medical Records (EMR) systems.</p>
+
+<p>Ad-hoc PDex Member History Requests  via CDS Hooks provides a mechanism for providers/clinicians to request Health Plan’s  information regarding the medical history for their patient as part of their regular workflow.  Requestor should be aware that the Health Plan may not have a complete medical history of services provided due to delays in billing, patient ability to pay for services, etc.</p>
 
 <p>The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information that will be exchanged between health plans when authorized by a health plan member.</p>
 
 <p>The Patient-everything operation is also included as part of this implementation. This is included to provide Health Plans with the ability to push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.</p>
 
-<p>While the authorization and communication mechanisms may differ between the provider-to-payer exchange (P2HPX) and the member-authorized  Payer-to-Payer exchange (MauthHPX) or member-authorized Payer to Third-Party Application exchange (Mauth3PX)  the payload of member history will be the same.</p>
+<p>While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the payload of member history will be the same.</p>
 
 <p>The objective with the above approach is to:</p>
 <ul>
@@ -171,8 +171,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="30981939-1634-4f6a-9dfb-94a816e35e09">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="2a3d734b-44d1-40dd-b2ab-28a1f522a49b">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.6.4"}
-    h3,h4,h5,h6{--heading-prefix:"2.6.4"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.4"}
+    h3,h4,h5,h6{--heading-prefix:"7.4"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><b>Hook Configuration</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><b>Hook Configuration</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -176,6 +174,32 @@ The potentially valid search query parameters will be limited by the options pro
   <li>Inclusions or exclusions based upon Organization, Location or Practitioners</li>
 </ul>
 
+<p>An example CDS Hooks Response Card is shown below:</p>
+
+<pre>
+{
+  "cards": [
+    {
+      "summary": "Provider Member History Request",
+      "indicator": "success",
+      "detail": "Response from Payer Appointment-Book Hook",
+      "source": {
+        "label": "Static Member History Response",
+        "url": "https://example.com/fhir/"
+      },
+      "links": [
+        {
+          "label": "SMART Example App",
+          "url": "https://smart.example.com/fhir/Patient/123456789",
+          "type": "smart"
+        }
+      ]
+    }
+  ]
+ }
+
+</pre>
+
 <p><a href="Systems.html">Next Page - Systems</a></p>
 
 
@@ -189,8 +213,8 @@ The potentially valid search query parameters will be limited by the options pro
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="06bc5320-cc2f-4ea3-b15b-b2d3f2838f93">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="bcbf9a06-ed17-483a-adf4-d1d6c0cd8d5f">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

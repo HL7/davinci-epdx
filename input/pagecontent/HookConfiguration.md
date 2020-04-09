@@ -40,6 +40,31 @@ As a minimum searches of FHIR Resources **SHOULD** support the following query p
 - Period (ie. Date / Time filters)
 - Inclusions or exclusions based upon Organization, Location or Practitioners
 
+An example CDS Hooks Response Card is shown below:
+
+<pre>
+{
+  "cards": [
+    {
+      "summary": "Provider Member History Request",
+      "indicator": "success",
+      "detail": "Response from Payer Appointment-Book Hook",
+      "source": {
+        "label": "Static Member History Response",
+        "url": "https://example.com/fhir/"
+      },
+      "links": [
+        {
+          "label": "SMART Example App",
+          "url": "https://smart.example.com/fhir/Patient/123456789",
+          "type": "smart"
+        }
+      ]
+    }
+  ]
+ }
+
+</pre>
 
 
 [Next Page - Systems](Systems.html)

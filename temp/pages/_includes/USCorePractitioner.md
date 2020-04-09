@@ -23,14 +23,14 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile         | Profile Field     | ValueSet | Notes |
 |------|-------------------|------------------|-------------------------------|----------------------|-------------------|----------|-------|
-| 1.1  | Claim-Provider    |                  | Claim billing provider NPI    | US Core Practitioner | .identifier.value |          |       |
-| 3.1  | Claim-Provider    |                  | Claim attending physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 6.1  | Claim-Provider    |                  | Claim referring provider NPI  | US Core Practitioner | .identifier.value |          |       |
-| 8.1  | Claim-Provider    |                  | Claim performing provider NPI | US Core Practitioner | .identifier.value |          |       |
-| 10.1 | Claim-Provider    |                  | Claim operating physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 12.1 | Claim-Provider    |                  | Claim other physician NPI     | US Core Practitioner | .identifier.value |          |       |
-| 14.1 | Claim-Provider    |                  | Claim rendering physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 17.1 | Claim-Provider    |                  | Claim PCP                     | US Core Practitioner | .identifier.value |          |       |
+| 1.1  | Claim-Provider    |  N/A                | Claim billing provider NPI    | US Core Practitioner | .identifier.value |          |       |
+| 3.1  | Claim-Provider    | N/A                 | Claim attending physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 6.1  | Claim-Provider    | N/A                 | Claim referring provider NPI  | US Core Practitioner | .identifier.value |          |       |
+| 8.1  | Claim-Provider    | N/A                 | Claim performing provider NPI | US Core Practitioner | .identifier.value |          |       |
+| 10.1 | Claim-Provider    | N/A                 | Claim operating physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 12.1 | Claim-Provider    | N/A                 | Claim other physician NPI     | US Core Practitioner | .identifier.value |          |       |
+| 14.1 | Claim-Provider    | N/A                 | Claim rendering physician NPI | US Core Practitioner | .identifier.value |          |       |
+| 17.1 | Claim-Provider    | N/A                 | Claim PCP                     | US Core Practitioner | .identifier.value |          |       |
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
 

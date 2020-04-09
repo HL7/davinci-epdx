@@ -1,0 +1,296 @@
+I"�!
+<div class="markdown-toc">
+
+</div>
+<p><a href="USCorePractitioner.html">Previous Page - US Core Practitioner</a></p>
+
+<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>  <strong>SHALL</strong> be used to record a members health events.</p>
+
+<p>The essential fields to be provided in the US Core Procedure resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Card.</th>
+      <th>Type</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Procedure</td>
+      <td>Procedure</td>
+      <td>0..*</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.id</td>
+      <td>id</td>
+      <td>0..1</td>
+      <td>id</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.status</td>
+      <td>status</td>
+      <td>1..1</td>
+      <td>code</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.code</td>
+      <td>code</td>
+      <td>1..1</td>
+      <td>CodeableConcept</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.subject</td>
+      <td>subject</td>
+      <td>1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.performed[x]</td>
+      <td>performed[x]</td>
+      <td>1..1</td>
+      <td>dateTime, Period</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Procedure.performer.actor</td>
+      <td>actor</td>
+      <td>1..1</td>
+      <td>Reference(Practitioner</td>
+      <td>PractitionerRole</td>
+      <td>Organization</td>
+      <td>Patient</td>
+      <td>RelatedPerson</td>
+      <td>Device)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
+<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>. This is shown below as an assistance  to implementers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line</th>
+      <th>PayerSourceRecord</th>
+      <th>CMS BB 2.0 Field</th>
+      <th>Data Descriptor</th>
+      <th>FHIR Profile</th>
+      <th>Profile Field</th>
+      <th>ValueSet</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.4</td>
+      <td>Member</td>
+      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_id">BENE_ID</a></td>
+      <td>Patientid</td>
+      <td>US Core Procedure</td>
+      <td>.subject</td>
+      <td> </td>
+      <td>Reference(Patient)</td>
+    </tr>
+    <tr>
+      <td>1.1</td>
+      <td>Claim-Line</td>
+      <td>N/A</td>
+      <td>Service (from) date</td>
+      <td>US Core Procedure</td>
+      <td>.occurence.occurrencePeriod.start</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>1.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Procedure code</td>
+      <td>US Core Procedure</td>
+      <td>.code</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Procedure date</td>
+      <td>US Core Procedure</td>
+      <td>.performed.dateTime</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Procedure code type</td>
+      <td>US Core Procedure</td>
+      <td>.category</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Procedure type</td>
+      <td>US Core Procedure</td>
+      <td>.code.coding.system</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Modifier Code -1</td>
+      <td>US Core Procedure</td>
+      <td>.modifierExtension</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Modifier Code -2</td>
+      <td>US Core Procedure</td>
+      <td>.modifierExtension</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Modifier Code -3</td>
+      <td>US Core Procedure</td>
+      <td>.modifierExtension</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8.1</td>
+      <td>Procedure</td>
+      <td>N/A</td>
+      <td>Modifier Code -4</td>
+      <td>US Core Procedure</td>
+      <td>.modifierExtension</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
+
+<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
+
+<p>https://bluebutton.cms.gov/resources/variables/bene_id/
+https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
+
+<h4 id="example-procedure-resource">Example Procedure Resource</h4>
+
+<p>An example mapping of an Procedure resource for a medical impiant is shown here:</p>
+
+<pre>
+{
+  "resourceType" : "Procedure",
+  "id" : "defib-implant",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: defib-implant</p><p><b>meta</b>: </p><p><b>identifier</b>: urn:uuid:b2a737f2-2fdb-49c1-b097-dac173d07aff</p><p><b>status</b>: completed</p><p><b>code</b>: Insertion or replacement of permanent implantable defibrillator system with transvenous lead(s), single or dual chamber &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://www.ama-assn.org/go/cpt code '33249' = '33249)&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><p><b>performed</b>: Mar 26, 2019, 7:55:26 PM --&gt; Mar 26, 2019, 8:25:26 PM</p><h3>Performers</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td>&lt;a href=\"Practitioner-practitioner-1.html\"&gt;Generated Summary: id: practitioner-1; 9941339108, 25456; Ronald Bone &lt;/a&gt;</td></tr>&lt;/table&gt;<h3>FocalDevices</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Manipulated</b></td></tr><tr><td>*</td><td>&lt;a href=\"Device-udi-2.html\"&gt;Generated Summary: id: udi-2; status: active; manufacturer: ACME Biomedical; expirationDate: Jan 1, 2022, 12:00:00 AM; lotNumber: M320; serialNumber: AC221; modelNumber: 1.0; &lt;span title=\"Codes: {http://snomed.info/sct 19257004}\"&gt;Implant&lt;/span&gt;&lt;/a&gt;</td></tr>&lt;/table&gt;&lt;/div&gt;"
+  },
+  "identifier" : [
+    {
+      "system" : "urn:ietf:rfc:3986",
+      "value" : "urn:uuid:b2a737f2-2fdb-49c1-b097-dac173d07aff"
+    }
+  ],
+  "status" : "completed",
+  "code" : {
+    "coding" : [
+      {
+        "system" : "http://www.ama-assn.org/go/cpt",
+        "code" : "33249"
+      }
+    ],
+    "text" : "Insertion or replacement of permanent implantable defibrillator system with transvenous lead(s), single or dual chamber"
+  },
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "performedPeriod" : {
+    "start" : "2019-03-26T12:55:26-07:00",
+    "end" : "2019-03-26T13:25:26-07:00"
+  },
+  "performer" : [
+    {
+      "actor" : {
+        "reference" : "Practitioner/practitioner-1"
+      }
+    }
+  ],
+  "focalDevice" : [
+    {
+      "manipulated" : {
+        "reference" : "Device/udi-2"
+      }
+    }
+  ]
+}
+</pre>
+
+<p>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure Profiles </a>.</p>
+
+<p><a href="USCoreCondition.html">Next Page - US Core Condition</a></p>
+
+:ET

@@ -10,13 +10,6 @@ When providers are building a health history for a new patient the information t
 
 The PDex Implementation Guide will focus on examples related to Ambulatory events.
 
-<table style="background-color:rgb(195,231,244);width:100%">
-	<tr><td>Question_For_Comment(Q_F_C03):</td></tr>
-  <tr><td><i>
-		Are there other categories of clinical data that providers wish to see?
-	</i></td></tr>	
-</table>
-
 As part of an event or episode of care the provider will be interested in the following types of data:
 
 * Consultations

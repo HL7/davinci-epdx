@@ -13,11 +13,18 @@ CDS Hooks is a relatively new technology. It is considered a Standard for Trial 
 
 To meet requirements identified by Da Vinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification. This section of the PDex implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them. The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.
 
-Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification either in the initial release or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.
+When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement that the implementation has determined relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.
 
-This IG **SHOULD** be used in conjunction with the Da Vinci Health Record Exchange (HRex) Implementation Guide. The HRex IG defines CDS Hooks that are used across one or more Da Vinci Use Case-related IG. The PDex IG defines the payload(s) that are required to support each PDex use case using the relevant HRex defined Hooks.  
+Where the EMR's FHIR API does not enable the SMART App to write a resource via the API the SMART App **SHOULD** write the records that it is permitted to write to the API. The remaining selected records **SHOULD** be retained in the EMR in the most appropriate form to allow the provider access to the information when needed.
+Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification, either in the initial release, or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.
 
-This implementation guide extends/customizes CDS Hooks in 4 ways: support for FHIR R4, extending the appointment-book hook, a hook configuration mechanism and additional response capabilities. Each are described in the following sections.
+This implementation guide extends/customizes CDS Hooks in 4 ways: 
+* Support for FHIR R4 
+* Extending the appointment-book hook
+* A hook configuration mechanism
+* additional response capabilities. 
+
+Each are described in the following sections.
 
 
 

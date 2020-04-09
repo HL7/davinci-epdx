@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.6.7"}
-    h3,h4,h5,h6{--heading-prefix:"2.6.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.7"}
+    h3,h4,h5,h6{--heading-prefix:"7.7"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><b>Handling Data Provenance</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="CDS-Hooks.html"><b>CDS-Hooks</b></a></li><li><b>Handling Data Provenance</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -133,6 +131,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><a href="FHIRProfilesandCDSHooksContext.html">Previous Page - FHIR Profiles and CDS Hooks Context</a></p>
 
 <p>Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.</p>
+
+<p>The PDex IG will define Provenance examples that meet the needs of Health Plans. The value sets, including any new codes required, used to enable Health Plans to express Provenance Records will be supplied to the Security Work Group and others developing Provenance profiles as examples of real world requirements.</p>
+
+<p>Provenance requirements for the Payer Community may be a super-set of those of the Provider focused-argonaut community.</p>
 
 <p>Health Plans <strong>SHOULD</strong> accept and retain Provenance records received with data from other sources such as a Member-authorized Payer-to-Payer exchange.</p>
 
@@ -225,25 +227,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="clinical-information-with-provenance">Clinical Information with Provenance</h4>
 
-<p>The Health Plan <strong>SHOULD</strong> store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
-The Health Plan <strong>SHOULD</strong> update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
-The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+<p>The Health Plan <strong>SHALL</strong> accept and maintain Provenance information associated with information received from contributing entities. 
+The Health Plan <strong>SHALL</strong> add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 
+Provenance information <strong>SHALL</strong> be available for any information requested by an external entity as part of exchanges conformant to this implementation guide.</p>
+
+<p>This guide shall define extensions to the provenance value sets as required to document the provenance of the information exchange.</p>
 
 <h4 id="clinical-information-without-provenance">Clinical Information without Provenance</h4>
 
-<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.
-The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.</p>
+
+<p>The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity that requests Provenance information for the records they request.</p>
 
 <h4 id="fhir-resource-from-prior-health-plan">FHIR Resource from prior Health Plan</h4>
 
-<p>The Health Plan <strong>SHOULD</strong> store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
-The Health Plan <strong>SHOULD</strong> update the Provenance record to add information covering the identity of the health plan and the action taken to become the custodian of the data.
-The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+<p>The Health Plan <strong>SHOULD</strong> store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.</p>
+
+<p>The Health Plan <strong>SHOULD</strong> update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data.</p>
+
+<p>The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
 
 <h4 id="claim-information-from-provider">Claim Information from Provider</h4>
 
-<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.
-The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
+<p>The Health Plan <strong>SHOULD</strong> create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.</p>
+
+<p>The updated Provenance record <strong>SHOULD</strong> be passed on to any downstream entity requesting the associated records.</p>
 
 <h3 id="example-provenance-record">Example Provenance Record</h3>
 
@@ -339,8 +347,8 @@ The updated Provenance record <strong>SHOULD</strong> be passed on to any downst
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="d7cc8183-9bf5-43b1-befe-89d6b8f6533a">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="60289e5f-db24-4199-8bd8-e0d03b74f9bb">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

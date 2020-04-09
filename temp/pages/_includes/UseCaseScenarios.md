@@ -10,22 +10,6 @@ The other use case is for Member/Patient-mediated Payer-to-Payer Exchange:
 - Consumer enrolls with new health plan and accesses their prior health plan to authorize sharing of the health history that the prior health plan holds on the consumer.
 
 The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider or when a member switches health plans.
-
-
-<table style="background-color:rgb(195,231,244);width:100%">
-  <tr>
-      <td>Question_For_Comment(Q_F_01):</td>
-  </tr>
-  <tr>
-		<td>
-      <i>
-What other claims or categories of data available to payers should be converted to FHIR clinical resources to release to providers? <br/>
-	In what sequence should these other categories of data be tackled?
-     </i>
-   </td>
-  </tr>	
-</table>
-
 		
 Three example data requests from Providers to Health Plans are covered in this IG and the associated Reference Implementation:
 

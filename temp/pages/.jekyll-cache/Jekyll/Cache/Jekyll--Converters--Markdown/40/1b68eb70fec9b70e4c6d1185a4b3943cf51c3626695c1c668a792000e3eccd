@@ -1,0 +1,45 @@
+I"l
+<div class="markdown-toc">
+
+</div>
+<p><a href="HandlingDataProvenance.html">Previous Page - Handling Data Provenance</a></p>
+
+<p>This IG provides a mechanism for Member-authorized exchange of their Health History:</p>
+
+<ul>
+  <li>From an old Health Plan to a new Health Plan</li>
+  <li>From their Health Plan to a third-party application of the member’s choice.</li>
+</ul>
+
+<p>The authorization method uses the <a href="https://oauth.net/2/">OAuth 2.0</a> protocol to issue a token to an authorized application or service. The authorized application can then use the token to enable interaction with the FHIR REST API.</p>
+
+<p>When a Member is authorizing sharing of the Member Health History with another Health Plan or a Third Party Application via the OAuth 2.0 protocol the Health Plan that is operating the API <strong>MAY</strong> offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations. However, under the HIPAA right of access the Member is at liberty to share that information if they so wish.</p>
+
+<table>
+	<tr>
+		<td>
+			<img width="100%" height="auto" src="MemberAuthorizedOAuth2Exchange.png" />
+		</td>	
+	</tr>	
+</table>
+
+<p>The well defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member <strong>SHALL</strong> authenticate using credentials they have been issued with by the Health Plan. This is typically the member’s customer portal credentials.</p>
+
+<p>After authenticating the Member <strong>SHALL</strong> be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan.</p>
+
+<p>The Health Plan <strong>SHALL</strong> provide the option to allow the Member to limit the information that is shared with the application.. For example, this <strong>MAY</strong> enable the Member to withhold their demographic or behavioral health information.</p>
+
+<p>After successfully authorizing an application an Access Token and Optional Refresh Token <strong>SHALL</strong> be returned to the requesting application.</p>
+
+<p>The requesting application <strong>SHALL</strong> use the access token to access the Health Plan’s secure FHIR API to download the information that the Member is allowed to access.</p>
+
+<p>Applications are registered with the API Endpoint. The application owner <strong>MAY</strong> be:</p>
+<ul>
+  <li>Another Health Plan</li>
+  <li>An Independent developer, such as a Personal Health Record application developer</li>
+  <li>Another Covered Entity, such as a Provider.</li>
+</ul>
+
+<p><a href="Credits.html">Next Page - Credits</a></p>
+
+:ET

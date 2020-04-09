@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.4.2"}
-    h3,h4,h5,h6{--heading-prefix:"2.4.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.2"}
+    h3,h4,h5,h6{--heading-prefix:"5.2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="UseCaseScenarios.html"><b>Use Case Scenarios</b></a></li><li><b>Useful Patient History for Providers</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="UseCaseScenarios.html"><b>Use Case Scenarios</b></a></li><li><b>Useful Patient History for Providers</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -138,13 +136,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <p>The PDex Implementation Guide will focus on examples related to Ambulatory events.</p>
-
-<table style="background-color:rgb(195,231,244);width:100%">
-	<tr><td>Question_For_Comment(Q_F_C03):</td></tr>
-  <tr><td><i>
-		Are there other categories of clinical data that providers wish to see?
-	</i></td></tr>	
-</table>
 
 <p>As part of an event or episode of care the provider will be interested in the following types of data:</p>
 
@@ -189,7 +180,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Laboratory test results</td>
-      <td><a name="6a3bb800-7146-4a84-8f90-d3a2ad1bc8dd">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="10147001-eabd-468a-ad94-5d0764c655ac">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>Result Observation</td>
@@ -201,7 +192,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Medical Devices</td>
-      <td><a name="3ea5991c-f434-442f-b55a-28a86c7bdc6e">​</a>Device: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html</a></td>
+      <td><a name="220432b1-a101-412e-914f-7e01a801db50">​</a>Device: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html</a></td>
     </tr>
     <tr>
       <td>Procedures</td>
@@ -209,11 +200,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Diagnoses</td>
-      <td><a name="88f8fbe3-3eac-4a0f-b455-f28a23f60f31">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="761c09fc-14a4-4260-ad9b-30ec7f4346af">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>Vital signs</td>
-      <td><a name="9ece946a-20b1-492c-b135-d35b8e5fe711">​</a>Observation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html</a></td>
+      <td><a name="84ce2cea-3d18-409d-9f7d-4b844a59f1f9">​</a>Observation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html</a></td>
     </tr>
     <tr>
       <td>Medications</td>
@@ -229,7 +220,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Notes</td>
-      <td><a name="6a322833-e701-4e41-91bf-41105d61606b">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="d3864522-f156-4351-b5a1-988c8c7bbbfa">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>FamilyHistory</td>
@@ -251,8 +242,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="7588fb21-b40f-4a75-abb6-569a1ac9102d">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="55a0f7bd-e460-4f5a-ad5b-e11daccdff1b">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

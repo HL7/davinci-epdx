@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"2.2.7"}
-    h3,h4,h5,h6{--heading-prefix:"2.2.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"3.7"}
+    h3,h4,h5,h6{--heading-prefix:"3.7"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
         
@@ -86,8 +86,6 @@
   <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-
-  <li><a href="CapabilityStatements.html">Capability Statements</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -101,7 +99,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Overview.html"><b>Overview</b></a></li><li><a href="Introduction.html"><b>Introduction</b></a></li><li><b>PDex Data Payloads</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="Introduction.html"><b>Introduction</b></a></li><li><b>PDex Data Payloads</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -137,15 +135,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>The PDex IG defines four types of data payload:</p>
 
 <ol>
-  <li>Member Clinical and Claims-derived History. Referred to in this IG as the “Member Health History”</li>
+  <li>Member Membership, Clinical and Claims-derived History. Referred to in this IG as the “Member Health History”</li>
   <li>Healthcare Network Directory</li>
   <li>Pharmacy Network Directory</li>
   <li>Medication Formulary</li>
 </ol>
 
+<p>The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transfered from one plan to another the receiving health plan is only obligated to share data received from another health plan in the electronic form and format it was received in.</p>
+
 <p>The Directory and Formulary data payloads are covered in their respective subsidiary PDex IGs.</p>
 
 <p>All resources available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement.</p>
+
+<p>The FHIR CapabilityStatement defines the resources and operations supported on the resources exposed via the FHIR API.
+The Read and Search Operations <strong>SHALL</strong> be supported for the FHIR Profiles covered in this payload section. The V-Read and History operations <strong>MAY</strong> be supported.</p>
 
 <h3 id="member-clinical-and-claims-derived-history">Member Clinical and Claims-derived History</h3>
 
@@ -158,9 +161,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html">US Core Condition Profile</a></li>
-  <li><a name="103f6c24-8dac-41cf-8b98-2ffb821124f0">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">US Core Device Profile</a></li>
-  <li><a name="ce7f1e2a-93aa-43dc-9675-cc03d0035971">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">US Core DiagnosticReport Profile</a></li>
-  <li><a name="93c071d6-59a0-41f0-b8cb-92eb39e6dff7">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html">US Core Diagnostic Report Profile for Report and Note exchange</a></li>
+  <li><a name="a144cad0-9631-40d1-a5ba-60eb8d26a31f">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">US Core Device Profile</a></li>
+  <li><a name="f8b23a57-eb4a-44c5-ae14-1ad46a199753">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">US Core DiagnosticReport Profile</a></li>
+  <li><a name="9a7c43a5-735c-41d7-856a-b083199750d4">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html">US Core Diagnostic Report Profile for Report and Note exchange</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html">US Core Goal Profile</a></li>
@@ -168,15 +171,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html">US Core Location Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">US Core Medication Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a></li>
-  <li><a name="64ee8809-21b7-41a2-843b-9b727042d482">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationstatement.html">US Core MedicationStatement Profile</a></li>
+  <li><a name="a774e7f1-21fd-4748-a27e-e1b52057552e">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationstatement.html">US Core MedicationStatement Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html">US Core Organization Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient Profile</a></li>
-  <li><a name="ee5ba828-2472-45d0-9b7c-6c6cc94a34f9">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-pediatric-bmi.html">US Core Pediatric BMI Observation Profile</a></li>
-  <li><a name="a359adcd-498d-492e-8003-5f948e2dfb7b">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-pediatric-weight.html">US Core Pediatric Weight Observation Profile</a></li>
+  <li><a name="a18e7d92-854f-489d-b1f0-7c0f26cb6f3f">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-pediatric-bmi.html">US Core Pediatric BMI Observation Profile</a></li>
+  <li><a name="ef37ada8-5964-4482-b7dc-6c6c522ad64e">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-pediatric-weight.html">US Core Pediatric Weight Observation Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a></li>
-  <li><a name="2b67b10a-17a8-420f-9446-d6c1c19914e1">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults.html">US Core Result Observation Profile</a></li>
+  <li><a name="ccbfe623-24af-4c80-bf2f-9d4ec1878df3">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observationresults.html">US Core Result Observation Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html">US Core Observation Lab</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>
 In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs Profile</a> from the FHIR Specification.</li>
@@ -191,7 +194,7 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
 <ul>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html"> HRex Coverage</a></li>
   <li><a href="StructureDefinition-pdex-medicationdispense.html">PDex MedicationDispense</a></li>
-  <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-provenance.html">HRex Provenance</a></li>
+  <li><a name="f2b2ebd3-a40d-475a-ab1f-95b8afd6b850">​</a><a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-provenance.html">HRex Provenance</a></li>
 </ul>
 
 <h4 id="capabilitystatement">CapabilityStatement</h4>
@@ -441,21 +444,21 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
 
 <h3 id="healthcare-network-directory">Healthcare Network Directory</h3>
 
-<p>The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG).</p>
+<p>The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net">PDex-plan-net IG</a>).</p>
 
-<p>The Latest build of the PDex-plan-net IG can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</p>
+<p>The Latest build of the <a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a> can be found at: <a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</a></p>
 
 <h3 id="pharmacy-network-directory">Pharmacy Network Directory</h3>
 
-<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (PDex-plan-net IG). A Health Plan’s Pharmacy Network <strong>SHALL</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory.</p>
+<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a>). A Health Plan’s Pharmacy Network <strong>SHALL</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory.</p>
 
-<p>The Latest build of the PDex-plan-net IG which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</p>
+<p>The Latest build of the <a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a> which includes the Pharmacy Network Directory can be found at: http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/</p>
 
 <h3 id="medication-formulary">Medication Formulary</h3>
 
-<p>When a Health Plan provides prescription drug coverage the list of covered medications is known as a “Formulary.”  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (PDex-formulary IG.</p>
+<p>When a Health Plan provides prescription drug coverage the list of covered medications is known as a “Formulary.”  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide (<a href="http://build.fhir.org/ig/HL7/davinci-pdex-formulary/">PDex-formulary IG</a>).</p>
 
-<p>The Latest build of the PDex-formulary IG can be found at http://build.fhir.org/ig/HL7/davinci-pdex-formulary/</p>
+<p>The Latest build of the <a href="http://build.fhir.org/ig/HL7/davinci-pdex-formulary/">PDex-formulary IG</a> can be found at <a href="http://build.fhir.org/ig/HL7/davinci-pdex-formulary/">http://build.fhir.org/ig/HL7/davinci-pdex-formulary/</a></p>
 
 <p><a href="PDexImplementationActorsInteractionsDataPayloadsandMethods.html">Next Page - PDex Implementation Actors, Interactions, Data Payloads and Methods</a></p>
 
@@ -470,8 +473,8 @@ In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="8964f70f-5d55-4540-91e9-6b84a584a82f">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 21, 2020 15:31+0000">2020-02-21</span>
+        <p><a name="ec10d6f8-6eb2-48fb-9d4d-ee64fa89d842">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

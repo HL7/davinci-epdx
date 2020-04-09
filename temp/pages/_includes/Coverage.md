@@ -24,18 +24,18 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 
 | Line | Payer Source Record | Payer Source Field | Data Descriptor             | FHIR Profile | Profile Field | ValueSet                                              | Notes                   |
 |------|-------------------|--------------------|----------------------------|--------------|---------------|-------------------------------------------------------|-------------------------|
-| 1.2  | Member            | BENE_ID            | Patientid                  | Coverage     | .identifier  |                                                       | Reference(Patient)      |
-| 12.1 | Member            | REL_CD             | relationship to subscriber | Coverage     | .relationship |                                                       |                         |
-| 13.1 | Member            |                    | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
-| 1.1  | Coverage          |                    | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
-| 2.1  | Coverage          |                    | Coverage type              | Coverage     | .type  | http://hl7.org/fhir/ValueSet/coverage-type |    |
-| 3.1  | Coverage          |                    | Coverage status            | Coverage     | .status       | https://www.hl7.org/fhir/codesystem-fm-status.html    |                         |
-| 4.1  | Coverage          |                    | Start date                 | Coverage     | period.start  |                                                       |                         |
-| 5.1  | Coverage          |                    | End date                   | Coverage     | period.end    |                                                       |                         |
-| 6.1  | Coverage          |                    | Group id                   | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="group"     |
-| 7.1  | Coverage          |                    | Group name                 | Coverage     | class.name    |                                                       |                         |
-| 8.1  | Coverage          |                    | Plan                       | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="plan"      |
-| 9.1  | Coverage          |                    | Payer                      | Coverage     | .payor        |                                                       | Reference(Organization) |
+| 1.2  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)            | Patientid                  | Coverage     | .identifier  |                                                       | Reference(Patient)      |
+| 12.1 | Member            | [REL_CD](https://bluebutton.cms.gov/resources/variables/rel_cd)             | relationship to subscriber | Coverage     | .relationship |                                                       |                         |
+| 13.1 | Member            |  N/A                  | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
+| 1.1  | Coverage          |  N/A                  | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
+| 2.1  | Coverage          | N/A                   | Coverage type              | Coverage     | .type  | http://hl7.org/fhir/ValueSet/coverage-type |    |
+| 3.1  | Coverage          |  N/A                  | Coverage status            | Coverage     | .status       | https://www.hl7.org/fhir/codesystem-fm-status.html    |                         |
+| 4.1  | Coverage          | N/A                   | Start date                 | Coverage     | period.start  |                                                       |                         |
+| 5.1  | Coverage          |  N/A                  | End date                   | Coverage     | period.end    |                                                       |                         |
+| 6.1  | Coverage          |  N/A                  | Group id                   | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="group"     |
+| 7.1  | Coverage          | N/A                   | Group name                 | Coverage     | class.name    |                                                       |                         |
+| 8.1  | Coverage          |  N/A                  | Plan                       | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="plan"      |
+| 9.1  | Coverage          | N/A                   | Payer                      | Coverage     | .payor        |                                                       | Reference(Organization) |
 
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
@@ -45,6 +45,7 @@ Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For exam
 https://bluebutton.cms.gov/resources/variables/bene_id/
 
 SubscriberId may not uniquely identify a health plan member. 
+If beneficiary is subscriber, also set .relationship to "self".
 
 It may for example identify the parent who obtains coverage for a child. Hence the Coverage resource may provide a combination of identifiers and point to demographic information to uniquely identify a patient/member.
 

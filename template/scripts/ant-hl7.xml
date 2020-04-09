@@ -46,9 +46,9 @@
       <filesmatch file1="${file.jira}" file2="${file.jiraspec}"/>
     </condition>
   </target>
-  <target name="onGenerate.jira.check" depends="onGenerate.jira.generate" unless="jiraMatch">
+  <target name="onGenerate.jira.check" depends="onGenerate.jira.generate" if="doJira" unless="jiraMatch">
     <copy file="${file.jira}" tofile="${ig.root}/${jiraSpecFile}.xml"/>
-    <echo file="${ig.template}ongenerate-validation-jira.json" message='&#x0a;{"severity":"warning","code":"informational","details":{"text":"The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts."}}&#x0a;,'/>
+    <echo file="${ig.template}/ongenerate-validation-jira.json" message='&#x0a;{"severity":"warning","code":"informational","details":{"text":"The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts."}}&#x0a;,'/>
   </target>   
   <target name="onGenerate.jira.skip" depends="onGenerate.jira.setup" unless="doJira">
     <condition property="skip.reason" value="package-list.json file is not yet defined" else="build is running offline">

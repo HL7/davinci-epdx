@@ -10,9 +10,9 @@ The first release of the PDex IG will focus on the following in scope items. Ite
 - Member-authorized Payer-to-Payer information exchange
 - Member-authorized Payer-to-Third-Party-Application information exchange
 - Use of Patient-everything operation to enable Payer Push via secure transport
-- Member access to Health Plan Directory API (Defined in subsidiary PDex-plan-net Directory IG)
-- Member access to Pharmacy Directory API (Defined in subsidiary PDex-plan-net Directory IG)
-- Member access to Plan Drug Formulary API (Defined in subsidiary PDex-formulary IG)
+- Member access to Health Plan Directory API (Defined in subsidiary PDex-plan-net Directory IG - [http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/](http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/))
+- Member access to Pharmacy Directory API (Defined in subsidiary PDex-plan-net Directory IG - [http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/](http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/))
+- Member access to Plan Drug Formulary API (Defined in subsidiary PDex-formulary IG - [http://hl7.org/fhir/us/Davinci-drug-formulary/](http://hl7.org/fhir/us/Davinci-drug-formulary/))
 	
 ### Deferred Scope
 	

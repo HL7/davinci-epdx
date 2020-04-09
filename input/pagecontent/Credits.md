@@ -34,4 +34,4 @@ Our thanks to these and to the many others not explicitly listed who contributed
 
 
 
-[Next Page - Capability Statements](CapabilityStatements.html)
+[Next Page - Terminology](Terminology.html)

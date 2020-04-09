@@ -40,6 +40,11 @@ The fields in the context of the CDS Hooks call are used as follows:
 </pre>
 
 #### SMART-on-FHIR app Parameters
+
+The SMART-on-FHIR app or service initiating the request to the Health Plan's CDS-Hooks service **SHALL** provide a callback URI to enable the CDS Hooks service to notify the SMART-on-FHIR App of the presence of a card.
+
+In the case of an automated call to the Health Plan's CDS Hooks service the card will contain the token(s) needed to access the Health Plan and the card will link to a provider's SMART-on-FHIR app that **SHALL** recognize the Provider and the EMR system the app is connected to.
+
 When a SMART-on-FHIR App is provided as a link in the content returned from the CDS Hooks it **SHALL** receive:
 
 - The URL entrypoint to the Health Plan's FHIR API
@@ -47,6 +52,8 @@ When a SMART-on-FHIR App is provided as a link in the content returned from the 
 - An access token to enable the app to write data to the Provider's EMR system.
 
 #### SMART-on-FHIR app default search queries
+
+This IG utilizes US Core Profiles whereever practicable. As such this IG supports the search parameters identified in the [US Core IG](https://www.hl7.org/fhir/us/core/). 
 
 The SMART App **SHOULD** provide the capability for a Provider, Organization, Implementer or administrator of a Provider's EMR System to define a set of valid FHIR search queries that can be executed against a Health Plan's FHIR API. This capability enables a Provider or Organization to define the boundaries for the information they are interested in receiving from a Health Plan's FHIR API.
 
@@ -76,11 +83,12 @@ Examples of search queries with replaceable parameters are shown in the table be
 | MedicationDispense for Patient created/updated in the last 3 months              | MedicationDispense?subject=Patient/[Health_Plan_Member_ID]&_lastUpdated=gt[TODAY-90]                              |
 
 #### SMART-on-FHIR app for Provider data selection
+
 The SMART App **SHALL** retrieve the CapabilityStatement/Metadata from the Health Plan's FHIR API.
  
 The SMART App **SHALL** retrieve the ConformanceStatement/CapabilityStatement/Metadata from the Provider's EMR system. 
 
-The Provider **MAY** select records from the Health Plan's FHIR API to be committed to their EMR system.  After selecting the relevant data the provider **MAY** trigger a write of the selected data to their EMR system. 
+The Provider **MAY** select records from the Health Plan's FHIR API to be committed to their EMR system. After selecting the relevant data the provider **MAY** trigger a write of the selected data to their EMR system. Alternatively the Provider's organization **MAY** implement automated selection rules to commit data received to the EMR.
 
 The SMART App **SHALL** use the EMRs Metadata to determine what records **MAY** be written to the EMR system. 
 
@@ -88,7 +96,7 @@ The SMART App **SHALL NOT** convert records from one FHIR version to another.
 
 If the Provider's EMR system supports FHIR R4 the SMART App **SHALL** determine which resources may be written to the Patient's record in the EMR system. It will write these records to the Provider's EMR System. 
 
-Any remaining selected records, where write operations are not permitted by the EMR system's FHIR API **SHOULD** take one of the actions identified in [writing records usingdocumentreference](#writing-records-using-documentreference), below.
+The set of records selected by the Provider to commit to the EMR shall be written to the EMR, as per the write rules enforced by the EMR. The remaining selected records that can't be written directly to the EMR shall be written as a DocumentReference per the format selection hierarchy identified in the following section [writing records usingdocumentreference](#writing-records-using-documentreference).
 
 If the Provider's EMR system does not support FHIR R4 the SMART App **SHOULD** create a DocumentReference record and write the selected records to the Provider's EMR System using one of the actions identified in [writing records usingdocumentreference](#writing-records-using-documentreference), below.
     
