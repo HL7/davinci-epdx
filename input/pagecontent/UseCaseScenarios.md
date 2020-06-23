@@ -1,4 +1,4 @@
-[Previous Page - US Core MedicationStatement](USCoreMedicationStatement.html)
+[Previous Page - US Core MedicationRequest](USCoreMedicationRequest.html)
 
 
 This implementation guide addresses a Provider-to-Payer use case:
