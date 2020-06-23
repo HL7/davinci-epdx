@@ -9,20 +9,20 @@
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "hl7.fhir.us.davinci-pdex"];
   fhir:Resource.meta [
-     fhir:Meta.versionId [ fhir:value "108" ];
-     fhir:Meta.lastUpdated [ fhir:value "2020-04-09T19:25:46.105+00:00"^^xsd:dateTime ];
-     fhir:Meta.source [ fhir:value "#gTbHJ3VjI1iOvaVy" ]
+     fhir:Meta.versionId [ fhir:value "122" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-06-23T18:35:11.489+00:00"^^xsd:dateTime ];
+     fhir:Meta.source [ fhir:value "#qjHLBkQly8l0RZsd" ]
   ];
   fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>&lt;p id=&quot;publish-box&quot;&gt;\nThis is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.\n&lt;/p&gt;</p>\n<p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>\n<p>This guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection.</p>\n<p><a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n<h3>Latest Changes</h3>\n<ul>\n<li>(68-75) Apply Ballot Changes (FHIR-23404, FHIR-23403, FHIR-23397, FHIR-23392, FHIR-23378, FHIR-23375, FHIR-23372, FHIR-23368, FHIR-23366, FHIR-23364, FHIR-23354, FHIR-23348, FHIR-23346, FHIR-23218, FHIR-23400, FHIR-23399, FHIR-23398, FHIR-23390, FHIR-23388, FHIR-23386, FHIR-23382, FHIR-23380, FHIR-23356, FHIR-23334, FHIR-23310, FHIR-233291, FHIR-23285, FHIR-23279, FHIR-22819, FHIR-22821, FHIR-22858, FHIR-22860, FHIR-22861, FHIR-22862, FHIR-22863, FHIR-22865, FHIR-22876, FHIR-22877, FHIR-23139, FHIR-23141, FHIR-23145, FHIR-23191, FHIR-23189, FHIR-23206, FHIR-23208, FHIR-23210, FHIR-23212, FHIR-23224, FHIR-23228, FHIR-23234, FHIR-23236, FHIR-23238, FHIR-23172, FHIR-23193, FHIR-23195, FHIR-23197, FHIR-23199, FHIR-23242, FHIR-23244, FHIR-23246, FHIR-23248, FHIR-23250, FHIR-23252, FHIR-23256, FHIR-23308, FHIR-23384)</li>\n<li>(302) Apply Ballot Changes (FHIR-23254, FHIR-23287, FHIR-23262, FHIR-23266, FHIR-23260, FHIR-23158)</li>\n<li>(300) Apply Ballot Changes (FHIR-23374, FHIR-23302, FHIR-23283, FHIR-23281, FHIR-23277)</li>\n<li>(299) Apply Ballot Changes (FHIR-23151, FHIR-23155)</li>\n<li>(298) Apply Ballot Changes (FHIR-23330, FHIIR-23325, FHIR-23323, FHIR-23322, FHIR-23318, FHIR-23315 )</li>\n<li>(297) Fix Typos (FHIR-23172, FHIR-23170, FHIR-23168, FHIR-23137, FHIR-23135-Wrong IG )</li>\n<li>(295) Fix Typos (FHIR-23230, FHIR-23214, FHIR-23189, FHIR-23187, FHIR-23186, FHIR-23185, FHHIR-23184, FHIR-23182, FHIR-23178, FHIR-23176, FHIR-23174)</li>\n<li>(293) Fix Typos (FHIR-23394, FHIR-23362, FHIR-23328, FHIR-23324, FHIR-23321, FHIR-23317, FHIR-23316, FHIR-23303, FHIR-23274, FHIR-23272, FHIR-23270)</li>\n<li>(292) Apply Ballot Changes (FHIR-23402, FHIR-23413, FHIR-23401, FHIR-23396 )</li>\n<li>(290) Apply Ballot Changes (FHIR-23405 )</li>\n<li>(285) Support FHIR V4.1.0</li>\n<li>(284) Change US Core reference</li>\n</ul>\n</div></div>"
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>&lt;p id=&quot;publish-box&quot;&gt;\nThis is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.\n&lt;/p&gt;</p>\n<p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.</p>\n<p>This guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection.</p>\n<p><a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n<h3>Latest Changes</h3>\n<ul>\n<li>(118) Consolidate Section 3, Update US Core profile references</li>\n<li>(68-75) Apply Ballot Changes (FHIR-23404, FHIR-23403, FHIR-23397, FHIR-23392, FHIR-23378, FHIR-23375, FHIR-23372, FHIR-23368, FHIR-23366, FHIR-23364, FHIR-23354, FHIR-23348, FHIR-23346, FHIR-23218, FHIR-23400, FHIR-23399, FHIR-23398, FHIR-23390, FHIR-23388, FHIR-23386, FHIR-23382, FHIR-23380, FHIR-23356, FHIR-23334, FHIR-23310, FHIR-233291, FHIR-23285, FHIR-23279, FHIR-22819, FHIR-22821, FHIR-22858, FHIR-22860, FHIR-22861, FHIR-22862, FHIR-22863, FHIR-22865, FHIR-22876, FHIR-22877, FHIR-23139, FHIR-23141, FHIR-23145, FHIR-23191, FHIR-23189, FHIR-23206, FHIR-23208, FHIR-23210, FHIR-23212, FHIR-23224, FHIR-23228, FHIR-23234, FHIR-23236, FHIR-23238, FHIR-23172, FHIR-23193, FHIR-23195, FHIR-23197, FHIR-23199, FHIR-23242, FHIR-23244, FHIR-23246, FHIR-23248, FHIR-23250, FHIR-23252, FHIR-23256, FHIR-23308, FHIR-23384)</li>\n<li>(302) Apply Ballot Changes (FHIR-23254, FHIR-23287, FHIR-23262, FHIR-23266, FHIR-23260, FHIR-23158)</li>\n<li>(300) Apply Ballot Changes (FHIR-23374, FHIR-23302, FHIR-23283, FHIR-23281, FHIR-23277)</li>\n<li>(299) Apply Ballot Changes (FHIR-23151, FHIR-23155)</li>\n<li>(298) Apply Ballot Changes (FHIR-23330, FHIIR-23325, FHIR-23323, FHIR-23322, FHIR-23318, FHIR-23315 )</li>\n<li>(297) Fix Typos (FHIR-23172, FHIR-23170, FHIR-23168, FHIR-23137, FHIR-23135-Wrong IG )</li>\n<li>(295) Fix Typos (FHIR-23230, FHIR-23214, FHIR-23189, FHIR-23187, FHIR-23186, FHIR-23185, FHHIR-23184, FHIR-23182, FHIR-23178, FHIR-23176, FHIR-23174)</li>\n<li>(293) Fix Typos (FHIR-23394, FHIR-23362, FHIR-23328, FHIR-23324, FHIR-23321, FHIR-23317, FHIR-23316, FHIR-23303, FHIR-23274, FHIR-23272, FHIR-23270)</li>\n<li>(292) Apply Ballot Changes (FHIR-23402, FHIR-23413, FHIR-23401, FHIR-23396 )</li>\n<li>(290) Apply Ballot Changes (FHIR-23405 )</li>\n<li>(285) Support FHIR V4.1.0</li>\n<li>(284) Change US Core reference</li>\n</ul>\n</div></div>"
   ];
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"];
-  fhir:ImplementationGuide.version [ fhir:value "0.2.1"];
+  fhir:ImplementationGuide.version [ fhir:value "0.3.2"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-04-09T19:27:23+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-06-23T18:36:23+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "HL7 Da Vinci"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -45,7 +45,7 @@
        fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/fm" ]
      ]
   ];
-  fhir:ImplementationGuide.description [ fhir:value "<p id=\"publish-box\">\nThis is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.\n</p>\n\n\nThis specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nThis guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection. \n\n[Financial Management](https://confluence.hl7.org/display/FM/Financial+Management+Home) is the Sponsoring Work Group for this Implementation Guide.\n\n**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**\n\nThe PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.\n\nThis IG uses the same Member Health History \"payload\" for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.\n\nThis IG covers the exchange of:\n- Claims-based information\n- Clinical Information (such as Lab Results, Allergies and Conditions)\n\nThis IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. \n\nThis IG covers the exchange of a Member's Health History in the following scenarios:\n- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR\n- Member-authorized Health Plan to Health Plan exchange\n- Member-authorized Health Plan to Third-Party Application exchange\n\nThe latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.\n\n**There are items in this guide that are subject to update**. This includes:\n- Value Sets\n- Vocabularies (X12, NUBC etc.)\n- Examples\n\n**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).\n\nSee the [Table of Contents](toc.html) for more information.\n\n### Latest Changes\n- (68-75) Apply Ballot Changes (FHIR-23404, FHIR-23403, FHIR-23397, FHIR-23392, FHIR-23378, FHIR-23375, FHIR-23372, FHIR-23368, FHIR-23366, FHIR-23364, FHIR-23354, FHIR-23348, FHIR-23346, FHIR-23218, FHIR-23400, FHIR-23399, FHIR-23398, FHIR-23390, FHIR-23388, FHIR-23386, FHIR-23382, FHIR-23380, FHIR-23356, FHIR-23334, FHIR-23310, FHIR-233291, FHIR-23285, FHIR-23279, FHIR-22819, FHIR-22821, FHIR-22858, FHIR-22860, FHIR-22861, FHIR-22862, FHIR-22863, FHIR-22865, FHIR-22876, FHIR-22877, FHIR-23139, FHIR-23141, FHIR-23145, FHIR-23191, FHIR-23189, FHIR-23206, FHIR-23208, FHIR-23210, FHIR-23212, FHIR-23224, FHIR-23228, FHIR-23234, FHIR-23236, FHIR-23238, FHIR-23172, FHIR-23193, FHIR-23195, FHIR-23197, FHIR-23199, FHIR-23242, FHIR-23244, FHIR-23246, FHIR-23248, FHIR-23250, FHIR-23252, FHIR-23256, FHIR-23308, FHIR-23384)\n- (302) Apply Ballot Changes (FHIR-23254, FHIR-23287, FHIR-23262, FHIR-23266, FHIR-23260, FHIR-23158)\n- (300) Apply Ballot Changes (FHIR-23374, FHIR-23302, FHIR-23283, FHIR-23281, FHIR-23277)\n- (299) Apply Ballot Changes (FHIR-23151, FHIR-23155)\n- (298) Apply Ballot Changes (FHIR-23330, FHIIR-23325, FHIR-23323, FHIR-23322, FHIR-23318, FHIR-23315 )\n- (297) Fix Typos (FHIR-23172, FHIR-23170, FHIR-23168, FHIR-23137, FHIR-23135-Wrong IG )\n- (295) Fix Typos (FHIR-23230, FHIR-23214, FHIR-23189, FHIR-23187, FHIR-23186, FHIR-23185, FHHIR-23184, FHIR-23182, FHIR-23178, FHIR-23176, FHIR-23174)\n- (293) Fix Typos (FHIR-23394, FHIR-23362, FHIR-23328, FHIR-23324, FHIR-23321, FHIR-23317, FHIR-23316, FHIR-23303, FHIR-23274, FHIR-23272, FHIR-23270)\n- (292) Apply Ballot Changes (FHIR-23402, FHIR-23413, FHIR-23401, FHIR-23396 )\n- (290) Apply Ballot Changes (FHIR-23405 )\n- (285) Support FHIR V4.1.0\n- (284) Change US Core reference\n"];
+  fhir:ImplementationGuide.description [ fhir:value "<p id=\"publish-box\">\nThis is a pre-release version (Ballot 1) of Payer Data exchange  (PDex) R1/STU. There is no current official version.\n</p>\n\n\nThis specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and just reference them in your ballot submission implementation guide.\n\nThis guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection. \n\n[Financial Management](https://confluence.hl7.org/display/FM/Financial+Management+Home) is the Sponsoring Work Group for this Implementation Guide.\n\n**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**\n\nThe PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.\n\nThis IG uses the same Member Health History \"payload\" for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.\n\nThis IG covers the exchange of:\n- Claims-based information\n- Clinical Information (such as Lab Results, Allergies and Conditions)\n\nThis IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. \n\nThis IG covers the exchange of a Member's Health History in the following scenarios:\n- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR\n- Member-authorized Health Plan to Health Plan exchange\n- Member-authorized Health Plan to Third-Party Application exchange\n\nThe latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.\n\n**There are items in this guide that are subject to update**. This includes:\n- Value Sets\n- Vocabularies (X12, NUBC etc.)\n- Examples\n\n**The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with**  [X12](http://www.x12.org).\n\nSee the [Table of Contents](toc.html) for more information.\n\n### Latest Changes\n- (118) Consolidate Section 3, Update US Core profile references\n- (68-75) Apply Ballot Changes (FHIR-23404, FHIR-23403, FHIR-23397, FHIR-23392, FHIR-23378, FHIR-23375, FHIR-23372, FHIR-23368, FHIR-23366, FHIR-23364, FHIR-23354, FHIR-23348, FHIR-23346, FHIR-23218, FHIR-23400, FHIR-23399, FHIR-23398, FHIR-23390, FHIR-23388, FHIR-23386, FHIR-23382, FHIR-23380, FHIR-23356, FHIR-23334, FHIR-23310, FHIR-233291, FHIR-23285, FHIR-23279, FHIR-22819, FHIR-22821, FHIR-22858, FHIR-22860, FHIR-22861, FHIR-22862, FHIR-22863, FHIR-22865, FHIR-22876, FHIR-22877, FHIR-23139, FHIR-23141, FHIR-23145, FHIR-23191, FHIR-23189, FHIR-23206, FHIR-23208, FHIR-23210, FHIR-23212, FHIR-23224, FHIR-23228, FHIR-23234, FHIR-23236, FHIR-23238, FHIR-23172, FHIR-23193, FHIR-23195, FHIR-23197, FHIR-23199, FHIR-23242, FHIR-23244, FHIR-23246, FHIR-23248, FHIR-23250, FHIR-23252, FHIR-23256, FHIR-23308, FHIR-23384)\n- (302) Apply Ballot Changes (FHIR-23254, FHIR-23287, FHIR-23262, FHIR-23266, FHIR-23260, FHIR-23158)\n- (300) Apply Ballot Changes (FHIR-23374, FHIR-23302, FHIR-23283, FHIR-23281, FHIR-23277)\n- (299) Apply Ballot Changes (FHIR-23151, FHIR-23155)\n- (298) Apply Ballot Changes (FHIR-23330, FHIIR-23325, FHIR-23323, FHIR-23322, FHIR-23318, FHIR-23315 )\n- (297) Fix Typos (FHIR-23172, FHIR-23170, FHIR-23168, FHIR-23137, FHIR-23135-Wrong IG )\n- (295) Fix Typos (FHIR-23230, FHIR-23214, FHIR-23189, FHIR-23187, FHIR-23186, FHIR-23185, FHHIR-23184, FHIR-23182, FHIR-23178, FHIR-23176, FHIR-23174)\n- (293) Fix Typos (FHIR-23394, FHIR-23362, FHIR-23328, FHIR-23324, FHIR-23321, FHIR-23317, FHIR-23316, FHIR-23303, FHIR-23274, FHIR-23272, FHIR-23270)\n- (292) Apply Ballot Changes (FHIR-23402, FHIR-23413, FHIR-23401, FHIR-23396 )\n- (290) Apply Ballot Changes (FHIR-23405 )\n- (285) Support FHIR V4.1.0\n- (284) Change US Core reference\n"];
   fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.us.davinci-pdex"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -318,6 +318,44 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PDexMedicationDispense" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The MedicationDispense record identifies the prescription drug issued to a member and paid for under their Health Insurance Drug Plan.\n" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "CapabilityStatement" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CapabilityStatement-us-core-server.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/us-core-server>;
+         fhir:Reference.reference [ fhir:value "CapabilityStatement/us-core-server" ];
+         fhir:Reference.display [ fhir:value "US Core Server CapabilityStatement" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "US Core Server CapabilityStatement" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This Section describes the expected capabilities of the US Core Server actor which is responsible for providing responses to the queries submitted by the US Core Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and and the latest proposed ONC [U.S. Core Data for Interoperability (USCDI)].  US Core Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 2;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-capabilitystatement-search-parameter-combination.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/capabilitystatement-search-parameter-combination>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/capabilitystatement-search-parameter-combination" ];
+         fhir:Reference.display [ fhir:value "Search Parameter Combination" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Search Parameter Combination" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This extension defines a possible search parameter combination,  by listing a set of search parameters and indicating whether they are required or optional. If a search combination is specified, clients should expect that they must submit a search that meets one of the required combinations or the search will be unsuccessful. If multiple search parameter combinations are specified, a client may pick between them, and supply the minimal required parameters for any of the combinations." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ];
@@ -332,43 +370,7 @@
          fhir:index 1;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Introduction.html" ];
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Introduction" ];
-         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ];
-         fhir:ImplementationGuide.definition.page.page [
-           fhir:index 0;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "ImplementationGuideScope.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Guide Scope" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 1;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "MemberConsent.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "Member Consent" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 2;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "FHIR.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "FHIR" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 3;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "SupportingSpecifications.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "Supporting Specifications" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 4;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "ImplementationAssumptions.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Assumptions" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 5;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "ImplementationHierarchyandPriorities.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "Implementation Hierarchy and Priorities" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ], [
-           fhir:index 6;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "PDexDataPayloads.html" ];
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "PDex Data Payloads" ];
-           fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-         ]
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 2;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "PDexImplementationActorsInteractionsDataPayloadsandMethods.html" ];
@@ -503,11 +505,6 @@
              fhir:index 19;
              fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "USCoreMedicationRequest.html" ];
              fhir:ImplementationGuide.definition.page.title [ fhir:value "US Core MedicationRequest" ];
-             fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
-           ], [
-             fhir:index 20;
-             fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "USCoreMedicationStatement.html" ];
-             fhir:ImplementationGuide.definition.page.title [ fhir:value "US Core MedicationStatement" ];
              fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
            ]
          ]
@@ -645,20 +642,28 @@
        fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/maps" ]
      ], [
        fhir:index 9;
-       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/config" ]
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/testing" ]
      ], [
        fhir:index 10;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
-       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/images" ]
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/config" ]
      ], [
        fhir:index 11;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/images" ]
+     ], [
+       fhir:index 12;
        fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-tx-cache" ];
        fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input-cache/txcache" ]
      ]
   ] .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/us-core-server> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/capabilitystatement-search-parameter-combination> a fhir:us .
 
 # - ontology header ------------------------------------------------------------
 

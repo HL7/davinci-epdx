@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\US Core Server CapabilityStatement - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"10.1"}
+    h3,h4,h5,h6{--heading-prefix:"10.1"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.2 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
+
+  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+</ul>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>US Core Server CapabilityStatement</b></li>
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.2). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+
+  
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-core-server.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-core-server.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-us-core-server.ttl.html">TTL</a>
+    </li>
+  
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">CapabilityStatement: US Core Server CapabilityStatement</h2>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <div><h2 id="title">US Core Server CapabilityStatement</h2><ul><li>Implementation Guide Version: 3.1.0</li><li>FHIR Version: 4.0.1</li><li>Supported formats: xml, json</li><li>Published: 2019-10-04</li><li>Published by: HL7 International - US Realm Steering Committee</li></ul><p><p>This Section describes the expected capabilities of the US Core Server actor which is responsible for providing responses to the queries submitted by the US Core Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and and the latest proposed ONC [U.S. Core Data for Interoperability (USCDI)].  US Core Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p></p><h3 id="behavior">FHIR RESTful Capabilities</h3><p>The US Core Server <strong>SHALL</strong>:</p><ol><li>Support the US Core Patient resource profile.</li><li>Support at least one additional resource profile from the list of US Core Profiles.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Return the following response classes:
+<ul><li>(Status 400): invalid parameter</li><li>(Status 401/4xx): unauthorized request</li><li>(Status 403): insufficient scope</li><li>(Status 404): unknown resource</li><li>(Status 410): deleted resource.</li></ul>
+</li><li>Support json source formats for all US Core interactions.</li></ol><p>The US Core Server <strong>SHOULD</strong>:</p><ol><li>Support xml source formats for all US Core interactions.</li><li>Identify the US Core profiles supported as part of the FHIR <code>meta.profile</code> attribute for each instance.</li><li>Support xml resource formats for all Argonaut questionnaire interactions.</li></ol><p id="security"><strong>Security:</strong></p><ol><li><a name="53983f61-4a38-4929-9b59-a5c28d76e368">​</a>See the <a href="security.html">General Security Considerations</a> section for requirements and recommendations.</li><li>A server <strong>SHALL</strong> reject any unauthorized requests by returning an <code>HTTP 401</code> unauthorized response code.</li></ol><p><strong>Summary of System Wide Interactions</strong></p><li><strong>MAY</strong> support the	<code>transaction</code> interaction.</li><li><strong>MAY</strong> support the	<code>batch</code> interaction.</li><li><strong>MAY</strong> support the	<code>search-system</code> interaction.</li><li><strong>MAY</strong> support the	<code>history-system</code> interaction.</li><h3 id="resource--details" class="no_toc">RESTful Capabilities by Resource/Profile:</h3><p><strong>Summary of Search Criteria</strong></p><table class="grid"><thead><tr><th>Resource Type</th><th>Supported Profiles</th><th>Supported Searches</th><th>Supported <code>_includes</code></th><th>Supported <code>_revincludes</code></th><th>Supported Operations</th></tr></thead><tbody><tr><td><a href="#allergyintolerance">AllergyIntolerance</a></td><td><a name="1a83e3b7-0a67-4981-83a2-0bcaf8051173">​</a><a href="StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a></td><td>
+							
+							patient, patient+clinical-status
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#careplan">CarePlan</a></td><td><a name="b53732aa-a2e2-4e7e-a731-e29db27f5e82">​</a><a href="StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a></td><td>
+							, patient+category+date, patient+category+status+date, patient+category+status, patient+category
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#careteam">CareTeam</a></td><td><a name="711999a4-7bc1-4962-b6f7-ed7af78338c5">​</a><a href="StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a></td><td>
+							, patient+status
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#condition">Condition</a></td><td><a name="d80edbf9-e972-43f0-8ec5-283e39e4fad4">​</a><a href="StructureDefinition-us-core-condition.html">US Core Condition Profile</a></td><td>
+							
+							patient, patient+category, patient+onset-date, patient+clinical-status, patient+code
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#device">Device</a></td><td><a name="d9fb8f56-2934-40de-9f56-ab4c07af3f6c">​</a><a href="StructureDefinition-us-core-implantable-device.html">US Core Implantable Device Profile</a></td><td>
+							
+							patient, patient+type
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#diagnosticreport">DiagnosticReport</a></td><td><a name="ac7424e3-2320-41d1-bae6-ae9b6a476af0">​</a><a href="StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>, 
+
+						<a href="StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport Profile for Laboratory Results Reporting</a></td><td>
+							
+							patient, patient+status, patient+code+date, patient+code, patient+category+date, patient+category
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#documentreference">DocumentReference</a></td><td><a name="fe1b0c7e-f326-4c8d-9568-cf4aa26bf37e">​</a><a href="StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a></td><td>
+							
+							_id, 
+							patient, patient+type, patient+type+period, patient+status, patient+category+date, patient+category
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+							$docref
+						</td></tr><tr><td><a href="#encounter">Encounter</a></td><td><a name="47251d8b-d91f-48ab-9fe3-e33aae163666">​</a><a href="StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a></td><td>
+							
+							_id, 
+							identifier, 
+							patient, patient+status, class+patient, patient+type, date+patient
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#goal">Goal</a></td><td><a name="5a20770f-ecdf-4800-92e8-8602f6440860">​</a><a href="StructureDefinition-us-core-goal.html">US Core Goal Profile</a></td><td>
+							
+							patient, patient+target-date, patient+lifecycle-status
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#immunization">Immunization</a></td><td><a name="95bd9c89-0db3-476b-be7f-835905f2754d">​</a><a href="StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a></td><td>
+							
+							patient, patient+date, patient+status
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#location">Location</a></td><td><a name="29d9c5c3-9ca1-4486-9f65-d19ac0f17485">​</a><a href="StructureDefinition-us-core-location.html">US Core Location Profile</a></td><td>
+							
+							name, 
+							address, 
+							address-city, 
+							address-state, 
+							address-postalcode
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#medication">Medication</a></td><td><a name="e3f64582-0fc5-461d-912d-acf6e883ca5c">​</a><a href="StructureDefinition-us-core-medication.html">US Core Medication Profile</a></td><td>
+							
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#medicationrequest">MedicationRequest</a></td><td><a name="c19eab48-b5b7-4c8b-b808-aec6f1ec10af">​</a><a href="StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a></td><td>
+							, patient+intent+status, patient+intent+encounter, patient+intent+authoredon, patient+intent
+						</td><td>
+							MedicationRequest:medication
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#observation">Observation</a></td><td><a name="82a13efe-d388-45b0-a486-cf342a255e57">​</a><a href="StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>, 
+
+						<a href="StructureDefinition-pediatric-weight-for-height.html">US Core Pediatric Weight  for Height Observation Profile</a>, 
+
+						<a href="StructureDefinition-us-core-observation-lab.html">US Core Laboratory Result Observation Profile</a>, 
+
+						<a href="StructureDefinition-pediatric-bmi-for-age.html">US Core Pediatric BMI for Age Observation Profile</a>, 
+
+						<a href="StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile</a></td><td>
+							, patient+code+date, patient+category+status, patient+code, patient+category+date, patient+category
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#organization">Organization</a></td><td><a name="9038ed59-c6d1-4b04-ab40-1ef7318cdd9e">​</a><a href="StructureDefinition-us-core-organization.html">US Core Organization Profile</a></td><td>
+							
+							name, 
+							address
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#patient">Patient</a></td><td><a name="bd5c0746-c818-41e8-9293-fa4846a227b1">​</a><a href="StructureDefinition-us-core-patient.html">US Core Patient Profile</a></td><td>
+							
+							_id, 
+							identifier, 
+							name, gender+name, birthdate+family, birthdate+name, family+gender
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#practitioner">Practitioner</a></td><td><a name="d66d4f0c-db22-455d-a75b-f27328f76fa3">​</a><a href="StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a></td><td>
+							
+							name, 
+							identifier
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#practitionerrole">PractitionerRole</a></td><td><a name="172687cf-b296-4311-b177-b44ec0080aa1">​</a><a href="StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a></td><td>
+							
+							specialty, 
+							practitioner
+						</td><td>
+							PractitionerRole:endpoint, PractitionerRole:practitioner
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#procedure">Procedure</a></td><td><a name="9464be47-8975-4dd3-8df7-a85c8352e7e0">​</a><a href="StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a></td><td>
+							
+							patient, patient+code+date, patient+status, patient+date
+						</td><td>
+							
+						</td><td>
+              Provenance:target
+            </td><td>
+							
+						</td></tr><tr><td><a href="#provenance">Provenance</a></td><td><a name="c7d84888-f7ff-48e7-aaaa-1a74439d05de">​</a><a href="StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a></td><td>
+							
+						</td><td>
+							
+						</td><td>
+              
+            </td><td>
+							
+						</td></tr><tr><td><a href="#valueset">ValueSet</a></td><td>
+
+						</td><td>
+							
+						</td><td>
+							
+						</td><td>
+              
+            </td><td>
+							
+							$expand
+						</td></tr></tbody></table><br/><h4 id="allergyintolerance" class="no_toc">AllergyIntolerance</h4><p><a name="51f29e8f-5677-41d1-baf0-d70d7e4d6977">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a AllergyIntolerance resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/AllergyIntolerance/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/AllergyIntolerance?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="2b114421-7b5a-495e-a130-8b3ef7496fe0">​</a><a href="SearchParameter-us-core-allergyintolerance-clinical-status.html">clinical-status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="2bfe79c0-c99f-4777-91d8-2ad414cc6ea8">​</a><a href="SearchParameter-us-core-allergyintolerance-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?patient=[patient]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+clinical-status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?patient=[patient]&amp;clinical-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careplan" class="no_toc">CarePlan</h4><p><a name="f32d0ba5-0e1e-42d0-959a-0ffd9af1fd61">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a CarePlan resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/CarePlan/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/CarePlan?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="3f64ca10-c07f-4da2-8509-4e1a498d6a8e">​</a><a href="SearchParameter-us-core-careplan-category.html">category</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="7de5fb57-ec86-4b0d-8652-86ac86dabfe6">​</a><a href="SearchParameter-us-core-careplan-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d287e1ee-bd04-4367-9f95-222753af1a99">​</a><a href="SearchParameter-us-core-careplan-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="abb9188d-0184-43e5-a9f8-1ef7e4fdad18">​</a><a href="SearchParameter-us-core-careplan-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?status=[status]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+category+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+category+status+date
+						</td><td>reference+token+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]&amp;status=[status]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+category+status
+						</td><td>reference+token+token
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careteam" class="no_toc">CareTeam</h4><p><a name="b0e35af7-d80d-473e-8f29-d2c99dcbe03a">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a CareTeam resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/CareTeam/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/CareTeam?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="6083f196-b5ca-4ca3-8cc5-d783cb34987a">​</a><a href="SearchParameter-us-core-careteam-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="98dc9d39-1841-465b-9901-8bff2cc8c39c">​</a><a href="SearchParameter-us-core-careteam-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?status=[status]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="condition" class="no_toc">Condition</h4><p><a name="ce46e5f7-5431-4668-b74c-ff582367b2ed">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-condition.html">US Core Condition Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Condition resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Condition/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Condition?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="cf7bcccc-92a5-4ded-872c-313b61681680">​</a><a href="SearchParameter-us-core-condition-category.html">category</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c710bca3-3c3f-416c-88ae-28fa3a5edf69">​</a><a href="SearchParameter-us-core-condition-clinical-status.html">clinical-status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="035e0b26-f476-466c-b9e4-43fe072ff9bf">​</a><a href="SearchParameter-us-core-condition-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ca8dae2a-cfd8-451a-8857-3d7e86e10573">​</a><a href="SearchParameter-us-core-condition-onset-date.html">onset-date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?onset-date=[onset-date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="1ce6dd82-7cb1-452a-b9c1-f68c4eba3f77">​</a><a href="SearchParameter-us-core-condition-code.html">code</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?code=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+category
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;category=[system]|[code]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+onset-date
+						</td><td>reference+date
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;onset-date=[onset-date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+clinical-status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+code
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;code=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="device" class="no_toc">Device</h4><p><a name="efa0e8bc-9280-49fd-82e5-fcdec9ce9dac">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-implantable-device.html">US Core Implantable Device Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Device resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Device/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Device?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="851e94f3-c2fb-448f-80ba-1b8b9541dd93">​</a><a href="SearchParameter-us-core-device-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="3b51ca7a-1a14-45af-8ab0-fdaee058b175">​</a><a href="SearchParameter-us-core-device-type.html">type</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Device?type=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+type
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]&amp;type=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="diagnosticreport" class="no_toc">DiagnosticReport</h4><p><a name="db731d17-6f96-4e5c-9e10-06bafa2999b4">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>, 
+				
+											<a href="StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport Profile for Laboratory Results Reporting</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>create</code><sup>†</sup>, 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><blockquote>create<sup>†</sup><p>This conformance expectation applies <strong>only</strong>  to the <em>US Core DiagnosticReport Profile for Report and Note exchange</em> profile.  The conformance expectation for the <em>US Core DiagnosticReport Profile for Laboratory Results Reporting</em> is  <strong>MAY</strong>.</p>
+</blockquote><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a DiagnosticReport resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/DiagnosticReport/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/DiagnosticReport?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="4b3c34b5-e62c-473a-853a-2b680351c3c5">​</a><a href="SearchParameter-us-core-diagnosticreport-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="a6cf4a81-7c38-4133-9452-637930604740">​</a><a href="SearchParameter-us-core-diagnosticreport-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d0fba5ab-0d53-4c14-949c-9a3b92859e35">​</a><a href="SearchParameter-us-core-diagnosticreport-category.html">category</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="f12ce622-e899-41d2-9e89-3886a45aaf5b">​</a><a href="SearchParameter-us-core-diagnosticreport-code.html">code</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="dc495d23-3052-4994-8de0-6deaff93a4cb">​</a><a href="SearchParameter-us-core-diagnosticreport-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?date=[date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;status=[status]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+code+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;code=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+code
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;code=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="documentreference" class="no_toc">DocumentReference</h4><p><a name="ce91acdb-1941-4a5a-99c6-dbca4da2cf4e">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a>
+				
+				</p><p>Resource Specific Documentation:</p><blockquote><p><a name="729a16f9-713b-4a45-961b-cdebb911ce11">​</a>The DocumentReference.type binding SHALL support at a minimum the <a href="ValueSet-us-core-clinical-note-type.html">5 Common Clinical Notes</a> and may extend to the full US Core DocumentReference Type Value Set</p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>create</code>, 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Operation  Summary:</p><ul><li><a name="8257d3cd-cfda-43dc-b21e-3861a09fc5c4">​</a><strong>SHALL</strong> support the 
+																								<a href="OperationDefinition-docref.html">$docref</a> operation
+																								<p><p>A server <strong>SHALL</strong> be capable of responding to a $docref operation and  capable of returning at least a reference to a generated CCD document, if available. <strong>MAY</strong> provide references to other 'on-demand' and 'stable' documents (or 'delayed/deferred assembly') that meet the query parameters as well. If a context date range is supplied the server ** SHOULD**  provide references to any document that falls within the date range If no date range is supplied, then the server <strong>SHALL</strong> provide references to last or current encounter.  <strong>SHOULD</strong> document what resources, if any, are returned as included resources</p><p><code>GET [base]/DocumentReference/$docref?patient=[id]</code></p></p></li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a DocumentReference resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/DocumentReference/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/DocumentReference?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="d3dec45f-eed7-4b74-a0a5-80fc3d65e524">​</a><a href="SearchParameter-us-core-documentreference-id.html">_id</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="bb82b9ff-5c66-4dab-a2fd-01a665e5c6f5">​</a><a href="SearchParameter-us-core-documentreference-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="ff276510-215c-4b24-8972-3c36d27b508d">​</a><a href="SearchParameter-us-core-documentreference-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="61a2aa4d-d1cc-47d2-a040-3034f2cb57a7">​</a><a href="SearchParameter-us-core-documentreference-category.html">category</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="2be9b54f-3ac3-4ab8-b498-c3756b4cb575">​</a><a href="SearchParameter-us-core-documentreference-type.html">type</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?type=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="3a4ee47c-3d15-42c5-b76a-9a6790660b68">​</a><a href="SearchParameter-us-core-documentreference-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="dcbc9347-f763-4fc8-bd44-ef86e240c96b">​</a><a href="SearchParameter-us-core-documentreference-period.html">period</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?period=[period]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+type
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;type=[system]|[code]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+type+period
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;type=[system]|[code]&amp;period=[period]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="encounter" class="no_toc">Encounter</h4><p><a name="692afa91-49c5-4833-a17a-7ea7392abdf7">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Encounter resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Encounter/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Encounter?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="adaa6157-1cfa-4b66-8ccc-13a6b953fafd">​</a><a href="SearchParameter-us-core-encounter-id.html">_id</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="b165a3a5-abab-416d-859b-c0166dc390ae">​</a><a href="SearchParameter-us-core-encounter-class.html">class</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?class=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="1790602e-e99f-479b-8d25-aef1df221c90">​</a><a href="SearchParameter-us-core-encounter-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="32dc16e0-9d22-462e-96b5-7eb26681b7aa">​</a><a href="SearchParameter-us-core-encounter-identifier.html">identifier</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="38ff9c96-bcc9-4a4e-a7a5-2b7de656f93e">​</a><a href="SearchParameter-us-core-encounter-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="a04a9652-95f6-4da8-ba9a-c0a02e51c514">​</a><a href="SearchParameter-us-core-encounter-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="9fba0001-da9d-4e63-ae4a-c6d978dce10a">​</a><a href="SearchParameter-us-core-encounter-type.html">type</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?type=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]&amp;status=[status]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>class+patient
+						</td><td>token+reference
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?class=[system]|[code]&amp;patient=[patient]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+type
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]&amp;type=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td>date+patient
+						</td><td>date+reference
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]&amp;patient=[patient]</code></td></tr></tbody></table><hr/><h4 id="goal" class="no_toc">Goal</h4><p><a name="a381fecc-b04c-44b8-b568-8fdacdea0311">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-goal.html">US Core Goal Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Goal resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Goal/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Goal?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="ba7471d0-4e42-4bee-830d-54c866437937">​</a><a href="SearchParameter-us-core-goal-lifecycle-status.html">lifecycle-status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?lifecycle-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="561a0f97-7ba0-42c8-a3c7-de51a1cd0ae8">​</a><a href="SearchParameter-us-core-goal-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="e5aff3b0-dfb4-4887-8d88-ed0a2efbc75d">​</a><a href="SearchParameter-us-core-goal-target-date.html">target-date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?target-date=[target-date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+target-date
+						</td><td>reference+date
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]&amp;target-date=[target-date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+lifecycle-status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]&amp;lifecycle-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="immunization" class="no_toc">Immunization</h4><p><a name="dca8a0e7-6dd6-4040-971a-65d7703d2f9d">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Immunization resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Immunization/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Immunization?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="481daa57-be7e-4058-9fe7-f6eb4bee6ab9">​</a><a href="SearchParameter-us-core-immunization-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c028b09b-1c22-40f4-a053-79c6bd755b84">​</a><a href="SearchParameter-us-core-immunization-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d9201643-cd2e-44e7-8722-f30bd4f91ee0">​</a><a href="SearchParameter-us-core-immunization-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?date=[date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+date
+						</td><td>reference+date
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="location" class="no_toc">Location</h4><p><a name="ce5da6f0-9f9b-423c-9a3c-141659322267">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-location.html">US Core Location Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Location resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Location/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Location?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="6e1abc8e-4733-40cb-8118-1b3a6e529914">​</a><a href="SearchParameter-us-core-location-name.html">name</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Location?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="28703b5f-7479-4754-98b1-8067fb61ae6a">​</a><a href="SearchParameter-us-core-location-address.html">address</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address=[address]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="b70fe5f5-1919-4058-8357-d459ae6c05db">​</a><a href="SearchParameter-us-core-location-address-city.html">address-city</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-city=[address-city]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="ec459852-1fe1-4a0a-b427-8cd43e4ad185">​</a><a href="SearchParameter-us-core-location-address-state.html">address-state</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-state=[address-state]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="451b7824-865b-437d-8542-c28c2a8da5e7">​</a><a href="SearchParameter-us-core-location-address-postalcode.html">address-postalcode</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-postalcode=[address-postalcode]</code></td></tr></tbody></table><hr/><h4 id="medication" class="no_toc">Medication</h4><p><a name="6f25c611-b852-46fe-9131-42d8b7640549">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-medication.html">US Core Medication Profile</a>
+				
+				</p><p>Resource Specific Documentation:</p><blockquote><p>The MedicationStatement and MedicationRequest resources can represent a medication, using an external reference to a Medication resource. If an external Medication Resource is used in a MedicationStatement or a MedicationRequest, then the READ and SEARCH Criteria  <strong>SHALL</strong>  be supported.</p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Medication resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Medication/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Medication?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><hr/><h4 id="medicationrequest" class="no_toc">MedicationRequest</h4><p><a name="4ace8fdb-7774-4702-91ed-9e46028d7a8c">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a>
+				
+				</p><p>Resource Specific Documentation:</p><blockquote><p>The MedicationRequest resources can represent a medication using either a code or refer to the Medication resource. When referencing Medication, the resource may be <a href="http://hl7.org/fhir/R4/references.html#contained">contained</a> or an external resource. The server application <strong>MAY</strong> choose any one way or more than one method, but if an external reference to Medication is used, the server <strong>SHALL</strong> support the _include` parameter for searching this element. The client application must support all methods.</p><p>For example, A server <strong>SHALL</strong> be capable of returning all medications for a patient using one of or both:</p><p><code>GET /MedicationRequest?patient=[id]</code></p><p><code>GET /MedicationRequest?patient=[id]&amp;_include=MedicationRequest:medication</code></p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a MedicationRequest resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/MedicationRequest/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHOULD</strong> be capable of supporting the following _includes:
+					<br/>
+					
+						MedicationRequest:medication - <code class="highlighter-rouge">GET [base]/MedicationRequest?[parameter=value]&amp;_include=MedicationRequest:medication</code><br/>
+					
+				</li><br/>          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/MedicationRequest?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="25887d34-56e0-4474-aec8-2056ad4e1ff8">​</a><a href="SearchParameter-us-core-medicationrequest-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c078e28b-7f53-4b1a-b24d-076799713176">​</a><a href="SearchParameter-us-core-medicationrequest-intent.html">intent</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?intent=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="8f92ff0d-c285-47c2-b5ef-7096162dec74">​</a><a href="SearchParameter-us-core-medicationrequest-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="93044631-9c8d-495e-b640-59a027a13ad5">​</a><a href="SearchParameter-us-core-medicationrequest-encounter.html">encounter</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?encounter=[encounter]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="f4a0fc45-1abf-4906-8087-e870a4724f27">​</a><a href="SearchParameter-us-core-medicationrequest-authoredon.html">authoredon</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?authoredon=[authoredon]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+intent+status
+						</td><td>reference+token+token
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]&amp;status=[status]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+intent+encounter
+						</td><td>reference+token+reference
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]&amp;encounter=[encounter]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+intent+authoredon
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]&amp;authoredon=[authoredon]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+intent
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="observation" class="no_toc">Observation</h4><p><a name="31955234-968f-4ce1-8ee4-7e5a48e93ff2">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>, 
+				
+											<a href="StructureDefinition-pediatric-weight-for-height.html">US Core Pediatric Weight  for Height Observation Profile</a>, 
+				
+											<a href="StructureDefinition-us-core-observation-lab.html">US Core Laboratory Result Observation Profile</a>, 
+				
+											<a href="StructureDefinition-pediatric-bmi-for-age.html">US Core Pediatric BMI for Age Observation Profile</a>, 
+				
+											<a href="StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Observation resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Observation/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Observation?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="8a9ed24e-aae2-467c-a907-328e5dced0f5">​</a><a href="SearchParameter-us-core-observation-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="979979b4-d598-4f57-bffa-dc2c0f26788b">​</a><a href="SearchParameter-us-core-observation-category.html">category</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="28f19042-303c-4f04-b1bf-35bea9a20acf">​</a><a href="SearchParameter-us-core-observation-code.html">code</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ce80be63-dc10-4f0a-a75d-d97da35364cf">​</a><a href="SearchParameter-us-core-observation-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="0bf4bc95-6cfa-408e-9c2e-4da70d6f5923">​</a><a href="SearchParameter-us-core-observation-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+code+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;code=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+category+status
+						</td><td>reference+token+token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+code
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;code=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="organization" class="no_toc">Organization</h4><p><a name="e95b6ae3-27a1-4bbd-a3b9-8cc52cc11bca">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-organization.html">US Core Organization Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Organization resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Organization/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Organization?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="b6f1263f-afe5-47b7-9f9d-9fe42a1d3c05">​</a><a href="SearchParameter-us-core-organization-name.html">name</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Organization?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="b359b113-9983-4be3-97f9-21e8f069b6b6">​</a><a href="SearchParameter-us-core-organization-address.html">address</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Organization?address=[address]</code></td></tr></tbody></table><hr/><h4 id="patient" class="no_toc">Patient</h4><p><a name="02351aec-833a-4ed2-81d6-aac9d8962ff3">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-patient.html">US Core Patient Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Patient resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Patient/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Patient?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="516fd36a-2905-4301-a084-e6b4697191bb">​</a><a href="SearchParameter-us-core-patient-id.html">_id</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="3714cf3b-d3f9-4b20-a4ad-6ea50f907649">​</a><a href="SearchParameter-us-core-patient-birthdate.html">birthdate</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="efe6cf8e-a1f2-4e8b-8805-2de181e95f4a">​</a><a href="SearchParameter-us-core-patient-family.html">family</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="b5d1ddd1-5e7e-45db-bfdf-5a8f14092ccb">​</a><a href="SearchParameter-us-core-patient-gender.html">gender</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?gender=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="93f6098a-2ae2-414a-bad3-38ba25a02bc5">​</a><a href="SearchParameter-us-core-patient-given.html">given</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?given=[given]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="e7ea6626-9a1f-4de9-92c0-7e58590e4abf">​</a><a href="SearchParameter-us-core-patient-identifier.html">identifier</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="190fa0a7-4d5b-4e31-a92c-d3638abdce1f">​</a><a href="SearchParameter-us-core-patient-name.html">name</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?name=[name]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>gender+name
+						</td><td>token+string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?gender=[system]|[code]&amp;name=[name]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>birthdate+family
+						</td><td>date+string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]&amp;family=[family]</code></td></tr><tr><td><strong>SHALL</strong></td><td>birthdate+name
+						</td><td>date+string
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]&amp;name=[name]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>family+gender
+						</td><td>string+token
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]&amp;gender=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitioner" class="no_toc">Practitioner</h4><p><a name="5875845c-531e-4039-a4ed-b3a99b9ae04d">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Practitioner resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Practitioner/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Practitioner?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="f976190b-969b-4e0e-ab0c-bc7b2cd3691c">​</a><a href="SearchParameter-us-core-practitioner-name.html">name</a></td><td>
+							string
+						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="25df6471-d166-48b9-b7e8-41df159998aa">​</a><a href="SearchParameter-us-core-practitioner-identifier.html">identifier</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?identifier=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitionerrole" class="no_toc">PractitionerRole</h4><p><a name="4613557e-7ddc-4344-9317-6674d56e2182">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a PractitionerRole resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/PractitionerRole/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHOULD</strong> be capable of supporting the following _includes:
+					<br/>
+					
+						PractitionerRole:endpoint - <code class="highlighter-rouge">GET [base]/PractitionerRole?[parameter=value]&amp;_include=PractitionerRole:endpoint</code><br/>
+					
+						PractitionerRole:practitioner - <code class="highlighter-rouge">GET [base]/PractitionerRole?[parameter=value]&amp;_include=PractitionerRole:practitioner</code><br/>
+					
+				</li><br/>          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/PractitionerRole?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="829a2762-1c57-4e93-b8a5-8b01eeedc659">​</a><a href="SearchParameter-us-core-practitionerrole-specialty.html">specialty</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?specialty=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="ef7410f9-a48e-4927-8f73-4f4267dd0b26">​</a><a href="SearchParameter-us-core-practitionerrole-practitioner.html">practitioner</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?practitioner=[practitioner]</code></td></tr></tbody></table><hr/><h4 id="procedure" class="no_toc">Procedure</h4><p><a name="5cb994dd-d9f5-4ee2-960d-d0a4b83c8514">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a>
+				
+				</p><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Procedure resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Procedure/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --><li>
+					A Server <strong>SHALL</strong> be capable of supporting the following _revincludes:
+					<br/>
+					
+						Provenance:target - <code class="highlighter-rouge">GET [base]/Procedure?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
+					
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="6b649292-4813-4e19-b272-5871835e03c3">​</a><a href="SearchParameter-us-core-procedure-status.html">status</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="93d30c6b-4638-4804-a678-adaed7470038">​</a><a href="SearchParameter-us-core-procedure-patient.html">patient</a></td><td>
+							reference
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ff8f57a4-1c3a-4d4d-b3b4-3ce6fa0b85f5">​</a><a href="SearchParameter-us-core-procedure-date.html">date</a></td><td>
+							date
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="46f4e6df-9d84-4390-831e-4847c3bc151b">​</a><a href="SearchParameter-us-core-procedure-code.html">code</a></td><td>
+							token
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?code=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+code+date
+						</td><td>reference+token+date
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;code=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+status
+						</td><td>reference+token
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+date
+						</td><td>reference+date
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;date=[date]</code></td></tr></tbody></table><hr/><h4 id="provenance" class="no_toc">Provenance</h4><p><a name="0f05daca-062f-42e5-b1d4-918b87369ab6">​</a>Supported Profiles:
+				
+											<a href="StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a>
+				
+				</p><p>Resource Specific Documentation:</p><blockquote><p>If a system receives a provider in <code>Provenance.agent.who</code> as free text they must capture who sent them the information as the organization. On request they <strong>SHALL</strong> provide this organization as the source and <strong>MAY</strong> include the free text provider.</p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+																							<code>search-type</code>, 
+																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
+																							<code>vread</code>, 
+																							<code>history-instance</code>.</li><li><strong>MAY</strong> support 
+																							<code>create</code>, 
+																							<code>update</code>, 
+																							<code>patch</code>, 
+																							<code>delete</code>, 
+																							<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>
+					A Server <strong>SHALL</strong> be capable of returning a Provenance resource using:
+					<br/>
+						<code class="highlighter-rouge">GET [base]/Provenance/[id]</code>
+				</li><br/>          <!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet -->          <!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --></ul><hr/><h4 id="valueset" class="no_toc">ValueSet</h4><p>Operation  Summary:</p><ul><li><strong>SHOULD</strong> support the 
+																									<a href="http://hl7.org/fhir/R4/valueset-operation-expand.html">$expand</a> operation
+																									<p><p>A  client can determine the note and report types support by a server by invoking the standard FHIR Value Set Expansion ($expand) operation defined in the FHIR R4 specification. Because servers may support different read and write formats, it also is used to determine the formats (for example, text, pdf) the server supports read and write transactions.</p></p></li></ul><hr/><br/></div>
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="78955e79-45c7-47e7-b0d1-a51f308f912a">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.2 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 18:36+0000">2020-06-23</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

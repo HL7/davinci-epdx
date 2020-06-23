@@ -1,8 +1,67 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.2.1",
+  "version": "0.3.2",
   "fhirVersion": "4.0.1",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination",
+      "title": "Search Parameter Combination",
+      "types": [
+        "string",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    }
+  ],
   "profiles": {
     "MedicationDispense": [
       {
@@ -12,6 +71,9 @@
     ]
   },
   "usage": {
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination": [
+      "CapabilityStatement.rest.resource"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -29,6 +91,12 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg": [
+      "StructureDefinition"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"

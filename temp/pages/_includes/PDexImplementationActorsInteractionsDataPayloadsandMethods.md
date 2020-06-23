@@ -1,4 +1,4 @@
-[Previous Page - PDex Data Payloads](PDexDataPayloads.html)
+[Previous Page - Introduction](Introduction.html)
 
 
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.

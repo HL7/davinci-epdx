@@ -43,7 +43,8 @@
     h3,h4,h5,h6{--heading-prefix:"5.2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
-        
+          <!-- Placeholder for child template header declarations -->
+
         <div id="hl7-nav">
           <a no-external="true" id="hl7-logo" href="http://hl7.org">
             <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
@@ -58,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.2.1 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.2 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -82,8 +83,6 @@
   <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
   <li><a href="Introduction.html">Introduction</a></li>
-
-  <li><a href="PDexDataPayloads.html">PDex Data Payloads</a></li>
 
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
@@ -116,7 +115,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.2.1). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.2). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Useful Patient History for Providers</h2>
   
   
@@ -180,7 +179,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Laboratory test results</td>
-      <td><a name="10147001-eabd-468a-ad94-5d0764c655ac">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="1af3ad11-4934-424d-9f73-70b992e4a70d">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>Result Observation</td>
@@ -192,7 +191,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Medical Devices</td>
-      <td><a name="220432b1-a101-412e-914f-7e01a801db50">​</a>Device: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html</a></td>
+      <td><a name="16208fbf-222a-48a5-a2d9-62d684fc8300">​</a>Device: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html</a></td>
     </tr>
     <tr>
       <td>Procedures</td>
@@ -200,11 +199,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Diagnoses</td>
-      <td><a name="761c09fc-14a4-4260-ad9b-30ec7f4346af">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="3b9741ca-66f1-442b-88c5-c0827d4cd8f4">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>Vital signs</td>
-      <td><a name="84ce2cea-3d18-409d-9f7d-4b844a59f1f9">​</a>Observation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html</a></td>
+      <td><a name="ef5b288e-468e-44d2-88ff-74ab85b7b266">​</a>Observation: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-observation.html</a></td>
     </tr>
     <tr>
       <td>Medications</td>
@@ -220,7 +219,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>Notes</td>
-      <td><a name="d3864522-f156-4351-b5a1-988c8c7bbbfa">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
+      <td><a name="fbc80c8e-348e-4331-a25b-29a0251a18c2">​</a>DiagnosticReport: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html</a></td>
     </tr>
     <tr>
       <td>FamilyHistory</td>
@@ -238,12 +237,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </div>    <!-- /container -->
   </div>    <!-- /segment-content -->
 
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="55a0f7bd-e460-4f5a-ad5b-e11daccdff1b">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.2.1 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 9, 2020 19:27+0000">2020-04-09</span>
+        <p><a name="6a93e3a6-e81a-4105-8143-9a171a4f0fe4">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.2 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 18:36+0000">2020-06-23</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
@@ -268,7 +276,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!-- Bootstrap core JavaScript
   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
   <script src="assets/js/respond.min.js" type="text/javascript"> </script>
   <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
