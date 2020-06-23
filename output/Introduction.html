@@ -59,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.2 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.3 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -115,7 +115,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.2). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.3). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Introduction</h2>
   
   
@@ -238,7 +238,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The exchange of Prescription drug formulary information is covered in the <a href="http://hl7.org/fhir/us/Davinci-drug-formulary//">PDex-formulary IG</a> ( http://hl7.org/fhir/us/Davinci-drug-formulary/ ).</p>
 
-<p><a name="68d072c2-c20c-41ce-917d-428046bec6ad">​</a>The OAuth2.0-based exchange is covered in detail in the <a href="Member-Authorized_OAuth2_Exchange.html">Member-Authorized OAuth2 Exchange</a></p>
+<p><a name="306e3de3-9ad4-4873-957a-255eb0f35a9e">​</a>The OAuth2.0-based exchange is covered in detail in the <a href="Member-Authorized_OAuth2_Exchange.html">Member-Authorized OAuth2 Exchange</a></p>
 
 <h2 id="supporting-specifications">Supporting Specifications</h2>
 
@@ -283,7 +283,7 @@ Specification:</p>
 
 <h2 id="implementation-assumptions">Implementation Assumptions</h2>
 
-<p><a name="2be913a7-df27-44b0-8e33-1ba640592ce0">​</a>Wherever possible, the PDex IG will use established <a href="http://hl7.org/fhir/us/core/">US Core Profiles</a> ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.</p>
+<p><a name="1c6b26a3-647e-428b-bffc-142ecdda347e">​</a>Wherever possible, the PDex IG will use established <a href="http://hl7.org/fhir/us/core/">US Core Profiles</a> ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.</p>
 
 <p>Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in this guide.</p>
 
@@ -292,7 +292,7 @@ Specification:</p>
 <p>The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:</p>
 
 <ol>
-  <li><a name="55f24999-0657-4f24-874e-8e11a7913a37">​</a>HL7 FHIR US Core STU3 v3.1.0 (based on FHIR R4 - <a href="http://hl7.org/fhir/us/core/">http://hl7.org/fhir/us/core/</a> )</li>
+  <li><a name="d7d7372c-3dbc-495f-8730-e9aa9157cedc">​</a>HL7 FHIR US Core STU3 v3.1.0 (based on FHIR R4 - <a href="http://hl7.org/fhir/us/core/">http://hl7.org/fhir/us/core/</a> )</li>
   <li>Da Vinci HRex IG profiles (based on FHIR R4 - <a href="http://build.fhir.org/ig/HL7/davinci-ehrx/">http://build.fhir.org/ig/HL7/davinci-ehrx/</a> )</li>
 </ol>
 
@@ -338,7 +338,7 @@ US Core Smoking Status Observation Profile</p>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html">US Core Condition Profile</a></li>
   <li><a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport Profile for Laboratory Results Reporting</a></li>
-  <li><a name="7042c619-33e8-46f8-b691-1dbabbf68a07">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html">US Core Diagnostic Report Profile for Report and Note exchange</a></li>
+  <li><a name="47c90adf-d8f5-4969-81b9-74c1c2780bed">​</a><a href="http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html">US Core Diagnostic Report Profile for Report and Note exchange</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a></li>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html">US Core Goal Profile</a></li>
@@ -370,9 +370,9 @@ US Core Smoking Status Observation Profile</p>
 
 <ul>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html">HRex Coverage</a></li>
-  <li><a name="fb18db5b-0673-4bf1-b10f-6b66b7e0a3c2">​</a><a href="StructureDefinition-pdex-device.html">PDex Device</a></li>
+  <li><a name="bdf6c58f-ddfb-4576-8493-dd329939cabb">​</a><a href="StructureDefinition-pdex-device.html">PDex Device</a></li>
   <li><a href="StructureDefinition-pdex-medicationdispense.html">PDex MedicationDispense</a></li>
-  <li><a name="f5a31aa2-4f33-419e-8426-abdd17929a29">​</a><a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-provenance.html">HRex Payer Provenance</a></li>
+  <li><a name="c2863184-f37b-47e3-89e6-291f7478186b">​</a><a href="http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-provenance.html">HRex Payer Provenance</a></li>
 </ul>
 
 <h4 id="capabilitystatement">CapabilityStatement</h4>
@@ -662,8 +662,8 @@ US Core Smoking Status Observation Profile</p>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="1af944b0-d960-4f76-8c4b-11c855dcc9f6">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.2 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 18:36+0000">2020-06-23</span>
+        <p><a name="c1651fa5-4785-47cf-b1b5-2e7fd22fbfe1">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.3 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 21:11+0000">2020-06-23</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
