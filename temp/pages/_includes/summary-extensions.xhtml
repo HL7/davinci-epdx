@@ -1,2 +1,7 @@
-{% raw %}<p>No Extensions Defined by this Implementation Guide</p>
+{% raw %}<table class="grid">
+ <tr><td><b>Code</b></td><td><b>Value Types</b></td><td><b>Definition</b></td></tr>
+ <tr><td><a href="StructureDefinition-capabilitystatement-search-parameter-combination.html">ent-search-parameter-combination</a></td><td></td><td>This extension defines a possible search parameter combination,  by listing a set of search parameters and indicating whether they are required or optional. If a search combination is specified, clients should expect that they must submit a search that meets one of the required combinations or the search will be unsuccessful. If multiple search parameter combinations are specified, a client may pick between them, and supply the minimal required parameters for any of the combinations.</td></tr>
+ <tr><td>&nbsp;&nbsp;required</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td>A search parameter name in the combination which is required.</td></tr>
+ <tr><td>&nbsp;&nbsp;optional</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td>A search parameter name in the combination which is optional.</td></tr>
+</table>
 {% endraw %}

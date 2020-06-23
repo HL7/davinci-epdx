@@ -291,4 +291,4 @@ An example mapping of a MedicationRequest is shown below:
 
 
 
-[Next Page - US Core MedicationStatement](USCoreMedicationStatement.html)
+[Next Page - Use Case Scenarios](UseCaseScenarios.html)

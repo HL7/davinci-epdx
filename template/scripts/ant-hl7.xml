@@ -28,7 +28,7 @@
       <footer filtering="no">&lt;/json&gt;</footer>
     </concat>
     <xslt in="${file.packagelist.tmp}" out="${file.packagelist.xml}" style="${ig.scripts}/onGenerate.package-list.xslt"/>
-    <concat encoding="UTF-8" destfile="${file.jira.tmp}">
+    <concat encoding="UTF-8" destfile="${file.jira.tmp}" fixlastline="yes">
       <fileset file="${file.workgroups}"/>
       <fileset file="${file.jiraspec}"/>
       <fileset file="${file.packagelist.xml}"/>
