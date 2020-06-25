@@ -1,4 +1,4 @@
-[Previous Page - Useful Patient History for Providers](UsefulPatientHistoryforProviders.html)
+[Previous Page - Use Case Scenarios](UseCaseScenarios.html)
 
 The Payer Data exchange Implementation Guide defines methods for Providers to request information from Health Plans.
 

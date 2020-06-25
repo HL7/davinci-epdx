@@ -1,5 +1,4 @@
-[Previous Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
-
+[Previous Page - US Core Goal_](USCoreGoal_.html)
 
 Where a Health Plan has access to structured and coded Immunization information for a member the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 
@@ -62,4 +61,4 @@ An example mapping of an Immunization resource is shown below:
 
 
 
-[Next Page - US Core DiagnosticReport](USCoreDiagnosticReport.html)
+[Next Page - US Core ImplantableDevice](USCoreImplantableDevice.html)

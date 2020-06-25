@@ -1,5 +1,4 @@
-[Previous Page - US Core Medication](USCoreMedication.html)
-
+[Previous Page - HRex MedicationDispense](HRexMedicationDispense.html)
 
 Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 
@@ -291,4 +290,5 @@ An example mapping of a MedicationRequest is shown below:
 
 
 
-[Next Page - Use Case Scenarios](UseCaseScenarios.html)
+
+[Next Page - US Core Organization](USCoreOrganization.html)

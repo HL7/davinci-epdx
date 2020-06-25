@@ -33,4 +33,5 @@ Applications are registered with the API Endpoint. The application owner **MAY**
 - An Independent developer, such as a Personal Health Record application developer
 - Another Covered Entity, such as a Provider.
 
+
 [Next Page - Credits](Credits.html)

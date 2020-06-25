@@ -1,6 +1,4 @@
-[Previous Page - US Core Practitioner](USCorePractitioner.html)
-
-
+[Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
 
 The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
 
@@ -104,4 +102,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - US Core Condition](USCoreCondition.html)
+[Next Page - Payer Provenance_](PayerProvenance_.html)

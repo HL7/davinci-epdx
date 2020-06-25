@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"7.6"}
-    h3,h4,h5,h6{--heading-prefix:"7.6.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"7.1"}
+    h3,h4,h5,h6{--heading-prefix:"7.1"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -59,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.3 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.5 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -115,30 +115,50 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.3). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.5). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Workflow Examples</h2>
   
   
   
 <div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#first-visit-with-new-provider" id="markdown-toc-first-visit-with-new-provider">First Visit with New Provider</a></li>
+  <li><a href="#return-visit-with-provider" id="markdown-toc-return-visit-with-provider">Return Visit with Provider</a></li>
+</ul>
 
 </div>
-<p><a href="Systems.html">Previous Page - Systems</a></p>
+<p><a href="CDS-Hooks.html">Previous Page - CDS-Hooks</a></p>
 
-<p>Assumption: Supported Provider/Clinician workflow meet the HIPAA treatment, payment, and operations purposes per OCR guidance. https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html</p>
+<p>Assumption: Supported Provider/Clinician workflow meet the HIPAA treatment, payment, and operations purposes per OCR guidance and are in compliance with federal and state regulations. <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html">https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html</a></p>
 
-<p>These are also example use cases and there is no reason to assume they are exhaustive.</p>
-
-<p>Note: Will inlcude language that the use of PDex exchange from payer to provider should meet current federal and state regulations.</p>
+<p>These are example use cases and there is no reason to assume they are exhaustive.</p>
 
 <p>There are two Provider/Clinician workflow examples:</p>
 
 <ol>
-  <li>First Visit with new Provider</li>
-  <li>Return visit with new Provider</li>
+  <li>First visit with new Provider</li>
+  <li>Return visit with Provider</li>
 </ol>
 
-<p><a href="FirstVisitwithNewProvider.html">Next Page - First Visit with New Provider</a></p>
+<h2 id="first-visit-with-new-provider">First Visit with New Provider</h2>
+
+<p>The patient calls their new provider to arrange for an annual physical.</p>
+
+<p>The receptionist in the doctor’s office collects their personal information, health plan coverage information and creates an appointment, a patient record and an initial encounter record.</p>
+
+<p>The creation of an appointment activates a CDS Hook transaction: appointment-book.</p>
+
+<h2 id="return-visit-with-provider">Return Visit with Provider</h2>
+
+<p>The patient calls their provider to arrange a follow-up appointment.</p>
+
+<p>The receptionist in the doctor’s office collects their personal information, checks for any change in health plan coverage information and creates an appointment, a patient record and an initial encounter record.</p>
+
+<p>The creation of an appointment activates a CDS Hook transaction: appointment-book.</p>
+
+<p>In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and <strong>MAY</strong> want to exclude information from their own organization, since that information will already be recorded in their EMR system.</p>
+
+<p><a href="HandlingDataProvenance.html">Next Page - Handling Data Provenance</a></p>
 
 
 </div>
@@ -160,8 +180,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="18f38e5c-8808-4780-8a4d-056d513d9112">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.3 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 21:11+0000">2020-06-23</span>
+        <p><a name="078d3501-272b-42b7-9ff8-ad46f03d67bd">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.5 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 25, 2020 02:00+0000">2020-06-25</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

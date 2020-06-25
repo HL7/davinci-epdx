@@ -1,5 +1,4 @@
-[Previous Page - US Core Device](USCoreDevice.html)
-
+[Previous Page - US Core MedicationRequest](USCoreMedicationRequest.html)
 
 When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
 
@@ -112,4 +111,4 @@ An example mapping of an Organization resource is shown below:
 
 
 
-[Next Page - US Core CarePlan](USCoreCarePlan.html)
+[Next Page - US Core Patient](USCorePatient.html)

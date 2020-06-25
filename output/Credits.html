@@ -40,7 +40,7 @@
   <body>
 
     <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -59,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.3 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.5 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -115,19 +115,22 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.3). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.5). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Credits</h2>
   
   
   
 <div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#terminology" id="markdown-toc-terminology">Terminology</a></li>
+</ul>
 
 </div>
 <p><a href="Member-AuthorizedOAuth2Exchange.html">Previous Page - Member-Authorized OAuth2 Exchange</a></p>
 
 <p><strong>Primary authors:</strong></p>
 <ul>
-  <li>Mark Scrimshire (NewWave Telecoms and Technologies)</li>
+  <li>Mark Scrimshire (OnyxHealth.io)</li>
   <li>Tony Benson (Blue Cross Blue Shield of Alabama)</li>
 </ul>
 
@@ -160,12 +163,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Epic (Danielle Friend, Isaac Vetter)</li>
   <li>Health Care Data Standards (Mary Kay McDaniel)</li>
   <li>Optum (Linda Michaelsen, Nicholas Radov)</li>
-  <li>Newwave (Mark Scrimshire, Santhi Chebrolu)</li>
+  <li>Newwave/Onyx (Mark Scrimshire, Santhi Chebrolu)</li>
 </ul>
 
 <p>Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.</p>
 
-<p><a href="Terminology.html">Next Page - Terminology</a></p>
+<h2 id="terminology">Terminology</h2>
+
+<p>This IG defaults to using US Core Profiles and value sets.</p>
+
+<p>If a resource is required that is not part of US Core it will be defined and referenced in the HRex IG. HRex is used to reference profiles that are utilized across multiple Da Vinci IGs.</p>
+
+<p>If a resource is unique to the PDex IG it will be defined in this guide, together with any unique value sets or coding systems required to support the profile.</p>
 
 
 </div>
@@ -187,8 +196,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="390e1b3b-b75c-4686-b9c4-f2ebcb738ec7">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.3 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 23, 2020 21:11+0000">2020-06-23</span>
+        <p><a name="cc279370-05fb-41f7-b77b-56e2f8e111f3">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.5 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 25, 2020 02:00+0000">2020-06-25</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

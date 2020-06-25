@@ -1,5 +1,4 @@
-[Previous Page - US Core Encounter](USCoreEncounter.html)
-
+[Previous Page - US Core ImplantableDevice](USCoreImplantableDevice.html)
 
 The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 
@@ -95,4 +94,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - MedicationDispense](MedicationDispense.html)
+[Next Page - US Core Medication](USCoreMedication.html)
