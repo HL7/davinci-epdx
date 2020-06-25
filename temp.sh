@@ -1,45 +1,29 @@
-	git rm     output/Actors.html
-	git rm     output/AdditionalorModifiedHooks.html
 	git add    output/CDS-Hooks.html
 	git add    output/CapabilityStatement-us-core-server.html
-	git add    output/CapabilityStatement-us-core-server.json
 	git add    output/CapabilityStatement-us-core-server.json.html
-	git add    output/CapabilityStatement-us-core-server.ttl
 	git add    output/CapabilityStatement-us-core-server.ttl.html
-	git add    output/CapabilityStatement-us-core-server.xml
 	git add    output/CapabilityStatement-us-core-server.xml.html
 	git add    output/Coverage.html
 	git add    output/Credits.html
 	git add    output/DataMapping.html
-	git rm     output/DataPayloads.html
-	git rm     output/ExchangeInteractions.html
-	git rm     output/FHIRProfilesandCDSHooksContext.html
-	git rm     output/FirstVisitwithNewProvider.html
+	git add    output/Device.html
+	git add    output/HRexMedicationDispense.html
 	git add    output/HandlingDataProvenance.html
-	git rm     output/HookConfiguration.html
 	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.json
 	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.ttl
 	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.xml
-	git rm     output/InteractionMethods.html
-	git rm     output/InteractionandPayloadMatrix.html
 	git add    output/Introduction.html
-	git rm     output/MedicationDispense.html
 	git add    output/Member-AuthorizedOAuth2Exchange.html
 	git add    output/Overview.html
-	git rm     output/PDexHooks.html
 	git add    output/PDexImplementationActorsInteractionsDataPayloadsandMethods.html
-	git rm     output/PatientPersona.html
+	git add    output/PayerProvenance_.html
 	git add    output/Provider-controlledInformationRequestsandFiltering.html
-	git rm     output/ReturnVisitwithProvider.html
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination-definitions.html
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination-mappings.html
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.json
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.json.html
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.ttl.html
 	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.xml.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.ttl
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.xml
 	git add    output/StructureDefinition-pdex-medicationdispense-definitions.html
 	git add    output/StructureDefinition-pdex-medicationdispense-examples.html
 	git add    output/StructureDefinition-pdex-medicationdispense-mappings.html
@@ -53,29 +37,32 @@
 	git add    output/StructureDefinition-pdex-medicationdispense.ttl.html
 	git add    output/StructureDefinition-pdex-medicationdispense.xml
 	git add    output/StructureDefinition-pdex-medicationdispense.xml.html
-	git rm     output/SupportforFHIRR4.html
-	git rm     output/Systems.html
-	git rm     output/Terminology.html
 	git add    output/USCoreAllergyIntolerance.html
 	git add    output/USCoreCarePlan.html
 	git add    output/USCoreCareTeam.html
 	git add    output/USCoreCondition.html
-	git rm     output/USCoreDevice.html
-	git rm     output/USCoreDiagnosticReport.html
+	git add    output/USCoreDiagnosticReportforLaboratoryResultsReporting.html
+	git add    output/USCoreDiagnosticReportforReportandNoteExchange.html
 	git add    output/USCoreDocumentReference.html
 	git add    output/USCoreEncounter.html
+	git add    output/USCoreGoal_.html
 	git add    output/USCoreImmunization.html
+	git add    output/USCoreImplantableDevice.html
 	git add    output/USCoreLocation.html
 	git add    output/USCoreMedication.html
 	git add    output/USCoreMedicationRequest.html
-	git rm     output/USCoreObservation.html
 	git add    output/USCoreOrganization.html
 	git add    output/USCorePatient.html
+	git add    output/USCorePediatricBMIforAgeObservation.html
+	git add    output/USCorePediatricWeightforHeightObservation.html
 	git add    output/USCorePractitioner.html
 	git add    output/USCorePractitionerRole.html
 	git add    output/USCoreProcedure.html
+	git add    output/USCoreProvenance_.html
+	git add    output/USCorePulseOximetry_.html
+	git add    output/USCoreSmokingStatusObservation_.html
 	git add    output/UseCaseScenarios.html
-	git rm     output/UsefulPatientHistoryforProviders.html
+	git add    output/VitalSigns_.html
 	git add    output/WorkflowExamples.html
 	git add    output/artifacts.html
 	git add    output/csvs.zip
@@ -100,205 +87,34 @@
 	git add    output/qa.txt
 	git add    output/qa.xml
 	git add    output/toc.html
-	git add    output/us-core-server.openapi.json
-	git add    output/usage-stats.json
 	git add    output/validator-davinci-pdex.pack
 	git add    output/validator.pack
 	git add    temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/09/4763a7ca08198e726931db616682b93753e971d97b7efe8e5f35d4f8e89fb2
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/12/0133d22ade5d07dc7346d6e7c238a8b9bbe89ba956325a39b585c63bac6cd7
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/17/3888f7fd3665154624093b7a48ff94e0f3a9496fabc64d6f4481ddd0f4bcb8
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/2e/1b7e476ad921c8ccb2d1c19d8bfaf0b88e7692130018d6a5228ad499f5792b
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/37/7ee2da6eea9ff7c7ad8223067de0f6970111c9bf4c4659000e0698c311f2e5
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/39/3c596c566f5c67992cd0545cd61f914b158bac61a31bfd38971527601aaad7
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/3b/30167947d89a00e4b890667ca71cffd7d326b8352dbb512d7817acab245ea8
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/44/1c02659b0f6b49d4d3de68ff5b0ca0c94a06c7321fc1ec5d96d953f47bcbdb
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/46/2d79c485a4ca76f2b3706e1d867edef33b3483e4ef4f6f29e520d483fe83fc
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/4b/dd95d76c2bae94e230e3b17c85126bb591b8941a358b860b9be6250b08c45c
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/4e/6c904a75d2d0536b42f545bc2d7eff3be9f0daf6ffc9592806160a97420384
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/51/2cd0b86dcfd8b6b1e09a0c62fcf5ff5f482ae37ae19cd67bc70da22740af35
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/5f/3063b89937a5c2e623c5284fde0c3257c1c4f24881a30d17e191aadb459292
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/66/ab1e5a13a7f370b65de84789b3d6e02076d911074670fa242e119bf7242f70
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/67/27c3e753f30f127fcb4afc2c8caae153428c6f773a4f263c6126a0b72931ba
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/6d/8c3bc2677da4e542b3a11f18a3e773173a54a7cc45a21130c7cb6d2f21eab1
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/6f/aee7ecb5c4b999b51b6755e2ad78dc17454c83a478a7135d495fb9f3da1fa9
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/71/511574c1b0cd08688a31540d50fde3031e138270ad2462b45c493ec1210ab8
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/72/fdb450e94a404f58333c3829d5d3c0382fe1f1025838fb11d58fbd4742bba5
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/80/d1331854eeb48bc9db0a60f8346b527c28b46897c06e13a759c8b0d2aa05ca
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/81/1d833c47d0baad16ec1100bfb25fca1e386383dea05f17db58ab1d3385c48f
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8b/9d040b7e5572a51513af9f7db9b95f48677a61b51b883b292ba3b811342615
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8e/e5b4d93062f9b82b6a425ffd5e6e1ad04315f19ebe0d3ec042753a08ae79f5
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/90/ec03207079e22247dc26ae1f2e2dc9c169a2964f603adec7351ae4ea122cc0
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/95/16f983d2a06b4fca7c8ea85bedca31609a62e6ed1432f4eca3973875acb724
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/9b/1ac6832ebdcbdd1007bdcb6d4f5fcf5aa537c16d9b53c5b98ca7709dfd65b2
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a3/2f7a1daaa50085ee45c6c71bffe7fc2c4a66f8ee8066472a1f001b2cd13a32
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a3/43c3eac9df051c1d41ac8b72676584c0d9977feffc6dbf05f4311b0805295e
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a3/f0496805dbc3d83ff54fc06b073fbde5e8b15dc445b0f50d118dfee57d1a5a
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a6/f3383f7e43e6bda47d9041e32475d95a765852b87333146cb6ba9a75b52602
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/a7/0ab00212939a367c6fe60995b48c3ddab49d5bc7e12161fa140281d047c417
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/aa/d5b0760b2d961e63364464d52997832849e0fdb4fe3e59bed02fea09680651
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b3/185facf715cca9fae30e32bd47b5444048cbbf53673285c6b27980db94bd48
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b7/a35bcb8b6df22f761a1b270ab30db4f18ca57bfa8a74ee7c6b1ed13db21f86
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/bc/1a3aec10c42a986a802bff64c7c27e78c9866a285abc9414872ab617141a26
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/c9/4bf58ac7387f8b769f3fbfba86937ba3740314ee02485d8e3498594e04628e
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/d9/5d8c16310dc8068dd6432d9f8f6ea7ff56d326680d3b5d22c1879589118bb8
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e2/84b5fef1887826c82cf9081851756095099d522288c4d4571931ba8c725e94
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e6/a07056d14de9ee23df45147d1b4db6c131d30d9aab267d976a07ff3ade4bd1
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f4/31f0040a00d187bc4d9b8dd67fdb06e544af50fcd7612bb2ec559278b7e8aa
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f8/aa6af56dd665084fbeb4cb14f3abc72599bdb0eedaf08f31526c9ebab295e4
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f9/8aff73fe2c8403b7b9afea01d586560924e3b7dbd1ff76f1341c4adb31b709
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f9/b2edb1d7153ed5e5c26249fb601213a8ea0e3d12e3b56402bb457b287a2397
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f9/e5d5f78186a3a604566bf8c248a1499095e53deac2ddde9625817c8b319cbe
-	git rm     temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/fc/3aedbf07cd0ce0f07988416b3eabef4664f8eb4861d3b677c54322a5470510
-	git rm     temp/pages/Actors.html
-	git rm     temp/pages/AdditionalorModifiedHooks.html
-	git add    temp/pages/CapabilityStatement-us-core-server.json
-	git add    temp/pages/CapabilityStatement-us-core-server.ttl
-	git add    temp/pages/CapabilityStatement-us-core-server.xml
-	git rm     temp/pages/DataPayloads.html
-	git rm     temp/pages/ExchangeInteractions.html
-	git rm     temp/pages/FHIRProfilesandCDSHooksContext.html
-	git rm     temp/pages/FirstVisitwithNewProvider.html
-	git rm     temp/pages/HookConfiguration.html
 	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.json
 	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.ttl
 	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.xml
-	git rm     temp/pages/InteractionMethods.html
-	git rm     temp/pages/InteractionandPayloadMatrix.html
-	git rm     temp/pages/MedicationDispense.html
-	git rm     temp/pages/PDexHooks.html
-	git rm     temp/pages/PatientPersona.html
-	git rm     temp/pages/ReturnVisitwithProvider.html
-	git add    temp/pages/StructureDefinition-capabilitystatement-search-parameter-combination.json
-	git add    temp/pages/StructureDefinition-capabilitystatement-search-parameter-combination.ttl
-	git add    temp/pages/StructureDefinition-capabilitystatement-search-parameter-combination.xml
 	git add    temp/pages/StructureDefinition-pdex-medicationdispense.json
 	git add    temp/pages/StructureDefinition-pdex-medicationdispense.ttl
 	git add    temp/pages/StructureDefinition-pdex-medicationdispense.xml
-	git rm     temp/pages/SupportforFHIRR4.html
-	git rm     temp/pages/Systems.html
-	git rm     temp/pages/Terminology.html
-	git rm     temp/pages/USCoreDevice.html
-	git rm     temp/pages/USCoreDiagnosticReport.html
-	git rm     temp/pages/USCoreObservation.html
-	git rm     temp/pages/UsefulPatientHistoryforProviders.html
 	git add    temp/pages/_data/fhir.json
-	git add    temp/pages/_data/pages.json
 	git add    temp/pages/_data/resources.json
 	git add    temp/pages/_data/structuredefinitions.json
-	git rm     temp/pages/_includes/Actors.md
-	git rm     temp/pages/_includes/AdditionalorModifiedHooks.md
-	git add    temp/pages/_includes/CDS-Hooks.md
-	git add    temp/pages/_includes/CapabilityStatement-us-core-server-json-html.xhtml
-	git add    temp/pages/_includes/CapabilityStatement-us-core-server-ttl-html.xhtml
-	git add    temp/pages/_includes/CapabilityStatement-us-core-server-xml-html.xhtml
-	git add    temp/pages/_includes/Coverage.md
-	git add    temp/pages/_includes/Credits.md
-	git add    temp/pages/_includes/DataMapping.md
-	git rm     temp/pages/_includes/DataPayloads.md
-	git rm     temp/pages/_includes/ExchangeInteractions.md
-	git rm     temp/pages/_includes/FHIRProfilesandCDSHooksContext.md
-	git rm     temp/pages/_includes/FirstVisitwithNewProvider.md
-	git add    temp/pages/_includes/HandlingDataProvenance.md
-	git rm     temp/pages/_includes/HookConfiguration.md
-	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-html.xhtml
 	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-json-html.xhtml
 	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-ttl-html.xhtml
 	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-xml-html.xhtml
-	git rm     temp/pages/_includes/InteractionMethods.md
-	git rm     temp/pages/_includes/InteractionandPayloadMatrix.md
-	git rm     temp/pages/_includes/MedicationDispense.md
-	git add    temp/pages/_includes/Member-AuthorizedOAuth2Exchange.md
-	git rm     temp/pages/_includes/PDexHooks.md
-	git add    temp/pages/_includes/PDexImplementationActorsInteractionsDataPayloadsandMethods.md
-	git rm     temp/pages/_includes/PatientPersona.md
-	git add    temp/pages/_includes/Provider-controlledInformationRequestsandFiltering.md
-	git rm     temp/pages/_includes/ReturnVisitwithProvider.md
-	git add    temp/pages/_includes/StructureDefinition-capabilitystatement-search-parameter-combination-json-html.xhtml
-	git add    temp/pages/_includes/StructureDefinition-capabilitystatement-search-parameter-combination-ttl-html.xhtml
-	git add    temp/pages/_includes/StructureDefinition-capabilitystatement-search-parameter-combination-xml-html.xhtml
+	git add    temp/pages/_includes/Overview.md
 	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-header.xhtml
 	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-json-html.xhtml
 	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-ttl-html.xhtml
 	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-xml-html.xhtml
-	git rm     temp/pages/_includes/SupportforFHIRR4.md
-	git rm     temp/pages/_includes/Systems.md
-	git rm     temp/pages/_includes/Terminology.md
-	git add    temp/pages/_includes/USCoreAllergyIntolerance.md
-	git add    temp/pages/_includes/USCoreCarePlan.md
-	git add    temp/pages/_includes/USCoreCareTeam.md
-	git add    temp/pages/_includes/USCoreCondition.md
-	git rm     temp/pages/_includes/USCoreDevice.md
-	git rm     temp/pages/_includes/USCoreDiagnosticReport.md
-	git add    temp/pages/_includes/USCoreDocumentReference.md
-	git add    temp/pages/_includes/USCoreEncounter.md
-	git add    temp/pages/_includes/USCoreImmunization.md
-	git add    temp/pages/_includes/USCoreLocation.md
-	git add    temp/pages/_includes/USCoreMedication.md
-	git add    temp/pages/_includes/USCoreMedicationRequest.md
-	git rm     temp/pages/_includes/USCoreObservation.md
-	git add    temp/pages/_includes/USCoreOrganization.md
-	git add    temp/pages/_includes/USCorePatient.md
-	git add    temp/pages/_includes/USCorePractitioner.md
-	git add    temp/pages/_includes/USCorePractitionerRole.md
-	git add    temp/pages/_includes/USCoreProcedure.md
-	git add    temp/pages/_includes/UseCaseScenarios.md
-	git rm     temp/pages/_includes/UsefulPatientHistoryforProviders.md
-	git add    temp/pages/_includes/WorkflowExamples.md
-	git add    temp/pages/_includes/list-byid-implementationguides-json.xhtml
-	git add    temp/pages/_includes/list-byid-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/list-byid-implementationguides.xhtml
-	git add    temp/pages/_includes/list-implementationguides-json.xhtml
-	git add    temp/pages/_includes/list-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/list-implementationguides.xhtml
-	git add    temp/pages/_includes/list-name-implementationguides-json.xhtml
-	git add    temp/pages/_includes/list-name-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/list-name-implementationguides.xhtml
-	git add    temp/pages/_includes/table-byid-implementationguides-json.xhtml
-	git add    temp/pages/_includes/table-byid-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/table-byid-implementationguides.xhtml
-	git add    temp/pages/_includes/table-implementationguides-json.xhtml
-	git add    temp/pages/_includes/table-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/table-implementationguides.xhtml
-	git add    temp/pages/_includes/table-name-implementationguides-json.xhtml
-	git add    temp/pages/_includes/table-name-implementationguides-xml.xhtml
-	git add    temp/pages/_includes/table-name-implementationguides.xhtml
-	git add    temp/pages/_includes/toc.xml
 	git add    temp/pages/full-ig.zip
-	git add    temp/pages/us-core-server.openapi.json
-	git add    temp/pages/usage-stats.json
-	git add    temp/qa/CapabilityStatement-us-core-server-json-html.html
-	git add    temp/qa/CapabilityStatement-us-core-server-ttl-html.html
-	git add    temp/qa/CapabilityStatement-us-core-server-xml-html.html
-	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-html.html
 	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-json-html.html
 	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-ttl-html.html
 	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-xml-html.html
-	git add    temp/qa/StructureDefinition-capabilitystatement-search-parameter-combination-json-html.html
-	git add    temp/qa/StructureDefinition-capabilitystatement-search-parameter-combination-ttl-html.html
-	git add    temp/qa/StructureDefinition-capabilitystatement-search-parameter-combination-xml-html.html
 	git add    temp/qa/StructureDefinition-pdex-medicationdispense-header.html
 	git add    temp/qa/StructureDefinition-pdex-medicationdispense-json-html.html
 	git add    temp/qa/StructureDefinition-pdex-medicationdispense-ttl-html.html
 	git add    temp/qa/StructureDefinition-pdex-medicationdispense-xml-html.html
-	git add    temp/qa/list-byid-implementationguides-json.html
-	git add    temp/qa/list-byid-implementationguides-xml.html
-	git add    temp/qa/list-byid-implementationguides.html
-	git add    temp/qa/list-implementationguides-json.html
-	git add    temp/qa/list-implementationguides-xml.html
-	git add    temp/qa/list-implementationguides.html
-	git add    temp/qa/list-name-implementationguides-json.html
-	git add    temp/qa/list-name-implementationguides-xml.html
-	git add    temp/qa/list-name-implementationguides.html
-	git add    temp/qa/table-byid-implementationguides-json.html
-	git add    temp/qa/table-byid-implementationguides-xml.html
-	git add    temp/qa/table-byid-implementationguides.html
-	git add    temp/qa/table-implementationguides-json.html
-	git add    temp/qa/table-implementationguides-xml.html
-	git add    temp/qa/table-implementationguides.html
-	git add    temp/qa/table-name-implementationguides-json.html
-	git add    temp/qa/table-name-implementationguides-xml.html
-	git add    temp/qa/table-name-implementationguides.html
 	git add    template/onGenerate-ig-updated.xml
 	git add    template/onGenerate-ig-working.1.xml
 	git add    template/onGenerate-ig-working.json
@@ -306,49 +122,12 @@
 	git add    template/onLoad-ig-updated.xml
 	git add    template/onLoad-ig-working.json
 	git add    template/onLoad-ig-working.xml
-	git add    template/versions.txt
 
-git add	input-cache/txcache/iso3166.cache
-git add		input/images/PDEXandUSCoreRelationship-v2.png
-git add		input/images/Payer-Admin-Financial-Clinical-Data-interchange.png
-git add		input/resources/capabilitystatement/
-git add		input/resources/structuredefinition/capabilitystatement-search-parameter-combination.json
-git add		output/Device.html
-git add		output/HRexMedicationDispense.html
-git add		output/PayerProvenance_.html
-git add		output/USCoreDiagnosticReportforLaboratoryResultsReporting.html
-git add		output/USCoreDiagnosticReportforReportandNoteExchange.html
-git add		output/USCoreGoal_.html
-git add		output/USCoreImplantableDevice.html
-git add		output/USCorePediatricBMIforAgeObservation.html
-git add		output/USCorePediatricWeightforHeightObservation.html
-git add		output/USCoreProvenance_.html
-git add		output/USCorePulseOximetry_.html
-git add		output/USCoreSmokingStatusObservation_.html
-git add		output/VitalSigns_.html
-git add		temp/pages/Device.html
-git add		temp/pages/HRexMedicationDispense.html
-git add		temp/pages/PayerProvenance_.html
-git add		temp/pages/USCoreDiagnosticReportforLaboratoryResultsReporting.htmlgit add	
-git add		temp/pages/USCoreDiagnosticReportforReportandNoteExchange.html
-git add		temp/pages/USCoreGoal_.html
-git add		temp/pages/USCoreImplantableDevice.html
-git add		temp/pages/USCorePediatricBMIforAgeObservation.html
-git add		temp/pages/USCorePediatricWeightforHeightObservation.html
-git add		temp/pages/USCoreProvenance_.html
-git add		temp/pages/USCorePulseOximetry_.html
-git add		temp/pages/USCoreSmokingStatusObservation_.html
-git add		temp/pages/VitalSigns_.html
-git add		temp/pages/_includes/Device.md
-git add		temp/pages/_includes/HRexMedicationDispense.md
-git add		temp/pages/_includes/PayerProvenance_.md
-git add		temp/pages/_includes/USCoreDiagnosticReportforLaboratoryResultsReporting.md
-git add		temp/pages/_includes/USCoreDiagnosticReportforReportandNoteExchange.md
-git add		temp/pages/_includes/USCoreGoal_.md
-git add		temp/pages/_includes/USCoreImplantableDevice.md
-git add		temp/pages/_includes/USCorePediatricBMIforAgeObservation.md
-git add		temp/pages/_includes/USCorePediatricWeightforHeightObservation.md
-git add		temp/pages/_includes/USCoreProvenance_.md
-git add		temp/pages/_includes/USCorePulseOximetry_.md
-git add		temp/pages/_includes/USCoreSmokingStatusObservation_.md
-git add		temp/pages/_includes/VitalSigns_.mgit
+
+git add	input/images/InteractionMethods1.pnggit status
+git add	input/images/InteractionMethods2.png
+git add	input/images/InteractionMethods3.png
+
+git add temp/pages/USCoreDiagnosticReportforLaboratoryResultsReporting.html
+git add	temp/pages/_includes/VitalSigns_.md
+

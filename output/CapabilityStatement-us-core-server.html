@@ -155,7 +155,7 @@
 
   <div><h2 id="title">US Core Server CapabilityStatement</h2><ul><li>Implementation Guide Version: 3.1.0</li><li>FHIR Version: 4.0.1</li><li>Supported formats: xml, json</li><li>Published: 2019-10-04</li><li>Published by: HL7 International - US Realm Steering Committee</li></ul><p><p>This Section describes the expected capabilities of the US Core Server actor which is responsible for providing responses to the queries submitted by the US Core Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and and the latest proposed ONC [U.S. Core Data for Interoperability (USCDI)].  US Core Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p></p><h3 id="behavior">FHIR RESTful Capabilities</h3><p>The US Core Server <strong>SHALL</strong>:</p><ol><li>Support the US Core Patient resource profile.</li><li>Support at least one additional resource profile from the list of US Core Profiles.</li><li>Implement the RESTful behavior according to the FHIR specification.</li><li>Return the following response classes:
 <ul><li>(Status 400): invalid parameter</li><li>(Status 401/4xx): unauthorized request</li><li>(Status 403): insufficient scope</li><li>(Status 404): unknown resource</li><li>(Status 410): deleted resource.</li></ul>
-</li><li>Support json source formats for all US Core interactions.</li></ol><p>The US Core Server <strong>SHOULD</strong>:</p><ol><li>Support xml source formats for all US Core interactions.</li><li>Identify the US Core profiles supported as part of the FHIR <code>meta.profile</code> attribute for each instance.</li><li>Support xml resource formats for all Argonaut questionnaire interactions.</li></ol><p id="security"><strong>Security:</strong></p><ol><li><a name="3885fc01-2ec2-4464-a8e1-a1fe2cd2d502">​</a>See the <a href="security.html">General Security Considerations</a> section for requirements and recommendations.</li><li>A server <strong>SHALL</strong> reject any unauthorized requests by returning an <code>HTTP 401</code> unauthorized response code.</li></ol><p><strong>Summary of System Wide Interactions</strong></p><li><strong>MAY</strong> support the	<code>transaction</code> interaction.</li><li><strong>MAY</strong> support the	<code>batch</code> interaction.</li><li><strong>MAY</strong> support the	<code>search-system</code> interaction.</li><li><strong>MAY</strong> support the	<code>history-system</code> interaction.</li><h3 id="resource--details" class="no_toc">RESTful Capabilities by Resource/Profile:</h3><p><strong>Summary of Search Criteria</strong></p><table class="grid"><thead><tr><th>Resource Type</th><th>Supported Profiles</th><th>Supported Searches</th><th>Supported <code>_includes</code></th><th>Supported <code>_revincludes</code></th><th>Supported Operations</th></tr></thead><tbody><tr><td><a href="#allergyintolerance">AllergyIntolerance</a></td><td><a name="b72e29ea-d669-4f3e-a83d-0e4a66934829">​</a><a href="StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a></td><td>
+</li><li>Support json source formats for all US Core interactions.</li></ol><p>The US Core Server <strong>SHOULD</strong>:</p><ol><li>Support xml source formats for all US Core interactions.</li><li>Identify the US Core profiles supported as part of the FHIR <code>meta.profile</code> attribute for each instance.</li><li>Support xml resource formats for all Argonaut questionnaire interactions.</li></ol><p id="security"><strong>Security:</strong></p><ol><li><a name="590b6d82-66c8-4857-9baa-7ad7a098e100">​</a>See the <a href="security.html">General Security Considerations</a> section for requirements and recommendations.</li><li>A server <strong>SHALL</strong> reject any unauthorized requests by returning an <code>HTTP 401</code> unauthorized response code.</li></ol><p><strong>Summary of System Wide Interactions</strong></p><li><strong>MAY</strong> support the	<code>transaction</code> interaction.</li><li><strong>MAY</strong> support the	<code>batch</code> interaction.</li><li><strong>MAY</strong> support the	<code>search-system</code> interaction.</li><li><strong>MAY</strong> support the	<code>history-system</code> interaction.</li><h3 id="resource--details" class="no_toc">RESTful Capabilities by Resource/Profile:</h3><p><strong>Summary of Search Criteria</strong></p><table class="grid"><thead><tr><th>Resource Type</th><th>Supported Profiles</th><th>Supported Searches</th><th>Supported <code>_includes</code></th><th>Supported <code>_revincludes</code></th><th>Supported Operations</th></tr></thead><tbody><tr><td><a href="#allergyintolerance">AllergyIntolerance</a></td><td><a name="a9470064-412c-442b-aa5e-e19a110a8caa">​</a><a href="StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a></td><td>
 							
 							patient, patient+clinical-status
 						</td><td>
@@ -164,7 +164,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#careplan">CarePlan</a></td><td><a name="aed9e5f7-0761-4106-a988-69e8506ec107">​</a><a href="StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a></td><td>
+						</td></tr><tr><td><a href="#careplan">CarePlan</a></td><td><a name="281dab09-cbcc-4ef2-8c1f-5a357e14acca">​</a><a href="StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a></td><td>
 							, patient+category+date, patient+category+status+date, patient+category+status, patient+category
 						</td><td>
 							
@@ -172,7 +172,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#careteam">CareTeam</a></td><td><a name="068b973d-119b-4114-806d-193a10e497ec">​</a><a href="StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a></td><td>
+						</td></tr><tr><td><a href="#careteam">CareTeam</a></td><td><a name="deb46640-8f1a-41d0-8de6-f5ade3e6aa06">​</a><a href="StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a></td><td>
 							, patient+status
 						</td><td>
 							
@@ -180,7 +180,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#condition">Condition</a></td><td><a name="78d84ac5-d37d-44b1-9681-8bf6882f53de">​</a><a href="StructureDefinition-us-core-condition.html">US Core Condition Profile</a></td><td>
+						</td></tr><tr><td><a href="#condition">Condition</a></td><td><a name="f6104dc4-93e7-477b-960b-66632d9f463f">​</a><a href="StructureDefinition-us-core-condition.html">US Core Condition Profile</a></td><td>
 							
 							patient, patient+category, patient+onset-date, patient+clinical-status, patient+code
 						</td><td>
@@ -189,7 +189,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#device">Device</a></td><td><a name="35d4e2b4-e5e3-4768-be04-4c516c27a778">​</a><a href="StructureDefinition-us-core-implantable-device.html">US Core Implantable Device Profile</a></td><td>
+						</td></tr><tr><td><a href="#device">Device</a></td><td><a name="ba44da99-b7a5-4017-b00f-2b4afe8bc256">​</a><a href="StructureDefinition-us-core-implantable-device.html">US Core Implantable Device Profile</a></td><td>
 							
 							patient, patient+type
 						</td><td>
@@ -198,7 +198,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#diagnosticreport">DiagnosticReport</a></td><td><a name="7aabc640-a1e2-4fe9-a180-ee268c656fbf">​</a><a href="StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>, 
+						</td></tr><tr><td><a href="#diagnosticreport">DiagnosticReport</a></td><td><a name="7305c8a9-3032-4d56-8a85-2fa51a789ca8">​</a><a href="StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>, 
 
 						<a href="StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport Profile for Laboratory Results Reporting</a></td><td>
 							
@@ -209,7 +209,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#documentreference">DocumentReference</a></td><td><a name="5ca95d93-535a-4791-a587-762012cc33f2">​</a><a href="StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a></td><td>
+						</td></tr><tr><td><a href="#documentreference">DocumentReference</a></td><td><a name="b0fffda7-97fc-41d1-a9ff-ffd0a291fb41">​</a><a href="StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a></td><td>
 							
 							_id, 
 							patient, patient+type, patient+type+period, patient+status, patient+category+date, patient+category
@@ -220,7 +220,7 @@
             </td><td>
 							
 							$docref
-						</td></tr><tr><td><a href="#encounter">Encounter</a></td><td><a name="dd80e350-389c-4440-b0ab-8116f6cd14b6">​</a><a href="StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a></td><td>
+						</td></tr><tr><td><a href="#encounter">Encounter</a></td><td><a name="b826bb03-1148-4176-a8df-4cd59d83df30">​</a><a href="StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a></td><td>
 							
 							_id, 
 							identifier, 
@@ -231,7 +231,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#goal">Goal</a></td><td><a name="a851501d-e54f-40de-8783-f4561861bfb7">​</a><a href="StructureDefinition-us-core-goal.html">US Core Goal Profile</a></td><td>
+						</td></tr><tr><td><a href="#goal">Goal</a></td><td><a name="43ad3383-cc01-4722-a87f-36649a027562">​</a><a href="StructureDefinition-us-core-goal.html">US Core Goal Profile</a></td><td>
 							
 							patient, patient+target-date, patient+lifecycle-status
 						</td><td>
@@ -240,7 +240,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#immunization">Immunization</a></td><td><a name="bb41985d-dd9f-46c7-ad71-103115ee249c">​</a><a href="StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a></td><td>
+						</td></tr><tr><td><a href="#immunization">Immunization</a></td><td><a name="833bb658-6975-4c8c-aa87-29a073ab079d">​</a><a href="StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a></td><td>
 							
 							patient, patient+date, patient+status
 						</td><td>
@@ -249,7 +249,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#location">Location</a></td><td><a name="7556896c-cf31-4d1d-b8b9-9b7c9e7566af">​</a><a href="StructureDefinition-us-core-location.html">US Core Location Profile</a></td><td>
+						</td></tr><tr><td><a href="#location">Location</a></td><td><a name="b073c63a-d951-4eb6-818d-8aa2f32d925b">​</a><a href="StructureDefinition-us-core-location.html">US Core Location Profile</a></td><td>
 							
 							name, 
 							address, 
@@ -262,7 +262,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#medication">Medication</a></td><td><a name="c631580e-505e-47a9-ad0c-054c6092606f">​</a><a href="StructureDefinition-us-core-medication.html">US Core Medication Profile</a></td><td>
+						</td></tr><tr><td><a href="#medication">Medication</a></td><td><a name="29f8dfec-d68e-4ff9-b696-c6dc9353c608">​</a><a href="StructureDefinition-us-core-medication.html">US Core Medication Profile</a></td><td>
 							
 						</td><td>
 							
@@ -270,7 +270,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#medicationrequest">MedicationRequest</a></td><td><a name="830458ce-e419-4ff5-bcc5-74dabda4f450">​</a><a href="StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a></td><td>
+						</td></tr><tr><td><a href="#medicationrequest">MedicationRequest</a></td><td><a name="28ecf7d0-7638-4e11-af0b-be736cc26091">​</a><a href="StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a></td><td>
 							, patient+intent+status, patient+intent+encounter, patient+intent+authoredon, patient+intent
 						</td><td>
 							MedicationRequest:medication
@@ -278,7 +278,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#observation">Observation</a></td><td><a name="b189a538-fdc8-424a-832f-43e8a41c6d7e">​</a><a href="StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>, 
+						</td></tr><tr><td><a href="#observation">Observation</a></td><td><a name="35d5163a-bf28-4d63-b613-a53e53895b51">​</a><a href="StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>, 
 
 						<a href="StructureDefinition-pediatric-weight-for-height.html">US Core Pediatric Weight  for Height Observation Profile</a>, 
 
@@ -294,7 +294,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#organization">Organization</a></td><td><a name="59bb0a00-5e52-4abd-9eca-cc1d64a801c8">​</a><a href="StructureDefinition-us-core-organization.html">US Core Organization Profile</a></td><td>
+						</td></tr><tr><td><a href="#organization">Organization</a></td><td><a name="cc1e032b-333f-452f-8eeb-15f9e9e9ed3a">​</a><a href="StructureDefinition-us-core-organization.html">US Core Organization Profile</a></td><td>
 							
 							name, 
 							address
@@ -304,7 +304,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#patient">Patient</a></td><td><a name="9ff3e310-e3f6-4316-8e96-9e50c64c5b63">​</a><a href="StructureDefinition-us-core-patient.html">US Core Patient Profile</a></td><td>
+						</td></tr><tr><td><a href="#patient">Patient</a></td><td><a name="0922b65a-2e87-49bc-abbf-16ced5666eff">​</a><a href="StructureDefinition-us-core-patient.html">US Core Patient Profile</a></td><td>
 							
 							_id, 
 							identifier, 
@@ -315,7 +315,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#practitioner">Practitioner</a></td><td><a name="2b96263a-6f3c-4125-b6a7-d4b3dc72077a">​</a><a href="StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a></td><td>
+						</td></tr><tr><td><a href="#practitioner">Practitioner</a></td><td><a name="36e79866-bae3-4952-aac5-1dc06c546d9d">​</a><a href="StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a></td><td>
 							
 							name, 
 							identifier
@@ -325,7 +325,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#practitionerrole">PractitionerRole</a></td><td><a name="a470aad7-d437-45f8-9e75-dcca7438b35a">​</a><a href="StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a></td><td>
+						</td></tr><tr><td><a href="#practitionerrole">PractitionerRole</a></td><td><a name="2d8e67e1-7a7a-45da-97c1-d24a240dc920">​</a><a href="StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a></td><td>
 							
 							specialty, 
 							practitioner
@@ -335,7 +335,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#procedure">Procedure</a></td><td><a name="9bd7f892-b82f-47f6-873f-59e0ebcb2d66">​</a><a href="StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a></td><td>
+						</td></tr><tr><td><a href="#procedure">Procedure</a></td><td><a name="ccef34df-4152-4b9d-8135-1272e6ac12f2">​</a><a href="StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a></td><td>
 							
 							patient, patient+code+date, patient+status, patient+date
 						</td><td>
@@ -344,7 +344,7 @@
               Provenance:target
             </td><td>
 							
-						</td></tr><tr><td><a href="#provenance">Provenance</a></td><td><a name="2f16bb91-09ee-4328-a61c-de9e768cb18a">​</a><a href="StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a></td><td>
+						</td></tr><tr><td><a href="#provenance">Provenance</a></td><td><a name="96686c59-e574-417e-bbfc-f90e98fee1ef">​</a><a href="StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a></td><td>
 							
 						</td><td>
 							
@@ -363,7 +363,7 @@
             </td><td>
 							
 							$expand
-						</td></tr></tbody></table><br/><h4 id="allergyintolerance" class="no_toc">AllergyIntolerance</h4><p><a name="9114aca8-11bc-4f70-bae7-95b7ebfa696d">​</a>Supported Profiles:
+						</td></tr></tbody></table><br/><h4 id="allergyintolerance" class="no_toc">AllergyIntolerance</h4><p><a name="5c74895c-5b96-4671-acb4-91b61e54f572">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a>
 				
@@ -386,13 +386,13 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/AllergyIntolerance?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="817e250d-5c83-4957-b660-74eb3a66b70a">​</a><a href="SearchParameter-us-core-allergyintolerance-clinical-status.html">clinical-status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="3760acbd-2ea9-4add-b0a6-d300426bbefd">​</a><a href="SearchParameter-us-core-allergyintolerance-clinical-status.html">clinical-status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="d7470928-2cf3-4396-bee7-17065f9ad57c">​</a><a href="SearchParameter-us-core-allergyintolerance-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="addbdbed-35fa-4b14-8139-28a722309c9d">​</a><a href="SearchParameter-us-core-allergyintolerance-patient.html">patient</a></td><td>
 							reference
 						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?patient=[patient]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+clinical-status
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?patient=[patient]&amp;clinical-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careplan" class="no_toc">CarePlan</h4><p><a name="ef1ff999-c43f-4c1a-a194-a62f8f8abf4a">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/AllergyIntolerance?patient=[patient]&amp;clinical-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careplan" class="no_toc">CarePlan</h4><p><a name="7ad64bb2-d364-4356-9388-8e122d781d61">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-careplan.html">US Core CarePlan Profile</a>
 				
@@ -415,13 +415,13 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/CarePlan?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="6bfa917d-b031-4d95-8c1a-7c8c6c22ee48">​</a><a href="SearchParameter-us-core-careplan-category.html">category</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="19332969-05a6-41a8-8f9b-bb5e29db04f6">​</a><a href="SearchParameter-us-core-careplan-category.html">category</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="792afdd1-5f81-4fe2-af0d-e0858183b29d">​</a><a href="SearchParameter-us-core-careplan-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="82f24f80-9740-4ffa-8f4c-9c33fbba6bb1">​</a><a href="SearchParameter-us-core-careplan-date.html">date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="36bd6e04-e244-43e6-8685-89b75004a478">​</a><a href="SearchParameter-us-core-careplan-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c159827f-9ec6-4b5b-9838-41d15018c24e">​</a><a href="SearchParameter-us-core-careplan-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="7e542683-b687-4a76-841a-f380f788fd6e">​</a><a href="SearchParameter-us-core-careplan-status.html">status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="a84c7568-68b1-437b-a020-a0b1e7e4a6f3">​</a><a href="SearchParameter-us-core-careplan-status.html">status</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?status=[status]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+category+date
 						</td><td>reference+token+date
@@ -431,7 +431,7 @@
 						</td><td>reference+token+token
 						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careteam" class="no_toc">CareTeam</h4><p><a name="5640ed0c-fe1f-4b58-8cda-001dae091e13">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/CarePlan?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="careteam" class="no_toc">CareTeam</h4><p><a name="a2a90f58-2f6b-4425-99bb-5cb59761a778">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-careteam.html">US Core CareTeam Profile</a>
 				
@@ -454,13 +454,13 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/CareTeam?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="edfc95ce-cf34-4613-aa26-e702269dd0be">​</a><a href="SearchParameter-us-core-careteam-patient.html">patient</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="c24b53ea-5e1b-4551-9e04-720535dc55e9">​</a><a href="SearchParameter-us-core-careteam-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="aec6d2c7-67a1-412a-a3ad-4d4edf3c6d06">​</a><a href="SearchParameter-us-core-careteam-status.html">status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="94411ecd-85fa-49ae-b8ca-4b55c21925a4">​</a><a href="SearchParameter-us-core-careteam-status.html">status</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?status=[status]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+status
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="condition" class="no_toc">Condition</h4><p><a name="ab145f9f-085a-4a36-a4db-5b27f46d3de4">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/CareTeam?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="condition" class="no_toc">Condition</h4><p><a name="118bcedc-4c06-4dec-a151-01537055eaab">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-condition.html">US Core Condition Profile</a>
 				
@@ -483,15 +483,15 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Condition?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="c20535a4-64c2-48ea-b758-00005c169712">​</a><a href="SearchParameter-us-core-condition-category.html">category</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="4e2c1836-1185-4411-b80e-1cf13dc97da5">​</a><a href="SearchParameter-us-core-condition-category.html">category</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Condition?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c40204e8-0d85-4400-832c-355932665869">​</a><a href="SearchParameter-us-core-condition-clinical-status.html">clinical-status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="5d6e1e45-f79f-4558-a3fa-effbd20d8b7b">​</a><a href="SearchParameter-us-core-condition-clinical-status.html">clinical-status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Condition?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="b810830d-61a2-468d-802c-a1545c24916f">​</a><a href="SearchParameter-us-core-condition-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="5b33b431-b020-4986-b4eb-5b66fa889da8">​</a><a href="SearchParameter-us-core-condition-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="a352f0a9-9b32-4417-adf0-fdd1e0493503">​</a><a href="SearchParameter-us-core-condition-onset-date.html">onset-date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="18104af0-04bb-4f83-b80d-3ec8d41b5b90">​</a><a href="SearchParameter-us-core-condition-onset-date.html">onset-date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/Condition?onset-date=[onset-date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d16d9e3d-808d-4dc5-aadf-ff3fd1ffc8ac">​</a><a href="SearchParameter-us-core-condition-code.html">code</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?onset-date=[onset-date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="851753a1-36ed-4efe-beae-b9df92c69c17">​</a><a href="SearchParameter-us-core-condition-code.html">code</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/Condition?code=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+category
 						</td><td>reference+token
@@ -501,7 +501,7 @@
 						</td><td>reference+token
 						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;clinical-status=[system]|[code]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+code
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;code=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="device" class="no_toc">Device</h4><p><a name="05dfdc56-2530-4aaf-9419-7d17f7dbb356">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Condition?patient=[patient]&amp;code=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="device" class="no_toc">Device</h4><p><a name="55d0d93c-81f5-4f67-a4f5-292e0ed7aa57">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-implantable-device.html">US Core Implantable Device Profile</a>
 				
@@ -524,13 +524,13 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Device?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="6e971e3b-8a50-477e-9692-e9936f1da112">​</a><a href="SearchParameter-us-core-device-patient.html">patient</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="d91fe1f4-8494-4263-9dd7-3863cdc7f58f">​</a><a href="SearchParameter-us-core-device-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d03bc83c-a4e9-4ece-9f39-45ce6e90add9">​</a><a href="SearchParameter-us-core-device-type.html">type</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="2efc719a-f897-46de-b792-7a252e933c70">​</a><a href="SearchParameter-us-core-device-type.html">type</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/Device?type=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+type
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]&amp;type=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="diagnosticreport" class="no_toc">DiagnosticReport</h4><p><a name="a2e1ea5f-ba3c-4dc6-a764-fda67a5f5d21">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Device?patient=[patient]&amp;type=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="diagnosticreport" class="no_toc">DiagnosticReport</h4><p><a name="f0092047-9a42-4352-b8c2-f6b89850b6d8">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>, 
 				
@@ -556,15 +556,15 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/DiagnosticReport?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="5d8a3016-c6c2-4f5c-8ba1-c2a0fcbabf0f">​</a><a href="SearchParameter-us-core-diagnosticreport-status.html">status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="76769150-13b2-406e-b142-297cf1f6f90a">​</a><a href="SearchParameter-us-core-diagnosticreport-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="3fc14a84-2d5c-418c-b157-790b80672ca1">​</a><a href="SearchParameter-us-core-diagnosticreport-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="19a64037-6a31-4e15-bb3a-b6ed7051aeb3">​</a><a href="SearchParameter-us-core-diagnosticreport-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="636cdbbd-26ee-492c-80cd-7227ba36a401">​</a><a href="SearchParameter-us-core-diagnosticreport-category.html">category</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="03311bb3-9672-479a-bcad-1e64c25b71be">​</a><a href="SearchParameter-us-core-diagnosticreport-category.html">category</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c29e4aeb-f8de-469a-b5e4-02a8031c559b">​</a><a href="SearchParameter-us-core-diagnosticreport-code.html">code</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c472db4d-b095-4cdc-87ad-f99d5cad1cfd">​</a><a href="SearchParameter-us-core-diagnosticreport-code.html">code</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="e1bff3c9-a027-4ada-8abe-13109a600f68">​</a><a href="SearchParameter-us-core-diagnosticreport-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="62877eee-da91-41f8-bacb-adadeae9d8d1">​</a><a href="SearchParameter-us-core-diagnosticreport-date.html">date</a></td><td>
 							date
 						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?date=[date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+status
 						</td><td>reference+token
@@ -576,11 +576,11 @@
 						</td><td>reference+token+date
 						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="documentreference" class="no_toc">DocumentReference</h4><p><a name="be99c463-63bf-4f5c-8cca-b87dff46d601">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/DiagnosticReport?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="documentreference" class="no_toc">DocumentReference</h4><p><a name="1b7fd27d-36a9-4b33-aea1-fe43a6f086dd">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-documentreference.html">US Core DocumentReference Profile</a>
 				
-				</p><p>Resource Specific Documentation:</p><blockquote><p><a name="ee865601-2f8f-47d5-b692-9b8d274a1c2d">​</a>The DocumentReference.type binding SHALL support at a minimum the <a href="ValueSet-us-core-clinical-note-type.html">5 Common Clinical Notes</a> and may extend to the full US Core DocumentReference Type Value Set</p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
+				</p><p>Resource Specific Documentation:</p><blockquote><p><a name="75dc557e-b88b-4b93-908f-33a1c6ae7df3">​</a>The DocumentReference.type binding SHALL support at a minimum the <a href="ValueSet-us-core-clinical-note-type.html">5 Common Clinical Notes</a> and may extend to the full US Core DocumentReference Type Value Set</p></blockquote><p>Reference Policy: <code>resolves</code></p><p>Profile Interaction Summary:</p><ul><li><strong>SHALL</strong> support 
 																							<code>create</code>, 
 																							<code>search-type</code>, 
 																							<code>read</code>.</li><li><strong>SHOULD</strong> support 
@@ -589,7 +589,7 @@
 																							<code>update</code>, 
 																							<code>patch</code>, 
 																							<code>delete</code>, 
-																							<code>history-type</code>.</li></ul><p>Operation  Summary:</p><ul><li><a name="2d07fdb3-b270-43b7-aad2-9365d3e6542d">​</a><strong>SHALL</strong> support the 
+																							<code>history-type</code>.</li></ul><p>Operation  Summary:</p><ul><li><a name="bb737847-819f-4a2e-a152-3dcd58adf077">​</a><strong>SHALL</strong> support the 
 																								<a href="OperationDefinition-docref.html">$docref</a> operation
 																								<p><p>A server <strong>SHALL</strong> be capable of responding to a $docref operation and  capable of returning at least a reference to a generated CCD document, if available. <strong>MAY</strong> provide references to other 'on-demand' and 'stable' documents (or 'delayed/deferred assembly') that meet the query parameters as well. If a context date range is supplied the server ** SHOULD**  provide references to any document that falls within the date range If no date range is supplied, then the server <strong>SHALL</strong> provide references to last or current encounter.  <strong>SHOULD</strong> document what resources, if any, are returned as included resources</p><p><code>GET [base]/DocumentReference/$docref?patient=[id]</code></p></p></li></ul><p>Fetch and Search Criteria:</p><ul><li>
 					A Server <strong>SHALL</strong> be capable of returning a DocumentReference resource using:
@@ -601,19 +601,19 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/DocumentReference?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="6e14d9ee-aa58-43d4-b36d-a04270949dd7">​</a><a href="SearchParameter-us-core-documentreference-id.html">_id</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="8667ec49-f1fb-405a-91e3-58a6cfaa49b8">​</a><a href="SearchParameter-us-core-documentreference-id.html">_id</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="712c14b9-0ce1-4c14-ad8e-f69dc79c7b26">​</a><a href="SearchParameter-us-core-documentreference-status.html">status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="3c2168e7-f262-4881-874a-54bfed25698e">​</a><a href="SearchParameter-us-core-documentreference-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="f33dbb9f-53a9-483a-b361-85d159a7df36">​</a><a href="SearchParameter-us-core-documentreference-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="40e14603-f54c-49d3-b687-67a3ac6f022e">​</a><a href="SearchParameter-us-core-documentreference-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="6add4f73-4fb7-4cf8-a86c-c17d83f4ff54">​</a><a href="SearchParameter-us-core-documentreference-category.html">category</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="8de97937-8b39-4b32-af7e-7c54f4480fda">​</a><a href="SearchParameter-us-core-documentreference-category.html">category</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="1b3fa946-63de-4082-8b72-712cf0757a05">​</a><a href="SearchParameter-us-core-documentreference-type.html">type</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c3374dfe-cbfd-422f-9579-6544d830abee">​</a><a href="SearchParameter-us-core-documentreference-type.html">type</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?type=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="2b5b0dc9-0d87-489c-a3a3-2a9adfec1efd">​</a><a href="SearchParameter-us-core-documentreference-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?type=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="9d421140-d362-410f-b81a-0cc98f8e8a73">​</a><a href="SearchParameter-us-core-documentreference-date.html">date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="12d89e34-499e-4c44-87e0-e883c71784b7">​</a><a href="SearchParameter-us-core-documentreference-period.html">period</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="33a56fd3-ed78-4b47-9ddc-6cbb9ae02cf4">​</a><a href="SearchParameter-us-core-documentreference-period.html">period</a></td><td>
 							date
 						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?period=[period]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+type
 						</td><td>reference+token
@@ -625,7 +625,7 @@
 						</td><td>reference+token+date
 						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="encounter" class="no_toc">Encounter</h4><p><a name="fc156b59-1e6a-407e-9ee6-1cdd3af46f54">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/DocumentReference?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="encounter" class="no_toc">Encounter</h4><p><a name="14c0155a-2886-42c0-ad4e-4ac99094f6b2">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a>
 				
@@ -648,19 +648,19 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Encounter?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="3da20d2b-2a67-460f-b95f-bdb682339107">​</a><a href="SearchParameter-us-core-encounter-id.html">_id</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="c19e8485-5066-42fb-8471-41172db456e6">​</a><a href="SearchParameter-us-core-encounter-id.html">_id</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="1485ac72-13a6-40eb-89f3-7c53b956826c">​</a><a href="SearchParameter-us-core-encounter-class.html">class</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="9660f12e-7056-4dd6-ac49-d95b6aae5c7e">​</a><a href="SearchParameter-us-core-encounter-class.html">class</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?class=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="3a2db756-901f-4af6-a48f-4808716c9274">​</a><a href="SearchParameter-us-core-encounter-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?class=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="37c55b7f-1de1-4ea7-9804-bae78ef38c84">​</a><a href="SearchParameter-us-core-encounter-date.html">date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="c98a4abf-feb5-4dca-a2e4-058e5b55e865">​</a><a href="SearchParameter-us-core-encounter-identifier.html">identifier</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="04d610e4-e0b1-4d2e-9ba9-c411307dcc1c">​</a><a href="SearchParameter-us-core-encounter-identifier.html">identifier</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="b5ee221a-65f1-4335-a966-cb81933ea4ba">​</a><a href="SearchParameter-us-core-encounter-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="03cada39-afaf-4f2e-88b0-d30ee583e0c0">​</a><a href="SearchParameter-us-core-encounter-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="b78b24c5-8bfa-41d8-be1a-1c0ffdcf43d2">​</a><a href="SearchParameter-us-core-encounter-status.html">status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c254d9f3-5f53-46ad-9e5f-3ee5bf94d26a">​</a><a href="SearchParameter-us-core-encounter-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="db8cb2eb-8016-4252-ae58-e34df1cdad92">​</a><a href="SearchParameter-us-core-encounter-type.html">type</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d0bd143d-1321-4086-857e-8c49b2e4fc5c">​</a><a href="SearchParameter-us-core-encounter-type.html">type</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/Encounter?type=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+status
 						</td><td>reference+token
@@ -670,7 +670,7 @@
 						</td><td>reference+token
 						</td><td><code class="highlighter-rouge">GET [base]/Encounter?patient=[patient]&amp;type=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td>date+patient
 						</td><td>date+reference
-						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]&amp;patient=[patient]</code></td></tr></tbody></table><hr/><h4 id="goal" class="no_toc">Goal</h4><p><a name="a7fab070-3297-423c-98d1-d46a8ce28d1b">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Encounter?date=[date]&amp;patient=[patient]</code></td></tr></tbody></table><hr/><h4 id="goal" class="no_toc">Goal</h4><p><a name="5025aa5b-db3c-468e-8f0b-f38ed687744a">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-goal.html">US Core Goal Profile</a>
 				
@@ -693,17 +693,17 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Goal?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="3d04dd2e-5746-4f1f-8153-53bb09098c52">​</a><a href="SearchParameter-us-core-goal-lifecycle-status.html">lifecycle-status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="82180113-2414-45da-be45-d3da3dfa3e2a">​</a><a href="SearchParameter-us-core-goal-lifecycle-status.html">lifecycle-status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Goal?lifecycle-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="bdc24023-cfde-4895-8dfe-851650ca5bd4">​</a><a href="SearchParameter-us-core-goal-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?lifecycle-status=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="333fd2c6-b176-4fdb-ae91-b15065599040">​</a><a href="SearchParameter-us-core-goal-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="35dd0fe1-1af8-4fb9-a854-9db158312b3a">​</a><a href="SearchParameter-us-core-goal-target-date.html">target-date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="c2df02ac-a710-42a8-a13e-fffc2935259f">​</a><a href="SearchParameter-us-core-goal-target-date.html">target-date</a></td><td>
 							date
 						</td><td><code class="highlighter-rouge">GET [base]/Goal?target-date=[target-date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+target-date
 						</td><td>reference+date
 						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]&amp;target-date=[target-date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+lifecycle-status
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]&amp;lifecycle-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="immunization" class="no_toc">Immunization</h4><p><a name="276c5dcf-9b95-43f6-a1aa-9ded19b539cc">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Goal?patient=[patient]&amp;lifecycle-status=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="immunization" class="no_toc">Immunization</h4><p><a name="aaec48d4-2783-47e8-98ff-1af4e1b27bdb">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a>
 				
@@ -726,17 +726,17 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Immunization?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="6638db31-2edb-43ed-a7bd-3260eb76112d">​</a><a href="SearchParameter-us-core-immunization-patient.html">patient</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="e6b927ab-cb06-428d-b64d-ac7ca31f4c9d">​</a><a href="SearchParameter-us-core-immunization-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ce9f50a0-ca62-4907-9ae1-d40588b503d0">​</a><a href="SearchParameter-us-core-immunization-status.html">status</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="f94f9107-a1b2-44bf-96f0-9850a5dab394">​</a><a href="SearchParameter-us-core-immunization-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Immunization?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d859fa26-3373-4ba2-8cda-6cb2305ad152">​</a><a href="SearchParameter-us-core-immunization-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="493d96b3-4511-42af-a20f-5caf3e87b9d6">​</a><a href="SearchParameter-us-core-immunization-date.html">date</a></td><td>
 							date
 						</td><td><code class="highlighter-rouge">GET [base]/Immunization?date=[date]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+date
 						</td><td>reference+date
 						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]&amp;date=[date]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>patient+status
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="location" class="no_toc">Location</h4><p><a name="fdebf61f-85ca-4bb0-88bb-f706a70207be">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Immunization?patient=[patient]&amp;status=[status]</code></td></tr></tbody></table><hr/><h4 id="location" class="no_toc">Location</h4><p><a name="8444aa40-e3b4-4c5b-8b47-7c1bd9bd95bb">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-location.html">US Core Location Profile</a>
 				
@@ -759,17 +759,17 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Location?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="6fa7907e-95b4-47f1-82ad-6af2c817a661">​</a><a href="SearchParameter-us-core-location-name.html">name</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="2431f9ab-dbf7-41f5-8f0e-4c5687d4c5f7">​</a><a href="SearchParameter-us-core-location-name.html">name</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Location?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="875463b1-f17a-4651-8174-1b2178c4c101">​</a><a href="SearchParameter-us-core-location-address.html">address</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Location?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="8d486367-ab22-4f4e-9b74-10be0afb2b7b">​</a><a href="SearchParameter-us-core-location-address.html">address</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Location?address=[address]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="5780e68e-3d20-4905-8bec-37ad2fbbf339">​</a><a href="SearchParameter-us-core-location-address-city.html">address-city</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address=[address]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="3ac61497-f8e1-4500-adb9-2749756adc3d">​</a><a href="SearchParameter-us-core-location-address-city.html">address-city</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Location?address-city=[address-city]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="b4cd3517-b049-4080-951c-44cc51876be1">​</a><a href="SearchParameter-us-core-location-address-state.html">address-state</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-city=[address-city]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="167c8457-30ef-4b4b-a0a5-9f028696b284">​</a><a href="SearchParameter-us-core-location-address-state.html">address-state</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Location?address-state=[address-state]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="e13c79c1-a0e7-4f59-b231-3277a521b848">​</a><a href="SearchParameter-us-core-location-address-postalcode.html">address-postalcode</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-state=[address-state]</code></td></tr><tr><td><strong>SHOULD</strong></td><td><a name="07db8931-f0ba-4be5-bacf-27da8b64a494">​</a><a href="SearchParameter-us-core-location-address-postalcode.html">address-postalcode</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Location?address-postalcode=[address-postalcode]</code></td></tr></tbody></table><hr/><h4 id="medication" class="no_toc">Medication</h4><p><a name="1aff6e3b-faf1-459a-9649-917c258a96a2">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Location?address-postalcode=[address-postalcode]</code></td></tr></tbody></table><hr/><h4 id="medication" class="no_toc">Medication</h4><p><a name="62596d78-033e-450a-88be-6e73f28e5ea2">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-medication.html">US Core Medication Profile</a>
 				
@@ -792,7 +792,7 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Medication?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><hr/><h4 id="medicationrequest" class="no_toc">MedicationRequest</h4><p><a name="211b2936-b2bf-4f5f-9992-cb3b8c0d7246">​</a>Supported Profiles:
+				</li><br/></ul><hr/><h4 id="medicationrequest" class="no_toc">MedicationRequest</h4><p><a name="09d5e335-737b-4429-b02e-162f354aacc7">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile</a>
 				
@@ -821,15 +821,15 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/MedicationRequest?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="5cbba6fa-9196-4f7f-9acc-9f1ae8989c3f">​</a><a href="SearchParameter-us-core-medicationrequest-status.html">status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="50658ed6-e36c-4953-9cd7-7193ee4a5acc">​</a><a href="SearchParameter-us-core-medicationrequest-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="8fa531b4-c401-4e50-903f-bde5d3228ba2">​</a><a href="SearchParameter-us-core-medicationrequest-intent.html">intent</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="67de5bdc-a285-4c12-a7e5-6a85ebd3ea53">​</a><a href="SearchParameter-us-core-medicationrequest-intent.html">intent</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?intent=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="6809b9ca-faef-48ee-a723-92ac9b35d20f">​</a><a href="SearchParameter-us-core-medicationrequest-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?intent=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="51064048-c1a6-4a51-a1d4-561c9bc89ffa">​</a><a href="SearchParameter-us-core-medicationrequest-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="1268dd03-6b15-4464-86ad-b533bb36bd7d">​</a><a href="SearchParameter-us-core-medicationrequest-encounter.html">encounter</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="f78bd72c-65e1-4b39-ab40-5ca4d1a6b042">​</a><a href="SearchParameter-us-core-medicationrequest-encounter.html">encounter</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?encounter=[encounter]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="405ac5bf-b159-4c27-827b-74bab404602e">​</a><a href="SearchParameter-us-core-medicationrequest-authoredon.html">authoredon</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?encounter=[encounter]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="a2a3b7e1-7d3a-4c6f-95f9-554fb6687ae3">​</a><a href="SearchParameter-us-core-medicationrequest-authoredon.html">authoredon</a></td><td>
 							date
 						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?authoredon=[authoredon]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>patient+intent+status
 						</td><td>reference+token+token
@@ -839,7 +839,7 @@
 						</td><td>reference+token+date
 						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]&amp;authoredon=[authoredon]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+intent
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="observation" class="no_toc">Observation</h4><p><a name="d673b82f-bf05-4edc-adac-03a0d3c28ae7">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/MedicationRequest?patient=[patient]&amp;intent=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="observation" class="no_toc">Observation</h4><p><a name="de2cbf76-77f2-42da-9fea-474934c387c5">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a>, 
 				
@@ -870,15 +870,15 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Observation?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="7d259b7d-8c68-4e51-a1c7-9d3f9080c0cb">​</a><a href="SearchParameter-us-core-observation-status.html">status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="c5535414-5966-455e-ba02-5554a571db56">​</a><a href="SearchParameter-us-core-observation-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Observation?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d2c26444-1bef-4e0a-b89d-a930786796f7">​</a><a href="SearchParameter-us-core-observation-category.html">category</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?status=[status]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ae0d9d6d-d818-468a-ad1c-95dd0501242d">​</a><a href="SearchParameter-us-core-observation-category.html">category</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Observation?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="15f144af-0e75-43f3-96ab-bef98e5caf7d">​</a><a href="SearchParameter-us-core-observation-code.html">code</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?category=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="4ce0e3df-c13e-46b3-98c9-637627bd6267">​</a><a href="SearchParameter-us-core-observation-code.html">code</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Observation?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="57069f98-e4f6-4988-9e62-d0908c0a6837">​</a><a href="SearchParameter-us-core-observation-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?code=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="58fe335a-e119-44ec-b7e7-abec147d5ec1">​</a><a href="SearchParameter-us-core-observation-date.html">date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/Observation?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="8efb1fe7-db0f-4741-9753-865d1bf6a5c4">​</a><a href="SearchParameter-us-core-observation-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="6c45ca7d-5ceb-4ae4-a9d4-584dd1ab31d1">​</a><a href="SearchParameter-us-core-observation-patient.html">patient</a></td><td>
 							reference
 						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+code+date
 						</td><td>reference+token+date
@@ -890,7 +890,7 @@
 						</td><td>reference+token+date
 						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]&amp;date=[date]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+category
 						</td><td>reference+token
-						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="organization" class="no_toc">Organization</h4><p><a name="b91de0c6-c793-4477-9325-7b358e0a182d">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Observation?patient=[patient]&amp;category=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="organization" class="no_toc">Organization</h4><p><a name="35e7105f-2f98-4186-939d-c1e1be387a91">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-organization.html">US Core Organization Profile</a>
 				
@@ -913,11 +913,11 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Organization?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="276f8ee4-7470-434b-9078-370c82518e30">​</a><a href="SearchParameter-us-core-organization-name.html">name</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="50f018ce-bdd2-4f41-827d-5f5520d7d80b">​</a><a href="SearchParameter-us-core-organization-name.html">name</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Organization?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="fecb8fe4-fc62-4756-9bff-8ccc62abcf2d">​</a><a href="SearchParameter-us-core-organization-address.html">address</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Organization?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="c386860e-a2e2-4827-9323-46d71426482b">​</a><a href="SearchParameter-us-core-organization-address.html">address</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Organization?address=[address]</code></td></tr></tbody></table><hr/><h4 id="patient" class="no_toc">Patient</h4><p><a name="9929bff5-6f54-4aad-982a-09462615753f">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Organization?address=[address]</code></td></tr></tbody></table><hr/><h4 id="patient" class="no_toc">Patient</h4><p><a name="4e4085d4-e59a-45c2-9b19-714735c87f84">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-patient.html">US Core Patient Profile</a>
 				
@@ -940,19 +940,19 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Patient?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="d96a8f60-aba4-4989-a0de-a8155d4e3fb3">​</a><a href="SearchParameter-us-core-patient-id.html">_id</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="289d3f23-3dcb-414b-b465-475b54b7da0c">​</a><a href="SearchParameter-us-core-patient-id.html">_id</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="6a3f6a4f-a5a6-4f9d-9df4-aad4f386d844">​</a><a href="SearchParameter-us-core-patient-birthdate.html">birthdate</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?_id=[id]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="bd4758e9-8f3e-46c7-81aa-e51beefc2f3f">​</a><a href="SearchParameter-us-core-patient-birthdate.html">birthdate</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="8294c166-56bb-4c6c-872f-4d0fe45785fe">​</a><a href="SearchParameter-us-core-patient-family.html">family</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="b63f9f5f-1013-4235-829e-c5aa81e0078a">​</a><a href="SearchParameter-us-core-patient-family.html">family</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="59b49258-88ef-4fe0-8f1d-95d8789b0f54">​</a><a href="SearchParameter-us-core-patient-gender.html">gender</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="ab9dcd33-ade9-4fe5-9af6-228608927c20">​</a><a href="SearchParameter-us-core-patient-gender.html">gender</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?gender=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="5c9ad7e0-d9c4-4f72-a14c-6d7b854411d3">​</a><a href="SearchParameter-us-core-patient-given.html">given</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?gender=[system]|[code]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="d9a314e1-cc14-4a02-a958-0096eebb621c">​</a><a href="SearchParameter-us-core-patient-given.html">given</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?given=[given]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="790ec470-0135-4be3-a3cf-52b952f05b54">​</a><a href="SearchParameter-us-core-patient-identifier.html">identifier</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?given=[given]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="4fd1c5cc-7021-4ce7-bce7-647e08bf3a1e">​</a><a href="SearchParameter-us-core-patient-identifier.html">identifier</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="1a95f1aa-d616-4102-bb75-42439d45ec9d">​</a><a href="SearchParameter-us-core-patient-name.html">name</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?identifier=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="9cc070f9-20ee-451e-b991-1a007619827b">​</a><a href="SearchParameter-us-core-patient-name.html">name</a></td><td>
 							string
 						</td><td><code class="highlighter-rouge">GET [base]/Patient?name=[name]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td>gender+name
 						</td><td>token+string
@@ -962,7 +962,7 @@
 						</td><td>date+string
 						</td><td><code class="highlighter-rouge">GET [base]/Patient?birthdate=[birthdate]&amp;name=[name]</code></td></tr><tr><td><strong>SHOULD</strong></td><td>family+gender
 						</td><td>string+token
-						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]&amp;gender=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitioner" class="no_toc">Practitioner</h4><p><a name="8d44e317-f229-44d5-9532-33d7647c9a1f">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Patient?family=[family]&amp;gender=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitioner" class="no_toc">Practitioner</h4><p><a name="9cbcc47a-d724-454a-b6cd-403967b56ccb">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-practitioner.html">US Core Practitioner Profile</a>
 				
@@ -985,11 +985,11 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Practitioner?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="303d43f0-d4b1-4551-b495-236ef510ae4c">​</a><a href="SearchParameter-us-core-practitioner-name.html">name</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="61a69a2d-54e5-43ac-8a2d-4706f39ab5c2">​</a><a href="SearchParameter-us-core-practitioner-name.html">name</a></td><td>
 							string
-						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="a44c3d64-4b24-4b74-b965-c9a3542ad563">​</a><a href="SearchParameter-us-core-practitioner-identifier.html">identifier</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?name=[name]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="f286ddaa-1b70-42a8-80c0-cef0c6d2a39a">​</a><a href="SearchParameter-us-core-practitioner-identifier.html">identifier</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?identifier=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitionerrole" class="no_toc">PractitionerRole</h4><p><a name="a286dcfc-eea7-4c83-9f6c-0bcde9f5dc8b">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Practitioner?identifier=[system]|[code]</code></td></tr></tbody></table><hr/><h4 id="practitionerrole" class="no_toc">PractitionerRole</h4><p><a name="5e135519-5f67-42aa-b083-2a545e1c5276">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole Profile</a>
 				
@@ -1020,11 +1020,11 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/PractitionerRole?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="b1dcc76f-20f3-48f7-8c2e-8b4d23b6f591">​</a><a href="SearchParameter-us-core-practitionerrole-specialty.html">specialty</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHALL</strong></td><td><a name="539815a6-4748-4424-a7f9-d0d9cda9001c">​</a><a href="SearchParameter-us-core-practitionerrole-specialty.html">specialty</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?specialty=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="3f0e740b-971d-4af8-a331-e87089484a3e">​</a><a href="SearchParameter-us-core-practitionerrole-practitioner.html">practitioner</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?specialty=[system]|[code]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="a376ac33-1035-4d13-bf22-f102fe75b2cb">​</a><a href="SearchParameter-us-core-practitionerrole-practitioner.html">practitioner</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?practitioner=[practitioner]</code></td></tr></tbody></table><hr/><h4 id="procedure" class="no_toc">Procedure</h4><p><a name="5a0896f4-df80-4d95-a0e7-97090fb2f07e">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/PractitionerRole?practitioner=[practitioner]</code></td></tr></tbody></table><hr/><h4 id="procedure" class="no_toc">Procedure</h4><p><a name="3858f69b-b51f-46fb-906d-b92783c1c632">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a>
 				
@@ -1047,13 +1047,13 @@
 					
 						Provenance:target - <code class="highlighter-rouge">GET [base]/Procedure?[parameter=value]&amp;_revinclude=Provenance:target</code><br/>
 					
-				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="8826647f-b55a-49a9-a4e4-1a565133e53d">​</a><a href="SearchParameter-us-core-procedure-status.html">status</a></td><td>
+				</li><br/></ul><p>Search Parameter Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Example</th></tr></thead><tbody><tr><td><strong>MAY</strong></td><td><a name="950fefa5-f259-4c95-909b-95bc45ad3201">​</a><a href="SearchParameter-us-core-procedure-status.html">status</a></td><td>
 							token
-						</td><td><code class="highlighter-rouge">GET [base]/Procedure?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="8a4df81d-89cc-4f06-b8a6-9151d4c40740">​</a><a href="SearchParameter-us-core-procedure-patient.html">patient</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td><a name="9da48516-ab11-493c-a5e2-54c873e091f5">​</a><a href="SearchParameter-us-core-procedure-patient.html">patient</a></td><td>
 							reference
-						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="dcf05e59-a81e-412f-8fca-92f3e29358ef">​</a><a href="SearchParameter-us-core-procedure-date.html">date</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="2e3dee6d-44c8-45dc-8ca9-dd5f49bee66c">​</a><a href="SearchParameter-us-core-procedure-date.html">date</a></td><td>
 							date
-						</td><td><code class="highlighter-rouge">GET [base]/Procedure?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="09a9acec-1921-4d64-aa89-60a81ca6b065">​</a><a href="SearchParameter-us-core-procedure-code.html">code</a></td><td>
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?date=[date]</code></td></tr><tr><td><strong>MAY</strong></td><td><a name="be0c2256-9b21-4af0-8f4b-eb74ebc8ba82">​</a><a href="SearchParameter-us-core-procedure-code.html">code</a></td><td>
 							token
 						</td><td><code class="highlighter-rouge">GET [base]/Procedure?code=[system]|[code]</code></td></tr></tbody></table><p>Search Parameter Combination Summary:</p><table class="grid"><thead><tr><th>Conformance</th><th>Parameter Combination</th><th>Types</th><th>Example</th></tr></thead><tbody><tr><td><strong>SHOULD</strong></td><td>patient+code+date
 						</td><td>reference+token+date
@@ -1061,7 +1061,7 @@
 						</td><td>reference+token
 						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;status=[status]</code></td></tr><tr><td><strong>SHALL</strong></td><td>patient+date
 						</td><td>reference+date
-						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;date=[date]</code></td></tr></tbody></table><hr/><h4 id="provenance" class="no_toc">Provenance</h4><p><a name="88f6533c-c23e-4eda-a024-1fb389983a7a">​</a>Supported Profiles:
+						</td><td><code class="highlighter-rouge">GET [base]/Procedure?patient=[patient]&amp;date=[date]</code></td></tr></tbody></table><hr/><h4 id="provenance" class="no_toc">Provenance</h4><p><a name="925289c4-70ae-45ac-a504-c1129d7fa5a8">​</a>Supported Profiles:
 				
 											<a href="StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a>
 				
@@ -1106,8 +1106,8 @@
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="8b1e4612-72ca-49e4-ace1-000b19eab695">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.5 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 25, 2020 02:00+0000">2020-06-25</span>
+        <p><a name="3db7a4ec-e73b-4651-99d2-34a5b02f9700">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com">HL7 Da Vinci</a>.  Package hl7.fhir.us.davinci-pdex#0.3.5 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jun 25, 2020 04:23+0000">2020-06-25</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
