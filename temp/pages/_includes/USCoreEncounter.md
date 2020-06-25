@@ -1,5 +1,4 @@
-[Previous Page - Coverage](Coverage.html)
-
+[Previous Page - US Core DocumentReference](USCoreDocumentReference.html)
 
 An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) is shown below:
 
@@ -72,4 +71,5 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - US Core Location](USCoreLocation.html)
+
+[Next Page - US Core Goal_](USCoreGoal_.html)

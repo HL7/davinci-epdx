@@ -1,6 +1,4 @@
-[Previous Page - Data Mapping](DataMapping.html)
-
-
+[Previous Page - US Core Organization](USCoreOrganization.html)
 
 The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
 
@@ -283,4 +281,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - Coverage](Coverage.html)
+[Next Page - US Core Pediatric BMI for Age Observation](USCorePediatricBMIforAgeObservation.html)

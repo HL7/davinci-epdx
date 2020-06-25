@@ -1,5 +1,4 @@
-[Previous Page - US Core CareTeam](USCoreCareTeam.html)
-
+[Previous Page - US Core Location](USCoreLocation.html)
 
 Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
 
@@ -82,4 +81,5 @@ An example mapping of a Medication is shown below:
 
 
 
-[Next Page - US Core MedicationRequest](USCoreMedicationRequest.html)
+
+[Next Page - HRex MedicationDispense](HRexMedicationDispense.html)
