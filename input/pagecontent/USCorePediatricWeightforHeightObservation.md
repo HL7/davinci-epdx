@@ -1,5 +1,4 @@
-[Previous Page - US Core DiagnosticReport](USCoreDiagnosticReport.html)
-
+[Previous Page - US Core Pediatric BMI for Age Observation](USCorePediatricBMIforAgeObservation.html)
 
 The US Core IG profiles the Observation resource for a variety of purposes. For example:
 - Smoking status
@@ -78,4 +77,5 @@ The essential fields to be provided in the US Core Observation resource are:
 
 
 
-[Next Page - US Core DocumentReference](USCoreDocumentReference.html)
+
+[Next Page - US Core Practitioner](USCorePractitioner.html)

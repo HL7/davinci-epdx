@@ -1,5 +1,4 @@
-[Previous Page - MedicationDispense](MedicationDispense.html)
-
+[Previous Page - US Core Pediatric Weight for Height Observation](USCorePediatricWeightforHeightObservation.html)
 
 The  [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
@@ -97,5 +96,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-
-[Next Page - US Core Procedure](USCoreProcedure.html)
+[Next Page - US Core PractitionerRole](USCorePractitionerRole.html)

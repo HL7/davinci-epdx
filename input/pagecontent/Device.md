@@ -1,5 +1,4 @@
-[Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
-
+[Previous Page - Coverage](Coverage.html)
 
 Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html) resource when the information is structured and coded.
 
@@ -62,4 +61,4 @@ An example mapping of a device resource is shown below:
 
 
 
-[Next Page - US Core Organization](USCoreOrganization.html)
+[Next Page - US Core DiagnosticReport for Laboratory Results Reporting](USCoreDiagnosticReportforLaboratoryResultsReporting.html)

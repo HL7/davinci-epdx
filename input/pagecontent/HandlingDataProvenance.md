@@ -1,5 +1,4 @@
-[Previous Page - FHIR Profiles and CDS Hooks Context](FHIRProfilesandCDSHooksContext.html)
-
+[Previous Page - Workflow Examples](WorkflowExamples.html)
 
 Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.
 
@@ -150,6 +149,7 @@ An example Provenance record is shown below:
 }
 
 </pre>
+
 
 
 

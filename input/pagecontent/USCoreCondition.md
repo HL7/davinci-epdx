@@ -1,5 +1,4 @@
-[Previous Page - US Core Procedure](USCoreProcedure.html)
-
+[Previous Page - US Core CareTeam](USCoreCareTeam.html)
 
 The essential fields to be provided in the US Core Condition resource are:
 
@@ -82,4 +81,4 @@ An example mapping of a problem using the Condition is shown below:
 
 
 
-[Next Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
+[Next Page - Coverage](Coverage.html)
