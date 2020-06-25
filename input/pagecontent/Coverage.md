@@ -1,5 +1,4 @@
-[Previous Page - US Core Patient](USCorePatient.html)
-
+[Previous Page - US Core Condition](USCoreCondition.html)
 
 The (Coverage resource)[http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html] is profiled in the Da Vinci HRex IG. 
 
@@ -250,4 +249,4 @@ An example mapping of a Coverage resource is shown here:
 
 
 
-[Next Page - US Core Encounter](USCoreEncounter.html)
+[Next Page - Device](Device.html)

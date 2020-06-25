@@ -1,5 +1,4 @@
-[Previous Page - US Core Organization](USCoreOrganization.html)
-
+[Previous Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
 
 Where a Health Plan has access to Care Plan information for a member they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
 

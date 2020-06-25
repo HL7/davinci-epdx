@@ -1,5 +1,4 @@
-[Previous Page - US Core Condition](USCoreCondition.html)
-
+[Previous Page - Data Mapping](DataMapping.html)
 
 Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
 
@@ -88,4 +87,4 @@ An example mapping of an AllergyIntolerance resource is shown below:
 
 
 
-[Next Page - US Core Immunization](USCoreImmunization.html)
+[Next Page - US Core CarePlan](USCoreCarePlan.html)

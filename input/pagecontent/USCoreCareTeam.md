@@ -1,6 +1,5 @@
 [Previous Page - US Core CarePlan](USCoreCarePlan.html)
 
-
 Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource.
 
 The essential fields to be provided in the CareTeam resource are:
@@ -96,4 +95,4 @@ An example mapping of a CareTeam is shown below:
 
 
 
-[Next Page - US Core Medication](USCoreMedication.html)
+[Next Page - US Core Condition](USCoreCondition.html)

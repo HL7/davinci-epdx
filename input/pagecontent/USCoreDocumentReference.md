@@ -1,5 +1,4 @@
-[Previous Page - US Core Observation](USCoreObservation.html)
-
+[Previous Page - US Core DiagnosticReport for Report and Note Exchange](USCoreDiagnosticReportforReportandNoteExchange.html)
 
 The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html) resource to exchange: 
  
@@ -109,4 +108,5 @@ An example mapping of a DocumentReference for an episode of care is shown below:
 
 
 
-[Next Page - US Core PractitionerRole](USCorePractitionerRole.html)
+
+[Next Page - US Core Encounter](USCoreEncounter.html)

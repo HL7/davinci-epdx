@@ -1,133 +1,65 @@
-	git add    output/CDS-Hooks.html
-	git add    output/CapabilityStatement-us-core-server.html
-	git add    output/CapabilityStatement-us-core-server.json.html
-	git add    output/CapabilityStatement-us-core-server.ttl.html
-	git add    output/CapabilityStatement-us-core-server.xml.html
-	git add    output/Coverage.html
-	git add    output/Credits.html
-	git add    output/DataMapping.html
-	git add    output/Device.html
-	git add    output/HRexMedicationDispense.html
-	git add    output/HandlingDataProvenance.html
-	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.json
-	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.ttl
-	git add    output/ImplementationGuide-hl7.fhir.us.davinci-pdex.xml
-	git add    output/Introduction.html
-	git add    output/Member-AuthorizedOAuth2Exchange.html
-	git add    output/Overview.html
-	git add    output/PDexImplementationActorsInteractionsDataPayloadsandMethods.html
-	git add    output/PayerProvenance_.html
-	git add    output/Provider-controlledInformationRequestsandFiltering.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination-definitions.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination-mappings.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.json.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.ttl.html
-	git add    output/StructureDefinition-capabilitystatement-search-parameter-combination.profile.xml.html
-	git add    output/StructureDefinition-pdex-medicationdispense-definitions.html
-	git add    output/StructureDefinition-pdex-medicationdispense-examples.html
-	git add    output/StructureDefinition-pdex-medicationdispense-mappings.html
-	git add    output/StructureDefinition-pdex-medicationdispense.html
-	git add    output/StructureDefinition-pdex-medicationdispense.json
-	git add    output/StructureDefinition-pdex-medicationdispense.json.html
-	git add    output/StructureDefinition-pdex-medicationdispense.profile.json.html
-	git add    output/StructureDefinition-pdex-medicationdispense.profile.ttl.html
-	git add    output/StructureDefinition-pdex-medicationdispense.profile.xml.html
-	git add    output/StructureDefinition-pdex-medicationdispense.ttl
-	git add    output/StructureDefinition-pdex-medicationdispense.ttl.html
-	git add    output/StructureDefinition-pdex-medicationdispense.xml
-	git add    output/StructureDefinition-pdex-medicationdispense.xml.html
-	git add    output/USCoreAllergyIntolerance.html
-	git add    output/USCoreCarePlan.html
-	git add    output/USCoreCareTeam.html
-	git add    output/USCoreCondition.html
-	git add    output/USCoreDiagnosticReportforLaboratoryResultsReporting.html
-	git add    output/USCoreDiagnosticReportforReportandNoteExchange.html
-	git add    output/USCoreDocumentReference.html
-	git add    output/USCoreEncounter.html
-	git add    output/USCoreGoal_.html
-	git add    output/USCoreImmunization.html
-	git add    output/USCoreImplantableDevice.html
-	git add    output/USCoreLocation.html
-	git add    output/USCoreMedication.html
-	git add    output/USCoreMedicationRequest.html
-	git add    output/USCoreOrganization.html
-	git add    output/USCorePatient.html
-	git add    output/USCorePediatricBMIforAgeObservation.html
-	git add    output/USCorePediatricWeightforHeightObservation.html
-	git add    output/USCorePractitioner.html
-	git add    output/USCorePractitionerRole.html
-	git add    output/USCoreProcedure.html
-	git add    output/USCoreProvenance_.html
-	git add    output/USCorePulseOximetry_.html
-	git add    output/USCoreSmokingStatusObservation_.html
-	git add    output/UseCaseScenarios.html
-	git add    output/VitalSigns_.html
-	git add    output/WorkflowExamples.html
-	git add    output/artifacts.html
-	git add    output/csvs.zip
-	git add    output/definitions.json.zip
-	git add    output/definitions.ttl.zip
-	git add    output/definitions.xml.zip
-	git add    output/examples.json.zip
-	git add    output/examples.ttl.zip
-	git add    output/examples.xml.zip
-	git add    output/excels.zip
-	git add    output/expansions.json
-	git add    output/expansions.json.zip
-	git add    output/expansions.xml
-	git add    output/expansions.xml.zip
-	git add    output/full-ig.zip
-	git add    output/index.html
-	git add    output/package.manifest.json
-	git add    output/package.tgz
-	git add    output/qa-tx.html
-	git add    output/qa.html
-	git add    output/qa.json
-	git add    output/qa.txt
-	git add    output/qa.xml
-	git add    output/toc.html
-	git add    output/validator-davinci-pdex.pack
-	git add    output/validator.pack
-	git add    temp/pages/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910
-	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.json
-	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.ttl
-	git add    temp/pages/ImplementationGuide-hl7.fhir.us.davinci-pdex.xml
-	git add    temp/pages/StructureDefinition-pdex-medicationdispense.json
-	git add    temp/pages/StructureDefinition-pdex-medicationdispense.ttl
-	git add    temp/pages/StructureDefinition-pdex-medicationdispense.xml
-	git add    temp/pages/_data/fhir.json
-	git add    temp/pages/_data/resources.json
-	git add    temp/pages/_data/structuredefinitions.json
-	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-json-html.xhtml
-	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-ttl-html.xhtml
-	git add    temp/pages/_includes/ImplementationGuide-hl7.fhir.us.davinci-pdex-xml-html.xhtml
-	git add    temp/pages/_includes/Overview.md
-	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-header.xhtml
-	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-json-html.xhtml
-	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-ttl-html.xhtml
-	git add    temp/pages/_includes/StructureDefinition-pdex-medicationdispense-xml-html.xhtml
-	git add    temp/pages/full-ig.zip
-	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-json-html.html
-	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-ttl-html.html
-	git add    temp/qa/ImplementationGuide-hl7.fhir.us.davinci-pdex-xml-html.html
-	git add    temp/qa/StructureDefinition-pdex-medicationdispense-header.html
-	git add    temp/qa/StructureDefinition-pdex-medicationdispense-json-html.html
-	git add    temp/qa/StructureDefinition-pdex-medicationdispense-ttl-html.html
-	git add    temp/qa/StructureDefinition-pdex-medicationdispense-xml-html.html
-	git add    template/onGenerate-ig-updated.xml
-	git add    template/onGenerate-ig-working.1.xml
-	git add    template/onGenerate-ig-working.json
-	git add    template/onGenerate-ig-working.xml
-	git add    template/onLoad-ig-updated.xml
-	git add    template/onLoad-ig-working.json
-	git add    template/onLoad-ig-working.xml
+	git add   input-cache/schemas/R5/fhir-single.xsd
+	git add   input/davinci-pdex.json
+	git rm    input/images/InteractionMethods1.png
+	git rm    input/images/InteractionMethods2.png
+	git rm    input/images/InteractionMethods3.png
+	git rm    input/pagecontent/Actors.md
+	git rm    input/pagecontent/AdditionalorModifiedHooks.md
+	git add   input/pagecontent/CDS-Hooks.md
+	git add   input/pagecontent/Coverage.md
+	git add   input/pagecontent/Credits.md
+	git add   input/pagecontent/DataMapping.md
+	git rm    input/pagecontent/DataPayloads.md
+	git rm    input/pagecontent/ExchangeInteractions.md
+	git rm    input/pagecontent/FHIRProfilesandCDSHooksContext.md
+	git rm    input/pagecontent/FirstVisitwithNewProvider.md
+	git add   input/pagecontent/HandlingDataProvenance.md
+	git rm    input/pagecontent/HookConfiguration.md
+	git rm    input/pagecontent/InteractionMethods.md
+	git rm    input/pagecontent/InteractionandPayloadMatrix.md
+	git rm    input/pagecontent/MedicationDispense.md
+	git add   input/pagecontent/Member-AuthorizedOAuth2Exchange.md
+	git add   input/pagecontent/Overview.md
+	git rm    input/pagecontent/PDexHooks.md
+	git add   input/pagecontent/PDexImplementationActorsInteractionsDataPayloadsandMethods.md
+	git rm    input/pagecontent/PatientPersona.md
+	git add   input/pagecontent/Provider-controlledInformationRequestsandFiltering.md
+	git rm    input/pagecontent/ReturnVisitwithProvider.md
+	git rm    input/pagecontent/SupportforFHIRR4.md
+	git rm    input/pagecontent/Systems.md
+	git rm    input/pagecontent/Terminology.md
+	git add   input/pagecontent/USCoreAllergyIntolerance.md
+	git add   input/pagecontent/USCoreCarePlan.md
+	git add   input/pagecontent/USCoreCareTeam.md
+	git add   input/pagecontent/USCoreCondition.md
+	git rm    input/pagecontent/USCoreDevice.md
+	git rm    input/pagecontent/USCoreDiagnosticReport.md
+	git add   input/pagecontent/USCoreDocumentReference.md
+	git add   input/pagecontent/USCoreEncounter.md
+	git add   input/pagecontent/USCoreImmunization.md
+	git add   input/pagecontent/USCoreLocation.md
+	git add   input/pagecontent/USCoreMedication.md
+	git add   input/pagecontent/USCoreMedicationRequest.md
+	git rm    input/pagecontent/USCoreObservation.md
+	git add   input/pagecontent/USCoreOrganization.md
+	git add   input/pagecontent/USCorePatient.md
+	git add   input/pagecontent/USCorePractitioner.md
+	git add   input/pagecontent/USCorePractitionerRole.md
+	git add   input/pagecontent/USCoreProcedure.md
+	git add   input/pagecontent/UseCaseScenarios.md
+	git rm    input/pagecontent/UsefulPatientHistoryforProviders.md
+	git add   input/pagecontent/WorkflowExamples.md
 
-
-git add	input/images/InteractionMethods1.pnggit status
-git add	input/images/InteractionMethods2.png
-git add	input/images/InteractionMethods3.png
-
-git add temp/pages/USCoreDiagnosticReportforLaboratoryResultsReporting.html
-git add	temp/pages/_includes/VitalSigns_.md
-
+git add	input/pagecontent/Device.md
+git add	input/pagecontent/HRexMedicationDispense.md
+git add	input/pagecontent/PayerProvenance_.md
+git add	input/pagecontent/USCoreDiagnosticReportforLaboratoryResultsReporting.md
+git add	input/pagecontent/USCoreDiagnosticReportforReportandNoteExchange.md
+git add	input/pagecontent/USCoreGoal_.md
+git add	input/pagecontent/USCoreImplantableDevice.md
+git add	input/pagecontent/USCorePediatricBMIforAgeObservation.md
+git add	input/pagecontent/USCorePediatricWeightforHeightObservation.md
+git add	input/pagecontent/USCoreProvenance_.md
+git add	input/pagecontent/USCorePulseOximetry_.md
+git add	input/pagecontent/USCoreSmokingStatusObservation_.md
+git add	input/pagecontent/VitalSigns_.md

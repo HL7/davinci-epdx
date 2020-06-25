@@ -1,5 +1,4 @@
-[Previous Page - US Core DocumentReference](USCoreDocumentReference.html)
-
+[Previous Page - US Core Practitioner](USCorePractitioner.html)
 
 The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
 
@@ -288,4 +287,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - US Core Device](USCoreDevice.html)
+[Next Page - US Core Procedure](USCoreProcedure.html)

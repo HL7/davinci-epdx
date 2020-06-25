@@ -1,9 +1,8 @@
-[Previous Page - US Core Immunization](USCoreImmunization.html)
+[Previous Page - Device](Device.html)
 
+Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
 
-Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
-
-The essential fields to be provided in the US Core DiagnosticReport resource are:
+The essential fields to be provided in the US Core DiagnosticReport for Laboratory Results Reporting resource are:
 
 | R4 Hierarchical Name           | R4 Name          | Card. | Type                                                                   |
 |--------------------------------|------------------|-------|------------------------------------------------------------------------|
@@ -21,7 +20,7 @@ The essential fields to be provided in the US Core DiagnosticReport resource are
 | DiagnosticReport.presentedForm | presentedForm    | 0..*  | Attachment                                                             |
 
 
-#### Example DiagnosticReport Resource
+#### Example DiagnosticReport for Laboratory Results Reporting Resource
 
 An example mapping of a DiagnosticReport for urinalysis is shown below:
 
@@ -149,4 +148,4 @@ An example mapping of a DiagnosticReport for urinalysis is shown below:
 
 
 
-[Next Page - US Core Observation](USCoreObservation.html)
+[Next Page - US Core DiagnosticReport for Report and Note Exchange](USCoreDiagnosticReportforReportandNoteExchange.html)

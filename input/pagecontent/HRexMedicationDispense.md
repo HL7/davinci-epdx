@@ -1,6 +1,4 @@
-[Previous Page - US Core Location](USCoreLocation.html)
-
-
+[Previous Page - US Core Medication](USCoreMedication.html)
 
 The  [Da Vinci HRex MedicationDispense profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-hrex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims.
 
@@ -178,5 +176,4 @@ An example mapping of a MedicationDispense resource is shown here for a Dispense
 
 
 
-
-[Next Page - US Core Practitioner](USCorePractitioner.html)
+[Next Page - US Core MedicationRequest](USCoreMedicationRequest.html)
