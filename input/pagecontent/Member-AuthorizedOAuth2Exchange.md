@@ -9,11 +9,10 @@ This IG provides a mechanism for Member-authorized exchange of their Health Hist
 The authorization method uses the [OAuth 2.0](https://oauth.net/2/) protocol to issue a token to an authorized application or service. The authorized application can then use the token to enable interaction with the FHIR REST API.
 
 When a Member is authorizing sharing of the Member Health History with another Health Plan or a Third Party Application via the OAuth 2.0 protocol the Health Plan that is operating the API **MAY** offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations. However, under the HIPAA right of access the Member is at liberty to share that information if they so wish.
-
 <table>
 	<tr>
 		<td>
-			<img  width="100%" height="auto" src="MemberAuthorizedOAuth2Exchange.png">
+			<img  width="100%" height="auto" src="MemberAuthExchange.png">
 		</td>	
 	</tr>	
 </table>
