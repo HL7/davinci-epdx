@@ -94,11 +94,10 @@ Sharing of Member health information via PDex **SHALL** use the CDS Hooks specif
 - appointment-book
 
 The overall flow of the SMART-on-FHIR and CDS-Hooks interaction is summarized in the diagram below:
-
 <table>
 	<tr>
 		<td>
-			<img  width="100%" height="auto"  src="PDexHooks.png">
+			<img  width="100%" height="auto"  src="CDSHooksSmartOnFHIR.png">
 		</td>
 	</tr>	
 </table>

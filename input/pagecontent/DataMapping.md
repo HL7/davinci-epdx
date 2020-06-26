@@ -1,4 +1,4 @@
-[Previous Page - PDex Implementation Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
+[Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
 
 Health Plans **SHALL** map claims and clinical information for a member to US Core v3.1.0 FHIR Resources based on R4.
 
