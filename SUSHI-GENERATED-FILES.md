@@ -17,7 +17,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | _genonce.sh                                                                       | generated |                                                                                                    |
 | _updatePublisher.bat                                                              | generated |                                                                                                    |
 | _updatePublisher.sh                                                               | generated |                                                                                                    |
-| input/ImplementationGuide-davinci-pdex.json                                       | generated | fishtank/config.yaml, {all input resources and pages}                                              |
+| input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json                           | generated | fishtank/config.yaml, {all input resources and pages}                                              |
 | input/ignoreWarnings.txt                                                          | generated |                                                                                                    |
 | package-list.json                                                                 | generated | fishtank/config.yaml                                                                               |
 | ig.ini                                                                            | copied    | fishtank/ig-data/ig.ini                                                                            |
