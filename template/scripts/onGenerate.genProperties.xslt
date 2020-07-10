@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Extract the organization, family, realm and id from the IG's id.  Expectation is that the id will be in the form:
+  -   hl7.[family].[realm].id or hl7.[family].id (presumed universal)
+  - Holler if realm isn't valid or family isn't valid
+  - finally, spit out the 'artifact' code based on the IG (FAMILY-us-[id] or FAMILY-[id]) as a property named jiraSpecFile
+  - which will be used to name the Jira Spec file proposed as a default
+  -->
 <xsl:stylesheet version="1.0" xmlns:f="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="text" encoding="UTF-8"/>
 	<xsl:template match="f:ImplementationGuide">
@@ -25,14 +32,14 @@
         <xsl:value-of select="concat('When using the HL7 template, the IG id must start with &quot;hl7.&quot; - found ', $id)"/>
       </xsl:message>
     </xsl:if>
-    <xsl:if test="not($family='cda' or $family='ehrfm' or $family='fhir' or $family='v2' or $family='v3' or $family='other')">
+    <xsl:if test="not($family='cda' or $family='fhir' or $family='v2' or $family='other')">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unrecognized family in id: ', $id)"/>
+        <xsl:value-of select="concat('Unrecognized family in id: ', $id, '.  ImplementationGuide.id must be in the form &quot;', 'hl7.[family].[realm].id', '&quot; where family is cda, fhir, v2 or other')"/>
       </xsl:message>
     </xsl:if>
     <xsl:if test="not($realm='us' or $realm='uv')">
       <xsl:message terminate="yes">
-        <xsl:value-of select="concat('Unrecognized realm in id: ', $id)"/>
+        <xsl:value-of select="concat('Unrecognized realm in id: ', $id, '.  ImplementationGuide.id must be in the form &quot;', 'hl7.[family].[realm].id', '&quot; where family is uv or us.')"/>
       </xsl:message>
     </xsl:if>
     <xsl:text>jiraSpecFile:</xsl:text>

@@ -1,18 +1,14 @@
 ---
 ---
+<!-- get modelType -->
+{% include fragment-modelType.html id='{{[id]}}' %}
+
 {% include fragment-pagebegin.html %}
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
   {% include fragment-profile-navtabs.html type='{{[type]}}' id='{{[id]}}' active='content' %}
 
   <a name="root"> </a>
-{% if site.data.structuredefinitions['{{[id]}}'].kind == 'logical' %}
-  {% assign modelType = 'Logical Model' %}
-{% elsif site.data.structuredefinitions['{{[id]}}'].kind == 'resource' %}
-  {% assign modelType = 'Resource Profile' %}
-{% else %}
-  {% assign modelType = 'Data Type Profile' %}
-{% endif %}
   <h2 id="root">{{modelType}}: {{[title]}}</h2>
   <p>{{site.data.structuredefinitions['{{[id]}}'].description | markdownify}}</p>
   <p>
@@ -21,13 +17,13 @@
   <pre>{{site.data.structuredefinitions['{{[id]}}'].url}}</pre>
 
 <!-- insert intro if present -->
-{% include fragment-intro.html %}
+{% include fragment-intro.html type='{{[type]}}' id='{{[id]}}' %}
 
   <!-- no uri -->
   <a name="profile"> </a>
   <h3 id="profile">Formal Views of Profile Content</h3>
   <p>
-    <a href="{{site.data.fhir.path}}profiling.html#representation">Description of Profiles, Differentials, Snapshots and how the different presentations work</a>.
+    <a href="{{site.data.fhir.path}}profiling.html#presentation">Description of Profiles, Differentials, Snapshots and how the different presentations work</a>.
   </p>
   <div id="tabs">
     <ul>
@@ -39,6 +35,9 @@
       </li>
       <li>
         <a href="#tabs-snap">Snapshot Table</a>
+      </li>
+      <li>
+        <a href="#tabs-snapms">Snapshot Table (Must Support)</a>
       </li>
 {% unless excludexml == 'y' %}
 <!--      <li>
@@ -118,6 +117,14 @@
       </div>
     </div>-->
 {% endunless %}
+    <a name="tabs-snapms"> </a>
+    <div id="tabs-snapms">
+      <div id="tbl-snap">
+        <div id="tbl-snap-inner">
+          {%include StructureDefinition-{{[id]}}-snapshot-by-mustsupport.xhtml%}
+        </div>
+      </div>
+    </div>
     <a name="tabs-all"> </a>
     <div id="tabs-all">
       <div id="all-summ">
@@ -189,9 +196,8 @@
   {%include StructureDefinition-{{[id]}}-inv.xhtml%}
 
 <!-- insert notes if present -->
-{% include fragment-notes.html %}
+{% include fragment-notes.html type='{{[type]}}' id='{{[id]}}' %}
 
-  {%include StructureDefinition-{{[id]}}-history.xhtml%}
 </div>
 {% assign includetabscripts = 'true' %}
 {% include fragment-pageend.html %}
