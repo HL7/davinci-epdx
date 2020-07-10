@@ -5,13 +5,7 @@
    <p>Contents:</p>
    <ul>
       <li>
-         <a href="#1">Behavior: Capability Statements</a>
-      </li>
-      <li>
-         <a href="#2">Structures: Resource Profiles</a>
-      </li>
-      <li>
-         <a href="#3">Structures: Extension Definitions</a>
+         <a href="#1">Structures: Resource Profiles</a>
       </li>
    </ul>
 </div>
@@ -20,23 +14,6 @@
      xmlns:f="http://hl7.org/fhir">
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
-   <h3>Behavior: Capability Statements </h3>
-   <p>The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide.  Systems complying with the implementation guide are expected to declare conformance to one or more of the following capability statements.</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CapabilityStatement-us-core-server.html"
-                     title="CapabilityStatement/us-core-server">US Core Server CapabilityStatement</a>
-               </td>
-               <td>This Section describes the expected capabilities of the US Core Server actor which is responsible for providing responses to the queries submitted by the US Core Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and and the latest proposed ONC [U.S. Core Data for Interoperability (USCDI)].  US Core Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
    <p>These define constraints on FHIR resources that need to be complied with by conformant implementations</p>
    <p>
@@ -45,28 +22,10 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-pdex-medicationdispense.html"
-                     title="StructureDefinition/pdex-medicationdispense">PDexMedicationDispense</a>
+                  <a href="StructureDefinition-payer-medicationdispense.html"
+                     title="StructureDefinition/payer-medicationdispense">Payer MedicationDispense</a>
                </td>
-               <td>The MedicationDispense record identifies the prescription drug issued to a member and paid for under their Health Insurance Drug Plan.
-</td>
-            </tr>
-         </tbody>
-      </table>
-   </p>
-   <a name="3"> </a>
-   <h3>Structures: Extension Definitions </h3>
-   <p>These define constraints on FHIR data types that need to be complied with by conformant implementations</p>
-   <p>
-      <table class="grid">
-         <col style="width:20%"/>
-         <tbody>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-capabilitystatement-search-parameter-combination.html"
-                     title="StructureDefinition/capabilitystatement-search-parameter-combination">Search Parameter Combination</a>
-               </td>
-               <td>This extension defines a possible search parameter combination,  by listing a set of search parameters and indicating whether they are required or optional. If a search combination is specified, clients should expect that they must submit a search that meets one of the required combinations or the search will be unsuccessful. If multiple search parameter combinations are specified, a client may pick between them, and supply the minimal required parameters for any of the combinations.</td>
+               <td>Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan</td>
             </tr>
          </tbody>
       </table>
