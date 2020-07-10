@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Generate a default Jira-Spec-Artifacts XML file for this IG that can be used by Jira to provide the appropriate drop-downs for this IG
+  -->
 <xsl:stylesheet version="1.0" xmlns:f="http://hl7.org/fhir" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="f">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="committeePageBase" select="'hl7.org/Special/committees/'"/>

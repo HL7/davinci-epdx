@@ -1,23 +1,30 @@
-/* Product families should override the following two colors with family-specific colors */
-#segment-footer > .container {
-  background-color: #505050;
+/* Product families should override the following colors with family-specific colors */
+:root {
+  --navbar-bg-color: #505050; /* 2. Header container color */
+  --footer-bg-color: #707070; /* 3. Footer background color*/
+  --footer-container-color: #505050; /* 4. Footer container color */
+  --btn-hover-color: #808080;  /* 6. Menu button hover color */
 }
-.navbar-inverse {
-  background-color: #505050;
-}
-.navbar-inverse .navbar-nav > li > a:hover {
-  background-color: #808080;
-}
+
 /* Generic settings common to all HL7 IGs */
+:root {
+  --stripe-bg-color: #999999; /* 5. Header strip color */
+  --btn-active-color: #da0c23; /* 7. Menu button active color */
+  --btn-text-color: #e6e6e6; /* 8. Menu button text color */
+  --stu-note-background-color: #fff2ff; /* 19. (STU) Note box background color */
+  --stu-note-border-left-color: #ffa0ff; /* 20. (STU) Note box border color */
+}
+
 #hl7-nav {
   line-height: 50px;
   float: left;
   margin-top: 4px;
-  color: #808080;
 }
+
 #hl7-nav a {
   color: inherit;
 }
+
 #hl7-logo {
   float: left;
   margin-left: 6px;
@@ -56,8 +63,6 @@
     margin: 5px;
     padding: 10px;
     border-left-style: solid;
-    background-color: #fff2ff;
-    border-left-color: #ffa0ff;
 }
 
 .stu-note::before {
