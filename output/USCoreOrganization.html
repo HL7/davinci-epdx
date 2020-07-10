@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\US Core Organization - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"4.3.18"}
+    h3,h4,h5,h6{--heading-prefix:"4.3.18"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.7 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+  <!-- menu.xml -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a name="fe2e27aa-43f8-4f1f-9a84-930e291f8a19">​</a><a href="Introduction.html">Introduction</a></li>
+
+  <li><a name="27a8ab49-00a3-48f8-ba8d-dac297768b04">​</a><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+</ul>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><a href="DataMapping.html"><b>Data Mapping</b></a></li><li><b>US Core Organization</b></li>
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.7). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>US Core Organization</h2>
+  
+  
+  
+<div class="markdown-toc">
+
+</div>
+  <!-- USCoreOrganization.md -->
+<p><a href="USCoreMedicationRequest.html">Previous Page - US Core MedicationRequest</a></p>
+
+<p>When a Health Plan is documenting information about organizations in relation to the Member’s Health History they <strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html">US Core Organization</a> resource.</p>
+
+<p>The essential fields to be provided in the US Core Organization resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Hierarchical Name</th>
+      <th>R4 Name</th>
+      <th>Flags</th>
+      <th>Card.</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Organization</td>
+      <td>Organization</td>
+      <td>I</td>
+      <td>0..*</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Organization.id</td>
+      <td>id</td>
+      <td>&nbsp;</td>
+      <td>0..1</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier</td>
+      <td>identifier</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier.system</td>
+      <td>system</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Organization.active</td>
+      <td>active</td>
+      <td>?!S</td>
+      <td>1..1</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>Organization.name</td>
+      <td>name</td>
+      <td>SI</td>
+      <td>1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.telecom</td>
+      <td>telecom</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>ContactPoint</td>
+    </tr>
+    <tr>
+      <td>Organization.address</td>
+      <td>address</td>
+      <td>SI</td>
+      <td>1..*</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Organization.address.line</td>
+      <td>line</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.city</td>
+      <td>city</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.state</td>
+      <td>state</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.address.postalCode</td>
+      <td>postalCode</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.endpoint</td>
+      <td>endpoint</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>Reference(Endpoint)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-organization-resource">Example Organization resource</h4>
+
+<p>An example mapping of an Organization resource is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Organization",
+  "id" : "saint-luke-w-endpoint",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;\n            <h1>Organization</h1>\n            <div>\n                <p>ID: 393872</p>\n                <p>Name: Saint Luke's Hospital of Kansas City </p>\n                <p>NPI: 1063494177</p>\n                <p>Phone:(816)932-2000</p>\n                <p>Address:4401 Wornall Rd,, MO, 64111</p>\n            </div>\n        &lt;/div&gt;"
+  },
+  "contained" : [
+    {
+      "resourceType" : "Endpoint",
+      "id" : "75",
+      "status" : "active",
+      "connectionType" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+        "code" : "direct-project"
+      },
+      "name" : "Dr. Ronald Bone Direct Address",
+      "managingOrganization" : {
+        "reference" : "Organization/example-organization-2"
+      },
+      "payloadType" : [
+        {
+          "coding" : [
+            {
+              "system" : "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+              "code" : "urn:hl7-org:sdwg:ccda-structuredBody:1.1"
+            }
+          ]
+        }
+      ],
+      "payloadMimeType" : [
+        "text/xml"
+      ],
+      "address" : "mailto:Interoperability@DirectAddress.com"
+    }
+  ],
+  "identifier" : [
+    {
+      "system" : "http://example.org/fhir/sid/us-npi",
+      "value" : "1063494177"
+    },
+    {
+      "system" : "http://example.org/fhir/us/argo/sid/us-ein",
+      "value" : "00-0000000"
+    }
+  ],
+  "active" : true,
+  "name" : "Saint Luke's Hospital of Kansas City",
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "(816)932-2000",
+      "use" : "work"
+    },
+    {
+      "system" : "other",
+      "value" : "http://www.saintlukeshealthsystem.org/locations/saint-lukes-hospital-kansas-city",
+      "use" : "work"
+    }
+  ],
+  "address" : [
+    {
+      "text" : "3300 Washtenaw Avenue, Suite 227 Amherst MA 01002",
+      "line" : [
+        "4401 Wornall Rd,"
+      ],
+      "city" : "Amherst",
+      "state" : "MA",
+      "postalCode" : "64111"
+    }
+  ],
+  "endpoint" : [
+    {
+      "reference" : "#75"
+    }
+  ]
+}
+</pre>
+
+<p><a href="USCorePatient.html">Next Page - US Core Patient</a></p>
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="60f6f51b-2a24-4655-8268-f7c0ca50f11c">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package davinci-pdex#0.3.7 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 10, 2020 10:41-0400">2020-07-10</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
