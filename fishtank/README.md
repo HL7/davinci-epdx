@@ -11,3 +11,6 @@ Build with Sushi as follows:
     sushi . -o ..
     cd ..
     ./_updatePublisher.sh
+    ./_genonce.sh
+    
+
