@@ -93,15 +93,10 @@ This IG also proposes the creation of a new CDS Hook for the interaction defined
 
 - Request-member-history
 
-An overview of the transaction flow is shown below:
-<table>
-	<tr>
-		<td>
-			<img  width="100%" height="auto"  src="/images/PDEX-SMART-Hook-SMART-InteractionMethods1.png" />
-		</td>	
-	</tr>	
-</table>
-	
+An overview of the transaction flow is shown in figure 4-1:
+
+![Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow](PDEX-SMART-Hook-SMART-InteractionMethods1.png){:height="auto" width="100%"}
+**Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow
  
 #### Hook Actions
 
@@ -133,18 +128,11 @@ The OAuth2.0 Member-authorized exchange is detailed in [Section 7](7_Member-Auth
 
 An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third Party Application Exchange:
 
-<table>
-	<tr>
-		<td>
-			<img  width="100%" height="auto"  src="/images/Payer-Payer-with-member-InteractionMethods2.png" />
-		</td>	
-	</tr>
-	<tr>
-		<td>
-			<img  width="100%" height="auto"  src="/images/Payer-App-InteractionMethods3.png" />
-		</td>	
-	</tr>
-</table>
+![Figure 4-2: Payer-to-Payer Exchange with Member Interaction](Payer-Payer-with-member-InteractionMethods2.png){:height="auto" width="100%"}
+**Figure 4-2: Payer-to-Payer Exchange with Member Interaction
+
+![Figure 4-3: Payer to Application Interaction](Payer-App-InteractionMethods3.png){:height="auto" width="100%"}
+**Figure 4-3: Payer to Application Interaction
 
 ### Patient-everything via alternate secure transport
 

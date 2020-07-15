@@ -84,9 +84,9 @@
 <ul class="nav navbar-nav">
   <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
-  <li><a name="36d2db27-4027-48d8-83ad-11a72dcbfd6d">​</a><a href="Introduction.html">Introduction</a></li>
+  <li><a name="c548d25d-e789-4c98-8364-4bc3ab36b655">​</a><a href="Introduction.html">Introduction</a></li>
 
-  <li><a name="96c5d769-306c-4b9e-b6b4-bcc8341d6c81">​</a><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a name="af4abe7a-60a4-42ee-a0bf-101211694fc8">​</a><a href="CDS-Hooks.html">CDS-Hooks</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -120,8 +120,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.7). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>PDex Implementation, Actors, Interactions, Data Payloads and Methods</h2>
   
-  
-  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#actors" id="markdown-toc-actors">Actors</a></li>
@@ -144,7 +152,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <hr/>
 <p>This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.</p>
 
-<p><a name="de8459fe-6697-4074-9fdb-0391da391bc2">​</a>The Member Health History is represented as a series of FHIR Resources that are based on a superset of <a href="http://hl7.org/fhir/us/core/">HL7 FHIR US Core</a>, HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.</p>
+<p><a name="0b183583-f833-4244-8776-95be50ed5b35">​</a>The Member Health History is represented as a series of FHIR Resources that are based on a superset of <a href="http://hl7.org/fhir/us/core/">HL7 FHIR US Core</a>, HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.</p>
 
 <h2 id="actors">Actors</h2>
 
@@ -182,7 +190,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>All resources and operations available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement.</p>
 
-<p><a name="f741a356-371c-440c-8739-477a6e42e933">​</a>See <a href="PDex_Data_Payloads.html">PDex Data Payloads</a> for details of the Data Payloads and operations.</p>
+<p><a name="8f33d2b0-91f3-4830-a24f-bbf7b1642759">​</a>See <a href="PDex_Data_Payloads.html">PDex Data Payloads</a> for details of the Data Payloads and operations.</p>
 
 <h2 id="interaction-methods">Interaction Methods</h2>
 
@@ -210,7 +218,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>When a patient returns for an appointment after a significant period (for example, after wintering in a different region).</li>
 </ol>
 
-<p><a name="eed6a28a-96eb-4687-85b4-a5e172e135f5">​</a>The CDS Hooks and SMART-on-FHIR application configuration is detailed in <a href="6_CDS-Hooks.html">Section 6</a>.</p>
+<p><a name="8b7f0b97-bc2d-4094-8076-4901436becbd">​</a>The CDS Hooks and SMART-on-FHIR application configuration is detailed in <a href="6_CDS-Hooks.html">Section 6</a>.</p>
 
 <h4 id="ad-hoc-pdex-member-history-request">Ad-hoc PDex Member History Request</h4>
 
@@ -239,14 +247,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Request-member-history</li>
 </ul>
 
-<p>An overview of the transaction flow is shown below:</p>
-<table>
-	<tr>
-		<td><a name="5fd47a77-2c0b-4ce0-a7ce-6755fa46f68f">​</a>
-			<img src="/images/PDEX-SMART-Hook-SMART-InteractionMethods1.png" width="100%" height="auto"/>
-		</td>	
-	</tr>	
-</table>
+<p>An overview of the transaction flow is shown in figure 4-1:</p>
+
+<p><img src="PDEX-SMART-Hook-SMART-InteractionMethods1.png" alt="Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow" width="100%" height="auto"/>
+**Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow</p>
 
 <h4 id="hook-actions">Hook Actions</h4>
 
@@ -274,22 +278,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The requesting application <strong>SHALL</strong> use the access token to access the Health Plan’s secure FHIR API to download the information that the Member is allowed to access.</p>
 
-<p><a name="0073e3ab-8290-431b-b04f-d91ccdf3d324">​</a>The OAuth2.0 Member-authorized exchange is detailed in <a href="7_Member-Authorized_OAuth2_Exchange.html">Section 7</a>.</p>
+<p><a name="1cc7e4b3-4e08-4a8f-9898-20b72ce5a568">​</a>The OAuth2.0 Member-authorized exchange is detailed in <a href="7_Member-Authorized_OAuth2_Exchange.html">Section 7</a>.</p>
 
 <p>An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third Party Application Exchange:</p>
 
-<table>
-	<tr>
-		<td><a name="3253c086-561a-4194-8c05-bad504742c65">​</a>
-			<img src="/images/Payer-Payer-with-member-InteractionMethods2.png" width="100%" height="auto"/>
-		</td>	
-	</tr>
-	<tr>
-		<td><a name="f5e908c7-3e20-4382-b8a9-ec9df59dc312">​</a>
-			<img src="/images/Payer-App-InteractionMethods3.png" width="100%" height="auto"/>
-		</td>	
-	</tr>
-</table>
+<p><img src="Payer-Payer-with-member-InteractionMethods2.png" alt="Figure 4-2: Payer-to-Payer Exchange with Member Interaction" width="100%" height="auto"/>
+**Figure 4-2: Payer-to-Payer Exchange with Member Interaction</p>
+
+<p><img src="Payer-App-InteractionMethods3.png" alt="Figure 4-3: Payer to Application Interaction" width="100%" height="auto"/>
+**Figure 4-3: Payer to Application Interaction</p>
 
 <h3 id="patient-everything-via-alternate-secure-transport">Patient-everything via alternate secure transport</h3>
 
@@ -363,6 +360,8 @@ The supported format is:</p>
 <p><a href="DataMapping.html">Next Page - Data Mapping</a></p>
 
 
+
+
 </div>
         </div>    <!-- /inner-wrapper -->
       </div>    <!-- /row -->
@@ -382,8 +381,8 @@ The supported format is:</p>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="b00e733b-afe2-40ea-818e-10ab0b2b699c">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package davinci-pdex#0.3.7 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 10, 2020 10:41-0400">2020-07-10</span>
+        <p><a name="5f0879e0-6a95-4be0-8398-d7a8a504be0d">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.7 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 15, 2020 11:52-0400">2020-07-15</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

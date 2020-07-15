@@ -17,10 +17,9 @@ lists those files generated from project configs or the contents in the ig-data 
 | _genonce.sh                                                                       | generated |                                                                                                    |
 | _updatePublisher.bat                                                              | generated |                                                                                                    |
 | _updatePublisher.sh                                                               | generated |                                                                                                    |
+| ig.ini                                                                            | generated | fishtank/config.yaml                                                                               |
 | input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json                           | generated | fishtank/config.yaml, {all input resources and pages}                                              |
 | input/ignoreWarnings.txt                                                          | generated |                                                                                                    |
-| package-list.json                                                                 | generated | fishtank/config.yaml                                                                               |
-| ig.ini                                                                            | copied    | fishtank/ig-data/ig.ini                                                                            |
 | input/images/CDSHooksSmartOnFHIR.png                                              | copied    | fishtank/ig-data/input/images/CDSHooksSmartOnFHIR.png                                              |
 | input/images/MappingFromV2toFHIR.png                                              | copied    | fishtank/ig-data/input/images/MappingFromV2toFHIR.png                                              |
 | input/images/MemberAuthExchange.png                                               | copied    | fishtank/ig-data/input/images/MemberAuthExchange.png                                               |
@@ -55,7 +54,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/USCoreDiagnosticReportforReportandNoteExchange.md               | copied    | fishtank/ig-data/input/pagecontent/USCoreDiagnosticReportforReportandNoteExchange.md               |
 | input/pagecontent/USCoreDocumentReference.md                                      | copied    | fishtank/ig-data/input/pagecontent/USCoreDocumentReference.md                                      |
 | input/pagecontent/USCoreEncounter.md                                              | copied    | fishtank/ig-data/input/pagecontent/USCoreEncounter.md                                              |
-| input/pagecontent/USCoreGoal_.md                                                  | copied    | fishtank/ig-data/input/pagecontent/USCoreGoal_.md                                                  |
+| input/pagecontent/USCoreGoal.md                                                   | copied    | fishtank/ig-data/input/pagecontent/USCoreGoal.md                                                   |
 | input/pagecontent/USCoreImmunization.md                                           | copied    | fishtank/ig-data/input/pagecontent/USCoreImmunization.md                                           |
 | input/pagecontent/USCoreImplantableDevice.md                                      | copied    | fishtank/ig-data/input/pagecontent/USCoreImplantableDevice.md                                      |
 | input/pagecontent/USCoreLocation.md                                               | copied    | fishtank/ig-data/input/pagecontent/USCoreLocation.md                                               |
@@ -69,8 +68,8 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/USCorePractitionerRole.md                                       | copied    | fishtank/ig-data/input/pagecontent/USCorePractitionerRole.md                                       |
 | input/pagecontent/USCoreProcedure.md                                              | copied    | fishtank/ig-data/input/pagecontent/USCoreProcedure.md                                              |
 | input/pagecontent/USCoreProvenance_.md                                            | copied    | fishtank/ig-data/input/pagecontent/USCoreProvenance_.md                                            |
-| input/pagecontent/USCorePulseOximetry_.md                                         | copied    | fishtank/ig-data/input/pagecontent/USCorePulseOximetry_.md                                         |
-| input/pagecontent/USCoreSmokingStatusObservation_.md                              | copied    | fishtank/ig-data/input/pagecontent/USCoreSmokingStatusObservation_.md                              |
+| input/pagecontent/USCorePulseOximetry.md                                          | copied    | fishtank/ig-data/input/pagecontent/USCorePulseOximetry.md                                          |
+| input/pagecontent/USCoreSmokingStatusObservation.md                               | copied    | fishtank/ig-data/input/pagecontent/USCoreSmokingStatusObservation.md                               |
 | input/pagecontent/VitalSigns_.md                                                  | copied    | fishtank/ig-data/input/pagecontent/VitalSigns_.md                                                  |
 | input/pagecontent/WorkflowExamples.md                                             | copied    | fishtank/ig-data/input/pagecontent/WorkflowExamples.md                                             |
 | input/pagecontent/index.md                                                        | copied    | fishtank/ig-data/input/pagecontent/index.md                                                        |
