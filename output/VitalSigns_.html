@@ -84,9 +84,9 @@
 <ul class="nav navbar-nav">
   <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
-  <li><a name="78ff79c8-4a9c-4582-a079-3980ee4ea201">​</a><a href="Introduction.html">Introduction</a></li>
+  <li><a name="8d418608-dbae-4efd-8531-8ce716dfac28">​</a><a href="Introduction.html">Introduction</a></li>
 
-  <li><a name="c38323ef-7800-4cdf-bb02-1e5c8ef78c82">​</a><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a name="4481d8e0-f2a2-47b5-897f-8c3677bd9c88">​</a><a href="CDS-Hooks.html">CDS-Hooks</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
 </ul>
 
@@ -120,17 +120,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.7). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>VitalSigns</h2>
   
-  
-  
-<div class="markdown-toc">
 
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
   <!-- VitalSigns_.md -->
-<p><a href="USCoreSmokingStatusObservation_.html">Previous Page - US Core Smoking Status Observation_</a></p>
+<p><a href="USCoreSmokingStatusObservation.html">Previous Page - US Core Smoking Status Observation</a></p>
 
-<p>No page content yet</p>
+<p>This IG supports the full complement of US Core profiles. They are supported to 
+enable a payer to produce FHIR resources from data provided in other formats.</p>
 
-<p><a name="e265df44-af02-4479-ab28-9e1212c1bb3d">​</a><a href="UseCaseScenarios.html">Next Page - Use Case Scenarios</a></p>
+<p>For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs</a> is referenced in US Core but uses the profile 
+from the base FHIR specification and does not create a US Core specific 
+profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available.</p>
+
+<p>A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may 
+not have access to the detail measurement data needed to create a valid 
+Vital Signs resource.</p>
+
+<p><a name="7127dd05-68de-431e-9ba3-ddd1602fa9d7">​</a><a href="UseCaseScenarios.html">Next Page - Use Case Scenarios</a></p>
+
+
 
 
 </div>
@@ -152,8 +171,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="6a2eb20b-556f-4405-be8e-9f85e862cf14">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package davinci-pdex#0.3.7 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 10, 2020 10:41-0400">2020-07-10</span>
+        <p><a name="1b869bf2-4aa9-4b87-b013-0d41a4e8b8e9">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.7 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 15, 2020 11:52-0400">2020-07-15</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

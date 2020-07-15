@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = 196, errors = 8, warn = 3, info = 2 -->
+<!-- broken links = 244, errors = 4, warn = 6, info = 1 -->
 <head>
   <title>DaVinciPayerDataExchange : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -23,29 +23,31 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for DaVinciPayerDataExchange</h1>
- <p>Generated Fri Jul 10 10:42:21 EDT 2020, FHIR version 4.0.1 for davinci-pdex#0.3.7 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>))</p>
-<p style="background-color: #ffcccc">IG Publisher Version: v1.1.0, which is out of date. The current version is v1.0.101-SNAPSHOT <a href="https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar">Download Latest</a></p>
+ <p>Generated Wed Jul 15 11:52:32 EDT 2020, FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.3.7 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>))</p>
+<p style="background-color: #ffcccc">IG Publisher Version: v1.1.0, which is out of date. The current version is ?pub-ver-1? <a href="https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar">Download Latest</a></p>
 <p>No Suppressed Errors</p>
  <p>HL7 Publication check:</p> <ul>
   <li>History Page 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/history.html' is wrong (ig.json#paths/history) - must be 'http://hl7.org/fhir/us/davinci-pdex/history.html'</li>
-  <li>package-list.json: package-id is wrong - is 'hl7.fhir.us.davinci-pdex' should be 'davinci-pdex'</li>
   <li>package-list.json: canonical is wrong - is 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex' should be 'http://hl7.org/fhir/us/davinci-pdex'</li>
   <li>package-list.json: No entry found for version 0.3.7</li>
 </ul>
 
- <p>Realm check:</p> <ul><li>n/a</li></ul>
+ <p>Realm check:</p> <ul><li><a href="us-core-comparisons/index.html">1 Profiles not based on US Core</a></li></ul>
  <table class="grid">
    <tr>
      <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Information messages &amp; Warnings</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>201</b></td><td><b>2</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_ImplementationGuide-davinci-pdex"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex</b></a></td><td><b>3</b></td><td><b>1</b></td>
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>246</b></td><td><b>1</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
-     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_profiles_structuredefinition-payer-medicationdispense"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-payer-medicationdispense</b></a></td><td><b>0</b></td><td><b>2</b></td>
+     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_ImplementationGuide-hl7.fhir.us.davinci-pdex"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex</b></a></td><td><b>0</b></td><td><b>2</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_profiles_structuredefinition-payer-medicationdispense"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-payer-medicationdispense</b></a></td><td><b>1</b></td><td><b>2</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_profiles_structuredefinition-payer-provenance"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-payer-provenance</b></a></td><td><b>1</b></td><td><b>2</b></td>
    </tr>
 </table>
 <hr/>
@@ -53,633 +55,759 @@
 <h2><a href="">n/a</a></h2>
  <table class="grid">
    <tr style="background-color: #ffebcc">
-     <td><b>ImplementationGuide.id</b></td><td><b>warning</b></td><td><b>The Implementation Guide Resource id should be davinci-pdex</b></td>
-   </tr>
-   <tr style="background-color: #ffebcc">
      <td><b></b></td><td><b>warning</b></td><td><b>The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="2_Overview.html#420623d9-c09a-4ea1-b8d6-f45d26d452dd">2_Overview.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="2_Overview.html#ba0bc515-a266-4bb8-9efd-a7067dbd00a1">2_Overview.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="2_Overview.html#5f0ea468-de05-47f1-877e-8e94b0e0e933">2_Overview.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="2_Overview.html#dcc11987-6434-4841-bdf3-dabb5a82c15a">2_Overview.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="2_Overview.html#2c099e61-fd57-4e45-b7c9-74b935a388fa">2_Overview.html#/html/body/div/div/div/div/div/p/a at Line 205, column 45</a></b></td><td><b>error</b></td><td><b>The link 'Handling_Data_Provenance.html' for &quot;Handling Data Provenance&quot; cannot be resolved</b></td>
+     <td><b><a href="2_Overview.html#df2335fb-09fc-4f56-b81b-f6a840916591">2_Overview.html#/html/body/div/div/div/div/div/p/a at Line 213, column 45</a></b></td><td><b>error</b></td><td><b>The link 'Handling_Data_Provenance.html' for &quot;Handling Data Provenance&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="2_Overview.html#6f8a9bfc-da89-4f32-9ca4-22e7c70516aa">2_Overview.html#/html/body/div/div/div/div/div/p/a at Line 207, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Next Page - Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="2_Overview.html#09c5d0b6-974c-4882-9d7e-662228929ed6">2_Overview.html#/html/body/div/div/div/div/div/p/a at Line 215, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Next Page - Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="2_Overview.html#72d2773b-ceba-4e18-a952-9c91ff6b138c">2_Overview.html#/html/body/div/div/div/p/a at Line 230, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="2_Overview.html#96d19ffa-6fe2-485b-8753-61be126cab44">2_Overview.html#/html/body/div/div/div/p/a at Line 239, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#4727ea96-d4ba-48f7-bd51-592dbf006ed8">3_Introduction.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#0d2b8ef4-d04d-4508-9145-990cfba5339e">3_Introduction.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#fccd5207-1ff2-4c75-beef-7ddeaa8a6c82">3_Introduction.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#1e162a9d-55a0-4ab7-9af6-43a92b7736cb">3_Introduction.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#62ce4260-a6bd-4b14-a273-b899e5692217">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 243, column 61</a></b></td><td><b>error</b></td><td><b>The link 'Member-Authorized_OAuth2_Exchange.html' for &quot;Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#5f158556-e94e-4344-b015-5bac5d3e9765">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 251, column 61</a></b></td><td><b>error</b></td><td><b>The link 'Member-Authorized_OAuth2_Exchange.html' for &quot;Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#18ef1ead-8437-43a0-a7c4-7a1eb4e2bfe2">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 288, column 57</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core Profiles&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#1c6f4604-b56c-4369-9b66-80413996c753">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 296, column 57</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core Profiles&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#d6225800-6912-43e5-80b0-cb3eb5e59a9e">3_Introduction.html#/html/body/div/div/div/div/div/ol/li/a at Line 297, column 57</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;http://hl7.org/fhir/us/core/&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#290b7af2-a6e2-4b06-8cd5-e0989276e88b">3_Introduction.html#/html/body/div/div/div/div/div/ol/li/a at Line 305, column 57</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;http://hl7.org/fhir/us/core/&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#f54c88a6-cbfa-439f-8d10-682d8e260acc">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 343, column 8</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html' for &quot;US Core Diagnostic Report Profile for Report and Note exchange&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#df06c5b8-1443-49d2-a02a-ea30aec6378f">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 351, column 8</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html' for &quot;US Core Diagnostic Report Profile for Report and Note exchange&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#5bffff47-e655-419c-994f-cad944015d05">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 375, column 8</a></b></td><td><b>error</b></td><td><b>The link 'StructureDefinition-pdex-device.html' for &quot;PDex Device&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#e114632d-afbc-4cb6-83c6-2f8e53b1a178">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 383, column 8</a></b></td><td><b>error</b></td><td><b>The link 'StructureDefinition-pdex-device.html' for &quot;PDex Device&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#f09191a9-a93e-4bc1-9e59-3af7307de57a">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 376, column 8</a></b></td><td><b>error</b></td><td><b>The link 'StructureDefinition-pdex-medicationdispense.html' for &quot;PDex MedicationDispense&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#dd890967-a381-412a-9c45-b585a44d30a4">3_Introduction.html#/html/body/div/div/div/div/div/ul/li/a at Line 384, column 8</a></b></td><td><b>error</b></td><td><b>The link 'StructureDefinition-pdex-medicationdispense.html' for &quot;PDex MedicationDispense&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#d4275f9d-e72d-4824-8aa5-2cb3d2af26d5">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 645, column 5</a></b></td><td><b>error</b></td><td><b>The link 'PDexImplementationActorsInteractionsDataPayloadsandMethods.html' for &quot;Next Page - PDex Implementation Actors, Interactions, Data Payloads and Methods&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#d7309eae-9753-43c5-875c-fedd7a5a6edc">3_Introduction.html#/html/body/div/div/div/div/div/p/a at Line 653, column 5</a></b></td><td><b>error</b></td><td><b>The link 'PDexImplementationActorsInteractionsDataPayloadsandMethods.html' for &quot;Next Page - PDex Implementation Actors, Interactions, Data Payloads and Methods&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="3_Introduction.html#690437f4-8d37-4a1a-897c-2a0948a6b33b">3_Introduction.html#/html/body/div/div/div/p/a at Line 668, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="3_Introduction.html#32eed2e3-0c71-4345-a0f5-c951b8f4cdca">3_Introduction.html#/html/body/div/div/div/p/a at Line 678, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#36d2db27-4027-48d8-83ad-11a72dcbfd6d">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#c548d25d-e789-4c98-8364-4bc3ab36b655">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#96c5d769-306c-4b9e-b6b4-bcc8341d6c81">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#af4abe7a-60a4-42ee-a0bf-101211694fc8">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#de8459fe-6697-4074-9fdb-0391da391bc2">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 147, column 108</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;HL7 FHIR US Core&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#0b183583-f833-4244-8776-95be50ed5b35">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 155, column 108</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;HL7 FHIR US Core&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#f741a356-371c-440c-8739-477a6e42e933">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 185, column 9</a></b></td><td><b>error</b></td><td><b>The link 'PDex_Data_Payloads.html' for &quot;PDex Data Payloads&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#8f33d2b0-91f3-4830-a24f-bbf7b1642759">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 193, column 9</a></b></td><td><b>error</b></td><td><b>The link 'PDex_Data_Payloads.html' for &quot;PDex Data Payloads&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#eed6a28a-96eb-4687-85b4-a5e172e135f5">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 213, column 78</a></b></td><td><b>error</b></td><td><b>The link '6_CDS-Hooks.html' for &quot;Section 6&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#8b7f0b97-bc2d-4094-8076-4901436becbd">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 221, column 78</a></b></td><td><b>error</b></td><td><b>The link '6_CDS-Hooks.html' for &quot;Section 6&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#5fd47a77-2c0b-4ce0-a7ce-6755fa46f68f">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 246, column 5</a></b></td><td><b>error</b></td><td><b>The image source '/images/PDEX-SMART-Hook-SMART-InteractionMethods1.png' cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#1cc7e4b3-4e08-4a8f-9898-20b72ce5a568">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 281, column 60</a></b></td><td><b>error</b></td><td><b>The link '7_Member-Authorized_OAuth2_Exchange.html' for &quot;Section 7&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#0073e3ab-8290-431b-b04f-d91ccdf3d324">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/p/a at Line 277, column 60</a></b></td><td><b>error</b></td><td><b>The link '7_Member-Authorized_OAuth2_Exchange.html' for &quot;Section 7&quot; cannot be resolved</b></td>
+     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#5f0879e0-6a95-4be0-8398-d7a8a504be0d">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/p/a at Line 385, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#3253c086-561a-4194-8c05-bad504742c65">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 284, column 5</a></b></td><td><b>error</b></td><td><b>The image source '/images/Payer-Payer-with-member-InteractionMethods2.png' cannot be resolved</b></td>
+     <td><b><a href="5_UseCaseScenarios.html#d0fdbff5-d30d-4e2e-863a-c6bc45c466d6">5_UseCaseScenarios.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#f5e908c7-3e20-4382-b8a9-ec9df59dc312">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 289, column 5</a></b></td><td><b>error</b></td><td><b>The image source '/images/Payer-App-InteractionMethods3.png' cannot be resolved</b></td>
+     <td><b><a href="5_UseCaseScenarios.html#78672d8e-aed5-43fe-b0ea-0d8146bc696f">5_UseCaseScenarios.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#b00e733b-afe2-40ea-818e-10ab0b2b699c">4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html#/html/body/div/div/div/p/a at Line 386, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="5_UseCaseScenarios.html#a16e7a66-e5f3-440e-affb-2600cf16ca96">5_UseCaseScenarios.html#/html/body/div/div/div/div/div/p/a at Line 303, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Provider-controlledInformationRequestsandFiltering.html' for &quot;Next Page - Provider-controlled Information Requests and Filtering&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="5_UseCaseScenarios.html#abbeecb6-b614-4523-a642-ec1b48867496">5_UseCaseScenarios.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="5_UseCaseScenarios.html#59382db6-5b94-480a-8a98-aac878589bb5">5_UseCaseScenarios.html#/html/body/div/div/div/p/a at Line 327, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="5_UseCaseScenarios.html#43bf2bfc-b665-41d1-bcde-d7e55aa1f333">5_UseCaseScenarios.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#b2da575c-67aa-40ff-93c3-0b85c97e642d">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="5_UseCaseScenarios.html#bd08ec8f-7fe1-485a-86b8-2b3f12889292">5_UseCaseScenarios.html#/html/body/div/div/div/div/div/p/a at Line 295, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Provider-controlledInformationRequestsandFiltering.html' for &quot;Next Page - Provider-controlled Information Requests and Filtering&quot; cannot be resolved</b></td>
+     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#4dd85c42-95e1-4ebc-b421-6869423d02af">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="5_UseCaseScenarios.html#fff3ce6b-7d37-46ff-8c8d-bf77c638efef">5_UseCaseScenarios.html#/html/body/div/div/div/p/a at Line 318, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#e55503bf-641a-4ecf-a248-d2b949d1cb99">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/div/div/p/a at Line 137, column 5</a></b></td><td><b>error</b></td><td><b>The link 'UseCaseScenarios.html' for &quot;Previous Page - Use Case Scenarios&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#d901331e-8b38-43bd-96f4-545b114fa65f">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#94f4aeb5-799c-4d17-828f-4dc94c1cd330">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/div/div/p/a at Line 149, column 5</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;Next Page - CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#833abb91-67b6-43be-913d-f3e12321c717">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#48d10543-0011-4e7d-81a2-49e738357427">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/p/a at Line 173, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#2f03321a-84b2-492e-9577-a0cb4c088753">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/div/div/p/a at Line 129, column 5</a></b></td><td><b>error</b></td><td><b>The link 'UseCaseScenarios.html' for &quot;Previous Page - Use Case Scenarios&quot; cannot be resolved</b></td>
+     <td><b><a href="7_CDS-Hooks.html#4805dab1-2e85-4090-8cf2-e4d5e8654a8f">7_CDS-Hooks.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#b854844e-0d4e-40f5-9703-98204ea6319c">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/div/div/p/a at Line 141, column 5</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;Next Page - CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="7_CDS-Hooks.html#fb5b42d8-8e62-42dc-af5e-0aedaa8124cc">7_CDS-Hooks.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="6_Provider-controlledInformationRequestsandFiltering.html#98918b05-0b5e-4d2f-88f7-4d06cff360a8">6_Provider-controlledInformationRequestsandFiltering.html#/html/body/div/div/div/p/a at Line 164, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/7_CDS-Hooks.html#545a4a4f-e449-4076-af56-f0368fdd449b">7_CDS-Hooks.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 261, column 5</a></b></td><td><b>error</b></td><td><b>The image source 'PDexHooks.png' cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="7_CDS-Hooks.html#845df7d0-749d-4eaa-a08e-48fa331d1d90">7_CDS-Hooks.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="7_CDS-Hooks.html#ed1d2a34-4a19-41cb-946a-2395fe49d978">7_CDS-Hooks.html#/html/body/div/div/div/p/a at Line 424, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="7_CDS-Hooks.html#d7555b15-27b8-469f-86ee-2904992c97da">7_CDS-Hooks.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#3f283a74-cdc4-4da6-a846-02fd4e5aa9b0">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/7_CDS-Hooks.html#e023ac83-b235-448c-9c84-b0c201832a5e">7_CDS-Hooks.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 253, column 5</a></b></td><td><b>error</b></td><td><b>The image source 'PDexHooks.png' cannot be resolved</b></td>
+     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#7dda6d4d-f11b-4b07-96c8-3534518db368">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="7_CDS-Hooks.html#b2914c0d-ac39-41b0-a4e0-4266b6d98091">7_CDS-Hooks.html#/html/body/div/div/div/p/a at Line 414, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/8_Member-AuthorizedOAuth2Exchange.html#1d6c0df1-5c50-4ca2-9213-a80130ef264c">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 153, column 5</a></b></td><td><b>error</b></td><td><b>The image source 'MemberAuthorizedOAuth2Exchange.png' cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#47248609-91cf-49f8-ac89-b8dd5bf3eb75">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#6ee6bc1e-7855-4bac-9075-a71dc81018bc">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/div/div/p/a at Line 175, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Credits.html' for &quot;Next Page - Credits&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#acf281f4-20b4-452b-937f-503fd9b1766a">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#b7c58aa2-b2b8-4ee7-bad6-c11df482af36">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/p/a at Line 199, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="/Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/8_Member-AuthorizedOAuth2Exchange.html#65b933c5-1aa0-4404-800f-2254b34cc2f7">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/div/div/table/tr/td/img at Line 145, column 5</a></b></td><td><b>error</b></td><td><b>The image source 'MemberAuthorizedOAuth2Exchange.png' cannot be resolved</b></td>
+     <td><b><a href="9_Credits.html#25428731-d8ce-45bd-828d-194ef9032544">9_Credits.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#b9662b16-249d-4d11-a1f7-3f71a556a8e5">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/div/div/p/a at Line 167, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Credits.html' for &quot;Next Page - Credits&quot; cannot be resolved</b></td>
+     <td><b><a href="9_Credits.html#f643e8bf-300f-472a-8197-a8bc60e5b41d">9_Credits.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="8_Member-AuthorizedOAuth2Exchange.html#3780509f-14ac-4059-9759-ea3f23330f27">8_Member-AuthorizedOAuth2Exchange.html#/html/body/div/div/div/p/a at Line 190, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="9_Credits.html#28c3e94b-28a9-4dbe-9e4e-8217b48082da">9_Credits.html#/html/body/div/div/div/div/div/p/a at Line 137, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Member-AuthorizedOAuth2Exchange.html' for &quot;Previous Page - Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="9_Credits.html#a83ed02a-5c98-437d-80ba-a16fceea0518">9_Credits.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="9_Credits.html#ac77fadc-efc2-49e1-a8e1-828d6942b629">9_Credits.html#/html/body/div/div/div/p/a at Line 210, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="9_Credits.html#7f400d6c-4fa1-4bf8-9ea1-ec6fc4e46959">9_Credits.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="Coverage.html#40f4ec73-59f4-4e51-97f6-72ad9b9c2d8c">Coverage.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="9_Credits.html#53edec3e-c8eb-43b4-8883-eb2da454c334">9_Credits.html#/html/body/div/div/div/div/div/p/a at Line 132, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Member-AuthorizedOAuth2Exchange.html' for &quot;Previous Page - Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
+     <td><b><a href="Coverage.html#a8a78ec0-32f4-4a58-8b74-af556be82b7a">Coverage.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="9_Credits.html#7c3c5b55-87f2-47b5-b081-60fa352cfbf6">9_Credits.html#/html/body/div/div/div/p/a at Line 203, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="Coverage.html#6e193f5a-11d8-4167-9e25-21bd201c9a79">Coverage.html#/html/body/div/div/div/p/a at Line 612, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Coverage.html#b5be57a0-d2a6-4e6e-9526-35aa7bc3a374">Coverage.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="DataMapping.html#0d849529-d0de-463c-9903-df00089def23">DataMapping.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Coverage.html#a5585318-2c21-4927-939e-e213202a12b1">Coverage.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="DataMapping.html#d0dbf9b9-dff8-4072-b4fc-73506ac8af3d">DataMapping.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Coverage.html#060385b2-971e-4151-a1b2-b4f665e39933">Coverage.html#/html/body/div/div/div/p/a at Line 603, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="DataMapping.html#3dc5a5c5-7df2-4898-a55a-dc78e6ce9ed2">DataMapping.html#/html/body/div/div/div/div/div/p/a at Line 137, column 5</a></b></td><td><b>error</b></td><td><b>The link 'PDexImplementationActorsInteractionsDataPayloadsandMethods.html' for &quot;Previous Page - PDex Implementation Actors, Interactions, Data Payloads and Methods&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="DataMapping.html#6945a772-6880-49b0-8034-c61151cb6c9c">DataMapping.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="DataMapping.html#94f09ab1-0a37-42b6-9c27-cf608e3d04f2">DataMapping.html#/html/body/div/div/div/div/div/p/a at Line 143, column 13</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core FHIR R4&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="DataMapping.html#e08d7a2f-d925-42e4-9f25-30ed32a82078">DataMapping.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="DataMapping.html#6e9ea1fc-7d88-452b-810d-2725275e0bc6">DataMapping.html#/html/body/div/div/div/p/a at Line 191, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="DataMapping.html#5fca6c6f-73f0-4590-b805-d31cea4e5259">DataMapping.html#/html/body/div/div/div/div/div/p/a at Line 129, column 5</a></b></td><td><b>error</b></td><td><b>The link 'PDexImplementationActorsInteractionsDataPayloadsandMethods.html' for &quot;Previous Page - PDex Implementation Actors, Interactions, Data Payloads and Methods&quot; cannot be resolved</b></td>
+     <td><b><a href="Device.html#91e9396f-8153-4f06-991d-7bd99717db38">Device.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="DataMapping.html#1f84ee6e-f1f8-4d42-8cf6-462ba9dc6f50">DataMapping.html#/html/body/div/div/div/div/div/p/a at Line 135, column 13</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core FHIR R4&quot; cannot be resolved</b></td>
+     <td><b><a href="Device.html#22443bb9-d891-4709-a445-70cc7b99768e">Device.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="DataMapping.html#20f13b68-38b7-45d1-8c2d-c9a04ed9bbf0">DataMapping.html#/html/body/div/div/div/p/a at Line 182, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="Device.html#c8c0d18e-3b0b-4233-9a90-7ab8f37983a3">Device.html#/html/body/div/div/div/div/div/p/a at Line 139, column 120</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html' for &quot;US Core Device&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Device.html#75dec671-196b-4e22-9d1a-3a8ba7edf6f9">Device.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="Device.html#8086c0a6-3e22-48dc-b3d0-2c71c48beb5b">Device.html#/html/body/div/div/div/p/a at Line 292, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Device.html#e1a9b503-2726-4ade-abc5-8d29ff146bb4">Device.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="HRexMedicationDispense.html#6717f709-3160-4fbf-957a-066ab2aeab73">HRexMedicationDispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Device.html#fa1ef91c-68b8-4312-8ec5-a4093f24711b">Device.html#/html/body/div/div/div/div/div/p/a at Line 131, column 120</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html' for &quot;US Core Device&quot; cannot be resolved</b></td>
+     <td><b><a href="HRexMedicationDispense.html#fca699f4-d679-4b03-b0a2-5a9654d65f3d">HRexMedicationDispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="Device.html#b0916a07-5607-48b2-8d30-9440381a75dd">Device.html#/html/body/div/div/div/p/a at Line 283, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="HRexMedicationDispense.html#e8d520a6-4ee4-4571-a47c-3a46d2a57a0c">HRexMedicationDispense.html#/html/body/div/div/div/p/a at Line 482, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HRexMedicationDispense.html#93fefbaf-465d-4b84-9b5b-5e305dc71d0c">HRexMedicationDispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="HandlingDataProvenance.html#8725d64f-2745-42fb-ba2d-dcd469527cc0">HandlingDataProvenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HRexMedicationDispense.html#0fcb7fe9-f668-4c5a-b8c9-2f339360ce21">HRexMedicationDispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="HandlingDataProvenance.html#8bdb3da2-4994-4d65-8168-1df2b355651f">HandlingDataProvenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HRexMedicationDispense.html#bb93416b-fc12-45db-80ee-18ae81b5f264">HRexMedicationDispense.html#/html/body/div/div/div/p/a at Line 473, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="HandlingDataProvenance.html#c6182ffe-0538-43fc-b3be-7659fa7bd683">HandlingDataProvenance.html#/html/body/div/div/div/div/div/p/a at Line 151, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Member-AuthorizedOAuth2Exchange.html' for &quot;Next Page - Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HandlingDataProvenance.html#f0a93324-4f74-40a4-a1b6-3df482f9d770">HandlingDataProvenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="HandlingDataProvenance.html#fca3ccde-cbc0-41b9-b877-42f3c6ce7595">HandlingDataProvenance.html#/html/body/div/div/div/p/a at Line 176, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HandlingDataProvenance.html#72cc428d-b815-4abb-a5dd-5bae25d722f9">HandlingDataProvenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#09d2491b-d76c-4249-87e5-4200459f206d">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 90, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HandlingDataProvenance.html#4ca7e186-5818-4e6b-8ec1-be77b25af13e">HandlingDataProvenance.html#/html/body/div/div/div/div/div/p/a at Line 339, column 5</a></b></td><td><b>error</b></td><td><b>The link 'Member-AuthorizedOAuth2Exchange.html' for &quot;Next Page - Member-Authorized OAuth2 Exchange&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#11ff0199-18f4-4b01-a054-2a3b81053448">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 92, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="HandlingDataProvenance.html#ad20b6fe-29e7-4f74-b0c0-240e0235713b">HandlingDataProvenance.html#/html/body/div/div/div/p/a at Line 362, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#4d1fb8e2-c119-4496-87a5-7800ca16e505">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/div/div/div/ul/li/a at Line 127, column 6</a></b></td><td><b>error</b></td><td><b>The link 'ImplementationGuide-hl7.fhir.us.davinci-pdex.html' for &quot;Narrative Content&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerProvenance_.html#03a1a69a-a422-4095-bd32-33c383f2f5e7">PayerProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#46a74627-f017-447b-b714-7915378dc862">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/div/div/div/ul/li/a at Line 133, column 8</a></b></td><td><b>error</b></td><td><b>The link 'ImplementationGuide-hl7.fhir.us.davinci-pdex.xml.html' for &quot;XML&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerProvenance_.html#97ca706c-1c66-498c-85bf-cfbf8f4c5fe1">PayerProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#a5f83338-56b7-419a-8107-8e9c15c70e96">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/div/div/div/ul/li/a at Line 140, column 8</a></b></td><td><b>error</b></td><td><b>The link 'ImplementationGuide-hl7.fhir.us.davinci-pdex.json.html' for &quot;JSON&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerProvenance_.html#66610e64-5095-49e5-af24-f0b4eb7ee6ef">PayerProvenance_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#31e2e1e4-4cdd-4f76-9de1-be6fc097a748">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/div/div/div/ul/li/a at Line 147, column 8</a></b></td><td><b>error</b></td><td><b>The link 'ImplementationGuide-hl7.fhir.us.davinci-pdex.ttl.html' for &quot;TTL&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerToPayerExchange.html#85c50e1e-af20-46af-8bc2-8d4babc808ee">PayerToPayerExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#b3998a4b-7b9b-4359-80d5-f53e976ed9ac">ImplementationGuide-hl7.fhir.us.davinci-pdex.history.html#/html/body/div/div/div/p/a at Line 206, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerToPayerExchange.html#7f744d52-98a0-4adb-a715-b485a1ac9584">PayerToPayerExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerProvenance_.html#361caf88-cdba-467b-9c47-7dd0e863062f">PayerProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="PayerToPayerExchange.html#49c09072-5f5c-4ed9-87be-b86b7fe39120">PayerToPayerExchange.html#/html/body/div/div/div/p/a at Line 699, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerProvenance_.html#7175b1f9-ae31-4d6f-b2c5-8432e7d9eaa9">PayerProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#3edae593-2b49-4fd9-8433-b7fcca94dba7">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerProvenance_.html#1e01685e-3b41-4af7-8113-4a3c7c2aed1e">PayerProvenance_.html#/html/body/div/div/div/p/a at Line 368, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#c0748545-f69a-4b30-b412-754d80791c04">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerToPayerExchange.html#f797bb47-254f-457e-8ec0-0a2be4a37a97">PayerToPayerExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#41416d4b-d587-46e1-bc13-1e92edf230f3">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/div/p/a at Line 624, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerToPayerExchange.html#0d25c796-cc72-46d2-96ef-84e30b3d4f8a">PayerToPayerExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#d396222b-ba35-4eb5-87cc-4aa4d49d088a">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="PayerToPayerExchange.html#71bfea18-2f8b-4fa7-8544-ae29e0853733">PayerToPayerExchange.html#/html/body/div/div/div/p/a at Line 709, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#1e574e61-79b7-4cc7-af0d-bac385f02cb2">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#d176766a-8019-4b45-bff6-d9aa3ed9b16b">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#c8dfa579-1908-4e78-a34f-8a8d572bf130">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/div/p/a at Line 239, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#ca03c277-46ab-40eb-bab0-92c22a80bc05">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#92408f7b-57ce-4728-a1f9-316820175ee4">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-definitions.html#4d441e4f-69c5-453e-9ea3-fb35bb54108c">StructureDefinition-payer-medicationdispense-definitions.html#/html/body/div/div/div/p/a at Line 624, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#01ebae6a-aac7-41a5-9014-172de7717b22">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#ce273b64-a8c1-4411-9c05-95a4e13cb528">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#fce1a052-319a-424d-a692-2036cdd361c7">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/div/p/a at Line 344, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#1fdcc756-ffb3-4cff-9639-e1c06f2da558">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.html#67e2fe9d-3414-4bf4-b28a-d49a3b0bc7fa">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-examples.html#d4c728d8-3331-41d6-a326-646bee6f8219">StructureDefinition-payer-medicationdispense-examples.html#/html/body/div/div/div/p/a at Line 239, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.html#574ccc5d-155b-4e2d-afc0-e068b80161a9">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#73a60681-1658-4471-8455-c2096954edaa">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.html#4d33aeec-d08f-49d6-9529-66d1c83fd2ab">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/div/p/a at Line 664, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#7de057b5-b31f-4a1d-b097-00cfae7b98c4">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#29a0ca53-eff9-42b6-9e25-68f05a280e8b">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense-mappings.html#9607a1d2-0511-405b-af65-62dd3bfa7b8a">StructureDefinition-payer-medicationdispense-mappings.html#/html/body/div/div/div/p/a at Line 344, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#eb2427c8-8c71-42ec-8470-ed9c6971b122">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.history.html#c8140255-f6ac-4ce8-9f32-cc52825f2d6f">StructureDefinition-payer-medicationdispense.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 90, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#15b87e1c-b1a6-4fb9-829d-dc7d48795f96">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/div/p/a at Line 2380, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.history.html#2abe953a-5318-4266-80c2-d4acafaaa9f9">StructureDefinition-payer-medicationdispense.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 92, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#fb6b11ea-a9dd-4f3d-aac3-683dea7af1fa">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.history.html#c2773a23-08a6-4850-93d4-0b0e5c647b60">StructureDefinition-payer-medicationdispense.history.html#/html/body/div/div/div/p/a at Line 206, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#9ed632a9-d38b-4ca8-80d2-20cbd83afdac">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.html#4b011936-7b7c-4065-8149-d676723d9683">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#c5dcff88-f0ce-4755-8cc0-cdd11057b4e4">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/div/p/a at Line 228, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.html#76423e0c-5c12-431a-ab6e-58f7bca00017">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#7e571783-3425-4b4b-bb84-ebd46f755414">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.html#eb9a27e4-fef6-4b33-bd43-2e56bf327804">StructureDefinition-payer-medicationdispense.html#/html/body/div/div/div/p/a at Line 664, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#37dca417-8d4a-48b1-8d7b-e3fee8e304bd">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#9bc75c94-6cc9-482d-a676-9ea69bbc1bfc">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#96047e1d-1038-44e6-ac6b-aa2c2b0ba5d3">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/div/p/a at Line 2431, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#d46fb075-94b1-4b16-bb11-679a810c3b41">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#bbc2c09c-5666-4045-90a9-1cece948dbc1">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.json.html#bec019aa-a5b0-4d44-b31b-2d8aad16d3aa">StructureDefinition-payer-medicationdispense.json.html#/html/body/div/div/div/p/a at Line 2380, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#d66cc29d-0070-4e65-b896-abf62ecc97da">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#e7d7edca-5302-44d1-bab0-8d0771c864e6">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#aaf85b5f-65d4-41b7-9343-f67c01ab40fb">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/div/p/a at Line 2170, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#c5eb9fac-e439-4ba0-8fa3-5c444ee58667">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#2fd18e59-afa3-4618-89a4-a853153abb9e">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.history.html#84272f59-e838-4020-8e9d-8db5ec92d701">StructureDefinition-payer-medicationdispense.profile.history.html#/html/body/div/div/div/p/a at Line 228, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#a08c6a41-d3bd-4eb4-a382-12aceb438b94">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#531768f7-6a89-4c77-be42-6098f6c47b76">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#410dac08-8a31-4bfb-a86c-d152a40713f2">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/div/p/a at Line 2181, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#7dd3fd07-2f48-4732-8f27-dca48e9a2407">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#074d6203-0ab9-4e5b-bd89-17b23c0363d7">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.json.html#deaa5166-960a-49a0-b3a9-e8baee018866">StructureDefinition-payer-medicationdispense.profile.json.html#/html/body/div/div/div/p/a at Line 2431, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#e866da00-c8e1-40c5-86e3-c499c95b038a">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#c4196496-57de-4933-9899-f6a520fc70f6">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#6e79b4ec-af1e-4e92-9ad0-0fed96221751">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/div/p/a at Line 2119, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#7a1b9b9f-7d11-4969-b997-8c994b17db44">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#ecec9abc-b886-4d52-a271-0de86bf252f4">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.ttl.html#b5f1e4fd-0724-41f5-b875-87506c9106a1">StructureDefinition-payer-medicationdispense.profile.ttl.html#/html/body/div/div/div/p/a at Line 2170, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#bf645e90-f271-4691-a1e0-9f6ce9b2a760">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#633680b4-5f35-46b7-9271-8c20f763c3fe">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#a3e37a56-bb39-4b84-8a4a-1c4cadcdf883">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/div/p/a at Line 2130, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#f6d1d28a-7901-43fc-b5bb-f4d90242cecc">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreAllergyIntolerance.html#c7eab26c-8a0d-418d-bc4a-2d7eca7d40c0">USCoreAllergyIntolerance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.profile.xml.html#8213662e-d720-4649-811f-95a61675a712">StructureDefinition-payer-medicationdispense.profile.xml.html#/html/body/div/div/div/p/a at Line 2181, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreAllergyIntolerance.html#c9ad8ac4-bfed-4862-b24c-83c5207e604c">USCoreAllergyIntolerance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#cc662342-94bb-48a3-8542-fa2726a4b654">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreAllergyIntolerance.html#95e16669-6e86-4625-9254-d8ac73598a93">USCoreAllergyIntolerance.html#/html/body/div/div/div/p/a at Line 277, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#b56ff861-aee0-44ff-b422-63dce2aacaa2">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCarePlan.html#00c7f9f3-8b3d-4194-b67b-0c58e228e18c">USCoreCarePlan.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.ttl.html#de3198e1-ed1a-46b1-a752-e895d26b8b39">StructureDefinition-payer-medicationdispense.ttl.html#/html/body/div/div/div/p/a at Line 2119, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCarePlan.html#b1e82d60-a686-46a6-b960-2cbbfbb29b9c">USCoreCarePlan.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#2aaac78c-efcb-4d1c-a2a9-df36b77cb3b7">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCarePlan.html#65f0d116-2d6b-450d-84b6-f413fd1a3f97">USCoreCarePlan.html#/html/body/div/div/div/p/a at Line 300, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#fcd38a80-df67-40a6-a42d-f095d2a5210e">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCareTeam.html#4fe447bc-eb53-4896-a3d5-c985409088ac">USCoreCareTeam.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-medicationdispense.xml.html#371fd3b8-2e9c-4380-8ecb-b9214532008e">StructureDefinition-payer-medicationdispense.xml.html#/html/body/div/div/div/p/a at Line 2130, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCareTeam.html#793d3b2c-fb01-4e00-8405-1a911dd23f60">USCoreCareTeam.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-definitions.html#4df73ba4-4ee2-4849-8118-b520ea54039e">StructureDefinition-payer-provenance-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCareTeam.html#65f81d33-1769-40b8-96ed-ddc344ab330e">USCoreCareTeam.html#/html/body/div/div/div/p/a at Line 324, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-definitions.html#db852a1b-34c5-44bd-a99c-e8dbd7b6eef8">StructureDefinition-payer-provenance-definitions.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCondition.html#1ef224e2-8e68-493e-8873-43dff0e7f2e7">USCoreCondition.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-definitions.html#33e059ef-f468-4d1b-ba37-a326f4c17991">StructureDefinition-payer-provenance-definitions.html#/html/body/div/div/div/p/a at Line 544, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCondition.html#b1a74d02-1f2a-49af-b480-ae10a3caad5c">USCoreCondition.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-examples.html#1be0ed52-997e-4141-9526-6b422d6f2903">StructureDefinition-payer-provenance-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreCondition.html#33e49f7a-5f05-4fb9-9f14-ec17436141d7">USCoreCondition.html#/html/body/div/div/div/p/a at Line 278, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-examples.html#085a180d-52bd-4830-902e-b61400027c7d">StructureDefinition-payer-provenance-examples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#c4c10f04-37f5-4178-a430-ab9b1c98f52e">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-examples.html#402cf4e8-3f64-4276-bbeb-0600677250b6">StructureDefinition-payer-provenance-examples.html#/html/body/div/div/div/p/a at Line 239, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#cb84e377-4a51-41c9-83cb-132d4a1fe14b">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-mappings.html#64ffc6e3-d5df-4ff0-99a6-4bc70389e9ad">StructureDefinition-payer-provenance-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#7cb5544b-8bd2-4e4f-ae67-c6b944956b47">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/div/p/a at Line 382, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-mappings.html#61647e55-2ea0-49bd-a82a-28bc6154c259">StructureDefinition-payer-provenance-mappings.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#d5936102-049c-4090-a9e5-f507331b1107">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance-mappings.html#b02ba315-788f-47a7-93fa-aeae165aef7e">StructureDefinition-payer-provenance-mappings.html#/html/body/div/div/div/p/a at Line 326, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#f3411daf-7ab6-4c52-bd0f-340ea7906458">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.history.html#a184a6eb-22c8-402e-b852-1b26003eca96">StructureDefinition-payer-provenance.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 90, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#9b0802f4-03b8-4432-b768-9acd9291f8db">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/div/p/a at Line 382, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.history.html#2cf5b1db-7647-4895-87eb-3c79e42354e4">StructureDefinition-payer-provenance.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 92, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDocumentReference.html#f3d5787b-b9fe-4abc-8435-39ea3a72c4eb">USCoreDocumentReference.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.history.html#dfcd1757-f51d-4cf1-ba45-2fb720f4ada7">StructureDefinition-payer-provenance.history.html#/html/body/div/div/div/p/a at Line 206, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDocumentReference.html#af71ba07-88c2-4e50-a4bb-35d7637faeb5">USCoreDocumentReference.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.html#cf52eac2-d827-4263-9676-f86cfa6f6f5a">StructureDefinition-payer-provenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreDocumentReference.html#b03dbfe4-d122-4013-851b-55ac5078d1b2">USCoreDocumentReference.html#/html/body/div/div/div/p/a at Line 342, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.html#a9aba570-dd2e-42a9-b53e-c399b8e1dc4c">StructureDefinition-payer-provenance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreEncounter.html#dd836a90-aa7d-4c60-af7e-a3605bad9c7d">USCoreEncounter.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.html#eb6c9b68-ddbb-48d6-b92f-9043f9bf156c">StructureDefinition-payer-provenance.html#/html/body/div/div/div/p/a at Line 611, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreEncounter.html#858921a8-3da2-4c75-bc1a-014afcd9dfb2">USCoreEncounter.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.json.html#f44796e7-51d8-442d-805e-4b98890d5f8b">StructureDefinition-payer-provenance.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreEncounter.html#27ae3100-469a-44fb-86fe-f4835440af2c">USCoreEncounter.html#/html/body/div/div/div/div/div/p/a at Line 517, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.json.html#bcb0ba23-0cd4-4e61-b603-72bb52ccccba">StructureDefinition-payer-provenance.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreEncounter.html#7d19bf80-35d4-498c-8e7a-1f0f4d61765c">USCoreEncounter.html#/html/body/div/div/div/p/a at Line 542, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.json.html#311d92e6-3955-42f0-9d53-5c943a1ee8ad">StructureDefinition-payer-provenance.json.html#/html/body/div/div/div/p/a at Line 1880, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreGoal_.html#501eac1f-81b8-4bb1-b1ff-e9060e01b401">USCoreGoal_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.history.html#80b882bb-a46d-4201-82f9-009f6acce92d">StructureDefinition-payer-provenance.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreGoal_.html#c438ffe4-6eba-4be7-800b-efb68a4765ee">USCoreGoal_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.history.html#3ab420a9-bd22-4d5e-92f9-976f53d644fc">StructureDefinition-payer-provenance.profile.history.html#/html/body/div/div/nav/div/div/ul/li/a at Line 93, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreGoal_.html#2fc2a2e5-7ffc-410d-86a7-a0634c28d74f">USCoreGoal_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.history.html#70c6e985-5286-43f3-a27b-8f48468d8483">StructureDefinition-payer-provenance.profile.history.html#/html/body/div/div/div/p/a at Line 228, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImmunization.html#50645e7f-b801-44a9-aed5-dea6f2df1ab0">USCoreImmunization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.json.html#c54d3035-8347-40ca-9f26-f21a55038f26">StructureDefinition-payer-provenance.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImmunization.html#e880a52b-7987-459e-8abb-f32bd64c2686">USCoreImmunization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.json.html#d1cada8a-874d-42ed-9499-b4755193bcd1">StructureDefinition-payer-provenance.profile.json.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImmunization.html#c6bf7f7a-704d-47f8-b283-f6a603337570">USCoreImmunization.html#/html/body/div/div/div/p/a at Line 294, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.json.html#cd36c154-f8d8-4336-8856-b8309a27e762">StructureDefinition-payer-provenance.profile.json.html#/html/body/div/div/div/p/a at Line 1931, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImplantableDevice.html#50cbf3b1-5fa7-4a3d-bcde-0238c53ce3c8">USCoreImplantableDevice.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.ttl.html#1449ce03-4faa-4768-a745-2724ec0d5d82">StructureDefinition-payer-provenance.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImplantableDevice.html#e9363647-fecd-4022-bbc9-b802dcf54420">USCoreImplantableDevice.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.ttl.html#5b8db454-4b35-4b6a-88a2-0841cde7b00b">StructureDefinition-payer-provenance.profile.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImplantableDevice.html#92f0a519-dbf7-4a84-bcad-5b909908105e">USCoreImplantableDevice.html#/html/body/div/div/div/div/div/p/a at Line 131, column 120</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantabledevice.html' for &quot;US Core IMplantable Device&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.ttl.html#db5807ce-9242-4d8b-8b31-bcd48638a496">StructureDefinition-payer-provenance.profile.ttl.html#/html/body/div/div/div/p/a at Line 1740, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreImplantableDevice.html#e3f1ddea-a8e3-4c61-b5d7-40e3adb9e720">USCoreImplantableDevice.html#/html/body/div/div/div/p/a at Line 283, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.xml.html#af4af0ce-b2b8-48b2-8d84-52281f37f271">StructureDefinition-payer-provenance.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 95, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreLocation.html#25239efd-b8d6-4050-bdf7-09f6cb8f3c70">USCoreLocation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.xml.html#f4dabf2b-0030-4a7a-8a74-496a543f6105">StructureDefinition-payer-provenance.profile.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 97, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreLocation.html#a7885adc-0906-49f4-955a-19b3f6d6afdd">USCoreLocation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.profile.xml.html#15901a9f-7034-45d7-b7f9-035a27c16e16">StructureDefinition-payer-provenance.profile.xml.html#/html/body/div/div/div/p/a at Line 1753, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreLocation.html#a8891126-6e59-4737-8a73-7ab8d4a79b7b">USCoreLocation.html#/html/body/div/div/div/div/div/p/a at Line 335, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.ttl.html#c40b1d5a-0cc4-4c49-bbf9-5cddc99b03df">StructureDefinition-payer-provenance.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreLocation.html#96bd32c9-816c-477f-b6ae-c793ee7b47e7">USCoreLocation.html#/html/body/div/div/div/p/a at Line 360, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.ttl.html#f5a67709-3891-48a1-90cf-8b8b59faeec0">StructureDefinition-payer-provenance.ttl.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedication.html#e282441e-033f-437e-b9c0-5fd4f61e0f27">USCoreMedication.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.ttl.html#530515b7-5183-4dfa-a0e9-6450cc58a0f6">StructureDefinition-payer-provenance.ttl.html#/html/body/div/div/div/p/a at Line 1689, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedication.html#38367dc2-bca6-4d47-9281-bf1787aaa7ad">USCoreMedication.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.xml.html#1f278da6-a705-4111-b954-6eb0b8b0fd9b">StructureDefinition-payer-provenance.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedication.html#2023bd85-2447-420a-9468-b8e0f747925f">USCoreMedication.html#/html/body/div/div/div/p/a at Line 274, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.xml.html#2ff6bb43-ec25-4275-b86c-b05b8ec7c90d">StructureDefinition-payer-provenance.xml.html#/html/body/div/div/nav/div/div/ul/li/a at Line 91, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedicationRequest.html#00bf4339-a825-405a-be1e-dc99e1519400">USCoreMedicationRequest.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="StructureDefinition-payer-provenance.xml.html#291e4864-c518-45f2-92ce-54c773dbc260">StructureDefinition-payer-provenance.xml.html#/html/body/div/div/div/p/a at Line 1702, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedicationRequest.html#6336de69-90b0-49a2-96e2-eb74fa28a48e">USCoreMedicationRequest.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreAllergyIntolerance.html#963dade7-db79-4388-aa1d-97df1ff388df">USCoreAllergyIntolerance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreMedicationRequest.html#4b099ee7-eed4-4fe4-825f-592a59c526bc">USCoreMedicationRequest.html#/html/body/div/div/div/p/a at Line 519, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreAllergyIntolerance.html#bf539aa6-3b03-4eb3-9a96-1c1999cb4c3d">USCoreAllergyIntolerance.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreOrganization.html#fe2e27aa-43f8-4f1f-9a84-930e291f8a19">USCoreOrganization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreAllergyIntolerance.html#ad2d816f-b51f-4485-ace9-e08afc108489">USCoreAllergyIntolerance.html#/html/body/div/div/div/p/a at Line 286, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreOrganization.html#27a8ab49-00a3-48f8-ba8d-dac297768b04">USCoreOrganization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCarePlan.html#ee35dce5-6d45-4a84-8401-6166ad1b7631">USCoreCarePlan.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreOrganization.html#60f6f51b-2a24-4655-8268-f7c0ca50f11c">USCoreOrganization.html#/html/body/div/div/div/p/a at Line 352, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCarePlan.html#c4594a74-0fa7-41ab-8997-b3414c195f7c">USCoreCarePlan.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePatient.html#a865c1b7-339c-4ad0-b249-403b9eed6e53">USCorePatient.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCarePlan.html#78f3e469-5f39-44fe-a03f-641cc8539186">USCoreCarePlan.html#/html/body/div/div/div/p/a at Line 309, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePatient.html#cad43b1a-3536-4b44-abea-9f7a5eb6f433">USCorePatient.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCareTeam.html#c9ee9ea0-442d-4e72-a3ab-25655ff46f71">USCoreCareTeam.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePatient.html#9c9be2f4-0f07-4c6e-9469-d3f7b9870ecf">USCorePatient.html#/html/body/div/div/div/div/div/p/a at Line 650, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCareTeam.html#734b63d9-bfb0-4e38-bff7-1fab7151f597">USCoreCareTeam.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePatient.html#52ecd8ff-b105-41f4-9605-b187c8f7f756">USCorePatient.html#/html/body/div/div/div/p/a at Line 675, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCareTeam.html#c0c3d444-8851-454b-a3ec-702c66e2f445">USCoreCareTeam.html#/html/body/div/div/div/p/a at Line 333, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricBMIforAgeObservation.html#d8fdd4b7-22fa-41a6-9805-52dc76ff20dd">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCondition.html#8157394f-6bce-4985-a116-5b40c7c2a487">USCoreCondition.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricBMIforAgeObservation.html#42209044-099d-4cc4-b6dd-7f6e0b9408c7">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCondition.html#76158ece-093c-438b-8011-ded1bf078f85">USCoreCondition.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricBMIforAgeObservation.html#3efae036-7dfe-438d-8768-7b2410e3b4cd">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/div/p/a at Line 285, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreCondition.html#183036e8-5437-44cf-9cbf-eb47a6372558">USCoreCondition.html#/html/body/div/div/div/p/a at Line 287, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricWeightforHeightObservation.html#0431b0ec-db7c-4bb2-bec7-70025a0e1320">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#e7552fae-8b88-4976-87c4-ecb2465227d5">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricWeightforHeightObservation.html#822dae62-0134-4595-ab11-c4944a273aae">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#5876decd-5ab6-4813-956d-5bfc7971849a">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePediatricWeightforHeightObservation.html#9551a682-1b79-41bd-afac-c031775e6afd">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/div/p/a at Line 285, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforLaboratoryResultsReporting.html#86e786ee-ee12-472e-845b-e6eb24a8184c">USCoreDiagnosticReportforLaboratoryResultsReporting.html#/html/body/div/div/div/p/a at Line 391, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitioner.html#7454839c-af35-4e1b-9277-7c2bde6a146b">USCorePractitioner.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#ab7da7d7-97de-494f-b7f0-716b634e4a5d">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitioner.html#0b80ced5-1e37-46dd-8bbd-d1e012bffc36">USCorePractitioner.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#d426124d-854c-4d74-8172-fc3834f6250f">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitioner.html#8e8ae073-47e9-459b-912e-e5ddc994328b">USCorePractitioner.html#/html/body/div/div/div/div/div/p/a at Line 358, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDiagnosticReportforReportandNoteExchange.html#cf459bf6-07f5-47c2-9c37-708f3debc7bb">USCoreDiagnosticReportforReportandNoteExchange.html#/html/body/div/div/div/p/a at Line 391, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitioner.html#28b9a709-59b4-412d-860e-03852ab4ac8c">USCorePractitioner.html#/html/body/div/div/div/p/a at Line 383, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDocumentReference.html#a58871db-ad23-4ec6-ae94-9b2e60cfba6d">USCoreDocumentReference.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitionerRole.html#51f606b4-791f-47bf-8a35-cf8547b8fe52">USCorePractitionerRole.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDocumentReference.html#1bd297fe-c143-4823-8482-3ee4408cfec2">USCoreDocumentReference.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitionerRole.html#560598f1-eb54-4e48-82eb-c4d8b406bbae">USCorePractitionerRole.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreDocumentReference.html#abb833a2-7452-4b27-9638-77840df9e778">USCoreDocumentReference.html#/html/body/div/div/div/p/a at Line 351, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitionerRole.html#7f57230f-b64e-4aab-8aec-246da9ef8376">USCorePractitionerRole.html#/html/body/div/div/div/div/div/p/a at Line 495, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreEncounter.html#55304b71-de0c-418b-b670-086f7c834497">USCoreEncounter.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePractitionerRole.html#f66326d2-f8f2-4ce6-9b70-bbb47dd19bfe">USCorePractitionerRole.html#/html/body/div/div/div/p/a at Line 520, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreEncounter.html#69908530-709a-4cfd-94f6-1c634ebe836f">USCoreEncounter.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProcedure.html#23e51246-f446-4e58-b47d-eae442f33d01">USCoreProcedure.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreEncounter.html#7dfeb53c-4099-4454-82d4-f1cea4ffe060">USCoreEncounter.html#/html/body/div/div/div/div/div/p/a at Line 525, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProcedure.html#d1e72559-2d1c-4500-b092-d7aa32e3281f">USCoreProcedure.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreEncounter.html#c121a407-0179-45b5-9174-bbc0125da516">USCoreEncounter.html#/html/body/div/div/div/p/a at Line 552, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProcedure.html#e79f129e-0a4d-4fd9-b266-89f1076fb601">USCoreProcedure.html#/html/body/div/div/div/div/div/p/a at Line 416, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreGoal.html#2f174199-52a1-4f49-abc9-722e2a4ec1a6">USCoreGoal.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProcedure.html#4a1d790a-a81c-4ccb-9d6f-b2d77a05d09a">USCoreProcedure.html#/html/body/div/div/div/p/a at Line 441, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreGoal.html#7ec44e49-1264-4366-bf0f-3bdf66726ef9">USCoreGoal.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProvenance_.html#f2784df8-247a-4773-831b-d4d51edc5764">USCoreProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreGoal.html#c7eccbc7-95f6-4acb-972f-0bb968752b64">USCoreGoal.html#/html/body/div/div/div/p/a at Line 174, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProvenance_.html#f2b161eb-3afc-4d25-988f-d1a608c37f9e">USCoreProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImmunization.html#67194602-e21f-4a5a-85e0-ca8e23d0dd8a">USCoreImmunization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreProvenance_.html#0ff072dc-9f89-4da7-afb0-31f100fb560c">USCoreProvenance_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImmunization.html#57489a56-76f2-4d51-a2a3-b83055b41443">USCoreImmunization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePulseOximetry_.html#180ca4c0-30fb-4a6d-886d-f62b6611d2f7">USCorePulseOximetry_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImmunization.html#4cb36774-1722-451c-88bc-d28000999a67">USCoreImmunization.html#/html/body/div/div/div/p/a at Line 304, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePulseOximetry_.html#4c3974b2-1362-49fa-9d20-516fe9e38acf">USCorePulseOximetry_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImplantableDevice.html#a3d0bb51-7c92-4c0b-b6e4-1fc57bd4e648">USCoreImplantableDevice.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCorePulseOximetry_.html#3018594f-f12d-4588-85f9-bd08559f4744">USCorePulseOximetry_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImplantableDevice.html#fd4d7266-eece-4e94-a3c7-54de73e452a8">USCoreImplantableDevice.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreSmokingStatusObservation_.html#7b994bb3-fe5a-423e-a749-29ddff0955d2">USCoreSmokingStatusObservation_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImplantableDevice.html#ab2bce9c-1d12-4acf-8c91-7d48ebc5d9b2">USCoreImplantableDevice.html#/html/body/div/div/div/div/div/p/a at Line 139, column 120</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantabledevice.html' for &quot;US Core IMplantable Device&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreSmokingStatusObservation_.html#b8cfd50a-50e3-41e1-b5a6-333de2d30859">USCoreSmokingStatusObservation_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreImplantableDevice.html#7f6c78e3-cc5f-4ae5-a0a3-60ff4129084c">USCoreImplantableDevice.html#/html/body/div/div/div/p/a at Line 292, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="USCoreSmokingStatusObservation_.html#8645ca71-4d4a-48d5-8797-0ebfdd6a1667">USCoreSmokingStatusObservation_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreLocation.html#abebc8eb-4e3b-418f-9c9c-8500c91906d0">USCoreLocation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="VitalSigns_.html#78ff79c8-4a9c-4582-a079-3980ee4ea201">VitalSigns_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreLocation.html#8bb8df33-95bc-47bc-9776-8dc7550c85eb">USCoreLocation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="VitalSigns_.html#c38323ef-7800-4cdf-bb02-1e5c8ef78c82">VitalSigns_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreLocation.html#e75c5a23-8eeb-4443-824d-2edee818d641">USCoreLocation.html#/html/body/div/div/div/div/div/p/a at Line 343, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="VitalSigns_.html#e265df44-af02-4479-ab28-9e1212c1bb3d">VitalSigns_.html#/html/body/div/div/div/div/div/p/a at Line 133, column 5</a></b></td><td><b>error</b></td><td><b>The link 'UseCaseScenarios.html' for &quot;Next Page - Use Case Scenarios&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreLocation.html#61af4d91-7fd2-4ed5-832e-44444e0012ac">USCoreLocation.html#/html/body/div/div/div/p/a at Line 369, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="VitalSigns_.html#6a2eb20b-556f-4405-be8e-9f85e862cf14">VitalSigns_.html#/html/body/div/div/div/p/a at Line 156, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedication.html#297d4c0d-2022-45ab-853d-f4cc012a336c">USCoreMedication.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="WorkflowExamples.html#2be081c5-e386-4eac-b59c-92d6fa7845bb">WorkflowExamples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedication.html#f1105d1b-f4b4-4d0d-ac94-cb819f71873b">USCoreMedication.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="WorkflowExamples.html#e4ca814c-735d-4667-a323-a3fa79076bbf">WorkflowExamples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedication.html#747ae9d2-7db1-42e7-8246-51513d12291d">USCoreMedication.html#/html/body/div/div/div/p/a at Line 283, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="WorkflowExamples.html#3494560c-79dd-4203-b12c-8be0c5999341">WorkflowExamples.html#/html/body/div/div/div/div/div/p/a at Line 133, column 5</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;Previous Page - CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedicationRequest.html#699e30e6-f1ff-4a3a-a4e2-3d07e1dcbfab">USCoreMedicationRequest.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="WorkflowExamples.html#5140eb88-43d8-4998-ad1c-c9100ac7c35d">WorkflowExamples.html#/html/body/div/div/div/p/a at Line 187, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedicationRequest.html#adbb80b8-0c1a-4793-886c-b741297c49b9">USCoreMedicationRequest.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="artifacts.html#f284ced2-995d-4379-a180-2802c1810101">artifacts.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreMedicationRequest.html#23f53fa7-2f03-4a8c-abf4-ddada17363a3">USCoreMedicationRequest.html#/html/body/div/div/div/p/a at Line 528, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="artifacts.html#3a1b6d16-961d-4f45-8e2b-c725c7bd6b1c">artifacts.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreOrganization.html#6b9fd73f-d27f-4291-b423-4d5e1c55f83b">USCoreOrganization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="artifacts.html#e2f710d3-7005-47bc-9b64-3483cb191f7e">artifacts.html#/html/body/div/div/div/p/a at Line 177, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreOrganization.html#82baae47-ffd9-4898-9d71-20fcc70bf2d0">USCoreOrganization.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="index.html#6d08a2b4-d44f-4bd9-8252-7a12eb639d8f">index.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCoreOrganization.html#291cc60a-41d9-497f-9899-641d43962452">USCoreOrganization.html#/html/body/div/div/div/p/a at Line 361, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="index.html#a87ffb38-cd60-4451-ac71-4b52b0c1e119">index.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCorePatient.html#f5f01004-b41c-4c11-abf3-b79430c08fcd">USCorePatient.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="index.html#ce8fe9d9-ae4e-43a1-8e80-5266b829e38d">index.html#/html/body/div/div/div/p/a at Line 257, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCorePatient.html#0efeccbf-2fe2-4d63-b841-33cc33cea3df">USCorePatient.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="toc.html#e0467126-ffda-4bc9-9fb3-bb228f23a9b3">toc.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+     <td><b><a href="USCorePatient.html#23599722-d1d9-47bf-a6fb-d8c4f6de648d">USCorePatient.html#/html/body/div/div/div/div/div/p/a at Line 658, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="toc.html#42329e30-ad50-4d17-8fde-bd2a3f38ca76">toc.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+     <td><b><a href="USCorePatient.html#4ab5a697-de91-4dd8-99f3-6d174bebc7c3">USCorePatient.html#/html/body/div/div/div/p/a at Line 684, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b><a href="toc.html#7a40f98d-50ea-4d33-bf90-1d734d1c6b36">toc.html#/html/body/div/div/div/p/a at Line 144, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+     <td><b><a href="USCorePediatricBMIforAgeObservation.html#a3dfc736-3432-4ceb-98e8-5b705e5df016">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePediatricBMIforAgeObservation.html#e045d018-7129-404f-9bd2-65354941e015">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePediatricBMIforAgeObservation.html#142bea14-4c28-4310-8c30-05c9ff9bea2e">USCorePediatricBMIforAgeObservation.html#/html/body/div/div/div/p/a at Line 294, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePediatricWeightforHeightObservation.html#b6a51e93-99fb-4c88-8ccb-50904f62a5a3">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePediatricWeightforHeightObservation.html#43eed1a1-4678-4db9-a750-f0dc4cf538b7">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePediatricWeightforHeightObservation.html#f600e60e-f2be-42d7-9b8b-cf666de6bf09">USCorePediatricWeightforHeightObservation.html#/html/body/div/div/div/p/a at Line 294, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitioner.html#9f4f6c4b-217b-4411-99e8-66d974163c74">USCorePractitioner.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitioner.html#88021cdc-c8ad-4549-a43f-c81670d2a4d2">USCorePractitioner.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitioner.html#ca81a61a-656a-4177-8e9e-d08461872e50">USCorePractitioner.html#/html/body/div/div/div/div/div/p/a at Line 366, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitioner.html#0c559a5a-4e44-4d52-b41d-7e54b87c5534">USCorePractitioner.html#/html/body/div/div/div/p/a at Line 392, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitionerRole.html#feec31b9-0d24-4485-909f-76e84637080a">USCorePractitionerRole.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitionerRole.html#4ecee481-6ba5-4bf7-b4a8-5a23ff52f231">USCorePractitionerRole.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitionerRole.html#2ae61d8d-5c72-406e-9a12-d5de230f7cd3">USCorePractitionerRole.html#/html/body/div/div/div/div/div/p/a at Line 503, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePractitionerRole.html#08995c5d-860a-4e44-8773-4c467b57ef02">USCorePractitionerRole.html#/html/body/div/div/div/p/a at Line 529, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProcedure.html#8451339f-7acd-41a6-83f8-99d711e79c80">USCoreProcedure.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProcedure.html#e84f0fd5-51e6-48a9-9beb-854b74544f9d">USCoreProcedure.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProcedure.html#10969379-0ca3-473b-a5e3-8d911fb9a083">USCoreProcedure.html#/html/body/div/div/div/div/div/p/a at Line 424, column 53</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/' for &quot;US Core R4 Implementation Guide&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProcedure.html#b0bc94ce-0a6a-4031-a04a-23ba792de1c8">USCoreProcedure.html#/html/body/div/div/div/p/a at Line 450, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProvenance_.html#b4247481-003b-4060-81be-e1cdde6b8754">USCoreProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProvenance_.html#5f4c4d77-648b-454c-ab75-96705041dc0d">USCoreProvenance_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProvenance_.html#cf738265-e62a-4131-ba68-c4e86574c866">USCoreProvenance_.html#/html/body/div/div/div/div/div/p/a at Line 141, column 5</a></b></td><td><b>error</b></td><td><b>The link 'USCorePulseOximetry_.html' for &quot;Next Page - US Core Pulse Oximetry_&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreProvenance_.html#b437217f-c770-4615-8c6e-342d08094857">USCoreProvenance_.html#/html/body/div/div/div/p/a at Line 165, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePulseOximetry.html#dca43b55-393c-40c5-9995-ac21c76d6181">USCorePulseOximetry.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePulseOximetry.html#637bdfe3-8561-4010-9807-f178248ac8f7">USCorePulseOximetry.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCorePulseOximetry.html#cceb115c-1150-4556-b12b-c9af85e92ebe">USCorePulseOximetry.html#/html/body/div/div/div/p/a at Line 171, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreSmokingStatusObservation.html#ca934524-deac-4044-a5f9-2175b614e920">USCoreSmokingStatusObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreSmokingStatusObservation.html#acd36b18-b731-4325-b73f-4a684e94841f">USCoreSmokingStatusObservation.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreSmokingStatusObservation.html#19a77399-2f4b-4787-98c7-f0c13a6c48d1">USCoreSmokingStatusObservation.html#/html/body/div/div/div/div/div/p/a at Line 142, column 127</a></b></td><td><b>error</b></td><td><b>The link 'http://hl7.org/fhir/us/core/StructureDefinition-us-core-smiokingstatus.html' for &quot;US Core Smoking Status&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="USCoreSmokingStatusObservation.html#2b0e0e3c-e944-46da-89b8-c48af786a50e">USCoreSmokingStatusObservation.html#/html/body/div/div/div/p/a at Line 171, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="VitalSigns_.html#8d418608-dbae-4efd-8531-8ce716dfac28">VitalSigns_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="VitalSigns_.html#4481d8e0-f2a2-47b5-897f-8c3677bd9c88">VitalSigns_.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="VitalSigns_.html#7127dd05-68de-431e-9ba3-ddd1602fa9d7">VitalSigns_.html#/html/body/div/div/div/div/div/p/a at Line 150, column 5</a></b></td><td><b>error</b></td><td><b>The link 'UseCaseScenarios.html' for &quot;Next Page - Use Case Scenarios&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="VitalSigns_.html#1b869bf2-4aa9-4b87-b013-0d41a4e8b8e9">VitalSigns_.html#/html/body/div/div/div/p/a at Line 175, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="WorkflowExamples.html#e568db8d-7053-458c-b05a-df7705b17460">WorkflowExamples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="WorkflowExamples.html#517dd409-affa-4c11-acb9-5647c36d3afb">WorkflowExamples.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="WorkflowExamples.html#bcd99917-d0ce-403e-8aac-bb5d0365d469">WorkflowExamples.html#/html/body/div/div/div/div/div/p/a at Line 137, column 5</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;Previous Page - CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="WorkflowExamples.html#8a3b1e5f-81c4-4955-b4a2-8e74938f3eb0">WorkflowExamples.html#/html/body/div/div/div/p/a at Line 192, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="artifacts.html#5a03c6b2-f125-454b-b59d-cdb5a97264ef">artifacts.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="artifacts.html#1eb63cbe-0472-491c-9c45-72b2ccb63f01">artifacts.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="artifacts.html#4d27b21c-51bf-49e1-9e06-94ce726b0ed5">artifacts.html#/html/body/div/div/div/p/a at Line 186, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="index.html#72f12822-c7c0-46ae-96f9-367d91be19be">index.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="index.html#a4ab77cd-1aee-4a92-b586-2d5e00cd9055">index.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="index.html#15b76516-8404-4ae1-a49b-4f62ce61c984">index.html#/html/body/div/div/div/p/a at Line 262, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="toc.html#cd207bfe-1036-4e1f-bd83-46b73e4a2629">toc.html#/html/body/div/div/nav/div/div/ul/li/a at Line 87, column 8</a></b></td><td><b>error</b></td><td><b>The link 'Introduction.html' for &quot;Introduction&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="toc.html#59ce50f2-88ea-4ce8-a962-32c128697d37">toc.html#/html/body/div/div/nav/div/div/ul/li/a at Line 89, column 8</a></b></td><td><b>error</b></td><td><b>The link 'CDS-Hooks.html' for &quot;CDS-Hooks&quot; cannot be resolved</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b><a href="toc.html#f497af6c-9533-49cf-85b6-af4a1c1ff0cc">toc.html#/html/body/div/div/div/p/a at Line 144, column 28</a></b></td><td><b>error</b></td><td><b>The link 'mark@ekivemark.com' for &quot;&quot; cannot be resolved</b></td>
    </tr>
 </table>
 <hr/>
-<a name="_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_ImplementationGuide-davinci-pdex"> </a>
-<h2><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json</a></h2>
+<a name="_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_ImplementationGuide-hl7.fhir.us.davinci-pdex"> </a>
+<h2><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json</a></h2>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>ImplementationGuide.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex')</b></td><td><b>error</b></td><td><b>Conformance resource /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json - the canonical URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex) does not match the URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex)</b></td>
+   <tr style="background-color: #ffebcc">
+     <td><b>ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.definition.resource[1].description</b></td><td><b>warning</b></td><td><b>value should not start or finish with whitespace</b></td>
    </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>ImplementationGuide.url</b></td><td><b>error</b></td><td><b>Resource id/url mismatch: hl7.fhir.us.davinci-pdex/http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex</b></td>
-   </tr>
-   <tr style="background-color: #ffffe6">
-     <td><b>ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.description</b></td><td><b>information</b></td><td><b>The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course</b></td>
-   </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex</b></td><td><b>error</b></td><td><b>URL Mismatch http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex vs http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex</b></td>
+   <tr style="background-color: #ffebcc">
+     <td><b>ImplementationGuide.jurisdiction</b></td><td><b>warning</b></td><td><b>The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
    </tr>
 </table>
 <hr/>
@@ -692,8 +820,28 @@
    <tr style="background-color: #ffffe6">
      <td><b>StructureDefinition/payer-medicationdispense: StructureDefinition.snapshot.element[28].mapping[0].map</b></td><td><b>information</b></td><td><b>The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course</b></td>
    </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>StructureDefinition.jurisdiction</b></td><td><b>error</b></td><td><b>The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
+   </tr>
    <tr style="background-color: #ffebcc">
      <td><b>StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/payer-medicationdispense')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_profiles_structuredefinition-payer-provenance"> </a>
+<h2><a href="StructureDefinition-payer-provenance.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-payer-provenance.json</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>StructureDefinition.jurisdiction</b></td><td><b>error</b></td><td><b>The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/payer-provenance').baseDefinition</b></td><td><b>warning</b></td><td><b>US FHIR Usage rules require that all profiles on Provenance derive from the core US profile. <a href="us-core-comparisons/sd-us-core-provenance-payer-provenance.html">Comparison with US Core Provenance Profile</a></b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/payer-provenance')</b></td><td><b>warning</b></td><td><b>The Implementation Guide contains no examples for this profile</b></td>
    </tr>
 </table>
 <a name="suppressed"> </a>
@@ -701,19 +849,17 @@
 <p>No suppressed messsages</p><a name="sorted"> </a>
 <p><b>Errors sorted by type</b></p>
 <hr/>
-<a name="RESOURCE_CANONICAL_MISMATCH"> </a>
-<h2>RESOURCE_CANONICAL_MISMATCH</h2>
+<a name="RESOURCE_JURISDICTION_MISMATCH"> </a>
+<h2>RESOURCE_JURISDICTION_MISMATCH</h2>
  <table class="grid">
-   <tr style="background-color: #ffeeee">
-     <td><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json</a></td><td><b>Conformance resource /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json - the canonical URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex) does not match the URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex)</b></td>
+   <tr style="background-color: #fff4ee">
+     <td><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json</a></td><td><b>The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
    </tr>
-</table>
-<hr/>
-<a name="RESOURCE_ID_MISMATCH"> </a>
-<h2>RESOURCE_ID_MISMATCH</h2>
- <table class="grid">
    <tr style="background-color: #ffeeee">
-     <td><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json</a></td><td><b>Resource id/url mismatch: hl7.fhir.us.davinci-pdex/http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex</b></td>
+     <td><a href="StructureDefinition-payer-medicationdispense.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-payer-medicationdispense.json</a></td><td><b>The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="StructureDefinition-payer-provenance.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-payer-provenance.json</a></td><td><b>The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</b></td>
    </tr>
 </table>
 <hr/>
@@ -721,10 +867,23 @@
 <h2>SECURITY_STRING_CONTENT_WARNING</h2>
  <table class="grid">
    <tr style="background-color: #fffff2">
-     <td><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json</a></td><td><b>The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course</b></td>
-   </tr>
-   <tr style="background-color: #fffff2">
      <td><a href="StructureDefinition-payer-medicationdispense.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-payer-medicationdispense.json</a></td><td><b>The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Type_Specific_Checks_DT_String_WS"> </a>
+<h2>Type_Specific_Checks_DT_String_WS</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="ImplementationGuide-hl7.fhir.us.davinci-pdex.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json</a></td><td><b>value should not start or finish with whitespace</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="US_CORE_DERIVATION"> </a>
+<h2>US_CORE_DERIVATION</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="StructureDefinition-payer-provenance.html">/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-payer-provenance.json</a></td><td><b>US FHIR Usage rules require that all profiles on Provenance derive from the core US profile. <a href="us-core-comparisons/sd-us-core-provenance-payer-provenance.html">Comparison with US Core Provenance Profile</a></b></td>
    </tr>
 </table>
 </body>
