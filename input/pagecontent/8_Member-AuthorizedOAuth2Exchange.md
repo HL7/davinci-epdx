@@ -23,7 +23,7 @@ When a Member is authorizing sharing of the Member Health History with another H
 <table>
 	<tr>
 		<td>
-			<img  width="100%" height="auto" src="MemberAuthorizedOAuth2Exchange.png">
+			<img  width="100%" height="auto" src="MemberAuthExchange.png">
 		</td>	
 	</tr>	
 </table>

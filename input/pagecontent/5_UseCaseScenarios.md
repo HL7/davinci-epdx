@@ -102,7 +102,19 @@ These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 | Notes                                  | DiagnosticReport for report and Note Exchange: [https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) |
 | FamilyHistory                          | DocumentReference: [http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html) |
 
-It must be recognized tat Payers may not have in depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.
+It must be recognized that Payers may not have in depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.
+
+
+## Versioning of FHIR Data
+
+A payer MAY choose to support FHIR resource data versioning in their API. In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
+
+If a payer chooses to support FHIR resource data versioning related resource references in a bounding resource MAY use the vread format of reference:
+
+    [type]/[id]/_history/[vid]
+    
+Supporting versioning of FHIR data implies supporting the [vread](https://www.hl7.org/fhir/http.html#vread) and [history]([vread](https://www.hl7.org/fhir/http.html#history) interactions in the FHIR specification.
+
 
 
 [Next Page - Provider-controlled Information Requests and Filtering](Provider-controlledInformationRequestsandFiltering.html)
