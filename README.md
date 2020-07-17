@@ -14,4 +14,6 @@ The publisher can be found at: https://trifolia-fhir.lantanagroup.com/home
 For version 0.3.7 FHIR Shorthand and Sushi were used to compile the PDex IG. The source code for the IG 
 is found in the fishtank folder in this repository.
 
-The primary author of this IG is: Mark Scrimshire of Newwave.io. You can reach him at mark@ekivemark.com.
+Check out the README.md in the Fishtank folder for instructions on compiling the IG using Sushi.
+
+The primary author of this IG is: Mark Scrimshire of OnyxHealth.io. You can reach him at mark@ekivemark.com.
