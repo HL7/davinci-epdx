@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/USCoreImmunization.md                                       *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - US Core Goal_](USCoreGoal_.html)
+[Previous Page - US Core Goal](USCoreGoal.html)
 
 Where a Health Plan has access to structured and coded Immunization information for a member the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 

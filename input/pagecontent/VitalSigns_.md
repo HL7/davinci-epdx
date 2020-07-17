@@ -8,8 +8,18 @@
 * ig-data/input/pagecontent/VitalSigns_.md                                              *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - US Core Smoking Status Observation_](USCoreSmokingStatusObservation_.html)
+[Previous Page - US Core Smoking Status Observation](USCoreSmokingStatusObservation.html)
 
-No page content yet
+This IG supports the full complement of US Core profiles. They are supported to 
+enable a payer to produce FHIR resources from data provided in other formats.
+
+For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) is referenced in US Core but uses the profile 
+from the base FHIR specification and does not create a US Core specific 
+profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available.
+
+A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may 
+not have access to the detail measurement data needed to create a valid 
+Vital Signs resource.
+
 
 [Next Page - Use Case Scenarios](UseCaseScenarios.html)

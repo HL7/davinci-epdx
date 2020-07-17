@@ -96,7 +96,7 @@ The overall flow of the SMART-on-FHIR and CDS-Hooks interaction is summarized in
 <table>
 	<tr>
 		<td>
-			<img  width="100%" height="auto"  src="PDexHooks.png">
+			<img  width="100%" height="auto"  src="PDEX-SMART-Hook-SMART-InteractionMethods1.png">
 		</td>
 	</tr>	
 </table>
