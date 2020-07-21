@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.3.8"/>
+  <version value="0.3.9"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-07-17T11:53:53-04:00"/>
+  <date value="2020-07-21T13:49:27-04:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -215,12 +215,12 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-payer-provenance.html"/>
+        <valueUri value="StructureDefinition-pdexprovenance.html"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/payer-provenance"/>
+        <reference value="StructureDefinition/pdexprovenance"/>
       </reference>
-      <name value="Payer Provenance"/>
+      <name value="PDex Provenance"/>
       <description value=" Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -382,8 +382,8 @@
             <generation value="markdown"/>
           </page>
           <page>
-            <nameUrl value="PayerProvenance_.html"/>
-            <title value="Payer Provenance"/>
+            <nameUrl value="PDexProvenance_.html"/>
+            <title value="PDex Provenance"/>
             <generation value="markdown"/>
           </page>
           <page>
@@ -436,6 +436,11 @@
       <page>
         <nameUrl value="9_Credits.html"/>
         <title value="Credits"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="Downloads.html"/>
+        <title value="Downloads"/>
         <generation value="markdown"/>
       </page>
     </page>
