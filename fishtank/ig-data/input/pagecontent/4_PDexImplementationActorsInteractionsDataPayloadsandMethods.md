@@ -147,16 +147,6 @@ The Patient-everything operation compiles a FHIR Bundle. In addition to the OAut
 
 The Patient-everything operation supports the use of the [bulk FHIR data format Specification](https://www.hl7.org/fhir/formats.html#bulk). A Health Plan **MAY** format the Patient-everything records to be exchanged using the ND-Json format. 
 
-## Interaction and Payload Matrix
-
-| Interactions and Methods                                                               | Member History | Healthcare Directory | Pharmacy Directory | Medication Formulary |
-|----------------------------------------------------------------------------------------|----------------|----------------------|--------------------|----------------------|
-| 1. Provider and Health Plan (P2HPX) - CDS-Hooks                                        | Y              |                      |                    |                      |
-| 2. Member-authorized Health Plan Exchange (MauthHPX) - OAuth2.0 + FHIR                 | Y              |                      |                    |                      |
-| 3. Member-authorized Health Plan to 3rd Party Application (Mauth3PX) - OAuth2.0 + FHIR | Y              | Y                    | Y                  | Y                    |
-| 4. Member-authorized Health Plan Exchange - Patient-everything (alternate Transport)                 | Y              |                      |                    |                      |
-
-
 
 
 [Next Page - Data Mapping](DataMapping.html)
