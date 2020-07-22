@@ -13,9 +13,9 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record or a claim record. 
 - Whether the data was subject to manual transcription or other interpretive transformation.
 
-The Payer Provenance resource is documented here: http://hl7.org/fhir/R4/provenance.html
+The PDex-Provenance resource is documented here: [pdexprovenance.html](pdexprovenance.html)
 
-The Provenance record **SHOULD** be populated with the following essential fields as follows:
+The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
 | Field                              | Value                                                                                                                                              |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -71,7 +71,7 @@ An example Provenance record is shown below:
 
 <pre>
 {
-  "resourceType": "Provenance",
+  "resourceType": "pdexProvenance",
   "id": "example",
   "text": {
     "status": "generated",

@@ -1,10 +1,10 @@
-[Previous Page - Coverage](Coverage.html)
+[Previous Page - US Core Immunization](USCoreImmunization.html)
 
-Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-device.html) resource when the information is structured and coded.
+Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
 
-In future versions of this IG there is a desire to ensure that all Device identification information is exchanged using the Device resource.  
+In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
-The essential fields to be provided in the US Core Device resource are:
+The essential fields to be provided in the US Core Implantable Device resource are:
 
 | R4 Hierarchical Name             | R4 Name    | Flags | Card. | Type                               |
 |----------------------------------|------------|-------|-------|------------------------------------|
@@ -20,9 +20,9 @@ The essential fields to be provided in the US Core Device resource are:
 | Device.patient                   | patient    | S     | 1..1  | Reference(US Core Patient Profile) |
 
 
-#### Example Device Resource
+#### Example Implantable Device Resource
 
-An example mapping of a device resource is shown below:
+An example mapping of an implantable device resource is shown below:
 
 <pre>
 {
@@ -61,4 +61,4 @@ An example mapping of a device resource is shown below:
 
 
 
-[Next Page - US Core DiagnosticReport for Laboratory Results Reporting](USCoreDiagnosticReportforLaboratoryResultsReporting.html)
+[Next Page - US Core Location](USCoreLocation.html)
