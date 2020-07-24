@@ -7,6 +7,9 @@
       <li>
          <a href="#1">Structures: Resource Profiles</a>
       </li>
+      <li>
+         <a href="#2">Example: Example Instances</a>
+      </li>
    </ul>
 </div>
 <div xmlns:html="http://www.w3.org/1999/xhtml"
@@ -22,10 +25,43 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-payer-medicationdispense.html"
-                     title="StructureDefinition/payer-medicationdispense">Payer MedicationDispense</a>
+                  <a href="StructureDefinition-pdex-device.html"
+                     title="StructureDefinition/pdex-device">PDex Device</a>
+               </td>
+               <td> The PDex Device profile is provided to enable payers to record information about
+non-implantable devices used by a member. A wheelchair or walking stick are examples of non-implantable devices.</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-pdex-medicationdispense.html"
+                     title="StructureDefinition/pdex-medicationdispense">PDex MedicationDispense</a>
                </td>
                <td>Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-pdex-provenance.html"
+                     title="StructureDefinition/pdex-provenance">PDex Provenance</a>
+               </td>
+               <td> Provenance is provided by
+the payer to identify the source of the information, whether the data came via a clinical record
+or a claim record and whether the data was subject to manual transcription or other interpretive transformation.</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="2"> </a>
+   <h3>Example: Example Instances </h3>
+   <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Provenance-1000001.html" title="Provenance/1000001">ExampleProvenanceTransmitter</a>
+               </td>
+               <td>Example of a Transmitter Provenance record for a bundle</td>
             </tr>
          </tbody>
       </table>

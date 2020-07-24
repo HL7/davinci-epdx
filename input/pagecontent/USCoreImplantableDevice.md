@@ -10,7 +10,7 @@
 {% endcomment %} -->
 [Previous Page - US Core Immunization](USCoreImmunization.html)
 
-Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core IMplantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantabledevice.html) resource when the information is structured and coded.
+Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
 
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
