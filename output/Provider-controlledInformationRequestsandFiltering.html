@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>HL7.FHIR.US.DAVINCI-PDEX\Credits - FHIR v4.0.1</title>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\Provider-controlled Information Requests and Filtering - FHIR v4.0.1</title>
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,8 +39,8 @@
   </head>
   <body>
 
-    <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -84,8 +84,8 @@
 <ul class="nav navbar-nav">
   <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
-  <li><a href="3_Introduction.html">Introduction</a></li>
-  <li><a href="7_CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
+  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
   <li><a href="artifacts.html">Artifact Index</a></li>
   <li><a href="Downloads.html">Downloads</a></li>
 </ul>
@@ -100,7 +100,7 @@
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
       <div class="container">    <!-- container -->  
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Credits</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Provider-controlled Information Requests and Filtering</b></li>
         </ul>  
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
@@ -118,7 +118,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
     <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.10). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
-  <h2>Credits</h2>
+  <h2>Provider-controlled Information Requests and Filtering</h2>
   
 
 
@@ -133,57 +133,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
   <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
-  <!-- 9_Credits.md -->
-<p><a name="bc39e19d-2ccd-40c6-8a8b-a6903b0a380a">​</a><a href="Member-AuthorizedOAuth2Exchange.html">Previous Page - Member-Authorized OAuth2 Exchange</a></p>
+  <!-- Provider-controlledInformationRequestsandFiltering.md -->
+<p><a href="UseCaseScenarios.html">Previous Page - Use Case Scenarios</a></p>
 
-<p><strong>Primary authors:</strong></p>
-<ul>
-  <li>Mark Scrimshire (OnyxHealth.io)</li>
-  <li>Tony Benson (Blue Cross Blue Shield of Alabama)</li>
-</ul>
+<p>The Payer Data exchange Implementation Guide defines methods for Providers to request information from Health Plans.</p>
 
-<p><strong>Project leads:</strong></p>
+<p>This IG does not cover the Payer-initiated transfer of unsolicited information to a provider. All Provider-oriented exchanges will be initiated as part of a Provider workflow, such as when a new patient presents for an appointment, using CDS-Hooks or triggered via a manual interaction with a SMART-on-FHIR app that generates the necessary CDS-Hook.</p>
 
-<ul>
-  <li>Robert Dieterle (Enable Care, LLC)</li>
-  <li>Viet Nguyen (Stratametrics, LLC)</li>
-</ul>
+<p>All search parameters and subsequent filtering of returned information <strong>SHALL</strong> be controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider except for the application of any restrictions based on the scopes of the access token issued to the Provider per applicable law.</p>
 
-<p><strong>Project management and coordination:</strong></p>
-<ul>
-  <li>Jocelyn Keegan (Point of Care Partners)</li>
-  <li>Dana Marcalonis (Point of Care Partners)</li>
-</ul>
+<p>Health Plans should only restrict provider access to a member’s data where that access is required in accordance with State or Federal regulations.</p>
 
-<p><strong>Technical support and guidance:</strong></p>
-<ul>
-  <li>Rick Geimer (Lantana Consulting Group)</li>
-</ul>
+<p>Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an OAuth2.0 Authorization.</p>
 
-<p>This implementation guide was the work of the Da Vinci Project PDex work group (http://www.hl7.org/about/davinci/index.cfm?ref=common) and the member organizations.</p>
-
-<p><strong>Project participants included:</strong></p>
-<ul>
-  <li>Aegis (Richard Ettema, Sandra Vance)</li>
-  <li>Allscripts (Emma Jones, Jeffrey Danford)</li>
-  <li>Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Gini McGlothin, Morry Payne, Clarissa Winchester)</li>
-  <li>Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)</li>
-  <li>Epic (Danielle Friend, Isaac Vetter)</li>
-  <li>Health Care Data Standards (Mary Kay McDaniel)</li>
-  <li>Optum (Linda Michaelsen, Nicholas Radov)</li>
-  <li>Newwave/Onyx (Mark Scrimshire, Santhi Chebrolu)</li>
-</ul>
-
-<p>Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.</p>
-
-<h2 id="terminology">Terminology</h2>
-
-<p>This IG defaults to using US Core Profiles and value sets.</p>
-
-<p>If a resource is required that is not part of US Core it will be defined and referenced in the HRex IG. HRex is used to reference profiles that are utilized across multiple Da Vinci IGs.</p>
-
-<p>If a resource is unique to the PDex IG it will be defined in this guide, together with any unique value sets or coding systems required to support the profile.</p>
-
+<p><a href="CDS-Hooks.html">Next Page - CDS-Hooks</a></p>
 
 
 
@@ -206,8 +169,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
-        <p><a name="c5224b89-4748-4833-8135-2fb29a0d40a4">​</a>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.10 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 24, 2020 10:44-0400">2020-07-24</span>
+        <p><a name="892271c8-22e9-4246-a35f-e204d23d264f">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.10 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 24, 2020 11:42-0400">2020-07-24</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
