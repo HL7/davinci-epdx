@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\Payer-to-Payer Exchange - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"4.2"}
+    h3,h4,h5,h6{--heading-prefix:"4.2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.10 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+  <!-- menu.xml -->
+<ul class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="3_Introduction.html">Introduction</a></li>
+  <li><a href="7_CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="Downloads.html">Downloads</a></li>
+</ul>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="4_PDexImplementationActorsInteractionsDataPayloadsandMethods.html"><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Payer-to-Payer Exchange</b></li>
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.10). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Payer-to-Payer Exchange</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#operation-member-match-on-patient" id="markdown-toc-operation-member-match-on-patient">Operation $member-match on Patient</a>    <ul>
+      <li><a href="#notes" id="markdown-toc-notes">Notes</a></li>
+      <li><a href="#operation" id="markdown-toc-operation">Operation:</a></li>
+      <li><a href="#patientidentifier" id="markdown-toc-patientidentifier">Patient.identifier</a></li>
+      <li><a href="#unique-member-identifier" id="markdown-toc-unique-member-identifier">Unique Member Identifier</a></li>
+      <li><a href="#parameters" id="markdown-toc-parameters">Parameters</a></li>
+      <li><a href="#member-matching-logic" id="markdown-toc-member-matching-logic">Member matching Logic</a></li>
+      <li><a href="#member-match-parameter-example" id="markdown-toc-member-match-parameter-example">$member-match Parameter Example</a>        <ul>
+          <li><a href="#example-parameter-bundle-sent-from-new-health-plan" id="markdown-toc-example-parameter-bundle-sent-from-new-health-plan">Example Parameter bundle sent from New Health Plan</a></li>
+          <li><a href="#parameter-response-from-old-health-plan" id="markdown-toc-parameter-response-from-old-health-plan">Parameter Response from Old Health Plan</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+  <!-- PayerToPayerExchange.md -->
+<h1 id="operation-member-match-on-patient">Operation $member-match on Patient</h1>
+
+<p>Find Member using Patient and Coverage Resources</p>
+
+<p>OPERATION: Find member using search driven by member patient and coverage information.</p>
+
+<p>When a member switches from one plan to another the member has the option to request their data be passed to their new health plan.</p>
+
+<p>The new Health Plan SHALL enable an enrolling member to provide the coverage details for their prior health plan. The new Health Plan SHALL create the following resources that will be compiled into a Parameter Resource and submitted to the $member-match operation on the Patient FHIR endpoint for the old health plan:</p>
+
+<ul>
+  <li>US Core Patient (Containing Member demographics)</li>
+  <li>Coverage (details of prior health plan coverage provided by the member, typically from their Health Plan coverage card)</li>
+  <li>Coverage (details of new or prospective health plan coverage, provided by the health plan based upon the member’s enrollment)</li>
+</ul>
+
+<p>The New Health Plan Coverage record provides information for the prior Health Plan to determine the identity of their member in the new health plan, enabling them to identify the member in the new Health Plan for any future communications.</p>
+
+<p>The Health Plan should add the unique member identifier to the received Patient record.</p>
+
+<p>The Old Health Plan should return the following data:</p>
+
+<ul>
+  <li>The unique member identifier added to the Patient.identifier in the Patient resource submitted by the new health plan.</li>
+  <li>The new health plan coverage resource.</li>
+</ul>
+
+<p>Only one Patient and one Coverage record are returned.</p>
+
+<p>Reference Implementation Information: <a href="https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation">Member-Match Reference Implementation</a></p>
+
+<h2 id="notes">Notes</h2>
+
+<p>Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.</p>
+
+<p>One suggestion for discoverability is that the FHIR endpoint is discoverable via a file in the .well-known folder of the URL for the health plan that is typically found on a member’s health plan insurance card.</p>
+
+<h2 id="operation">Operation:</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL: POST [base]/Patient/$member-match
+</code></pre></div></div>
+
+<h2 id="patientidentifier">Patient.identifier</h2>
+
+<p>When the New Health Plan creates an OldCoverage parameter where the Coverage resource has a Coverage.identifier and the identifier.type is “MB”. The “MB” value is taken from the http://terminology.hl7.org/CodeSystem/v2-0203 value set.</p>
+
+<p>When the Old Health Plan returns the Patient Record they SHALL ADD a Patient.identifier with the Patient.identifier.type = “UMB” (Unique Member Identifier). This is a new type value.</p>
+
+<p>A code system will be created with a value set with a single entry “UMB” and will be referenced by the value set for identifier.</p>
+
+<h2 id="unique-member-identifier">Unique Member Identifier</h2>
+
+<p>The old Health Plan SHALL return a unique member identifier and a corresponding system value that identifies the plan.</p>
+
+<p>The member identifier SHALL be either the internal unique identifier, or an identifier that is mapped one-to-one to the Health Plan’s unique member identifier.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Use</td>
+      <td>Name</td>
+      <td>Cardinality</td>
+      <td>Type</td>
+      <td>Binding</td>
+      <td>Documentation</td>
+    </tr>
+    <tr>
+      <td>IN</td>
+      <td>resource</td>
+      <td>1..1</td>
+      <td>Parameter</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Use this to provide a set of coverage and beneficiary details for the match operation to search for a unique member record (e.g. POST a parameter with Patient, Old Coverage and New Coverage to Patient/$member-match).</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>OUT</td>
+      <td>return</td>
+      <td>1..1</td>
+      <td>Parameter</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>The returned Parameter resource will contain the New Plan’s Coverage record and their Member Patient record with the ADDITION of an identifier of type “UMB” that represents the Unique identifier to identify the member records at the old health plan. If the operation failed to find a unique match then a BadRequest status code is returned. (e.g. 422 - Unprocessable Entity).</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The response from a successful $member-match is a parameter containing the updated Patient resource submitted, but with the UMB identifier, and the new health plan coverage record as submitted in the original Parameter request.</p>
+
+<p>The response from a failed $member-match is a <b>422</b> Unprocessable Entity Status Code.</p>
+
+<p>After a successful $member-match the new health plan will use the unique member identifier provided by the Old Health Plan in the Patient.identifier field to query for any subsequent transactions related to payer-to-payer exchange.</p>
+
+<p>For example, in PDex the new health plan will subsequently use the UMB identifier to request the member’s health records. This can be done by querying the US Core FHIR profile endpoints which will be constrained to the identified member. Alternatively the new health plan can perform a $everything operation to the Patient/{ID}/$everything operation endpoint to receive a bundle of the member’s health records.</p>
+
+<h2 id="member-matching-logic">Member matching Logic</h2>
+
+<p>This specification is not attempting to define the member matching logic that is used by a Payer that processes a $member-match operation.</p>
+
+<ul>
+  <li>The specification is:</li>
+  <li>defining that only a SINGLE unique match is returned.</li>
+  <li>No match returns a 422 status code.</li>
+  <li>Multiple matches returns a 422 status code.</li>
+  <li>Defining the content passed into the $member-match operation.</li>
+  <li>Defining the data returned from the $member-match operation.</li>
+</ul>
+
+<p>An important objective of this operation is to ensure that a payer operating a $member-match operation has sufficient data provided to enable a match operation to be performed.</p>
+
+<p>For the requesting payer the operation assumes that a new member is able to provide their demographic information (name, date of birth, gender) and the identification details that would be present on the health plan insurance card provided by their old health plan.</p>
+
+<h2 id="member-match-parameter-example">$member-match Parameter Example</h2>
+
+<p>Example request: $member-match Parameter resource submitted by the new health plan.</p>
+
+<p>Note the Patient identifier type set to “MB”.
+$member-match accepts a POST with the Parameters json bundle in the body.</p>
+
+<h3 id="example-parameter-bundle-sent-from-new-health-plan">Example Parameter bundle sent from New Health Plan</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "MemberPatient",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "1",
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://hl7.davinci.org",
+                                    "code": "MB"
+                                }
+                            ]
+                        },
+                        "system": "http://oldhealthplan.example.com",
+                        "value": "55678",
+                        "assigner": {
+                            "reference": "Organization/2",
+                            "_reference": {
+                                "fhir_comments": [
+                                    "MB is passed from coverage card by new health plan."
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Person",
+                        "given": [
+                            "Patricia",
+                            "Ann"
+                        ]
+                    }
+                ],
+                "gender": "female",
+                "birthDate": "1974-12-25"
+            }
+        },
+        {
+            "name": "OldCoverage",
+            "resource": {
+                "resourceType": "Coverage",
+                "id": "9876B1",
+                "text": {
+                    "status": "generated",
+                    "div": "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;A human-readable rendering of the coverage&lt;/div&gt;"
+                },
+                "contained": [
+                    {
+                        "resourceType": "Organization",
+                        "id": "Organization/2",
+                        "name": "Old Health Plan",
+                        "endpoint": [
+                            {
+                                "reference": "http://www.oldhealthplan.com"
+                            }
+                        ]
+                    }
+                ],
+                "identifier": [
+                    {
+                        "system": "http://oldhealthplan.example.com",
+                        "value": "DH10001235"
+                    }
+                ],
+                "status": "draft",
+                "beneficiary": {
+                    "reference": "Patient/4"
+                },
+                "period": {
+                    "start": "2011-05-23",
+                    "end": "2012-05-23"
+                },
+                "payor": [
+                    {
+                        "reference": "#Organization/2"
+                    }
+                ],
+                "class": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                                    "code": "group"
+                                }
+                            ]
+                        },
+                        "value": "CB135"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                                    "code": "plan"
+                                }
+                            ]
+                        },
+                        "value": "B37FC"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                                    "code": "subplan"
+                                }
+                            ]
+                        },
+                        "value": "P7"
+                    },
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                                    "code": "class"
+                                }
+                            ]
+                        },
+                        "value": "SILVER"
+                    }
+                ]
+            }
+        },
+            {
+        "name": "NewCoverage",
+        "resource": {
+          "resourceType": "Coverage",
+          "id": "AA87654",
+          "contained": [
+              {
+                "resourceType" : "Organization",
+                "id" : "Organization/3",
+                "name" : "New Health Plan",
+                "endpoint" : [
+                  {
+                    "reference" : "http://www.newhealthplan.com"
+                  }
+                ]
+              }
+            ],
+            "identifier": [
+            {
+              "system": "http://newealthplan.example.com",
+              "value": "234567"
+            }
+          ],
+          "status": "active",
+          "beneficiary": {
+            "reference": "Patient/1"
+          },
+          "period": {
+            "start": "2020-04-01",
+            "end": "2021-03-31"
+          },
+          "payor": [
+            {
+              "reference": "#Organization/3"
+            }
+          ],
+          "class": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                    "code": "group"
+                  }
+                ]
+              },
+              "value": "A55521",
+              "name": "New Health Plan Group"
+            },
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                    "code": "subgroup"
+                  }
+                ]
+              },
+              "value": "456"
+            },
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                    "code": "plan"
+                  }
+                ]
+              },
+              "value": "99012"
+            },
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                    "code": "subplan"
+                  }
+                ]
+              },
+              "value": "A4"
+            },
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                    "code": "class"
+                  }
+                ]
+              },
+              "value": "GOLD"
+            }
+          ]
+        }
+      }
+    ]
+}
+</code></pre></div></div>
+
+<h3 id="parameter-response-from-old-health-plan">Parameter Response from Old Health Plan</h3>
+
+<p>Parameter Response Example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "MemberPatient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.davinci.org",
+                  "code": "MB"
+                }
+              ]
+            },
+            "system": "http://oldhealthplan.example.com",
+            "value": "55678",
+            "assigner": {
+              "reference": "Organization/2",
+              "_reference": {
+                "fhir_comments": [
+                  "MB is passed from coverage card by new health plan."
+                ]
+              }
+            }
+          },
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "UMB",
+                  "display": "Member Number",
+                  "userSelected": false
+                }
+              ],
+              "text": "Member Number"
+            },
+            "system": "https://old.payer.example.com/diamond-health-ppo/uniquemember",
+            "value": "dhu-10102"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Person",
+            "given": [
+              "Patricia",
+              "Ann"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-12-25"
+      }
+    },
+    {
+      "name": "NewCoverage",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "AA87654",
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "Organization/3",
+            "name": "New Health Plan",
+            "endpoint": [
+              {
+                "reference": "http://www.newhealthplan.com"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://newealthplan.example.com",
+            "value": "234567"
+          }
+        ],
+        "status": "active",
+        "beneficiary": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2021-03-31"
+        },
+        "payor": [
+          {
+            "reference": "#Organization/3"
+          }
+        ],
+        "class": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "group"
+                }
+              ]
+            },
+            "value": "A55521",
+            "name": "New Health Plan Group"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "subgroup"
+                }
+              ]
+            },
+            "value": "456"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "plan"
+                }
+              ]
+            },
+            "value": "99012"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "subplan"
+                }
+              ]
+            },
+            "value": "A4"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                  "code": "class"
+                }
+              ]
+            },
+            "value": "GOLD"
+          }
+        ]
+      }
+    }
+  ]
+}
+</code></pre></div></div>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p><a name="6d5eb9bd-c403-4f2a-908c-413809e93394">​</a>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.10 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 24, 2020 10:44-0400">2020-07-24</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
