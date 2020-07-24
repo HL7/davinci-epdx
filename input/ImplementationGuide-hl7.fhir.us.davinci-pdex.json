@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -44,19 +44,35 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/payer-medicationdispense"
+          "reference": "StructureDefinition/pdex-device"
         },
-        "name": "Payer MedicationDispense",
+        "name": "PDex Device",
+        "description": " The PDex Device profile is provided to enable payers to record information about\nnon-implantable devices used by a member. A wheelchair or walking stick are examples of non-implantable devices.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pdex-medicationdispense"
+        },
+        "name": "PDex MedicationDispense",
         "description": "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan",
         "exampleBoolean": false
       },
       {
         "reference": {
-          "reference": "StructureDefinition/pdexprovenance"
+          "reference": "StructureDefinition/pdex-provenance"
         },
         "name": "PDex Provenance",
         "description": " Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Provenance/1000001"
+        },
+        "name": "ExampleProvenanceTransmitter",
+        "description": "Example of a Transmitter Provenance record for a bundle",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"
       }
     ],
     "page": {
@@ -125,8 +141,8 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "Device.html",
-                  "title": "Device",
+                  "nameUrl": "PdexDevice.html",
+                  "title": "PDex Device",
                   "generation": "markdown"
                 },
                 {
@@ -220,12 +236,12 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "PDexProvenance_.html",
+                  "nameUrl": "PDexProvenance.html",
                   "title": "PDex Provenance",
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "USCoreProvenance_.html",
+                  "nameUrl": "USCoreProvenance.html",
                   "title": "US Core Provenance",
                   "generation": "markdown"
                 },
@@ -240,7 +256,7 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "VitalSigns_.html",
+                  "nameUrl": "VitalSigns.html",
                   "title": "VitalSigns",
                   "generation": "markdown"
                 }
