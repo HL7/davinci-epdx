@@ -6,9 +6,9 @@
 <body>
 <table class="grid">
 <tr><td><b>Level</b></td><td><b>Type</b></td><td><b>Location</b></td><td><b>Message</b></td></tr>
-<tr><td>error</td><td>invalid</td><td>ImplementationGuide.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex')</td><td>Conformance resource /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-davinci-pdex.json - the canonical URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex) does not match the URL (http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex)</td><td></td></tr>
-<tr><td>error</td><td>invariant</td><td>ImplementationGuide.url</td><td>Resource id/url mismatch: hl7.fhir.us.davinci-pdex/http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/davinci-pdex</td><td></td></tr>
-<tr><td>information</td><td>invalid</td><td>ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.description</td><td>The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course</td><td></td></tr>
+<tr><td>warning</td><td>invalid</td><td>ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.definition.resource[0].description</td><td>value should not start or finish with whitespace</td><td></td></tr>
+<tr><td>warning</td><td>invalid</td><td>ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.definition.resource[2].description</td><td>value should not start or finish with whitespace</td><td></td></tr>
+<tr><td>warning</td><td>business-rule</td><td>ImplementationGuide.jurisdiction</td><td>The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)</td><td></td></tr>
 </table>
 </body>
 </html>

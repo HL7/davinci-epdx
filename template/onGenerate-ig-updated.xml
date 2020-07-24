@@ -14,11 +14,11 @@
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.3.8"/>
+   <version value="0.3.10"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-07-17T11:23:12-04:00"/>
+   <date value="2020-07-24T10:44:21-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -61,19 +61,37 @@
 
 
 
-
+      <grouping id="_ex_example">
+         <name value="Example: Example Instances"/>
+         <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
+      </grouping>
 
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-payer-medicationdispense.html"/>
+            <valueUri value="StructureDefinition-pdex-device.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/payer-medicationdispense"/>
+            <reference value="StructureDefinition/pdex-device"/>
          </reference>
-         <name value="Payer MedicationDispense"/>
+         <name value="PDex Device"/>
+         <description value=" The PDex Device profile is provided to enable payers to record information about&#xA;non-implantable devices used by a member. A wheelchair or walking stick are examples of non-implantable devices."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_str_profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pdex-medicationdispense.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pdex-medicationdispense"/>
+         </reference>
+         <name value="PDex MedicationDispense"/>
          <description value="Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"/>
          <exampleBoolean value="false"/>
          <groupingId value="_str_profile"/>
@@ -83,15 +101,30 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-payer-provenance.html"/>
+            <valueUri value="StructureDefinition-pdex-provenance.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/payer-provenance"/>
+            <reference value="StructureDefinition/pdex-provenance"/>
          </reference>
-         <name value="Payer Provenance"/>
+         <name value="PDex Provenance"/>
          <description value=" Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation."/>
          <exampleBoolean value="false"/>
          <groupingId value="_str_profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Provenance"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Provenance-1000001.html"/>
+         </extension>
+         <reference>
+            <reference value="Provenance/1000001"/>
+         </reference>
+         <name value="ExampleProvenanceTransmitter"/>
+         <description value="Example of a Transmitter Provenance record for a bundle"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <groupingId value="_ex_example"/>
       </resource>
       <page>
          <nameUrl value="toc.html"/>
@@ -156,8 +189,8 @@
                   <generation value="markdown"/>
                </page>
                <page>
-                  <nameUrl value="Device.html"/>
-                  <title value="Device"/>
+                  <nameUrl value="PdexDevice.html"/>
+                  <title value="PDex Device"/>
                   <generation value="markdown"/>
                </page>
                <page>
@@ -251,12 +284,12 @@
                   <generation value="markdown"/>
                </page>
                <page>
-                  <nameUrl value="PayerProvenance_.html"/>
-                  <title value="Payer Provenance"/>
+                  <nameUrl value="PDexProvenance.html"/>
+                  <title value="PDex Provenance"/>
                   <generation value="markdown"/>
                </page>
                <page>
-                  <nameUrl value="USCoreProvenance_.html"/>
+                  <nameUrl value="USCoreProvenance.html"/>
                   <title value="US Core Provenance"/>
                   <generation value="markdown"/>
                </page>
@@ -271,7 +304,7 @@
                   <generation value="markdown"/>
                </page>
                <page>
-                  <nameUrl value="VitalSigns_.html"/>
+                  <nameUrl value="VitalSigns.html"/>
                   <title value="VitalSigns"/>
                   <generation value="markdown"/>
                </page>
@@ -308,17 +341,32 @@
             <generation value="markdown"/>
          </page>
          <page>
+            <nameUrl value="Downloads.html"/>
+            <title value="Downloads"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
             <nameUrl value="artifacts.html"/>
             <title value="Artifacts Summary"/>
             <generation value="html"/>
             <page>
-               <nameUrl value="StructureDefinition-payer-medicationdispense.html"/>
-               <title value="Payer MedicationDispense"/>
+               <nameUrl value="StructureDefinition-pdex-device.html"/>
+               <title value="PDex Device"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-payer-provenance.html"/>
-               <title value="Payer Provenance"/>
+               <nameUrl value="StructureDefinition-pdex-medicationdispense.html"/>
+               <title value="PDex MedicationDispense"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-pdex-provenance.html"/>
+               <title value="PDex Provenance"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Provenance-1000001.html"/>
+               <title value="ExampleProvenanceTransmitter"/>
                <generation value="generated"/>
             </page>
          </page>
