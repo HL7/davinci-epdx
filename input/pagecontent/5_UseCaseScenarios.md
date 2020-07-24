@@ -107,17 +107,14 @@ It must be recognized that Payers may not have in depth health history for a hea
 
 ## Versioning of FHIR Data
 
-A payer MAY choose to support FHIR resource data versioning in their API. In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
+A payer SHOULD provide the most recent version of the Patient, Practitioner, Organization and Location resources.
 
-If a payer chooses to support FHIR resource data versioning related resource references in a bounding resource MAY use the vread format of reference:
+A payer MAY choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
+
+If a payer chooses to support FHIR resource data versioning of related resource references in the referring resource MAY use the vread format of reference:
 
     [type]/[id]/_history/[vid]
-    
+
 Supporting versioning of FHIR data implies supporting the [vread](https://www.hl7.org/fhir/http.html#vread) and [history]([vread](https://www.hl7.org/fhir/http.html#history) interactions in the FHIR specification.
-
-This guide recommends, but does not enforce, the following approach:
-
-- Clinical objects, such as observations, referenced by other clinical objects should reference by ID.
-- Physical objects (Patient, Practitioners, Organizations and Locations) referenced by clinical objects (such as encounters) MAY be referenced by ID or by ID and version.
 
 [Next Page - Provider-controlled Information Requests and Filtering](Provider-controlledInformationRequestsandFiltering.html)
