@@ -22,7 +22,7 @@ The well defined mechanism for enabling Member/Patient authorization to share in
 
 After authenticating the Member **SHALL** be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan.
 
-The Health Plan **SHALL** provide the option to allow the Member to limit the information that is shared with the application.. For example, this **MAY** enable the Member to withhold their demographic or behavioral health information. 
+The Authorization process SHALL provide the ability for the authorized representative to designate a third-party application that will have access to all information permitted by current state and federal regulations.  
 
 After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application. 
 
