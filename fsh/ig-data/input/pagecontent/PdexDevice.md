@@ -12,7 +12,7 @@ The essential fields to be provided in the PDex Device resource are:
 |----------------------------------|------------|-------|-------|------------------------------------|
 | Device                           | Device     | I     | 0..*  |                                    |
 | Device.id                        | id         |      | 0..1  | id                                 |
-| Device.udiCarrier                | udiCarrier | SI   | 1..1  | BackboneElement                    |
+| Device.udiCarrier                | udiCarrier | SI   | 0..1  | BackboneElement                    |
 | Device.deviceName.name           | name       |       | 1..1  | string                             |
 | Device.deviceName.type           | type       |       | 1..1  | code                               |
 | Device.type                      | type       | S     | 1..1  | CodeableConcept                    |
