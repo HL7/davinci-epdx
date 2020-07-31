@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -12,7 +12,8 @@
       "telecom": [
         {
           "system": "email",
-          "value": "mark@ekivemark.com"
+          "value": "mailto:mark@ekivemark.com",
+          "display": "Mark Scrimshire, OnyxHealth.io"
         }
       ]
     },
@@ -47,7 +48,7 @@
           "reference": "StructureDefinition/pdex-device"
         },
         "name": "PDex Device",
-        "description": " The PDex Device profile is provided to enable payers to record information about\nnon-implantable devices used by a member. A wheelchair or walking stick are examples of non-implantable devices.",
+        "description": " The PDex Device profile is provided to enable payers to record information about\ndevices used by a member that may not have a UDI number.",
         "exampleBoolean": false
       },
       {

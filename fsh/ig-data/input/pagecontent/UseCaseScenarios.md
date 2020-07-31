@@ -101,7 +101,7 @@ A payer SHOULD provide the most recent version of the Patient, Practitioner, Org
 
 A payer MAY choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
 
-If a payer chooses to support FHIR resource data versioning of related resource references in the referring resource MAY use the vread format of reference:
+If a payer chooses to support FHIR resource data versioning of related resource references in the referring resource SHALL use the vread format of reference:
 
     [type]/[id]/_history/[vid]
 
