@@ -3,7 +3,7 @@
   <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <!-- 
-    This file contains just the constraints for the profile Device
+    This file contains just the constraints for the profile USCoreImplantableDeviceProfile
     It includes the base constraints for the resource as well.
     Because of the way that schematrons and containment work, 
     you may need to use this schematron fragment to build a, 
@@ -17,6 +17,8 @@
       <sch:assert test="not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))">If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (inherited)</sch:assert>
       <sch:assert test="not(exists(f:contained/*/f:meta/f:security))">If a resource is contained in another resource, it SHALL NOT have a security label (inherited)</sch:assert>
       <sch:assert test="exists(f:text/h:div)">A resource should have narrative for robust management (inherited)</sch:assert>
+      <sch:assert test="not(f:udiCarrier) or (f:carrierHRF or f:carrierAIDC)">Implantable medical devices that have UDI information SHALL represent this information in either carrierAIDC or carrierHRF. (inherited)</sch:assert>
+      <sch:assert test="not(f:udiCarrier) or (f:manufactureDate or f:expirationDate or f:lotNumber or f:serialNumber or f:distinctIdentifier)">For implantable medical devices that have UDI information,  at least one of the Production Identifiers (UDI-PI) SHALL be present. (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
