@@ -47,7 +47,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * receiver 0..*
 * receiver only Reference(us-core-patient | us-core-practitioner)
-* receiver ^short = "Who collected the medication"
+* receiver ^short = "Person collecting the medication"
 
 * note 0..*
 * note only Annotation
