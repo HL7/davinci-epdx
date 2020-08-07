@@ -10,7 +10,7 @@
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-07-31T11:43:03-04:00",
+  "date": "2020-08-06T23:00:21-04:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -361,6 +361,95 @@
         },
         "name": "PDex Provenance",
         "description": " Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "StructureDefinition-ProvenanceConversionFrom.html"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/ProvenanceConversionFrom"
+        },
+        "name": "An attribute to describe the data conversion performed",
+        "description": "Attributes that identify the source record format from which data in the referenced resources was derived",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "ValueSet-ProvenanceFormatConversionSourceVS.html"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/ProvenanceFormatConversionSourceVS"
+        },
+        "name": "Source Data conversion",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "ValueSet-ProvenancePayerAgent.html"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/ProvenancePayerAgent"
+        },
+        "name": "Payer Agent Type",
+        "description": "Agent role that payer performs",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "CodeSystem-ProvenanceConversionSourceCS.html"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/ProvenanceConversionSourceCS"
+        },
+        "name": "Provenance Conversion Source Format",
+        "description": "CodeSystem for source format standards",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "CodeSystem-ProvenancePayerAgentCS.html"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/ProvenancePayerAgentCS"
+        },
+        "name": "Payer Agent roles",
+        "description": "CodeSystem for types of role carried out by payers when recording provenance.",
         "exampleBoolean": false
       },
       {

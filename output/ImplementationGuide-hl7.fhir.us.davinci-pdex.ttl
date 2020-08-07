@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-07-31T11:43:03-04:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-08-06T23:00:21-04:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -353,6 +353,95 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "StructureDefinition-ProvenanceConversionFrom.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/ProvenanceConversionFrom" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "An attribute to describe the data conversion performed" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Attributes that identify the source record format from which data in the referenced resources was derived" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 4;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-ProvenanceFormatConversionSourceVS.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceFormatConversionSourceVS>;
+         fhir:Reference.reference [ fhir:value "ValueSet/ProvenanceFormatConversionSourceVS" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Source Data conversion" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "ValueSet-ProvenancePayerAgent.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerAgent>;
+         fhir:Reference.reference [ fhir:value "ValueSet/ProvenancePayerAgent" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Payer Agent Type" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Agent role that payer performs" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CodeSystem-ProvenanceConversionSourceCS.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/ProvenanceConversionSourceCS" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Provenance Conversion Source Format" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CodeSystem for source format standards" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 7;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
+         fhir:Extension.valueUri [ fhir:value "CodeSystem-ProvenancePayerAgentCS.html" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerAgentCS>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/ProvenancePayerAgentCS" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Payer Agent roles" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CodeSystem for types of role carried out by payers when recording provenance." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 8;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
        ], [
          fhir:index 1;
@@ -658,6 +747,16 @@
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceFormatConversionSourceVS> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerAgent> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerAgentCS> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000001> a fhir:us .
 

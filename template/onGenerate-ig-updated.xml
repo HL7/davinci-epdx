@@ -18,7 +18,7 @@
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-07-31T11:43:03-04:00"/>
+   <date value="2020-08-06T23:00:21-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -49,14 +49,24 @@
 
 
 
+
       <grouping id="_str_profile">
          <name value="Structures: Resource Profiles"/>
          <description value="These define constraints on FHIR resources that need to be complied with by conformant implementations"/>
       </grouping>
 
-
-
-
+      <grouping id="_str_extension">
+         <name value="Structures: Extension Definitions"/>
+         <description value="These define constraints on FHIR data types that need to be complied with by conformant implementations"/>
+      </grouping>
+      <grouping id="_term_valueset">
+         <name value="Terminology: Value Sets"/>
+         <description value="These define sets of codes used by systems conforming with this implementation guide"/>
+      </grouping>
+      <grouping id="_term_codesystem">
+         <name value="Terminology: Code Systems"/>
+         <description value="These define new code systems used by systems conforming with this implementation guide"/>
+      </grouping>
 
 
 
@@ -110,6 +120,80 @@
          <description value=" Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation."/>
          <exampleBoolean value="false"/>
          <groupingId value="_str_profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-ProvenanceConversionFrom.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/ProvenanceConversionFrom"/>
+         </reference>
+         <name value="An attribute to describe the data conversion performed"/>
+         <description value="Attributes that identify the source record format from which data in the referenced resources was derived"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_str_extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-ProvenanceFormatConversionSourceVS.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/ProvenanceFormatConversionSourceVS"/>
+         </reference>
+         <name value="Source Data conversion"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-ProvenancePayerAgent.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/ProvenancePayerAgent"/>
+         </reference>
+         <name value="Payer Agent Type"/>
+         <description value="Agent role that payer performs"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-ProvenanceConversionSourceCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/ProvenanceConversionSourceCS"/>
+         </reference>
+         <name value="Provenance Conversion Source Format"/>
+         <description value="CodeSystem for source format standards"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-ProvenancePayerAgentCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/ProvenancePayerAgentCS"/>
+         </reference>
+         <name value="Payer Agent roles"/>
+         <description value="CodeSystem for types of role carried out by payers when recording provenance."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_codesystem"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -362,6 +446,31 @@
             <page>
                <nameUrl value="StructureDefinition-pdex-provenance.html"/>
                <title value="PDex Provenance"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-ProvenanceConversionFrom.html"/>
+               <title value="An attribute to describe the data conversion performed"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-ProvenanceFormatConversionSourceVS.html"/>
+               <title value="Source Data conversion"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-ProvenancePayerAgent.html"/>
+               <title value="Payer Agent Type"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-ProvenanceConversionSourceCS.html"/>
+               <title value="Provenance Conversion Source Format"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-ProvenancePayerAgentCS.html"/>
+               <title value="Payer Agent roles"/>
                <generation value="generated"/>
             </page>
             <page>
