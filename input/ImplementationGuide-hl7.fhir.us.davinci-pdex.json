@@ -69,6 +69,45 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/ProvenanceConversionFrom"
+        },
+        "name": "An attribute to describe the data conversion performed",
+        "description": "Attributes that identify the source record format from which data in the referenced resources was derived",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProvenanceFormatConversionSourceVS"
+        },
+        "name": "Source Data conversion",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ProvenancePayerAgent"
+        },
+        "name": "Payer Agent Type",
+        "description": "Agent role that payer performs",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ProvenanceConversionSourceCS"
+        },
+        "name": "Provenance Conversion Source Format",
+        "description": "CodeSystem for source format standards",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ProvenancePayerAgentCS"
+        },
+        "name": "Payer Agent roles",
+        "description": "CodeSystem for types of role carried out by payers when recording provenance.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Provenance/1000001"
         },
         "name": "ExampleProvenanceTransmitter",

@@ -1,9 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="855209b4-a6e8-4b0c-b8b6-79eee5f5a95b"/>
+  <id value="d3b56696-2191-4eab-93d0-86adba8f9bed"/>
   <meta>
-    <lastUpdated value="2020-07-31T11:43:03.153-04:00"/>
+    <lastUpdated value="2020-08-06T23:00:21.055-04:00"/>
   </meta>
   <type value="collection"/>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ValueSet/ProvenanceFormatConversionSourceVS"/>
+    <resource>
+      <ValueSet>
+        <id value="ProvenanceFormatConversionSourceVS"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 11 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-ProvenanceConversionSourceCS.html">Provenance Conversion Source Format v0.3.11 (CodeSystem)</a>
+            </p>
+            <p>All codes from system 
+              <a href="CodeSystem-ProvenanceConversionSourceCS.html">
+                <code>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-hl7v2"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-hl7v2">hl7v2</a>
+                </td>
+                <td>HL7 v2</td>
+                <td>HL7 v2 Message</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-hl7v3"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-hl7v3">hl7v3</a>
+                </td>
+                <td>HL7 v3</td>
+                <td>HL7 v3 Message</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-ccda"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-ccda">ccda</a>
+                </td>
+                <td>HL7 C-CDA</td>
+                <td>HL7 Consolidated-Clinical Document Architecture</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-claim"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-claim">claim</a>
+                </td>
+                <td>837 claim</td>
+                <td>EDI 837 Claim</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-hl7v2oru"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-hl7v2oru">hl7v2oru</a>
+                </td>
+                <td>HL7 v2 ORU</td>
+                <td>HL7 v2 Structured Observation Report(ORU) message</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-hl7v2adt"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-hl7v2adt">hl7v2adt</a>
+                </td>
+                <td>HL7 v2 ADT</td>
+                <td>HL7 v2 Admit, Discharge Transfer (ADT) message</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-hl7v2ro1"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-hl7v2ro1">hl7v2ro1</a>
+                </td>
+                <td>HL7 v2 RO1</td>
+                <td>HL7 v2 Unsolicited Observation (R01) message</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-custom"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-custom">custom</a>
+                </td>
+                <td>Custom Format</td>
+                <td>Non-standard input format. e.g. CSV file, fax, etc.</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-fhirdstu2"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-fhirdstu2">fhirdstu2</a>
+                </td>
+                <td>FHIR DSTU2</td>
+                <td>HL7 FHIR DSTU2 profile</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-fhirdstu3"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-fhirdstu3">fhirdstu3</a>
+                </td>
+                <td>FHIR STU3</td>
+                <td>HL7 FHIR STU3 profile</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenanceConversionSourceCS-fhirr4"> </a>
+                  <a href="CodeSystem-ProvenanceConversionSourceCS.html#ProvenanceConversionSourceCS-fhirr4">fhirr4</a>
+                </td>
+                <td>FHIR R4</td>
+                <td>HL7 FHIR R4 profile</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ValueSet/ProvenanceFormatConversionSourceVS"/>
+        <version value="0.3.11"/>
+        <name value="ProvenanceFormatConversionSourceVS"/>
+        <title value="Source Data conversion"/>
+        <status value="active"/>
+        <date value="2020-08-06T23:00:21-04:00"/>
+        <contact>
+          <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+          <telecom>
+            <system value="email"/>
+            <value value="mailto:mark@ekivemark.com"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="HL7 International - Financial Management"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://www.hl7.org/Special/committees/fm"/>
+          </telecom>
+        </contact>
+        <expansion>
+          <identifier value="urn:uuid:d5bd2b88-ab1d-4c31-a8f8-349702c6aa4d"/>
+          <timestamp value="2020-08-06T23:00:28-04:00"/>
+          <total value="11"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS|0.3.11"/>
+          </parameter>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="hl7v2"/>
+            <display value="HL7 v2"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="hl7v3"/>
+            <display value="HL7 v3"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="ccda"/>
+            <display value="HL7 C-CDA"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="claim"/>
+            <display value="837 claim"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="hl7v2oru"/>
+            <display value="HL7 v2 ORU"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="hl7v2adt"/>
+            <display value="HL7 v2 ADT"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="hl7v2ro1"/>
+            <display value="HL7 v2 RO1"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="custom"/>
+            <display value="Custom Format"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="fhirdstu2"/>
+            <display value="FHIR DSTU2"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="fhirdstu3"/>
+            <display value="FHIR STU3"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"/>
+            <code value="fhirr4"/>
+            <display value="FHIR R4"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ValueSet/ProvenancePayerAgent"/>
+    <resource>
+      <ValueSet>
+        <id value="ProvenancePayerAgent"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 3 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-ProvenancePayerAgentCS.html">Payer Agent roles v0.3.11 (CodeSystem)</a>
+            </p>
+            <p>All codes from system 
+              <a href="CodeSystem-ProvenancePayerAgentCS.html">
+                <code>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenancePayerAgentCS-transmitter"> </a>
+                  <a href="CodeSystem-ProvenancePayerAgentCS.html#ProvenancePayerAgentCS-transmitter">transmitter</a>
+                </td>
+                <td>Transmitter</td>
+                <td>Provenance Transmitter</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenancePayerAgentCS-compiler"> </a>
+                  <a href="CodeSystem-ProvenancePayerAgentCS.html#ProvenancePayerAgentCS-compiler">compiler</a>
+                </td>
+                <td>Compiler</td>
+                <td>Record Compiler</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-us-davinci-pdex-ImplementationGuide-davinci-pdex-CodeSystem-ProvenancePayerAgentCS-converter"> </a>
+                  <a href="CodeSystem-ProvenancePayerAgentCS.html#ProvenancePayerAgentCS-converter">converter</a>
+                </td>
+                <td>Converter</td>
+                <td>Convert records from another format</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ValueSet/ProvenancePayerAgent"/>
+        <version value="0.3.11"/>
+        <name value="ProvenancePayerAgent"/>
+        <title value="Payer Agent Type"/>
+        <status value="active"/>
+        <date value="2020-08-06T23:00:21-04:00"/>
+        <contact>
+          <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+          <telecom>
+            <system value="email"/>
+            <value value="mailto:mark@ekivemark.com"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="HL7 International - Financial Management"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://www.hl7.org/Special/committees/fm"/>
+          </telecom>
+        </contact>
+        <description value="Agent role that payer performs"/>
+        <expansion>
+          <identifier value="urn:uuid:dbf43e2c-087e-4269-99fb-b89ca41a8185"/>
+          <timestamp value="2020-08-06T23:00:28-04:00"/>
+          <total value="3"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS|0.3.11"/>
+          </parameter>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS"/>
+            <code value="transmitter"/>
+            <display value="Transmitter"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS"/>
+            <code value="compiler"/>
+            <display value="Compiler"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS"/>
+            <code value="converter"/>
+            <display value="Converter"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
 </Bundle>
