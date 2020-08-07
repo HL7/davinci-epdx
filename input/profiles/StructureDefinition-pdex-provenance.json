@@ -2,11 +2,41 @@
   "resourceType": "StructureDefinition",
   "id": "pdex-provenance",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance",
-  "version": "0.3.11",
+  "version": "0.1.10",
   "name": "PdexProvenance",
   "title": "PDex Provenance",
-  "status": "active",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
   "description": " Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -43,6 +73,36 @@
   "differential": {
     "element": [
       {
+        "id": "Provenance.extension",
+        "path": "Provenance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Provenance.extension:sourceFormat",
+        "path": "Provenance.extension",
+        "sliceName": "sourceFormat",
+        "short": "Source format resource was converted from",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Provenance.occurredDateTime",
         "path": "Provenance.occurredDateTime",
         "min": 0,
@@ -60,7 +120,7 @@
         "min": 1,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/provenance-agent-type"
+          "valueSet": "http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent"
         }
       },
       {

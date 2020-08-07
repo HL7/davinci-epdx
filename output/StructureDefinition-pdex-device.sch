@@ -3,12 +3,20 @@
   <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <!-- 
-    This file contains just the constraints for the profile USCoreImplantableDeviceProfile
+    This file contains just the constraints for the profile Device
     It includes the base constraints for the resource as well.
     Because of the way that schematrons and containment work, 
     you may need to use this schematron fragment to build a, 
     single schematron that validates contained resources (if you have any) 
   -->
+  <sch:pattern>
+    <sch:title>f:Device</sch:title>
+    <sch:rule context="f:Device">
+      <sch:assert test="count(f:udiCarrier) &lt;= 1">udiCarrier: maximum cardinality of 'udiCarrier' is 1</sch:assert>
+      <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
+      <sch:assert test="count(f:patient) &gt;= 1">patient: minimum cardinality of 'patient' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:title>Device</sch:title>
     <sch:rule context="f:Device">
@@ -17,8 +25,6 @@
       <sch:assert test="not(exists(f:contained/*/f:meta/f:versionId)) and not(exists(f:contained/*/f:meta/f:lastUpdated))">If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated (inherited)</sch:assert>
       <sch:assert test="not(exists(f:contained/*/f:meta/f:security))">If a resource is contained in another resource, it SHALL NOT have a security label (inherited)</sch:assert>
       <sch:assert test="exists(f:text/h:div)">A resource should have narrative for robust management (inherited)</sch:assert>
-      <sch:assert test="not(f:udiCarrier) or (f:carrierHRF or f:carrierAIDC)">Implantable medical devices that have UDI information SHALL represent this information in either carrierAIDC or carrierHRF. (inherited)</sch:assert>
-      <sch:assert test="not(f:udiCarrier) or (f:manufactureDate or f:expirationDate or f:lotNumber or f:serialNumber or f:distinctIdentifier)">For implantable medical devices that have UDI information,  at least one of the Production Identifiers (UDI-PI) SHALL be present. (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -69,6 +75,12 @@
     <sch:title>Device.definition</sch:title>
     <sch:rule context="f:Device/f:definition">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Device/f:udiCarrier</sch:title>
+    <sch:rule context="f:Device/f:udiCarrier">
+      <sch:assert test="count(f:deviceIdentifier) &gt;= 1">deviceIdentifier: minimum cardinality of 'deviceIdentifier' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

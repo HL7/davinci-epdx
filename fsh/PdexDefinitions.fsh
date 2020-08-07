@@ -1,5 +1,5 @@
   // Define a rule set for commonly used rules for definition resources using instances
-  RuleSet: PDexDefinitionContent
+  RuleSet: PdexDefinitionContent
     * status = #draft      // draft until final published
     * experimental = true  // true until ready for pilot, then false
     * version = "0.1.10"    // Follow IG Versioning rules
@@ -11,7 +11,7 @@
     * jurisdiction.coding = urn:iso:std:iso:3166#US
 
     // Define a rule set for commonly used rules for definition resources using other Sushi features
-  RuleSet: PDexStructureDefinitionContent
+  RuleSet: PdexStructureDefinitionContent
     * ^status = #draft      // draft until final published
     * ^experimental = true  // true until ready for pilot, then false
     * ^version = "0.1.10"    // Follow IG Versioning rules
@@ -22,14 +22,14 @@
     * ^contact[1].telecom.value = "mailto:mark@ekivemark.com"
     * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 
-  RuleSet: PDexCapabilityStatementContent
+  RuleSet: PdexCapabilityStatementContent
     * status = #draft
     * experimental = true
     * date = "2020-07-24"
     * publisher = "HL7 Da Vinci"
     * contact.name = "Mark Scrimshire"
     * contact.telecom.system = #email
-    * contact.telecom.value = "mark@ekivemark.com"
+    * contact.telecom.value = "mailto:mark@ekivemark.com"
     * kind = #requirements
     * fhirVersion = #4.0.1
     * format[0] = #json

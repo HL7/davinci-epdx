@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerAgentCS> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ProvenancePayerAgentCS"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">transmitter<a name=\"ProvenancePayerAgentCS-transmitter\"> </a></td><td>Transmitter</td><td>Provenance Transmitter</td></tr><tr><td style=\"white-space:nowrap\">compiler<a name=\"ProvenancePayerAgentCS-compiler\"> </a></td><td>Compiler</td><td>Record Compiler</td></tr><tr><td style=\"white-space:nowrap\">converter<a name=\"ProvenancePayerAgentCS-converter\"> </a></td><td>Converter</td><td>Convert records from another format</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenancePayerAgentCS"];
+  fhir:CodeSystem.version [ fhir:value "0.3.11"];
+  fhir:CodeSystem.name [ fhir:value "ProvenancePayerAgentCS"];
+  fhir:CodeSystem.title [ fhir:value "Payer Agent roles"];
+  fhir:CodeSystem.status [ fhir:value "active"];
+  fhir:CodeSystem.date [ fhir:value "2020-08-06T23:00:21-04:00"^^xsd:dateTime];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "mailto:mark@ekivemark.com" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "HL7 International - Financial Management" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/fm" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "CodeSystem for types of role carried out by payers when recording provenance."];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "3"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "transmitter" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Transmitter" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Provenance Transmitter" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "compiler" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Compiler" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Record Compiler" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "converter" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Converter" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Convert records from another format" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerAgentCS.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/CodeSystem/ProvenancePayerAgentCS.ttl> .
+
+# -------------------------------------------------------------------------------------
+
