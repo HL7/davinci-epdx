@@ -1,18 +1,26 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 5, warn = 7, info = 1
+err = 9, warn = 15, info = 1
 IG Publisher Version: v1.1.0 Out of date - current version is ?pub-ver-1?
-Generated Fri Jul 31 11:43:20 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.3.11 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+Generated Thu Aug 06 23:00:42 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.3.11 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
- Build Errors : 31 / 1
+ Build Errors : 33 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 3
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 2 / 0
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 1 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 2 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceConversionFrom : 2 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-medicationdispense : 1 / 2
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 1 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 2 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenanceConversionSourceCS : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenancePayerAgentCS : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/valueset-ProvenanceFormatConversionSourceVS : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/valueset-ProvenancePayerAgent : 0 / 1
 </table>
 == n/a ==
+ERROR: Provenance.agent.type: The reference http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent could not be resolved
+ERROR: Extension.extension.valueCodeableConcept: The reference http://hl7.org/fhir/ValueSet/ValueSet-ProvenanceFormatConversionSourceVS could not be resolved
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ValueSet/ProvenanceFormatConversionSourceVS.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.
 ERROR: /Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/Coverage.html#/html/body/div/div/div/div/div/p/a at Line 589, column 5: The link 'Device.html' for "Next Page - Device" cannot be resolved
 ERROR: /Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/DataMapping.html#/html/body/div/div/div/div/div/p/a at Line 144, column 13: The link 'http://hl7.org/fhir/us/core/' for "US Core FHIR R4" cannot be resolved
@@ -51,14 +59,28 @@ WARNING: ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.defin
 WARNING: ImplementationGuide.jurisdiction: The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000001.json ==
 ERROR: Provenance/1000001: Provenance.target[0]: Unable to resolve resource "bundle/2000002"
+WARNING: Provenance/1000001: Provenance.agent[0].type: ValueSet http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent not found by validator
 ERROR: Provenance/1000001: Provenance.agent[0].who: Unable to resolve resource "Organization/1"
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-ProvenanceConversionFrom.json ==
+ERROR: StructureDefinition/ProvenanceConversionFrom: StructureDefinition.snapshot.element[8].binding.valueSet: URL value "http://hl7.org/fhir/ValueSet/ValueSet-ProvenanceFormatConversionSourceVS" does not resolve
+ERROR: StructureDefinition/ProvenanceConversionFrom: StructureDefinition.differential.element[5].binding.valueSet: URL value "http://hl7.org/fhir/ValueSet/ValueSet-ProvenanceFormatConversionSourceVS" does not resolve
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom'): The Implementation Guide contains no examples for this extension
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-device.json ==
-ERROR: StructureDefinition.jurisdiction: The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-device'): The Implementation Guide contains no examples for this profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-medicationdispense.json ==
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition.snapshot.element[28].mapping[0].map: The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course
 ERROR: StructureDefinition.jurisdiction: The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-medicationdispense'): The Implementation Guide contains no examples for this profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-provenance.json ==
-ERROR: StructureDefinition.jurisdiction: The resource must declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
+ERROR: StructureDefinition/pdex-provenance: StructureDefinition.snapshot.element[22].binding.valueSet: URL value "http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent" does not resolve
+ERROR: StructureDefinition/pdex-provenance: StructureDefinition.differential.element[4].binding.valueSet: URL value "http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent" does not resolve
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance').baseDefinition: US FHIR Usage rules require that all profiles on Provenance derive from the core US profile
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-ProvenanceConversionSourceCS.json ==
+WARNING: CodeSystem.jurisdiction: The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-ProvenancePayerAgentCS.json ==
+WARNING: CodeSystem.jurisdiction: The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/ValueSet-ProvenanceFormatConversionSourceVS.json ==
+WARNING: ValueSet.jurisdiction: The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/ValueSet-ProvenancePayerAgent.json ==
+WARNING: ValueSet.jurisdiction: The resource should declare its jurisdiction to match the package id (hl7.fhir.us.davinci-pdex, jurisdiction = urn:iso:std:iso:3166#US)
