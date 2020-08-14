@@ -17,7 +17,7 @@
   fhir:ValueSet.name [ fhir:value "FDANationalDrugCode"];
   fhir:ValueSet.title [ fhir:value "FDA National Drug Code (NDC)"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2020-08-14T10:09:50-04:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2020-08-14T11:03:47-04:00"^^xsd:dateTime];
   fhir:ValueSet.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -36,6 +36,14 @@
      ]
   ];
   fhir:ValueSet.description [ fhir:value "FDA National Drug Code (NDC)"];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "US" ]
+     ]
+  ];
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [
        fhir:index 0;
