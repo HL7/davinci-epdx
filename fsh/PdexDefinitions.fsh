@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //USCore
 Alias:   $USCorePatient = http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
 Alias:   $USCorePractitioner = http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
@@ -11,6 +12,9 @@ Alias:   $USCoreMedication = http://hl7.org/fhir/us/core/StructureDefinition/us-
 Alias:   $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
 
 // Define a rule set for commonly used rules for definition resources using instances
+=======
+  // Define a rule set for commonly used rules for definition resources using instances
+>>>>>>> master
   RuleSet: PdexDefinitionContent
     * status = #draft      // draft until final published
     * experimental = true  // true until ready for pilot, then false

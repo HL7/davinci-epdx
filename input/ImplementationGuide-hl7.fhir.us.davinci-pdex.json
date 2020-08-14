@@ -1,8 +1,13 @@
 {
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
+<<<<<<< HEAD
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
   "version": "0.1.12",
+=======
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
+  "version": "0.3.11",
+>>>>>>> master
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -69,6 +74,7 @@
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "StructureDefinition/DispenseRefill"
         },
         "name": "An attribute to express the refill number of a prescription",
@@ -77,6 +83,8 @@
       },
       {
         "reference": {
+=======
+>>>>>>> master
           "reference": "StructureDefinition/ProvenanceConversionFrom"
         },
         "name": "An attribute to describe the data conversion performed",
@@ -85,6 +93,7 @@
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "ValueSet/FDANationalDrugCode"
         },
         "name": "FDA National Drug Code (NDC)",
@@ -102,33 +111,57 @@
       {
         "reference": {
           "reference": "ValueSet/ProvenancePayerConversionSource"
+=======
+          "reference": "ValueSet/ProvenanceFormatConversionSourceVS"
+>>>>>>> master
         },
         "name": "Source Data conversion",
         "exampleBoolean": false
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "CodeSystem/ProvenanceAgentRoleTypeCS"
         },
         "name": "Provenance Roles",
         "description": "CodeSystem for types of role relating to the creation or communication of referenced resources",
+=======
+          "reference": "ValueSet/ProvenancePayerAgent"
+        },
+        "name": "Payer Agent Type",
+        "description": "Agent role that payer performs",
+>>>>>>> master
         "exampleBoolean": false
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "CodeSystem/ProvenancePayerDataSourceCS"
         },
         "name": "Provenance Payer Conversion Source Format",
+=======
+          "reference": "CodeSystem/ProvenanceConversionSourceCS"
+        },
+        "name": "Provenance Conversion Source Format",
+>>>>>>> master
         "description": "CodeSystem for source format standards",
         "exampleBoolean": false
       },
       {
         "reference": {
+<<<<<<< HEAD
           "reference": "MedicationDispense/1000001"
         },
         "name": "ExampleMedicationDispenseClaim",
         "description": "Example of a MedicationDispense from a Claim",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"
+=======
+          "reference": "CodeSystem/ProvenancePayerAgentCS"
+        },
+        "name": "Payer Agent roles",
+        "description": "CodeSystem for types of role carried out by payers when recording provenance.",
+        "exampleBoolean": false
+>>>>>>> master
       },
       {
         "reference": {
@@ -136,6 +169,7 @@
         },
         "name": "ExampleProvenanceTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
+<<<<<<< HEAD
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
       },
       {
@@ -169,6 +203,9 @@
         "name": "Patient1",
         "description": "US Core Patient Example1",
         "exampleBoolean": true
+=======
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"
+>>>>>>> master
       }
     ],
     "page": {
@@ -414,7 +451,11 @@
       },
       {
         "code": "path-history",
+<<<<<<< HEAD
         "value": "http://hl7.org/fhir/us/davinci-pdex/history.html"
+=======
+        "value": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/history.html"
+>>>>>>> master
       }
     ]
   }

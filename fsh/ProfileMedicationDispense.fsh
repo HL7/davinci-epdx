@@ -4,6 +4,7 @@ Id:             pdex-medicationdispense
 Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
 * subject 1..1
+<<<<<<< HEAD
 * subject only Reference(us-core-patient)
 * status  1..1
 * status  ^short = "completed"
@@ -17,6 +18,13 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * medicationCodeableConcept ^short = "Billing, service, product, or drug code"
 * medicationCodeableConcept from FDANationalDrugCode
 
+=======
+* subject only Reference(Patient)
+* status  1..1
+* status  ^short = "preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown"
+* status  from http://hl7.org/fhir/ValueSet/medicationdispense-status (required)
+
+>>>>>>> master
 * supportingInformation 0..*
 * supportingInformation only Reference(Resource)
 * supportingInformation ^short = """
@@ -31,13 +39,20 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * performer.function ^short = "Trial fill, partial fill, emergency fill, etc."
 * performer.function from http://hl7.org/fhir/ValueSet/medicationdispense-performer-function (example)
 * performer.actor 1..1
+<<<<<<< HEAD
 * performer.actor only Reference(us-core-practitioner | us-core-practitionerrole | us-core-organization)
+=======
+* performer.actor only Reference(us-core-practitioner | us-core-practitionerrole | us-core-organization | pdex-device)
+>>>>>>> master
 * performer.actor ^short = "Individual or device performing the dispense"
 
 * location 0..1
 * location only Reference(us-core-location)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 * authorizingPrescription 0..*
 * authorizingPrescription only Reference(us-core-medicationrequest)
 
@@ -48,6 +63,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * quantity 0..1
 * quantity only SimpleQuantity
+<<<<<<< HEAD
 * quantity ^short = "Billing, service, product, or drug code"
 
 * daysSupply 0..1
@@ -62,6 +78,17 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 // * receiver 0..*
 // * receiver only Reference(us-core-patient | us-core-practitioner)
 // * receiver ^short = "Person collecting the medication"
+=======
+* quantity ^short = "Amount dispensed"
+
+* daysSupply 0..1
+* daysSupply only SimpleQuantity
+* daysSupply ^short = "Amount of medication expressed as a timing amount"
+
+* receiver 0..*
+* receiver only Reference(us-core-patient | us-core-practitioner)
+* receiver ^short = "Person collecting the medication"
+>>>>>>> master
 
 * note 0..*
 * note only Annotation
