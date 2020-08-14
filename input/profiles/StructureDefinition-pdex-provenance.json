@@ -1,11 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "pdex-provenance",
-<<<<<<< HEAD
   "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
-=======
-  "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance",
->>>>>>> master
   "version": "0.1.10",
   "name": "PdexProvenance",
   "title": "PDex Provenance",
@@ -96,7 +92,6 @@
         "sliceName": "sourceFormat",
         "short": "Source format resource was converted from",
         "min": 0,
-<<<<<<< HEAD
         "max": "1"
       },
       {
@@ -112,26 +107,10 @@
       {
         "id": "Provenance.extension:sourceFormat.valueCodeableConcept",
         "path": "Provenance.extension.valueCodeableConcept",
-=======
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Provenance.occurredDateTime",
-        "path": "Provenance.occurredDateTime",
->>>>>>> master
         "min": 0,
         "max": "1",
         "type": [
           {
-<<<<<<< HEAD
             "code": "CodeableConcept"
           }
         ],
@@ -144,16 +123,10 @@
         "id": "Provenance.recorded",
         "path": "Provenance.recorded",
         "short": "Date/Time information was received by Payer"
-=======
-            "code": "dateTime"
-          }
-        ]
->>>>>>> master
       },
       {
         "id": "Provenance.agent.type",
         "path": "Provenance.agent.type",
-<<<<<<< HEAD
         "min": 1,
         "binding": {
           "strength": "required",
@@ -173,25 +146,6 @@
             ]
           }
         ]
-=======
-        "comment": "Amender",
-        "min": 1,
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent"
-        }
-      },
-      {
-        "id": "Provenance.agent.role",
-        "path": "Provenance.agent.role",
-        "comment": "Informant",
-        "min": 1,
-        "max": "1",
-        "binding": {
-          "strength": "example",
-          "valueSet": "http://hl7.org/fhir/ValueSet/security-role-type"
-        }
->>>>>>> master
       }
     ]
   }
