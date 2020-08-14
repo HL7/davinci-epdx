@@ -13,7 +13,11 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record or a claim record. 
 - Whether the data was subject to manual transcription or other interpretive transformation.
 
+<<<<<<< HEAD
+The PDex-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
+=======
 The PDex-Provenance resource is documented here: [pdexprovenance.html](pdexprovenance.html)
+>>>>>>> master
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
@@ -21,6 +25,56 @@ The PDexProvenance record **SHOULD** be populated with the following essential f
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | occurredPeriod or occurredDataTime | dateTime or Period of the encounter/procedure/medication being provided                                                                            |
 | recorded                           | Time of this transaction                                                                                                                           |
+<<<<<<< HEAD
+| agent.[0].type                     | transmitter (for conversion of claims data to clinical resources) | TRANS (for information taken from manual input)| REVIEWER (for clinical resources) |
+| agent.[0].who                      | US Core Organization resource identifying the health plan                                                                                                  |
+
+### Example Provenance Records
+
+Four examples are provided to deal with four different scenarios:
+
+1. Payer is transmitting a bundle [ExampleProvenanceTransmitter](Provenance-1000001.html)
+2. Organization as source of a record [ExampleProvenanceAuthor](Provenance-1000002.html)
+3. Solo Practitioner as source of a record [ExampleProvenanceSoloPractitioner](Provenance-1000003.html)
+4. Payer as source of a record [ExampleProvenancePayerSource](Provenance-1000004.html)
+
+#### Payer Transmitting a bundle
+
+The payer acts as the transmitter. Setting: 
+
+agent.type = "Transmitter" 
+agent.who = Payer's US Core Organization record
+
+#### Payer Converts a clinical record from a non-FHIR format
+
+The Payer creates the Provenance record as follows:
+
+target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Author
+agent.who = US Core Organization record for the originating organization
+extension.sourceFormat = "ccda" to identify that the record was transformed from a CCDA document
+
+#### Payer Converts a practitioner's clinical record from a non-FHIR format
+
+The Payer creates the Provenance record as follows:
+
+target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Author
+agent.who = US Core Practitioner record when the provider is NOT associated with an organization
+extension.sourceFormat = "hl7v2" to identify that the record was transformed from a HL7 v2 message
+
+#### Payer creates a clinical record from internal sources
+
+The Payer creates the Provenance record as follows:
+
+target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Source
+agent.who = Payer's US Core Organization record
+extension.sourceFormat = "custom" to identify that the record was transformed from a custom data format such as a CSV file.
+=======
 | agent.[0].type                     | AMENDER (for conversion of claims data to clinical resources) | TRANS (for information taken from manual input)| REVIEWER (for clinical resources) |
 | agent.[0].role                     | informant | custodian                                                                                                                              |
 | agent.[0].who                      | Organization resource identifying the health plan                                                                                                  |
@@ -38,6 +92,7 @@ Three examples are provided to deal with four different scenarios:
 4. Health Plan receive a claim from a provider and renders the data into FHIR clinical resources in order to pass information to a provider.
 
 #### Clinical Information with Provenance
+>>>>>>> master
 
 The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities. 
 The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 
@@ -67,6 +122,56 @@ The updated Provenance record **SHOULD** be passed on to any downstream entity r
 
 ### Example Provenance Record
 
+<<<<<<< HEAD
+An example Author Provenance record is shown below:
+
+<pre>
+{
+  "resourceType" : "Provenance",
+  "id" : "1000002",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2020-07-10T16:26:23.217+00:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"encounter/2000003\">encounter/2000003</a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype author}\">author</span></td><td><a href=\"Organization/2\">Organization/2</a></td></tr></table></div>"
+  },
+  "extension" : [
+    {
+      "url" : "sourceFormat",
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS",
+            "code" : "hl7ccda"
+          }
+        ]
+      }
+    }
+  ],
+  "target" : [
+    {
+      "reference" : "encounter/2000003"
+    }
+  ],
+  "recorded" : "2020-07-10T16:26:23.217+00:00",
+  "agent" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/provenanceagenttype",
+            "code" : "author"
+          }
+        ]
+      },
+      "who" : {
+        "reference" : "Organization/2"
+=======
 An example Provenance record is shown below:
 
 <pre>
@@ -139,6 +244,7 @@ An example Provenance record is shown below:
       "what": {
         "reference": "DocumentReference/example",
         "display": "CDA Document in XDS repository"
+>>>>>>> master
       }
     }
   ]

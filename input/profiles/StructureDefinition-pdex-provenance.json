@@ -1,7 +1,11 @@
 {
   "resourceType": "StructureDefinition",
   "id": "pdex-provenance",
+<<<<<<< HEAD
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
+=======
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance",
+>>>>>>> master
   "version": "0.1.10",
   "name": "PdexProvenance",
   "title": "PDex Provenance",
@@ -92,6 +96,23 @@
         "sliceName": "sourceFormat",
         "short": "Source format resource was converted from",
         "min": 0,
+<<<<<<< HEAD
+        "max": "1"
+      },
+      {
+        "id": "Provenance.extension:sourceFormat.extension",
+        "path": "Provenance.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.extension:sourceFormat.url",
+        "path": "Provenance.extension.url",
+        "fixedUri": "sourceFormat"
+      },
+      {
+        "id": "Provenance.extension:sourceFormat.valueCodeableConcept",
+        "path": "Provenance.extension.valueCodeableConcept",
+=======
         "max": "1",
         "type": [
           {
@@ -105,17 +126,54 @@
       {
         "id": "Provenance.occurredDateTime",
         "path": "Provenance.occurredDateTime",
+>>>>>>> master
         "min": 0,
         "max": "1",
         "type": [
           {
+<<<<<<< HEAD
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
+        }
+      },
+      {
+        "id": "Provenance.recorded",
+        "path": "Provenance.recorded",
+        "short": "Date/Time information was received by Payer"
+=======
             "code": "dateTime"
           }
         ]
+>>>>>>> master
       },
       {
         "id": "Provenance.agent.type",
         "path": "Provenance.agent.type",
+<<<<<<< HEAD
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType"
+        }
+      },
+      {
+        "id": "Provenance.agent.who",
+        "path": "Provenance.agent.who",
+        "short": "Provide US Core Organization. If no Organization provide US Core Practitioner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ]
+=======
         "comment": "Amender",
         "min": 1,
         "binding": {
@@ -133,6 +191,7 @@
           "strength": "example",
           "valueSet": "http://hl7.org/fhir/ValueSet/security-role-type"
         }
+>>>>>>> master
       }
     ]
   }

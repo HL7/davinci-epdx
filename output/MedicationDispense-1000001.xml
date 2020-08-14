@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationDispense xmlns="http://hl7.org/fhir">
+  <id value="1000001"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2020-07-09T15:26:23.217+00:00"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>medication</b>: <span title="Codes: {http://hl7.org/fhir/us/carin-bb/ValueSet/FDANationalDrugCode 54458-872-10}">54458-872-10</span></p><p><b>subject</b>: <a href="Patient/100123">Patient/100123</a></p><h3>Performers</h3><table class="grid"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href="Practitioner/234543123">Practitioner/234543123</a></td></tr></table><p><b>location</b>: <a href="Location/876543">Location/876543</a></p><p><b>type</b>: <span title="Codes: {http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType RF}">RF</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></div>
+  </text>
+  <status value="completed"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://hl7.org/fhir/us/carin-bb/ValueSet/FDANationalDrugCode"/>
+      <code value="54458-872-10"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/100123"/>
+  </subject>
+  <performer>
+    <actor>
+      <reference value="Practitioner/234543123"/>
+    </actor>
+  </performer>
+  <location>
+    <reference value="Location/876543"/>
+  </location>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType"/>
+      <code value="RF"/>
+    </coding>
+  </type>
+  <quantity>
+    <value value="60"/>
+  </quantity>
+  <daysSupply>
+    <value value="30"/>
+  </daysSupply>
+</MedicationDispense>

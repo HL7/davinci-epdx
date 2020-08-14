@@ -12,6 +12,10 @@
   <sch:pattern>
     <sch:title>f:MedicationDispense</sch:title>
     <sch:rule context="f:MedicationDispense">
+<<<<<<< HEAD
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill': maximum cardinality of 'extension' is 1</sch:assert>
+=======
+>>>>>>> master
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -55,6 +59,11 @@
     <sch:rule context="f:MedicationDispense/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+<<<<<<< HEAD
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+=======
+>>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -98,6 +107,10 @@
     <sch:title>MedicationDispense.medication[x] 1</sch:title>
     <sch:rule context="f:MedicationDispense/f:medication[x]">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+<<<<<<< HEAD
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+=======
+>>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

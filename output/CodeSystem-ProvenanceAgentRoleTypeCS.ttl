@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleTypeCS> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ProvenanceAgentRoleTypeCS"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleTypeCS defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">author<a name=\"ProvenanceAgentRoleTypeCS-author\"> </a></td><td>Author</td><td>Person or entity that originated the referenced resource</td></tr><tr><td style=\"white-space:nowrap\">source<a name=\"ProvenanceAgentRoleTypeCS-source\"> </a></td><td>Source</td><td>Organization, Practitioner or Payer who was the source of the referenced resource</td></tr><tr><td style=\"white-space:nowrap\">transmitter<a name=\"ProvenanceAgentRoleTypeCS-transmitter\"> </a></td><td>Transmitter</td><td>Provenance Transmitter</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleTypeCS"];
+  fhir:CodeSystem.version [ fhir:value "0.1.12"];
+  fhir:CodeSystem.name [ fhir:value "ProvenanceAgentRoleTypeCS"];
+  fhir:CodeSystem.title [ fhir:value "Provenance Roles"];
+  fhir:CodeSystem.status [ fhir:value "active"];
+  fhir:CodeSystem.date [ fhir:value "2020-08-14T01:51:17-04:00"^^xsd:dateTime];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "mailto:mark@ekivemark.com" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "HL7 International - Financial Management" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/fm" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "CodeSystem for types of role relating to the creation or communication of referenced resources"];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "3"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "author" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Author" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Person or entity that originated the referenced resource" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "source" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Source" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Organization, Practitioner or Payer who was the source of the referenced resource" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "transmitter" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Transmitter" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Provenance Transmitter" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleTypeCS.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleTypeCS.ttl> .
+
+# -------------------------------------------------------------------------------------
+

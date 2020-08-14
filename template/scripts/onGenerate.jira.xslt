@@ -50,6 +50,10 @@
     </xsl:if>
     <xsl:variable name="ballotUrl" select="/root/package-list/package[@status='preview' or @status='ballot'][1]/@path"/>
     <specification url="{$url}" ciUrl="{$ciUrl}" defaultWorkgroup="{$wg}" defaultVersion="{$version}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd">
+<<<<<<< HEAD
+      <xsl:copy-of select="/root/specification/@gitUrl"/>
+=======
+>>>>>>> master
       <xsl:if test="$ballotUrl!=''">
         <xsl:attribute name="ballotUrl">
           <xsl:value-of select="$ballotUrl"/>
@@ -62,6 +66,12 @@
           </xsl:if>
         </version>
       </xsl:for-each>
+<<<<<<< HEAD
+      <xsl:if test="not(/root/package-list/package/@version='1.0')">
+        <version code="0.1" deprecated="true"/>
+      </xsl:if>
+=======
+>>>>>>> master
       <artifactPageExtension value="-definitions"/>
       <artifactPageExtension value="-examples"/>
       <artifactPageExtension value="-mappings"/>

@@ -5,10 +5,17 @@
   <meta>
     <versionId value="1"/>
     <lastUpdated value="2020-07-09T15:26:23.217+00:00"/>
+<<<<<<< HEAD
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>target</b>: <a href="bundle/2000002">bundle/2000002</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype transmitter}">transmitter</span></td><td><a href="Organization/1">Organization/1</a></td></tr></table></div>
+=======
     <profile value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"/>
   </meta>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>target</b>: <a href="bundle/2000002">bundle/2000002</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Role</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://terminology.hl7.org/CodeSystem/provenance-participant-type assembler}">Assembler</span></td><td><span title="Codes: {http://terminology.hl7.org/CodeSystem/contractsignertypecodes TRANS}">Transcriber</span></td><td><a href="Organization/1">Organization/1</a></td></tr></table></div>
+>>>>>>> master
   </text>
   <target>
     <reference value="bundle/2000002"/>
@@ -17,6 +24,12 @@
   <agent>
     <type>
       <coding>
+<<<<<<< HEAD
+        <system value="http://terminology.hl7.org/CodeSystem/provenanceagenttype"/>
+        <code value="transmitter"/>
+      </coding>
+    </type>
+=======
         <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
         <code value="assembler"/>
       </coding>
@@ -27,6 +40,7 @@
         <code value="TRANS"/>
       </coding>
     </role>
+>>>>>>> master
     <who>
       <reference value="Organization/1"/>
     </who>

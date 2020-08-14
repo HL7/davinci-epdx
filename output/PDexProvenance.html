@@ -59,7 +59,11 @@
 
 
         <div id="ig-status">
+<<<<<<< HEAD
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.12 - CI Build</p>
+=======
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.11 - CI Build</p>
+>>>>>>> master
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -118,7 +122,11 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
+<<<<<<< HEAD
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.12). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+=======
     <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.11). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+>>>>>>> master
   <h2>PDex Provenance</h2>
   
 
@@ -133,7 +141,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+<<<<<<< HEAD
+  <li><a href="#example-provenance-records" id="markdown-toc-example-provenance-records">Example Provenance Records</a></li>
+=======
   <li><a href="#6-7-1-example-provenance-record-for-chain-of-custody" id="markdown-toc-6-7-1-example-provenance-record-for-chain-of-custody">6-7-1 Example Provenance Record for chain of custody</a></li>
+>>>>>>> master
   <li><a href="#example-provenance-record" id="markdown-toc-example-provenance-record">Example Provenance Record</a></li>
 </ul>
 
@@ -156,7 +168,11 @@ provided by the Health Plan’s FHIR API.</p>
   <li>Whether the data was subject to manual transcription or other interpretive transformation.</li>
 </ul>
 
+<<<<<<< HEAD
+<p>The PDex-Provenance resource is documented here: <a href="StructureDefinition-pdex-provenance.html">StructureDefinition-pdex-provenance.html</a></p>
+=======
 <p><a name="ca98af93-a349-46cd-94af-78b737add32c">​</a>The PDex-Provenance resource is documented here: <a href="pdexprovenance.html">pdexprovenance.html</a></p>
+>>>>>>> master
 
 <p>The PDexProvenance record <strong>SHOULD</strong> be populated with the following essential fields as follows:</p>
 
@@ -184,11 +200,72 @@ provided by the Health Plan’s FHIR API.</p>
     </tr>
     <tr>
       <td>agent.[0].type</td>
+<<<<<<< HEAD
+      <td>transmitter (for conversion of claims data to clinical resources)</td>
+=======
       <td>AMENDER (for conversion of claims data to clinical resources)</td>
+>>>>>>> master
       <td>TRANS (for information taken from manual input)</td>
       <td>REVIEWER (for clinical resources)</td>
     </tr>
     <tr>
+<<<<<<< HEAD
+      <td>agent.[0].who</td>
+      <td>US Core Organization resource identifying the health plan</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-provenance-records">Example Provenance Records</h3>
+
+<p>Four examples are provided to deal with four different scenarios:</p>
+
+<ol>
+  <li>Payer is transmitting a bundle <a href="Provenance-1000001.html">ExampleProvenanceTransmitter</a></li>
+  <li>Organization as source of a record <a href="Provenance-1000002.html">ExampleProvenanceAuthor</a></li>
+  <li>Solo Practitioner as source of a record <a href="Provenance-1000003.html">ExampleProvenanceSoloPractitioner</a></li>
+  <li>Payer as source of a record <a href="Provenance-1000004.html">ExampleProvenancePayerSource</a></li>
+</ol>
+
+<h4 id="payer-transmitting-a-bundle">Payer Transmitting a bundle</h4>
+
+<p>The payer acts as the transmitter. Setting:</p>
+
+<p>agent.type = “Transmitter” 
+agent.who = Payer’s US Core Organization record</p>
+
+<h4 id="payer-converts-a-clinical-record-from-a-non-fhir-format">Payer Converts a clinical record from a non-FHIR format</h4>
+
+<p>The Payer creates the Provenance record as follows:</p>
+
+<p>target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Author
+agent.who = US Core Organization record for the originating organization
+extension.sourceFormat = “ccda” to identify that the record was transformed from a CCDA document</p>
+
+<h4 id="payer-converts-a-practitioners-clinical-record-from-a-non-fhir-format">Payer Converts a practitioner’s clinical record from a non-FHIR format</h4>
+
+<p>The Payer creates the Provenance record as follows:</p>
+
+<p>target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Author
+agent.who = US Core Practitioner record when the provider is NOT associated with an organization
+extension.sourceFormat = “hl7v2” to identify that the record was transformed from a HL7 v2 message</p>
+
+<h4 id="payer-creates-a-clinical-record-from-internal-sources">Payer creates a clinical record from internal sources</h4>
+
+<p>The Payer creates the Provenance record as follows:</p>
+
+<p>target.reference = Reference of the converted record
+recorded = Date original record was received
+agent.type = Source
+agent.who = Payer’s US Core Organization record
+extension.sourceFormat = “custom” to identify that the record was transformed from a custom data format such as a CSV file.</p>
+=======
       <td>agent.[0].role</td>
       <td>informant</td>
       <td>custodian</td>
@@ -233,6 +310,7 @@ provided by the Health Plan’s FHIR API.</p>
 </ol>
 
 <h4 id="clinical-information-with-provenance">Clinical Information with Provenance</h4>
+>>>>>>> master
 
 <p>The Health Plan <strong>SHALL</strong> accept and maintain Provenance information associated with information received from contributing entities. 
 The Health Plan <strong>SHALL</strong> add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 
@@ -262,6 +340,56 @@ Provenance information <strong>SHALL</strong> be available for any information r
 
 <h3 id="example-provenance-record">Example Provenance Record</h3>
 
+<<<<<<< HEAD
+<p>An example Author Provenance record is shown below:</p>
+
+<pre>
+{
+  "resourceType" : "Provenance",
+  "id" : "1000002",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2020-07-10T16:26:23.217+00:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: &lt;a href=\"encounter/2000003\"&gt;encounter/2000003&lt;/a&gt;</p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3>&lt;table class=\"grid\"&gt;<tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td>&lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype author}\"&gt;author&lt;/span&gt;</td><td>&lt;a href=\"Organization/2\"&gt;Organization/2&lt;/a&gt;</td></tr>&lt;/table&gt;&lt;/div&gt;"
+  },
+  "extension" : [
+    {
+      "url" : "sourceFormat",
+      "valueCodeableConcept" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS",
+            "code" : "hl7ccda"
+          }
+        ]
+      }
+    }
+  ],
+  "target" : [
+    {
+      "reference" : "encounter/2000003"
+    }
+  ],
+  "recorded" : "2020-07-10T16:26:23.217+00:00",
+  "agent" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/provenanceagenttype",
+            "code" : "author"
+          }
+        ]
+      },
+      "who" : {
+        "reference" : "Organization/2"
+=======
 <p>An example Provenance record is shown below:</p>
 
 <pre>
@@ -334,6 +462,7 @@ Provenance information <strong>SHALL</strong> be available for any information r
       "what": {
         "reference": "DocumentReference/example",
         "display": "CDA Document in XDS repository"
+>>>>>>> master
       }
     }
   ]
@@ -341,7 +470,11 @@ Provenance information <strong>SHALL</strong> be available for any information r
 
 </pre>
 
+<<<<<<< HEAD
+<p><a name="111b63e1-4e20-4b8a-99b0-d23303f3668f">​</a><a href="USCoreProvenance_.html">Next Page - US Core Provenance_</a></p>
+=======
 <p><a name="64cee3ec-e9bd-4d93-ada4-bef8d934ccf5">​</a><a href="USCoreProvenance_.html">Next Page - US Core Provenance_</a></p>
+>>>>>>> master
 
 
 
@@ -366,7 +499,11 @@ Provenance information <strong>SHALL</strong> be available for any information r
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
+<<<<<<< HEAD
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.12 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 14, 2020 01:51-0400">2020-08-14</span>
+=======
           IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.11 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 6, 2020 23:36-0400">2020-08-06</span>
+>>>>>>> master
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

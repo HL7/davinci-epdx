@@ -1,0 +1,102 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "DispenseRefill",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
+  "version": "0.1.10",
+  "name": "DispenseRefill",
+  "title": "An attribute to express the refill number of a prescription",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension:refillNum",
+        "path": "Extension.extension",
+        "sliceName": "refillNum",
+        "short": "Refill number of this prescription",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:refillNum.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:refillNum.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "refillNum"
+      },
+      {
+        "id": "Extension.extension:refillNum.valueQuantity",
+        "path": "Extension.extension.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

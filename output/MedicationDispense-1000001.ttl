@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001> a fhir:MedicationDispense;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "1000001"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-07-09T15:26:23.217+00:00"^^xsd:dateTime ];
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://hl7.org/fhir/us/carin-bb/ValueSet/FDANationalDrugCode 54458-872-10}\">54458-872-10</span></p><p><b>subject</b>: <a href=\"Patient/100123\">Patient/100123</a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"Practitioner/234543123\">Practitioner/234543123</a></td></tr></table><p><b>location</b>: <a href=\"Location/876543\">Location/876543</a></p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType RF}\">RF</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></div>"
+  ];
+  fhir:MedicationDispense.status [ fhir:value "completed"];
+  fhir:MedicationDispense.medicationCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/carin-bb/ValueSet/FDANationalDrugCode" ];
+       fhir:Coding.code [ fhir:value "54458-872-10" ]
+     ]
+  ];
+  fhir:MedicationDispense.subject [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Patient/100123>;
+     fhir:Reference.reference [ fhir:value "Patient/100123" ]
+  ];
+  fhir:MedicationDispense.performer [
+     fhir:index 0;
+     fhir:MedicationDispense.performer.actor [
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Practitioner/234543123>;
+       fhir:Reference.reference [ fhir:value "Practitioner/234543123" ]
+     ]
+  ];
+  fhir:MedicationDispense.location [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Location/876543>;
+     fhir:Reference.reference [ fhir:value "Location/876543" ]
+  ];
+  fhir:MedicationDispense.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType" ];
+       fhir:Coding.code [ fhir:value "RF" ]
+     ]
+  ];
+  fhir:MedicationDispense.quantity [
+     fhir:Quantity.value [ fhir:value "60"^^xsd:decimal ]
+  ];
+  fhir:MedicationDispense.daysSupply [
+     fhir:Quantity.value [ fhir:value "30"^^xsd:decimal ]
+  ] .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/100123> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/234543123> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Location/876543> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/MedicationDispense/1000001.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,7 +1,11 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ProvenanceConversionFrom",
+<<<<<<< HEAD
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
+=======
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
+>>>>>>> master
   "version": "0.1.10",
   "name": "ProvenanceConversionFrom",
   "title": "An attribute to describe the data conversion performed",
@@ -77,6 +81,12 @@
         "fixedUri": "source"
       },
       {
+<<<<<<< HEAD
+        "id": "Extension.extension:source.valueCodeableConcept",
+        "path": "Extension.extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+=======
         "id": "Extension.extension:source.value[x]",
         "path": "Extension.extension.value[x]",
         "slicing": {
@@ -89,10 +99,17 @@
           "ordered": false,
           "rules": "open"
         },
+>>>>>>> master
         "type": [
           {
             "code": "CodeableConcept"
           }
+<<<<<<< HEAD
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
+=======
         ]
       },
       {
@@ -103,12 +120,17 @@
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/ValueSet/ValueSet-ProvenanceFormatConversionSourceVS"
+>>>>>>> master
         }
       },
       {
         "id": "Extension.url",
         "path": "Extension.url",
+<<<<<<< HEAD
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
+=======
         "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
+>>>>>>> master
       },
       {
         "id": "Extension.value[x]",

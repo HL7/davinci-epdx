@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="1000003"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2020-07-11T17:26:23.217+00:00"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000003</p><p><b>meta</b>: </p><p><b>target</b>: <a href="encounter/2000004">encounter/2000004</a></p><p><b>recorded</b>: Jul 11, 2020 1:26:23 PM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype author}">author</span></td><td><a href="Practitioner/1">Practitioner/1</a></td></tr></table></div>
+  </text>
+  <extension url="sourceFormat">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS"/>
+        <code value="x12837"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <target>
+    <reference value="encounter/2000004"/>
+  </target>
+  <recorded value="2020-07-11T17:26:23.217+00:00"/>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenanceagenttype"/>
+        <code value="author"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Practitioner/1"/>
+    </who>
+  </agent>
+</Provenance>

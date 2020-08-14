@@ -1,0 +1,112 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/Patient1> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "Patient1"];
+  fhir:Resource.meta [
+     fhir:Meta.lastUpdated [ fhir:value "2020-07-07T13:26:22.0314215+00:00"^^xsd:dateTime ];
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient>
+     ]
+  ];
+  fhir:Resource.language [ fhir:value "en-US"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p><b>Generated Narrative</b></p><p><b>id</b>: Patient1</p><p><b>meta</b>: </p><p><b>language</b>: en-US</p><p><b>identifier</b>: mb = 1234-234-1243-12345678901, mr = 1234-234-1243-12345678901m, um = 1234-234-1243-12345678901u, pt = 1234-234-1243-12345678901a</p><p><b>active</b>: true</p><p><b>name</b>: Johnny Appleseed </p><p><b>telecom</b>: ph: (410)678-2323</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1986-01-01</p><p><b>address</b>: 123 Main Street Pittsburgh PA 12519 </p><p><b>maritalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></p></div>"
+  ];
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ValueSet/identifier-type" ];
+         fhir:Coding.code [ fhir:value "mb" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/memberidentifier" ];
+     fhir:Identifier.value [ fhir:value "1234-234-1243-12345678901" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ValueSet/identifier-type" ];
+         fhir:Coding.code [ fhir:value "mr" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/medicalrecordnumber" ];
+     fhir:Identifier.value [ fhir:value "1234-234-1243-12345678901m" ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ValueSet/identifier-type" ];
+         fhir:Coding.code [ fhir:value "um" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/uniquememberidentifier" ];
+     fhir:Identifier.value [ fhir:value "1234-234-1243-12345678901u" ]
+  ], [
+     fhir:index 3;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/ValueSet/identifier-type" ];
+         fhir:Coding.code [ fhir:value "pt" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/patacctnum" ];
+     fhir:Identifier.value [ fhir:value "1234-234-1243-12345678901a" ]
+  ];
+  fhir:Patient.active [ fhir:value "true"^^xsd:boolean];
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.family [ fhir:value "Appleseed" ];
+     fhir:HumanName.given [
+       fhir:value "Johnny";
+       fhir:index 0
+     ]
+  ];
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "(410)678-2323" ];
+     fhir:ContactPoint.rank [ fhir:value "2"^^xsd:positiveInteger ]
+  ];
+  fhir:Patient.gender [ fhir:value "male"];
+  fhir:Patient.birthDate [ fhir:value "1986-01-01"^^xsd:date];
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.type [ fhir:value "physical" ];
+     fhir:Address.line [
+       fhir:value "123 Main Street";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "Pittsburgh" ];
+     fhir:Address.state [ fhir:value "PA" ];
+     fhir:Address.postalCode [ fhir:value "12519" ]
+  ];
+  fhir:Patient.maritalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-NullFlavor" ];
+       fhir:Coding.code [ fhir:value "UNK" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/Patient1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/Patient/Patient1.ttl> .
+
+# -------------------------------------------------------------------------------------
+

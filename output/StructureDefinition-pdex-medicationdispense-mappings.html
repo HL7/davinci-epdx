@@ -63,7 +63,11 @@
 
 
         <div id="ig-status">
+<<<<<<< HEAD
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.12 - CI Build</p>
+=======
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.11 - CI Build</p>
+>>>>>>> master
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -115,7 +119,11 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
+<<<<<<< HEAD
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.12). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+=======
   <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.11). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+>>>>>>> master
   
 
 
@@ -151,6 +159,19 @@
 
 
 
+<<<<<<< HEAD
+  
+    
+      <li>
+        <a href="StructureDefinition-pdex-medicationdispense-examples.html">Examples</a>
+      </li>
+    
+  
+
+
+
+=======
+>>>>>>> master
 
   
     <li>
@@ -194,6 +215,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;statusReason[x]</td><td>Event.statusReason</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>Event.code</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>Event.code</td> </tr>
+=======
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>Event.context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer</td> </tr>
@@ -207,7 +232,11 @@
  <tr><td>MedicationDispense</td><td>Entity. Role, or Act, Supply[moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (refillNum)</td><td>n/a, N/A</td> </tr>
+=======
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.outboundRelationship[typeCode=COMP]/target[classCode=PROC,moodCode=EVN]</td> </tr>
@@ -215,6 +244,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;statusReason[x]</td><td>.outboundRelationship[typeCode=RSON]/target[classCode=OBS,moodCode=EVN, code=&quot;not done reason&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;type of medication dispense&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>.participation[typeCode=PRD].role</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>.participation[typeCode=PRD].role</td> </tr>
+=======
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role[classCode=PAT]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>.inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN, code=&quot;type of encounter or episode&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>.outboundRelationship[typeCode=PERT].target[A_SupportingClinicalStatement CMET minimal with many different choices of classCodes(ORG, ENC, PROC, SPLY, SBADM, OBS) and each of the act class codes draws from one or more of the following moodCodes (EVN, DEF, INT PRMS, RQO, PRP, APT, ARQ, GOL)]</td> </tr>
@@ -252,6 +285,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>FiveWs.what[x]</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>FiveWs.what[x]</td> </tr>
+=======
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>FiveWs.context</td> </tr>
 </table>
@@ -261,6 +298,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CombinedMedicationDispense.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>CombinedMedicationDispense.SupplyEvent.statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>CombinedMedicationRequest.component1.AdministrationRequest.consumable</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>CombinedMedicationRequest.component1.AdministrationRequest.consumable</td> </tr>
+=======
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>CombinedMedicationDispense.inFulfillmentOf</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>CombinedMedicationDispense.SupplyEvent.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td>CombinedMedicationDispense.SupplyEvent.quantity</td> </tr>
@@ -277,6 +318,10 @@
  <tr><td colspan="3"><b>PdexMedicationDispense</b></td></tr>
  <tr><td>MedicationDispense</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>RXD-2-Dispense/Give Code</td> </tr>
+<<<<<<< HEAD
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>RXD-2-Dispense/Give Code</td> </tr>
+=======
+>>>>>>> master
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3-Patient ID List</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>ORC-2 Placer Order Number</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>RXD-33-Dispense Type</td> </tr>
@@ -340,7 +385,11 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
+<<<<<<< HEAD
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.12 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 14, 2020 01:51-0400">2020-08-14</span>
+=======
           IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.11 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 6, 2020 23:36-0400">2020-08-06</span>
+>>>>>>> master
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
