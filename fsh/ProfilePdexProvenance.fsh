@@ -8,6 +8,7 @@ or a claim record and whether the data was subject to manual transcription or ot
 """
 Mixins: PdexStructureDefinitionContent
 
+<<<<<<< HEAD
 * recorded 1..1
 * recorded ^short = "Date/Time information was received by Payer"
 * agent.type 1..1
@@ -21,3 +22,17 @@ Mixins: PdexStructureDefinitionContent
 * extension[sourceFormat] ^short = "Source format resource was converted from"
 // * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
 * extension[sourceFormat].valueCodeableConcept from ProvenancePayerConversionSource
+=======
+* occurredDateTime 0..1
+* recorded 1..1
+* recorded only instant
+* agent.type 1..1
+* agent.type from http://hl7.org/fhir/ValueSet/ValueSet-ProvenancePayerAgent
+* agent.type  ^comment = "Amender"
+* agent.role 1..1
+* agent.role from http://hl7.org/fhir/ValueSet/security-role-type (example)
+* agent.role  ^comment = "Informant"
+* agent.who 1..1
+* extension contains ProvenanceConversionFrom named sourceFormat 0..1
+* extension[sourceFormat] ^short = "Source format resource was converted from"
+>>>>>>> master

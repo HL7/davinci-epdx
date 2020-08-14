@@ -7,11 +7,19 @@
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+<<<<<<< HEAD
   <version value="0.1.12"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
   <date value="2020-08-14T01:51:17-04:00"/>
+=======
+  <version value="0.3.11"/>
+  <name value="DaVinciPayerDataExchange"/>
+  <title value="Da Vinci Payer Data exchange"/>
+  <status value="draft"/>
+  <date value="2020-08-06T23:36:42-04:00"/>
+>>>>>>> master
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -65,7 +73,11 @@
         <valueString value="path-history"/>
       </extension>
       <extension url="value">
+<<<<<<< HEAD
         <valueString value="http://hl7.org/fhir/us/davinci-pdex/history.html"/>
+=======
+        <valueString value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/history.html"/>
+>>>>>>> master
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -243,6 +255,7 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
         <valueUri value="StructureDefinition-DispenseRefill.html"/>
       </extension>
       <reference>
@@ -257,6 +270,8 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+=======
+>>>>>>> master
         <valueUri value="StructureDefinition-ProvenanceConversionFrom.html"/>
       </extension>
       <reference>
@@ -271,6 +286,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
         <valueUri value="ValueSet-FDANationalDrugCode.html"/>
       </extension>
       <reference>
@@ -292,6 +308,14 @@
       </reference>
       <name value="Provenance Agent Type"/>
       <description value="Agent role performed relating to referenced resource"/>
+=======
+        <valueUri value="ValueSet-ProvenanceFormatConversionSourceVS.html"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ProvenanceFormatConversionSourceVS"/>
+      </reference>
+      <name value="Source Data conversion"/>
+>>>>>>> master
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -299,12 +323,22 @@
         <valueString value="ValueSet"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
         <valueUri value="ValueSet-ProvenancePayerConversionSource.html"/>
       </extension>
       <reference>
         <reference value="ValueSet/ProvenancePayerConversionSource"/>
       </reference>
       <name value="Source Data conversion"/>
+=======
+        <valueUri value="ValueSet-ProvenancePayerAgent.html"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ProvenancePayerAgent"/>
+      </reference>
+      <name value="Payer Agent Type"/>
+      <description value="Agent role that payer performs"/>
+>>>>>>> master
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -312,6 +346,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
         <valueUri value="CodeSystem-ProvenanceAgentRoleTypeCS.html"/>
       </extension>
       <reference>
@@ -319,6 +354,15 @@
       </reference>
       <name value="Provenance Roles"/>
       <description value="CodeSystem for types of role relating to the creation or communication of referenced resources"/>
+=======
+        <valueUri value="CodeSystem-ProvenanceConversionSourceCS.html"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ProvenanceConversionSourceCS"/>
+      </reference>
+      <name value="Provenance Conversion Source Format"/>
+      <description value="CodeSystem for source format standards"/>
+>>>>>>> master
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -326,6 +370,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+<<<<<<< HEAD
         <valueUri value="CodeSystem-ProvenancePayerDataSourceCS.html"/>
       </extension>
       <reference>
@@ -333,10 +378,20 @@
       </reference>
       <name value="Provenance Payer Conversion Source Format"/>
       <description value="CodeSystem for source format standards"/>
+=======
+        <valueUri value="CodeSystem-ProvenancePayerAgentCS.html"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ProvenancePayerAgentCS"/>
+      </reference>
+      <name value="Payer Agent roles"/>
+      <description value="CodeSystem for types of role carried out by payers when recording provenance."/>
+>>>>>>> master
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+<<<<<<< HEAD
         <valueString value="MedicationDispense"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -351,6 +406,8 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+=======
+>>>>>>> master
         <valueString value="Provenance"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -361,6 +418,7 @@
       </reference>
       <name value="ExampleProvenanceTransmitter"/>
       <description value="Example of a Transmitter Provenance record for a bundle"/>
+<<<<<<< HEAD
       <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
     </resource>
     <resource>
@@ -418,6 +476,9 @@
       <name value="Patient1"/>
       <description value="US Core Patient Example1"/>
       <exampleBoolean value="true"/>
+=======
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"/>
+>>>>>>> master
     </resource>
     <page>
       <nameUrl value="toc.html"/>

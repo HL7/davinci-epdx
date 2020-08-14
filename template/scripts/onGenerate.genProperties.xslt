@@ -19,9 +19,12 @@
     </xsl:variable>
     <xsl:variable name="code">
       <xsl:choose>
+<<<<<<< HEAD
         <xsl:when test="f:definition/f:parameter[f:code/@value='jira-code']">
           <xsl:value-of select="f:definition/f:parameter[f:code/@value='jira-code']/f:value/@value"/>
         </xsl:when>
+=======
+>>>>>>> master
         <xsl:when test="$realm!=''">
           <xsl:value-of select="substring-after($id, concat($realm, '.'))"/>
         </xsl:when>

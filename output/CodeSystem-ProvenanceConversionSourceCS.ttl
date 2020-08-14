@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ProvenanceConversionSourceCS"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">hl7v2<a name=\"ProvenanceConversionSourceCS-hl7v2\"> </a></td><td>HL7 v2</td><td>HL7 v2 Message</td></tr><tr><td style=\"white-space:nowrap\">hl7v3<a name=\"ProvenanceConversionSourceCS-hl7v3\"> </a></td><td>HL7 v3</td><td>HL7 v3 Message</td></tr><tr><td style=\"white-space:nowrap\">ccda<a name=\"ProvenanceConversionSourceCS-ccda\"> </a></td><td>HL7 C-CDA</td><td>HL7 Consolidated-Clinical Document Architecture</td></tr><tr><td style=\"white-space:nowrap\">claim<a name=\"ProvenanceConversionSourceCS-claim\"> </a></td><td>837 claim</td><td>EDI 837 Claim</td></tr><tr><td style=\"white-space:nowrap\">hl7v2oru<a name=\"ProvenanceConversionSourceCS-hl7v2oru\"> </a></td><td>HL7 v2 ORU</td><td>HL7 v2 Structured Observation Report(ORU) message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2adt<a name=\"ProvenanceConversionSourceCS-hl7v2adt\"> </a></td><td>HL7 v2 ADT</td><td>HL7 v2 Admit, Discharge Transfer (ADT) message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2ro1<a name=\"ProvenanceConversionSourceCS-hl7v2ro1\"> </a></td><td>HL7 v2 RO1</td><td>HL7 v2 Unsolicited Observation (R01) message</td></tr><tr><td style=\"white-space:nowrap\">custom<a name=\"ProvenanceConversionSourceCS-custom\"> </a></td><td>Custom Format</td><td>Non-standard input format. e.g. CSV file, fax, etc.</td></tr><tr><td style=\"white-space:nowrap\">fhirdstu2<a name=\"ProvenanceConversionSourceCS-fhirdstu2\"> </a></td><td>FHIR DSTU2</td><td>HL7 FHIR DSTU2 profile</td></tr><tr><td style=\"white-space:nowrap\">fhirdstu3<a name=\"ProvenanceConversionSourceCS-fhirdstu3\"> </a></td><td>FHIR STU3</td><td>HL7 FHIR STU3 profile</td></tr><tr><td style=\"white-space:nowrap\">fhirr4<a name=\"ProvenanceConversionSourceCS-fhirr4\"> </a></td><td>FHIR R4</td><td>HL7 FHIR R4 profile</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS"];
+  fhir:CodeSystem.version [ fhir:value "0.3.11"];
+  fhir:CodeSystem.name [ fhir:value "ProvenanceConversionSourceCS"];
+  fhir:CodeSystem.title [ fhir:value "Provenance Conversion Source Format"];
+  fhir:CodeSystem.status [ fhir:value "active"];
+  fhir:CodeSystem.date [ fhir:value "2020-08-06T23:36:42-04:00"^^xsd:dateTime];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "mailto:mark@ekivemark.com" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "HL7 International - Financial Management" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/fm" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "CodeSystem for source format standards"];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "11"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "hl7v2" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 v2" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 v2 Message" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "hl7v3" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 v3" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 v3 Message" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "ccda" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 C-CDA" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 Consolidated-Clinical Document Architecture" ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "claim" ];
+     fhir:CodeSystem.concept.display [ fhir:value "837 claim" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "EDI 837 Claim" ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "hl7v2oru" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 v2 ORU" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 v2 Structured Observation Report(ORU) message" ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "hl7v2adt" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 v2 ADT" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 v2 Admit, Discharge Transfer (ADT) message" ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "hl7v2ro1" ];
+     fhir:CodeSystem.concept.display [ fhir:value "HL7 v2 RO1" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 v2 Unsolicited Observation (R01) message" ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "custom" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Custom Format" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "Non-standard input format. e.g. CSV file, fax, etc." ]
+  ], [
+     fhir:index 8;
+     fhir:CodeSystem.concept.code [ fhir:value "fhirdstu2" ];
+     fhir:CodeSystem.concept.display [ fhir:value "FHIR DSTU2" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 FHIR DSTU2 profile" ]
+  ], [
+     fhir:index 9;
+     fhir:CodeSystem.concept.code [ fhir:value "fhirdstu3" ];
+     fhir:CodeSystem.concept.display [ fhir:value "FHIR STU3" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 FHIR STU3 profile" ]
+  ], [
+     fhir:index 10;
+     fhir:CodeSystem.concept.code [ fhir:value "fhirr4" ];
+     fhir:CodeSystem.concept.display [ fhir:value "FHIR R4" ];
+     fhir:CodeSystem.concept.definition [ fhir:value "HL7 FHIR R4 profile" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/CodeSystem/ProvenanceConversionSourceCS.ttl> .
+
+# -------------------------------------------------------------------------------------
+
