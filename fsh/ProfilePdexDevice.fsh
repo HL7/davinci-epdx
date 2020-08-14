@@ -20,8 +20,10 @@ Mixins: PdexStructureDefinitionContent
 * udiCarrier.carrierHRF  ^short = "UDI Human Readable Barcode String"
 * distinctIdentifier  0..1
 * distinctIdentifier  ^short = "The distinct identification string"
-* manufactureDate  0..1
-* manufactureDate  ^short = "Name of device manufacturer"
+// * manufactureDate  0..1
+// * manufactureDate  ^short = "Name of device manufacturer"
+// * deviceName 1..*
+
 * expirationDate  0..1
 * expirationDate  ^short = "Date and time of expiry of this device (if applicable)"
 * lotNumber  0..1
@@ -30,3 +32,5 @@ Mixins: PdexStructureDefinitionContent
 * type  from http://hl7.org/fhir/ValueSet/device-kind (extensible)
 * patient  1..1
 * patient only Reference(us-core-patient)
+
+// Hicpics code? as extension.

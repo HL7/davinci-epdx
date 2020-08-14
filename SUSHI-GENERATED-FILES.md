@@ -39,6 +39,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/PDexProvenance.md                                             | copied    | fsh/ig-data/input/pagecontent/PDexProvenance.md                                             |
 | input/pagecontent/PayerToPayerExchange.md                                       | copied    | fsh/ig-data/input/pagecontent/PayerToPayerExchange.md                                       |
 | input/pagecontent/PdexDevice.md                                                 | copied    | fsh/ig-data/input/pagecontent/PdexDevice.md                                                 |
+| input/pagecontent/PdexProvenance-intro.md                                       | copied    | fsh/ig-data/input/pagecontent/PdexProvenance-intro.md                                       |
 | input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         | copied    | fsh/ig-data/input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         |
 | input/pagecontent/USCoreAllergyIntolerance.md                                   | copied    | fsh/ig-data/input/pagecontent/USCoreAllergyIntolerance.md                                   |
 | input/pagecontent/USCoreCarePlan.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreCarePlan.md                                             |

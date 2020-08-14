@@ -1,10 +1,68 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.3.11",
+  "version": "0.1.12",
   "fhirVersion": "4.0.1",
   "extensions": [
     {
-      "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
+      "title": "An attribute to express the refill number of a prescription",
+      "types": [
+        "Quantity",
+        "Quantity",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
       "title": "An attribute to describe the data conversion performed",
       "types": [
         "CodeableConcept",
@@ -65,19 +123,19 @@
   "profiles": {
     "Device": [
       {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-device",
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
         "title": "PDex Device"
       }
     ],
     "MedicationDispense": [
       {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-medicationdispense",
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
         "title": "PDex MedicationDispense"
       }
     ],
     "Provenance": [
       {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance",
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
         "title": "PDex Provenance"
       }
     ]
@@ -107,7 +165,10 @@
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ],
-    "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom": [
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill": [
+      "MedicationDispense"
+    ],
+    "sourceFormat": [
       "Provenance"
     ]
   }

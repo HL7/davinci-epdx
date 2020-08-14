@@ -4,10 +4,18 @@ Id:             pdex-medicationdispense
 Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
 * subject 1..1
-* subject only Reference(Patient)
+* subject only Reference(us-core-patient)
 * status  1..1
-* status  ^short = "preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown"
+* status  ^short = "completed"
 * status  from http://hl7.org/fhir/ValueSet/medicationdispense-status (required)
+
+* category 0..1
+* category ^short = "Type of dispense action"
+* category from http://hl7.org/fhir/ValueSet/medicationdispense-category
+
+* medicationCodeableConcept 1..1
+* medicationCodeableConcept ^short = "Billing, service, product, or drug code"
+* medicationCodeableConcept from FDANationalDrugCode
 
 * supportingInformation 0..*
 * supportingInformation only Reference(Resource)
@@ -23,11 +31,12 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * performer.function ^short = "Trial fill, partial fill, emergency fill, etc."
 * performer.function from http://hl7.org/fhir/ValueSet/medicationdispense-performer-function (example)
 * performer.actor 1..1
-* performer.actor only Reference(us-core-practitioner | us-core-practitionerrole | us-core-organization | pdex-device)
+* performer.actor only Reference(us-core-practitioner | us-core-practitionerrole | us-core-organization)
 * performer.actor ^short = "Individual or device performing the dispense"
 
 * location 0..1
 * location only Reference(us-core-location)
+
 
 * authorizingPrescription 0..*
 * authorizingPrescription only Reference(us-core-medicationrequest)
@@ -39,15 +48,20 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * quantity 0..1
 * quantity only SimpleQuantity
-* quantity ^short = "Amount dispensed"
+* quantity ^short = "Billing, service, product, or drug code"
 
 * daysSupply 0..1
 * daysSupply only SimpleQuantity
-* daysSupply ^short = "Amount of medication expressed as a timing amount"
+* daysSupply ^short = "Medication expressed as a timing amount"
 
-* receiver 0..*
-* receiver only Reference(us-core-patient | us-core-practitioner)
-* receiver ^short = "Person collecting the medication"
+* extension contains DispenseRefill named refillNum 0..1
+// * extension[refillNum] ^short = "Refill number of this prescription"
+// * extension[refillNum].valueQuantity only Quantity
+
+
+// * receiver 0..*
+// * receiver only Reference(us-core-patient | us-core-practitioner)
+// * receiver ^short = "Person collecting the medication"
 
 * note 0..*
 * note only Annotation

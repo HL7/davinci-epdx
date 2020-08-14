@@ -18,7 +18,7 @@ Once installed you should switch to the fishtank directory.
 
 Build with Sushi as follows:
 
-    cd fishtank
+    cd fsh
     sushi . -o ..
     cd ..
     ./_updatePublisher.sh

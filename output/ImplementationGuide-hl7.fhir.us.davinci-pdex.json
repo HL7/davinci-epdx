@@ -6,11 +6,11 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>&quot;This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and reference them in your ballot submission implementation guide.\\n\\nThis guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection. \\n\\n<a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.\\n\\n<strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong>\\n\\nThe PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.\\n\\nThis IG uses the same Member Health History &amp;quot;payload&amp;quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.\\n\\nThis IG covers the exchange of:\\n- Claims-based information\\n- Clinical Information (such as Lab Results, Allergies and Conditions)\\n\\nThis IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. \\n\\nThis IG covers the exchange of a Member's Health History in the following scenarios:\\n- Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR\\n- Member-authorized Health Plan to Health Plan exchange\\n- Member-authorized Health Plan to Third-Party Application exchange\\n\\nThe latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.\\n\\n<strong>There are items in this guide that are subject to update</strong>. This includes:\\n- Value Sets\\n- Vocabularies (X12, NUBC etc.)\\n- Examples\\n\\n<strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.\\n\\nSee the <a href=\"toc.html\">Table of Contents</a> for more information.\\n&quot;</p>\n</div></div>"
   },
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.3.11",
+  "version": "0.1.12",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-08-06T23:36:42-04:00",
+  "date": "2020-08-14T01:51:17-04:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -94,7 +94,7 @@
           },
           {
             "url": "value",
-            "valueString": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/history.html"
+            "valueString": "http://hl7.org/fhir/us/davinci-pdex/history.html"
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -371,6 +371,24 @@
           },
           {
             "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "StructureDefinition-DispenseRefill.html"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/DispenseRefill"
+        },
+        "name": "An attribute to express the refill number of a prescription",
+        "description": "Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
             "valueUri": "StructureDefinition-ProvenanceConversionFrom.html"
           }
         ],
@@ -389,13 +407,14 @@
           },
           {
             "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "ValueSet-ProvenanceFormatConversionSourceVS.html"
+            "valueUri": "ValueSet-FDANationalDrugCode.html"
           }
         ],
         "reference": {
-          "reference": "ValueSet/ProvenanceFormatConversionSourceVS"
+          "reference": "ValueSet/FDANationalDrugCode"
         },
-        "name": "Source Data conversion",
+        "name": "FDA National Drug Code (NDC)",
+        "description": "FDA National Drug Code (NDC)",
         "exampleBoolean": false
       },
       {
@@ -406,14 +425,31 @@
           },
           {
             "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "ValueSet-ProvenancePayerAgent.html"
+            "valueUri": "ValueSet-ProvenanceAgentType.html"
           }
         ],
         "reference": {
-          "reference": "ValueSet/ProvenancePayerAgent"
+          "reference": "ValueSet/ProvenanceAgentType"
         },
-        "name": "Payer Agent Type",
-        "description": "Agent role that payer performs",
+        "name": "Provenance Agent Type",
+        "description": "Agent role performed relating to referenced resource",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "ValueSet-ProvenancePayerConversionSource.html"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/ProvenancePayerConversionSource"
+        },
+        "name": "Source Data conversion",
         "exampleBoolean": false
       },
       {
@@ -424,13 +460,31 @@
           },
           {
             "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "CodeSystem-ProvenanceConversionSourceCS.html"
+            "valueUri": "CodeSystem-ProvenanceAgentRoleTypeCS.html"
           }
         ],
         "reference": {
-          "reference": "CodeSystem/ProvenanceConversionSourceCS"
+          "reference": "CodeSystem/ProvenanceAgentRoleTypeCS"
         },
-        "name": "Provenance Conversion Source Format",
+        "name": "Provenance Roles",
+        "description": "CodeSystem for types of role relating to the creation or communication of referenced resources",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "CodeSystem-ProvenancePayerDataSourceCS.html"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/ProvenancePayerDataSourceCS"
+        },
+        "name": "Provenance Payer Conversion Source Format",
         "description": "CodeSystem for source format standards",
         "exampleBoolean": false
       },
@@ -438,19 +492,19 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
+            "valueString": "MedicationDispense"
           },
           {
             "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-            "valueUri": "CodeSystem-ProvenancePayerAgentCS.html"
+            "valueUri": "MedicationDispense-1000001.html"
           }
         ],
         "reference": {
-          "reference": "CodeSystem/ProvenancePayerAgentCS"
+          "reference": "MedicationDispense/1000001"
         },
-        "name": "Payer Agent roles",
-        "description": "CodeSystem for types of role carried out by payers when recording provenance.",
-        "exampleBoolean": false
+        "name": "ExampleMedicationDispenseClaim",
+        "description": "Example of a MedicationDispense from a Claim",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"
       },
       {
         "extension": [
@@ -468,7 +522,79 @@
         },
         "name": "ExampleProvenanceTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Provenance"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Provenance-1000002.html"
+          }
+        ],
+        "reference": {
+          "reference": "Provenance/1000002"
+        },
+        "name": "ExampleProvenanceAuthor",
+        "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Provenance"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Provenance-1000003.html"
+          }
+        ],
+        "reference": {
+          "reference": "Provenance/1000003"
+        },
+        "name": "ExampleProvenanceSoloPractitioner",
+        "description": "Example of an author Provenance record displaying a sole practitioner as the author",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Provenance"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Provenance-1000004.html"
+          }
+        ],
+        "reference": {
+          "reference": "Provenance/1000004"
+        },
+        "name": "ExampleProvenancePayerSource",
+        "description": "Example of an payer being the source of the data",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Patient"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Patient-Patient1.html"
+          }
+        ],
+        "reference": {
+          "reference": "Patient/Patient1"
+        },
+        "name": "Patient1",
+        "description": "US Core Patient Example1",
+        "exampleBoolean": true
       }
     ],
     "page": {

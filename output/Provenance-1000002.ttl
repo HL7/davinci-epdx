@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000002> a fhir:Provenance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "1000002"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime ];
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"encounter/2000003\">encounter/2000003</a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype author}\">author</span></td><td><a href=\"Organization/2\">Organization/2</a></td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "sourceFormat" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS" ];
+         fhir:Coding.code [ fhir:value "hl7ccda" ]
+       ]
+     ]
+  ];
+  fhir:Provenance.target [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/encounter/2000003>;
+     fhir:Reference.reference [ fhir:value "encounter/2000003" ]
+  ];
+  fhir:Provenance.recorded [ fhir:value "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime];
+  fhir:Provenance.agent [
+     fhir:index 0;
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/provenanceagenttype" ];
+         fhir:Coding.code [ fhir:value "author" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
+       fhir:Reference.reference [ fhir:value "Organization/2" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/davinci-pdex/encounter/2000003> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/2> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000002.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/Provenance/1000002.ttl> .
+
+# -------------------------------------------------------------------------------------
+

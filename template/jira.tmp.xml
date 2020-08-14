@@ -60,7 +60,7 @@
 </specification>
 <package-list>
    <package version="current"
-            path="http://build.fhir.org/ig/example/example-ig"
+            path="http://build.fhir.org/ig/HL7/davinci-epdx"
             status="ci-build"/>
    <package version="0.0.1" path="http://example.org/fhir/STU1" status="ballot"/>
 </package-list>
@@ -79,11 +79,11 @@
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.3.11"/>
+   <version value="0.1.12"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-08-06T23:36:42-04:00"/>
+   <date value="2020-08-14T01:51:17-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -191,6 +191,21 @@
             <valueString value="StructureDefinition:extension"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-DispenseRefill.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/DispenseRefill"/>
+         </reference>
+         <name value="An attribute to express the refill number of a prescription"/>
+         <description value="Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_str_extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-ProvenanceConversionFrom.html"/>
          </extension>
          <reference>
@@ -206,12 +221,13 @@
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ValueSet-ProvenanceFormatConversionSourceVS.html"/>
+            <valueUri value="ValueSet-FDANationalDrugCode.html"/>
          </extension>
          <reference>
-            <reference value="ValueSet/ProvenanceFormatConversionSourceVS"/>
+            <reference value="ValueSet/FDANationalDrugCode"/>
          </reference>
-         <name value="Source Data conversion"/>
+         <name value="FDA National Drug Code (NDC)"/>
+         <description value="FDA National Drug Code (NDC)"/>
          <exampleBoolean value="false"/>
          <groupingId value="_term_valueset"/>
       </resource>
@@ -220,13 +236,27 @@
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ValueSet-ProvenancePayerAgent.html"/>
+            <valueUri value="ValueSet-ProvenanceAgentType.html"/>
          </extension>
          <reference>
-            <reference value="ValueSet/ProvenancePayerAgent"/>
+            <reference value="ValueSet/ProvenanceAgentType"/>
          </reference>
-         <name value="Payer Agent Type"/>
-         <description value="Agent role that payer performs"/>
+         <name value="Provenance Agent Type"/>
+         <description value="Agent role performed relating to referenced resource"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_term_valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-ProvenancePayerConversionSource.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/ProvenancePayerConversionSource"/>
+         </reference>
+         <name value="Source Data conversion"/>
          <exampleBoolean value="false"/>
          <groupingId value="_term_valueset"/>
       </resource>
@@ -235,13 +265,13 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CodeSystem-ProvenanceConversionSourceCS.html"/>
+            <valueUri value="CodeSystem-ProvenanceAgentRoleTypeCS.html"/>
          </extension>
          <reference>
-            <reference value="CodeSystem/ProvenanceConversionSourceCS"/>
+            <reference value="CodeSystem/ProvenanceAgentRoleTypeCS"/>
          </reference>
-         <name value="Provenance Conversion Source Format"/>
-         <description value="CodeSystem for source format standards"/>
+         <name value="Provenance Roles"/>
+         <description value="CodeSystem for types of role relating to the creation or communication of referenced resources"/>
          <exampleBoolean value="false"/>
          <groupingId value="_term_codesystem"/>
       </resource>
@@ -250,15 +280,30 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CodeSystem-ProvenancePayerAgentCS.html"/>
+            <valueUri value="CodeSystem-ProvenancePayerDataSourceCS.html"/>
          </extension>
          <reference>
-            <reference value="CodeSystem/ProvenancePayerAgentCS"/>
+            <reference value="CodeSystem/ProvenancePayerDataSourceCS"/>
          </reference>
-         <name value="Payer Agent roles"/>
-         <description value="CodeSystem for types of role carried out by payers when recording provenance."/>
+         <name value="Provenance Payer Conversion Source Format"/>
+         <description value="CodeSystem for source format standards"/>
          <exampleBoolean value="false"/>
          <groupingId value="_term_codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="MedicationDispense"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="MedicationDispense-1000001.html"/>
+         </extension>
+         <reference>
+            <reference value="MedicationDispense/1000001"/>
+         </reference>
+         <name value="ExampleMedicationDispenseClaim"/>
+         <description value="Example of a MedicationDispense from a Claim"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"/>
+         <groupingId value="_ex_example"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -272,7 +317,67 @@
          </reference>
          <name value="ExampleProvenanceTransmitter"/>
          <description value="Example of a Transmitter Provenance record for a bundle"/>
-         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Provenance"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Provenance-1000002.html"/>
+         </extension>
+         <reference>
+            <reference value="Provenance/1000002"/>
+         </reference>
+         <name value="ExampleProvenanceAuthor"/>
+         <description value="Example of an author Provenance record displaying a practitioner's organization as the author"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Provenance"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Provenance-1000003.html"/>
+         </extension>
+         <reference>
+            <reference value="Provenance/1000003"/>
+         </reference>
+         <name value="ExampleProvenanceSoloPractitioner"/>
+         <description value="Example of an author Provenance record displaying a sole practitioner as the author"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Provenance"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Provenance-1000004.html"/>
+         </extension>
+         <reference>
+            <reference value="Provenance/1000004"/>
+         </reference>
+         <name value="ExampleProvenancePayerSource"/>
+         <description value="Example of an payer being the source of the data"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-Patient1.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/Patient1"/>
+         </reference>
+         <name value="Patient1"/>
+         <description value="US Core Patient Example1"/>
+         <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
       <page>
@@ -514,33 +619,68 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-DispenseRefill.html"/>
+               <title value="An attribute to express the refill number of a prescription"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-ProvenanceConversionFrom.html"/>
                <title value="An attribute to describe the data conversion performed"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="ValueSet-ProvenanceFormatConversionSourceVS.html"/>
+               <nameUrl value="ValueSet-FDANationalDrugCode.html"/>
+               <title value="FDA National Drug Code (NDC)"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-ProvenanceAgentType.html"/>
+               <title value="Provenance Agent Type"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-ProvenancePayerConversionSource.html"/>
                <title value="Source Data conversion"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="ValueSet-ProvenancePayerAgent.html"/>
-               <title value="Payer Agent Type"/>
+               <nameUrl value="CodeSystem-ProvenanceAgentRoleTypeCS.html"/>
+               <title value="Provenance Roles"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="CodeSystem-ProvenanceConversionSourceCS.html"/>
-               <title value="Provenance Conversion Source Format"/>
+               <nameUrl value="CodeSystem-ProvenancePayerDataSourceCS.html"/>
+               <title value="Provenance Payer Conversion Source Format"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="CodeSystem-ProvenancePayerAgentCS.html"/>
-               <title value="Payer Agent roles"/>
+               <nameUrl value="MedicationDispense-1000001.html"/>
+               <title value="ExampleMedicationDispenseClaim"/>
                <generation value="generated"/>
             </page>
             <page>
                <nameUrl value="Provenance-1000001.html"/>
                <title value="ExampleProvenanceTransmitter"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Provenance-1000002.html"/>
+               <title value="ExampleProvenanceAuthor"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Provenance-1000003.html"/>
+               <title value="ExampleProvenanceSoloPractitioner"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Provenance-1000004.html"/>
+               <title value="ExampleProvenancePayerSource"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Patient-Patient1.html"/>
+               <title value="Patient1"/>
                <generation value="generated"/>
             </page>
          </page>
@@ -559,7 +699,7 @@
       </parameter>
       <parameter>
          <code value="path-history"/>
-         <value value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/history.html"/>
+         <value value="http://hl7.org/fhir/us/davinci-pdex/history.html"/>
       </parameter>
       <parameter>
          <code value="path-resource"/>

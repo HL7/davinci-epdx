@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="1000004"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2020-07-12T18:26:23.217+00:00"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000004</p><p><b>meta</b>: </p><p><b>target</b>: <a href="medicationdispense/3000001">medicationdispense/3000001</a></p><p><b>recorded</b>: Jul 12, 2020 2:26:23 PM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype source}">source</span></td><td><a href="Organization/1">Organization/1</a></td></tr></table></div>
+  </text>
+  <extension url="sourceFormat">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS"/>
+        <code value="ncpdp"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <target>
+    <reference value="medicationdispense/3000001"/>
+  </target>
+  <recorded value="2020-07-12T18:26:23.217+00:00"/>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/provenanceagenttype"/>
+        <code value="source"/>
+      </coding>
+    </type>
+    <who>
+      <reference value="Organization/1"/>
+    </who>
+  </agent>
+</Provenance>

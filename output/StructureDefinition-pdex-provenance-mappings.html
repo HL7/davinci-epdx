@@ -63,7 +63,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.3.11 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.12 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -115,7 +115,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.3.11). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.12). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -200,7 +200,6 @@
  <tr><td colspan="3"><b>PdexProvenance</b></td></tr>
  <tr><td>Provenance</td><td>Event</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurred[x]</td><td>Event.occurred[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurred[x] (occurredDateTime)</td><td>Event.occurred[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>Event.location</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>Event.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;activity</td><td>Event.code</td> </tr>
@@ -213,11 +212,15 @@
  <tr><td>Provenance</td><td>Entity. Role, or Act, ControlAct[isNormalAct() and subsumes(CACT, classCode) and moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (sourceFormat)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (sourceFormat)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;target</td><td>./outboundRelationship[isNormalActRelationship() and typeCode=SUBJ]/target  OR  ./participation[isNormalParticipation() and typeCode=SBJ]/role  OR  ./participation[isNormalParticipation() and typeCode=SBJ]/role[isNormalRole()]/player</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurred[x]</td><td>./effectiveTime[type=IVL_TS]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurred[x] (occurredDateTime)</td><td>./effectiveTime[type=IVL_TS]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>unique(./participation[isNormalParticipation() and typeCode=AUT]/time[type=TS])</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;policy</td><td>./inboundRelationship[isNormalActRelationship() and typeCode=&quot;SUBJ&quot;]/source[isNormalAct and subsumes(POLICY, classCode) and moodCode=EVN]/text[typeCode='ED'/tel</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>unique(./participation[isNormalParticipation() and typeCode=LOC]/role[isNormalRole() and subsumes(SDLOC, classCode)]/player[isNormalEntity and classCode=&quot;LOC&quot; and determinerCode=&quot;INST&quot;]</td> </tr>
@@ -245,7 +248,6 @@
  <tr><td>Provenance</td><td>Activity</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;target</td><td>Entity Created/Updated</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurred[x]</td><td>Activity.startTime &amp; Activity.endTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurred[x] (occurredDateTime)</td><td>Activity.startTime &amp; Activity.endTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>Activity.when</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>Activity.location</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>Activity.Activity</td> </tr>
@@ -261,7 +263,6 @@
  <tr><td>Provenance</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;target</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurred[x]</td><td>FiveWs.done[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurred[x] (occurredDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>FiveWs.where[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>FiveWs.why[x]</td> </tr>
@@ -335,7 +336,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.3.11 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 6, 2020 23:36-0400">2020-08-06</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.12 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 14, 2020 01:51-0400">2020-08-14</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
