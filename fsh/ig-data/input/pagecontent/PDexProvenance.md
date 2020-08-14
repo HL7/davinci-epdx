@@ -15,6 +15,7 @@ This **SHOULD** be used to:
 
 The PDex-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
 
+
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
 | Field                              | Value                                                                                                                                              |
