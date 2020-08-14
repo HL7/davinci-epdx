@@ -1,13 +1,8 @@
 {
   "resourceType": "StructureDefinition",
   "id": "pdex-medicationdispense",
-<<<<<<< HEAD
   "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
   "version": "0.1.12",
-=======
-  "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-medicationdispense",
-  "version": "0.3.11",
->>>>>>> master
   "name": "PdexMedicationDispense",
   "title": "PDex MedicationDispense",
   "status": "active",
@@ -48,7 +43,6 @@
   "differential": {
     "element": [
       {
-<<<<<<< HEAD
         "id": "MedicationDispense.extension",
         "path": "MedicationDispense.extension",
         "slicing": {
@@ -81,17 +75,12 @@
         "id": "MedicationDispense.status",
         "path": "MedicationDispense.status",
         "short": "completed",
-=======
-        "id": "MedicationDispense.status",
-        "path": "MedicationDispense.status",
->>>>>>> master
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/ValueSet/medicationdispense-status"
         }
       },
       {
-<<<<<<< HEAD
         "id": "MedicationDispense.category",
         "path": "MedicationDispense.category",
         "short": "Type of dispense action",
@@ -117,8 +106,6 @@
         }
       },
       {
-=======
->>>>>>> master
         "id": "MedicationDispense.subject",
         "path": "MedicationDispense.subject",
         "min": 1,
@@ -126,11 +113,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-<<<<<<< HEAD
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-=======
-              "http://hl7.org/fhir/StructureDefinition/Patient"
->>>>>>> master
             ]
           }
         ]
@@ -164,12 +147,7 @@
             "targetProfile": [
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner",
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole",
-<<<<<<< HEAD
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
-=======
-              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
-              "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-device"
->>>>>>> master
             ]
           }
         ]
@@ -207,7 +185,6 @@
         }
       },
       {
-<<<<<<< HEAD
         "id": "MedicationDispense.quantity",
         "path": "MedicationDispense.quantity",
         "short": "Billing, service, product, or drug code"
@@ -216,20 +193,6 @@
         "id": "MedicationDispense.daysSupply",
         "path": "MedicationDispense.daysSupply",
         "short": "Medication expressed as a timing amount"
-=======
-        "id": "MedicationDispense.receiver",
-        "path": "MedicationDispense.receiver",
-        "short": "Person collecting the medication",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
-              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
-            ]
-          }
-        ]
->>>>>>> master
       }
     ]
   }

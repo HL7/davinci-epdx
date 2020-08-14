@@ -12,24 +12,14 @@
      fhir:Meta.versionId [ fhir:value "1" ];
      fhir:Meta.lastUpdated [ fhir:value "2020-07-09T15:26:23.217+00:00"^^xsd:dateTime ];
      fhir:Meta.profile [
-<<<<<<< HEAD
        fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
        fhir:index 0;
        fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
-=======
-       fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance";
-       fhir:index 0;
-       fhir:link <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/pdex-provenance>
->>>>>>> master
      ]
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-<<<<<<< HEAD
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"bundle/2000002\">bundle/2000002</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype transmitter}\">transmitter</span></td><td><a href=\"Organization/1\">Organization/1</a></td></tr></table></div>"
-=======
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000001</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"bundle/2000002\">bundle/2000002</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Role</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenance-participant-type assembler}\">Assembler</span></td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/contractsignertypecodes TRANS}\">Transcriber</span></td><td><a href=\"Organization/1\">Organization/1</a></td></tr></table></div>"
->>>>>>> master
   ];
   fhir:Provenance.target [
      fhir:index 0;
@@ -42,21 +32,8 @@
      fhir:Provenance.agent.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-<<<<<<< HEAD
          fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/provenanceagenttype" ];
          fhir:Coding.code [ fhir:value "transmitter" ]
-=======
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/provenance-participant-type" ];
-         fhir:Coding.code [ fhir:value "assembler" ]
-       ]
-     ];
-     fhir:Provenance.agent.role [
-       fhir:index 0;
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/contractsignertypecodes" ];
-         fhir:Coding.code [ fhir:value "TRANS" ]
->>>>>>> master
        ]
      ];
      fhir:Provenance.agent.who [

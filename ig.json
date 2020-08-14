@@ -1,0 +1,119 @@
+{
+	"tool": "jekyll",
+	"source": "implementationguide/davinci-pdex.xml",
+	"npm-name": "hl7.fhir.us.davinci-pdex",
+	"license": "CC0-1.0",
+	"paths": {
+		"qa": "generated_output/qa",
+		"temp": "generated_output/temp",
+		"output": "output",
+		"history": "http://hl7.org/fhir/us/davinci-pdex/history.html",
+		"txCache": "generated_output/txCache",
+		"specification": "http://hl7.org/fhir/R4/",
+		"pages": [
+			"framework",
+			"source/pages"
+		],
+		"resources": [
+			"source/resources"
+		]
+	},
+	"pages": [
+		"pages"
+	],
+	"extension-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"allowed-domains": [
+		"https://trifolia-on-fhir.lantanagroup.com"
+	],
+	"sct-edition": "http://snomed.info/sct/731000124108",
+	"canonicalBase": "http://hl7.org/fhir/us/davinci-pdex",
+	"defaults": {
+		"Location": {
+			"template-base": "ex.html"
+		},
+		"ProcedureRequest": {
+			"template-base": "ex.html"
+		},
+		"Organization": {
+			"template-base": "ex.html"
+		},
+		"MedicationStatement": {
+			"template-base": "ex.html"
+		},
+		"SearchParameter": {
+			"template-base": "base.html"
+		},
+		"StructureDefinition": {
+			"template-mappings": "sd-mappings.html",
+			"template-base": "sd.html",
+			"template-defns": "sd-definitions.html"
+		},
+		"Immunization": {
+			"template-base": "ex.html"
+		},
+		"Patient": {
+			"template-base": "ex.html"
+		},
+		"StructureMap": {
+			"content": false,
+			"script": false,
+			"template-base": "ex.html",
+			"profiles": false
+		},
+		"ConceptMap": {
+			"template-base": "base.html"
+		},
+		"Practitioner": {
+			"template-base": "ex.html"
+		},
+		"OperationDefinition": {
+			"template-base": "base.html"
+		},
+		"CodeSystem": {
+			"template-base": "base.html"
+		},
+		"Communication": {
+			"template-base": "ex.html"
+		},
+		"Any": {
+			"template-format": "format.html",
+			"template-base": "base.html"
+		},
+		"PractitionerRole": {
+			"template-base": "ex.html"
+		},
+		"ValueSet": {
+			"template-base": "base.html"
+		},
+		"CapabilityStatement": {
+			"template-base": "base.html"
+		},
+		"Observation": {
+			"template-base": "ex.html"
+		}
+	},
+	"resources": {
+		"StructureDefinition/pdex-medicationdispense": {
+			"base": "StructureDefinition-pdex-medicationdispense.html",
+			"defns": "StructureDefinition-pdex-medicationdispense-definitions.html"
+		}
+	},
+	"version": "4.0.0",
+	"fixed-business-version": "0.1.0",
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/davinci-hrex",
+			"name": "DaVinciHRex",
+			"version": "current",
+			"package": "hl7.fhir.us.davinci-hrex"
+		},
+		{
+			"location": "http://hl7.org/fhir/us/core",
+			"name": "USCoreR4",
+			"version": "current",
+			"package": "hl7.fhir.us.core"
+		}
+	]
+}

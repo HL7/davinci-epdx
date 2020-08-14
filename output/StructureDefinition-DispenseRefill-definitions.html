@@ -1,602 +1,361 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1894.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 50.0px; font: 14.0px 'Helvetica Neue'; color: #262626; -webkit-text-stroke: #262626}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 50.0px; font: 14.0px 'Helvetica Neue'; color: #3576be; -webkit-text-stroke: #3576be}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 50.0px; font: 14.0px 'Helvetica Neue'; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p4 {margin: 0.0px 0.0px 10.0px 0.0px; text-align: center; line-height: 16.8px; font: 16.0px Verdana; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #262626; -webkit-text-stroke: #262626; background-color: #878787; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 16.8px; font: 12.0px Verdana; color: #262626; -webkit-text-stroke: #262626; background-color: #ffff0b}
-    p.p12 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 16.8px; font: 12.0px Verdana; color: #262626; -webkit-text-stroke: #262626}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.4px; font: 12.0px Verdana; color: #262626; -webkit-text-stroke: #262626}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 13.2px; font: 11.0px Verdana; color: #262626; -webkit-text-stroke: #262626}
-    p.p15 {margin: 0.0px 0.0px 10.0px 0.0px; line-height: 15.4px; font: 11.0px Verdana; color: #262626; -webkit-text-stroke: #262626}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 13.2px; font: 11.0px Verdana; color: #3576be; -webkit-text-stroke: #3576be}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 16.8px; font: 12.0px Verdana; color: #ffffff; -webkit-text-stroke: #ffffff}
-    li.li6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 12.0px 'Helvetica Neue'; color: #e0e0e0; -webkit-text-stroke: #e0e0e0}
-    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 16.8px; font: 12.0px Verdana; color: #262626; -webkit-text-stroke: #262626; background-color: #f2f2f2}
-    li.li9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 12.0px Verdana; color: #434343; -webkit-text-stroke: #434343}
-    li.li10 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 12.0px Verdana; color: #ce001b; -webkit-text-stroke: #ce001b}
-    li.li17 {margin: 0.0px 0.0px 5.0px 0.0px; line-height: 16.8px; font: 12.0px Verdana; color: #262626; -webkit-text-stroke: #262626}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; background-color: #ffffff}
-    span.s3 {font-kerning: none; color: #3576be; background-color: #ffffff; -webkit-text-stroke: 0px #3576be}
-    span.s4 {font: 12.0px Verdana; font-kerning: none}
-    span.s5 {font: 12.0px Verdana; font-kerning: none; background-color: #ffffff}
-    span.s6 {background-color: #9b0e24; -webkit-text-stroke: 0px #000000}
-    span.s7 {color: #434343; -webkit-text-stroke: 0px #000000}
-    span.s8 {font-kerning: none; -webkit-text-stroke: 0px #434343}
-    span.s9 {font: 14.0px 'Helvetica Neue'; font-kerning: none}
-    span.s10 {font: 12.0px Verdana; font-kerning: none; color: #3576be; -webkit-text-stroke: 0px #3576be}
-    span.s11 {-webkit-text-stroke: 0px #000000}
-    span.s12 {background-color: #ffffff; -webkit-text-stroke: 0px #000000}
-    span.s13 {font-kerning: none; color: #6d6d6d; -webkit-text-stroke: 0px #6d6d6d}
-    span.s14 {font: 11.0px Verdana; font-kerning: none; color: #3576be; -webkit-text-stroke: 0px #3576be}
-    span.s15 {font-kerning: none; color: #262626; -webkit-text-stroke: 0px #262626}
-    span.s16 {font-kerning: none; color: #3576be; -webkit-text-stroke: 0px #3576be}
-    span.s17 {font-kerning: none; background-color: #9b0e24}
-    span.s18 {font-kerning: none; color: #70aff5; -webkit-text-stroke: 0px #70aff5}
-    span.s19 {font-kerning: none; color: #ffff64; background-color: #9b0e24; -webkit-text-stroke: 0px #ffff64}
-    span.s20 {font-kerning: none; color: #70aff5; background-color: transparent; -webkit-text-stroke: 0px #70aff5}
-    table.t1 {margin: 0.0px 0.0px 10.0px 0.0px; border-collapse: collapse}
-    td.td1 {width: 728.0px; background-color: #ebebeb; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #262626 #262626 #b3b3b3 #262626; padding: 3.0px 3.0px 3.0px 3.0px}
-    td.td2 {width: 65.3px; padding: 3.0px 3.0px 3.0px 3.0px}
-    td.td3 {width: 662.7px; padding: 3.0px 3.0px 3.0px 3.0px}
-    ul.ul1 {list-style-type: none}
-    ul.ul2 {list-style-type: disc}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1"><a href="http://hl7.org/"><img src="file:///hl7-logo-header.png" alt="hl7-logo-header.png"><span class="s2"><span class="Apple-converted-space"> </span></span></a></span></p>
-<p class="p2"><span class="s1"><a href="http://hl7.org/fhir"><img src="file:///fhir-logo-www.png" alt="fhir-logo-www.png"><span class="s3"><span class="Apple-converted-space"> </span></span></a></span></p>
-<p class="p3"><span class="s1"><a href="http://hl7.org/fhir/search.cfm"><img src="file:///search.png" alt="search.png"></a></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s2"><b>Da Vinci Payer Data exchange</b></span><span class="s4"><br>
-</span><span class="s5">0.1.12 - CI Build</span></p>
-<p class="p5"><span class="s1"></span><br></p>
-<ul class="ul1">
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/index.html"><span class="s1">IG Home</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/toc.html"><span class="s1">Table of Contents</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/Introduction.html"><span class="s1">Introduction</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/CDS-Hooks.html"><span class="s1">CDS-Hooks</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/artifacts.html"><span class="s1">Artifact Index</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li6"><span class="s6"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/Downloads.html"><span class="s1">Downloads</span></a></span><span class="s1"><br>
-</span></li>
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.FHIR.US.DAVINCI-PDEX\An attribute to express the refill number of a prescription - Definitions - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+    <style type="text/css">h2{--heading-prefix:"11.4"}
+    h3,h4,h5,h6{--heading-prefix:"11.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.12 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+<!-- menu.xml  -->
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="Introduction.html">Introduction</a></li>
+  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="Downloads.html">Downloads</a></li>
 </ul>
-<ul class="ul1">
-  <li class="li7"><span class="s7"><b></b><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/toc.html"><span class="s8"><b>Table of Contents</b></span></a><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/artifacts.html"><span class="s8"><b>Artifacts Summary</b></span></a></span><span class="s1"><b>An attribute to express the refill number of a prescription</b></span><span class="s9"><span class="Apple-converted-space"> </span></span></li>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>An attribute to express the refill number of a prescription</b></li>
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <div id="segment-content">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 4" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.12). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-DispenseRefill.html">Content</a>
+  </li>
+
+
+
+  <li class="active">
+    <a href="#">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-DispenseRefill-mappings.html">Mappings</a>
+    </li>
+  
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-DispenseRefill.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-DispenseRefill.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-DispenseRefill.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
 </ul>
-<p class="p8"><span class="s1">Da Vinci Payer Data exchange - Local Development build (v0.1.12). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html"><span class="s10">Directory of published versions</span></a></span></p>
-<ul class="ul1">
-  <li class="li9"><span class="s11"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/StructureDefinition-DispenseRefill.html"><span class="s1">Content</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li10"><span class="s12"></span><span class="s2">Detailed Descriptions<br>
-</span></li>
-  <li class="li9"><span class="s11"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/StructureDefinition-DispenseRefill-mappings.html"><span class="s1">Mappings</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li9"><span class="s11"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/StructureDefinition-DispenseRefill.profile.xml.html"><span class="s1">XML</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li9"><span class="s11"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/StructureDefinition-DispenseRefill.profile.json.html"><span class="s1">JSON</span></a></span><span class="s1"><br>
-</span></li>
-  <li class="li9"><span class="s11"><a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/StructureDefinition-DispenseRefill.profile.ttl.html"><span class="s1">TTL</span></a></span><span class="s1"><br>
-</span></li>
-</ul>
-<h2 style="margin: 0.0px 0.0px 9.0px 0.0px; line-height: 22.4px; font: 22.4px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s1">Extension: DispenseRefill - Detailed Descriptions</span></h2>
-<p class="p12"><span class="s1">Definitions for the DispenseRefill extension.</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>1.</b></span><span class="s1"><b> Extension</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">An Extension</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..* This element is affected by the following invariants: ele-1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-        <p class="p14"><span class="s1"><b>ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>2.</b></span><span class="s1"><b> Extension.id</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>3.</b></span><span class="s1"><b> Extension.extension</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..*</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Alternate Names</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">extensions, user content</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Comments</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions. The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-        <p class="p14"><span class="s1"><b>ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">This element introduces a set of slices on Extension.extension. The slices are unordered and Open, and can be differentiated using the following discriminators:</span></p>
-        <ul class="ul2">
-          <li class="li17"><span class="s11"></span><span class="s1">value @ url</span></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>4.</b></span><span class="s1"><b> Extension.extension:refillNum</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/profiling.html#slicing">SliceName<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">refillNum</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">An Extension</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-        <p class="p14"><span class="s1"><b>ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>5.</b></span><span class="s1"><b> Extension.extension:refillNum.id</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>6.</b></span><span class="s1"><b> Extension.extension:refillNum.extension</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">An Extension</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..0</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-        <p class="p14"><span class="s1"><b>ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">This element introduces a set of slices on Extension.extension.extension. The slices are unordered and Open, and can be differentiated using the following discriminators:</span></p>
-        <ul class="ul2">
-          <li class="li17"><span class="s11"></span><span class="s1">value @ url</span></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>7.</b></span><span class="s1"><b> Extension.extension:refillNum.url</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Source of the definition for the extension code - a logical name or a URL.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">1..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Comments</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Fixed Value</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">refillNum</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>8.</b></span><span class="s1"><b> Extension.extension:refillNum.value[x]</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html"><span class="s14">Extensibility</span></a> for a list).</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">[x] Note</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">See <a href="http://hl7.org/fhir/R4/formats.html#choice"><span class="s14">Choice of Data Types</span></a> for further information about how to use [x]</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">This element introduces a set of slices on Extension.extension.value[x]. The slices are unordered and Closed, and can be differentiated using the following discriminators:</span></p>
-        <ul class="ul2">
-          <li class="li17"><span class="s11"></span><span class="s1">type @ $this</span></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>9.</b></span><span class="s1"><b> Extension.extension:refillNum.value[x]:valueQuantity</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/profiling.html#slicing">SliceName<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">valueQuantity</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html"><span class="s14">Extensibility</span></a> for a list).</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">[x] Note</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">See <a href="http://hl7.org/fhir/R4/formats.html#choice"><span class="s14">Choice of Data Types</span></a> for further information about how to use [x]</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>10.</b></span><span class="s1"><b> Extension.url</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Source of the definition for the extension code - a logical name or a URL.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">1..1</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri<span class="s14"></span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Comments</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Fixed Value</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" class="td1">
-        <p class="p13"><span class="s13"><b>11.</b></span><span class="s1"><b> Extension.value[x]</b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Definition</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p15"><span class="s1">Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html"><span class="s14">Extensibility</span></a> for a list).</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">0..0</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p16"><span class="s1"><a href="http://hl7.org/fhir/R4/datatypes.html">Type<span class="s14"></span></a></span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p16"><span class="s15">Choice of: <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary"><span class="s16">base64Binary</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#boolean"><span class="s16">boolean</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#canonical"><span class="s16">canonical</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#code"><span class="s16">code</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#date"><span class="s16">date</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime"><span class="s16">dateTime</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#decimal"><span class="s16">decimal</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#id"><span class="s16">id</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#instant"><span class="s16">instant</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#integer"><span class="s16">integer</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#markdown"><span class="s16">markdown</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#oid"><span class="s16">oid</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#positiveInt"><span class="s16">positiveInt</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#string"><span class="s16">string</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#time"><span class="s16">time</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt"><span class="s16">unsignedInt</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#uri"><span class="s16">uri</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#url"><span class="s16">url</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#uuid"><span class="s16">uuid</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Address"><span class="s16">Address</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Age"><span class="s16">Age</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Annotation"><span class="s16">Annotation</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment"><span class="s16">Attachment</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept"><span class="s16">CodeableConcept</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Coding"><span class="s16">Coding</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint"><span class="s16">ContactPoint</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Count"><span class="s16">Count</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Distance"><span class="s16">Distance</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Duration"><span class="s16">Duration</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName"><span class="s16">HumanName</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier"><span class="s16">Identifier</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Money"><span class="s16">Money</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Period"><span class="s16">Period</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity"><span class="s16">Quantity</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Range"><span class="s16">Range</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Ratio"><span class="s16">Ratio</span></a>, <a href="http://hl7.org/fhir/R4/references.html#Reference"><span class="s16">Reference</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#SampledData"><span class="s16">SampledData</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Signature"><span class="s16">Signature</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Timing"><span class="s16">Timing</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail"><span class="s16">ContactDetail</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#Contributor"><span class="s16">Contributor</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement"><span class="s16">DataRequirement</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Expression"><span class="s16">Expression</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition"><span class="s16">ParameterDefinition</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact"><span class="s16">RelatedArtifact</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#TriggerDefinition"><span class="s16">TriggerDefinition</span></a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#UsageContext"><span class="s16">UsageContext</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Dosage"><span class="s16">Dosage</span></a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Meta"><span class="s16">Meta</span></a></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">[x] Note</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1">See <a href="http://hl7.org/fhir/R4/formats.html#choice"><span class="s14">Choice of Data Types</span></a> for further information about how to use [x]</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td2">
-        <p class="p14"><span class="s1">Invariants</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p14"><span class="s1"><b>Defined on this element</b></span></p>
-        <p class="p14"><span class="s1"><b>ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</span></p>
-      </td>
-    </tr>
-  </tbody>
+
+
+<a name="root"> </a>
+<h2 id="root">Extension: DispenseRefill - Detailed Descriptions</h2>
+
+<p>Definitions for the DispenseRefill extension.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <table class="dict">
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension"> </a><span style="color: grey">1.</span> <b>Extension</b><a href="#Extension" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>An Extension</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..* This element is affected by the following invariants: ele-1</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.id"> </a><span style="color: grey">2.</span> <b>Extension.id</b><a href="#Extension.id" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension"> </a><span style="color: grey">3.</span> <b>Extension.extension</b><a href="#Extension.extension" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td></tr>
+  <tr><td title="Other names by which this resource/element may be known">Alternate Names</td><td>extensions, user content</td></tr>
+  <tr><td>Comments</td><td><p>There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.</p>
+</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing</a></td><td>This element introduces a set of slices on Extension.extension. The slices are unordered and Open, and can be differentiated using the following discriminators: <ul> <li>value @ url</li></ul></td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum"> </a><span style="color: grey">4.</span> <b>Extension.extension:refillNum</b><a href="#Extension.extension:refillNum" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/profiling.html#slicing">SliceName</a></td><td>refillNum</td></tr>
+  <tr><td>Definition</td><td><p>An Extension</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum.id"> </a><span style="color: grey">5.</span> <b>Extension.extension:refillNum.id</b><a href="#Extension.extension:refillNum.id" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum.extension"> </a><span style="color: grey">6.</span> <b>Extension.extension:refillNum.extension</b><a href="#Extension.extension:refillNum.extension" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>An Extension</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..0</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing</a></td><td>This element introduces a set of slices on Extension.extension.extension. The slices are unordered and Open, and can be differentiated using the following discriminators: <ul> <li>value @ url</li></ul></td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum.url"> </a><span style="color: grey">7.</span> <b>Extension.extension:refillNum.url</b><a href="#Extension.extension:refillNum.url" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Source of the definition for the extension code - a logical name or a URL.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></td></tr>
+  <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
+</td></tr>
+  <tr><td>Fixed Value</td><td>refillNum</td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum.value[x]"> </a><a name="Extension.extension.valueQuantity"> </a><a name="Extension.extension:refillNum.valueQuantity"> </a><span style="color: grey">8.</span> <b>Extension.extension:refillNum.value[x]</b><a href="#Extension.extension:refillNum.value[x]" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html">Extensibility</a> for a list).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/R4/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/profiling.html#slicing">Slicing</a></td><td>This element introduces a set of slices on Extension.extension.value[x]. The slices are unordered and Closed, and can be differentiated using the following discriminators: <ul> <li>type @ $this</li></ul></td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.extension:refillNum.value[x]:valueQuantity"> </a><a name="Extension.extension:refillNum.valueQuantity:valueQuantity"> </a><a name="Extension.extension.valueQuantity:valueQuantity"> </a><a name="Extension.extension.valueQuantity"> </a><a name="Extension.extension:refillNum.valueQuantity"> </a><span style="color: grey">9.</span> <b>Extension.extension:refillNum.value[x]:valueQuantity</b><a href="#Extension.extension:refillNum.value[x]:valueQuantity" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/profiling.html#slicing">SliceName</a></td><td>valueQuantity</td></tr>
+  <tr><td>Definition</td><td><p>Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html">Extensibility</a> for a list).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/R4/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.url"> </a><span style="color: grey">10.</span> <b>Extension.url</b><a href="#Extension.url" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Source of the definition for the extension code - a logical name or a URL.</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></td></tr>
+  <tr><td>Comments</td><td><p>The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.</p>
+</td></tr>
+  <tr><td>Fixed Value</td><td>http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill</td></tr>
+  <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Extension.value[x]"> </a><a name="Extension.valueCount"> </a><a name="Extension.valueParameterDefinition"> </a><a name="Extension.valueQuantity"> </a><a name="Extension.valueAnnotation"> </a><a name="Extension.valueContactPoint"> </a><a name="Extension.valueHumanName"> </a><a name="Extension.valueTime"> </a><a name="Extension.valueId"> </a><a name="Extension.valueOid"> </a><a name="Extension.valuePeriod"> </a><a name="Extension.valueTiming"> </a><a name="Extension.valueCode"> </a><a name="Extension.valueCodeableConcept"> </a><a name="Extension.valueMarkdown"> </a><a name="Extension.valueMoney"> </a><a name="Extension.valueDataRequirement"> </a><a name="Extension.valueBoolean"> </a><a name="Extension.valueAge"> </a><a name="Extension.valueUsageContext"> </a><a name="Extension.valueDistance"> </a><a name="Extension.valueUrl"> </a><a name="Extension.valueInstant"> </a><a name="Extension.valueUri"> </a><a name="Extension.valueAddress"> </a><a name="Extension.valueBase64Binary"> </a><a name="Extension.valueAttachment"> </a><a name="Extension.valueSampledData"> </a><a name="Extension.valueString"> </a><a name="Extension.valueUnsignedInt"> </a><a name="Extension.valueDosage"> </a><a name="Extension.valueRatio"> </a><a name="Extension.valuePositiveInt"> </a><a name="Extension.valueRelatedArtifact"> </a><a name="Extension.valueInteger"> </a><a name="Extension.valueCoding"> </a><a name="Extension.valueMeta"> </a><a name="Extension.valueCanonical"> </a><a name="Extension.valueContactDetail"> </a><a name="Extension.valueIdentifier"> </a><a name="Extension.valueRange"> </a><a name="Extension.valueContributor"> </a><a name="Extension.valueDateTime"> </a><a name="Extension.valueUuid"> </a><a name="Extension.valueTriggerDefinition"> </a><a name="Extension.valueDecimal"> </a><a name="Extension.valueReference"> </a><a name="Extension.valueExpression"> </a><a name="Extension.valueDuration"> </a><a name="Extension.valueDate"> </a><a name="Extension.valueSignature"> </a><span style="color: grey">11.</span> <b>Extension.value[x]</b><a href="#Extension.value[x]" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
+  <tr><td>Definition</td><td><p>Value of extension - must be one of a constrained set of the data types (see <a href="http://hl7.org/fhir/R4/extensibility.html">Extensibility</a> for a list).</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..0</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td>Choice of: <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">base64Binary</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">canonical</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#date">date</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">decimal</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#id">id</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#instant">instant</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#integer">integer</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">markdown</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#oid">oid</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#positiveInt">positiveInt</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#time">time</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">unsignedInt</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#uuid">uuid</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Address">Address</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Age">Age</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Annotation">Annotation</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint">ContactPoint</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Count">Count</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Distance">Distance</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Duration">Duration</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName">HumanName</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Money">Money</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">Quantity</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Range">Range</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Ratio">Ratio</a>, <a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#SampledData">SampledData</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Signature">Signature</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Timing">Timing</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail">ContactDetail</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#Contributor">Contributor</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#DataRequirement">DataRequirement</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Expression">Expression</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#ParameterDefinition">ParameterDefinition</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact">RelatedArtifact</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#TriggerDefinition">TriggerDefinition</a>, <a href="http://hl7.org/fhir/R4/metadatatypes.html#UsageContext">UsageContext</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Dosage">Dosage</a>, <a href="http://hl7.org/fhir/R4/datatypes.html#Meta">Meta</a></td></tr>
+  <tr><td>[x] Note</td><td>See <a href="http://hl7.org/fhir/R4/formats.html#choice">Choice of Data Types</a> for further information about how to use [x]</td></tr>
+  <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
+<b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))</td></tr>
 </table>
-<p class="p18"><span class="s17">IG © 2020+ . Package hl7.fhir.us.davinci-pdex#0.1.12 based on <a href="http://hl7.org/fhir/R4/"><span class="s18">FHIR 4.0.1</span></a>. Generated 2020-08-14 </span><span class="s1"><br>
-</span><span class="s19">Links: <a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/toc.html"><span class="s18">Table of Contents</span></a> | <a href="file:///Users/mark/Documents/_Local/DaVinci/davinci-epdx2/output/qa.html"><span class="s18">QA Report</span></a> | <a href="http://hl7.org/fhir/us/davinci-pdex/history.html"><span class="s18">Version History | </span></a><a href="http://hl7.org/fhir/R4/license.html"><span class="s20"><img src="file:///cc0.png" alt="cc0.png"></span></a> | <a href="http://hl7.org/fhir-issues"><span class="s18">Propose a change<span class="Apple-converted-space"> </span></span></a></span></p>
-</body>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    try {
+      var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+    } catch(exception) {
+    }
+
+    if (!currentTabIndex)
+      currentTabIndex = '0';
+
+    $( '#tabs' ).tabs({
+      active: currentTabIndex,
+      activate: function( event, ui ) {
+        var active = $('.selector').tabs('option', 'active');
+        currentTabIndex = ui.newTab.index();
+        document.activeElement.blur();
+        try {
+          sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+        } catch(exception) {
+        }
+      }
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.12 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 14, 2020 10:09-0400">2020-08-14</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History  |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change </a>
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
 </html>

@@ -9,7 +9,6 @@ Mixins: PdexStructureDefinitionContent
 
   * extension contains
   source 0..1
-<<<<<<< HEAD
 
   * extension[source] ^short = "Source record format from which data was derived"
 //  * extension[source].url ProvenancePayerConversionSource
@@ -32,8 +31,3 @@ refillNum 0..1
 * extension[refillNum] ^short = "Refill number of this prescription"
 * extension[refillNum].valueQuantity only Quantity
 
-=======
-  * extension[source] ^short = "Source record format from which data was derived"
-  * extension[source].value[x] only CodeableConcept
-  * extension[source].valueCodeableConcept from http://hl7.org/fhir/ValueSet/ValueSet-ProvenanceFormatConversionSourceVS (extensible)
->>>>>>> master
