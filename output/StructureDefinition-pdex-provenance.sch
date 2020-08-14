@@ -12,11 +12,7 @@
   <sch:pattern>
     <sch:title>f:Provenance</sch:title>
     <sch:rule context="f:Provenance">
-<<<<<<< HEAD
       <sch:assert test="count(f:extension[@url = 'sourceFormat']) &lt;= 1">extension with URL = 'sourceFormat': maximum cardinality of 'extension' is 1</sch:assert>
-=======
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex/StructureDefinition/ProvenanceConversionFrom': maximum cardinality of 'extension' is 1</sch:assert>
->>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -59,7 +55,6 @@
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-<<<<<<< HEAD
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -83,9 +78,6 @@
     <sch:rule context="f:Provenance/f:extension/f:value[x]">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-=======
-      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
->>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -105,10 +97,6 @@
     <sch:title>Provenance.occurred[x] 1</sch:title>
     <sch:rule context="f:Provenance/f:occurred[x]">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
-<<<<<<< HEAD
-=======
-      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
->>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -145,11 +133,6 @@
     <sch:title>f:Provenance/f:agent</sch:title>
     <sch:rule context="f:Provenance/f:agent">
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
-<<<<<<< HEAD
-=======
-      <sch:assert test="count(f:role) &gt;= 1">role: minimum cardinality of 'role' is 1</sch:assert>
-      <sch:assert test="count(f:role) &lt;= 1">role: maximum cardinality of 'role' is 1</sch:assert>
->>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -232,11 +215,6 @@
     <sch:title>f:Provenance/f:entity/f:agent</sch:title>
     <sch:rule context="f:Provenance/f:entity/f:agent">
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
-<<<<<<< HEAD
-=======
-      <sch:assert test="count(f:role) &gt;= 1">role: minimum cardinality of 'role' is 1</sch:assert>
-      <sch:assert test="count(f:role) &lt;= 1">role: maximum cardinality of 'role' is 1</sch:assert>
->>>>>>> master
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
