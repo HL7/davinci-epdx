@@ -24,16 +24,20 @@ CodeSystem: ProvenancePayerDataSourceCS
   * #hl7v2vxu "HL7 v2 VXU" "HL7 V2 Immunization Transaction"
   * #hl7v3 "HL7 v3" "HL7 v3 Message"
   * #hl7ccda "HL7 C-CDA" "HL7 Consolidated-Clinical Document Architecture"
-  * #hl7cda "HL7 CDA" "HL7 CDA other C-CDA"
+  * #hl7cda "HL7 CDA" "HL7 CDA documents that are not C-CDA"
   * #hl7cdaqrda "HL7 CDA QRDA" "HL7 Quality Reporting Document"
   * #hl7fhirdstu2 "FHIR DSTU2" "HL7 FHIR DSTU2"
   * #hl7fhirdstu3 "FHIR STU3" "HL7 FHIR STU3"
   * #hl7fhirr4 "FHIR R4" "HL7 FHIR R4"
   * #x12837 "837 claim" "X12 837 Claim"
   * #x12278 "278" "X12 Prior Authorization"
+  * #x12275 "275" "X12 Attachment"
   * #x12other "X12" "X12 non-specific transaction"
   * #ncpdp "NCPDP" "N.C.P.D.P."
   * #custom "Custom Format" "Non-standard input format. e.g. CSV file, fax, etc."
+
+/* Should any of these elements be added to the list above
+
   * #pdf "PDF" "Portable Document Format"
   * #image "Image Format" "Image formats e.g. jpg, png, tiff, etc."
   * #capture "Direct Capture" "Direct Capture, such as into a payers case management system"
@@ -44,10 +48,22 @@ CodeSystem: ProvenancePayerDataSourceCS
   * #ms-word "Word" "Word Document"
   * #ms-excel "Excel" "Excel spreadsheet"
   * #ms-powerpoint "PowerPoint" "Powerpoint document"
-
+*/
 
 /*
 Which source types do we need?
+
+standards
++ Custom
+
+non-standard prefix with general
+generaltext
+generalcsv
+generalimage
+x12
+
+
+
 */
 
 

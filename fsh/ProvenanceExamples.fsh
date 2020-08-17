@@ -8,7 +8,7 @@ Description: "Example of a Transmitter Provenance record for a bundle"
 * recorded = "2020-07-09T15:26:23.217+00:00"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenanceagenttype#transmitter
 * agent[0].who.reference = "Organization/1"
-//* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS#hl7v2adt
+//* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource#hl7v2adt
 
 Instance: ExampleProvenanceAuthor
 InstanceOf: pdex-provenance
@@ -20,7 +20,7 @@ Description: "Example of an author Provenance record displaying a practitioner's
 * recorded = "2020-07-10T16:26:23.217+00:00"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenanceagenttype#author
 * agent[0].who.reference = "Organization/2"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS#hl7ccda
+* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource#hl7ccda
 
 
 Instance: ExampleProvenanceSoloPractitioner
@@ -33,7 +33,7 @@ Description: "Example of an author Provenance record displaying a sole practitio
 * recorded = "2020-07-11T17:26:23.217+00:00"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenanceagenttype#author
 * agent[0].who.reference = "Practitioner/1"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS#x12837
+* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource#x12837
 
 
 
