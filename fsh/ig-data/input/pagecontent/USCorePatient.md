@@ -277,7 +277,7 @@ An example mapping of a Patient resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html).
 
 
 

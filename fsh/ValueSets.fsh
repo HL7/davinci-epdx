@@ -5,13 +5,14 @@
 ValueSet: ProvenanceAgentType
 Title: "Provenance Agent Type"
 Description: "Agent role performed relating to referenced resource"
-  * codes from system ProvenanceAgentRoleTypeCS
+  * codes from system ProvenanceAgentRoleType
   * ^jurisdiction = urn:iso:std:iso:3166#US
 
 
 ValueSet: ProvenancePayerConversionSource
 Title: "Source Data conversion"
-  * codes from system ProvenancePayerDataSourceCS
+Description: "Source Data formats used as the source for FHIR referenced record by the Payer."
+  * codes from system ProvenancePayerDataSource
   * ^jurisdiction = urn:iso:std:iso:3166#US
 
 // Taken from CARIN-BB

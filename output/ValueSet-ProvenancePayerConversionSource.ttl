@@ -10,14 +10,14 @@
   fhir:Resource.id [ fhir:value "ProvenancePayerConversionSource"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-ProvenancePayerDataSourceCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSourceCS</code></a></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-ProvenancePayerDataSource.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</code></a></li></ul></div>"
   ];
   fhir:ValueSet.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"];
   fhir:ValueSet.version [ fhir:value "0.1.12"];
   fhir:ValueSet.name [ fhir:value "ProvenancePayerConversionSource"];
   fhir:ValueSet.title [ fhir:value "Source Data conversion"];
   fhir:ValueSet.status [ fhir:value "active"];
-  fhir:ValueSet.date [ fhir:value "2020-08-14T11:03:47-04:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2020-08-17T17:55:53-04:00"^^xsd:dateTime];
   fhir:ValueSet.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -35,6 +35,7 @@
        fhir:ContactPoint.value [ fhir:value "http://www.hl7.org/Special/committees/fm" ]
      ]
   ];
+  fhir:ValueSet.description [ fhir:value "Source Data formats used as the source for FHIR referenced record by the Payer."];
   fhir:ValueSet.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -46,7 +47,7 @@
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [
        fhir:index 0;
-       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSourceCS" ]
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource" ]
      ]
   ] .
 

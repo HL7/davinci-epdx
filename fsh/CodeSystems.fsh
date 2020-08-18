@@ -3,17 +3,19 @@
 */
 Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
 
-CodeSystem:  ProvenanceAgentRoleTypeCS
+CodeSystem:  ProvenanceAgentRoleType
   Title: "Provenance Roles"
   Description:  "CodeSystem for types of role relating to the creation or communication of referenced resources"
+  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
   * #author "Author" "Person or entity that originated the referenced resource"
   * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"
   * #transmitter "Transmitter" "Provenance Transmitter"
 
 
-CodeSystem: ProvenancePayerDataSourceCS
+CodeSystem: ProvenancePayerDataSource
   Title: "Provenance Payer Conversion Source Format"
   Description: "CodeSystem for source format standards"
+  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
   * #hl7v2other "HL7 v2" "HL7 v2 Message"
   * #hl7v2oru "HL7 v2 ORU" "HL7 v2 Structured Observation Report(ORU) message"
   * #hl7v2adt "HL7 v2 ADT" "HL7 v2 Admit, Discharge Transfer (ADT) message"
@@ -67,4 +69,16 @@ x12
 */
 
 
+CodeSystem: IdentifierTypeCS
+Title: "Identifier Type"
+Description: "Identifier Type"
+  * #tax "Tax ID Number" "Tax ID Number"
+  * #npi "National Provider Identifier" "National Provider Identifier"
+  * #clia "CLIA" "CLIA"
+  * #payerid "Payer ID" "Payer ID"
+  * #mb "Member ID" "Member ID"
+  * #mr "Medical Record Number" "Medical Record Number"
+  * #pt "Patient Account Number" "Patient Account Number"
+  * #um "Unique Member ID" "Unique Member ID"
+  * #cn "Claim Number" "Claim Number"
 

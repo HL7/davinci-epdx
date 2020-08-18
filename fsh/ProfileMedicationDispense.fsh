@@ -3,6 +3,7 @@ Parent:         MedicationDispense
 Id:             pdex-medicationdispense
 Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * subject 1..1
 * subject only Reference(us-core-patient)
 * status  1..1

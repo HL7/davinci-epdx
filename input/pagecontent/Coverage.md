@@ -259,4 +259,4 @@ An example mapping of a Coverage resource is shown here:
 
 
 
-[Next Page - Device](Device.html)
+[Next Page - Device](PdexDevice.html)

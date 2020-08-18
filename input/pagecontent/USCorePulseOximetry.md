@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/USCorePulseOximetry.md                                      *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - US Core Provenance_](USCoreProvenance_.html)
+[Previous Page - US Core Provenance](USCoreProvenance.html)
 
 This IG supports the full complement of US Core profiles. They are supported to 
 enable a payer to produce FHIR resources from data provided in other formats.

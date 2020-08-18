@@ -19,7 +19,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000004</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"medicationdispense/3000001\">medicationdispense/3000001</a></p><p><b>recorded</b>: Jul 12, 2020 2:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/provenanceagenttype source}\">source</span></td><td><a href=\"Organization/1\">Organization/1</a></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000004</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"MedicationDispense-1000001.html\">Generated Summary: id: 1000001; status: completed; <span title=\"Codes: {http://hl7.org/fhir/sid/ndc 54458-872-10}\">30 TABLET in 1 BLISTER PACK (54458-872-10)</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-ActCode RF}\">Refill</span>; 60; 30</a></p><p><b>recorded</b>: Jul 12, 2020 2:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType source}\">source</span></td><td><a href=\"Organization-2.html\">Generated Summary: id: 2; language: en-US; National Provider Identifier = 345678, Payer ID = 901234; active; name: Payer 1</a></td></tr></table></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
@@ -27,15 +27,15 @@
      fhir:Extension.valueCodeableConcept [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS" ];
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ValueSet-ProvenancePayerConversionSource" ];
          fhir:Coding.code [ fhir:value "ncpdp" ]
        ]
      ]
   ];
   fhir:Provenance.target [
      fhir:index 0;
-     fhir:link <http://hl7.org/fhir/us/davinci-pdex/medicationdispense/3000001>;
-     fhir:Reference.reference [ fhir:value "medicationdispense/3000001" ]
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001>;
+     fhir:Reference.reference [ fhir:value "MedicationDispense/1000001" ]
   ];
   fhir:Provenance.recorded [ fhir:value "2020-07-12T18:26:23.217+00:00"^^xsd:dateTime];
   fhir:Provenance.agent [
@@ -43,19 +43,19 @@
      fhir:Provenance.agent.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/provenanceagenttype" ];
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" ];
          fhir:Coding.code [ fhir:value "source" ]
        ]
      ];
      fhir:Provenance.agent.who [
-       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/1>;
-       fhir:Reference.reference [ fhir:value "Organization/1" ]
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
+       fhir:Reference.reference [ fhir:value "Organization/2" ]
      ]
   ] .
 
-<http://hl7.org/fhir/us/davinci-pdex/medicationdispense/3000001> a fhir:us .
+<http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001> a fhir:us .
 
-<http://hl7.org/fhir/us/davinci-pdex/Organization/1> a fhir:us .
+<http://hl7.org/fhir/us/davinci-pdex/Organization/2> a fhir:us .
 
 # - ontology header ------------------------------------------------------------
 
