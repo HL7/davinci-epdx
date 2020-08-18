@@ -1,5 +1,5 @@
 Profile:        PdexProvenance
-Parent:         Provenance
+Parent:         us-core-provenance
 Id:             pdex-provenance
 Title:          "PDex Provenance"
 Description:    """Provenance is provided by

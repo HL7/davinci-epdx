@@ -1,9 +1,9 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 1, warn = 12, info = 6
+err = 1, warn = 10, info = 10
 IG Publisher Version: 1.1.13
-Generated Tue Aug 18 18:07:50 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.14 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+Generated Tue Aug 18 18:17:25 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.14 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
  Build Errors : 0 / 1 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 0 / 1
@@ -16,15 +16,15 @@ Generated Tue Aug 18 18:07:50 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/organization-3 : 0 / 0 / 4
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/patient-1 : 0 / 4 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/practitioner-4 : 0 / 0 / 3
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 0 / 0 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000002 : 0 / 1 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 0 / 0 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 0 / 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 0 / 0 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000002 : 0 / 1 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 0 / 0 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceConversionFrom : 0 / 0 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 2 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-medicationdispense : 0 / 0 / 2
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 0 / 1 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-IdentifierTypeCS : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenanceAgentRoleType : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenancePayerDataSource : 0 / 0 / 1
@@ -76,13 +76,17 @@ INFORMATION: Practitioner/4: Practitioner: Validate resource against profile htt
 INFORMATION: Practitioner/4: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000001.json ==
 INFORMATION: Provenance/1000001: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000001: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000002.json ==
 INFORMATION: Provenance/1000002: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000002: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 WARNING: Provenance/1000002: Provenance.extension[0].value.ofType(CodeableConcept): Display Name for http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda should be one of 'HL7 C-CDA' instead of 'C-CDA'
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000003.json ==
 INFORMATION: Provenance/1000003: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000003: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000004.json ==
 INFORMATION: Provenance/1000004: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000004: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-DispenseRefill.json ==
 INFORMATION: StructureDefinition/DispenseRefill: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill'): The Implementation Guide contains no examples for this extension
@@ -90,14 +94,12 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/St
 INFORMATION: StructureDefinition/ProvenanceConversionFrom: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-device.json ==
 INFORMATION: StructureDefinition/pdex-device: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device'): The Implementation Guide contains no examples for this profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-medicationdispense.json ==
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition.snapshot.element[30].mapping[0].map: The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-provenance.json ==
 INFORMATION: StructureDefinition/pdex-provenance: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance').baseDefinition: US FHIR Usage rules require that all profiles on Provenance derive from the core US profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-IdentifierTypeCS.json ==
 INFORMATION: CodeSystem/IdentifierTypeCS: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-ProvenanceAgentRoleType.json ==
