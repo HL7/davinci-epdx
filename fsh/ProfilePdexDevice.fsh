@@ -5,7 +5,7 @@ Title:          "PDex Device"
 Description:    """The PDex Device profile is provided to enable payers to record information about
 devices used by a member that may not have a UDI number.
 """
-Mixins: PdexStructureDefinitionContent
+* insert PdexStructureDefinitionContent
 
 * distinctIdentifier 0..1
 * distinctIdentifier ^short = "The distinct identification string"

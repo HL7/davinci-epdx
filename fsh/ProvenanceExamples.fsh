@@ -8,7 +8,7 @@ Description: "Example of a Transmitter Provenance record for a bundle"
 * recorded = "2020-07-09T15:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#transmitter "Transmitter"
 * agent[0].who.reference = "Organization/2"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7v2adt
+* extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt
 
 Instance: ExampleProvenanceAuthor
 InstanceOf: pdex-provenance
