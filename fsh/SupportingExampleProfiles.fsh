@@ -117,6 +117,7 @@ Description: "Example of an Encounter that has a provenance record"
   * type =  #99201 "Office Visit"
   * subject.reference = "Patient/1"
 
+/*
 Instance: ExampleBundle1
 InstanceOf: Bundle
 Description: "A simple bundle to demonstrate a provenance example"
@@ -139,3 +140,4 @@ Description: "A simple bundle to demonstrate a provenance example"
   * entry[1].resource.type =  http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
   * entry[1].resource.quantity.value = 60
   * entry[1].resource.daysSupply.value = 30
+*/
