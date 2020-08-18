@@ -12,8 +12,8 @@ HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/fhir+xml
 Content-Length: 96193
-Date: Mon, 17 Aug 2020 21:55:53 GMT
-X-Request-Id: 321-513231
+Date: Tue, 18 Aug 2020 04:21:48 GMT
+X-Request-Id: 321-568268
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Content-Location, Location
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
@@ -29,52 +29,278 @@ Accept: application/fhir+xml
 Content-Type: application/fhir+xml;charset=UTF-8
 Accept-Charset: UTF-8
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;coding&quot;/&gt;&lt;valueCoding&gt;&lt;system value=&quot;http://hl7.org/fhir/ValueSet/identifier-type&quot;/&gt;&lt;code value=&quot;mb&quot;/&gt;&lt;/valueCoding&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;coding&quot;/&gt;&lt;valueCoding&gt;&lt;code value=&quot;mb&quot;/&gt;&lt;/valueCoding&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
 </pre>
 <pre>
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/fhir+xml; charset=UTF-8
-Content-Length: 584
+Content-Length: 496
 Cache-control: public, max-age=600
-Date: Mon, 17 Aug 2020 21:55:54 GMT
+Date: Tue, 18 Aug 2020 04:21:49 GMT
 Pragma: no-cache
-X-Request-Id: 321-513232
+X-Request-Id: 321-568269
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Content-Location, Location
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
 X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-Last-Modified: Mon, 17 Aug 2020 21:55:54 GMT
+Last-Modified: Tue, 18 Aug 2020 04:21:49 GMT
 Server: Health Intersections FHIR Server
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;http://hl7.org/fhir/ValueSet/identifier-type&amp;quot; is not known (encountered paired with code = &amp;quot;mb&amp;quot;); The code provided (http://hl7.org/fhir/ValueSet/identifier-type#mb) is not valid in the value set &amp;apos;All codes known to the system&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;mb&amp;quot;); The code provided (#mb) is not valid in the value set &amp;apos;All codes known to the system&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
 </pre>
 <hr/><a name="l3"> </a>
 <pre>
-POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
 User-Agent: Java FHIR Client for FHIR
 Accept: application/fhir+xml
 Content-Type: application/fhir+xml;charset=UTF-8
 Accept-Charset: UTF-8
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;coding&quot;/&gt;&lt;valueCoding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType&quot;/&gt;&lt;code value=&quot;transmitter&quot;/&gt;&lt;/valueCoding&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;mb&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;identifier-type&quot;/&gt;&lt;meta&gt;&lt;lastUpdated value=&quot;2019-10-31T18:29:23.356-04:00&quot;/&gt;&lt;profile value=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;&lt;/meta&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/valueset-warning&quot;&gt;&lt;valueMarkdown value=&quot;Types are for general categories of identifiers. See [the identifier registry](identifier-registry.html) for a list of common identifier systems&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;&gt;&lt;valueCode value=&quot;vocab&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;&gt;&lt;valueCode value=&quot;normative&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version&quot;&gt;&lt;valueCode value=&quot;4.0.0&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;&gt;&lt;valueInteger value=&quot;5&quot;/&gt;&lt;/extension&gt;&lt;url value=&quot;http://hl7.org/fhir/ValueSet/identifier-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.4.642.3.45&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;4.0.1&quot;/&gt;&lt;name value=&quot;Identifier Type Codes&quot;/&gt;&lt;title value=&quot;IdentifierType&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;experimental value=&quot;false&quot;/&gt;&lt;date value=&quot;2019-11-01T09:29:23+11:00&quot;/&gt;&lt;publisher value=&quot;HL7 (FHIR Project)&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;/&gt;&lt;concept&gt;&lt;code value=&quot;DL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PPN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;BRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MCN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;EN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;TAX&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;NIIP&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MD&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;DR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;ACSN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;UDI&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SNO&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SB&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PLAC&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;FILL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;JHN&quot;/&gt;&lt;/concept&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
 </pre>
 <pre>
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Type: application/fhir+xml; charset=UTF-8
-Content-Length: 636
+Content-Length: 488
 Cache-control: public, max-age=600
-Date: Mon, 17 Aug 2020 21:55:54 GMT
+Date: Tue, 18 Aug 2020 04:21:50 GMT
 Pragma: no-cache
-X-Request-Id: 321-513233
+X-Request-Id: 321-568270
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Content-Location, Location
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
 X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-Last-Modified: Mon, 17 Aug 2020 21:55:54 GMT
+Last-Modified: Tue, 18 Aug 2020 04:21:50 GMT
 Server: Health Intersections FHIR Server
 
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType&amp;quot; is not known (encountered paired with code = &amp;quot;transmitter&amp;quot;); The code provided (http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType#transmitter) is not valid in the value set &amp;apos;All codes known to the system&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;mb&amp;quot;); The code provided (#mb) is not valid in the value set &amp;apos;Identifier Type Codes&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l4"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;mr&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;identifier-type&quot;/&gt;&lt;meta&gt;&lt;lastUpdated value=&quot;2019-10-31T18:29:23.356-04:00&quot;/&gt;&lt;profile value=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;&lt;/meta&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/valueset-warning&quot;&gt;&lt;valueMarkdown value=&quot;Types are for general categories of identifiers. See [the identifier registry](identifier-registry.html) for a list of common identifier systems&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;&gt;&lt;valueCode value=&quot;vocab&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;&gt;&lt;valueCode value=&quot;normative&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version&quot;&gt;&lt;valueCode value=&quot;4.0.0&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;&gt;&lt;valueInteger value=&quot;5&quot;/&gt;&lt;/extension&gt;&lt;url value=&quot;http://hl7.org/fhir/ValueSet/identifier-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.4.642.3.45&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;4.0.1&quot;/&gt;&lt;name value=&quot;Identifier Type Codes&quot;/&gt;&lt;title value=&quot;IdentifierType&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;experimental value=&quot;false&quot;/&gt;&lt;date value=&quot;2019-11-01T09:29:23+11:00&quot;/&gt;&lt;publisher value=&quot;HL7 (FHIR Project)&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;/&gt;&lt;concept&gt;&lt;code value=&quot;DL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PPN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;BRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MCN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;EN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;TAX&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;NIIP&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MD&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;DR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;ACSN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;UDI&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SNO&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SB&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PLAC&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;FILL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;JHN&quot;/&gt;&lt;/concept&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 488
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:50 GMT
+Pragma: no-cache
+X-Request-Id: 321-568271
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:50 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;mr&amp;quot;); The code provided (#mr) is not valid in the value set &amp;apos;Identifier Type Codes&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l5"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;um&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;identifier-type&quot;/&gt;&lt;meta&gt;&lt;lastUpdated value=&quot;2019-10-31T18:29:23.356-04:00&quot;/&gt;&lt;profile value=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;&lt;/meta&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/valueset-warning&quot;&gt;&lt;valueMarkdown value=&quot;Types are for general categories of identifiers. See [the identifier registry](identifier-registry.html) for a list of common identifier systems&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;&gt;&lt;valueCode value=&quot;vocab&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;&gt;&lt;valueCode value=&quot;normative&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version&quot;&gt;&lt;valueCode value=&quot;4.0.0&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;&gt;&lt;valueInteger value=&quot;5&quot;/&gt;&lt;/extension&gt;&lt;url value=&quot;http://hl7.org/fhir/ValueSet/identifier-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.4.642.3.45&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;4.0.1&quot;/&gt;&lt;name value=&quot;Identifier Type Codes&quot;/&gt;&lt;title value=&quot;IdentifierType&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;experimental value=&quot;false&quot;/&gt;&lt;date value=&quot;2019-11-01T09:29:23+11:00&quot;/&gt;&lt;publisher value=&quot;HL7 (FHIR Project)&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;/&gt;&lt;concept&gt;&lt;code value=&quot;DL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PPN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;BRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MCN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;EN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;TAX&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;NIIP&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MD&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;DR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;ACSN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;UDI&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SNO&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SB&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PLAC&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;FILL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;JHN&quot;/&gt;&lt;/concept&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 488
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:50 GMT
+Pragma: no-cache
+X-Request-Id: 321-568272
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:50 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;um&amp;quot;); The code provided (#um) is not valid in the value set &amp;apos;Identifier Type Codes&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l6"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;pt&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;displayLanguage&quot;/&gt;&lt;valueString value=&quot;en-US&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;identifier-type&quot;/&gt;&lt;meta&gt;&lt;lastUpdated value=&quot;2019-10-31T18:29:23.356-04:00&quot;/&gt;&lt;profile value=&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;/&gt;&lt;/meta&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/valueset-warning&quot;&gt;&lt;valueMarkdown value=&quot;Types are for general categories of identifiers. See [the identifier registry](identifier-registry.html) for a list of common identifier systems&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;&gt;&lt;valueCode value=&quot;vocab&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;&gt;&lt;valueCode value=&quot;normative&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version&quot;&gt;&lt;valueCode value=&quot;4.0.0&quot;/&gt;&lt;/extension&gt;&lt;extension url=&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;&gt;&lt;valueInteger value=&quot;5&quot;/&gt;&lt;/extension&gt;&lt;url value=&quot;http://hl7.org/fhir/ValueSet/identifier-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.4.642.3.45&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;4.0.1&quot;/&gt;&lt;name value=&quot;Identifier Type Codes&quot;/&gt;&lt;title value=&quot;IdentifierType&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;experimental value=&quot;false&quot;/&gt;&lt;date value=&quot;2019-11-01T09:29:23+11:00&quot;/&gt;&lt;publisher value=&quot;HL7 (FHIR Project)&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;/&gt;&lt;concept&gt;&lt;code value=&quot;DL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PPN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;BRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MCN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;EN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;TAX&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;NIIP&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PRN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;MD&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;DR&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;ACSN&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;UDI&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SNO&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;SB&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;PLAC&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;FILL&quot;/&gt;&lt;/concept&gt;&lt;concept&gt;&lt;code value=&quot;JHN&quot;/&gt;&lt;/concept&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 488
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:50 GMT
+Pragma: no-cache
+X-Request-Id: 321-568273
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:50 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;The code system &amp;quot;&amp;quot; is not known (encountered paired with code = &amp;quot;pt&amp;quot;); The code provided (#pt) is not valid in the value set &amp;apos;Identifier Type Codes&amp;apos;&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;not-found&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l7"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;transmitter&quot;/&gt;&lt;display value=&quot;Transmitter&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;ProvenanceAgentType&quot;/&gt;&lt;text&gt;&lt;status value=&quot;generated&quot;/&gt;&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-ProvenanceAgentRoleType.html&quot;&gt;&lt;code&gt;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/text&gt;&lt;url value=&quot;http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType&quot;/&gt;&lt;version value=&quot;0.1.12&quot;/&gt;&lt;name value=&quot;ProvenanceAgentType&quot;/&gt;&lt;title value=&quot;Provenance Agent Type&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;date value=&quot;2020-08-18T00:21:47-04:00&quot;/&gt;&lt;contact&gt;&lt;name value=&quot;Mark Scrimshire (mark.scrimshire@onyxhealth.io)&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;email&quot;/&gt;&lt;value value=&quot;mailto:mark@ekivemark.com&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;contact&gt;&lt;name value=&quot;HL7 International - Financial Management&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://www.hl7.org/Special/committees/fm&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;Agent role performed relating to referenced resource&quot;/&gt;&lt;jurisdiction&gt;&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:3166&quot;/&gt;&lt;code value=&quot;US&quot;/&gt;&lt;/coding&gt;&lt;/jurisdiction&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 416
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:51 GMT
+Pragma: no-cache
+X-Request-Id: 321-568274
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:51 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;CodeSystem uri &amp;apos;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&amp;apos; is unknown&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l8"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;author&quot;/&gt;&lt;display value=&quot;Author&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;ProvenanceAgentType&quot;/&gt;&lt;text&gt;&lt;status value=&quot;generated&quot;/&gt;&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-ProvenanceAgentRoleType.html&quot;&gt;&lt;code&gt;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/text&gt;&lt;url value=&quot;http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType&quot;/&gt;&lt;version value=&quot;0.1.12&quot;/&gt;&lt;name value=&quot;ProvenanceAgentType&quot;/&gt;&lt;title value=&quot;Provenance Agent Type&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;date value=&quot;2020-08-18T00:21:47-04:00&quot;/&gt;&lt;contact&gt;&lt;name value=&quot;Mark Scrimshire (mark.scrimshire@onyxhealth.io)&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;email&quot;/&gt;&lt;value value=&quot;mailto:mark@ekivemark.com&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;contact&gt;&lt;name value=&quot;HL7 International - Financial Management&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://www.hl7.org/Special/committees/fm&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;Agent role performed relating to referenced resource&quot;/&gt;&lt;jurisdiction&gt;&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:3166&quot;/&gt;&lt;code value=&quot;US&quot;/&gt;&lt;/coding&gt;&lt;/jurisdiction&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 416
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:51 GMT
+Pragma: no-cache
+X-Request-Id: 321-568275
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:51 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;CodeSystem uri &amp;apos;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&amp;apos; is unknown&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l9"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;source&quot;/&gt;&lt;display value=&quot;Source&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;ProvenanceAgentType&quot;/&gt;&lt;text&gt;&lt;status value=&quot;generated&quot;/&gt;&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;ul&gt;&lt;li&gt;Include all codes defined in &lt;a href=&quot;CodeSystem-ProvenanceAgentRoleType.html&quot;&gt;&lt;code&gt;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/text&gt;&lt;url value=&quot;http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType&quot;/&gt;&lt;version value=&quot;0.1.12&quot;/&gt;&lt;name value=&quot;ProvenanceAgentType&quot;/&gt;&lt;title value=&quot;Provenance Agent Type&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;date value=&quot;2020-08-18T00:21:47-04:00&quot;/&gt;&lt;contact&gt;&lt;name value=&quot;Mark Scrimshire (mark.scrimshire@onyxhealth.io)&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;email&quot;/&gt;&lt;value value=&quot;mailto:mark@ekivemark.com&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;contact&gt;&lt;name value=&quot;HL7 International - Financial Management&quot;/&gt;&lt;telecom&gt;&lt;system value=&quot;url&quot;/&gt;&lt;value value=&quot;http://www.hl7.org/Special/committees/fm&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;Agent role performed relating to referenced resource&quot;/&gt;&lt;jurisdiction&gt;&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:3166&quot;/&gt;&lt;code value=&quot;US&quot;/&gt;&lt;/coding&gt;&lt;/jurisdiction&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 416
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:51 GMT
+Pragma: no-cache
+X-Request-Id: 321-568276
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:51 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;CodeSystem uri &amp;apos;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType&amp;apos; is unknown&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l10"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;11429006&quot;/&gt;&lt;display value=&quot;Consultation&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;us-core-encounter-type&quot;/&gt;&lt;text&gt;&lt;status value=&quot;generated&quot;/&gt;&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;US Core Encounter Type&lt;/h2&gt;&lt;div&gt;&lt;p&gt;The type of encounter: a specific code indicating type of service provided. This value set includes codes from SNOMED CT decending from the concept 308335008 (Patient encounter procedure (procedure)) and from the Current Procedure and Terminology(CPT) designated for Evaluation and Management (99200 – 99607) (subscription to AMA Required)&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;b&gt;Copyright Statement:&lt;/b&gt; This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  This value set includes content from CPT copyright 2014 American Medical Association. All rights reserved.&lt;/p&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include codes from &lt;a href=&quot;http://www.snomed.org/&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt; where concept  is-a  308335008 (Patient encounter procedure)&lt;/li&gt;&lt;li&gt;Include all codes defined in &lt;code&gt;http://www.ama-assn.org/go/cpt&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/text&gt;&lt;url value=&quot;http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.3.88.12.80.32&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;3.1.0&quot;/&gt;&lt;name value=&quot;USCoreEncounterType&quot;/&gt;&lt;title value=&quot;US Core Encounter Type&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;date value=&quot;2019-05-21T00:00:00+10:00&quot;/&gt;&lt;publisher value=&quot;HL7 US Realm Steering Committee&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;other&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;The type of encounter: a specific code indicating type of service provided. This value set includes codes from SNOMED CT decending from the concept 308335008 (Patient encounter procedure (procedure)) and from the Current Procedure and Terminology(CPT) designated for Evaluation and Management (99200 &amp;#x2013; 99607) (subscription to AMA Required)&quot;/&gt;&lt;jurisdiction&gt;&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:3166&quot;/&gt;&lt;code value=&quot;US&quot;/&gt;&lt;display value=&quot;United States of America&quot;/&gt;&lt;/coding&gt;&lt;/jurisdiction&gt;&lt;copyright value=&quot;This value set includes content from SNOMED CT, which is copyright &amp;#xA9; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  This value set includes content from CPT copyright 2014 American Medical Association. All rights reserved.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;filter&gt;&lt;property value=&quot;concept&quot;/&gt;&lt;op value=&quot;is-a&quot;/&gt;&lt;value value=&quot;308335008&quot;/&gt;&lt;/filter&gt;&lt;/include&gt;&lt;include&gt;&lt;system value=&quot;http://www.ama-assn.org/go/cpt&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 376
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:51 GMT
+Pragma: no-cache
+X-Request-Id: 321-568277
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:51 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;CodeSystem uri &amp;apos;http://www.ama-assn.org/go/cpt&amp;apos; is unknown&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<hr/><a name="l11"> </a>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: Java FHIR Client for FHIR
+Accept: application/fhir+xml
+Content-Type: application/fhir+xml;charset=UTF-8
+Accept-Charset: UTF-8
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;codeableConcept&quot;/&gt;&lt;valueCodeableConcept&gt;&lt;coding&gt;&lt;code value=&quot;99201&quot;/&gt;&lt;display value=&quot;Office Visit&quot;/&gt;&lt;/coding&gt;&lt;/valueCodeableConcept&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSetMode&quot;/&gt;&lt;valueString value=&quot;CHECK_MEMERSHIP_ONLY&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;valueSet&quot;/&gt;&lt;resource&gt;&lt;ValueSet&gt;&lt;id value=&quot;us-core-encounter-type&quot;/&gt;&lt;text&gt;&lt;status value=&quot;generated&quot;/&gt;&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;US Core Encounter Type&lt;/h2&gt;&lt;div&gt;&lt;p&gt;The type of encounter: a specific code indicating type of service provided. This value set includes codes from SNOMED CT decending from the concept 308335008 (Patient encounter procedure (procedure)) and from the Current Procedure and Terminology(CPT) designated for Evaluation and Management (99200 – 99607) (subscription to AMA Required)&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;b&gt;Copyright Statement:&lt;/b&gt; This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  This value set includes content from CPT copyright 2014 American Medical Association. All rights reserved.&lt;/p&gt;&lt;p&gt;This value set includes codes from the following code systems:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include codes from &lt;a href=&quot;http://www.snomed.org/&quot;&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt; where concept  is-a  308335008 (Patient encounter procedure)&lt;/li&gt;&lt;li&gt;Include all codes defined in &lt;code&gt;http://www.ama-assn.org/go/cpt&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/text&gt;&lt;url value=&quot;http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type&quot;/&gt;&lt;identifier&gt;&lt;system value=&quot;urn:ietf:rfc:3986&quot;/&gt;&lt;value value=&quot;urn:oid:2.16.840.1.113883.3.88.12.80.32&quot;/&gt;&lt;/identifier&gt;&lt;version value=&quot;3.1.0&quot;/&gt;&lt;name value=&quot;USCoreEncounterType&quot;/&gt;&lt;title value=&quot;US Core Encounter Type&quot;/&gt;&lt;status value=&quot;active&quot;/&gt;&lt;date value=&quot;2019-05-21T00:00:00+10:00&quot;/&gt;&lt;publisher value=&quot;HL7 US Realm Steering Committee&quot;/&gt;&lt;contact&gt;&lt;telecom&gt;&lt;system value=&quot;other&quot;/&gt;&lt;value value=&quot;http://hl7.org/fhir&quot;/&gt;&lt;/telecom&gt;&lt;/contact&gt;&lt;description value=&quot;The type of encounter: a specific code indicating type of service provided. This value set includes codes from SNOMED CT decending from the concept 308335008 (Patient encounter procedure (procedure)) and from the Current Procedure and Terminology(CPT) designated for Evaluation and Management (99200 &amp;#x2013; 99607) (subscription to AMA Required)&quot;/&gt;&lt;jurisdiction&gt;&lt;coding&gt;&lt;system value=&quot;urn:iso:std:iso:3166&quot;/&gt;&lt;code value=&quot;US&quot;/&gt;&lt;display value=&quot;United States of America&quot;/&gt;&lt;/coding&gt;&lt;/jurisdiction&gt;&lt;copyright value=&quot;This value set includes content from SNOMED CT, which is copyright &amp;#xA9; 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  This value set includes content from CPT copyright 2014 American Medical Association. All rights reserved.&quot;/&gt;&lt;compose&gt;&lt;include&gt;&lt;system value=&quot;http://snomed.info/sct&quot;/&gt;&lt;filter&gt;&lt;property value=&quot;concept&quot;/&gt;&lt;op value=&quot;is-a&quot;/&gt;&lt;value value=&quot;308335008&quot;/&gt;&lt;/filter&gt;&lt;/include&gt;&lt;include&gt;&lt;system value=&quot;http://www.ama-assn.org/go/cpt&quot;/&gt;&lt;/include&gt;&lt;/compose&gt;&lt;/ValueSet&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;profile&quot;/&gt;&lt;resource&gt;&lt;Parameters&gt;&lt;parameter&gt;&lt;name value=&quot;profile-url&quot;/&gt;&lt;valueString value=&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;&lt;/resource&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
+</pre>
+<pre>
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/fhir+xml; charset=UTF-8
+Content-Length: 376
+Cache-control: public, max-age=600
+Date: Tue, 18 Aug 2020 04:21:51 GMT
+Pragma: no-cache
+X-Request-Id: 321-568278
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Location, Location
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE
+X-GDPR-Disclosure: All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+Last-Modified: Tue, 18 Aug 2020 04:21:51 GMT
+Server: Health Intersections FHIR Server
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Parameters xmlns=&quot;http://hl7.org/fhir&quot;&gt;&lt;parameter&gt;&lt;name value=&quot;result&quot;/&gt;&lt;valueBoolean value=&quot;false&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;message&quot;/&gt;&lt;valueString value=&quot;CodeSystem uri &amp;apos;http://www.ama-assn.org/go/cpt&amp;apos; is unknown&quot;/&gt;&lt;/parameter&gt;&lt;parameter&gt;&lt;name value=&quot;cause&quot;/&gt;&lt;valueString value=&quot;unknown&quot;/&gt;&lt;/parameter&gt;&lt;/Parameters&gt;
 </pre>
 </head></html>

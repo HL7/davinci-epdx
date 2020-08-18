@@ -19,11 +19,11 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"encounter/2000003\">encounter/2000003</a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType author}\">author</span></td><td><a href=\"Organization-3.html\">Generated Summary: id: 3; language: en-US; National Provider Identifier = 345678, Tax ID Number = 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"Encounter-6.html\">Generated Summary: id: 6; status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Consultation</span></a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: \">Author</span></td><td><a href=\"Organization-3.html\">Generated Summary: id: 3; language: en-US; National Provider Identifier = 345678, Tax ID Number = 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
-     fhir:Extension.url [ fhir:value "sourceFormat" ];
+     fhir:Extension.url [ fhir:value "https://example.com/base/Extension" ];
      fhir:Extension.valueCodeableConcept [
        fhir:CodeableConcept.coding [
          fhir:index 0;
@@ -34,8 +34,8 @@
   ];
   fhir:Provenance.target [
      fhir:index 0;
-     fhir:link <http://hl7.org/fhir/us/davinci-pdex/encounter/2000003>;
-     fhir:Reference.reference [ fhir:value "encounter/2000003" ]
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Encounter/6>;
+     fhir:Reference.reference [ fhir:value "Encounter/6" ]
   ];
   fhir:Provenance.recorded [ fhir:value "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime];
   fhir:Provenance.agent [
@@ -43,8 +43,8 @@
      fhir:Provenance.agent.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" ];
-         fhir:Coding.code [ fhir:value "author" ]
+         fhir:Coding.code [ fhir:value "author" ];
+         fhir:Coding.display [ fhir:value "Author" ]
        ]
      ];
      fhir:Provenance.agent.who [
@@ -53,7 +53,7 @@
      ]
   ] .
 
-<http://hl7.org/fhir/us/davinci-pdex/encounter/2000003> a fhir:us .
+<http://hl7.org/fhir/us/davinci-pdex/Encounter/6> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Organization/3> a fhir:us .
 
