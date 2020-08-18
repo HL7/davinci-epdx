@@ -8,6 +8,19 @@
     "versionId": "1",
     "lastUpdated": "2020-07-09T15:26:23.217+00:00"
   },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "hl7v2adt",
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"
+          }
+        ]
+      }
+    }
+  ],
   "target": [
     {
       "reference": "Bundle/2000002"
@@ -20,6 +33,7 @@
         "coding": [
           {
             "code": "transmitter",
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType",
             "display": "Transmitter"
           }
         ]

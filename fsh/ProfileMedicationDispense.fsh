@@ -16,7 +16,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * medicationCodeableConcept 1..1
 * medicationCodeableConcept ^short = "Billing, service, product, or drug code"
-* medicationCodeableConcept from FDANationalDrugCode
+* medicationCodeableConcept from http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode
 
 * supportingInformation 0..*
 * supportingInformation only Reference(Resource)

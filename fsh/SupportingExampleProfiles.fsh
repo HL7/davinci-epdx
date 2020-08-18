@@ -24,7 +24,7 @@ Usage: #example
   * address[0].postalCode = "12519"
   * maritalStatus = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
   * identifier[0].type = #mb
-  * identifier[0].value = "1234-234-1243-12345678901"
+  * identifier[0].value = "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901"
   * identifier[0].system = "https://www.xxxhealthplan.com/fhir/memberidentifier"
   * identifier[1].type = #mr
   * identifier[1].value = "1234-234-1243-12345678901m"
@@ -117,7 +117,7 @@ Description: "Example of an Encounter that has a provenance record"
   * type =  #99201 "Office Visit"
   * subject.reference = "Patient/1"
 
-/*
+
 Instance: ExampleBundle1
 InstanceOf: Bundle
 Description: "A simple bundle to demonstrate a provenance example"
@@ -140,4 +140,4 @@ Description: "A simple bundle to demonstrate a provenance example"
   * entry[1].resource.type =  http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
   * entry[1].resource.quantity.value = 60
   * entry[1].resource.daysSupply.value = 30
-*/
+

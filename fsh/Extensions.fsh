@@ -7,14 +7,15 @@ Title: "An attribute to describe the data conversion performed"
 Description: "Attributes that identify the source record format from which data in the referenced resources was derived"
 Mixins: PdexStructureDefinitionContent
 
-  * extension contains
-  source 0..1
+//  * extension contains
+//  source 0..1
 
-  * extension[source] ^short = "Source record format from which data was derived"
+  * value[x] ^short = "Source record format from which data was derived"
 //  * extension[source].url ProvenancePayerConversionSource
-//  * extension[source].value only CodeableConcept
-  * extension[source].valueCodeableConcept from ProvenancePayerConversionSource (extensible)
-
+//  * extension[source].value[x] only CodeableConcept
+//  * extension[source].valueCodeableConcept from ProvenancePayerConversionSource (extensible)
+  * value[x] only CodeableConcept
+  * valueCodeableConcept from ProvenancePayerConversionSource (extensible)
 
 /*
 Extension for MedicationDispense

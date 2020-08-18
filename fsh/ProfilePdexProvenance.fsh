@@ -17,7 +17,7 @@ Mixins: PdexStructureDefinitionContent
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
 * agent.who only Reference(us-core-organization | us-core-practitioner)
 
-* extension contains sourceFormat 0..1
+* extension contains ProvenanceConversionFrom named sourceFormat 0..1
 * extension[sourceFormat] ^short = "Source format resource was converted from"
 // * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
-* extension[sourceFormat].valueCodeableConcept from ProvenancePayerConversionSource
+* extension[sourceFormat].valueCodeableConcept from ProvenancePayerConversionSource (required)

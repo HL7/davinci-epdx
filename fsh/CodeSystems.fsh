@@ -1,11 +1,11 @@
 /*
    Code Systems for Provenance
 */
-Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
 
-CodeSystem:  ProvenanceAgentRoleType
+
+CodeSystem: ProvenanceAgentRoleType
   Title: "Provenance Roles"
-  Description:  "CodeSystem for types of role relating to the creation or communication of referenced resources"
+  Description: "CodeSystem for types of role relating to the creation or communication of referenced resources"
   * ^jurisdiction.coding = urn:iso:std:iso:3166#US
   * #author "Author" "Person or entity that originated the referenced resource"
   * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"

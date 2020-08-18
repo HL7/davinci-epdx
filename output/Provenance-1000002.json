@@ -10,16 +10,17 @@
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"Encounter-6.html\">Generated Summary: id: 6; status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Consultation</span></a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: \">Author</span></td><td><a href=\"Organization-3.html\">Generated Summary: id: 3; language: en-US; National Provider Identifier = 345678, Tax ID Number = 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"Encounter-6.html\">Generated Summary: id: 6; status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Consultation</span></a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}\">Author</span></td><td><a href=\"Organization-3.html\">Generated Summary: id: 3; language: en-US; National Provider Identifier = 345678, Tax ID Number = 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
   },
   "extension": [
     {
-      "url": "https://example.com/base/Extension",
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/ProvenancePayerDataSource",
-            "code": "hl7ccda"
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+            "code": "hl7ccda",
+            "display": "C-CDA"
           }
         ]
       }
@@ -36,6 +37,7 @@
       "type": {
         "coding": [
           {
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType",
             "code": "author",
             "display": "Author"
           }
