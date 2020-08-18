@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-08-18T01:36:11-04:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-08-18T01:48:39-04:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -646,24 +646,6 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Bundle-2000002.html" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/Bundle/2000002>;
-         fhir:Reference.reference [ fhir:value "Bundle/2000002" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleBundle1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple bundle to demonstrate a provenance example" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
-     ], [
-       fhir:index 19;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Organization" ]
        ], [
          fhir:index 1;
@@ -678,7 +660,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provider 1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 20;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -696,7 +678,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Practitioner Record" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 21;
+       fhir:index 20;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -714,7 +696,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Pharmacy Location Record" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 22;
+       fhir:index 21;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -732,7 +714,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an Encounter that has a provenance record" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 23;
+       fhir:index 22;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1068,8 +1050,6 @@
 <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000004> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Organization/2> a fhir:us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Bundle/2000002> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Organization/3> a fhir:us .
 
