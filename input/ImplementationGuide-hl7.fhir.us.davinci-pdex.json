@@ -74,7 +74,7 @@
           "reference": "StructureDefinition/pdex-provenance"
         },
         "name": "PDex Provenance",
-        "description": " Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
+        "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
         "exampleBoolean": false
       },
       {
@@ -199,6 +199,14 @@
       },
       {
         "reference": {
+          "reference": "Bundle/2000002"
+        },
+        "name": "ExampleBundle1",
+        "description": "A simple bundle to demonstrate a provenance example",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Organization/3"
         },
         "name": "OrganizationProvider1",
@@ -219,6 +227,22 @@
         },
         "name": "ExampleLocation",
         "description": "Example of a Pharmacy Location Record",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/6"
+        },
+        "name": "ExampleEncounter1",
+        "description": "Example of an Encounter that has a provenance record",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/7"
+        },
+        "name": "ExampleEncounter2",
+        "description": "Example of an Encounter that has a provenance record",
         "exampleBoolean": true
       }
     ],

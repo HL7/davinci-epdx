@@ -2,7 +2,7 @@ Profile:        PdexProvenance
 Parent:         Provenance
 Id:             pdex-provenance
 Title:          "PDex Provenance"
-Description:    """ Provenance is provided by
+Description:    """Provenance is provided by
 the payer to identify the source of the information, whether the data came via a clinical record
 or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
 """

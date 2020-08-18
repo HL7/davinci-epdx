@@ -18,7 +18,7 @@
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-08-17T17:55:53-04:00"/>
+   <date value="2020-08-18T00:21:47-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -123,7 +123,7 @@
             <reference value="StructureDefinition/pdex-provenance"/>
          </reference>
          <name value="PDex Provenance"/>
-         <description value=" Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation."/>
+         <description value="Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation."/>
          <exampleBoolean value="false"/>
          <groupingId value="_str_profile"/>
       </resource>
@@ -354,6 +354,21 @@
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Bundle"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Bundle-2000002.html"/>
+         </extension>
+         <reference>
+            <reference value="Bundle/2000002"/>
+         </reference>
+         <name value="ExampleBundle1"/>
+         <description value="A simple bundle to demonstrate a provenance example"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="Organization"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -394,6 +409,36 @@
          </reference>
          <name value="ExampleLocation"/>
          <description value="Example of a Pharmacy Location Record"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Encounter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Encounter-6.html"/>
+         </extension>
+         <reference>
+            <reference value="Encounter/6"/>
+         </reference>
+         <name value="ExampleEncounter1"/>
+         <description value="Example of an Encounter that has a provenance record"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Encounter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Encounter-7.html"/>
+         </extension>
+         <reference>
+            <reference value="Encounter/7"/>
+         </reference>
+         <name value="ExampleEncounter2"/>
+         <description value="Example of an Encounter that has a provenance record"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -711,6 +756,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="Bundle-2000002.html"/>
+               <title value="ExampleBundle1"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="Organization-3.html"/>
                <title value="OrganizationProvider1"/>
                <generation value="generated"/>
@@ -723,6 +773,16 @@
             <page>
                <nameUrl value="Location-5.html"/>
                <title value="ExampleLocation"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Encounter-6.html"/>
+               <title value="ExampleEncounter1"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Encounter-7.html"/>
+               <title value="ExampleEncounter2"/>
                <generation value="generated"/>
             </page>
          </page>

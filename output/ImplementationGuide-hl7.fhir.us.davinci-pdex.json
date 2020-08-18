@@ -10,7 +10,7 @@
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-08-17T17:55:53-04:00",
+  "date": "2020-08-18T00:21:47-04:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -370,7 +370,7 @@
           "reference": "StructureDefinition/pdex-provenance"
         },
         "name": "PDex Provenance",
-        "description": " Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
+        "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
         "exampleBoolean": false
       },
       {
@@ -647,6 +647,24 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Bundle-2000002.html"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/2000002"
+        },
+        "name": "ExampleBundle1",
+        "description": "A simple bundle to demonstrate a provenance example",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "Organization"
           },
           {
@@ -695,6 +713,42 @@
         },
         "name": "ExampleLocation",
         "description": "Example of a Pharmacy Location Record",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Encounter"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Encounter-6.html"
+          }
+        ],
+        "reference": {
+          "reference": "Encounter/6"
+        },
+        "name": "ExampleEncounter1",
+        "description": "Example of an Encounter that has a provenance record",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Encounter"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Encounter-7.html"
+          }
+        ],
+        "reference": {
+          "reference": "Encounter/7"
+        },
+        "name": "ExampleEncounter2",
+        "description": "Example of an Encounter that has a provenance record",
         "exampleBoolean": true
       }
     ],

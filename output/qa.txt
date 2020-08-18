@@ -1,22 +1,25 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 27, warn = 7, info = 11
+err = 12, warn = 16, info = 10
 IG Publisher Version: v1.1.0 Out of date - current version is ?pub-ver-1?
-Generated Mon Aug 17 17:56:15 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.12 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+Generated Tue Aug 18 00:22:10 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.12 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
- Build Errors : 3 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 1
+ Build Errors : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 0
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/bundle-2000002 : 0 / 0
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-6 : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-7 : 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/location-5 : 0 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/medicationdispense-1000001 : 0 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/organization-2 : 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/organization-3 : 0 / 2
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/patient-1 : 8 / 0
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/practitioner-4 : 1 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 2 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000002 : 4 / 2
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 6 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 5 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/patient-1 : 0 / 4
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/practitioner-4 : 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 1 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000002 : 2 / 3
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 4 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 4 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill : 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceConversionFrom : 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 2
@@ -31,11 +34,12 @@ Generated Mon Aug 17 17:56:15 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
 </table>
 == n/a ==
 WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jiraspec.tmp.xml' (currently in Github) and 'jira.xml' (reflects current IG content)
-ERROR: /Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/Provenance-1000001.html#/html/body/div/div/div/div/div/div/p/a at Line 167, column 142: The link 'bundle/2000002' for "bundle/2000002" cannot be resolved
-ERROR: /Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/Provenance-1000002.html#/html/body/div/div/div/div/div/div/p/a at Line 167, column 142: The link 'encounter/2000003' for "encounter/2000003" cannot be resolved
-ERROR: /Users/mark/Documents/_Local/DaVinci/davinci-epdx/output/Provenance-1000003.html#/html/body/div/div/div/div/div/div/p/a at Line 167, column 142: The link 'encounter/2000004' for "encounter/2000004" cannot be resolved
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json ==
-WARNING: ImplementationGuide/hl7.fhir.us.davinci-pdex: ImplementationGuide.definition.resource[2].description: value should not start or finish with whitespace
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Bundle-2000002.json ==
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Encounter-6.json ==
+WARNING: Encounter/6: Encounter.type[0].coding[0]: A code with no system has no defined meaning. A system should be provided
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Encounter-7.json ==
+WARNING: Encounter/7: Encounter.type[0].coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Location-5.json ==
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/MedicationDispense-1000001.json ==
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Organization-2.json ==
@@ -45,43 +49,35 @@ INFORMATION: Organization/2: Organization.identifier[1]: This element does not m
 INFORMATION: Organization/3: Organization.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
 INFORMATION: Organization/3: Organization.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Patient-1.json ==
-ERROR: Patient/1: Patient.identifier[0].type.coding[0]: The Coding references a value set, not a code system ("http://hl7.org/fhir/ValueSet/identifier-type")
-ERROR: Patient/1: Patient.identifier[0].type.coding[0]: Unknown Code System "http://hl7.org/fhir/ValueSet/identifier-type"
-ERROR: Patient/1: Patient.identifier[1].type.coding[0]: The Coding references a value set, not a code system ("http://hl7.org/fhir/ValueSet/identifier-type")
-ERROR: Patient/1: Patient.identifier[1].type.coding[0]: Unknown Code System "http://hl7.org/fhir/ValueSet/identifier-type"
-ERROR: Patient/1: Patient.identifier[2].type.coding[0]: The Coding references a value set, not a code system ("http://hl7.org/fhir/ValueSet/identifier-type")
-ERROR: Patient/1: Patient.identifier[2].type.coding[0]: Unknown Code System "http://hl7.org/fhir/ValueSet/identifier-type"
-ERROR: Patient/1: Patient.identifier[3].type.coding[0]: The Coding references a value set, not a code system ("http://hl7.org/fhir/ValueSet/identifier-type")
-ERROR: Patient/1: Patient.identifier[3].type.coding[0]: Unknown Code System "http://hl7.org/fhir/ValueSet/identifier-type"
+WARNING: Patient/1: Patient.identifier[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Patient/1: Patient.identifier[1].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Patient/1: Patient.identifier[2].type.coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: Patient/1: Patient.identifier[3].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Practitioner-4.json ==
-ERROR: Practitioner/4: Practitioner.telecom[0]: cpt-2: A system is required if a value is provided. [value.empty() or system.exists()]
 INFORMATION: Practitioner/4: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000001.json ==
-ERROR: Provenance/1000001: Provenance.target[0]: Unable to resolve resource "bundle/2000002"
-ERROR: Provenance/1000001: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType#transmitter)
-INFORMATION: Provenance/1000001: Provenance.agent[0].type.coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" is unknown so the code cannot be validated
+ERROR: Provenance/1000001: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = null#transmitter)
+WARNING: Provenance/1000001: Provenance.agent[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000002.json ==
-ERROR: Provenance/1000002: Provenance.extension[0]: Extension.url must be an absolute URL
+INFORMATION: Provenance/1000002: Provenance.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+ERROR: Provenance/1000002: Provenance.extension[0]: The extension https://example.com/base/Extension is unknown, and not allowed here
 INFORMATION: Provenance/1000002: Provenance.extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/ProvenancePayerDataSource" is unknown so the code cannot be validated
-ERROR: Provenance/1000002: Provenance.extension[0].value.ofType(CodeableConcept): None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource), and a code from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/ProvenancePayerDataSource#hl7ccda)
-ERROR: Provenance/1000002: Provenance.target[0]: Unable to resolve resource "encounter/2000003"
-ERROR: Provenance/1000002: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType#author)
-INFORMATION: Provenance/1000002: Provenance.agent[0].type.coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" is unknown so the code cannot be validated
+ERROR: Provenance/1000002: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = null#author)
+WARNING: Provenance/1000002: Provenance.agent[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000003.json ==
-ERROR: Provenance/1000003: Provenance.extension[0]: Extension.url must be an absolute URL
+INFORMATION: Provenance/1000003: Provenance.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+ERROR: Provenance/1000003: Provenance.extension[0]: The extension https://example.com/base/Extension is unknown, and not allowed here
 ERROR: Provenance/1000003: Provenance.extension[0].value.ofType(CodeableConcept).coding[0]: The Coding references a value set, not a code system ("http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource")
 ERROR: Provenance/1000003: Provenance.extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
-ERROR: Provenance/1000003: Provenance.extension[0].value.ofType(CodeableConcept): None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource), and a code from this value set is required) (codes = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource#x12837)
-ERROR: Provenance/1000003: Provenance.target[0]: Unable to resolve resource "encounter/2000004"
-ERROR: Provenance/1000003: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType#author)
-INFORMATION: Provenance/1000003: Provenance.agent[0].type.coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" is unknown so the code cannot be validated
+ERROR: Provenance/1000003: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = null#author)
+WARNING: Provenance/1000003: Provenance.agent[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000004.json ==
-ERROR: Provenance/1000004: Provenance.extension[0]: Extension.url must be an absolute URL
+INFORMATION: Provenance/1000004: Provenance.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+ERROR: Provenance/1000004: Provenance.extension[0]: The extension https://example.com/base/Extension is unknown, and not allowed here
 ERROR: Provenance/1000004: Provenance.extension[0].value.ofType(CodeableConcept).coding[0]: Unknown Code System "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ValueSet-ProvenancePayerConversionSource"
 ERROR: Provenance/1000004: Provenance.extension[0].value.ofType(CodeableConcept).coding[0].system: URL value "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ValueSet-ProvenancePayerConversionSource" does not resolve
-ERROR: Provenance/1000004: Provenance.extension[0].value.ofType(CodeableConcept): None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource), and a code from this value set is required) (codes = http://hl7.org/fhir/us/davinci-pdex/ValueSet/ValueSet-ProvenancePayerConversionSource#ncpdp)
-ERROR: Provenance/1000004: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType#source)
-INFORMATION: Provenance/1000004: Provenance.agent[0].type.coding[0]: Code System URI "http://terminology.hl7.org/CodeSystem/ProvenanceAgentRoleType" is unknown so the code cannot be validated
+ERROR: Provenance/1000004: Provenance.agent[0].type: None of the codes provided are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType), and a code from this value set is required) (codes = null#source)
+WARNING: Provenance/1000004: Provenance.agent[0].type.coding[0]: A code with no system has no defined meaning. A system should be provided
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-DispenseRefill.json ==
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill'): The Implementation Guide contains no examples for this extension
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-ProvenanceConversionFrom.json ==
