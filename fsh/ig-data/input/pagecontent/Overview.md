@@ -68,9 +68,7 @@ Health Plans **SHALL** incorporate provenance records that they receive as part 
 
 In the case of historical data the Health Plan **SHOULD** identify the author, source and format of the data .
 
-Provenance is covered in more detail in [Handling Data Provenance](Handling_Data_Provenance.html).
-
-
+Provenance is covered in more detail in [Handling Data Provenance](HandlingDataProvenance.html).
 
 
 [Next Page - Introduction](Introduction.html)

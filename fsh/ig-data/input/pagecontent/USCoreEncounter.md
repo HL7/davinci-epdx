@@ -67,7 +67,7 @@ The minimum fields to be provided in the US Core Encounter resource are:
 
 An example mapping of an Encounter resource is shown here:
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html).
+Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html).
 
 
 

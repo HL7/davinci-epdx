@@ -1,4 +1,4 @@
-[Previous Page - Device](Device.html)
+[Previous Page - PDex Device](PdexDevice.html)
 
 Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
 

@@ -4,7 +4,7 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 ---
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
-The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core](http://hl7.org/fhir/us/core/), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
+The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core](http://hl7.org/fhir/us/core/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
 
 ## Actors
 
@@ -36,7 +36,7 @@ The PDex IG defines two types of data payload:
 
 All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
-See [PDex Data Payloads](PDex_Data_Payloads.html) for details of the Data Payloads and operations.
+See [Data Mapping](DataMapping.html) for details of the Data Payloads and operations.
 
 ## Interaction Methods
 
@@ -60,7 +60,7 @@ SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two princi
 1. When a new patient books an appointment
 2. When a patient returns for an appointment after a significant period (for example, after wintering in a different region).
 
-The CDS Hooks and SMART-on-FHIR application configuration is detailed in [Section 6](6_CDS-Hooks.html).
+The CDS Hooks and SMART-on-FHIR application configuration is detailed in [CDS-Hooks](CDS-Hooks.html).
 
 #### Ad-hoc PDex Member History Request
 
@@ -114,7 +114,7 @@ Any subsequent Access Token issued based on the Refresh Token **SHALL** be restr
 
 The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. 
 
-The OAuth2.0 Member-authorized exchange is detailed in [Section 7](7_Member-Authorized_OAuth2_Exchange.html).
+The OAuth2.0 Member-authorized exchange is detailed in [Section: Member-Authorized OAuth2.0 Exchange](Member-AuthorizedOAuth2Exchange.html).
 
 An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third Party Application Exchange:
 

@@ -75,7 +75,7 @@ The exchange of Healthcare network/directory information and Pharmacy network/di
 
 The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary//) ( http://hl7.org/fhir/us/Davinci-drug-formulary/ ).
 
-The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](Member-Authorized_OAuth2_Exchange.html)
+The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](Member-AuthorizedOAuth2Exchange.html)
 
 ## Supporting Specifications
 
@@ -111,7 +111,7 @@ This implementation guide uses terminology, notations and design principles that
 
 ## Implementation Assumptions
 
-Wherever possible, the PDex IG will use established [US Core Profiles](http://hl7.org/fhir/us/core/) ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
+Wherever possible, the PDex IG will use established [US Core Profiles](http://hl7.org/fhir/us/core/index.html) ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
 Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in this guide.
 
@@ -119,7 +119,7 @@ Where profiles are specific to the PDex use case and are not shared with other D
 
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
-1. HL7 FHIR US Core STU3 v3.1.0 (based on FHIR R4 - [http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/) ) 
+1. HL7 FHIR US Core STU3 v3.1.0 (based on FHIR R4 - [http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/index.html) ) 
 2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://build.fhir.org/ig/HL7/davinci-ehrx/](http://build.fhir.org/ig/HL7/davinci-ehrx/) )
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
@@ -162,7 +162,7 @@ US Core Smoking Status Observation Profile
 - [US Core CareTeam Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html)
 - [US Core Condition Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html)
 - [US Core DiagnosticReport Profile for Laboratory Results Reporting](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html)
-- [US Core Diagnostic Report Profile for Report and Note exchange](http://hl7.org/fhir/us/core/StructureDefinition-new-us-core-diagnosticreport.html)
+- [US Core Diagnostic Report Profile for Report and Note exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
 - [US Core DocumentReference Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html)
 - [US Core Encounter Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html)
 - [US Core Goal Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html)

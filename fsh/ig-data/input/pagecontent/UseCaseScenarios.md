@@ -1,4 +1,4 @@
-[Previous Page - VitalSigns_](VitalSigns_.html)
+[Previous Page - VitalSigns](VitalSigns.html)
 
 This implementation guide addresses a Provider-to-Payer use case:
 
