@@ -1,11 +1,41 @@
 {
   "resourceType": "StructureDefinition",
   "id": "pdex-medicationdispense",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Medications"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
   "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
-  "version": "0.1.12",
+  "version": "0.1.10",
   "name": "PdexMedicationDispense",
   "title": "PDex MedicationDispense",
-  "status": "active",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
   "description": "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan",
   "jurisdiction": [
     {

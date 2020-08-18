@@ -6,7 +6,7 @@ Description:    """Provenance is provided by
 the payer to identify the source of the information, whether the data came via a clinical record
 or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
 """
-Mixins: PdexStructureDefinitionContent
+* insert PdexStructureDefinitionContent
 
 * recorded 1..1
 * recorded ^short = "Date/Time information was received by Payer"
@@ -15,7 +15,7 @@ Mixins: PdexStructureDefinitionContent
 
 * agent.who 1..1
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
-* agent.who only Reference(us-core-organization | us-core-practitioner)
+* agent.who only Reference(us-core-organization or us-core-practitioner)
 
 * extension contains ProvenanceConversionFrom named sourceFormat 0..1
 * extension[sourceFormat] ^short = "Source format resource was converted from"

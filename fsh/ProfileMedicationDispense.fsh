@@ -3,6 +3,7 @@ Parent:         MedicationDispense
 Id:             pdex-medicationdispense
 Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
+* insert PdexStructureDefinitionContent
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * subject 1..1
 * subject only Reference(us-core-patient)
@@ -32,7 +33,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * performer.function ^short = "Trial fill, partial fill, emergency fill, etc."
 * performer.function from http://hl7.org/fhir/ValueSet/medicationdispense-performer-function (example)
 * performer.actor 1..1
-* performer.actor only Reference(us-core-practitioner | us-core-practitionerrole | us-core-organization)
+* performer.actor only Reference(us-core-practitioner or us-core-practitionerrole or us-core-organization)
 * performer.actor ^short = "Individual or device performing the dispense"
 
 * location 0..1

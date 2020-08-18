@@ -5,7 +5,8 @@
 Extension: ProvenanceConversionFrom
 Title: "An attribute to describe the data conversion performed"
 Description: "Attributes that identify the source record format from which data in the referenced resources was derived"
-Mixins: PdexStructureDefinitionContent
+
+* insert PdexStructureDefinitionContent
 
 //  * extension contains
 //  source 0..1
@@ -24,7 +25,8 @@ Extension for MedicationDispense
 Extension: DispenseRefill
 Title: "An attribute to express the refill number of a prescription"
 Description: "Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc."
-Mixins: PdexStructureDefinitionContent
+
+* insert PdexStructureDefinitionContent
 
 * extension contains
 refillNum 0..1
