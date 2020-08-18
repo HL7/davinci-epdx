@@ -10,7 +10,7 @@
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-08-18T01:48:39-04:00",
+  "date": "2020-08-18T16:01:25-04:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -603,7 +603,7 @@
         "reference": {
           "reference": "Provenance/1000003"
         },
-        "name": "ExampleProvenanceSoloPractitioner",
+        "name": "ExasourceFormatmpleProvenanceSoloPractitioner",
         "description": "Example of an author Provenance record displaying a sole practitioner as the author",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
       },
@@ -641,6 +641,24 @@
         },
         "name": "OrganizationPayer1",
         "description": "Payer1",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "Bundle"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "Bundle-2000002.html"
+          }
+        ],
+        "reference": {
+          "reference": "Bundle/2000002"
+        },
+        "name": "ExampleBundle1",
+        "description": "A simple bundle to demonstrate a provenance example",
         "exampleBoolean": true
       },
       {

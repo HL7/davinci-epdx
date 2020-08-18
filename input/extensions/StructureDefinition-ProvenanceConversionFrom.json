@@ -59,37 +59,9 @@
   "differential": {
     "element": [
       {
-        "id": "Extension.extension:source",
+        "id": "Extension.extension",
         "path": "Extension.extension",
-        "sliceName": "source",
-        "short": "Source record format from which data was derived",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Extension.extension:source.extension",
-        "path": "Extension.extension.extension",
         "max": "0"
-      },
-      {
-        "id": "Extension.extension:source.url",
-        "path": "Extension.extension.url",
-        "fixedUri": "source"
-      },
-      {
-        "id": "Extension.extension:source.valueCodeableConcept",
-        "path": "Extension.extension.valueCodeableConcept",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
-        }
       },
       {
         "id": "Extension.url",
@@ -99,7 +71,32 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "max": "0"
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Source record format from which data was derived",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueCodeableConcept",
+        "path": "Extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
+        }
       }
     ]
   }
