@@ -20,9 +20,6 @@ devices used by a member that may not have a UDI number.
 * udiCarrier.carrierHRF  ^short = "UDI Human Readable Barcode String"
 * distinctIdentifier  0..1
 * distinctIdentifier  ^short = "The distinct identification string"
-// * manufactureDate  0..1
-// * manufactureDate  ^short = "Name of device manufacturer"
-// * deviceName 1..*
 
 * expirationDate  0..1
 * expirationDate  ^short = "Date and time of expiry of this device (if applicable)"
