@@ -23,7 +23,7 @@ Description: "Example of an author Provenance record displaying a practitioner's
 * extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "C-CDA"
 
 
-Instance: ExasourceFormatmpleProvenanceSoloPractitioner
+Instance: ExampleProvenanceSoloPractitioner
 InstanceOf: pdex-provenance
 Description: "Example of an author Provenance record displaying a sole practitioner as the author"
 * id = "1000003"
