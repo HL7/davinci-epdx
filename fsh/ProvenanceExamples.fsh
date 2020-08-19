@@ -20,7 +20,6 @@ Description: "Example of an author Provenance record displaying a practitioner's
 * recorded = "2020-07-10T16:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#author "Author"
 * agent[0].who.reference = "Organization/3"
-//* extension.url = "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceConversionFrom"
 * extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "C-CDA"
 
 
@@ -34,7 +33,6 @@ Description: "Example of an author Provenance record displaying a sole practitio
 * recorded = "2020-07-11T17:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#author "Author"
 * agent[0].who.reference = "Practitioner/4"
-//* extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
 * extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#x12837
 
 
@@ -49,7 +47,6 @@ Description: "Example of an payer being the source of the data"
 * recorded = "2020-07-12T18:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#source "Source"
 * agent[0].who.reference = "Organization/2"
-//* extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom"
 * extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp
 
 
