@@ -19,5 +19,5 @@ or a claim record and whether the data was subject to manual transcription or ot
 
 * extension contains ProvenanceConversionFrom named sourceFormat 0..1
 * extension[sourceFormat] ^short = "Source format resource was converted from"
-// * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSource"
-* extension[sourceFormat].valueCodeableConcept from ProvenancePayerConversionSource (required)
+// * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
+* extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)

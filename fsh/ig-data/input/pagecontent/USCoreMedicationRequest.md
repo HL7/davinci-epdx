@@ -1,4 +1,4 @@
-[Previous Page - HRex MedicationDispense](HRexMedicationDispense.html)
+[Previous Page - PDex MedicationDispense](PDexMedicationDispense.html)
 
 Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 

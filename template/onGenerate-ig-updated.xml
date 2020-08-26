@@ -46,11 +46,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.1.16"/>
+   <version value="0.1.17"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-08-18T23:33:38-04:00"/>
+   <date value="2020-08-25T21:52:34-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -224,12 +224,12 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ValueSet-ProvenancePayerConversionSource.html"/>
+            <valueUri value="ValueSet-ProvenancePayerSourceFormat.html"/>
          </extension>
          <reference>
-            <reference value="ValueSet/ProvenancePayerConversionSource"/>
+            <reference value="ValueSet/ProvenancePayerSourceFormat"/>
          </reference>
-         <name value="Source Data conversion"/>
+         <name value="Source of Data"/>
          <description value="Source Data formats used as the source for FHIR referenced record by the Payer."/>
          <exampleBoolean value="false"/>
          <groupingId value="_term_valueset"/>
@@ -587,13 +587,13 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                   <generation value="markdown"/>
                </page>
                <page>
-                  <nameUrl value="HRexMedicationDispense.html"/>
-                  <title value="HRex MedicationDispense"/>
+                  <nameUrl value="PDexMedicationDispense.html"/>
+                  <title value="PDex MedicationDispense"/>
                   <generation value="markdown"/>
                </page>
                <page>
                   <nameUrl value="USCoreMedicationRequest.html"/>
-                  <title value="US Core MedicationDispense"/>
+                  <title value="US Core MedicationRequest"/>
                   <generation value="markdown"/>
                </page>
                <page>
@@ -733,8 +733,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="ValueSet-ProvenancePayerConversionSource.html"/>
-               <title value="Source Data conversion"/>
+               <nameUrl value="ValueSet-ProvenancePayerSourceFormat.html"/>
+               <title value="Source of Data"/>
                <generation value="generated"/>
             </page>
             <page>

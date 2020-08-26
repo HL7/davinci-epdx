@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -111,9 +111,9 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/ProvenancePayerConversionSource"
+          "reference": "ValueSet/ProvenancePayerSourceFormat"
         },
-        "name": "Source Data conversion",
+        "name": "Source of Data",
         "description": "Source Data formats used as the source for FHIR referenced record by the Payer.",
         "exampleBoolean": false
       },
@@ -362,13 +362,13 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "HRexMedicationDispense.html",
-                  "title": "HRex MedicationDispense",
+                  "nameUrl": "PDexMedicationDispense.html",
+                  "title": "PDex MedicationDispense",
                   "generation": "markdown"
                 },
                 {
                   "nameUrl": "USCoreMedicationRequest.html",
-                  "title": "US Core MedicationDispense",
+                  "title": "US Core MedicationRequest",
                   "generation": "markdown"
                 },
                 {
