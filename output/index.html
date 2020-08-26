@@ -59,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.16 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.17 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -118,7 +118,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.16). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.17). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Home</h2>
   
 
@@ -131,8 +131,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#background" id="markdown-toc-background">Background</a></li>
+  <li><a href="#latest-changes" id="markdown-toc-latest-changes">Latest Changes</a></li>
+  <li><a href="#intellectual-property" id="markdown-toc-intellectual-property">Intellectual Property</a></li>
+  <li><a href="#conventions" id="markdown-toc-conventions">Conventions</a></li>
+</ul>
+
 </div>
 <!-- index.md  -->
 <p id="publish-box">
@@ -149,6 +155,43 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 <p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member’s Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>
 
 <p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>
+
+<p>CMS Guidance defines two sets of data be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required, but if used these guides will provide information payers can use to meet the requirements of the policies being finalized. 
+This IG defines how Claims and Encounter Data are to be provided; the DaVinci payer data exchange (PDex) and US Core IGs define how Clinical Data is to be provided.</p>
+
+<h3 id="background">Background</h3>
+<p>There are two parallel paths pursued by the CARIN Alliance and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves most financial data out of scope.</p>
+
+<p>The CARIN Alliance focused on replicating the CMS Blue Button 2.0 solution directed at providing beneficiaries access to claims information for Medicare Fee For Service (FFS) in the form of a FHIR based ExplanationOfBenefits (EOB). The CARIN Alliance Consumer-Directed Payer Data Exchange (CARIN IG for Blue Button®) solution was intended to provide the same information based on commercial payer databases, at a least for Medicare Advantage products. The CMS Interoperability and Patient Access Final Rule expanded the scope of a Blue Button 2.0 equivalent to include not just Medicare Advantage but also Medicaid HMO, CHIP HMO and QHP’s in the federal marketplace.</p>
+
+<p>The Da Vinci Payer Data Exchange (PDex) solution started with the goal of providing payer sourced information to providers in the form of FHIR resources consistent with US Core profiles for FHIR Release 4 (R4). The CMS Interoperability Final Rule directs covered payers (as noted above) to make encounter information and clinical data available to members through an API defined by the ONC 21st Century Cures Act Final Rule for, at a minimum, information defined in USCDI release 1.1. Since PDex was already focused on making the same information available through a compliant API, Da Vinci expanded the scope of PDex to include not only payer to provider exchange at the request of the provider but also payer to third party application exchange at the request of the member.</p>
+
+<p>In addition, the CMS Interoperability Final Rule requires a covered plan, at the member’s request, to make their information (as defined by USCDI release 1.1, at a minimum) available to any other plan as directed by the member. This ability must exist for up to 5 years after the member leaves the plan. Da Vinci expanded the scope of the PDex Implementation Guide to support this exchange.</p>
+
+<p>At this point we have two solutions that provide an overlapping but different set of information for the members of a health plan. The first is the CARIN IG for Blue Button® which is focused on providing claims information, including the adjudication information, in the form of a FHIR EOB.  The second solution is to provide all payer information related to the clinical condition and care of the patient using US Core profiles on FHIR R4 resources. In the latter case, information coming from claims is represented as USCDI V1.1 information and includes, at a minimum: encounters, providers, organizations, locations, dates of service, diagnoses (conditions), procedures and observations. This information would also include clinical information from sources other than claims maintained by the payer, such as:</p>
+
+<p>1)	laboratory results received via HL7 V2 ORU transactions, 
+2)	clinical data from HL7 consolidated CDAs, 
+3)	information derived from HL7 V2 ADT transactions, 
+4)	information received or extracted from immunization registries, 
+5)	information related to medication administration from pharmacy benefit managers in pharmacy networks, 
+6)	FHIR resources, and any other source of clinical information related to the member.</p>
+
+<p>Unlike the US Core 3.1.0 Implementation Guide, PDex provides guidance to payers on how to make the following information available via the Patient Access API:</p>
+
+<p>1)	provenance appropriate for payer data exchange (USCDI/US Core profiles are not sufficient)
+2)	dispensed medications (not covered in US Core)
+3)	medical devices that are not implantable devices (not covered in US Core)
+4)	CPCDS data set to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
+5)	clinical data received by payers (e.g. laboratory results) from multiple sources (e.g. claims, HL7 V2, CDA) to the appropriate FHIR US Core and PDex profile data elements</p>
+
+<table>
+	<tr>
+		<td>
+			<img width="100%" height="auto" src="DataViewAdminFinancialClinicalInterop.png" />
+		</td>	
+	</tr>	
+</table>
 
 <p>This IG uses the same Member Health History “payload” for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>
 
@@ -182,6 +225,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 
 <h3 id="latest-changes">Latest Changes</h3>
 <ul>
+  <li>0.1.17 FHIR-26699</li>
   <li>0.3.10:
     <ul>
       <li>FHIR-23311, FHIR-28111</li>
@@ -207,11 +251,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 
 <p>In addition, we are creating a supplemental guide to provide more examples of how to populate the resources that are being exchanged based on the nature of the source information (e.g. lab results via V2 transactions, CDA, or claims).</p>
 
-<h1 id="intellectual-property">Intellectual Property</h1>
+<h3 id="intellectual-property">Intellectual Property</h3>
 
 <p>This HL7 specification contains and references intellectual property owned by third parties (“Third Party IP”).  Implementers and testers of this specification <strong>SHALL</strong> abide by the license requirements for each terminology content artifact utilized within a functioning implementation. Terminology licenses <strong>SHALL</strong> be obtained from the Third Party IP owner for each code system and/or other specified artifact used.  It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third Party IP.</p>
 
-<h1 id="conventions">Conventions</h1>
+<h3 id="conventions">Conventions</h3>
 
 <p>This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:</p>
 
@@ -229,7 +273,9 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
   <li>
     <p><strong>patient</strong> or <strong>subject</strong> id will be used to express the identifier used by the provider to identify a patient/subject.</p>
   </li>
-  <li><strong>member</strong> id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:</li>
+  <li>
+    <p><strong>member</strong> id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:</p>
+  </li>
   <li>Member</li>
   <li>Subscriber</li>
   <li>Beneficiary</li>
@@ -263,7 +309,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.16 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2020 23:33-0400">2020-08-18</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.17 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 25, 2020 21:52-0400">2020-08-25</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

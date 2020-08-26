@@ -15,6 +15,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json                         | generated | fsh/config.yaml, {all input resources and pages}                                            |
 | input/ignoreWarnings.txt                                                        | generated |                                                                                             |
 | input/images/CDSHooksSmartOnFHIR.png                                            | copied    | fsh/ig-data/input/images/CDSHooksSmartOnFHIR.png                                            |
+| input/images/DataViewAdminFinancialClinicalInterop.png                          | copied    | fsh/ig-data/input/images/DataViewAdminFinancialClinicalInterop.png                          |
 | input/images/MappingFromV2toFHIR.png                                            | copied    | fsh/ig-data/input/images/MappingFromV2toFHIR.png                                            |
 | input/images/MemberAuthExchange.png                                             | copied    | fsh/ig-data/input/images/MemberAuthExchange.png                                             |
 | input/images/PDEX-SMART-Hook-SMART-InteractionMethods1.png                      | copied    | fsh/ig-data/input/images/PDEX-SMART-Hook-SMART-InteractionMethods1.png                      |
@@ -30,12 +31,12 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/Credits.md                                                    | copied    | fsh/ig-data/input/pagecontent/Credits.md                                                    |
 | input/pagecontent/DataMapping.md                                                | copied    | fsh/ig-data/input/pagecontent/DataMapping.md                                                |
 | input/pagecontent/Downloads.md                                                  | copied    | fsh/ig-data/input/pagecontent/Downloads.md                                                  |
-| input/pagecontent/HRexMedicationDispense.md                                     | copied    | fsh/ig-data/input/pagecontent/HRexMedicationDispense.md                                     |
 | input/pagecontent/HandlingDataProvenance.md                                     | copied    | fsh/ig-data/input/pagecontent/HandlingDataProvenance.md                                     |
 | input/pagecontent/Introduction.md                                               | copied    | fsh/ig-data/input/pagecontent/Introduction.md                                               |
 | input/pagecontent/Member-AuthorizedOAuth2Exchange.md                            | copied    | fsh/ig-data/input/pagecontent/Member-AuthorizedOAuth2Exchange.md                            |
 | input/pagecontent/Overview.md                                                   | copied    | fsh/ig-data/input/pagecontent/Overview.md                                                   |
 | input/pagecontent/PDexImplementationActorsInteractionsDataPayloadsandMethods.md | copied    | fsh/ig-data/input/pagecontent/PDexImplementationActorsInteractionsDataPayloadsandMethods.md |
+| input/pagecontent/PDexMedicationDispense.md                                     | copied    | fsh/ig-data/input/pagecontent/PDexMedicationDispense.md                                     |
 | input/pagecontent/PDexProvenance.md                                             | copied    | fsh/ig-data/input/pagecontent/PDexProvenance.md                                             |
 | input/pagecontent/PayerToPayerExchange.md                                       | copied    | fsh/ig-data/input/pagecontent/PayerToPayerExchange.md                                       |
 | input/pagecontent/PdexDevice.md                                                 | copied    | fsh/ig-data/input/pagecontent/PdexDevice.md                                                 |

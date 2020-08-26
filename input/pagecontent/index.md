@@ -23,6 +23,44 @@ This guide can be reviewed offline. Go to the Downloads section. Click on the li
 
 The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.
 
+CMS Guidance defines two sets of data be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required, but if used these guides will provide information payers can use to meet the requirements of the policies being finalized. 
+This IG defines how Claims and Encounter Data are to be provided; the DaVinci payer data exchange (PDex) and US Core IGs define how Clinical Data is to be provided. 
+
+### Background
+There are two parallel paths pursued by the CARIN Alliance and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves most financial data out of scope.
+
+The CARIN Alliance focused on replicating the CMS Blue Button 2.0 solution directed at providing beneficiaries access to claims information for Medicare Fee For Service (FFS) in the form of a FHIR based ExplanationOfBenefits (EOB). The CARIN Alliance Consumer-Directed Payer Data Exchange (CARIN IG for Blue Button®) solution was intended to provide the same information based on commercial payer databases, at a least for Medicare Advantage products. The CMS Interoperability and Patient Access Final Rule expanded the scope of a Blue Button 2.0 equivalent to include not just Medicare Advantage but also Medicaid HMO, CHIP HMO and QHP's in the federal marketplace.
+
+The Da Vinci Payer Data Exchange (PDex) solution started with the goal of providing payer sourced information to providers in the form of FHIR resources consistent with US Core profiles for FHIR Release 4 (R4). The CMS Interoperability Final Rule directs covered payers (as noted above) to make encounter information and clinical data available to members through an API defined by the ONC 21st Century Cures Act Final Rule for, at a minimum, information defined in USCDI release 1.1. Since PDex was already focused on making the same information available through a compliant API, Da Vinci expanded the scope of PDex to include not only payer to provider exchange at the request of the provider but also payer to third party application exchange at the request of the member.
+
+In addition, the CMS Interoperability Final Rule requires a covered plan, at the member’s request, to make their information (as defined by USCDI release 1.1, at a minimum) available to any other plan as directed by the member. This ability must exist for up to 5 years after the member leaves the plan. Da Vinci expanded the scope of the PDex Implementation Guide to support this exchange.
+  
+At this point we have two solutions that provide an overlapping but different set of information for the members of a health plan. The first is the CARIN IG for Blue Button® which is focused on providing claims information, including the adjudication information, in the form of a FHIR EOB.  The second solution is to provide all payer information related to the clinical condition and care of the patient using US Core profiles on FHIR R4 resources. In the latter case, information coming from claims is represented as USCDI V1.1 information and includes, at a minimum: encounters, providers, organizations, locations, dates of service, diagnoses (conditions), procedures and observations. This information would also include clinical information from sources other than claims maintained by the payer, such as:
+
+1)	laboratory results received via HL7 V2 ORU transactions, 
+2)	clinical data from HL7 consolidated CDAs, 
+3)	information derived from HL7 V2 ADT transactions, 
+4)	information received or extracted from immunization registries, 
+5)	information related to medication administration from pharmacy benefit managers in pharmacy networks, 
+6)	FHIR resources, and any other source of clinical information related to the member.
+ 
+Unlike the US Core 3.1.0 Implementation Guide, PDex provides guidance to payers on how to make the following information available via the Patient Access API:
+
+1)	provenance appropriate for payer data exchange (USCDI/US Core profiles are not sufficient)
+2)	dispensed medications (not covered in US Core)
+3)	medical devices that are not implantable devices (not covered in US Core)
+4)	CPCDS data set to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
+5)	clinical data received by payers (e.g. laboratory results) from multiple sources (e.g. claims, HL7 V2, CDA) to the appropriate FHIR US Core and PDex profile data elements
+
+<table>
+	<tr>
+		<td>
+			<img  width="100%" height="auto" src="DataViewAdminFinancialClinicalInterop.png">
+		</td>	
+	</tr>	
+</table>
+
+
 This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.
 
 This IG covers the exchange of:
@@ -48,6 +86,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 ### Latest Changes
+- 0.1.17 FHIR-26699 
 - 0.3.10: 
    - FHIR-23311, FHIR-28111
    - Fix footer errors
@@ -70,11 +109,11 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 
 In addition, we are creating a supplemental guide to provide more examples of how to populate the resources that are being exchanged based on the nature of the source information (e.g. lab results via V2 transactions, CDA, or claims).
 
-# Intellectual Property
+### Intellectual Property
 
 This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP").  Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third Party IP owner for each code system and/or other specified artifact used.  It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third Party IP.
 
-# Conventions
+### Conventions
 
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
@@ -91,6 +130,7 @@ For the purposes of this IG we will use the following terms:
 * **patient** or **subject** id will be used to express the identifier used by the provider to identify a patient/subject.
 
 * **member** id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:
+
 * Member
 * Subscriber 
 * Beneficiary

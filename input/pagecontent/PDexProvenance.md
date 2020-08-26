@@ -131,7 +131,7 @@ An example Author Provenance record is shown below:
       "valueCodeableConcept" : {
         "coding" : [
           {
-            "system" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerConversionSourceVS",
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormatVS",
             "code" : "hl7ccda"
           }
         ]

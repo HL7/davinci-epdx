@@ -82,4 +82,4 @@ An example mapping of a Medication is shown below:
 
 
 
-[Next Page - HRex MedicationDispense](HRexMedicationDispense.html)
+[Next Page - PDex MedicationDispense](PDexMedicationDispense.html)
