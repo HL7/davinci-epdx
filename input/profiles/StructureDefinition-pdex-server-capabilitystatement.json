@@ -1,0 +1,324 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-server-capabilitystatement",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Conformance"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "anonymous"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-server-capabilitystatement",
+  "version": "0.1.10",
+  "name": "PdexServerCapabilityStatement",
+  "title": "Server CapabilityStatement profile for PDex with US Core",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "CapabilityStatement server profile. Adds PDex specific profiles to US Core base.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CapabilityStatement",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CapabilityStatement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CapabilityStatement.rest",
+        "path": "CapabilityStatement.rest",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "mode"
+            }
+          ]
+        },
+        "min": 1
+      },
+      {
+        "id": "CapabilityStatement.rest:server",
+        "path": "CapabilityStatement.rest",
+        "sliceName": "server",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "CapabilityStatement.rest:server.mode",
+        "path": "CapabilityStatement.rest.mode",
+        "patternCode": "server"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource",
+        "path": "CapabilityStatement.rest.resource",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "mode"
+            }
+          ],
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-allergyintolerance",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-allergyintolerance",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-careplan",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-careplan",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-careteam",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-careteam",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-condition",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-condition",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:hrex-coverage",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "hrex-coverage",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:pdex-device",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "pdex-device",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-diagnosticreport-lab",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-diagnosticreport-lab",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-diagnosticreport-note",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-diagnosticreport-note",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-documentreference",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-documentreference",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-encounter",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-encounter",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-goal",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-goal",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-immunization",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-immunization",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-implantable-device",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-implantable-device",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-location",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-location",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-medication",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-medication",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:pdex-medicationdispense",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "pdex-medicationdispense",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-medicationrequest",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-medicationrequest",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-organization",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-organization",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-patient",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-patient",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:pediatric-bmi-for-age",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "pediatric-bmi-for-age",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:pediatric-weight-for-height",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "pediatric-weight-for-height",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-practitioner",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-practitioner",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-practitionerrole",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-practitionerrole",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-procedure",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-procedure",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:pdex-provenance",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "pdex-provenance",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-provenance",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-provenance",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-pulse-oximetry",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-pulse-oximetry",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:us-core-smoking-status",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "us-core-smoking-status",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "CapabilityStatement.rest:server.resource:observation-vitalsigns",
+        "path": "CapabilityStatement.rest.resource",
+        "sliceName": "observation-vitalsigns",
+        "min": 0,
+        "max": "1"
+      }
+    ]
+  }
+}

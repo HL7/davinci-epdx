@@ -17,7 +17,7 @@ or a claim record and whether the data was subject to manual transcription or ot
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
 * agent.who only Reference(us-core-organization or us-core-practitioner)
 
-* extension contains ProvenanceConversionFrom named sourceFormat 0..1
-* extension[sourceFormat] ^short = "Source format resource was converted from"
+* extension contains ProvenanceSourceFrom named sourceFormat 0..1
+* extension[sourceFormat] ^short = "Source format target resource was created from"
 // * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
 * extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)

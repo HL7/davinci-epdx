@@ -10,7 +10,7 @@ Description: "Agent role performed relating to referenced resource"
 
 
 ValueSet: ProvenancePayerSourceFormat
-Title: "Source of Data"
+Title: "Payer source of data"
 Description: "Source Data formats used as the source for FHIR referenced record by the Payer."
   * codes from system ProvenancePayerDataSource
   * ^jurisdiction = urn:iso:std:iso:3166#US

@@ -1,9 +1,9 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 1, warn = 10, info = 10
-IG Publisher Version: 1.1.14 Out of date - current version is 1.1.15
-Generated Tue Aug 25 21:53:07 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.17 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+err = 3, warn = 12, info = 10
+IG Publisher Version: 1.1.15 Out of date - current version is 1.1.16
+Generated Fri Aug 28 10:40:34 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.18 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
  Build Errors : 0 / 1 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 0 / 1
@@ -21,10 +21,11 @@ Generated Tue Aug 25 21:53:07 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill : 0 / 1 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceConversionFrom : 0 / 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceSourceFrom : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-medicationdispense : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 0 / 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-server-capabilitystatement : 2 / 2 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-IdentifierTypeCS : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenanceAgentRoleType : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenancePayerDataSource : 0 / 0 / 1
@@ -90,8 +91,8 @@ INFORMATION: Provenance/1000004: Provenance.agent[0]: This element does not matc
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-DispenseRefill.json ==
 INFORMATION: StructureDefinition/DispenseRefill: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill'): The Implementation Guide contains no examples for this extension
-== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-ProvenanceConversionFrom.json ==
-INFORMATION: StructureDefinition/ProvenanceConversionFrom: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-ProvenanceSourceFrom.json ==
+INFORMATION: StructureDefinition/ProvenanceSourceFrom: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-device.json ==
 INFORMATION: StructureDefinition/pdex-device: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device'): The Implementation Guide contains no examples for this profile
@@ -100,6 +101,12 @@ INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition: V
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition.snapshot.element[30].mapping[0].map: The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-provenance.json ==
 INFORMATION: StructureDefinition/pdex-provenance: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-server-capabilitystatement.json ==
+INFORMATION: StructureDefinition/pdex-server-capabilitystatement: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+WARNING: StructureDefinition/pdex-server-capabilitystatement: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace
+ERROR: StructureDefinition/pdex-server-capabilitystatement: StructureDefinition.snapshot.element[44].slicing: Profile http://hl7.org/fhir/StructureDefinition/ElementDefinition, Element 'StructureDefinition.snapshot.element[44].slicing.rules': minimum required = 1, but only found 0
+ERROR: StructureDefinition/pdex-server-capabilitystatement: StructureDefinition.differential.element[1].slicing: Profile http://hl7.org/fhir/StructureDefinition/ElementDefinition, Element 'StructureDefinition.differential.element[1].slicing.rules': minimum required = 1, but only found 0
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-server-capabilitystatement'): The Implementation Guide contains no examples for this profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-IdentifierTypeCS.json ==
 INFORMATION: CodeSystem/IdentifierTypeCS: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-ProvenanceAgentRoleType.json ==

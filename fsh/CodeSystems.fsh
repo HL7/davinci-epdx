@@ -13,8 +13,8 @@ CodeSystem: ProvenanceAgentRoleType
 
 
 CodeSystem: ProvenancePayerDataSource
-  Title: "Provenance Payer Data Source Format"
-  Description: "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
+Title: "Provenance Payer Data Source Format"
+Description: "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
   * ^jurisdiction.coding = urn:iso:std:iso:3166#US
   * #hl7v2other "HL7 v2" "HL7 v2 Message"
   * #hl7v2oru "HL7 v2 ORU" "HL7 v2 Structured Observation Report(ORU) message"
@@ -42,39 +42,11 @@ CodeSystem: ProvenancePayerDataSource
   * #other "Other" "Any other document format not specifically defined"
 
 
-/* Should any of these elements be added to the list above
-
-  * #pdf "PDF" "Portable Document Format"
-  * #image "Image Format" "Image formats e.g. jpg, png, tiff, etc."
-  * #html "HTML document" "HTML web page document"
-  * #xml "XML document" "Extensible Markup Language document"
-  * #json "Json document" "Javascript Object Notation document"
-  * #dicom "Dicom" "DICOM Image format"
-  * #ms-word "Word" "Word Document"
-  * #ms-excel "Excel" "Excel spreadsheet"
-  * #ms-powerpoint "PowerPoint" "Powerpoint document"
-*/
-
-/*
-Which source types do we need?
-
-standards
-+ Custom
-
-non-standard prefix with general
-generaltext
-generalcsv
-generalimage
-x12
-
-
-
-*/
-
 
 CodeSystem: IdentifierTypeCS
 Title: "Identifier Type"
 Description: "Identifier Type"
+  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
   * #tax "Tax ID Number" "Tax ID Number"
   * #npi "National Provider Identifier" "National Provider Identifier"
   * #clia "CLIA" "CLIA"

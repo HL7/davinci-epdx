@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -79,6 +79,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/pdex-server-capabilitystatement"
+        },
+        "name": "Server CapabilityStatement profile for PDex with US Core",
+        "description": "CapabilityStatement server profile. Adds PDex specific profiles to US Core base.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/DispenseRefill"
         },
         "name": "An attribute to express the refill number of a prescription",
@@ -87,9 +95,9 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ProvenanceConversionFrom"
+          "reference": "StructureDefinition/ProvenanceSourceFrom"
         },
-        "name": "An attribute to describe the data conversion performed",
+        "name": "An attribute to describe the data source a resource was constructed from",
         "description": "Attributes that identify the source record format from which data in the referenced resources was derived",
         "exampleBoolean": false
       },
@@ -113,7 +121,7 @@
         "reference": {
           "reference": "ValueSet/ProvenancePayerSourceFormat"
         },
-        "name": "Source of Data",
+        "name": "Payer source of data",
         "description": "Source Data formats used as the source for FHIR referenced record by the Payer.",
         "exampleBoolean": false
       },
@@ -137,8 +145,8 @@
         "reference": {
           "reference": "CodeSystem/ProvenancePayerDataSource"
         },
-        "name": "Provenance Payer Conversion Source Format",
-        "description": "CodeSystem for source format standards",
+        "name": "Provenance Payer Data Source Format",
+        "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
         "exampleBoolean": false
       },
       {
