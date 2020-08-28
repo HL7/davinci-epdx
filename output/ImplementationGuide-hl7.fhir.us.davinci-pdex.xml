@@ -34,11 +34,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.1.17"/>
+  <version value="0.1.18"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-08-25T21:52:34-04:00"/>
+  <date value="2020-08-28T10:33:47-04:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -273,6 +273,20 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-pdex-server-capabilitystatement.html"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdex-server-capabilitystatement"/>
+      </reference>
+      <name value="Server CapabilityStatement profile for PDex with US Core"/>
+      <description value="CapabilityStatement server profile. Adds PDex specific profiles to US Core base."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -290,12 +304,12 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-ProvenanceConversionFrom.html"/>
+        <valueUri value="StructureDefinition-ProvenanceSourceFrom.html"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/ProvenanceConversionFrom"/>
+        <reference value="StructureDefinition/ProvenanceSourceFrom"/>
       </reference>
-      <name value="An attribute to describe the data conversion performed"/>
+      <name value="An attribute to describe the data source a resource was constructed from"/>
       <description value="Attributes that identify the source record format from which data in the referenced resources was derived"/>
       <exampleBoolean value="false"/>
     </resource>
@@ -337,7 +351,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <reference>
         <reference value="ValueSet/ProvenancePayerSourceFormat"/>
       </reference>
-      <name value="Source of Data"/>
+      <name value="Payer source of data"/>
       <description value="Source Data formats used as the source for FHIR referenced record by the Payer."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -379,8 +393,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <reference>
         <reference value="CodeSystem/ProvenancePayerDataSource"/>
       </reference>
-      <name value="Provenance Payer Conversion Source Format"/>
-      <description value="CodeSystem for source format standards"/>
+      <name value="Provenance Payer Data Source Format"/>
+      <description value="CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -1,6 +1,6 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -63,8 +63,8 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom",
-      "title": "An attribute to describe the data conversion performed",
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+      "title": "An attribute to describe the data source a resource was constructed from",
       "types": [
         "CodeableConcept",
         "CodeableConcept"
@@ -89,6 +89,12 @@
         "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
         "title": "PDex Provenance"
       }
+    ],
+    "CapabilityStatement": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-server-capabilitystatement",
+        "title": "Server CapabilityStatement profile for PDex with US Core"
+      }
     ]
   },
   "usage": {
@@ -110,11 +116,17 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
       "StructureDefinition"
     ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
+      "StructureDefinition.snapshot.element"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category": [
       "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
       "ImplementationGuide.definition"
@@ -125,7 +137,7 @@
     "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill": [
       "MedicationDispense"
     ],
-    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceConversionFrom": [
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom": [
       "Provenance"
     ]
   }

@@ -4,9 +4,9 @@
   "content": "complete",
   "name": "ProvenancePayerDataSource",
   "id": "ProvenancePayerDataSource",
-  "title": "Provenance Payer Conversion Source Format",
-  "description": "CodeSystem for source format standards",
-  "version": "0.1.17",
+  "title": "Provenance Payer Data Source Format",
+  "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
+  "version": "0.1.18",
   "url": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
   "jurisdiction": [
     {
@@ -120,10 +120,25 @@
       "definition": "N.C.P.D.P."
     },
     {
-      "code": "custom",
-      "display": "Custom Format",
-      "definition": "Non-standard input format. e.g. CSV file, fax, etc."
+      "code": "capture",
+      "display": "Direct Capture",
+      "definition": "Direct Capture, such as into a payers case management system"
+    },
+    {
+      "code": "customtx",
+      "display": "Trading Partner Format",
+      "definition": "Trading Partner Proprietary format"
+    },
+    {
+      "code": "image",
+      "display": "Image",
+      "definition": "Fax or scanned document"
+    },
+    {
+      "code": "other",
+      "display": "Other",
+      "definition": "Any other document format not specifically defined"
     }
   ],
-  "count": 21
+  "count": 24
 }
