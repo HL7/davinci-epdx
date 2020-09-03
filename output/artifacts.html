@@ -176,13 +176,14 @@ devices used by a member that may not have a UDI number.</p>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-pdex-provenance.html"
-                     title="StructureDefinition/pdex-provenance">PDex Provenance</a>
+                  <a href="StructureDefinition-pdex-origin-provenance.html"
+                     title="StructureDefinition/pdex-origin-provenance">PDex Origin Provenance</a>
                </td>
                <td>
 <p>Provenance is provided by
 the payer to identify the source of the information, whether the data came via a clinical record
-or a claim record and whether the data was subject to manual transcription or other interpretive transformation.</p>
+or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
+This profile adds PayerSourceFormat as an extension on the entity base element.</p>
 </td>
             </tr>
             <tr>
@@ -192,6 +193,18 @@ or a claim record and whether the data was subject to manual transcription or ot
                </td>
                <td>
 <p>CapabilityStatement server profile. Adds PDex specific profiles to US Core base.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-pdex-target-provenance.html"
+                     title="StructureDefinition/pdex-target-provenance">PDex Target Provenance</a>
+               </td>
+               <td>
+<p>Provenance is provided by
+the payer to identify the source of the information, whether the data came via a clinical record
+or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
+This Profile places the PayerSourceFormat as an extension to the base profile.</p>
 </td>
             </tr>
          </tbody>
@@ -357,6 +370,14 @@ or a claim record and whether the data was subject to manual transcription or ot
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Provenance-1000005.html" title="Provenance/1000005">ExampleProvenancePayerModified</a>
+               </td>
+               <td>
+<p>Example of provenance based on security group recommendations</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Organization-2.html" title="Organization/2">OrganizationPayer1</a>
                </td>
                <td>
@@ -436,7 +457,7 @@ or a claim record and whether the data was subject to manual transcription or ot
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.18 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 28, 2020 10:33-0400">2020-08-28</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.18 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 2, 2020 13:53-0400">2020-09-02</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

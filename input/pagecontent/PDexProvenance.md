@@ -23,7 +23,20 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record or a claim record. 
 - Whether the data was subject to manual transcription or other interpretive transformation.
 
-The PDex-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
+The PDex-Target-Provenance resource is documented here: [StructureDefinition-pdex-target-provenance.html](StructureDefinition-pdex-target-provenance.html)
+
+The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-origin-provenance.html](StructureDefinition-pdex-origin-provenance.html)
+
+**NOTE:**
+PDex Provenance is displayed in two forms for the purposes of Connectathon testing: 
+- [StructureDefinition-pdex-target-provenance.html](StructureDefinition-pdex-target-provenance.html)
+- [StructureDefinition-pdex-origin-provenance.html](StructureDefinition-pdex-origin-provenance.html)
+
+Both Profiles add an extension that uses the ProvenanceSourceFrom ValueSet.
+In the Target Provenance Profile this extension is at the base of the profile. In the Origin Provenance Profile the extenaion is included in the Provenance.entity base element.
+
+The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
+
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
@@ -108,7 +121,7 @@ The updated Provenance record **SHOULD** be passed on to any downstream entity r
 
 ### Example Provenance Record
 
-An example Author Provenance record is shown below:
+An example Author Provenance record appears below:
 
 <pre>
 {
@@ -118,7 +131,7 @@ An example Author Provenance record is shown below:
     "versionId" : "1",
     "lastUpdated" : "2020-07-10T16:26:23.217+00:00",
     "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
     ]
   },
   "text" : {
