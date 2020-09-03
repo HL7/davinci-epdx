@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = 0, errors = 2, warn = 15, info = 13 -->
+<!-- broken links = 0, errors = 2, warn = 16, info = 13 -->
 <head>
   <title>DaVinciPayerDataExchange : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for DaVinciPayerDataExchange</h1>
- <p>Generated Wed Sep 02 22:23:18 EDT 2020, FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.19 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>)). See <a href="/users/mark/documents/_local/davinci/davinci-epdx/output/qa.min.html">Errors Only</a></p>
+ <p>Generated Wed Sep 02 22:45:19 EDT 2020, FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.19 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>)). See <a href="/users/mark/documents/_local/davinci/davinci-epdx/output/qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
  <tr><td>Publisher Version:</td><td><span style="background-color: #ffcccc">IG Publisher Version: v1.1.15, which is out of date. The current version is v1.1.17 <a href="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar">Download Latest</a></span></td></tr>
  <tr><td>Supressed Messages:</td><td>No Suppressed Issues
@@ -39,7 +39,7 @@
  <tr><td>HTA Analysis:</td><td><a href="qa-hta.html">All OK</a></td></tr>
  <tr><td>Realm rules:</td><td>All OK</td></tr>
  <tr><td>Previous Version Comparison:</td><td> <a href="comparison-v0.1.0/index.html">Comparison with version 0.1.0</a></td></tr>
- <tr><td>Summary:</td><td> broken links = 0, errors = 2, warn = 15, info = 13</td></tr>
+ <tr><td>Summary:</td><td> broken links = 0, errors = 2, warn = 16, info = 13</td></tr>
 </table>
  <table class="grid">
    <tr>
@@ -91,7 +91,7 @@
      <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_examples_provenance-1000004"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>2</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
-     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_examples_provenance-1000005"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000005</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>2</b></td>
+     <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_examples_provenance-1000005"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000005</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>2</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
      <td><a href="#_Users_mark_Documents__Local_DaVinci_davinci-epdx_input_extensions_structuredefinition-DispenseRefill"><b>/Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>1</b></td>
@@ -393,7 +393,10 @@
      <td><b>Provenance/1000005: Provenance (l1/c2)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST"><b>Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Provenance/1000005: Provenance.agent[0] (l39/c6)</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance</b> <span id="sl45" class="flip" onclick="flip('l45')">Show Reasoning</span><div id="l45" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance<ul><li>Provenance.agent[0]: discriminator = true and type.coding.where((system = 'http://terminology.hl7.org/CodeSystem/provenance-participant-type') and (code = 'author')).exists()</li>, <li>Provenance.agent[0]: discriminator = true and type.coding.where((system = 'http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type') and (code = 'transmitter')).exists()</li></ul></div></td>
+     <td><b><a href="">Provenance/1000005: Provenance.agent[0] (l40/c6)</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance</b> <span id="sl45" class="flip" onclick="flip('l45')">Show Reasoning</span><div id="l45" style="display: none"><p>&nbsp;</p>This element does not match any known slicedefined_in_the_profilehttp://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance<ul><li>Provenance.agent[0]: discriminator = true and type.coding.where((system = 'http://terminology.hl7.org/CodeSystem/provenance-participant-type') and (code = 'author')).exists()</li>, <li>Provenance.agent[0]: discriminator = true and type.coding.where((system = 'http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type') and (code = 'transmitter')).exists()</li></ul></div></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Provenance/1000005: Provenance.entity[0].extension[0].value.ofType(CodeableConcept) (l17/c24)</b></td><td><b>warning</b></td><td title="Display Name for http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda should be one of 'HL7 C-CDA' instead of 'C-CDA'"><b>Display Name for http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda should be one of 'HL7 C-CDA' instead of 'C-CDA'</b></td>
    </tr>
 </table>
 <hr/>
