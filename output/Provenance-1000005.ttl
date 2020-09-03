@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000005> a fhir:Provenance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "1000005"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-09-01T13:41:23.217+00:00"^^xsd:dateTime ];
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000005</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"Encounter-7.html\">Generated Summary: id: 7; status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Office Visit</span></a></p><p><b>recorded</b>: Jul 12, 2020 2:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType source}\">Source</span></td><td><a href=\"Organization-2.html\">Generated Summary: id: 2; language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></td></tr></table><h3>Entities</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Role</b></td><td><b>What</b></td></tr><tr><td>*</td><td></td><td>source</td><td><span>No reference available</span></td></tr></table></div>"
+  ];
+  fhir:Provenance.target [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Encounter/7>;
+     fhir:Reference.reference [ fhir:value "Encounter/7" ]
+  ];
+  fhir:Provenance.recorded [ fhir:value "2020-07-12T18:26:23.217+00:00"^^xsd:dateTime];
+  fhir:Provenance.agent [
+     fhir:index 0;
+     fhir:Provenance.agent.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType" ];
+         fhir:Coding.code [ fhir:value "source" ];
+         fhir:Coding.display [ fhir:value "Source" ]
+       ]
+     ];
+     fhir:Provenance.agent.who [
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
+       fhir:Reference.reference [ fhir:value "Organization/2" ]
+     ]
+  ];
+  fhir:Provenance.entity [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource" ];
+           fhir:Coding.code [ fhir:value "ncpdp" ]
+         ]
+       ]
+     ];
+     fhir:Provenance.entity.role [ fhir:value "source" ];
+     fhir:Provenance.entity.what [
+       fhir:Reference.display [ fhir:value "No reference available" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/davinci-pdex/Encounter/7> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/2> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000005.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/Provenance/1000005.ttl> .
+
+# -------------------------------------------------------------------------------------
+

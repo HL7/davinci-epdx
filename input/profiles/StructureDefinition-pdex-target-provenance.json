@@ -1,0 +1,183 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-target-provenance",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance",
+  "version": "0.1.10",
+  "name": "PdexTargetProvenance",
+  "title": "PDex Target Provenance",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.\nThis Profile places the PayerSourceFormat as an extension to the base profile.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "fhirauditevent",
+      "uri": "http://hl7.org/fhir/auditevent",
+      "name": "FHIR AuditEvent Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Provenance",
+  "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Provenance.extension",
+        "path": "Provenance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Provenance.extension:sourceFormat",
+        "path": "Provenance.extension",
+        "sliceName": "sourceFormat",
+        "short": "Source format target resource was created from",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Provenance.extension:sourceFormat.valueCodeableConcept",
+        "path": "Provenance.extension.valueCodeableConcept",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
+        }
+      },
+      {
+        "id": "Provenance.recorded",
+        "path": "Provenance.recorded",
+        "short": "Date/Time information was received by Payer"
+      },
+      {
+        "id": "Provenance.agent",
+        "path": "Provenance.agent"
+      },
+      {
+        "id": "Provenance.agent.type",
+        "path": "Provenance.agent.type",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType"
+        }
+      },
+      {
+        "id": "Provenance.agent.who",
+        "path": "Provenance.agent.who",
+        "short": "Provide US Core Organization. If no Organization provide US Core Practitioner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Provenance.agent:ProvenanceAuthor",
+        "path": "Provenance.agent",
+        "sliceName": "ProvenanceAuthor"
+      },
+      {
+        "id": "Provenance.agent:ProvenanceAuthor.who",
+        "path": "Provenance.agent.who",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Provenance.agent:ProvenanceTransmitter",
+        "path": "Provenance.agent",
+        "sliceName": "ProvenanceTransmitter"
+      },
+      {
+        "id": "Provenance.agent:ProvenanceTransmitter.who",
+        "path": "Provenance.agent.who",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
