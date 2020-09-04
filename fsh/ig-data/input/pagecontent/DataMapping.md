@@ -1,6 +1,6 @@
 [Previous Page - PDex Implementation Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
 
-Health Plans **SHALL** map claims and clinical information for a member to US Core v3.1.0 FHIR Resources based on R4.
+Health Plans **SHALL** map claims and clinical information for a member to US Core v3.1.1 FHIR Resources based on R4.
 
 US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption they **MAY** be offered up to US Realm for incorporation into a future version of US Core.
 

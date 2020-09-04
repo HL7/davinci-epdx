@@ -62,6 +62,5 @@ Description: "Example of provenance based on security group recommendations"
   * agent[0].who.reference = "Organization/2"
   * entity.role = http://hl7.org/fhir/provenance-entity-role#source
   * entity.what.display = "No reference available"
-  * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp
-
+  * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "C-CDA"
 
