@@ -41,8 +41,8 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
-    <style type="text/css">h2{--heading-prefix:"11.18"}
-    h3,h4,h5,h6{--heading-prefix:"11.18"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.17"}
+    h3,h4,h5,h6{--heading-prefix:"11.17"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -180,13 +180,13 @@
      <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.versionId">fhir:Meta.versionId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;1&quot; ];
      <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.lastUpdated">fhir:Meta.lastUpdated</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#instant">fhir:value</a> &quot;2020-07-11T17:26:23.217+00:00&quot;^^xsd:dateTime ];
      <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance&quot;;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance&quot;;
        <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance&gt;     ]
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance&gt;     ]
   ];
   <a href="http://hl7.org/fhir/R4/provenance.html#Provenance.text">fhir:DomainResource.text</a> [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: 1000003&lt;/p&gt;&lt;p&gt;&lt;b&gt;meta&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;target&lt;/b&gt;: &lt;a href=\&quot;Encounter-7.html\&quot;&gt;Generated Summary: id: 7; status: finished; &lt;span title=\&quot;{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\&quot;&gt;Ambulatory&lt;/span&gt;; &lt;span title=\&quot;Codes: \&quot;&gt;Office Visit&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;recorded&lt;/b&gt;: Jul 11, 2020 1:26:23 PM&lt;/p&gt;&lt;h3&gt;Agents&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Who&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;span title=\&quot;Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}\&quot;&gt;Author&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;Practitioner-4.html\&quot;&gt;Generated Summary: id: 4; National Provider Identifier: 874635264; Susan Smith ; ph: 3015551234; gender: female; birthDate: 1965-11-15&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;extensions&quot; ];
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Ids&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Meta&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;An attribute to describe the data source a resource was constructed from&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;target&lt;/b&gt;: &lt;a href=\&quot;Encounter-7.html\&quot;&gt;Generated Summary: status: finished; &lt;span title=\&quot;{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\&quot;&gt;Ambulatory&lt;/span&gt;; &lt;span title=\&quot;Codes: \&quot;&gt;Office Visit&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;recorded&lt;/b&gt;: Jul 11, 2020 1:26:23 PM&lt;/p&gt;&lt;h3&gt;Agents&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Who&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;span title=\&quot;Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}\&quot;&gt;Author&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;Practitioner-4.html\&quot;&gt;Generated Summary: National Provider Identifier: 874635264; Susan Smith ; ph: 3015551234; gender: female; birthDate: 1965-11-15&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
   ];
   <a href="http://hl7.org/fhir/R4/provenance.html#Provenance.extension">fhir:DomainResource.extension</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
@@ -195,7 +195,8 @@
        <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
          <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
          <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource&quot; ];
-         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;x12837&quot; ]       ]     ]
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;x12837&quot; ];
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;837 claim&quot; ]       ]     ]
   ];
   <a href="http://hl7.org/fhir/R4/provenance.html#Provenance.target">fhir:Provenance.target</a> [
      <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
@@ -248,7 +249,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.19 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 3, 2020 23:14-0400">2020-09-03</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.19 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 10, 2020 09:25-0400">2020-09-10</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

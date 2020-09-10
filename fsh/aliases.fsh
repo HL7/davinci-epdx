@@ -8,8 +8,8 @@
 
 
 // Code Systems
-//  Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
+  Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
 // Fake link
-  Alias: $FDANationalDrugCodeCS = http://example.org/fhir/sid/ndc
+//  Alias: $FDANationalDrugCodeCS = http://example.org/fhir/sid/ndc
 // PDex Base
   Alias: $Base = http://hl7.org/fhir/us/davinci-pdex

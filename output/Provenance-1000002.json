@@ -5,12 +5,12 @@
     "versionId": "1",
     "lastUpdated": "2020-07-10T16:26:23.217+00:00",
     "profile": [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"
     ]
   },
   "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: 1000002</p><p><b>meta</b>: </p><p><b>target</b>: <a href=\"Encounter-6.html\">Generated Summary: id: 6; status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Consultation</span></a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}\">Author</span></td><td><a href=\"Organization-3.html\">Generated Summary: id: 3; language: en-US; National Provider Identifier: 345678, Tax ID Number: 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>An attribute to describe the data source a resource was constructed from</b>: </p><p><b>target</b>: <a href=\"Encounter-6.html\">Generated Summary: status: finished; <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span>; <span title=\"Codes: \">Consultation</span></a></p><p><b>recorded</b>: Jul 10, 2020 12:26:23 PM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}\">Author</span></td><td><a href=\"Organization-3.html\">Generated Summary: language: en-US; National Provider Identifier: 345678, Tax ID Number: 123-45-6789; active; name: Provider 1</a></td></tr></table></div>"
   },
   "extension": [
     {
@@ -20,7 +20,7 @@
           {
             "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
             "code": "hl7ccda",
-            "display": "C-CDA"
+            "display": "HL7 C-CDA"
           }
         ]
       }
