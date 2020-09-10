@@ -46,7 +46,7 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.us.core",
-      "version": "3.1.0",
+      "version": "3.1.1",
       "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
       "id": "hl7_fhir_us_core"
     }
@@ -63,6 +63,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/pdex-entitysource-provenance"
+        },
+        "name": "PDex Entity Source Provenance",
+        "description": "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/pdex-medicationdispense"
         },
         "name": "PDex MedicationDispense",
@@ -71,26 +79,10 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/pdex-origin-provenance"
+          "reference": "StructureDefinition/pdex-source-provenance"
         },
-        "name": "PDex Origin Provenance",
-        "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.\nThis profile adds PayerSourceFormat as an extension on the entity base element.\n",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/pdex-server-capabilitystatement"
-        },
-        "name": "Server CapabilityStatement profile for PDex with US Core",
-        "description": "CapabilityStatement server profile. Adds PDex specific profiles to US Core base.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/pdex-target-provenance"
-        },
-        "name": "PDex Target Provenance",
-        "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.\nThis Profile places the PayerSourceFormat as an extension to the base profile.",
+        "name": "PDex Source Provenance",
+        "description": "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This Profile places the PayerSourceFormat as an extension to the base profile.",
         "exampleBoolean": false
       },
       {
@@ -179,7 +171,7 @@
         },
         "name": "ExampleProvenanceTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"
       },
       {
         "reference": {
@@ -187,7 +179,7 @@
         },
         "name": "ExampleProvenanceAuthor",
         "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"
       },
       {
         "reference": {
@@ -195,7 +187,7 @@
         },
         "name": "ExampleProvenanceSoloPractitioner",
         "description": "Example of an author Provenance record displaying a sole practitioner as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"
       },
       {
         "reference": {
@@ -203,7 +195,7 @@
         },
         "name": "ExampleProvenancePayerSource",
         "description": "Example of an payer being the source of the data",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"
       },
       {
         "reference": {
@@ -211,7 +203,7 @@
         },
         "name": "ExampleProvenancePayerModified",
         "description": "Example of provenance based on security group recommendations",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance"
       },
       {
         "reference": {

@@ -1,13 +1,9 @@
-Profile:        PdexOriginProvenance
+Profile:        PdexEntitySourceProvenance
 Parent:         us-core-provenance
-Id:             pdex-origin-provenance
-Title:          "PDex Origin Provenance"
-Description:    """Provenance is provided by
-the payer to identify the source of the information, whether the data came via a clinical record
-or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
-This profile adds PayerSourceFormat as an extension on the entity base element.
+Id:             pdex-entitysource-provenance
+Title:          "PDex Entity Source Provenance"
+Description:    "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."
 
-"""
 * insert PdexStructureDefinitionContent
 
 * recorded 1..1
@@ -31,16 +27,13 @@ This profile adds PayerSourceFormat as an extension on the entity base element.
 * entity.extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)
 
 
-Profile:        PdexTargetProvenance
+Profile:        PdexSourceProvenance
 Parent:         us-core-provenance
-Id:             pdex-target-provenance
-Title:          "PDex Target Provenance"
-Description:    """Provenance is provided by
-the payer to identify the source of the information, whether the data came via a clinical record
-or a claim record and whether the data was subject to manual transcription or other interpretive transformation.
-This Profile places the PayerSourceFormat as an extension to the base profile.
-"""
-  * insert PdexStructureDefinitionContent
+Id:             pdex-source-provenance
+Title:          "PDex Source Provenance"
+Description:    "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This Profile places the PayerSourceFormat as an extension to the base profile."
+
+* insert PdexStructureDefinitionContent
 
   * recorded 1..1
   * recorded ^short = "Date/Time information was received by Payer"

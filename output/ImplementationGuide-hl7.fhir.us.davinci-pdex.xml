@@ -38,7 +38,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-09-03T23:14:40-04:00"/>
+  <date value="2020-09-10T09:25:27-04:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -66,7 +66,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
   <dependsOn id="hl7_fhir_us_core">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
-    <version value="3.1.0"/>
+    <version value="3.1.1"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -248,6 +248,20 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="StructureDefinition-pdex-entitysource-provenance.html"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/pdex-entitysource-provenance"/>
+      </reference>
+      <name value="PDex Entity Source Provenance"/>
+      <description value="Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
         <valueUri value="StructureDefinition-pdex-medicationdispense.html"/>
       </extension>
       <reference>
@@ -262,41 +276,13 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-origin-provenance.html"/>
+        <valueUri value="StructureDefinition-pdex-source-provenance.html"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/pdex-origin-provenance"/>
+        <reference value="StructureDefinition/pdex-source-provenance"/>
       </reference>
-      <name value="PDex Origin Provenance"/>
-      <description value="Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation.&#xA;This profile adds PayerSourceFormat as an extension on the entity base element.&#xA;"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-server-capabilitystatement.html"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/pdex-server-capabilitystatement"/>
-      </reference>
-      <name value="Server CapabilityStatement profile for PDex with US Core"/>
-      <description value="CapabilityStatement server profile. Adds PDex specific profiles to US Core base."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-target-provenance.html"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/pdex-target-provenance"/>
-      </reference>
-      <name value="PDex Target Provenance"/>
-      <description value="Provenance is provided by&#xA;the payer to identify the source of the information, whether the data came via a clinical record&#xA;or a claim record and whether the data was subject to manual transcription or other interpretive transformation.&#xA;This Profile places the PayerSourceFormat as an extension to the base profile."/>
+      <name value="PDex Source Provenance"/>
+      <description value="Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This Profile places the PayerSourceFormat as an extension to the base profile."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -451,7 +437,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceTransmitter"/>
       <description value="Example of a Transmitter Provenance record for a bundle"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -465,7 +451,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceAuthor"/>
       <description value="Example of an author Provenance record displaying a practitioner&#39;s organization as the author"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -479,7 +465,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceSoloPractitioner"/>
       <description value="Example of an author Provenance record displaying a sole practitioner as the author"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -493,7 +479,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenancePayerSource"/>
       <description value="Example of an payer being the source of the data"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-target-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -507,7 +493,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenancePayerModified"/>
       <description value="Example of provenance based on security group recommendations"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-origin-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

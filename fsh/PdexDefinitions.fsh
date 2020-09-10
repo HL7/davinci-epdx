@@ -2,7 +2,7 @@
   RuleSet: PdexDefinitionContent
     * status = #draft      // draft until final published
     * experimental = true  // true until ready for pilot, then false
-    * version = "0.1.10"    // Follow IG Versioning rules
+    * version = "0.1.19"    // Follow IG Versioning rules
     * publisher = "HL7 International"
     * contact[0].telecom.system = #url
     * contact[0].telecom.value = "http://hl7.org/Special/committees/pafm/index.cfm"
@@ -14,7 +14,7 @@
   RuleSet: PdexStructureDefinitionContent
     * ^status = #draft      // draft until final published
     * ^experimental = true  // true until ready for pilot, then false
-    * ^version = "0.1.10"    // Follow IG Versioning rules
+    * ^version = "0.1.19"    // Follow IG Versioning rules
     * ^publisher = "HL7 International"
     * ^contact[0].telecom.system = #url
     * ^contact[0].telecom.value = "http://hl7.org/Special/committees/fm"

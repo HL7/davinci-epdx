@@ -1,5 +1,5 @@
 Instance: ExampleProvenanceTransmitter
-InstanceOf: pdex-target-provenance
+InstanceOf: pdex-source-provenance
 Description: "Example of a Transmitter Provenance record for a bundle"
 * id = "1000001"
 * meta.versionId = "1"
@@ -8,10 +8,10 @@ Description: "Example of a Transmitter Provenance record for a bundle"
 * recorded = "2020-07-09T15:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#transmitter "Transmitter"
 * agent[0].who.reference = "Organization/2"
-* extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt
+* extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
 
 Instance: ExampleProvenanceAuthor
-InstanceOf: pdex-target-provenance
+InstanceOf: pdex-source-provenance
 Description: "Example of an author Provenance record displaying a practitioner's organization as the author"
 * id = "1000002"
 * meta.versionId = "1"
@@ -20,11 +20,11 @@ Description: "Example of an author Provenance record displaying a practitioner's
 * recorded = "2020-07-10T16:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#author "Author"
 * agent[0].who.reference = "Organization/3"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "C-CDA"
+* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
 
 
 Instance: ExampleProvenanceSoloPractitioner
-InstanceOf: pdex-target-provenance
+InstanceOf: pdex-source-provenance
 Description: "Example of an author Provenance record displaying a sole practitioner as the author"
 * id = "1000003"
 * meta.versionId = "1"
@@ -33,12 +33,12 @@ Description: "Example of an author Provenance record displaying a sole practitio
 * recorded = "2020-07-11T17:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#author "Author"
 * agent[0].who.reference = "Practitioner/4"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#x12837
+* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#x12837 "837 claim"
 
 
 
 Instance: ExampleProvenancePayerSource
-InstanceOf: pdex-target-provenance
+InstanceOf: pdex-source-provenance
 Description: "Example of an payer being the source of the data"
 * id = "1000004"
 * meta.versionId = "1"
@@ -47,11 +47,11 @@ Description: "Example of an payer being the source of the data"
 * recorded = "2020-07-12T18:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#source "Source"
 * agent[0].who.reference = "Organization/2"
-* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp
+* extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp "NCPDP"
 
 
 Instance: ExampleProvenancePayerModified
-InstanceOf: pdex-origin-provenance
+InstanceOf: pdex-entitysource-provenance
 Description: "Example of provenance based on security group recommendations"
   * id = "1000005"
   * meta.versionId = "1"
@@ -62,5 +62,5 @@ Description: "Example of provenance based on security group recommendations"
   * agent[0].who.reference = "Organization/2"
   * entity.role = http://hl7.org/fhir/provenance-entity-role#source
   * entity.what.display = "No reference available"
-  * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "C-CDA"
+  * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
 

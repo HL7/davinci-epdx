@@ -1,6 +1,6 @@
-/*
-  Extensions for Payer Data Exchange
-*/
+//
+//  Extensions for Payer Data Exchange
+//
 
 Extension: ProvenanceSourceFrom
 Title: "An attribute to describe the data source a resource was constructed from"
@@ -18,9 +18,9 @@ Description: "Attributes that identify the source record format from which data 
   * value[x] only CodeableConcept
   * valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
 
-/*
-Extension for MedicationDispense
-*/
+//
+//Extension for MedicationDispense
+//
 
 Extension: DispenseRefill
 Title: "An attribute to express the refill number of a prescription"
