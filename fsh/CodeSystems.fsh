@@ -39,6 +39,7 @@ Description: "CodeSystem for source formats that identify what non-FHIR source w
   * #capture "Direct Capture" "Direct Capture, such as into a payers case management system"
   * #customtx "Trading Partner Format" "Trading Partner Proprietary format"
   * #image "Image" "Fax or scanned document"
+  * #unstructured "Unstructured Document" "PDF, test and other unstructured document"
   * #other "Other" "Any other document format not specifically defined"
 
 

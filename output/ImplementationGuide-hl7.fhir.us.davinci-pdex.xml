@@ -34,11 +34,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.1.19"/>
+  <version value="0.1.20"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-09-10T09:25:27-04:00"/>
+  <date value="2020-09-15T23:47:32-04:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -591,6 +591,20 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleEncounter2"/>
       <description value="Example of an Encounter that has a provenance record"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+        <valueUri value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/PdexServerCapabilityStatement"/>
+      </reference>
+      <name value="PdexServerCapabilityStatement"/>
+      <description value="Payer Data Exchange Server Capability Statement"/>
       <exampleBoolean value="true"/>
     </resource>
     <page>

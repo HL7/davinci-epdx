@@ -14,16 +14,9 @@ Description:    "Provenance is provided by the payer to identify the source of t
 * agent.who 1..1
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
 * agent.who only Reference(us-core-organization or us-core-practitioner)
-//* extension contains ProvenanceSourceFrom named sourceFormat 0..1
-//* extension[sourceFormat] ^short = "Source format target resource was created from"
-  // * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
-//* extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)
 
-// * entity.what ^short = "Source format target resource was created from"
-// * entity.what.code from ProvenancePayerSourceFormat (extensible)
 * entity.extension contains ProvenanceSourceFrom named sourceFormat 0..1
 * entity.extension[sourceFormat] ^short = "Entity Source format that target resource was created from"
-// * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
 * entity.extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)
 
 
@@ -45,5 +38,4 @@ Description:    "Provenance is provided by the payer to identify the source of t
   * agent.who only Reference(us-core-organization or us-core-practitioner)
   * extension contains ProvenanceSourceFrom named sourceFormat 0..1
   * extension[sourceFormat] ^short = "Source format target resource was created from"
-//  * extension[sourceFormat].url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
   * extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)

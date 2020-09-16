@@ -59,7 +59,7 @@
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.19 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -86,9 +86,19 @@
   <li><a href="toc.html">Table of Contents</a></li>
   <li><a href="Introduction.html">Introduction</a></li>
   <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifact Index<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="artifacts.html">Profiles and Extensions</a></li>
+      <li><a name="054095b7-df66-449e-b658-8105acbf0002">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="7b613de1-9483-4182-b87f-1abb355c5956">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
+    </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
 </ul>
+
 
             </div>    <!-- /.nav-collapse -->
           </div>    <!-- /.container -->
@@ -118,7 +128,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.19). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>PDex Provenance</h2>
   
 
@@ -156,15 +166,15 @@ provided by the Health Plan’s FHIR API.</p>
   <li>Whether the data was subject to manual transcription or other interpretive transformation.</li>
 </ul>
 
-<p><a name="5dd25d2a-25b0-42f5-a35f-26d200d9a73e">​</a>The PDex-Target-Provenance resource is documented here: <a href="StructureDefinition-pdex-target-provenance.html">StructureDefinition-pdex-target-provenance.html</a></p>
+<p>The PDex-Target-Provenance resource is documented here: <a href="StructureDefinition-pdex-source-provenance.html">StructureDefinition-pdex-source-provenance.html</a></p>
 
-<p><a name="0c3cce5c-1ce9-4c85-8a8a-1cad075c5105">​</a>The PDex-Origin-Provenance resource is documented here: <a href="StructureDefinition-pdex-origin-provenance.html">StructureDefinition-pdex-origin-provenance.html</a></p>
+<p>The PDex-Origin-Provenance resource is documented here: <a href="StructureDefinition-pdex-entitysource-provenance.html">StructureDefinition-pdex-entitysource-provenance.html</a></p>
 
 <p><strong>NOTE:</strong>
 PDex Provenance is displayed in two forms for the purposes of Connectathon testing:</p>
 <ul>
-  <li><a name="41864548-cb2c-4962-9b36-19c71577d919">​</a><a href="StructureDefinition-pdex-target-provenance.html">StructureDefinition-pdex-target-provenance.html</a></li>
-  <li><a name="6334e25d-9b3c-4b95-9203-78c8cf279275">​</a><a href="StructureDefinition-pdex-origin-provenance.html">StructureDefinition-pdex-origin-provenance.html</a></li>
+  <li><a href="StructureDefinition-pdex-source-provenance.html">StructureDefinition-pdex-source-provenance.html</a></li>
+  <li><a href="StructureDefinition-pdex-entitysource-provenance.html">StructureDefinition-pdex-entitysource-provenance.html</a></li>
 </ul>
 
 <p>Both Profiles add an extension that uses the ProvenanceSourceFrom ValueSet.
@@ -367,7 +377,7 @@ Provenance information <strong>SHALL</strong> be available for any information r
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.19 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 10, 2020 09:25-0400">2020-09-10</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

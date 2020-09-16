@@ -6,7 +6,7 @@
   "id": "ProvenancePayerDataSource",
   "title": "Provenance Payer Data Source Format",
   "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "url": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
   "jurisdiction": [
     {
@@ -135,10 +135,15 @@
       "definition": "Fax or scanned document"
     },
     {
+      "code": "unstructured",
+      "display": "Unstructured Document",
+      "definition": "PDF, test and other unstructured document"
+    },
+    {
       "code": "other",
       "display": "Other",
       "definition": "Any other document format not specifically defined"
     }
   ],
-  "count": 24
+  "count": 25
 }
