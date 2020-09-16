@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -259,6 +259,14 @@
         },
         "name": "ExampleEncounter2",
         "description": "Example of an Encounter that has a provenance record",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/PdexServerCapabilityStatement"
+        },
+        "name": "PdexServerCapabilityStatement",
+        "description": "Payer Data Exchange Server Capability Statement",
         "exampleBoolean": true
       }
     ],

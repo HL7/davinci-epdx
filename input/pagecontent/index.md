@@ -86,6 +86,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 ### Latest Changes
+- 0.1.20 Add PdexServerCapabilityStatement. Add EntitySource and Source Provenance records (pending extension resolution with Security Workgroup)
 - 0.1.19 Create Pdex-Origin-Provenance and Pdex-Target-Provenance to test two variations on reporting payer source format information.
     - Update US core references to 3.1.1 (released August 28, 2020)
 - 0.1.18 resolve build errors

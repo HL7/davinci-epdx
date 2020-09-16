@@ -23,14 +23,14 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record or a claim record. 
 - Whether the data was subject to manual transcription or other interpretive transformation.
 
-The PDex-Target-Provenance resource is documented here: [StructureDefinition-pdex-target-provenance.html](StructureDefinition-pdex-target-provenance.html)
+The PDex-Target-Provenance resource is documented here: [StructureDefinition-pdex-source-provenance.html](StructureDefinition-pdex-source-provenance.html)
 
-The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-origin-provenance.html](StructureDefinition-pdex-origin-provenance.html)
+The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
 
 **NOTE:**
 PDex Provenance is displayed in two forms for the purposes of Connectathon testing: 
-- [StructureDefinition-pdex-target-provenance.html](StructureDefinition-pdex-target-provenance.html)
-- [StructureDefinition-pdex-origin-provenance.html](StructureDefinition-pdex-origin-provenance.html)
+- [StructureDefinition-pdex-source-provenance.html](StructureDefinition-pdex-source-provenance.html)
+- [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
 
 Both Profiles add an extension that uses the ProvenanceSourceFrom ValueSet.
 In the Target Provenance Profile this extension is at the base of the profile. In the Origin Provenance Profile the extenaion is included in the Provenance.entity base element.

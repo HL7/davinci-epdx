@@ -25,7 +25,7 @@
   RuleSet: PdexCapabilityStatementContent
     * status = #draft
     * experimental = true
-    * date = "2020-07-24"
+    * date = "2020-09-13"
     * publisher = "HL7 Da Vinci"
     * contact.name = "Mark Scrimshire"
     * contact.telecom.system = #email
@@ -34,4 +34,4 @@
     * fhirVersion = #4.0.1
     * format[0] = #json
     * format[1] = #xml
-    * implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/davinci-pdex"
+    * implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
