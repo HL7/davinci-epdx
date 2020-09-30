@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
     <link rel="stylesheet" href="assets/css/hl7.css"/>
     <link rel="stylesheet" href="assets/css/fhir.css"/>
@@ -39,6 +40,8 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
+	  <script src="assets/js/prism.js"></script>
+
     <style type="text/css">h2{--heading-prefix:"11.21"}
     h3,h4,h5,h6{--heading-prefix:"11.21"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
@@ -53,13 +56,13 @@
         <div id="family-nav">
           <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
-          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        <div id="hl7-search"><a name="dc953a0c-1cb6-4c80-8a17-051db36aca42">​</a>
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.21 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -92,8 +95,8 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Profiles and Extensions</a></li>
-      <li><a name="f0d3bcd7-96ea-41a3-ac16-a5dd173dd340">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
-      <li><a name="dd974f20-09eb-4074-8d8f-8416a27c9de8">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a name="8361a584-c739-493c-94eb-55631260b6fd">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="ae0ebe48-d2b5-49a7-8c83-bc6e8a9fc561">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
       <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
     </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.21). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
   
 
@@ -179,13 +182,13 @@ org.hl7.fhir.r5.renderers.ResourceRenderer.describe (ResourceRenderer.java:99
 org.hl7.fhir.r5.renderers.PatientRenderer.render (PatientRenderer.java:31
 org.hl7.fhir.r5.renderers.ResourceRenderer.build (ResourceRenderer.java:55
 org.hl7.fhir.r5.renderers.BundleRenderer.render (BundleRenderer.java:296
-org.hl7.fhir.igtools.publisher.Publisher.getXhtml (Publisher.java:7767
-org.hl7.fhir.igtools.publisher.Publisher.saveDirectResourceOutputs (Publisher.java:7112
-org.hl7.fhir.igtools.publisher.Publisher.generateHtmlOutputs (Publisher.java:6562
-org.hl7.fhir.igtools.publisher.Publisher.generate (Publisher.java:4849
-org.hl7.fhir.igtools.publisher.Publisher.createIg (Publisher.java:871
-org.hl7.fhir.igtools.publisher.Publisher.execute (Publisher.java:717
-org.hl7.fhir.igtools.publisher.Publisher.main (Publisher.java:8276 --></p></blockquote><a name="https-//example.com/base/MedicationDispense/1000001"> </a><a name="MedicationDispense_1000001"> </a><hr/><p>Entry 2 - Full URL = https://example.com/base/MedicationDispense/1000001</p><p>Resource MedicationDispense:</p><blockquote><p><b>Generated Narrative</b></p><h3>Ids</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: COMPLETED</p><p><b>subject</b>: <a href="Patient-1.html">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; ph: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}">unknown</span></a></p><h3>Performers</h3><table class="grid"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href="Practitioner-4.html">Generated Summary: National Provider Identifier: 874635264; Susan Smith ; ph: 3015551234; gender: female; birthDate: 1965-11-15</a></td></tr></table><p><b>location</b>: <a href="Location-5.html">Generated Summary: name: MyFavorite Pharmacy</a></p><p><b>type</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-ActCode RF}">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></blockquote></div>
+org.hl7.fhir.igtools.publisher.Publisher.getXhtml (Publisher.java:7789
+org.hl7.fhir.igtools.publisher.Publisher.saveDirectResourceOutputs (Publisher.java:7121
+org.hl7.fhir.igtools.publisher.Publisher.generateHtmlOutputs (Publisher.java:6567
+org.hl7.fhir.igtools.publisher.Publisher.generate (Publisher.java:4854
+org.hl7.fhir.igtools.publisher.Publisher.createIg (Publisher.java:876
+org.hl7.fhir.igtools.publisher.Publisher.execute (Publisher.java:722
+org.hl7.fhir.igtools.publisher.Publisher.main (Publisher.java:8302 --></p></blockquote><a name="https-//example.com/base/MedicationDispense/1000001"> </a><a name="MedicationDispense_1000001"> </a><hr/><p>Entry 2 - Full URL = https://example.com/base/MedicationDispense/1000001</p><p>Resource MedicationDispense:</p><blockquote><p><b>Generated Narrative</b></p><h3>Ids</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Texts</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: COMPLETED</p><p><b>subject</b>: <a href="Patient-1.html">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}">unknown</span></a></p><h3>Performers</h3><table class="grid"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href="Practitioner-4.html">Generated Summary: National Provider Identifier: 874635264; Susan Smith ; Phone: 3015551234; gender: female; birthDate: 1965-11-15</a></td></tr></table><p><b>location</b>: <a href="Location-5.html">Generated Summary: name: MyFavorite Pharmacy</a></p><p><b>type</b>: <span title="Codes: {http://terminology.hl7.org/CodeSystem/v3-ActCode RF}">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></blockquote></div>
 
     <!-- insert notes if present -->
   
@@ -212,12 +215,13 @@ org.hl7.fhir.igtools.publisher.Publisher.main (Publisher.java:8276 --></p></bloc
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.21 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 30, 2020 00:54-0400">2020-09-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History  |
+               | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank"><a name="cbf473fb-a114-4b42-9314-dca0044c19fe">​</a>Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
                  <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
                    <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
                  <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
@@ -247,4 +251,4 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></span></p></div></div></div></body></html>
+</a></a></span></p></div></div></div></body></html>

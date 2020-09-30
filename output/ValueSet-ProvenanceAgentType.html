@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
     <link rel="stylesheet" href="assets/css/hl7.css"/>
     <link rel="stylesheet" href="assets/css/fhir.css"/>
@@ -39,6 +40,8 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
+	  <script src="assets/js/prism.js"></script>
+
     <style type="text/css">h2{--heading-prefix:"11.8"}
     h3,h4,h5,h6{--heading-prefix:"11.8"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
@@ -53,13 +56,13 @@
         <div id="family-nav">
           <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
-          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        <div id="hl7-search"><a name="8333a5fa-eb1d-4ca1-93cf-4b8a8380b5d8">​</a>
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.21 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -92,8 +95,8 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Profiles and Extensions</a></li>
-      <li><a name="e2662234-119d-4cf8-9cbc-48245f2a29f3">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
-      <li><a name="58c2189b-8a4f-4078-bf30-7a8c7d9fb6aa">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a name="efc4869f-6057-4bde-883a-4b2158ff5593">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="32a7c0f2-6b55-4317-96d4-3fb9a3201410">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
       <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
     </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.21). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -168,9 +171,9 @@
   <table class="grid">
 <tbody>
 <tr><td>Defining URL:</td><td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType</td></tr>
- <tr><td>Version:</td><td>0.1.20</td></tr>
- <tr><td>Name:</td><td>ProvenanceAgentType"Provenance Agent Type"</td></tr>
- <tr><td>Status:</td><td>Active</td></tr>
+ <tr><td>Version:</td><td>0.1.21</td></tr>
+ <tr><td>Name:</td><td>ProvenanceAgentType ("Provenance Agent Type")</td></tr>
+ <tr><td>Status:</td><td>Active as of 2020-09-30T00:54:31-04:00</td></tr>
  <tr><td>Definition:</td><td><p>Agent role performed relating to referenced resource</p>
 </td></tr>
  <tr><td>Source Resource:</td><td><a href="ValueSet-ProvenanceAgentType.xml.html">XML</a> / <a href="ValueSet-ProvenanceAgentType.json.html">JSON</a> / <a href="ValueSet-ProvenanceAgentType.ttl.html">Turtle</a></td></tr>
@@ -202,7 +205,7 @@
   <a name="expansion"> </a>
   <h3 id="expansion">Expansion</h3>
 
-  <div><p>This value set contains 3 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="CodeSystem-ProvenanceAgentRoleType.html">Provenance Roles v0.1.20 (CodeSystem)</a></p><p>All codes from system <a href="CodeSystem-ProvenanceAgentRoleType.html"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType</code></a></p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-author"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-author">author</a></td><td>Author</td><td>Person or entity that originated the referenced resource</td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-source"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-source">source</a></td><td>Source</td><td>Organization, Practitioner or Payer who was the source of the referenced resource</td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-transmitter"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-transmitter">transmitter</a></td><td>Transmitter</td><td>Provenance Transmitter</td></tr></table></div>
+  <div><p>This value set contains 3 concepts</p><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="CodeSystem-ProvenanceAgentRoleType.html">Provenance Roles v0.1.21 (CodeSystem)</a></p><p>All codes from system <a href="CodeSystem-ProvenanceAgentRoleType.html"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType</code></a></p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-author"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-author">author</a></td><td>Author</td><td>Person or entity that originated the referenced resource</td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-source"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-source">source</a></td><td>Source</td><td>Organization, Practitioner or Payer who was the source of the referenced resource</td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenanceAgentRoleType-transmitter"> </a><a href="CodeSystem-ProvenanceAgentRoleType.html#ProvenanceAgentRoleType-transmitter">transmitter</a></td><td>Transmitter</td><td>Provenance Transmitter</td></tr></table></div>
 
   <hr/>
   <p>
@@ -263,12 +266,13 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.21 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 30, 2020 00:54-0400">2020-09-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History  |
+               | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank"><a name="cae98ac2-ac4c-463e-a354-3025a6602d27">​</a>Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
                  <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
                    <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
                  <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
@@ -298,4 +302,4 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></span></p></div></div></div></body></html>
+</a></a></span></p></div></div></div></body></html>

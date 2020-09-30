@@ -176,6 +176,15 @@ An example Author Provenance record appears below:
 
 </pre>
 
+### Returning Provenance Records
+
+Requesting a provenance resource is accomplished by adding the "_revinclude=Provenance:target" parameter to a search query. 
+
+For servers that support the "_revinclude" parameter this will return Provenance records in a bundle along with 
+the resources returned by the search query. 
+
+An example of a MedicationDispense query being returned with a Provenance record (using the PDex-Origin-Provenance structure definition) as a result of adding the _revinclude=Provenance:target parameter is shown here: [Bundle With Provenance](Bundle-3000002.html)
+
 
 
 [Next Page - US Core Provenance](USCoreProvenance.html)
