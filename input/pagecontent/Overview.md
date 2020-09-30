@@ -76,7 +76,9 @@ Since Health Plans compile information from many sources to create a Member's He
 
 Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHALL** create FHIR Provenance record(s) to identify the source of the information being received and the actions applied to the data, such as converting from one format to another. Health Plans **SHALL** provide Provenance records in any PDex information exchange.
 
-In the case of historical data the Health Plan **SHOULD** identify the author, source and format of the data .
+In the case of historical data the Health Plan **SHOULD** identify the author, source and source format of the data.
+
+Retrieving Provenance for resources is accomplished by adding "_revinclude=Provenance:target" to a search request.
 
 Provenance is covered in more detail in [Handling Data Provenance](HandlingDataProvenance.html).
 

@@ -111,11 +111,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.1.20"/>
+   <version value="0.1.21"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-09-15T23:47:32-04:00"/>
+   <date value="2020-09-30T00:54:31-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -511,6 +511,21 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Bundle"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Bundle-3000002.html"/>
+         </extension>
+         <reference>
+            <reference value="Bundle/3000002"/>
+         </reference>
+         <name value="BundleWithProvenance"/>
+         <description value="A bundle that returns provenance using _revinclude=Provenance:target"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="Practitioner"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -537,6 +552,21 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <name value="ExampleLocation"/>
          <description value="Example of a Pharmacy Location Record"/>
          <exampleBoolean value="true"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Device"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Device-543210.html"/>
+         </extension>
+         <reference>
+            <reference value="Device/543210"/>
+         </reference>
+         <name value="ExampleDevice"/>
+         <description value="Example of a Device from a Claim"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device"/>
          <groupingId value="_ex_example"/>
       </resource>
       <resource>
@@ -918,6 +948,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="Bundle-3000002.html"/>
+               <title value="BundleWithProvenance"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="Practitioner-4.html"/>
                <title value="ExamplePractitioner"/>
                <generation value="generated"/>
@@ -925,6 +960,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <page>
                <nameUrl value="Location-5.html"/>
                <title value="ExampleLocation"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Device-543210.html"/>
+               <title value="ExampleDevice"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -1003,6 +1043,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <parameter>
          <code value="path-resource"/>
          <value value="input/history"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="fsh-generated/resources"/>
       </parameter>
       <parameter>
          <code value="path-pages"/>

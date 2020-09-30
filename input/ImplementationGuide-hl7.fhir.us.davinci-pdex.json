@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -231,6 +231,14 @@
       },
       {
         "reference": {
+          "reference": "Bundle/3000002"
+        },
+        "name": "BundleWithProvenance",
+        "description": "A bundle that returns provenance using _revinclude=Provenance:target",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Practitioner/4"
         },
         "name": "ExamplePractitioner",
@@ -244,6 +252,14 @@
         "name": "ExampleLocation",
         "description": "Example of a Pharmacy Location Record",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Device/543210"
+        },
+        "name": "ExampleDevice",
+        "description": "Example of a Device from a Claim",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device"
       },
       {
         "reference": {

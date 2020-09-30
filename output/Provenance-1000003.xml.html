@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
     <link rel="stylesheet" href="assets/css/hl7.css"/>
     <link rel="stylesheet" href="assets/css/fhir.css"/>
@@ -39,6 +40,8 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
+	  <script src="assets/js/prism.js"></script>
+
     <style type="text/css">h2{--heading-prefix:"11.17"}
     h3,h4,h5,h6{--heading-prefix:"11.17"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
@@ -53,13 +56,13 @@
         <div id="family-nav">
           <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
-          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        <div id="hl7-search"><a name="a12524e7-847c-4ebd-87c6-9567cec71856">​</a>
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.21 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -92,8 +95,8 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Profiles and Extensions</a></li>
-      <li><a name="5f82a923-a6ee-4546-bc65-6abf707e53ce">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
-      <li><a name="ff8cced9-b2ff-4d3c-b012-fe9e9477ab4f">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a name="ec3f1aa5-1d31-499b-9def-125ac98f1100">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="671b6fdc-52ec-4260-ba59-4f721a17c2d0">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
       <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
     </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.21). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
 
 
@@ -173,7 +176,7 @@
 
 
 
-  <pre class="xml">
+  <pre class="xml"><code class="language-xml">
 
 &lt;<a href="http://hl7.org/fhir/R4/provenance.html#Provenance">Provenance</a> xmlns="http://hl7.org/fhir"&gt;
   &lt;<a href="http://hl7.org/fhir/R4/provenance.html#Provenance.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1000003"/&gt;
@@ -185,7 +188,7 @@
   &lt;/meta&gt;
   &lt;<a href="http://hl7.org/fhir/R4/provenance.html#Provenance.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="extensions"/&gt;
-    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Ids&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Meta&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;An attribute to describe the data source a resource was constructed from&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;target&lt;/b&gt;: &lt;a href="Encounter-7.html"&gt;Generated Summary: status: finished; &lt;span title="{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}"&gt;Ambulatory&lt;/span&gt;; &lt;span title="Codes: "&gt;Office Visit&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;recorded&lt;/b&gt;: Jul 11, 2020 1:26:23 PM&lt;/p&gt;&lt;h3&gt;Agents&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Who&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;span title="Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}"&gt;Author&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="Practitioner-4.html"&gt;Generated Summary: National Provider Identifier: 874635264; Susan Smith ; ph: 3015551234; gender: female; birthDate: 1965-11-15&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Ids&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Meta&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;An attribute to describe the data source a resource was constructed from&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;target&lt;/b&gt;: &lt;a href="Encounter-7.html"&gt;Generated Summary: status: finished; &lt;span title="{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}"&gt;Ambulatory&lt;/span&gt;; &lt;span title="Codes: "&gt;Office Visit&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;recorded&lt;/b&gt;: Jul 11, 2020 1:26:23 PM&lt;/p&gt;&lt;h3&gt;Agents&lt;/h3&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Who&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;span title="Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType author}"&gt;Author&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href="Practitioner-4.html"&gt;Generated Summary: National Provider Identifier: 874635264; Susan Smith ; Phone: 3015551234; gender: female; birthDate: 1965-11-15&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/provenance.html#Provenance.extension">extension</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"&gt;
@@ -215,7 +218,7 @@
       &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Practitioner/4"/&gt;
     &lt;/who&gt;
   &lt;/agent&gt;
-&lt;/Provenance&gt;</pre>
+&lt;/Provenance&gt;</code></pre>
 
 
     <!-- insert notes if present -->
@@ -243,12 +246,13 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.21 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 30, 2020 00:54-0400">2020-09-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History  |
+               | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank"><a name="5f07e7e7-f57e-4f23-8188-feeb4745f965">​</a>Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
                  <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
                    <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
                  <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
@@ -278,4 +282,4 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></span></p></div></div></div></body></html>
+</a></a></span></p></div></div></div></body></html>

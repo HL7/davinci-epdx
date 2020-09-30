@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
     <link rel="stylesheet" href="assets/css/hl7.css"/>
     <link rel="stylesheet" href="assets/css/fhir.css"/>
@@ -39,6 +40,8 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
+	  <script src="assets/js/prism.js"></script>
+
     <style type="text/css">h2{--heading-prefix:"11.12"}
     h3,h4,h5,h6{--heading-prefix:"11.12"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
@@ -53,13 +56,13 @@
         <div id="family-nav">
           <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
-          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        <div id="hl7-search"><a name="7f94e661-ac59-43c7-9b39-4d5a15e6f615">​</a>
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.21 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -92,8 +95,8 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Profiles and Extensions</a></li>
-      <li><a name="fe5ee095-152d-432c-a299-75045b0bc56f">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
-      <li><a name="33b6a23b-9185-4782-bf53-2ea82db3761f">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a name="75b88dd8-1181-462d-b65a-bd6dcc4adce7">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="914cc23e-ae30-492b-b4fa-b69f9d1169c4">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
       <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
     </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.21). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
 
 
@@ -173,7 +176,7 @@
 
 
 
-  <pre class="json">
+  <pre class="json"><code class="language-json">
 {
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">id</a>" : "ProvenancePayerDataSource",
@@ -182,11 +185,11 @@
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;p&gt;This code system http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource defines the following codes:&lt;/p&gt;&lt;table class=\"codes\"&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2other&lt;a name=\"ProvenancePayerDataSource-hl7v2other\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2&lt;/td&gt;&lt;td&gt;HL7 v2 Message&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2oru&lt;a name=\"ProvenancePayerDataSource-hl7v2oru\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 ORU&lt;/td&gt;&lt;td&gt;HL7 v2 Structured Observation Report(ORU) message&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2adt&lt;a name=\"ProvenancePayerDataSource-hl7v2adt\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 ADT&lt;/td&gt;&lt;td&gt;HL7 v2 Admit, Discharge Transfer (ADT) message&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2r01&lt;a name=\"ProvenancePayerDataSource-hl7v2r01\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 R01&lt;/td&gt;&lt;td&gt;HL7 v2 Observation (R01) message&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2rsp&lt;a name=\"ProvenancePayerDataSource-hl7v2rsp\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 RSP&lt;/td&gt;&lt;td&gt;HL7 V2 Immunization Record Response&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2orm&lt;a name=\"ProvenancePayerDataSource-hl7v2orm\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 ORM&lt;/td&gt;&lt;td&gt;HL7 v2 Orders&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2mdm&lt;a name=\"ProvenancePayerDataSource-hl7v2mdm\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 MDM&lt;/td&gt;&lt;td&gt;Medical Document Management&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v2vxu&lt;a name=\"ProvenancePayerDataSource-hl7v2vxu\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v2 VXU&lt;/td&gt;&lt;td&gt;HL7 V2 Immunization Transaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7v3&lt;a name=\"ProvenancePayerDataSource-hl7v3\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 v3&lt;/td&gt;&lt;td&gt;HL7 v3 Message&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7ccda&lt;a name=\"ProvenancePayerDataSource-hl7ccda\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 C-CDA&lt;/td&gt;&lt;td&gt;HL7 Consolidated-Clinical Document Architecture&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7cda&lt;a name=\"ProvenancePayerDataSource-hl7cda\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 CDA&lt;/td&gt;&lt;td&gt;HL7 CDA documents that are not C-CDA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7cdaqrda&lt;a name=\"ProvenancePayerDataSource-hl7cdaqrda\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;HL7 CDA QRDA&lt;/td&gt;&lt;td&gt;HL7 Quality Reporting Document&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7fhirdstu2&lt;a name=\"ProvenancePayerDataSource-hl7fhirdstu2\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;FHIR DSTU2&lt;/td&gt;&lt;td&gt;HL7 FHIR DSTU2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7fhirdstu3&lt;a name=\"ProvenancePayerDataSource-hl7fhirdstu3\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;FHIR STU3&lt;/td&gt;&lt;td&gt;HL7 FHIR STU3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;hl7fhirr4&lt;a name=\"ProvenancePayerDataSource-hl7fhirr4\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;FHIR R4&lt;/td&gt;&lt;td&gt;HL7 FHIR R4&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;x12837&lt;a name=\"ProvenancePayerDataSource-x12837\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;837 claim&lt;/td&gt;&lt;td&gt;X12 837 Claim&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;x12278&lt;a name=\"ProvenancePayerDataSource-x12278\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;278&lt;/td&gt;&lt;td&gt;X12 Prior Authorization&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;x12275&lt;a name=\"ProvenancePayerDataSource-x12275\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;275&lt;/td&gt;&lt;td&gt;X12 Attachment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;x12other&lt;a name=\"ProvenancePayerDataSource-x12other\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;X12&lt;/td&gt;&lt;td&gt;X12 non-specific transaction&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;ncpdp&lt;a name=\"ProvenancePayerDataSource-ncpdp\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;NCPDP&lt;/td&gt;&lt;td&gt;National Council for Prescription Drug Programs&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;capture&lt;a name=\"ProvenancePayerDataSource-capture\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Direct Capture&lt;/td&gt;&lt;td&gt;Direct Capture, such as into a payers case management system&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;customtx&lt;a name=\"ProvenancePayerDataSource-customtx\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Trading Partner Format&lt;/td&gt;&lt;td&gt;Trading Partner Proprietary format&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;image&lt;a name=\"ProvenancePayerDataSource-image\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Image&lt;/td&gt;&lt;td&gt;Fax or scanned document&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;unstructured&lt;a name=\"ProvenancePayerDataSource-unstructured\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unstructured Document&lt;/td&gt;&lt;td&gt;PDF, test and other unstructured document&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"white-space:nowrap\"&gt;other&lt;a name=\"ProvenancePayerDataSource-other\"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Other&lt;/td&gt;&lt;td&gt;Any other document format not specifically defined&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "0.1.20",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "0.1.21",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">name</a>" : "ProvenancePayerDataSource",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">title</a>" : "Provenance Payer Data Source Format",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2020-09-15T23:47:32-04:00",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2020-09-30T00:54:31-04:00",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">contact</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -347,7 +350,7 @@
       "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Any other document format not specifically defined"
     }
   ]
-}</pre>
+}</code></pre>
 
 
     <!-- insert notes if present -->
@@ -375,12 +378,13 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.21 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 30, 2020 00:54-0400">2020-09-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History  |
+               | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank"><a name="b460f458-05df-4af9-a8e0-738639282a98">​</a>Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
                  <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
                    <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
                  <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
@@ -410,4 +414,4 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></span></p></div></div></div></body></html>
+</a></a></span></p></div></div></div></body></html>

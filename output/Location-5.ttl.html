@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
     <link rel="stylesheet" href="assets/css/hl7.css"/>
     <link rel="stylesheet" href="assets/css/fhir.css"/>
@@ -39,8 +40,10 @@
   </head>
   <body onload="document.body.style.opacity='1'">
 
-    <style type="text/css">h2{--heading-prefix:"11.24"}
-    h3,h4,h5,h6{--heading-prefix:"11.24"}</style>
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"11.25"}
+    h3,h4,h5,h6{--heading-prefix:"11.25"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -53,13 +56,13 @@
         <div id="family-nav">
           <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
-          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        <div id="hl7-search"><a name="19c763f2-c33a-42a3-9e6d-498404ad922e">​</a>
+          <a no-external="true" id="hl7-search-lnk" href="searchform.html"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.20 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.21 - CI Build</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
@@ -92,8 +95,8 @@
     </a>
     <ul class="dropdown-menu">
       <li><a href="artifacts.html">Profiles and Extensions</a></li>
-      <li><a name="e37e0065-22ab-449f-86a6-5162a485b387">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
-      <li><a name="4f27bdaf-4969-4d9a-b8d4-fa2a0d394256">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
+      <li><a name="af0e55f2-062e-476e-aacb-444ebc02bbe4">​</a><a href="artifacts.html#terminology-value-sets">Value Sets and Code Systems</a></li>
+      <li><a name="1bbc7856-cf2c-485e-a6cd-38fcd0fb6455">​</a><a href="artifacts.html#example-example-instances">Examples</a></li>
       <li><a href="CapabilityStatement-PdexServerCapabilityStatement.html">Capability Statement</a></li>
     </ul></li>
   <li><a href="Downloads.html">Downloads</a></li>
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.20). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.21). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
 
 
 
@@ -173,7 +176,7 @@
 
 
 
-  <pre class="rdf">
+  <pre class="rdf"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -202,7 +205,7 @@
  a owl:Ontology;
   owl:imports fhir:fhir.ttl.
 
-</pre>
+</code></pre>
 
 
 
@@ -231,12 +234,13 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.20 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 15, 2020 23:47-0400">2020-09-15</span>
+          IG &copy; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.21 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 30, 2020 00:54-0400">2020-09-30</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
                  <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History  |
+               | <a style="color: #81BEF7" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank"><a name="30b839a5-fb2a-4936-8640-2f1dcedbd873">​</a>Version History  |
+               <a style="color: #81BEF7" href="searchform.html" target="_blank">Search  |
                  <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
                    <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
                  <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change </a>
@@ -266,4 +270,4 @@ anchors.add()</script>
   ================================================== -->
   
 
-</a></span></p></div></div></div></body></html>
+</a></a></span></p></div></div></div></body></html>

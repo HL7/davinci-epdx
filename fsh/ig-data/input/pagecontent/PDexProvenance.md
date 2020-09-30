@@ -166,6 +166,12 @@ An example Author Provenance record appears below:
 
 </pre>
 
+### Returning Provenance Records
+
+Requesting a provenance resource is accomplished by adding the "_revinclude=Provenance:target" parameter to a search query. 
+
+For servers that support the "_revinclude" parameter this will return Provenance records in a bundle along with 
+the resources returned by the search query. 
 
 
 [Next Page - US Core Provenance](USCoreProvenance.html)
