@@ -74,6 +74,7 @@ For example, as part of an event or episode of care the provider may be interest
 * Family History
 
 These types of data **SHALL** be mapped to FHIR clinical resources as follows:
+{% include style_insert_table_blue.html %}
 
 | Data type                              | FHIR R4/US Core STU3 profile                                                                                  |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------|

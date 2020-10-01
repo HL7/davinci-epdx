@@ -14,6 +14,8 @@ Where a Health Plan has access to Laboratory Results and other diagnostic inform
 
 The essential fields to be provided in the US Core DiagnosticReport for Laboratory Results Reporting resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name           | R4 Name          | Card. | Type                                                                   |
 |--------------------------------|------------------|-------|------------------------------------------------------------------------|
 | DiagnosticReport               | DiagnosticReport | 0..*  |                                                                        |
@@ -29,6 +31,92 @@ The essential fields to be provided in the US Core DiagnosticReport for Laborato
 | DiagnosticReport.media         | media            | 0..*  | BackboneElement                                                        |
 | DiagnosticReport.presentedForm | presentedForm    | 0..*  | Attachment                                                             |
 
+#### HL7 V2 Mapping to Diagnostic Report
+
+| R4 Hierarchical Name                      | R4 Name           | Cardinality | Type                                                                                                                       | HL7 V2 Source |
+|-------------------------------------------|-------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| DiagnosticReport.basedOn                  |  basedOn          | 0..*        | Reference(CarePlan \| DeviceRequest \| ImmunizationRecommendation \| MedicationRequest \| NutritionOrder\| ServiceRequest) | ORC           |
+| DiagnosticReport.status                   |  status           | 1..1        | code                                                                                                                       | OBX-11        |
+| DiagnosticReport.code                     |  code             | 1..1        | CodeableConcept                                                                                                            | OBX-3         |
+| DiagnosticReport.subject                  |  subject          | 1..1        | Reference(US Core Patient Profile)                                                                                         | PID-3         |
+| DiagnosticReport.focus                    |  focus            | 0..*        | Reference(Resource)                                                                                                        | OBX-3         |
+| DiagnosticReport.encounter                |  encounter        | 0..1        | Reference(Encounter)                                                                                                       | PV1           |
+| DiagnosticReport.effective[x]             |  effective[x]     | 0..1        | dateTime, Period                                                                                                           | OBX-14        |
+| DiagnosticReport.issued                   |  issued           | 0..1        | instant                                                                                                                    | OBR-22        |
+| DiagnosticReport.performer                |  performer        | 0..*        | Reference(Practitioner \| PractitionerRole \| Organization \| CareTeam \| Patient \| RelatedPerson)                        | OBX-15        |
+| DiagnosticReport.value[x]                 |  value[x]         | 0..1        | Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period                     | OBX-5         |
+| DiagnosticReport.dataAbsentReason         |  dataAbsentReason | 0..1        | CodeableConcept                                                                                                            | N/A           |
+| DiagnosticReport.interpretation           |  interpretation   | 0..*        | CodeableConcept                                                                                                            | OBX-8         |
+| DiagnosticReport.note                     |  note             | 0..*        | Annotation                                                                                                                 | NTE           |
+| DiagnosticReport.bodySite                 |  bodySite         | 0..1        | CodeableConcept                                                                                                            | OBX-20        |
+| DiagnosticReport.method                   |  method           | 0..1        | CodeableConcept                                                                                                            | OBX-17        |
+| DiagnosticReport.specimen                 |  specimen         | 0..1        | Reference(Specimen)                                                                                                        | SPM           |
+| DiagnosticReport.device                   |  device           | 0..1        | Reference(Device \| DeviceMetric)                                                                                          | OBX-17        |
+| DiagnosticReport.referenceRange           |  referenceRange   | 0..*        | BackboneElement                                                                                                            | OBX-7         |
+| DiagnosticReport.referenceRange.extension |  extension        | 0..*        | Extension                                                                                                                  | OBX-7         |
+| DiagnosticReport.referenceRange.low       |  low              | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.high      |  high             | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.type      |  type             | 0..1        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.appliesTo |  appliesTo        | 0..*        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.text      |  text             | 0..1        | string                                                                                                                     | OBX-7         |
+
+#### C-CDA Mapping to Diagnostic Report
+
+| R4 Hierarchical Name                      | R4 Name           | Cardinality | Type                                                                                                                       | HL7 V2 Source |
+|-------------------------------------------|-------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| DiagnosticReport.basedOn                  |  basedOn          | 0..*        | Reference(CarePlan \| DeviceRequest \| ImmunizationRecommendation \| MedicationRequest \| NutritionOrder\| ServiceRequest) | ORC           |
+| DiagnosticReport.status                   |  status           | 1..1        | code                                                                                                                       | OBX-11        |
+| DiagnosticReport.code                     |  code             | 1..1        | CodeableConcept                                                                                                            | OBX-3         |
+| DiagnosticReport.subject                  |  subject          | 1..1        | Reference(US Core Patient Profile)                                                                                         | PID-3         |
+| DiagnosticReport.focus                    |  focus            | 0..*        | Reference(Resource)                                                                                                        | OBX-3         |
+| DiagnosticReport.encounter                |  encounter        | 0..1        | Reference(Encounter)                                                                                                       | PV1           |
+| DiagnosticReport.effective[x]             |  effective[x]     | 0..1        | dateTime, Period                                                                                                           | OBX-14        |
+| DiagnosticReport.issued                   |  issued           | 0..1        | instant                                                                                                                    | OBR-22        |
+| DiagnosticReport.performer                |  performer        | 0..*        | Reference(Practitioner \| PractitionerRole \| Organization \| CareTeam \| Patient \| RelatedPerson)                        | OBX-15        |
+| DiagnosticReport.value[x]                 |  value[x]         | 0..1        | Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period                     | OBX-5         |
+| DiagnosticReport.dataAbsentReason         |  dataAbsentReason | 0..1        | CodeableConcept                                                                                                            | N/A           |
+| DiagnosticReport.interpretation           |  interpretation   | 0..*        | CodeableConcept                                                                                                            | OBX-8         |
+| DiagnosticReport.note                     |  note             | 0..*        | Annotation                                                                                                                 | NTE           |
+| DiagnosticReport.bodySite                 |  bodySite         | 0..1        | CodeableConcept                                                                                                            | OBX-20        |
+| DiagnosticReport.method                   |  method           | 0..1        | CodeableConcept                                                                                                            | OBX-17        |
+| DiagnosticReport.specimen                 |  specimen         | 0..1        | Reference(Specimen)                                                                                                        | SPM           |
+| DiagnosticReport.device                   |  device           | 0..1        | Reference(Device \| DeviceMetric)                                                                                          | OBX-17        |
+| DiagnosticReport.referenceRange           |  referenceRange   | 0..*        | BackboneElement                                                                                                            | OBX-7         |
+| DiagnosticReport.referenceRange.extension |  extension        | 0..*        | Extension                                                                                                                  | OBX-7         |
+| DiagnosticReport.referenceRange.low       |  low              | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.high      |  high             | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.type      |  type             | 0..1        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.appliesTo |  appliesTo        | 0..*        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.text      |  text             | 0..1        | string                                                                                                                     | OBX-7         |
+
+#### Claim (837) to Diagnostic Report
+
+| R4 Hierarchical Name                      | R4 Name           | Cardinality | Type                                                                                                                       | HL7 V2 Source |
+|-------------------------------------------|-------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| DiagnosticReport.basedOn                  |  basedOn          | 0..*        | Reference(CarePlan \| DeviceRequest \| ImmunizationRecommendation \| MedicationRequest \| NutritionOrder\| ServiceRequest) | ORC           |
+| DiagnosticReport.status                   |  status           | 1..1        | code                                                                                                                       | OBX-11        |
+| DiagnosticReport.code                     |  code             | 1..1        | CodeableConcept                                                                                                            | OBX-3         |
+| DiagnosticReport.subject                  |  subject          | 1..1        | Reference(US Core Patient Profile)                                                                                         | PID-3         |
+| DiagnosticReport.focus                    |  focus            | 0..*        | Reference(Resource)                                                                                                        | OBX-3         |
+| DiagnosticReport.encounter                |  encounter        | 0..1        | Reference(Encounter)                                                                                                       | PV1           |
+| DiagnosticReport.effective[x]             |  effective[x]     | 0..1        | dateTime, Period                                                                                                           | OBX-14        |
+| DiagnosticReport.issued                   |  issued           | 0..1        | instant                                                                                                                    | OBR-22        |
+| DiagnosticReport.performer                |  performer        | 0..*        | Reference(Practitioner \| PractitionerRole \| Organization \| CareTeam \| Patient \| RelatedPerson)                        | OBX-15        |
+| DiagnosticReport.value[x]                 |  value[x]         | 0..1        | Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period                     | OBX-5         |
+| DiagnosticReport.dataAbsentReason         |  dataAbsentReason | 0..1        | CodeableConcept                                                                                                            | N/A           |
+| DiagnosticReport.interpretation           |  interpretation   | 0..*        | CodeableConcept                                                                                                            | OBX-8         |
+| DiagnosticReport.note                     |  note             | 0..*        | Annotation                                                                                                                 | NTE           |
+| DiagnosticReport.bodySite                 |  bodySite         | 0..1        | CodeableConcept                                                                                                            | OBX-20        |
+| DiagnosticReport.method                   |  method           | 0..1        | CodeableConcept                                                                                                            | OBX-17        |
+| DiagnosticReport.specimen                 |  specimen         | 0..1        | Reference(Specimen)                                                                                                        | SPM           |
+| DiagnosticReport.device                   |  device           | 0..1        | Reference(Device \| DeviceMetric)                                                                                          | OBX-17        |
+| DiagnosticReport.referenceRange           |  referenceRange   | 0..*        | BackboneElement                                                                                                            | OBX-7         |
+| DiagnosticReport.referenceRange.extension |  extension        | 0..*        | Extension                                                                                                                  | OBX-7         |
+| DiagnosticReport.referenceRange.low       |  low              | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.high      |  high             | 0..1        | SimpleQuantity                                                                                                             | OBX-7         |
+| DiagnosticReport.referenceRange.type      |  type             | 0..1        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.appliesTo |  appliesTo        | 0..*        | CodeableConcept                                                                                                            | OBX-10        |
+| DiagnosticReport.referenceRange.text      |  text             | 0..1        | string                                                                                                                     | OBX-7         |
 
 #### Example DiagnosticReport for Laboratory Results Reporting Resource
 

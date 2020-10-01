@@ -40,6 +40,8 @@ The purpose of the extension is to identify the source format that the data in t
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
+{% include style_insert_table_blue.html %}
+
 | Field                              | Value                                                                                                                                              |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | occurredPeriod or occurredDataTime | dateTime or Period of the encounter/procedure/medication being provided                                                                            |
@@ -182,9 +184,6 @@ Requesting a provenance resource is accomplished by adding the "_revinclude=Prov
 
 For servers that support the "_revinclude" parameter this will return Provenance records in a bundle along with 
 the resources returned by the search query. 
-
-An example of a MedicationDispense query being returned with a Provenance record (using the PDex-Origin-Provenance structure definition) as a result of adding the _revinclude=Provenance:target parameter is shown here: [Bundle With Provenance](Bundle-3000002.html)
-
 
 
 [Next Page - US Core Provenance](USCoreProvenance.html)

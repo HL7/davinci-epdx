@@ -13,6 +13,7 @@
 Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 
 The essential fields to be provided in the MedicationRequest resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name                                             | R4 Name                | Card. | Type                         |
 |------------------------------------------------------------------|------------------------|-------|------------------------------|

@@ -13,6 +13,7 @@
 The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
 
 The essential fields to be provided in the US Core PractitionerRole resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name                      | R4 Name          | Flags | Card. | Type                                    |
 |-------------------------------------------|------------------|-------|-------|-----------------------------------------|

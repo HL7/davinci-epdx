@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Device/543210> a fhir:Device;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "543210"];
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ];
+     fhir:Meta.lastUpdated [ fhir:value "2020-09-28T09:26:23.217+00:00"^^xsd:dateTime ];
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>UdiCarriers</h3><table class=\"grid\"><tr><td>-</td><td><b>DeviceIdentifier</b></td></tr><tr><td>*</td><td>23366006</td></tr></table><p><b>status</b>: active</p><p><b>manufacturer</b>: Motorized Wheelchair Company, Inc.</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td>-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td>*</td><td>MotorChairPro</td><td>user-friendly-name</td></tr></table><p><b>type</b>: <span title=\"Codes: {http://snomed.info/sct 23366006}\">Motorized wheelchair device (physical object)</span></p><p><b>patient</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p></div>"
+  ];
+  fhir:Device.udiCarrier [
+     fhir:index 0;
+     fhir:Device.udiCarrier.deviceIdentifier [ fhir:value "23366006" ]
+  ];
+  fhir:Device.status [ fhir:value "active"];
+  fhir:Device.manufacturer [ fhir:value "Motorized Wheelchair Company, Inc."];
+  fhir:Device.deviceName [
+     fhir:index 0;
+     fhir:Device.deviceName.name [ fhir:value "MotorChairPro" ];
+     fhir:Device.deviceName.type [ fhir:value "user-friendly-name" ]
+  ];
+  fhir:Device.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:23366006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "23366006" ]
+     ]
+  ];
+  fhir:Device.patient [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ] .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Device/543210.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/Device/543210.ttl> .
+
+# -------------------------------------------------------------------------------------
+

@@ -30,6 +30,8 @@ The purpose of the extension is to identify the source format that the data in t
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
 
+{% include style_insert_table_blue.html %}
+
 | Field                              | Value                                                                                                                                              |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | occurredPeriod or occurredDataTime | dateTime or Period of the encounter/procedure/medication being provided                                                                            |

@@ -14,6 +14,8 @@ Where a Health Plan has access to Information about the CareTeam for a member th
 
 The essential fields to be provided in the CareTeam resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name        | R4 Name     | Flags | Card. | Type                                                                                                             |
 |-----------------------------|-------------|-------|-------|------------------------------------------------------------------------------------------------------------------|
 | CareTeam                    | CareTeam    | I     | 0..*  |                                                                                                                  |

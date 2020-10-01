@@ -3,6 +3,7 @@
 Where a Health Plan has access to structured and coded Immunization information for a member the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 
 The essential fields to be provided in the US Core Immunization resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name                       | R4 Name       | Card. | Type                                                      |
 |--------------------------------------------|---------------|-------|-----------------------------------------------------------|

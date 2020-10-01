@@ -5,6 +5,7 @@ Where a Health Plan has information about devices used by the Member that inform
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
 The essential fields to be provided in the US Core Implantable Device resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name             | R4 Name    | Flags | Card. | Type                               |
 |----------------------------------|------------|-------|-------|------------------------------------|

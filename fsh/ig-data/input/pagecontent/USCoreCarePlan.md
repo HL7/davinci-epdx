@@ -4,6 +4,8 @@ Where a Health Plan has access to Care Plan information for a member they **SHAL
 
 The essential fields to be provided in the CarePlan  resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name            | R4 Name  | Flags | Card. | Type                               |
 |---------------------------------|----------|-------|-------|------------------------------------|
 | CarePlan                        | CarePlan | I     | 0..*  |                                    |

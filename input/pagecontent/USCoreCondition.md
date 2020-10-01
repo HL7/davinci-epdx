@@ -11,6 +11,7 @@
 [Previous Page - US Core CareTeam](USCoreCareTeam.html)
 
 The essential fields to be provided in the US Core Condition resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name         | R4 Name            | Card. | Type                               |
 |------------------------------|--------------------|-------|------------------------------------|

@@ -26,6 +26,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/images/Payer-Payer-with-member-InteractionMethods2.png                    | copied    | fsh/ig-data/input/images/Payer-Payer-with-member-InteractionMethods2.png                    |
 | input/images/padding .png                                                       | copied    | fsh/ig-data/input/images/padding .png                                                       |
 | input/includes/menu.xml                                                         | copied    | fsh/ig-data/input/includes/menu.xml                                                         |
+| input/includes/style_insert_table_blue.html                                     | copied    | fsh/ig-data/input/includes/style_insert_table_blue.html                                     |
 | input/pagecontent/CDS-Hooks.md                                                  | copied    | fsh/ig-data/input/pagecontent/CDS-Hooks.md                                                  |
 | input/pagecontent/Coverage.md                                                   | copied    | fsh/ig-data/input/pagecontent/Coverage.md                                                   |
 | input/pagecontent/Credits.md                                                    | copied    | fsh/ig-data/input/pagecontent/Credits.md                                                    |

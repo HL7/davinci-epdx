@@ -13,6 +13,7 @@
 The  [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
 The essential fields to be provided in the US Core Practitioner resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name            | R4 Name      | Card. | Type            |
 |---------------------------------|--------------|-------|-----------------|

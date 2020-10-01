@@ -1,5 +1,5 @@
 Profile:        PdexDevice
-Parent:         us-core-implantable-device
+Parent:         Device
 Id:             pdex-device
 Title:          "PDex Device"
 Description:    """The PDex Device profile is provided to enable payers to record information about
