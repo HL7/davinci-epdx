@@ -3,6 +3,7 @@
 When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
 
 The essential fields to be provided in the US Core Organization resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name            | R4 Name      | Flags | Card. | Type                |
 |---------------------------------|--------------|-------|-------|---------------------|

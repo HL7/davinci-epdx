@@ -3,6 +3,7 @@
 Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
 
 The essential fields to be provided in the Medication resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name          | R4 Name    | Card. | Type                                               |
 |-------------------------------|------------|-------|----------------------------------------------------|

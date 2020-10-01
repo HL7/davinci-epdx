@@ -2,6 +2,8 @@
 
 An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) is shown below:
 
+{% include style_insert_table_blue.html %}
+
 | Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor                       | FHIR Profile      | Profile Field                                                            | ValueSet                                                                      | Notes                              |
 |------|-------------------|------------------|---------------------------------------|-------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------|------------------------------------|
 | 1.5  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)          | Patientid                             | US Core Encounter | .subject                                                                 |                                                                               | Reference(Patient)                 |

@@ -4,6 +4,8 @@ Where a Health Plan has access to clinical notes and associated diagnostic infor
 
 The essential fields to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name           | R4 Name          | Card. | Type                                                                   |
 |--------------------------------|------------------|-------|------------------------------------------------------------------------|
 | DiagnosticReport               | DiagnosticReport | 0..*  |                                                                        |

@@ -4,6 +4,8 @@ The (Coverage resource)[http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefin
 
 The minimum fields to be provided in the Coverage resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name                      | R4 Name     | Card. | Type                                             |
 |-------------------------------------------|-------------|-------|--------------------------------------------------|
 | Coverage                                  | Coverage    |       | DomainResource                                   |

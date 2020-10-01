@@ -13,6 +13,7 @@
 The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
 
 The essential fields to be provided in the US Core Procedure resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name      | R4 Name      | Card. | Type                                                                                         |
 |---------------------------|--------------|-------|----------------------------------------------------------------------------------------------|

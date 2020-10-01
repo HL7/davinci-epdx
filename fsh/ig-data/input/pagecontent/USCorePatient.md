@@ -3,6 +3,7 @@
 The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
 
 The essential fields in the Patient profile are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name           | R4 Name           | Card. | Type            |
 |--------------------------------|-------------------|-------|-----------------|

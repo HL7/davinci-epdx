@@ -8,6 +8,8 @@ In future versions of this IG there is a desire to ensure that all Device identi
 
 The essential fields to be provided in the PDex Device resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name             | R4 Name    | Flags | Card. | Type                               |
 |----------------------------------|------------|-------|-------|------------------------------------|
 | Device                           | Device     | I     | 0..*  |                                    |

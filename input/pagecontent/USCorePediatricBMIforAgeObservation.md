@@ -16,6 +16,7 @@ The US Core IG profiles the Observation resource for a variety of purposes. For 
 - Pediatric Weight for Height
 
 The essential fields to be provided in the US Core Observation resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name         | R4 Name          | Card. | Type                                                                                                   |
 |------------------------------|------------------|-------|--------------------------------------------------------------------------------------------------------|

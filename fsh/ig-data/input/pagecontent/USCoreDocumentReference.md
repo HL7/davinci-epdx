@@ -7,6 +7,7 @@ The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhi
 - C-CDA documents
 
 The essential fields to be provided in the US Core DocumentReference resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name                             | R4 Name           | Card. | Type                                 |
 |--------------------------------------------------|-------------------|-------|--------------------------------------|

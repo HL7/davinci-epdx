@@ -15,6 +15,8 @@ Where a Health Plan has information about a member's allergies the  [US Core All
 
 The essential fields to be provided in the US Core AllergyIntolerance resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name                  | R4 Name            | Card. | Type                               |
 |---------------------------------------|--------------------|-------|------------------------------------|
 | AllergyIntolerance                    | AllergyIntolerance | 0..*  |                                    |

@@ -212,6 +212,8 @@ The FHIR CapabilityStatement defines the resources and operations permitted on t
 
 The Permitted Operations for the FHIR Profiles covered in this payload section are defined as follows:
 
+{% include style_insert_table_blue.html %}
+
 | Resource Type                                 | Profile                                                                                        | Read | V-Read | Search | History |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|---------|
 | AllergyIntolerance                            | http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y | Y       |

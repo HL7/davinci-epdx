@@ -4,6 +4,8 @@ The  [Da Vinci PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/da
 
 The essential fields to be provided in the MedicationDispense resource are:
 
+{% include style_insert_table_blue.html %}
+
 | R4 Hierarchical Name             | R4 Name            | Card. | Type                       |
 |----------------------------------|--------------------|-------|----------------------------|
 | MedicationDispense               | MedicationDispense |       | DomainResource             |
@@ -28,6 +30,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | 11.1 | Claim-Line        |  N/A                | Quantity dispensed          | MedicationDispense        | .quantity                                                              |                                                         |                                |
 | 12.1 | Claim-Line        |  N/A                | Quantity qualifier code     | MedicationDispense        | .category                                                              |                                                         |                                |
 | 5.1  | Claim-Pharmacy    |  N/A                | Prescription origin code    | US Core MedicationRequest | .authorizingPrescription.Reference(MedicationRequest).identifier.value |                                                         |                                |
+
 
 Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
 

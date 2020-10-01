@@ -3,6 +3,7 @@
 The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 
 The essential fields to be provided in the US Core Location resource are:
+{% include style_insert_table_blue.html %}
 
 | R4 Hierarchical Name          | R4 Name              | Card. | Type                                    |
 |-------------------------------|----------------------|-------|-----------------------------------------|
