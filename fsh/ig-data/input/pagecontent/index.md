@@ -76,6 +76,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 ### Latest Changes
+- 0.1.22 Remove pdex-source-provenance. Change provenance examples to use pdex-entitysource-provenance. Update CapabilityStatement to remove pdex-source-provenance.
 - 0.1.21 Add Pdex-Device Example. Add Provenance _revinclude use,
 reformat tables for improved readability, Added HL7v2, CCDA and Claim(837) mapping tables to US Core DiagnosticReportfor Laboratory Results Reporting.
 - 0.1.20 Add PdexServerCapabilityStatement. Add EntitySource and Source Provenance records (pending extension resolution with Security Workgroup), Add dropdown menu to Artifacts menu item. 

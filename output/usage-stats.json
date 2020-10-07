@@ -1,6 +1,6 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -80,8 +80,8 @@
     ],
     "Provenance": [
       {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance",
-        "title": "PDex Source Provenance"
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance",
+        "title": "PDex Entity Source Provenance"
       }
     ],
     "MedicationDispense": [
@@ -127,7 +127,6 @@
     ],
     "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom": [
       "Bundle.entry.resource.entity",
-      "Provenance",
       "Provenance.entity"
     ]
   }

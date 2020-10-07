@@ -5,20 +5,11 @@
   <meta>
     <versionId value="1"/>
     <lastUpdated value="2020-07-09T15:26:23.217+00:00"/>
-    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>An attribute to describe the data source a resource was constructed from</b>: </p><p><b>target</b>: <a href="Bundle-2000002.html">Generated Summary: type: searchset; timestamp: Jul 16, 2020 4:26:23 PM; 2</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType transmitter}">Transmitter</span></td><td><a href="Organization-2.html">Generated Summary: language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class="grid"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>target</b>: <a href="Bundle-2000002.html">Generated Summary: type: searchset; timestamp: Jul 16, 2020 4:26:23 PM; 2</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title="Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType transmitter}">Transmitter</span></td><td><a href="Organization-2.html">Generated Summary: language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></td></tr></table><h3>Entities</h3><table class="grid"><tr><td>-</td><td><b>Extension</b></td><td><b>Role</b></td><td><b>What</b></td></tr><tr><td>*</td><td></td><td>source</td><td><span>No reference available</span></td></tr></table></div>
   </text>
-  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom">
-    <valueCodeableConcept>
-      <coding>
-        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"/>
-        <code value="hl7v2adt"/>
-        <display value="HL7 v2 ADT"/>
-      </coding>
-    </valueCodeableConcept>
-  </extension>
   <target>
     <reference value="Bundle/2000002"/>
   </target>
@@ -35,4 +26,19 @@
       <reference value="Organization/2"/>
     </who>
   </agent>
+  <entity>
+    <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"/>
+          <code value="hl7v2adt"/>
+          <display value="HL7 v2 ADT"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <role value="source"/>
+    <what>
+      <display value="No reference available"/>
+    </what>
+  </entity>
 </Provenance>

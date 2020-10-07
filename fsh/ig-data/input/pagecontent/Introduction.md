@@ -219,6 +219,7 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Goal                                          | http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y     | Y       |
 | Immunization                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      | Y       |
 | Implantable Device                      | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html    | Y    | Y      | Y      | Y       |
+| Laboratory Result Observation           | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html       | Y    | Y      | Y      | Y       |
 | Location                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html             | Y    | Y      | Y      | Y       |
 | Medication                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      | Y       |
 | MedicationDispense                            | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html           | Y    | Y      | Y      | Y       |
@@ -226,12 +227,13 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Organization                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html         | Y    | Y      | Y    | Y       |
 | Patient                                       | http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      | Y       |
 | Pediatric BMI for Age Observation  | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html      | Y    | Y      | Y     | Y       |
+| Pediatric Head Occipital Frontal Circumference Percentile  | https://www.hl7.org/fhir/us/core/StructureDefinition-head-occipital-frontal-circumference-percentile.html  | Y    | Y      | Y      | Y       |
 | Pediatric Weight for Height Observation  | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html  | Y    | Y      | Y      | Y       |
 | Practitioner                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      | Y       |
 | PractitionerRole                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      | Y       |
 | Procedure                                     | http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y         | Y       |
 | Provenance                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      | Y       |
-| Payer Provenance                                    | http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-provenance.html   | Y    | Y      | Y      | Y       |
+| PDex Provenance                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-entitysource-provenance.html   | Y    | Y      | Y      | Y       |
 | Pulse Oximetry                         | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
 | Smoking Status Observation                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y       | Y       |
 | Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y       | Y       |
