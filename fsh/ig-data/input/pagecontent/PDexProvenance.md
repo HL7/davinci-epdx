@@ -10,22 +10,15 @@ provided by the Health Plan's FHIR API.
 
 This **SHOULD** be used to:
 - identify the source of the information. 
-- whether the data came via a clinical record or a claim record. 
-- Whether the data was subject to manual transcription or other interpretive transformation.
-
-The PDex-Target-Provenance resource is documented here: [StructureDefinition-pdex-source-provenance.html](StructureDefinition-pdex-source-provenance.html)
+- whether the data came via a clinical record, or a claim record. 
+- Whether the data was subject to manual transcription, or other interpretive transformation.
 
 The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
 
-**NOTE:**
-PDex Provenance is displayed in two forms for the purposes of Connectathon testing: 
-- [StructureDefinition-pdex-source-provenance.html](StructureDefinition-pdex-source-provenance.html)
-- [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
+PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
+In the Origin Provenance Profile the extenaion is included in the Provenance.entity base element.
 
-Both Profiles add an extension that uses the ProvenanceSourceFrom ValueSet.
-In the Target Provenance Profile this extension is at the base of the profile. In the Origin Provenance Profile the extenaion is included in the Provenance.entity base element.
-
-The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
+The purpose of the extension isto identify the source format that the data in the provenance.target resource was taken from.
 
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:

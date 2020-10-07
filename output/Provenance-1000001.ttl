@@ -12,26 +12,14 @@
      fhir:Meta.versionId [ fhir:value "1" ];
      fhir:Meta.lastUpdated [ fhir:value "2020-07-09T15:26:23.217+00:00"^^xsd:dateTime ];
      fhir:Meta.profile [
-       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance";
+       fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance";
        fhir:index 0;
-       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance>
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance>
      ]
   ];
   fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>An attribute to describe the data source a resource was constructed from</b>: </p><p><b>target</b>: <a href=\"Bundle-2000002.html\">Generated Summary: type: searchset; timestamp: Jul 16, 2020 4:26:23 PM; 2</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType transmitter}\">Transmitter</span></td><td><a href=\"Organization-2.html\">Generated Summary: language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></td></tr></table></div>"
-  ];
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource" ];
-         fhir:Coding.code [ fhir:value "hl7v2adt" ];
-         fhir:Coding.display [ fhir:value "HL7 v2 ADT" ]
-       ]
-     ]
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>target</b>: <a href=\"Bundle-2000002.html\">Generated Summary: type: searchset; timestamp: Jul 16, 2020 4:26:23 PM; 2</a></p><p><b>recorded</b>: Jul 9, 2020 11:26:23 AM</p><h3>Agents</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType transmitter}\">Transmitter</span></td><td><a href=\"Organization-2.html\">Generated Summary: language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></td></tr></table><h3>Entities</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Role</b></td><td><b>What</b></td></tr><tr><td>*</td><td></td><td>source</td><td><span>No reference available</span></td></tr></table></div>"
   ];
   fhir:Provenance.target [
      fhir:index 0;
@@ -52,6 +40,25 @@
      fhir:Provenance.agent.who [
        fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
        fhir:Reference.reference [ fhir:value "Organization/2" ]
+     ]
+  ];
+  fhir:Provenance.entity [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource" ];
+           fhir:Coding.code [ fhir:value "hl7v2adt" ];
+           fhir:Coding.display [ fhir:value "HL7 v2 ADT" ]
+         ]
+       ]
+     ];
+     fhir:Provenance.entity.role [ fhir:value "source" ];
+     fhir:Provenance.entity.what [
+       fhir:Reference.display [ fhir:value "No reference available" ]
      ]
   ] .
 
