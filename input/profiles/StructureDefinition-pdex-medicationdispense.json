@@ -115,6 +115,7 @@
         "id": "MedicationDispense.status",
         "path": "MedicationDispense.status",
         "short": "completed",
+        "mustSupport": true,
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/ValueSet/medicationdispense-status"
@@ -156,7 +157,8 @@
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "MedicationDispense.supportingInformation",

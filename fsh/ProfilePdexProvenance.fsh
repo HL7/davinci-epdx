@@ -11,11 +11,11 @@ Description:    "Provenance is provided by the payer to identify the source of t
 * agent.type 1..1
 * agent.type from http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType
 
-* agent.who 1..1
+* agent.who 1..1 MS
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
 * agent.who only Reference(us-core-organization or us-core-practitioner)
 
-* entity.extension contains ProvenanceSourceFrom named sourceFormat 0..1
+* entity.extension contains ProvenanceSourceFrom named sourceFormat 0..1 MS
 * entity.extension[sourceFormat] ^short = "Entity Source format that target resource was created from"
 * entity.extension[sourceFormat].valueCodeableConcept from ProvenancePayerSourceFormat (required)
 

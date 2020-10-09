@@ -88,7 +88,7 @@ ICCBA DIs for other devices:
 "Device.udiCarrier.entryType","","","",0,1,"","","","code {[]} {[]}
 ","barcode | rfid | manual +","A coded entry to indicate how the data was entered.","","Supports a way to distinguish hand entered from machine read data.","","","","","","","",,"required","Codes to identify how UDI data was entered.","http://hl7.org/fhir/ValueSet/udi-entry-type|4.0.1","",,,,"Device.udiCarrier.entryType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","NA"
-"Device.status","","","",0,1,"","Y","Y","code {[]} {[]}
+"Device.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","active | inactive | entered-in-error | unknown","Status of the Device availability.","This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.","","","","","","","","",,"required","The availability status of the device.","http://hl7.org/fhir/ValueSet/device-status|4.0.1","",,,,"Device.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".statusCode","FiveWs.status"
 "Device.statusReason","","","",0,*,"","","","CodeableConcept {[]} {[]}
@@ -216,7 +216,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Device.property.valueCode","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","Property value as a code, e.g., NTP4 (synced to NTP)","Property value as a code, e.g., NTP4 (synced to NTP).","","","","","","","","","",,,,,"",,,,"Device.property.valueCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Device.patient","","","",1,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient]]}
+"Device.patient","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient]]}
 ","Patient to whom Device is affixed","Patient information, If the device is affixed to a person.","","If the device is implanted in a patient, then need to associate the device to the patient.","","","","","","","",,,,,"",,,,"Device.patient",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]","FiveWs.subject[x]","FiveWs.subject"
 "Device.owner","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}

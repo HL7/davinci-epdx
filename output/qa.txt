@@ -1,15 +1,15 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 3, warn = 10, info = 12
+err = 1, warn = 11, info = 12
 IG Publisher Version: 1.1.34
-Generated Wed Oct 07 00:17:41 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.22 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+Generated Fri Oct 09 02:30:53 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.23 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
  Build Errors : 1 / 1 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/bundle-2000002 : 0 / 0 / 3
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/bundle-3000002 : 0 / 0 / 5
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/capabilitystatement-PdexServerCapabilityStatement : 2 / 1 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/capabilitystatement-PdexServerCapabilityStatement : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/device-543210 : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-6 : 0 / 1 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-7 : 0 / 1 / 2
@@ -26,6 +26,7 @@ Generated Wed Oct 07 00:17:41 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000005 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceSourceFrom : 0 / 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-hrex-coverage : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-entitysource-provenance : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-medicationdispense : 0 / 0 / 2
@@ -54,8 +55,6 @@ INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance).agent[0
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/CapabilityStatement-PdexServerCapabilityStatement.json ==
 INFORMATION: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 WARNING: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement: cpb-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]
-ERROR: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement.rest[0].resource[4].supportedProfile[0]: URL value 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage' does not resolve
-ERROR: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement.rest[0].resource[16].operation[0].definition: URL value 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match' does not resolve
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Device-543210.json ==
 INFORMATION: Device/543210: Device: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Encounter-6.json ==
@@ -112,6 +111,9 @@ INFORMATION: StructureDefinition/DispenseRefill: StructureDefinition: Validate r
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill'): The Implementation Guide contains no examples for this extension
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-ProvenanceSourceFrom.json ==
 INFORMATION: StructureDefinition/ProvenanceSourceFrom: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-hrex-coverage.json ==
+INFORMATION: StructureDefinition/hrex-coverage: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage'): The Implementation Guide contains no examples for this profile
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-device.json ==
 INFORMATION: StructureDefinition/pdex-device: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile

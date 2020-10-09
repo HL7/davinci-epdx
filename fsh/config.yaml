@@ -12,7 +12,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
-version: 0.1.22
+version: 0.1.23
 name: DaVinciPayerDataExchange
 title: Da Vinci Payer Data exchange
 status: draft
@@ -78,6 +78,8 @@ pages:
         title: US Core Immunization
       USCoreImplantableDevice.md:
         title: US Core ImplantableDevice
+      USCoreLaboratoryResultObservation.md:
+        title: US Core Laboratory Result Observation
       USCoreLocation.md:
         title: US Core Location
       USCoreMedication.md:
@@ -92,6 +94,8 @@ pages:
         title: US Core Patient
       USCorePediatricBMIforAgeObservation.md:
         title: US Core Pediatric BMI for Age Observation
+      USCorePediatricHeadOccipital.md:
+        title: US Core Pediatric Head Occipital-frontal Circumference Observation
       USCorePediatricWeightforHeightObservation.md:
         title: US Core Pediatric Weight for Height Observation
       USCorePractitioner.md:
@@ -146,7 +150,8 @@ pages:
 # template: fhir.base.template#current
 # template: fhir.base.template
 # template: hl7.fhir.template#0.1.0
-template: hl7.fhir.template#current
+template: hl7.davinci.template#current
+# template: hl7.fhir.template#current
 # template: hl7.fhir.template
 # ig: input/ImplementationGuide-davinci-pdex.json
 ig: ../input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json

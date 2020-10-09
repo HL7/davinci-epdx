@@ -1,0 +1,29 @@
+[Previous Page - US Core Pediatric BMI for Age Observation](USCorePediatricBMIforAgeObservation.html)
+
+The US Core IG profiles the Observation resource for a variety of purposes. For example:
+- Smoking status
+- Pediatric BMI for Age
+- Pediatric Weight for Height
+
+The essential fields to be provided in the US Core Observation resource are:
+{% include style_insert_table_blue.html %}
+
+| R4 Hierarchical Name         | R4 Name          | Card. | Type                                                                                                   |
+|------------------------------|------------------|-------|--------------------------------------------------------------------------------------------------------|
+| Observation                  | Observation      | 0..*  |                                                                                                        |
+| Observation.id               | id               | 0..1  | id                                                                                                     |
+| Observation.status           | status           | 1..1  | code                                                                                                   |
+| Observation.category         | category         | 1..*  | CodeableConcept                                                                                        |
+| Observation.code             | code             | 1..1  | CodeableConcept                                                                                        |
+| Observation.subject          | subject          | 1..1  | Reference(US Core Patient Profile)                                                                     |
+| Observation.effective[x]     | effective[x]     | 0..1  | dateTime, Period                                                                                       |
+| Observation.value[x]         | value[x]         | 0..1  | Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period |
+| Observation.dataAbsentReason | dataAbsentReason | 0..1  | CodeableConcept                                                                                        |
+
+
+#### An Example Head Occipital-frontal Circumference Observation Resource
+
+US Core Pediatric Head Occipital-frontal Circumference Percentile example: [https://hl7.org/fhir/us/core/Observation-ofc-percentile.html](https://hl7.org/fhir/us/core/Observation-ofc-percentile.html)
+
+
+[Next Page - US Core Pediatric Weight for Height Observation](USCorePediatricWeightforHeightObservation.html)

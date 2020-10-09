@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -53,6 +53,14 @@
   ],
   "definition": {
     "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/hrex-coverage"
+        },
+        "name": "HRex Coverage Profile",
+        "description": "The HRex Coverage Profile defines the constraints for representing a member's healthcare insurance information to the Payer.  Coverage instances complying with this profile, sometimes together with the Patient which this profile references via `beneficiary`, allows a payer to identify a member in their system.",
+        "exampleBoolean": false
+      },
       {
         "reference": {
           "reference": "StructureDefinition/pdex-device"
@@ -384,6 +392,11 @@
                   "generation": "markdown"
                 },
                 {
+                  "nameUrl": "USCoreLaboratoryResultObservation.html",
+                  "title": "US Core Laboratory Result Observation",
+                  "generation": "markdown"
+                },
+                {
                   "nameUrl": "USCoreLocation.html",
                   "title": "US Core Location",
                   "generation": "markdown"
@@ -416,6 +429,11 @@
                 {
                   "nameUrl": "USCorePediatricBMIforAgeObservation.html",
                   "title": "US Core Pediatric BMI for Age Observation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "USCorePediatricHeadOccipital.html",
+                  "title": "US Core Pediatric Head Occipital-frontal Circumference Observation",
                   "generation": "markdown"
                 },
                 {

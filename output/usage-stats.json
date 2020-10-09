@@ -1,6 +1,6 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -72,6 +72,12 @@
     }
   ],
   "profiles": {
+    "Coverage": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage",
+        "title": "HRex Coverage Profile"
+      }
+    ],
     "Device": [
       {
         "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
@@ -109,6 +115,9 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
       "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
+      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
