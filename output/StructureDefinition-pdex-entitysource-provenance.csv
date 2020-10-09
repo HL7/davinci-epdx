@@ -105,7 +105,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Provenance.agent.role","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","What the agents role was","The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.","For example: doctor, nurse, clerk, etc.","","","","","","","","",,"example","The role that a provenance agent played with respect to the activity.","http://hl7.org/fhir/ValueSet/security-role-type","",,,,"Provenance.agent.role",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".typecode","AuditEvent.agent.role"
-"Provenance.agent.who","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner]]}
+"Provenance.agent.who","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner]]}
 ","Who participated","The individual, device or organization that participated in the event.","whoIdentity should be used when the agent is not a Resource type.","","","","","","","","",,,,,"",,,,"Provenance.agent.who",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer.actor",".id","FiveWs.actor"
 "Provenance.agent.onBehalfOf","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
@@ -137,7 +137,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Provenance.agent.role","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","What the agents role was","The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.","For example: doctor, nurse, clerk, etc.","","","","","","","","",,"example","The role that a provenance agent played with respect to the activity.","http://hl7.org/fhir/ValueSet/security-role-type","",,,,"Provenance.agent.role",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".typecode","AuditEvent.agent.role"
-"Provenance.agent.who","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner]]}
+"Provenance.agent.who","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner]]}
 ","Who participated","The individual, device or organization that participated in the event.","whoIdentity should be used when the agent is not a Resource type.","","","","","","","","",,,,,"",,,,"Provenance.agent.who",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer.actor",".id","FiveWs.actor"
 "Provenance.agent.onBehalfOf","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
@@ -152,7 +152,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Provenance.entity.extension","sourceFormat","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom]]} {[]}
+"Provenance.entity.extension","sourceFormat","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom]]} {[]}
 ","Entity Source format that target resource was created from","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"

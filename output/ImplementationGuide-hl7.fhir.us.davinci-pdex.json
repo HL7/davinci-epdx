@@ -6,11 +6,11 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and reference them in your ballot submission implementation guide.</p>\n<p>This guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection.</p>\n<p><a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n</div></div>"
   },
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-10-07T00:16:55-04:00",
+  "date": "2020-10-09T02:30:03-04:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -319,6 +319,24 @@
       }
     ],
     "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+            "valueUri": "StructureDefinition-hrex-coverage.html"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/hrex-coverage"
+        },
+        "name": "HRex Coverage Profile",
+        "description": "The HRex Coverage Profile defines the constraints for representing a member's healthcare insurance information to the Payer.  Coverage instances complying with this profile, sometimes together with the Patient which this profile references via `beneficiary`, allows a payer to identify a member in their system.",
+        "exampleBoolean": false
+      },
       {
         "extension": [
           {
@@ -930,6 +948,11 @@
                   "generation": "markdown"
                 },
                 {
+                  "nameUrl": "USCoreLaboratoryResultObservation.html",
+                  "title": "US Core Laboratory Result Observation",
+                  "generation": "markdown"
+                },
+                {
                   "nameUrl": "USCoreLocation.html",
                   "title": "US Core Location",
                   "generation": "markdown"
@@ -962,6 +985,11 @@
                 {
                   "nameUrl": "USCorePediatricBMIforAgeObservation.html",
                   "title": "US Core Pediatric BMI for Age Observation",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "USCorePediatricHeadOccipital.html",
+                  "title": "US Core Pediatric Head Occipital-frontal Circumference Observation",
                   "generation": "markdown"
                 },
                 {

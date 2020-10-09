@@ -46,11 +46,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.1.22"/>
+   <version value="0.1.23"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-10-07T00:16:55-04:00"/>
+   <date value="2020-10-09T02:30:03-04:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -114,6 +114,21 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
       </grouping>
 
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-hrex-coverage.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/hrex-coverage"/>
+         </reference>
+         <name value="HRex Coverage Profile"/>
+         <description value="The HRex Coverage Profile defines the constraints for representing a member's healthcare insurance information to the Payer.  Coverage instances complying with this profile, sometimes together with the Patient which this profile references via `beneficiary`, allows a payer to identify a member in their system."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_str_profile"/>
+      </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource"/>
@@ -637,6 +652,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                   <generation value="markdown"/>
                </page>
                <page>
+                  <nameUrl value="USCoreLaboratoryResultObservation.html"/>
+                  <title value="US Core Laboratory Result Observation"/>
+                  <generation value="markdown"/>
+               </page>
+               <page>
                   <nameUrl value="USCoreLocation.html"/>
                   <title value="US Core Location"/>
                   <generation value="markdown"/>
@@ -669,6 +689,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <page>
                   <nameUrl value="USCorePediatricBMIforAgeObservation.html"/>
                   <title value="US Core Pediatric BMI for Age Observation"/>
+                  <generation value="markdown"/>
+               </page>
+               <page>
+                  <nameUrl value="USCorePediatricHeadOccipital.html"/>
+                  <title value="US Core Pediatric Head Occipital-frontal Circumference Observation"/>
                   <generation value="markdown"/>
                </page>
                <page>
@@ -757,6 +782,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <nameUrl value="artifacts.html"/>
             <title value="Artifacts Summary"/>
             <generation value="html"/>
+            <page>
+               <nameUrl value="StructureDefinition-hrex-coverage.html"/>
+               <title value="HRex Coverage Profile"/>
+               <generation value="generated"/>
+            </page>
             <page>
                <nameUrl value="StructureDefinition-pdex-device.html"/>
                <title value="PDex Device"/>

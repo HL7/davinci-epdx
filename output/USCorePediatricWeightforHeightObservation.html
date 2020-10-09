@@ -42,8 +42,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.3.21"}
-    h3,h4,h5,h6{--heading-prefix:"4.3.21"}</style>
+    <style type="text/css">h2{--heading-prefix:"4.3.23"}
+    h3,h4,h5,h6{--heading-prefix:"4.3.23"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -60,9 +60,12 @@
           <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
         </div>
 
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.22 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -124,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.22). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Pediatric Weight for Height Observation</h2>
   
 
@@ -141,7 +144,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <!-- USCorePediatricWeightforHeightObservation.md  -->
-<p><a href="USCorePediatricBMIforAgeObservation.html">Previous Page - US Core Pediatric BMI for Age Observation</a></p>
+<p><a href="USCorePediatricHeadOccipital.html">Previous Page - US Core Pediatric Head Occipital-frontal Circumference Observation</a></p>
 
 <p>The US Core IG profiles the Observation resource for a variety of purposes. For example:</p>
 <ul>
@@ -238,20 +241,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<h4 id="an-example-smoking-status-resource">An Example Smoking Status Resource</h4>
+<h4 id="an-example-pediatric-weight-for-height-observation-resource">An Example Pediatric Weight For Height Observation Resource</h4>
 
+<p>US Core Pediatric Weight for Height Observation: <a href="https://hl7.org/fhir/us/core/Observation-pediatric-wt-example.html">https://hl7.org/fhir/us/core/Observation-pediatric-wt-example.html</a></p>
 <pre>
 {
   "resourceType" : "Observation",
-  "id" : "some-day-smoker",
+  "id" : "pediatric-wt-example",
   "meta" : {
     "profile" : [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
+      "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height"
     ]
   },
   "text" : {
     "status" : "generated",
-    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative with Details</b></p><p><b>id</b>: some-day-smoker</p><p><b>meta</b>: </p><p><b>status</b>: final</p><p><b>category</b>: Social History &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'social-history' = 'Social History', given as 'Social History'})&lt;/span&gt;</p><p><b>code</b>: Tobacco smoking status NHIS &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {LOINC code '72166-2' = 'Tobacco smoking status NHIS', given as 'Tobacco smoking status NHIS'})&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007&lt;/a&gt;</p><p><b>issued</b>: Mar 18, 2016, 5:27:04 AM</p><p><b>value</b>: Current some day smoker &lt;span style=\"background: LightGoldenRodYellow\"&gt;(Details : {SNOMED CT code '428041000124106' = 'Occasional tobacco smoker)&lt;/span&gt;</p>&lt;/div&gt;"
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative</b></p><p><b>id</b>: pediatric-wt-example</p><p><b>meta</b>: </p><p></p><p><b>category</b>: &lt;span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\"&gt;Vital Signs&lt;/span&gt;</p><p><b>code</b>: &lt;span title=\"Codes: {http://loinc.org 77606-2}\"&gt;BMI&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-infant-example.html\"&gt;Infant Example. Generated Summary: id: infant-example; Medical Record Number: 1032703 (USUAL); active; Infant Example ; ph: 555-555-5555(HOME); gender: male; birthDate: 2020-06-02&lt;/a&gt;</p><p><b>encounter</b>: <span>GP Visit</span></p><p><b>effective</b>: 2020-07-02</p><p><b>value</b>: 65 %</p><p><b>note</b>: WHO Males, 0-2 years Chart</p>&lt;/div&gt;"
   },
   "status" : "final",
   "category" : [
@@ -259,37 +263,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       "coding" : [
         {
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code" : "social-history",
-          "display" : "Social History"
+          "code" : "vital-signs",
+          "display" : "Vital Signs"
         }
       ],
-      "text" : "Social History"
+      "text" : "Vital Signs"
     }
   ],
   "code" : {
     "coding" : [
       {
         "system" : "http://loinc.org",
-        "code" : "72166-2",
-        "display" : "Tobacco smoking status NHIS"
+        "code" : "77606-2",
+        "display" : "Weight-for-length Per age and sex"
       }
     ],
-    "text" : "Tobacco smoking status NHIS"
+    "text" : "BMI"
   },
   "subject" : {
-    "reference" : "Patient/example",
-    "display" : "Amy Shaw"
+    "reference" : "Patient/infant-example",
+    "display" : "Infant Example"
   },
-  "issued" : "2016-03-18T05:27:04Z",
-  "valueCodeableConcept" : {
-    "coding" : [
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "428041000124106"
-      }
-    ],
-    "text" : "Current some day smoker"
-  }
+  "encounter" : {
+    "display" : "GP Visit"
+  },
+  "effectiveDateTime" : "2020-07-02",
+  "valueQuantity" : {
+    "value" : 65,
+    "unit" : "%",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "%"
+  },
+  "note" : [
+    {
+      "text" : "WHO Males, 0-2 years Chart"
+    }
+  ]
 }
 </pre>
 
@@ -318,7 +327,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.22 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 7, 2020 00:16-0400">2020-10-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -18,6 +18,8 @@ devices used by a member that may not have a UDI number.
 * udiCarrier.carrierAIDC  ^short = "UDI Machine Readable Barcode String"
 * udiCarrier.carrierHRF	 0..1
 * udiCarrier.carrierHRF  ^short = "UDI Human Readable Barcode String"
+* status 1..1 MS
+
 * distinctIdentifier  0..1
 * distinctIdentifier  ^short = "The distinct identification string"
 
@@ -27,7 +29,7 @@ devices used by a member that may not have a UDI number.
 * serialNumber  0..1
 * type  1..1
 * type  from http://hl7.org/fhir/ValueSet/device-kind (extensible)
-* patient  1..1
+* patient  1..1 MS
 * patient only Reference(us-core-patient)
 
 // Hicpics code? as extension.

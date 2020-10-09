@@ -76,6 +76,9 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 ### Latest Changes
+- 0.1.23 Added in line examples for US Core profiles: Encounter, Goal.
+  Made ProvenanceSourceFrom a MustSupport in Pdex-EntitySource-Provenance profile. Fixed US Core examples for Provenance, Pediatric BMI, Pediatric Weight, Pediatric Occipital-frontal circumference, Smoking Status and Vital Signs. Added new page of Laboratory Results Observation. Migrated hrex-coverage to PDEX. Fixed capabilityStatements. Switched to da vinci template.
+  
 - 0.1.22 Remove pdex-source-provenance. Change provenance examples to use pdex-entitysource-provenance. Update CapabilityStatement to remove pdex-source-provenance.
 - 0.1.21 Add Pdex-Device Example. Add Provenance _revinclude use,
 reformat tables for improved readability, Added HL7v2, CCDA and Claim(837) mapping tables to US Core DiagnosticReportfor Laboratory Results Reporting.

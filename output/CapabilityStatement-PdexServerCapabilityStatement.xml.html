@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"11.28"}
-    h3,h4,h5,h6{--heading-prefix:"11.28"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.29"}
+    h3,h4,h5,h6{--heading-prefix:"11.29"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -62,9 +62,12 @@
           <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
         </div>
 
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.22 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -119,7 +122,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.22). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -182,7 +185,7 @@
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/PdexServerCapabilityStatement&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.22&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.23&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2020-09-13&quot;/&gt;
@@ -327,7 +330,7 @@
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Coverage&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.supportedProfile">supportedProfile</a>
-                        <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage&quot;/&gt;
+                        <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction">interaction</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.interaction.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;read&quot;/&gt;
       &lt;/interaction&gt;
@@ -679,7 +682,7 @@
       &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation">operation</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;member-match&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource.operation.definition">definition</a>
-                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match&quot;/&gt;
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition/member-match&quot;/&gt;
       &lt;/operation&gt;
     &lt;/resource&gt;
     &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.rest.resource">resource</a>&gt;
@@ -850,7 +853,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.22 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 7, 2020 00:16-0400">2020-10-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

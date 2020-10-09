@@ -43,6 +43,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/PdexDevice.md                                                 | copied    | fsh/ig-data/input/pagecontent/PdexDevice.md                                                 |
 | input/pagecontent/PdexProvenance-intro.md                                       | copied    | fsh/ig-data/input/pagecontent/PdexProvenance-intro.md                                       |
 | input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         | copied    | fsh/ig-data/input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         |
+| input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    | copied    | fsh/ig-data/input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    |
 | input/pagecontent/USCoreAllergyIntolerance.md                                   | copied    | fsh/ig-data/input/pagecontent/USCoreAllergyIntolerance.md                                   |
 | input/pagecontent/USCoreCarePlan.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreCarePlan.md                                             |
 | input/pagecontent/USCoreCareTeam.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreCareTeam.md                                             |
@@ -54,12 +55,14 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/USCoreGoal.md                                                 | copied    | fsh/ig-data/input/pagecontent/USCoreGoal.md                                                 |
 | input/pagecontent/USCoreImmunization.md                                         | copied    | fsh/ig-data/input/pagecontent/USCoreImmunization.md                                         |
 | input/pagecontent/USCoreImplantableDevice.md                                    | copied    | fsh/ig-data/input/pagecontent/USCoreImplantableDevice.md                                    |
+| input/pagecontent/USCoreLaboratoryResultObservation.md                          | copied    | fsh/ig-data/input/pagecontent/USCoreLaboratoryResultObservation.md                          |
 | input/pagecontent/USCoreLocation.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreLocation.md                                             |
 | input/pagecontent/USCoreMedication.md                                           | copied    | fsh/ig-data/input/pagecontent/USCoreMedication.md                                           |
 | input/pagecontent/USCoreMedicationRequest.md                                    | copied    | fsh/ig-data/input/pagecontent/USCoreMedicationRequest.md                                    |
 | input/pagecontent/USCoreOrganization.md                                         | copied    | fsh/ig-data/input/pagecontent/USCoreOrganization.md                                         |
 | input/pagecontent/USCorePatient.md                                              | copied    | fsh/ig-data/input/pagecontent/USCorePatient.md                                              |
 | input/pagecontent/USCorePediatricBMIforAgeObservation.md                        | copied    | fsh/ig-data/input/pagecontent/USCorePediatricBMIforAgeObservation.md                        |
+| input/pagecontent/USCorePediatricHeadOccipital.md                               | copied    | fsh/ig-data/input/pagecontent/USCorePediatricHeadOccipital.md                               |
 | input/pagecontent/USCorePediatricWeightforHeightObservation.md                  | copied    | fsh/ig-data/input/pagecontent/USCorePediatricWeightforHeightObservation.md                  |
 | input/pagecontent/USCorePractitioner.md                                         | copied    | fsh/ig-data/input/pagecontent/USCorePractitioner.md                                         |
 | input/pagecontent/USCorePractitionerRole.md                                     | copied    | fsh/ig-data/input/pagecontent/USCorePractitionerRole.md                                     |

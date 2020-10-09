@@ -55,6 +55,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/
 
 An example mapping of a MedicationDispense resource is shown here for a Dispense for Over the Counter medication - Tylenol PM (NDC code) - on hold with as needed dosage with a condition, a dose Range and an Event History:
 
+[MedicationDispense Example](MedicationDispense-1000001.html)
 
 
 

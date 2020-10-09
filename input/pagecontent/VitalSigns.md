@@ -13,13 +13,28 @@
 This IG supports the full complement of US Core profiles. They are supported to 
 enable a payer to produce FHIR resources from data provided in other formats.
 
-For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) is referenced in US Core but uses the profile 
-from the base FHIR specification and does not create a US Core specific 
+For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) is referenced in US Core but uses the profile from the base FHIR specification and does not create a US Core specific 
 profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available.
 
-A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may 
-not have access to the detail measurement data needed to create a valid 
-Vital Signs resource.
+A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may not have access to the detail measurement data needed to create a valid Vital Signs resource.
+
+### Examples of Vital Signs Resources
+
+- Vital Signs Panel: Vital signs, weight, height, head circumference, oxygen saturation and BMI panel 
+- Respiratory Rate
+- Heart rate
+- Oxygen Saturation
+- Body Temperature
+- Body Height
+- Head Circumference
+- Body Weight
+- Body Mass Index
+- Blood Pressure (systolic and diastolic)
+
+See links to examples in the FHIR R4 specification here: [https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html)
+
+[https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html)
+
 
 
 [Next Page - Use Case Scenarios](UseCaseScenarios.html)

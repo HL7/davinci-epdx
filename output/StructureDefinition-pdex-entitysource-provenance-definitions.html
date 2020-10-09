@@ -46,8 +46,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"11.2"}
-    h3,h4,h5,h6{--heading-prefix:"11.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.3"}
+    h3,h4,h5,h6{--heading-prefix:"11.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -64,9 +64,12 @@
           <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
         </div>
 
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.22 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -121,7 +124,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 4" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.22). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -503,6 +506,8 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">USCoreOrganizationProfile</a> | <a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-practitioner.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner">USCorePractitionerProfile</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Must Support Types</a></td><td>No must-support rules about the choice of types/profiles</td></tr>
   <tr><td>Comments</td><td><p>whoIdentity should be used when the agent is not a Resource type.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
@@ -585,6 +590,8 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>1..1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-organization.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization">USCoreOrganizationProfile</a> | <a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-practitioner.html" title="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner">USCorePractitionerProfile</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Must Support Types</a></td><td>No must-support rules about the choice of types/profiles</td></tr>
   <tr><td>Comments</td><td><p>whoIdentity should be used when the agent is not a Resource type.</p>
 </td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
@@ -624,6 +631,7 @@
 </td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#conformance">Control</a></td><td>0..1 This element is affected by the following invariants: ele-1</td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a>(<a href="StructureDefinition-ProvenanceSourceFrom.html" title="[CanonicalType[http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom]]">ProvenanceSourceFrom</a>)  (Extension Type: <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a>)</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/conformance-rules.html#mustSupport">Must Support</a></td><td>true</td></tr>
   <tr><td>Invariants</td><td><b>Defined on this element</b><br/>
 <b title="Formal Invariant Identifier">ele-1</b>: All FHIR elements must have a @value or children (: hasValue() or (children().count() &gt; id.count()))<br/><b title="Formal Invariant Identifier">ext-1</b>: Must have either extensions or value[x], not both (: extension.exists() != value.exists())</td></tr>
   <tr><td colspan="2" class="structure"><span class="self-link-parent"><a name="Provenance.entity.extension:sourceFormat.id"> </a><span style="color: grey">45.</span> <b>Provenance.entity.extension:sourceFormat.id</b><a href="#Provenance.entity.extension:sourceFormat.id" title="link to here" class="self-link"><svg viewBox="0 0 1792 1792" width="16" class="self-link" height="16"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></span></td></tr>
@@ -765,7 +773,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.22 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 7, 2020 00:16-0400">2020-10-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

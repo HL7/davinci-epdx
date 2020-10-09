@@ -72,4 +72,4 @@ An example mapping of an implantable device resource is shown below:
 
 
 
-[Next Page - US Core Location](USCoreLocation.html)
+[Next Page - US Core Laboratory Result Observation](USCoreLaboratoryResultObservation.html)

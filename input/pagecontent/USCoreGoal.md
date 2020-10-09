@@ -20,5 +20,38 @@ unable to create from the source clinical data they have available.
 
 A valid US Core Goal profile in addition to a reference to a member, using the US Core Patient resource, will require a lifecycleStatus, a description of the goal and, optionally, a target date.
 
+#### Example Goal Resource
+
+An example mapping of a Goal resource is shown here:
+
+<pre>
+{
+  "resourceType" : "Goal",
+  "id" : "goal-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: goal-1</p><p><b>meta</b>: </p><p><b>lifecycleStatus</b>: active</p><p><b>description</b>: <span title=\"Codes: \">Patient is targeting a pulse oximetry of 92% and a weight of 195 lbs</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw , Amy V. Baxter ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: 1987-02-20</a></p><h3>Targets</h3><table class=\"grid\"><tr><td>-</td><td><b>Due[x]</b></td></tr><tr><td>*</td><td>2016-04-05</td></tr></table></div>"
+  },
+  "lifecycleStatus" : "active",
+  "description" : {
+    "text" : "Patient is targeting a pulse oximetry of 92% and a weight of 195 lbs"
+  },
+  "subject" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "target" : [
+    {
+      "dueDate" : "2016-04-05"
+    }
+  ]
+}
+
+</pre>
 
 [Next Page - US Core Immunization](USCoreImmunization.html)

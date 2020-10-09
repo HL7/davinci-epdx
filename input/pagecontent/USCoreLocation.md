@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/USCoreLocation.md                                           *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - US Core ImplantableDevice](USCoreImplantableDevice.html)
+[Previous Page - US Core Laboratory Result Observation](USCoreLaboratoryResultObservation.html)
 
 The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 

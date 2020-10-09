@@ -31,20 +31,21 @@ The essential fields to be provided in the US Core Observation resource are:
 | Observation.dataAbsentReason | dataAbsentReason | 0..1  | CodeableConcept                                                                                        |
 
 
-#### An Example Smoking Status Resource
+#### An Example BMI Age Observation Resource
 
+US Core Pediatric BMI for Age example: [http://hl7.org/fhir/us/core/Observation-pediatric-bmi-example.html](http://hl7.org/fhir/us/core/Observation-pediatric-bmi-example.html)
 <pre>
 {
   "resourceType" : "Observation",
-  "id" : "some-day-smoker",
+  "id" : "pediatric-bmi-example",
   "meta" : {
     "profile" : [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus"
+      "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age"
     ]
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: some-day-smoker</p><p><b>meta</b>: </p><p><b>status</b>: final</p><p><b>category</b>: Social History <span style=\"background: LightGoldenRodYellow\">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'social-history' = 'Social History', given as 'Social History'})</span></p><p><b>code</b>: Tobacco smoking status NHIS <span style=\"background: LightGoldenRodYellow\">(Details : {LOINC code '72166-2' = 'Tobacco smoking status NHIS', given as 'Tobacco smoking status NHIS'})</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007</a></p><p><b>issued</b>: Mar 18, 2016, 5:27:04 AM</p><p><b>value</b>: Current some day smoker <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '428041000124106' = 'Occasional tobacco smoker)</span></p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: pediatric-bmi-example</p><p><b>meta</b>: </p><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 59576-9}\">BMI</span></p><p><b>subject</b>: <a href=\"Patient-child-example.html\">Child Example. Generated Summary: id: child-example; Medical Record Number: 1032704 (USUAL); active; Child Example ; ph: 555-555-5555(HOME); gender: male; birthDate: 2016-01-15</a></p><p><b>encounter</b>: <span>GP Visit</span></p><p><b>effective</b>: 05/05/2019 5:12:29 AM</p><p><b>value</b>: 65 %</p><p><b>note</b>: CDC Males, 2-20 years Chart</p></div>"
   },
   "status" : "final",
   "category" : [
@@ -52,41 +53,44 @@ The essential fields to be provided in the US Core Observation resource are:
       "coding" : [
         {
           "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code" : "social-history",
-          "display" : "Social History"
+          "code" : "vital-signs",
+          "display" : "Vital Signs"
         }
       ],
-      "text" : "Social History"
+      "text" : "Vital Signs"
     }
   ],
   "code" : {
     "coding" : [
       {
         "system" : "http://loinc.org",
-        "code" : "72166-2",
-        "display" : "Tobacco smoking status NHIS"
+        "code" : "59576-9",
+        "display" : "Body mass index (BMI) [Percentile] Per age and sex"
       }
     ],
-    "text" : "Tobacco smoking status NHIS"
+    "text" : "BMI"
   },
   "subject" : {
-    "reference" : "Patient/example",
-    "display" : "Amy Shaw"
+    "reference" : "Patient/child-example",
+    "display" : "Child Example"
   },
-  "issued" : "2016-03-18T05:27:04Z",
-  "valueCodeableConcept" : {
-    "coding" : [
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "428041000124106"
-      }
-    ],
-    "text" : "Current some day smoker"
-  }
+  "encounter" : {
+    "display" : "GP Visit"
+  },
+  "effectiveDateTime" : "2019-05-04T12:12:29-07:00",
+  "valueQuantity" : {
+    "value" : 65,
+    "unit" : "%",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "%"
+  },
+  "note" : [
+    {
+      "text" : "CDC Males, 2-20 years Chart"
+    }
+  ]
 }
 </pre>
 
 
-
-
-[Next Page - US Core Pediatric Weight for Height Observation](USCorePediatricWeightforHeightObservation.html)
+[Next Page - US Core Pediatric Head Occipital-frontal Circumference Observation](USCorePediatricHeadOccipital.html)

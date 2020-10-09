@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "807cb74f-23f8-4fbf-84d1-51699f5c80b8-3",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/807cb74f-23f8-4fbf-84d1-51699f5c80b8-3",
+  "id" : "b1d943b7-2c20-4bff-9c16-28ceb67158a0-3",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/b1d943b7-2c20-4bff-9c16-28ceb67158a0-3",
   "name" : "IntersectionUSCoreImplantableDeviceProfileAndPdexDevice",
   "title" : "Intersection of US Core Implantable Device Profile And PDex Device",
   "status" : "active",
-  "date" : "2020-10-07T00:17:08-04:00",
+  "date" : "2020-10-09T02:30:13-04:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -711,7 +711,7 @@
       "short" : "active | inactive | entered-in-error | unknown",
       "definition" : "Status of the Device availability.",
       "comment" : "This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "code"
@@ -724,7 +724,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : true,
       "isSummary" : true,
       "binding" : {
