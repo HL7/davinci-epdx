@@ -5,23 +5,37 @@ The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-u
 The essential fields in the Patient profile are:
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name           | R4 Name           | Card. | Type            |
-|--------------------------------|-------------------|-------|-----------------|
-| Patient                        | Patient           | 0..*  |                 |
-| Patient.id                     | id                | 0..1  | id              |
-| Patient.us-core-race           | us-core-race      | 0..1  | (Complex)       |
-| Patient.us-core-ethnicity      | us-core-ethnicity | 0..1  | (Complex)       |
-| Patient.us-core-birthsex       | us-core-birthsex  | 0..1  | code            |
-| Patient.identifier             | identifier        | 1..*  | Identifier      |
-| Patient.identifier.system      | system            | 1..1  | uri             |
-| Patient.identifier.value       | value             | 1..1  | string          |
-| Patient.name                   | name              | 1..*  | HumanName       |
-| Patient.name.family            | family            | 1..1  | string          |
-| Patient.name.given             | given             | 1..*  | string          |
-| Patient.gender                 | gender            | 1..1  | code            |
-| Patient.birthDate              | birthDate         | 0..1  | date            |
-| Patient.communication          | communication     | 0..*  | BackboneElement |
-| Patient.communication.language | language          | 1..1  | CodeableConcept |
+| US Core Element                 | MustSupport | CPCDS Element Mapping                                                                  |
+|---------------------------------|:-------------:|----------------------------------------------------------------------------------------|
+|  Patient.meta.lastUpdated       |             | [{"163":"Member Demographics Last Updated Date"}]                                      |
+|  Patient.us-core-race           |      S      | [{"128":"Race Code"}]                                                                  |
+|  Patient.us-core-ethnicity      |      S      | [{"129":"Ethnicity"}]                                                                  |
+|  Patient.us-core-birthsex       |      S      | [{"153":"Birth Sex"}]                                                                  |
+|  Patient.identifier             |      S      | [{"1":"Member id"}, {"109":"Patient account number"}, {"110":"Medical record number"}] |
+|  Patient.identifier.system      |      S      |                                                                                        |
+|  Patient.identifier.value       |      S      |                                                                                        |
+|  Patient.name                   |      S      | [{"130":"Patient Name"}]                                                               |
+|  Patient.name.family            |      S      |                                                                                        |
+|  Patient.name.given             |      S      |                                                                                        |
+|  Patient.telecom                |      S      |                                                                                        |
+|  Patient.telecom.system         |      S      |                                                                                        |
+|  Patient.telecom.value          |      S      |                                                                                        |
+|  Patient.telecom.use            |      S      |                                                                                        |
+|  Patient.gender                 |      S      | [{"71":"Gender code"}]                                                                 |
+|  Patient.birthDate              |      S      | [{"70":"Date of birth"}]                                                               |
+|  Patient.deceasedBoolean        |             | [{"150":"Deceased"}]                                                                   |
+|  Patient.deceasedDateTime       |             | [{"124":"Date of death"}]                                                              |
+|  Patient.address                |      S      |                                                                                        |
+|  Patient.address.line           |      S      | [{"158":"Street Address"}]                                                             |
+|  Patient.address.city           |      S      |                                                                                        |
+|  Patient.address.district       |             | [{"125":"County"}]                                                                     |
+|  Patient.address.state          |      S      | [{"126":"State"}]                                                                      |
+|  Patient.address.postalCode     |      S      | [{"131":"Zip"}]                                                                        |
+|  Patient.address.country        |             | [{"127":"Country"}]                                                                    |
+|  Patient.address.period         |      S      |                                                                                        |
+|  Patient.communication          |      S      |                                                                                        |
+|  Patient.communication.language |      S      |                                                                                        |
+
 
 The Member Number will be entered in the ***identifier** field. The code **MB**  **SHALL** be used to identify the member identifier.  See the example below:
 

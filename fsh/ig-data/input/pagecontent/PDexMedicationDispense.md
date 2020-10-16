@@ -18,28 +18,19 @@ The essential fields to be provided in the MedicationDispense resource are:
 
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispence profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance  to implementers:
 
-| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor             | FHIR Profile              | Profile Field                                                          | ValueSet                                                | Notes                          |
-|------|-------------------|------------------|-----------------------------|---------------------------|------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------|
-| 1.3  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)          | Patientid                   | MedicationDispense        | .subject                                                               |                                                         | Reference(Patient)             |
-| 1.1  | Claim-Pharmacy    |  N/A                | Days supply                 | MedicationDispense        | .daysSupply                                                            |                                                         |                                |
-| 2.1  | Claim-Pharmacy    |  N/A                | RX service reference number | MedicationDispense        | .identifier                                                            |                                                         |                                |
-| 4.1  | Claim-Pharmacy    |   N/A               | Refill number               | MedicationDispense        | .type                                                                  | http://hl7.org/fhir/R4/v3/ActPharmacySupplyType/vs.html | Calculate First Fill or Refill |
-| 7.1  | Claim-Line        |  N/A                | Number of units             | MedicationDispense        |                                                                        |                                                         |                                |
-| 9.1  | Claim-Line        |  N/A                | National drug code          | MedicationDispense        | .medication.medcationCodeeableConcept                                  |                                                         | SNOMED CT Code                 |
-| 10.1 | Claim-Line        |  N/A                | Compound code               | MedicationDispense        | .medication.medcationReference(Medication)                             |                                                         |                                |
-| 11.1 | Claim-Line        |  N/A                | Quantity dispensed          | MedicationDispense        | .quantity                                                              |                                                         |                                |
-| 12.1 | Claim-Line        |  N/A                | Quantity qualifier code     | MedicationDispense        | .category                                                              |                                                         |                                |
-| 5.1  | Claim-Pharmacy    |  N/A                | Prescription origin code    | US Core MedicationRequest | .authorizingPrescription.Reference(MedicationRequest).identifier.value |                                                         |                                |
+| US Core Element                        | MustSupport | CPCDS Element Mapping                                                                                                                                                                                  |
+|----------------------------------------|:-------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MedicationDispense.meta.lastUpdated    |             | [{"163":"EOB Last Updated Date"}]                                                                                                                                                                      |
+| MedicationDispense.identifier          |             | [{"35":"RX service reference number"}]                                                                                                                                                                 |
+| MedicationDispense.status              |      S      | [{"140":"Claim processing status code "}]                                                                                                                                                              |
+| MedicationDispense.medicationReference |             | [{"79":"NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&system=sdo"}, {"38, 78":"National drug code Compound Code"}] |
+| MedicationDispense.subject             |      S      | [{"Ref (1)":"Member id"}                                                                                                                                                                               |
+| MedicationDispense.performer.function  |             | [{"165":"Care Team Roile (Value pcpc\|Prescribing)"}]                                                                                                                                                  |
+| MedicationDispense.performer.actor     |             | [{"Ref(96,122)":"Provider NPIs"}, {"Ref(169,172)":"Provider Names"}                                                                                                                                    |
+| MedicationDispense.quantity            |             | [{"39151":"Quantity dispensed \| Quantity Qualifier Code"}]                                                                                                                                            |
+| MedicationDispense.daysSupply          |             | [{"77":"Days supply"}]                                                                                                                                                                                 |
+| MedicationDispense.whenHandedOver      |             | [{"90":"Service (from) date"}]                                                                                                                                                                         |
 
-
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
-https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/
 
 #### Example MedicationDispense Resource
 

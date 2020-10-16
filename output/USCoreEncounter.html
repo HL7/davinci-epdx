@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Encounter</h2>
   
 
@@ -167,381 +167,120 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     }
 </style>
 
-<table>
-  <thead>
-    <tr>
-      <th>Line</th>
-      <th>PayerSourceRecord</th>
-      <th>CMS BB 2.0 Field</th>
-      <th>Data Descriptor</th>
-      <th>FHIR Profile</th>
-      <th>Profile Field</th>
-      <th>ValueSet</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.5</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_id">BENE_ID</a></td>
-      <td>Patientid</td>
-      <td>US Core Encounter</td>
-      <td>.subject</td>
-      <td> </td>
-      <td>Reference(Patient)</td>
-    </tr>
-    <tr>
-      <td>1.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim service start date</td>
-      <td>US Core Encounter</td>
-      <td>.period.start</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>2.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim service end date</td>
-      <td>US Core Encounter</td>
-      <td>.period.end</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>5.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Member admission date</td>
-      <td>US Core Encounter</td>
-      <td>.period.start</td>
-      <td> </td>
-      <td>Overrides claim service start date</td>
-    </tr>
-    <tr>
-      <td>6.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Member discharge date</td>
-      <td>US Core Encounter</td>
-      <td>.period.end</td>
-      <td> </td>
-      <td>Overrides claim service end date</td>
-    </tr>
-    <tr>
-      <td>7.2</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Patient account number</td>
-      <td>US Core Encounter</td>
-      <td>.subject</td>
-      <td> </td>
-      <td>Reference(Patient)</td>
-    </tr>
-    <tr>
-      <td>9.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim unique identifier</td>
-      <td>US Core Encounter</td>
-      <td>.identifier.id</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>12.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim diagnosis related group</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.id</td>
-      <td> </td>
-      <td>.diagnosis.use</td>
-    </tr>
-    <tr>
-      <td>13.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim inpatient source admission code</td>
-      <td>US Core Encounter</td>
-      <td>.class</td>
-      <td>http://build.fhir.org/v3/ActEncounterCode/vs.html</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>14.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Claim inpatient admission type code</td>
-      <td>US Core Encounter</td>
-      <td>.type</td>
-      <td>https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-us-core-encounter-type.html</td>
-      <td>CPT Coding</td>
-    </tr>
-    <tr>
-      <td>21.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Patient discharge status code</td>
-      <td>US Core Encounter</td>
-      <td>.hospitalization.dischargeDisposition</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>2.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Line number</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.id</td>
-      <td> </td>
-      <td>Without Claim Identifier Claim Line is Not relevant or useful. Hence, .diagnosis.id does not need to be used.</td>
-    </tr>
-    <tr>
-      <td>3.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Service to date</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.condition.Reference(Procedure).occurence.occurrencePeriod.end</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>4.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Type of service</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.condition.Reference(Procedure).type</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>5.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Place of service code</td>
-      <td>US Core Encounter</td>
-      <td>.location.location.Reference(Location).type</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>1.1</td>
-      <td>Diagnosis</td>
-      <td>N/A</td>
-      <td>Diagnosis code</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.condition</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>2.1</td>
-      <td>Diagnosis</td>
-      <td>N/A</td>
-      <td>Present on admission</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.condition</td>
-      <td>http://build.fhir.org/valueset-diagnosis-role.html</td>
-      <td>.diagnosis.use</td>
-    </tr>
-    <tr>
-      <td>3.1</td>
-      <td>Diagnosis</td>
-      <td>N/A</td>
-      <td>Diagnosis code type</td>
-      <td>US Core Encounter</td>
-      <td>.diagnosis.condition.Reference(Condition).code</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
 <p>When populating the encounter resource period - if claim has period, populate period; if only a date, populate the end date in a period element.</p>
 
 <p>Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.</p>
 
-<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
-
-<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
-
-<p>The minimum fields to be provided in the US Core Encounter resource are:</p>
+<p>The minimum fields to be provided in the US Core Encounter resource are:
+Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below.</p>
 
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Card.</th>
-      <th>Type</th>
-      <th> </th>
+      <th>US Core Element</th>
+      <th style="text-align: center">MustSupport</th>
+      <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Encounter</td>
-      <td>Encounter</td>
-      <td>0..*</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.id</td>
-      <td>id</td>
-      <td>0..1</td>
-      <td>id</td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.identifier</td>
-      <td>identifier</td>
-      <td>0..*</td>
-      <td>Identifier</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“35”:”Payer claim unique identifier”}]</td>
     </tr>
     <tr>
       <td>Encounter.identifier.system</td>
-      <td>system</td>
-      <td>1..1</td>
-      <td>uri</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.identifier.value</td>
-      <td>value</td>
-      <td>1..1</td>
-      <td>string</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.status</td>
-      <td>status</td>
-      <td>1..1</td>
-      <td>code</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“140”:”Claim processing status code “}]</td>
     </tr>
     <tr>
       <td>Encounter.class</td>
-      <td>class</td>
-      <td>1..1</td>
-      <td>Coding</td>
+      <td style="text-align: center">S</td>
       <td> </td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.period</td>
+      <td style="text-align: center"> </td>
+      <td>[{“18, 19”:”Member Admission Date Member Discharge Date”}</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
-      <td>type</td>
-      <td>1..*</td>
-      <td>CodeableConcept</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“16”:”Claim type”}]</td>
     </tr>
     <tr>
       <td>Encounter.subject</td>
-      <td>subject</td>
-      <td>1..1</td>
-      <td>Reference(US Core Patient Profile)</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“Ref (1)”:”Member id”}, {“Ref (109)”:”Patient account number”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Encounter.participant</td>
-      <td>participant</td>
-      <td>0..*</td>
-      <td>BackboneElement</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“Ref (93, 96, 98, 99, 173)”:”Provider attending, PCP, operating, refering and supervising NPIs”}, {“Ref (166, 169, 182, 171, 174)”:”Provider attending, PCP, operating, refering and supervising names”}</td>
     </tr>
     <tr>
       <td>Encounter.participant.type</td>
-      <td>type</td>
-      <td>0..*</td>
-      <td>CodeableConcept</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.participant.period</td>
-      <td>period</td>
-      <td>0..1</td>
-      <td>Period</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.participant.individual</td>
-      <td>individual</td>
-      <td>0..1</td>
-      <td>Reference(US Core Practitioner Profile)</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.period</td>
-      <td>period</td>
-      <td>0..1</td>
-      <td>Period</td>
+      <td style="text-align: center">S</td>
+      <td>[{“18, 19”:”Member Admission Date Member Discharge Date”}</td>
+    </tr>
+    <tr>
+      <td>Encounter.length</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.reasonCode</td>
-      <td>reasonCode</td>
-      <td>0..*</td>
-      <td>CodeableConcept</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.diagnosis</td>
-      <td>diagnosis</td>
-      <td>0..*</td>
-      <td>BackboneElement</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.diagnosis.condition</td>
-      <td>condition</td>
-      <td>1..1</td>
-      <td>Reference(US Core Condition Profile</td>
-      <td>US Core Procedure Profile)</td>
-    </tr>
-    <tr>
-      <td>Encounter.diagnosis.rank</td>
-      <td>rank</td>
-      <td>0..1</td>
-      <td>positiveInt</td>
-      <td> </td>
+      <td style="text-align: center"> </td>
+      <td>[{“33, 32, 113”:”Claim diagnosis related group (DRG), including the code system, the DRG version and the code value”}, {“21, 22, 23, 30, 31, 145”:”Diagnosis Code, Description”}, {“28, 29”:”Present on admission”}</td>
     </tr>
     <tr>
       <td>Encounter.hospitalization</td>
-      <td>hospitalization</td>
-      <td>0..1</td>
-      <td>BackboneElement</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.hospitalization.dischargeDisposition</td>
-      <td>dischargeDisposition</td>
-      <td>0..1</td>
-      <td>CodeableConcept</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.location</td>
-      <td>location</td>
-      <td>0..*</td>
-      <td>BackboneElement</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.location.location</td>
-      <td>location</td>
-      <td>1..1</td>
-      <td>Reference(US Core Location Profile)</td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
   </tbody>
@@ -619,7 +358,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -12,48 +12,25 @@
 
 The (Coverage resource)[http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html] is profiled in the Da Vinci HRex IG. 
 
-The minimum fields to be provided in the Coverage resource are:
-
 {% include style_insert_table_blue.html %}
-
-| R4 Hierarchical Name                      | R4 Name     | Card. | Type                                             |
-|-------------------------------------------|-------------|-------|--------------------------------------------------|
-| Coverage                                  | Coverage    |       | DomainResource                                   |
-| Coverage.identifier                       | identifier  | 0..*  | Identifier                                       |
-| Coverage.status                           | status      | 0..1  | code                                             |
-| Coverage.beneficiary                      | beneficiary | 0..1  | Reference(Patient)                               |
-| Coverage.payor                            | payor       | 0..*  | Reference(Organization| Patient | RelatedPerson) |
-| Coverage.class                            | class       | 0..*  | BackboneElement                                  |
-| Coverage.class.type                       | type        | 1..1  | Coding                                           |
-| Coverage.class.value                      | value       | 1..1  | string                                           |
-| Coverage.costToBeneficiary.value[x]       | value[x]    | 1..1  |                                                  |
-| Coverage.costToBeneficiary.exception.type | type        | 1..1  | CodeableConcept                                  |
 
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
 
-| Line | Payer Source Record | Payer Source Field | Data Descriptor             | FHIR Profile | Profile Field | ValueSet                                              | Notes                   |
-|------|-------------------|--------------------|----------------------------|--------------|---------------|-------------------------------------------------------|-------------------------|
-| 1.2  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)            | Patientid                  | Coverage     | .identifier  |                                                       | Reference(Patient)      |
-| 12.1 | Member            | [REL_CD](https://bluebutton.cms.gov/resources/variables/rel_cd)             | relationship to subscriber | Coverage     | .relationship |                                                       |                         |
-| 13.1 | Member            |  N/A                  | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
-| 1.1  | Coverage          |  N/A                  | subscriber id              | Coverage     | .subscriberId |                                                       |                         |
-| 2.1  | Coverage          | N/A                   | Coverage type              | Coverage     | .type  | http://hl7.org/fhir/ValueSet/coverage-type |    |
-| 3.1  | Coverage          |  N/A                  | Coverage status            | Coverage     | .status       | https://www.hl7.org/fhir/codesystem-fm-status.html    |                         |
-| 4.1  | Coverage          | N/A                   | Start date                 | Coverage     | period.start  |                                                       |                         |
-| 5.1  | Coverage          |  N/A                  | End date                   | Coverage     | period.end    |                                                       |                         |
-| 6.1  | Coverage          |  N/A                  | Group id                   | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="group"     |
-| 7.1  | Coverage          | N/A                   | Group name                 | Coverage     | class.name    |                                                       |                         |
-| 8.1  | Coverage          |  N/A                  | Plan                       | Coverage     | class.value   | https://www.hl7.org/fhir/valueset-coverage-class.html | .class.type="plan"      |
-| 9.1  | Coverage          | N/A                   | Payer                      | Coverage     | .payor        |                                                       | Reference(Organization) |
+| US Core Element           | MustSupport | CPCDS Element Mapping                                     |
+|---------------------------|:-------------:|-----------------------------------------------------------|
+| Coverage.meta.lastUpdated |             | [{"163":"Coverage Last Updated Date"}]                    |
+| Coverage.identifier       |      S      |                                                           |
+| Coverage.status           |             | [{"133":"Coverage status"}]                               |
+| Coverage.subscriberId     |      S      | [{"132":"Subscriber id"}]                                 |
+| Coverage.beneficiary      |      S      | [{"Ref (1)":"Member id"}                                  |
+| Coverage.relationship     |             | [{"72":"Relationship to subscriber"}]                     |
+| Coverage.payor            |      S      | [{"Ref (2) ":"Claim Payer Identifier"}                    |
+| Coverage.class.value      |             | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |
+| Coverage.class.name       |             | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
 
 
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-https://bluebutton.cms.gov/resources/variables/bene_id/
 
 SubscriberId may not uniquely identify a health plan member. 
 If beneficiary is subscriber, also set .relationship to "self".
