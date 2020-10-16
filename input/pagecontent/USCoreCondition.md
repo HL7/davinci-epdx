@@ -13,15 +13,16 @@
 The essential fields to be provided in the US Core Condition resource are:
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name         | R4 Name            | Card. | Type                               |
-|------------------------------|--------------------|-------|------------------------------------|
-| Condition                    | Condition          | 0..*  |                                    |
-| Condition.id                 | id                 | 0..1  | id                                 |
-| Condition.clinicalStatus     | clinicalStatus     | 0..1  | CodeableConcept                    |
-| Condition.verificationStatus | verificationStatus | 1..1  | CodeableConcept                    |
-| Condition.category           | category           | 1..*  | CodeableConcept                    |
-| Condition.code               | code               | 1..1  | CodeableConcept                    |
-| Condition.subject            | subject            | 1..1  | Reference(US Core Patient Profile) |
+| US Core Element                   | MustSupport | CPCDS Element Mapping                                                                                                                          |
+|-----------------------------------|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Condition.meta.lastUpdated        |             | [{"163":"Member Demographics Last Updated Date"}]                                                                                              |
+| Condition.clinicalStatus          |      S      |                                                                                                                                                |
+| Condition.verificationStatus      |      S      |                                                                                                                                                |
+| Condition.category                |      S      |                                                                                                                                                |
+| Condition.code                    |      S      | [{"22, 23, 145":"Diagnosis Code, Description"}                                                                                                 |
+| Condition.subject                 |      S      | [{"Ref (1)":"Member id"}                                                                                                                       |
+| Condition.abatementRange.recorder |             | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
+
 
 #### Example Condition Resource
 

@@ -13,11 +13,11 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and reference them in your ballot submission implementation guide.</p>\n<p>This guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection.</p>\n<p><a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n</div></div>"
   ];
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"];
-  fhir:ImplementationGuide.version [ fhir:value "0.1.23"];
+  fhir:ImplementationGuide.version [ fhir:value "0.1.24"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-10-09T02:30:03-04:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-10-16T02:34:00-04:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -308,10 +308,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-hrex-coverage.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage>;
@@ -326,10 +322,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-pdex-device.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device>;
@@ -344,10 +336,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-pdex-entitysource-provenance.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance>;
@@ -362,10 +350,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-pdex-medicationdispense.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense>;
@@ -380,10 +364,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-DispenseRefill.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill>;
@@ -398,10 +378,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "StructureDefinition-ProvenanceSourceFrom.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>;
@@ -416,10 +392,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "ValueSet-FDANationalDrugCode.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode>;
@@ -434,10 +406,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "ValueSet-ProvenanceAgentType.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType>;
@@ -452,10 +420,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "ValueSet-ProvenancePayerSourceFormat.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat>;
@@ -470,10 +434,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "CodeSystem" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "CodeSystem-IdentifierTypeCS.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/IdentifierTypeCS>;
@@ -488,10 +448,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "CodeSystem" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "CodeSystem-ProvenanceAgentRoleType.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType>;
@@ -506,10 +462,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "CodeSystem" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "CodeSystem-ProvenancePayerDataSource.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>;
@@ -524,10 +476,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Patient" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Patient-1.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Patient/1>;
@@ -542,10 +490,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "MedicationDispense-1000001.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001>;
@@ -563,10 +507,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Provenance-1000001.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000001>;
@@ -584,10 +524,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Provenance-1000002.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000002>;
@@ -605,10 +541,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Provenance-1000003.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000003>;
@@ -626,10 +558,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Provenance-1000004.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000004>;
@@ -647,10 +575,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Provenance" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Provenance-1000005.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Provenance/1000005>;
@@ -668,10 +592,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Organization" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Organization-2.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
@@ -686,10 +606,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Bundle-2000002.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Bundle/2000002>;
@@ -704,10 +620,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Organization" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Organization-3.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/3>;
@@ -722,10 +634,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Bundle-3000002.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Bundle/3000002>;
@@ -740,10 +648,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Practitioner" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Practitioner-4.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4>;
@@ -758,10 +662,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Location" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Location-5.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Location/5>;
@@ -776,10 +676,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Device" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Device-543210.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Device/543210>;
@@ -797,10 +693,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Encounter" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Encounter-6.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Encounter/6>;
@@ -815,10 +707,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Encounter" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "Encounter-7.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/Encounter/7>;
@@ -833,10 +721,6 @@
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "CapabilityStatement" ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/implementationguide-page" ];
-         fhir:Extension.valueUri [ fhir:value "CapabilityStatement-PdexServerCapabilityStatement.html" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/PdexServerCapabilityStatement>;

@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>PDex MedicationDispense</h2>
   
 
@@ -225,128 +225,64 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>Line</th>
-      <th>PayerSourceRecord</th>
-      <th>CMS BB 2.0 Field</th>
-      <th>Data Descriptor</th>
-      <th>FHIR Profile</th>
-      <th>Profile Field</th>
-      <th>ValueSet</th>
-      <th>Notes</th>
+      <th>US Core Element</th>
+      <th style="text-align: center">MustSupport</th>
+      <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1.3</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_id">BENE_ID</a></td>
-      <td>Patientid</td>
-      <td>MedicationDispense</td>
-      <td>.subject</td>
-      <td> </td>
-      <td>Reference(Patient)</td>
+      <td>MedicationDispense.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td>[{“163”:”EOB Last Updated Date”}]</td>
     </tr>
     <tr>
-      <td>1.1</td>
-      <td>Claim-Pharmacy</td>
-      <td>N/A</td>
-      <td>Days supply</td>
-      <td>MedicationDispense</td>
-      <td>.daysSupply</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.identifier</td>
+      <td style="text-align: center"> </td>
+      <td>[{“35”:”RX service reference number”}]</td>
     </tr>
     <tr>
-      <td>2.1</td>
-      <td>Claim-Pharmacy</td>
-      <td>N/A</td>
-      <td>RX service reference number</td>
-      <td>MedicationDispense</td>
-      <td>.identifier</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.status</td>
+      <td style="text-align: center">S</td>
+      <td>[{“140”:”Claim processing status code “}]</td>
     </tr>
     <tr>
-      <td>4.1</td>
-      <td>Claim-Pharmacy</td>
-      <td>N/A</td>
-      <td>Refill number</td>
-      <td>MedicationDispense</td>
-      <td>.type</td>
-      <td>http://hl7.org/fhir/R4/v3/ActPharmacySupplyType/vs.html</td>
-      <td>Calculate First Fill or Refill</td>
+      <td>MedicationDispense.medicationReference</td>
+      <td style="text-align: center"> </td>
+      <td>[{“79”:”NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&amp;system=sdo”}, {“38, 78”:”National drug code Compound Code”}]</td>
     </tr>
     <tr>
-      <td>7.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Number of units</td>
-      <td>MedicationDispense</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.subject</td>
+      <td style="text-align: center">S</td>
+      <td>[{“Ref (1)”:”Member id”}</td>
     </tr>
     <tr>
-      <td>9.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>National drug code</td>
-      <td>MedicationDispense</td>
-      <td>.medication.medcationCodeeableConcept</td>
-      <td> </td>
-      <td>SNOMED CT Code</td>
+      <td>MedicationDispense.performer.function</td>
+      <td style="text-align: center"> </td>
+      <td>[{“165”:”Care Team Roile (Value pcpc|Prescribing)”}]</td>
     </tr>
     <tr>
-      <td>10.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Compound code</td>
-      <td>MedicationDispense</td>
-      <td>.medication.medcationReference(Medication)</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.performer.actor</td>
+      <td style="text-align: center"> </td>
+      <td>[{“Ref(96,122)”:”Provider NPIs”}, {“Ref(169,172)”:”Provider Names”}</td>
     </tr>
     <tr>
-      <td>11.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Quantity dispensed</td>
-      <td>MedicationDispense</td>
-      <td>.quantity</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.quantity</td>
+      <td style="text-align: center"> </td>
+      <td>[{“39151”:”Quantity dispensed | Quantity Qualifier Code”}]</td>
     </tr>
     <tr>
-      <td>12.1</td>
-      <td>Claim-Line</td>
-      <td>N/A</td>
-      <td>Quantity qualifier code</td>
-      <td>MedicationDispense</td>
-      <td>.category</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.daysSupply</td>
+      <td style="text-align: center"> </td>
+      <td>[{“77”:”Days supply”}]</td>
     </tr>
     <tr>
-      <td>5.1</td>
-      <td>Claim-Pharmacy</td>
-      <td>N/A</td>
-      <td>Prescription origin code</td>
-      <td>US Core MedicationRequest</td>
-      <td>.authorizingPrescription.Reference(MedicationRequest).identifier.value</td>
-      <td> </td>
-      <td> </td>
+      <td>MedicationDispense.whenHandedOver</td>
+      <td style="text-align: center"> </td>
+      <td>[{“90”:”Service (from) date”}]</td>
     </tr>
   </tbody>
 </table>
-
-<p>Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
-
-<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
 <h4 id="example-medicationdispense-resource">Example MedicationDispense Resource</h4>
 
@@ -379,7 +315,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

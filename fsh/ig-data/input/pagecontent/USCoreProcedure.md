@@ -5,42 +5,21 @@ The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition
 The essential fields to be provided in the US Core Procedure resource are:
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name      | R4 Name      | Card. | Type                                                                                         |
-|---------------------------|--------------|-------|----------------------------------------------------------------------------------------------|
-| Procedure                 | Procedure    | 0..*  |                                                                                              |
-| Procedure.id              | id           | 0..1  | id                                                                                           |
-| Procedure.status          | status       | 1..1  | code                                                                                         |
-| Procedure.code            | code         | 1..1  | CodeableConcept                                                                              |
-| Procedure.subject         | subject      | 1..1  | Reference(US Core Patient Profile)                                                           |
-| Procedure.performed[x]    | performed[x] | 1..1  | dateTime, Period                                                                             |
-| Procedure.performer.actor | actor        | 1..1  | Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device) |
 
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
 
-| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor     | FHIR Profile      | Profile Field                     | ValueSet | Notes              |
-|------|-------------------|------------------|---------------------|-------------------|-----------------------------------|----------|--------------------|
-| 1.4  | Member            | [BENE_ID](https://bluebutton.cms.gov/resources/variables/bene_id)          | Patientid           | US Core Procedure | .subject                          |          | Reference(Patient) |
-| 1.1  | Claim-Line        | N/A                 | Service (from) date | US Core Procedure | .occurence.occurrencePeriod.start |          |                    |
-| 1.1  | Procedure         | N/A                 | Procedure code      | US Core Procedure | .code                             |          |                    |
-| 2.1  | Procedure         | N/A                 | Procedure date      | US Core Procedure | .performed.dateTime               |          |                    |
-| 3.1  | Procedure         | N/A                 | Procedure code type | US Core Procedure | .category                         |          |                    |
-| 4.1  | Procedure         | N/A                 | Procedure type      | US Core Procedure | .code.coding.system               |          |                    |
-| 5.1  | Procedure         | N/A                 | Modifier Code -1    | US Core Procedure | .modifierExtension                |          |                    |
-| 6.1  | Procedure         | N/A                 | Modifier Code -2    | US Core Procedure | .modifierExtension                |          |                    |
-| 7.1  | Procedure         | N/A                 | Modifier Code -3    | US Core Procedure | .modifierExtension                |          |                    |
-| 8.1  | Procedure         | N/A                 | Modifier Code -4    | US Core Procedure | .modifierExtension                |          |                    |
-
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
-https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/
-
+| US Core Element             | MustSupport | CPCDS Element Mapping                                                                                   |
+|-----------------------------|:-----------:|---------------------------------------------------------------------------------------------------------|
+|  Procedure.meta.lastUpdated |             | [{"163":"EOB Last Updated Date"}]                                                                       |
+|  Procedure.identifier       |             | [{"35":"Payer claim unique identifier"}]                                                                |
+|  Procedure.status           |      S      |                                                                                                         |
+|  Procedure.code             |      S      |                                                                                                         |
+|  Procedure.subject          |      S      | [{"Ref (1)":"Member id"}, {"Ref (109)":"Patient account number"}, {"Ref (110)":"Medical record number"} |
+|  Procedure.performed[x]     |      S      |                                                                                                         |
+|  Procedure.performedPeriod  |             | [{"25, 27":"Procedure date"}                                                                            |
+|  Procedure.reasonCode       |             | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
 
 #### Example Procedure Resource
 

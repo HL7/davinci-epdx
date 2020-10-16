@@ -34,11 +34,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.1.23"/>
+  <version value="0.1.24"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-10-09T02:30:03-04:00"/>
+  <date value="2020-10-16T02:34:00-04:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -233,9 +233,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-hrex-coverage.html"/>
-      </extension>
       <reference>
         <reference value="StructureDefinition/hrex-coverage"/>
       </reference>
@@ -246,9 +243,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-device.html"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/pdex-device"/>
@@ -261,9 +255,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-entitysource-provenance.html"/>
-      </extension>
       <reference>
         <reference value="StructureDefinition/pdex-entitysource-provenance"/>
       </reference>
@@ -274,9 +265,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-pdex-medicationdispense.html"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/pdex-medicationdispense"/>
@@ -289,9 +277,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-DispenseRefill.html"/>
-      </extension>
       <reference>
         <reference value="StructureDefinition/DispenseRefill"/>
       </reference>
@@ -302,9 +287,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="StructureDefinition-ProvenanceSourceFrom.html"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/ProvenanceSourceFrom"/>
@@ -317,9 +299,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-FDANationalDrugCode.html"/>
-      </extension>
       <reference>
         <reference value="ValueSet/FDANationalDrugCode"/>
       </reference>
@@ -330,9 +309,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-ProvenanceAgentType.html"/>
       </extension>
       <reference>
         <reference value="ValueSet/ProvenanceAgentType"/>
@@ -345,9 +321,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="ValueSet-ProvenancePayerSourceFormat.html"/>
-      </extension>
       <reference>
         <reference value="ValueSet/ProvenancePayerSourceFormat"/>
       </reference>
@@ -358,9 +331,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-IdentifierTypeCS.html"/>
       </extension>
       <reference>
         <reference value="CodeSystem/IdentifierTypeCS"/>
@@ -373,9 +343,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-ProvenanceAgentRoleType.html"/>
-      </extension>
       <reference>
         <reference value="CodeSystem/ProvenanceAgentRoleType"/>
       </reference>
@@ -386,9 +353,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CodeSystem-ProvenancePayerDataSource.html"/>
       </extension>
       <reference>
         <reference value="CodeSystem/ProvenancePayerDataSource"/>
@@ -401,9 +365,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Patient-1.html"/>
-      </extension>
       <reference>
         <reference value="Patient/1"/>
       </reference>
@@ -414,9 +375,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MedicationDispense"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="MedicationDispense-1000001.html"/>
       </extension>
       <reference>
         <reference value="MedicationDispense/1000001"/>
@@ -429,9 +387,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Provenance-1000001.html"/>
-      </extension>
       <reference>
         <reference value="Provenance/1000001"/>
       </reference>
@@ -442,9 +397,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Provenance-1000002.html"/>
       </extension>
       <reference>
         <reference value="Provenance/1000002"/>
@@ -457,9 +409,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Provenance-1000003.html"/>
-      </extension>
       <reference>
         <reference value="Provenance/1000003"/>
       </reference>
@@ -470,9 +419,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Provenance-1000004.html"/>
       </extension>
       <reference>
         <reference value="Provenance/1000004"/>
@@ -485,9 +431,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Provenance"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Provenance-1000005.html"/>
-      </extension>
       <reference>
         <reference value="Provenance/1000005"/>
       </reference>
@@ -498,9 +441,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Organization-2.html"/>
       </extension>
       <reference>
         <reference value="Organization/2"/>
@@ -513,9 +453,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Bundle-2000002.html"/>
-      </extension>
       <reference>
         <reference value="Bundle/2000002"/>
       </reference>
@@ -526,9 +463,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Organization-3.html"/>
       </extension>
       <reference>
         <reference value="Organization/3"/>
@@ -541,9 +475,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Bundle-3000002.html"/>
-      </extension>
       <reference>
         <reference value="Bundle/3000002"/>
       </reference>
@@ -554,9 +485,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Practitioner"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Practitioner-4.html"/>
       </extension>
       <reference>
         <reference value="Practitioner/4"/>
@@ -569,9 +497,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Location"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Location-5.html"/>
-      </extension>
       <reference>
         <reference value="Location/5"/>
       </reference>
@@ -582,9 +507,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Device-543210.html"/>
       </extension>
       <reference>
         <reference value="Device/543210"/>
@@ -597,9 +519,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Encounter-6.html"/>
-      </extension>
       <reference>
         <reference value="Encounter/6"/>
       </reference>
@@ -611,9 +530,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Encounter"/>
       </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="Encounter-7.html"/>
-      </extension>
       <reference>
         <reference value="Encounter/7"/>
       </reference>
@@ -624,9 +540,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-        <valueUri value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
       </extension>
       <reference>
         <reference value="CapabilityStatement/PdexServerCapabilityStatement"/>

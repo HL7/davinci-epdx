@@ -12,19 +12,19 @@
 
 Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource.
 
-The essential fields to be provided in the CareTeam resource are:
+The essential fields to be provided in the CareTeam resource from the CPCDS file are:
 
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name        | R4 Name     | Flags | Card. | Type                                                                                                             |
-|-----------------------------|-------------|-------|-------|------------------------------------------------------------------------------------------------------------------|
-| CareTeam                    | CareTeam    | I     | 0..*  |                                                                                                                  |
-| CareTeam.id                 | id          |      | 0..1  | id                                                                                                               |
-| CareTeam.status             | status      | ?!S  | 1..1  | code                                                                                                             |
-| CareTeam.subject            | subject     | S    | 1..1  | Reference(US Core Patient Profile)                                                                               |
-| CareTeam.participant        | participant | SI    | 1..*  | BackboneElement                                                                                                  |
-| CareTeam.participant.role   | role        | S    | 1..1  | CodeableConcept                                                                                                  |
-| CareTeam.participant.member | member      | S    | 1..1  | Reference(US Core Patient Profile | US Core Practitioner Profile | US Core Organization Profile | RelatedPerson) |
+| US Core Element           | MustSupport | CPCDS Element Mapping                                                                                                                                                                                      |
+|---------------------------|:-------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CareTeam.meta.lastUpdated |             | [{"163":"Member Demographics Last Updated Date"}]                                                                                                                                                          |
+| CareTeam.status           |      S      |                                                                                                                                                                                                            |
+| CareTeam.subject          |      S      | [{"Ref (1)":"Member id"}                                                                                                                                                                                   |
+| CareTeam.period           |             | [{"177":"Statement From Date "}, {", 178":"Statement Through Date"}]                                                                                                                                       |
+| CareTeam.participant      |      S      | [{"Ref (93, 96, 98, 99, 173)":"Provider attending, PCP, operating, refering and supervising NPIs"}, {"Ref (166, 169, 182, 171, 174)":"Provider attending, PCP, operating, refering and supervising names"} |
+| CareTeam.role             |      S      | [{"165":"Care Team Role"}]                                                                                                                                                                                 |
+| CareTeam.member           |      S      |                                                                                                                                                                                                            |
 
 #### Example CareTeam Resource
 

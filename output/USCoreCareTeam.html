@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.23 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.23). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core CareTeam</h2>
   
 
@@ -148,7 +148,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Where a Health Plan has access to Information about the CareTeam for a member they <strong>SHALL</strong> make the information available using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html">US Core CareTeam</a> resource.</p>
 
-<p>The essential fields to be provided in the CareTeam resource are:</p>
+<p>The essential fields to be provided in the CareTeam resource from the CPCDS file are:</p>
 
 <style>
     table{
@@ -172,86 +172,46 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Flags</th>
-      <th>Card.</th>
-      <th>Type</th>
-      <th> </th>
-      <th> </th>
-      <th> </th>
+      <th>US Core Element</th>
+      <th style="text-align: center">MustSupport</th>
+      <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>CareTeam</td>
-      <td>CareTeam</td>
-      <td>I</td>
-      <td>0..*</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>CareTeam.id</td>
-      <td>id</td>
-      <td> </td>
-      <td>0..1</td>
-      <td>id</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>CareTeam.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>CareTeam.status</td>
-      <td>status</td>
-      <td>?!S</td>
-      <td>1..1</td>
-      <td>code</td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center">S</td>
       <td> </td>
     </tr>
     <tr>
       <td>CareTeam.subject</td>
-      <td>subject</td>
-      <td>S</td>
-      <td>1..1</td>
-      <td>Reference(US Core Patient Profile)</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“Ref (1)”:”Member id”}</td>
+    </tr>
+    <tr>
+      <td>CareTeam.period</td>
+      <td style="text-align: center"> </td>
+      <td>[{“177”:”Statement From Date “}, {“, 178”:”Statement Through Date”}]</td>
     </tr>
     <tr>
       <td>CareTeam.participant</td>
-      <td>participant</td>
-      <td>SI</td>
-      <td>1..*</td>
-      <td>BackboneElement</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td>[{“Ref (93, 96, 98, 99, 173)”:”Provider attending, PCP, operating, refering and supervising NPIs”}, {“Ref (166, 169, 182, 171, 174)”:”Provider attending, PCP, operating, refering and supervising names”}</td>
     </tr>
     <tr>
-      <td>CareTeam.participant.role</td>
-      <td>role</td>
-      <td>S</td>
-      <td>1..1</td>
-      <td>CodeableConcept</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>CareTeam.role</td>
+      <td style="text-align: center">S</td>
+      <td>[{“165”:”Care Team Role”}]</td>
     </tr>
     <tr>
-      <td>CareTeam.participant.member</td>
-      <td>member</td>
-      <td>S</td>
-      <td>1..1</td>
-      <td>Reference(US Core Patient Profile</td>
-      <td>US Core Practitioner Profile</td>
-      <td>US Core Organization Profile</td>
-      <td>RelatedPerson)</td>
+      <td>CareTeam.member</td>
+      <td style="text-align: center">S</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -360,7 +320,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.23 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 9, 2020 02:30-0400">2020-10-09</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
