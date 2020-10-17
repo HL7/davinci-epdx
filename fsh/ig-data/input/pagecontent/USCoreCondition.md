@@ -3,15 +3,15 @@
 The essential fields to be provided in the US Core Condition resource are:
 {% include style_insert_table_blue.html %}
 
-| US Core Element                   | MustSupport | CPCDS Element Mapping                                                                                                                          |
-|-----------------------------------|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Condition.meta.lastUpdated        |             | [{"163":"Member Demographics Last Updated Date"}]                                                                                              |
-| Condition.clinicalStatus          |      S      |                                                                                                                                                |
-| Condition.verificationStatus      |      S      |                                                                                                                                                |
-| Condition.category                |      S      |                                                                                                                                                |
-| Condition.code                    |      S      | [{"22, 23, 145":"Diagnosis Code, Description"}                                                                                                 |
-| Condition.subject                 |      S      | [{"Ref (1)":"Member id"}                                                                                                                       |
-| Condition.abatementRange.recorder |             | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
+| US Core Element                   | MustSupport | Cardinality | CPCDS Element Mapping                                                                                                                          |
+|-----------------------------------|:-----------:|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Condition.meta.lastUpdated        |             |     0..1    | [{"163":"Member Demographics Last Updated Date"}]                                                                                              |
+| Condition.clinicalStatus          |      S      |     0..1    |                                                                                                                                                |
+| Condition.verificationStatus      |      S      |     0..1    |                                                                                                                                                |
+| Condition.category                |      S      |     1..*    |                                                                                                                                                |
+| Condition.code                    |      S      |     1..1    | [{"22, 23, 145":"Diagnosis Code, Description"}                                                                                                 |
+| Condition.subject                 |      S      |     1..1    | [{"Ref (1)":"Member id"}                                                                                                                       |
+| Condition.abatementRange.recorder |             |     0..1    | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
 
 
 #### Example Condition Resource
