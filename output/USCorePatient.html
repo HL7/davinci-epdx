@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.25 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.25). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Patient</h2>
   
 
@@ -174,6 +174,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <th>US Core Element</th>
       <th style="text-align: center">MustSupport</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
@@ -181,147 +182,175 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>Patient.meta.lastUpdated</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-race</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“128”:”Race Code”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-ethnicity</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“129”:”Ethnicity”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-birthsex</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“153”:”Birth Sex”}]</td>
     </tr>
     <tr>
       <td>Patient.identifier</td>
       <td style="text-align: center">S</td>
-      <td>[{“1”:”Member id”}, {“109”:”Patient account number”}, {“110”:”Medical record number”}]</td>
+      <td style="text-align: center">1..*</td>
+      <td>[{“MMI=1”:”Member id”}, {“PatnAcctNr=109”:”Patient account number”}, {“MedRecNr=110”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Patient.identifier.system</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.identifier.value</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.name</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
       <td>[{“130”:”Patient Name”}]</td>
     </tr>
     <tr>
       <td>Patient.name.family</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.name.given</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.system</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.value</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.use</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.gender</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>[{“71”:”Gender code”}]</td>
     </tr>
     <tr>
       <td>Patient.birthDate</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“70”:”Date of birth”}]</td>
     </tr>
     <tr>
       <td>Patient.deceasedBoolean</td>
+      <td style="text-align: center"> </td>
       <td style="text-align: center"> </td>
       <td>[{“150”:”Deceased”}]</td>
     </tr>
     <tr>
       <td>Patient.deceasedDateTime</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
       <td>[{“124”:”Date of death”}]</td>
     </tr>
     <tr>
       <td>Patient.address</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address.line</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td>[{“158”:”Street Address”}]</td>
     </tr>
     <tr>
       <td>Patient.address.city</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address.district</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“125”:”County”}]</td>
     </tr>
     <tr>
       <td>Patient.address.state</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“126”:”State”}]</td>
     </tr>
     <tr>
       <td>Patient.address.postalCode</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td>[{“131”:”Zip”}]</td>
     </tr>
     <tr>
       <td>Patient.address.country</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“127”:”Country”}]</td>
     </tr>
     <tr>
       <td>Patient.address.period</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.communication</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.communication.language</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p>The Member Number will be entered in the <strong>*identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
+<p>The Member Number will be entered in the <strong>identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
 
 <pre>
 {
@@ -760,7 +789,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 23:46-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

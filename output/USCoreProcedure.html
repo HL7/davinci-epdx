@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.25 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.25). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Procedure</h2>
   
 
@@ -146,9 +146,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- USCoreProcedure.md  -->
 <p><a href="USCorePractitionerRole.html">Previous Page - US Core PractitionerRole</a></p>
 
-<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>  <strong>SHALL</strong> be used to record a members health events.</p>
-
-<p>The essential fields to be provided in the US Core Procedure resource are:</p>
+<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>  <strong>SHALL</strong> be used to record a member’s health events.</p>
 
 <style>
     table{
@@ -177,6 +175,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <th>US Core Element</th>
       <th style="text-align: center">MustSupport</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
@@ -184,41 +183,49 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>Procedure.meta.lastUpdated</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“163”:”EOB Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Procedure.identifier</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td>[{“35”:”Payer claim unique identifier”}]</td>
     </tr>
     <tr>
       <td>Procedure.status</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.subject</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>[{“Ref (1)”:”Member id”}, {“Ref (109)”:”Patient account number”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Procedure.performed[x]</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.performedPeriod</td>
+      <td style="text-align: center"> </td>
       <td style="text-align: center"> </td>
       <td>[{“25, 27”:”Procedure date”}</td>
     </tr>
     <tr>
       <td>Procedure.reasonCode</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td>[{“24, 26, 146”:”ICD Procedure Code”}</td>
     </tr>
   </tbody>
@@ -226,7 +233,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="example-procedure-resource">Example Procedure Resource</h4>
 
-<p>An example mapping of an Procedure resource for a medical impiant is shown here:</p>
+<p>An example mapping of an Procedure resource for a medical implant is shown here:</p>
 
 <pre>
 {
@@ -308,7 +315,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 23:46-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
