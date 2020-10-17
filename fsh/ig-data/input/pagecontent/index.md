@@ -76,6 +76,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 See the [Table of Contents](toc.html) for more information.
 
 ### Latest Changes
+- 0.1.25 Added Cardinality to CPCDS tables: US Core CareTeam, US Core Condition, US Core Encounter, US Core Procedure, HRex Coverage, PDex MedicationDispense.
 - 0.1.24 Updated US Core Patient, Hrex Coverage, US Core CareTeam, US Core Condition, PDex MedicationDispense, US Core Encounter, US Core Procedure to add mapping of CARIN-BB IG CPCDS fields to US Core/PDex Profiles. Fixed DiagnosticReport mapping of CCDA and X12 837 claim elements. 
 - 0.1.23 Added in line examples for US Core profiles: Encounter, Goal.
   Made ProvenanceSourceFrom a MustSupport in Pdex-EntitySource-Provenance profile. Fixed US Core examples for Provenance, Pediatric BMI, Pediatric Weight, Pediatric Occipital-frontal circumference, Smoking Status and Vital Signs. Added new page of Laboratory Results Observation. Migrated hrex-coverage to PDEX. Fixed capabilityStatements. Switched to da vinci template.

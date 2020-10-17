@@ -2,34 +2,24 @@
 
 The  [Da Vinci PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims.
 
-The essential fields to be provided in the MedicationDispense resource are:
-
 {% include style_insert_table_blue.html %}
-
-| R4 Hierarchical Name             | R4 Name            | Card. | Type                       |
-|----------------------------------|--------------------|-------|----------------------------|
-| MedicationDispense               | MedicationDispense |       | DomainResource             |
-| MedicationDispense.identifier    | identifier         | 0..*  | Identifier                 |
-| MedicationDispense.status        | status             | 1..1  | code                       |
-| MedicationDispense.medication[x] | medication[x]      | 1..1  |                            |
-| MedicationDispense.subject       | subject            | 0..1  | Reference(Patient | Group) |
 
 #### Health Plan Mapping Assistance
 
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispence profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance  to implementers:
 
-| US Core Element                        | MustSupport | CPCDS Element Mapping                                                                                                                                                                                  |
-|----------------------------------------|:-------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MedicationDispense.meta.lastUpdated    |             | [{"163":"EOB Last Updated Date"}]                                                                                                                                                                      |
-| MedicationDispense.identifier          |             | [{"35":"RX service reference number"}]                                                                                                                                                                 |
-| MedicationDispense.status              |      S      | [{"140":"Claim processing status code "}]                                                                                                                                                              |
-| MedicationDispense.medicationReference |             | [{"79":"NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&system=sdo"}, {"38, 78":"National drug code Compound Code"}] |
-| MedicationDispense.subject             |      S      | [{"Ref (1)":"Member id"}                                                                                                                                                                               |
-| MedicationDispense.performer.function  |             | [{"165":"Care Team Roile (Value pcpc\|Prescribing)"}]                                                                                                                                                  |
-| MedicationDispense.performer.actor     |             | [{"Ref(96,122)":"Provider NPIs"}, {"Ref(169,172)":"Provider Names"}                                                                                                                                    |
-| MedicationDispense.quantity            |             | [{"39151":"Quantity dispensed \| Quantity Qualifier Code"}]                                                                                                                                            |
-| MedicationDispense.daysSupply          |             | [{"77":"Days supply"}]                                                                                                                                                                                 |
-| MedicationDispense.whenHandedOver      |             | [{"90":"Service (from) date"}]                                                                                                                                                                         |
+| US Core Element                        | MustSupport | Cardinality | CPCDS Element Mapping                                                                                                                                                                                     |
+|----------------------------------------|:-----------:|:-----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MedicationDispense.meta.lastUpdated    |             |     0..1    | [{"163":"EOB Last Updated Date"}]                                                                                                                                                                         |
+| MedicationDispense.identifier          |             |     0..*    | [{"35":"RX service reference number"}]                                                                                                                                                                    |
+| MedicationDispense.status              |      S      |     1..1    | [{"140":"Claim processing status code<br>"}]                                                                                                                                                              |
+| MedicationDispense.medicationReference |             |             | [{"79":"NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&system=sdo"}, {"38, 78":"National drug code<br>Compound Code"}] |
+| MedicationDispense.subject             |      S      |     1..1    | [{"Ref (1)":"Member id"}                                                                                                                                                                                  |
+| MedicationDispense.performer.function  |             |     0..1    | [{"165":"Care Team Roile (Value pcpc\|Prescribing)"}]                                                                                                                                                     |
+| MedicationDispense.performer.actor     |             |     1..1    | [{"Ref(96,122)":"Provider NPIs"}, {"Ref(169,172)":"Provider Names"}                                                                                                                                       |
+| MedicationDispense.quantity            |             |     0..1    | [{"39151":"Quantity dispensed \| Quantity Qualifier Code"}]                                                                                                                                               |
+| MedicationDispense.daysSupply          |             |     0..1    | [{"77":"Days supply"}]                                                                                                                                                                                    |
+| MedicationDispense.whenHandedOver      |             |     0..1    | [{"90":"Service (from) date"}]                                                                                                                                                                            |
 
 
 #### Example MedicationDispense Resource
