@@ -10,9 +10,9 @@
 {% endcomment %} -->
 [Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
 
-The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
+The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a member's health events.
 
-The essential fields to be provided in the US Core Procedure resource are:
+
 {% include style_insert_table_blue.html %}
 
 
@@ -20,20 +20,21 @@ The essential fields to be provided in the US Core Procedure resource are:
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
 
-| US Core Element             | MustSupport | CPCDS Element Mapping                                                                                   |
-|-----------------------------|:-----------:|---------------------------------------------------------------------------------------------------------|
-|  Procedure.meta.lastUpdated |             | [{"163":"EOB Last Updated Date"}]                                                                       |
-|  Procedure.identifier       |             | [{"35":"Payer claim unique identifier"}]                                                                |
-|  Procedure.status           |      S      |                                                                                                         |
-|  Procedure.code             |      S      |                                                                                                         |
-|  Procedure.subject          |      S      | [{"Ref (1)":"Member id"}, {"Ref (109)":"Patient account number"}, {"Ref (110)":"Medical record number"} |
-|  Procedure.performed[x]     |      S      |                                                                                                         |
-|  Procedure.performedPeriod  |             | [{"25, 27":"Procedure date"}                                                                            |
-|  Procedure.reasonCode       |             | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
+| US Core Element             | MustSupport | Cardinality | CPCDS Element Mapping                                                                                   |
+|-----------------------------|:-----------:|:-----------:|---------------------------------------------------------------------------------------------------------|
+|  Procedure.meta.lastUpdated |             |     0..1    | [{"163":"EOB Last Updated Date"}]                                                                       |
+|  Procedure.identifier       |             |     0..*    | [{"35":"Payer claim unique identifier"}]                                                                |
+|  Procedure.status           |      S      |     1..1    |                                                                                                         |
+|  Procedure.code             |      S      |     1..1    |                                                                                                         |
+|  Procedure.subject          |      S      |     1..1    | [{"Ref (1)":"Member id"}, {"Ref (109)":"Patient account number"}, {"Ref (110)":"Medical record number"} |
+|  Procedure.performed[x]     |      S      |     1..1    |                                                                                                         |
+|  Procedure.performedPeriod  |             |             | [{"25, 27":"Procedure date"}                                                                            |
+|  Procedure.reasonCode       |             |     0..*    | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
+
 
 #### Example Procedure Resource
 
-An example mapping of an Procedure resource for a medical impiant is shown here:
+An example mapping of an Procedure resource for a medical implant is shown here:
 
 <pre>
 {

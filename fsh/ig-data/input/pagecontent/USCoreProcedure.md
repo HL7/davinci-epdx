@@ -1,8 +1,8 @@
 [Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
 
-The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a members health events.
+The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a member's health events.
 
-The essential fields to be provided in the US Core Procedure resource are:
+
 {% include style_insert_table_blue.html %}
 
 
@@ -24,7 +24,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 
 #### Example Procedure Resource
 
-An example mapping of an Procedure resource for a medical impiant is shown here:
+An example mapping of an Procedure resource for a medical implant is shown here:
 
 <pre>
 {

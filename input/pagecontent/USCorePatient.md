@@ -15,39 +15,39 @@ The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-u
 The essential fields in the Patient profile are:
 {% include style_insert_table_blue.html %}
 
-| US Core Element                 | MustSupport | CPCDS Element Mapping                                                                  |
-|---------------------------------|:-------------:|----------------------------------------------------------------------------------------|
-|  Patient.meta.lastUpdated       |             | [{"163":"Member Demographics Last Updated Date"}]                                      |
-|  Patient.us-core-race           |      S      | [{"128":"Race Code"}]                                                                  |
-|  Patient.us-core-ethnicity      |      S      | [{"129":"Ethnicity"}]                                                                  |
-|  Patient.us-core-birthsex       |      S      | [{"153":"Birth Sex"}]                                                                  |
-|  Patient.identifier             |      S      | [{"1":"Member id"}, {"109":"Patient account number"}, {"110":"Medical record number"}] |
-|  Patient.identifier.system      |      S      |                                                                                        |
-|  Patient.identifier.value       |      S      |                                                                                        |
-|  Patient.name                   |      S      | [{"130":"Patient Name"}]                                                               |
-|  Patient.name.family            |      S      |                                                                                        |
-|  Patient.name.given             |      S      |                                                                                        |
-|  Patient.telecom                |      S      |                                                                                        |
-|  Patient.telecom.system         |      S      |                                                                                        |
-|  Patient.telecom.value          |      S      |                                                                                        |
-|  Patient.telecom.use            |      S      |                                                                                        |
-|  Patient.gender                 |      S      | [{"71":"Gender code"}]                                                                 |
-|  Patient.birthDate              |      S      | [{"70":"Date of birth"}]                                                               |
-|  Patient.deceasedBoolean        |             | [{"150":"Deceased"}]                                                                   |
-|  Patient.deceasedDateTime       |             | [{"124":"Date of death"}]                                                              |
-|  Patient.address                |      S      |                                                                                        |
-|  Patient.address.line           |      S      | [{"158":"Street Address"}]                                                             |
-|  Patient.address.city           |      S      |                                                                                        |
-|  Patient.address.district       |             | [{"125":"County"}]                                                                     |
-|  Patient.address.state          |      S      | [{"126":"State"}]                                                                      |
-|  Patient.address.postalCode     |      S      | [{"131":"Zip"}]                                                                        |
-|  Patient.address.country        |             | [{"127":"Country"}]                                                                    |
-|  Patient.address.period         |      S      |                                                                                        |
-|  Patient.communication          |      S      |                                                                                        |
-|  Patient.communication.language |      S      |                                                                                        |
+| US Core Element                 | MustSupport | Cardinality | CPCDS Element Mapping                                                                                         |
+|---------------------------------|:-----------:|:-----------:|---------------------------------------------------------------------------------------------------------------|
+|  Patient.meta.lastUpdated       |             |     0..1    | [{"163":"Member Demographics Last Updated Date"}]                                                             |
+|  Patient.us-core-race           |      S      |     0..1    | [{"128":"Race Code"}]                                                                                         |
+|  Patient.us-core-ethnicity      |      S      |     0..1    | [{"129":"Ethnicity"}]                                                                                         |
+|  Patient.us-core-birthsex       |      S      |     0..1    | [{"153":"Birth Sex"}]                                                                                         |
+|  Patient.identifier             |      S      |     1..*    | [{"MMI=1":"Member id"}, {"PatnAcctNr=109":"Patient account number"}, {"MedRecNr=110":"Medical record number"} |
+|  Patient.identifier.system      |      S      |     1..1    |                                                                                                               |
+|  Patient.identifier.value       |      S      |     1..1    |                                                                                                               |
+|  Patient.name                   |      S      |     1..*    | [{"130":"Patient Name"}]                                                                                      |
+|  Patient.name.family            |      S      |     0..1    |                                                                                                               |
+|  Patient.name.given             |      S      |     0..*    |                                                                                                               |
+|  Patient.telecom                |      S      |     0..*    |                                                                                                               |
+|  Patient.telecom.system         |      S      |     1..1    |                                                                                                               |
+|  Patient.telecom.value          |      S      |     1..1    |                                                                                                               |
+|  Patient.telecom.use            |      S      |     0..1    |                                                                                                               |
+|  Patient.gender                 |      S      |     1..1    | [{"71":"Gender code"}]                                                                                        |
+|  Patient.birthDate              |      S      |     0..1    | [{"70":"Date of birth"}]                                                                                      |
+|  Patient.deceasedBoolean        |             |             | [{"150":"Deceased"}]                                                                                          |
+|  Patient.deceasedDateTime       |             |             | [{"124":"Date of death"}]                                                                                     |
+|  Patient.address                |      S      |     0..*    |                                                                                                               |
+|  Patient.address.line           |      S      |     0..*    | [{"158":"Street Address"}]                                                                                    |
+|  Patient.address.city           |      S      |     0..1    |                                                                                                               |
+|  Patient.address.district       |             |     0..1    | [{"125":"County"}]                                                                                            |
+|  Patient.address.state          |      S      |     0..1    | [{"126":"State"}]                                                                                             |
+|  Patient.address.postalCode     |      S      |     0..1    | [{"131":"Zip"}]                                                                                               |
+|  Patient.address.country        |             |     0..1    | [{"127":"Country"}]                                                                                           |
+|  Patient.address.period         |      S      |     0..1    |                                                                                                               |
+|  Patient.communication          |      S      |     0..*    |                                                                                                               |
+|  Patient.communication.language |      S      |     1..1    |                                                                                                               |
 
 
-The Member Number will be entered in the ***identifier** field. The code **MB**  **SHALL** be used to identify the member identifier.  See the example below:
+The Member Number will be entered in the **identifier** field. The code **MB**  **SHALL** be used to identify the member identifier.  See the example below:
 
 <pre>
 {

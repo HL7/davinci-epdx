@@ -18,17 +18,17 @@ The (Coverage resource)[http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefin
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
 
-| US Core Element           | MustSupport | CPCDS Element Mapping                                     |
-|---------------------------|:-------------:|-----------------------------------------------------------|
-| Coverage.meta.lastUpdated |             | [{"163":"Coverage Last Updated Date"}]                    |
-| Coverage.identifier       |      S      |                                                           |
-| Coverage.status           |             | [{"133":"Coverage status"}]                               |
-| Coverage.subscriberId     |      S      | [{"132":"Subscriber id"}]                                 |
-| Coverage.beneficiary      |      S      | [{"Ref (1)":"Member id"}                                  |
-| Coverage.relationship     |             | [{"72":"Relationship to subscriber"}]                     |
-| Coverage.payor            |      S      | [{"Ref (2) ":"Claim Payer Identifier"}                    |
-| Coverage.class.value      |             | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |
-| Coverage.class.name       |             | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
+| US Core Element           | MustSupport | Carinality | CPCDS Element Mapping                                     |
+|---------------------------|:-----------:|:----------:|-----------------------------------------------------------|
+| Coverage.meta.lastUpdated |             |    0..1    | [{"163":"Coverage Last Updated Date"}]                    |
+| Coverage.identifier       |      S      |    0..*    |                                                           |
+| Coverage.status           |             |    1..1    | [{"133":"Coverage status"}]                               |
+| Coverage.subscriberId     |      S      |    0..1    | [{"132":"Subscriber id"}]                                 |
+| Coverage.beneficiary      |      S      |    1..1    | [{"Ref (1)":"Member id"}                                  |
+| Coverage.relationship     |             |    0..1    | [{"72":"Relationship to subscriber"}]                     |
+| Coverage.payor            |      S      |    1..*    | [{"Ref (2)<br>":"Claim Payer Identifier"}                 |
+| Coverage.class.value      |             |    1..1    | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |
+| Coverage.class.name       |             |    0..1    | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
 
 
 

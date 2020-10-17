@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.25 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.25). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Encounter</h2>
   
 
@@ -179,6 +179,7 @@ Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included 
     <tr>
       <th>US Core Element</th>
       <th style="text-align: center">MustSupport</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
@@ -186,101 +187,121 @@ Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included 
     <tr>
       <td>Encounter.identifier</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td>[{“35”:”Payer claim unique identifier”}]</td>
     </tr>
     <tr>
       <td>Encounter.identifier.system</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.identifier.value</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.status</td>
       <td style="text-align: center">S</td>
-      <td>[{“140”:”Claim processing status code “}]</td>
+      <td style="text-align: center">1..1</td>
+      <td>[{“140”:”Claim processing status code<br />”}]</td>
     </tr>
     <tr>
       <td>Encounter.class</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.classHistory.period</td>
       <td style="text-align: center"> </td>
-      <td>[{“18, 19”:”Member Admission Date Member Discharge Date”}</td>
+      <td style="text-align: center">1..1</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
       <td>[{“16”:”Claim type”}]</td>
     </tr>
     <tr>
       <td>Encounter.subject</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>[{“Ref (1)”:”Member id”}, {“Ref (109)”:”Patient account number”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Encounter.participant</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td>[{“Ref (93, 96, 98, 99, 173)”:”Provider attending, PCP, operating, refering and supervising NPIs”}, {“Ref (166, 169, 182, 171, 174)”:”Provider attending, PCP, operating, refering and supervising names”}</td>
     </tr>
     <tr>
       <td>Encounter.participant.type</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.participant.period</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.participant.individual</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.period</td>
       <td style="text-align: center">S</td>
-      <td>[{“18, 19”:”Member Admission Date Member Discharge Date”}</td>
+      <td style="text-align: center">0..1</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}</td>
     </tr>
     <tr>
       <td>Encounter.length</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.reasonCode</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.diagnosis</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td>[{“33, 32, 113”:”Claim diagnosis related group (DRG), including the code system, the DRG version and the code value”}, {“21, 22, 23, 30, 31, 145”:”Diagnosis Code, Description”}, {“28, 29”:”Present on admission”}</td>
     </tr>
     <tr>
       <td>Encounter.hospitalization</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.hospitalization.dischargeDisposition</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.location</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.location.location</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
   </tbody>
@@ -358,7 +379,7 @@ Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included 
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 23:46-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

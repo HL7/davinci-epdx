@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.24 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.25 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.24). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.25). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Condition</h2>
   
 
@@ -172,6 +172,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <th>US Core Element</th>
       <th style="text-align: center">MustSupport</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
@@ -179,36 +180,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>Condition.meta.lastUpdated</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Condition.clinicalStatus</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.verificationStatus</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.category</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.code</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>[{“22, 23, 145”:”Diagnosis Code, Description”}</td>
     </tr>
     <tr>
       <td>Condition.subject</td>
       <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>[{“Ref (1)”:”Member id”}</td>
     </tr>
     <tr>
       <td>Condition.abatementRange.recorder</td>
       <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>[{“Ref (95, 96, 99)”:”Provider rendering, PCP and referring NPIs”}, {“Ref (168, 169, 170, 171)”:”Provider rendering, PCP and referring names”}</td>
     </tr>
   </tbody>
@@ -306,7 +314,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.24 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 02:34-0400">2020-10-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 23:46-0400">2020-10-16</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

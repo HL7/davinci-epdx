@@ -16,15 +16,15 @@ The essential fields to be provided in the CareTeam resource from the CPCDS file
 
 {% include style_insert_table_blue.html %}
 
-| US Core Element           | MustSupport | CPCDS Element Mapping                                                                                                                                                                                      |
-|---------------------------|:-------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CareTeam.meta.lastUpdated |             | [{"163":"Member Demographics Last Updated Date"}]                                                                                                                                                          |
-| CareTeam.status           |      S      |                                                                                                                                                                                                            |
-| CareTeam.subject          |      S      | [{"Ref (1)":"Member id"}                                                                                                                                                                                   |
-| CareTeam.period           |             | [{"177":"Statement From Date "}, {", 178":"Statement Through Date"}]                                                                                                                                       |
-| CareTeam.participant      |      S      | [{"Ref (93, 96, 98, 99, 173)":"Provider attending, PCP, operating, refering and supervising NPIs"}, {"Ref (166, 169, 182, 171, 174)":"Provider attending, PCP, operating, refering and supervising names"} |
-| CareTeam.role             |      S      | [{"165":"Care Team Role"}]                                                                                                                                                                                 |
-| CareTeam.member           |      S      |                                                                                                                                                                                                            |
+| US Core Element           | MustSupport | Cardinality | CPCDS Element Mapping                                                                                                                                                                                      |
+|---------------------------|:-----------:|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CareTeam.meta.lastUpdated |             |     0..1    | [{"163":"Member Demographics Last Updated Date"}]                                                                                                                                                          |
+| CareTeam.status           |      S      |     0..1    |                                                                                                                                                                                                            |
+| CareTeam.subject          |      S      |     1..1    | [{"Ref (1)":"Member id"}                                                                                                                                                                                   |
+| CareTeam.period           |             |     0..1    | [{"177":"Statement From Date "}, {", 178":"Statement Through Date"}]                                                                                                                                       |
+| CareTeam.participant      |      S      |     1..*    | [{"Ref (93, 96, 98, 99, 173)":"Provider attending, PCP, operating, refering and supervising NPIs"}, {"Ref (166, 169, 182, 171, 174)":"Provider attending, PCP, operating, refering and supervising names"} |
+| CareTeam.role             |      S      |     1..1    | [{"165":"Care Team Role"}]                                                                                                                                                                                 |
+| CareTeam.member           |      S      |     1..1    |                                                                                                                                                                                                            |
 
 #### Example CareTeam Resource
 
