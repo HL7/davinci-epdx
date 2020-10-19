@@ -25,6 +25,8 @@ Only one Patient and one Coverage record are returned.
 
 Reference Implementation Information: [Member-Match Reference Implementation](https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation)
 
+The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/)
+
 ## Notes
 
 Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.
@@ -484,3 +486,17 @@ Parameter Response Example
       ]
     }
     
+## Handling Data Received Via Payer-to-Payer Exchange
+
+When a new health plan receives a member's data from a prior health plan the handling of that data is an implementation decision by the Health Plan. 
+
+The choices for handling of imported data for a member include, but are not limited to:
+
+- Incorporating the data into the FHIR data for a member to enable the data to be passed on via FHIR API to third-party applications or other payers.
+- Processing the data to incorporate into the health plan's enterprise systems, such as Care Management.
+
+The CMS Interoperability and Patient Access Rule encourages, but does not require payers to share member data using USCDI/US Core FHIR resources. If a health plan receives data as FHIR resources they are encouraged to also request the associated Provenance resources using the following parameter:
+
+    "_revinclude=Provenance:target" 
+
+This will help a payer identify the source of data if/when records are merged into a member's health record, differentiating the data from data that came from the health plan itself.
