@@ -154,6 +154,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <li><a href="#parameter-response-from-old-health-plan" id="markdown-toc-parameter-response-from-old-health-plan">Parameter Response from Old Health Plan</a></li>
         </ul>
       </li>
+      <li><a href="#handling-data-received-via-payer-to-payer-exchange" id="markdown-toc-handling-data-received-via-payer-to-payer-exchange">Handling Data Received Via Payer-to-Payer Exchange</a></li>
     </ul>
   </li>
 </ul>
@@ -190,6 +191,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Only one Patient and one Coverage record are returned.</p>
 
 <p>Reference Implementation Information: <a href="https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation">Member-Match Reference Implementation</a></p>
+
+<p>The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the <a href="http://hl7.org/fhir/us/davinci-hrex/">Health Record Exchange (HRex) IG</a>: <a href="http://hl7.org/fhir/us/davinci-hrex/">http://hl7.org/fhir/us/davinci-hrex/</a></p>
 
 <h2 id="notes">Notes</h2>
 
@@ -693,6 +696,24 @@ $member-match accepts a POST with the Parameters json bundle in the body.</p>
 }
 </code></pre></div></div>
 
+<h2 id="handling-data-received-via-payer-to-payer-exchange">Handling Data Received Via Payer-to-Payer Exchange</h2>
+
+<p>When a new health plan receives a member’s data from a prior health plan the handling of that data is an implementation decision by the Health Plan.</p>
+
+<p>The choices for handling of imported data for a member include, but are not limited to:</p>
+
+<ul>
+  <li>Incorporating the data into the FHIR data for a member to enable the data to be passed on via FHIR API to third-party applications or other payers.</li>
+  <li>Processing the data to incorporate into the health plan’s enterprise systems, such as Care Management.</li>
+</ul>
+
+<p>The CMS Interoperability and Patient Access Rule encourages, but does not require payers to share member data using USCDI/US Core FHIR resources. If a health plan receives data as FHIR resources they are encouraged to also request the associated Provenance resources using the following parameter:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"_revinclude=Provenance:target" 
+</code></pre></div></div>
+
+<p>This will help a payer identify the source of data if/when records are merged into a member’s health record, differentiating the data from data that came from the health plan itself.</p>
+
 
 
 
@@ -716,7 +737,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 16, 2020 23:46-0400">2020-10-16</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2020 18:47-0400">2020-10-19</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -26,9 +26,9 @@ This **SHOULD** be used to:
 The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
 
 PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
-In the Origin Provenance Profile the extenaion is included in the Provenance.entity base element.
+In the Origin Provenance Profile the extension is included in the Provenance.entity base element.
 
-The purpose of the extension isto identify the source format that the data in the provenance.target resource was taken from.
+The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
 
 
 The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
