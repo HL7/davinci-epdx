@@ -54,7 +54,7 @@ Unlike the US Core 3.1.0 Implementation Guide, PDex provides guidance to payers 
 This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.
 
 This IG covers the exchange of:
-- Claims-based information
+- Claims-based information via clinical FHIR profiles, namely US Core plus payer-specific profiles for Device and MedicationDispense.
 - Clinical Information (such as Lab Results, Allergies and Conditions)
 
 This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History. 
@@ -75,7 +75,30 @@ The latter two scenarios are provided to meet the requirements identified in the
 
 See the [Table of Contents](toc.html) for more information.
 
+### Mapping Adjudicated Claims information to Clinical Resources
+
+A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/) to fields in the respective clinical (US Core and PDex profiles) are provided in the narrative pages for the following profiles:
+- [US Core CareTeam](USCoreCareTeam.html) 
+- [US Core Condition](USCoreCondition.html)
+- [US Core Encounter](USCoreEncounter.html) 
+- [US Core Patient](USCorePatient.html) 
+- [US Core Procedure](USCoreProcedure.html) 
+- [HRex Coverage](Coverage.html) 
+- [PDex MedicationDispense](PDexMedicationDispense.html)
+
+Tables are provided to assist implementers in mapping adjudicated claims data extracted for use in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Pacyer Consumer Data Set (CPCDS) mapping.
+
+The column definitions are provided in the table below. Look for this style of table in the Profiles defined in this IG.
+
+{% include style_insert_table_blue.html %}
+
+| US Core Element           | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping                  |
+|---------------------------|-------------|:----------:|---------------------------|----------------------------------------|
+| The Element name in the target Profile. e.g. Coverage.meta.lastUpdated | S indicates a Must Support Element            |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
+
+
 ### Latest Changes
+- 0.1.26 Added explanation of table structure to Home Page. Added CARIN-BB Element Name to CPCDS mapping tables for US Core Patient, HRex Coverage, PDex MedicationDispense, US Core CareTeam, US Core Condition, US Core Encounter, US Core Procedure.
 - 0.1.25 Added Cardinality to CPCDS tables: US Core CareTeam, US Core Condition, US Core Encounter, US Core Procedure, HRex Coverage, PDex MedicationDispense. Update to Payer-to-Payer Exchange with guidance for ingestion options.
 - 0.1.24 Updated US Core Patient, Hrex Coverage, US Core CareTeam, US Core Condition, PDex MedicationDispense, US Core Encounter, US Core Procedure to add mapping of CARIN-BB IG CPCDS fields to US Core/PDex Profiles. Fixed DiagnosticReport mapping of CCDA and X12 837 claim elements. 
 - 0.1.23 Added in line examples for US Core profiles: Encounter, Goal.
