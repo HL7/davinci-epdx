@@ -5,26 +5,26 @@ The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition
 
 {% include style_insert_table_blue.html %}
 
-
-
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
 
-| US Core Element             | MustSupport | Cardinality | CPCDS Element Mapping                                                                                   |
-|-----------------------------|:-----------:|:-----------:|---------------------------------------------------------------------------------------------------------|
-|  Procedure.meta.lastUpdated |             |     0..1    | [{"163":"EOB Last Updated Date"}]                                                                       |
-|  Procedure.identifier       |             |     0..*    | [{"35":"Payer claim unique identifier"}]                                                                |
-|  Procedure.status           |      S      |     1..1    |                                                                                                         |
-|  Procedure.code             |      S      |     1..1    |                                                                                                         |
-|  Procedure.subject          |      S      |     1..1    | [{"Ref (1)":"Member id"}, {"Ref (109)":"Patient account number"}, {"Ref (110)":"Medical record number"} |
-|  Procedure.performed[x]     |      S      |     1..1    |                                                                                                         |
-|  Procedure.performedPeriod  |             |             | [{"25, 27":"Procedure date"}                                                                            |
-|  Procedure.reasonCode       |             |     0..*    | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
+| US Core Element             | MustSupport | Cardinality | CARIN-BB Element                         | CPCDS Element Mapping                                                                                   |
+|-----------------------------|-------------|-------------|------------------------------------------|---------------------------------------------------------------------------------------------------------|
+|  Procedure.meta.lastUpdated |             |     0..1    | ExplanationOfBenefit.meta.lastUpdated    | [{"163":"EOB Last Updated Date"}]                                                                       |
+|  Procedure.identifier       |             |     0..*    | ExplanationOfBenefit.identifier          | [{"35":"Payer claim unique identifier"}]                                                                |
+|  Procedure.status           |      S      |     1..1    |                                          |                                                                                                         |
+|  Procedure.code             |      S      |     1..1    |                                          |                                                                                                         |
+|  Procedure.subject          |      S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}, {"Ref (109)":"Patient account number"}, {"Ref (110)":"Medical record number"} |
+|  Procedure.performed[x]     |      S      |     1..1    |                                          |                                                                                                         |
+|  Procedure.performedPeriod  |             |             | ExplanationOfBenefit.procedure.date      | [{"25, 27":"Procedure date"}                                                                            |
+|  Procedure.reasonCode       |             |     0..*    | ExplanationOfBenefit.procedure.procedure | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example Procedure Resource
 
-An example mapping of an Procedure resource for a medical implant is shown here:
+An example mapping of a Procedure resource for a medical implant 
+is presented below:
 
 <pre>
 {

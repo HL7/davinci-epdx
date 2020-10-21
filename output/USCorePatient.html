@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.25 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.26 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.25). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.26). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Patient</h2>
   
 
@@ -173,182 +173,213 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <thead>
     <tr>
       <th>US Core Element</th>
-      <th style="text-align: center">MustSupport</th>
-      <th style="text-align: center">Cardinality</th>
+      <th>MustSupport</th>
+      <th>Cardinality</th>
+      <th>CARIN-BB Element</th>
       <th>CPCDS Element Mapping</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Patient.meta.lastUpdated</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>Patient.meta.lastUpdated</td>
       <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-race</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.us-core-race</td>
       <td>[{“128”:”Race Code”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-ethnicity</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.us-core-ethnicity</td>
       <td>[{“129”:”Ethnicity”}]</td>
     </tr>
     <tr>
       <td>Patient.us-core-birthsex</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.us-core-birthsex</td>
       <td>[{“153”:”Birth Sex”}]</td>
     </tr>
     <tr>
       <td>Patient.identifier</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..*</td>
+      <td>S</td>
+      <td>1..*</td>
+      <td>Patient.identifier</td>
       <td>[{“MMI=1”:”Member id”}, {“PatnAcctNr=109”:”Patient account number”}, {“MedRecNr=110”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Patient.identifier.system</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.identifier.value</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.name</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..*</td>
+      <td>S</td>
+      <td>1..*</td>
+      <td>Patient.name</td>
       <td>[{“130”:”Patient Name”}]</td>
     </tr>
     <tr>
       <td>Patient.name.family</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.name.given</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..*</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..*</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.system</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.value</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.telecom.use</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.gender</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td>Patient.gender</td>
       <td>[{“71”:”Gender code”}]</td>
     </tr>
     <tr>
       <td>Patient.birthDate</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.birthDate</td>
       <td>[{“70”:”Date of birth”}]</td>
     </tr>
     <tr>
       <td>Patient.deceasedBoolean</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
+      <td> </td>
+      <td> </td>
+      <td>Patient.deceasedBoolean</td>
       <td>[{“150”:”Deceased”}]</td>
     </tr>
     <tr>
       <td>Patient.deceasedDateTime</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
+      <td> </td>
+      <td> </td>
+      <td>Patient.deceasedDateTime</td>
       <td>[{“124”:”Date of death”}]</td>
     </tr>
     <tr>
       <td>Patient.address</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..*</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address.line</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..*</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td>Patient.address.line</td>
       <td>[{“158”:”Street Address”}]</td>
     </tr>
     <tr>
       <td>Patient.address.city</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address.district</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>Patient.address.district</td>
       <td>[{“125”:”County”}]</td>
     </tr>
     <tr>
       <td>Patient.address.state</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.address.state</td>
       <td>[{“126”:”State”}]</td>
     </tr>
     <tr>
       <td>Patient.address.postalCode</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td>Patient.address.postalCode</td>
       <td>[{“131”:”Zip”}]</td>
     </tr>
     <tr>
       <td>Patient.address.country</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>0..1</td>
+      <td>Patient.address.country</td>
       <td>[{“127”:”Country”}]</td>
     </tr>
     <tr>
       <td>Patient.address.period</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..1</td>
+      <td>S</td>
+      <td>0..1</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.communication</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">0..*</td>
+      <td>S</td>
+      <td>0..*</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.communication.language</td>
-      <td style="text-align: center">S</td>
-      <td style="text-align: center">1..1</td>
+      <td>S</td>
+      <td>1..1</td>
+      <td> </td>
       <td> </td>
     </tr>
   </tbody>
 </table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
 
 <p>The Member Number will be entered in the <strong>identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
 
@@ -369,196 +400,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       "value" : "987654321"
     }
 </pre>
-
-<h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
-
-<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient profile</a>. This is shown below as an assistance  to implementers:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Line</th>
-      <th>PayerSource</th>
-      <th>CMS BB 2.0 Field</th>
-      <th>Data Descriptor</th>
-      <th>FHIR Profile</th>
-      <th>Profile Field</th>
-      <th>ValueSet</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_id">BENE_ID</a></td>
-      <td>Patientid</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>2.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/dob_dt">DOB_DT</a></td>
-      <td>Date of birth</td>
-      <td>US Core Patient</td>
-      <td>.birthDate</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>3.1</td>
-      <td>Member</td>
-      <td>N/A</td>
-      <td>Date of Death</td>
-      <td>US Core Patient</td>
-      <td>.deceased[dateTime]</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>4.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_county_cd">BENE_COUNTY_CD</a></td>
-      <td>County</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.district</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>5.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_state_cd">BENE_STATE_CD</a></td>
-      <td>State</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.state</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>6.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_cnty_cd">BENE_CNTY_CD</a></td>
-      <td>Country</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.country</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>7.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_race_cd">BENE_RACE_CD</a></td>
-      <td>Race code</td>
-      <td>US Core Patient</td>
-      <td>.us-core-race</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>8.1</td>
-      <td>Member</td>
-      <td>N/A</td>
-      <td>Ethnicity</td>
-      <td>US Core Patient</td>
-      <td>.us-core-ethnicity</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>9.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/gndr_cd">GNDR_CD</a></td>
-      <td>Gender code</td>
-      <td>US Core Patient</td>
-      <td>.gender</td>
-      <td><a href="http://hl7.org/fhir/STU3/valueset-administrative-gender.html">Valueset-administrative-gender - FHIR v3.0.1</a></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>10.1</td>
-      <td>Member</td>
-      <td>N/A</td>
-      <td>Name</td>
-      <td>US Core Patient</td>
-      <td>.name</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>11.1</td>
-      <td>Member</td>
-      <td><a href="https://bluebutton.cms.gov/resources/variables/bene_mlg_cntct_zip_cd">BENE_MLG_CNTCT_ZIP_CD</a></td>
-      <td>Zip code</td>
-      <td>US Core Patient</td>
-      <td>.contact.address.postalCode</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>7.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Patient account number</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>8.1</td>
-      <td>Claim</td>
-      <td>N/A</td>
-      <td>Medical record number</td>
-      <td>US Core Patient</td>
-      <td>.identifier.value</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>F.1</td>
-      <td>R4</td>
-      <td>N/A</td>
-      <td>Birth sex</td>
-      <td>US Core Patient</td>
-      <td>.us-core-birthsex</td>
-      <td><a href="https://build.fhir.org/ig/HL7/US-Core-R4/ValueSet-birthsex.html">US-Core-R4/ValueSet-birthsex</a></td>
-      <td>UNK</td>
-    </tr>
-    <tr>
-      <td>F.2</td>
-      <td>R4</td>
-      <td>N/A</td>
-      <td>Telecom</td>
-      <td>US Core Patient</td>
-      <td>.telecom</td>
-      <td> </td>
-      <td>Provide If Available</td>
-    </tr>
-    <tr>
-      <td>F.3</td>
-      <td>R4</td>
-      <td>N/A</td>
-      <td>Language</td>
-      <td>US Core Patient</td>
-      <td>.communication</td>
-      <td> </td>
-      <td>Provide If Available</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Where an entry is provided in the CMS BB2.0 FIELD column  above the definition of the field can be reviewed using the following URL:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/</p>
-
-<p>Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:</p>
-
-<p>https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
 
 <h4 id="example-patient-resource">Example Patient Resource</h4>
 
@@ -789,7 +630,7 @@ https://bluebutton.cms.gov/resources/variables/dob_dt/</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.25 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Oct 19, 2020 18:47-0400">2020-10-19</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.26 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 20, 2020 23:33-0400">2020-10-20</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
