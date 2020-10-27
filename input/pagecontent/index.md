@@ -108,6 +108,9 @@ The column definitions are provided in the table below. Look for this style of t
 
 
 ### Latest Changes
+- 0.1.27 FHIR-28372: Added clarification for NCPDP document types.
+  FHIR-29553: Provide guidance when sharing Unstructured Documents using US Core DocumentReference with associated PDex Provenance. Links to the examples were incorporated into the US Core DocumentReference page.
+  Shortened pdex-entitysource-provenance structure definition to pdex-provenance. 
 - 0.1.26 Added explanation of table structure to Home Page. Added CARIN-BB Element Name to CPCDS mapping tables for US Core Patient, HRex Coverage, PDex MedicationDispense, US Core CareTeam, US Core Condition, US Core Encounter, US Core Procedure.
 - 0.1.25 Added Cardinality to CPCDS tables: US Core CareTeam, US Core Condition, US Core Encounter, US Core Procedure, HRex Coverage, PDex MedicationDispense. Update to Payer-to-Payer Exchange with guidance for ingestion options.
 - 0.1.24 Updated US Core Patient, Hrex Coverage, US Core CareTeam, US Core Condition, PDex MedicationDispense, US Core Encounter, US Core Procedure to add mapping of CARIN-BB IG CPCDS fields to US Core/PDex Profiles. Fixed DiagnosticReport mapping of CCDA and X12 837 claim elements. 
@@ -176,3 +179,5 @@ For the purposes of this IG we will use the following terms:
 * Covered Party
 * Subject of Care
 
+
+[Next Page: Overview](Overview.html)

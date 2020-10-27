@@ -117,6 +117,12 @@ An example mapping of a DocumentReference for an episode of care is shown below:
 }
 </pre>
 
+The following example of a DocumentReference and associated PDex Provenance resource demonstrates how an unstructured document, such as a Portable Document Format (PDF) document could be attached, or embedded as base64 encoded content in a DocumentReference. The associated PDex Provenance resource identifies the source document as a PDF file. 
+
+#### Example: Unstructured Document with Provenance
+
+- The example US Core DocumentReference is here: [DocumentReference-123456.html](DocumentReference-123456.html)
+- The associated PDex Provenance resource is here: [Provenance-1000006.html](Provenance-1000006.html)
 
 
 

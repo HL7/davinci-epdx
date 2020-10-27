@@ -2,9 +2,9 @@
   "resourceType": "StructureDefinition",
   "id": "pdex-provenance",
   "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
-  "version": "0.1.10",
-  "name": "PdexProvenance",
-  "title": "PDex Provenance",
+  "version": "0.1.19",
+  "name": "PdexEntitySourceProvenance",
+  "title": "PDex Entity Source Provenance",
   "status": "draft",
   "experimental": true,
   "publisher": "HL7 International",
@@ -26,7 +26,7 @@
       ]
     }
   ],
-  "description": "Provenance is provided by\nthe payer to identify the source of the information, whether the data came via a clinical record\nor a claim record and whether the data was subject to manual transcription or other interpretive transformation.",
+  "description": "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element.",
   "jurisdiction": [
     {
       "coding": [
@@ -72,44 +72,6 @@
   "derivation": "constraint",
   "differential": {
     "element": [
-      {
-        "id": "Provenance.extension",
-        "path": "Provenance.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        }
-      },
-      {
-        "id": "Provenance.extension:sourceFormat",
-        "path": "Provenance.extension",
-        "sliceName": "sourceFormat",
-        "short": "Source format target resource was created from",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Provenance.extension:sourceFormat.valueCodeableConcept",
-        "path": "Provenance.extension.valueCodeableConcept",
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"
-        }
-      },
       {
         "id": "Provenance.recorded",
         "path": "Provenance.recorded",
@@ -158,7 +120,8 @@
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Provenance.agent:ProvenanceTransmitter",
@@ -176,7 +139,8 @@
               "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Provenance.entity.extension",
@@ -196,7 +160,7 @@
         "id": "Provenance.entity.extension:sourceFormat",
         "path": "Provenance.entity.extension",
         "sliceName": "sourceFormat",
-        "short": "Source format target resource was created from",
+        "short": "Entity Source format that target resource was created from",
         "min": 0,
         "max": "1",
         "type": [
@@ -206,7 +170,8 @@
               "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       },
       {
         "id": "Provenance.entity.extension:sourceFormat.valueCodeableConcept",
