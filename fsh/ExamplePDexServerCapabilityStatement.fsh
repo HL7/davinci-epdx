@@ -354,7 +354,7 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[20].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
 
 // Provenance
-  * rest.resource[21].supportedProfile[0] = $PdexEntitySourceProvenance
+  * rest.resource[21].supportedProfile[0] = $PdexProvenance
   * rest.resource[21].supportedProfile[1] = $USCoreProvenance
 
   * rest.resource[21].type = http://hl7.org/fhir/resource-types#Provenance

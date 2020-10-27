@@ -1,9 +1,9 @@
 ﻿DaVinciPayerDataExchange : Validation Results
 =========================================
 
-err = 1, warn = 11, info = 12
+err = 1, warn = 13, info = 16
 IG Publisher Version: 1.1.35
-Generated Tue Oct 20 23:34:32 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.26 (canonical = http://hl7.org/fhir/us/davinci-pdex)
+Generated Tue Oct 27 00:59:32 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#0.1.27 (canonical = http://hl7.org/fhir/us/davinci-pdex)
 
  Build Errors : 1 / 1 / 0
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/ImplementationGuide-hl7.fhir.us.davinci-pdex : 0 / 0 / 1
@@ -11,6 +11,7 @@ Generated Tue Oct 20 23:34:32 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/bundle-3000002 : 0 / 0 / 5
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/capabilitystatement-PdexServerCapabilityStatement : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/device-543210 : 0 / 0 / 1
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/documentreference-123456 : 0 / 0 / 5
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-6 : 0 / 1 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/encounter-7 : 0 / 1 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/location-5 : 0 / 0 / 2
@@ -22,14 +23,15 @@ Generated Tue Oct 20 23:34:32 EDT 2020. FHIR version 4.0.1 for hl7.fhir.us.davin
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000001 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000002 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000003 : 0 / 0 / 2
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 0 / 0 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000004 : 0 / 2 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000005 : 0 / 0 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/provenance-1000006 : 0 / 0 / 2
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-DispenseRefill : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/structuredefinition-ProvenanceSourceFrom : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-hrex-coverage : 0 / 1 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-device : 0 / 1 / 1
- /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-entitysource-provenance : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-medicationdispense : 0 / 0 / 2
+ /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/structuredefinition-pdex-provenance : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-IdentifierTypeCS : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenanceAgentRoleType : 0 / 0 / 1
  /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/codesystem-ProvenancePayerDataSource : 0 / 0 / 1
@@ -50,13 +52,19 @@ INFORMATION: Bundle/2000002: Bundle.entry[1].resource.ofType(MedicationDispense)
 INFORMATION: Bundle/3000002: Bundle: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
 INFORMATION: Bundle/3000002: Bundle.entry[0].resource.ofType(MedicationDispense): Validate resource against profile http://hl7.org/fhir/StructureDefinition/MedicationDispense
 INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Provenance
-INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance): Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance - listed in meta
-INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance).agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance): Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance - listed in meta
+INFORMATION: Bundle/3000002: Bundle.entry[1].resource.ofType(Provenance).agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/CapabilityStatement-PdexServerCapabilityStatement.json ==
 INFORMATION: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 WARNING: CapabilityStatement/PdexServerCapabilityStatement: CapabilityStatement: cpb-0: Name should be usable as an identifier for the module by machine processing applications such as code generation [name.matches('[A-Z]([A-Za-z0-9_]){0,254}')]
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Device-543210.json ==
 INFORMATION: Device/543210: Device: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/DocumentReference-123456.json ==
+INFORMATION: DocumentReference/123456: DocumentReference: Validate resource against profile http://hl7.org/fhir/StructureDefinition/DocumentReference
+INFORMATION: DocumentReference/123456: DocumentReference.type: None of the codes provided are in the value set http://hl7.org/fhir/ValueSet/c80-doc-typecodes (http://hl7.org/fhir/ValueSet/c80-doc-typecodes), and a code is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK)
+INFORMATION: DocumentReference/123456: DocumentReference.content[0].format: Code System URI 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' is unknown so the code cannot be validated
+INFORMATION: DocumentReference/123456: DocumentReference.content[0].format: Could not confirm that the codes provided are in the value set http://hl7.org/fhir/ValueSet/formatcodes, and a code is recommended to come from this value set
+INFORMATION: DocumentReference/123456: DocumentReference: Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference - listed in meta
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Encounter-6.json ==
 INFORMATION: Encounter/6: Encounter: Validate resource against profile http://hl7.org/fhir/StructureDefinition/Encounter
 WARNING: Encounter/6: Encounter.type[0].coding[0]: A code with no system has no defined meaning. A system should be provided
@@ -92,20 +100,25 @@ INFORMATION: Practitioner/4: Practitioner: Validate resource against profile htt
 INFORMATION: Practitioner/4: Practitioner: Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner - listed in meta
 INFORMATION: Practitioner/4: Practitioner.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000001.json ==
-INFORMATION: Provenance/1000001: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
-INFORMATION: Provenance/1000001: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Provenance/1000001: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000001: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000002.json ==
-INFORMATION: Provenance/1000002: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
-INFORMATION: Provenance/1000002: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Provenance/1000002: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000002: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000003.json ==
-INFORMATION: Provenance/1000003: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
-INFORMATION: Provenance/1000003: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Provenance/1000003: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000003: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000004.json ==
-INFORMATION: Provenance/1000004: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
-INFORMATION: Provenance/1000004: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Provenance/1000004: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000004: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+WARNING: Provenance/1000004: Provenance.entity[0].extension[0].value.ofType(CodeableConcept): Display Name for http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp should be one of 'NCPDP Telecommunication' instead of 'NCPDP'
+WARNING: Provenance/1000004: Provenance.entity[0].extension[0].value.ofType(CodeableConcept).coding[0]: Internal error: Display Name for http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp should be one of 'NCPDP Telecommunication' instead of 'NCPDP'
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000005.json ==
-INFORMATION: Provenance/1000005: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
-INFORMATION: Provenance/1000005: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+INFORMATION: Provenance/1000005: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000005: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/examples/Provenance-1000006.json ==
+INFORMATION: Provenance/1000006: Provenance: Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+INFORMATION: Provenance/1000006: Provenance.agent[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/extensions/StructureDefinition-DispenseRefill.json ==
 INFORMATION: StructureDefinition/DispenseRefill: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill'): The Implementation Guide contains no examples for this extension
@@ -117,11 +130,11 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/St
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-device.json ==
 INFORMATION: StructureDefinition/pdex-device: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
-== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-entitysource-provenance.json ==
-INFORMATION: StructureDefinition/pdex-entitysource-provenance: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-medicationdispense.json ==
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 INFORMATION: StructureDefinition/pdex-medicationdispense: StructureDefinition.snapshot.element[30].mapping[0].map: The string value contains embedded HTML tags. Note that all inputs should be escaped when rendered to HTML as a matter of course
+== /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/profiles/StructureDefinition-pdex-provenance.json ==
+INFORMATION: StructureDefinition/pdex-provenance: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-IdentifierTypeCS.json ==
 INFORMATION: CodeSystem/IdentifierTypeCS: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/CodeSystem-ProvenanceAgentRoleType.json ==
@@ -130,7 +143,7 @@ INFORMATION: CodeSystem/ProvenanceAgentRoleType: CodeSystem: Validate resource a
 INFORMATION: CodeSystem/ProvenancePayerDataSource: CodeSystem: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/ValueSet-FDANationalDrugCode.json ==
 INFORMATION: ValueSet/FDANationalDrugCode: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
-ERROR: ValueSet.where(id = 'FDANationalDrugCode'): Error from server: Not done yet @ Not done yet: TNDCServices.getcontext
+ERROR: ValueSet.where(id = 'FDANationalDrugCode'): Error from server: Access violation at address 0000000000F89791 in module 'FHIRServer.exe'. Read of address 000000000000001C
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/ValueSet-ProvenanceAgentType.json ==
 INFORMATION: ValueSet/ProvenanceAgentType: ValueSet: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 == /Users/mark/Documents/_Local/DaVinci/davinci-epdx/input/vocabulary/ValueSet-ProvenancePayerSourceFormat.json ==

@@ -1,9 +1,9 @@
 [Previous Page - US Core Procedure](USCoreProcedure.html)
 
-When a Health Plan forwards information as a FHIR Resource it **SHOULD** create
-related Provenance record(s) to reflect the original source, any subsequent data
-handlers or transformers and the action taken by the Health Plan in its handling of
-the data. 
+When a Health Plan forwards information as a FHIR Resource it
+**SHOULD** create related Provenance record(s) to reflect the
+original source, any subsequent data handlers or transformers and
+the action taken by the Health Plan in its handling of the data. 
 
 A Provenance resource **SHOULD** be provided with each member-related resource
 provided by the Health Plan's FHIR API. 
@@ -13,7 +13,7 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record, or a claim record. 
 - Whether the data was subject to manual transcription, or other interpretive transformation.
 
-The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-entitysource-provenance.html](StructureDefinition-pdex-entitysource-provenance.html)
+The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
 
 PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
 In the Origin Provenance Profile the extension is included in the Provenance.entity base element.

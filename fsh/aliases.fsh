@@ -36,8 +36,8 @@
   // Da Vinci Pdex IG
   Alias:   $PdexDevice = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
   Alias:   $PdexMedicationDispense = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense
-  Alias:   $PdexSourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance
-  Alias:   $PdexEntitySourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-entitysource-provenance
+//  Alias:   $PdexSourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance
+  Alias:   $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 
 // Code Systems
   Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc

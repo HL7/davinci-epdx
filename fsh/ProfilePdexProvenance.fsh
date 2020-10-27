@@ -1,6 +1,6 @@
 Profile:        PdexEntitySourceProvenance
 Parent:         us-core-provenance
-Id:             pdex-entitysource-provenance
+Id:             pdex-provenance
 Title:          "PDex Entity Source Provenance"
 Description:    "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."
 

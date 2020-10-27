@@ -6,7 +6,7 @@
   "id": "ProvenancePayerDataSource",
   "title": "Provenance Payer Data Source Format",
   "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "url": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
   "jurisdiction": [
     {
@@ -115,9 +115,14 @@
       "definition": "X12 non-specific transaction"
     },
     {
+      "code": "script",
+      "display": "NCPDP SCRIPT",
+      "definition": "National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)"
+    },
+    {
       "code": "ncpdp",
-      "display": "NCPDP",
-      "definition": "National Council for Prescription Drug Programs"
+      "display": "NCPDP Telecommunication",
+      "definition": "NCPDP Telecommunication transaction (pharmacy claims)"
     },
     {
       "code": "capture",
@@ -145,5 +150,5 @@
       "definition": "Any other document format not specifically defined"
     }
   ],
-  "count": 25
+  "count": 26
 }
