@@ -101,7 +101,7 @@ The column definitions are provided in the table below. Look for this style of t
 
 ### Latest Changes
 - 0.1.28 Fix Essential Fields tables for US Core Profiles (v3.1.1): AllergyIntolerance, CarePlan, CareTeam, Condition, DiagnosticReportForLaboratoryResultsReporting, DiagnosticReportForReportNoteExchange, DocumentReference, Encounter, Goal, Immunization, ImplantableDevice, LaboratoryResultObservation, Location, Medication, MedicationRequest, Organization, Patient, PediatricBMIForAge, PediatricHeadOccipitalFrontalCircumference, PediatricWeightForHeight, Practitioner, PractitionerRole, Procedure, Provenance, PulseOximetry,SmokingStatusObservation, VitalSigns.
-  Essential Fields table updated fro Hrex Coverage, Pdex Device, Pdex MedicationDispense, Pdex Provenance.
+  Essential Fields table updated for Hrex Coverage, Pdex Device, Pdex MedicationDispense, Pdex Provenance.
   Definition of Must Support for Cardinality of 1..1 and 1..* added to Table Definition.
   Fixed Next and Previous Page Links for all Narrative pages.
 - 0.1.27 FHIR-28372: Added clarification for NCPDP document types.
