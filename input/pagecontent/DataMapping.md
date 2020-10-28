@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/DataMapping.md                                              *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - PDex Implementation Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
+[Previous Page - Payer-to-Payer Exchange](PayerToPayerExchange.html)
 
 Health Plans **SHALL** map claims and clinical information for a member to US Core v3.1.1 FHIR Resources based on R4.
 

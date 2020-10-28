@@ -106,8 +106,14 @@ The column definitions are provided in the table below. Look for this style of t
 |---------------------------|-------------|:----------:|---------------------------|----------------------------------------|
 | The Element name in the target Profile. e.g. Coverage.meta.lastUpdated | S indicates a Must Support Element            |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
 
+<i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
+
 
 ### Latest Changes
+- 0.1.28 Fix Essential Fields tables for US Core Profiles (v3.1.1): AllergyIntolerance, CarePlan, CareTeam, Condition, DiagnosticReportForLaboratoryResultsReporting, DiagnosticReportForReportNoteExchange, DocumentReference, Encounter, Goal, Immunization, ImplantableDevice, LaboratoryResultObservation, Location, Medication, MedicationRequest, Organization, Patient, PediatricBMIForAge, PediatricHeadOccipitalFrontalCircumference, PediatricWeightForHeight, Practitioner, PractitionerRole, Procedure, Provenance, PulseOximetry,SmokingStatusObservation, VitalSigns.
+  Essential Fields table updated fro Hrex Coverage, Pdex Device, Pdex MedicationDispense, Pdex Provenance.
+  Definition of Must Support for Cardinality of 1..1 and 1..* added to Table Definition.
+  Fixed Next and Previous Page Links for all Narrative pages.
 - 0.1.27 FHIR-28372: Added clarification for NCPDP document types.
   FHIR-29553: Provide guidance when sharing Unstructured Documents using US Core DocumentReference with associated PDex Provenance. Links to the examples were incorporated into the US Core DocumentReference page.
   Shortened pdex-entitysource-provenance structure definition to pdex-provenance. 

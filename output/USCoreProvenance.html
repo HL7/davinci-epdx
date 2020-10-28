@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.27 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.27). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Provenance</h2>
   
 
@@ -152,6 +152,162 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a> is provided as a reference for situations where payers receive detailed clinical data via formats such as C-CDA and in converting to a FHIR format are able to identify the detailed information about the originating event and can therefore create an appropriate Provenance record.</p>
 
 <p>In all other cases a payer SHALL create a <a href="PDexProvenance.html">PDex Provenance</a> profile that identifies their role as a “Transmitter” of the information.</p>
+
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Provenance resource are:</p>
+
+<style>
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        border:2px solid #000088;
+        width:90%;
+        overflow-wrap: anywhere;
+    }
+
+    th{
+        border:2px solid #000088;
+        background-color:lightskyblue;
+    }
+
+    td{
+        border:1px solid #000088;
+    }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Provenance.target</td>
+      <td>target</td>
+      <td style="text-align: center">1..*</td>
+      <td>Reference(Resource)</td>
+    </tr>
+    <tr>
+      <td>Provenance.recorded</td>
+      <td>recorded</td>
+      <td style="text-align: center">1..1</td>
+      <td>instant</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent</td>
+      <td>agent</td>
+      <td style="text-align: center">1..*</td>
+      <td>(Slice Definition)</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:All Slices.type</td>
+      <td>type</td>
+      <td style="text-align: center">0..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:All Slices.who</td>
+      <td>who</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(US Core Practitioner Profile | US Core Patient Profile | US Core Organization Profile)</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:All Slices.onBehalfOf</td>
+      <td>onBehalfOf</td>
+      <td style="text-align: center">0..1</td>
+      <td>Reference(US Core Organization Profile)</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor</td>
+      <td>agent:ProvenanceAuthor</td>
+      <td style="text-align: center">0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor.type</td>
+      <td>type</td>
+      <td style="text-align: center">1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor.type.coding</td>
+      <td>coding</td>
+      <td style="text-align: center">1..*</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor.type.coding.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor.type.coding.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceAuthor.who</td>
+      <td>who</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(Practitioner| PractitionerRole | RelatedPerson | Patient | Device | Organization)</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter</td>
+      <td>agent:ProvenanceTransmitter</td>
+      <td style="text-align: center">0..1</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter.type</td>
+      <td>type</td>
+      <td style="text-align: center">1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter.type.coding</td>
+      <td>coding</td>
+      <td style="text-align: center">1..*</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter.type.coding.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter.type.coding.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Provenance.agent:ProvenanceTransmitter.who</td>
+      <td>who</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(Practitioner| PractitionerRole | RelatedPerson | Patient | Device | Organization)</td>
+    </tr>
+    <tr>
+      <td>Provenance.entity.role</td>
+      <td>role</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Provenance.entity.what</td>
+      <td>what</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(Resource)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h3 id="example-us-core-provenance-resource">Example US Core Provenance Resource</h3>
 
@@ -322,7 +478,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.27 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 27, 2020 00:58-0400">2020-10-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

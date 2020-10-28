@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.27 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.27). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core PractitionerRole</h2>
   
 
@@ -148,7 +148,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html">US Core PractitionerRole profile</a>  <strong>SHALL</strong> be used to record information about the roles that practitioners take in providing services to their patients.</p>
 
-<p>The essential fields to be provided in the US Core PractitionerRole resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core PractitionerRole resource are:</p>
 
 <style>
     table{
@@ -172,100 +172,77 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Flags</th>
-      <th>Card.</th>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
       <th>Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>PractitionerRole</td>
-      <td>PractitionerRole</td>
-      <td>I</td>
-      <td>0..*</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>PractitionerRole.id</td>
-      <td>id</td>
-      <td> </td>
-      <td>0..1</td>
-      <td>id</td>
-    </tr>
-    <tr>
       <td>PractitionerRole.practitioner</td>
       <td>practitioner</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>Reference(US Core Practitioner Profile)</td>
     </tr>
     <tr>
       <td>PractitionerRole.organization</td>
       <td>organization</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>Reference(US Core Organization Profile)</td>
     </tr>
     <tr>
       <td>PractitionerRole.code</td>
       <td>code</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">0..*</td>
       <td>CodeableConcept</td>
     </tr>
     <tr>
       <td>PractitionerRole.specialty</td>
       <td>specialty</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">0..*</td>
       <td>CodeableConcept</td>
     </tr>
     <tr>
       <td>PractitionerRole.location</td>
       <td>location</td>
-      <td>S</td>
-      <td>0..*</td>
-      <td>Reference(US Core Location Profile)</td>
+      <td style="text-align: center">0..*</td>
+      <td>Reference(Location)</td>
     </tr>
     <tr>
       <td>PractitionerRole.telecom</td>
       <td>telecom</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td style="text-align: center">0..*</td>
       <td>ContactPoint</td>
     </tr>
     <tr>
       <td>PractitionerRole.telecom.system</td>
       <td>system</td>
-      <td>SI</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>code</td>
     </tr>
     <tr>
       <td>PractitionerRole.telecom.value</td>
       <td>value</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>string</td>
     </tr>
     <tr>
-      <td>PractitionerRole.notAvailable.description</td>
+      <td>PractitionerRole.description</td>
       <td>description</td>
-      <td> </td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>string</td>
     </tr>
     <tr>
       <td>PractitionerRole.endpoint</td>
       <td>endpoint</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td style="text-align: center">0..*</td>
       <td>Reference(Endpoint)</td>
     </tr>
   </tbody>
 </table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-practitionerrole-resource">Example PractitionerRole Resource</h4>
 
@@ -556,7 +533,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.27 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 27, 2020 00:58-0400">2020-10-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

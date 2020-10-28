@@ -10,6 +10,20 @@ unable to create from the source clinical data they have available.
 
 A valid US Core Goal profile in addition to a reference to a member, using the US Core Patient resource, will require a lifecycleStatus, a description of the goal and, optionally, a target date.
 
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Goal resource are:
+
+{% include style_insert_table_blue.html %}
+
+| R4 Element            | Name             | Cardinality | Type                               |
+|-----------------------|------------------|:-----------:|------------------------------------|
+|  Goal.lifecycleStatus |  lifecycleStatus |     1..1    | code                               |
+|  Goal.description     |  description     |     1..1    | CodeableConcept                    |
+|  Goal.subject         |  subject         |     1..1    | Reference(US Core Patient Profile) |
+|  Goal.target          |  target          |     0..*    | BackboneElement                    |
+|  Goal.due[x]:dueDate  |  due[x]:dueDate  |     0..1    | date                               |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
 #### Example Goal Resource
 
 An example mapping of a Goal resource is shown here:

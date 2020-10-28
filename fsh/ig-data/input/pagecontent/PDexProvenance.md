@@ -21,16 +21,36 @@ In the Origin Provenance Profile the extension is included in the Provenance.ent
 The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
 
 
-The PDexProvenance record **SHOULD** be populated with the following essential fields as follows:
+The PDexProvenance record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:
 
 {% include style_insert_table_blue.html %}
 
-| Field                              | Value                                                                                                                                              |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| occurredPeriod or occurredDataTime | dateTime or Period of the encounter/procedure/medication being provided                                                                            |
-| recorded                           | Time of this transaction                                                                                                                           |
-| agent.[0].type                     | transmitter (for conversion of claims data to clinical resources) | TRANS (for information taken from manual input)| REVIEWER (for clinical resources) |
-| agent.[0].who                      | US Core Organization resource identifying the health plan                                                                                                  |
+| R4 Element                                                | Name                         | Cardinality | Type                                                                    |
+|-----------------------------------------------------------|------------------------------|:-----------:|-------------------------------------------------------------------------|
+| Provenance.target                                         |  target                      |     1..*    | Reference(Resource)                                                     |
+| Provenance.recorded                                       |  recorded                    |     1..1    | instant                                                                 |
+| Provenance.agent                                          |  agent                       |     1..*    | (Slice Definition)                                                      |
+| Provenance.agent:All Slices.type                          |  type                        |     1..1    | CodeableConcept                                                         |
+| Provenance.agent:All Slices.who                           |  who                         |     1..1    | Reference(US Core Organization Profile \| US Core Practitioner Profile) |
+| Provenance.agent:All Slices.onBehalfOf                    |  onBehalfOf                  |     0..1    | Reference(US Core Organization Profile)                                 |
+| Provenance.agent:ProvenanceAuthor                         |  agent:ProvenanceAuthor      |     0..*    | BackboneElement                                                         |
+| Provenance.agent:ProvenanceAuthor.type                    |  type                        |     1..1    | CodeableConcept                                                         |
+| Provenance.agent:ProvenanceAuthor.type.coding             |  coding                      |     1..*    | Coding                                                                  |
+| Provenance.agent:ProvenanceAuthor.type.coding.system      |  system                      |     1..1    | uri                                                                     |
+| Provenance.agent:ProvenanceAuthor.type.coding.code        |  code                        |     1..1    | code                                                                    |
+| Provenance.agent:ProvenanceAuthor.who                     |  who                         |     1..1    | Reference(US Core Organization Profile \| US Core Practitioner Profile) |
+| Provenance.agent:ProvenanceTransmitter                    |  agent:ProvenanceTransmitter |     0..1    | BackboneElement                                                         |
+| Provenance.agent:ProvenanceTransmitter.type               |  type                        |     1..1    | CodeableConcept                                                         |
+| Provenance.agent:ProvenanceTransmitter.type.coding        |  coding                      |     1..*    | Coding                                                                  |
+| Provenance.agent:ProvenanceTransmitter.type.coding.system |  system                      |     1..1    | uri                                                                     |
+| Provenance.agent:ProvenanceTransmitter.type.coding.code   |  code                        |     1..1    | code                                                                    |
+| Provenance.agent:ProvenanceTransmitter.who                |  who                         |     1..1    | Reference(US Core Organization Profile \| US Core Practitioner Profile) |
+| Provenance.entity.ProvenanceSourceFrom.url                |  url                         |     1..1    | uri                                                                     |
+| Provenance.entity.role                                    |  role                        |     1..1    | code                                                                    |
+| Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                     |
+
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 ### Example Provenance Records
 

@@ -13,19 +13,20 @@
 Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
 
 
-The essential fields to be provided in the US Core AllergyIntolerance resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core AllergyIntolerance resource are:
 
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name                  | R4 Name            | Card. | Type                               |
-|---------------------------------------|--------------------|-------|------------------------------------|
-| AllergyIntolerance                    | AllergyIntolerance | 0..*  |                                    |
-| AllergyIntolerance.id                 | id                 | 0..1  | id                                 |
-| AllergyIntolerance.clinicalStatus     | clinicalStatus     | 0..1  | CodeableConcept                    |
-| AllergyIntolerance.verificationStatus | verificationStatus | 1..1  | CodeableConcept                    |
-| AllergyIntolerance.code               | code               | 1..1  | CodeableConcept                    |
-| AllergyIntolerance.patient            | patient            | 1..1  | Reference(US Core Patient Profile) |
+| R4 Element                                | Name                | Cardinality | Type                               |
+|-------------------------------------------|---------------------|:-----------:|------------------------------------|
+| AllergyIntolerance.clinicalStatus         |  clinicalStatus     |     0..1    | CodeableConcept                    |
+| AllergyIntolerance.verificationStatus     |  verificationStatus |     0..1    | CodeableConcept                    |
+| AllergyIntolerance.code                   |  code               |     1..1    | CodeableConcept                    |
+| AllergyIntolerance.patient                |  patient            |     1..1    | Reference(US Core Patient Profile) |
+| AllergyIntolerance.reaction               |  reaction           |     0..*    | BackboneElement                    |
+| AllergyIntolerance.reaction.manifestation |  manifestation      |     1..*    | CodeableConcept                    |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example AllergyIntolerance Resource
 

@@ -1,9 +1,25 @@
 [Previous Page - US Core Condition](USCoreCondition.html)
 
-The (Coverage resource)[http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html] is profiled in the Da Vinci HRex IG. 
+The [Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) is profiled in the Da Vinci HRex IG. 
 
 {% include style_insert_table_blue.html %}
 
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Hrex Coverage resource are:
+
+| R4 Element              | Name          | Cardinality | Type                                 |
+|-------------------------|---------------|:-----------:|--------------------------------------|
+| Coverage.identifier     |  identifier   |     0..*    | Identifier                           |
+| Coverage.status         |  status       |     1..1    | code                                 |
+| Coverage.subscriberId   |  subscriberId |     0..1    | string                               |
+| Coverage.beneficiary    |  beneficiary  |     1..1    | Reference(US Core Patient Profile)   |
+| Coverage.payor          |  payor        |     1..*    | Reference(HRex Organization Profile) |
+| Coverage.class.type     |  type         |     1..1    | CodeableConcept                      |
+| Coverage.class.value    |  value        |     1..1    | string                               |
+| Coverage.value[x]       |  value[x]     |     1..1    |                                      |
+| Coverage.exception.type |  type         |     1..1    | CodeableConcept                      |
+
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
@@ -229,4 +245,4 @@ An example mapping of a Coverage resource is shown here:
 
 
 
-[Next Page - Device](PdexDevice.html)
+[Next Page - Pdex Device](PdexDevice.html)

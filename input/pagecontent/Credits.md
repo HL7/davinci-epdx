@@ -49,3 +49,4 @@ If a resource is required that is not part of US Core it will be defined and ref
 If a resource is unique to the PDex IG it will be defined in this guide, together with any unique value sets or coding systems required to support the profile.
 
 
+[Next Page - Downloads](Downloads.html)

@@ -2,22 +2,22 @@
 
 Where a Health Plan has access to structured and coded Immunization information for a member the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 
-The essential fields to be provided in the US Core Immunization resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Immunization resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name                       | R4 Name       | Card. | Type                                                      |
-|--------------------------------------------|---------------|-------|-----------------------------------------------------------|
-| Immunization                               | Immunization  | 0..*  |                                                           |
-| Immunization.id                            | id            | 0..1  | id                                                        |
-| Immunization.status                        | status        | 1..1  | code                                                      |
-| Immunization.statusReason                  | statusReason  | 0..1  | CodeableConcept                                           |
-| Immunization.vaccineCode                   | vaccineCode   | 1..1  | CodeableConcept                                           |
-| Immunization.patient                       | patient       | 1..1  | Reference(US Core Patient Profile)                        |
-| Immunization.occurrence[x]                 | occurrence[x] | 1..1  | dateTime, string                                          |
-| Immunization.primarySource                 | primarySource | 1..1  | boolean                                                   |
-| Immunization.performer.actor               | actor         | 1..1  | Reference(Practitioner | PractitionerRole | Organization) |
-| Immunization.protocolApplied.doseNumber[x] | doseNumber[x] | 1..1  | positiveInt, string                                       |
+| R4 Element                                  | Name           | Cardinality | Type                                                        |
+|---------------------------------------------|----------------|-------------|-------------------------------------------------------------|
+|  Immunization.status                        |  status        | 1..1        | code                                                        |
+|  Immunization.statusReason                  |  statusReason  | 0..1        | CodeableConcept                                             |
+|  Immunization.vaccineCode                   |  vaccineCode   | 1..1        | CodeableConcept                                             |
+|  Immunization.patient                       |  patient       | 1..1        | Reference(US Core Patient Profile)                          |
+|  Immunization.occurrence[x]                 |  occurrence[x] | 1..1        |                                                             |
+|  Immunization.primarySource                 |  primarySource | 1..1        | boolean                                                     |
+|  Immunization.performer.actor               |  actor         | 1..1        | Reference(Practitioner \| PractitionerRole \| Organization) |
+|  Immunization.protocolApplied.doseNumber[x] |  doseNumber[x] | 1..1        |                                                             |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example Immunization Resource:
 

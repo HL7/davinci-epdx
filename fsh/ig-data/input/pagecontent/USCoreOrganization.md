@@ -2,24 +2,27 @@
 
 When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
 
-The essential fields to be provided in the US Core Organization resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Organization resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name            | R4 Name      | Flags | Card. | Type                |
-|---------------------------------|--------------|-------|-------|---------------------|
-| Organization                    | Organization | I     | 0..*  |                     |
-| Organization.id                 | id           |      | 0..1  | id                  |
-| Organization.identifier         | identifier   | SI   | 1..*  | Identifier          |
-| Organization.identifier.system  | system       | S    | 1..1  | uri                 |
-| Organization.active             | active       | ?!S  | 1..1  | boolean             |
-| Organization.name               | name         | SI   | 1..1  | string              |
-| Organization.telecom            | telecom      | SI    | 1..*  | ContactPoint        |
-| Organization.address            | address      | SI    | 1..*  | Address             |
-| Organization.address.line       | line         | S    | 0..*  | string              |
-| Organization.address.city       | city         | S    | 0..1  | string              |
-| Organization.address.state      | state        | S    | 0..1  | string              |
-| Organization.address.postalCode | postalCode   | S    | 0..1  | string              |
-| Organization.endpoint           | endpoint     | S     | 0..*  | Reference(Endpoint) |
+| R4 Element                                 | Name            | Cardinality | Type               |
+|--------------------------------------------|-----------------|:-----------:|--------------------|
+|  Organization.identifier                   |  identifier     |     0..*    | (Slice Definition) |
+|  Organization.identifier:All Slices.system |  system         |     0..1    | uri                |
+|  Organization.identifier:All Slices.value  |  value          |     0..1    | string             |
+|  Organization.identifier:NPI               |  identifier:NPI |     0..1    | Identifier         |
+|  Organization.identifier:NPI.system        |  system         |     1..1    | uri                |
+|  Organization.identifier:CLIA.system       |  system         |     1..1    | uri                |
+|  Organization.active                       |  active         |     1..1    | boolean            |
+|  Organization.name                         |  name           |     1..1    | string             |
+|  Organization.telecom                      |  telecom        |     0..*    | ContactPoint       |
+|  Organization.address                      |  address        |     0..*    | Address            |
+|  Organization.address.line                 |  line           |     0..4    | string             |
+|  Organization.address.city                 |  city           |     0..1    | string             |
+|  Organization.address.state                |  state          |     0..1    | string             |
+|  Organization.address.postalCode           |  postalCode     |     0..1    | string             |
+|  Organization.address.country              |  country        |     0..1    | string             |
 
 #### Example Organization resource
 

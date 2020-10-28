@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.27 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.27). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Organization</h2>
   
 
@@ -148,7 +148,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>When a Health Plan is documenting information about organizations in relation to the Member’s Health History they <strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html">US Core Organization</a> resource.</p>
 
-<p>The essential fields to be provided in the US Core Organization resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Organization resource are:</p>
 
 <style>
     table{
@@ -172,104 +172,102 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Flags</th>
-      <th>Card.</th>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
       <th>Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Organization</td>
-      <td>Organization</td>
-      <td>I</td>
-      <td>0..*</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Organization.id</td>
-      <td>id</td>
-      <td> </td>
-      <td>0..1</td>
-      <td>id</td>
-    </tr>
-    <tr>
       <td>Organization.identifier</td>
       <td>identifier</td>
-      <td>SI</td>
-      <td>1..*</td>
+      <td style="text-align: center">0..*</td>
+      <td>(Slice Definition)</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier:All Slices.system</td>
+      <td>system</td>
+      <td style="text-align: center">0..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier:All Slices.value</td>
+      <td>value</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier:NPI</td>
+      <td>identifier:NPI</td>
+      <td style="text-align: center">0..1</td>
       <td>Identifier</td>
     </tr>
     <tr>
-      <td>Organization.identifier.system</td>
+      <td>Organization.identifier:NPI.system</td>
       <td>system</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Organization.identifier:CLIA.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
       <td>uri</td>
     </tr>
     <tr>
       <td>Organization.active</td>
       <td>active</td>
-      <td>?!S</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>boolean</td>
     </tr>
     <tr>
       <td>Organization.name</td>
       <td>name</td>
-      <td>SI</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>string</td>
     </tr>
     <tr>
       <td>Organization.telecom</td>
       <td>telecom</td>
-      <td>SI</td>
-      <td>1..*</td>
+      <td style="text-align: center">0..*</td>
       <td>ContactPoint</td>
     </tr>
     <tr>
       <td>Organization.address</td>
       <td>address</td>
-      <td>SI</td>
-      <td>1..*</td>
+      <td style="text-align: center">0..*</td>
       <td>Address</td>
     </tr>
     <tr>
       <td>Organization.address.line</td>
       <td>line</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td style="text-align: center">0..4</td>
       <td>string</td>
     </tr>
     <tr>
       <td>Organization.address.city</td>
       <td>city</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">0..1</td>
       <td>string</td>
     </tr>
     <tr>
       <td>Organization.address.state</td>
       <td>state</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">0..1</td>
       <td>string</td>
     </tr>
     <tr>
       <td>Organization.address.postalCode</td>
       <td>postalCode</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">0..1</td>
       <td>string</td>
     </tr>
     <tr>
-      <td>Organization.endpoint</td>
-      <td>endpoint</td>
-      <td>S</td>
-      <td>0..*</td>
-      <td>Reference(Endpoint)</td>
+      <td>Organization.address.country</td>
+      <td>country</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
     </tr>
   </tbody>
 </table>
@@ -388,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.27 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 27, 2020 00:58-0400">2020-10-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

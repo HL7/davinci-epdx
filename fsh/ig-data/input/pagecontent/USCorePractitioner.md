@@ -2,44 +2,23 @@
 
 The  [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
-The essential fields to be provided in the US Core Practitioner resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Practitioner resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name            | R4 Name      | Card. | Type            |
-|---------------------------------|--------------|-------|-----------------|
-| Practitioner                    | Practitioner | 0..*  |                 |
-| Practitioner.id                 | id           | 0..1  | id              |
-| Practitioner.identifier         | identifier   | 1..*  | Identifier      |
-| Practitioner.identifier.system  | system       | 1..1  | uri             |
-| Practitioner.identifier.value   | value        | 1..1  | string          |
-| Practitioner.name               | name         | 1..1  | HumanName       |
-| Practitioner.name.family        | family       | 1..1  | string          |
-| Practitioner.qualification.code | code         | 1..1  | CodeableConcept |
+| R4 Element                                 | Name            | Cardinality | Type               |
+|--------------------------------------------|-----------------|:-----------:|--------------------|
+|  Practitioner.identifier                   |  identifier     |     1..*    | (Slice Definition) |
+|  Practitioner.identifier:All Slices.system |  system         |     1..1    | uri                |
+|  Practitioner.identifier:All Slices.value  |  value          |     1..1    | string             |
+|  Practitioner.identifier:NPI               |  identifier:NPI |     0..1    | Identifier         |
+|  Practitioner.identifier:NPI.system        |  system         |     1..1    | uri                |
+|  Practitioner.name                         |  name           |     1..*    | HumanName          |
+|  Practitioner.name.family                  |  family         |     1..1    | string             |
+|  Practitioner.qualification.code           |  code           |     1..1    | CodeableConcept    |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
-#### Health Plan Mapping Assistance
-
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html). This is shown below as an assistance  to implementers:
-
-| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile         | Profile Field     | ValueSet | Notes |
-|------|-------------------|------------------|-------------------------------|----------------------|-------------------|----------|-------|
-| 1.1  | Claim-Provider    |  N/A                | Claim billing provider NPI    | US Core Practitioner | .identifier.value |          |       |
-| 3.1  | Claim-Provider    | N/A                 | Claim attending physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 6.1  | Claim-Provider    | N/A                 | Claim referring provider NPI  | US Core Practitioner | .identifier.value |          |       |
-| 8.1  | Claim-Provider    | N/A                 | Claim performing provider NPI | US Core Practitioner | .identifier.value |          |       |
-| 10.1 | Claim-Provider    | N/A                 | Claim operating physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 12.1 | Claim-Provider    | N/A                 | Claim other physician NPI     | US Core Practitioner | .identifier.value |          |       |
-| 14.1 | Claim-Provider    | N/A                 | Claim rendering physician NPI | US Core Practitioner | .identifier.value |          |       |
-| 17.1 | Claim-Provider    | N/A                 | Claim PCP                     | US Core Practitioner | .identifier.value |          |       |
-
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
-https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/
 
 #### Example Practitioner Resource
 

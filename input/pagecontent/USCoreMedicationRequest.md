@@ -12,22 +12,25 @@
 
 Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 
-The essential fields to be provided in the MedicationRequest resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the MedicationRequest resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name                                             | R4 Name                | Card. | Type                         |
-|------------------------------------------------------------------|------------------------|-------|------------------------------|
-| MedicationRequest                                                | MedicationRequest      |       | DomainResource               |
-| MedicationRequest.identifier                                     | identifier             | 0..*  | Identifier                   |
-| MedicationRequest.status                                         | status                 | 1..1  | code                         |
-| MedicationRequest.intent                                         | intent                 | 1..1  | code                         |
-| MedicationRequest.medication[x]                                  | medication[x]          | 1..1  |                              |
-| MedicationRequest.subject                                        | subject                | 1..1  | Reference(Patient | Group)   |
-| MedicationRequest.substitution.allowed[x].allowedCodeableConcept | allowedCodeableConcept |       | CodeableConcept              |
-| MedicationRequest.substitution.reason                            | reason                 | 0..1  | CodeableConcept              |
-| MedicationRequest.priorPrescription                              | priorPrescription      | 0..1  | Reference(MedicationRequest) |
-| MedicationRequest.detectedIssue                                  | detectedIssue          | 0..*  | Reference(DetectedIssue)     |
-| MedicationRequest.eventHistory                                   | eventHistory           | 0..*  | Reference(Provenance)        |
+| R4 Element                                | Name               | Cardinality | Type                                                                                               |
+|-------------------------------------------|--------------------|:-----------:|----------------------------------------------------------------------------------------------------|
+|  MedicationRequest.status                 |  status            |     1..1    | code                                                                                               |
+|  MedicationRequest.intent                 |  intent            |     1..1    | code                                                                                               |
+|  MedicationRequest.reported[x]            |  reported[x]       |     0..1    |                                                                                                    |
+|  MedicationRequest.medication[x]          |  medication[x]     |     1..1    |                                                                                                    |
+|  MedicationRequest.subject                |  subject           |     1..1    | Reference(US Core Patient Profile)                                                                 |
+|  MedicationRequest.encounter              |  encounter         |     0..1    | Reference(Encounter)                                                                               |
+|  MedicationRequest.authoredOn             |  authoredOn        |     1..1    | dateTime                                                                                           |
+|  MedicationRequest.requester              |  requester         |     1..1    | Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile) |
+|  MedicationRequest.dosageInstruction      |  dosageInstruction |     0..*    | Dosage                                                                                             |
+|  MedicationRequest.dosageInstruction.text |  text              |     0..1    | string                                                                                             |
+|  MedicationRequest.allowed[x]             |  allowed[x]        |     1..1    |                                                                                                    |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example MedicationRequest Resource
 

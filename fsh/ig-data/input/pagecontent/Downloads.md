@@ -1,3 +1,5 @@
+[Previous Page - Credits](Credits.html)
+
 
 - [Full Specification (zip)](full-ig.zip)
 - [JSON Definitions (zip)](definitions.json.zip)
@@ -7,4 +9,5 @@
 - [Turtle Definitions (zip)](definitions.ttl.zip)
 
 
+[Next Page - Artifacts Summary](artifacts.html)
 
