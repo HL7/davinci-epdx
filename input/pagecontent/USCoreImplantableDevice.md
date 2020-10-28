@@ -14,22 +14,30 @@ Where a Health Plan has information about devices used by the Member that inform
 
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
-The essential fields to be provided in the US Core Implantable Device resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Implantable Device resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name             | R4 Name    | Flags | Card. | Type                               |
-|----------------------------------|------------|-------|-------|------------------------------------|
-| Device                           | Device     | I     | 0..*  |                                    |
-| Device.id                        | id         |      | 0..1  | id                                 |
-| Device.udiCarrier                | udiCarrier | SI   | 1..1  | BackboneElement                    |
-| Device.deviceName.name           | name       |       | 1..1  | string                             |
-| Device.deviceName.type           | type       |       | 1..1  | code                               |
-| Device.type                      | type       | S     | 1..1  | CodeableConcept                    |
-| Device.specialization.systemType | systemType |       | 1..1  | CodeableConcept                    |
-| Device.version.value             | value      |       | 1..1  | string                             |
-| Device.property.type             | type       |       | 1..1  | CodeableConcept                    |
-| Device.patient                   | patient    | S     | 1..1  | Reference(US Core Patient Profile) |
+| R4 Element                          | Name                | Cardinality | Type                               |
+|-------------------------------------|---------------------|:-----------:|------------------------------------|
+|  Device.udiCarrier                  |  udiCarrier         |     0..1    | BackboneElement                    |
+|  Device.udiCarrier.deviceIdentifier |  deviceIdentifier   |     1..1    | string                             |
+|  Device.udiCarrier.carrierAIDC      |  carrierAIDC        |     0..1    | base64Binary                       |
+|  Device.udiCarrier.carrierHRF       |  carrierHRF         |     0..1    | string                             |
+|  Device.distinctIdentifier          |  distinctIdentifier |     0..1    | string                             |
+|  Device.manufactureDate             |  manufactureDate    |     0..1    | dateTime                           |
+|  Device.expirationDate              |  expirationDate     |     0..1    | dateTime                           |
+|  Device.lotNumber                   |  lotNumber          |     0..1    | string                             |
+|  Device.serialNumber                |  serialNumber       |     0..1    | string                             |
+|  Device.deviceName.name             |  name               |     1..1    | string                             |
+|  Device.deviceName.type             |  type               |     1..1    | code                               |
+|  Device.type                        |  type               |     1..1    | CodeableConcept                    |
+|  Device.specialization.systemType   |  systemType         |     1..1    | CodeableConcept                    |
+|  Device.version.value               |  value              |     1..1    | string                             |
+|  Device.property.type               |  type               |     1..1    | CodeableConcept                    |
+|  Device.patient                     |  patient            |     1..1    | Reference(US Core Patient Profile) |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example Implantable Device Resource
 

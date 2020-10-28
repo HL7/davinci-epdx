@@ -12,16 +12,16 @@
 
 Where a Health Plan has access to Medication information they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
 
-The essential fields to be provided in the Medication resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Medication resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name          | R4 Name    | Card. | Type                                               |
-|-------------------------------|------------|-------|----------------------------------------------------|
-| Medication                    | Medication | 0..*  |                                                    |
-| Medication.id                 | id         | 0..1  | id                                                 |
-| Medication.code               | code       | 1..1  | CodeableConcept                                    |
-| Medication.ingredient         | ingredient | 0..*  | BackboneElement                                    |
-| Medication.ingredient.item[x] | item[x]    | 1..1  | CodeableConcept, Reference(Substance | Medication) |
+| R4 Element                     | Name     | Cardinality | Type            |
+|--------------------------------|----------|:-----------:|-----------------|
+|  Medication.code               |  code    |     1..1    | CodeableConcept |
+|  Medication.ingredient.item[x] |  item[x] |     1..1    |                 |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example Medication Resource
 

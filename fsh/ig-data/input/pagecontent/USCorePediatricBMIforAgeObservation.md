@@ -5,20 +5,36 @@ The US Core IG profiles the Observation resource for a variety of purposes. For 
 - Pediatric BMI for Age
 - Pediatric Weight for Height
 
-The essential fields to be provided in the US Core Observation resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Observation resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name         | R4 Name          | Card. | Type                                                                                                   |
-|------------------------------|------------------|-------|--------------------------------------------------------------------------------------------------------|
-| Observation                  | Observation      | 0..*  |                                                                                                        |
-| Observation.id               | id               | 0..1  | id                                                                                                     |
-| Observation.status           | status           | 1..1  | code                                                                                                   |
-| Observation.category         | category         | 1..*  | CodeableConcept                                                                                        |
-| Observation.code             | code             | 1..1  | CodeableConcept                                                                                        |
-| Observation.subject          | subject          | 1..1  | Reference(US Core Patient Profile)                                                                     |
-| Observation.effective[x]     | effective[x]     | 0..1  | dateTime, Period                                                                                       |
-| Observation.value[x]         | value[x]         | 0..1  | Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period |
-| Observation.dataAbsentReason | dataAbsentReason | 0..1  | CodeableConcept                                                                                        |
+| R4 Element                                 | Name              | Cardinality | Type                               |
+|--------------------------------------------|-------------------|:-----------:|------------------------------------|
+|  Observation.status                        |  status           |     1..1    | code                               |
+|  Observation.category                      |  category         |     1..*    | (Slice Definition)                 |
+|  Observation.category:VSCat                |  category:VSCat   |     1..1    | CodeableConcept                    |
+|  Observation.category:VSCat.coding         |  coding           |     1..*    | Coding                             |
+|  Observation.category:VSCat.coding.system  |  system           |     1..1    | uri                                |
+|  Observation.category:VSCat.coding.code    |  code             |     1..1    | code                               |
+|  Observation.code                          |  code             |     1..1    | CodeableConcept                    |
+|  Observation.code.coding                   |  coding           |     1..*    | Coding                             |
+|  Observation.code.coding.system            |  system           |     1..1    | uri                                |
+|  Observation.code.coding.code              |  code             |     1..1    | code                               |
+|  Observation.subject                       |  subject          |     1..1    | Reference(US Core Patient Profile) |
+|  Observation.effective[x]                  |  effective[x]     |     1..1    |                                    |
+|  Observation.value[x]                      |  value[x]         |     0..1    | (Slice Definition)                 |
+|  Observation.value[x]:valueQuantity.value  |  value            |     1..1    | decimal                            |
+|  Observation.value[x]:valueQuantity.unit   |  unit             |     1..1    | string                             |
+|  Observation.value[x]:valueQuantity.system |  system           |     1..1    | uri                                |
+|  Observation.value[x]:valueQuantity.code   |  code             |     1..1    | code                               |
+|  Observation.dataAbsentReason              |  dataAbsentReason |     0..1    | CodeableConcept                    |
+|  Observation.component                     |  component        |     0..*    | BackboneElement                    |
+|  Observation.component.code                |  code             |     1..1    | CodeableConcept                    |
+|  Observation.component.value[x]            |  value[x]         |     0..1    |                                    |
+|  Observation.dataAbsentReason              |  dataAbsentReason |     0..1    | CodeableConcept                    |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 
 #### An Example BMI Age Observation Resource

@@ -1,3 +1,5 @@
+[Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
+
 # Operation $member-match on Patient
 
 Find Member using Patient and Coverage Resources
@@ -500,3 +502,6 @@ The CMS Interoperability and Patient Access Rule encourages, but does not requir
     "_revinclude=Provenance:target" 
 
 This will help a payer identify the source of data if/when records are merged into a member's health record, differentiating the data from data that came from the health plan itself.
+
+
+[Next Page - Data Mapping](DataMapping.html)

@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.27 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.27). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Pediatric BMI for Age Observation</h2>
   
 
@@ -153,7 +153,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Pediatric Weight for Height</li>
 </ul>
 
-<p>The essential fields to be provided in the US Core Observation resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Observation resource are:</p>
 
 <style>
     table{
@@ -177,69 +177,149 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Card.</th>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
       <th>Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Observation</td>
-      <td>Observation</td>
-      <td>0..*</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Observation.id</td>
-      <td>id</td>
-      <td>0..1</td>
-      <td>id</td>
-    </tr>
-    <tr>
       <td>Observation.status</td>
       <td>status</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>code</td>
     </tr>
     <tr>
       <td>Observation.category</td>
       <td>category</td>
-      <td>1..*</td>
+      <td style="text-align: center">1..*</td>
+      <td>(Slice Definition)</td>
+    </tr>
+    <tr>
+      <td>Observation.category:VSCat</td>
+      <td>category:VSCat</td>
+      <td style="text-align: center">1..1</td>
       <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Observation.category:VSCat.coding</td>
+      <td>coding</td>
+      <td style="text-align: center">1..*</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Observation.category:VSCat.coding.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Observation.category:VSCat.coding.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
     </tr>
     <tr>
       <td>Observation.code</td>
       <td>code</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Observation.code.coding</td>
+      <td>coding</td>
+      <td style="text-align: center">1..*</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Observation.code.coding.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Observation.code.coding.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
     </tr>
     <tr>
       <td>Observation.subject</td>
       <td>subject</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>Reference(US Core Patient Profile)</td>
     </tr>
     <tr>
       <td>Observation.effective[x]</td>
       <td>effective[x]</td>
-      <td>0..1</td>
-      <td>dateTime, Period</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
     </tr>
     <tr>
       <td>Observation.value[x]</td>
       <td>value[x]</td>
-      <td>0..1</td>
-      <td>Quantity, CodeableConcept, string, boolean, integer, Range, Ratio, SampledData, time, dateTime, Period</td>
+      <td style="text-align: center">0..1</td>
+      <td>(Slice Definition)</td>
+    </tr>
+    <tr>
+      <td>Observation.value[x]:valueQuantity.value</td>
+      <td>value</td>
+      <td style="text-align: center">1..1</td>
+      <td>decimal</td>
+    </tr>
+    <tr>
+      <td>Observation.value[x]:valueQuantity.unit</td>
+      <td>unit</td>
+      <td style="text-align: center">1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Observation.value[x]:valueQuantity.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Observation.value[x]:valueQuantity.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
     </tr>
     <tr>
       <td>Observation.dataAbsentReason</td>
       <td>dataAbsentReason</td>
-      <td>0..1</td>
+      <td style="text-align: center">0..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Observation.component</td>
+      <td>component</td>
+      <td style="text-align: center">0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Observation.component.code</td>
+      <td>code</td>
+      <td style="text-align: center">1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Observation.component.value[x]</td>
+      <td>value[x]</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Observation.dataAbsentReason</td>
+      <td>dataAbsentReason</td>
+      <td style="text-align: center">0..1</td>
       <td>CodeableConcept</td>
     </tr>
   </tbody>
 </table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="an-example-bmi-age-observation-resource">An Example BMI Age Observation Resource</h4>
 
@@ -327,7 +407,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.27 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 27, 2020 00:58-0400">2020-10-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

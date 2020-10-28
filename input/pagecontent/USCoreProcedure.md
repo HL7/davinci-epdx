@@ -12,8 +12,20 @@
 
 The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a member's health events.
 
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Procedure resource are:
 
 {% include style_insert_table_blue.html %}
+
+| R4 Element                         | Name          | Cardinality | Type                                                                                              |
+|------------------------------------|---------------|:-----------:|---------------------------------------------------------------------------------------------------|
+|  Procedure.status                  |  status       |     1..1    | code                                                                                              |
+|  Procedure.code                    |  code         |     1..1    | CodeableConcept                                                                                   |
+|  Procedure.subject                 |  subject      |     1..1    | Reference(US Core Patient Profile)                                                                |
+|  Procedure.performed[x]            |  performed[x] |     1..1    |                                                                                                   |
+|  Procedure.performer.actor         |  actor        |     1..1    | Reference(Practitioner \| PractitionerRole \| Organization \| Patient \| RelatedPerson \| Device) |
+|  Procedure.focalDevice.manipulated |  manipulated  |     1..1    | Reference(Device)                                                                                 |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:

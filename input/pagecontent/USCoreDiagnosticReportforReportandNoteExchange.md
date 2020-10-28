@@ -12,25 +12,26 @@
 
 Where a Health Plan has access to clinical notes and associated diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.
 
-The essential fields to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
 
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name           | R4 Name          | Card. | Type                                                                   |
-|--------------------------------|------------------|-------|------------------------------------------------------------------------|
-| DiagnosticReport               | DiagnosticReport | 0..*  |                                                                        |
-| DiagnosticReport.id            | id               | 0..1  | id                                                                     |
-| DiagnosticReport.status        | status           | 1..1  | code                                                                   |
-| DiagnosticReport.category      | category         | 1..1  | CodeableConcept                                                        |
-| DiagnosticReport.code          | code             | 1..1  | CodeableConcept                                                        |
-| DiagnosticReport.subject       | subject          | 1..1  | Reference(US Core Patient Profile)                                     |
-| DiagnosticReport.effective[x]  | effective[x]     | 1..1  | dateTime, Period                                                       |
-| DiagnosticReport.issued        | issued           | 1..1  | instant                                                                |
-| DiagnosticReport.performer     | performer        | 0..*  | Reference(US Core Practitioner Profile | US Core Organization Profile) |
-| DiagnosticReport.result        | result           | 0..*  | Reference(US Core Result Observation Profile)                          |
-| DiagnosticReport.media         | media            | 0..*  | BackboneElement                                                        |
-| DiagnosticReport.presentedForm | presentedForm    | 0..*  | Attachment                                                             |
+| R4 Element                                              | Name                      | Cardinality | Type                                                                    |
+|---------------------------------------------------------|---------------------------|:-----------:|-------------------------------------------------------------------------|
+| DiagnosticReport.status                                 |  status                   |     1..1    | code                                                                    |
+| DiagnosticReport.category                               |  category                 |     1..*    | (Slice Definition)                                                      |
+| DiagnosticReport.category:LaboratorySlice               |  category:LaboratorySlice |     1..1    | CodeableConcept                                                         |
+| DiagnosticReport.category:LaboratorySlice.coding        |  coding                   |     1..*    | Coding                                                                  |
+| DiagnosticReport.category:LaboratorySlice.coding.system |  system                   |     1..1    | uri                                                                     |
+| DiagnosticReport.category:LaboratorySlice.coding.code   |  code                     |     1..1    | code                                                                    |
+| DiagnosticReport.code                                   |  code                     |     1..1    | CodeableConcept                                                         |
+| DiagnosticReport.subject                                |  subject                  |     1..1    | Reference(US Core Patient Profile)                                      |
+| DiagnosticReport.effective[x]                           |  effective[x]             |     1..1    |                                                                         |
+| DiagnosticReport.issued                                 |  issued                   |     1..1    | instant                                                                 |
+| DiagnosticReport.performer                              |  performer                |     0..*    | Reference(US Core Practitioner Profile \| US Core Organization Profile) |
+| DiagnosticReport.result                                 |  result                   |     0..*    | Reference(US Core Laboratory Result Observation Profile)                |
 
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example DiagnosticReport for Report and Note exchange Resource
 

@@ -12,8 +12,42 @@
 
 The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
 
-The essential fields in the Patient profile are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient profile are:
+
 {% include style_insert_table_blue.html %}
+
+| R4 Element                      | Name               | Cardinality | Type                                |
+|---------------------------------|--------------------|:-----------:|-------------------------------------|
+|  Patient.us-core-race           |  us-core-race      |     0..1    | (Complex)                           |
+|  Patient.us-core-ethnicity      |  us-core-ethnicity |     0..1    | (Complex)                           |
+|  Patient.us-core-birthsex       |  us-core-birthsex  |     0..1    | code                                |
+|  Patient.identifier             |  identifier        |     1..*    | Identifier                          |
+|  Patient.identifier.system      |  system            |     1..1    | uri                                 |
+|  Patient.identifier.value       |  value             |     1..1    | string                              |
+|  Patient.name                   |  name              |     1..*    | HumanName                           |
+|  Patient.name.family            |  family            |     0..1    | string                              |
+|  Patient.name.given             |  given             |     0..*    | string                              |
+|  Patient.telecom                |  telecom           |     0..*    | ContactPoint                        |
+|  Patient.telecom.system         |  system            |     1..1    | code                                |
+|  Patient.telecom.value          |  value             |     1..1    | string                              |
+|  Patient.telecom.use            |  use               |     0..1    | code                                |
+|  Patient.gender                 |  gender            |     1..1    | code                                |
+|  Patient.birthDate              |  birthDate         |     0..1    | date                                |
+|  Patient.address                |  address           |     0..*    | Address                             |
+|  Patient.address.line           |  line              |     0..*    | string                              |
+|  Patient.address.city           |  city              |     0..1    | string                              |
+|  Patient.address.state          |  state             |     0..1    | string                              |
+|  Patient.address.postalCode     |  postalCode        |     0..1    | string                              |
+|  Patient.address.period         |  period            |     0..1    | Period                              |
+|  Patient.communication          |  communication     |     0..*    | BackboneElement                     |
+|  Patient.communication.language |  language          |     1..1    | CodeableConcept                     |
+|  Patient.link.other             |  other             |     1..1    | Reference(Patient \| RelatedPerson) |
+|  Patient.link.type              |  type              |     1..1    | code                                |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient resource from the CPCDS file are:
 
 | US Core Element                 | MustSupport | Cardinality | CARIN-BB Element            | CPCDS Element Mapping                                                                                         |
 |---------------------------------|-------------|-------------|-----------------------------|---------------------------------------------------------------------------------------------------------------|

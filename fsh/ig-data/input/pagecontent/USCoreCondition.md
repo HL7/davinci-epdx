@@ -1,8 +1,20 @@
 [Previous Page - US Core CareTeam](USCoreCareTeam.html)
 
-The essential fields to be provided in the US Core Condition resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Condition resource are:
 
 {% include style_insert_table_blue.html %}
+
+| R4 Element                   | Name                | Cardinality | Type                               |
+|------------------------------|---------------------|:-----------:|------------------------------------|
+| Condition.clinicalStatus     |  clinicalStatus     |     0..1    | CodeableConcept                    |
+| Condition.verificationStatus |  verificationStatus |     0..1    | CodeableConcept                    |
+| Condition.category           |  category           |     1..*    | CodeableConcept                    |
+| Condition.code               |  code               |     1..1    | CodeableConcept                    |
+| Condition.subject            |  subject            |     1..1    | Reference(US Core Patient Profile) |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+The essential fields to be provided in the Condition resource from the CPCDS file are:
 
 | US Core Element                   | MustSupport | Cardinality | CARIN-BB Element                         | CPCDS Element Mapping                                                                                                                          |
 |-----------------------------------|-------------|-------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|

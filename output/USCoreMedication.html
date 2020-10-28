@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.27 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -127,7 +127,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.27). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Medication</h2>
   
 
@@ -148,7 +148,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Where a Health Plan has access to Medication information they <strong>SHALL</strong> make the information available using the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html">US Core Medication</a> resource.</p>
 
-<p>The essential fields to be provided in the Medication resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Medication resource are:</p>
 
 <style>
     table{
@@ -172,51 +172,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>R4 Hierarchical Name</th>
-      <th>R4 Name</th>
-      <th>Card.</th>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
       <th>Type</th>
-      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Medication</td>
-      <td>Medication</td>
-      <td>0..*</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Medication.id</td>
-      <td>id</td>
-      <td>0..1</td>
-      <td>id</td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Medication.code</td>
       <td>code</td>
-      <td>1..1</td>
+      <td style="text-align: center">1..1</td>
       <td>CodeableConcept</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Medication.ingredient</td>
-      <td>ingredient</td>
-      <td>0..*</td>
-      <td>BackboneElement</td>
-      <td> </td>
     </tr>
     <tr>
       <td>Medication.ingredient.item[x]</td>
       <td>item[x]</td>
-      <td>1..1</td>
-      <td>CodeableConcept, Reference(Substance</td>
-      <td>Medication)</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-medication-resource">Example Medication Resource</h4>
 
@@ -310,7 +288,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.27 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 27, 2020 00:58-0400">2020-10-27</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

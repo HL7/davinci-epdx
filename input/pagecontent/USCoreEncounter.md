@@ -14,13 +14,41 @@ An example mapping of Health Plan data for Members to the [US Core Encounter pro
 
 {% include style_insert_table_blue.html %}
 
-
 When populating the encounter resource period - if claim has period, populate period; if only a date, populate the end date in a period element.
 
 Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.
 
 
-The minimum fields to be provided in the US Core Encounter resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Encounter resource are:
+
+| R4 Element                                     | Name                  | Cardinality | Type                                    |
+|------------------------------------------------|-----------------------|:-----------:|-----------------------------------------|
+| Encounter.identifier                           |  identifier           |     0..*    | Identifier                              |
+| Encounter.identifier.system                    |  system               |     1..1    | uri                                     |
+| Encounter.identifier.value                     |  value                |     1..1    | string                                  |
+| Encounter.status                               |  status               |     1..1    | code                                    |
+| Encounter.statusHistory.status                 |  status               |     1..1    | code                                    |
+| Encounter.statusHistory.period                 |  period               |     1..1    | Period                                  |
+| Encounter.class                                |  class                |     1..1    | Coding                                  |
+| Encounter.classHistory.class                   |  class                |     1..1    | Coding                                  |
+| Encounter.classHistory.period                  |  period               |     1..1    | Period                                  |
+| Encounter.type                                 |  type                 |     1..*    | CodeableConcept                         |
+| Encounter.subject                              |  subject              |     1..1    | Reference(US Core Patient Profile)      |
+| Encounter.participant                          |  participant          |     0..*    | BackboneElement                         |
+| Encounter.participant.type                     |  type                 |     0..*    | CodeableConcept                         |
+| Encounter.participant.period                   |  period               |     0..1    | Period                                  |
+| Encounter.participant.individual               |  individual           |     0..1    | Reference(US Core Practitioner Profile) |
+| Encounter.period                               |  period               |     0..1    | Period                                  |
+| Encounter.length                               |  length               |     0..1    | Duration                                |
+| Encounter.reasonCode                           |  reasonCode           |     0..*    | CodeableConcept                         |
+| Encounter.diagnosis.condition                  |  condition            |     1..1    | Reference(Condition \| Procedure)       |
+| Encounter.hospitalization                      |  hospitalization      |     0..1    | BackboneElement                         |
+| Encounter.hospitalization.dischargeDisposition |  dischargeDisposition |     0..1    | CodeableConcept                         |
+| Encounter.location                             |  location             |     0..*    | BackboneElement                         |
+| Encounter.location.location                    |  location             |     1..1    | Reference(Location)                     |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
 Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below.
 
 | US Core Element                                | MustSupport | Cardinality | CARIN-BB Element                                 | CPCDS Element Mapping                                                                                                                                                                                               |

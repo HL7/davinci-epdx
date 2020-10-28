@@ -17,6 +17,22 @@ For some resources payers are unlikely to have the clinical information necessar
 
 A Smoking Status observation requires codes and values for smoking observation. Payers may not have access to the detail data needed to create a valid observation resource.
 
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Smoking Status Observation resource are:
+
+{% include style_insert_table_blue.html %}
+
+| R4 Element                                 | Name                           | Cardinality | Type                               |
+|--------------------------------------------|--------------------------------|:-----------:|------------------------------------|
+|  Observation.status                        |  status                        |     1..1    | code                               |
+|  Observation.code                          |  code                          |     1..1    | CodeableConcept                    |
+|  Observation.subject                       |  subject                       |     1..1    | Reference(US Core Patient Profile) |
+|  Observation.issued                        |  issued                        |     1..1    | instant                            |
+|  Observation.value[x]                      |  value[x]                      |     1..1    | (Slice Definition)                 |
+|  Observation.value[x]:valueCodeableConcept |  value[x]:valueCodeableConcept |     1..1    | CodeableConcept                    |
+|  Observation.component.code                |  code                          |     1..1    | CodeableConcept                    |
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
 ### Example Smoking Status Observation
 
 US Core Smoking Status Observation: [https://hl7.org/fhir/us/core/Observation-some-day-smoker.html](https://hl7.org/fhir/us/core/Observation-some-day-smoker.html)

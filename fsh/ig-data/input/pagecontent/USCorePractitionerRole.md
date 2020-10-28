@@ -2,25 +2,24 @@
 
 The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
 
-The essential fields to be provided in the US Core PractitionerRole resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core PractitionerRole resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name                      | R4 Name          | Flags | Card. | Type                                    |
-|-------------------------------------------|------------------|-------|-------|-----------------------------------------|
-| PractitionerRole                          | PractitionerRole | I     | 0..*  |                                         |
-| PractitionerRole.id                       | id               |      | 0..1  | id                                      |
-| PractitionerRole.practitioner             | practitioner     | S    | 1..1  | Reference(US Core Practitioner Profile) |
-| PractitionerRole.organization             | organization     | S    | 1..1  | Reference(US Core Organization Profile) |
-| PractitionerRole.code                     | code             | S    | 1..1  | CodeableConcept                         |
-| PractitionerRole.specialty                | specialty        | S    | 1..1  | CodeableConcept                         |
-| PractitionerRole.location                 | location         | S    | 0..*  | Reference(US Core Location Profile)     |
-| PractitionerRole.telecom                  | telecom          | S    | 0..*  | ContactPoint                            |
-| PractitionerRole.telecom.system           | system           | SI   | 1..1  | code                                    |
-| PractitionerRole.telecom.value            | value            | S    | 1..1  | string                                  |
-| PractitionerRole.notAvailable.description | description      |       | 1..1  | string                                  |
-| PractitionerRole.endpoint                 | endpoint         | S     | 0..*  | Reference(Endpoint)                     |
+| R4 Element                       | Name          | Cardinality | Type                                    |
+|----------------------------------|---------------|:-----------:|-----------------------------------------|
+|  PractitionerRole.practitioner   |  practitioner |     1..1    | Reference(US Core Practitioner Profile) |
+|  PractitionerRole.organization   |  organization |     1..1    | Reference(US Core Organization Profile) |
+|  PractitionerRole.code           |  code         |     0..*    | CodeableConcept                         |
+|  PractitionerRole.specialty      |  specialty    |     0..*    | CodeableConcept                         |
+|  PractitionerRole.location       |  location     |     0..*    | Reference(Location)                     |
+|  PractitionerRole.telecom        |  telecom      |     0..*    | ContactPoint                            |
+|  PractitionerRole.telecom.system |  system       |     1..1    | code                                    |
+|  PractitionerRole.telecom.value  |  value        |     1..1    | string                                  |
+|  PractitionerRole.description    |  description  |     1..1    | string                                  |
+|  PractitionerRole.endpoint       |  endpoint     |     0..*    | Reference(Endpoint)                     |
 
-
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example PractitionerRole Resource
 

@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/123456> a fhir:DocumentReference;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "123456"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: current</p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></p><p><b>category</b>: <span title=\"Codes: {http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category clinical-note}\">Clinical Note</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p><p><b>date</b>: Oct 9, 2020 11:26:23 AM</p><p><b>author</b>: <a href=\"Organization-3.html\">Generated Summary: language: en-US; National Provider Identifier: 345678, Tax ID Number: 123-45-6789; active; name: Provider 1</a></p><p><b>custodian</b>: <a href=\"Organization-2.html\">Generated Summary: language: en-US; National Provider Identifier: 345678, Payer ID: 901234; active; name: Payer 1</a></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>format</b>: <span title=\"{http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem urn:ihe:iti:xds:2017:mimeTypeSufficient}\">urn:ihe:iti:xds:2017:mimeTypeSufficient</span></p></blockquote></div>"
+  ];
+  fhir:DocumentReference.status [ fhir:value "current"];
+  fhir:DocumentReference.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-NullFlavor" ];
+       fhir:Coding.code [ fhir:value "UNK" ]
+     ]
+  ];
+  fhir:DocumentReference.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category" ];
+       fhir:Coding.code [ fhir:value "clinical-note" ]
+     ]
+  ];
+  fhir:DocumentReference.subject [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Patient/1>;
+     fhir:Reference.reference [ fhir:value "Patient/1" ]
+  ];
+  fhir:DocumentReference.date [ fhir:value "2020-10-09T15:26:23.217+00:00"^^xsd:dateTime];
+  fhir:DocumentReference.author [
+     fhir:index 0;
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/3>;
+     fhir:Reference.reference [ fhir:value "Organization/3" ]
+  ];
+  fhir:DocumentReference.custodian [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/2>;
+     fhir:Reference.reference [ fhir:value "Organization/2" ]
+  ];
+  fhir:DocumentReference.content [
+     fhir:index 0;
+     fhir:DocumentReference.content.attachment [
+       fhir:Attachment.contentType [ fhir:value "application/pdf" ];
+       fhir:Attachment.url [ fhir:value "/Binary/1-pdf" ];
+       fhir:Attachment.title [ fhir:value "Uri where the data can be found = [base]/Binary/1-pdf\nor base64encode document and include in content.attachment.data element" ]
+     ];
+     fhir:DocumentReference.content.format [
+       fhir:Coding.system [ fhir:value "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem" ];
+       fhir:Coding.code [ fhir:value "urn:ihe:iti:xds:2017:mimeTypeSufficient" ]
+     ]
+  ] .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/3> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/2> a fhir:us .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/123456.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl;
+  owl:versionIRI <http://build.fhir.org/us/davinci-pdex/DocumentReference/123456.ttl> .
+
+# -------------------------------------------------------------------------------------
+

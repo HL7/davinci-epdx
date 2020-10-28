@@ -14,6 +14,21 @@ The  [Da Vinci PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/da
 
 {% include style_insert_table_blue.html %}
 
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the PDex Medication Dispense resource are:
+
+| R4 Element                                     | Name            | Cardinality | Type                                                                                              |
+|------------------------------------------------|-----------------|:-----------:|---------------------------------------------------------------------------------------------------|
+| MedicationDispense.status                      |  status         |     1..1    | code                                                                                              |
+| MedicationDispense.medication[x]               |  medication[x]  |     1..1    |                                                                                                   |
+| MedicationDispense.subject                     |  subject        |     1..1    | Reference(Patient \| Group)                                                                       |
+| MedicationDispense.performer.actor             |  actor          |     1..1    | Reference(Practitioner \| PractitionerRole \| Organization \| Patient \| Device \| RelatedPerson) |
+| MedicationDispense.substitution.wasSubstituted |  wasSubstituted |     1..1    | boolean                                                                                           |
+
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+
+
 #### Health Plan Mapping Assistance
 
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispence profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance  to implementers:

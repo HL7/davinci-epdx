@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/HandlingDataProvenance.md                                   *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - Workflow Examples](WorkflowExamples.html)
+[Previous Page - PDex Implementation, Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
 
 Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.
 
@@ -26,4 +26,4 @@ This guide provides a pdex-provenance resource that is customized to the needs o
 the payer by focusing on their role as a transmitter and not originator of data.
 
 
-[Next Page - Member-Authorized OAuth2 Exchange](Member-AuthorizedOAuth2Exchange.html)
+[Next Page - Payer-to-Payer Exchange](PayerToPayerExchange.html)

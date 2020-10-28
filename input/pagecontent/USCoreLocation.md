@@ -12,42 +12,26 @@
 
 The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 
-The essential fields to be provided in the US Core Location resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Location resource are:
+
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name          | R4 Name              | Card. | Type                                    |
-|-------------------------------|----------------------|-------|-----------------------------------------|
-| Location                      | Location             | 0..*  |                                         |
-| Location.id                   | id                   | 0..1  | id                                      |
-| Location.status               | status               | 0..1  | code                                    |
-| Location.name                 | name                 | 1..1  | string                                  |
-| Location.telecom              | telecom              | 0..*  | ContactPoint                            |
-| Location.address              | address              | 0..1  | Address                                 |
-| Location.address.line         | line                 | 0..*  | string                                  |
-| Location.address.city         | city                 | 0..1  | string                                  |
-| Location.address.state        | state                | 0..1  | string                                  |
-| Location.address.postalCode   | postalCode           | 0..1  | string                                  |
-| Location.managingOrganization | managingOrganization | 0..1  | Reference(US Core Organization Profile) |
+| R4 Element                     | Name                  | Cardinality | Type                                    |
+|--------------------------------|-----------------------|:-----------:|-----------------------------------------|
+|  Location.status               |  status               |     0..1    | code                                    |
+|  Location.name                 |  name                 |     1..1    | string                                  |
+|  Location.telecom              |  telecom              |     0..*    | ContactPoint                            |
+|  Location.address              |  address              |     0..1    | Address                                 |
+|  Location.address.line         |  line                 |     0..*    | string                                  |
+|  Location.address.city         |  city                 |     0..1    | string                                  |
+|  Location.address.state        |  state                |     0..1    | string                                  |
+|  Location.address.postalCode   |  postalCode           |     0..1    | string                                  |
+|  Location.position.longitude   |  longitude            |     1..1    | decimal                                 |
+|  Location.position.latitude    |  latitude             |     1..1    | decimal                                 |
+|  Location.managingOrganization |  managingOrganization |     0..1    | Reference(US Core Organization Profile) |
 
-#### Health Plan Mapping Assistance
+<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html). This is shown below as an assistance  to implementers:
-
-| Line | PayerSourceRecord | CMS BB 2.0 Field | Data Descriptor               | FHIR Profile     | Profile Field     | ValueSet                                                         | Notes |
-|------|-------------------|------------------|-------------------------------|------------------|-------------------|------------------------------------------------------------------|-------|
-| 15.1 | Claim             |  N/A                | Claim bill facility type code | US Core Location | .type             | http://build.fhir.org/v3/ServiceDeliveryLocationRoleType/vs.html |       |
-| 5.1  | Claim-Provider    |  N/A                | Claim site of service NPI     | US Core Location | .identifier.value |                                                                  |       |
-| 16.1 | Claim-Provider    |  N/A                | Claim service location NPI    | US Core Location | .identifier.value |                                                                  |       |
-| 7.1  | Claim-Pharmacy    | N/A                 | Pharmacy service type code    | US Core Location | .type             |                                                                  |       |
-
-Where an entry is provided in the CMS BB2.0 FIELD column the definition of the field can be reviewed using the following URL:
-
-https://bluebutton.cms.gov/resources/variables/{CMS_BB2.0_FIELD}/
-
-Where {CMS_BB2.0_FIELD} is replaced with the Field value in lower case. For example:
-
-https://bluebutton.cms.gov/resources/variables/bene_id/
-https://bluebutton.cms.gov/resources/variables/dob_dt/
 
 #### Example Location Resource
 
