@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="pdex-medicationdispense-patient"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>SearchParameter: PdexMedicationDispensePatient</h2><p><b> description</b> : Returns prescriptions for a specific patient<br/>
+<em>NOTE</em>: This Pdex SearchParameter definition extends the usage context of
+<a href="http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">capabilitystatement-expectation</a>
+ extension to formally express implementer conformance expectations for these elements:
+ - multipleAnd
+ - multipleOr
+ - comparator
+ - modifier
+ - chain
+
+ </p><br/><p><b> id</b> pdex-medicationdispense-patient</p><p><b> url</b> : <b> http://hl7.org/fhir/us/core/SearchParameter/pdex-medicationdispense-patient</b>
+			</p><p><b> version</b> : 4.0.1</p><p><b> name</b> : PdexMedicationDispensePatient</p><p><b> derivedFrom</b> : http://hl7.org/fhir/SearchParameter/clinical-patient
+			</p><p><b> status</b> : active</p><p><b> experimental</b>  False</p><p><b> date</b> : 2020-07-01</p><p><b> publisher</b> : HL7 International - Financial Management</p><p><b> contact</b> : http://www.hl7.org/Special/committees/fm.cfm</p><p><b> useContext</b> : </p><p><b> jurisdiction</b> : United States of America (the) <span> (Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United
+           States of America (the)'})</span>
+			</p>    <!-- <p>
+		<b> purpose</b> : Need to search by identifier for various infrastructural cases - mainly retrieving packages,
+         and matching as part of a chain</p> --><p><b> code</b> : <code>patient</code>
+			</p><p><b> base</b> :MedicationDispense</p><p><b> type</b> : reference</p><p><b> expression</b> : <code>MedicationDispense.subject.where(resolve() is Patient)</code>
+			</p><p><b> xpath</b> : <code>f:MedicationDispense/f:subject</code>
+			</p><p><b> xpathUsage</b> : normal</p><p><b> multipleOr</b> : True   (Conformance Expectation = MAY)</p><p><b> multipleAnd</b> : True  ( Conformance Expectation = MAY)</p></div>
+  </text>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-patient"/>
+  <version value="0.1.29"/>
+  <name value="PdexMedicationDispensePatient"/>
+  <derivedFrom value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2020-07-01T21:51:58.017219Z"/>
+  <publisher value="HL7 International - Financial Management"/>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark@ekivemark.com0"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Returns dispensed prescriptions for a specific patient&#xA;&lt;em&gt;NOTE&lt;/em&gt;: This Pdex SearchParameter definition extends the usage context of&#xA;&lt;a href=&quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&quot;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <code value="patient"/>
+  <base value="MedicationDispense"/>
+  <type value="reference"/>
+  <expression value="MedicationDispense.subject.where(resolve() is Patient)"/>
+  <xpath value="f:MedicationDispense/f:subject"/>
+  <xpathUsage value="normal"/>
+  <target value="Patient"/>
+  <target value="Group"/>
+  <multipleOr value="true">
+    <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+      <valueCode value="MAY"/>
+    </extension>
+  </multipleOr>
+  <multipleAnd value="true">
+    <extension url="http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation">
+      <valueCode value="MAY"/>
+    </extension>
+  </multipleAnd>
+</SearchParameter>
