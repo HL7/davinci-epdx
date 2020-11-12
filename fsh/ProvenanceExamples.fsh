@@ -1,16 +1,16 @@
 Instance: ExampleProvenanceTransmitter
 InstanceOf: pdex-provenance
 Description: "Example of a Transmitter Provenance record for a bundle"
-* id = "1000001"
-* meta.versionId = "1"
-* meta.lastUpdated = "2020-07-09T15:26:23.217+00:00"
-* target[0].reference = "Bundle/2000002"
-* recorded = "2020-07-09T15:26:23.217+00:00"
-* agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#transmitter "Transmitter"
-* agent[0].who.reference = "Organization/2"
-* entity.role = http://hl7.org/fhir/provenance-entity-role#source
-* entity.what.display = "No reference available"
-* entity.extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
+  * id = "1000001"
+  * meta.versionId = "1"
+  * meta.lastUpdated = "2020-07-09T15:26:23.217+00:00"
+  * target[0].reference = "Bundle/2000002"
+  * recorded = "2020-07-09T15:26:23.217+00:00"
+  * agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#transmitter "Transmitter"
+  * agent[0].who.reference = "Organization/2"
+  * entity.role = http://hl7.org/fhir/provenance-entity-role#source
+  * entity.what.display = "No reference available"
+  * entity.extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
 
 Instance: ExampleProvenanceAuthor
 InstanceOf: pdex-provenance

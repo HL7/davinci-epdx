@@ -14,6 +14,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | ig.ini                                                                          | generated | fsh/config.yaml                                                                             |
 | input/ImplementationGuide-hl7.fhir.us.davinci-pdex.json                         | generated | fsh/config.yaml, {all input resources and pages}                                            |
 | input/ignoreWarnings.txt                                                        | generated |                                                                                             |
+| input/capabilities/CapabilityStatement-pdex-server.json                         | copied    | fsh/ig-data/input/capabilities/StructureDefinition-capabilitystatement-pdex-server.json     |
 | input/images/CDSHooksSmartOnFHIR.png                                            | copied    | fsh/ig-data/input/images/CDSHooksSmartOnFHIR.png                                            |
 | input/images/DataViewAdminFinancialClinicalInterop.png                          | copied    | fsh/ig-data/input/images/DataViewAdminFinancialClinicalInterop.png                          |
 | input/images/MappingFromV2toFHIR.png                                            | copied    | fsh/ig-data/input/images/MappingFromV2toFHIR.png                                            |
@@ -44,6 +45,8 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/PdexProvenance-intro.md                                       | copied    | fsh/ig-data/input/pagecontent/PdexProvenance-intro.md                                       |
 | input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         | copied    | fsh/ig-data/input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         |
 | input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    | copied    | fsh/ig-data/input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    |
+| input/pagecontent/StructureDefinition-pdex-device-intro.md                      | copied    | fsh/ig-data/input/pagecontent/StructureDefinition-pdex-device-intro.md                      |
+| input/pagecontent/StructureDefinition-pdex-device-notes.md                      | copied    | fsh/ig-data/input/pagecontent/StructureDefinition-pdex-device-notes.md                      |
 | input/pagecontent/USCoreAllergyIntolerance.md                                   | copied    | fsh/ig-data/input/pagecontent/USCoreAllergyIntolerance.md                                   |
 | input/pagecontent/USCoreCarePlan.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreCarePlan.md                                             |
 | input/pagecontent/USCoreCareTeam.md                                             | copied    | fsh/ig-data/input/pagecontent/USCoreCareTeam.md                                             |
@@ -73,4 +76,8 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/UseCaseScenarios.md                                           | copied    | fsh/ig-data/input/pagecontent/UseCaseScenarios.md                                           |
 | input/pagecontent/VitalSigns.md                                                 | copied    | fsh/ig-data/input/pagecontent/VitalSigns.md                                                 |
 | input/pagecontent/WorkflowExamples.md                                           | copied    | fsh/ig-data/input/pagecontent/WorkflowExamples.md                                           |
+| input/pagecontent/capabilitystatement-pdex-server-intro.md                      | copied    | fsh/ig-data/input/pagecontent/capabilitystatement-pdex-server-intro.md                      |
+| input/pagecontent/capabilitystatement-pdex-server.md                            | copied    | fsh/ig-data/input/pagecontent/capabilitystatement-pdex-server.md                            |
 | input/pagecontent/index.md                                                      | copied    | fsh/ig-data/input/pagecontent/index.md                                                      |
+| input/resources/SearchParameter-pdex-medicationdispense-patient.json            | copied    | fsh/ig-data/input/resources/SearchParameter-pdex-medicationdispense-patient.json            |
+| input/resources/SearchParameter-pdex-medicationdispense-status.json             | copied    | fsh/ig-data/input/resources/SearchParameter-pdex-medicationdispense-status.json             |

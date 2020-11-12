@@ -34,11 +34,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.1.28"/>
+  <version value="0.1.29"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-10-28T03:31:43-04:00"/>
+  <date value="2020-11-12T18:24:38-05:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -256,10 +256,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/pdex-provenance"/>
+        <reference value="StructureDefinition/pdex-medicationdispense"/>
       </reference>
-      <name value="PDex Entity Source Provenance"/>
-      <description value="Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."/>
+      <name value="PDex MedicationDispense"/>
+      <description value="Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -267,10 +267,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/pdex-medicationdispense"/>
+        <reference value="StructureDefinition/pdex-provenance"/>
       </reference>
-      <name value="PDex MedicationDispense"/>
-      <description value="Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"/>
+      <name value="PDex Provenance"/>
+      <description value="Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -303,7 +303,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="ValueSet/FDANationalDrugCode"/>
       </reference>
       <name value="FDA National Drug Code (NDC)"/>
-      <description value="FDA National Drug Code (NDC)"/>
+      <description value="The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. &#xA7; 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.&#xA;&#xA;The information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.&#xA;&#xA;Users should note:&#xA;&#xA;Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.&#xA;&#xA;Information regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)&#xA;&#xA;Users should note a few important items&#xA;&#xA;*   The NDC Directory is updated daily.&#xA;*   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.&#xA;*   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -451,6 +451,17 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/1000017"/>
+      </reference>
+      <name value="ExampleProvenanceBundleTransmitter"/>
+      <description value="Example of a Transmitter Provenance record for a bundle"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
@@ -569,6 +580,39 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <name value="PdexServerCapabilityStatement"/>
       <description value="Payer Data Exchange Server Capability Statement"/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/pdex-server"/>
+      </reference>
+      <name value="PDEX Server CapabilityStatement"/>
+      <description value="This Section describes the expected capabilities of the PDEX Server actor which is responsible for providing responses to the queries submitted by the PDEX Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDEX Servers are defined. PDEX Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/pdex-medicationdispense-patient"/>
+      </reference>
+      <name value="PdexMedicationDispensePatient"/>
+      <description value="Returns dispensed prescriptions for a specific patient&#xA;&lt;em&gt;NOTE&lt;/em&gt;: This Pdex SearchParameter definition extends the usage context of&#xA;&lt;a href=&quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&quot;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/pdex-medicationdispense-status"/>
+      </reference>
+      <name value="PdexMedicationDispenseStatus"/>
+      <description value="Status of the prescription dispense&#xA; &lt;em&gt;NOTE&lt;/em&gt;: This SearchParameter definition extends the usage context of&#xA;&lt;a href=&quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&quot;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+      <exampleBoolean value="false"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

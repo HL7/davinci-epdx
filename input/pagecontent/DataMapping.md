@@ -39,4 +39,4 @@ In this data mapping section each profile has a listing of the minimum essential
 
 
 
-[Next Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
+[Next Page - PDex Server Capability Statement](CapabilityStatement-pdex-server.html)
