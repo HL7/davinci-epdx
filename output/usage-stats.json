@@ -1,6 +1,6 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -93,11 +93,26 @@
     "Provenance": [
       {
         "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
-        "title": "PDex Entity Source Provenance"
+        "title": "PDex Provenance"
       }
     ]
   },
   "usage": {
+    "htp://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.resource.interaction"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.interaction",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.operation",
+      "CapabilityStatement.rest.resource.searchParam",
+      "SearchParameter.multipleAnd",
+      "SearchParameter.multipleOr"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination": [
+      "CapabilityStatement.rest.resource"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],

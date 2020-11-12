@@ -28,7 +28,7 @@
         <xsl:value-of select="concat('Unable to find Jira work group defined that corresponds with HL7 website http://', $committeePageBase, $wgWebCode, '.  If that URL resolves, please contact the HL7 webmaster.')"/>
       </xsl:message>
     </xsl:if>
-    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='ballot' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
+    <xsl:for-each select="/root/package-list/package[not(@status='ci-build' or @status='preview' or @status='draft' or @status='ballot' or @status='trial-use' or @status='update' or @status='normative' or status='trial-use+normative')]">
       <xsl:message terminate="yes">
         <xsl:value-of select="concat('Unrecognized package-list status: ', @status, ' for release ', @version)"/>
       </xsl:message>

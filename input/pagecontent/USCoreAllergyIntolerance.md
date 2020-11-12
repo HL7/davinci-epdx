@@ -8,7 +8,7 @@
 * ig-data/input/pagecontent/USCoreAllergyIntolerance.md                                 *
 *****************************************************************************************
 {% endcomment %} -->
-[Previous Page - Data Mapping](DataMapping.html)
+[Previous Page - PDex Server Capability Statement](CapabilityStatement-pdex-server.html)
 
 Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
 

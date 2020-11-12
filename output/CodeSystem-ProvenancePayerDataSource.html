@@ -42,8 +42,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"11.12"}
-    h3,h4,h5,h6{--heading-prefix:"11.12"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.15"}
+    h3,h4,h5,h6{--heading-prefix:"11.15"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -87,16 +87,46 @@
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <!-- menu.xml  -->
 <!-- menu.xml  -->
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
-  <li><a href="toc.html">Table of Contents</a></li>
-  <li><a href="Introduction.html">Introduction</a></li>
-  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-  <li><a href="artifacts.html">Artifact Index</a></li>
 
-  <!-- menu.xml  -->
-    <li><a href="Downloads.html">Downloads</a></li>
-  </ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="Introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="DataMapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="CDS-Hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="PayerToPayerExchange.html">Payer-to-Payer Exchange</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="CapabilityStatement-pdex-server.html">Capability Statement</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifact Index</a>
+  </li>
+  <li>
+    <a href="Downloads.html">Downloads</a>
+  </li>
+</ul>
 
 
             </div>  <!-- /.nav-collapse -->
@@ -120,7 +150,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -174,10 +204,10 @@
   <table class="grid">
 <tbody>
 <tr><td>Defining URL:</td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td></tr>
- <tr><td>Version:</td><td>0.1.28</td></tr>
+ <tr><td>Version:</td><td>0.1.29</td></tr>
  <tr><td>Name:</td><td>ProvenancePayerDataSource</td></tr>
  <tr><td>Title:</td><td>Provenance Payer Data Source Format</td></tr>
- <tr><td>Status:</td><td>Active as of 2020-10-28T03:31:43-04:00</td></tr>
+ <tr><td>Status:</td><td>Active as of 2020-11-12T18:24:38-05:00</td></tr>
  <tr><td>Definition:</td><td><p>CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)</p>
 </td></tr>
  <tr><td>Content:</td><td>Complete: All the concepts defined by the code system are included in the code system resource</td></tr>
@@ -195,7 +225,7 @@
 </ul>
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p>This code system http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">hl7v2other<a name="ProvenancePayerDataSource-hl7v2other"> </a></td><td>HL7 v2</td><td>HL7 v2 Message</td></tr><tr><td style="white-space:nowrap">hl7v2oru<a name="ProvenancePayerDataSource-hl7v2oru"> </a></td><td>HL7 v2 ORU</td><td>HL7 v2 Structured Observation Report(ORU) message</td></tr><tr><td style="white-space:nowrap">hl7v2adt<a name="ProvenancePayerDataSource-hl7v2adt"> </a></td><td>HL7 v2 ADT</td><td>HL7 v2 Admit, Discharge Transfer (ADT) message</td></tr><tr><td style="white-space:nowrap">hl7v2r01<a name="ProvenancePayerDataSource-hl7v2r01"> </a></td><td>HL7 v2 R01</td><td>HL7 v2 Observation (R01) message</td></tr><tr><td style="white-space:nowrap">hl7v2rsp<a name="ProvenancePayerDataSource-hl7v2rsp"> </a></td><td>HL7 v2 RSP</td><td>HL7 V2 Immunization Record Response</td></tr><tr><td style="white-space:nowrap">hl7v2orm<a name="ProvenancePayerDataSource-hl7v2orm"> </a></td><td>HL7 v2 ORM</td><td>HL7 v2 Orders</td></tr><tr><td style="white-space:nowrap">hl7v2mdm<a name="ProvenancePayerDataSource-hl7v2mdm"> </a></td><td>HL7 v2 MDM</td><td>Medical Document Management</td></tr><tr><td style="white-space:nowrap">hl7v2vxu<a name="ProvenancePayerDataSource-hl7v2vxu"> </a></td><td>HL7 v2 VXU</td><td>HL7 V2 Immunization Transaction</td></tr><tr><td style="white-space:nowrap">hl7v3<a name="ProvenancePayerDataSource-hl7v3"> </a></td><td>HL7 v3</td><td>HL7 v3 Message</td></tr><tr><td style="white-space:nowrap">hl7ccda<a name="ProvenancePayerDataSource-hl7ccda"> </a></td><td>HL7 C-CDA</td><td>HL7 Consolidated-Clinical Document Architecture</td></tr><tr><td style="white-space:nowrap">hl7cda<a name="ProvenancePayerDataSource-hl7cda"> </a></td><td>HL7 CDA</td><td>HL7 CDA documents that are not C-CDA</td></tr><tr><td style="white-space:nowrap">hl7cdaqrda<a name="ProvenancePayerDataSource-hl7cdaqrda"> </a></td><td>HL7 CDA QRDA</td><td>HL7 Quality Reporting Document</td></tr><tr><td style="white-space:nowrap">hl7fhirdstu2<a name="ProvenancePayerDataSource-hl7fhirdstu2"> </a></td><td>FHIR DSTU2</td><td>HL7 FHIR DSTU2</td></tr><tr><td style="white-space:nowrap">hl7fhirdstu3<a name="ProvenancePayerDataSource-hl7fhirdstu3"> </a></td><td>FHIR STU3</td><td>HL7 FHIR STU3</td></tr><tr><td style="white-space:nowrap">hl7fhirr4<a name="ProvenancePayerDataSource-hl7fhirr4"> </a></td><td>FHIR R4</td><td>HL7 FHIR R4</td></tr><tr><td style="white-space:nowrap">x12837<a name="ProvenancePayerDataSource-x12837"> </a></td><td>837 claim</td><td>X12 837 Claim</td></tr><tr><td style="white-space:nowrap">x12278<a name="ProvenancePayerDataSource-x12278"> </a></td><td>278</td><td>X12 Prior Authorization</td></tr><tr><td style="white-space:nowrap">x12275<a name="ProvenancePayerDataSource-x12275"> </a></td><td>275</td><td>X12 Attachment</td></tr><tr><td style="white-space:nowrap">x12other<a name="ProvenancePayerDataSource-x12other"> </a></td><td>X12</td><td>X12 non-specific transaction</td></tr><tr><td style="white-space:nowrap">script<a name="ProvenancePayerDataSource-script"> </a></td><td>NCPDP SCRIPT</td><td>National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)</td></tr><tr><td style="white-space:nowrap">ncpdp<a name="ProvenancePayerDataSource-ncpdp"> </a></td><td>NCPDP Telecommunication</td><td>NCPDP Telecommunication transaction (pharmacy claims)</td></tr><tr><td style="white-space:nowrap">capture<a name="ProvenancePayerDataSource-capture"> </a></td><td>Direct Capture</td><td>Direct Capture, such as into a payers case management system</td></tr><tr><td style="white-space:nowrap">customtx<a name="ProvenancePayerDataSource-customtx"> </a></td><td>Trading Partner Format</td><td>Trading Partner Proprietary format</td></tr><tr><td style="white-space:nowrap">image<a name="ProvenancePayerDataSource-image"> </a></td><td>Image</td><td>Fax or scanned document</td></tr><tr><td style="white-space:nowrap">unstructured<a name="ProvenancePayerDataSource-unstructured"> </a></td><td>Unstructured Document</td><td>PDF, test and other unstructured document</td></tr><tr><td style="white-space:nowrap">other<a name="ProvenancePayerDataSource-other"> </a></td><td>Other</td><td>Any other document format not specifically defined</td></tr></table></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>This code system http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">hl7v2other<a name="ProvenancePayerDataSource-hl7v2other"> </a></td><td>HL7 v2</td><td>HL7 v2 Message</td></tr><tr><td style="white-space:nowrap">hl7v2oru<a name="ProvenancePayerDataSource-hl7v2oru"> </a></td><td>HL7 v2 ORU</td><td>HL7 v2 Structured Observation Report(ORU) message</td></tr><tr><td style="white-space:nowrap">hl7v2adt<a name="ProvenancePayerDataSource-hl7v2adt"> </a></td><td>HL7 v2 ADT</td><td>HL7 v2 Admit, Discharge Transfer (ADT) message</td></tr><tr><td style="white-space:nowrap">hl7v2r01<a name="ProvenancePayerDataSource-hl7v2r01"> </a></td><td>HL7 v2 R01</td><td>HL7 v2 Observation (R01) message</td></tr><tr><td style="white-space:nowrap">hl7v2rsp<a name="ProvenancePayerDataSource-hl7v2rsp"> </a></td><td>HL7 v2 RSP</td><td>HL7 V2 Immunization Record Response</td></tr><tr><td style="white-space:nowrap">hl7v2orm<a name="ProvenancePayerDataSource-hl7v2orm"> </a></td><td>HL7 v2 ORM</td><td>HL7 v2 Orders</td></tr><tr><td style="white-space:nowrap">hl7v2mdm<a name="ProvenancePayerDataSource-hl7v2mdm"> </a></td><td>HL7 v2 MDM</td><td>Medical Document Management</td></tr><tr><td style="white-space:nowrap">hl7v2vxu<a name="ProvenancePayerDataSource-hl7v2vxu"> </a></td><td>HL7 v2 VXU</td><td>HL7 V2 Immunization Transaction</td></tr><tr><td style="white-space:nowrap">hl7v3<a name="ProvenancePayerDataSource-hl7v3"> </a></td><td>HL7 v3</td><td>HL7 v3 Message</td></tr><tr><td style="white-space:nowrap">hl7ccda<a name="ProvenancePayerDataSource-hl7ccda"> </a></td><td>HL7 C-CDA</td><td>HL7 Consolidated-Clinical Document Architecture</td></tr><tr><td style="white-space:nowrap">hl7cda<a name="ProvenancePayerDataSource-hl7cda"> </a></td><td>HL7 CDA</td><td>HL7 CDA documents that are not C-CDA</td></tr><tr><td style="white-space:nowrap">hl7cdaqrda<a name="ProvenancePayerDataSource-hl7cdaqrda"> </a></td><td>HL7 CDA QRDA</td><td>HL7 Quality Reporting Document</td></tr><tr><td style="white-space:nowrap">hl7fhirdstu2<a name="ProvenancePayerDataSource-hl7fhirdstu2"> </a></td><td>FHIR DSTU2</td><td>HL7 FHIR DSTU2</td></tr><tr><td style="white-space:nowrap">hl7fhirdstu3<a name="ProvenancePayerDataSource-hl7fhirdstu3"> </a></td><td>FHIR STU3</td><td>HL7 FHIR STU3</td></tr><tr><td style="white-space:nowrap">hl7fhirr4<a name="ProvenancePayerDataSource-hl7fhirr4"> </a></td><td>FHIR R4</td><td>HL7 FHIR R4</td></tr><tr><td style="white-space:nowrap">x12837<a name="ProvenancePayerDataSource-x12837"> </a></td><td>837 claim</td><td>X12 837 Claim</td></tr><tr><td style="white-space:nowrap">x12278<a name="ProvenancePayerDataSource-x12278"> </a></td><td>278</td><td>X12 Prior Authorization</td></tr><tr><td style="white-space:nowrap">x12275<a name="ProvenancePayerDataSource-x12275"> </a></td><td>275</td><td>X12 Attachment</td></tr><tr><td style="white-space:nowrap">x12other<a name="ProvenancePayerDataSource-x12other"> </a></td><td>X12</td><td>X12 non-specific transaction</td></tr><tr><td style="white-space:nowrap">script<a name="ProvenancePayerDataSource-script"> </a></td><td>NCPDP SCRIPT</td><td>National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)</td></tr><tr><td style="white-space:nowrap">ncpdp<a name="ProvenancePayerDataSource-ncpdp"> </a></td><td>NCPDP Telecommunication</td><td>NCPDP Telecommunication transaction (pharmacy claims)</td></tr><tr><td style="white-space:nowrap">capture<a name="ProvenancePayerDataSource-capture"> </a></td><td>Direct Capture</td><td>Direct Capture, such as into a payers case management system</td></tr><tr><td style="white-space:nowrap">customtx<a name="ProvenancePayerDataSource-customtx"> </a></td><td>Trading Partner Format</td><td>Trading Partner Proprietary format</td></tr><tr><td style="white-space:nowrap">image<a name="ProvenancePayerDataSource-image"> </a></td><td>Image</td><td>Fax or scanned document</td></tr><tr><td style="white-space:nowrap">unstructured<a name="ProvenancePayerDataSource-unstructured"> </a></td><td>Unstructured Document</td><td>PDF, text and other unstructured document</td></tr><tr><td style="white-space:nowrap">other<a name="ProvenancePayerDataSource-other"> </a></td><td>Other</td><td>Any other document format not specifically defined</td></tr></table></div>
 
   <!-- insert notes if present -->
   
@@ -224,7 +254,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2020 18:24-0500">2020-11-12</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

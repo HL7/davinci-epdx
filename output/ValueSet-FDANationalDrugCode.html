@@ -42,8 +42,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"11.7"}
-    h3,h4,h5,h6{--heading-prefix:"11.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.10"}
+    h3,h4,h5,h6{--heading-prefix:"11.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.28 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -87,16 +87,46 @@
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <!-- menu.xml  -->
 <!-- menu.xml  -->
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
-  <li><a href="toc.html">Table of Contents</a></li>
-  <li><a href="Introduction.html">Introduction</a></li>
-  <li><a href="CDS-Hooks.html">CDS-Hooks</a></li>
-  <li><a href="artifacts.html">Artifact Index</a></li>
 
-  <!-- menu.xml  -->
-    <li><a href="Downloads.html">Downloads</a></li>
-  </ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="Introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="DataMapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="CDS-Hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="PayerToPayerExchange.html">Payer-to-Payer Exchange</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="CapabilityStatement-pdex-server.html">Capability Statement</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifact Index</a>
+  </li>
+  <li>
+    <a href="Downloads.html">Downloads</a>
+  </li>
+</ul>
 
 
             </div>  <!-- /.nav-collapse -->
@@ -120,7 +150,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.28). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -167,11 +197,23 @@
   <table class="grid">
 <tbody>
 <tr><td>Defining URL:</td><td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode</td></tr>
- <tr><td>Version:</td><td>0.1.28</td></tr>
+ <tr><td>Version:</td><td>0.1.29</td></tr>
  <tr><td>Name:</td><td>FDANationalDrugCode</td></tr>
  <tr><td>Title:</td><td>FDA National Drug Code (NDC)</td></tr>
- <tr><td>Status:</td><td>Active as of 2020-10-28T03:31:43-04:00</td></tr>
- <tr><td>Definition:</td><td><p>FDA National Drug Code (NDC)</p>
+ <tr><td>Status:</td><td>Active as of 2020-11-12T18:24:38-05:00</td></tr>
+ <tr><td>Definition:</td><td><p>The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. § 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.</p>
+<p>The information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.</p>
+<p>Users should note:</p>
+<p>Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.</p>
+<p>Information regarding the FDA published NDC Directory can be found <a href="https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory">here</a></p>
+<p>Users should note a few important items</p>
+<ul>
+<li>The NDC Directory is updated daily.</li>
+<li>The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.</li>
+<li>The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: <a href="https://labels.fda.gov/">FDA Online Label Repository</a></li>
+</ul>
+</td></tr>
+ <tr><td>Copyright:</td><td><p>NDC codes have no copyright acknowledgment or license requirements.</p>
 </td></tr>
  <tr><td>Source Resource:</td><td><a href="ValueSet-FDANationalDrugCode.xml.html">XML</a> / <a href="ValueSet-FDANationalDrugCode.json.html">JSON</a> / <a href="ValueSet-FDANationalDrugCode.ttl.html">Turtle</a></td></tr>
 </tbody></table>
@@ -263,7 +305,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.28 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 28, 2020 03:31-0400">2020-10-28</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2020 18:24-0500">2020-11-12</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
