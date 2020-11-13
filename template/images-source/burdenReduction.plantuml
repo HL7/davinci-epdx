@@ -36,10 +36,10 @@ Deactivate EHR
 "Provider" -> "EHR": Click 'launch' on SMART App card
 Activate "SMART app"
   "EHR" -> "SMART app": Launch SMART app
-  "SMART app" -> "Rules repository": Retrieve form/template
-  "SMART app" -> "EHR repository": Retrieve data to populate form/template
-  "SMART app" <- "Provider": User verifies data & completes form/template
-  "SMART app" -> "EHR repository": Store completed form/template
+  "SMART app" -> "Rules repository": Retrieve Questionnaire/CQL
+  "SMART app" -> "EHR repository": Retrieve data to populate QuestionnaireResponse/execute CQL
+  "SMART app" <- "Provider": User verifies data & QuestionnaireResponse
+  "SMART app" -> "EHR repository": Store completed QuestionnaireResponse
 Deactivate "SMART app"
 == Prior Authorization Support (PAS) ==
 Provider -> EHR: "Request prior auth"
