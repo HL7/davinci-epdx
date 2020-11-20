@@ -2,9 +2,7 @@ Profile:        PdexDevice
 Parent:         Device
 Id:             pdex-device
 Title:          "PDex Device"
-Description:    """The PDex Device profile is provided to enable payers to record information about
-devices used by a member that may not have a UDI number.
-"""
+Description:    "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number."
 * insert PdexStructureDefinitionContent
 
 * distinctIdentifier 0..1

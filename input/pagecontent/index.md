@@ -111,7 +111,7 @@ The column definitions are provided in the table below. Look for this style of t
 
 ### Latest Changes
 - 0.1.29 Fix spelling error in SourceFormat code description, Fix profile title for pdex-provenance. Change Pdex Provenance to derive from R4 Provenance. Fix menu bar layout.
- FHIR-29594 - Add PDex Server CapabilityStatement, Update FDA National Drug Code ValueSet to match CARIN-BB.
+ FHIR-29594 - Add PDex Server CapabilityStatement, Update FDA National Drug Code ValueSet to match CARIN-BB. 
 
 - 0.1.28 Fix Essential Fields tables for US Core Profiles (v3.1.1): AllergyIntolerance, CarePlan, CareTeam, Condition, DiagnosticReportForLaboratoryResultsReporting, DiagnosticReportForReportNoteExchange, DocumentReference, Encounter, Goal, Immunization, ImplantableDevice, LaboratoryResultObservation, Location, Medication, MedicationRequest, Organization, Patient, PediatricBMIForAge, PediatricHeadOccipitalFrontalCircumference, PediatricWeightForHeight, Practitioner, PractitionerRole, Procedure, Provenance, PulseOximetry,SmokingStatusObservation, VitalSigns.
   Essential Fields table updated for HRex Coverage, Pdex Device, Pdex MedicationDispense, Pdex Provenance.

@@ -46,11 +46,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="0.1.29"/>
+   <version value="1.0.0"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-11-13T17:22:01-05:00"/>
+   <date value="2020-11-20T10:34:42-05:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -79,6 +79,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
       <packageId value="hl7.fhir.us.core"/>
       <version value="3.1.1"/>
+   </dependsOn>
+   <dependsOn id="hl7_fhir_us_davinci_hrex">
+      <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
+      <packageId value="hl7.fhir.us.davinci-hrex"/>
+      <version value="0.2.0"/>
    </dependsOn>
    <definition>
       <grouping id="_dyn_capabilitystatement">
@@ -126,28 +131,13 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-hrex-coverage.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/hrex-coverage"/>
-         </reference>
-         <name value="HRex Coverage Profile"/>
-         <description value="The HRex Coverage Profile defines the constraints for representing a member's healthcare insurance information to the Payer.  Coverage instances complying with this profile, sometimes together with the Patient which this profile references via `beneficiary`, allows a payer to identify a member in their system."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="_str_profile"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:resource"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-pdex-device.html"/>
          </extension>
          <reference>
             <reference value="StructureDefinition/pdex-device"/>
          </reference>
          <name value="PDex Device"/>
-         <description value="The PDex Device profile is provided to enable payers to record information about&#xA;devices used by a member that may not have a UDI number."/>
+         <description value="The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number."/>
          <exampleBoolean value="false"/>
          <groupingId value="_str_profile"/>
       </resource>
@@ -312,7 +302,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Patient/1"/>
          </reference>
          <name value="Patient1"/>
-         <description value="US Core Patient Example1"/>
+         <description value="Example of a US Core Patient Record"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -417,7 +407,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Provenance/1000006"/>
          </reference>
          <name value="ExampleDocRefProvenance"/>
-         <description value="Example of a PDex Provenance record for a PDF embedded in a DocumentReference resource"/>
+         <description value="Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."/>
          <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -447,7 +437,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="DocumentReference/123456"/>
          </reference>
          <name value="ExampleDocumentReference"/>
-         <description value="Example of a US Core DocumentReference with an embedded PDF document"/>
+         <description value="Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded."/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -462,7 +452,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Organization/2"/>
          </reference>
          <name value="OrganizationPayer1"/>
-         <description value="Payer1"/>
+         <description value="Example of the Payer Organization"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -492,7 +482,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Organization/3"/>
          </reference>
          <name value="OrganizationProvider1"/>
-         <description value="Provider 1"/>
+         <description value="Provider Organization Example 1"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -588,16 +578,16 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="CapabilityStatement"/>
+            <valueString value="Coverage"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
+            <valueUri value="Coverage-883210.html"/>
          </extension>
          <reference>
-            <reference value="CapabilityStatement/PdexServerCapabilityStatement"/>
+            <reference value="Coverage/883210"/>
          </reference>
-         <name value="PdexServerCapabilityStatement"/>
-         <description value="Payer Data Exchange Server Capability Statement"/>
+         <name value="ExampleCoverage"/>
+         <description value="Example of a Coverage for a Member"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -627,7 +617,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="SearchParameter/pdex-medicationdispense-patient"/>
          </reference>
          <name value="PdexMedicationDispensePatient"/>
-         <description value="Returns dispensed prescriptions for a specific patient&#xA;&lt;em&gt;NOTE&lt;/em&gt;: This Pdex SearchParameter definition extends the usage context of&#xA;&lt;a href=&#34;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&#34;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+         <description value="Returns dispensed prescriptions for a specific patient.&#xA;NOTE: This Pdex SearchParameter definition extends the usage context of&#xA;[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain."/>
          <exampleBoolean value="false"/>
          <groupingId value="_dyn_searchparameter"/>
       </resource>
@@ -642,7 +632,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="SearchParameter/pdex-medicationdispense-status"/>
          </reference>
          <name value="PdexMedicationDispenseStatus"/>
-         <description value="Status of the prescription dispense&#xA; &lt;em&gt;NOTE&lt;/em&gt;: This SearchParameter definition extends the usage context of&#xA;&lt;a href=&#34;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&#34;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+         <description value="Status of the prescription dispense.&#xA;NOTE: This SearchParameter definition extends the usage context of&#xA;[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain."/>
          <exampleBoolean value="false"/>
          <groupingId value="_dyn_searchparameter"/>
       </resource>
@@ -895,11 +885,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-hrex-coverage.html"/>
-               <title value="HRex Coverage Profile"/>
-               <generation value="generated"/>
-            </page>
-            <page>
                <nameUrl value="StructureDefinition-pdex-device.html"/>
                <title value="PDex Device"/>
                <generation value="generated"/>
@@ -1050,8 +1035,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
-               <title value="PdexServerCapabilityStatement"/>
+               <nameUrl value="Coverage-883210.html"/>
+               <title value="ExampleCoverage"/>
                <generation value="generated"/>
             </page>
          </page>

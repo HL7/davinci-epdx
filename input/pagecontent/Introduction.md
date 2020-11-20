@@ -204,7 +204,7 @@ The FHIR bundle that is the output of the $patient-everything operation can be r
 - [HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
-- [HRex Payer Provenance](http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-provenance.html)
+- [PDex Provenance](StructureDefinition-pdex-provenance.html)
 
 #### CapabilityStatement
 

@@ -37,7 +37,7 @@ Only one Patient and one Coverage record are returned.
 
 Reference Implementation Information: [Member-Match Reference Implementation](https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation)
 
-The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/)
+The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep)
 
 ## Notes
 

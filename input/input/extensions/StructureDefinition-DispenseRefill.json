@@ -59,33 +59,9 @@
   "differential": {
     "element": [
       {
-        "id": "Extension.extension:refillNum",
+        "id": "Extension.extension",
         "path": "Extension.extension",
-        "sliceName": "refillNum",
-        "short": "Refill number of this prescription",
-        "min": 0,
-        "max": "1"
-      },
-      {
-        "id": "Extension.extension:refillNum.extension",
-        "path": "Extension.extension.extension",
         "max": "0"
-      },
-      {
-        "id": "Extension.extension:refillNum.url",
-        "path": "Extension.extension.url",
-        "fixedUri": "refillNum"
-      },
-      {
-        "id": "Extension.extension:refillNum.valueQuantity",
-        "path": "Extension.extension.valueQuantity",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ]
       },
       {
         "id": "Extension.url",
@@ -95,7 +71,12 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "max": "0"
+        "short": "Refill number of this prescription",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
       }
     ]
   }

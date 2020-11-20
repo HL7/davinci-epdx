@@ -21,9 +21,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * supportingInformation 0..*
 * supportingInformation only Reference(Resource)
-* supportingInformation ^short = """
-                Information that supports the dispensing of the medication. Reference any US Core, HRex or PDex profile
-                """
+* supportingInformation ^short = "Information that supports the dispensing of the medication. Reference any US Core, HRex or PDex profile."
 
 * performer 0..*
 * performer only BackboneElement
@@ -54,11 +52,11 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 
 * daysSupply 0..1
 * daysSupply only SimpleQuantity
-* daysSupply ^short = "Medication expressed as a timing amount"
+* daysSupply ^short = "Medication expressed as a timing amount."
 
 * extension contains DispenseRefill named refillNum 0..1
-// * extension[refillNum] ^short = "Refill number of this prescription"
-// * extension[refillNum].valueQuantity only Quantity
+* extension[refillNum] ^short = "Refill number of this prescription"
+* extension[refillNum].valueQuantity only Quantity
 
 
 // * receiver 0..*
