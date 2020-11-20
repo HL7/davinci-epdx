@@ -1,6 +1,6 @@
 Instance: Patient1
 InstanceOf: us-core-patient
-Description: "US Core Patient Example1"
+Description: "Example of a US Core Patient Record"
 Usage: #example
   * id = "1"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
@@ -23,47 +23,45 @@ Usage: #example
   * address[0].state = "PA"
   * address[0].postalCode = "12519"
   * maritalStatus = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
-  * identifier[0].type = #mb
+  * identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MB
   * identifier[0].value = "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901"
   * identifier[0].system = "https://www.xxxhealthplan.com/fhir/memberidentifier"
-  * identifier[1].type = #mr
+  * identifier[1].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR
   * identifier[1].value = "1234-234-1243-12345678901m"
   * identifier[1].system = "https://www.xxxhealthplan.com/fhir/medicalrecordnumber"
-  * identifier[2].type = #um
+  * identifier[2].type = http://terminology.hl7.org/CodeSystem/v2-0203#XV
   * identifier[2].value = "1234-234-1243-12345678901u"
   * identifier[2].system = "https://www.xxxhealthplan.com/fhir/uniquememberidentifier"
-  * identifier[3].type = #pt
+  * identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
   * identifier[3].value = "1234-234-1243-12345678901a"
   * identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
 
 
 Instance: OrganizationPayer1
 InstanceOf: us-core-organization
-Description: "Payer1"
+Description: "Example of the Payer Organization"
 Usage: #example
   * id = "2"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
   * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
   * language = #en-US
   * identifier[0].type = IdentifierTypeCS#npi
+  * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
   * identifier[0].value = "345678"
-  * identifier[1].type = IdentifierTypeCS#payerid
-  * identifier[1].value = "901234"
   * name = "Payer 1"
   * active = true
 
 Instance: OrganizationProvider1
 InstanceOf: us-core-organization
-Description: "Provider 1"
+Description: "Provider Organization Example 1"
 Usage: #example
   * id = "3"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
   * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
   * language = #en-US
   * identifier[0].type = IdentifierTypeCS#npi
+  * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
   * identifier[0].value = "345678"
-  * identifier[1].type = IdentifierTypeCS#tax
-  * identifier[1].value = "123-45-6789"
   * name = "Provider 1"
   * active = true
 
@@ -75,7 +73,7 @@ Description: "Example of a Practitioner Record"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
   * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
   * identifier[0].type = IdentifierTypeCS#npi
-  * identifier[0].system = "urn:oid:2.16.528.1.1007.3.1"
+  * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
   * identifier[0].value = "874635264"
   * name[0].family = "Smith"
   * name[0].given[0] = "Susan"
@@ -100,9 +98,9 @@ Description: "Example of an Encounter that has a provenance record"
   * id = "6"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
   * meta.lastUpdated = "2020-07-14T19:26:23.217+00:00"
-  * status = #finished "Finished"
+  * status = http://hl7.org/fhir/encounter-status#finished "Finished"
   * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
-  * type =  #11429006 "Consultation"
+  * type =  http://snomed.info/sct#11429006 "Consultation"
   * subject.reference = "Patient/1"
 
 
@@ -112,9 +110,9 @@ Description: "Example of an Encounter that has a provenance record"
   * id = "7"
   * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
   * meta.lastUpdated = "2020-07-15T20:26:23.217+00:00"
-  * status = #finished "Finished"
+  * status = http://hl7.org/fhir/encounter-status#finished "Finished"
   * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
-  * type =  #99201 "Office Visit"
+  * type =  http://snomed.info/sct#308335008 "Patient encounter procedure"
   * subject.reference = "Patient/1"
 
 

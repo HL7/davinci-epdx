@@ -55,7 +55,7 @@ Description: "Example of an payer being the source of the data"
 * agent[0].who.reference = "Organization/2"
 * entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entity.what.display = "No reference available"
-* entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp "NCPDP"
+* entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#ncpdp "NCPDP Telecommunication"
 
 
 Instance: ExampleProvenancePayerModified

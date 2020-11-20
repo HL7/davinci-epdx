@@ -29,6 +29,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/includes/menu.xml                                                         | copied    | ../fsh/ig-data/input/includes/menu.xml                                                         |
 | input/includes/style_insert_table_blue.html                                     | copied    | ../fsh/ig-data/input/includes/style_insert_table_blue.html                                     |
 | input/pagecontent/CDS-Hooks.md                                                  | copied    | ../fsh/ig-data/input/pagecontent/CDS-Hooks.md                                                  |
+| input/pagecontent/CapabilityStatement-pdex-server-intro.md                      | copied    | ../fsh/ig-data/input/pagecontent/CapabilityStatement-pdex-server-intro.md                      |
 | input/pagecontent/Coverage.md                                                   | copied    | ../fsh/ig-data/input/pagecontent/Coverage.md                                                   |
 | input/pagecontent/Credits.md                                                    | copied    | ../fsh/ig-data/input/pagecontent/Credits.md                                                    |
 | input/pagecontent/DataMapping.md                                                | copied    | ../fsh/ig-data/input/pagecontent/DataMapping.md                                                |
@@ -44,6 +45,7 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/PdexDevice.md                                                 | copied    | ../fsh/ig-data/input/pagecontent/PdexDevice.md                                                 |
 | input/pagecontent/PdexProvenance-intro.md                                       | copied    | ../fsh/ig-data/input/pagecontent/PdexProvenance-intro.md                                       |
 | input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         | copied    | ../fsh/ig-data/input/pagecontent/Provider-controlledInformationRequestsandFiltering.md         |
+| input/pagecontent/StructureDefinition-capabilitystatement-pdex-server-intro.md  | copied    | ../fsh/ig-data/input/pagecontent/StructureDefinition-capabilitystatement-pdex-server-intro.md  |
 | input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    | copied    | ../fsh/ig-data/input/pagecontent/StructureDefinition-hrex-coverage-intro.md                    |
 | input/pagecontent/StructureDefinition-pdex-device-intro.md                      | copied    | ../fsh/ig-data/input/pagecontent/StructureDefinition-pdex-device-intro.md                      |
 | input/pagecontent/StructureDefinition-pdex-device-notes.md                      | copied    | ../fsh/ig-data/input/pagecontent/StructureDefinition-pdex-device-notes.md                      |
@@ -76,7 +78,6 @@ lists those files generated from project configs or the contents in the ig-data 
 | input/pagecontent/UseCaseScenarios.md                                           | copied    | ../fsh/ig-data/input/pagecontent/UseCaseScenarios.md                                           |
 | input/pagecontent/VitalSigns.md                                                 | copied    | ../fsh/ig-data/input/pagecontent/VitalSigns.md                                                 |
 | input/pagecontent/WorkflowExamples.md                                           | copied    | ../fsh/ig-data/input/pagecontent/WorkflowExamples.md                                           |
-| input/pagecontent/capabilitystatement-pdex-server-intro.md                      | copied    | ../fsh/ig-data/input/pagecontent/capabilitystatement-pdex-server-intro.md                      |
 | input/pagecontent/capabilitystatement-pdex-server.md                            | copied    | ../fsh/ig-data/input/pagecontent/capabilitystatement-pdex-server.md                            |
 | input/pagecontent/index.md                                                      | copied    | ../fsh/ig-data/input/pagecontent/index.md                                                      |
 | input/resources/SearchParameter-pdex-medicationdispense-patient.json            | copied    | ../fsh/ig-data/input/resources/SearchParameter-pdex-medicationdispense-patient.json            |

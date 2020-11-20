@@ -17,3 +17,25 @@ is found in the fishtank folder in this repository.
 Check out the README.md in the Fishtank folder for instructions on compiling the IG using Sushi.
 
 The primary author of this IG is: Mark Scrimshire of OnyxHealth.io. You can reach him at mark@ekivemark.com.
+
+## Building the IG
+
+Run the following commands from the base directory.
+
+To run Sushi only:
+
+    sushi fsh -o ./input
+    
+    
+To prepare to run the publisher:
+
+    ./_updatePublisher.sh
+    
+The following command will also run sushi since the FSH files are in the /fsh folder.
+
+To run the publisher:
+
+    ./_genonce.sh
+    
+If publisher has timeout issues when running sushi. edit the fsh.ini file to adjust the timeout value. 
+

@@ -1,10 +1,11 @@
 Instance: ExampleDocumentReference
 InstanceOf: us-core-documentreference
-Description: "Example of a US Core DocumentReference with an embedded PDF document"
+Description: "Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded."
 * id = "123456"
 * status = http://hl7.org/fhir/ValueSet/document-reference-status#current
 // * type = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type#UNK
-* type = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+//* type = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+* type =  http://loinc.org#51852-2
 // * category = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-category#clinical-note
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject.reference = "Patient/1"
@@ -12,7 +13,8 @@ Description: "Example of a US Core DocumentReference with an embedded PDF docume
 * author.reference = "Organization/3"
 * custodian.reference = "Organization/2"
 // * content[0].format = http://hl7.org/fhir/ValueSet/formatcodes#urn:ihe:iti:xds:2017:mimeTypeSufficient
-* content[0].format =  http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds:2017:mimeTypeSufficient
+* content[0].format.system =  "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"
+* content[0].format.display = "urn:ihe:iti:xds:2017:mimeTypeSufficient"
 * content[0].attachment.contentType = #application/pdf
 * content[0].attachment.url = "/Binary/1-pdf"
 * content[0].attachment.title = """
@@ -23,7 +25,7 @@ Description: "Example of a US Core DocumentReference with an embedded PDF docume
 
 Instance: ExampleDocRefProvenance
 InstanceOf: pdex-provenance
-Description: "Example of a PDex Provenance record for a PDF embedded in a DocumentReference resource"
+Description: "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."
 * id = "1000006"
 * meta.versionId = "1"
 * meta.lastUpdated = "2020-10-09T15:26:23.217+00:00"

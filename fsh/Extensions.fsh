@@ -25,12 +25,14 @@ Description: "Attributes that identify the source record format from which data 
 Extension: DispenseRefill
 Title: "An attribute to express the refill number of a prescription"
 Description: "Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc."
-
 * insert PdexStructureDefinitionContent
 
-* extension contains
-refillNum 0..1
+* value[x] ^short = "Refill number of this prescription"
+* value[x] only Quantity
 
-* extension[refillNum] ^short = "Refill number of this prescription"
-* extension[refillNum].valueQuantity only Quantity
+// * extension contains refillNum 0..1
+
+// * extension[refillNum] ^short = "Refill number of this prescription"
+// * extension[refillNum].valueSimpleQuantity only SimpleQuantity
+
 

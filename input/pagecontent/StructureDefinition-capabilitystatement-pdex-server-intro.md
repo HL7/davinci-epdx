@@ -8,13 +8,5 @@
 * ig-data/input/pagecontent/StructureDefinition-capabilitystatement-pdex-server-intro.md *
 ******************************************************************************************
 {% endcomment %} -->
-[Previous Page - Data Mapping](DataMapping.html)
 
-The PDex Server Capability Statement integrates US Core profiles with PDex and HRex profiles and operations.
-
-
-
-
-
-
-[Next Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
+{% include style_insert_table_blue.html %}
