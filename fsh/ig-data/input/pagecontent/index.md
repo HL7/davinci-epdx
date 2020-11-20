@@ -101,7 +101,7 @@ The column definitions are provided in the table below. Look for this style of t
 
 ### Latest Changes
 - 0.1.30 Fix errors. Added ignoreWarnings.txt to address warnings and
-  issues in QA Report. Adjusted MedicationDispense and refillNum extension to address slicing error.
+  issues in QA Report. Adjusted MedicationDispense and refillNum extension to address slicing error. Fixing build on build.fhir.org. 
 - 0.1.29 Fix spelling error in SourceFormat code description, Fix profile title for pdex-provenance. Change Pdex Provenance to derive from R4 Provenance. Fix menu bar layout.
  FHIR-29594 - Add PDex Server CapabilityStatement, Update FDA National Drug Code ValueSet to match CARIN-BB. 
 
