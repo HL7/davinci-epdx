@@ -49,36 +49,37 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient resource from the CPCDS file are:
 
-| US Core Element                 | MustSupport | Cardinality | CARIN-BB Element            | CPCDS Element Mapping                                                                                         |
-|---------------------------------|-------------|-------------|-----------------------------|---------------------------------------------------------------------------------------------------------------|
-|  Patient.meta.lastUpdated       |             |     0..1    |  Patient.meta.lastUpdated   | [{"163":"Member Demographics Last Updated Date"}]                                                             |
-|  Patient.us-core-race           |      S      |     0..1    |  Patient.us-core-race       | [{"128":"Race Code"}]                                                                                         |
-|  Patient.us-core-ethnicity      |      S      |     0..1    |  Patient.us-core-ethnicity  | [{"129":"Ethnicity"}]                                                                                         |
-|  Patient.us-core-birthsex       |      S      |     0..1    |  Patient.us-core-birthsex   | [{"153":"Birth Sex"}]                                                                                         |
-|  Patient.identifier             |      S      |     1..*    |  Patient.identifier         | [{"MMI=1":"Member id"}, {"PatnAcctNr=109":"Patient account number"}, {"MedRecNr=110":"Medical record number"} |
-|  Patient.identifier.system      |      S      |     1..1    |                             |                                                                                                               |
-|  Patient.identifier.value       |      S      |     1..1    |                             |                                                                                                               |
-|  Patient.name                   |      S      |     1..*    |  Patient.name               | [{"130":"Patient Name"}]                                                                                      |
-|  Patient.name.family            |      S      |     0..1    |                             |                                                                                                               |
-|  Patient.name.given             |      S      |     0..*    |                             |                                                                                                               |
-|  Patient.telecom                |      S      |     0..*    |                             |                                                                                                               |
-|  Patient.telecom.system         |      S      |     1..1    |                             |                                                                                                               |
-|  Patient.telecom.value          |      S      |     1..1    |                             |                                                                                                               |
-|  Patient.telecom.use            |      S      |     0..1    |                             |                                                                                                               |
-|  Patient.gender                 |      S      |     1..1    |  Patient.gender             | [{"71":"Gender code"}]                                                                                        |
-|  Patient.birthDate              |      S      |     0..1    |  Patient.birthDate          | [{"70":"Date of birth"}]                                                                                      |
-|  Patient.deceasedBoolean        |             |             |  Patient.deceasedBoolean    | [{"150":"Deceased"}]                                                                                          |
-|  Patient.deceasedDateTime       |             |             |  Patient.deceasedDateTime   | [{"124":"Date of death"}]                                                                                     |
-|  Patient.address                |      S      |     0..*    |                             |                                                                                                               |
-|  Patient.address.line           |      S      |     0..*    |  Patient.address.line       | [{"158":"Street Address"}]                                                                                    |
-|  Patient.address.city           |      S      |     0..1    |                             |                                                                                                               |
-|  Patient.address.district       |             |     0..1    |  Patient.address.district   | [{"125":"County"}]                                                                                            |
-|  Patient.address.state          |      S      |     0..1    |  Patient.address.state      | [{"126":"State"}]                                                                                             |
-|  Patient.address.postalCode     |      S      |     0..1    |  Patient.address.postalCode | [{"131":"Zip"}]                                                                                               |
-|  Patient.address.country        |             |     0..1    |  Patient.address.country    | [{"127":"Country"}]                                                                                           |
-|  Patient.address.period         |      S      |     0..1    |                             |                                                                                                               |
-|  Patient.communication          |      S      |     0..*    |                             |                                                                                                               |
-|  Patient.communication.language |      S      |     1..1    |                             |                                                                                                               |
+| US Core Element                 | MustSupport | Cardinality | CARIN-BB Element           | CPCDS Element Mapping                                                                                                                |
+|---------------------------------|:-----------:|:-----------:|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+|  Patient.meta.lastUpdated       |             |     0..1    | Patient.meta.lastUpdated   | [{"163":"Member Demographics Last Updated Date"}]                                                                                    |
+|  Patient.us-core-race           |      S      |     0..1    | Patient.us-core-race       | [{"128":"Race Code"}]                                                                                                                |
+|  Patient.us-core-ethnicity      |      S      |     0..1    | Patient.us-core-ethnicity  | [{"129":"Ethnicity"}]                                                                                                                |
+|  Patient.us-core-birthsex       |      S      |     0..1    | Patient.us-core-birthsex   | [{"153":"Birth Sex"}]                                                                                                                |
+|  Patient.identifier             |      S      |     1..*    | Patient.identifier         | [{"MMI=1":"Member id"}, {"191":"Unique Member ID"}, {"PatnAcctNr=109, MedRecNr=110":"Patient account number, Medical record number"} |
+|  Patient.identifier.system      |      S      |     1..1    |                            |                                                                                                                                      |
+|  Patient.identifier.value       |      S      |     1..1    |                            |                                                                                                                                      |
+|  Patient.name                   |      S      |     1..*    | Patient.name               | [{"130":"Patient Name"}]                                                                                                             |
+|  Patient.name.family            |      S      |     0..1    |                            |                                                                                                                                      |
+|  Patient.name.given             |      S      |     0..*    |                            |                                                                                                                                      |
+|  Patient.telecom                |      S      |     0..*    |                            |                                                                                                                                      |
+|  Patient.telecom.system         |      S      |     1..1    |                            |                                                                                                                                      |
+|  Patient.telecom.value          |      S      |     1..1    |                            |                                                                                                                                      |
+|  Patient.telecom.use            |      S      |     0..1    |                            |                                                                                                                                      |
+|  Patient.gender                 |      S      |     1..1    | Patient.gender             | [{"71":"Gender code"}]                                                                                                               |
+|  Patient.birthDate              |      S      |     0..1    | Patient.birthDate          | [{"70":"Date of birth"}]                                                                                                             |
+|  Patient.deceasedBoolean        |             |             | Patient.deceasedBoolean    | [{"150":"Deceased"}]                                                                                                                 |
+|  Patient.deceasedDateTime       |             |             | Patient.deceasedDateTime   | [{"124":"Date of death"}]                                                                                                            |
+|  Patient.address                |      S      |     0..*    |                            |                                                                                                                                      |
+|  Patient.address.line           |      S      |     0..*    | Patient.address.line       | [{"158":"Street Address"}]                                                                                                           |
+|  Patient.address.city           |      S      |     0..1    |                            |                                                                                                                                      |
+|  Patient.address.district       |             |     0..1    | Patient.address.district   | [{"125":"County"}]                                                                                                                   |
+|  Patient.address.state          |      S      |     0..1    | Patient.address.state      | [{"126":"State"}]                                                                                                                    |
+|  Patient.address.postalCode     |      S      |     0..1    | Patient.address.postalCode | [{"131":"Zip"}]                                                                                                                      |
+|  Patient.address.country        |             |     0..1    | Patient.address.country    | [{"127":"Country"}]                                                                                                                  |
+|  Patient.address.period         |      S      |     0..1    |                            |                                                                                                                                      |
+|  Patient.communication          |      S      |     0..*    |                            |                                                                                                                                      |
+|  Patient.communication.language |      S      |     1..1    |                            |                                                                                                                                      |
+
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 

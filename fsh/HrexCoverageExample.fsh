@@ -3,6 +3,7 @@ InstanceOf: hrex-coverage
 Description: "Example of a Coverage for a Member"
   * id = "883210"
   * meta.versionId = "1"
+  * meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
   * meta.lastUpdated = "2020-10-28T09:26:23.217+00:00"
   * identifier[0].system = "http://example.org/someOrg/identifiers/whatever"
   * identifier[0].value = "1039399818"

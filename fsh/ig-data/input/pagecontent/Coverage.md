@@ -36,6 +36,8 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | Coverage.class.value      |             |     1..1    | Coverage.class.value      | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |
 | Coverage.class.name       |             |     0..1    | Coverage.class.name       | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
 
+It is important to note a difference between Coverage information provided in the CARIN-BB IG and the PDex IG. The PDex IG Coverage expresses the current state of health plan coverage whereas the CARIN-BB Coverage is intended to express the coverage that was valid at the date of service or admission.
+
 <i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 

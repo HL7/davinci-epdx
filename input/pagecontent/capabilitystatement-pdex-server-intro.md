@@ -14,7 +14,4 @@ The PDex Server Capability Statement integrates US Core profiles with PDex and H
 
 {% include style_insert_table_blue.html %}
 
-
-
-
 [Next Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
