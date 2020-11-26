@@ -111,6 +111,7 @@ The column definitions are provided in the table below. Look for this style of t
 
 ### Latest Changes
 - 1.0.0 Change version to 1.0.0 for publication.
+- 0.1.32 Add notes and extra formatting to mapping table updates applied in 0.1.31
 - 0.1.31 Fix CPCDS mapping tables from CARIN-BB IG: FHIR-29785 CareTeam, FHIR-29786 Condition, FHIR-29787 Encounter, FHIR-29788 Patient, FHIR-29789 Procedure, FHIR-29790 Coverage, FHIR-29791 MedicationDispense.
 - 0.1.30 Fix errors. Added ignoreWarnings.txt to address warnings and
   issues in QA Report. Adjusted MedicationDispense and refillNum extension to address slicing error. Fixing build on build.fhir.org. 
