@@ -41,6 +41,8 @@ The essential fields to be provided in the CareTeam resource from the CPCDS file
 |  - CareTeam.participant.member |       S      |     1..1    | ExplanationOfBenefit.careTeam.member                                               | [{"Ref (93, 96, 98, 99, 173)":"Provider attending, PCP, operating, refering and supervising NPIs"}, {"Ref (166, 169, 182, 171, 174)":"Provider attending, PCP, operating, refering and supervising names"}, {"Ref (94, 167)":"Claim Billing Provider NPI, Claim Billing Provider Name"} |
 
 
+
+
 <i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
 
 #### Example CareTeam Resource
