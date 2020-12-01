@@ -10,15 +10,20 @@
 {% endcomment %} -->
 [Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
 
+Notes:
+1. Payers **SHOULD** utilize the FHIR API to exchange patient information Payer-to-Payer at the request of the member.
+2. Payers **SHALL** include all member related documents as the contents of, or links from appropriate instances of the DocumentReference resource (unless these documents are being exchanged by another method.
+
+
 # Operation $member-match on Patient
 
 Find Member using Patient and Coverage Resources
 
 OPERATION: Find member using search driven by member patient and coverage information.
 
-When a member switches from one plan to another the member has the option to request their data be passed to their new health plan.
+When a member switches from one plan to another the member has the option to request their data to be passed to their new health plan.
 
-The new Health Plan SHALL enable an enrolling member to provide the coverage details for their prior health plan. The new Health Plan SHALL create the following resources that will be compiled into a Parameter Resource and submitted to the $member-match operation on the Patient FHIR endpoint for the old health plan:
+The new Health Plan **SHALL** enable an enrolling member to provide the coverage details for their prior health plan. The new Health Plan **SHALL** create the following resources that will be compiled into a Parameter Resource and submitted to the $member-match operation on the Patient FHIR endpoint for the old health plan:
 
 - US Core Patient (Containing Member demographics)
 - Coverage (details of prior health plan coverage provided by the member, typically from their Health Plan coverage card)
@@ -43,7 +48,6 @@ The $member-match operation is being used by multiple Da Vinci IGs and consequen
 
 Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.
 
-One suggestion for discoverability is that the FHIR endpoint is discoverable via a file in the .well-known folder of the URL for the health plan that is typically found on a member's health plan insurance card.
 
 ## Operation:
 
@@ -53,17 +57,19 @@ One suggestion for discoverability is that the FHIR endpoint is discoverable via
 
 When the New Health Plan creates an OldCoverage parameter where the Coverage resource has a Coverage.identifier and the identifier.type is "MB". The "MB" value is taken from the http://terminology.hl7.org/CodeSystem/v2-0203 value set.
 
-When the Old Health Plan returns the Patient Record they SHALL ADD a Patient.identifier with the Patient.identifier.type = "UMB" (Unique Member Identifier). This is a new type value.
+When the Old Health Plan returns the Patient Record they **SHALL** add a Patient.identifier with the Patient.identifier.type = "UMB" (Unique Member Identifier). This is a new type value.
 
 A code system will be created with a value set with a single entry "UMB" and will be referenced by the value set for identifier.
 
 ## Unique Member Identifier
 
-The old Health Plan SHALL return a unique member identifier and a corresponding system value that identifies the plan. 
+The old Health Plan **SHALL** return a unique member identifier and a corresponding system value that identifies the plan. 
 
-The member identifier SHALL be either the internal unique identifier, or an identifier that is mapped one-to-one to the Health Plan's unique member identifier.
+The member identifier **SHALL** be either the internal unique identifier, or an identifier that is mapped one-to-one to the Health Plan's unique member identifier.
 
 ## Parameters
+
+{% include style_insert_table_blue.html %}
 
 | Use | Name | Cardinality | Type | Binding | Documentation |
 | IN | resource | 1..1 | Parameter |  | 
@@ -78,16 +84,16 @@ The response from a failed $member-match is a <b>422</b> Unprocessable Entity St
 
 After a successful $member-match the new health plan will use the unique member identifier provided by the Old Health Plan in the Patient.identifier field to query for any subsequent transactions related to payer-to-payer exchange.
 
-For example, in PDex the new health plan will subsequently use the UMB identifier to request the member’s health records. This can be done by querying the US Core FHIR profile endpoints which will be constrained to the identified member. Alternatively the new health plan can perform a $everything operation to the Patient/{ID}/$everything operation endpoint to receive a bundle of the member’s health records.
+For example, in PDex the new health plan will subsequently use the UMB identifier to request the member’s health records. This can be done by querying the US Core FHIR profile endpoints which will be constrained to the identified member. Alternatively, the new health plan can perform a $everything operation to the Patient/{ID}/$everything operation endpoint to receive a bundle of the member’s health records.
 
 ## Member matching Logic
 
 This specification is not attempting to define the member matching logic that is used by a Payer that processes a $member-match operation.
 
-- The specification is:
+The specification is:
 - defining that only a SINGLE unique match is returned.
 - No match returns a 422 status code.
-- Multiple matches returns a 422 status code. 
+- Multiple matches return a 422 status code. 
 - Defining the content passed into the $member-match operation.
 - Defining the data returned from the $member-match operation.
 
@@ -500,14 +506,14 @@ Parameter Response Example
     
 ## Handling Data Received Via Payer-to-Payer Exchange
 
-When a new health plan receives a member's data from a prior health plan the handling of that data is an implementation decision by the Health Plan. 
+When a new health plan receives a member's data from a prior health plan the handling of that data is an implementation decision by the Health Plan. The CMS Interoperability and Patient Access Rule requires that the data must be incorporated into the member's record. 
 
 The choices for handling of imported data for a member include, but are not limited to:
 
 - Incorporating the data into the FHIR data for a member to enable the data to be passed on via FHIR API to third-party applications or other payers.
 - Processing the data to incorporate into the health plan's enterprise systems, such as Care Management.
 
-The CMS Interoperability and Patient Access Rule encourages, but does not require payers to share member data using USCDI/US Core FHIR resources. If a health plan receives data as FHIR resources they are encouraged to also request the associated Provenance resources using the following parameter:
+The CMS Interoperability and Patient Access Rule encourages, but does not require payers, to share member data using US Core FHIR resources. If a health plan receives data as FHIR resources they are encouraged to also request the associated Provenance resources using the following parameter:
 
     "_revinclude=Provenance:target" 
 

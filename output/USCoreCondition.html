@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Condition</h2>
   
 
@@ -176,7 +176,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- USCoreCondition.md  -->
 <p><a href="USCoreCareTeam.html">Previous Page - US Core CareTeam</a></p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Condition resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html">US Core Condition</a> resource are:</p>
 
 <style>
     table{
@@ -240,7 +240,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <p>The essential fields to be provided in the Condition resource from the CPCDS file are:</p>
 
@@ -248,66 +248,66 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <thead>
     <tr>
       <th>US Core Element</th>
-      <th>MustSupport</th>
-      <th>Cardinality</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CARIN-BB Element</th>
-      <th>CPCDS Element Mapping</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Condition.meta.lastUpdated</td>
-      <td> </td>
-      <td>0..1</td>
+      <td>- Condition.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.meta.lastUpdated</td>
-      <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
+      <td>[{“163”:”EOB Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Condition.clinicalStatus</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: active | recurrence | relapse | inactive | remission | resolved</td>
     </tr>
     <tr>
       <td>Condition.verificationStatus</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: active | recurrence | relapse | inactive | remission | resolved</td>
     </tr>
     <tr>
       <td>Condition.category</td>
-      <td>S</td>
-      <td>1..*</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Based on Diagnosis from claim pick appropriate condition category from: [problem-list-item | encounter-diagnosis | health-concern]</td>
     </tr>
     <tr>
       <td>Condition.code</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.diagnosis.diagnosis</td>
-      <td>[{“22, 23, 145”:”Diagnosis Code, Description”}</td>
+      <td>[{“22, 23”:”Diagnosis Code”}</td>
     </tr>
     <tr>
       <td>Condition.subject</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.patient</td>
       <td>[{“Ref (1)”:”Member id”}</td>
     </tr>
     <tr>
-      <td>Condition.abatementRange.recorder</td>
-      <td> </td>
-      <td>0..1</td>
+      <td>Condition.recorder</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.careTeam.provider</td>
       <td>[{“Ref (95, 96, 99)”:”Provider rendering, PCP and referring NPIs”}, {“Ref (168, 169, 170, 171)”:”Provider rendering, PCP and referring names”}</td>
     </tr>
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-condition-resource">Example Condition Resource</h4>
 
@@ -401,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

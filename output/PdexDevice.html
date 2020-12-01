@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>PDex Device</h2>
   
 
@@ -176,11 +176,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- PdexDevice.md  -->
 <p><a href="Coverage.html">Previous Page - Coverage</a></p>
 
-<p>US Core supports the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html">US Core Implantable Device</a> resource. However,  payers may need to record information about other non-implantable devices that are used by their members. The PDex-Device profile is used to record this type of information.</p>
+<p>US Core supports the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html">US Core Implantable Device</a> resource. However,  payers may need to record information about other non-implantable devices that are used by their members. The <a href="StructureDefinition-pdex-device.html">PDex Device</a> profile is used to record this type of information.</p>
 
-<p>In future versions of this IG there is a desire to ensure that all Device identification information is exchanged using the PDex Device or US Core Implantable Device resource.</p>
+<p>In future versions of this IG there is a desire to ensure that all Device identification information is exchanged using the <a href="StructureDefinition-pdex-device.html">PDex Device</a> or <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html">US Core Implantable Device</a> resource.</p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the PDex Device resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="StructureDefinition-pdex-device.html">PDex Device</a> resource are:</p>
 
 <style>
     table{
@@ -212,49 +212,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </thead>
   <tbody>
     <tr>
-      <td>Device.udiCarrier.deviceIdentifier</td>
-      <td>deviceIdentifier</td>
-      <td style="text-align: center">1..1</td>
-      <td>string</td>
-    </tr>
-    <tr>
-      <td>Device.status</td>
-      <td>status</td>
-      <td style="text-align: center">1..1</td>
-      <td>code</td>
-    </tr>
-    <tr>
-      <td>Device.deviceName.name</td>
-      <td>name</td>
-      <td style="text-align: center">1..1</td>
-      <td>string</td>
-    </tr>
-    <tr>
-      <td>Device.deviceName.type</td>
-      <td>type</td>
-      <td style="text-align: center">1..1</td>
-      <td>code</td>
-    </tr>
-    <tr>
       <td>Device.type</td>
-      <td>type</td>
-      <td style="text-align: center">1..1</td>
-      <td>CodeableConcept</td>
-    </tr>
-    <tr>
-      <td>Device.specialization.systemType</td>
-      <td>systemType</td>
-      <td style="text-align: center">1..1</td>
-      <td>CodeableConcept</td>
-    </tr>
-    <tr>
-      <td>Device.version.value</td>
-      <td>value</td>
-      <td style="text-align: center">1..1</td>
-      <td>string</td>
-    </tr>
-    <tr>
-      <td>Device.property.type</td>
       <td>type</td>
       <td style="text-align: center">1..1</td>
       <td>CodeableConcept</td>
@@ -268,9 +226,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
-<p>The PdexDevice profile is available here: <a href="StructureDefinition-pdex-device.html">StructureDefinition-pdex-device.html</a></p>
+<p>The PDex Device profile is available here: <a href="StructureDefinition-pdex-device.html">StructureDefinition-pdex-device.html</a></p>
 
 <h4 id="example-device-resource">Example Device Resource</h4>
 
@@ -336,7 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

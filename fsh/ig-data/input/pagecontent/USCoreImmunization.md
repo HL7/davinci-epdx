@@ -1,8 +1,8 @@
 [Previous Page - US Core Goal](USCoreGoal.html)
 
-Where a Health Plan has access to structured and coded Immunization information for a member the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
+Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Immunization resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Immunization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -17,7 +17,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Immunization.performer.actor               |  actor         | 1..1        | Reference(Practitioner \| PractitionerRole \| Organization) |
 |  Immunization.protocolApplied.doseNumber[x] |  doseNumber[x] | 1..1        |                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Immunization Resource:
 

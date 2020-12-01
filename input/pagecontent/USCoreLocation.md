@@ -12,7 +12,7 @@
 
 The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Location resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the  [US Core Location](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -26,11 +26,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Location.address.city         |  city                 |     0..1    | string                                  |
 |  Location.address.state        |  state                |     0..1    | string                                  |
 |  Location.address.postalCode   |  postalCode           |     0..1    | string                                  |
-|  Location.position.longitude   |  longitude            |     1..1    | decimal                                 |
-|  Location.position.latitude    |  latitude             |     1..1    | decimal                                 |
 |  Location.managingOrganization |  managingOrganization |     0..1    | Reference(US Core Organization Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 #### Example Location Resource

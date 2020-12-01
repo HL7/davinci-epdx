@@ -10,7 +10,7 @@
 {% endcomment %} -->
 [Previous Page - US Core CareTeam](USCoreCareTeam.html)
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Condition resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Condition](http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -22,7 +22,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Condition.code               |  code               |     1..1    | CodeableConcept                    |
 | Condition.subject            |  subject            |     1..1    | Reference(US Core Patient Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The essential fields to be provided in the Condition resource from the CPCDS file are:
 
@@ -31,12 +31,12 @@ The essential fields to be provided in the Condition resource from the CPCDS fil
 |  - Condition.meta.lastUpdated |              |     0..1    | ExplanationOfBenefit.meta.lastUpdated    | [{"163":"EOB Last Updated Date"}]                                                                                                              |
 | Condition.clinicalStatus      |       S      |     0..1    |                                          | . Note: active \| recurrence \| relapse \| inactive \| remission \| resolved                                                                   |
 | Condition.verificationStatus  |       S      |     0..1    |                                          | . Note: active \| recurrence \| relapse \| inactive \| remission \| resolved                                                                   |
-| Condition.category            |       S      |     1..*    |                                          | . Note: Based on Diagnosis from claim pick appropriate contion category from: [problem-list-item \| encounter-diagnosis \| health-concern]     |
+| Condition.category            |       S      |     1..*    |                                          | . Note: Based on Diagnosis from claim pick appropriate condition category from: [problem-list-item \| encounter-diagnosis \| health-concern]     |
 | Condition.code                |       S      |     1..1    | ExplanationOfBenefit.diagnosis.diagnosis | [{"22, 23":"Diagnosis Code"}                                                                                                                   |
 | Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}                                                                                                                       |
 | Condition.recorder            |              |     0..1    | ExplanationOfBenefit.careTeam.provider   | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Condition Resource
 

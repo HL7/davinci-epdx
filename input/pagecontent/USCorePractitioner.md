@@ -12,7 +12,7 @@
 
 The  [US Core Practitioner profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html)  **SHALL** be used to record information about Practitioners.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Practitioner resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Practitioner](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -25,14 +25,14 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Practitioner.identifier:NPI.system        |  system         |     1..1    | uri                |
 |  Practitioner.name                         |  name           |     1..*    | HumanName          |
 |  Practitioner.name.family                  |  family         |     1..1    | string             |
-|  Practitioner.qualification.code           |  code           |     1..1    | CodeableConcept    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 #### Example Practitioner Resource
 
-An example mapping of an Practitioner resource is shown here:
+An example mapping of a Practitioner resource is shown here:
 
 <pre>
 {

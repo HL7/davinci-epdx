@@ -60,7 +60,7 @@ The PDexProvenance record **SHOULD** be populated with the following essential f
 | Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Provenance Records
 

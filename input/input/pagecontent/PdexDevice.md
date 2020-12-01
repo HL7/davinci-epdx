@@ -31,7 +31,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Device.patient                     |  patient          |     1..1    | Reference(US Core Patient Profile) |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The PdexDevice profile is available here: [StructureDefinition-pdex-device.html](StructureDefinition-pdex-device.html)
 

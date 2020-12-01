@@ -1,6 +1,7 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -18,7 +19,7 @@
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>status</b>: finished</p><p><b>class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span></p><p><b>type</b>: <span title=\"Codes: \">Office Visit</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>status</b>: finished</p><p><b>class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">Ambulatory</span></p><p><b>type</b>: <span title=\"Codes: {http://snomed.info/sct 308335008}\">Patient encounter procedure</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; Member Number: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, Medical record number: 1234-234-1243-12345678901m, Health Plan Identifier: 1234-234-1243-12345678901u, Patient external identifier: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p></div>"
   ];
   fhir:Encounter.status [ fhir:value "finished"];
   fhir:Encounter.class [
@@ -30,8 +31,10 @@
      fhir:index 0;
      fhir:CodeableConcept.coding [
        fhir:index 0;
-       fhir:Coding.code [ fhir:value "99201" ];
-       fhir:Coding.display [ fhir:value "Office Visit" ]
+       a sct:308335008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "308335008" ];
+       fhir:Coding.display [ fhir:value "Patient encounter procedure" ]
      ]
   ];
   fhir:Encounter.subject [

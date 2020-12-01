@@ -11,11 +11,11 @@
 [Previous Page - US Core Pediatric BMI for Age Observation](USCorePediatricBMIforAgeObservation.html)
 
 The US Core IG profiles the Observation resource for a variety of purposes. For example:
-- Smoking status
-- Pediatric BMI for Age
-- Pediatric Weight for Height
+- [Smoking status](https://hl7.org/fhir/us/core/Observation-some-day-smoker.html)
+- [Pediatric BMI for Age](http://hl7.org/fhir/us/core/Observation-pediatric-bmi-example.html)
+- [Pediatric Weight for Height](https://hl7.org/fhir/us/core/Observation-pediatric-wt-example.html)
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Observation resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Observation](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -44,7 +44,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.component.value[x]            |  value[x]         |     0..1    |                                    |
 |  Observation.dataAbsentReason              |  dataAbsentReason |     0..1    | CodeableConcept                    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### An Example Head Occipital-frontal Circumference Observation Resource
 

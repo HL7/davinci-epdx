@@ -2,7 +2,7 @@
 
 The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core PractitionerRole resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core PractitionerRole](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -16,10 +16,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  PractitionerRole.telecom        |  telecom      |     0..*    | ContactPoint                            |
 |  PractitionerRole.telecom.system |  system       |     1..1    | code                                    |
 |  PractitionerRole.telecom.value  |  value        |     1..1    | string                                  |
-|  PractitionerRole.description    |  description  |     1..1    | string                                  |
 |  PractitionerRole.endpoint       |  endpoint     |     0..*    | Reference(Endpoint)                     |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example PractitionerRole Resource
 
