@@ -15,22 +15,18 @@ US Core supports the [US Core Implantable Device](http://hl7.org/fhir/us/core/St
 
 In future versions of this IG there is a desire to ensure that all Device identification information is exchanged using the PDex Device or US Core Implantable Device resource.  
 
-The essential fields to be provided in the PDex Device resource are:
+{% include style_insert_table_blue.html %}
+
+he essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [PDex Device](StructureDefinition-pdex-device.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
-| R4 Hierarchical Name             | R4 Name    | Flags | Card. | Type                               |
-|----------------------------------|------------|-------|-------|------------------------------------|
-| Device                           | Device     | I     | 0..*  |                                    |
-| Device.id                        | id         |      | 0..1  | id                                 |
-| Device.udiCarrier                | udiCarrier | SI   | 0..1  | BackboneElement                    |
-| Device.deviceName.name           | name       |       | 1..1  | string                             |
-| Device.deviceName.type           | type       |       | 1..1  | code                               |
-| Device.type                      | type       | S     | 1..1  | CodeableConcept                    |
-| Device.specialization.systemType | systemType |       | 1..1  | CodeableConcept                    |
-| Device.version.value             | value      |       | 1..1  | string                             |
-| Device.property.type             | type       |       | 1..1  | CodeableConcept                    |
-| Device.patient                   | patient    | S     | 1..1  | Reference(US Core Patient Profile) |
+| R4 Element                         | Name              | Cardinality | Type                               |
+|------------------------------------|-------------------|:-----------:|------------------------------------|
+| Device.type                        |  type             |     1..1    | CodeableConcept                    |
+| Device.patient                     |  patient          |     1..1    | Reference(US Core Patient Profile) |
 
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 

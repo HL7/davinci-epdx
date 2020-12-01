@@ -10,7 +10,7 @@
 {% endcomment %} -->
 [Previous Page - PDex Device](PdexDevice.html)
 
-Where a Health Plan has access to Laboratory Results and other diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
+Where a Health Plan has access to Laboratory Results and other diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core DiagnosticReport for Laboratory Results Reporting resource are:
 
@@ -31,7 +31,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DiagnosticReport.performer                              |  performer                |     0..*    | Reference(US Core Practitioner Profile \| US Core Organization Profile) |
 | DiagnosticReport.result                                 |  result                   |     0..*    | Reference(US Core Laboratory Result Observation Profile)                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### HL7 V2 Mapping to Diagnostic Report
 

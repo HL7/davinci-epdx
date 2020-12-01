@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>CDS Hooks</h2>
   
 
@@ -173,7 +173,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#support-for-fhir-r4" id="markdown-toc-support-for-fhir-r4">Support for FHIR R4</a>    <ul>
-      <li><a href="#graceful-write-degradation" id="markdown-toc-graceful-write-degradation">Graceful write degradation</a></li>
+      <li><a href="#graceful-write-degradation" id="markdown-toc-graceful-write-degradation">Graceful Write Degradation</a></li>
     </ul>
   </li>
   <li><a href="#adding-or-modifying-hooks" id="markdown-toc-adding-or-modifying-hooks">Adding or Modifying Hooks</a>    <ul>
@@ -199,7 +199,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they <strong>MAY</strong> review and choose to commit to the patient record in their EMR.</p>
 
-<p>CDS Hooks enables the Health Plan to be queried either via an on-demand transaction triggered from a SMRT-on-FHIR app, or from a workflow event in the EMR that triggers the hook, such as when an apppointment is booked for a patient.</p>
+<p>CDS Hooks enables the Health Plan to be queried either via an on-demand transaction triggered from a SMART-on-FHIR app, or from a workflow event in the EMR that triggers the hook, such as when an appointment is booked for a patient.</p>
 
 <p>The bulk of the functionality of this specification is implemented using CDS Hooks. The <a href="https://cds-hooks.hl7.org/">Hooks specification</a> is small. Implementers should read and be familiar with all of it.</p>
 
@@ -207,9 +207,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>To meet requirements identified by Da Vinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification. This section of the PDex implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them. The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.</p>
 
-<p>When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System’s CapabilityStatement that the implementation has determined relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.</p>
+<p>When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System’s CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.</p>
 
-<p>Where the EMR’s FHIR API does not enable the SMART App to write a resource via the API the SMART App <strong>SHOULD</strong> write the records that it is permitted to write to the API. The remaining selected records <strong>SHOULD</strong> be retained in the EMR in the most appropriate form to allow the provider access to the information when needed.
+<p>Where the EMR’s FHIR API does not enable the SMART App to write a resource via the API, the SMART App <strong>SHOULD</strong> write the records that it is permitted to write to the API. The remaining selected records <strong>SHOULD</strong> be retained in the EMR in the most appropriate form to allow the provider access to the information when needed.
 Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification, either in the initial release, or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.</p>
 
 <p>This implementation guide extends/customizes CDS Hooks in 4 ways:</p>
@@ -234,28 +234,28 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>The SMART-on-FHIR App that <strong>MAY</strong> be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR.</p>
 
-<p>When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System’s CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. Where the EMR’s FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. The remaining selected records <strong>SHALL</strong> be compiled into a FHIR bundle, a PDF <strong>SHALL</strong> be created to provide a human-readable version of the bundle and both documents <strong>SHALL</strong> be attached as a DocumentReference and commited to the patient’s record.</p>
+<p>When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System’s CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. Where the EMR’s FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. The remaining selected records <strong>SHALL</strong> be compiled into a FHIR bundle, a PDF <strong>SHALL</strong> be created to provide a human-readable version of the bundle and both documents <strong>SHALL</strong> be attached as a DocumentReference and committed to the patient’s record.</p>
 
 <p>Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP <strong>SHALL</strong> attempt to write the selected records based upon the options listed below for graceful write degradation.</p>
 
-<h3 id="graceful-write-degradation">Graceful write degradation</h3>
+<h3 id="graceful-write-degradation">Graceful Write Degradation</h3>
 
 <p>When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App <strong>SHALL</strong> , where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient’s record.</p>
 
 <p>Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App <strong>SHALL</strong> create a human readable PDF version of the selected resources and attach this document to the DocumentReference and commit to the patient’s record.</p>
 
-<p>Where the EMR does not support the attachment of PDF Documents to a DocumentRefernece record the SMART App <strong>SHALL</strong> create an HTML or XHTML document that contains the selected resources and attach this document to the DocumentReference and commit to the patient’s record.</p>
+<p>Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App <strong>SHALL</strong> create an HTML or XHTML document that contains the selected resources and attach this document to the DocumentReference and commit to the patient’s record.</p>
 
-<p>Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentRefernece record the SMART App <strong>SHALL</strong> create a human readable ASCII text version of the selected resources and attach this to the DocumentReference and commit to the patient’s record.</p>
+<p>Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App <strong>SHALL</strong> create a human readable ASCII text version of the selected resources and attach this to the DocumentReference and commit to the patient’s record.</p>
 
 <p>To summarize this graceful degradation in functionality the priority for writing information to a target EMR should be:</p>
 
 <ol>
-  <li>Write to information to the respective target resources</li>
-  <li>Where data can’t be written to target resources then create a Document Reference that comprises a FHIR bundle and a human readable PDF of the records being committed.</li>
-  <li>Where the DocumentReference resource does not support committing a FHIR bundle store the PDF document.</li>
-  <li>Where the DocumentReference does not support writing a PDF store an HTML or XHTML version.</li>
-  <li>Where the DocumentReference does not support HTML or XHTML content write an ASCII text version.</li>
+  <li>Write information to the respective target resources</li>
+  <li>Where data can’t be written to target resources, create a Document Reference that comprises a FHIR bundle and a human readable PDF of the records being committed.</li>
+  <li>Where the DocumentReference resource does not support committing a FHIR bundle, store the PDF document.</li>
+  <li>Where the DocumentReference does not support writing a PDF, store an HTML or XHTML version.</li>
+  <li>Where the DocumentReference does not support HTML or XHTML content, write an ASCII text version.</li>
 </ol>
 
 <h2 id="adding-or-modifying-hooks">Adding or Modifying Hooks</h2>
@@ -285,7 +285,7 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>Subscriber Id or Member Id, if available, <strong>SHOULD</strong> be taken from the Patient’s Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.</p>
 
-<p>If the Member Id is not available the Subscriber ID and the patient information from the Coverage.beneficiary element <strong>SHOULD</strong> be used to uniquely identify the member.</p>
+<p>If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element <strong>SHOULD</strong> be used to uniquely identify the member.</p>
 
 <h2 id="pdex-hooks">PDex Hooks</h2>
 
@@ -343,7 +343,7 @@ Each capability listed here has been proposed to the CDS Hooks community and may
   }
 </pre>
 
-<p>If a Health Plan does not provide a Member Id on a coverage card the extension can reference a Coverage resource that contains the Subscriber Id and plan details and the beneficiary information (ie. the member demographic information).</p>
+<p>If a Health Plan does not provide a Member Id on a coverage card the extension can reference a Coverage resource that contains the Subscriber Id, plan details and the beneficiary information (i.e., the member demographic information).</p>
 
 <p>Any identifiers associated with the coverage for the patient (which may include patient demographics) <strong>SHOULD</strong> be obtained from the FHIR Coverage record for the patient, or <strong>MAY</strong> be entered manually by the provider via the SMART-on-FHIR App.</p>
 
@@ -377,23 +377,22 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>Examples of preset search queries parameters <strong>MAY</strong> include, but are not limited to:</p>
 <ul>
-  <li>Period (Start and optionally End date)</li>
+  <li>Period (Start and, optionally, End date)</li>
   <li>Excluded Practitioner(s)</li>
   <li>Excluded Organization(s)</li>
   <li>Excluded Location(s)</li>
 </ul>
 
-<p>The later three items are used to enable the Provider to exclude information that they may already have in their system.
-These query parameters are examples of FHIR API queries. Any valid FHIR search query for a Patient <strong>MAY</strong> be constructed by the Provider.
-The potentially valid search query parameters will be limited by the options provided in the Health Plan’s FHIR API CapabilityStatement.</p>
+<p>The latter three items are used to enable the Provider to exclude information that they may already have in their system.
+These query parameters are examples of FHIR API queries. Any valid FHIR search query for a Patient <strong>MAY</strong> be constructed by the Provider. The potentially valid search query parameters will be limited by the options provided in the Health Plan’s FHIR API CapabilityStatement.</p>
 
-<p>As a minimum the Health Plan’s FHIR API <strong>SHALL</strong> limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query.</p>
+<p>As a minimum, the Health Plan’s FHIR API <strong>SHALL</strong> limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query.</p>
 
-<p>As a minimum searches of FHIR Resources <strong>SHOULD</strong> support the following query parameters where appropriate for a Resource Type:</p>
+<p>As a minimum, search of FHIR Resources <strong>SHOULD</strong> support the following query parameters where appropriate for a Resource Type:</p>
 
 <ul>
   <li>_lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss</li>
-  <li>Period (ie. Date / Time filters)</li>
+  <li>Period (i.e. Date / Time filters)</li>
   <li>Inclusions or exclusions based upon Organization, Location or Practitioners</li>
 </ul>
 
@@ -465,7 +464,7 @@ The potentially valid search query parameters will be limited by the options pro
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -10,9 +10,9 @@
 {% endcomment %} -->
 [Previous Page - US Core Organization](USCoreOrganization.html)
 
-The  [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)  **SHALL** be used to express a members demographic information.
+The [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html) **SHALL** be used to express a member's demographic information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient profile are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html) are:
 
 {% include style_insert_table_blue.html %}
 
@@ -41,10 +41,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Patient.address.period         |  period            |     0..1    | Period                              |
 |  Patient.communication          |  communication     |     0..*    | BackboneElement                     |
 |  Patient.communication.language |  language          |     1..1    | CodeableConcept                     |
-|  Patient.link.other             |  other             |     1..1    | Reference(Patient \| RelatedPerson) |
-|  Patient.link.type              |  type              |     1..1    | code                                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient resource from the CPCDS file are:
@@ -80,7 +79,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Patient.communication             |       S      |     0..*    |                            | . Note: Provide preferred communication language via language code below, if available                                                                                                                                                                     |
 |  -  Patient.communication.language |       S      |     1..1    |                            | . Note: Provide preferred communication language, if available                                                                                                                                                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The Member Number will be entered in the **identifier** field. The code **MB**  **SHALL** be used to identify the member identifier.  See the example below:
 

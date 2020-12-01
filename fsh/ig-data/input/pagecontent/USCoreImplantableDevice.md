@@ -1,10 +1,10 @@
 [Previous Page - US Core Immunization](USCoreImmunization.html)
 
-Where a Health Plan has information about devices used by the Member that information SHALL be published using the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
+Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
 
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Implantable Device resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -19,15 +19,10 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Device.expirationDate              |  expirationDate     |     0..1    | dateTime                           |
 |  Device.lotNumber                   |  lotNumber          |     0..1    | string                             |
 |  Device.serialNumber                |  serialNumber       |     0..1    | string                             |
-|  Device.deviceName.name             |  name               |     1..1    | string                             |
-|  Device.deviceName.type             |  type               |     1..1    | code                               |
 |  Device.type                        |  type               |     1..1    | CodeableConcept                    |
-|  Device.specialization.systemType   |  systemType         |     1..1    | CodeableConcept                    |
-|  Device.version.value               |  value              |     1..1    | string                             |
-|  Device.property.type               |  type               |     1..1    | CodeableConcept                    |
 |  Device.patient                     |  patient            |     1..1    | Reference(US Core Patient Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Implantable Device Resource
 

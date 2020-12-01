@@ -41,6 +41,7 @@
 
 // Code Systems
   Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
+  Alias: $DeviceStatus = http://hl7.org/fhir/device-status
 
 // PDex Base
   Alias: $Base = http://hl7.org/fhir/us/davinci-pdex

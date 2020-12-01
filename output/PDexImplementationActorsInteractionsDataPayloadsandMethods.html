@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>PDex Implementation, Actors, Interactions, Data Payloads and Methods</h2>
   
 
@@ -203,21 +203,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><strong>Health Plan</strong>: The Insurance entity, or Payer, who handles claims for services provided to their plan members.</li>
   <li><strong>Member</strong>: The health plan member / patient who is, or was, a member of a health plan.</li>
   <li><strong>Provider</strong>: The practitioner or clinician, or their representative, that initiates a data access request to retrieve member data from a health plan.</li>
-  <li><strong>Third Party Application</strong>: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.</li>
+  <li><strong>Third-Party Application</strong>: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.</li>
 </ul>
 
-<p>There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example the subscriber may be the primary family member on a plan that covers the entire family. Therefore the term Member will will be used through out this guide to identify the indivudal subject of the “member health history”.</p>
-
-<p>For the purposes of this IG a covered entity, such as a Provider, may create an application for connection to a Health Plan FHIR API.</p>
+<p>There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the “member health history”.</p>
 
 <h2 id="exchange-interactions">Exchange Interactions</h2>
 
 <p>The PDex IG is specifying three exchange interactions:</p>
 
 <ol>
-  <li>Providers and Health Plans exchanging information about the Member that a provider has a current or pending treatment relationship.</li>
+  <li>Providers and Health Plans exchanging information about a Member where the provider has a current or pending treatment relationship.</li>
   <li>Health Plans via a Member authorized exchange when a Member has moved from enrollment in one health plan to another.</li>
-  <li>Health Plans and Third Party Applications that a Member has authorized to share their health information that is held by the health plan.</li>
+  <li>Health Plans and Third-Party Applications that a Member has authorized to share their health information that is held by the health plan.</li>
 </ol>
 
 <h2 id="data-payloads">Data Payloads</h2>
@@ -235,9 +233,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="interaction-methods">Interaction Methods</h2>
 
-<p>The PDEx IG is focused around member or plan directed exchange of a member’s data.</p>
+<p>The PDex IG is focused on provider, member, or plan directed exchange of a member’s data.</p>
 
-<p>All exchanges in this IG are for an individual. Where one member has permission to access the information for another member of the health plan they should  provide appropriate credentials to enable the exchange for that individual.</p>
+<p>All exchanges in this IG are for an individual. Where one member has permission to access the information for another member of the health plan, they should provide appropriate credentials to enable the exchange for that individual.</p>
 
 <p>The PDex IG specifies three interaction methods. Their use depends upon the Actors involved and the Data Payloads being exchanged.</p>
 
@@ -252,7 +250,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Clinical systems will use the specification and workflows defined by <a href="https://cds-hooks.hl7.org/">CDS Hooks</a> to initiate Payer Data Exchange  with Health Plans. Implementers must be familiar with all aspects of this specification.</p>
 
-<p>SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two principle ways:</p>
+<p>SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two principal ways:</p>
 
 <ol>
   <li>When a new patient books an appointment</li>
@@ -267,14 +265,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>The CDS Hook to be fired from an automated workflow based upon EMR events.</li>
   <li>The SMART-on-FHIR triggering app enables an on-demand call to the Health Plan to enable access to a Health Plan member’s information.</li>
-  <li>The Health Plan to implement one entrypoint for a request for Member Information, which may require the Health Plan to trigger the compilation of information or perform an initial patient match rather than providing access for a Provider to openly search their member records.</li>
+  <li>The Health Plan to implement one entry point for a request for Member Information, which may require the Health Plan to trigger the compilation of information or perform an initial patient match rather than providing access for a Provider to openly search their member records.</li>
 </ul>
 
-<p>CDS Hooks provides a mechanism for providers/clinicians to request a medical history for their patient from the Health Plan as part of their regular workflow - when scheduling an appointment. However, sometimes clinicians may be interested updating the patient’s medical history without going through the appointment booking steps within their EMR. I.e. They don’t want to actually create an appointment, they just want to ask the question “Has anything new happened to my patient at some other location?”</p>
+<p>CDS Hooks provides a mechanism for providers/clinicians to request a medical history for their patient from the Health Plan as part of their regular workflow - when scheduling an appointment. However, sometimes clinicians may be interested in updating the patient’s medical history without going through the appointment booking steps within their EMR. I.e., They don’t want to actually create an appointment, they just want to ask the question “Has anything new happened to my patient at some other location?”</p>
 
-<p>Sometimes clinicians want to check and update a patient’s history, for example during a patient review, or responding to a question from a patient. The solution to this need is the use of a SMART on FHIR app that will invoke a CDS Hook. This is possible because many EMR systems provide support for SMART on FHIR. This use of SMART is distinct from the use of SMART in CDS Hooks. This isn’t launching a SMART app based upon the contents of a returned card. Instead it is using SMART to invoke a CDS Hook in place of the EMR. It is emulating the workflow trigger that would normally trigger a hook within an EMR workflow.</p>
+<p>Sometimes clinicians want to check and update a patient’s history, for example during a patient review, or responding to a question from a patient. One solution to this need is the use of a SMART on FHIR app that will invoke a CDS Hook. This is possible because many EMR systems provide support for SMART on FHIR. This use of SMART is distinct from the use of SMART in CDS Hooks. This isn’t launching a SMART app based upon the contents of a returned card. Instead, it is using SMART to invoke a CDS Hook in place of the EMR. It is emulating the workflow trigger that would normally trigger a hook within an EMR workflow.</p>
 
-<p>The SMART on FHIR CDS Hook trigger approach was pioneered by the <a href="http://hl7.org/fhir/us/davinci%2Dcrd/2019May/">Da Vinci Coverage Requirements Discovery IG</a> (CRD-IG). Developers interested in using this approach should refer to the CDS Hooks and SMART on FHIR sections of that IG for the latest guidance, exaamples and links to code samples.</p>
+<p>The SMART on FHIR CDS Hook trigger approach was pioneered by the <a href="http://hl7.org/fhir/us/davinci%2Dcrd/2019May/">Da Vinci Coverage Requirements Discovery IG</a> (CRD-IG). Developers interested in using this approach should refer to the CDS Hooks and SMART on FHIR sections of that IG for the latest guidance, examples and links to code samples.</p>
 
 <p>The PDex IG uses a similar approach to enable a CDS Hook. The CDS Hook used by PDex is:</p>
 
@@ -301,13 +299,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The <a href="http://hl7.org/fhir/us/davinci-dtr/2019Sep/">Da Vinci Documentation Templates and Rules Implementation Guide</a> (DTR-IG) provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided SMART Apps should function.</p>
 
-<p>All requesters (e.g. EHRs) <strong>SHOULD</strong> store provenance associated with any data exchanged as part of this IG if it is committed to their system.</p>
+<p>All requesters (e.g., EHRs) <strong>SHOULD</strong> store provenance associated with any data exchanged as part of this IG if it is committed to their system.</p>
 
 <h3 id="oauth20-and-fhir-api">OAuth2.0 and FHIR API</h3>
 
-<p>The well defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member <strong>SHALL</strong> authenticate using credentials they have been issued by the Health Plan. This is typically the member’s customer portal credentials.</p>
+<p>The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member <strong>SHALL</strong> authenticate using credentials they have been issued by the Health Plan. This is typically the member’s customer portal credentials.</p>
 
-<p>The member will typically register with a third party application, service or new (target) Health Plan with whom they wish to share data. During that registration process the member should review and agree to the Terms of Service and a Privacy Policy that details how the application or service will use the member’s data froom the (source) Health Plan. While authenticated to the application or service the member <strong>MAY</strong> connect to the (source) Health Plan’s FHIR API and authorize sharing of their information. After authenticating to the (source) Health Plan’s FHIR API the Member <strong>SHALL</strong> be presented with an Authorization screen that enables them to approve the sharing of information with their intended application, service or (target) Health Plan. For this authorization to occur the Application, service or (target) Health Plan will require OAuth 2.0 client application credentials that are issued by the (source) Health Plan in order to register an authorization request.</p>
+<p>The member will typically select a third-party application, service or new (target) Health Plan with whom they wish to share data. The member should review and agree with the Terms of Service and a Privacy Policy that details how the application or service will use the member’s data from the (source) Health Plan. While authenticated to the application or service, the member <strong>MAY</strong> connect to the (source) Health Plan’s authorization server. After authenticating to the (source) Health Plan’s authorization server, the Member <strong>SHALL</strong> be presented with an Authorization screen that enables them to approve the sharing of information with their intended application, service or (target) Health Plan. For this authorization to occur the Application, service or (target) Health Plan will require OAuth 2.0 client application credentials that are issued by the (source) Health Plan in order to register an authorization request.</p>
 
 <p>The Authorization process, in accordance with applicable privacy policy, <strong>SHALL</strong> provide a mechanism to support current regulations allowing members the right to decide what information is permitted to be exchanged.  Examples of member authorized restrictions/permissions are 42CFR, State and Federal requirements for sensitive data.</p>
 
@@ -317,11 +315,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Any subsequent Access Token issued based on the Refresh Token <strong>SHALL</strong> be restricted (at least) to the same restrictions.</p>
 
-<p>The requesting application <strong>SHALL</strong> use the access token to access the Health Plan’s secure FHIR API to download the information that the Member is allowed to access.</p>
+<p>The requesting application <strong>SHALL</strong> use the access token to access the Health Plan’s secure FHIR API to download the information that the Application is allowed to access.</p>
 
 <p>The OAuth2.0 Member-authorized exchange is detailed in <a href="Member-AuthorizedOAuth2Exchange.html">Section: Member-Authorized OAuth2.0 Exchange</a>.</p>
 
-<p>An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third Party Application Exchange:</p>
+<p>An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third-Party Application Exchange:</p>
 
 <p><img src="Payer-Payer-with-member-InteractionMethods2.png" alt="Figure 4-2: Payer-to-Payer Exchange with Member Interaction" height="auto" width="100%" />
 **Figure 4-2: Payer-to-Payer Exchange with Member Interaction</p>
@@ -344,13 +342,13 @@ The supported format is:</p>
 
 <p>A Health Plan’s FHIR API <strong>SHOULD</strong> support the Patient-everything operation as defined in the FHIR R4 specification here: https://www.hl7.org/fhir/operation-patient-everything.html</p>
 
-<p>The Patient-everything operation is provided in this IG as a method to address the uncertainty in the February 11, 2019 publication of the CMS Interoperability Notice of Proposed Rule Making (NPRM). The NPRM makes reference to a possible Payer push of member-authorized health data. The Patient-everything operation is identified as a potential method to package all of a member’s health history into a records bundle for transmission.</p>
+<p>The Patient-everything operation is identified as a potential method to package all of a member’s health history into a records bundle for transmission.</p>
 
 <p>The Patient-everything operation <strong>SHOULD</strong> be available as an operation via the Health Plan’s FHIR API.</p>
 
-<p>Member-authorized sharing of their health history <strong>MAY</strong> utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member’s information. The OAuth2.0 access token used to give access to a Member’s records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided by the relevant patient.</p>
+<p>Member-authorized sharing of their health history <strong>MAY</strong> utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member’s information. The OAuth2.0 access token used to give access to a Member’s records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided for the relevant patient.</p>
 
-<p>The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans <strong>MAY</strong> enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Heallth Plan and another Trusted Entity such as another Health Plan.</p>
+<p>The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans <strong>MAY</strong> enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Health Plan and another Trusted Entity such as another Health Plan.</p>
 
 <p>The Patient-everything operation supports the use of the <a href="https://www.hl7.org/fhir/formats.html#bulk">bulk FHIR data format Specification</a>. A Health Plan <strong>MAY</strong> format the Patient-everything records to be exchanged using the ND-Json format.</p>
 
@@ -379,7 +377,7 @@ The supported format is:</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Procedure</h2>
   
 
@@ -176,9 +176,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- USCoreProcedure.md  -->
 <p><a href="USCorePractitionerRole.html">Previous Page - US Core PractitionerRole</a></p>
 
-<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>  <strong>SHALL</strong> be used to record a member’s health events.</p>
+<p>The  <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a> <strong>SHALL</strong> be used to record a member’s health events.</p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Procedure resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a> are:</p>
 
 <style>
     table{
@@ -233,97 +233,99 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td style="text-align: center">1..1</td>
       <td> </td>
     </tr>
-    <tr>
-      <td>Procedure.performer.actor</td>
-      <td>actor</td>
-      <td style="text-align: center">1..1</td>
-      <td>Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)</td>
-    </tr>
-    <tr>
-      <td>Procedure.focalDevice.manipulated</td>
-      <td>manipulated</td>
-      <td style="text-align: center">1..1</td>
-      <td>Reference(Device)</td>
-    </tr>
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
-<p>A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>. This is shown below as an assistance  to implementers:</p>
+<p>A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">US Core Procedure profile</a>. This is shown below as an assistance to implementers:</p>
 
 <table>
   <thead>
     <tr>
       <th>US Core Element</th>
-      <th>MustSupport</th>
-      <th>Cardinality</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CARIN-BB Element</th>
-      <th>CPCDS Element Mapping</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Procedure.meta.lastUpdated</td>
-      <td> </td>
-      <td>0..1</td>
+      <td>-  Procedure.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.meta.lastUpdated</td>
       <td>[{“163”:”EOB Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>Procedure.identifier</td>
-      <td> </td>
-      <td>0..*</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td>ExplanationOfBenefit.identifier</td>
-      <td>[{“35”:”Payer claim unique identifier”}]</td>
+      <td>[{“35”:”Payer claim unique identifier”}]. Note: Assign Payer System URI for Unique Claim Id in Procedure.identifier.system. Set Claim Id in Procedure.identifier.value</td>
     </tr>
     <tr>
       <td>Procedure.status</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Note: EOB Status 0f [active | cancelled | draft | entered-in-error] = [completed|not-done|unknown|entered-in-error]</td>
     </tr>
     <tr>
       <td>Procedure.code</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>[{“24, 26, 146”:”ICD Procedure Code”}, {“40”:”Procedure Code - CPT / HCPCS”}</td>
     </tr>
     <tr>
       <td>Procedure.subject</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.patient</td>
-      <td>[{“Ref (1)”:”Member id”}, {“Ref (109)”:”Patient account number”}, {“Ref (110)”:”Medical record number”}</td>
+      <td>[{“Ref (1), Ref (109)”:”Member id, Patient account number”}, {“Ref (191)”:”Unique Member ID”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Procedure.performed[x]</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Enter Procedure.performedPeriod or Procedure.performedDateTime (next field below)</td>
+    </tr>
+    <tr>
+      <td>Procedure.performedDateTime</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td>ExplanationOfBenefit.procedure.date, ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“25, 27”:”Procedure date”}, {“90, 119”:”Service from date,  Service to date”}</td>
     </tr>
     <tr>
       <td>Procedure.performedPeriod</td>
-      <td> </td>
-      <td> </td>
-      <td>ExplanationOfBenefit.procedure.date</td>
-      <td>[{“25, 27”:”Procedure date”}</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td>ExplanationOfBenefit.procedure.date, ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“25, 27”:”Procedure date”}, {“90, 119”:”Service from date,  Service to date”}</td>
+    </tr>
+    <tr>
+      <td>Procedure.location</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
+      <td>ExplanationOfBenefit.item.location. locationCodeableConcept, ExplanationOfBenefit.item.supportingInfo.location. locationCodeableConcept</td>
+      <td>[{“46”:”Place of service code”}, {“97, 170, 176”:”Service Facility NPI (if available), Name, Address”}]</td>
     </tr>
     <tr>
       <td>Procedure.reasonCode</td>
-      <td> </td>
-      <td>0..*</td>
-      <td>ExplanationOfBenefit.procedure.procedure</td>
-      <td>[{“24, 26, 146”:”ICD Procedure Code”}</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.procedure.procedure, ExplanationOfBenefit.item.productOrService</td>
+      <td>[{“24, 26, 146”:”ICD Procedure Code”}, {“40”:”Procedure Code - CPT / HCPCS”}</td>
     </tr>
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-procedure-resource">Example Procedure Resource</h4>
 
@@ -410,7 +412,7 @@ is presented below:</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

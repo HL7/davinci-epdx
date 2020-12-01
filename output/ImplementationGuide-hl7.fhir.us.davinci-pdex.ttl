@@ -13,11 +13,11 @@
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>DaVinciPayerDataExchange</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex</pre><div><p>This specification is currently undergoing ballot and connectathon testing. It is expected to evolve, possibly significantly, as part of that process.\nFeedback is welcome and may be submitted through the FHIR JIRA tracker indicating US Da Vinci PDex as the specification. If balloting on this IG, please submit your comments via the tracker and reference them in your ballot submission implementation guide.</p>\n<p>This guide can be reviewed offline. Go to the Downloads section. Click on the link to download the full Implementation Guide as a zip file. Expand the zip file and use a web browser to launch the index.html file in the directory created by the zip extract process. External hyperlinks in the guide will not be available unless you have an active internet connection.</p>\n<p><a href=\"https://confluence.hl7.org/display/FM/Financial+Management+Home\">Financial Management</a> is the Sponsoring Work Group for this Implementation Guide.</p>\n<p><strong>The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles based on FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.</strong></p>\n<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule.</p>\n<p>This IG uses the same Member Health History &quot;payload&quot; for member-authorized exchange of information with other Health Plans and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>\n<p>This IG covers the exchange of:</p>\n<ul>\n<li>Claims-based information</li>\n<li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>\n</ul>\n<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>\n<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>\n<ul>\n<li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>\n<li>Member-authorized Health Plan to Health Plan exchange</li>\n<li>Member-authorized Health Plan to Third-Party Application exchange</li>\n</ul>\n<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019.</p>\n<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>\n<ul>\n<li>Value Sets</li>\n<li>Vocabularies (X12, NUBC etc.)</li>\n<li>Examples</li>\n</ul>\n<p><strong>The Vocabulary, Value Sets and codings used to express data in this IG are subject to review and will be reconciled with</strong>  <a href=\"http://www.x12.org\">X12</a>.</p>\n<p>See the <a href=\"toc.html\">Table of Contents</a> for more information.</p>\n</div></div>"
   ];
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"];
-  fhir:ImplementationGuide.version [ fhir:value "0.1.29"];
+  fhir:ImplementationGuide.version [ fhir:value "1.0.0"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
   fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-11-13T17:22:01-05:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-12-01T03:11:56-05:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -59,6 +59,15 @@
      ];
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.us.core" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "3.1.1" ]
+  ], [
+     fhir:index 1;
+     fhir:Element.id [ fhir:value "hl7_fhir_us_davinci_hrex" ];
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex";
+       fhir:link <http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex>
+     ];
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.us.davinci-hrex" ];
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "0.2.0" ]
   ];
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
@@ -328,7 +337,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/pdex-device" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PDex Device" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The PDex Device profile is provided to enable payers to record information about\ndevices used by a member that may not have a UDI number." ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 2;
@@ -482,7 +491,7 @@
          fhir:Reference.reference [ fhir:value "Patient/1" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "US Core Patient Example1" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a US Core Patient Record" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 13;
@@ -598,7 +607,7 @@
          fhir:Reference.reference [ fhir:value "Provenance/1000006" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleDocRefProvenance" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a PDex Provenance record for a PDF embedded in a DocumentReference resource" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
          fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
@@ -632,7 +641,7 @@
          fhir:Reference.reference [ fhir:value "DocumentReference/123456" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleDocumentReference" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a US Core DocumentReference with an embedded PDF document" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 22;
@@ -646,7 +655,7 @@
          fhir:Reference.reference [ fhir:value "Organization/2" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "OrganizationPayer1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Payer1" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the Payer Organization" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 23;
@@ -674,7 +683,7 @@
          fhir:Reference.reference [ fhir:value "Organization/3" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "OrganizationProvider1" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provider 1" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provider Organization Example 1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index 25;
@@ -768,6 +777,23 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Coverage" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/Coverage/883210>;
+         fhir:Reference.reference [ fhir:value "Coverage/883210" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleCoverage" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Coverage for a Member" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage>
+       ]
+     ], [
+       fhir:index 32;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "CapabilityStatement" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -778,7 +804,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Payer Data Exchange Server Capability Statement" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -792,7 +818,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "This Section describes the expected capabilities of the PDEX Server actor which is responsible for providing responses to the queries submitted by the PDEX Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDEX Servers are defined. PDEX Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -803,10 +829,10 @@
          fhir:Reference.reference [ fhir:value "SearchParameter/pdex-medicationdispense-patient" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PdexMedicationDispensePatient" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Returns dispensed prescriptions for a specific patient\n<em>NOTE</em>: This Pdex SearchParameter definition extends the usage context of\n<a href=\"http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html\">capabilitystatement-expectation</a>\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain\n\n " ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Returns dispensed prescriptions for a specific patient.\nNOTE: This Pdex SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -817,7 +843,7 @@
          fhir:Reference.reference [ fhir:value "SearchParameter/pdex-medicationdispense-status" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PdexMedicationDispenseStatus" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status of the prescription dispense\n <em>NOTE</em>: This SearchParameter definition extends the usage context of\n<a href=\"http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html\">capabilitystatement-expectation</a>\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain\n\n " ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status of the prescription dispense.\nNOTE: This SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ];
      fhir:ImplementationGuide.definition.page [
@@ -1178,6 +1204,8 @@
 <http://hl7.org/fhir/us/davinci-pdex/Encounter/6> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Encounter/7> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Coverage/883210> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/PdexServerCapabilityStatement> a fhir:us .
 

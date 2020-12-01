@@ -13,12 +13,12 @@
 This IG supports the full complement of US Core profiles. They are supported to 
 enable a payer to produce FHIR resources from data provided in other formats.
 
-For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) is referenced in US Core but uses the profile from the base FHIR specification and does not create a US Core specific 
+For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) is referenced in US Core but uses the profile from the base FHIR specification and does not create a US Core specific 
 profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available.
 
 A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may not have access to the detail measurement data needed to create a valid Vital Signs resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Vital Signs resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -40,7 +40,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.component.value[x]           |  value[x]         |     0..1    |                    |
 |  Observation.component.dataAbsentReason   |  dataAbsentReason |     0..1    | CodeableConcept    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Examples of Vital Signs Resources
 

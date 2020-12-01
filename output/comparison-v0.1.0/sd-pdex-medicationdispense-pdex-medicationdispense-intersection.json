@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "d0d7661c-58af-4e2c-9f73-bafc9b7e3654-3",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/d0d7661c-58af-4e2c-9f73-bafc9b7e3654-3",
+  "id" : "b2664442-2ef9-4f9f-afa7-31e7541fb6b6-3",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/b2664442-2ef9-4f9f-afa7-31e7541fb6b6-3",
   "name" : "IntersectionPDexMedicationDispenseAndPdexMedicationDispense",
   "title" : "Intersection of PDex MedicationDispense Profile And PDex MedicationDispense",
   "status" : "active",
-  "date" : "2020-11-20T10:59:08-05:00",
+  "date" : "2020-12-01T03:12:18-05:00",
   "snapshot" : {
     "element" : [{
       "path" : "MedicationDispense",
@@ -434,7 +434,7 @@
     },
     {
       "path" : "MedicationDispense.subject",
-      "short" : "Who the dispense is for",
+      "short" : "left: Who the dispense is for; right: The patient who is prescribed the medication",
       "definition" : "A link to a resource representing the person or the group to whom the medication will be given.",
       "comment" : "SubstanceAdministration->subject->Patient.",
       "min" : 1,
@@ -948,7 +948,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "Element"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -1029,7 +1029,7 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{

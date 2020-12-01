@@ -10,9 +10,9 @@
 {% endcomment %} -->
 [Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
 
-The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)  **SHALL** be used to record a member's health events.
+The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html) **SHALL** be used to record a member's health events.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Procedure resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html) are:
 
 {% include style_insert_table_blue.html %}
 
@@ -22,13 +22,12 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Procedure.code                    |  code         |     1..1    | CodeableConcept                                                                                   |
 |  Procedure.subject                 |  subject      |     1..1    | Reference(US Core Patient Profile)                                                                |
 |  Procedure.performed[x]            |  performed[x] |     1..1    |                                                                                                   |
-|  Procedure.performer.actor         |  actor        |     1..1    | Reference(Practitioner \| PractitionerRole \| Organization \| Patient \| RelatedPerson \| Device) |
-|  Procedure.focalDevice.manipulated |  manipulated  |     1..1    | Reference(Device)                                                                                 |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Health Plan Mapping Assistance
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance to implementers:
 
 | US Core Element                | Must Support | Cardinality | CARIN-BB Element                                                                                                                        | CPCDS Element Mapping or Implementer Note                                                                                                                              |
 |--------------------------------|:------------:|:-----------:|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +42,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 |  Procedure.location            |              |     0..1    | ExplanationOfBenefit.item.location. locationCodeableConcept, ExplanationOfBenefit.item.supportingInfo.location. locationCodeableConcept | [{"46":"Place of service code"}, {"97, 170, 176":"Service Facility NPI (if available), Name, Address"}]                                                                |
 |  Procedure.reasonCode          |              |     0..*    | ExplanationOfBenefit.procedure.procedure, ExplanationOfBenefit.item.productOrService                                                    | [{"24, 26, 146":"ICD Procedure Code"}, {"40":"Procedure Code - CPT / HCPCS"}                                                                                           |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Procedure Resource
 

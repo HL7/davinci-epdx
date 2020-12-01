@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Data Mapping</h2>
   
 
@@ -178,7 +178,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Health Plans <strong>SHALL</strong> map claims and clinical information for a member to US Core v3.1.1 FHIR Resources based on R4.</p>
 
-<p>US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption they <strong>MAY</strong> be offered up to US Realm for incorporation into a future version of US Core.</p>
+<p>US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption, they <strong>MAY</strong> be offered up to US Realm for incorporation into a future version of US Core.</p>
 
 <p>Where a <a href="https://www.hl7.org/fhir/us/core/index.html">US Core FHIR R4</a> Resource is not defined Health Plans <strong>SHALL</strong> map claims and clinical information to FHIR Profiles defined in this IG, or the Da Vinci HRex IG.</p>
 
@@ -186,9 +186,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Dental and vision information are considered part of the Health Plan record for the specific member and, when it is available, <strong>SHOULD</strong> be included in the exchanges described in this IG.</p>
 
-<p>Mapping is also required when data is exchanged between systems. The PDex IG exchanges are centered around Member/Patients. FHIR Platforms generate their own ids when creating resources. Consequently a Patient resource in one system can have a different FHIR Resource ID from a Patient in another system. When a bundle of resources are retrieved from a Health Plan’s FHIR API it will be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything FHIR bundle.</p>
+<p>Mapping is also required when data is exchanged between systems. The PDex IG exchanges are centered around Member/Patients. FHIR Platforms generate their own ids when creating resources. Consequently, a Patient resource in one system can have a different FHIR Resource ID from a Patient in another system. When a bundle of resources is retrieved from a Health Plan’s FHIR API it will be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything FHIR bundle.</p>
 
-<p>In the steps below “Received” refers to the information requested from a Health Plan’s FHIR API. “Target” refers to the target FHIR API of the organization making the request. In the Payer to Payer exchange scenario the New Plan is the Target and the Old Health Plan provides the “Received” bundle.</p>
+<p>In the steps below “Received” refers to the information requested from a Health Plan’s FHIR API. “Target” refers to the target FHIR API of the organization making the request. In the Payer-to-Payer exchange scenario the New Plan is the Target and the Old Health Plan provides the “Received” bundle.</p>
 
 <ol>
   <li>Use the received Patient resource to match to the target Patient resource. Use the Target Patient Resource ID for any Patient references used in subsequently imported records from the Received bundle.</li>
@@ -202,7 +202,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Providing data in sub-element fields</strong></p>
 
-<p>In this data mapping section each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n&gt;0) the Health Plan <strong>SHALL</strong> populate the field and for a field specified as MUST SUPPORT and cardinality is 0.., the Health Plan SHALL be capable of populating the field and do so if the relevant data exists.” If a field is marked as MUST SUPPORT the receiver must be able to consume it without generating an error., unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of “0..1” or “0..*” the sub-element field does not need to be populated.</p>
+<p>In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n&gt;0) the Health Plan <strong>SHALL</strong> populate the field and for a field specified as MUST SUPPORT and cardinality is 0.., the Health Plan <strong>SHALL</strong> be capable of populating the field and do so if the relevant data exists.” If a field is marked as MUST SUPPORT the receiver must be able to consume it without generating an error., unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of “0..1” or “0..*” the sub-element field does not need to be populated.</p>
 
 <p><a href="CapabilityStatement-pdex-server.html">Next Page - PDex Server Capability Statement</a></p>
 
@@ -229,7 +229,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

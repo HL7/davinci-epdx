@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>VitalSigns</h2>
   
 
@@ -179,12 +179,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>This IG supports the full complement of US Core profiles. They are supported to 
 enable a payer to produce FHIR resources from data provided in other formats.</p>
 
-<p>For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs</a> is referenced in US Core but uses the profile from the base FHIR specification and does not create a US Core specific 
+<p>For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs</a> is referenced in US Core but uses the profile from the base FHIR specification and does not create a US Core specific 
 profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available.</p>
 
 <p>A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may not have access to the detail measurement data needed to create a valid Vital Signs resource.</p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Vital Signs resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs</a> resource are:</p>
 
 <style>
     table{
@@ -308,7 +308,7 @@ profile. Payers may be unable to create a valid Vital Signs record from the sour
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h3 id="examples-of-vital-signs-resources">Examples of Vital Signs Resources</h3>
 
@@ -354,7 +354,7 @@ profile. Payers may be unable to create a valid Vital Signs record from the sour
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

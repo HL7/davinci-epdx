@@ -18,8 +18,15 @@
      ]
   ];
   fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://hl7.org/fhir/sid/ndc 54458-872-10}\">30 TABLET in 1 BLISTER PACK (54458-872-10)</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"Practitioner-4.html\">Generated Summary: National Provider Identifier: 874635264; Susan Smith ; Phone: 3015551234; gender: female; birthDate: 1965-11-15</a></td></tr></table><p><b>location</b>: <a href=\"Location-5.html\">Generated Summary: name: MyFavorite Pharmacy</a></p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-ActCode RF}\">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></div>"
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>An attribute to express the refill number of a prescription</b>: 1</p><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://hl7.org/fhir/sid/ndc 54458-872-10}\">30 TABLET in 1 BLISTER PACK (54458-872-10)</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Generated Summary: language: en-US; Member Number: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, Medical record number: 1234-234-1243-12345678901m, Health Plan Identifier: 1234-234-1243-12345678901u, Patient external identifier: 1234-234-1243-12345678901a; active; Johnny Appleseed ; Phone: (410)678-2323; gender: male; birthDate: 1986-01-01; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"Practitioner-4.html\">Generated Summary: National Provider Identifier: 874635264; Susan Smith ; Phone: 3015551234; gender: female; birthDate: 1965-11-15</a></td></tr></table><p><b>location</b>: <a href=\"Location-5.html\">Generated Summary: name: MyFavorite Pharmacy</a></p><p><b>type</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-ActCode RF}\">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill" ];
+     fhir:Extension.valueQuantity [
+       fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ]
+     ]
   ];
   fhir:MedicationDispense.status [ fhir:value "completed"];
   fhir:MedicationDispense.medicationCodeableConcept [

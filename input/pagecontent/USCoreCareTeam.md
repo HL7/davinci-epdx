@@ -12,7 +12,7 @@
 
 Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the CareTeam resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource are:
 
 | R4 Element           | Name         | Cardinality | Type                                                                                               |
 |----------------------|--------------|:-----------:|----------------------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | CareTeam.member      |  member      |     1..1    | Reference(US Core Patient Profile \| US Core Practitioner Profile \| US Core Organization Profile) |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The essential fields to be provided in the CareTeam resource from the CPCDS file are:
 
@@ -43,7 +43,7 @@ The essential fields to be provided in the CareTeam resource from the CPCDS file
 
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example CareTeam Resource
 

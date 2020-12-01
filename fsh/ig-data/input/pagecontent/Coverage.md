@@ -4,7 +4,7 @@ The [Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefin
 
 {% include style_insert_table_blue.html %}
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Hrex Coverage resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [HRex Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) are:
 
 | R4 Element              | Name          | Cardinality | Type                                 |
 |-------------------------|---------------|:-----------:|--------------------------------------|
@@ -13,21 +13,18 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Coverage.subscriberId   |  subscriberId |     0..1    | string                               |
 | Coverage.beneficiary    |  beneficiary  |     1..1    | Reference(US Core Patient Profile)   |
 | Coverage.payor          |  payor        |     1..*    | Reference(HRex Organization Profile) |
-| Coverage.class.type     |  type         |     1..1    | CodeableConcept                      |
-| Coverage.class.value    |  value        |     1..1    | string                               |
-| Coverage.value[x]       |  value[x]     |     1..1    |                                      |
-| Coverage.exception.type |  type         |     1..1    | CodeableConcept                      |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
 
-| US Core Element           | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping                                     |
+| US Core Element           | Must Support | Cardinality | CARIN-BB Element          | CPCDS Element Mapping  or Implementer Note                                     |
 |---------------------------|-------------|:-----------:|---------------------------|-----------------------------------------------------------|
 | Coverage.meta.lastUpdated |             |     0..1    | Coverage.meta.lastUpdated | [{"163":"Coverage Last Updated Date"}]                    |
-| Coverage.identifier       |      S      |     0..*    |                           |                                                           |
+| Coverage.identifier       |      S      |     0..*    | Coverage.identifier      | Supply a Unique Coverage Identifier                        |
 | Coverage.status           |             |     1..1    | Coverage.status           | [{"133":"Coverage status"}]                               |
 | Coverage.subscriberId     |      S      |     0..1    | Coverage.subscriberId     | [{"132":"Subscriber id"}]                                 |
 | Coverage.beneficiary      |      S      |     1..1    | Coverage.beneficiary      | [{"Ref (1)":"Member id"}                                  |
@@ -36,15 +33,16 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | Coverage.class.value      |             |     1..1    | Coverage.class.value      | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |
 | Coverage.class.name       |             |     0..1    | Coverage.class.name       | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
 
-It is important to note a difference between Coverage information provided in the CARIN-BB IG and the PDex IG. The PDex IG Coverage expresses the current state of health plan coverage whereas the CARIN-BB Coverage is intended to express the coverage that was valid at the date of service or admission.
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+
+It is important to note a difference between Coverage information provided in the CARIN-BB IG and the PDex IG. The PDex IG Coverage expresses the current state of health plan coverage whereas the CARIN-BB Coverage is intended to express the coverage that was valid at the date of service or admission.
 
 
 SubscriberId may not uniquely identify a health plan member. 
 If beneficiary is subscriber, also set .relationship to "self".
 
-It may, for example, identify the parent who obtains coverage for a child. Therefore the Coverage resource may provide a combination of identifiers and point to demographic information to uniquely identify a patient/member.
+It may, for example, identify the parent who obtains coverage for a child. Therefore, the Coverage resource may provide a combination of identifiers and point to demographic information to uniquely identify a patient/member.
 
 Coverage.identifier **MAY** include a member identifier in the Coverage resource.
 

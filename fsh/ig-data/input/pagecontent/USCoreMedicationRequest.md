@@ -1,8 +1,8 @@
 [Previous Page - PDex MedicationDispense](PDexMedicationDispense.html)
 
-Where a Health Plan has access to Prescription information they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
+Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the MedicationRequest resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -17,10 +17,10 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  MedicationRequest.authoredOn             |  authoredOn        |     1..1    | dateTime                                                                                           |
 |  MedicationRequest.requester              |  requester         |     1..1    | Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile) |
 |  MedicationRequest.dosageInstruction      |  dosageInstruction |     0..*    | Dosage                                                                                             |
-|  MedicationRequest.dosageInstruction.text |  text              |     0..1    | string                                                                                             |
-|  MedicationRequest.allowed[x]             |  allowed[x]        |     1..1    |                                                                                                    |
+|  MedicationRequest.dosageInstruction.text |  text |     0..1    | String                                                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example MedicationRequest Resource
 

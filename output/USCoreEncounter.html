@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Encounter</h2>
   
 
@@ -201,7 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.</p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Encounter resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter</a> resource are:</p>
 
 <table>
   <thead>
@@ -238,34 +238,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>code</td>
     </tr>
     <tr>
-      <td>Encounter.statusHistory.status</td>
-      <td>status</td>
-      <td style="text-align: center">1..1</td>
-      <td>code</td>
-    </tr>
-    <tr>
-      <td>Encounter.statusHistory.period</td>
-      <td>period</td>
-      <td style="text-align: center">1..1</td>
-      <td>Period</td>
-    </tr>
-    <tr>
       <td>Encounter.class</td>
       <td>class</td>
       <td style="text-align: center">1..1</td>
       <td>Coding</td>
-    </tr>
-    <tr>
-      <td>Encounter.classHistory.class</td>
-      <td>class</td>
-      <td style="text-align: center">1..1</td>
-      <td>Coding</td>
-    </tr>
-    <tr>
-      <td>Encounter.classHistory.period</td>
-      <td>period</td>
-      <td style="text-align: center">1..1</td>
-      <td>Period</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
@@ -310,22 +286,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Period</td>
     </tr>
     <tr>
-      <td>Encounter.length</td>
-      <td>length</td>
-      <td style="text-align: center">0..1</td>
-      <td>Duration</td>
-    </tr>
-    <tr>
       <td>Encounter.reasonCode</td>
       <td>reasonCode</td>
       <td style="text-align: center">0..*</td>
       <td>CodeableConcept</td>
-    </tr>
-    <tr>
-      <td>Encounter.diagnosis.condition</td>
-      <td>condition</td>
-      <td style="text-align: center">1..1</td>
-      <td>Reference(Condition | Procedure)</td>
     </tr>
     <tr>
       <td>Encounter.hospitalization</td>
@@ -354,165 +318,172 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
-<p>Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below.</p>
+<p>Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below:</p>
 
 <table>
   <thead>
     <tr>
       <th>US Core Element</th>
-      <th>MustSupport</th>
-      <th>Cardinality</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CARIN-BB Element</th>
-      <th>CPCDS Element Mapping</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Encounter.identifier</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td>ExplanationOfBenefit.identifier</td>
-      <td>[{“35”:”Payer claim unique identifier”}]</td>
+      <td>[{“35”:”Payer claim unique identifier”}]. Note: Assign Payer System URI for Unique Claim Id in Encounter.identifier.system. SetClaim Id in Encounter.identifier.value</td>
     </tr>
     <tr>
-      <td>Encounter.identifier.system</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td>- Encounter.identifier.system</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Assign Payer System URI for Unique Claim Id in Encounter.identifier.system. Set Claim Id in Encounter.identifier.value</td>
     </tr>
     <tr>
-      <td>Encounter.identifier.value</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td>- Encounter.identifier.value</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Assign Claim Id in Encounter.identifier.value</td>
     </tr>
     <tr>
       <td>Encounter.status</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.status</td>
       <td>[{“140”:”Claim processing status code<br />”}]</td>
     </tr>
     <tr>
-      <td>Encounter.class</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td>- Encounter.statusHistory.period</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>[{“177, 178”:”Statement From Date<br />Statement Through Date<br />”}</td>
     </tr>
     <tr>
-      <td>Encounter.classHistory.period</td>
+      <td>Encounter.class</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td>1..1</td>
-      <td>ExplanationOfBenefit.supportingInfo.timingPeriod</td>
-      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}</td>
+      <td>. Note: Use ExplanationOfBenefit.type [institutional|oral|pharmacy|professional|vision]  to map to ActCode [IMP|AMB|AMB|AMB]</td>
+    </tr>
+    <tr>
+      <td>- Encounter.classHistory.period</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
+      <td>ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}, {“90, 119”:”Service from date, Service to date”}</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
-      <td>S</td>
-      <td>1..*</td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
+      <td>ExplanationOfBenefit.type</td>
       <td>[{“16”:”Claim type”}]</td>
     </tr>
     <tr>
       <td>Encounter.subject</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.patient</td>
-      <td>[{“Ref (1)”:”Member id”}, {“Ref (109)”:”Patient account number”}, {“Ref (110)”:”Medical record number”}</td>
+      <td>[{“Ref (1), Ref (109)”:”Member id, Patient account number”}, {“Ref (191)”:”Unique Member ID”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
       <td>Encounter.participant</td>
-      <td>S</td>
-      <td>0..*</td>
-      <td>ExplanationOfBenefit.careTeam.provider</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
       <td>[{“Ref (93, 96, 98, 99, 173)”:”Provider attending, PCP, operating, refering and supervising NPIs”}, {“Ref (166, 169, 182, 171, 174)”:”Provider attending, PCP, operating, refering and supervising names”}</td>
     </tr>
     <tr>
-      <td>Encounter.participant.type</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td>- Encounter.participant.type</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
-      <td>Encounter.participant.period</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td>- Encounter.participant.period</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
-      <td>Encounter.participant.individual</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td>- Encounter.participant.individual</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
       <td>Encounter.period</td>
-      <td>S</td>
-      <td>0..1</td>
-      <td>ExplanationOfBenefit.supportingInfo.timingPeriod</td>
-      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}, {“90, 119”:”Service from date, Service to date”}</td>
     </tr>
     <tr>
       <td>Encounter.length</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
       <td>Encounter.reasonCode</td>
-      <td>S</td>
-      <td>0..*</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
       <td>Encounter.diagnosis</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td> </td>
-      <td>0..*</td>
-      <td>ExplanationOfBenefit.supportingInfo.code</td>
-      <td>[{“33, 32, 113”:”Claim diagnosis related group (DRG), including the code system, the DRG version and the code value”}, {“21, 22, 23, 30, 31, 145”:”Diagnosis Code, Description”}, {“28, 29”:”Present on admission”}</td>
+      <td>[{“33, 32, 113”:”Claim diagnosis related group (DRG), including the code system, the DRG version and the code value”}, {“21, 22, 23, 30, 31”:”Diagnosis Code”}, {“28, 29”:”Present on admission”}</td>
     </tr>
     <tr>
       <td>Encounter.hospitalization</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
-      <td>Encounter.hospitalization.dischargeDisposition</td>
-      <td>S</td>
-      <td>0..1</td>
+      <td>- Encounter.hospitalization.dischargeDisposition</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Provide information if available</td>
     </tr>
     <tr>
       <td>Encounter.location</td>
-      <td>S</td>
-      <td>0..*</td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.locationReference</td>
+      <td>. Note: Reference to location where Encounter took place</td>
     </tr>
     <tr>
-      <td>Encounter.location.location</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td>- Encounter.location.location</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
+      <td>. Note: Reference to location where Encounter took place</td>
     </tr>
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-encounter-resource">Example Encounter Resource</h4>
 
@@ -586,7 +557,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 1, 2020 03:11-0500">2020-12-01</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

@@ -14,31 +14,31 @@ The  [Da Vinci PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/da
 
 {% include style_insert_table_blue.html %}
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the PDex Medication Dispense resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Da Vinci PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html) profile are:
 
 | R4 Element                                     | Name            | Cardinality | Type                                                                                              |
 |------------------------------------------------|-----------------|:-----------:|---------------------------------------------------------------------------------------------------|
 | MedicationDispense.status                      |  status         |     1..1    | code                                                                                              |
 | MedicationDispense.medication[x]               |  medication[x]  |     1..1    |                                                                                                   |
-| MedicationDispense.subject                     |  subject        |     1..1    | Reference(Patient \| Group)                                                                       |
+| MedicationDispense.subject                     |  subject        |     1..1    | Reference(US Core Patient )                                                                       |
 | MedicationDispense.performer.actor             |  actor          |     1..1    | Reference(Practitioner \| PractitionerRole \| Organization \| Patient \| Device \| RelatedPerson) |
 | MedicationDispense.substitution.wasSubstituted |  wasSubstituted |     1..1    | boolean                                                                                           |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 
 #### Health Plan Mapping Assistance
 
-A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispence profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance  to implementers:
+A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance to implementers:
 
 | US Core Element                            | Must Support | Cardinality | CARIN-BB Element                                                                       | CPCDS Element Mapping or Implementer Note                                                                                                                                                                 |
 |--------------------------------------------|:------------:|:-----------:|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  - MedicationDispense.meta.lastUpdated     |              |     0..1    | ExplanationOfBenefit.meta.lastUpdated                                                  | [{"163":"EOB Last Updated Date"}]                                                                                                                                                                         |
 | MedicationDispense.identifier              |              |     0..*    | ExplanationOfBenefit.Identifier                                                        | [{"35":"RX service reference number"}]. Note: Assign Payer System URI for Unique Claim Id in MedicationDispense.identifier.system. SetClaim Id in MedicationDispense.identifier.value                     |
 | MedicationDispense.status                  |       S      |     1..1    | ExplanationOfBenefit.status                                                            | [{"140":"Claim processing status code<br>"}]                                                                                                                                                              |
-| MedicationDispense.medication[x]           |              |     1..1    |                                                                                        | . Note: Enter prescriptin information in sub-elements below                                                                                                                                               |
+| MedicationDispense.medication[x]           |              |     1..1    |                                                                                        | . Note: Enter prescription information in sub-elements below                                                                                                                                               |
 |  -  MedicationDispense.medicationReference |              |             | ExplanationOfBenefit.supportingInfo.code, ExplanationOfBenefit.detail.productOrService | [{"79":"NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&system=sdo"}, {"38, 78":"National drug code<br>Compound Code"}] |
 | MedicationDispense.subject                 |       S      |     1..1    | ExplanationOfBenefit.patient                                                           | [{"Ref (1), Ref (109)":"Member id, Patient account number"}, {"Ref (191)":"Unique Member ID"}, {"Ref (110)":"Medical record number"}                                                                      |
 |  -  MedicationDispense.performer.function  |              |     0..1    | ExplanationOfBenefit.careTeam.role                                                     | [{"165":"Care Team Role (Value pcp\|Prescribing)"}]                                                                                                                                                       |
@@ -48,11 +48,11 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | MedicationDispense.whenHandedOver          |              |     0..1    | ExplanationOfBenefit.item.servicedDate                                                 | [{"90":"Service (from) date"}]                                                                                                                                                                            |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example MedicationDispense Resource
 
-An example mapping of a MedicationDispense resource is shown here for a Dispense for Over the Counter medication - Tylenol PM (NDC code) - on hold with as needed dosage with a condition, a dose Range and an Event History:
+An example mapping of a MedicationDispense resource is shown here for a dispense for Over-The-Counter medication - Tylenol PM (NDC code) - on hold with as needed dosage with a condition, a dose Range and an Event History:
 
 [MedicationDispense Example](MedicationDispense-1000001.html)
 

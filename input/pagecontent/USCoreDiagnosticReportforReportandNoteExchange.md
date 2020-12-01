@@ -10,7 +10,7 @@
 {% endcomment %} -->
 [Previous Page - US Core DiagnosticReport for Laboratory Results Reporting](USCoreDiagnosticReportforLaboratoryResultsReporting.html)
 
-Where a Health Plan has access to clinical notes and associated diagnostic information they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.
+Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
 
@@ -31,7 +31,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DiagnosticReport.performer                              |  performer                |     0..*    | Reference(US Core Practitioner Profile \| US Core Organization Profile) |
 | DiagnosticReport.result                                 |  result                   |     0..*    | Reference(US Core Laboratory Result Observation Profile)                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example DiagnosticReport for Report and Note exchange Resource
 
