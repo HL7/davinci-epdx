@@ -133,5 +133,8 @@ For the purposes of this IG we will use the following terms:
     * Covered Party
     * Subject of Care
 
+### FHIR Publisher
+
+This IG was built with Sushi and the FHIR Publisher (v1.1.44)
 
 [Next Page: Overview](Overview.html)
