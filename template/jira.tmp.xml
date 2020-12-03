@@ -115,7 +115,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data exchange"/>
    <status value="draft"/>
-   <date value="2020-11-20T10:34:42-05:00"/>
+   <date value="2020-12-02T20:57:23-05:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -191,6 +191,21 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
       </grouping>
 
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-hrex-coverage.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/hrex-coverage"/>
+         </reference>
+         <name value="HRex Coverage Profile"/>
+         <description value="The HRex Coverage Profile defines the constraints for representing a member's healthcare insurance information to the Payer.  Coverage instances complying with this profile, sometimes together with the Patient which this profile references via `beneficiary`, allows a payer to identify a member in their system."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="_str_profile"/>
+      </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource"/>
@@ -653,6 +668,21 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          </reference>
          <name value="ExampleCoverage"/>
          <description value="Example of a Coverage for a Member"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"/>
+         <groupingId value="_ex_example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CapabilityStatement"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
+         </extension>
+         <reference>
+            <reference value="CapabilityStatement/PdexServerCapabilityStatement"/>
+         </reference>
+         <name value="PdexServerCapabilityStatement"/>
+         <description value="Payer Data Exchange Server Capability Statement"/>
          <exampleBoolean value="true"/>
          <groupingId value="_ex_example"/>
       </resource>
@@ -950,6 +980,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-hrex-coverage.html"/>
+               <title value="HRex Coverage Profile"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-pdex-device.html"/>
                <title value="PDex Device"/>
                <generation value="generated"/>
@@ -1102,6 +1137,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <page>
                <nameUrl value="Coverage-883210.html"/>
                <title value="ExampleCoverage"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CapabilityStatement-PdexServerCapabilityStatement.html"/>
+               <title value="PdexServerCapabilityStatement"/>
                <generation value="generated"/>
             </page>
          </page>
