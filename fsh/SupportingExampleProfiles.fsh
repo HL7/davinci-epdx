@@ -100,7 +100,7 @@ Description: "Example of an Encounter that has a provenance record"
   * meta.lastUpdated = "2020-07-14T19:26:23.217+00:00"
   * status = http://hl7.org/fhir/encounter-status#finished "Finished"
   * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
-  * type =  http://snomed.info/sct#11429006 "Consultation"
+  * type =  $SnomedCT#11429006 "Consultation"
   * subject.reference = "Patient/1"
 
 
@@ -112,7 +112,7 @@ Description: "Example of an Encounter that has a provenance record"
   * meta.lastUpdated = "2020-07-15T20:26:23.217+00:00"
   * status = http://hl7.org/fhir/encounter-status#finished "Finished"
   * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
-  * type =  http://snomed.info/sct#308335008 "Patient encounter procedure"
+  * type =  $SnomedCT#308335008 "Patient encounter procedure"
   * subject.reference = "Patient/1"
 
 

@@ -181,9 +181,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- PDexProvenance.md  -->
 <p><a href="USCoreProcedure.html">Previous Page - US Core Procedure</a></p>
 
-<p>When a Health Plan forwards information as a FHIR Resource it
-<strong>SHOULD</strong> create related Provenance record(s) to reflect the
-original source.</p>
+<p>When a Health Plan forwards information as a FHIR Resource it <strong>SHOULD</strong> create related 
+Provenance record(s) to reflect the original source.</p>
 
 <p>A Provenance resource <strong>SHOULD</strong> be provided with each member-related resource provided by the Health Plan’s FHIR API.</p>
 
@@ -193,11 +192,13 @@ original source.</p>
   <li>whether the data came via a clinical record, or a claim record.</li>
 </ul>
 
-<p>The PDex-Provenance resource is documented here: <a href="StructureDefinition-pdex-provenance.html">StructureDefinition-pdex-provenance.html</a></p>
+<p>The PDex-Provenance resource is based on the <a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a> and is documented here: <a href="StructureDefinition-pdex-provenance.html">StructureDefinition-pdex-provenance.html</a></p>
 
-<p>PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.</p>
+<p>PDex Provenance adds an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.</p>
 
-<p>The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.</p>
+<p>Provenance.recorded value <strong>SHOULD</strong> be the date/time when the data is received by the payer.</p>
+
+<p>The purpose of the extension is to identify the source format that the data in the provenance.target resource is taken from.</p>
 
 <p>The <a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a> record <strong>SHOULD</strong> be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:</p>
 
@@ -528,7 +529,7 @@ the resources returned by the search query.</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 3, 2020 09:27-0500">2020-12-03</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 5, 2020 23:42-0500">2020-12-05</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

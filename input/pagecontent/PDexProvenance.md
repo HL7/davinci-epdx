@@ -10,9 +10,8 @@
 {% endcomment %} -->
 [Previous Page - US Core Procedure](USCoreProcedure.html)
 
-When a Health Plan forwards information as a FHIR Resource it
-**SHOULD** create related Provenance record(s) to reflect the
-original source. 
+When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related 
+Provenance record(s) to reflect the original source. 
 
 A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. 
 
@@ -21,11 +20,13 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record, or a claim record. 
 
 
-The PDex-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
+The PDex-Provenance resource is based on the [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) and is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
 
-PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.
+PDex Provenance adds an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.
 
-The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
+Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer.
+
+The purpose of the extension is to identify the source format that the data in the provenance.target resource is taken from.
 
 
 The [PDex Provenance](StructureDefinition-pdex-provenance.html) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:
