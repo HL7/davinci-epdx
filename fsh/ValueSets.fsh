@@ -2,7 +2,7 @@
 //  Value Sets for Payer Data Exchange
 //
 
-ValueSet:     ProvenanceAgentType
+ValueSet: ProvenanceAgentType
 Title:        "Provenance Agent Type"
 Description:  "Agent role performed relating to referenced resource"
   * codes from system ProvenanceAgentRoleType

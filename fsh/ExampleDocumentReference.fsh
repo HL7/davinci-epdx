@@ -31,7 +31,7 @@ Description: "Example of a PDex Provenance record for a PDF embedded or linked i
 * meta.lastUpdated = "2020-10-09T15:26:23.217+00:00"
 * target[0].reference = "DocumentReference/123456"
 * recorded = "2020-10-09T15:26:23.217+00:00"
-* agent[0].type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType#source "Source"
+* agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * agent[0].who.reference = "Organization/3"
 * entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entity.what.display = "No reference available"

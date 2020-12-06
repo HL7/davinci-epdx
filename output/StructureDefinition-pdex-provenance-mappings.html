@@ -245,6 +245,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;agent</td><td>Event.performer</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Event.performer.function</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceAuthor)</td><td>Event.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Event.performer.function</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceTransmitter)</td><td>Event.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Event.performer.function</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>Event.performer.actor</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>PdexProvenance</b></td></tr>
@@ -261,6 +267,22 @@
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>unique(./reasonCode)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;activity</td><td>Act.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;agent</td><td>./participation[isNormalParticipation()]  OR  ./outboundRelationship[isNormalActRelationship() and typeCode='DRIV']</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>.typecode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onBehalfOf</td><td>Person, Practitioner, Organization, Device :* .role [classCode = RoleClassMutualRelationship; role.code and * .scopes[Role](classCode=IDENT) and *.plays [Role.Code]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceAuthor)</td><td>./participation[isNormalParticipation()]  OR  ./outboundRelationship[isNormalActRelationship() and typeCode='DRIV']</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>.typecode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onBehalfOf</td><td>Person, Practitioner, Organization, Device :* .role [classCode = RoleClassMutualRelationship; role.code and * .scopes[Role](classCode=IDENT) and *.plays [Role.Code]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceTransmitter)</td><td>./participation[isNormalParticipation()]  OR  ./outboundRelationship[isNormalActRelationship() and typeCode='DRIV']</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
@@ -293,6 +315,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;activity</td><td>Activity.Activity</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;agent</td><td>Agent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Agent.Attribution</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceAuthor)</td><td>Agent</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Agent.Attribution</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceTransmitter)</td><td>Agent</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Agent.Attribution</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;entity</td><td>Entity</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>Entity.role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;what</td><td>Entity.Identity</td> </tr>
@@ -308,6 +334,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;activity</td><td>FiveWs.why[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;agent</td><td>FiveWs.who</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceAuthor)</td><td>FiveWs.who</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceTransmitter)</td><td>FiveWs.who</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;who</td><td>FiveWs.actor</td> </tr>
 </table>
 <a name="fhirauditevent"> </a><h3>Mappings for FHIR AuditEvent Mapping (<a href="http://hl7.org/fhir/auditevent.html">http://hl7.org/fhir/auditevent</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>PdexProvenance</b></td></tr>
@@ -318,6 +348,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>AuditEvent.agent.location</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reason</td><td>AuditEvent.purposeOfEvent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;agent</td><td>AuditEvent.agent</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>AuditEvent.agent.type</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>AuditEvent.agent.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceAuthor)</td><td>AuditEvent.agent</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>AuditEvent.agent.type</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>AuditEvent.agent.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;agent (ProvenanceTransmitter)</td><td>AuditEvent.agent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>AuditEvent.agent.type</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role</td><td>AuditEvent.agent.role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;entity</td><td>AuditEvent.entity</td> </tr>
@@ -375,7 +411,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 3, 2020 09:27-0500">2020-12-03</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 5, 2020 23:42-0500">2020-12-05</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

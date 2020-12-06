@@ -26,7 +26,7 @@ At this point we have two solutions that provide an overlapping but different se
  
 Unlike the [US Core 3.1.1 Implementation Guide](https://www.hl7.org/fhir/us/core/index.html), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
 
-1. Provenance appropriate for payer data exchange (USCDI/US Core profiles are not sufficient)
+1. Provenance appropriate for payer data exchange (extended US Core Provenance)
 2. Dispensed medications (not covered in US Core)
 3. Medical devices that are not implantable devices (not covered in US Core)
 4. CPCDS data set to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
