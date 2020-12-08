@@ -24,7 +24,7 @@ Description: "Example of a US Core DocumentReference with a linked PDF document.
 
 
 Instance: ExampleDocRefProvenance
-InstanceOf: Provenance
+InstanceOf: pdex-provenance
 Description: "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."
 * id = "1000006"
 * meta.versionId = "1"

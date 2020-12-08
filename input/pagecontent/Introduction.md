@@ -197,7 +197,7 @@ The FHIR bundle that is the output of the $patient-everything operation can be r
 - [HRex Coverage](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
-- [Provenance](StructureDefinition-Provenance.html)
+- [Provenance](StructureDefinition-pdex-provenance.html)
 
 #### CapabilityStatement
 
@@ -236,7 +236,7 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | PractitionerRole                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      | Y       |
 | Procedure                                     | http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y         | Y       |
 | Provenance                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      | Y       |
-| PDex Provenance                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-Provenance.html   | Y    | Y      | Y      | Y       |
+| PDex Provenance                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-provenance.html   | Y    | Y      | Y      | Y       |
 | Pulse Oximetry                         | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
 | Smoking Status Observation                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y       | Y       |
 | Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y       | Y       |
