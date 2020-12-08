@@ -1,5 +1,5 @@
 Instance: ExampleProvenanceBundleTransmitter
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of a Transmitter Provenance record for a bundle"
 * id = "1000017"
 * meta.versionId = "1"
