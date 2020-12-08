@@ -19,14 +19,15 @@
   fhir:Resource.language [ fhir:value "en-US"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: mb: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, mr: 1234-234-1243-12345678901m, um: 1234-234-1243-12345678901u, pt: 1234-234-1243-12345678901a</p><p><b>active</b>: true</p><p><b>name</b>: Johnny Appleseed </p><p><b>telecom</b>: ph: (410)678-2323</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1986-01-01</p><p><b>address</b>: 123 Main Street Pittsburgh PA 12519 </p><p><b>maritalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: Member Number: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901, Medical record number: 1234-234-1243-12345678901m, Health Plan Identifier: 1234-234-1243-12345678901u, Patient external identifier: 1234-234-1243-12345678901a</p><p><b>active</b>: true</p><p><b>name</b>: Johnny Appleseed </p><p><b>telecom</b>: ph: (410)678-2323</p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1986-01-01</p><p><b>address</b>: 123 Main Street Pittsburgh PA 12519 </p><p><b>maritalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></p></div>"
   ];
   fhir:Patient.identifier [
      fhir:index 0;
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "mb" ]
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "MB" ]
        ]
      ];
      fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/memberidentifier" ];
@@ -36,7 +37,8 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "mr" ]
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "MR" ]
        ]
      ];
      fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/medicalrecordnumber" ];
@@ -46,7 +48,8 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "um" ]
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "XV" ]
        ]
      ];
      fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/uniquememberidentifier" ];
@@ -56,7 +59,8 @@
      fhir:Identifier.type [
        fhir:CodeableConcept.coding [
          fhir:index 0;
-         fhir:Coding.code [ fhir:value "pt" ]
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "PT" ]
        ]
      ];
      fhir:Identifier.system [ fhir:value "https://www.xxxhealthplan.com/fhir/patacctnum" ];

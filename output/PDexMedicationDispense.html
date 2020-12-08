@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>PDex MedicationDispense</h2>
   
 
@@ -242,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="health-plan-mapping-assistance">Health Plan Mapping Assistance</h4>
 
@@ -252,87 +252,94 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <thead>
     <tr>
       <th>US Core Element</th>
-      <th>MustSupport</th>
-      <th>Cardinality</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
       <th>CARIN-BB Element</th>
-      <th>CPCDS Element Mapping</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>MedicationDispense.meta.lastUpdated</td>
-      <td> </td>
-      <td>0..1</td>
+      <td>- MedicationDispense.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.meta.lastUpdated</td>
       <td>[{“163”:”EOB Last Updated Date”}]</td>
     </tr>
     <tr>
       <td>MedicationDispense.identifier</td>
-      <td> </td>
-      <td>0..*</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
       <td>ExplanationOfBenefit.Identifier</td>
-      <td>[{“35”:”RX service reference number”}]</td>
+      <td>[{“35”:”RX service reference number”}]. Note: Assign Payer System URI for Unique Claim Id in MedicationDispense.identifier.system. SetClaim Id in MedicationDispense.identifier.value</td>
     </tr>
     <tr>
       <td>MedicationDispense.status</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.status</td>
       <td>[{“140”:”Claim processing status code<br />”}]</td>
     </tr>
     <tr>
-      <td>MedicationDispense.medicationReference</td>
+      <td>MedicationDispense.medication[x]</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
       <td> </td>
-      <td> </td>
-      <td>ExplanationOfBenefit.supportingInfo.code</td>
+      <td>. Note: Enter prescriptin information in sub-elements below</td>
+    </tr>
+    <tr>
+      <td>-  MedicationDispense.medicationReference</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td>ExplanationOfBenefit.supportingInfo.code, ExplanationOfBenefit.detail.productOrService</td>
       <td>[{“79”:”NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&amp;system=sdo”}, {“38, 78”:”National drug code<br />Compound Code”}]</td>
     </tr>
     <tr>
       <td>MedicationDispense.subject</td>
-      <td>S</td>
-      <td>1..1</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.patient</td>
-      <td>[{“Ref (1)”:”Member id”}</td>
+      <td>[{“Ref (1), Ref (109)”:”Member id, Patient account number”}, {“Ref (191)”:”Unique Member ID”}, {“Ref (110)”:”Medical record number”}</td>
     </tr>
     <tr>
-      <td>MedicationDispense.performer.function</td>
-      <td> </td>
-      <td>0..1</td>
+      <td>-  MedicationDispense.performer.function</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.careTeam.role</td>
-      <td>[{“165”:”Care Team Roile (Value pcpc|Prescribing)”}]</td>
+      <td>[{“165”:”Care Team Role (Value pcp|Prescribing)”}]</td>
     </tr>
     <tr>
-      <td>MedicationDispense.performer.actor</td>
-      <td> </td>
-      <td>1..1</td>
+      <td>-  MedicationDispense.performer.actor</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
       <td>ExplanationOfBenefit.careTeam.provider</td>
-      <td>[{“Ref(96,122)”:”Provider NPIs”}, {“Ref(169,172)”:”Provider Names”}</td>
+      <td>[{“Ref(96,122)”:”Provider NPIs”}, {“Ref(169,172)”:”Provider Names”}, {“94, 167”:”Claum billing provider NPI, Claim billing provider name”}</td>
     </tr>
     <tr>
       <td>MedicationDispense.quantity</td>
-      <td> </td>
-      <td>0..1</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.item.quantity</td>
       <td>[{““39,151””:”Quantity dispensed | Quantity Qualifier Code”}</td>
     </tr>
     <tr>
       <td>MedicationDispense.daysSupply</td>
-      <td> </td>
-      <td>0..1</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.supportingInfo.valueQuantity</td>
       <td>[{“77”:”Days supply”}]</td>
     </tr>
     <tr>
       <td>MedicationDispense.whenHandedOver</td>
-      <td> </td>
-      <td>0..1</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
       <td>ExplanationOfBenefit.item.servicedDate</td>
       <td>[{“90”:”Service (from) date”}]</td>
     </tr>
   </tbody>
 </table>
 
-<p><i><a href="index.html#mapping-adjudicated-claims-information-to-clinical-resources">Table Definition</a></i></p>
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
 <h4 id="example-medicationdispense-resource">Example MedicationDispense Resource</h4>
 
@@ -365,7 +372,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

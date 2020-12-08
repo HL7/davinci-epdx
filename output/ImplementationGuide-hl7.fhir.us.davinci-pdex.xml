@@ -34,11 +34,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
 </div></div>
   </text>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-  <version value="0.1.29"/>
+  <version value="1.0.0"/>
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data exchange"/>
   <status value="draft"/>
-  <date value="2020-11-13T17:22:01-05:00"/>
+  <date value="2020-12-07T20:05:34-05:00"/>
   <contact>
     <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
     <telecom>
@@ -68,6 +68,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     <packageId value="hl7.fhir.us.core"/>
     <version value="3.1.1"/>
   </dependsOn>
+  <dependsOn id="hl7_fhir_us_davinci_hrex">
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex"/>
+    <packageId value="hl7.fhir.us.davinci-hrex"/>
+    <version value="0.2.0"/>
+  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -91,6 +96,14 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </extension>
       <extension url="value">
         <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="expansion-params.json"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -248,7 +261,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="StructureDefinition/pdex-device"/>
       </reference>
       <name value="PDex Device"/>
-      <description value="The PDex Device profile is provided to enable payers to record information about&#xA;devices used by a member that may not have a UDI number."/>
+      <description value="The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -267,7 +280,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/pdex-provenance"/>
+        <reference value="StructureDefinition/Provenance"/>
       </reference>
       <name value="PDex Provenance"/>
       <description value="Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."/>
@@ -369,7 +382,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="Patient/1"/>
       </reference>
       <name value="Patient1"/>
-      <description value="US Core Patient Example1"/>
+      <description value="Example of a US Core Patient Record"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -392,7 +405,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceTransmitter"/>
       <description value="Example of a Transmitter Provenance record for a bundle"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -403,7 +416,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceAuthor"/>
       <description value="Example of an author Provenance record displaying a practitioner&#39;s organization as the author"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -414,7 +427,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceSoloPractitioner"/>
       <description value="Example of an author Provenance record displaying a sole practitioner as the author"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -425,7 +438,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenancePayerSource"/>
       <description value="Example of an payer being the source of the data"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -436,7 +449,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenancePayerModified"/>
       <description value="Example of provenance based on security group recommendations"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -446,8 +459,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="Provenance/1000006"/>
       </reference>
       <name value="ExampleDocRefProvenance"/>
-      <description value="Example of a PDex Provenance record for a PDF embedded in a DocumentReference resource"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <description value="Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -458,7 +471,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </reference>
       <name value="ExampleProvenanceBundleTransmitter"/>
       <description value="Example of a Transmitter Provenance record for a bundle"/>
-      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -468,7 +481,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="DocumentReference/123456"/>
       </reference>
       <name value="ExampleDocumentReference"/>
-      <description value="Example of a US Core DocumentReference with an embedded PDF document"/>
+      <description value="Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -479,7 +492,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="Organization/2"/>
       </reference>
       <name value="OrganizationPayer1"/>
-      <description value="Payer1"/>
+      <description value="Example of the Payer Organization"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -501,7 +514,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="Organization/3"/>
       </reference>
       <name value="OrganizationProvider1"/>
-      <description value="Provider 1"/>
+      <description value="Provider Organization Example 1"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -572,6 +585,17 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Coverage"/>
+      </extension>
+      <reference>
+        <reference value="Coverage/883210"/>
+      </reference>
+      <name value="ExampleCoverage"/>
+      <description value="Example of a Coverage for a Member"/>
+      <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CapabilityStatement"/>
       </extension>
       <reference>
@@ -600,7 +624,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="SearchParameter/pdex-medicationdispense-patient"/>
       </reference>
       <name value="PdexMedicationDispensePatient"/>
-      <description value="Returns dispensed prescriptions for a specific patient&#xA;&lt;em&gt;NOTE&lt;/em&gt;: This Pdex SearchParameter definition extends the usage context of&#xA;&lt;a href=&quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&quot;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+      <description value="Returns dispensed prescriptions for a specific patient.&#xA;NOTE: This Pdex SearchParameter definition extends the usage context of&#xA;[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -611,7 +635,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="SearchParameter/pdex-medicationdispense-status"/>
       </reference>
       <name value="PdexMedicationDispenseStatus"/>
-      <description value="Status of the prescription dispense&#xA; &lt;em&gt;NOTE&lt;/em&gt;: This SearchParameter definition extends the usage context of&#xA;&lt;a href=&quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&quot;&gt;capabilitystatement-expectation&lt;/a&gt;&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain&#xA;&#xA; "/>
+      <description value="Status of the prescription dispense.&#xA;NOTE: This SearchParameter definition extends the usage context of&#xA;[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)&#xA; extension to formally express implementer conformance expectations for these elements:&#xA; - multipleAnd&#xA; - multipleOr&#xA; - comparator&#xA; - modifier&#xA; - chain."/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

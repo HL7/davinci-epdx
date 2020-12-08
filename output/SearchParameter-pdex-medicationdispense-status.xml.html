@@ -67,7 +67,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>0.1.29 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -152,7 +152,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v0.1.29). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -220,7 +220,7 @@
  - modifier&lt;br/&gt;
  - chain&lt;br/&gt;
 
- &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt; id&lt;/b&gt; pdex-medicationdispense-status&lt;/p&gt;&lt;p&gt;&lt;b&gt; url&lt;/b&gt; : &lt;b&gt; http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-status&lt;/b&gt;
+&lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt; id&lt;/b&gt; pdex-medicationdispense-status&lt;/p&gt;&lt;p&gt;&lt;b&gt; url&lt;/b&gt; : &lt;b&gt; http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-status&lt;/b&gt;
 			&lt;/p&gt;&lt;p&gt;&lt;b&gt; version&lt;/b&gt; : 4.0.1&lt;/p&gt;&lt;p&gt;&lt;b&gt; name&lt;/b&gt; : PdexeMedicationdispenseStatus&lt;/p&gt;&lt;p&gt;&lt;b&gt; derivedFrom&lt;/b&gt; : http://hl7.org/fhir/SearchParameter/medications-status
 			&lt;/p&gt;&lt;p&gt;&lt;b&gt; status&lt;/b&gt; : active&lt;/p&gt;&lt;p&gt;&lt;b&gt; experimental&lt;/b&gt;  False&lt;/p&gt;&lt;p&gt;&lt;b&gt; date&lt;/b&gt; : 2020-07-01&lt;/p&gt;&lt;p&gt;&lt;b&gt; publisher&lt;/b&gt; : HL7 International - Da Vinci Project&lt;/p&gt;&lt;p&gt;&lt;b&gt; contact&lt;/b&gt; : http://www.hl7.org/Special/committees/fm&lt;/p&gt;&lt;p&gt;&lt;b&gt; useContext&lt;/b&gt; : &lt;/p&gt;&lt;p&gt;&lt;b&gt; jurisdiction&lt;/b&gt; : United States of America (the) &lt;span&gt; (Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United
            States of America (the)'})&lt;/span&gt;
@@ -233,7 +233,7 @@
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-status&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.29&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.0.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PdexMedicationDispenseStatus&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.derivedFrom">derivedFrom</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/SearchParameter/medications-status&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
@@ -255,17 +255,15 @@
     &lt;/telecom&gt;
   &lt;/contact&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.description">description</a>
-               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Status of the prescription dispense
- &amp;lt;em&amp;gt;NOTE&amp;lt;/em&amp;gt;: This SearchParameter definition extends the usage context of
-&amp;lt;a href=&amp;quot;http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html&amp;quot;&amp;gt;capabilitystatement-expectation&amp;lt;/a&amp;gt;
+               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Status of the prescription dispense.
+NOTE: This SearchParameter definition extends the usage context of
+[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)
  extension to formally express implementer conformance expectations for these elements:
  - multipleAnd
  - multipleOr
  - comparator
  - modifier
- - chain
-
- &quot;/&gt;
+ - chain.&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/searchparameter.html#SearchParameter.jurisdiction">jurisdiction</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
@@ -318,7 +316,7 @@
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#0.1.29 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Nov 13, 2020 17:22-0500">2020-11-13</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
