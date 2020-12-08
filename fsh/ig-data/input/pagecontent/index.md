@@ -125,6 +125,6 @@ For the purposes of this IG we will use the following terms:
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.1.45)
+This IG was built with Sushi and the FHIR Publisher (v1.1.50)
 
 [Next Page: Overview](Overview.html)
