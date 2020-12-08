@@ -1,5 +1,5 @@
 Instance: ExampleProvenanceTransmitter
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of a Transmitter Provenance record for a bundle"
   * id = "1000001"
   * meta.versionId = "1"
@@ -13,7 +13,7 @@ Description: "Example of a Transmitter Provenance record for a bundle"
   * entity.extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
 
 Instance: ExampleProvenanceAuthor
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of an author Provenance record displaying a practitioner's organization as the author"
 * id = "1000002"
 * meta.versionId = "1"
@@ -28,7 +28,7 @@ Description: "Example of an author Provenance record displaying a practitioner's
 
 
 Instance: ExampleProvenanceSoloPractitioner
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of an author Provenance record displaying a sole practitioner as the author"
 * id = "1000003"
 * meta.versionId = "1"
@@ -44,7 +44,7 @@ Description: "Example of an author Provenance record displaying a sole practitio
 
 
 Instance: ExampleProvenancePayerSource
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of an payer being the source of the data"
 * id = "1000004"
 * meta.versionId = "1"
@@ -59,7 +59,7 @@ Description: "Example of an payer being the source of the data"
 
 
 Instance: ExampleProvenancePayerModified
-InstanceOf: pdex-provenance
+InstanceOf: Provenance
 Description: "Example of provenance based on security group recommendations"
   * id = "1000005"
   * meta.versionId = "1"
