@@ -25,7 +25,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Procedure.performer.actor         |  actor        |     1..1    | Reference(Practitioner \| PractitionerRole \| Organization \| Patient \| RelatedPerson \| Device) |
 |  Procedure.focalDevice.manipulated |  manipulated  |     1..1    | Reference(Device)                                                                                 |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance  to implementers:
@@ -41,7 +41,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 |  Procedure.performedPeriod  |             |             | ExplanationOfBenefit.procedure.date      | [{"25, 27":"Procedure date"}                                                                            |
 |  Procedure.reasonCode       |             |     0..*    | ExplanationOfBenefit.procedure.procedure | [{"24, 26, 146":"ICD Procedure Code"}                                                                   |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Procedure Resource
 

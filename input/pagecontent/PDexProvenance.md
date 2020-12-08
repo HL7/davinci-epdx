@@ -10,28 +10,26 @@
 {% endcomment %} -->
 [Previous Page - US Core Procedure](USCoreProcedure.html)
 
-When a Health Plan forwards information as a FHIR Resource it
-**SHOULD** create related Provenance record(s) to reflect the
-original source, any subsequent data handlers or transformers and
-the action taken by the Health Plan in its handling of the data. 
+When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related 
+Provenance record(s) to reflect the original source. 
 
-A Provenance resource **SHOULD** be provided with each member-related resource
-provided by the Health Plan's FHIR API. 
+A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. 
 
 This **SHOULD** be used to:
 - identify the source of the information. 
 - whether the data came via a clinical record, or a claim record. 
-- Whether the data was subject to manual transcription, or other interpretive transformation.
-
-The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
-
-PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
-In the Origin Provenance Profile the extension is included in the Provenance.entity base element.
-
-The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.
 
 
-The PDexProvenance record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:
+The PDex-Provenance resource is based on the [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) and is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
+
+PDex Provenance adds an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.
+
+Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer.
+
+The purpose of the extension is to identify the source format that the data in the provenance.target resource is taken from.
+
+
+The [PDex Provenance](StructureDefinition-pdex-provenance.html) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:
 
 {% include style_insert_table_blue.html %}
 
@@ -57,10 +55,10 @@ The PDexProvenance record **SHOULD** be populated with the following essential f
 | Provenance.agent:ProvenanceTransmitter.who                |  who                         |     1..1    | Reference(US Core Organization Profile \| US Core Practitioner Profile) |
 | Provenance.entity.ProvenanceSourceFrom.url                |  url                         |     1..1    | uri                                                                     |
 | Provenance.entity.role                                    |  role                        |     1..1    | code                                                                    |
-| Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                     |
+| Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource) In general this will be a text string indicating the source is defined by the role code                                                     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Provenance Records
 
@@ -75,38 +73,38 @@ Four examples are provided to deal with four different scenarios:
 
 The payer acts as the transmitter. Setting: 
 
-agent.type = "Transmitter" 
-agent.who = Payer's US Core Organization record
+    agent.type = "Transmitter" 
+    agent.who = Payer's US Core Organization record
 
 #### Payer Converts a clinical record from a non-FHIR format
 
 The Payer creates the Provenance record as follows:
 
-target.reference = Reference of the converted record
-recorded = Date original record was received
-agent.type = Author
-agent.who = US Core Organization record for the originating organization
-extension.sourceFormat = "ccda" to identify that the record was transformed from a CCDA document
+    target.reference = Reference of the converted record
+    recorded = Date original record was received
+    agent.type = Author
+    agent.who = US Core Organization record for the originating organization
+    extension.sourceFormat = "ccda" to identify that the record was transformed from a CCDA document
 
 #### Payer Converts a practitioner's clinical record from a non-FHIR format
 
 The Payer creates the Provenance record as follows:
 
-target.reference = Reference of the converted record
-recorded = Date original record was received
-agent.type = Author
-agent.who = US Core Practitioner record when the provider is NOT associated with an organization
-extension.sourceFormat = "hl7v2" to identify that the record was transformed from a HL7 v2 message
+    target.reference = Reference of the converted record
+    recorded = Date original record was received
+    agent.type = Author
+    agent.who = US Core Practitioner record when the provider is NOT associated with an organization
+    extension.sourceFormat = "hl7v2" to identify that the record was transformed from a HL7 v2 message
 
 #### Payer creates a clinical record from internal sources
 
 The Payer creates the Provenance record as follows:
 
-target.reference = Reference of the converted record
-recorded = Date original record was received
-agent.type = Source
-agent.who = Payer's US Core Organization record
-extension.sourceFormat = "custom" to identify that the record was transformed from a custom data format such as a CSV file.
+    target.reference = Reference of the converted record
+    recorded = Date original record was received
+    agent.type = Source
+    agent.who = Payer's US Core Organization record
+    extension.sourceFormat = "custom" to identify that the record was transformed from a custom data format such as a CSV file.
 
 The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities. 
 The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 

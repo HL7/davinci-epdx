@@ -4,13 +4,13 @@ This IG supports the full complement of US Core profiles.
 They are supported to enable a payer to produce FHIR resources from 
 data provided in other formats.
 
-For some resources payers are unlikely to have the clinical information
+For some resources, payers are unlikely to have the clinical information
 necessary to create a valid US Core resource. The [US Core Goal Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html) is one potential example of a resource that payers may be 
 unable to create from the source clinical data they have available.
 
 A valid US Core Goal profile in addition to a reference to a member, using the US Core Patient resource, will require a lifecycleStatus, a description of the goal and, optionally, a target date.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Goal resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Goal](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -22,7 +22,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Goal.target          |  target          |     0..*    | BackboneElement                    |
 |  Goal.due[x]:dueDate  |  due[x]:dueDate  |     0..1    | date                               |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Goal Resource
 

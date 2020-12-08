@@ -16,12 +16,13 @@
 
 **Project leads:**
 
-* Robert Dieterle (Enable Care, LLC)
+* Robert Dieterle (EnableCare, LLC)
 * Viet Nguyen (Stratametrics, LLC)
 
 **Project management and coordination:**
 * Jocelyn Keegan (Point of Care Partners)
 * Dana Marcalonis (Point of Care Partners)
+* Vanessa Candelora (Point of Care Partners)
 
 **Technical support and guidance:**
 * Rick Geimer (Lantana Consulting Group)
@@ -36,7 +37,7 @@ This implementation guide was the work of the Da Vinci Project PDex work group (
 * Epic (Danielle Friend, Isaac Vetter)
 * Health Care Data Standards (Mary Kay McDaniel)
 * Optum (Linda Michaelsen, Nicholas Radov)
-* Newwave/Onyx (Mark Scrimshire, Santhi Chebrolu)
+* Newwave/Onyx Technology, LLC (Mark Scrimshire, Santhi Chebrolu)
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
 

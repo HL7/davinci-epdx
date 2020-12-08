@@ -10,14 +10,13 @@
 {% endcomment %} -->
 [Previous Page - US Core Pulse Oximetry](USCorePulseOximetry.html)
 
-This IG supports the full complement of US Core profiles. They are supported to 
-enable a payer to produce FHIR resources from data provided in other formats.
+This IG supports the full complement of US Core profiles. They are supported to enable a payer to produce FHIR resources from data provided in other formats.
 
-For some resources payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [US Core Smoking Status](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html) is one potential example of an Observation profile that payers may be unable to create from the source clinical data they have available.
+For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [US Core Smoking Status](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html) is one potential example of an Observation profile that payers may be unable to create from the source clinical data they have available.
 
 A Smoking Status observation requires codes and values for smoking observation. Payers may not have access to the detail data needed to create a valid observation resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Smoking Status Observation resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Smoking Status](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html) Observation resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -31,7 +30,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.value[x]:valueCodeableConcept |  value[x]:valueCodeableConcept |     1..1    | CodeableConcept                    |
 |  Observation.component.code                |  code                          |     1..1    | CodeableConcept                    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Smoking Status Observation
 

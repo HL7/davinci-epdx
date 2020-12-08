@@ -1,8 +1,8 @@
 [Previous Page - US Core MedicationRequest](USCoreMedicationRequest.html)
 
-When a Health Plan is documenting information about organizations in relation to the Member's Health History they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
+When a Health Plan is documenting information about organizations in relation to the Member's Health History, they **SHOULD** use the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Organization resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Organization](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -13,7 +13,6 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Organization.identifier:All Slices.value  |  value          |     0..1    | string             |
 |  Organization.identifier:NPI               |  identifier:NPI |     0..1    | Identifier         |
 |  Organization.identifier:NPI.system        |  system         |     1..1    | uri                |
-|  Organization.identifier:CLIA.system       |  system         |     1..1    | uri                |
 |  Organization.active                       |  active         |     1..1    | boolean            |
 |  Organization.name                         |  name           |     1..1    | string             |
 |  Organization.telecom                      |  telecom        |     0..*    | ContactPoint       |

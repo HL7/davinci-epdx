@@ -14,7 +14,7 @@
 
 In all other cases a payer SHALL create a [PDex Provenance](PDexProvenance.html) profile that identifies their role as a "Transmitter" of the information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Provenance resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) are:
 
 {% include style_insert_table_blue.html %}
 
@@ -31,17 +31,16 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Provenance.agent:ProvenanceAuthor.type.coding             |  coding                      |     1..*    | Coding                                                                                             |
 |  Provenance.agent:ProvenanceAuthor.type.coding.system      |  system                      |     1..1    | uri                                                                                                |
 |  Provenance.agent:ProvenanceAuthor.type.coding.code        |  code                        |     1..1    | code                                                                                               |
-|  Provenance.agent:ProvenanceAuthor.who                     |  who                         |     1..1    | Reference(Practitioner\| PractitionerRole \| RelatedPerson \| Patient \| Device \| Organization)   |
 |  Provenance.agent:ProvenanceTransmitter                    |  agent:ProvenanceTransmitter |     0..1    | BackboneElement                                                                                    |
 |  Provenance.agent:ProvenanceTransmitter.type               |  type                        |     1..1    | CodeableConcept                                                                                    |
 |  Provenance.agent:ProvenanceTransmitter.type.coding        |  coding                      |     1..*    | Coding                                                                                             |
 |  Provenance.agent:ProvenanceTransmitter.type.coding.system |  system                      |     1..1    | uri                                                                                                |
 |  Provenance.agent:ProvenanceTransmitter.type.coding.code   |  code                        |     1..1    | code                                                                                               |
-|  Provenance.agent:ProvenanceTransmitter.who                |  who                         |     1..1    | Reference(Practitioner\| PractitionerRole \| RelatedPerson \| Patient \| Device \| Organization)   |
+|                 |  who                         |     1..1    | Reference(Practitioner\| PractitionerRole \| RelatedPerson \| Patient \| Device \| Organization)   |
 |  Provenance.entity.role                                    |  role                        |     1..1    | code                                                                                               |
 |  Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                                                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example US Core Provenance Resource
 

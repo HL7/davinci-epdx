@@ -26,7 +26,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | AllergyIntolerance.reaction               |  reaction           |     0..*    | BackboneElement                    |
 | AllergyIntolerance.reaction.manifestation |  manifestation      |     1..*    | CodeableConcept                    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example AllergyIntolerance Resource
 

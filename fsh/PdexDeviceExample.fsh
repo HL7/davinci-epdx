@@ -7,7 +7,7 @@ Description: "Example of a Device from a Claim"
   * udiCarrier.deviceIdentifier  = "23366006"
   * status = http://hl7.org/fhir/ValueSet/device-status#active
 //  * type = http://hl7.org/fhir/ValueSet/device-kind#23366006
-  * type = http://snomed.info/sct#23366006
+  * type = $SnomedCT#23366006
   * manufacturer = "Motorized Wheelchair Company, Inc."
   * deviceName[0].name = "MotorChairPro"
   * deviceName[0].type = http://hl7.org/fhir/ValueSet/device-nametype#user-friendly-name

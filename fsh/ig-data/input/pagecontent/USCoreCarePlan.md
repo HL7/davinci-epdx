@@ -1,8 +1,8 @@
 [Previous Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
 
-Where a Health Plan has access to Care Plan information for a member they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
+Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the CarePlan resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -19,9 +19,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | CarePlan.category:AssessPlan.coding.system |  system              |     1..1    | uri                                |
 | CarePlan.category:AssessPlan.coding.code   |  code                |     1..1    | code                               |
 | CarePlan.subject                           |  subject             |     1..1    | Reference(US Core Patient Profile) |
-| CarePlan.activity.detail.status            |  status              |     1..1    | code                               |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example CarePlan Resource
 

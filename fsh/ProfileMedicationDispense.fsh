@@ -7,6 +7,8 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * subject 1..1 MS
 * subject only Reference(us-core-patient)
+* subject ^short = "The patient who is prescribed the medication"
+
 * status  1..1 MS
 * status  ^short = "completed"
 * status  from http://hl7.org/fhir/ValueSet/medicationdispense-status (required)
@@ -67,3 +69,6 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * note only Annotation
 * note ^short = "Information about the dispense"
 
+* substitution 0..1 MS
+* substitution.wasSubstituted 1..1 MS
+* substitution.wasSubstituted only boolean

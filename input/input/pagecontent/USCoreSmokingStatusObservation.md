@@ -31,7 +31,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.value[x]:valueCodeableConcept |  value[x]:valueCodeableConcept |     1..1    | CodeableConcept                    |
 |  Observation.component.code                |  code                          |     1..1    | CodeableConcept                    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Smoking Status Observation
 

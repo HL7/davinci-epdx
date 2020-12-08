@@ -41,7 +41,12 @@
 
 // Code Systems
   Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
+  Alias: $DeviceStatus = http://hl7.org/fhir/device-status
+
+// SNOMED CT
+  Alias: $SnomedCT = http://snomed.info/sct|http://snomed.info/sct/731000124108
 
 // PDex Base
   Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
+
 

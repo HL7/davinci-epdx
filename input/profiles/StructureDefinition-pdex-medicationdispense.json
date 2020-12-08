@@ -156,6 +156,7 @@
       {
         "id": "MedicationDispense.subject",
         "path": "MedicationDispense.subject",
+        "short": "The patient who is prescribed the medication",
         "min": 1,
         "type": [
           {
@@ -242,6 +243,16 @@
         "id": "MedicationDispense.daysSupply",
         "path": "MedicationDispense.daysSupply",
         "short": "Medication expressed as a timing amount."
+      },
+      {
+        "id": "MedicationDispense.substitution",
+        "path": "MedicationDispense.substitution",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationDispense.substitution.wasSubstituted",
+        "path": "MedicationDispense.substitution.wasSubstituted",
+        "mustSupport": true
       }
     ]
   }

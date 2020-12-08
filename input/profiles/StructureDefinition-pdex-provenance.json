@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "pdex-provenance",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Foundation.Security"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "not-classified"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
   "version": "0.1.19",
   "name": "PdexProvenance",
@@ -78,7 +68,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Provenance",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Provenance",
+  "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance",
   "derivation": "constraint",
   "differential": {
     "element": [
@@ -88,18 +78,50 @@
         "short": "Date/Time information was received by Payer"
       },
       {
-        "id": "Provenance.agent.type",
-        "path": "Provenance.agent.type",
-        "min": 1,
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType"
-        }
+        "id": "Provenance.agent",
+        "path": "Provenance.agent"
       },
       {
         "id": "Provenance.agent.who",
         "path": "Provenance.agent.who",
         "short": "Provide US Core Organization. If no Organization provide US Core Practitioner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Provenance.agent:ProvenanceAuthor",
+        "path": "Provenance.agent",
+        "sliceName": "ProvenanceAuthor"
+      },
+      {
+        "id": "Provenance.agent:ProvenanceAuthor.who",
+        "path": "Provenance.agent.who",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent:ProvenanceTransmitter",
+        "path": "Provenance.agent",
+        "sliceName": "ProvenanceTransmitter"
+      },
+      {
+        "id": "Provenance.agent:ProvenanceTransmitter.who",
+        "path": "Provenance.agent.who",
         "type": [
           {
             "code": "Reference",

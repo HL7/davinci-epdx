@@ -20,8 +20,6 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DocumentReference.date                           |  date        |     0..1    | instant                                                                                            |
 | DocumentReference.author                         |  author      |     0..*    | Reference(US Core Practitioner Profile \| US Core Organization Profile \| US Core Patient Profile) |
 | DocumentReference.custodian                      |  custodian   |     0..1    | Reference(US Core Organization Profile)                                                            |
-| DocumentReference.relatesTo.code                 |  code        |     1..1    | code                                                                                               |
-| DocumentReference.relatesTo.target               |  target      |     1..1    | Reference(DocumentReference)                                                                       |
 | DocumentReference.content                        |  content     |     1..*    | BackboneElement                                                                                    |
 | DocumentReference.content.attachment             |  attachment  |     1..1    | Attachment                                                                                         |
 | DocumentReference.content.attachment.contentType |  contentType |     1..1    | code                                                                                               |
@@ -32,7 +30,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DocumentReference.context.encounter              |  encounter   |     0..1    | Reference(US Core Encounter Profile)                                                               |
 | DocumentReference.context.period                 |  period      |     0..1    | Period                                                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example DocumentReference resource
 
@@ -115,7 +113,7 @@ An example mapping of a DocumentReference for an episode of care is shown below:
 }
 </pre>
 
-The following example of a DocumentReference and associated PDex Provenance resource demonstrates how an unstructured document, such as a Portable Document Format (PDF) document could be attached, or embedded as base64 encoded content in a DocumentReference. The associated PDex Provenance resource identifies the source document as a PDF file. 
+The following example of a DocumentReference and associated PDex Provenance resource demonstrates how an unstructured document, such as a Portable Document Format (PDF) document could be attached or embedded as base64 encoded content in a DocumentReference. The associated PDex Provenance resource identifies the source document as a PDF file. 
 
 #### Example: Unstructured Document with Provenance
 
