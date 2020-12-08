@@ -62,7 +62,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.component:FlowRate.value[x].component:Concentration.value[x].code      |  code                    |     1..1    | code               |
 |  Observation.component:FlowRate.value[x].component:Concentration.dataAbsentReason   |  dataAbsentReason        |     0..1    | CodeableConcept    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Pulse Oximetry Resource
 

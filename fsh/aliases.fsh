@@ -37,7 +37,8 @@
   Alias:   $PdexDevice = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
   Alias:   $PdexMedicationDispense = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense
 //  Alias:   $PdexSourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance
-  Alias:   $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+  Alias:   $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance
+  Alias:   $Provenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance
 
 // Code Systems
   Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc

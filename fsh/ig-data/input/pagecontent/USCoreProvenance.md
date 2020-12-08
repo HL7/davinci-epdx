@@ -31,7 +31,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Provenance.entity.role                                    |  role                        |     1..1    | code                                                                                               |
 |  Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                                                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example US Core Provenance Resource
 

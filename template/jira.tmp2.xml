@@ -3,16 +3,20 @@
                url="http://hl7.org/fhir/us/davinci-pdex"
                ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx"
                defaultWorkgroup="fm"
-               defaultVersion="current"
+               defaultVersion="1.0.0"
                xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
                gitUrl="https://github.com/HL7/davinci-epdx"
                ballotUrl="http://example.org/fhir/STU1">
    <version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
+   <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU1"/>
    <version code="0.0.1" url="http://example.org/fhir/STU1"/>
    <version code="0.1" deprecated="true"/>
    <artifactPageExtension value="-definitions"/>
    <artifactPageExtension value="-examples"/>
    <artifactPageExtension value="-mappings"/>
+   <artifact name="HRex Coverage Profile"
+             key="StructureDefinition-hrex-coverage"
+             id="StructureDefinition/hrex-coverage"/>
    <artifact name="PDex Device"
              key="StructureDefinition-pdex-device"
              id="StructureDefinition/pdex-device"/>
@@ -20,8 +24,8 @@
              key="StructureDefinition-pdex-medicationdispense"
              id="StructureDefinition/pdex-medicationdispense"/>
    <artifact name="PDex Provenance"
-             key="StructureDefinition-pdex-provenance"
-             id="StructureDefinition/pdex-provenance"/>
+             key="StructureDefinition-Provenance"
+             id="StructureDefinition/Provenance"/>
    <artifact name="An attribute to express the refill number of a prescription"
              key="StructureDefinition-DispenseRefill"
              id="StructureDefinition/DispenseRefill"/>
@@ -88,6 +92,9 @@
    <artifact name="ExampleEncounter1" key="Encounter-6" id="Encounter/6"/>
    <artifact name="ExampleEncounter2" key="Encounter-7" id="Encounter/7"/>
    <artifact name="ExampleCoverage" key="Coverage-883210" id="Coverage/883210"/>
+   <artifact name="PdexServerCapabilityStatement"
+             key="CapabilityStatement-PdexServerCapabilityStatement"
+             id="CapabilityStatement/PdexServerCapabilityStatement"/>
    <artifact name="PDEX Server CapabilityStatement"
              key="CapabilityStatement-pdex-server"
              id="CapabilityStatement/pdex-server"/>
@@ -101,7 +108,6 @@
              key="AppointmentResponse"
              deprecated="true"/>
    <artifact name="Patient" key="Patient" deprecated="true"/>
-   <artifact name="Provenance" key="Provenance" deprecated="true"/>
    <page name="(NA)" key="NA"/>
    <page name="(many)" key="many"/>
    <page name="Table of Contents" key="toc"/>

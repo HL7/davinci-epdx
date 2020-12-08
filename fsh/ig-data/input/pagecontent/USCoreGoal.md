@@ -22,7 +22,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Goal.target          |  target          |     0..*    | BackboneElement                    |
 |  Goal.due[x]:dueDate  |  due[x]:dueDate  |     0..1    | date                               |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Goal Resource
 

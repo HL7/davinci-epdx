@@ -19,7 +19,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  PractitionerRole.description    |  description  |     1..1    | string                                  |
 |  PractitionerRole.endpoint       |  endpoint     |     0..*    | Reference(Endpoint)                     |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example PractitionerRole Resource
 

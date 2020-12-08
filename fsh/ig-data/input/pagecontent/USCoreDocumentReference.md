@@ -32,7 +32,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DocumentReference.context.encounter              |  encounter   |     0..1    | Reference(US Core Encounter Profile)                                                               |
 | DocumentReference.context.period                 |  period      |     0..1    | Period                                                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example DocumentReference resource
 

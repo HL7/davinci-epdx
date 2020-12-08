@@ -47,7 +47,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Encounter.location                             |  location             |     0..*    | BackboneElement                         |
 | Encounter.location.location                    |  location             |     1..1    | Reference(Location)                     |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below.
 
@@ -76,7 +76,7 @@ Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included 
 |  - Encounter.location.location                    |       S      |     1..1    |                                                                                                    | . Note: Reference to location where Encounter took place                                                                                                                                                   |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 #### Example Encounter Resource

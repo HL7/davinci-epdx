@@ -1,11 +1,6 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "PdexServerCapabilityStatement",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
-    ]
-  },
   "status": "draft",
   "experimental": true,
   "date": "2020-09-13",
@@ -31,6 +26,11 @@
     "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
   ],
   "name": "PdexServerCapabilityStatement1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+    ]
+  },
   "description": "Payer Data Exchange Server Capability Statement",
   "rest": [
     {
@@ -803,7 +803,7 @@
         },
         {
           "supportedProfile": [
-            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance",
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
           ],
           "type": "Provenance",

@@ -21,7 +21,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | CarePlan.subject                           |  subject             |     1..1    | Reference(US Core Patient Profile) |
 | CarePlan.activity.detail.status            |  status              |     1..1    | code                               |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example CarePlan Resource
 

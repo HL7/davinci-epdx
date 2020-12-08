@@ -12,7 +12,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Condition.code               |  code               |     1..1    | CodeableConcept                    |
 | Condition.subject            |  subject            |     1..1    | Reference(US Core Patient Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The essential fields to be provided in the Condition resource from the CPCDS file are:
 
@@ -26,7 +26,7 @@ The essential fields to be provided in the Condition resource from the CPCDS fil
 | Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}                                                                                                                       |
 | Condition.recorder            |              |     0..1    | ExplanationOfBenefit.careTeam.provider   | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Condition Resource
 

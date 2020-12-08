@@ -11,7 +11,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Medication.code               |  code    |     1..1    | CodeableConcept |
 |  Medication.ingredient.item[x] |  item[x] |     1..1    |                 |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example Medication Resource
 

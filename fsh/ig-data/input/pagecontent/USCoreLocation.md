@@ -20,7 +20,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Location.position.latitude    |  latitude             |     1..1    | decimal                                 |
 |  Location.managingOrganization |  managingOrganization |     0..1    | Reference(US Core Organization Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 
 #### Example Location Resource

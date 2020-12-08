@@ -13,7 +13,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | CareTeam.member      |  member      |     1..1    | Reference(US Core Patient Profile \| US Core Practitioner Profile \| US Core Organization Profile) |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 The essential fields to be provided in the CareTeam resource from the CPCDS file are:
 
@@ -33,7 +33,7 @@ The essential fields to be provided in the CareTeam resource from the CPCDS file
 
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 #### Example CareTeam Resource
 

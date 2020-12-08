@@ -23,7 +23,7 @@ This **SHOULD** be used to:
 - whether the data came via a clinical record, or a claim record. 
 - Whether the data was subject to manual transcription, or other interpretive transformation.
 
-The PDex-Origin-Provenance resource is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.html)
+The PDex Provenance resource is documented here: [StructureDefinition-Provenance.html](StructureDefinition-Provenance.html)
 
 PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
 In the Origin Provenance Profile the extension is included in the Provenance.entity base element.
@@ -60,7 +60,7 @@ The PDexProvenance record **SHOULD** be populated with the following essential f
 | Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
 ### Example Provenance Records
 

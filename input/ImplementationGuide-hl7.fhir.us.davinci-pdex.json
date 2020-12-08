@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "0.1.31",
+  "version": "1.0.0",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data exchange",
   "status": "draft",
@@ -85,7 +85,7 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/pdex-provenance"
+          "reference": "StructureDefinition/Provenance"
         },
         "name": "PDex Provenance",
         "description": "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element.",
@@ -177,7 +177,7 @@
         },
         "name": "ExampleProvenanceTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -185,7 +185,7 @@
         },
         "name": "ExampleProvenanceAuthor",
         "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -193,7 +193,7 @@
         },
         "name": "ExampleProvenanceSoloPractitioner",
         "description": "Example of an author Provenance record displaying a sole practitioner as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -201,7 +201,7 @@
         },
         "name": "ExampleProvenancePayerSource",
         "description": "Example of an payer being the source of the data",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -209,7 +209,7 @@
         },
         "name": "ExampleProvenancePayerModified",
         "description": "Example of provenance based on security group recommendations",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -217,7 +217,7 @@
         },
         "name": "ExampleDocRefProvenance",
         "description": "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource.",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -225,7 +225,7 @@
         },
         "name": "ExampleProvenanceBundleTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "reference": {
@@ -598,6 +598,10 @@
       {
         "code": "show-inherited-invariants",
         "value": "false"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "expansion-params.json"
       },
       {
         "code": "path-history",
