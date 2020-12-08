@@ -35,7 +35,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Device.definition","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DeviceDefinition]]}
 ","The reference to the definition for the device","The reference to the definition for the device.","","","","","","","","","",,,,,"",,,,"Device.definition",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Device.udiCarrier","","","",0,1,"Y","","Y","BackboneElement {[]} {[]}
+"Device.udiCarrier","","","",0,1,"","","Y","BackboneElement {[]} {[]}
 ","Unique Device Identifier (UDI) Barcode string","Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.","UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](http://hl7.org/fhir/R4/device-mappings.html#udi) for a complete mapping of UDI parts to Device.","","","","","","","","",,,,,"",,,,"Device.udiCarrier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".id and .code","FiveWs.identifier"
 "Device.udiCarrier.id","","","",0,1,"","","","string {[]} {[]}
@@ -51,7 +51,7 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Device.udiCarrier.deviceIdentifier","","DI
-","",1,1,"Y","","Y","string {[]} {[]}
+","",1,1,"","","Y","string {[]} {[]}
 ","Mandatory fixed portion of UDI","The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.","","","","","","","","","",,,,,"",,,,"Device.udiCarrier.deviceIdentifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.id.extension","FiveWs.what[x]","The device identifier (DI), a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device."
 "Device.udiCarrier.issuer","","Barcode System
@@ -78,24 +78,24 @@ ICCBA DIs for other devices:
 ","Regional UDI authority","The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.","","Allows a recipient of a UDI to know which database will contain the UDI-associated metadata.","","","","","","","",,,,,"",,,,"Device.udiCarrier.jurisdiction",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.scoper"
 "Device.udiCarrier.carrierAIDC","","Automatic Identification and Data Capture
-","",0,1,"Y","","Y","base64Binary {[]} {[]}
+","",0,1,"","","Y","base64Binary {[]} {[]}
 ","UDI Machine Readable Barcode String","The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - e.g., a barcode or RFID.   Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.","The AIDC form of UDIs should be scanned or otherwise used for the identification of the device whenever possible to minimize errors in records resulting from manual transcriptions. If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.","","","","","","","","",,,,,"",,,,"Device.udiCarrier.carrierAIDC",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.id.extension","A unique device identifier (UDI) on a device label a form that uses automatic identification and data capture (AIDC) technology."
 "Device.udiCarrier.carrierHRF","","Human Readable Form
-","",0,1,"Y","","Y","string {[]} {[]}
+","",0,1,"","","Y","string {[]} {[]}
 ","UDI Human Readable Barcode String","The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.","If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.","","","","","","","","",,,,,"",,,,"Device.udiCarrier.carrierHRF",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.id.extension","A unique device identifier (UDI) on a device label in plain text"
 "Device.udiCarrier.entryType","","","",0,1,"","","","code {[]} {[]}
 ","barcode | rfid | manual +","A coded entry to indicate how the data was entered.","","Supports a way to distinguish hand entered from machine read data.","","","","","","","",,"required","Codes to identify how UDI data was entered.","http://hl7.org/fhir/ValueSet/udi-entry-type|4.0.1","",,,,"Device.udiCarrier.entryType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","NA"
-"Device.status","","","",0,1,"Y","Y","Y","code {[]} {[]}
-","active | inactive | entered-in-error | unknown","Status of the Device availability.","This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/device-status","",,,,"Device.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"Device.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
+","active | inactive | entered-in-error | unknown","Status of the Device availability.","This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.","","","","","","","","",,"required","The availability status of the device.","http://hl7.org/fhir/ValueSet/device-status|4.0.1","",,,,"Device.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".statusCode","FiveWs.status"
 "Device.statusReason","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","online | paused | standby | offline | not-ready | transduc-discon | hw-discon | off","Reason for the dtatus of the Device availability.","","","","","","","","","",,"extensible","The availability status reason of the device.","http://hl7.org/fhir/ValueSet/device-status-reason","",,,,"Device.statusReason",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.status"
 "Device.distinctIdentifier","","Distinct Identification Code (DIC)
-","",0,1,"Y","","","string {[]} {[]}
+","",0,1,"","","","string {[]} {[]}
 ","The distinct identification string","The distinct identification string as required by regulation for a human cell, tissue, or cellular and tissue-based product.","For example, this applies to devices in the United States regulated under *Code of Federal Regulation 21CFR§1271.290(c)*.","","","","","","","","",,,,,"",,,,"Device.distinctIdentifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".lotNumberText","FiveWs.what[x]","The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI."
 "Device.manufacturer","","","",0,1,"","","","string {[]} {[]}
@@ -104,13 +104,13 @@ ICCBA DIs for other devices:
 "Device.manufactureDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","Date when the device was made","The date and time when the device was manufactured.","","","","","","","","","",,,,,"",,,,"Device.manufactureDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".existenceTime.low","FiveWs.what[x]","The date a specific device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI.  For FHIR, The datetime syntax must converted to YYYY-MM-DD[THH:MM:SS].  If hour is present, the minutes and seconds should both be set to “00”."
-"Device.expirationDate","","","",0,1,"Y","","","dateTime {[]} {[]}
+"Device.expirationDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","Date and time of expiry of this device (if applicable)","The date and time beyond which this device is no longer valid or should not be used (if applicable).","","","","","","","","","",,,,,"",,,,"Device.expirationDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".expirationTime","FiveWs.what[x]","the expiration date of a specific device -  which is a component of the production identifier (PI), a conditional, variable portion of a UDI.  For FHIR, The datetime syntax must converted to YYYY-MM-DD[THH:MM:SS].  If hour is present, the minutes and seconds should both be set to “00”."
-"Device.lotNumber","","","",0,1,"Y","","","string {[]} {[]}
+"Device.lotNumber","","","",0,1,"","","","string {[]} {[]}
 ","Lot number of manufacture","Lot number assigned by the manufacturer.","","","","","","","","","",,,,,"",,,,"Device.lotNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".lotNumberText","FiveWs.what[x]","The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI."
-"Device.serialNumber","","","",0,1,"Y","","","string {[]} {[]}
+"Device.serialNumber","","","",0,1,"","","","string {[]} {[]}
 ","Serial number assigned by the manufacturer","The serial number assigned by the organization when the device was manufactured.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.serialNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
 "Device.deviceName","","","",0,*,"","","","BackboneElement {[]} {[]}
@@ -142,7 +142,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 "Device.partNumber","","","",0,1,"","","","string {[]} {[]}
 ","The part number of the device","The part number of the device.","Alphanumeric Maximum 20.","","","","","","","","",,,,,"",,,,"Device.partNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playedRole[typeCode=MANU].id","FiveWs.what[x]"
-"Device.type","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
+"Device.type","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","The kind or type of device","The kind or type of device.","","","","","","","","","",,"extensible","","http://hl7.org/fhir/ValueSet/device-kind","",,,,"Device.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Device.specialization","","","",0,*,"","","","BackboneElement {[]} {[]}

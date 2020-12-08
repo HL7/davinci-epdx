@@ -13,6 +13,7 @@
     <sch:title>f:Device</sch:title>
     <sch:rule context="f:Device">
       <sch:assert test="count(f:udiCarrier) &lt;= 1">udiCarrier: maximum cardinality of 'udiCarrier' is 1</sch:assert>
+      <sch:assert test="count(f:status) &gt;= 1">status: minimum cardinality of 'status' is 1</sch:assert>
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:patient) &gt;= 1">patient: minimum cardinality of 'patient' is 1</sch:assert>
     </sch:rule>

@@ -8,9 +8,9 @@
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
   "version": "1.0.0",
   "name": "DaVinciPayerDataExchange",
-  "title": "Da Vinci Payer Data Exchange",
+  "title": "Da Vinci Payer Data exchange",
   "status": "draft",
-  "date": "2020-12-05T23:42:40-05:00",
+  "date": "2020-12-07T20:05:34-05:00",
   "contact": [
     {
       "name": "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
@@ -98,6 +98,19 @@
           {
             "url": "value",
             "valueString": "false"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "path-expansion-params"
+          },
+          {
+            "url": "value",
+            "valueString": "expansion-params.json"
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -375,7 +388,7 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/pdex-provenance"
+          "reference": "StructureDefinition/Provenance"
         },
         "name": "PDex Provenance",
         "description": "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element.",
@@ -533,7 +546,7 @@
         },
         "name": "ExampleProvenanceTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -547,7 +560,7 @@
         },
         "name": "ExampleProvenanceAuthor",
         "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -561,7 +574,7 @@
         },
         "name": "ExampleProvenanceSoloPractitioner",
         "description": "Example of an author Provenance record displaying a sole practitioner as the author",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -575,7 +588,7 @@
         },
         "name": "ExampleProvenancePayerSource",
         "description": "Example of an payer being the source of the data",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -589,7 +602,7 @@
         },
         "name": "ExampleProvenancePayerModified",
         "description": "Example of provenance based on security group recommendations",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -603,7 +616,7 @@
         },
         "name": "ExampleDocRefProvenance",
         "description": "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource.",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [
@@ -617,7 +630,7 @@
         },
         "name": "ExampleProvenanceBundleTransmitter",
         "description": "Example of a Transmitter Provenance record for a bundle",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance"
       },
       {
         "extension": [

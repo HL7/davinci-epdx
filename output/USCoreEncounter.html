@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>US Core Encounter</h2>
   
 
@@ -201,7 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.</p>
 
-<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter</a> resource are:</p>
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core Encounter resource are:</p>
 
 <table>
   <thead>
@@ -238,10 +238,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>code</td>
     </tr>
     <tr>
+      <td>Encounter.statusHistory.status</td>
+      <td>status</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Encounter.statusHistory.period</td>
+      <td>period</td>
+      <td style="text-align: center">1..1</td>
+      <td>Period</td>
+    </tr>
+    <tr>
       <td>Encounter.class</td>
       <td>class</td>
       <td style="text-align: center">1..1</td>
       <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.class</td>
+      <td>class</td>
+      <td style="text-align: center">1..1</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.period</td>
+      <td>period</td>
+      <td style="text-align: center">1..1</td>
+      <td>Period</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
@@ -286,10 +310,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Period</td>
     </tr>
     <tr>
+      <td>Encounter.length</td>
+      <td>length</td>
+      <td style="text-align: center">0..1</td>
+      <td>Duration</td>
+    </tr>
+    <tr>
       <td>Encounter.reasonCode</td>
       <td>reasonCode</td>
       <td style="text-align: center">0..*</td>
       <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Encounter.diagnosis.condition</td>
+      <td>condition</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(Condition | Procedure)</td>
     </tr>
     <tr>
       <td>Encounter.hospitalization</td>
@@ -320,7 +356,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
 
-<p>Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below:</p>
+<p>Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below.</p>
 
 <table>
   <thead>
@@ -557,7 +593,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 5, 2020 23:42-0500">2020-12-05</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

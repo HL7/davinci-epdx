@@ -15,9 +15,9 @@
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"];
   fhir:ImplementationGuide.version [ fhir:value "1.0.0"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
-  fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data Exchange"];
+  fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-12-05T23:42:40-05:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-12-07T20:05:34-05:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -111,11 +111,11 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
-         fhir:Extension.valueString [ fhir:value "path-history" ]
+         fhir:Extension.valueString [ fhir:value "path-expansion-params" ]
        ], [
          fhir:index 1;
          fhir:Extension.url [ fhir:value "value" ];
-         fhir:Extension.valueString [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/history.html" ]
+         fhir:Extension.valueString [ fhir:value "expansion-params.json" ]
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -123,11 +123,11 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
-         fhir:Extension.valueString [ fhir:value "path-liquid" ]
+         fhir:Extension.valueString [ fhir:value "path-history" ]
        ], [
          fhir:index 1;
          fhir:Extension.url [ fhir:value "value" ];
-         fhir:Extension.valueString [ fhir:value "template/liquid" ]
+         fhir:Extension.valueString [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/history.html" ]
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -139,11 +139,23 @@
        ], [
          fhir:index 1;
          fhir:Extension.url [ fhir:value "value" ];
-         fhir:Extension.valueString [ fhir:value "input/liquid" ]
+         fhir:Extension.valueString [ fhir:value "template/liquid" ]
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
        fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "code" ];
+         fhir:Extension.valueString [ fhir:value "path-liquid" ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "value" ];
+         fhir:Extension.valueString [ fhir:value "input/liquid" ]
+       ];
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
+     ], [
+       fhir:index 7;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -155,7 +167,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 7;
+       fhir:index 8;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -167,7 +179,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 8;
+       fhir:index 9;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -179,7 +191,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 9;
+       fhir:index 10;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -191,7 +203,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 10;
+       fhir:index 11;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -203,7 +215,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 11;
+       fhir:index 12;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -215,7 +227,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 12;
+       fhir:index 13;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -227,7 +239,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 13;
+       fhir:index 14;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -239,7 +251,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 14;
+       fhir:index 15;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -251,7 +263,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 15;
+       fhir:index 16;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -263,7 +275,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 16;
+       fhir:index 17;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -275,7 +287,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 17;
+       fhir:index 18;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -287,7 +299,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 18;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -299,7 +311,7 @@
        ];
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "code" ];
@@ -361,8 +373,8 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/pdex-provenance" ]
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/Provenance" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PDex Provenance" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element." ];
@@ -524,8 +536,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceTransmitter" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Transmitter Provenance record for a bundle" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 15;
@@ -541,8 +553,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceAuthor" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an author Provenance record displaying a practitioner's organization as the author" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 16;
@@ -558,8 +570,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceSoloPractitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an author Provenance record displaying a sole practitioner as the author" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 17;
@@ -575,8 +587,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenancePayerSource" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an payer being the source of the data" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 18;
@@ -592,8 +604,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenancePayerModified" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of provenance based on security group recommendations" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 19;
@@ -609,8 +621,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleDocRefProvenance" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 20;
@@ -626,8 +638,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceBundleTransmitter" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Transmitter Provenance record for a bundle" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
        ]
      ], [
        fhir:index 21;
@@ -1149,7 +1161,7 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense> a fhir:us .
 
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance> a fhir:us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill> a fhir:us .
 

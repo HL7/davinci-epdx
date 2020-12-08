@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>PDex Provenance</h2>
   
 
@@ -181,26 +181,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- PDexProvenance.md  -->
 <p><a href="USCoreProcedure.html">Previous Page - US Core Procedure</a></p>
 
-<p>When a Health Plan forwards information as a FHIR Resource it <strong>SHOULD</strong> create related 
-Provenance record(s) to reflect the original source.</p>
+<p>When a Health Plan forwards information as a FHIR Resource it
+<strong>SHOULD</strong> create related Provenance record(s) to reflect the
+original source, any subsequent data handlers or transformers and
+the action taken by the Health Plan in its handling of the data.</p>
 
-<p>A Provenance resource <strong>SHOULD</strong> be provided with each member-related resource provided by the Health Plan’s FHIR API.</p>
+<p>A Provenance resource <strong>SHOULD</strong> be provided with each member-related resource
+provided by the Health Plan’s FHIR API.</p>
 
 <p>This <strong>SHOULD</strong> be used to:</p>
 <ul>
   <li>identify the source of the information.</li>
   <li>whether the data came via a clinical record, or a claim record.</li>
+  <li>Whether the data was subject to manual transcription, or other interpretive transformation.</li>
 </ul>
 
-<p>The PDex-Provenance resource is based on the <a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html">US Core Provenance Profile</a> and is documented here: <a href="StructureDefinition-pdex-provenance.html">StructureDefinition-pdex-provenance.html</a></p>
+<p>The PDex Provenance resource is documented here: <a href="StructureDefinition-Provenance.html">StructureDefinition-Provenance.html</a></p>
 
-<p>PDex Provenance adds an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.</p>
+<p>PDex Provenance add an extension that uses the ProvenanceSourceFrom ValueSet to the entity element.
+In the Origin Provenance Profile the extension is included in the Provenance.entity base element.</p>
 
-<p>Provenance.recorded value <strong>SHOULD</strong> be the date/time when the data is received by the payer.</p>
+<p>The purpose of the extension is to identify the source format that the data in the provenance.target resource was taken from.</p>
 
-<p>The purpose of the extension is to identify the source format that the data in the provenance.target resource is taken from.</p>
-
-<p>The <a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a> record <strong>SHOULD</strong> be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:</p>
+<p>The PDexProvenance record <strong>SHOULD</strong> be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:</p>
 
 <style>
     table{
@@ -355,7 +358,7 @@ Provenance record(s) to reflect the original source.</p>
       <td>Provenance.entity.what</td>
       <td>what</td>
       <td style="text-align: center">1..1</td>
-      <td>Reference(Resource) In general this will be a text string indicating the source is defined by the role code</td>
+      <td>Reference(Resource)</td>
     </tr>
   </tbody>
 </table>
@@ -377,42 +380,38 @@ Provenance record(s) to reflect the original source.</p>
 
 <p>The payer acts as the transmitter. Setting:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>agent.type = "Transmitter" 
-agent.who = Payer's US Core Organization record
-</code></pre></div></div>
+<p>agent.type = “Transmitter” 
+agent.who = Payer’s US Core Organization record</p>
 
 <h4 id="payer-converts-a-clinical-record-from-a-non-fhir-format">Payer Converts a clinical record from a non-FHIR format</h4>
 
 <p>The Payer creates the Provenance record as follows:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target.reference = Reference of the converted record
+<p>target.reference = Reference of the converted record
 recorded = Date original record was received
 agent.type = Author
 agent.who = US Core Organization record for the originating organization
-extension.sourceFormat = "ccda" to identify that the record was transformed from a CCDA document
-</code></pre></div></div>
+extension.sourceFormat = “ccda” to identify that the record was transformed from a CCDA document</p>
 
 <h4 id="payer-converts-a-practitioners-clinical-record-from-a-non-fhir-format">Payer Converts a practitioner’s clinical record from a non-FHIR format</h4>
 
 <p>The Payer creates the Provenance record as follows:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target.reference = Reference of the converted record
+<p>target.reference = Reference of the converted record
 recorded = Date original record was received
 agent.type = Author
 agent.who = US Core Practitioner record when the provider is NOT associated with an organization
-extension.sourceFormat = "hl7v2" to identify that the record was transformed from a HL7 v2 message
-</code></pre></div></div>
+extension.sourceFormat = “hl7v2” to identify that the record was transformed from a HL7 v2 message</p>
 
 <h4 id="payer-creates-a-clinical-record-from-internal-sources">Payer creates a clinical record from internal sources</h4>
 
 <p>The Payer creates the Provenance record as follows:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target.reference = Reference of the converted record
+<p>target.reference = Reference of the converted record
 recorded = Date original record was received
 agent.type = Source
-agent.who = Payer's US Core Organization record
-extension.sourceFormat = "custom" to identify that the record was transformed from a custom data format such as a CSV file.
-</code></pre></div></div>
+agent.who = Payer’s US Core Organization record
+extension.sourceFormat = “custom” to identify that the record was transformed from a custom data format such as a CSV file.</p>
 
 <p>The Health Plan <strong>SHALL</strong> accept and maintain Provenance information associated with information received from contributing entities. 
 The Health Plan <strong>SHALL</strong> add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. 
@@ -529,7 +528,7 @@ the resources returned by the search query.</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 5, 2020 23:42-0500">2020-12-05</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

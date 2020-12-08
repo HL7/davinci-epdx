@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Introduction</h2>
   
 
@@ -200,7 +200,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- Introduction.md  -->
 <p><a href="Overview.html">Previous Page - Overview</a></p>
 
-<p>The PDex Implementation Guide (IG) identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that is being communicated.</p>
+<p>The PDex Implementation Guide (IG) identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that <strong>SHALL</strong> be communicated.</p>
 
 <p><strong>Actors:</strong></p>
 <ol>
@@ -224,7 +224,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The Patient-everything operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.</p>
 
-<p>While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API may be the same.</p>
+<p>While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the payload of member history will be the same.</p>
 
 <p>The objective with the above approach is to:</p>
 
@@ -235,12 +235,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="implementation-guide-scope">Implementation Guide Scope</h2>
 
-<p>The first release of the PDex IG will focus on the following in-scope items. Items in the deferred scope category will be considered for future iterations of the IG, or will be accommodated via an alternative Da Vinci Use Case. Out of scope items are not being considered at this time.</p>
+<p>The first release of the PDex IG will focus on the following in-scope items. Items in the deferred scope category will be considered for future iterations of the IG, or will be accommodated via an alternative Da Vinci Use Case project. Out of scope items are not being considered at this time.</p>
 
 <h3 id="in-scope">In Scope</h3>
 
 <ul>
   <li>Ambulatory Care Provider queries</li>
+  <li>Outpatient encounter</li>
   <li>Member-authorized Payer-to-Payer information exchange</li>
   <li>Member-authorized Payer-to-Third-Party-Application information exchange</li>
   <li>Use of Patient-everything operation to enable Payer Push via secure transport</li>
@@ -284,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.</p>
 
-<p>The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/">PDex-Plan-Net IG</a> ( http://hl7.org/fhir/us/davinci-pdex-plan-net/ ).</p>
+<p>The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/">PDex-plan-net IG</a> ( http://hl7.org/fhir/us/davinci-pdex-plan-net/2020Feb/ ).</p>
 
 <p>The exchange of Prescription drug formulary information is covered in the <a href="http://hl7.org/fhir/us/Davinci-drug-formulary//">PDex-formulary IG</a> ( http://hl7.org/fhir/us/Davinci-drug-formulary/ ).</p>
 
@@ -310,14 +311,15 @@ Specification:</p>
 <ul>
   <li>FHIR Core (FHIR)</li>
   <li>US Core (FHIR)</li>
-  <li>US Da Vinci PDex (FHIR)</li>
+  <li>
+    <p>US Da Vinci PDex (FHIR)</p>
+  </li>
+  <li>Individuals interested in participating in Payer Data exchange (PDex) or other HL7 Da Vinci projects can find information about the Da Vinci accelerator project <a href="http://www.hl7.org/about/davinci">here</a>.</li>
 </ul>
-
-<p>Individuals interested in participating in Payer Data exchange (PDex) or other HL7 Da Vinci projects can find information about the Da Vinci accelerator project <a href="http://www.hl7.org/about/davinci">here</a>.</p>
 
 <h2 id="fhir">FHIR</h2>
 
-<p>This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it’s important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.</p>
+<p>This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, its important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.</p>
 
 <ul>
   <li><a href="http://build.fhir.org/overview.html">FHIR overview</a></li>
@@ -334,7 +336,7 @@ Specification:</p>
 
 <p>Wherever possible, the PDex IG will use established <a href="http://hl7.org/fhir/us/core/index.html">US Core Profiles</a> ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.</p>
 
-<p>Where profiles are specific to the PDex use case the profiles will be defined in this guide.</p>
+<p>Where profiles are specific to the PDex use case and are not shared with other Da Vinci IGs the profiles will be defined in this guide.</p>
 
 <h2 id="implementation-hierarchy-and-priorities">Implementation Hierarchy and Priorities</h2>
 
@@ -360,7 +362,7 @@ Specification:</p>
   <li>Medication Formulary</li>
 </ol>
 
-<p>The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share data received from another health plan in the electronic form and format in which it was received.</p>
+<p>The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share data received from another health plan in the electronic form and format it was received in.</p>
 
 <p>The Directory and Formulary data payloads are covered in their respective Da Vinci Implementation Guides.</p>
 
@@ -375,6 +377,11 @@ Specification:</p>
 <p>The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the “Member Health History”  <strong>SHOULD</strong> include the following profiles where payers have data to support the use of those profiles:</p>
 
 <h4 id="us-core-profiles">US Core Profiles</h4>
+
+<p>Excluded:</p>
+
+<p>US Core Pulse Oximetry Profile
+US Core Smoking Status Observation Profile</p>
 
 <ul>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a></li>
@@ -404,9 +411,9 @@ Specification:</p>
   <li><a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile</a></li>
 </ul>
 
-<p>In addition, US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs Profile</a> from the FHIR Specification.</p>
+<p>In addition US Core uses the <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">Vital Signs Profile</a> from the FHIR Specification.</p>
 
-<p>In addition, the $patient-everything operation <strong>SHOULD</strong> be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined <a href="https://www.hl7.org/fhir/operation-patient-everything.html">here</a>: <a href="https://www.hl7.org/fhir/operation-patient-everything.html">https://www.hl7.org/fhir/operation-patient-everything.html</a>.</p>
+<p>In addition the $patient-everything operation <strong>SHOULD</strong> be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined <a href="https://www.hl7.org/fhir/operation-patient-everything.html">here</a>: <a href="https://www.hl7.org/fhir/operation-patient-everything.html">https://www.hl7.org/fhir/operation-patient-everything.html</a>.</p>
 
 <p>The FHIR bundle that is the output of the $patient-everything operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle <strong>SHOULD</strong> be compiled as a non-paged bundle.</p>
 
@@ -416,7 +423,7 @@ Specification:</p>
   <li><a href="http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html">HRex Coverage</a></li>
   <li><a href="StructureDefinition-pdex-device.html">PDex Device</a></li>
   <li><a href="StructureDefinition-pdex-medicationdispense.html">PDex MedicationDispense</a></li>
-  <li><a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a></li>
+  <li><a href="StructureDefinition-Provenance.html">Provenance</a></li>
 </ul>
 
 <h4 id="capabilitystatement">CapabilityStatement</h4>
@@ -713,7 +720,7 @@ Specification:</p>
 
 <h3 id="pharmacy-network-directory">Pharmacy Network Directory</h3>
 
-<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a>). A Health Plan’s Pharmacy Network <strong>SHOULD</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory.</p>
+<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://build.fhir.org/ig/HL7/davinci-pdex-plan-net/">PDex-plan-net IG</a>). A Health Plan’s Pharmacy Network <strong>SHALL</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory.</p>
 
 <h3 id="medication-formulary">Medication Formulary</h3>
 
@@ -744,7 +751,7 @@ Specification:</p>
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 5, 2020 23:42-0500">2020-12-05</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
