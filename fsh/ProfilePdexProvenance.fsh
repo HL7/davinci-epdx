@@ -1,6 +1,6 @@
 Profile:        Provenance
 Parent:         us-core-provenance
-Id:             Provenance
+Id:             pdex-provenance
 Title:          "Provenance"
 Description:    "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element."
 
