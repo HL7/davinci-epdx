@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Use Case Scenarios</h2>
   
 
@@ -194,22 +194,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>The other use case is for Member/Patient-mediated Payer-to-Payer Exchange:</p>
 
 <ul>
-  <li>Consumer enrolls with new health plan and accesses their prior health plan to authorize sharing of the health history that the prior health plan holds on the consumer.</li>
+  <li>A consumer enrolls with a new health plan and accesses their prior health plan to authorize sharing of the health history that the prior health plan holds on the consumer.</li>
 </ul>
 
-<p>The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider or when a member switches health plans.</p>
+<p>The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider or when a member switches health plan.</p>
 
 <p>Three example data requests from Providers to Health Plans are covered in this IG and the associated Reference Implementation:</p>
 
 <ol>
   <li>What Encounters has the patient had since mm/dd/yyyy, excluding encounters at my organization.</li>
   <li>What procedures has the patient had?</li>
-  <li>What medications has the patient received (i.e. A claim for a medication has been settled by the health plan)</li>
+  <li>What medications has the patient received (i.e., A claim for a medication has been settled by the health plan)</li>
 </ol>
 
-<p>Reference Implementations can be found in the Da Vinci Github account:
-	- <a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex SMART-on-FHIR+CDS-Hook Patient Import App</a>
-	- <a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex Payer-to-Payer Patient Import App</a></p>
+<p>Reference Implementations can be found in the Da Vinci GitHub account:</p>
+
+<ul>
+  <li><a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex SMART-on-FHIR+CDS-Hook Patient Import App</a></li>
+  <li><a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex Payer-to-Payer Patient Import App</a></li>
+</ul>
 
 <h2 id="patient-persona">Patient Persona</h2>
 
@@ -217,7 +220,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Lauren Dent is a 62-year-old female, living in Wisconsin but she spends winters in Tampa Bay, FL.</p>
 
-<p>Lauren works on a seasonal basis and has just accepted a new position with her employer and has moved to Madison, WI to live with her daughter, leaving her previous home in La Crosse, WI. As a result of the move she has selected a new Primary Care Provider.</p>
+<p>Lauren works on a seasonal basis and has just accepted a new position with her employer and has moved to Madison, WI to live with her daughter, leaving her previous home in La Crosse, WI. As a result of the move, she has selected a new Primary Care Provider.</p>
 
 <p>Lauren is in reasonable health but is managing a number of conditions:</p>
 
@@ -232,7 +235,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="memberpatient-mediated-payer-to-payer-exchange">Member/Patient-mediated Payer-to-Payer Exchange:</h3>
 
-<p>Arthur Dent is a 68 year old Male.</p>
+<p>Arthur Dent is a 68-year-old Male.</p>
 
 <p>He has recently switched from Medicare Advantage Plan A and enrolled in Medicare Advantage Plan B.</p>
 
@@ -249,9 +252,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Procedures</li>
 </ul>
 
-<p>This Guide will focus on on a method to enable a provider to query the health record of a health plan member they are treating for the information that is of interest to them in relation to the care of the member. The CDS-Hooks method that is described in a later section enables a provider to query for information in the member’s health record at the health plan using US Core profiles and search parameters and subsequently select, either manually or by pre-defined automated tools, the records they want to commit to the patient’s health record in the provider’s EMR.</p>
+<p>This Guide will focus on a method to enable a provider to query the health record of a health plan member they are treating for the information that is of interest to them in relation to the care of the member. The CDS-Hooks method that is described in a later section enables a provider to query for information in the member’s health record at the health plan using US Core profiles and search parameters and subsequently select, either manually or by pre-defined automated tools, the records they want to commit to the patient’s health record in the provider’s EMR.</p>
 
-<p>For example, as part of an event or episode of care the provider may be interested in the following types of data:</p>
+<p>For example, as part of an event or episode of care the provider <strong>MAY</strong> be interested in the following types of data:</p>
 
 <ul>
   <li>Consultations/Encounters</li>
@@ -358,20 +361,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p>It must be recognized that Payers may not have in depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.</p>
+<p>It must be recognized that Payers may not have in-depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.</p>
 
 <h2 id="versioning-of-fhir-data">Versioning of FHIR Data</h2>
 
-<p>A payer SHOULD provide the most recent version of the Patient, Practitioner, Organization and Location resources.</p>
+<p>A payer <strong>SHOULD</strong> provide the most recent version of the Patient, Practitioner, Organization and Location resources.</p>
 
-<p>A payer MAY choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> guidance in the HTTP section of the FHIR specification.</p>
+<p>A payer <strong>MAY</strong> choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> guidance in the HTTP section of the FHIR specification.</p>
 
-<p>If a payer chooses to support FHIR resource data versioning of related resource references in the referring resource SHALL use the vread format of reference:</p>
+<p>If a payer chooses to support FHIR resource data versioning of related resource references in the referring resource <strong>SHALL</strong> use the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> format of reference:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[type]/[id]/_history/[vid]
 </code></pre></div></div>
 
-<p>Supporting versioning of FHIR data implies supporting the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> and [history](<a href="https://www.hl7.org/fhir/http.html#history">vread</a> interactions in the FHIR specification.</p>
+<p>Supporting versioning of FHIR data implies supporting the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> and <a href="https://www.hl7.org/fhir/http.html#history">history</a> interactions in the FHIR specification.</p>
 
 <p><a href="Provider-controlledInformationRequestsandFiltering.html">Next Page - Provider-controlled Information Requests and Filtering</a></p>
 
@@ -398,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 14, 2020 21:55-0500">2020-12-14</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
