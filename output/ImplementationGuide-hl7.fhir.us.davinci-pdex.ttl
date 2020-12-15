@@ -15,9 +15,9 @@
   fhir:ImplementationGuide.url [ fhir:value "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"];
   fhir:ImplementationGuide.version [ fhir:value "1.0.0"];
   fhir:ImplementationGuide.name [ fhir:value "DaVinciPayerDataExchange"];
-  fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data exchange"];
+  fhir:ImplementationGuide.title [ fhir:value "Da Vinci Payer Data Exchange"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2020-12-07T20:05:34-05:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2020-12-14T21:55:53-05:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ];
@@ -373,10 +373,10 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/Provenance" ]
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/pdex-provenance" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PDex Provenance" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Provenance" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Provenance is provided by the payer to identify the source of the information, whether the data came via a clinical record or a claim record and whether the data was subject to manual transcription or other interpretive transformation. This profile adds PayerSourceFormat as an extension on the entity base element." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
@@ -536,8 +536,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceTransmitter" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Transmitter Provenance record for a bundle" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 15;
@@ -553,8 +553,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceAuthor" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an author Provenance record displaying a practitioner's organization as the author" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 16;
@@ -570,8 +570,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceSoloPractitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an author Provenance record displaying a sole practitioner as the author" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 17;
@@ -587,8 +587,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenancePayerSource" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of an payer being the source of the data" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 18;
@@ -604,8 +604,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenancePayerModified" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of provenance based on security group recommendations" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 19;
@@ -621,8 +621,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleDocRefProvenance" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource." ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 20;
@@ -638,8 +638,8 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ExampleProvenanceBundleTransmitter" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a Transmitter Provenance record for a bundle" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance";
-         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance>
+         fhir:value "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance";
+         fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
        ]
      ], [
        fhir:index 21;
@@ -1161,7 +1161,7 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense> a fhir:us .
 
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/Provenance> a fhir:us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance> a fhir:us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill> a fhir:us .
 

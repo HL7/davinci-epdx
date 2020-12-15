@@ -65,7 +65,7 @@
         </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data exchange</span><br/>1.0.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span><br/>1.0.0 - CI Build</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -157,7 +157,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v1.0.0). See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Provider-controlled Information Requests and Filtering</h2>
   
 
@@ -176,17 +176,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- Provider-controlledInformationRequestsandFiltering.md  -->
 <p><a href="UseCaseScenarios.html">Previous Page - Use Case Scenarios</a></p>
 
-<p>The Payer Data exchange Implementation Guide defines methods for Providers to request information from Health Plans.</p>
+<p>The Payer Data Exchange Implementation Guide defines methods for Providers to request information from Health Plans.</p>
 
 <p>This IG does not cover the Payer-initiated transfer of unsolicited information to a provider. All Provider-oriented exchanges will be initiated as part of a Provider workflow, such as when a new patient presents for an appointment, using CDS-Hooks or triggered via a manual interaction with a SMART-on-FHIR app that generates the necessary CDS-Hook.</p>
 
 <p>All search parameters and subsequent filtering of returned information <strong>SHALL</strong> be controlled by the Provider making the information request.  The Payer does not filter information that has been requested by the provider except for the application of any restrictions based on the scopes of the access token issued to the Provider per applicable law.</p>
 
-<p>Health Plans should only restrict provider access to a member’s data where that access is required in accordance with State or Federal regulations.</p>
+<p>Health Plans <strong>SHOULD</strong> only restrict provider access to a member’s data where that access is required in accordance with State or Federal regulations.</p>
 
 <p>Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an OAuth2.0 Authorization.</p>
 
 <p><a href="CDS-Hooks.html">Next Page - CDS-Hooks</a></p>
+
 
 
 
@@ -210,7 +211,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 7, 2020 20:05-0500">2020-12-07</span>
+          IG &#169; 2020+ <a style="color: #81BEF7" href="mailto:mark@ekivemark.com0"></a>.  Package hl7.fhir.us.davinci-pdex#1.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 14, 2020 21:55-0500">2020-12-14</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |

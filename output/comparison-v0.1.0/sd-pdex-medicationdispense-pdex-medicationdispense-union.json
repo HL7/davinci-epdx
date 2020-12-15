@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "83f55fca-79ea-403f-b79f-eb01c86c4816-2",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/83f55fca-79ea-403f-b79f-eb01c86c4816-2",
+  "id" : "75949311-2a54-48ed-bfbc-7202409e2909-2",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/75949311-2a54-48ed-bfbc-7202409e2909-2",
   "name" : "UnionPDexMedicationDispenseAndPdexMedicationDispense",
   "title" : "Union of PDex MedicationDispense Profile And PDex MedicationDispense",
   "status" : "active",
-  "date" : "2020-12-07T20:05:49-05:00",
+  "date" : "2020-12-14T21:56:09-05:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -427,7 +427,7 @@
     },
     {
       "path" : "MedicationDispense.subject",
-      "short" : "Who the dispense is for",
+      "short" : "left: Who the dispense is for; right: The patient who is prescribed the medication",
       "definition" : "A link to a resource representing the person or the group to whom the medication will be given.",
       "comment" : "SubstanceAdministration->subject->Patient.",
       "min" : 0,
@@ -935,7 +935,7 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "Element"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -1016,7 +1016,7 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
