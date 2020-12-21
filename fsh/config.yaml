@@ -5,16 +5,16 @@
 # │  configuration from now on. You may delete your package.json as it is no longer needed.        │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 
-# ╭───────────────────────ImplementationGuide-hl7.fhir.us.davinci-pdex.json────────────────────────╮
+# ╭────────────────────────ImplementationGuide-hl7.fhir.us.davinci-pdex.json───────────────────────╮
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see:                                                                    │
 # │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
-version: 0.1.31
+version: 1.0.0
 name: DaVinciPayerDataExchange
-title: Da Vinci Payer Data exchange
+title: Da Vinci Payer Data Exchange
 status: draft
 publisher: "HL7 Da Vinci"
 contact:
@@ -35,9 +35,11 @@ dependencies:
   hl7.fhir.us.davinci-hrex: 0.2.0
 parameters:
   show-inherited-invariants: false
+  path-expansion-params: expansion-params.json
 copyrightYear: 2020+
-releaseLabel: STU 1
+releaseLabel: CI Build
 jurisdiction: urn:iso:std:iso:3166#US
+category: Financial
 
 pages:
   index.md:
@@ -54,8 +56,8 @@ pages:
       title: Payer-to-Payer Exchange
     DataMapping.md:
       title: Data Mapping
-#      StructureDefinition-capabilitystatements-pdex-server.html:
-#        title: PDex Server Capability Statement
+      #      StructureDefinition-capabilitystatements-pdex-server.html:
+      #        title: PDex Server Capability Statement
       USCoreAllergyIntolerance.md:
         title: US Core AllergyIntolerance
       USCoreCarePlan.md:
