@@ -1,0 +1,31 @@
+{
+  "resourceType": "Coverage",
+  "id": "883210",
+  "meta": {
+    "versionId": "1",
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
+    ],
+    "lastUpdated": "2020-10-28T09:26:23.217+00:00"
+  },
+  "identifier": [
+    {
+      "system": "http://example.org/someOrg/identifiers/whatever",
+      "value": "1039399818"
+    },
+    {
+      "system": "http://example.org/new-payer/identifiers/coverage",
+      "value": "234567"
+    }
+  ],
+  "status": "active",
+  "subscriberId": "97531",
+  "beneficiary": {
+    "reference": "Patient/1"
+  },
+  "payor": [
+    {
+      "reference": "Organization/2"
+    }
+  ]
+}
