@@ -1,16 +1,16 @@
 Instance: ExampleProvenanceTransmitter
 InstanceOf: pdex-provenance
 Description: "Example of a Transmitter Provenance record for a bundle"
-  * id = "1000001"
-  * meta.versionId = "1"
-  * meta.lastUpdated = "2020-07-09T15:26:23.217+00:00"
-  * target[0].reference = "Bundle/2000002"
-  * recorded = "2020-07-09T15:26:23.217+00:00"
-  * agent[0].type =  http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
-  * agent[0].who.reference = "Organization/2"
-  * entity.role = http://hl7.org/fhir/provenance-entity-role#source
-  * entity.what.display = "No reference available"
-  * entity.extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
+* id = "1000001"
+* meta.versionId = "1"
+* meta.lastUpdated = "2020-07-09T15:26:23.217+00:00"
+* target[0].reference = "Bundle/2000002"
+* recorded = "2020-07-09T15:26:23.217+00:00"
+* agent[0].type =  http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* agent[0].who.reference = "Organization/2"
+* entity.role = http://hl7.org/fhir/provenance-entity-role#source
+* entity.what.display = "No reference available"
+* entity.extension[sourceFormat].valueCodeableConcept = ProvenancePayerDataSource#hl7v2adt "HL7 v2 ADT"
 
 Instance: ExampleProvenanceAuthor
 InstanceOf: pdex-provenance
@@ -61,14 +61,14 @@ Description: "Example of an payer being the source of the data"
 Instance: ExampleProvenancePayerModified
 InstanceOf: pdex-provenance
 Description: "Example of provenance based on security group recommendations"
-  * id = "1000005"
-  * meta.versionId = "1"
-  * meta.lastUpdated = "2020-09-01T13:41:23.217+00:00"
-  * target[0].reference = "Encounter/7"
-  * recorded = "2020-07-12T18:26:23.217+00:00"
-  * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
-  * agent[0].who.reference = "Organization/2"
-  * entity.role = http://hl7.org/fhir/provenance-entity-role#source
-  * entity.what.display = "No reference available"
-  * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* id = "1000005"
+* meta.versionId = "1"
+* meta.lastUpdated = "2020-09-01T13:41:23.217+00:00"
+* target[0].reference = "Encounter/7"
+* recorded = "2020-07-12T18:26:23.217+00:00"
+* agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* agent[0].who.reference = "Organization/2"
+* entity.role = http://hl7.org/fhir/provenance-entity-role#source
+* entity.what.display = "No reference available"
+* entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
 

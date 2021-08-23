@@ -11,12 +11,12 @@ Description: "Attributes that identify the source record format from which data 
 //  * extension contains
 //  source 0..1
 
-  * value[x] ^short = "Source record format from which data was derived"
+* value[x] ^short = "Source record format from which data was derived"
 //  * extension[source].url ProvenancePayerSourceFormat
 //  * extension[source].value[x] only CodeableConcept
 //  * extension[source].valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
-  * value[x] only CodeableConcept
-  * valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
+* value[x] only CodeableConcept
+* valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
 
 //
 //Extension for MedicationDispense
