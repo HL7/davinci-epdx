@@ -2,7 +2,7 @@ Instance: ExampleDocumentReference
 InstanceOf: us-core-documentreference
 Description: "Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded."
 * id = "123456"
-* status = http://hl7.org/fhir/ValueSet/document-reference-status#current
+* status = http://hl7.org/fhir/document-reference-status#current
 // * type = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type#UNK
 //* type = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
 * type =  http://loinc.org#51852-2

@@ -8,11 +8,13 @@ The PDex IG is the work product of the HL7 Da Vinci Project.
 More information about the Da Vinci Interoperability Project can be found here: http://www.hl7.org/about/davinci/
 The PDex project information can be found here: https://confluence.hl7.org/pages/viewpage.action?pageId=40738760
 
+PDex Version 1.0.0 was published using FHIR Shorthand and Sushi. 
+
+For the PDex STU Update version 1.0.1 Sushi was upgraded to the 1.x release. The source code for the IG
+is found in the fishtank (input/fsh) folder in this repository.
+
 The PDex IG was originally published using the Trifolia FHIR Publisher. 
 The publisher can be found at: https://trifolia-fhir.lantanagroup.com/home
-
-For version 0.3.7 FHIR Shorthand and Sushi were used to compile the PDex IG. The source code for the IG 
-is found in the fishtank folder in this repository.
 
 Check out the README.md in the Fishtank folder for instructions on compiling the IG using Sushi.
 
