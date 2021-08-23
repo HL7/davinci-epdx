@@ -123,6 +123,10 @@ For the purposes of this IG we will use the following terms:
     * Covered Party
     * Subject of Care
 
+### Change History
+
+A history of changes made since the publication of the STU1 version of the PDex IG is maintained [here](/ChangeHistory.html): [ChangeHistory](/ChangeHistory.html) 
+
 ### FHIR Publisher
 
 This IG was built with Sushi and the FHIR Publisher (v1.1.50)

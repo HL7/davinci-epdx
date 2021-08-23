@@ -5,7 +5,7 @@ Notes:
 2. Payers **SHALL** include all member related documents as the contents of, or links from appropriate instances of the DocumentReference resource (unless these documents are being exchanged by another method.
 
 
-# Operation $member-match on Patient
+### Operation $member-match on Patient
 
 Find Member using Patient and Coverage Resources
 
@@ -18,6 +18,7 @@ The new Health Plan **SHALL** enable an enrolling member to provide the coverage
 - US Core Patient (Containing Member demographics)
 - Coverage (details of prior health plan coverage provided by the member, typically from their Health Plan coverage card)
 - Coverage (details of new or prospective health plan coverage, provided by the health plan based upon the member's enrollment)
+- Consent (Information indicating whether a member wishes to exchange all information, or only information that is not additionally protected such as 42.CFR Part 2 or state-specific sensitive data categories.)
 
 The New Health Plan Coverage record provides information for the prior Health Plan to determine the identity of their member in the new health plan, enabling them to identify the member in the new Health Plan for any future communications.
 
@@ -34,16 +35,29 @@ Reference Implementation Information: [Member-Match Reference Implementation](ht
 
 The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep)
 
-## Notes
+A Consent Resource **SHOULD** be provided as part of the transaction data sent to the prior Payer. The resource is profiled in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep). The consent resource identifies the categories of data to be exchanged with the member's permission. There are two categories of data that can be exchanged:
+
+1. Everything: All data with no restricitons.
+2. Non-Additionally protected data classes. 
+
+The CMS Interoperability Rule defines a set of data that  can be excluded from data sharing. The restricted data classes are defined as:
+- Sensitive data classes identified in 42.CFR Part 2
+- Data identified as sensitive in state regulations, such as sexual and mental health data. 
+
+These restricted data classes are excluded from the Non-Additionally protected data class.
+
+In situations where a data holder is unable to segregate data into the two data classes then no data should be released when a member has requested only Non-Additionally protected data be exchanged.
+
+### Notes
 
 Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.
 
 
-## Operation:
+### Operation $member-match:
 
     URL: POST [base]/Patient/$member-match
 
-## Patient.identifier
+### Patient.identifier
 
 When the New Health Plan creates an OldCoverage parameter where the Coverage resource has a Coverage.identifier and the identifier.type is "MB". The "MB" value is taken from the http://terminology.hl7.org/CodeSystem/v2-0203 value set.
 
@@ -51,22 +65,21 @@ When the Old Health Plan returns the Patient Record they **SHALL** add a Patient
 
 A code system will be created with a value set with a single entry "UMB" and will be referenced by the value set for identifier.
 
-## Unique Member Identifier
+### Unique Member Identifier
 
 The old Health Plan **SHALL** return a unique member identifier and a corresponding system value that identifies the plan. 
 
 The member identifier **SHALL** be either the internal unique identifier, or an identifier that is mapped one-to-one to the Health Plan's unique member identifier.
 
-## Parameters
+### Parameters
 
 {% include style_insert_table_blue.html %}
 
 | Use | Name | Cardinality | Type | Binding | Documentation |
 | IN | resource | 1..1 | Parameter |  | 
-Use this to provide a set of coverage and beneficiary details for the match operation to search for a unique member record (e.g. POST a parameter with Patient, Old Coverage and New Coverage to Patient/$member-match). |
+Use this to provide a set of coverage, beneficiary and consent details for the match operation to search for a unique member record (e.g. POST a parameter with Patient, Old Coverage, New Coverage and Consent to Patient/$member-match). |
 | OUT | return | 1..1 | Parameter |  |	
 The returned Parameter resource will contain the New Plan's Coverage record and their Member Patient record with the ADDITION of an identifier of type "UMB" that represents the Unique identifier to identify the member records at the old health plan. If the operation failed to find a unique match then a BadRequest status code is returned. (e.g. 422 - Unprocessable Entity). |
-
 
 The response from a successful $member-match is a parameter containing the updated Patient resource submitted, but with the UMB identifier, and the new health plan coverage record as submitted in the original Parameter request.
 
@@ -76,7 +89,7 @@ After a successful $member-match the new health plan will use the unique member 
 
 For example, in PDex the new health plan will subsequently use the UMB identifier to request the member’s health records. This can be done by querying the US Core FHIR profile endpoints which will be constrained to the identified member. Alternatively, the new health plan can perform a $everything operation to the Patient/{ID}/$everything operation endpoint to receive a bundle of the member’s health records.
 
-## Member matching Logic
+### Member matching Logic
 
 This specification is not attempting to define the member matching logic that is used by a Payer that processes a $member-match operation.
 
@@ -91,14 +104,14 @@ An important objective of this operation is to ensure that a payer operating a $
 
 For the requesting payer the operation assumes that a new member is able to provide their demographic information (name, date of birth, gender) and the identification details that would be present on the health plan insurance card provided by their old health plan.
 
-## $member-match Parameter Example
+### $member-match Parameter Example
 
 Example request: $member-match Parameter resource submitted by the new health plan. 
 
 Note the Patient identifier type set to "MB".
 $member-match accepts a POST with the Parameters json bundle in the body.
 
-### Example Parameter bundle sent from New Health Plan
+#### Example Parameter bundle sent from New Health Plan
 
     {
         "resourceType": "Parameters",
@@ -331,7 +344,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
         ]
     }
 
-### Parameter Response from Old Health Plan
+#### Parameter Response from Old Health Plan
 
 Parameter Response Example
 

@@ -131,11 +131,17 @@ The supported format is:
 
 - URL: [base]/Patient/[id]/$everything
 
-Health Plans **MAY** enable support for a Patient-everything bundle to be created. Exchange of this bundle **SHOULD** be accomplished using  SMART or SMART Backend services. The bundle may alternatively be exchanged via a transport method that supports the secure exchange of PHI.
+Health Plans **SHOULD** enable support for a Patient-everything bundle to be created. Exchange of this bundle **SHOULD** be accomplished using  SMART or SMART Backend services. The bundle may alternatively be exchanged via a transport method that supports the secure exchange of PHI.
 
 This operation is intended to simplify requests from a client application when requesting records for a patient. 
 
-A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: https://www.hl7.org/fhir/operation-patient-everything.html
+$everything is an operation. Operations do not support the full range of query parameters available to a regular search request. PDex recommends the use of _revInclude in search operations to retrieve associated Provenance resources. In cases where Provenance is being requested as part of the $everythng operation this is accomplished by specifying Provenance as one of a list of resources included in the **_type** parameter of the $everything operation.
+
+Example of _type parameter: 
+
+    _type=Condition,Device,Encounter,Immunization,Observation,Procedure,Provenance
+
+A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html)
 
 The Patient-everything operation is identified as a potential method to package all of a member's health history into a records bundle for transmission. 
 
