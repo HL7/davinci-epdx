@@ -125,7 +125,7 @@ For the purposes of this IG we will use the following terms:
 
 ### Change History
 
-A history of changes made since the publication of the STU1 version of the PDex IG is maintained [here](/ChangeHistory.html): [ChangeHistory](/ChangeHistory.html) 
+A history of changes made since the publication of the STU1 version of the PDex IG is maintained [here](ChangeHistory.html): [ChangeHistory](ChangeHistory.html) 
 
 ### FHIR Publisher
 
