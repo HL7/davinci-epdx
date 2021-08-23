@@ -5,15 +5,15 @@
 ValueSet: ProvenanceAgentType
 Title:        "Provenance Agent Type"
 Description:  "Agent role performed relating to referenced resource"
-  * codes from system ProvenanceAgentRoleType
-  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* codes from system ProvenanceAgentRoleType
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
 
 
 ValueSet: ProvenancePayerSourceFormat
 Title: "Payer source of data"
 Description: "Source Data formats used as the source for FHIR referenced record by the Payer."
-  * codes from system ProvenancePayerDataSource
-  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* codes from system ProvenancePayerDataSource
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
 
 // Taken from CARIN-BB
 ValueSet: FDANationalDrugCode
@@ -35,7 +35,7 @@ Users should note a few important items
 *   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.
 *   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)"
 //  * codes from system $FDANationalDrugCode
-  * ^copyright = "NDC codes have no copyright acknowledgment or license requirements."
+* ^copyright = "NDC codes have no copyright acknowledgment or license requirements."
 //
-  * codes from system $FDANationalDrugCodeCS
-  * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* codes from system $FDANationalDrugCodeCS
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
