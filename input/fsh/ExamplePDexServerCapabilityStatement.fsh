@@ -19,11 +19,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[0].interaction[4].code = #history-type
   * rest.resource[0].readHistory = true
 
-  * rest.resource[0].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[0].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[0].searchRevInclude = "Provenance"
   * rest.resource[0].searchParam.name = "_id"
-  * rest.resource[0].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[0].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // CarePlan
   * rest.resource[1].supportedProfile = $USCoreCarePlan
@@ -35,11 +35,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[1].interaction[4].code = #history-type
   * rest.resource[1].readHistory = true
 
-  * rest.resource[1].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[1].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[1].searchRevInclude = "Provenance"
   * rest.resource[1].searchParam.name = "_id"
-  * rest.resource[1].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[1].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // CareTeam
   * rest.resource[2].supportedProfile = $USCoreCareTeam
@@ -51,11 +51,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[2].interaction[4].code = #history-type
   * rest.resource[2].readHistory = true
 
-  * rest.resource[2].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[2].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[2].searchRevInclude = "Provenance"
   * rest.resource[2].searchParam.name = "_id"
-  * rest.resource[2].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[2].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Condition
   * rest.resource[3].supportedProfile = $USCoreCondition
@@ -67,11 +67,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[3].interaction[4].code = #history-type
   * rest.resource[3].readHistory = true
 
-  * rest.resource[3].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[3].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[3].searchRevInclude = "Provenance"
   * rest.resource[3].searchParam.name = "_id"
-  * rest.resource[3].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[3].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Coverage
   * rest.resource[4].supportedProfile = $HrexCoverage
@@ -83,11 +83,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[4].interaction[4].code = #history-type
   * rest.resource[4].readHistory = true
 
-  * rest.resource[4].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[4].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[4].searchRevInclude = "Provenance"
   * rest.resource[4].searchParam.name = "_id"
-  * rest.resource[4].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[4].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Device
   * rest.resource[5].supportedProfile[0] = $PdexDevice
@@ -100,11 +100,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[5].interaction[4].code = #history-type
   * rest.resource[5].readHistory = true
 
-  * rest.resource[5].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[5].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[5].searchRevInclude = "Provenance"
   * rest.resource[5].searchParam.name = "_id"
-  * rest.resource[5].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[5].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // DiagnosticReport
   * rest.resource[6].supportedProfile[0] = $USCoreDiagnosticReportLab
@@ -118,11 +118,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[6].interaction[4].code = #history-type
   * rest.resource[6].readHistory = true
 
-  * rest.resource[6].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[6].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[6].searchRevInclude = "Provenance"
   * rest.resource[6].searchParam.name = "_id"
-  * rest.resource[6].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[6].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // DocumentReference
   * rest.resource[7].supportedProfile = $USCoreDocumentReference
@@ -134,11 +134,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[7].interaction[4].code = #history-type
   * rest.resource[7].readHistory = true
 
-  * rest.resource[7].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[7].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[7].searchRevInclude = "Provenance"
   * rest.resource[7].searchParam.name = "_id"
-  * rest.resource[7].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[7].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Encounter
   * rest.resource[8].supportedProfile = $USCoreEncounter
@@ -150,11 +150,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[8].interaction[4].code = #history-type
   * rest.resource[8].readHistory = true
 
-  * rest.resource[8].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[8].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[8].searchRevInclude = "Provenance"
   * rest.resource[8].searchParam.name = "_id"
-  * rest.resource[8].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[8].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Goal
   * rest.resource[9].supportedProfile = $USCoreGoal
@@ -166,11 +166,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[9].interaction[4].code = #history-type
   * rest.resource[9].readHistory = true
 
-  * rest.resource[9].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[9].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[9].searchRevInclude = "Provenance"
   * rest.resource[9].searchParam.name = "_id"
-  * rest.resource[9].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[9].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Immunization
   * rest.resource[10].supportedProfile = $USCoreImmunization
@@ -182,11 +182,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[10].interaction[4].code = #history-type
   * rest.resource[10].readHistory = true
 
-  * rest.resource[10].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[10].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[10].searchRevInclude = "Provenance"
   * rest.resource[10].searchParam.name = "_id"
-  * rest.resource[10].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[10].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Location
   * rest.resource[11].supportedProfile = $USCoreLocation
@@ -198,11 +198,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[11].interaction[4].code = #history-type
   * rest.resource[11].readHistory = true
 
-  * rest.resource[11].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[11].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[11].searchRevInclude = "Provenance"
   * rest.resource[11].searchParam.name = "_id"
-  * rest.resource[11].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[11].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Medication
   * rest.resource[12].supportedProfile = $USCoreMedication
@@ -214,11 +214,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[12].interaction[4].code = #history-type
   * rest.resource[12].readHistory = true
 
-  * rest.resource[12].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[12].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[12].searchRevInclude = "Provenance"
   * rest.resource[12].searchParam.name = "_id"
-  * rest.resource[12].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[12].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // MedicationDispense
   * rest.resource[13].supportedProfile = $PdexMedicationDispense
@@ -230,11 +230,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[13].interaction[4].code = #history-type
   * rest.resource[13].readHistory = true
 
-  * rest.resource[13].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[13].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[13].searchRevInclude = "Provenance"
   * rest.resource[13].searchParam.name = "_id"
-  * rest.resource[13].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[13].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // MedicationRequest
   * rest.resource[14].type = http://hl7.org/fhir/resource-types#MedicationRequest
@@ -245,11 +245,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[14].interaction[4].code = #history-type
   * rest.resource[14].readHistory = true
 
-  * rest.resource[14].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[14].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[14].searchRevInclude = "Provenance"
   * rest.resource[14].searchParam.name = "_id"
-  * rest.resource[14].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[14].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Organization
   * rest.resource[15].supportedProfile = $USCoreOrganization
@@ -261,11 +261,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[15].interaction[4].code = #history-type
   * rest.resource[15].readHistory = true
 
-  * rest.resource[15].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[15].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[15].searchRevInclude = "Provenance"
   * rest.resource[15].searchParam.name = "_id"
-  * rest.resource[15].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[15].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Patient
   * rest.resource[16].supportedProfile = $USCorePatient
@@ -277,11 +277,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[16].interaction[4].code = #history-type
   * rest.resource[16].readHistory = true
 
-  * rest.resource[16].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[16].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[16].searchRevInclude = "Provenance"
   * rest.resource[16].searchParam.name = "_id"
-  * rest.resource[16].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[16].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
   * rest.resource[16].operation.name = "member-match"
   * rest.resource[16].operation.definition = $HrexOperationMemberMatch
@@ -301,11 +301,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[17].interaction[4].code = #history-type
   * rest.resource[17].readHistory = true
 
-  * rest.resource[17].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[17].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[17].searchRevInclude = "Provenance"
   * rest.resource[17].searchParam.name = "_id"
-  * rest.resource[17].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[17].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Practitioner
   * rest.resource[18].supportedProfile = $USCorePractitioner
@@ -317,11 +317,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[18].interaction[4].code = #history-type
   * rest.resource[18].readHistory = true
 
-  * rest.resource[18].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[18].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[18].searchRevInclude = "Provenance"
   * rest.resource[18].searchParam.name = "_id"
-  * rest.resource[18].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[18].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // PractitionerRole
   * rest.resource[19].supportedProfile = $USCorePractitionerRole
@@ -333,11 +333,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[19].interaction[4].code = #history-type
   * rest.resource[19].readHistory = true
 
-  * rest.resource[19].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[19].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[19].searchRevInclude = "Provenance"
   * rest.resource[19].searchParam.name = "_id"
-  * rest.resource[19].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[19].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Procedure
   * rest.resource[20].supportedProfile = $USCoreProcedure
@@ -349,11 +349,11 @@ Description: "Payer Data Exchange Server Capability Statement"
   * rest.resource[20].interaction[4].code = #history-type
   * rest.resource[20].readHistory = true
 
-  * rest.resource[20].referencePolicy = http://hl7.org/fhir/ValueSet/reference-handling-policy#resolves
+  * rest.resource[20].referencePolicy = http://hl7.org/fhir/reference-handling-policy#resolves
 
   * rest.resource[20].searchRevInclude = "Provenance"
   * rest.resource[20].searchParam.name = "_id"
-  * rest.resource[20].searchParam.type = http://hl7.org/fhir/ValueSet/search-param-type#string
+  * rest.resource[20].searchParam.type = http://hl7.org/fhir/search-param-type#string
 
 // Provenance
   * rest.resource[21].supportedProfile[0] = $PdexProvenance

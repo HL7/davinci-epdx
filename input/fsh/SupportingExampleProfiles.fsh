@@ -9,13 +9,13 @@ Usage: #example
   * active = true
   * name[0].family = "Appleseed"
   * name[0].given[0] = "Johnny"
-  * telecom[0].system = http://hl7.org/fhir/ValueSet/contact-point-system#phone
+  * telecom[0].system = http://hl7.org/fhir/contact-point-system#phone
   * telecom[0].value = "(443)555-1212"
   * telecom[0].rank = 1
-  * telecom[0].system = http://hl7.org/fhir/ValueSet/contact-point-system#phone
-  * telecom[0].value = "(410)678-2323"
-  * telecom[0].rank = 2
-  * gender = http://hl7.org/fhir/ValueSet/administrative-gender#male
+  * telecom[1].system = http://hl7.org/fhir/contact-point-system#phone
+  * telecom[1].value = "(410)678-2323"
+  * telecom[1].rank = 2
+  * gender = http://hl7.org/fhir/administrative-gender#male
   * birthDate = "1986-01-01"
   * address[0].type = http://hl7.org/fhir/address-type#physical
   * address[0].line[0] = "123 Main Street"
@@ -78,9 +78,9 @@ Description: "Example of a Practitioner Record"
   * name[0].family = "Smith"
   * name[0].given[0] = "Susan"
   * name[0].suffix = "MD"
-  * telecom[0].system =  #phone
+  * telecom[0].system =  http://hl7.org/fhir/contact-point-system#phone
   * telecom[0].value = "3015551234"
-  * gender = http://hl7.org/fhir/ValueSet/administrative-gender#female
+  * gender = http://hl7.org/fhir/administrative-gender#female
   * birthDate = "1965-11-15"
 
 Instance: ExampleLocation

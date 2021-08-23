@@ -6,8 +6,6 @@ Description:    "Provenance is provided by the payer to identify the source of t
 
 * insert PdexStructureDefinitionContent
 
-* recorded 1..1
-* recorded ^short = "Date/Time information was received by Payer"
 // * agent.type 1..1
 // * agent.type from http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType
 
