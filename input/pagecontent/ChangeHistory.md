@@ -1,8 +1,8 @@
 
 {% include style_insert_table_blue.html %}
 
-## STU Update 1.0.1
-The following changes were applied in the STU 1.0.1 update:
+## STU Update 1.1.0
+The following changes were applied in the STU 1.1.0 update:
 
 | JIRA Ticket | Change         |
 |------------|-----------------|

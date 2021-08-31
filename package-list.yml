@@ -46,13 +46,21 @@ list:
     path: http://build.fhir.org/ig/HL7/davinci-epdx
     status: ci-build
     current: true
-  - version: 1.0.1
-    date: "2021-08-22"
-    desc: 'HL7 FHIR® Implementation Guide: Payer Data Exchange (PDex), Release 1.0.1 - US Realm.'
+  - version: 1.1.0
+    date: "2021-08-30"
+    desc: 'HL7 FHIR® Implementation Guide: Payer Data Exchange (PDex), Release 1.1.0 - US Realm.'
     path: http://hl7.org/fhir/us/davinci-pdex/2021Aug
     status: trial-use
     sequence: STU1
     fhirversion: 4.0.1
+    descmd: >-
+    The following changes were applied in the STU 1.1.0 update:
+
+    | JIRA Ticket | Change         |
+    |------------|-----------------|
+    |[FHIR-33141](https://jira.hl7.org/browse/FHIR-33141)|Revert [PDex Provenance](StructureDefinition-pdex-provenance.html) Recorded definition to the US Core Provenance version |
+    |[FHIR-33173](https://jira.hl7.org/browse/FHIR-33173)|Add clarification to use of [$everything operation](PDexImplementationActorsInteractionsDataPayloadsandMethods.html#patient-everything-via-alternate-secure-transport)|
+    |[FHIR-33216](https://jira.hl7.org/browse/FHIR-33216)|Add guidance for use of Consent resource in [$member-match operation](PayerToPayerExchange.html#operation-member-match-on-patient)|
 
   - version: 1.0.0
     date: "2020-11-02"
