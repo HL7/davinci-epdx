@@ -7,7 +7,9 @@ Notes:
 
 ### Operation $member-match on Patient
 
-Find Member using Patient and Coverage Resources
+Find Member using Patient and Coverage Resources. 
+
+It is recognized that the $member-match function is an operation that can be the pre-cursor to many different data exchange use cases between Payers and other with other organizations, such as providers. Consequently the $member-match operation has been moved to the HL7 Da Vinci Health Record Exchange (HRex) Implementation Guide. This IG references the $member-match operation and associated operations as defined in the HRex IG. Please refer to the [Authorization with Consent section](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html)) of the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx/index.html) for full details. 
 
 OPERATION: Find member using search driven by member patient and coverage information.
 
@@ -27,17 +29,15 @@ The Health Plan should add the unique member identifier to the received Patient 
 The Old Health Plan should return the following data:
 
 - The unique member identifier added to the Patient.identifier in the Patient resource submitted by the new health plan.
-- The new health plan coverage resource.
+- (Optional) The new health plan coverage resource.
 
-Only one Patient and one Coverage record are returned.
+Only one Patient and (optionally) one Coverage record are returned.
 
 Reference Implementation Information: [Member-Match Reference Implementation](https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation)
 
-The $member-match operation is being used by multiple Da Vinci IGs and consequently has been moved to the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep)
+A Consent Resource **SHOULD** be provided as part of a $member-access transaction sent to the prior Payer. The resource is profiled in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep). The consent resource identifies the categories of data to be exchanged with the member's permission. There are two categories of data that can be exchanged:
 
-A Consent Resource **SHOULD** be provided as part of the transaction data sent to the prior Payer. The resource is profiled in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep). The consent resource identifies the categories of data to be exchanged with the member's permission. There are two categories of data that can be exchanged:
-
-1. Everything: All data with no restricitons.
+1. Everything: All data with no restrictions.
 2. Non-Additionally protected data classes. 
 
 The CMS Interoperability Rule defines a set of data that  can be excluded from data sharing. The restricted data classes are defined as:
@@ -52,6 +52,7 @@ In situations where a data holder is unable to segregate data into the two data 
 
 Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.
 
+Interactions between Payers **SHALL** be conducted under mutually authenticated TLS. These interactions will also leverage the [HL7 UDAP B2B](http://hl7.org/fhir/us/udap-securityb2b.html) specification.
 
 ### Operation $member-match:
 
