@@ -12,7 +12,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
-version: 1.1.0
+version: 2.0.0
 name: DaVinciPayerDataExchange
 title: Da Vinci Payer Data Exchange
 status: draft
@@ -31,13 +31,13 @@ description: "This specification is currently undergoing ballot and connectathon
 license: CC0-1.0
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core: 3.1.1
+  hl7.fhir.us.core: 4.0.0
   hl7.fhir.us.davinci-hrex: 0.2.0
 parameters:
   show-inherited-invariants: false
   path-expansion-params: ../../input/expansion-params.json
 copyrightYear: 2020+
-releaseLabel: STU1
+releaseLabel: STU2
 jurisdiction: urn:iso:std:iso:3166#US
 category: Financial
 
@@ -78,6 +78,9 @@ pages:
         title: US Core DocumentReference
       USCoreEncounter.md:
         title: US Core Encounter
+      # StructureDefinition-pdex-explanationofbenefit.html:
+      PDexExplanationOfBenefit.md:
+        title: PDex ExplanationOfBenefit
       USCoreGoal.md:
         title: US Core Goal
       USCoreImmunization.md:

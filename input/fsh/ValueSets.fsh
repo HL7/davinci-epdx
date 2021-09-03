@@ -39,3 +39,15 @@ Users should note a few important items
 //
 * codes from system $FDANationalDrugCodeCS
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+ValueSet: PriorAuthorizationAmounts
+Title: "Prior Authorization value categories"
+Description: "Codes to define Prior Authorization requested, agreed and utilized amounts."
+* codes from system PriorAuthorizationValueCodes
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+// ValueSet: ProcessPriority
+// Title: "Value Set used to assign a priority for the issue"
+// Description: "Codes to define the priorty to be applied to the issue"
+// * codes from system $ProcessPriority
+// * ^jurisdiction.coding = urn:iso:std:iso:3166#US

@@ -51,4 +51,6 @@ Alias: $SnomedCT = http://snomed.info/sct|http://snomed.info/sct/731000124108
 // PDex Base
 Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
 
+// EOB
+Alias: $Process-Priority = http://hl7.org/fhir/ValueSet/process-priority
 

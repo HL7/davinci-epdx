@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data Exchange",
   "status": "draft",
@@ -46,7 +46,7 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.us.core",
-      "version": "3.1.1",
+      "version": "4.0.0",
       "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
       "id": "hl7_fhir_us_core"
     },
@@ -77,6 +77,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/pdex-explanationofbenefit"
+        },
+        "name": "PDex Explanation of Benefit",
+        "description": "The PDex ExplanationOfBenefit (EOB) profile is provided to enable payers to express Prior Authorization information to members",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/pdex-medicationdispense"
         },
         "name": "PDex MedicationDispense",
@@ -101,6 +109,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/PriorAuthorizationUtilization"
+        },
+        "name": "An attribute to express the amount of a service or item that has been utilized",
+        "description": "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ProvenanceSourceFrom"
         },
         "name": "An attribute to describe the data source a resource was constructed from",
@@ -113,6 +129,14 @@
         },
         "name": "FDA National Drug Code (NDC)",
         "description": "The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. § 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.\n\nThe information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.\n\nUsers should note:\n\nStarting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.\n\nInformation regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)\n\nUsers should note a few important items\n\n*   The NDC Directory is updated daily.\n*   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.\n*   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PriorAuthorizationAmounts"
+        },
+        "name": "Prior Authorization value categories",
+        "description": "Codes to define Prior Authorization requested, agreed and utilized amounts.",
         "exampleBoolean": false
       },
       {
@@ -137,6 +161,14 @@
         },
         "name": "Identifier Type",
         "description": "Identifier Type",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PriorAuthorizationValueCodes"
+        },
+        "name": "Prior Authorization Values",
+        "description": "Codes used to define Prior Authorization categories",
         "exampleBoolean": false
       },
       {
@@ -439,6 +471,11 @@
                   "generation": "markdown"
                 },
                 {
+                  "nameUrl": "PDexExplanationOfBenefit.html",
+                  "title": "PDex ExplanationOfBenefit",
+                  "generation": "markdown"
+                },
+                {
                   "nameUrl": "USCoreGoal.html",
                   "title": "US Core Goal",
                   "generation": "markdown"
@@ -598,7 +635,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU1"
+        "value": "STU2"
       },
       {
         "code": "show-inherited-invariants",

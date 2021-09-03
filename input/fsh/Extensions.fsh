@@ -36,3 +36,11 @@ Description: "Attribute that identifies the refill number of a prescription. e.g
 // * extension[refillNum].valueSimpleQuantity only SimpleQuantity
 
 
+Extension: PriorAuthorizationUtilization
+Title: "An attribute to express the amount of a service or item that has been utilized"
+Description: "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization."
+* insert PdexStructureDefinitionContent
+
+* value[x] ^short = "Amount/Quantity of an item or service that has been consumed/utilized"
+* value[x] only Quantity or Ratio
+

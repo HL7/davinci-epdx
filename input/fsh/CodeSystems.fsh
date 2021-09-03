@@ -59,3 +59,13 @@ Description: "Identifier Type"
 * #um "Unique Member ID" "Unique Member ID"
 * #cn "Claim Number" "Claim Number"
 
+
+
+CodeSystem: PriorAuthorizationValueCodes
+Title: "Prior Authorization Values"
+Description: "Codes used to define Prior Authorization categories"
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* #submitted "Submitted" "Proposed amounts of units or services"
+* #eligible "Eligible" "Eligible/agreed items or services"
+* #utilized "Utilized" "Amount of items or services consumed to date"
+
