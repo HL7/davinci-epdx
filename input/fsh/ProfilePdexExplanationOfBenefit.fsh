@@ -26,6 +26,39 @@ Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enab
 
 * item.encounter only Reference(us-core-encounter)
 
+// Added from CARIN bb EOBInpatientProfile.fsh
+
+* item.productOrService from C4BBEOBInstitutionalProcedureCodes (required)
+* insert EOBHeaderItemAdjudicationInvariant
+* insert ItemAdjudicationInvariant
+* insert ItemAdjudicationSlicing
+* item.adjudication contains
+adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
+allowedunits 0..1 MS and
+consumedunits 0..1 MS
+* item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits
+* item.adjudication[allowedunits].value only decimal
+// FHIR-30807 - Change cardinality in EOB Inpatient and Outpatient Institutional Profiles
+* item.adjudication[allowedunits].value 1..1 MS
+* item.adjudication[adjudicationamounttype].category from C4BBAdjudication
+* item.adjudication[adjudicationamounttype].amount MS
+* item.adjudication[adjudicationamounttype].amount 1..1
+* item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits
+* item.adjudication[consumedunits].value only decimal
+* item.adjudication[consumedunits].value 1..1 MS
+
+* insert AdjudicationInvariant
+* insert AdjudicationSlicing
+* adjudication MS
+* item.adjudication  MS
+* adjudication contains
+adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
+denialreason 0..* MS
+* adjudication[adjudicationamounttype].category from C4BBAdjudication  (required)
+* adjudication[adjudicationamounttype].amount 1..1
+
+// End of addition from EOBInpatientProfile.fsh
+
 * addItem.provider only Reference(us-core-practitioner or us-core-practitionerrole or us-core-organization)
 
 * total.category 1..1 MS

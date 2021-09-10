@@ -51,3 +51,42 @@ Description: "Codes to define Prior Authorization requested, agreed and utilized
 // Description: "Codes to define the priorty to be applied to the issue"
 // * codes from system $ProcessPriority
 // * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+
+ValueSet: C4BBAdjudication
+Title: "C4BB Adjudication"
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
+* $HL7AdjudicationCS#submitted
+* $HL7AdjudicationCS#copay
+* $HL7AdjudicationCS#eligible
+* $HL7AdjudicationCS#deductible
+* $HL7AdjudicationCS#benefit
+* C4BBAdjudication#coinsurance "Coinsurance"
+* C4BBAdjudication#noncovered "Noncovered"
+* C4BBAdjudication#priorpayerpaid "Prior payer paid"
+* C4BBAdjudication#paidbypatient "Paid by patient"
+* C4BBAdjudication#paidtopatient "Paid to patient"
+* C4BBAdjudication#paidtoprovider "Paid to provider"
+* C4BBAdjudication#memberliability "Member liability"
+* C4BBAdjudication#discount "Discount"
+* C4BBAdjudication#drugcost "Drug cost"
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PDexAdjudicationCategoryDiscriminator
+Title: "PDex Adjudication Category Discriminator"
+Description: "Used as the discriminator for adjudication.category and item.adjudication.category for the CARIN IG for Blue Button®"
+* codes from valueset C4BBAdjudication
+// 20210127 CAS: Added to resolve the issue where this "all slices" discriminator (category) required ValueSet did not include a valueset reuuired for the required benefitpaymentstatus slice discriminator
+* codes from valueset C4BBPayerBenefitPaymentStatus
+* codes from system PDexAdjudicationDiscriminator
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: C4BBPayerBenefitPaymentStatus
+Title: "C4BB Payer Benefit Payment Status"
+Description: "Indicates the in network or out of network payment status of the claim."
+* C4BBPayerAdjudicationStatus#innetwork	"In Network"
+* C4BBPayerAdjudicationStatus#outofnetwork "Out Of Network"
+* C4BBPayerAdjudicationStatus#other "Other"
+* ^copyright = "This Valueset is not copyrighted."
+

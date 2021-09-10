@@ -54,3 +54,6 @@ Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
 // EOB
 Alias: $Process-Priority = http://hl7.org/fhir/ValueSet/process-priority
 
+Alias:   $CPT = http://www.ama-assn.org/go/cpt
+Alias:   $HL7AdjudicationCS = 	http://terminology.hl7.org/CodeSystem/adjudication
+Alias:   $HL7DataAbsentReason = http://terminology.hl7.org/CodeSystem/data-absent-reason
