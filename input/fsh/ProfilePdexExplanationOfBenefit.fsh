@@ -19,6 +19,10 @@ Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enab
 * facility  0..1 MS
 * facility only Reference(us-core-location)
 
+* preAuthRefPeriod	0..1 MS
+* preAuthRefPeriod  only Period
+* preAuthRefPeriod  ^comment = "Prior Authorization in-effect period"
+
 * careTeam.provider 1..1 MS
 * careTeam.provider only Reference(us-core-practitioner or us-core-practitionerrole or us-core-organization)
 
