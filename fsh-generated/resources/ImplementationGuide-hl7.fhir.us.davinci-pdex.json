@@ -189,6 +189,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"
+        },
+        "name": "X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nThe X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.\n\nRemittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.\n\nEach RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/C4BBAdjudication"
         },
         "name": "C4BB Adjudication",
@@ -217,6 +225,14 @@
         },
         "name": "Health Insurance Prospective Payment System (HIPPS)",
         "description": "Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets\nof patient characteristics (or case-mix groups) health insurers use to make payment\ndeterminations under several prospective payment systems. Case-mix groups are\ndeveloped based on research into utilization patterns among various provider types. For\nthe payment systems that use HIPPS codes, clinical assessment data is the basic input. A\nstandard patient assessment instrument is interpreted by case-mix grouping software\nalgorithms, which assign the case mix group. For payment purposes, at least one HIPPS\ncode is defined to represent each case-mix group. These HIPPS codes are reported on\nclaims to insurers.\nInstitutional providers use HIPPS codes on claims in association with special revenue\ncodes. One revenue code is defined for each prospective payment system that requires\nHIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837\ninstitutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44\n(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in\ndata element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may\nappear on separate lines of a single claim.\n\nHIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,\nwith certain positions of the code indicating the case mix group itself, and other positions\nproviding additional information. The additional information varies among HIPPS codes\npertaining to different payment systems, but often provides information about the clinical\nassessment used to arrive at the code. Which positions of the code carry the case mix\ngroup information may also vary by payment systems.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/CMSRemittanceAdviceRemarkCodes"
+        },
+        "name": "X12 Remittance Advice Remark Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nRemittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.\n\nEach RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer, including the RARC codes. Can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
         "exampleBoolean": false
       },
       {
@@ -257,6 +273,14 @@
         },
         "name": "Provenance Payer Data Source Format",
         "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/X12ClaimAdjustmentReasonCodes"
+        },
+        "name": "X12 Claim Adjustment Reason Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nThe X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
         "exampleBoolean": false
       },
       {

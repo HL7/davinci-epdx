@@ -1,4 +1,20 @@
 // CodeSystems
+RuleSet: CodeSystemStubBoilerplate
+* ^publisher = "HL7 International - Financial Management Work Group"
+* ^contact[0].name = "HL7 International - Financial Management Work Group"
+* ^contact[0].telecom[0].system = #url
+* ^contact[0].telecom[0].value = "http://hl7.org/Special/committees/fm"
+* ^contact[0].telecom[1].system = #email
+* ^contact[0].telecom[1].value = "fmlists@lists.hl7.org"
+* ^contact[1].name = "Jean Duteau"
+* ^contact[1].telecom[0].system = #email
+* ^contact[1].telecom[0].value = "mailto:jean@duteaudesign.com"
+* ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* ^jurisdiction[0].coding[0].code = #US
+* ^jurisdiction[0].coding[0].display = "United States of America"
+* ^content = #not-present
+
+
 
 ValueSet: C4BBEOBInstitutionalProcedureCodes
 // 20210215 CAS: FHIR-31074 - Please shorten the titles for the IP, OP, and Professional Procedure code and modifiers ValueSets
@@ -114,3 +130,110 @@ group information may also vary by payment systems."
 RuleSet: HIPPSCopyrightNotice
 * ^copyright = "CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)"
 
+ValueSet: X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
+Title: "X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"
+Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+
+The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.
+
+Remittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.
+
+Each RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.
+
+External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:
+
+[https://x12.org/codes](https://x12.org/codes)
+
+Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
+* codes from system X12ClaimAdjustmentReasonCodes
+* codes from system CMSRemittanceAdviceRemarkCodes
+* ^copyright = "**Intellectual Property Information**
+
+  All X12 products are subject to this IP policy, including published and draft works.
+
+  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+
+Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
+
+  **Licensing Information**
+
+  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
+
+Additional information on X12 licensing program can be found here:
+
+  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
+
+  **Purchasing Information:**
+
+  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com
+
+  The Centers for Medicare & Medicaid Services (CMS) maintain Remittance Advice Remark Codes (RARC) used throughout the US health care industry."
+
+CodeSystem: X12ClaimAdjustmentReasonCodes
+Title: "X12 Claim Adjustment Reason Codes"
+Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+
+The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.
+
+External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:
+
+[https://x12.org/codes](https://x12.org/codes)
+
+Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
+* ^url = "https://x12.org/codes/claim-adjustment-reason-codes"
+* insert CodeSystemStubBoilerplate
+* ^copyright = "**Intellectual Property Information**
+
+  All X12 products are subject to this IP policy, including published and draft works.
+
+  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+
+Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
+
+  **Licensing Information**
+
+  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
+
+Additional information on X12 licensing program can be found here:
+
+  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
+
+  **Purchasing Information:**
+
+  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."
+
+
+CodeSystem: CMSRemittanceAdviceRemarkCodes
+Title: "X12 Remittance Advice Remark Codes"
+Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+
+Remittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.
+
+Each RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.
+
+External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer, including the RARC codes. Can be found here:
+
+[https://x12.org/codes](https://x12.org/codes)
+
+Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
+* ^url = "https://x12.org/codes/remittance-advice-remark-codes"
+* insert CodeSystemStubBoilerplate
+* ^copyright = "**Intellectual Property Information**
+
+  All X12 products are subject to this IP policy, including published and draft works.
+
+  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+
+Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
+
+  **Licensing Information**
+
+  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
+
+Additional information on X12 licensing program can be found here:
+
+  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
+
+  **Purchasing Information:**
+
+  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."

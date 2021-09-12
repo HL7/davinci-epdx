@@ -35,10 +35,13 @@ Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enab
 * item.adjudication contains
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 allowedunits 0..1 MS and
+denialreason 0..* MS and
 consumedunits 0..1 MS
+* item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason
+* item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
+* item.adjudication[denialreason].reason 1..1 MS
 * item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits
 * item.adjudication[allowedunits].value only decimal
-// FHIR-30807 - Change cardinality in EOB Inpatient and Outpatient Institutional Profiles
 * item.adjudication[allowedunits].value 1..1 MS
 * item.adjudication[adjudicationamounttype].category from C4BBAdjudication
 * item.adjudication[adjudicationamounttype].amount MS
