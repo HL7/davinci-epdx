@@ -12,4 +12,4 @@ Description: "Example of a Coverage for a Member"
 * status = http://hl7.org/fhir/fm-status#active
 * subscriberId = "97531"
 * beneficiary.reference = "Patient/1"
-* payor.reference = "Organization/2"
+* payor.reference = "Organization/Payer1"

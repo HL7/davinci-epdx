@@ -9,3 +9,4 @@ The following changes were applied in the STU 1.1.0 update:
 |[FHIR-33141](https://jira.hl7.org/browse/FHIR-33141)|Revert [PDex Provenance](StructureDefinition-pdex-provenance.html) Recorded definition to the US Core Provenance version |
 |[FHIR-33173](https://jira.hl7.org/browse/FHIR-33173)|Add clarification to use of [$everything operation](PDexImplementationActorsInteractionsDataPayloadsandMethods.html#patient-everything-via-alternate-secure-transport)|
 |[FHIR-33216](https://jira.hl7.org/browse/FHIR-33216)|Add guidance for use of Consent resource in [$member-match operation](PayerToPayerExchange.html#operation-member-match-on-patient)|
+| [FHIR-33713](https://jira.hl7.org/browse/FHIR-33713)| Add [Provenance custodian](Provenance-1000101.html) record for receipt of member data from prior payer|

@@ -1,8 +1,47 @@
 Instance: Patient1
 InstanceOf: us-core-patient
-Description: "Example of a US Core Patient Record"
+Description: "Example of a US Core Patient Record for Payer 1"
 Usage: #example
 * id = "1"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* name[0].family = "Appleseed"
+* name[0].given[0] = "Johnny"
+* telecom[0].system = http://hl7.org/fhir/contact-point-system#phone
+* telecom[0].value = "(443)555-1212"
+* telecom[0].rank = 1
+* telecom[1].system = http://hl7.org/fhir/contact-point-system#phone
+* telecom[1].value = "(410)678-2323"
+* telecom[1].rank = 2
+* gender = http://hl7.org/fhir/administrative-gender#male
+* birthDate = "1986-01-01"
+* address[0].type = http://hl7.org/fhir/address-type#physical
+* address[0].line[0] = "123 Main Street"
+* address[0].city = "Pittsburgh"
+* address[0].state = "PA"
+* address[0].postalCode = "12519"
+* maritalStatus = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+* identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MB
+* identifier[0].value = "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901"
+* identifier[0].system = "https://www.xxxhealthplan.com/fhir/memberidentifier"
+* identifier[1].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR
+* identifier[1].value = "1234-234-1243-12345678901m"
+* identifier[1].system = "https://www.xxxhealthplan.com/fhir/medicalrecordnumber"
+* identifier[2].type = http://terminology.hl7.org/CodeSystem/v2-0203#XV
+* identifier[2].value = "1234-234-1243-12345678901u"
+* identifier[2].system = "https://www.xxxhealthplan.com/fhir/uniquememberidentifier"
+* identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
+* identifier[3].value = "1234-234-1243-12345678901a"
+* identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
+
+
+Instance: Patient100
+InstanceOf: us-core-patient
+Description: "Example of a US Core Patient Record for Payer 2"
+Usage: #example
+* id = "100"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
@@ -36,12 +75,11 @@ Usage: #example
 * identifier[3].value = "1234-234-1243-12345678901a"
 * identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
 
-
 Instance: OrganizationPayer1
 InstanceOf: us-core-organization
 Description: "Example of the Payer Organization"
 Usage: #example
-* id = "2"
+* id = "Payer1"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
@@ -55,7 +93,7 @@ Instance: OrganizationProvider1
 InstanceOf: us-core-organization
 Description: "Provider Organization Example 1"
 Usage: #example
-* id = "3"
+* id = "ProviderOrg1"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
@@ -63,6 +101,20 @@ Usage: #example
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "345678"
 * name = "Provider 1"
+* active = true
+
+Instance: OrganizationProvider2
+InstanceOf: us-core-organization
+Description: "Provider Organization Example 1"
+Usage: #example
+* id = "ProviderOrg2"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+* meta.lastUpdated = "2019-12-12T09:14:11+00:00"
+* language = #en-US
+* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[0].value = "345679"
+* name = "Provider 2"
 * active = true
 
 
@@ -94,10 +146,10 @@ Description: "Example of a Pharmacy Location Record"
 
 Instance: ExampleEncounter1
 InstanceOf: us-core-encounter
-Description: "Example of an Encounter that has a provenance record"
+Description: "Example of an Encounter that has a provenance record received by Payer 1"
 * id = "6"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
-* meta.lastUpdated = "2020-07-14T19:26:23.217+00:00"
+* meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * type =  $SnomedCT#11429006 "Consultation"
@@ -106,14 +158,26 @@ Description: "Example of an Encounter that has a provenance record"
 
 Instance: ExampleEncounter2
 InstanceOf: us-core-encounter
-Description: "Example of an Encounter that has a provenance record"
+Description: "Example of an Encounter that has a provenance record received by Payer 1"
 * id = "7"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
+* status = http://hl7.org/fhir/encounter-status#finished "Finished"
+* class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
+* type =  $SnomedCT#308335008 "Patient encounter procedure"
+* subject.reference = "Patient/1"
+
+
+Instance: ExampleEncounter3
+InstanceOf: us-core-encounter
+Description: "Example of an Encounter that has a provenance record received by Payer 2"
+* id = "8"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * meta.lastUpdated = "2020-07-15T20:26:23.217+00:00"
 * status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * type =  $SnomedCT#308335008 "Patient encounter procedure"
-* subject.reference = "Patient/1"
+* subject.reference = "Patient/100"
 
 
 Instance: ExampleBundle1

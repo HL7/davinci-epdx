@@ -135,7 +135,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
                             "system": "http://oldhealthplan.example.com",
                             "value": "55678",
                             "assigner": {
-                                "reference": "Organization/2",
+                                "reference": "Organization/Payer1",
                                 "_reference": {
                                     "fhir_comments": [
                                         "MB is passed from coverage card by new health plan."
@@ -170,7 +170,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
                     "contained": [
                         {
                             "resourceType": "Organization",
-                            "id": "Organization/2",
+                            "id": "Organization/Payer1",
                             "name": "Old Health Plan",
                             "endpoint": [
                                 {
@@ -195,7 +195,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
                     },
                     "payor": [
                         {
-                            "reference": "#Organization/2"
+                            "reference": "#Organization/Payer1"
                         }
                     ],
                     "class": [
@@ -254,7 +254,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
               "contained": [
                   {
                     "resourceType" : "Organization",
-                    "id" : "Organization/3",
+                    "id" : "Organization/ProviderOrg1",
                     "name" : "New Health Plan",
                     "endpoint" : [
                       {
@@ -279,7 +279,7 @@ $member-match accepts a POST with the Parameters json bundle in the body.
               },
               "payor": [
                 {
-                  "reference": "#Organization/3"
+                  "reference": "#Organization/ProviderOrg1"
                 }
               ],
               "class": [
@@ -370,7 +370,7 @@ Parameter Response Example
                 "system": "http://oldhealthplan.example.com",
                 "value": "55678",
                 "assigner": {
-                  "reference": "Organization/2",
+                  "reference": "Organization/Payer1",
                   "_reference": {
                     "fhir_comments": [
                       "MB is passed from coverage card by new health plan."
@@ -417,7 +417,7 @@ Parameter Response Example
             "contained": [
               {
                 "resourceType": "Organization",
-                "id": "Organization/3",
+                "id": "Organization/ProviderOrg1",
                 "name": "New Health Plan",
                 "endpoint": [
                   {
@@ -442,7 +442,7 @@ Parameter Response Example
             },
             "payor": [
               {
-                "reference": "#Organization/3"
+                "reference": "#Organization/ProviderOrg1"
               }
             ],
             "class": [
