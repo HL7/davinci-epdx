@@ -160,7 +160,39 @@
           "reference": "Patient/1"
         },
         "name": "Patient1",
-        "description": "Example of a US Core Patient Record",
+        "description": "Example of a US Core Patient Record for Payer 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/100"
+        },
+        "name": "Patient100",
+        "description": "Example of a US Core Patient Record for Payer 2",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/1000000-1"
+        },
+        "name": "BundleExamplePayer1",
+        "description": "The bundle pulled from Payer1 by Payer 2 when a member switches to Payer 2. Patient, 2 Encounters and 2 Provenance records.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/1000000-2"
+        },
+        "name": "BundleExamplePayer2",
+        "description": "The bundle pulled from Payer2 by Payer 3 when a member switches to Payer 3. Patient, 2 Encounters and 2 Provenance records plus new records from Payer 2.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/1000000-3"
+        },
+        "name": "BundleExamplePayer3",
+        "description": "The bundle pulled from Payer3 by Payer 4 when a member switches to Payer 4. Patient, 2 Encounters and 2 Provenance records originating from Payer 1 plus new records from Payer 2 and Payer 3, including supporting Provenance records.",
         "exampleBoolean": true
       },
       {
@@ -183,7 +215,7 @@
         "reference": {
           "reference": "Provenance/1000002"
         },
-        "name": "ExampleProvenanceAuthor",
+        "name": "ExampleProvenanceAuthorEncounter6",
         "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
       },
@@ -191,13 +223,21 @@
         "reference": {
           "reference": "Provenance/1000003"
         },
+        "name": "ExampleProvenanceAuthorEncounter7",
+        "description": "Example of an author Provenance record displaying a practitioner's organization as the author",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "reference": {
+          "reference": "Provenance/1000004"
+        },
         "name": "ExampleProvenanceSoloPractitioner",
         "description": "Example of an author Provenance record displaying a sole practitioner as the author",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
       },
       {
         "reference": {
-          "reference": "Provenance/1000004"
+          "reference": "Provenance/1000005"
         },
         "name": "ExampleProvenancePayerSource",
         "description": "Example of an payer being the source of the data",
@@ -205,7 +245,7 @@
       },
       {
         "reference": {
-          "reference": "Provenance/1000005"
+          "reference": "Provenance/1000006"
         },
         "name": "ExampleProvenancePayerModified",
         "description": "Example of provenance based on security group recommendations",
@@ -213,7 +253,7 @@
       },
       {
         "reference": {
-          "reference": "Provenance/1000006"
+          "reference": "Provenance/1000016"
         },
         "name": "ExampleDocRefProvenance",
         "description": "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource.",
@@ -229,18 +269,18 @@
       },
       {
         "reference": {
+          "reference": "Provenance/1000101"
+        },
+        "name": "ExampleProvenanceCustodian",
+        "description": "Example of a Custodian Provenance record for the contents of a bundle received from another payer",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+      },
+      {
+        "reference": {
           "reference": "DocumentReference/123456"
         },
         "name": "ExampleDocumentReference",
         "description": "Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded.",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Organization/2"
-        },
-        "name": "OrganizationPayer1",
-        "description": "Example of the Payer Organization",
         "exampleBoolean": true
       },
       {
@@ -253,18 +293,18 @@
       },
       {
         "reference": {
-          "reference": "Organization/3"
-        },
-        "name": "OrganizationProvider1",
-        "description": "Provider Organization Example 1",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "Bundle/3000002"
         },
         "name": "BundleWithProvenance",
         "description": "A bundle that returns provenance using _revinclude=Provenance:target",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/3000003"
+        },
+        "name": "BundleConditionWithProvenance",
+        "description": "A bundle that returns Conditions with provenance using _revinclude=Provenance:target",
         "exampleBoolean": true
       },
       {
@@ -296,7 +336,7 @@
           "reference": "Encounter/6"
         },
         "name": "ExampleEncounter1",
-        "description": "Example of an Encounter that has a provenance record",
+        "description": "Example of an Encounter that has a provenance record received by Payer 1",
         "exampleBoolean": true
       },
       {
@@ -304,7 +344,15 @@
           "reference": "Encounter/7"
         },
         "name": "ExampleEncounter2",
-        "description": "Example of an Encounter that has a provenance record",
+        "description": "Example of an Encounter that has a provenance record received by Payer 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/8"
+        },
+        "name": "ExampleEncounter3",
+        "description": "Example of an Encounter that has a provenance record received by Payer 2",
         "exampleBoolean": true
       },
       {
@@ -317,10 +365,34 @@
       },
       {
         "reference": {
+          "reference": "Organization/Payer1"
+        },
+        "name": "OrganizationPayer1",
+        "description": "Example of the Payer Organization",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/PdexServerCapabilityStatement"
         },
         "name": "PdexServerCapabilityStatement",
         "description": "Payer Data Exchange Server Capability Statement",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/ProviderOrg1"
+        },
+        "name": "OrganizationProvider1",
+        "description": "Provider Organization Example 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/ProviderOrg2"
+        },
+        "name": "OrganizationProvider2",
+        "description": "Provider Organization Example 1",
         "exampleBoolean": true
       },
       {

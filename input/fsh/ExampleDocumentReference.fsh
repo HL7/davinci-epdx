@@ -10,8 +10,8 @@ Description: "Example of a US Core DocumentReference with a linked PDF document.
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject.reference = "Patient/1"
 * date = "2020-10-09T15:26:23.217+00:00"
-* author.reference = "Organization/3"
-* custodian.reference = "Organization/2"
+* author.reference = "Organization/ProviderOrg1"
+* custodian.reference = "Organization/Payer1"
 // * content[0].format = http://hl7.org/fhir/ValueSet/formatcodes#urn:ihe:iti:xds:2017:mimeTypeSufficient
 * content[0].format.system =  "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"
 * content[0].format.display = "urn:ihe:iti:xds:2017:mimeTypeSufficient"
@@ -26,13 +26,13 @@ Description: "Example of a US Core DocumentReference with a linked PDF document.
 Instance: ExampleDocRefProvenance
 InstanceOf: pdex-provenance
 Description: "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."
-* id = "1000006"
+* id = "1000016"
 * meta.versionId = "1"
 * meta.lastUpdated = "2020-10-09T15:26:23.217+00:00"
 * target[0].reference = "DocumentReference/123456"
 * recorded = "2020-10-09T15:26:23.217+00:00"
 * agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
-* agent[0].who.reference = "Organization/3"
+* agent[0].who.reference = "Organization/ProviderOrg1"
 * entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entity.what.display = "No reference available"
 * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#unstructured
