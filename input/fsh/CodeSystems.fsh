@@ -122,3 +122,5 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * #denied "Denied" "Indicates if the claim was denied"
 * #partiallypaid "Partially Paid" "Indicates that some line items on the claim were denied"
 * ^copyright = "This CodeSystem is not copyrighted."
+
+

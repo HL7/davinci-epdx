@@ -90,3 +90,15 @@ Description: "Indicates the in network or out of network payment status of the c
 * C4BBPayerAdjudicationStatus#other "Other"
 * ^copyright = "This Valueset is not copyrighted."
 
+// ValueSet: PriorAuthServiceTypeCodes
+// Title: "Prior Authorization Service Type Codes (X12)"
+// Description: "Indicates the Type of Service that a Prior Authorization is covering"
+// * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+// * codes from PdexServiceTypeCodes
+
+
+ValueSet: X12278ReviewDecisionReasonCode
+Title: "X12 278 Review Descision Reason Codes"
+Description: "Codes used to identify the reason for the health care service review outcome."
+* ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* codes from system https://codesystem.x12.org/external/886

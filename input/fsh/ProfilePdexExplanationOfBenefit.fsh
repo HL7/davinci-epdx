@@ -4,7 +4,8 @@ Id:             pdex-explanationofbenefit
 Title:          "PDex Explanation of Benefit"
 Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enable payers to express Prior Authorization information to members"
 * insert PdexStructureDefinitionContent
-
+* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
+* extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * status  1..1 MS
 * priority 0..1
 * priority from $Process-Priority (required)
@@ -28,6 +29,9 @@ Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enab
 
 * insurance.coverage only Reference(hrex-coverage)
 
+* item.category 0..1 MS
+* item.category from https://x12.org/codes/service-type-codes
+* item.category ^binding.description = "Codes identifying business groupings for health care services or benefits. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.encounter only Reference(us-core-encounter)
 
 // Added from CARIN bb EOBInpatientProfile.fsh
@@ -41,6 +45,8 @@ adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 allowedunits 0..1 MS and
 denialreason 0..* MS and
 consumedunits 0..1 MS
+* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
 * item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
