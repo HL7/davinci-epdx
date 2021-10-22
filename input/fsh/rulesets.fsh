@@ -14,20 +14,20 @@ Severity: #error
 
 
 // RuleSets
-RuleSet: CodeSystemStubBoilerplate
-* ^publisher = "HL7 International - Financial Management Work Group"
-* ^contact[0].name = "HL7 International - Financial Management Work Group"
-* ^contact[0].telecom[0].system = #url
-* ^contact[0].telecom[0].value = "http://hl7.org/Special/committees/fm"
-* ^contact[0].telecom[1].system = #email
-* ^contact[0].telecom[1].value = "fmlists@lists.hl7.org"
-* ^contact[1].name = "Jean Duteau"
-* ^contact[1].telecom[0].system = #email
-* ^contact[1].telecom[0].value = "mailto:jean@duteaudesign.com"
-* ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
-* ^jurisdiction[0].coding[0].code = #US
-* ^jurisdiction[0].coding[0].display = "United States of America"
-* ^content = #not-present
+// RuleSet: CodeSystemStubBoilerplate
+  // * ^publisher = "HL7 International - Financial Management Work Group"
+  // * ^contact[0].name = "HL7 International - Financial Management Work Group"
+  // * ^contact[0].telecom[0].system = #url
+  // * ^contact[0].telecom[0].value = "http://hl7.org/Special/committees/fm"
+  // * ^contact[0].telecom[1].system = #email
+  // * ^contact[0].telecom[1].value = "fmlists@lists.hl7.org"
+  // * ^contact[1].name = "Jean Duteau"
+  // * ^contact[1].telecom[0].system = #email
+  // * ^contact[1].telecom[0].value = "mailto:jean@duteaudesign.com"
+  // * ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+  // * ^jurisdiction[0].coding[0].code = #US
+  // * ^jurisdiction[0].coding[0].display = "United States of America"
+  // * ^content = #not-present
 
 RuleSet: ItemAdjudicationInvariant
 * item obeys adjudication-has-amount-type-slice
