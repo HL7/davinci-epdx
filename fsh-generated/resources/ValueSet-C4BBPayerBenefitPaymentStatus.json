@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "C4BBPayerBenefitPaymentStatus",
+  "id": "C4BBPayerBenefitPaymentStatus",
+  "title": "C4BB Payer Benefit Payment Status",
+  "description": "Indicates the in network or out of network payment status of the claim.",
+  "version": "2.0.0",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/C4BBPayerBenefitPaymentStatus",
+  "copyright": "This Valueset is not copyrighted.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/C4BBPayerAdjudicationStatus",
+        "concept": [
+          {
+            "code": "innetwork",
+            "display": "In Network"
+          },
+          {
+            "code": "outofnetwork",
+            "display": "Out Of Network"
+          },
+          {
+            "code": "other",
+            "display": "Other"
+          }
+        ]
+      }
+    ]
+  }
+}
