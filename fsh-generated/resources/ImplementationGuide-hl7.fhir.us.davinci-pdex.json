@@ -493,6 +493,38 @@
       },
       {
         "reference": {
+          "reference": "SearchParameter/explanationofbenefit-identifier"
+        },
+        "description": "The business/claim identifier of the Explanation of Benefit",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Identifier"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-patient"
+        },
+        "description": "The reference to the patient",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Patient"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-service-date"
+        },
+        "description": "Date of the service for the EOB. The service-date search parameter simplifies search, since a client doesn't need to know that for inpatient and outpatient institutional EOB dates they need to search by billablePeriod.period.start, for a pharmacy EOB by item.servicedDate, and for a professional and non-clinician EOB - by item.servicedPeriod.period.start.",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_ServiceDate"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-type"
+        },
+        "description": "The type of the ExplanationOfBenefit",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Type"
+      },
+      {
+        "reference": {
           "reference": "SearchParameter/pdex-medicationdispense-patient"
         },
         "description": "Returns dispensed prescriptions for a specific patient.\nNOTE: This Pdex SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain.",
