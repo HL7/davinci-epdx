@@ -124,3 +124,42 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * ^copyright = "This CodeSystem is not copyrighted."
 
 
+CodeSystem: C4BBSupportingInfoType
+Title: "C4BB Supporting Info Type"
+Description: "Claim Information Category - Used as the discriminator for supportingInfo"
+* #admissionperiod  "Admission Period" "Dates corresponding with the admission and discharge of the beneficiary to a facility"
+* #pointoforigin  "Point Of Origin"  "UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility."
+* #admtype	"Admission Type"  "UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled."
+* #billingnetworkcontractingstatus	"Billing Network Contracting Status"       "Indicates that the Billing Provider has a contract with the Payer as of the effective date of service or admission."
+* #brandgenericindicator	"Brand Generic Indicator" "NCPDP code indicating whether the plan adjudicated the claim as a brand or generic drug."
+* #clmrecvddate	"Claim Received Date" "Date the claim was received by the payer."
+* #compoundcode "Compound Code" "NCPDP code indicating whether or not the prescription is a compound."
+* #dawcode "DAW (Dispense As Written) Code" "NCPDP code indicating the prescriber's instruction regarding substitution of generic equivalents or order to dispense the specific prescribed medication."
+* #dayssupply	"Days Supply" "NCPDP value indicating the Number of days supply of medication dispensed by the pharmacy."
+* #discharge-status  "Discharge Status"   "UB-04 Discharge Status (FL-17) indicates the patient’s status as of the discharge date for a facility stay."
+* #drg	"DRG"	"DRG (Diagnosis Related Group), including the code system, the DRG version and the code value"
+* #performingnetworkcontractingstatus	"Performing Network Contracting Status" "Indicates that the Performing Provider has a contract with the Payer as of the effective date of service or admission."
+* #refillnum	"Refill Number"	  "NCPDP value indicating the number fill of the current dispensed supply (0, 1, 2, etc.)"
+* #rxorigincode	"Rx Origin Code" "NCPDP code indicating whether the prescription was transmitted as an electronic prescription, by phone, by fax, or as a written paper copy."
+* #servicefacility  "Service Facility" "The facility where the service occurred.  Examples include hospitals, nursing homes, laboratories or homeless shelters."
+* #typeofbill "Type of Bill"  "UB-04 Type of Bill (FL-04) provides specific information for payer purposes."
+* #medicalrecordnumber "Medical Record Number" "Patient Medical Record Number associated with the specific claim."
+* #patientaccountnumber "Patient Account Number" "Patient Account Number associated with the specific claim."
+* ^copyright = "This CodeSystem is not copyrighted."
+
+
+
+CodeSystem: C4BBIdentifierType
+Title: "C4BB Identifier Type"
+Description: "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
+// * #tax "Tax ID Number" "Tax ID Number"  - use the TAX code from the base codesystem
+* #npi "National Provider Identifier" "National Provider Identifier"
+//* #clia "CLIA" "CLIA"
+* #payerid "Payer ID" "Payer ID"
+* #naiccode "NAIC Code" "NAIC Code"
+//* #mb "Member ID" "Member ID" - not needed - defined in HL7
+// * #mr "Medical Record Number" "Medical Record Number" - use the MR code from the base codesystem
+* #pat "Patient Account Number" "Patient Account Number"
+* #um "Unique Member ID" "Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business"
+* #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
+* ^copyright = "This CodeSystem is not copyrighted."

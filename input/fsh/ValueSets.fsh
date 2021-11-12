@@ -102,3 +102,12 @@ Title: "X12 278 Review Descision Reason Codes"
 Description: "Codes used to identify the reason for the health care service review outcome."
 * ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * codes from system https://codesystem.x12.org/external/886
+
+
+ValueSet: C4BBSupportingInfoType
+Title: "C4BB SupportingInfo Type"
+Description: "Used as the discriminator for the types of supporting information for the CARIN IG for Blue Button� Implementation Guide."
+* codes from system C4BBSupportingInfoType
+* ^copyright = "This Valueset is not copyrighted."
+
+

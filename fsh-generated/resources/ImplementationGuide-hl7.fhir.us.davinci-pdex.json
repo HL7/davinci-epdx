@@ -173,6 +173,14 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/C4BBSupportingInfoType"
+        },
+        "name": "C4BB SupportingInfo Type",
+        "description": "Used as the discriminator for the types of supporting information for the CARIN IG for Blue Button� Implementation Guide.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/FDANationalDrugCode"
         },
         "name": "FDA National Drug Code (NDC)",
@@ -237,10 +245,26 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/C4BBIdentifierType"
+        },
+        "name": "C4BB Identifier Type",
+        "description": "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/C4BBPayerAdjudicationStatus"
         },
         "name": "C4BB Payer Adjudication Status",
         "description": "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/C4BBSupportingInfoType"
+        },
+        "name": "C4BB Supporting Info Type",
+        "description": "Claim Information Category - Used as the discriminator for supportingInfo",
         "exampleBoolean": false
       },
       {
@@ -474,6 +498,22 @@
         "name": "ExampleCoverage",
         "description": "Example of a Coverage for a Member",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
+      },
+      {
+        "reference": {
+          "reference": "Coverage/Coverage1"
+        },
+        "name": "PriorAuthCoverage",
+        "description": "Health Plan Coverage for Prior Authorization",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
+      },
+      {
+        "reference": {
+          "reference": "ExplanationOfBenefit/EOBPriorAuth1"
+        },
+        "name": "EOBPriorAuth",
+        "description": "EOB Inpatient Example1",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-explanationofbenefit"
       },
       {
         "reference": {
