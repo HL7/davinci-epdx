@@ -4,7 +4,7 @@ This guide is based on the [HL7 FHIR](http://build.fhir.org/index.html) ( http:/
 
 This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 4.0.0](https://www.hl7.org/fhir/us/core/) ( https://www.hl7.org/fhir/us/core/ ) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a venn diagram as shown below.
 
-<table><tr><td><img width="100%" height="auto" src="PDEXandUSCoreRelationship-v2.png" /></td></tr></table>
+<table><tr><td><img width="100%" height="auto" src="PDEXandUSCoreRelationship-v3.png" /></td></tr></table>
   
 Implementers of this specification therefore need to understand some basic information about these specifications, which act as building blocks for this Implementation Guide.
 
