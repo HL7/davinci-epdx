@@ -1,4 +1,4 @@
-[Previous Page - PDex ExplanationOfBenefit](StructureDefinition-pdex-explanationofbenefit.html)
+[Previous Page - PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
 
 This IG supports the full complement of US Core profiles. 
 They are supported to enable a payer to produce FHIR resources from 

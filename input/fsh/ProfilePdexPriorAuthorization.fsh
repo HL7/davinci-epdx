@@ -1,8 +1,8 @@
-Profile:        PdexExplanationOfBenefit
+Profile:        PdexPriorAuthorization
 Parent:         ExplanationOfBenefit
-Id:             pdex-explanationofbenefit
-Title:          "PDex Explanation of Benefit"
-Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enable payers to express Prior Authorization information to members"
+Id:             pdex-priorauthorization
+Title:          "PDex Prior Authorization"
+Description:    "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members"
 * insert PdexStructureDefinitionContent
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
@@ -37,9 +37,9 @@ Description:    "The PDex ExplanationOfBenefit (EOB) profile is provided to enab
 
 // Added from CARIN bb EOBInpatientProfile.fsh
 
-* item.productOrService from C4BBEOBInstitutionalProcedureCodes (required)
+* item.productOrService from PDexPAInstitutionalProcedureCodes (required)
 * insert EOBHeaderItemAdjudicationInvariant
-* insert ItemAdjudicationInvariant
+// * insert ItemAdjudicationInvariant
 * insert ItemAdjudicationSlicing
 * item.adjudication contains
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
@@ -54,7 +54,7 @@ consumedunits 0..1 MS
 * item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits
 * item.adjudication[allowedunits].value only decimal
 * item.adjudication[allowedunits].value 1..1 MS
-* item.adjudication[adjudicationamounttype].category from C4BBAdjudication
+* item.adjudication[adjudicationamounttype].category from PDexAdjudication
 * item.adjudication[adjudicationamounttype].amount MS
 * item.adjudication[adjudicationamounttype].amount 1..1
 * item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits
@@ -68,7 +68,7 @@ consumedunits 0..1 MS
 * adjudication contains
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 denialreason 0..* MS
-* adjudication[adjudicationamounttype].category from C4BBAdjudication  (required)
+* adjudication[adjudicationamounttype].category from PDexAdjudication  (required)
 * adjudication[adjudicationamounttype].amount 1..1
 
 // End of addition from EOBInpatientProfile.fsh

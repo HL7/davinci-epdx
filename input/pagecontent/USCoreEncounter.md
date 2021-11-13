@@ -114,4 +114,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - PDex ExplanationOfBenefit](StructureDefinition-pdex-explanationofbenefit.html)
+[Next Page - PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)

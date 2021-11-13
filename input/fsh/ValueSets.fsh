@@ -53,48 +53,47 @@ Description: "Codes to define Prior Authorization requested, agreed and utilized
 // * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 
 
-ValueSet: C4BBAdjudication
-Title: "C4BB Adjudication"
+ValueSet: PDexAdjudication
+Title: "PDex Adjudication"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values
-defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem."
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem."
 * $HL7AdjudicationCS#submitted
 * $HL7AdjudicationCS#copay
 * $HL7AdjudicationCS#eligible
 * $HL7AdjudicationCS#deductible
 * $HL7AdjudicationCS#benefit
-* C4BBAdjudication#coinsurance "Coinsurance"
-* C4BBAdjudication#noncovered "Noncovered"
-* C4BBAdjudication#priorpayerpaid "Prior payer paid"
-* C4BBAdjudication#paidbypatient "Paid by patient"
-* C4BBAdjudication#paidtopatient "Paid to patient"
-* C4BBAdjudication#paidtoprovider "Paid to provider"
-* C4BBAdjudication#memberliability "Member liability"
-* C4BBAdjudication#discount "Discount"
-* C4BBAdjudication#drugcost "Drug cost"
+* PDexAdjudication#coinsurance "Coinsurance"
+* PDexAdjudication#noncovered "Noncovered"
+* PDexAdjudication#priorpayerpaid "Prior payer paid"
+* PDexAdjudication#paidbypatient "Paid by patient"
+* PDexAdjudication#paidtopatient "Paid to patient"
+* PDexAdjudication#paidtoprovider "Paid to provider"
+* PDexAdjudication#memberliability "Member liability"
+* PDexAdjudication#discount "Discount"
+* PDexAdjudication#drugcost "Drug cost"
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PDexAdjudicationCategoryDiscriminator
 Title: "PDex Adjudication Category Discriminator"
-Description: "Used as the discriminator for adjudication.category and item.adjudication.category for the CARIN IG for Blue Button®"
-* codes from valueset C4BBAdjudication
-// 20210127 CAS: Added to resolve the issue where this "all slices" discriminator (category) required ValueSet did not include a valueset reuuired for the required benefitpaymentstatus slice discriminator
-* codes from valueset C4BBPayerBenefitPaymentStatus
+Description: "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization"
+* codes from valueset PDexAdjudication
+* codes from valueset PDexPayerBenefitPaymentStatus
 * codes from system PDexAdjudicationDiscriminator
 * ^copyright = "This Valueset is not copyrighted."
 
-ValueSet: C4BBPayerBenefitPaymentStatus
-Title: "C4BB Payer Benefit Payment Status"
+ValueSet: PDexPayerBenefitPaymentStatus
+Title: "PDex Payer Benefit Payment Status"
 Description: "Indicates the in network or out of network payment status of the claim."
-* C4BBPayerAdjudicationStatus#innetwork	"In Network"
-* C4BBPayerAdjudicationStatus#outofnetwork "Out Of Network"
-* C4BBPayerAdjudicationStatus#other "Other"
+* PDexPayerAdjudicationStatus#innetwork	"In Network"
+* PDexPayerAdjudicationStatus#outofnetwork "Out Of Network"
+* PDexPayerAdjudicationStatus#other "Other"
 * ^copyright = "This Valueset is not copyrighted."
 
 // ValueSet: PriorAuthServiceTypeCodes
 // Title: "Prior Authorization Service Type Codes (X12)"
 // Description: "Indicates the Type of Service that a Prior Authorization is covering"
 // * ^jurisdiction.coding = urn:iso:std:iso:3166#US
-// * codes from PdexServiceTypeCodes
+// * codes from PDexServiceTypeCodes
 
 
 ValueSet: X12278ReviewDecisionReasonCode
@@ -104,10 +103,10 @@ Description: "Codes used to identify the reason for the health care service revi
 * codes from system https://codesystem.x12.org/external/886
 
 
-ValueSet: C4BBSupportingInfoType
-Title: "C4BB SupportingInfo Type"
-Description: "Used as the discriminator for the types of supporting information for the CARIN IG for Blue Button� Implementation Guide."
-* codes from system C4BBSupportingInfoType
+ValueSet: PDexSupportingInfoType
+Title: "PDex SupportingInfo Type"
+Description: "Used as the discriminator for the types of supporting information for the PDEX Prior Authorization. Based on the CARIN IG for Blue Button� Implementation Guide."
+* codes from system PDexSupportingInfoType
 * ^copyright = "This Valueset is not copyrighted."
 
 

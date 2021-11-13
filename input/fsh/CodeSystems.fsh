@@ -79,8 +79,8 @@ Description: "Used as the discriminator for the data elements in adjudication an
 * ^copyright = "This CodeSystem is not copyrighted."
 
 // CodeSystemStubs.fsh contains stubs for external codesystems.
-CodeSystem: C4BBAdjudication
-Title: "C4BB Adjudication"
+CodeSystem: PDexAdjudication
+Title: "PDex Adjudication"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
 * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
 * #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
@@ -110,8 +110,8 @@ Description: "Describes the various amount fields used when payers receive and a
 // * #payment "Payment" "payment"
 
 
-CodeSystem: C4BBPayerAdjudicationStatus
-Title: "C4BB Payer Adjudication Status"
+CodeSystem: PDexPayerAdjudicationStatus
+Title: "PDex Payer Adjudication Status"
 Description: "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"
 * #innetwork	"In Network" "Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider"
 * #outofnetwork "Out Of Network" "Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider"
@@ -124,8 +124,8 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * ^copyright = "This CodeSystem is not copyrighted."
 
 
-CodeSystem: C4BBSupportingInfoType
-Title: "C4BB Supporting Info Type"
+CodeSystem: PDexSupportingInfoType
+Title: "PDex Supporting Info Type"
 Description: "Claim Information Category - Used as the discriminator for supportingInfo"
 * #admissionperiod  "Admission Period" "Dates corresponding with the admission and discharge of the beneficiary to a facility"
 * #pointoforigin  "Point Of Origin"  "UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility."
@@ -149,8 +149,8 @@ Description: "Claim Information Category - Used as the discriminator for support
 
 
 
-CodeSystem: C4BBIdentifierType
-Title: "C4BB Identifier Type"
+CodeSystem: PDexIdentifierType
+Title: "PDex Identifier Type"
 Description: "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
 // * #tax "Tax ID Number" "Tax ID Number"  - use the TAX code from the base codesystem
 * #npi "National Provider Identifier" "National Provider Identifier"

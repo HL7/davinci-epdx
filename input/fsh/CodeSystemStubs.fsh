@@ -16,8 +16,8 @@ RuleSet: CodeSystemStubBoilerplate
 
 
 
-ValueSet: C4BBEOBInstitutionalProcedureCodes
-// 20210215 CAS: FHIR-31074 - Please shorten the titles for the IP, OP, and Professional Procedure code and modifiers ValueSets
+
+ValueSet: PDexPAInstitutionalProcedureCodes
 Title: "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
 Description: "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.
 
@@ -95,8 +95,6 @@ These files contain the Level II alphanumeric HCPCS procedure and modifier codes
 * insert CodeSystemStubBoilerplate
 * insert HCPCSCopyrightNotice
 
-// 20210201 CAS: Placeholder fix for https://jira.hl7.org/browse/FHIR-30413 - Add HIPPS to Institutional item.productOrService Value Set
-  // Approach adding a special valueset for inpatient
 CodeSystem: CMSHIPPSCodes
 Title: "Health Insurance Prospective Payment System (HIPPS)"
 Description: "Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets
@@ -126,7 +124,6 @@ group information may also vary by payment systems."
 * insert CodeSystemStubBoilerplate
 * insert HIPPSCopyrightNotice
 
-// 20210201 CAS:  https://jira.hl7.org/browse/FHIR-30413 - Add HIPPS to Institutional item.productOrService Value Set
 RuleSet: HIPPSCopyrightNotice
 * ^copyright = "CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)"
 

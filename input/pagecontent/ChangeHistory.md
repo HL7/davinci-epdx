@@ -3,12 +3,12 @@
 
 ## STU 2.0.0
 
-The following changes were applied in the STU 2.0.0 update:
+The following changes were applied in the Proposed STU 2.0.0 update:
 
 | JIRA Ticket | Change          |
 |------------|-----------------|
 | [FHIR-33382](https://jira.hl7.org/browse/FHIR-33382) | Change references to US Core to link to the current 4.0.0 version. |
-|[FHIR-33217](https://jira.hl7.org/browse/FHIR-33217)| Add an [EOB profile](StructureDefinition-pdex-explanationofbenefit.html) to support the exchange of Prior Authorization information with Members.  Added Slices to item adjudication and added consumedunits slice |
+|[FHIR-33217](https://jira.hl7.org/browse/FHIR-33217)| Add an [PDex Prior Authorization profile](StructureDefinition-pdex-priorauthorization.html), based on the EOB resource to support the exchange of Prior Authorization information with Members.  Added Slices to item adjudication and added consumedunits slice |
 
 ## STU Update 1.1.0
 The following changes were applied in the STU 1.1.0 update:

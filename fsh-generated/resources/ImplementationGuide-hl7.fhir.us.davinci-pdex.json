@@ -2,7 +2,7 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-pdex",
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "2.0.0",
+  "version": "1.1.0",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data Exchange",
   "status": "draft",
@@ -77,18 +77,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/pdex-explanationofbenefit"
-        },
-        "name": "PDex Explanation of Benefit",
-        "description": "The PDex ExplanationOfBenefit (EOB) profile is provided to enable payers to express Prior Authorization information to members",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/pdex-medicationdispense"
         },
         "name": "PDex MedicationDispense",
         "description": "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pdex-priorauthorization"
+        },
+        "name": "PDex Prior Authorization",
+        "description": "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members",
         "exampleBoolean": false
       },
       {
@@ -149,38 +149,6 @@
       },
       {
         "reference": {
-          "reference": "ValueSet/C4BBAdjudication"
-        },
-        "name": "C4BB Adjudication",
-        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values\ndefined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/C4BBEOBInstitutionalProcedureCodes"
-        },
-        "name": "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
-        "description": "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.\n\nThe target set for this value set are the procedure codes from the CPT and HCPCS files and the rate codes from the HIPPS files.\n\nThe Current Procedural Terminology (CPT) code set, created and maintained by the American Medical Association, is the language of medicine today and the code to its future. This system of terminology is the most widely accepted medical nomenclature used to report medical procedures and services under public and private health insurance programs. CPT coding is also used for administrative management purposes such as claims processing and developing guidelines for medical care review. Each year, via a rigorous, evidence-based and transparent process, the independent CPT Editorial Panel revises, creates or deletes hundreds of codes in order to reflect current medical practice.\n\nDesignated by the U.S. Department of Health and Human Services under the Health Insurance Portability and Accountability Act (HIPAA) as a national coding set for physician and other health care professional services and procedures, CPT’s evidence-based codes accurately encompass the full range of health care services.\n\nAll CPT codes are five-digits and can be either numeric or alphanumeric, depending on the category. CPT code descriptors are clinically focused and utilize common standards so that a diverse set of users can have common understanding across the clinical health care paradigm.\n\nThere are various types of CPT codes:\n\n**Category I:** These codes have descriptors that correspond to a procedure or service. Codes range from 00100–99499 and are generally ordered into sub-categories based on procedure/service type and anatomy.\n\n**Category II:** These alphanumeric tracking codes are supplemental codes used for performance measurement. Using them is optional and not required for correct coding.\n\n**Category III:** These are temporary alphanumeric codes for new and developing technology, procedures and services. They were created for data collection, assessment and in some instances, payment of new services and procedures that currently don’t meet the criteria for a Category I code.\n\n**Proprietary Laboratory Analyses (PLA) codes:** Recently added to the CPT code set, these codes describe proprietary clinical laboratory analyses and can be either provided by a single (solesource) laboratory or licensed or marketed to multiple providing laboratories that are cleared or approved by the Food and Drug Administration (FDA)). This category includes but is not limited to Advanced Diagnostic Laboratory Tests (ADLTs) and Clinical Diagnostic Laboratory Tests (CDLTs), as defined under the Protecting Access to Medicare Act of 2014 (PAMA).\n\nTo obtain CPT, please see the license request form [here](http://info.commerce.ama-assn.org/ama-data-file-request-2020)\n\nThe Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.\n\nGeneral information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)\n\nReleases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\n\nThese files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data.\n\nThe Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets\nof patient characteristics (or case-mix groups) health insurers use to make payment\ndeterminations under several prospective payment systems. Case-mix groups are\ndeveloped based on research into utilization patterns among various provider types. For\nthe payment systems that use HIPPS codes, clinical assessment data is the basic input. A\nstandard patient assessment instrument is interpreted by case-mix grouping software\nalgorithms, which assign the case mix group. For payment purposes, at least one HIPPS\ncode is defined to represent each case-mix group. These HIPPS codes are reported on\nclaims to insurers.\nInstitutional providers use HIPPS codes on claims in association with special revenue\ncodes. One revenue code is defined for each prospective payment system that requires\nHIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837\ninstitutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44\n(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in\ndata element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may\nappear on separate lines of a single claim.\n\nHIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,\nwith certain positions of the code indicating the case mix group itself, and other positions\nproviding additional information. The additional information varies among HIPPS codes\npertaining to different payment systems, but often provides information about the clinical\nassessment used to arrive at the code. Which positions of the code carry the case mix\ngroup information may also vary by payment systems.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/C4BBPayerBenefitPaymentStatus"
-        },
-        "name": "C4BB Payer Benefit Payment Status",
-        "description": "Indicates the in network or out of network payment status of the claim.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/C4BBSupportingInfoType"
-        },
-        "name": "C4BB SupportingInfo Type",
-        "description": "Used as the discriminator for the types of supporting information for the CARIN IG for Blue Button� Implementation Guide.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "ValueSet/FDANationalDrugCode"
         },
         "name": "FDA National Drug Code (NDC)",
@@ -189,10 +157,42 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/PDexAdjudication"
+        },
+        "name": "PDex Adjudication",
+        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values\ndefined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/PDexAdjudicationCategoryDiscriminator"
         },
         "name": "PDex Adjudication Category Discriminator",
-        "description": "Used as the discriminator for adjudication.category and item.adjudication.category for the CARIN IG for Blue Button®",
+        "description": "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexPAInstitutionalProcedureCodes"
+        },
+        "name": "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+        "description": "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.\n\nThe target set for this value set are the procedure codes from the CPT and HCPCS files and the rate codes from the HIPPS files.\n\nThe Current Procedural Terminology (CPT) code set, created and maintained by the American Medical Association, is the language of medicine today and the code to its future. This system of terminology is the most widely accepted medical nomenclature used to report medical procedures and services under public and private health insurance programs. CPT coding is also used for administrative management purposes such as claims processing and developing guidelines for medical care review. Each year, via a rigorous, evidence-based and transparent process, the independent CPT Editorial Panel revises, creates or deletes hundreds of codes in order to reflect current medical practice.\n\nDesignated by the U.S. Department of Health and Human Services under the Health Insurance Portability and Accountability Act (HIPAA) as a national coding set for physician and other health care professional services and procedures, CPT’s evidence-based codes accurately encompass the full range of health care services.\n\nAll CPT codes are five-digits and can be either numeric or alphanumeric, depending on the category. CPT code descriptors are clinically focused and utilize common standards so that a diverse set of users can have common understanding across the clinical health care paradigm.\n\nThere are various types of CPT codes:\n\n**Category I:** These codes have descriptors that correspond to a procedure or service. Codes range from 00100–99499 and are generally ordered into sub-categories based on procedure/service type and anatomy.\n\n**Category II:** These alphanumeric tracking codes are supplemental codes used for performance measurement. Using them is optional and not required for correct coding.\n\n**Category III:** These are temporary alphanumeric codes for new and developing technology, procedures and services. They were created for data collection, assessment and in some instances, payment of new services and procedures that currently don’t meet the criteria for a Category I code.\n\n**Proprietary Laboratory Analyses (PLA) codes:** Recently added to the CPT code set, these codes describe proprietary clinical laboratory analyses and can be either provided by a single (solesource) laboratory or licensed or marketed to multiple providing laboratories that are cleared or approved by the Food and Drug Administration (FDA)). This category includes but is not limited to Advanced Diagnostic Laboratory Tests (ADLTs) and Clinical Diagnostic Laboratory Tests (CDLTs), as defined under the Protecting Access to Medicare Act of 2014 (PAMA).\n\nTo obtain CPT, please see the license request form [here](http://info.commerce.ama-assn.org/ama-data-file-request-2020)\n\nThe Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.\n\nGeneral information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)\n\nReleases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\n\nThese files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data.\n\nThe Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets\nof patient characteristics (or case-mix groups) health insurers use to make payment\ndeterminations under several prospective payment systems. Case-mix groups are\ndeveloped based on research into utilization patterns among various provider types. For\nthe payment systems that use HIPPS codes, clinical assessment data is the basic input. A\nstandard patient assessment instrument is interpreted by case-mix grouping software\nalgorithms, which assign the case mix group. For payment purposes, at least one HIPPS\ncode is defined to represent each case-mix group. These HIPPS codes are reported on\nclaims to insurers.\nInstitutional providers use HIPPS codes on claims in association with special revenue\ncodes. One revenue code is defined for each prospective payment system that requires\nHIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837\ninstitutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44\n(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in\ndata element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may\nappear on separate lines of a single claim.\n\nHIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,\nwith certain positions of the code indicating the case mix group itself, and other positions\nproviding additional information. The additional information varies among HIPPS codes\npertaining to different payment systems, but often provides information about the clinical\nassessment used to arrive at the code. Which positions of the code carry the case mix\ngroup information may also vary by payment systems.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexPayerBenefitPaymentStatus"
+        },
+        "name": "PDex Payer Benefit Payment Status",
+        "description": "Indicates the in network or out of network payment status of the claim.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexSupportingInfoType"
+        },
+        "name": "PDex SupportingInfo Type",
+        "description": "Used as the discriminator for the types of supporting information for the PDEX Prior Authorization. Based on the CARIN IG for Blue Button� Implementation Guide.",
         "exampleBoolean": false
       },
       {
@@ -237,38 +237,6 @@
       },
       {
         "reference": {
-          "reference": "CodeSystem/C4BBAdjudication"
-        },
-        "name": "C4BB Adjudication",
-        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/C4BBIdentifierType"
-        },
-        "name": "C4BB Identifier Type",
-        "description": "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/C4BBPayerAdjudicationStatus"
-        },
-        "name": "C4BB Payer Adjudication Status",
-        "description": "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/C4BBSupportingInfoType"
-        },
-        "name": "C4BB Supporting Info Type",
-        "description": "Claim Information Category - Used as the discriminator for supportingInfo",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "CodeSystem/CMSHCPCSCodes"
         },
         "name": "Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes",
@@ -301,10 +269,42 @@
       },
       {
         "reference": {
+          "reference": "CodeSystem/PDexAdjudication"
+        },
+        "name": "PDex Adjudication",
+        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/PDexAdjudicationDiscriminator"
         },
         "name": "PDex Adjudication Discriminator",
         "description": "Used as the discriminator for the data elements in adjudication and item.adjudication",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexIdentifierType"
+        },
+        "name": "PDex Identifier Type",
+        "description": "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexPayerAdjudicationStatus"
+        },
+        "name": "PDex Payer Adjudication Status",
+        "description": "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexSupportingInfoType"
+        },
+        "name": "PDex Supporting Info Type",
+        "description": "Claim Information Category - Used as the discriminator for supportingInfo",
         "exampleBoolean": false
       },
       {
@@ -509,11 +509,11 @@
       },
       {
         "reference": {
-          "reference": "ExplanationOfBenefit/EOBPriorAuth1"
+          "reference": "ExplanationOfBenefit/PDexPriorAuth1"
         },
-        "name": "EOBPriorAuth",
-        "description": "EOB Inpatient Example1",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-explanationofbenefit"
+        "name": "PDEXPriorAuth",
+        "description": "PDex Prior Authorization based on EOB Inpatient Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"
       },
       {
         "reference": {
@@ -671,8 +671,8 @@
                   "generation": "markdown"
                 },
                 {
-                  "nameUrl": "PDexExplanationOfBenefit.html",
-                  "title": "PDex ExplanationOfBenefit",
+                  "nameUrl": "PDexPriorAuthorization.html",
+                  "title": "PDex PriorAuthorization",
                   "generation": "markdown"
                 },
                 {
