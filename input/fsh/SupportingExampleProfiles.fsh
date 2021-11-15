@@ -124,9 +124,12 @@ Description: "A simple bundle to demonstrate a provenance example"
 * type = http://hl7.org/fhir/bundle-type#searchset "Search Results"
 * timestamp = "2020-07-16T20:26:23.217+00:00"
 * total = 2
+* link[0].relation = "self"
+* link[0].url = "https://example.com/base/fhir/MedicationDispense?ct=W3sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
 * entry[0].fullUrl = "https://example.com/base/Patient/1"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1"
+* entry[0].search.mode = http://hl7.org/fhir/search-entry-mode#include
 * entry[1].fullUrl = "https://example.com/base/MedicationDispense/1000001"
 * entry[1].resource.resourceType = "MedicationDispense"
 * entry[1].resource.id = "1000001"
@@ -138,4 +141,6 @@ Description: "A simple bundle to demonstrate a provenance example"
 * entry[1].resource.type =  http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * entry[1].resource.quantity.value = 60
 * entry[1].resource.daysSupply.value = 30
+* entry[1].search.mode = http://hl7.org/fhir/search-entry-mode#match
+
 
