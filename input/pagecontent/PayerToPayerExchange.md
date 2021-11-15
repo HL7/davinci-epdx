@@ -13,8 +13,8 @@ It is recognized that the $member-match function is an operation that can be the
 
 OPERATION: Find member using search driven by member patient and coverage information.
 
-When a member switches from one plan to another the member has the option to request their data to be passed to their new health plan.
-
+When a member switches from one plan to another the member has the option to request their data to be passed to their new health plan. A pre-requisite for this request is that the member has the information from their prior coverage, or member identity card, such as member number, subscriber number, group id, plan id. If the member does not have this information and does not have their prior coverage card they would be required to contact their prior plan to obtain this information. 
+ 
 The new Health Plan **SHALL** enable an enrolling member to provide the coverage details for their prior health plan. The new Health Plan **SHALL** create the following resources that will be compiled into a Parameter Resource and submitted to the $member-match operation on the Patient FHIR endpoint for the old health plan:
 
 - US Core Patient (Containing Member demographics)

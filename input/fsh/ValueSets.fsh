@@ -39,3 +39,74 @@ Users should note a few important items
 //
 * codes from system $FDANationalDrugCodeCS
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+ValueSet: PriorAuthorizationAmounts
+Title: "Prior Authorization value categories"
+Description: "Codes to define Prior Authorization requested, agreed and utilized amounts."
+* codes from system PriorAuthorizationValueCodes
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+// ValueSet: ProcessPriority
+// Title: "Value Set used to assign a priority for the issue"
+// Description: "Codes to define the priorty to be applied to the issue"
+// * codes from system $ProcessPriority
+// * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+
+
+ValueSet: PDexAdjudication
+Title: "PDex Adjudication"
+Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem."
+* $HL7AdjudicationCS#submitted
+* $HL7AdjudicationCS#copay
+* $HL7AdjudicationCS#eligible
+* $HL7AdjudicationCS#deductible
+* $HL7AdjudicationCS#benefit
+* PDexAdjudication#coinsurance "Coinsurance"
+* PDexAdjudication#noncovered "Noncovered"
+* PDexAdjudication#priorpayerpaid "Prior payer paid"
+* PDexAdjudication#paidbypatient "Paid by patient"
+* PDexAdjudication#paidtopatient "Paid to patient"
+* PDexAdjudication#paidtoprovider "Paid to provider"
+* PDexAdjudication#memberliability "Member liability"
+* PDexAdjudication#discount "Discount"
+* PDexAdjudication#drugcost "Drug cost"
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PDexAdjudicationCategoryDiscriminator
+Title: "PDex Adjudication Category Discriminator"
+Description: "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization"
+* codes from valueset PDexAdjudication
+* codes from valueset PDexPayerBenefitPaymentStatus
+* codes from system PDexAdjudicationDiscriminator
+* ^copyright = "This Valueset is not copyrighted."
+
+ValueSet: PDexPayerBenefitPaymentStatus
+Title: "PDex Payer Benefit Payment Status"
+Description: "Indicates the in network or out of network payment status of the claim."
+* PDexPayerAdjudicationStatus#innetwork	"In Network"
+* PDexPayerAdjudicationStatus#outofnetwork "Out Of Network"
+* PDexPayerAdjudicationStatus#other "Other"
+* ^copyright = "This Valueset is not copyrighted."
+
+// ValueSet: PriorAuthServiceTypeCodes
+// Title: "Prior Authorization Service Type Codes (X12)"
+// Description: "Indicates the Type of Service that a Prior Authorization is covering"
+// * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+// * codes from PDexServiceTypeCodes
+
+
+ValueSet: X12278ReviewDecisionReasonCode
+Title: "X12 278 Review Descision Reason Codes"
+Description: "Codes used to identify the reason for the health care service review outcome."
+* ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* codes from system https://codesystem.x12.org/external/886
+
+
+ValueSet: PDexSupportingInfoType
+Title: "PDex SupportingInfo Type"
+Description: "Used as the discriminator for the types of supporting information for the PDEX Prior Authorization. Based on the CARIN IG for Blue Button� Implementation Guide."
+* codes from system PDexSupportingInfoType
+* ^copyright = "This Valueset is not copyrighted."
+
+

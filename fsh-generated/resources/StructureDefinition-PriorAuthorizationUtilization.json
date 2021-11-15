@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PriorAuthorizationUtilization",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization",
+  "version": "0.1.19",
+  "name": "PriorAuthorizationUtilization",
+  "title": "An attribute to express the amount of a service or item that has been utilized",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "An attribute to express the amount of a service or item that has been utilized",
+        "definition": "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Amount/Quantity of an item or service that has been consumed/utilized",
+        "type": [
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "Ratio"
+          }
+        ]
+      }
+    ]
+  }
+}

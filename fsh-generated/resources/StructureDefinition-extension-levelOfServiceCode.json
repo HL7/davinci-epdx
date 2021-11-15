@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "extension-levelOfServiceCode",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode",
+  "version": "1.1.0",
+  "name": "LevelOfServiceCode",
+  "status": "active",
+  "description": "A code specifying the level of service being requested (UM06)",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "definition": "A code specifying the level of service being requested (UM06)"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.valueCodeableConcept",
+        "path": "Extension.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338",
+          "description": "Codes specifying the level of service rendered. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+        }
+      }
+    ]
+  }
+}

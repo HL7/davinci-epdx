@@ -12,7 +12,7 @@
       "telecom": [
         {
           "system": "email",
-          "value": "mailto:mark@ekivemark.com0",
+          "value": "mailto:mark.scrimshire@onyxhealth.io",
           "display": "Mark Scrimshire, OnyxHealth.io"
         }
       ]
@@ -46,7 +46,7 @@
   "dependsOn": [
     {
       "packageId": "hl7.fhir.us.core",
-      "version": "3.1.1",
+      "version": "4.0.0",
       "uri": "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
       "id": "hl7_fhir_us_core"
     },
@@ -85,6 +85,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/pdex-priorauthorization"
+        },
+        "name": "PDex Prior Authorization",
+        "description": "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/pdex-provenance"
         },
         "name": "Provenance",
@@ -101,6 +109,22 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/extension-levelOfServiceCode"
+        },
+        "name": "LevelOfServiceCode",
+        "description": "A code specifying the level of service being requested (UM06)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/PriorAuthorizationUtilization"
+        },
+        "name": "An attribute to express the amount of a service or item that has been utilized",
+        "description": "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/ProvenanceSourceFrom"
         },
         "name": "An attribute to describe the data source a resource was constructed from",
@@ -109,10 +133,74 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/extension-reviewAction"
+        },
+        "name": "ReviewAction",
+        "description": "The details of the review action that is necessary for the authorization.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/extension-reviewActionCode"
+        },
+        "name": "ReviewActionCode",
+        "description": "The code describing the result of the review.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/FDANationalDrugCode"
         },
         "name": "FDA National Drug Code (NDC)",
         "description": "The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. § 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.\n\nThe information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.\n\nUsers should note:\n\nStarting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.\n\nInformation regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)\n\nUsers should note a few important items\n\n*   The NDC Directory is updated daily.\n*   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.\n*   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexAdjudication"
+        },
+        "name": "PDex Adjudication",
+        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values\ndefined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexAdjudicationCategoryDiscriminator"
+        },
+        "name": "PDex Adjudication Category Discriminator",
+        "description": "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexPAInstitutionalProcedureCodes"
+        },
+        "name": "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+        "description": "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.\n\nThe target set for this value set are the procedure codes from the CPT and HCPCS files and the rate codes from the HIPPS files.\n\nThe Current Procedural Terminology (CPT) code set, created and maintained by the American Medical Association, is the language of medicine today and the code to its future. This system of terminology is the most widely accepted medical nomenclature used to report medical procedures and services under public and private health insurance programs. CPT coding is also used for administrative management purposes such as claims processing and developing guidelines for medical care review. Each year, via a rigorous, evidence-based and transparent process, the independent CPT Editorial Panel revises, creates or deletes hundreds of codes in order to reflect current medical practice.\n\nDesignated by the U.S. Department of Health and Human Services under the Health Insurance Portability and Accountability Act (HIPAA) as a national coding set for physician and other health care professional services and procedures, CPT’s evidence-based codes accurately encompass the full range of health care services.\n\nAll CPT codes are five-digits and can be either numeric or alphanumeric, depending on the category. CPT code descriptors are clinically focused and utilize common standards so that a diverse set of users can have common understanding across the clinical health care paradigm.\n\nThere are various types of CPT codes:\n\n**Category I:** These codes have descriptors that correspond to a procedure or service. Codes range from 00100–99499 and are generally ordered into sub-categories based on procedure/service type and anatomy.\n\n**Category II:** These alphanumeric tracking codes are supplemental codes used for performance measurement. Using them is optional and not required for correct coding.\n\n**Category III:** These are temporary alphanumeric codes for new and developing technology, procedures and services. They were created for data collection, assessment and in some instances, payment of new services and procedures that currently don’t meet the criteria for a Category I code.\n\n**Proprietary Laboratory Analyses (PLA) codes:** Recently added to the CPT code set, these codes describe proprietary clinical laboratory analyses and can be either provided by a single (solesource) laboratory or licensed or marketed to multiple providing laboratories that are cleared or approved by the Food and Drug Administration (FDA)). This category includes but is not limited to Advanced Diagnostic Laboratory Tests (ADLTs) and Clinical Diagnostic Laboratory Tests (CDLTs), as defined under the Protecting Access to Medicare Act of 2014 (PAMA).\n\nTo obtain CPT, please see the license request form [here](http://info.commerce.ama-assn.org/ama-data-file-request-2020)\n\nThe Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.\n\nGeneral information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)\n\nReleases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\n\nThese files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data.\n\nThe Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets\nof patient characteristics (or case-mix groups) health insurers use to make payment\ndeterminations under several prospective payment systems. Case-mix groups are\ndeveloped based on research into utilization patterns among various provider types. For\nthe payment systems that use HIPPS codes, clinical assessment data is the basic input. A\nstandard patient assessment instrument is interpreted by case-mix grouping software\nalgorithms, which assign the case mix group. For payment purposes, at least one HIPPS\ncode is defined to represent each case-mix group. These HIPPS codes are reported on\nclaims to insurers.\nInstitutional providers use HIPPS codes on claims in association with special revenue\ncodes. One revenue code is defined for each prospective payment system that requires\nHIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837\ninstitutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44\n(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in\ndata element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may\nappear on separate lines of a single claim.\n\nHIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,\nwith certain positions of the code indicating the case mix group itself, and other positions\nproviding additional information. The additional information varies among HIPPS codes\npertaining to different payment systems, but often provides information about the clinical\nassessment used to arrive at the code. Which positions of the code carry the case mix\ngroup information may also vary by payment systems.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexPayerBenefitPaymentStatus"
+        },
+        "name": "PDex Payer Benefit Payment Status",
+        "description": "Indicates the in network or out of network payment status of the claim.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PDexSupportingInfoType"
+        },
+        "name": "PDex SupportingInfo Type",
+        "description": "Used as the discriminator for the types of supporting information for the PDEX Prior Authorization. Based on the CARIN IG for Blue Button� Implementation Guide.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/PriorAuthorizationAmounts"
+        },
+        "name": "Prior Authorization value categories",
+        "description": "Codes to define Prior Authorization requested, agreed and utilized amounts.",
         "exampleBoolean": false
       },
       {
@@ -133,10 +221,98 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/X12278ReviewDecisionReasonCode"
+        },
+        "name": "X12 278 Review Descision Reason Codes",
+        "description": "Codes used to identify the reason for the health care service review outcome.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"
+        },
+        "name": "X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nThe X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.\n\nRemittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.\n\nEach RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/CMSHCPCSCodes"
+        },
+        "name": "Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes",
+        "description": "The Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.\n\nGeneral information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)\n\nReleases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)\n\nThese files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/CMSHIPPSCodes"
+        },
+        "name": "Health Insurance Prospective Payment System (HIPPS)",
+        "description": "Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets\nof patient characteristics (or case-mix groups) health insurers use to make payment\ndeterminations under several prospective payment systems. Case-mix groups are\ndeveloped based on research into utilization patterns among various provider types. For\nthe payment systems that use HIPPS codes, clinical assessment data is the basic input. A\nstandard patient assessment instrument is interpreted by case-mix grouping software\nalgorithms, which assign the case mix group. For payment purposes, at least one HIPPS\ncode is defined to represent each case-mix group. These HIPPS codes are reported on\nclaims to insurers.\nInstitutional providers use HIPPS codes on claims in association with special revenue\ncodes. One revenue code is defined for each prospective payment system that requires\nHIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837\ninstitutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44\n(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in\ndata element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may\nappear on separate lines of a single claim.\n\nHIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,\nwith certain positions of the code indicating the case mix group itself, and other positions\nproviding additional information. The additional information varies among HIPPS codes\npertaining to different payment systems, but often provides information about the clinical\nassessment used to arrive at the code. Which positions of the code carry the case mix\ngroup information may also vary by payment systems.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/CMSRemittanceAdviceRemarkCodes"
+        },
+        "name": "X12 Remittance Advice Remark Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nRemittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.\n\nEach RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer, including the RARC codes. Can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/IdentifierTypeCS"
         },
         "name": "Identifier Type",
         "description": "Identifier Type",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexAdjudication"
+        },
+        "name": "PDex Adjudication",
+        "description": "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexAdjudicationDiscriminator"
+        },
+        "name": "PDex Adjudication Discriminator",
+        "description": "Used as the discriminator for the data elements in adjudication and item.adjudication",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexIdentifierType"
+        },
+        "name": "PDex Identifier Type",
+        "description": "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexPayerAdjudicationStatus"
+        },
+        "name": "PDex Payer Adjudication Status",
+        "description": "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PDexSupportingInfoType"
+        },
+        "name": "PDex Supporting Info Type",
+        "description": "Claim Information Category - Used as the discriminator for supportingInfo",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/PriorAuthorizationValueCodes"
+        },
+        "name": "Prior Authorization Values",
+        "description": "Codes used to define Prior Authorization categories",
         "exampleBoolean": false
       },
       {
@@ -153,6 +329,14 @@
         },
         "name": "Provenance Payer Data Source Format",
         "description": "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/X12ClaimAdjustmentReasonCodes"
+        },
+        "name": "X12 Claim Adjustment Reason Codes",
+        "description": "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.\n\nThe X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.\n\nExternal code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:\n\n[https://x12.org/codes](https://x12.org/codes)\n\nClick on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).",
         "exampleBoolean": false
       },
       {
@@ -317,6 +501,22 @@
       },
       {
         "reference": {
+          "reference": "Coverage/Coverage1"
+        },
+        "name": "PriorAuthCoverage",
+        "description": "Health Plan Coverage for Prior Authorization",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
+      },
+      {
+        "reference": {
+          "reference": "ExplanationOfBenefit/PDexPriorAuth1"
+        },
+        "name": "PDEXPriorAuth",
+        "description": "PDex Prior Authorization based on EOB Inpatient Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"
+      },
+      {
+        "reference": {
           "reference": "CapabilityStatement/PdexServerCapabilityStatement"
         },
         "name": "PdexServerCapabilityStatement",
@@ -330,6 +530,38 @@
         "description": "This Section describes the expected capabilities of the PDEX Server actor which is responsible for providing responses to the queries submitted by the PDEX Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDEX Servers are defined. PDEX Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.",
         "exampleBoolean": false,
         "name": "PDEX Server CapabilityStatement"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-identifier"
+        },
+        "description": "The business/claim identifier of the Explanation of Benefit",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Identifier"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-patient"
+        },
+        "description": "The reference to the patient",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Patient"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-service-date"
+        },
+        "description": "Date of the service for the EOB. The service-date search parameter simplifies search, since a client doesn't need to know that for inpatient and outpatient institutional EOB dates they need to search by billablePeriod.period.start, for a pharmacy EOB by item.servicedDate, and for a professional and non-clinician EOB - by item.servicedPeriod.period.start.",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_ServiceDate"
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/explanationofbenefit-type"
+        },
+        "description": "The type of the ExplanationOfBenefit",
+        "exampleBoolean": false,
+        "name": "ExplanationOfBenefit_Type"
       },
       {
         "reference": {
@@ -436,6 +668,11 @@
                 {
                   "nameUrl": "USCoreEncounter.html",
                   "title": "US Core Encounter",
+                  "generation": "markdown"
+                },
+                {
+                  "nameUrl": "PDexPriorAuthorization.html",
+                  "title": "PDex PriorAuthorization",
                   "generation": "markdown"
                 },
                 {
@@ -598,7 +835,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU1"
+        "value": "STU2"
       },
       {
         "code": "show-inherited-invariants",

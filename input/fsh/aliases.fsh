@@ -51,4 +51,18 @@ Alias: $SnomedCT = http://snomed.info/sct|http://snomed.info/sct/731000124108
 // PDex Base
 Alias: $Base = http://hl7.org/fhir/us/davinci-pdex
 
+// EOB
+Alias: $Process-Priority = http://hl7.org/fhir/ValueSet/process-priority
+
+Alias:   $CPT = http://www.ama-assn.org/go/cpt
+Alias:   $HL7ClaimTypeCS = http://terminology.hl7.org/CodeSystem/claim-type
+Alias:   $HL7AdjudicationCS = http://terminology.hl7.org/CodeSystem/adjudication
+Alias:   $HL7DataAbsentReason = http://terminology.hl7.org/CodeSystem/data-absent-reason
+Alias:   $HL7DiagnosisType = http://terminology.hl7.org/CodeSystem/ex-diagnosistype
+Alias:   $HL7ProcessPriority = http://terminology.hl7.org/CodeSystem/processpriority
+Alias:   $HL7FundsReserve = http://terminology.hl7.org/CodeSystem/fundsreserve
+Alias:   $HL7RelatedClaim = http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship
+
+// X12
+Alias: $X12ServiceType = https://x12.org/codes/service-type-codes
 

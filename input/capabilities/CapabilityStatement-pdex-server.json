@@ -5,7 +5,7 @@
     "status": "generated"
   },
   "url": "http://hl7.org/fhir/us/core/CapabilityStatement/pdex-server",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "name": "PdexServerCapabilityStatement",
   "title": "PDEX Server CapabilityStatement",
   "status": "active",
@@ -43,7 +43,7 @@
     "application/json-patch+json"
   ],
   "implementationGuide": [
-    "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|1.0.0"
+    "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|1.1.0"
   ],
   "rest": [
     {
@@ -662,7 +662,7 @@
             "resolves"
           ],
           "searchRevInclude": [
-            "Provenance"
+            "Provenance:target"
           ],
           "searchParam": [
             {
@@ -1468,6 +1468,119 @@
           ]
         },
         {
+          "extension" : [
+            {
+              "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode" : "SHALL"
+            }
+          ],
+          "type" : "ExplanationOfBenefit",
+          "supportedProfile" : [
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"
+          ],
+          "documentation" : "When a Prior Authorization references another resource (e.g., Patient or Practitioner), the reference may be versioned or versionless. Payers SHALL use versioned references whenever they maintain point-in-time data (data that was effective as of the date of service or date of admission on the claim), but MAY use versionless references when they do not maintain versioned data. Clients MAY request referenced resources as part of an EOB search (by supplying the _include parameter) or directly using read or vread. Payers SHALL support both approaches, and SHALL return the same content for referenced resources in either case. “:iterate\" should be used if you request to include Coverage:payor in the EOB response bundle, e.g. GET [base]/ExplanationOfBenefit?[parameter=value]&_include=ExplanationOfBenefit:coverage&_include:iterate=Coverage:payor.",
+          "interaction" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "code" : "search-type"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "code" : "read",
+              "documentation" : "Searches using service-date, _lastUpdated, or type require a patient search argument.\n\n_include:* SHALL be supported.\n"
+            }
+          ],
+          "referencePolicy" : [
+            "resolves"
+          ],
+          "searchInclude" : [
+            "ExplanationOfBenefit:patient",
+            "ExplanationOfBenefit:provider",
+            "ExplanationOfBenefit:care-team",
+            "ExplanationOfBenefit:coverage",
+            "ExplanationOfBenefit:insurer",
+            "ExplanationOfBenefit:*"
+          ],
+          "searchParam" : [
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "_id",
+              "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+              "type" : "token"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "patient",
+              "definition" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-patient",
+              "type" : "reference"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "_lastUpdated",
+              "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+              "type" : "date"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "type",
+              "definition" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-type",
+              "type" : "token"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "identifier",
+              "definition" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-identifier",
+              "type" : "token"
+            },
+            {
+              "extension" : [
+                {
+                  "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode" : "SHALL"
+                }
+              ],
+              "name" : "service-date",
+              "definition" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-service-date",
+              "type" : "date"
+            }
+          ]
+        },
+        {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
@@ -1865,7 +1978,7 @@
           "supportedProfile": [
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication"
           ],
-          "documentation": "The  MedicationRequest resource can represent a medication, using an external reference to a Medication resource. If an external Medication Resourcse is used in a MedicationRequest, then the READ  **SHALL**  be supported.",
+          "documentation": "The  MedicationRequest resource can represent a medication, using an external reference to a Medication resource. If an external Medication Resource is used in a MedicationRequest, then the READ  **SHALL**  be supported.",
           "interaction": [
             {
               "extension": [
@@ -2146,41 +2259,7 @@
               ],
               "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
             },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
-                },
-                {
-                  "url": "required",
-                  "valueString": "patient"
-                },
-                {
-                  "url": "required",
-                  "valueString": "intent"
-                }
-              ],
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "SHOULD"
-                },
-                {
-                  "url": "required",
-                  "valueString": "patient"
-                },
-                {
-                  "url": "required",
-                  "valueString": "intent"
-                }
-              ],
-              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
-            },
-            {
+             {
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

@@ -30,5 +30,6 @@ Description:    "The PDex Device profile is provided to enable payers to record 
 * type  from http://hl7.org/fhir/ValueSet/device-kind (extensible)
 * patient  1..1 MS
 * patient only Reference(us-core-patient)
+* url  0..1 MS
 
 // Hicpics code? as extension.
