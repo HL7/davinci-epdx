@@ -18,13 +18,13 @@ The essential fields to be provided in the Condition resource from the CPCDS fil
 
 | US Core Element               | Must Support | Cardinality | CARIN-BB Element                         | CPCDS Element Mapping or Implementer Note                                                                                                      |
 |-------------------------------|:------------:|:-----------:|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|  - Condition.meta.lastUpdated |              |     0..1    | ExplanationOfBenefit.meta.lastUpdated    | [{"163":"EOB Last Updated Date"}]                                                                                                              |
+|  Condition.meta.lastUpdated |              |     0..1    | ExplanationOfBenefit.meta.lastUpdated    | [{"163":"EOB Last Updated Date"}]                                                                                                              |
 | Condition.clinicalStatus      |       S      |     0..1    |                                          | . Note: active \| recurrence \| relapse \| inactive \| remission \| resolved                                                                   |
 | Condition.verificationStatus  |       S      |     0..1    |                                          | . Note: active \| recurrence \| relapse \| inactive \| remission \| resolved                                                                   |
 | Condition.category            |       S      |     1..*    |                                          | . Note: Based on Diagnosis from claim pick appropriate condition category from: [problem-list-item \| encounter-diagnosis \| health-concern]     |
-| Condition.code                |       S      |     1..1    | ExplanationOfBenefit.diagnosis.diagnosis | [{"22, 23":"Diagnosis Code"}                                                                                                                   |
-| Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}                                                                                                                       |
-| Condition.recorder            |              |     0..1    | ExplanationOfBenefit.careTeam.provider   | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"} |
+| Condition.code                |       S      |     1..1    | ExplanationOfBenefit.diagnosis.diagnosis | [{"22, 23":"Diagnosis Code"}]                                                                                                                   |
+| Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}]                                                                                                                       |
+| Condition.recorder            |              |     0..1    | ExplanationOfBenefit.careTeam.provider   | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"}] |
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
