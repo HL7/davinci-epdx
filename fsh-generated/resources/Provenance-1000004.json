@@ -3,7 +3,7 @@
   "id": "1000004",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2020-07-12T18:26:23.217+00:00",
+    "lastUpdated": "2020-07-11T17:26:23.217+00:00",
     "profile": [
       "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
     ]
@@ -16,9 +16,9 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "ncpdp",
+                "code": "x12837",
                 "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
-                "display": "NCPDP Telecommunication"
+                "display": "837 claim"
               }
             ]
           }
@@ -32,10 +32,10 @@
   ],
   "target": [
     {
-      "reference": "MedicationDispense/1000001"
+      "reference": "Encounter/7"
     }
   ],
-  "recorded": "2020-07-12T18:26:23.217+00:00",
+  "recorded": "2020-07-11T17:26:23.217+00:00",
   "agent": [
     {
       "type": {
@@ -48,7 +48,7 @@
         ]
       },
       "who": {
-        "reference": "Organization/2"
+        "reference": "Practitioner/4"
       }
     }
   ]

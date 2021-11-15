@@ -97,7 +97,7 @@ An example mapping of a Coverage resource is shown here:
   },
   "payor": [
     {
-      "reference": "Organization/2"
+      "reference": "Organization/Payer1"
     }
   ],
   "class": [
