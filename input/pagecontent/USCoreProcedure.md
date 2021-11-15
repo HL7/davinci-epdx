@@ -1,4 +1,4 @@
-[Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
+[Previous Page - PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
 
 The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html) **SHALL** be used to record a member's health events.
 
