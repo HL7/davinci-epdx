@@ -17,19 +17,19 @@ Usage: #example
 
 * use = #preauthorization
 * patient = Reference(Patient/1)
-* insurer = Reference(Organization/2)
+* insurer = Reference(Organization/Payer1)
 * insurer.display = "Example Health Plan"
 * billablePeriod.start = "2021-10-01"
 * billablePeriod.end = "2021-10-31"
 * created = "2021-09-20T00:00:00+00:00"
-* provider = Reference(Organization/3)
-* provider.display = "Example Health Plan"
+* provider = Reference(Organization/Payer2)
+* provider.display = "Another Example Health Plan"
 * priority = $HL7ProcessPriority#normal "Normal"
 * fundsReserveRequested = $HL7FundsReserve#provider "Provider"
 * fundsReserve = $HL7FundsReserve#none "None"
 * related[0].relationship = $HL7RelatedClaim#associated "Associated Claim"
 * related[0].reference.value = "XCLM1001"
-* careTeam[0].provider = Reference(Organization/3)
+* careTeam[0].provider = Reference(Organization/Payer1)
 * careTeam[0].sequence = 1
 * careTeam[0].responsible = true
 * insurance.coverage = Reference(883210)

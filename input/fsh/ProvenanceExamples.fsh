@@ -18,12 +18,12 @@ Description: "Example of a Custodian Provenance record for the contents of a bun
 * id = "1000101"
 * meta.versionId = "1"
 * meta.lastUpdated = "2020-08-09T15:26:23.217+00:00"
-* target[0].reference = "Encounter?identifier=Payer1-1"
-* target[1].reference = "Encounter?identifier=Payer1-2"
+* target[0].reference = "Encounter/6"
+* target[1].reference = "Encounter/7"
 * recorded = "2020-08-09T15:26:23.217+00:00"
-* reason = http://terminology.hl7.org/CodeSystem/v3-ActReason#RECORDMGMT
+* reason = http://terminology.hl7.org/CodeSystem/v3-ActReason#RECORDMGT
 * activity = http://terminology.hl7.org/CodeSystem/v3-DataOperation#APPEND
-* agent[0].type =  http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#custodian "Custodian"
+* agent[0].type =  http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian "Custodian"
 * agent[0].who.reference = "Organization/Payer1"
 
 

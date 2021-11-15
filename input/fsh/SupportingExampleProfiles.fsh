@@ -37,6 +37,45 @@ Usage: #example
 * identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
 
 
+Instance: Patient1-2
+InstanceOf: us-core-patient
+Description: "Example of a US Core Patient Record for Payer 2"
+Usage: #example
+* id = "1-2"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
+* language = #en-US
+* active = true
+* name[0].family = "Appleseed"
+* name[0].given[0] = "Johnny"
+* telecom[0].system = http://hl7.org/fhir/contact-point-system#phone
+* telecom[0].value = "(443)555-1212"
+* telecom[0].rank = 1
+* telecom[1].system = http://hl7.org/fhir/contact-point-system#phone
+* telecom[1].value = "(410)678-2323"
+* telecom[1].rank = 2
+* gender = http://hl7.org/fhir/administrative-gender#male
+* birthDate = "1986-01-01"
+* address[0].type = http://hl7.org/fhir/address-type#physical
+* address[0].line[0] = "123 Main Street"
+* address[0].city = "Pittsburgh"
+* address[0].state = "PA"
+* address[0].postalCode = "12519"
+* maritalStatus = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
+* identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MB
+* identifier[0].value = "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901"
+* identifier[0].system = "https://www.xxxhealthplan.com/fhir/memberidentifier"
+* identifier[1].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR
+* identifier[1].value = "1234-234-1243-12345678901m"
+* identifier[1].system = "https://www.xxxhealthplan.com/fhir/medicalrecordnumber"
+* identifier[2].type = http://terminology.hl7.org/CodeSystem/v2-0203#XV
+* identifier[2].value = "1234-234-1243-12345678901u"
+* identifier[2].system = "https://www.xxxhealthplan.com/fhir/uniquememberidentifier"
+* identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
+* identifier[3].value = "1234-234-1243-12345678901a"
+* identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
+
+
 Instance: Patient100
 InstanceOf: us-core-patient
 Description: "Example of a US Core Patient Record for Payer 2"
@@ -88,6 +127,52 @@ Usage: #example
 * identifier[0].value = "345678"
 * name = "Payer 1"
 * active = true
+
+Instance: OrganizationPayer1-1
+InstanceOf: us-core-organization
+Description: "Example of the Payer Organization"
+Usage: #example
+* id = "Payer1-1"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+* meta.lastUpdated = "2019-12-12T09:14:11+00:00"
+* language = #en-US
+* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[0].value = "345678"
+* name = "Payer 1"
+* active = true
+
+
+
+Instance: OrganizationPayer2
+InstanceOf: us-core-organization
+Description: "Another Example of the Payer Organization"
+Usage: #example
+* id = "Payer2"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+* meta.lastUpdated = "2020-12-12T09:14:11+00:00"
+* language = #en-US
+* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[0].value = "345679"
+* name = "Payer 2"
+* active = true
+
+
+Instance: OrganizationPayer2-2
+InstanceOf: us-core-organization
+Description: "Another Example of the Payer Organization"
+Usage: #example
+* id = "Payer2-2"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+* meta.lastUpdated = "2020-12-12T09:14:11+00:00"
+* language = #en-US
+* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[0].value = "345679"
+* name = "Payer 2"
+* active = true
+
 
 Instance: OrganizationProvider1
 InstanceOf: us-core-organization

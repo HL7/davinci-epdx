@@ -45,6 +45,8 @@ Description: "A bundle that returns Conditions with provenance using _revinclude
 * type = http://hl7.org/fhir/bundle-type#searchset "Search Results"
 * timestamp = "2020-09-28T23:26:23.217+00:00"
 * total = 2
+* link[0].relation = "self"
+* link[0].url = "https://example.com/base/fhir/Condition?ct=W1sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
 * entry[0].fullUrl = "https://example.com/base/Condition/101"
 * entry[0].resource.resourceType = "Condition"
 * entry[0].resource.id = "101"
@@ -60,7 +62,7 @@ Description: "A bundle that returns Conditions with provenance using _revinclude
 * entry[1].resource.id = "102"
 * entry[1].resource.clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * entry[1].resource.verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
-* entry[1].resource.category = http://terminology.hl7.org/CodeSystem/condition-category#health-concern
+* entry[1].resource.category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item "Problem List Item"
 * entry[1].resource.code = http://snomed.info/sct#247824007 "Fear of becoming fat"
 * entry[1].resource.subject.reference = "Patient/1"
 * entry[1].resource.onsetDateTime = "2020-03-13"
@@ -73,13 +75,13 @@ Description: "A bundle that returns Conditions with provenance using _revinclude
 * entry[2].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * entry[2].resource.target[0].reference = "Condition/101"
 * entry[2].resource.recorded = "1995-09-20T18:26:23.217+00:00"
-* entry[2].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#author "Author"
+* entry[2].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * entry[2].resource.agent[0].who.reference = "Organization/ProviderOrg2"
 * entry[2].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[2].resource.entity.what.display = "No reference available"
 * entry[2].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
 * entry[2].resource.entity.extension.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
-* entry[2].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[2].search.mode = http://hl7.org/fhir/search-entry-mode#include
 
 
 
@@ -88,9 +90,11 @@ InstanceOf: Bundle
 Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to Payer 2. Patient, 2 Encounters and 2 Provenance records."
 * id = "1000000-1"
 * meta.profile = "http://hl7.org/fhir/StructureDefinition/Bundle"
-* type = http://hl7.org/fhir/bundle-type#searchset "Search Results"
+* type = http://hl7.org/fhir/bundle-type#transaction-response
 * timestamp = "2019-12-31T20:26:23.217+00:00"
-* total = 3
+// * total = 3
+* link[0].relation = "self"
+* link[0].url = "https://example.com/base/fhir/Patient?ct=W2idG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
 * entry[0].fullUrl = "https://example.com/base/Patient/1"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1"
@@ -126,6 +130,8 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[0].resource.identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
 * entry[0].resource.identifier[3].value = "1234-234-1243-12345678901a"
 * entry[0].resource.identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
+// * entry[0].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[0].response.status = "200"
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1"
@@ -135,6 +141,8 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[1].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[1].resource.subject.reference = "Patient/1"
+// * entry[1].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[1].response.status = "200"
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1"
@@ -144,6 +152,8 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[2].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[2].resource.subject.reference = "Patient/1"
+// * entry[2].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[2].response.status = "200"
 * entry[3].fullUrl = "https://example.com/base/Provenance/1000002-1"
 * entry[3].resource.resourceType = "Provenance"
 * entry[3].resource.id = "1000002-1"
@@ -157,6 +167,9 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[3].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[3].resource.entity.what.display = "No reference available"
 * entry[3].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[3].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[3].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[3].response.status = "200"
 * entry[4].fullUrl = "https://example.com/base/Provenance/1000003-1"
 * entry[4].resource.resourceType = "Provenance"
 * entry[4].resource.id = "1000003-1"
@@ -169,6 +182,9 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
 * entry[4].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[4].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[4].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[4].response.status = "200"
 * entry[5].fullUrl = "https://example.com/base/Provenance/1000004-1"
 * entry[5].resource.resourceType = "Provenance"
 * entry[5].resource.id = "1000004-1"
@@ -179,15 +195,21 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[5].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[5].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[5].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
+// * entry[5].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[5].response.status = "200"
+
+
 
 Instance: BundleExamplePayer2
 InstanceOf: Bundle
 Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to Payer 3. Patient, 2 Encounters and 2 Provenance records plus new records from Payer 2."
 * id = "1000000-2"
 * meta.profile = "http://hl7.org/fhir/StructureDefinition/Bundle"
-* type = http://hl7.org/fhir/bundle-type#searchset "Search Results"
+* type = http://hl7.org/fhir/bundle-type#transaction-response
 * timestamp = "2019-12-31T20:26:23.217+00:00"
-* total = 4
+// * total = 4
+* link[0].relation = "self"
+* link[0].url = "https://example.com/base/fhir/Patient?ct=W4sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
 * entry[0].fullUrl = "https://example.com/base/Patient/1-2"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1-2"
@@ -223,6 +245,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[0].resource.identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
 * entry[0].resource.identifier[3].value = "1234-234-1243-12345678901a"
 * entry[0].resource.identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
+// * entry[0].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[0].response.status = "200"
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1-2"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1-2"
@@ -232,6 +256,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[1].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[1].resource.subject.reference = "Patient/1-2"
+// * entry[1].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[1].response.status = "200"
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1-2"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1-2"
@@ -241,6 +267,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[2].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[2].resource.subject.reference = "Patient/1-2"
+// * entry[2].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[2].response.status = "200"
 * entry[3].fullUrl = "https://example.com/base/Encounter/8-2"
 * entry[3].resource.resourceType = "Encounter"
 * entry[3].resource.id = "8-2"
@@ -250,6 +278,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[3].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[3].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[3].resource.subject.reference = "Patient/1-2"
+// * entry[3].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[3].response.status = "200"
 * entry[4].fullUrl = "https://example.com/base/Provenance/1000002-1-2"
 * entry[4].resource.resourceType = "Provenance"
 * entry[4].resource.id = "1000002-1-2"
@@ -263,6 +293,9 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
 * entry[4].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[4].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[4].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[4].response.status = "200"
 * entry[5].fullUrl = "https://example.com/base/Provenance/1000003-1-2"
 * entry[5].resource.resourceType = "Provenance"
 * entry[5].resource.id = "1000003-1-2"
@@ -274,7 +307,10 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[5].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[5].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[5].resource.entity.what.display = "No reference available"
-* entry[5].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[5].resource.entity.extension[0].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[5].resource.entity.extension[0].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[5].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[5].response.status = "200"
 * entry[6].fullUrl = "https://example.com/base/Provenance/1000004-1-2"
 * entry[6].resource.resourceType = "Provenance"
 * entry[6].resource.id = "1000004-1-2"
@@ -289,6 +325,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[6].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[6].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[6].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
+// * entry[6].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[6].response.status = "200"
 * entry[7].fullUrl = "https://example.com/base/Provenance/1000004-2"
 * entry[7].resource.resourceType = "Provenance"
 * entry[7].resource.id = "1000004-2"
@@ -300,7 +338,10 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[7].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[7].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[7].resource.entity.what.display = "No reference available"
-* entry[7].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[7].resource.entity.extension[0].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[7].resource.entity.extension[0].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[7].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[7].response.status = "200"
 * entry[8].fullUrl = "https://example.com/base/Provenance/1000005-2"
 * entry[8].resource.resourceType = "Provenance"
 * entry[8].resource.id = "1000004-2"
@@ -311,6 +352,8 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[8].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[8].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[8].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
+// * entry[8].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[8].response.status = "200"
 
 
 Instance: BundleExamplePayer3
@@ -318,9 +361,11 @@ InstanceOf: Bundle
 Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to Payer 4. Patient, 2 Encounters and 2 Provenance records originating from Payer 1 plus new records from Payer 2 and Payer 3, including supporting Provenance records."
 * id = "1000000-3"
 * meta.profile = "http://hl7.org/fhir/StructureDefinition/Bundle"
-* type = http://hl7.org/fhir/bundle-type#searchset "Search Results"
+* type = http://hl7.org/fhir/bundle-type#transaction-response
 * timestamp = "2021-12-31T20:26:23.217+00:00"
-* total = 5
+// * total = 5
+* link[0].relation = "self"
+* link[0].url = "https://example.com/base/fhir/Patient?ct=W5sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
 * entry[0].fullUrl = "https://example.com/base/Patient/1-3"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1-3"
@@ -356,6 +401,8 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[0].resource.identifier[3].type = http://terminology.hl7.org/CodeSystem/v2-0203#PT
 * entry[0].resource.identifier[3].value = "1234-234-1243-12345678901a"
 * entry[0].resource.identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
+// * entry[0].search.mode = http://hl7.org/fhir/search-entry-mode#match
+* entry[0].response.status = "200"
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1-2-3"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1-2-3"
@@ -365,6 +412,8 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[1].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[1].resource.subject.reference = "Patient/1-2"
+// * entry[1].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[1].response.status = "200"
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1-2-3"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1-2-3"
@@ -374,6 +423,8 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[2].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[2].resource.subject.reference = "Patient/1-3"
+// * entry[2].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[2].response.status = "200"
 * entry[3].fullUrl = "https://example.com/base/Encounter/8-2-3"
 * entry[3].resource.resourceType = "Encounter"
 * entry[3].resource.id = "8-2-3"
@@ -383,6 +434,8 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[3].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
 * entry[3].resource.type =  $SnomedCT#11429006 "Consultation"
 * entry[3].resource.subject.reference = "Patient/1-3"
+// * entry[3].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[3].response.status = "200"
 * entry[4].fullUrl = "https://example.com/base/Provenance/1000002-1-2-3"
 * entry[4].resource.resourceType = "Provenance"
 * entry[4].resource.id = "1000002-1-2-3"
@@ -396,6 +449,9 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
 * entry[4].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[4].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[4].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[4].response.status = "200"
 * entry[5].fullUrl = "https://example.com/base/Provenance/1000003-1-2-3"
 * entry[5].resource.resourceType = "Provenance"
 * entry[5].resource.id = "1000003-1-2-3"
@@ -408,6 +464,9 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[5].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[5].resource.entity.what.display = "No reference available"
 * entry[5].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[5].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[5].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[5].response.status = "200"
 * entry[6].fullUrl = "https://example.com/base/Provenance/1000005-2"
 * entry[6].resource.resourceType = "Provenance"
 * entry[6].resource.id = "1000005-2"
@@ -420,6 +479,9 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[6].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[6].resource.entity.what.display = "No reference available"
 * entry[6].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
+* entry[6].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[6].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[6].response.status = "200"
 * entry[7].fullUrl = "https://example.com/base/Provenance/1000004-1-2-3"
 * entry[7].resource.resourceType = "Provenance"
 * entry[7].resource.id = "1000004-1-2-3"
@@ -434,22 +496,27 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[7].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[7].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[7].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
+// * entry[7].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[7].response.status = "200"
 * entry[8].fullUrl = "https://example.com/base/Provenance/1000004-2"
 * entry[8].resource.resourceType = "Provenance"
 * entry[8].resource.id = "1000004-2"
 * entry[8].resource.meta.versionId = "1"
 * entry[8].resource.meta.lastUpdated = "2020-06-15T20:26:23.217+00:00"
 * entry[8].resource.target[0].reference = "Encounter/8-2-3"
-* entry[8].resource.target[1].reference = "Provenance/8-2-3"
+* entry[8].resource.target[1].reference = "Provenance/1000005-2"
 * entry[8].resource.recorded = "2020-06-15T20:26:23.217+00:00"
 * entry[8].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * entry[8].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[8].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[8].resource.entity.what.display = "No reference available"
 * entry[8].resource.entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#hl7ccda "HL7 C-CDA"
-* entry[9].fullUrl = "https://example.com/base/Provenance/1000005-2"
+* entry[8].resource.entity.extension.url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"
+// * entry[8].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[8].response.status = "200"
+* entry[9].fullUrl = "https://example.com/base/Provenance/1000005-2-3"
 * entry[9].resource.resourceType = "Provenance"
-* entry[9].resource.id = "1000004-2"
+* entry[9].resource.id = "1000005-2-3"
 * entry[9].resource.meta.versionId = "1"
 * entry[9].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[9].resource.target[0].reference = "Bundle/1000000-2"
@@ -457,6 +524,8 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[9].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[9].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[9].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
+// * entry[9].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[9].response.status = "200"
 * entry[10].fullUrl = "https://example.com/base/Provenance/1000006-3"
 * entry[10].resource.resourceType = "Provenance"
 * entry[10].resource.id = "1000006-3"
@@ -467,4 +536,5 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[10].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[10].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[10].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
-
+// * entry[10].search.mode = http://hl7.org/fhir/search-entry-mode#include
+* entry[10].response.status = "200"
