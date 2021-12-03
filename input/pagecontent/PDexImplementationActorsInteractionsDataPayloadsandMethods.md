@@ -128,11 +128,11 @@ An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Heal
 
 TODO: update link to replace build.fhir.org when HRex publishes.
 
-Payer to Payer Data Exchange **MAY** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
+Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
 [Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The exchange of data 
 between Health Plans **SHALL** support the [Authorization with Consent](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html) method, as defined in the 
 [Da Vinci Health Record Exchange IG](http://hl7.org/fhir/us/davinci-hrex). 
-Once Health Plans have completed the Consent stage of the Exchange the requesting Health Plan **MAY** 
+Once Health Plans have completed the Consent stage of the Exchange the requesting Health Plan **SHOULD** 
 request/retrieve data using the [FHIR Bulk Data Patient Level Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the 
 [Bulk Data Export Operation Request Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow). 
 
