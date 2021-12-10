@@ -124,52 +124,56 @@ An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Heal
 ![Figure 4-3: Payer to Application Interaction](Payer-App-InteractionMethods3.png){:height="auto" width="100%"}
 **Figure 4-3: Payer to Application Interaction
 
-### Payer-to-Payer Data Exchange Using Bulk FHIR Methods
+### Payer-to-Payer Data Exchange
 
 TODO: update link to replace build.fhir.org when HRex publishes.
 
-Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
-[Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The exchange of data 
-between Health Plans **SHALL** support the [Authorization with Consent](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html) method, as defined in the 
-[Da Vinci Health Record Exchange IG](http://hl7.org/fhir/us/davinci-hrex). 
-Once Health Plans have completed the Consent stage of the Exchange the requesting Health Plan **SHOULD** 
-request/retrieve data using the [FHIR Bulk Data Patient Level Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the 
-[Bulk Data Export Operation Request Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow). 
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1, is a requirement of the 
+CMS Interoperability Rule.
 
-All PDex Payer to Payer Bulk FHIR-based data exchanges permitted in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management 
-of attribution lists for exchange of data for groups of members will be considered in a future version of the IG.
+All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
+data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
+of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
+Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult 
+the Data Provider's Server Capability Statement to determine which methods are made available by the 
+data holder. Each retrieval method **SHALL** be preceded by the use of the 
+[Authorization with Consent](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html) method, as defined 
+in the [Da Vinci Health Record Exchange IG](http://hl7.org/fhir/us/davinci-hrex). Once Health Plans have 
+completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL** request/retrieve data 
+using one of the following three methods:
 
-### Patient-everything via alternate secure transport
+1. Query each clinical endpoint individually
+2. Patient/$everything operation
+3. Bulk FHIR Asynchronous protocols
 
-The FHIR Specification provides for a [Patient-everything operation](https://www.hl7.org/fhir/operation-patient-everything.html). 
-The supported format is:
+#### 1. Query each clinical endpoint individually
 
-- URL: [base]/Patient/[id]/$everything
+Health Plans **SHALL** support search of a member's clinical data to each US Core clinical resource plus the 
+PDex Medication Dispense resource. Using the search capability of each endpoint enables the _revInclude parameter
+to be used to retrieve the associated Provenance records.
 
-Health Plans **SHOULD** enable support for a Patient-everything bundle to be created. Exchange of this bundle **SHOULD** be accomplished using  SMART or SMART Backend services. The bundle may alternatively be exchanged via a transport method that supports the secure exchange of PHI.
+#### 2. Patient/$everything operation
 
-This operation is intended to simplify requests from a client application when requesting records for a patient. 
+Health Plans **SHALL** support the use of the Patient/$everything operation as defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
 
-$everything is an operation. Operations do not support the full range of query parameters available to a regular search request. PDex recommends the use of _revInclude in search operations to retrieve associated Provenance resources. In cases where Provenance is being requested as part of the $everythng operation this is accomplished by specifying Provenance as one of a list of resources included in the **_type** parameter of the $everything operation.
+It must be noted that the Patient/$everything operation does not support the full range of query parameters 
+available to a regular search request. In cases where Provenance is being requested as part of the 
+$everythng operation this is accomplished by specifying Provenance as one of a list of resources included in 
+the **_type** parameter of the $everything operation.
 
-Example of _type parameter: 
+Example of _type parameter:
 
     _type=Condition,Device,Encounter,Immunization,Observation,Procedure,Provenance
 
-A Health Plan's FHIR API **SHOULD** support the Patient-everything operation as defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html)
+#### 3. Bulk FHIR Asynchronous protocols
 
-The Patient-everything operation is identified as a potential method to package all of a member's health history into a records bundle for transmission. 
-
-The Patient-everything operation **SHOULD** be available as an operation via the Health Plan's FHIR API. 
-
-Member-authorized sharing of their health history **MAY** utilize the Patient-everything operation. However, the information returned in a bundle by the operation will be limited to only the member's information. The OAuth2.0 access token used to give access to a Member's records is ONLY valid for that member. If a Payer or Third-Party application has access tokens for multiple members they MUST call the Patient-everything operation discretely for each member, using the access token provided for the relevant patient. 
-
-The Patient-everything operation compiles a FHIR Bundle. In addition to the OAuth2.0 Member-authorized Payer-to-Payer and Payer-to-Third Party Application Exchange method, Health Plans **MAY** enable support for a Patient-everything bundle to be created and pushed via an alternate secure transport method between the Health Plan and another Trusted Entity such as another Health Plan. 
-
-The Patient-everything operation supports the use of the [bulk FHIR data format Specification](https://www.hl7.org/fhir/formats.html#bulk). A Health Plan **MAY** format the Patient-everything records to be exchanged using the ND-Json format. 
-
+Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
+[Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The 
+request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level 
+Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the 
+[Bulk Data Export Operation Request 
+Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow). 
 
 
 [Next Page - Handling Data Provenance](HandlingDataProvenance.html)
