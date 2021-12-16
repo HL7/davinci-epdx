@@ -4,6 +4,7 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 ---
 [Previous Page - Introduction](Introduction.html)
 
+{% include style_insert_table_blue.html %}
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
 The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core](http://hl7.org/fhir/us/core/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
@@ -143,30 +144,70 @@ in the [Da Vinci Health Record Exchange IG](http://hl7.org/fhir/us/davinci-hrex)
 completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL** request/retrieve data 
 using one of the following three methods:
 
-1. Query each clinical endpoint individually
-2. Patient/$everything operation
+1. Query all clinical resource individually
+2. Patient/{id}/$everything-pdex operation
 3. Bulk FHIR Asynchronous protocols
 
-#### 1. Query each clinical endpoint individually
+Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
 
-Health Plans **SHALL** support search of a member's clinical data to each US Core clinical resource plus the 
-PDex Medication Dispense resource. Using the search capability of each endpoint enables the _revInclude parameter
-to be used to retrieve the associated Provenance records.
+| Profile                                                                                                                                                                                                                                                                                    | Resource           |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| [US Core Allergy Intolerance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance)                                                                                                                                                                                 | AllergyIntolerance |
+| [US Core CarePlan](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan)                                                                                                                                                                                                      | CarePlan           |
+| [US Core CareTeam](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam)                                                                                                                                                                                                      | CareTeam           |
+| [US Core Condition](https://hl7.org/fhir/us/core/StructureDefinition/us-core-condition)                                                                                                                                                                                                    | Condition          |
+| [PDex Device](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device) <br/> [US Core ImplantableDevice](https://hl7.org/fhir/us/core/StructureDefinition/us-core-device)                                                                                                | Device             |
+| [US Core DiagnosticReport for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab)<br/>[US Core DiagnosticReport for Report and Note Exchange](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note) | DiagnosticReport   |
+| [US Core DocumentReference](https://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference)                                                                                                                                                                                    | DocumentReference  |
+| [US Core Encounter](https://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter)                                                                                                                                                                                                    | Encounter          |
+| [US Core Goal](https://hl7.org/fhir/us/core/StructureDefinition/us-core-goal)                                                                                                                                                                                                              | Goal               |
+| [US Core Immunization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization)                                                                                                                                                                                              | Immunization       |
+| [US Core Location](https://hl7.org/fhir/us/core/StructureDefinition/us-core-location)                                                                                                                                                                                                      | Location           |
+| [US Core Medication](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medication)                                                                                                                                                                                                  | Medication         |
+| [PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense)                                                                                                                                                                          | MedicationDispense |
+| [US Core MedicationRequest](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest)                                                                                                                                                                                    | MedicationRequest  |
+| [US Core Laboratory Result Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab)<br/>[US Core Pediatric BMI for Age Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age)<br/>[US Core Pediatric Head Occipital-frontal Circumference Observation](https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile)<br/>[US Core Pediatric Weight for Height Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height)<br/>[US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry)<br/>[US Core Smoking Status Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus)<br/>[VitalSigns](https://hl7.org/fhir/StructureDefinition/vitalspanel)                                                                           | Observation  |
+| [US Core Organization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)                                                                                                                                                                                             | Organization |
+| [US Core Patient](https://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)                                                                                                                                                                                                       | Patient      |
+| [US Core Practitioner](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)                                                                                                                                                                                             | Practitioner |
+| [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole)                                                                                                                                                                                     | PractitionerRole  |
+| [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)                                                                                                                                                                                                   | Procedure    |
+| [PDex Provenance](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-provenance)<br/>[US Core Provenance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance)                                                                                                                                                                                                                                   | Provenance   |
 
-#### 2. Patient/$everything operation
 
-Health Plans **SHALL** support the use of the Patient/$everything operation as defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
+#### Query all clinical resource individually
 
-It must be noted that the Patient/$everything operation does not support the full range of query parameters 
+Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as 
+identified in the table above. Using the search capability of each resource enables the _revInclude and _include 
+parameters to be used to retrieve the associated Provenance and supporting records.
+
+#### Patient/{id}/$everything-pdex operation
+
+Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everythinh-pdex 
+operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 
+specification here: 
+[https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
+
+$everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
+
+It must be noted that the Patient/{id}/$everything-pdex operation does not support the full range of query parameters 
 available to a regular search request. In cases where Provenance is being requested as part of the 
-$everythng operation this is accomplished by specifying Provenance as one of a list of resources included in 
-the **_type** parameter of the $everything operation.
+$everythng-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in 
+the **_type** parameter of the $everything-pdex operation.
+
+The following resource/profiles are retrievable using the $everything-pdex operation:
 
 Example of _type parameter:
 
-    _type=Condition,Device,Encounter,Immunization,Observation,Procedure,Provenance
+    _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
+           Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-#### 3. Bulk FHIR Asynchronous protocols
+The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not 
+directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
+
+#### Bulk FHIR Asynchronous protocols
+
+    /Patient/{id}/$export
 
 Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
 [Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The 
@@ -174,6 +215,9 @@ request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
 Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the 
 [Bulk Data Export Operation Request 
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow). 
+
+The Patient Export Operation for Payer to Payer exchange should be constrained to the resources and profiles 
+identified in the table at the top of this section.
 
 
 [Next Page - Handling Data Provenance](HandlingDataProvenance.html)
