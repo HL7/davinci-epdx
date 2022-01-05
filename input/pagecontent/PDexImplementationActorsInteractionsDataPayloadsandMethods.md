@@ -138,11 +138,49 @@ of attribution lists for exchange of data for groups of members may be considere
 
 Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult 
 the Data Provider's Server Capability Statement to determine which methods are made available by the 
-data holder. Each retrieval method **SHALL** be preceded by the use of the 
-[Authorization with Consent](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html) method, as defined 
-in the [Da Vinci Health Record Exchange IG](http://hl7.org/fhir/us/davinci-hrex). Once Health Plans have 
-completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL** request/retrieve data 
-using one of the following three methods:
+data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member 
+and provide consent:
+
+#### Member Match with Consent
+
+<div>
+{% include authorization-consent.svg %}
+</div>
+
+The steps in the Member Match with Consent process are:
+
+- Establish a secure connection via mTLS
+- Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
+- Use mTLS secure connection to perform MemberMatch operation
+- If a Member Id is returned from $MemberMatch a request is made to $MemberAccess for an OAuth2.0 Access Token
+- If an Access Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
+
+The $MemberMatch operation is defined in the [HRex Member Match operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
+
+- [US Core Patient Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
+- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
+- [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
+
+In the case where a Member Match is confirmed the receiving payer will: 
+
+- Return a Unique Member Identifier in the Member Match Operation Response. 
+- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member.
+
+#### Evaluation of Consent
+
+The receiving payer **MAY** store the Consent record for the member. The following content from the Consent record 
+is used to validate a data request:
+
+- Member Identity is matched
+- Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
+- Date period for consent is valid
+- Payer requesting retrieval of data is matched
+
+#### Data Retrieval Methods
+
+Once Health Plans have completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL** 
+utilize the access token returned from the Member Access step to request/retrieve data using one of the 
+following three methods:
 
 1. Query all clinical resource individually
 2. Patient/{id}/$everything-pdex operation
