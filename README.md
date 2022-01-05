@@ -13,9 +13,6 @@ PDex Version 1.0.0 was published using FHIR Shorthand and Sushi.
 For the PDex STU Update version 1.0.1 Sushi was upgraded to the 1.x release. The source code for the IG
 is found in the fishtank (input/fsh) folder in this repository.
 
-The PDex IG was originally published using the Trifolia FHIR Publisher. 
-The publisher can be found at: https://trifolia-fhir.lantanagroup.com/home
-
 Check out the README.md in the Fishtank folder for instructions on compiling the IG using Sushi.
 
 The primary author of this IG is: Mark Scrimshire of OnyxHealth.io. You can reach him at mark@ekivemark.com.
