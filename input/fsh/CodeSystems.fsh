@@ -163,3 +163,4 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * #um "Unique Member ID" "Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 * ^copyright = "This CodeSystem is not copyrighted."
+
