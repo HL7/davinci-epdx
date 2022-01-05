@@ -20,6 +20,17 @@ Check out the README.md in the Fishtank folder for instructions on compiling the
 
 The primary author of this IG is: Mark Scrimshire of OnyxHealth.io. You can reach him at mark@ekivemark.com.
 
+## Environment setup
+
+Update to latest Sushi:
+
+    npm install -g fsh-sushi
+
+Check Sushi Version:
+
+     sushi -v
+
+
 ## Building the IG
 
 Run the following commands from the base directory.
@@ -27,8 +38,7 @@ Run the following commands from the base directory.
 To run Sushi only:
 
     sushi fsh -o ./input
-    
-    
+
 To prepare to run the publisher:
 
     ./_updatePublisher.sh
