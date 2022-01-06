@@ -152,8 +152,11 @@ The steps in the Member Match with Consent process are:
 - Establish a secure connection via mTLS
 - Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
 - Use mTLS secure connection to perform MemberMatch operation
-- If a Member Id is returned from $MemberMatch a request is made to $MemberAccess for an OAuth2.0 Access Token
-- If an Access Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
+- The MemberMatch operation uses Patient and Coverage records to determine if a member is found
+- The MemberMatch operation evaluates the Consent resource for a matched member
+- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a UNique Member Match ID is created for Payer2
+- If a Member Match Id is returned from $MemberMatch a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access and Refresh Token
+- If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
 The $MemberMatch operation is defined in the [HRex Member Match operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
 
@@ -163,8 +166,10 @@ The $MemberMatch operation is defined in the [HRex Member Match operation](http:
 
 In the case where a Member Match is confirmed the receiving payer will: 
 
-- Return a Unique Member Identifier in the Member Match Operation Response. 
-- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member.
+- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
+- Return a Unique Member Match Identifier in the Member Match Operation Response.
+
+If the receiving payer is unable to comply with the consent request a Member Match ID is NOT returned in the $MemberMatch response/
 
 #### Evaluation of Consent
 
