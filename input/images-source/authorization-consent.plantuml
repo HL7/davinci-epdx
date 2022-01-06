@@ -1,17 +1,16 @@
-
 @startuml
 autonumber
 == Connection Intitialization ==
-group #LightBlue Step 1: Verify Exchange, establish mutual TLS, and verify trust.
+group #LightGreen Step 1: Verify Exchange, establish mutual TLS, and verify trust.
 	Payer2 -> PayerDirectory : Query
-	PayerDirectory -> Payer2 : Return endpoint, mutual TLS public cert,
+	PayerDirectory -> Payer2 : Return endpoint, mutual TLS public cert, 
 	Payer2 -> Payer2 : Verify Cert
 	Payer2 -> Payer1 : Server-Server OAuth -- Establish Mutual TLS
 	Payer1 -> PayerDirectory : Query mutual TLS Public Cert
 	PayerDirectory ->> Payer1 : Return mTLS public cert
 	Payer1 -> Payer1 : Verify Cert
 end
-group Step 1a: OAuth 2.0 Dynamic Registration via mTLS connection
+group #lightGreen Step 1a: OAuth 2.0 Dynamic Registration via mTLS connection
 	Payer2 -> Payer1 : Request registration (JWT with registration details)
   Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
 end
@@ -21,34 +20,46 @@ group Step 2: Establish common member
 	Payer1 -> Payer1 : Verify member
   Payer1 -> Payer1 : Store or Compute Consent (all / non-sensitive) for Member
   note right
-  	Member: ID
-    Policy: all | non-sensitive
-    Consent Period: start, end
+  Member: ID
+  Payer: ID
+  Policy: all | non-sensitive
+  Consent Period: start, end
   endnote
-	Payer1 -> Payer2 : Return Member ID
+	Payer1 -> Payer1 : Generate Unique Member Match ID for Payer2  
+  Payer1 -> Payer2 : Creates Unique (to Payer2) Member Match ID and returns in response 
   note right
-  	Payer1 may determine concurrent coverage is in effect
-    and covered by member consent to trigger reciprocal
-    app registration and $MemberAccess request
+  	Payer1 may determine concurrent coverage is in effect 
+    and covered by member consent to trigger reciprocal 
+    app registration and $MemberMatch request
+  endnote
+  note left
+  	Payer2 receives the Unique Member Match ID 
+    that is unique to Payer2 
+    from Payer1.  
+    Identifier is only returned if
+    member is matched and consent
+    can be complied with per 
+    date and policy constraints.
   endnote
 end
-== Data Requests ==
+
 group Step 3: Request Access and refresh token
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using member ID
-  note right
-  	$MemberAccess operation
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using Unique Member Match ID
+  note right 
+  	Token endpoint matches to member using Payer2 unique Member Match ID 
   endnote
   Payer1 -> Payer2 : Return access and refresh token
 end
+== Data Requests ==
 group #LightBlue Step 4: Exchange PDEX (USCDI) Information via API
 	Payer2 -> Payer1 : Get access token using refresh token, if necessary
   Payer2 -> Payer1 : Use access token to access API
 	Payer1 -> Payer2 : Return $everything or incremental data as appropriate
   note right
-  	Use retrieval method, as defined in use case scenarios, such as:
+  	Use retrieval method, as defined in use case scenarios, such as: 
       1.) Individual search against each USCDI resource
       2.) $everything operation
-      3.) asynchronous Bulk FHIR methods.
+      3.) asynchronous Bulk FHIR methods. 
   endnote
 end
 @enduml
