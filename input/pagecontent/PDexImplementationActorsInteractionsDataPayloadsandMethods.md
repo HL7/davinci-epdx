@@ -9,7 +9,7 @@ This section defines the Actors, Exchange Interactions and Data Payloads covered
 
 The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core](http://hl7.org/fhir/us/core/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
 
-## Actors
+### Actors
 
 The following actors are recognized in the PDex IG:
 
@@ -20,7 +20,7 @@ The following actors are recognized in the PDex IG:
 
 There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the "member health history".
 
-## Exchange Interactions
+### Exchange Interactions
 
 The PDex IG is specifying three exchange interactions:
  
@@ -28,7 +28,7 @@ The PDex IG is specifying three exchange interactions:
 2. Health Plans via a Member authorized exchange when a Member has moved from enrollment in one health plan to another.
 3. Health Plans and Third-Party Applications that a Member has authorized to share their health information that is held by the health plan.
 
-## Data Payloads
+### Data Payloads
 
 The PDex IG defines two types of data payload:
 
@@ -39,7 +39,7 @@ All resources and operations available via a FHIR API endpoint **SHALL** be decl
 
 See [Data Mapping](DataMapping.html) for details of the Data Payloads and operations.
 
-## Interaction Methods
+### Interaction Methods
 
 The PDex IG is focused on provider, member, or plan directed exchange of a member's data. 
 
@@ -50,9 +50,9 @@ The PDex IG specifies three interaction methods. Their use depends upon the Acto
 There are three potential interaction methods:
 1. CDS Hooks with SMART on FHIR
 2. OAuth 2.0 and FHIR API
-3. Patient-everything via alternate secure transport
+3. Payer-to-Payer Exchange
 
-### CDS Hooks with SMART-on-FHIR
+#### CDS Hooks with SMART-on-FHIR
 
 Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org/) to initiate Payer Data Exchange  with Health Plans. Implementers must be familiar with all aspects of this specification.
 
@@ -63,7 +63,7 @@ SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two princi
 
 The CDS Hooks and SMART-on-FHIR application configuration is detailed in [CDS-Hooks](CDS-Hooks.html).
 
-#### Ad-hoc PDex Member History Request
+##### Ad-hoc PDex Member History Request
 
 The specification of a SMART-on-FHIR App to initiate a CDS-Hook call to a Health Plan's FHIR API enables:
 * The CDS Hook to be fired from an automated workflow based upon EMR events.
@@ -89,7 +89,7 @@ An overview of the transaction flow is shown in figure 4-1:
 ![Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow](PDEX-SMART-Hook-SMART-InteractionMethods1.png){:height="auto" width="100%"}
 **Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow
  
-#### Hook Actions
+##### Hook Actions
 
 When a Health Plan server responds to a CDS Hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/1.0/#link). Support for this option by Health Plan systems **SHOULD** be provided. The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to review the available Health Plan's data for their patient, select the data they want to commit to their EMR system and upon confirming their selection, enable the selected data to be written to the clinician's EMR system.
 
@@ -99,7 +99,7 @@ The [Da Vinci Documentation Templates and Rules Implementation Guide](http://hl7
 
 All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if it is committed to their system.
 
-### OAuth2.0 and FHIR API
+#### OAuth2.0 and FHIR API
 
 The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member **SHALL** authenticate using credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.
 
@@ -125,7 +125,7 @@ An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Heal
 ![Figure 4-3: Payer to Application Interaction](Payer-App-InteractionMethods3.png){:height="auto" width="100%"}
 **Figure 4-3: Payer to Application Interaction
 
-### Payer-to-Payer Data Exchange
+#### Payer-to-Payer Data Exchange
 
 TODO: update link to replace build.fhir.org when HRex publishes.
 
