@@ -9,7 +9,7 @@ This section defines the Actors, Exchange Interactions and Data Payloads covered
 
 The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core](http://hl7.org/fhir/us/core/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
 
-## Actors
+### Actors
 
 The following actors are recognized in the PDex IG:
 
@@ -20,7 +20,7 @@ The following actors are recognized in the PDex IG:
 
 There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the "member health history".
 
-## Exchange Interactions
+### Exchange Interactions
 
 The PDex IG is specifying three exchange interactions:
  
@@ -28,7 +28,7 @@ The PDex IG is specifying three exchange interactions:
 2. Health Plans via a Member authorized exchange when a Member has moved from enrollment in one health plan to another.
 3. Health Plans and Third-Party Applications that a Member has authorized to share their health information that is held by the health plan.
 
-## Data Payloads
+### Data Payloads
 
 The PDex IG defines two types of data payload:
 
@@ -39,7 +39,7 @@ All resources and operations available via a FHIR API endpoint **SHALL** be decl
 
 See [Data Mapping](DataMapping.html) for details of the Data Payloads and operations.
 
-## Interaction Methods
+### Interaction Methods
 
 The PDex IG is focused on provider, member, or plan directed exchange of a member's data. 
 
@@ -50,9 +50,9 @@ The PDex IG specifies three interaction methods. Their use depends upon the Acto
 There are three potential interaction methods:
 1. CDS Hooks with SMART on FHIR
 2. OAuth 2.0 and FHIR API
-3. Patient-everything via alternate secure transport
+3. Payer-to-Payer Exchange
 
-### CDS Hooks with SMART-on-FHIR
+#### CDS Hooks with SMART-on-FHIR
 
 Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org/) to initiate Payer Data Exchange  with Health Plans. Implementers must be familiar with all aspects of this specification.
 
@@ -63,7 +63,7 @@ SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two princi
 
 The CDS Hooks and SMART-on-FHIR application configuration is detailed in [CDS-Hooks](CDS-Hooks.html).
 
-#### Ad-hoc PDex Member History Request
+##### Ad-hoc PDex Member History Request
 
 The specification of a SMART-on-FHIR App to initiate a CDS-Hook call to a Health Plan's FHIR API enables:
 * The CDS Hook to be fired from an automated workflow based upon EMR events.
@@ -89,7 +89,7 @@ An overview of the transaction flow is shown in figure 4-1:
 ![Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow](PDEX-SMART-Hook-SMART-InteractionMethods1.png){:height="auto" width="100%"}
 **Figure 4-1: CDS-Hooks SMART-on-FHIR Transaction Flow
  
-#### Hook Actions
+##### Hook Actions
 
 When a Health Plan server responds to a CDS Hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/1.0/#link). Support for this option by Health Plan systems **SHOULD** be provided. The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to review the available Health Plan's data for their patient, select the data they want to commit to their EMR system and upon confirming their selection, enable the selected data to be written to the clinician's EMR system.
 
@@ -99,7 +99,7 @@ The [Da Vinci Documentation Templates and Rules Implementation Guide](http://hl7
 
 All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if it is committed to their system.
 
-### OAuth2.0 and FHIR API
+#### OAuth2.0 and FHIR API
 
 The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member **SHALL** authenticate using credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.
 
@@ -125,142 +125,28 @@ An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Heal
 ![Figure 4-3: Payer to Application Interaction](Payer-App-InteractionMethods3.png){:height="auto" width="100%"}
 **Figure 4-3: Payer to Application Interaction
 
-### Payer-to-Payer Data Exchange
+#### Payer-to-Payer Data Exchange
 
 TODO: update link to replace build.fhir.org when HRex publishes.
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1, is a requirement of the 
-CMS Interoperability Rule.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in
+FHIR by US Core, is a requirement of the CMS Interoperability Rule.
 
 All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
 data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
 of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
-Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult 
-the Data Provider's Server Capability Statement to determine which methods are made available by the 
-data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member 
-and provide consent:
-
-#### Member Match with Consent
-
-<div>
-{% include authorization-consent.svg %}
-</div>
-
-The steps in the Member Match with Consent process are:
-
-- Establish a secure connection via mTLS
-- Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
-- Use mTLS secure connection to perform MemberMatch operation
-- The MemberMatch operation uses Patient and Coverage records to determine if a member is found
-- The MemberMatch operation evaluates the Consent resource for a matched member
-- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a UNique Member Match ID is created for Payer2
-- If a Member Match Id is returned from $MemberMatch a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access and Refresh Token
-- If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
-
-The $MemberMatch operation is defined in the [HRex Member Match operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
-
-- [US Core Patient Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
-- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
-- [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
-
-In the case where a Member Match is confirmed the receiving payer will: 
-
-- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique Member Match Identifier in the Member Match Operation Response.
-
-If the receiving payer is unable to comply with the consent request a Member Match ID is NOT returned in the $MemberMatch response/
-
-#### Evaluation of Consent
-
-The receiving payer **MAY** store the Consent record for the member. The following content from the Consent record 
-is used to validate a data request:
-
-- Member Identity is matched
-- Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
-- Date period for consent is valid
-- Payer requesting retrieval of data is matched
-
-#### Data Retrieval Methods
-
-Once Health Plans have completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL** 
-utilize the access token returned from the Member Access step to request/retrieve data using one of the 
-following three methods:
+Payer-to-Payer exchange can be accomplished by three methods. 
 
 1. Query all clinical resource individually
 2. Patient/{id}/$everything-pdex operation
 3. Bulk FHIR Asynchronous protocols
 
-Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
+Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 
+determine which methods are made available by the data holder. 
 
-| Profile                                                                                                                                                                                                                                                                                    | Resource           |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| [US Core Allergy Intolerance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance)                                                                                                                                                                                 | AllergyIntolerance |
-| [US Core CarePlan](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan)                                                                                                                                                                                                      | CarePlan           |
-| [US Core CareTeam](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam)                                                                                                                                                                                                      | CareTeam           |
-| [US Core Condition](https://hl7.org/fhir/us/core/StructureDefinition/us-core-condition)                                                                                                                                                                                                    | Condition          |
-| [PDex Device](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device) <br/> [US Core ImplantableDevice](https://hl7.org/fhir/us/core/StructureDefinition/us-core-device)                                                                                                | Device             |
-| [US Core DiagnosticReport for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab)<br/>[US Core DiagnosticReport for Report and Note Exchange](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note) | DiagnosticReport   |
-| [US Core DocumentReference](https://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference)                                                                                                                                                                                    | DocumentReference  |
-| [US Core Encounter](https://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter)                                                                                                                                                                                                    | Encounter          |
-| [US Core Goal](https://hl7.org/fhir/us/core/StructureDefinition/us-core-goal)                                                                                                                                                                                                              | Goal               |
-| [US Core Immunization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization)                                                                                                                                                                                              | Immunization       |
-| [US Core Location](https://hl7.org/fhir/us/core/StructureDefinition/us-core-location)                                                                                                                                                                                                      | Location           |
-| [US Core Medication](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medication)                                                                                                                                                                                                  | Medication         |
-| [PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense)                                                                                                                                                                          | MedicationDispense |
-| [US Core MedicationRequest](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest)                                                                                                                                                                                    | MedicationRequest  |
-| [US Core Laboratory Result Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab)<br/>[US Core Pediatric BMI for Age Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age)<br/>[US Core Pediatric Head Occipital-frontal Circumference Observation](https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile)<br/>[US Core Pediatric Weight for Height Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height)<br/>[US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry)<br/>[US Core Smoking Status Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus)<br/>[VitalSigns](https://hl7.org/fhir/StructureDefinition/vitalspanel)                                                                           | Observation  |
-| [US Core Organization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)                                                                                                                                                                                             | Organization |
-| [US Core Patient](https://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)                                                                                                                                                                                                       | Patient      |
-| [US Core Practitioner](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)                                                                                                                                                                                             | Practitioner |
-| [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole)                                                                                                                                                                                     | PractitionerRole  |
-| [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)                                                                                                                                                                                                   | Procedure    |
-| [PDex Provenance](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-provenance)<br/>[US Core Provenance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance)                                                                                                                                                                                                                                   | Provenance   |
-
-
-#### Query all clinical resource individually
-
-Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as 
-identified in the table above. Using the search capability of each resource enables the _revInclude and _include 
-parameters to be used to retrieve the associated Provenance and supporting records.
-
-#### Patient/{id}/$everything-pdex operation
-
-Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everythinh-pdex 
-operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 
-specification here: 
-[https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
-
-$everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
-
-It must be noted that the Patient/{id}/$everything-pdex operation does not support the full range of query parameters 
-available to a regular search request. In cases where Provenance is being requested as part of the 
-$everythng-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in 
-the **_type** parameter of the $everything-pdex operation.
-
-The following resource/profiles are retrievable using the $everything-pdex operation:
-
-Example of _type parameter:
-
-    _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
-           Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
-
-The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not 
-directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
-
-#### Bulk FHIR Asynchronous protocols
-
-    /Patient/{id}/$export
-
-Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR 
-[Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The 
-request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level 
-Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the 
-[Bulk Data Export Operation Request 
-Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow). 
-
-The Patient Export Operation for Payer to Payer exchange should be constrained to the resources and profiles 
-identified in the table at the top of this section.
+Please refer to [Section 4.2 - Payer To Payer Exchange](PayerToPayerExchange.html) for details about Payer-to-Payer
+exchange workflows and data exchange methods. 
 
 
 [Next Page - Handling Data Provenance](HandlingDataProvenance.html)

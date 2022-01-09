@@ -1,527 +1,140 @@
 [Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
 
-Notes:
-1. Payers **SHOULD** utilize the FHIR API to exchange patient information Payer-to-Payer at the request of the member.
-2. Payers **SHALL** include all member related documents as the contents of, or links from appropriate instances of the DocumentReference resource (unless these documents are being exchanged by another method.
+
+TODO: update link to replace build.fhir.org when HRex publishes.
+
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in 
+FHIR by US Core, is a requirement of the CMS Interoperability Rule.
+
+All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
+data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
+of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+
+Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult
+the Data Provider's Server Capability Statement to determine which methods are made available by the
+data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member
+and provide consent:
+
+### Member Match with Consent
+
+<div style="height=auto;width=90%;">
+{% include authorization-consent.svg %}{ width: 100%; height: auto; }
+</div>
+
+The steps in the Member Match with Consent process are:
+
+- Establish a secure connection via mTLS
+- Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
+- Use mTLS secure connection to perform MemberMatch operation
+- The MemberMatch operation uses Patient and Coverage records to determine if a member is found
+- The MemberMatch operation evaluates the Consent resource for a matched member
+- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a UNique Member Match ID is created for Payer2
+- If a Member Match Id is returned from $MemberMatch a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access and Refresh Token
+- If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
+
+The $MemberMatch operation is defined in the [HRex Member Match operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
+
+- [US Core Patient Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
+- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
+- [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
+
+In the case where a Member Match is confirmed the receiving payer will:
+
+- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
+- Return a Unique Member Match Identifier in the Member Match Operation Response.
+
+If the receiving payer is unable to comply with the consent request a Member Match ID is NOT returned in the $MemberMatch response/
+
+### Evaluation of Consent
+
+The receiving payer **MAY** store the Consent record for the member. The following content from the Consent record
+is used to validate a data request:
+
+- Member Identity is matched
+- Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
+- Date period for consent is valid
+- Payer requesting retrieval of data is matched
+
+### Data Retrieval Methods
+
+Once Health Plans have completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL**
+utilize the access token returned from the Member Access step to request/retrieve data using one of the
+following three methods:
+
+1. Query all clinical resource individually
+2. Patient/{id}/$everything-pdex operation
+3. Bulk FHIR Asynchronous protocols
+
+Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
+
+| Profile                                                                                                                                                                                                                                                                                    | Resource           |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| [US Core Allergy Intolerance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance)                                                                                                                                                                                 | AllergyIntolerance |
+| [US Core CarePlan](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan)                                                                                                                                                                                                      | CarePlan           |
+| [US Core CareTeam](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam)                                                                                                                                                                                                      | CareTeam           |
+| [US Core Condition](https://hl7.org/fhir/us/core/StructureDefinition/us-core-condition)                                                                                                                                                                                                    | Condition          |
+| [PDex Device](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device) <br/> [US Core ImplantableDevice](https://hl7.org/fhir/us/core/StructureDefinition/us-core-device)                                                                                                | Device             |
+| [US Core DiagnosticReport for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab)<br/>[US Core DiagnosticReport for Report and Note Exchange](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note) | DiagnosticReport   |
+| [US Core DocumentReference](https://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference)                                                                                                                                                                                    | DocumentReference  |
+| [US Core Encounter](https://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter)                                                                                                                                                                                                    | Encounter          |
+| [US Core Goal](https://hl7.org/fhir/us/core/StructureDefinition/us-core-goal)                                                                                                                                                                                                              | Goal               |
+| [US Core Immunization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization)                                                                                                                                                                                              | Immunization       |
+| [US Core Location](https://hl7.org/fhir/us/core/StructureDefinition/us-core-location)                                                                                                                                                                                                      | Location           |
+| [US Core Medication](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medication)                                                                                                                                                                                                  | Medication         |
+| [PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense)                                                                                                                                                                          | MedicationDispense |
+| [US Core MedicationRequest](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest)                                                                                                                                                                                    | MedicationRequest  |
+| [US Core Laboratory Result Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab)<br/>[US Core Pediatric BMI for Age Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age)<br/>[US Core Pediatric Head Occipital-frontal Circumference Observation](https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile)<br/>[US Core Pediatric Weight for Height Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height)<br/>[US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry)<br/>[US Core Smoking Status Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus)<br/>[VitalSigns](https://hl7.org/fhir/StructureDefinition/vitalspanel)                                                                           | Observation  |
+| [US Core Organization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)                                                                                                                                                                                             | Organization |
+| [US Core Patient](https://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)                                                                                                                                                                                                       | Patient      |
+| [US Core Practitioner](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)                                                                                                                                                                                             | Practitioner |
+| [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole)                                                                                                                                                                                     | PractitionerRole  |
+| [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)                                                                                                                                                                                                   | Procedure    |
+| [PDex Provenance](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-provenance)<br/>[US Core Provenance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance)                                                                                                                                                                                                                                   | Provenance   |
 
 
-### Operation $member-match on Patient
+### Query all clinical resource individually
 
-Find Member using Patient and Coverage Resources. 
+Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as
+identified in the table above. Using the search capability of each resource enables the _revInclude and _include
+parameters to be used to retrieve the associated Provenance and supporting records.
 
-It is recognized that the $member-match function is an operation that can be the pre-cursor to many different data exchange use cases between Payers and other with other organizations, such as providers. Consequently the $member-match operation has been moved to the HL7 Da Vinci Health Record Exchange (HRex) Implementation Guide. This IG references the $member-match operation and associated operations as defined in the HRex IG. Please refer to the [Authorization with Consent section](http://build.fhir.org/ig/HL7/davinci-ehrx/consent-oauth.html)) of the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx/index.html) for full details. 
+### Patient/{id}/$everything-pdex operation
 
-OPERATION: Find member using search driven by member patient and coverage information.
+Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everythinh-pdex
+operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4
+specification here:
+[https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-When a member switches from one plan to another the member has the option to request their data to be passed to their new health plan. A pre-requisite for this request is that the member has the information from their prior coverage, or member identity card, such as member number, subscriber number, group id, plan id. If the member does not have this information and does not have their prior coverage card they would be required to contact their prior plan to obtain this information. 
- 
-The new Health Plan **SHALL** enable an enrolling member to provide the coverage details for their prior health plan. The new Health Plan **SHALL** create the following resources that will be compiled into a Parameter Resource and submitted to the $member-match operation on the Patient FHIR endpoint for the old health plan:
+$everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
 
-- US Core Patient (Containing Member demographics)
-- Coverage (details of prior health plan coverage provided by the member, typically from their Health Plan coverage card)
-- Coverage (details of new or prospective health plan coverage, provided by the health plan based upon the member's enrollment)
-- Consent (Information indicating whether a member wishes to exchange all information, or only information that is not additionally protected such as 42.CFR Part 2 or state-specific sensitive data categories.)
+It must be noted that the Patient/{id}/$everything-pdex operation does not support the full range of query parameters
+available to a regular search request. In cases where Provenance is being requested as part of the
+$everythng-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
+the **_type** parameter of the $everything-pdex operation.
 
-The New Health Plan Coverage record provides information for the prior Health Plan to determine the identity of their member in the new health plan, enabling them to identify the member in the new Health Plan for any future communications.
+The following resource/profiles are retrievable using the $everything-pdex operation:
 
-The Health Plan should add the unique member identifier to the received Patient record.
+Example of _type parameter:
 
-The Old Health Plan should return the following data:
+    _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
+           Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-- The unique member identifier added to the Patient.identifier in the Patient resource submitted by the new health plan.
-- (Optional) The new health plan coverage resource.
+The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not
+directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
 
-Only one Patient and (optionally) one Coverage record are returned.
+### Bulk FHIR Asynchronous protocols
 
-Reference Implementation Information: [Member-Match Reference Implementation](https://confluence.hl7.org/display/DVP/Member-Match+Reference+Implementation)
+    /Patient/{id}/$export
 
-A Consent Resource **SHOULD** be provided as part of a $member-access transaction sent to the prior Payer. The resource is profiled in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2020Sep): [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/2020Sep). The consent resource identifies the categories of data to be exchanged with the member's permission. There are two categories of data that can be exchanged:
+Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
+[Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The
+request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
+Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the
+[Bulk Data Export Operation Request
+Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
-1. Everything: All data with no restrictions.
-2. Non-Additionally protected data classes. 
-
-The CMS Interoperability Rule defines a set of data that  can be excluded from data sharing. The restricted data classes are defined as:
-- Sensitive data classes identified in 42.CFR Part 2
-- Data identified as sensitive in state regulations, such as sexual and mental health data. 
-
-These restricted data classes are excluded from the Non-Additionally protected data class.
-
-In situations where a data holder is unable to segregate data into the two data classes then no data should be released when a member has requested only Non-Additionally protected data be exchanged.
-
-### Notes
-
-Providing a directory of FHIR Endpoints that support the $member-match operation for each health plan is outside the scope of this operation.
-
-Interactions between Payers **SHALL** be conducted under mutually authenticated TLS. These interactions will also leverage the [HL7 UDAP B2B](http://hl7.org/fhir/us/udap-securityb2b.html) specification.
-
-### Operation $member-match:
-
-    URL: POST [base]/Patient/$member-match
-
-### Patient.identifier
-
-When the New Health Plan creates an OldCoverage parameter where the Coverage resource has a Coverage.identifier and the identifier.type is "MB". The "MB" value is taken from the http://terminology.hl7.org/CodeSystem/v2-0203 value set.
-
-When the Old Health Plan returns the Patient Record they **SHALL** add a Patient.identifier with the Patient.identifier.type = "UMB" (Unique Member Identifier). This is a new type value.
-
-A code system will be created with a value set with a single entry "UMB" and will be referenced by the value set for identifier.
-
-### Unique Member Identifier
-
-The old Health Plan **SHALL** return a unique member identifier and a corresponding system value that identifies the plan. 
-
-The member identifier **SHALL** be either the internal unique identifier, or an identifier that is mapped one-to-one to the Health Plan's unique member identifier.
-
-### Parameters
-
-{% include style_insert_table_blue.html %}
-
-| Use | Name | Cardinality | Type | Binding | Documentation |
-| IN | resource | 1..1 | Parameter |  | 
-Use this to provide a set of coverage, beneficiary and consent details for the match operation to search for a unique member record (e.g. POST a parameter with Patient, Old Coverage, New Coverage and Consent to Patient/$member-match). |
-| OUT | return | 1..1 | Parameter |  |	
-The returned Parameter resource will contain the New Plan's Coverage record and their Member Patient record with the ADDITION of an identifier of type "UMB" that represents the Unique identifier to identify the member records at the old health plan. If the operation failed to find a unique match then a BadRequest status code is returned. (e.g. 422 - Unprocessable Entity). |
-
-The response from a successful $member-match is a parameter containing the updated Patient resource submitted, but with the UMB identifier, and the new health plan coverage record as submitted in the original Parameter request.
-
-The response from a failed $member-match is a <b>422</b> Unprocessable Entity Status Code.
-
-After a successful $member-match the new health plan will use the unique member identifier provided by the Old Health Plan in the Patient.identifier field to query for any subsequent transactions related to payer-to-payer exchange.
-
-For example, in PDex the new health plan will subsequently use the UMB identifier to request the member’s health records. This can be done by querying the US Core FHIR profile endpoints which will be constrained to the identified member. Alternatively, the new health plan can perform a $everything operation to the Patient/{ID}/$everything operation endpoint to receive a bundle of the member’s health records.
-
-### Member matching Logic
-
-This specification is not attempting to define the member matching logic that is used by a Payer that processes a $member-match operation.
-
-The specification is:
-- defining that only a SINGLE unique match is returned.
-- No match returns a 422 status code.
-- Multiple matches return a 422 status code. 
-- Defining the content passed into the $member-match operation.
-- Defining the data returned from the $member-match operation.
-
-An important objective of this operation is to ensure that a payer operating a $member-match operation has sufficient data provided to enable a match operation to be performed. 
-
-For the requesting payer the operation assumes that a new member is able to provide their demographic information (name, date of birth, gender) and the identification details that would be present on the health plan insurance card provided by their old health plan.
-
-### $member-match Parameter Example
-
-Example request: $member-match Parameter resource submitted by the new health plan. 
-
-Note the Patient identifier type set to "MB".
-$member-match accepts a POST with the Parameters json bundle in the body.
-
-#### Example Parameter bundle sent from New Health Plan
-
-    {
-        "resourceType": "Parameters",
-        "parameter": [
-            {
-                "name": "MemberPatient",
-                "resource": {
-                    "resourceType": "Patient",
-                    "id": "1",
-                    "identifier": [
-                        {
-                            "type": {
-                                "coding": [
-                                    {
-                                        "system": "http://hl7.davinci.org",
-                                        "code": "MB"
-                                    }
-                                ]
-                            },
-                            "system": "http://oldhealthplan.example.com",
-                            "value": "55678",
-                            "assigner": {
-                                "reference": "Organization/Payer1",
-                                "_reference": {
-                                    "fhir_comments": [
-                                        "MB is passed from coverage card by new health plan."
-                                    ]
-                                }
-                            }
-                        }
-                    ],
-                    "name": [
-                        {
-                            "use": "official",
-                            "family": "Person",
-                            "given": [
-                                "Patricia",
-                                "Ann"
-                            ]
-                        }
-                    ],
-                    "gender": "female",
-                    "birthDate": "1974-12-25"
-                }
-            },
-            {
-                "name": "OldCoverage",
-                "resource": {
-                    "resourceType": "Coverage",
-                    "id": "9876B1",
-                    "text": {
-                        "status": "generated",
-                        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the coverage</div>"
-                    },
-                    "contained": [
-                        {
-                            "resourceType": "Organization",
-                            "id": "Organization/Payer1",
-                            "name": "Old Health Plan",
-                            "endpoint": [
-                                {
-                                    "reference": "http://www.oldhealthplan.com"
-                                }
-                            ]
-                        }
-                    ],
-                    "identifier": [
-                        {
-                            "system": "http://oldhealthplan.example.com",
-                            "value": "DH10001235"
-                        }
-                    ],
-                    "status": "draft",
-                    "beneficiary": {
-                        "reference": "Patient/4"
-                    },
-                    "period": {
-                        "start": "2011-05-23",
-                        "end": "2012-05-23"
-                    },
-                    "payor": [
-                        {
-                            "reference": "#Organization/Payer1"
-                        }
-                    ],
-                    "class": [
-                        {
-                            "type": {
-                                "coding": [
-                                    {
-                                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                                        "code": "group"
-                                    }
-                                ]
-                            },
-                            "value": "CB135"
-                        },
-                        {
-                            "type": {
-                                "coding": [
-                                    {
-                                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                                        "code": "plan"
-                                    }
-                                ]
-                            },
-                            "value": "B37FC"
-                        },
-                        {
-                            "type": {
-                                "coding": [
-                                    {
-                                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                                        "code": "subplan"
-                                    }
-                                ]
-                            },
-                            "value": "P7"
-                        },
-                        {
-                            "type": {
-                                "coding": [
-                                    {
-                                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                                        "code": "class"
-                                    }
-                                ]
-                            },
-                            "value": "SILVER"
-                        }
-                    ]
-                }
-            },
-                {
-            "name": "NewCoverage",
-            "resource": {
-              "resourceType": "Coverage",
-              "id": "AA87654",
-              "contained": [
-                  {
-                    "resourceType" : "Organization",
-                    "id" : "Organization/ProviderOrg1",
-                    "name" : "New Health Plan",
-                    "endpoint" : [
-                      {
-                        "reference" : "http://www.newhealthplan.com"
-                      }
-                    ]
-                  }
-                ],
-                "identifier": [
-                {
-                  "system": "http://newealthplan.example.com",
-                  "value": "234567"
-                }
-              ],
-              "status": "active",
-              "beneficiary": {
-                "reference": "Patient/1"
-              },
-              "period": {
-                "start": "2020-04-01",
-                "end": "2021-03-31"
-              },
-              "payor": [
-                {
-                  "reference": "#Organization/ProviderOrg1"
-                }
-              ],
-              "class": [
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                        "code": "group"
-                      }
-                    ]
-                  },
-                  "value": "A55521",
-                  "name": "New Health Plan Group"
-                },
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                        "code": "subgroup"
-                      }
-                    ]
-                  },
-                  "value": "456"
-                },
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                        "code": "plan"
-                      }
-                    ]
-                  },
-                  "value": "99012"
-                },
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                        "code": "subplan"
-                      }
-                    ]
-                  },
-                  "value": "A4"
-                },
-                {
-                  "type": {
-                    "coding": [
-                      {
-                        "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                        "code": "class"
-                      }
-                    ]
-                  },
-                  "value": "GOLD"
-                }
-              ]
-            }
-          }
-        ]
-    }
-
-#### Parameter Response from Old Health Plan
-
-Parameter Response Example
-
-    {
-      "resourceType": "Parameters",
-      "parameter": [
-        {
-          "name": "MemberPatient",
-          "resource": {
-            "resourceType": "Patient",
-            "id": "1",
-            "identifier": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.davinci.org",
-                      "code": "MB"
-                    }
-                  ]
-                },
-                "system": "http://oldhealthplan.example.com",
-                "value": "55678",
-                "assigner": {
-                  "reference": "Organization/Payer1",
-                  "_reference": {
-                    "fhir_comments": [
-                      "MB is passed from coverage card by new health plan."
-                    ]
-                  }
-                }
-              },
-              {
-                "use": "usual",
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                      "code": "UMB",
-                      "display": "Member Number",
-                      "userSelected": false
-                    }
-                  ],
-                  "text": "Member Number"
-                },
-                "system": "https://old.payer.example.com/diamond-health-ppo/uniquemember",
-                "value": "dhu-10102"
-              }
-            ],
-            "name": [
-              {
-                "use": "official",
-                "family": "Person",
-                "given": [
-                  "Patricia",
-                  "Ann"
-                ]
-              }
-            ],
-            "gender": "female",
-            "birthDate": "1974-12-25"
-          }
-        },
-        {
-          "name": "NewCoverage",
-          "resource": {
-            "resourceType": "Coverage",
-            "id": "AA87654",
-            "contained": [
-              {
-                "resourceType": "Organization",
-                "id": "Organization/ProviderOrg1",
-                "name": "New Health Plan",
-                "endpoint": [
-                  {
-                    "reference": "http://www.newhealthplan.com"
-                  }
-                ]
-              }
-            ],
-            "identifier": [
-              {
-                "system": "http://newealthplan.example.com",
-                "value": "234567"
-              }
-            ],
-            "status": "active",
-            "beneficiary": {
-              "reference": "Patient/1"
-            },
-            "period": {
-              "start": "2020-04-01",
-              "end": "2021-03-31"
-            },
-            "payor": [
-              {
-                "reference": "#Organization/ProviderOrg1"
-              }
-            ],
-            "class": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "code": "group"
-                    }
-                  ]
-                },
-                "value": "A55521",
-                "name": "New Health Plan Group"
-              },
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "code": "subgroup"
-                    }
-                  ]
-                },
-                "value": "456"
-              },
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "code": "plan"
-                    }
-                  ]
-                },
-                "value": "99012"
-              },
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "code": "subplan"
-                    }
-                  ]
-                },
-                "value": "A4"
-              },
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "code": "class"
-                    }
-                  ]
-                },
-                "value": "GOLD"
-              }
-            ]
-          }
-        }
-      ]
-    }
-    
-## Handling Data Received Via Payer-to-Payer Exchange
-
-When a new health plan receives a member's data from a prior health plan the handling of that data is an implementation decision by the Health Plan. The CMS Interoperability and Patient Access Rule requires that the data must be incorporated into the member's record. 
-
-The choices for handling of imported data for a member include, but are not limited to:
-
-- Incorporating the data into the FHIR data for a member to enable the data to be passed on via FHIR API to third-party applications or other payers.
-- Processing the data to incorporate into the health plan's enterprise systems, such as Care Management.
-
-The CMS Interoperability and Patient Access Rule encourages, but does not require payers, to share member data using US Core FHIR resources. If a health plan receives data as FHIR resources they are encouraged to also request the associated Provenance resources using the following parameter:
-
-    "_revinclude=Provenance:target" 
-
-This will help a payer identify the source of data if/when records are merged into a member's health record, differentiating the data from data that came from the health plan itself.
+The Patient Export Operation for Payer to Payer exchange should be constrained to the resources and profiles
+identified in the table at the top of this section.
 
 
 [Next Page - Data Mapping](DataMapping.html)
