@@ -25,14 +25,16 @@ group Step 2: Establish common member
   Policy: all | non-sensitive
   Consent Period: start, end
   endnote
-	Payer1 -> Payer1 : Generate Unique Member Match ID for Payer2  
-  Payer1 -> Payer2 : Creates Unique (to Payer2) Member Match ID and returns in response 
+
+	Payer1 -> Payer1 : Generate Unique Member Match ID for Payer2
   note right
-  	Payer1 may determine concurrent coverage is in effect 
-    and covered by member consent to trigger reciprocal 
+    Payer1 may determine concurrent coverage is in effect
+    and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
   endnote
-  note left
+
+  Payer1 -> Payer2 : Creates Unique (to Payer2) Member Match ID and returns in response
+  note right
   	Payer2 receives the Unique Member Match ID 
     that is unique to Payer2 
     from Payer1.  
