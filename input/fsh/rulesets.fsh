@@ -57,3 +57,10 @@ RuleSet: EOBHeaderItemAdjudicationInvariant
 RuleSet: HCPCSCopyrightNotice
 * ^copyright = "See information on the use of HCPCS Level I (proprietary and owned by American Medical Association) and Level II codes [here](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/HCPCS_Coding_Questions)"
 
+RuleSet: Metaprofile-supportedProfile-slice
+* meta.profile ^slicing.discriminator.type = #pattern
+* meta.profile ^slicing.discriminator.path = "$this"
+* meta.profile ^slicing.rules = #open
+* meta.profile ^slicing.ordered = false
+* meta.profile ^slicing.description = "Slice based on value"
+* meta.profile contains supportedProfile 1..1

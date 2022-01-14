@@ -1,4 +1,4 @@
-[Previous Page - US Core Encounter](USCoreEncounter.html)
+[Previous Page - US Core PractitionerRole](USCorePractitionerRole.html)
 
 {% include style_insert_table_blue.html %}
  
@@ -6,4 +6,4 @@ The PDex Prior Authorization profile has been created to enable payers to provid
 
 Go to [PDex Prior Authorization profile](StructureDefinition-pdex-priorauthorization.html)
 
-[Next Page - US Core Goal](USCoreGoal.html)
+[Next Page - US Core Procedure](USCoreProcedure.html)

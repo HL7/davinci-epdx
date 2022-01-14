@@ -18,42 +18,44 @@ and provide consent:
 ### Member Match with Consent
 
 <div style="height=auto;width=90%;">
-{% include authorization-consent.svg %}{ width: 100%; height: auto; }
+{% include authorization-consent.svg %}
 </div>
 
 The steps in the Member Match with Consent process are:
 
 - Establish a secure connection via mTLS
 - Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
-- Use mTLS secure connection to perform MemberMatch operation
-- The MemberMatch operation uses Patient and Coverage records to determine if a member is found
-- The MemberMatch operation evaluates the Consent resource for a matched member
-- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a UNique Member Match ID is created for Payer2
-- If a Member Match Id is returned from $MemberMatch a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access and Refresh Token
+- Use Client Credentials to acquire OAuth2.0 token to perform $MemberMatch operation
+- The MemberMatch operation uses Patient Demographics and Coverage records to determine if a member is found
+- The $MemberMatch operation evaluates the Consent resource for a matched member
+- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a Unique MemberMatch ID is created for the requesting Payer (Payer2)
+- If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access and Refresh Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
-The $MemberMatch operation is defined in the [HRex Member Match operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
+The $MemberMatch operation is defined in the [HRex MemberMatch operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html) from the [Da Vinci Health Record Exchange IG](http://build.fhir.org/ig/HL7/davinci-ehrx). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
 
-- [US Core Patient Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
-- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html)
+- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
+- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
 
-In the case where a Member Match is confirmed the receiving payer will:
+In the case where a match is confirmed the receiving payer will:
 
-- Utilize the consent record to evaluate the request from the requesting payer for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique Member Match Identifier in the Member Match Operation Response.
+- Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
+- Return a Unique MemberMatch Identifier in the $MemberMatch Operation Response.
 
-If the receiving payer is unable to comply with the consent request a Member Match ID is NOT returned in the $MemberMatch response/
+If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response/
 
 ### Evaluation of Consent
 
-The receiving payer **MAY** store the Consent record for the member. The following content from the Consent record
-is used to validate a data request:
+The receiving payer **MAY** store the Consent record for the member. 
+The following minimal content from the Consent record is used to validate a data request:
 
 - Member Identity is matched
 - Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
 - Date period for consent is valid
 - Payer requesting retrieval of data is matched
+
+If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
 
 ### Data Retrieval Methods
 
@@ -100,16 +102,15 @@ parameters to be used to retrieve the associated Provenance and supporting recor
 
 ### Patient/{id}/$everything-pdex operation
 
-Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everythinh-pdex
-operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4
-specification here:
+Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex
+operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-$everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
+However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
 
 It must be noted that the Patient/{id}/$everything-pdex operation does not support the full range of query parameters
 available to a regular search request. In cases where Provenance is being requested as part of the
-$everythng-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
+$everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
 the **_type** parameter of the $everything-pdex operation.
 
 The following resource/profiles are retrievable using the $everything-pdex operation:

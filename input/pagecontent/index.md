@@ -131,6 +131,6 @@ A history of changes made since the publication of the STU1 version of the PDex 
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.1.50)
+This IG was built with Sushi and the FHIR Publisher (v1.1.94)
 
 [Next Page: Overview](Overview.html)
