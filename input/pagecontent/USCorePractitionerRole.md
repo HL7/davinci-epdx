@@ -286,4 +286,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - US Core Procedure](USCoreProcedure.html)
+[Next Page - PDex Prior Authorization](PDexPriorAuthorization.html)

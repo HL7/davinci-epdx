@@ -25,14 +25,14 @@ end
 
 == Member Connection ==
 group Step 2a: Get Operation Token
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access to $Member-Match operation only
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access to $MemberMatch operation only
   note right
   	Token endpoint issues access token using Payer2 OAuth Credentials
   endnote
   Payer1 -> Payer2 : Return access token
 end
 group Step 2b: Establish common member - secure transaction
-	Payer2 -> Payer1 : Send bundle (Patient, Coverage & Consent) to $member-match operation
+	Payer2 -> Payer1 : Send bundle (Patient Demographics, Coverage & Consent) to $MemberMatch operation
 	Payer1 -> Payer1 : Verify member
   Payer1 -> Payer1 : Store or Compute Consent (all / non-sensitive) for Member
   note right
@@ -42,16 +42,16 @@ group Step 2b: Establish common member - secure transaction
   Consent Period: start, end
   endnote
 
-	Payer1 -> Payer1 : Generate Unique Member Match ID for Payer2
+	Payer1 -> Payer1 : Generate Unique MemberMatch ID for Payer2
   note right
     Payer1 may determine concurrent coverage is in effect
     and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
   endnote
 
-  Payer1 -> Payer2 : Creates Unique (to Payer2) Member Match ID and returns in response
+  Payer1 -> Payer2 : Creates Unique (to Payer2) MemberMatch ID and returns in response
   note right
-  	Payer2 receives the Unique Member Match ID
+  	Payer2 receives the Unique MemberMatch ID
     that is unique to Payer2
     from Payer1.
     Identifier is only returned if
@@ -62,9 +62,9 @@ group Step 2b: Establish common member - secure transaction
 end
 
 group Step 3: Request Access and refresh token
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using Unique Member Match ID
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using Unique MemberMatch ID
   note right
-  	Token endpoint matches to member using Payer2 unique Member Match ID
+  	Token endpoint matches to member using Payer2 unique MemberMatch ID
   endnote
   Payer1 -> Payer2 : Return access and refresh token
 end
@@ -72,7 +72,7 @@ end
 group #LightBlue Step 4: Exchange PDEX (USCDI) Information via API
 	Payer2 -> Payer1 : Get access token using refresh token, if necessary
   Payer2 -> Payer1 : Use access token to access API
-	Payer1 -> Payer2 : Return $everything or incremental data as appropriate
+	Payer1 -> Payer2 : Return $everything-pdex or incremental data as appropriate
   note right
   	Use retrieval method, as defined in use case scenarios, such as:
       1.) Individual search against each USCDI resource
