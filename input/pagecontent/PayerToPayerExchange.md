@@ -18,7 +18,7 @@ and provide consent:
 ### Member Match with Consent
 
 <div style="height=auto;width=90%;">
-{% include authorization-consent.svg %}{ width: 100%; height: auto; }
+{% include authorization-consent.svg %}
 </div>
 
 The steps in the Member Match with Consent process are:
