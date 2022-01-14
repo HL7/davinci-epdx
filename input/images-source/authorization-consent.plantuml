@@ -18,12 +18,8 @@ group #lightGreen Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection
 	Payer2 -> Payer1 : Request registration (JWT with registration details)
   Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
 end
-== Secure Transaction Capability Established ==
-group #lightGrey Step 1: Client Credentials Issued
-	Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
-end
 
-== Member Connection ==
+== Establish Shared Member Connection ==
 group Step 2a: Get Operation Token
 	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access to $MemberMatch operation only
   note right
