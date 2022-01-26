@@ -18,8 +18,12 @@ group #lightGreen Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection
 	Payer2 -> Payer1 : Request registration (JWT with registration details)
   Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
 end
+== Secure Transaction Capability Established ==
+group #lightGrey Step 1: Client Credentials Issued
+	Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
+end
 
-== Establish Shared Member Connection ==
+== Member Connection ==
 group Step 2a: Get Operation Token
 	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access to $MemberMatch operation only
   note right
@@ -38,29 +42,25 @@ group Step 2b: Establish common member - secure transaction
   Consent Period: start, end
   endnote
 
-	Payer1 -> Payer1 : Generate Unique MemberMatch ID for Payer2
+	Payer1 -> Payer2 : Return Unique MemberMatch ID
   note right
+    This process assumes Payer1 creates a unique ID for the member that
+    crosses all relevant contract arrangements.
+
     Payer1 may determine concurrent coverage is in effect
     and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
-  endnote
 
-  Payer1 -> Payer2 : Creates Unique (to Payer2) MemberMatch ID and returns in response
-  note right
-  	Payer2 receives the Unique MemberMatch ID
-    that is unique to Payer2
-    from Payer1.
-    Identifier is only returned if
-    member is matched and consent
-    can be complied with per
-    date and policy constraints.
+  	Payer2 receives the Unique MemberMatch ID from Payer1.
+    Identifier is only returned if member is matched and consent
+    can be complied with per date and policy constraints.
   endnote
 end
 
 group Step 3: Request Access and refresh token
 	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using Unique MemberMatch ID
   note right
-  	Token endpoint matches to member using Payer2 unique MemberMatch ID
+  	Token endpoint matches to member using unique MemberMatch ID and consent is current
   endnote
   Payer1 -> Payer2 : Return access and refresh token
 end
