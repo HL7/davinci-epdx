@@ -28,7 +28,7 @@ Description: "A bundle that returns provenance using _revinclude=Provenance:targ
 * entry[1].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * entry[1].resource.target[0].reference = "MedicationDispense/1000001"
 * entry[1].resource.recorded = "2020-07-12T18:26:23.217+00:00"
-* entry[1].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[1].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[1].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[1].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[1].resource.entity.what.display = "No reference available"
@@ -98,7 +98,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[0].fullUrl = "https://example.com/base/Patient/1"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1"
-* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
 * entry[0].resource.meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
 * entry[0].resource.language = #en-US
 * entry[0].resource.active = true
@@ -135,7 +135,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1"
-* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[1].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[1].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -146,7 +146,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1"
-* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[2].resource.meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * entry[2].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -192,7 +192,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[5].resource.meta.lastUpdated = "2019-12-31T20:26:23.217+00:00"
 * entry[5].resource.target[0].reference = "Bundle/1000000-1"
 * entry[5].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[5].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[5].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[5].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[5].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[5].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -213,7 +213,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[0].fullUrl = "https://example.com/base/Patient/1-2"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1-2"
-* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
 * entry[0].resource.meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
 * entry[0].resource.language = #en-US
 * entry[0].resource.active = true
@@ -250,7 +250,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1-2"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1-2"
-* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[1].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[1].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -261,7 +261,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1-2"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1-2"
-* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[2].resource.meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * entry[2].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -272,7 +272,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[3].fullUrl = "https://example.com/base/Encounter/8-2"
 * entry[3].resource.resourceType = "Encounter"
 * entry[3].resource.id = "8-2"
-* entry[3].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[3].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[3].resource.meta.lastUpdated = "2020-06-15T20:26:23.217+00:00"
 * entry[3].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[3].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -322,7 +322,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[6].resource.target[3].reference = "Provenance/1000002-1-2"
 * entry[6].resource.target[4].reference = "Provenance/1000003-1-2"
 * entry[6].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[6].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[6].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[6].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[6].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[6].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -349,7 +349,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[8].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[8].resource.target[0].reference = "Bundle/1000000-2"
 * entry[8].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[8].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[8].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[8].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[8].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[8].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -369,7 +369,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[0].fullUrl = "https://example.com/base/Patient/1-3"
 * entry[0].resource.resourceType = "Patient"
 * entry[0].resource.id = "1-3"
-* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* entry[0].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
 * entry[0].resource.meta.lastUpdated = "2021-01-07T13:26:22.0314215+00:00"
 * entry[0].resource.language = #en-US
 * entry[0].resource.active = true
@@ -406,7 +406,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[1].fullUrl = "https://example.com/base/Encounter/6-1-2-3"
 * entry[1].resource.resourceType = "Encounter"
 * entry[1].resource.id = "6-1-2-3"
-* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[1].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[1].resource.meta.lastUpdated = "2021-01-14T19:26:23.217+00:00"
 * entry[1].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[1].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -417,7 +417,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[2].fullUrl = "https://example.com/base/Encounter/7-1-2-3"
 * entry[2].resource.resourceType = "Encounter"
 * entry[2].resource.id = "7-1-2-3"
-* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[2].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[2].resource.meta.lastUpdated = "2021-01-15T20:26:23.217+00:00"
 * entry[2].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[2].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -428,7 +428,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[3].fullUrl = "https://example.com/base/Encounter/8-2-3"
 * entry[3].resource.resourceType = "Encounter"
 * entry[3].resource.id = "8-2-3"
-* entry[3].resource.meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* entry[3].resource.meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
 * entry[3].resource.meta.lastUpdated = "2021-03-15T20:26:23.217+00:00"
 * entry[3].resource.status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * entry[3].resource.class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -493,7 +493,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[7].resource.target[3].reference = "Provenance/1000002-1-2-3"
 * entry[7].resource.target[4].reference = "Provenance/1000003-1-2-3"
 * entry[7].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[7].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[7].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[7].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[7].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[7].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -521,7 +521,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[9].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[9].resource.target[0].reference = "Bundle/1000000-2"
 * entry[9].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[9].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[9].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[9].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[9].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[9].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -533,7 +533,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[10].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[10].resource.target[0].reference = "Bundle/1000000-2"
 * entry[10].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[10].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[10].resource.agent[0].type = http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
 * entry[10].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[10].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[10].search.mode = http://hl7.org/fhir/search-entry-mode#include
