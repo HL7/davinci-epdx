@@ -10,7 +10,7 @@ The following changes were applied in the Proposed STU 2.0.0 update:
 | [FHIR-35868](https://jira.hl7.org/browse/FHIR-35868) | Revert US Core References back to 3.1.1 |
 | [FHIR-34308](https://jira.hl7.org/browse/FHIR-34308) | Update US Core and PDex inter-relationship diagram to add Prior Auth in Overview page. |
 | [FHIR-33382](https://jira.hl7.org/browse/FHIR-33382) | Change references to US Core to link to the current 4.0.0 version. Reverted - see [FHIR-35868](https://jira.hl7.org/browse/FHIR-35868) above. |
-| [FHIR-33218](https://jira.hl7.org/browse/FHIR-33218) | Update Payer-to-Payer Exchange section to clarify use of Bulk FHIR protocols for retrieval of data for a single patient/member only. |
+| [FHIR-33218](https://jira.hl7.org/browse/FHIR-33218) | Update Payer-to-Payer Exchange section to clarify use of Bulk FHIR protocols for retrieval of data for a single patient/member only. The flow has been subject to substantial assessment at multiple connectathons and test events. |
 |[FHIR-33217](https://jira.hl7.org/browse/FHIR-33217)| Add a [PDex Prior Authorization profile](StructureDefinition-pdex-priorauthorization.html), based on the EOB resource to support the exchange of Prior Authorization information with Members.  Added Slices to item adjudication and added consumedunits slice |
 
 ## STU Update 1.1.0

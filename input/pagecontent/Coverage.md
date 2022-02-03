@@ -2,6 +2,8 @@
 
 The [Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) is profiled in the Da Vinci HRex IG. 
 
+NOTE: This resource is not included in the resource set returned by Payer-to-Payer exchange. The resource is used to submit coverage information to the $MemberMatch operation.
+
 {% include style_insert_table_blue.html %}
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [HRex Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) are:

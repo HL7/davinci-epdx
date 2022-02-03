@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sat, Jan 22, 2022 13:07+0000 for FHIR v4.6.0 
+  Generated on Thu, Feb 3, 2022 12:13+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -7423,7 +7423,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:element name="actuality" minOccurs="1" maxOccurs="1" type="AdverseEventActuality">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether the event actually happened or was a near miss. Note that this is independent of whether anyone was affected or harmed or how severely.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -16949,7 +16949,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">A simple summary of the stage such as &quot;Stage 3&quot; or &quot;Early Onset&quot;. The determination of the stage is disease-specific, such as cancer, retinopathy of prematurity, kidney diseases, Alzheimer's, or Parkinson disease.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="evidence" type="Condition.Evidence" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="evidence" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Supporting evidence / manifestations that are the basis of the Condition's verification status, such as evidence that confirmed or refuted the condition.</xs:documentation>
            </xs:annotation>
@@ -16983,27 +16983,6 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The kind of staging, such as pathological or clinical staging.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Condition.Evidence">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A manifestation or symptom that led to the recording of this condition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="detail" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Links to other relevant information, including pathology reports.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30536,7 +30515,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="function" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A classification of the ingredient identifying its precise purpose(s) in the drug product. This extends the Ingredient.role to add more detail. Example: Antioxidant, Alkalizing Agent.</xs:documentation>
+              <xs:documentation xml:lang="en">A classification of the ingredient identifying its precise purpose(s) in the drug product. This extends the Ingredient.role to add more detail. Example: antioxidant, alkalizing agent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="group" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -30593,7 +30572,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code or full resource that represents the ingredient substance.</xs:documentation>
+              <xs:documentation xml:lang="en">A code or full resource that represents the ingredient's substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="strength" type="Ingredient.Strength" minOccurs="0" maxOccurs="unbounded">
@@ -40280,7 +40259,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
         <xs:sequence>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The actual status of supply. In what situation this package type may be supplied for use.</xs:documentation>
+              <xs:documentation xml:lang="en">The actual status of supply. Conveys in what situation this package type may be supplied for use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -43617,7 +43596,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status that is authorised e.g. approved. Intermediate states can be tracked with cases and applications.</xs:documentation>
+              <xs:documentation xml:lang="en">The status that is authorised e.g. approved. Intermediate states and actions can be tracked with cases and applications.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusDate" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -43637,7 +43616,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="intendedUse" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The intended use of the product, e.g. prevention, treatment.</xs:documentation>
+              <xs:documentation xml:lang="en">The intended use of the product, e.g. prevention, treatment, diagnosis.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basis" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -43693,14 +43672,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Relevant date for this of case.</xs:documentation>
+              <xs:documentation xml:lang="en">Relevant date for this case.</xs:documentation>
             </xs:annotation>
             <xs:element name="datePeriod" type="Period"/>
             <xs:element name="dateDateTime" type="dateTime"/>
           </xs:choice>
           <xs:element name="application" type="RegulatedAuthorization.Case" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Applications submitted to obtain a marketing authorization. Steps within the longer running case or procedure.</xs:documentation>
+              <xs:documentation xml:lang="en">Applications submitted to obtain a marketing authorization, or similar. Steps within the longer running case or procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -47950,12 +47929,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A business level identifier of the substance.</xs:documentation>
+              <xs:documentation xml:lang="en">A business level version identifier of the substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Status of substance within the catalogue e.g. approved.</xs:documentation>
+              <xs:documentation xml:lang="en">Status of substance within the catalogue e.g. active, retired.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="classification" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -47965,7 +47944,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="domain" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If the substance applies to only human or veterinary use.</xs:documentation>
+              <xs:documentation xml:lang="en">If the substance applies to human or veterinary use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="grade" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -48124,12 +48103,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code expressing the type of characteristic.</xs:documentation>
+              <xs:documentation xml:lang="en">A code expressing the type of property.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">A value for the characteristic.</xs:documentation>
+              <xs:documentation xml:lang="en">A value for the property.</xs:documentation>
             </xs:annotation>
             <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
             <xs:element name="valueQuantity" type="Quantity"/>
@@ -48206,7 +48185,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="sourceDocument" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Supporting literature about the source of information.</xs:documentation>
+              <xs:documentation xml:lang="en">The source of information about the structure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="representation" type="SubstanceDefinition.Representation" minOccurs="0" maxOccurs="unbounded">
@@ -48268,7 +48247,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="statusDate" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date at which the code status is changed as part of the terminology maintenance.</xs:documentation>
+              <xs:documentation xml:lang="en">The date at which the code status was changed as part of the terminology maintenance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -48365,12 +48344,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the official name, for example 'provisional', 'approved'.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of the official name, for example 'draft', 'active', 'retired'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Date of official name change.</xs:documentation>
+              <xs:documentation xml:lang="en">Date of the official name change.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

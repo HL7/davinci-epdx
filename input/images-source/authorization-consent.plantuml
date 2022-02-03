@@ -7,72 +7,91 @@ participant "Payer Directory | Certificate Authority" as PayerDirectory
 == Connection Intitialization ==
 group #LightGreen Step 1a: Verify Exchange, establish mutual TLS, and verify trust.
 	Payer2 -> PayerDirectory : Query
+  note left
+  	Payer2 searches registry
+    for Payer1 details
+  endnote
 	PayerDirectory -> Payer2 : Return endpoint, mutual TLS public cert,
 	Payer2 -> Payer2 : Verify Cert
 	Payer2 -> Payer1 : Establish Mutual TLS
 	Payer1 -> PayerDirectory : Query mutual TLS Public Cert
+  note right
+  	Payer2 queries registry
+    for Payer1 details
+  endnote
 	PayerDirectory ->> Payer1 : Return mTLS public cert
 	Payer1 -> Payer1 : Verify Cert
 end
 group #lightGreen Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection
 	Payer2 -> Payer1 : Request registration (JWT with registration details)
+	note left
+  	Payer2 submits JWT with
+    service registration details
+  endnote
   Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
+
 end
 == Secure Transaction Capability Established ==
-group #lightGrey Step 1: Client Credentials Issued
-	Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
-end
 
 == Member Connection ==
-group Step 2a: Get Operation Token
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access to $MemberMatch operation only
-  note right
-  	Token endpoint issues access token using Payer2 OAuth Credentials
-  endnote
+group Step 2a: Get $MemberMatch Operation Token
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access \nto $MemberMatch operation only
   Payer1 -> Payer2 : Return access token
+  note right
+  	Token endpoint issues access token using
+    Payer2 OAuth Credentials
+  endnote
 end
 group Step 2b: Establish common member - secure transaction
-	Payer2 -> Payer1 : Send bundle (Patient Demographics, Coverage & Consent) to $MemberMatch operation
+	Payer2 -> Payer1 : Send bundle (Patient Demographics, \nCoverage & Consent) to $MemberMatch operation
 	Payer1 -> Payer1 : Verify member
-  Payer1 -> Payer1 : Store or Compute Consent (all / non-sensitive) for Member
+  Payer1 -> Payer1 : Store or Compute Consent \n(all / non-sensitive) for Member
   note right
   Member: ID
   Payer: ID
   Policy: all | non-sensitive
   Consent Period: start, end
+  This information will be need to be checked
+  when Access Token is issued in Step 3
   endnote
 
-	Payer1 -> Payer2 : Return Unique MemberMatch ID
+	Payer1 -> Payer2 : Return MemberMatch ID
   note right
-    This process assumes Payer1 creates a unique ID for the member that
-    crosses all relevant contract arrangements.
+    This process assumes Payer1 provides a unique ID for
+    the member that crosses all relevant
+    contract arrangements.
 
     Payer1 may determine concurrent coverage is in effect
     and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
 
-  	Payer2 receives the Unique MemberMatch ID from Payer1.
-    Identifier is only returned if member is matched and consent
-    can be complied with per date and policy constraints.
+  	Payer2 receives the MemberMatch ID from Payer1.
+    The MemberMatch ID is only returned if member
+    is matched AND consent can be complied with
+    per date and policy constraints.
   endnote
 end
 
-group Step 3: Request Access and refresh token
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access using Unique MemberMatch ID
+group Step 3: Request Access token
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using MemberMatch ID
   note right
-  	Token endpoint matches to member using unique MemberMatch ID and consent is current
+  	Token endpoint matches to member using
+    MemberMatch ID and confirms that
+    consent is still valid
   endnote
-  Payer1 -> Payer2 : Return access and refresh token
+  Payer1 -> Payer2 : Return access token
+  note right
+  	token is scoped to single Patient
+  endnote
 end
 == Data Requests ==
-group #LightBlue Step 4: Exchange PDEX (USCDI) Information via API
-	Payer2 -> Payer1 : Get access token using refresh token, if necessary
-  Payer2 -> Payer1 : Use access token to access API
-	Payer1 -> Payer2 : Return $everything-pdex or incremental data as appropriate
+group #LightBlue Step 4: Exchange PDex (USCDI) Information via API
+  Payer2 -> Payer1 : Use Patient-scoped access token to access API
+	Payer1 -> Payer2 : Return $everything-pdex or \nincremental data as appropriate/supported \nby Payer1 Capability Statement
   note right
   	Use retrieval method, as defined in use case scenarios, such as:
       1.) Individual search against each USCDI resource
-      2.) $everything operation
+      2.) $everything-pdex operation
       3.) asynchronous Bulk FHIR methods.
   endnote
 end
