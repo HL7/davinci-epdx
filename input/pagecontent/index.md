@@ -6,7 +6,7 @@ The PDex work group has made changes to the original version of the IG following
 The STU2 version of the IG incorporates changes to support the sharing of Prior Authorization information with members and providers. This is done through the profiling of the [ExplanationOfBenefit](PDexPriorAuthorization.html) resource. 
 
 CMS Guidance defines two sets of data to be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required, but if used these guides will provide information payers can use to meet the requirements of the policies being finalized. 
-The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://build.fhir.org/ig/HL7/carin-bb/) defines how Claims and Encounter Data are to be provided; This DaVinci Payer Data Exchange IG (PDex) and the [US Core IG](https://www.hl7.org/fhir/us/core/index.html) define how Clinical Data is to be provided. 
+The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://build.fhir.org/ig/HL7/carin-bb/) defines how Claims and Encounter Data are to be provided; This DaVinci Payer Data Exchange IG (PDex) and the [US Core IG](https://www.hl7.org/fhir/us/core/STU3.1.1/index.html) define how Clinical Data is to be provided. 
 
 ### Background
 There are two parallel paths pursued by the CARIN Alliance and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
@@ -26,7 +26,7 @@ At this point we have two solutions that provide an overlapping but different se
 5. Information related to medication administration from pharmacy benefit managers in pharmacy networks, 
 6. FHIR resources, and any other source of clinical information related to the member.
  
-Unlike the [US Core 4.0.0 Implementation Guide](https://www.hl7.org/fhir/us/core/index.html), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
+Unlike the [US Core 3.1.1 Implementation Guide](https://www.hl7.org/fhir/us/core/STU3.1.1/index.html), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
 
 1. Provenance appropriate for payer data exchange (extended US Core Provenance)
 2. Dispensed medications (not covered in US Core)
@@ -131,6 +131,6 @@ A history of changes made since the publication of the STU1 version of the PDex 
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.1.94)
+This IG was built with Sushi and the FHIR Publisher (v1.1.98)
 
 [Next Page: Overview](Overview.html)

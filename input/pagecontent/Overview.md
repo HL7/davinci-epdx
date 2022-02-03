@@ -39,7 +39,7 @@ This IG covers three methods of information exchange:
 An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown below. This exchange flow is used for communication between Providers and Health Plans. The CDS-Hook will be used to perform a Patient/Member match and return a token that enables a SMART-on-FHIR App to access information via the Health Plan's FHIR API for the matched member.
 
 
-#### OAuth2.o or SMART-on-FHIR member Authorized Exchange
+#### OAuth2.0 or SMART-on-FHIR member Authorized Exchange
 
 The sharing of data with a member controlled Third Party App is accomplished through the Member's HIPAA Right of Access. As such the member is able to use their data in any way they desire. 
 
@@ -50,7 +50,7 @@ After authenticating the Member **SHALL** be presented with an Authorization scr
 
 #### $patient-everything Exchange Via Alternate Secure Transport
 
-The $patient-everything operation for an individual member enables the potential use of Bulk FHIR, using such formats as ND-Json. This IG does not define the alternate secure transport mechanisms that may be used for exchange between Health Plans. However, the IG does allow for the use of Bulk FHIR formats to exchange data for an individual member where the member has authorized that exchange or Federal, state or local regulations authorize the sharing of information between parties. 
+The [$patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation for an individual member enables the potential use of Bulk FHIR, using such formats as ND-Json. This IG does not define the alternate secure transport mechanisms that may be used for exchange between Health Plans. However, the IG does allow for the use of Bulk FHIR formats to exchange data for an individual member where the member has authorized that exchange or Federal, state or local regulations authorize the sharing of information between parties. 
 
 The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record.
 

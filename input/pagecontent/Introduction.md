@@ -18,7 +18,7 @@ Ad-hoc PDex Member History Requests via CDS Hooks provides a mechanism for provi
 
 The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information that will be exchanged between health plans when authorized by a health plan member.
 
-The Patient-everything operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
+The [Patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
 
 While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API may be the same.  
                                                                                                           
@@ -36,7 +36,7 @@ The first release of the PDex IG will focus on the following in-scope items. Ite
 - Ambulatory Care Provider queries
 - Member-authorized Payer-to-Payer information exchange
 - Member-authorized Payer-to-Third-Party-Application information exchange
-- Use of Patient-everything operation to enable Payer Push via secure transport
+- Use of [Patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation to enable Payer Push via secure transport
 	
 ### Deferred Scope
 	
@@ -118,7 +118,7 @@ Where profiles are specific to the PDex use case the profiles will be defined in
 
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
-1. HL7 FHIR US Core STU3 v4.0.0 (based on FHIR R4 - [http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/index.html) ) 
+1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/STU3.1.1/index.html) ) 
 2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://build.fhir.org/ig/HL7/davinci-ehrx/](http://build.fhir.org/ig/HL7/davinci-ehrx/) )
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
@@ -178,7 +178,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 
 In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
-In addition, the $patient-everything operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
+In addition, the [$patient-everything-pdex]() operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
 
 The FHIR bundle that is the output of the $patient-everything operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
 
