@@ -108,7 +108,7 @@ operation operates as per the Patient/{id}/$everything operation defined in the 
 
 However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
 
-It must be noted that the Patient/{id}/$everything-pdex operation does not support the full range of query parameters
+It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation does not support the full range of query parameters
 available to a regular search request. In cases where Provenance is being requested as part of the
 $everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
 the **_type** parameter of the $everything-pdex operation.
