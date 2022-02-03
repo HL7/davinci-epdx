@@ -110,7 +110,7 @@ This implementation guide uses terminology, notations and design principles that
 
 ## Implementation Assumptions
 
-Wherever possible, the PDex IG will use established [US Core Profiles](http://hl7.org/fhir/us/core/index.html) ( http://hl7.org/fhir/us/core/ ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
+Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles](http://hl7.org/fhir/us/core/STU3.1.1/index.html) ( http://hl7.org/fhir/us/core/STU3.3.1 ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
 Where profiles are specific to the PDex use case the profiles will be defined in this guide.
 
@@ -178,9 +178,9 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 
 In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
-In addition, the [$patient-everything-pdex]() operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
+In addition, the [$patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
 
-The FHIR bundle that is the output of the $patient-everything operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
+The FHIR bundle that is the output of the $patient-everything-pdex operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
 
 #### Da Vinci PDex / HRex
 

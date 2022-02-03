@@ -4,7 +4,7 @@ Description: "PDex Prior Authorization based on EOB Inpatient Example"
 Usage: #example
 * id = "PDexPriorAuth1"
 //* id = "1234-234-1243-12345678901-20190101-20191031"
-* meta.profile = Canonical(PdexPriorAuthorization)
+//* meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization)
 * meta.lastUpdated = "2021-10-12T09:14:11+00:00"
 * language = #en-US
 * status = #active

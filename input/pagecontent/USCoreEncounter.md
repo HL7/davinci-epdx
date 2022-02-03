@@ -114,4 +114,4 @@ Refer to the US Core Additional examples of the [US Core R4 Implementation Guide
 
 
 
-[Next Page - US Core Goal](StructureDefinition-us-core-goal.html)
+[Next Page - US Core Goal](USCoreGoal.html)

@@ -1,4 +1,4 @@
-[Previous Page - US Core Encounter](StructureDefinition-us-core-encounter.html)
+[Previous Page - US Core Encounter](USCoreEncounter.html)
 
 This IG supports the full complement of US Core profiles. 
 They are supported to enable a payer to produce FHIR resources from 

@@ -34,7 +34,7 @@ The steps in the Payer Member Match with Consent process are:
 
 The $PayerMemberMatch operation is defined in the [PayerMemberMatch operation](OperationDefinition-payer-member-match.html). The profiles used in the Payer Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
 
-- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html)
+- [HRex Patient Demographics Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
 
