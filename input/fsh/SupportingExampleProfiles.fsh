@@ -3,7 +3,7 @@ InstanceOf: us-core-patient
 Description: "Example of a US Core Patient Record for Payer 1"
 Usage: #example
 * id = "1"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -42,7 +42,7 @@ InstanceOf: us-core-patient
 Description: "Example of a US Core Patient Record for Payer 2"
 Usage: #example
 * id = "1-2"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * meta.lastUpdated = "2019-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -81,7 +81,7 @@ InstanceOf: us-core-patient
 Description: "Example of a US Core Patient Record for Payer 2"
 Usage: #example
 * id = "100"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-patient"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * meta.lastUpdated = "2020-07-07T13:26:22.0314215+00:00"
 * language = #en-US
 * active = true
@@ -119,7 +119,7 @@ InstanceOf: us-core-organization
 Description: "Example of the Payer Organization"
 Usage: #example
 * id = "Payer1"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -133,7 +133,7 @@ InstanceOf: us-core-organization
 Description: "Example of the Payer Organization"
 Usage: #example
 * id = "Payer1-1"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -149,7 +149,7 @@ InstanceOf: us-core-organization
 Description: "Another Example of the Payer Organization"
 Usage: #example
 * id = "Payer2"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2020-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -164,7 +164,7 @@ InstanceOf: us-core-organization
 Description: "Another Example of the Payer Organization"
 Usage: #example
 * id = "Payer2-2"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2020-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -179,7 +179,7 @@ InstanceOf: us-core-organization
 Description: "Provider Organization Example 1"
 Usage: #example
 * id = "ProviderOrg1"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -193,7 +193,7 @@ InstanceOf: us-core-organization
 Description: "Provider Organization Example 1"
 Usage: #example
 * id = "ProviderOrg2"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-organization"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
@@ -207,7 +207,7 @@ Instance: ExamplePractitioner
 InstanceOf: us-core-practitioner
 Description: "Example of a Practitioner Record"
 * id = "4"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-practitioner"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
 * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
@@ -224,7 +224,7 @@ Instance: ExampleLocation
 InstanceOf: us-core-location
 Description: "Example of a Pharmacy Location Record"
 * id = "5"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-location"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
 * meta.lastUpdated = "2020-07-13T19:26:23.217+00:00"
 * name = "MyFavorite Pharmacy"
 
@@ -233,7 +233,7 @@ Instance: ExampleEncounter1
 InstanceOf: us-core-encounter
 Description: "Example of an Encounter that has a provenance record received by Payer 1"
 * id = "6"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -245,7 +245,7 @@ Instance: ExampleEncounter2
 InstanceOf: us-core-encounter
 Description: "Example of an Encounter that has a provenance record received by Payer 1"
 * id = "7"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
@@ -257,7 +257,7 @@ Instance: ExampleEncounter3
 InstanceOf: us-core-encounter
 Description: "Example of an Encounter that has a provenance record received by Payer 2"
 * id = "8"
-* meta.profile = "http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition/us-core-encounter"
+* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * meta.lastUpdated = "2020-07-15T20:26:23.217+00:00"
 * status = http://hl7.org/fhir/encounter-status#finished "Finished"
 * class =  http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "Ambulatory"
