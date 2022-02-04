@@ -48,3 +48,4 @@ To run the publisher:
     
 If publisher has timeout issues when running sushi. edit the fsh.ini file to adjust the timeout value. 
 
+Da Vinci IG Template: http://build.fhir.org/ig/HL7/ig-template-davinci/branches/master/index.html
