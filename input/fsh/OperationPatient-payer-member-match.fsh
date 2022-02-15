@@ -3,6 +3,7 @@ InstanceOf: OperationDefinition
 Usage: #definition
 * url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/payer-member-match"
 * version = "1.0.0"
+* id = "payer-member-match"
 * name = "PayerMemberMatch"
 * title = "Payer Member Match Operation"
 * status = #draft
@@ -11,7 +12,7 @@ Usage: #definition
 * publisher = "HL7 International - Clinical Interoperability Council"
 * contact.telecom.system = #url
 * contact.telecom.value = "http://www.hl7.org/Special/committees/cic"
-* description = "The **$payer-member-match** operation allows one health plan to retrieve a unique identifier for a member from another health plan using a member's demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum.  (I.e. A pure demographic match will not be supported by such implementations.)"
+* description = "The **$payer-member-match** operation allows one health plan to retrieve a unique identifier for a member from another health plan using a member's demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum.  (I.e., A pure demographic match will not be supported by such implementations.)"
 * jurisdiction = urn:iso:std:iso:3166#US
 * affectsState = true
 * code = #member-match
