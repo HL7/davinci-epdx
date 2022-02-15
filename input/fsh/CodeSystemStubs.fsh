@@ -6,12 +6,13 @@ RuleSet: CodeSystemStubBoilerplate
 * ^contact[0].telecom[0].value = "http://hl7.org/Special/committees/fm"
 * ^contact[0].telecom[1].system = #email
 * ^contact[0].telecom[1].value = "fmlists@lists.hl7.org"
-* ^contact[1].name = "Jean Duteau"
+* ^contact[1].name = "Mark Scrimshire"
 * ^contact[1].telecom[0].system = #email
-* ^contact[1].telecom[0].value = "mailto:jean@duteaudesign.com"
+* ^contact[1].telecom[0].value = "mailto:mark.scrimshire@onyxhealth.io"
 * ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * ^jurisdiction[0].coding[0].code = #US
 * ^jurisdiction[0].coding[0].display = "United States of America"
+* ^caseSensitive = false
 * ^content = #not-present
 
 
@@ -92,6 +93,7 @@ Releases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCod
 
 These files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data."
 * ^url =  "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets"
+* ^caseSensitive = false
 * insert CodeSystemStubBoilerplate
 * insert HCPCSCopyrightNotice
 
@@ -121,6 +123,7 @@ pertaining to different payment systems, but often provides information about th
 assessment used to arrive at the code. Which positions of the code carry the case mix
 group information may also vary by payment systems."
 * ^url =  "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes"
+* ^caseSensitive = false
 * insert CodeSystemStubBoilerplate
 * insert HIPPSCopyrightNotice
 
@@ -178,6 +181,7 @@ External code lists maintained by X12 and external code lists maintained by othe
 
 Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
 * ^url = "https://x12.org/codes/claim-adjustment-reason-codes"
+* ^caseSensitive = false
 * insert CodeSystemStubBoilerplate
 * ^copyright = "**Intellectual Property Information**
 
@@ -214,6 +218,7 @@ External code lists maintained by X12 and external code lists maintained by othe
 
 Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
 * ^url = "https://x12.org/codes/remittance-advice-remark-codes"
+* ^caseSensitive = false
 * insert CodeSystemStubBoilerplate
 * ^copyright = "**Intellectual Property Information**
 

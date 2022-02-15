@@ -14,29 +14,29 @@ The PDex Implementation Guide (IG) identifies three actors and specifies three i
 	
 The Blue Button 2.0 initiative (The CMS Blue Button 2.0 API and the CARIN Consumer-Directed Exchange IG) specifies the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a member's health and claims information as FHIR clinical profiles (based on US Core) that are more easily consumed by Electronic Medical Records (EMR) systems. 
                                                                                                           
-Ad-hoc PDex Member History Requests via CDS Hooks provides a mechanism for providers/clinicians to request information from health plans about the medical history for their patient as part of their regular workflow.  The requestor should be aware that the Health Plan may not have a complete medical history of services provided due to delays in billing, patient ability to pay for services, etc.
+Ad-hoc PDex Member History Requests via CDS Hooks provides a mechanism for providers/clinicians to request information from health plans about the medical history of their patient as part of their regular workflow.  The requestor should be aware that the Health Plan may not have a complete medical history of services provided due to delays in billing, patient ability to pay for services, etc.
 
-The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information that will be exchanged between health plans when authorized by a health plan member.
+The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information which will be exchanged between health plans when authorized by a health plan member.
 
-The [Patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
+The [patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
 
 While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API may be the same.  
                                                                                                           
-The objective with the above approach is to:
+The objectives with the above approach is to:
 
-- Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested by stakeholders across health care
+- Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested by stakeholders across health care systems.
 - Consolidate the number of operational interfaces that health plans and  EMR systems need to maintain in order to meet regulatory requirements.
 
 ## Implementation Guide Scope
 
-The first release of the PDex IG will focus on the following in-scope items. Items in the deferred scope category will be considered for future iterations of the IG, or will be accommodated via an alternative Da Vinci Use Case. Out of scope items are not being considered at this time.
+The first release of the PDex IG will focus on the following in-scope items. Items in the deferred scope category will be considered for future iterations of the IG or will be accommodated via an alternative Da Vinci Use Case. Out of scope items are not being considered at this time.
 	
 ### In Scope
 	
 - Ambulatory Care Provider queries
 - Member-authorized Payer-to-Payer information exchange
-- Member-authorized Payer-to-Third-Party-Application information exchange
-- Use of [Patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation to enable Payer Push via secure transport
+- Member-authorized Payer-to-Third-Party Application information exchange
+- Use of [patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation to enable Payer Push via secure transport
 	
 ### Deferred Scope
 	
@@ -56,11 +56,11 @@ Member/Patient Consent for scenarios covered in this Implementation Guide fall i
 
 ### Provider-Health Plan Exchange
 
-Provider-Health Plan exchange of data is covered by the Health Insurance Portability and Accountability Act (HIPAA) under the [Treatment Payment and Health Care Operations](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) ( https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html ) provision.
+Provider-Health Plan exchange of data is covered by the Health Insurance Portability and Accountability Act (HIPAA) under the [Treatment Payment and Health Care Operations](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) provision.
 
 ### Member-mediated Information Exchange
 
-The CMS Interoperability and Patient Access Rule requires that a member to a new health plan **SHALL** be able to request their information be passed from their old health plan to their new health plan.
+The CMS Interoperability and Patient Access Rule requires that a member to a new health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.
 
 The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016 be available via API.
 
@@ -70,9 +70,9 @@ The Member-mediated Information Exchange method will build upon established OAut
 
 The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.
 
-The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-Plan-Net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/) ( http://hl7.org/fhir/us/davinci-pdex-plan-net/ ).
+The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-Plan-Net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/).
 
-The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary//) ( http://hl7.org/fhir/us/Davinci-drug-formulary/ ).
+The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary/).
 
 The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](Member-AuthorizedOAuth2Exchange.html)
 
@@ -82,7 +82,7 @@ This implementation guide is dependent on other specifications. Please submit an
 
 - Feedback on CDS Hooks should be posted to the CDS Hooks [GitHub Issue List](https://github.com/cds-hooks/docs/issues)
 
-- Feedback on this Implementation Guide and supporting HL7 specifications should be submitted as issue tickets via the [HL7 FHIR Jira system](https://jira.hl7.org/secure/Dashboard.jspa). Login to Jira and create an issue. Enter the following information to identify the relevant specification:
+- Feedback on this Implementation Guide and supporting HL7 specifications should be submitted as issue tickets via the [HL7 FHIR Jira system](https://jira.hl7.org/secure/Dashboard.jspa). Login to Jira and create an issue. Next enter the following information to identify the relevant specification:
 
 Project: FHIR Specification Feedback
 Issue Type: Change Request
@@ -110,7 +110,7 @@ This implementation guide uses terminology, notations and design principles that
 
 ## Implementation Assumptions
 
-Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles](http://hl7.org/fhir/us/core/STU3.1.1/index.html) ( http://hl7.org/fhir/us/core/STU3.3.1 ). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
+Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles]({{site.data.fhir.ver.uscore}}/index.html). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
 Where profiles are specific to the PDex use case the profiles will be defined in this guide.
 
@@ -118,7 +118,7 @@ Where profiles are specific to the PDex use case the profiles will be defined in
 
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
-1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [http://hl7.org/fhir/us/core/](http://hl7.org/fhir/us/core/STU3.1.1/index.html) ) 
+1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [http://hl7.org/fhir/us/core/]({{site.data.fhir.ver.uscore}}/index.html) ) 
 2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://build.fhir.org/ig/HL7/davinci-ehrx/](http://build.fhir.org/ig/HL7/davinci-ehrx/) )
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
@@ -134,13 +134,13 @@ The PDex IG defines four types of data payload:
 3. Pharmacy Network Directory
 4. Medication Formulary
 
-The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share data received from another health plan in the electronic form and format in which it was received.   
+The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share the data received from another health plan in the same electronic form and format in which it was received.   
 
 The Directory and Formulary data payloads are covered in their respective Da Vinci Implementation Guides.
 
 All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
-The FHIR CapabilityStatement defines the resources and operations supported on the resources exposed via the FHIR API.
+The FHIR CapabilityStatement defines the resources and operations supported by the resources exposed via the FHIR API.
 
 The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. The V-Read and History operations **MAY** be supported.
 
@@ -155,7 +155,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core CareTeam Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html)
 - [US Core Condition Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html)
 - [US Core DiagnosticReport Profile for Laboratory Results Reporting](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html)
-- [US Core Diagnostic Report Profile for Report and Note exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
+- [US Core DiagnosticReport Profile for Report and Note exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
 - [US Core DocumentReference Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html)
 - [US Core Encounter Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html)
 - [US Core Goal Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html)
@@ -178,7 +178,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 
 In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
-In addition, the [$patient-everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $Patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
+In addition, the [$patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
 
 The FHIR bundle that is the output of the $patient-everything-pdex operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
 

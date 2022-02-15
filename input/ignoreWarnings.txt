@@ -1,4 +1,93 @@
 == Suppressed Messages ==
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+US FHIR Usage rules require that all profiles on Device derive from the core US profile. Comparison with US Core Implantable Device Profile
+US FHIR Usage rules require that all profiles on Device derive from the core US profile.
+
+
+# Information Messages are consistent with messages in US Core QA Report
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination Show Reasoning
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination
+
+# Validation against profile information messages
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/MedicationDispense
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/MedicationDispense
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Provenance
+Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
+Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/DocumentReference
+Validate resource against profile http://hl7
+.org/fhir/us/core/StructureDefinition/us-core-documentreference - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Encounter
+Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Location
+Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-location - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Organization
+Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient - listed in meta
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Practitioner
+Validate resource against profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner - listed in meta
+Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
+
+# Unable to locate HTML tags in FSH source Per Grahame Grieve LT/GT in base resource not being properly escaped.
+StructureDefinition/pdex-medicationdispense: StructureDefinition.snapshot.element[35].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML withour appropraite post-processing, it may be a security risk
+
+# Tooling issue with jira.xml
+The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jira-current.xml' (a normalized view of what is in Github) and 'template/jira-new.xml' (reflects current IG content)
+
+# Case Sensitive CodeSystem Values
+CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+
+# Case Sensitive Values
+HL7 Defined CodeSystems SHOULD have a stated value for the caseSensitive element so that users know the status and meaning of the code system clearly
+
+# Access to CPT Codes
+Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
+[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+
+# Access to X12 Codes
+Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated
+Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.valueCodeableConcept could not be resolved
+The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.value[x] could not be resolved
+ValueSet https://x12.org/codes/service-type-codes not found by validator
+Unable to provide support for code system https://codesystem.x12.org/external/886
+Error from server: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+ValueSet https://x12.org/codes/service-type-codes not found by validator
+Error from server: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved
+The Implementation Guide contains no examples for this extension
+
+# HTML Warning
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+The element MedicationDispense.statusReason[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
+
+# Operation Definitions
+opd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+
+# Prior Authorization
+The element ExplanationOfBenefit.addItem.location[x] has a binding, and has multiple types ([Address, Reference, CodeableConcept]). The binding will apply to all the types
+The element ExplanationOfBenefit.diagnosis.diagnosis[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
+The element ExplanationOfBenefit.procedure.procedure[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
+The valueSet reference https://x12.org/codes/service-type-codes on element ExplanationOfBenefit.item.category could not be resolved
+The element ExplanationOfBenefit.item.location[x] has a binding, and has multiple types ([Address, Reference, CodeableConcept]). The binding will apply to all the types
+The element ExplanationOfBenefit.addItem.location[x] has a binding, and has multiple types ([Address, Reference, CodeableConcept]). The binding will apply to all the types
+The Implementation Guide contains no explicitly linked examples for this profile
+
+# Issue validating custodian participant type
+This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance

@@ -1,4 +1,4 @@
-Instance: PDEXPriorAuth
+Instance: PdexPriorAuth
 InstanceOf: PdexPriorAuthorization
 Description: "PDex Prior Authorization based on EOB Inpatient Example"
 Usage: #example

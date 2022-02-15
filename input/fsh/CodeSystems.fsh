@@ -6,8 +6,10 @@
 CodeSystem: ProvenanceAgentRoleType
   Title: "Provenance Roles"
   Description: "CodeSystem for types of role relating to the creation or communication of referenced resources"
+* ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * #author "Author" "Person or entity that originated the referenced resource"
+* #custodian "Custodian" "The entity that is accountable for maintaining a true an accurate copy of the original record"
 * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"
 * #transmitter "Transmitter" "Provenance Transmitter"
 
@@ -16,6 +18,7 @@ CodeSystem: ProvenancePayerDataSource
 Title: "Provenance Payer Data Source Format"
 Description: "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^caseSensitive = false
 * #hl7v2other "HL7 v2" "HL7 v2 Message"
 * #hl7v2oru "HL7 v2 ORU" "HL7 v2 Structured Observation Report(ORU) message"
 * #hl7v2adt "HL7 v2 ADT" "HL7 v2 Admit, Discharge Transfer (ADT) message"
@@ -49,6 +52,7 @@ CodeSystem: IdentifierTypeCS
 Title: "Identifier Type"
 Description: "Identifier Type"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^caseSensitive = false
 * #tax "Tax ID Number" "Tax ID Number"
 * #npi "National Provider Identifier" "National Provider Identifier"
 * #clia "CLIA" "CLIA"
@@ -64,6 +68,7 @@ Description: "Identifier Type"
 CodeSystem: PriorAuthorizationValueCodes
 Title: "Prior Authorization Values"
 Description: "Codes used to define Prior Authorization categories"
+* ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * #submitted "Submitted" "Proposed amounts of units or services"
 * #eligible "Eligible" "Eligible/agreed items or services"
@@ -77,11 +82,13 @@ Description: "Used as the discriminator for the data elements in adjudication an
 * #consumedunits "consumed units" "defines the adjudication slice to define consumed units"
 * #denialreason "Denial Reason" "defines the adjudication slice to identify the denial reason"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^caseSensitive = false
 
 // CodeSystemStubs.fsh contains stubs for external codesystems.
 CodeSystem: PDexAdjudication
 Title: "PDex Adjudication"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+* ^caseSensitive = false
 * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
 * #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
 * #priorpayerpaid "Prior payer paid" "The reduction in the payment amount to reflect the carrier as a secondary payor."
@@ -122,7 +129,7 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * #denied "Denied" "Indicates if the claim was denied"
 * #partiallypaid "Partially Paid" "Indicates that some line items on the claim were denied"
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false
 
 CodeSystem: PDexSupportingInfoType
 Title: "PDex Supporting Info Type"
@@ -146,7 +153,7 @@ Description: "Claim Information Category - Used as the discriminator for support
 * #medicalrecordnumber "Medical Record Number" "Patient Medical Record Number associated with the specific claim."
 * #patientaccountnumber "Patient Account Number" "Patient Account Number associated with the specific claim."
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false
 
 
 CodeSystem: PDexIdentifierType
@@ -163,4 +170,4 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * #um "Unique Member ID" "Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false
