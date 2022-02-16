@@ -15,36 +15,38 @@ the Data Provider's Server Capability Statement to determine which methods are m
 data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member
 and provide consent:
 
-### Payer Member Match with Consent
+### Member Match with Consent
 
 <div style="height=auto;width=90%;">
 {% include authorization-consent.svg %}
 </div>
 
 
-The steps in the Payer Member Match with Consent process are:
+The steps in the Member Match with Consent process are:
 
 - Establish a secure connection via mTLS
 - Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
-- Use Client Credentials to acquire OAuth2.0 token to perform $PayerMemberMatch operation
-- The PayerMemberMatch operation uses Patient Demographics and Coverage records to determine if a member is found
-- The $PayerMemberMatch operation evaluates the Consent resource for a matched member
+- Use Client Credentials to acquire OAuth2.0 token to perform $MemberMatch operation
+- The MemberMatch operation uses Patient Demographics and Coverage records to determine if a member is found
+- The $MemberMatch operation evaluates the Consent resource for a matched member
 - If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a MemberMatch ID is provided to the requesting Payer (Payer2)
-- If a MemberMatch Id is returned from $PayerMemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
+- If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
-The $PayerMemberMatch operation is defined in the [PayerMemberMatch operation](OperationDefinition-payer-member-match.html). The profiles used in the Payer Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
+The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
 
 - [HRex Patient Demographics Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
 
+The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
+
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique MemberMatch Identifier in the $PayerMemberMatch Operation Response.
+- Return a Unique MemberMatch Identifier in the $MemberMatch Operation Response.
 
-If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $PayerMemberMatch response.
+If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response.
 
 ### Evaluation of Consent
 
@@ -76,9 +78,8 @@ The choices to perform the scoping and consent verification are:
 
 ### Data Retrieval Methods
 
-Once Health Plans have completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL**
-utilize the access token returned from the Member Access step to request/retrieve data using one of the
-following three methods:
+Once Health Plans have completed the Member Access stage of the Exchange the requesting Health Plan **SHALL** utilize the access token returned from the Member Access step to request/retrieve 
+data using one of the following three methods:
 
 1. Query all clinical resource individually
 2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
