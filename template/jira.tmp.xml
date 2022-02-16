@@ -296,7 +296,19 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data Exchange"/>
    <status value="draft"/>
-   <date value="2022-02-16T17:21:25+00:00"/>
+   <date value="2022-02-16T20:44:55+00:00"/>
+   <publisher value="HL7 Financial Management Working Group"/>
+   <contact>
+      <name value="HL7 Financial Management Working Group"/>
+      <telecom>
+         <system value="url"/>
+         <value value="http://www.hl7.org/Special/committees/fm"/>
+      </telecom>
+      <telecom>
+         <system value="email"/>
+         <value value="fm@lists.HL7.org"/>
+      </telecom>
+   </contact>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -406,7 +418,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="StructureDefinition/pdex-device"/>
          </reference>
          <name value="PDex Device"/>
-         <description value="The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number."/>
+         <description value="The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. &#xA;FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0"/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
