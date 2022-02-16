@@ -2,7 +2,7 @@ Profile:        PdexDevice
 Parent:         Device
 Id:             pdex-device
 Title:          "PDex Device"
-Description:    "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number."
+Description:    "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. \nFHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0"
 * insert PdexStructureDefinitionContent
 
 * distinctIdentifier 0..1
