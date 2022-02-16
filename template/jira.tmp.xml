@@ -296,7 +296,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data Exchange"/>
    <status value="draft"/>
-   <date value="2022-02-16T17:12:24+00:00"/>
+   <date value="2022-02-16T17:21:25+00:00"/>
    <contact>
       <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
       <telecom>
@@ -1461,21 +1461,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="OperationDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="OperationDefinition-payer-member-match.html"/>
-         </extension>
-         <reference>
-            <reference value="OperationDefinition/payer-member-match"/>
-         </reference>
-         <name value="payer-member-match"/>
-         <description value="The **$payer-member-match** operation allows one health plan to retrieve a unique identifier for a member from another health plan using a member's demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum.  (I.e., A pure demographic match will not be supported by such implementations.)"/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-dyn-operationdefinition"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="CapabilityStatement"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -1830,11 +1815,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <page>
                <nameUrl value="OperationDefinition-patient-everything-pdex.html"/>
                <title value="patient-everything-pdex"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="OperationDefinition-payer-member-match.html"/>
-               <title value="payer-member-match"/>
                <generation value="generated"/>
             </page>
             <page>
