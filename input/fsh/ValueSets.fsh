@@ -6,6 +6,8 @@ ValueSet: ProvenanceAgentType
 Title:        "Provenance Agent Type"
 Description:  "Agent role performed relating to referenced resource"
 * codes from system ProvenanceAgentRoleType
+* codes from system http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type
+* codes from system http://terminology.hl7.org/CodeSystem/provenance-participant-type
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 
 
@@ -25,14 +27,14 @@ The information submitted as part of the listing process, the NDC number, and th
 
 Users should note:
 
-Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.
+Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to the FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.
 
 Information regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)
 
 Users should note a few important items
 
 *   The NDC Directory is updated daily.
-*   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.
+*   The new NDC Directory contains ONLY information on final marketed drugs submitted to the FDA in SPL electronic listing files by labelers.
 *   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)"
 //  * codes from system $FDANationalDrugCode
 * ^copyright = "NDC codes have no copyright acknowledgment or license requirements."
@@ -97,7 +99,7 @@ Description: "Indicates the in network or out of network payment status of the c
 
 
 ValueSet: X12278ReviewDecisionReasonCode
-Title: "X12 278 Review Descision Reason Codes"
+Title: "X12 278 Review Decision Reason Codes"
 Description: "Codes used to identify the reason for the health care service review outcome."
 * ^copyright = "This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * codes from system https://codesystem.x12.org/external/886

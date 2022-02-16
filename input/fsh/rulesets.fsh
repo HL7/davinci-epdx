@@ -64,3 +64,11 @@ RuleSet: Metaprofile-supportedProfile-slice
 * meta.profile ^slicing.ordered = false
 * meta.profile ^slicing.description = "Slice based on value"
 * meta.profile contains supportedProfile 1..1
+
+// RuleSet: Agenttype-provenanceCommitter-slice
+// * agent ^slicing.discriminator.type = #pattern
+// * agent ^slicing.discriminator.path = "$this"
+// * agent ^slicing.rules = #open
+// * agent ^slicing.ordered = false
+// * agent ^slicing.description = "Slice based on value"
+// * agent contains ProvenanceCommitter 0..*

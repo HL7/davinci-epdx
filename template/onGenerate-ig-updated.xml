@@ -46,7 +46,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </div>
    </text>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="1.1.0"/>
+   <version value="1.1.0-ballot"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data Exchange"/>
    <status value="draft"/>
@@ -220,7 +220,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="StructureDefinition/DispenseRefill"/>
          </reference>
          <name value="An attribute to express the refill number of a prescription"/>
-         <description value="Attribute that identifies the refill number of a prescription. e.g. 0, 1, 2, etc."/>
+         <description value="Attribute that identifies the refill number of a prescription. e.g., 0, 1, 2, etc."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-extension"/>
       </resource>
@@ -310,7 +310,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="ValueSet/FDANationalDrugCode"/>
          </reference>
          <name value="FDA National Drug Code (NDC)"/>
-         <description value="The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. § 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.&#xA;&#xA;The information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.&#xA;&#xA;Users should note:&#xA;&#xA;Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.&#xA;&#xA;Information regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)&#xA;&#xA;Users should note a few important items&#xA;&#xA;*   The NDC Directory is updated daily.&#xA;*   The new NDC Directory contains ONLY information on final marketed drugs submitted to FDA in SPL electronic listing files by labelers.&#xA;*   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)"/>
+         <description value="The Drug Listing Act of 1972 requires registered drug establishments to provide the Food and Drug Administration (FDA) with a current list of all drugs manufactured, prepared, propagated, compounded, or processed by it for commercial distribution.  (See Section 510 of the Federal Food, Drug, and Cosmetic Act (Act) (21 U.S.C. § 360)). Drug products are identified and reported using a unique, three-segment number, called the National Drug Code (NDC), which serves as a universal product identifier for drugs. FDA publishes the listed NDC numbers and the information submitted as part of the listing information in the NDC Directory which is updated daily.&#xA;&#xA;The information submitted as part of the listing process, the NDC number, and the NDC Directory are used in the implementation and enforcement of the Act.&#xA;&#xA;Users should note:&#xA;&#xA;Starting June 1, 2011, only drugs for which electronic listings (SPL) have been submitted to the FDA are included in the NDC Directory. Drugs for which listing information was last submitted to FDA on paper forms, prior to June 2009, are included on a separate file and will not be updated after June 2012.&#xA;&#xA;Information regarding the FDA published NDC Directory can be found [here](https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory)&#xA;&#xA;Users should note a few important items&#xA;&#xA;*   The NDC Directory is updated daily.&#xA;*   The new NDC Directory contains ONLY information on final marketed drugs submitted to the FDA in SPL electronic listing files by labelers.&#xA;*   The NDC Directory does not contain all listed drugs. The new version includes the final marketed drugs which listing information were submitted electronically. It does not include animal drugs, blood products, or human drugs that are not in final marketed form, such as Active Pharmaceutical Ingredients(APIs), drugs for further processing, drugs manufactured exclusively for a private label distributor, or drugs that are marketed solely as part of a kit or combination product or inner layer of a multi-level packaged product not marketed individually. For more information about how certain kits or multi-level packaged drugs are addressed in the new NDC Directory, see the NDC Directory Package File definitions document. For the FDA Online Label Repository page and additional resources go to: [FDA Online Label Repository](https://labels.fda.gov/)"/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
       </resource>
@@ -459,7 +459,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <reference>
             <reference value="ValueSet/X12278ReviewDecisionReasonCode"/>
          </reference>
-         <name value="X12 278 Review Descision Reason Codes"/>
+         <name value="X12 278 Review Decision Reason Codes"/>
          <description value="Codes used to identify the reason for the health care service review outcome."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
@@ -838,7 +838,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Provenance/1000005"/>
          </reference>
          <name value="ExampleProvenancePayerSource"/>
-         <description value="Example of an payer being the source of the data"/>
+         <description value="Example of a payer being the source of the data"/>
          <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -1088,25 +1088,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <reference>
             <reference value="ExplanationOfBenefit/PDexPriorAuth1"/>
          </reference>
-         <name value="PDEXPriorAuth"/>
+         <name value="PdexPriorAuth"/>
          <description value="PDex Prior Authorization based on EOB Inpatient Example"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="OperationDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="OperationDefinition-Patient-everything-pdex.html"/>
-         </extension>
-         <reference>
-            <reference value="OperationDefinition/Patient-everything-pdex"/>
-         </reference>
-         <name value="Patient-everything-pdex"/>
-         <description value="This operation is used to return all the clinical information related to a single patient described in the resource or context on which this operation is invoked. The response is a bundle of type &#34;searchset&#34;. At a minimum, the patient resource(s) itself is returned, along with any other clinical (as defined by USCDI) resources that the server has that are related to the patient, and that are available for the given user. The server also returns whatever resources are needed to support the records - e.g. linked practitioners, medications, locations, organizations etc. It should be noted that the server may need to filter resources to exclude resource profiles that fall outside of the clinical context. For example, excluding Blue Button claims that use the ExplanationOfBenefit resource, while including PDex Prior Authorizations that use the same base resource.   &#xA;&#xA;The intended use for this operation is to provide a payer with access to the entire clinical record.  The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments. In the US Realm, at a minimum, the resources returned SHALL include all the data covered by the meaningful use common data elements as defined in the US Core Implementation Guide. The PDex Implementation Guide adds Pdex-Device, Pdex-MedicationDispense and Pdex-PriorAuthorization to the clinical resource set. Other applicable implementation guides may make additional rules about how much information that is returned."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-dyn-operationdefinition"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1218,13 +1203,28 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="OperationDefinition"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="OperationDefinition-patient-everything-pdex.html"/>
+         </extension>
+         <reference>
+            <reference value="OperationDefinition/patient-everything-pdex"/>
+         </reference>
+         <name value="patient-everything-pdex"/>
+         <description value="This operation is used to return all the clinical information related to a single patient described in the resource or context on which this operation is invoked. The response is a bundle of type &#34;searchset&#34;. At a minimum, the patient resource(s) itself is returned, along with any other clinical (as defined by USCDI) resources that the server has that are related to the patient, and that are available for the given user. The server also returns whatever resources are needed to support the records - e.g., linked practitioners, medications, locations, organizations etc. It should be noted that the server may need to filter resources to exclude resource profiles that fall outside of the clinical context. For example, excluding Blue Button claims that use the ExplanationOfBenefit resource, while including PDex Prior Authorizations that use the same base resource.   &#xA;&#xA;The intended use for this operation is to provide a payer with access to the entire clinical record.  The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments. In the US Realm, at a minimum, the resources returned SHALL include all the data covered by the meaningful use common data elements as defined in the US Core Implementation Guide. The PDex Implementation Guide adds Pdex-Device, Pdex-MedicationDispense and Pdex-PriorAuthorization to the clinical resource set. Other applicable implementation guides may make additional rules about how much information that is returned."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-dyn-operationdefinition"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="OperationDefinition"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="OperationDefinition-payer-member-match.html"/>
          </extension>
          <reference>
             <reference value="OperationDefinition/payer-member-match"/>
          </reference>
          <name value="payer-member-match"/>
-         <description value="The **$payer-member-match** operation allows one health plan to retrieve a unique identifier for a member from another health plan using a member's demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum.  (I.e. A pure demographic match will not be supported by such implementations.)"/>
+         <description value="The **$payer-member-match** operation allows one health plan to retrieve a unique identifier for a member from another health plan using a member's demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum.  (I.e., A pure demographic match will not be supported by such implementations.)"/>
          <exampleBoolean value="false"/>
          <groupingId value="-dyn-operationdefinition"/>
       </resource>
@@ -1284,7 +1284,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="SearchParameter/explanationofbenefit-service-date"/>
          </reference>
          <name value="ExplanationOfBenefit_ServiceDate"/>
-         <description value="Date of the service for the EOB. The service-date search parameter simplifies search, since a client doesn't need to know that for inpatient and outpatient institutional EOB dates they need to search by billablePeriod.period.start, for a pharmacy EOB by item.servicedDate, and for a professional and non-clinician EOB - by item.servicedPeriod.period.start."/>
+         <description value="Date of the service for the EOB. The service-date search parameter simplifies the search, since a client doesn't need to know that. For inpatient and outpatient institutional EOB dates they need to search by billablePeriod.period.start, for a pharmacy EOB by item.servicedDate, and for a professional and non-clinician EOB - by item.servicedPeriod.period.start."/>
          <exampleBoolean value="false"/>
          <groupingId value="-dyn-searchparameter"/>
       </resource>
@@ -1582,8 +1582,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="OperationDefinition-Patient-everything-pdex.html"/>
-               <title value="Patient-everything-pdex"/>
+               <nameUrl value="OperationDefinition-patient-everything-pdex.html"/>
+               <title value="patient-everything-pdex"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -1728,7 +1728,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             </page>
             <page>
                <nameUrl value="ValueSet-X12278ReviewDecisionReasonCode.html"/>
-               <title value="X12 278 Review Descision Reason Codes"/>
+               <title value="X12 278 Review Decision Reason Codes"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -1923,7 +1923,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             </page>
             <page>
                <nameUrl value="ExplanationOfBenefit-PDexPriorAuth1.html"/>
-               <title value="PDEXPriorAuth"/>
+               <title value="PdexPriorAuth"/>
                <generation value="generated"/>
             </page>
             <page>
