@@ -21,6 +21,7 @@ and provide consent:
 {% include authorization-consent.svg %}
 </div>
 
+
 The steps in the Payer Member Match with Consent process are:
 
 - Establish a secure connection via mTLS
@@ -43,7 +44,7 @@ In the case where a match is confirmed the receiving payer will:
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
 - Return a Unique MemberMatch Identifier in the $PayerMemberMatch Operation Response.
 
-If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $PayerMemberMatch response/
+If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $PayerMemberMatch response.
 
 ### Evaluation of Consent
 
@@ -57,6 +58,22 @@ The following minimal content from the Consent record is used to validate a data
 
 If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
 
+#### Alternate Data Retrieval Flow
+
+<div style="height=auto;width=90%;">
+{% include credential-consent-flow.svg %}
+</div>
+
+<p id="publish-box">
+NOTE: Ballot Feedback sought regarding where and hoe the scoping and consent verification steps are performed after a successful MemberMatch.
+</p>
+
+The choices to perform the scoping and consent verification are:
+
+1. As part of the OAuth transaction that receives the MemberMatch ID
+2. During the data retrieval for each resource or operation endpoint that is accessed.
+
+
 ### Data Retrieval Methods
 
 Once Health Plans have completed the $MemberAccess stage of the Exchange the requesting Health Plan **SHALL**
@@ -64,7 +81,7 @@ utilize the access token returned from the Member Access step to request/retriev
 following three methods:
 
 1. Query all clinical resource individually
-2. [Patient/{id}/$everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation
+2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
 3. Bulk FHIR Asynchronous protocols
 
 Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
@@ -94,7 +111,7 @@ Each of the above methods **SHALL** support the retrieval of the profiles and re
 | [PDex Provenance](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-provenance)<br/>[US Core Provenance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance)                                                                                                                                                                                                                                   | Provenance   |
 
 
-### Query all clinical resource individually
+### Query all clinical resources individually
 
 Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as
 identified in the table above. Using the search capability of each resource enables the _revInclude and _include
@@ -108,7 +125,7 @@ operation operates as per the Patient/{id}/$everything operation defined in the 
 
 However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
 
-It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation does not support the full range of query parameters
+It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation does not support the full range of query parameters
 available to a regular search request. In cases where Provenance is being requested as part of the
 $everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
 the **_type** parameter of the $everything-pdex operation.
@@ -129,14 +146,14 @@ The server *SHOULD* filter the ExplanationOfBenefit resource to include only PDe
 
     /Patient/{id}/$export
 
-Payer to Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
+Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
 [Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The
 request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
 Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the
 [Bulk Data Export Operation Request
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
-The Patient Export Operation for Payer to Payer exchange should be constrained to the resources and profiles
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles
 identified in the table at the top of this section.
 
 

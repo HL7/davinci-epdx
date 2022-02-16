@@ -6,9 +6,11 @@
 CodeSystem: ProvenanceAgentRoleType
   Title: "Provenance Roles"
   Description: "CodeSystem for types of role relating to the creation or communication of referenced resources"
+* ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
 * #author "Author" "Person or entity that originated the referenced resource"
+* #custodian "Custodian" "The entity that is accountable for maintaining a true an accurate copy of the original record"
 * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"
 * #transmitter "Transmitter" "Provenance Transmitter"
 
@@ -67,6 +69,7 @@ Description: "Identifier Type"
 CodeSystem: PriorAuthorizationValueCodes
 Title: "Prior Authorization Values"
 Description: "Codes used to define Prior Authorization categories"
+* ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
 * #submitted "Submitted" "Proposed amounts of units or services"
@@ -82,6 +85,7 @@ Description: "Used as the discriminator for the data elements in adjudication an
 * #consumedunits "consumed units" "defines the adjudication slice to define consumed units"
 * #denialreason "Denial Reason" "defines the adjudication slice to identify the denial reason"
 * ^copyright = "This CodeSystem is not copyrighted."
+* ^caseSensitive = false
 
 // CodeSystemStubs.fsh contains stubs for external codesystems.
 CodeSystem: PDexAdjudication
@@ -129,7 +133,7 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * #denied "Denied" "Indicates if the claim was denied"
 * #partiallypaid "Partially Paid" "Indicates that some line items on the claim were denied"
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false
 
 CodeSystem: PDexSupportingInfoType
 Title: "PDex Supporting Info Type"
@@ -154,7 +158,7 @@ Description: "Claim Information Category - Used as the discriminator for support
 * #medicalrecordnumber "Medical Record Number" "Patient Medical Record Number associated with the specific claim."
 * #patientaccountnumber "Patient Account Number" "Patient Account Number associated with the specific claim."
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false
 
 
 CodeSystem: PDexIdentifierType
@@ -172,4 +176,4 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * #um "Unique Member ID" "Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business"
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 * ^copyright = "This CodeSystem is not copyrighted."
-
+* ^caseSensitive = false

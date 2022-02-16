@@ -7,7 +7,7 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 {% include style_insert_table_blue.html %}
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
-The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core STU 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
+The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core STU 3.1.1]({{site.data.fhir.ver.uscore}}/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
 
 ## Actors
 
@@ -139,7 +139,7 @@ of attribution lists for exchange of data for groups of members may be considere
 Payer-to-Payer exchange can be accomplished by three methods. 
 
 1. Query all clinical resource individually
-2. [Patient/{id}/$everything-pdex](OperationDefinition-Patient-everything-pdex.html) operation
+2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
 3. Bulk FHIR Asynchronous protocols
 
 Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 

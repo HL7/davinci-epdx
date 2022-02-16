@@ -16,8 +16,8 @@ group #LightGreen Step 1a: Verify Exchange, establish mutual TLS, and verify tru
 	Payer2 -> Payer1 : Establish Mutual TLS
 	Payer1 -> PayerDirectory : Query mutual TLS Public Cert
   note right
-  	Payer2 queries registry
-    for Payer1 details
+  	Payer1 queries registry
+    for Payer2 details
   endnote
 	PayerDirectory ->> Payer1 : Return mTLS public cert
 	Payer1 -> Payer1 : Verify Cert
