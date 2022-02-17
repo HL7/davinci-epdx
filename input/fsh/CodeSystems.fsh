@@ -88,8 +88,8 @@ Description: "Used as the discriminator for the data elements in adjudication an
 * ^caseSensitive = false
 
 // CodeSystemStubs.fsh contains stubs for external codesystems.
-CodeSystem: PDexAdjudication
-Title: "PDex Adjudication"
+CodeSystem: PDexAdjudicationCS
+Title: "PDex Adjudication Codes"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
 * ^caseSensitive = false
 * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."

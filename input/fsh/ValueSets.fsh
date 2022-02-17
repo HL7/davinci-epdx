@@ -64,15 +64,15 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 * $HL7AdjudicationCS#eligible
 * $HL7AdjudicationCS#deductible
 * $HL7AdjudicationCS#benefit
-* PDexAdjudication#coinsurance "Coinsurance"
-* PDexAdjudication#noncovered "Noncovered"
-* PDexAdjudication#priorpayerpaid "Prior payer paid"
-* PDexAdjudication#paidbypatient "Paid by patient"
-* PDexAdjudication#paidtopatient "Paid to patient"
-* PDexAdjudication#paidtoprovider "Paid to provider"
-* PDexAdjudication#memberliability "Member liability"
-* PDexAdjudication#discount "Discount"
-* PDexAdjudication#drugcost "Drug cost"
+* PDexAdjudicationCS#coinsurance "Coinsurance"
+* PDexAdjudicationCS#noncovered "Noncovered"
+* PDexAdjudicationCS#priorpayerpaid "Prior payer paid"
+* PDexAdjudicationCS#paidbypatient "Paid by patient"
+* PDexAdjudicationCS#paidtopatient "Paid to patient"
+* PDexAdjudicationCS#paidtoprovider "Paid to provider"
+* PDexAdjudicationCS#memberliability "Member liability"
+* PDexAdjudicationCS#discount "Discount"
+* PDexAdjudicationCS#drugcost "Drug cost"
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PDexAdjudicationCategoryDiscriminator
@@ -116,7 +116,7 @@ Description: "Used as the discriminator for the types of supporting information 
 // Approach adding a special valueset for inpatient
 ValueSet: PDexPriorAuthInstitutionalProcedureCodes
 // 20210215 CAS: FHIR-31074 - Please shorten the titles for the IP, OP, and Professional Procedure code and modifiers ValueSets
-Title: "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
+Title: "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
 Description: "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.
 
 The target set for this value set are the procedure codes from the CPT and HCPCS files and the rate codes from the HIPPS files.
