@@ -1,16 +1,9 @@
 == Suppressed Messages ==
 
-# FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
-
-# Information Messages are consistent with messages in US Core QA Report
-This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination
-
-
 # Access to CPT Codes
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 
 # Access to X12 Codes
@@ -23,6 +16,13 @@ The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1
 The Implementation Guide contains no examples for this extension
 ValueSet https://x12.org/codes/service-type-codes not found by validator
 Error from server: Unable to provide support for code system https://codesystem.x12.org/external/886
+
+
+# FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+
+# Information Messages are consistent with messages in US Core QA Report
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination
 
 
 # Reviewed and identified as not being HTML tags.
@@ -39,20 +39,20 @@ This element does not match any known slice defined in the profile http://hl7.or
 
 
 # Validation against profile information messages
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Encounter
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/MedicationDispense
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Provenance
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
+Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
 Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/Encounter
 Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense
 Validate resource against profile http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/SearchParameter
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/CodeSystem
-Validate resource against profile http://hl7.org/fhir/StructureDefinition/ValueSet
 
 
