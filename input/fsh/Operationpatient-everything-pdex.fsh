@@ -8,7 +8,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/OperationDefinition/patient-everything-pdex"
 * version = "4.0.1"
 * id = "patient-everything-pdex"
-* name = "patient-everything-pdex"
+* name = "PatientEverythingPdex"
 * status = #draft
 * kind = #operation
 * date = "2022-02-03T12:49:00+00:00"

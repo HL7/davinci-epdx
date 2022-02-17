@@ -7,7 +7,7 @@ Description:    "The PDex Prior Authorization (PPA) profile is based on the Expl
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * meta.profile 1..*
 * insert Metaprofile-supportedProfile-slice
-* meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|1.1.0)
+* meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|2.0.0)
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * status  1..1 MS

@@ -24,7 +24,7 @@ Usage: #example
 * created = "2021-09-20T00:00:00+00:00"
 * provider = Reference(Organization/Payer2)
 * provider.display = "Another Example Health Plan"
-* priority = $HL7ProcessPriority#normal "Normal"
+* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal "Normal"
 * fundsReserveRequested = $HL7FundsReserve#provider "Provider"
 * fundsReserve = $HL7FundsReserve#none "None"
 * related[0].relationship = $HL7RelatedClaim#associated "Associated Claim"
