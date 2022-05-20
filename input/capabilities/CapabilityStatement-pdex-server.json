@@ -48,9 +48,9 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "The PDEX Server **SHALL**:1. Support the US Core Patient resource profile.1. Support at least one additional resource profile from the list of US Core and PDEX Profiles.1. Implement the RESTful behavior according to the FHIR specification.1. Return the following response classes:   - (Status 400): invalid parameter   - (Status 401/4xx): unauthorized request   - (Status 403): insufficient scope   - (Status 404): unknown resource   - (Status 410): deleted resource.1. Support json source formats for all US Core and PDEX interactions.The PDEX Server **SHOULD**:1. Support xml source formats for all US Core interactions.1. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance.",
+      "documentation": "The PDEX Server **SHALL**: \n1. Support the US Core Patient resource profile.\n2. Support at least one additional resource profile from the list of US Core and PDEX Profiles. \n3. Implement the RESTful behavior according to the FHIR specification. \n4. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource. \n5. Support json source formats for all US Core and PDEX interactions. \n\nThe PDEX Server **SHOULD**: \n1. Support xml source formats for all US Core interactions.\n2. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance.",
       "security": {
-        "description": "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations.1. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code."
+        "description": "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations. 2. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code."
       },
       "resource": [
         {
@@ -2473,12 +2473,24 @@
           ],
           "type": "Observation",
           "supportedProfile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus",
-            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
             "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age",
+            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height",
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry",
-            "http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile"
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate",
+            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age",
+            "http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile",
+            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
           ],
           "interaction": [
             {

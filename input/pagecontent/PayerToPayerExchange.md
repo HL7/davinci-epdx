@@ -33,11 +33,11 @@ The steps in the Member Match with Consent process are:
 - If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
-The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://build.fhir.org/ig/HL7/davinci-ehrx). These are:
+The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
-- [HRex Patient Demographics Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
-- [HRex Coverage Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-patient-demographics.html)
-- [HRex Consent Profile](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
+- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
+- [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
+- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-consent.html)
 
 The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 

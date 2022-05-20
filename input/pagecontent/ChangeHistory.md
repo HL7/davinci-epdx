@@ -1,6 +1,23 @@
 
 {% include style_insert_table_blue.html %}
 
+### STU 2.0.0-ballot:Ballot Reconciliation
+
+| JIRA Ticket | Change          |
+|------------|------------------|
+| [FHIR-37366](https://jira.hl7.org/browse/FHIR-37366) | Vital Signs not referenced in Capability Statement |
+| [FHIR-36603](https://jira.hl7.org/browse/FHIR-36603) | Note that CPCDS is external and informative |
+| [FHIR-36580](https://jira.hl7.org/browse/FHIR-36580) | Update references to HRex to published 1.0.0 version |
+| [FHIR-36575](https://jira.hl7.org/browse/FHIR-36575) | Make the CapabilityStatement rendering more reader friendly |
+| [FHIR-36573](https://jira.hl7.org/browse/FHIR-36573) | Correction: Added pages to drop-down menu |
+| [FHIR-36569](https://jira.hl7.org/browse/FHIR-36569) | Create a Change Notes or History page |
+| [FHIR-36564](https://jira.hl7.org/browse/FHIR-36564) | Add clarifying markup for CPCDS mapping tables | 
+| [FHIR-36562](https://jira.hl7.org/browse/FHIR-36562) | Add CARIN Acronym on first use |
+| [FHIR-36237](https://jira.hl7.org/browse/FHIR-36237) | Sending Duplicative Data |
+| [FHIR-36080](https://jira.hl7.org/browse/FHIR-36080) | link to published FHIR v4.0.1 |
+| [FHIR-36079](https://jira.hl7.org/browse/FHIR-36079) | removed double link to ChangeHistory |
+
+
 ## STU 2.0.0
 
 The following changes were applied in the Proposed STU 2.0.0 update:

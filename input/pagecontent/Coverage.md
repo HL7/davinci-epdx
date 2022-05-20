@@ -1,12 +1,12 @@
 [Previous Page - US Core Condition](USCoreCondition.html)
 
-The [Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) is profiled in the Da Vinci HRex IG. 
+The [Coverage resource](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html) is profiled in the Da Vinci HRex IG. 
 
 NOTE: This resource is not included in the resource set returned by Payer-to-Payer exchange. The resource is used to submit coverage information to the $MemberMatch operation.
 
 {% include style_insert_table_blue.html %}
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [HRex Coverage resource](http://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-coverage.html) are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [HRex Coverage resource](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html) are:
 
 | R4 Element              | Name          | Cardinality | Type                                 |
 |-------------------------|---------------|:-----------:|--------------------------------------|

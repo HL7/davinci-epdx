@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="1.0.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
-<version code="1.1.0" url="http://hl7.org/fhir/us/davinci-pdex/2022May"/>
+<version code="2.0.0-ballot" url="http://hl7.org/fhir/us/davinci-pdex/2022May"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU1"/>
 <version code="0.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
+<version code="2.0.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
 <version code="0.1" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
@@ -20,7 +21,7 @@
 <artifact id="Bundle/2000002" key="Bundle-2000002" name="ExampleBundle1"/>
 <artifact id="Coverage/883210" key="Coverage-883210" name="ExampleCoverage"/>
 <artifact id="Device/543210" key="Device-543210" name="ExampleDevice"/>
-<artifact id="Provenance/1000016" key="Provenance-1000006" name="ExampleDocRefProvenance"/>
+<artifact id="Provenance/1000016" key="Provenance-1000016" name="ExampleDocRefProvenance"/>
 <artifact id="DocumentReference/123456" key="DocumentReference-123456" name="ExampleDocumentReference"/>
 <artifact id="Encounter/6" key="Encounter-6" name="ExampleEncounter1"/>
 <artifact id="Encounter/7" key="Encounter-7" name="ExampleEncounter2"/>
@@ -54,8 +55,8 @@
 <artifact id="Organization/ProviderOrg2" key="Organization-ProviderOrg2" name="OrganizationProvider2"/>
 <artifact id="CapabilityStatement/pdex-server" key="CapabilityStatement-pdex-server" name="PDEX Server CapabilityStatement"/>
 <artifact id="ValueSet/PDexAdjudication" key="ValueSet-PDexAdjudication" name="PDex Adjudication"/>
-<artifact id="CodeSystem/PDexAdjudication" key="CodeSystem-PDexAdjudication" name="PDex Adjudication"/>
 <artifact id="ValueSet/PDexAdjudicationCategoryDiscriminator" key="ValueSet-PDexAdjudicationCategoryDiscriminator" name="PDex Adjudication Category Discriminator"/>
+<artifact id="CodeSystem/PDexAdjudicationCS" key="CodeSystem-PDexAdjudicationCS" name="PDex Adjudication Codes"/>
 <artifact id="CodeSystem/PDexAdjudicationDiscriminator" key="CodeSystem-PDexAdjudicationDiscriminator" name="PDex Adjudication Discriminator"/>
 <artifact id="StructureDefinition/pdex-device" key="StructureDefinition-pdex-device" name="PDex Device"/>
 <artifact id="CodeSystem/PDexIdentifierType" key="CodeSystem-PDexIdentifierType" name="PDex Identifier Type"/>
@@ -74,11 +75,11 @@
 <artifact id="SearchParameter/pdex-medicationdispense-status" key="SearchParameter-pdex-medicationdispense-status" name="PdexMedicationDispenseStatus"/>
 <artifact id="ExplanationOfBenefit/PDexPriorAuth1" key="ExplanationOfBenefit-PDexPriorAuth1" name="PdexPriorAuth"/>
 <artifact id="CapabilityStatement/PdexServerCapabilityStatement" key="CapabilityStatement-PdexServerCapabilityStatement" name="PdexServerCapabilityStatement"/>
+<artifact id="ValueSet/PDexPriorAuthInstitutionalProcedureCodes" key="ValueSet-PDexPriorAuthInstitutionalProcedureCodes" name="Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
 <artifact id="CodeSystem/PriorAuthorizationValueCodes" key="CodeSystem-PriorAuthorizationValueCodes" name="Prior Authorization Values"/>
 <artifact id="ValueSet/PriorAuthorizationAmounts" key="ValueSet-PriorAuthorizationAmounts" name="Prior Authorization value categories"/>
 <artifact id="Coverage/Coverage1" key="Coverage-Coverage1" name="PriorAuthCoverage"/>
 <artifact id="ValueSet/PDexPAInstitutionalProcedureCodes" key="ValueSet-PDexPAInstitutionalProcedureCodes" name="Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
-<artifact id="ValueSet/PDexPriorAuthInstitutionalProcedureCodes" key="ValueSet-PDexPriorAuthInstitutionalProcedureCodes" name="Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
 <artifact id="StructureDefinition/pdex-provenance" key="Provenance" name="Provenance"/>
 <artifact id="ValueSet/ProvenanceAgentType" key="ValueSet-ProvenanceAgentType" name="Provenance Agent Type"/>
 <artifact id="CodeSystem/ProvenancePayerDataSource" key="CodeSystem-ProvenancePayerDataSource" name="Provenance Payer Data Source Format"/>
