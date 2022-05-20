@@ -30,8 +30,8 @@ Alias:   $R4ObservationVitalSigns = http://hl7.org/fhir/StructureDefinition/vita
 // Da Vinci Hrex IG
 //  Alias:   $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
 Alias:   $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
-//  Alias:   $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
-Alias:   $HrexOperationMemberMatch = http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition/member-match
+Alias:   $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
+// Alias:   $HrexOperationMemberMatch = http://build.fhir.org/ig/HL7/davinci-ehrx/OperationDefinition/member-match
 
 // Da Vinci Pdex IG
 Alias:   $PdexDevice = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device

@@ -1,0 +1,832 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "PdexServerCapabilityStatement",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
+    ]
+  },
+  "status": "draft",
+  "experimental": true,
+  "date": "2020-09-13",
+  "publisher": "HL7 Da Vinci",
+  "contact": [
+    {
+      "name": "Mark Scrimshire",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "implementationGuide": [
+    "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+  ],
+  "name": "PdexServerCapabilityStatement1",
+  "description": "Payer Data Exchange Server Capability Statement",
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"
+          ],
+          "type": "AllergyIntolerance",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan"
+          ],
+          "type": "CarePlan",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam"
+          ],
+          "type": "CareTeam",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+          ],
+          "type": "Condition",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage"
+          ],
+          "type": "Coverage",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"
+          ],
+          "type": "Device",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ],
+          "type": "DiagnosticReport",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ],
+          "type": "DocumentReference",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+          ],
+          "type": "Encounter",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal"
+          ],
+          "type": "Goal",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+          ],
+          "type": "Immunization",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+          ],
+          "type": "Location",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication"
+          ],
+          "type": "Medication",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"
+          ],
+          "type": "MedicationDispense",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "type": "MedicationRequest",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+          ],
+          "type": "Organization",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+          ],
+          "type": "Patient",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ],
+          "operation": [
+            {
+              "name": "member-match",
+              "definition": "http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age",
+            "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus",
+            "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+          ],
+          "type": "Observation",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+          ],
+          "type": "Practitioner",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ],
+          "type": "PractitionerRole",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ],
+          "type": "Procedure",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true,
+          "referencePolicy": [
+            "resolves"
+          ],
+          "searchRevInclude": [
+            "Provenance"
+          ],
+          "searchParam": [
+            {
+              "name": "_id",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
+          ],
+          "type": "Provenance",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "vread"
+            },
+            {
+              "code": "history-instance"
+            },
+            {
+              "code": "history-type"
+            }
+          ],
+          "readHistory": true
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ CMS Guidance defines two sets of data to be made available by payers in the Pati
 The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://build.fhir.org/ig/HL7/carin-bb/) defines how Claims and Encounter Data are to be provided; This DaVinci Payer Data Exchange IG (PDex) and the [US Core IG]({{site.data.fhir.ver.uscore}}/index.html) define how Clinical Data is to be provided. 
 
 ### Background
-There are two parallel paths pursued by the CARIN Alliance and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
+There are two parallel paths pursued by the CARIN Alliance (**C**reating **A**ccess to **R**eal-time **In**formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
 
 The CARIN Alliance focused on replicating the CMS Blue Button 2.0 solution directed at providing beneficiaries access to claims information for Medicare Fee For Service (FFS) in the form of a FHIR based ExplanationOfBenefit (EOB). The CARIN Alliance Consumer-Directed Payer Data Exchange (CARIN IG for Blue Button®) solution was intended to provide the same information based on commercial payer databases, at a least for Medicare Advantage products. The CMS Interoperability and Patient Access Final Rule expanded the scope of a Blue Button 2.0 equivalent to include not just Medicare Advantage but also Medicaid HMO, CHIP HMO and QHP's in the federal marketplace.
 
@@ -77,7 +77,10 @@ A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](
 - [HRex Coverage](Coverage.html) 
 - [PDex MedicationDispense](PDexMedicationDispense.html)
 
-Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping.
+Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. 
+
+
+
 
 The column definitions are provided in the table below. Look for this style of table in the Profiles defined in this IG.
 
@@ -89,6 +92,7 @@ The column definitions are provided in the table below. Look for this style of t
 
 <i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
 
+<i>Note: In the CPCDS Element Mapping column the element ["{163]":"...."}] or ["Ref(x,xx,xxx)":"..."] refers to the CPCDS element Id: Element name in the CPCDS tables.</i>
 
 The IG will continue to be tested at connectathons and will continue to utilize commonly adopted standards (e.g., US Core profiles) that have been tested by other groups (e.g., Argonaut). USCDI concepts are encapsulated in US-Core Profiles on FHIR Resources. The Code Systems, Value Sets and codings used in this IG are based on US-Core Profiles. Regardless of the way in which payers store their administrative and clinical information they will need to map it appropriately to these profiles. 
 
@@ -127,7 +131,7 @@ For the purposes of this IG we will use the following terms:
 
 ### Change History
 
-A history of changes made since the publication of the STU1 version of the PDex IG is maintained [here](ChangeHistory.html): [ChangeHistory](ChangeHistory.html) 
+A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](ChangeHistory.html).
 
 ### FHIR Publisher
 
