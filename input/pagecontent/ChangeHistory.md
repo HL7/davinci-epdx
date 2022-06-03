@@ -5,18 +5,32 @@
 
 | JIRA Ticket | Change          |
 |------------|------------------|
-| [FHIR-37366](https://jira.hl7.org/browse/FHIR-37366) | Vital Signs not referenced in Capability Statement |
+| BallotRec-Vote2 |   |
+| [FHIR-36885](https://jira.hl7.org/browse/FHIR-36885) | ExplanationOfBenefit.use = preauthorization |
+| [FHIR-36772](https://jira.hl7.org/browse/FHIR-36772) | PDEX Provenance page. Broken section |
+| [FHIR-36600](https://jira.hl7.org/browse/FHIR-36600) | Review all mappings for Coverage |
+| [FHIR-36597](https://jira.hl7.org/browse/FHIR-36597) | Invalid data population instruction for Condition |
+| [FHIR-36596](https://jira.hl7.org/browse/FHIR-36596) | Invalid data population instruction for CareTeam  |
+| [FHIR-36563](https://jira.hl7.org/browse/FHIR-36563) | No issues; this section is dense but necessary in defining scope. |
+| [FHIR-36352](https://jira.hl7.org/browse/FHIR-36352) | Expand CPCDS Undefined Acronym |
+| [FHIR-36337](https://jira.hl7.org/browse/FHIR-36337) | Update Name Column for Lab Result |
+| TC: [FHIR-36075](https://jira.hl7.org/browse/FHIR-36075) | Link to US Core 3.1.1 actually links to HL7 home |
+| TC: [FHIR-36314](https://jira.hl7.org/browse/FHIR-36314) | Formatting fixes in Care Team element table |
+| Ballot-Rec-Vote1 |  |
+| TC: [FHIR-37366](https://jira.hl7.org/browse/FHIR-37366) | Vital Signs not referenced in Capability Statement |
 | [FHIR-36603](https://jira.hl7.org/browse/FHIR-36603) | Note that CPCDS is external and informative |
 | [FHIR-36580](https://jira.hl7.org/browse/FHIR-36580) | Update references to HRex to published 1.0.0 version |
-| [FHIR-36575](https://jira.hl7.org/browse/FHIR-36575) | Make the CapabilityStatement rendering more reader friendly |
+| TC: [FHIR-36575](https://jira.hl7.org/browse/FHIR-36575) | Make the CapabilityStatement rendering more reader friendly |
 | [FHIR-36573](https://jira.hl7.org/browse/FHIR-36573) | Correction: Added pages to drop-down menu |
-| [FHIR-36569](https://jira.hl7.org/browse/FHIR-36569) | Create a Change Notes or History page |
+| TC: [FHIR-36569](https://jira.hl7.org/browse/FHIR-36569) | Create a Change Notes or History page |
 | [FHIR-36564](https://jira.hl7.org/browse/FHIR-36564) | Add clarifying markup for CPCDS mapping tables | 
 | [FHIR-36562](https://jira.hl7.org/browse/FHIR-36562) | Add CARIN Acronym on first use |
+| TC: [FHIR-36255](https://jira.hl7.org/browse/FHIR-36255)| Formatting issues for PDEX server capability statement |
 | [FHIR-36237](https://jira.hl7.org/browse/FHIR-36237) | Sending Duplicative Data |
-| [FHIR-36080](https://jira.hl7.org/browse/FHIR-36080) | link to published FHIR v4.0.1 |
-| [FHIR-36079](https://jira.hl7.org/browse/FHIR-36079) | removed double link to ChangeHistory |
+| TC: [FHIR-36080](https://jira.hl7.org/browse/FHIR-36080) | link to published FHIR v4.0.1 |
+| TC: [FHIR-36079](https://jira.hl7.org/browse/FHIR-36079) | removed double link to ChangeHistory |
 
+Technical Corrections are prefixed with "TC: "
 
 ## STU 2.0.0
 
@@ -24,7 +38,7 @@ The following changes were applied in the Proposed STU 2.0.0 update:
 
 | JIRA Ticket | Change          |
 |------------|------------------|
-| [FHIR-36026](https://jira.hl7.org/browse/FHIR-36026) | Multiple Technical Corrections |
+| TC: [FHIR-36026](https://jira.hl7.org/browse/FHIR-36026) | Multiple Technical Corrections |
 | [FHIR-35868](https://jira.hl7.org/browse/FHIR-35868) | Revert US Core References back to 3.1.1 |
 | [FHIR-34308](https://jira.hl7.org/browse/FHIR-34308) | Update US Core and PDex inter-relationship diagram to add Prior Auth in Overview page. |
 | [FHIR-33382](https://jira.hl7.org/browse/FHIR-33382) | Change references to US Core to link to the current 4.0.0 version. Reverted - see [FHIR-35868](https://jira.hl7.org/browse/FHIR-35868) above. |
