@@ -26,10 +26,10 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | US Core Element           | Must Support | Cardinality | CARIN-BB Element          | CPCDS Element Mapping  or Implementer Note                                     |
 |---------------------------|-------------|:-----------:|---------------------------|-----------------------------------------------------------|
 | Coverage.meta.lastUpdated |             |     0..1    | Coverage.meta.lastUpdated | [{"163":"Coverage Last Updated Date"}]                    |
-| Coverage.identifier       |      S      |     0..*    | Coverage.identifier      | Supply a Unique Coverage Identifier                        |
+| Coverage.identifier       |      S      |     0..*    | Coverage.identifier       | [{"Ref (1)":"Member id"}]                                 |
 | Coverage.status           |             |     1..1    | Coverage.status           | [{"133":"Coverage status"}]                               |
 | Coverage.subscriberId     |      S      |     0..1    | Coverage.subscriberId     | [{"132":"Subscriber id"}]                                 |
-| Coverage.beneficiary      |      S      |     1..1    | Coverage.beneficiary      | [{"Ref (1)":"Member id"}                                  |
+| Coverage.beneficiary      |      S      |     1..1    | Coverage.beneficiary      | Use [{"Ref (1)":"Member id"}] to find Ratient/id Reference |
 | Coverage.relationship     |             |     0..1    | Coverage.relationship     | [{"72":"Relationship to subscriber"}]                     |
 | Coverage.payor            |      S      |     1..*    | Coverage.payor            | [{"Ref (2)<br>":"Claim Payer Identifier"}                 |
 | Coverage.class.value      |             |     1..1    | Coverage.class.value      | [{"Plan=154":"Plan Identifier"}, {"Group=134":"Group Id"} |

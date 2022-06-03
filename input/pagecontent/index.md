@@ -26,12 +26,12 @@ At this point we have two solutions that provide an overlapping but different se
 5. Information related to medication administration from pharmacy benefit managers in pharmacy networks, 
 6. FHIR resources, and any other source of clinical information related to the member.
  
-Unlike the [US Core 3.1.1 Implementation Guide]({{site.data.fhir.ver.uscore}}/index.html), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
+Unlike the [US Core 3.1.1 Implementation Guide](http://hl7.org/fhir/us/core/STU3.1.1), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
 
 1. Provenance appropriate for payer data exchange (extended US Core Provenance)
 2. Dispensed medications (not covered in US Core)
 3. Medical devices that are not implantable devices (not covered in US Core)
-4. CPCDS data set to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
+4. Common Payer Consumer Data Set (CPCDS) to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
 5. Clinical data received by payers (e.g., laboratory results) from multiple sources (e.g., claims, HL7 V2, CDA) to the appropriate FHIR US Core and PDex profile data elements.
 
 <table>

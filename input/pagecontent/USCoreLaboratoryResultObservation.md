@@ -11,9 +11,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.status                     |  status              |     1..1    | code                               |
 |  Observation.category                   |  category            |     1..*    | (Slice Definition)                 |
 |  Observation.category:Laboratory        |  category:Laboratory |     1..1    | CodeableConcept                    |
-|  Observation.category:Laboratory.coding |  coding              |     1..*    | Coding                             |
-|  Observation.category:Laboratory.system |  system              |     1..1    | uri                                |
-|  Observation.category:Laboratory.code   |  code                |     1..1    | code                               |
+|  Observation.category:Laboratory.coding |  Laboratory.coding   |     1..*    | Coding                             |
+|  Observation.category:Laboratory.system |  Laboratory.system   |     1..1    | uri                                |
+|  Observation.category:Laboratory.code   |  Laboratory.code     |     1..1    | code                               |
 |  Observation.code                       |  code                |     1..1    | CodeableConcept                    |
 |  Observation.subject                    |  subject             |     1..1    | Reference(US Core Patient Profile) |
 |  Observation.effective[x]               |  effective[x]        |     0..1    |                                    |

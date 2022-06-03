@@ -11,6 +11,8 @@ Description:    "The PDex Prior Authorization (PPA) profile is based on the Expl
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * status  1..1 MS
+* use 1..1 MS
+* use = #preauthorization
 * priority 0..1
 * priority from $Process-Priority (required)
 * patient  1..1 MS
