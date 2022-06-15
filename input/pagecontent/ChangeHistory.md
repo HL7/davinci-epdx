@@ -5,6 +5,12 @@
 
 | JIRA Ticket | Change          |
 |------------|------------------|
+| BallotRec-Vote3 |   |
+| [FHIR-37577](https://jira.hl7.org/browse/FHIR-37577) | Change use of _profile to ExplanationOfBenefit.use to filter on "preauthorization" |
+| [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576) | Duplicate to FHIR-37577 |
+| [FHIR-37546](https://jira.hl7.org/browse/FHIR-37546) | Consent expiration for P2P Data Exchange |
+| [FHIR-36629](https://jira.hl7.org/browse/FHIR-36629) | change from are expected to SHALL |
+| [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462) | Incorrect Diagram, Consent considerations, everything operation |
 | BallotRec-Vote2 |   |
 | [FHIR-36885](https://jira.hl7.org/browse/FHIR-36885) | ExplanationOfBenefit.use = preauthorization |
 | [FHIR-36772](https://jira.hl7.org/browse/FHIR-36772) | PDEX Provenance page. Broken section |
