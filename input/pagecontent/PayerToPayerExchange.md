@@ -1,5 +1,6 @@
 [Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
 
+{% include style_insert_table_blue.html %}
 
 TODO: update link to replace build.fhir.org when HRex publishes.
 
@@ -21,6 +22,7 @@ and provide consent:
 {% include authorization-consent.svg %}
 </div>
 
+Health Plans **SHALL** support the $member-match operation.
 
 The steps in the Member Match with Consent process are:
 
@@ -35,9 +37,9 @@ The steps in the Member Match with Consent process are:
 
 The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
-- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
-- [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
-- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-consent.html)
+- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
+- [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
+- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
 
 The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 
@@ -59,6 +61,22 @@ The following minimal content from the Consent record is used to validate a data
 - Payer requesting retrieval of data is matched
 
 If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
+
+#### Period of Consent Validity
+
+Here are some scenarios that could inform the decision about an appropriate period of validity for a consent to exchange health information:
+
+- Medicare has an annual enrollment. This can result in beneficiaries signing up for a new health plan up to 3 months before their new health plan goes into effect.
+- When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period of time after the plan terminates.
+- Some plan beneficiaries may have concurrent coverage. For example, a Medicare and a Medicaid plan may be in effect for a beneficiary for the duration of coverage period. In this scenario health plans may need to exchange information about the beneficiary throughout the period of dual plan coverage in order to coordinate treatment.
+
+It is a member's option to share their health information with their new health plan. When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be:
+
+| Scenario  | Consent Start Date | Consent End Date |
+|-----------|--------------------|------------------|
+| Early Enrollment | Date of enrollment | 90 days after Plan Start Date |
+| Immediate Enrollment | Date of enrollment | 90 days after Plan Start Date |
+| Concurrent Plan Coverage | Date of enrollment | Plan Period End Date (typically 12 months from plan start date) |
 
 #### Alternate Data Retrieval Flow
 
