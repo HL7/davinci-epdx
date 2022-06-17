@@ -22,6 +22,7 @@ and provide consent:
 {% include authorization-consent.svg %}
 </div>
 
+Health Plans **SHALL** support the $member-match operation.
 
 The steps in the Member Match with Consent process are:
 
