@@ -5,12 +5,18 @@
 
 | JIRA Ticket | Change          |
 |------------|------------------|
+| BallotRec-Vote4 |   |
+| [FHIR-37645](https://jira.hl7.org/browse/FHIR-37645) | Consent presentation for P2P |
+| [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644) | Consent Revocation for P2P |
+| [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599) | Review 835 and all mappings to diagnostics. |
+
 | BallotRec-Vote3 |   |
 | [FHIR-37577](https://jira.hl7.org/browse/FHIR-37577) | Change use of _profile to ExplanationOfBenefit.use to filter on "preauthorization" |
 | [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576) | Duplicate to FHIR-37577 |
 | [FHIR-37546](https://jira.hl7.org/browse/FHIR-37546) | Consent expiration for P2P Data Exchange |
 | [FHIR-36767](https://jira.hl7.org/browse/FHIR-36767) | $member-match operation conformance not defined |
 | [FHIR-36629](https://jira.hl7.org/browse/FHIR-36629) | change from are expected to SHALL |
+| [FHIR-36601](https://jira.hl7.org/browse/FHIR-36601) | Review all mappings for DiagnosticReport (MedicationDispense). |
 | [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462) | Incorrect Diagram, Consent considerations, everything operation |
 | BallotRec-Vote2 |   |
 | [FHIR-36885](https://jira.hl7.org/browse/FHIR-36885) | ExplanationOfBenefit.use = preauthorization |
