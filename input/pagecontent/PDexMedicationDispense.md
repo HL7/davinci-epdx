@@ -1,10 +1,10 @@
 [Previous Page - US Core Medication](USCoreMedication.html)
 
-The  [Da Vinci PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims.
+The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims.
 
 {% include style_insert_table_blue.html %}
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Da Vinci PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html) profile are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Da Vinci PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) profile are:
 
 | R4 Element                                     | Name            | Cardinality | Type                                                                                              |
 |------------------------------------------------|-----------------|:-----------:|---------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 |--------------------------------------------|:------------:|:-----------:|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  - MedicationDispense.meta.lastUpdated     |              |     0..1    | ExplanationOfBenefit.meta.lastUpdated                                                  | [{"163":"EOB Last Updated Date"}]                                                                                                                                                                         |
 | MedicationDispense.identifier              |              |     0..*    | ExplanationOfBenefit.Identifier                                                        | [{"35":"RX service reference number"}]. Note: Assign Payer System URI for Unique Claim Id in MedicationDispense.identifier.system. SetClaim Id in MedicationDispense.identifier.value                     |
-| MedicationDispense.status                  |       S      |     1..1    | ExplanationOfBenefit.status                                                            | [{"140":"Claim processing status code<br>"}]                                                                                                                                                              |
+| MedicationDispense.status                  |       S      |     1..1    | ExplanationOfBenefit.status                                                            | [{"140":"Claim processing status code<br>"}] Note: Default to "completed"                                                                                                                               |
 | MedicationDispense.medication[x]           |              |     1..1    |                                                                                        | . Note: Enter prescription information in sub-elements below                                                                                                                                               |
 |  -  MedicationDispense.medicationReference |              |             | ExplanationOfBenefit.supportingInfo.code, ExplanationOfBenefit.detail.productOrService | [{"79":"NCPDP field # 408-D8 (Dispensed As Written (DAW)/Product Selection Code) https://ushik.ahrq.gov/ViewItemDetails?itemKey=200387000&system=sdo"}, {"38, 78":"National drug code<br>Compound Code"}] |
 | MedicationDispense.subject                 |       S      |     1..1    | ExplanationOfBenefit.patient                                                           | [{"Ref (1), Ref (109)":"Member id, Patient account number"}, {"Ref (191)":"Unique Member ID"}, {"Ref (110)":"Medical record number"}]                                                                    |

@@ -50,6 +50,32 @@ In the case where a match is confirmed the receiving payer will:
 
 If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response.
 
+#### Consent Revocation
+
+The following guidance is provided for a situation where a member wishes to revoke consent for a previously grannted Payer-to-payer exchange.
+
+As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
+Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.
+
+This approach does not preclude the member contracting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.
+
+#### Consent Request Language
+
+It is recommended that consistent language is used by Payers to present the information to a member when they are being asked to grant consent for a Payer-to-Payer exchange of their health information.
+
+You [the Member] are:
+
+- Instructing [New Payer] to retrieve your health information from [Old Payer]
+- Instructing the Old Payer to release your health information to [New Payer]
+- Requesting all information is to be retrieved, or sensitive data (such as mental health data) should be excluded from the retrieved health information.
+- Granting consent for [New Payer] to request data from [Old Payer] for a period of up to 90 days after the activation of your health coverage with [New Payer]
+
+Please note that:
+- The scope of data sensitivity is determined by Federal and State regulations that apply in the state in which [Old Payer] operates.
+- If [Old Payer] is unable to identify and exclude sensitive data and you have chosen to exclude sensitive data from the request then [Old Payer] will be unable to comply with your request.
+- In the case where you have active coverage with both [Old Payer] and [New Payer] the ennd date for the Consent innstruction will be the anticipated end date of the health coverage with [New Payer]
+
+
 ### Evaluation of Consent
 
 The receiving payer **MAY** store the Consent record for the member. 

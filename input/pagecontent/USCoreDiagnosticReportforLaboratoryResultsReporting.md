@@ -85,7 +85,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 #### Claim (837) to Diagnostic Report
 
 
-| R4 Hierarchical Name                              | R4 Name            | Cardinality | Type                                                                                                                         | Claim(837)                 |
+| R4 Hierarchical Name                              | R4 Name            | Cardinality | Type                                                                                                                         | Claim(837) / Note          |
 |---------------------------------------------------|--------------------|:-----------:|------------------------------------------------------------------------------------------------------------------------------|----------------------------|
 | DiagnosticReport.implicitRules                    |  implicitRules     | 0..1        | uri                                                                                                                          | x                          |
 | DiagnosticReport.language                         |  language          | 0..1        | code                                                                                                                         | x                          |
@@ -95,7 +95,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DiagnosticReport.modifierExtension                |  modifierExtension | 0..*        | Extension                                                                                                                    | x                          |
 | DiagnosticReport.identifier                       |  identifier        | 0..*        | Identifier                                                                                                                   | x                          |
 | DiagnosticReport.partOf                           |  partOf            | 0..*        | Reference(MedicationAdministration\| MedicationDispense \| MedicationStatement \| Procedure \| Immunization \| ImagingStudy) | x                          |
-| DiagnosticReport.status                           |  status            | 1..1        | code                                                                                                                         | Claim Frequency Code       |
+| DiagnosticReport.status                           |  status            | 1..1        | code                                                                                                                         | Default to "unknown"       |
 | DiagnosticReport.category                         |  category          | 1..*        | CodeableConcept                                                                                                              | x                          |
 | DiagnosticReport.code                             |  code              | 1..1        | CodeableConcept                                                                                                              | Procedure Code             |
 | DiagnosticReport.subject                          |  subject           | 1..1        | Reference(US Core Patient Profile)                                                                                           | Patient Demographics       |
