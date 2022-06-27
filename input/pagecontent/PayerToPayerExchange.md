@@ -52,7 +52,7 @@ If the receiving payer is unable to comply with the consent request a MemberMatc
 
 #### Consent Revocation
 
-The following guidance is provided for a situation where a member wishes to revoke consent for a previously grannted Payer-to-payer exchange.
+The following guidance is provided for a situation where a member wishes to revoke consent for a previously granted Payer-to-payer exchange.
 
 As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
 Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.
@@ -73,7 +73,7 @@ You [the Member] are:
 Please note that:
 - The scope of data sensitivity is determined by Federal and State regulations that apply in the state in which [Old Payer] operates.
 - If [Old Payer] is unable to identify and exclude sensitive data and you have chosen to exclude sensitive data from the request then [Old Payer] will be unable to comply with your request.
-- In the case where you have active coverage with both [Old Payer] and [New Payer] the ennd date for the Consent innstruction will be the anticipated end date of the health coverage with [New Payer]
+- In the case where you have active coverage with both [Old Payer] and [New Payer] the end date for the Consent instruction will be the anticipated end date of the health coverage with [New Payer]
 
 
 ### Evaluation of Consent
