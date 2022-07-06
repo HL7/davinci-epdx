@@ -10,6 +10,7 @@
 | [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644) | Consent Revocation for P2P |
 | [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599) | Review 835 and all mappings to diagnostics. |
 
+
 | BallotRec-Vote3 |   |
 | [FHIR-37577](https://jira.hl7.org/browse/FHIR-37577) | Change use of _profile to ExplanationOfBenefit.use to filter on "preauthorization" |
 | [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576) | Duplicate to FHIR-37577 |
