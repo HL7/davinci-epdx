@@ -45,9 +45,9 @@ The profiles that comprise the bundle are included in the FHIR artifacts in this
 
 The profiles are: 
 
-- [mTLS Endpoint Bundle](/StructureDefinition-mtls-bundle.html)
-- [mTLS Endpoint](/StructureDefinition-mtls-endpoint.html)
-- [mTLS Organization](/StructureDefinition-mtls-managing-organization.html)
+- [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
+- [mTLS Endpoint](StructureDefinition-mtls-endpoint.html)
+- [mTLS Organization](StructureDefinition-mtls-managing-organization.html)
  
 An extension is also defined to stored the mTLS signed object:
 
