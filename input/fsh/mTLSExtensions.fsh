@@ -1,7 +1,6 @@
-
 Extension: MtlsSignedObject
 Id: pdex-mtls-signedobject-extension
-Title: "Signed Object"
+Title: "mTLS Signed Object"
 Description: "mTLS Endpoint Signed Object Extension"
 
 * extension contains
@@ -9,8 +8,9 @@ Description: "mTLS Endpoint Signed Object Extension"
   Object 1..1 MS
 * extension[ObjectType].value[x] only CodeableConcept
 * extension[ObjectType].value[x] from MtlsObjectType (extensible)
-* extension[Object].value[x] only base64Binary
-
+// * extension[Object].value[x] only Base64Binary
+* extension[Object].value[x] only string
+* extension[Object].value[x] ^short = "This should be base64Binary but valuebase64Binary won't compile. Therefore setting to string"
 
 // --------------------------------
 
