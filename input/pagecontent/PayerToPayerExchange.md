@@ -51,7 +51,7 @@ The profiles are:
  
 An extension is also defined to stored the mTLS signed object:
 
-- [mTLS Signed Object](/StructureDefinition-pdex-mtls-signedobject-extension.html)
+- [mTLS Signed Object](StructureDefinition-pdex-mtls-signedobject-extension.html)
 
 #### The $member-match operation
 
