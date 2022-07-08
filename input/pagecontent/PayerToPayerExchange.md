@@ -35,6 +35,26 @@ The steps in the Member Match with Consent process are:
 - If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
+#### mTLS Endpoint Discovery
+
+For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
+
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/prviate keys.
+
+The profiles that comprise the bundle are included in the FHIR artifacts in this guide.
+
+The profiles are: 
+
+- [mTLS Endpoint Bundle](/StructureDefinition-mtls-bundle.html)
+- [mTLS Endpoint](/StructureDefinition-mtls-endpoint.html)
+- [mTLS Organization](/StructureDefinition-mtls-managing-organization.html)
+ 
+An extension is also defined to stored the mTLS signed object:
+
+- [mTLS Signed Object](/StructureDefinition-pdex-mtls-signedobject-extension.html)
+
+#### The $member-match operation
+
 The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)

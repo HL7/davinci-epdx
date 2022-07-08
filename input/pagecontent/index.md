@@ -112,6 +112,12 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.
 
+#### Must Support
+
+For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core implementation guide
+
+#### Patient/Subject Terminology
+
 It is important to differentiate in the Implementation Guide between identifiers used by the Provider/EMR and those used by the Payer/Health Plan to identify the patient/subject/member.
 
 For the purposes of this IG we will use the following terms:
