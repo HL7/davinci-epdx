@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Jun 14, 2022 13:46+0000 for FHIR v4.6.0 
+  Generated on Mon, Jul 11, 2022 14:56+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -32192,7 +32192,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The status of the device itself - whether it is switched on, or activated, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="associationState" type="Device.AssociationState" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="association" type="Device.Association" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The details about the device when it is affixed or inside of a patient.</xs:documentation>
            </xs:annotation>
@@ -32439,7 +32439,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="Device.AssociationState">
+  <xs:complexType name="Device.Association">
     <xs:annotation>
       <xs:documentation xml:lang="en">A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.</xs:documentation>
     </xs:annotation>
@@ -32459,6 +32459,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="humanSubject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The individual to whom the device is affixed or inserted in their body.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="bodyStructure" minOccurs="0" maxOccurs="1" type="CodeableReference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current anatomical location of the device in/on the humanSubject where it is attached or placed.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -33874,6 +33879,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The reason for asserting the usage status - for example forgot, lost, stolen, broken.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="adherence" type="DeviceUsage.Adherence" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This indicates how or if the device is being used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="informationSource" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Who reported the device was being used by the patient.</xs:documentation>
@@ -33897,6 +33907,27 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">Details about the device statement that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceUsage.Adherence">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A record of a device being used by a patient where the record is the result of a report from the patient or a clinician.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Type of adherence.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reason" minOccurs="1" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reason for adherence type.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -36511,7 +36542,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Defines the characteristic as a combination of two or more characteristics.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="method" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="method" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Method used for describing characteristic.</xs:documentation>
            </xs:annotation>
@@ -36519,11 +36550,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Device used for determining characteristic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="offset" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Defines the reference point for comparison when characteristic.valueQuantity is not compared to zero.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="timeFromEvent" type="EvidenceVariable.TimeFromEvent" minOccurs="0" maxOccurs="unbounded">
@@ -36566,6 +36592,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
             <xs:element name="valueReference" type="Reference"/>
             <xs:element name="valueId" type="id"/>
           </xs:choice>
+          <xs:element name="offset" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Defines the reference point for comparison when valueQuantity is not compared to zero.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -39824,6 +39855,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">A unique identifier assigned to this imaging selection.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="ImagingSelectionStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current state of the ImagingSelection resource. This is not the status of any ImagingStudy, ServiceRequest, or Task resources associated with the ImagingSelection.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The patient, or group of patients, location, device, organization, procedure or practitioner this imaging selection is about and into whose or what record the imaging selection is placed.</xs:documentation>
@@ -39854,7 +39890,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Reason for referencing the selected content.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="studyUid" minOccurs="0" maxOccurs="1" type="oid">
+          <xs:element name="studyUid" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">The Study Instance UID for the DICOM Study from which the images were selected.</xs:documentation>
            </xs:annotation>
@@ -39869,12 +39905,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The network service providing retrieval access to the selected images, frames, etc. See implementation notes for information about using DICOM endpoints.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="seriesUid" minOccurs="0" maxOccurs="1" type="oid">
+          <xs:element name="seriesUid" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">The Series Instance UID for the DICOM Series from which the images were selected.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="frameOfReferenceUid" minOccurs="0" maxOccurs="1" type="oid">
+          <xs:element name="frameOfReferenceUid" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">The Frame of Reference UID identifying the coordinate system that conveys spatial and/or temporal information for the selected images or frames.</xs:documentation>
            </xs:annotation>
@@ -39889,9 +39925,9 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">Each imaging selection includes one or more selected DICOM SOP instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="imageRegion" type="ImagingSelection.ImageRegion" minOccurs="0" maxOccurs="1">
+          <xs:element name="imageRegion" type="ImagingSelection.ImageRegion1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Each imaging selection might includes one or more image regions. Image regions are specified by a region type and a set of 2D or 3D coordinates.</xs:documentation>
+              <xs:documentation xml:lang="en">Each imaging selection might includes a 3D image region, specified by a region type and a set of 3D coordinates.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39926,7 +39962,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="uid" minOccurs="1" maxOccurs="1" type="oid">
+          <xs:element name="uid" minOccurs="1" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">The SOP Instance UID for the selected DICOM instance.</xs:documentation>
            </xs:annotation>
@@ -39936,24 +39972,20 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">The SOP Class UID for the selected DICOM instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="frameList" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="subset" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The set of frames within a multi-frame SOP Instance that are included in the imaging selection.       Encoded as a comma separated list of one or more non duplicate frame numbers.       If this is absent, all frames within the referenced SOP Instance are included in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Selected subset of the SOP Instance. The content and format of the subset item is determined by the SOP Class of the selected instance.
+       May be one of:
+       - A list of frame numbers selected from a multiframe SOP Instance.
+       - A list of Content Item Observation UID values selected from a DICOM SR or other structured document SOP Instance.
+       - A list of segment numbers selected from a segmentation SOP Instance.
+       - A list of Region of Interest (ROI) numbers selected from a radiotherapy structure set SOP Instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="observationUid" minOccurs="0" maxOccurs="unbounded" type="oid">
+          <xs:element name="imageRegion" type="ImagingSelection.ImageRegion" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The unique identifier for the observation Content Item (and its subsidiary Content Items, if any) that are included in the imaging selection.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="segmentList" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The set of segments within a segmentation SOP Instance that are included in the imaging selection.       Encoded as a comma separated list of one or more non duplicate segment numbers.       If this is absent, all segments within the referenced segmentation SOP Instance are included in the selection.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="roiList" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The set of regions of interest (ROI) within a radiotherapy structure set instance that are included in the imaging selection.       Encoded as a comma separated list of one or more non duplicate ROI numbers.       If this is absent, all ROIs within the referenced radiotherapy structure set SOP Instance are included in the selection.</xs:documentation>
+              <xs:documentation xml:lang="en">Each imaging selection instance or frame list might includes an image region, specified by a region type and a set of 2D coordinates.
+       If the parent imagingSelection.instance contains a subset element of type frame, the image region applies to all frames in the subset list.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -39967,51 +39999,73 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="regionType" minOccurs="1" maxOccurs="1" type="ImagingSelectionGraphicType">
+          <xs:element name="regionType" minOccurs="1" maxOccurs="1" type="ImagingSelectionDGraphicType">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifies the type of image region.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="coordinateType" minOccurs="1" maxOccurs="1" type="ImagingSelectionCoordinateType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the type of coordinate system that define the image region.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="coordinate" minOccurs="1" maxOccurs="unbounded" type="decimal">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The coordinates describing the image region.       If coordinateType is 2D this specifies sequence of (x,y) coordinates in the coordinate system of the image specified by the instance.uid element that contains this image region.       If coordinateType is 3D this specifies sequence of (x,y,z) coordinates in the coordinate system specified by the frameOfReferenceUid element.</xs:documentation>
+              <xs:documentation xml:lang="en">The coordinates describing the image region. Encoded as a set of (column, row) pairs that denote positions in the selected image / frames specified with sub-pixel resolution.
+       The origin at the TLHC of the TLHC pixel is 0.0\0.0, the BRHC of the TLHC pixel is 1.0\1.0, and the BRHC of the BRHC pixel is the number of columns\rows in the image / frames. The values must be within the range 0\0 to the number of columns\rows in the image / frames.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ImagingSelectionCoordinateTypeEnum">
+  <xs:complexType name="ImagingSelection.ImageRegion1">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A selection of DICOM SOP instances and/or frames within a single Study and Series. This might include additional specifics such as an image region, an Observation UID or a Segmentation Number, allowing linkage to an Observation Resource or transferring this information along with the ImagingStudy Resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="regionType" minOccurs="1" maxOccurs="1" type="ImagingSelectionDGraphicType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Specifies the type of image region.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="coordinate" minOccurs="1" maxOccurs="unbounded" type="decimal">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The coordinates describing the image region. Encoded as an ordered set of (x,y,z) triplets (in mm and may be negative) that define a region of interest in the patient-relative Reference Coordinate System defined by ImagingSelection.frameOfReferenceUid element.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ImagingSelectionStatusEnum">
     <xs:restriction base="code-primitive">
-      <xs:enumeration value="2d">
+      <xs:enumeration value="available">
         <xs:annotation>
-          <xs:documentation xml:lang="en">2D</xs:documentation>
+          <xs:documentation xml:lang="en">Available</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="3d">
+      <xs:enumeration value="entered-in-error">
         <xs:annotation>
-          <xs:documentation xml:lang="en">3D</xs:documentation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ImagingSelectionCoordinateType">
+  <xs:complexType name="ImagingSelectionStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en"></xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="ImagingSelectionCoordinateTypeEnum" use="optional"/>
+        <xs:attribute name="value" type="ImagingSelectionStatusEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ImagingSelectionGraphicTypeEnum">
+  <xs:simpleType name="ImagingSelectionDGraphicTypeEnum">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="POINT">
         <xs:annotation>
@@ -40045,14 +40099,14 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ImagingSelectionGraphicType">
+  <xs:complexType name="ImagingSelectionDGraphicType">
     <xs:annotation>
       <xs:documentation xml:lang="en"></xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="ImagingSelectionGraphicTypeEnum" use="optional"/>
+        <xs:attribute name="value" type="ImagingSelectionDGraphicTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -40406,11 +40460,6 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
             <xs:element name="occurrenceDateTime" type="dateTime"/>
             <xs:element name="occurrenceString" type="string"/>
           </xs:choice>
-          <xs:element name="recorded" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="primarySource" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates whether this record was captured as an original primary source-of-truth record rather than a secondary 'reported' record. A value &quot;true&quot; means this is a primary record of the immunization.</xs:documentation>
