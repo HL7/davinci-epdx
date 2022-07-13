@@ -5,8 +5,8 @@
 
 | JIRA Ticket                                              | Change                                                                                                                              |
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| BallotRec-Vote4                                          |                   | Added mTLS Discovery Profiles    | Added mTLS Discovery profiles and referenced in Payer-to-Payer Exchange page. |
-|
+| BallotRec-Vote4                                          |                                                                                                                                     |
+| Added mTLS Discovery Profiles                            | Added mTLS Discovery profiles and referenced in Payer-to-Payer Exchange page.                                                       |
 | [FHIR-37645](https://jira.hl7.org/browse/FHIR-37645)     | Consent presentation for P2P                                                                                                        |
 | [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644)     | Consent Revocation for P2P                                                                                                          |
 | [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599)     | Review 835 and all mappings to diagnostics.                                                                                         |
