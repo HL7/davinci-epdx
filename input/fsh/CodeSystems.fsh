@@ -88,6 +88,8 @@ Description: "Used as the discriminator for the data elements in adjudication an
 * ^caseSensitive = false
 
 // CodeSystemStubs.fsh contains stubs for external codesystems.
+// taken from CARIN-BB
+// Add Carin-BB Code System to Aliases
 CodeSystem: PDexAdjudicationCS
 Title: "PDex Adjudication Codes"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."

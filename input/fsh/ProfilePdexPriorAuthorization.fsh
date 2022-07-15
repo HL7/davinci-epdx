@@ -54,16 +54,16 @@ denialreason 0..* MS and
 consumedunits 0..1 MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
-* item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason
+* item.adjudication[denialreason].category = $AdjudicationCS#denialreason
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
-* item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits
+* item.adjudication[allowedunits].category = $AdjudicationCS#allowedunits
 * item.adjudication[allowedunits].value only decimal
 * item.adjudication[allowedunits].value 1..1 MS
 * item.adjudication[adjudicationamounttype].category from PDexAdjudication
 * item.adjudication[adjudicationamounttype].amount MS
 * item.adjudication[adjudicationamounttype].amount 1..1
-* item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits
+* item.adjudication[consumedunits].category = $AdjudicationCS#consumedunits
 * item.adjudication[consumedunits].value only decimal
 * item.adjudication[consumedunits].value 1..1 MS
 

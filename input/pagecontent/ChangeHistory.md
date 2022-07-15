@@ -7,11 +7,16 @@
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote4                                          |                                                                                                                                     |
 | Added mTLS Discovery Profiles                            | Added mTLS Discovery profiles and referenced in Payer-to-Payer Exchange page.                                                       |
+| [FHIR-37778](https://jira.hl7.org/browse/FHIR-37778)     | Link to the HREX Coverage takes you to the Patient Demographic Profile                                                              |
 | [FHIR-37645](https://jira.hl7.org/browse/FHIR-37645)     | Consent presentation for P2P                                                                                                        |
 | [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644)     | Consent Revocation for P2P                                                                                                          |
 | [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599)     | Review 835 and all mappings to diagnostics.                                                                                         |
 | TC: [FHIR-36572](https://jira.hl7.org/browse/FHIR-36572) | Create a Formal Specification or Conformance Expectations page/section                                                              |
 | [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462)     | Incorrect Diagram, Consent considerations, everything operation (Duplicate of [FHIR-36461](https://jira.hl7.org/browse/FHIR-36461)) |
+| [FHIR-36254](https://jira.hl7.org/browse/FHIR-36254)     | Missing details of payer-to-payer mutual authentication                                                                             |
+| [FHIR-36223](https://jira.hl7.org/browse/FHIR-36223)     | PDEX defined their own version of an already existing code system                                                                   |
+| TC: [FHIR-36176](https://jira.hl7.org/browse/FHIR-36176) | Correction needed in ExplanationOfBenefit-PDexPriorAuth1.json                                                                       |
+| [FHIR-36078](https://jira.hl7.org/browse/FHIR-36078)     | CareTeam for a patient is not the same thing as "a random collection of Providers that treated the patient once"                    |
 | BallotRec-Vote3                                          |                                                                                                                                     |
 | [FHIR-37577](https://jira.hl7.org/browse/FHIR-37577)     | Change use of _profile to ExplanationOfBenefit.use to filter on "preauthorization"                                                  |
 | [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576)     | Duplicate to FHIR-37577                                                                                                             |

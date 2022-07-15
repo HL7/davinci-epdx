@@ -80,7 +80,7 @@ Title: "PDex Adjudication Category Discriminator"
 Description: "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization"
 * codes from valueset PDexAdjudication
 * codes from valueset PDexPayerBenefitPaymentStatus
-* codes from system PDexAdjudicationDiscriminator
+* codes from system $AdjudicationCS
 * ^copyright = "This Valueset is not copyrighted."
 
 ValueSet: PDexPayerBenefitPaymentStatus
