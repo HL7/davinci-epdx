@@ -66,3 +66,5 @@ Alias:   $HL7RelatedClaim = http://terminology.hl7.org/CodeSystem/ex-relatedclai
 // X12
 Alias: $X12ServiceType = https://x12.org/codes/service-type-codes
 
+// CARIN BB
+Alias:  $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication

@@ -15,7 +15,9 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
-The essential fields to be provided in the CareTeam resource from the CPCDS file are:
+Claims information typically represents a particular event, such as a procedure or encounter. The CareTeam resource is intended to represent the parties involved in supporting a subject/patient. Where a claim represents an Episode of Care it may be appropriate to record the parties involved in the claim as members of the CareTeam involved in that EpisodeOfCare. For discrete procedures or encounters it **MAY** not be appropriate to create a CareTeam record from the claims information.
+
+The essential fields to be provided in the CareTeam resource from the CPCDS file, where appropriate, are:
 
 {% include style_insert_table_blue.html %}
 
