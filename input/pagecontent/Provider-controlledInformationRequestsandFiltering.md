@@ -6,9 +6,9 @@ This IG does not cover the Payer-initiated transfer of unsolicited information t
 
 All search parameters and subsequent filtering of returned information SHALL be controlled by the Provider making the information request. The Payer does not filter information that has been requested by the provider except for the application of any restrictions based on the scopes of the access token issued to the Provider per applicable law.
 
-Health Plans SHALL only restrict provider access to a member’s data where that access is required to be limited in accordance with State or Federal regulations.
+Health Plans SHALL only restrict provider access to a member’s data where that access is required to be limited in accordance with State or Federal regulations, or individual restriction on sharing.
 
-Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an OAuth2.0 Authorization or via a member-directed payer-to-payer exchange.
+Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an member-mediated SMART-on-FHIR Authorization or via a member-directed payer-to-payer exchange.
 
 
 [Next Page - CDS-Hooks](CDS-Hooks.html)

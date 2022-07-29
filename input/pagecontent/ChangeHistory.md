@@ -6,6 +6,7 @@
 | JIRA Ticket                                              | Change                                                                                                                              |
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote5                                          |                                                                                    |
+| [FHIR-36495](https://jira.hl7.org/browse/FHIR-36495)     | CDS Card should not return an access token  |
 | [FHIR-36315](https://jira.hl7.org/browse/FHIR-36315)     | Unclear definitions of filtering vs restricting cases                                                                               |
 | TC: [FHIR-36174](https://jira.hl7.org/browse/FHIR-36174) |  Correction in StructureDefinition-pdex-provenance |
 | BallotRec-Vote4                                          |                                                                                                                                     |
@@ -14,7 +15,7 @@
 | [FHIR-37645](https://jira.hl7.org/browse/FHIR-37645)     | Consent presentation for P2P                                                                                                        |
 | [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644)     | Consent Revocation for P2P                                                                                                          |
 | [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599)     | Review 835 and all mappings to diagnostics.                                                                                         |
-| TC: [FHIR-36572](https://jira.hl7.org/browse/FHIR-36572) | Create a Formal Specification or Conformance Expectations page/section                                                              |
+| [FHIR-36572](https://jira.hl7.org/browse/FHIR-36572)     | Create a Formal Specification or Conformance Expectations page/section                                                              |
 | [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462)     | Incorrect Diagram, Consent considerations, everything operation (Duplicate of [FHIR-36461](https://jira.hl7.org/browse/FHIR-36461)) |
 | [FHIR-36254](https://jira.hl7.org/browse/FHIR-36254)     | Missing details of payer-to-payer mutual authentication                                                                             |
 | [FHIR-36223](https://jira.hl7.org/browse/FHIR-36223)     | PDEX defined their own version of an already existing code system                                                                   |
