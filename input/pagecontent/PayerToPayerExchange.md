@@ -39,20 +39,16 @@ The steps in the Member Match with Consent process are:
 
 For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/prviate keys.
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys.
 
-The profiles that comprise the bundle are included in the FHIR artifacts in this guide.
+The mTLS Endpoint Bundle is profiled in this IG. It is comprised of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
 
 The profiles are: 
 
 - [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
-- [mTLS Endpoint](StructureDefinition-mtls-endpoint.html)
-- [mTLS Organization](StructureDefinition-mtls-managing-organization.html)
+- [National Directory Endpoint Qry Exchange Endpoint](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Endpoint)
+- [National Directory Endpoint Qry Exchange Organization](http://build.fhir.org/ig/HL7/fhir-directory-query/StructureDefinition-NatlDirEndpointQry-Organization.html)
  
-An extension is also defined to stored the mTLS signed object:
-
-- [mTLS Signed Object](StructureDefinition-pdex-mtls-signedobject-extension.html)
-
 #### The $member-match operation
 
 The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
