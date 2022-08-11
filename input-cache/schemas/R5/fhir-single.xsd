@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Aug 10, 2022 05:43+0000 for FHIR v4.6.0 
+  Generated on Thu, Aug 11, 2022 10:39+0000 for FHIR v4.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -23646,9 +23646,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The individual or set of individuals the action is being or was performed on.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care that establishes the context for this event.</xs:documentation>
+              <xs:documentation xml:lang="en">This ChargeItem has the details of how the associated Encounter should be billed or otherwise be handled by finance systems.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -23666,12 +23666,12 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="performingOrganization" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The organization requesting the service.</xs:documentation>
+              <xs:documentation xml:lang="en">The organization performing the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="requestingOrganization" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The organization performing the service.</xs:documentation>
+              <xs:documentation xml:lang="en">The organization requesting the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="costCenter" minOccurs="0" maxOccurs="1" type="Reference">
@@ -23719,7 +23719,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Describes why the event occurred in coded or textual form.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="service" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="service" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicated the rendered service that caused this charge.</xs:documentation>
            </xs:annotation>
@@ -23847,6 +23847,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The identifier that is used to identify this version of the charge item definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the charge item definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A natural language name identifying the ChargeItemDefinition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the charge item definition.</xs:documentation>
@@ -23907,6 +23912,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">A legal or geographic region in which the charge item definition is intended to be used.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explanation of why this charge item definition is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A copyright statement relating to the charge item definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the charge item definition.</xs:documentation>
@@ -23920,11 +23930,6 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the charge item definition content was or is planned to be in active use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -23958,19 +23963,19 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A brief, natural language description of the condition that effectively communicates the intended semantics.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="language" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The media type of the language for the expression, e.g. &quot;text/cql&quot; for Clinical Query Language expressions or &quot;text/fhirpath&quot; for FHIRPath expressions.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="condition" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether the condition is satisfied. When using FHIRPath expressions, the %context environment variable must be replaced at runtime with the ChargeItem resource to which this definition is applied.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The period during which the charge item definition content was or is planned to be in active use.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="1" type="RelatedArtifact">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to / quotation of the external source of the group of properties.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30561,6 +30566,16 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="Kind">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The nature of the coverage be it insurance, or cash payment such as self-pay.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="paymentBy" type="Coverage.PaymentBy" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Link to the paying party and optionally what specifically they will be responsible to pay.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.</xs:documentation>
@@ -30576,7 +30591,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subscriberId" minOccurs="0" maxOccurs="1" type="Identifier">
+          <xs:element name="subscriberId" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">The insurer assigned ID for the Subscriber.</xs:documentation>
            </xs:annotation>
@@ -30601,7 +30616,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Time period during which the coverage is in force. A missing start date indicates the start date isn't known, a missing end date means the coverage is continuing to be in force.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="payor" minOccurs="1" maxOccurs="unbounded" type="Reference">
+          <xs:element name="insurer" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The program or plan underwriter or payor including both insurance and non-insurance agreements, such as patient-pay agreements.</xs:documentation>
            </xs:annotation>
@@ -30613,7 +30628,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="order" minOccurs="0" maxOccurs="1" type="positiveInt">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.</xs:documentation>
+              <xs:documentation xml:lang="en">The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care. For example; a patient might have (0) auto insurance (1) their own health insurance and (2) spouse's health insurance. When claiming for treatments which were not the result of an auto accident then only coverages (1) and (2) above would be applicatble and would apply in the order specified in parenthesis.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="network" minOccurs="0" maxOccurs="1" type="string">
@@ -30645,6 +30660,27 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="Coverage.PaymentBy">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="party" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The list of parties providing non-insurance payment for the treatment costs.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="responsibility" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en"> Description of the financial responsibility.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Coverage.Class">
     <xs:annotation>
       <xs:documentation xml:lang="en">Financial instrument which may be used to reimburse or pay for health care products and services. Includes both insurance and self-payment.</xs:documentation>
@@ -30657,9 +30693,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The type of classification for which an insurer-specific class label or number and optional name is provided.  For example, type may be used to identify a class of coverage or employer group, policy, or plan.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The alphanumeric string value associated with the insurer issued label.</xs:documentation>
+              <xs:documentation xml:lang="en">The alphanumeric identifier associated with the insurer issued label.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
@@ -30683,7 +30719,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The category of patient centric costs associated with treatment.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="1" maxOccurs="1" >
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">The amount due from the patient for the cost category.</xs:documentation>
             </xs:annotation>
@@ -30717,6 +30753,36 @@ into another (possibly the same) biological entity.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="KindEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="insurance">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Insurance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="self-pay">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Self-pay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Kind">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="KindEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -38873,7 +38939,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A FHIR expression that identifies one of FHIR References to other resources.</xs:documentation>
+              <xs:documentation xml:lang="en">A FHIRPath expression that identifies one of FHIR References to other resources.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="sliceName" minOccurs="0" maxOccurs="1" type="string">
@@ -44157,12 +44223,12 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:element name="List" type="List">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A list is a curated collection of resources.</xs:documentation>
+      <xs:documentation xml:lang="en">A List is a curated collection of resources, for things such as problem lists, allergy lists, facility list, organization list, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="List">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A list is a curated collection of resources.</xs:documentation>
+      <xs:documentation xml:lang="en">A List is a curated collection of resources, for things such as problem lists, allergy lists, facility list, organization list, etc.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -44239,7 +44305,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="List.Entry">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A list is a curated collection of resources.</xs:documentation>
+      <xs:documentation xml:lang="en">A List is a curated collection of resources, for things such as problem lists, allergy lists, facility list, organization list, etc.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -50773,7 +50839,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="network" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).</xs:documentation>
+              <xs:documentation xml:lang="en">The network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -51298,7 +51364,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="language" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.</xs:documentation>
+              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-AU&quot; for Australian English.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="preferred" minOccurs="0" maxOccurs="1" type="boolean">
@@ -52001,7 +52067,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="language" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.</xs:documentation>
+              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-AU&quot; for Australian English.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="preferred" minOccurs="0" maxOccurs="1" type="boolean">
@@ -54526,7 +54592,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="language" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.</xs:documentation>
+              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-AU&quot; for Australian English.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="preferred" minOccurs="0" maxOccurs="1" type="boolean">
