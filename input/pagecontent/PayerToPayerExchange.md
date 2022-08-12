@@ -1,4 +1,4 @@
-[Previous Page - Handling Security Labels](HandlingSecurityLabels.html)
+[Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
 
 {% include style_insert_table_blue.html %}
 

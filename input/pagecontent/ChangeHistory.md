@@ -9,7 +9,6 @@
 | [FHIR-36495](https://jira.hl7.org/browse/FHIR-36495)     | CDS Card should not return an access token  |
 | [FHIR-36315](https://jira.hl7.org/browse/FHIR-36315)     | Unclear definitions of filtering vs restricting cases                                                                               |
 | TC: [FHIR-36174](https://jira.hl7.org/browse/FHIR-36174) |  Correction in StructureDefinition-pdex-provenance |
-| [FHIR-23313](https://jira.hl7.org/browse/FHIR-23313)     | PDex IG is totally silent on the use of FHIR Security Labels. - PDex #120  |
 | BallotRec-Vote4                                          |                                                                                                                                     |
 | Added mTLS Discovery Profiles                            | Added mTLS Discovery profiles and referenced in Payer-to-Payer Exchange page.                                                       |
 | [FHIR-37778](https://jira.hl7.org/browse/FHIR-37778)     | Link to the HREX Coverage takes you to the Patient Demographic Profile                                                              |
