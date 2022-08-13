@@ -247,4 +247,4 @@ When a Health Plan provides prescription drug coverage the list of covered medic
 
 
 
-[Next Page - PDex Implementation Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
+[Next Page - Security and Privacy](SecurityAndPrivacy.html)
