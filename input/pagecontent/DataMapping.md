@@ -29,4 +29,4 @@ In this data mapping section, each profile has a listing of the minimum essentia
 
 
 
-[Next Page - PDex Server Capability Statement](CapabilityStatement-pdex-server.html)
+[Next Page - US Core Allergy Intolerance](USCoreAllergyIntolerance.html)
