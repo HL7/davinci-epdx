@@ -7,6 +7,7 @@
 |----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote5                                          |                                                                                                                                    |
 | [FHIR-37904](https://jira.hl7.org/browse/FHIR-37904)     | Add Privacy and Security section to IG |
+| [FHIR-36598](https://jira.hl7.org/browse/FHIR-36598)     | Review all mappings for Encounter. |
 | [FHIR-36495](https://jira.hl7.org/browse/FHIR-36495)     | CDS Card should not return an access token                                                                                         |
 | [FHIR-36315](https://jira.hl7.org/browse/FHIR-36315)     | Unclear definitions of filtering vs restricting cases                                                                              |
 | TC: [FHIR-36174](https://jira.hl7.org/browse/FHIR-36174) | Correction in StructureDefinition-pdex-provenance                                                                                  |
