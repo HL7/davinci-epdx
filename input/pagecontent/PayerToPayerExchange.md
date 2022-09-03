@@ -180,7 +180,7 @@ parameters to be used to retrieve the associated Provenance and supporting recor
 
 ### Patient/{id}/$everything-pdex operation
 
-Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex
+Health Plans **SHOULD** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex
 operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
