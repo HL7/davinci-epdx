@@ -23,7 +23,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
 
-| US Core Element           | Must Support | Cardinality | CARIN-BB Element          | CPCDS Element Mapping  or Implementer Note                                     |
+| PDex Element              | Must Support | Cardinality | CARIN-BB Element          | CPCDS Element Mapping  or Implementer Note                                     |
 |---------------------------|-------------|:-----------:|---------------------------|-----------------------------------------------------------|
 | Coverage.meta.lastUpdated |             |     0..1    | Coverage.meta.lastUpdated | [{"163":"Coverage Last Updated Date"}]                    |
 | Coverage.identifier       |      S      |     0..*    | Coverage.identifier       | [{"Ref (1)":"Member id"}]                                 |

@@ -23,7 +23,6 @@ The essential fields to be provided in the Condition resource from the CPCDS fil
 | Condition.category            |       S      |     1..*    |                                          | . Note: Based on Diagnosis from claim pick appropriate condition category from: [problem-list-item \| encounter-diagnosis \| health-concern]     |
 | Condition.code                |       S      |     1..1    | ExplanationOfBenefit.diagnosis.diagnosis | [{"22, 23":"Diagnosis Code"}]                                                                                                                   |
 | Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}]                                                                                                                       |
-| Condition.recorder            |              |     0..1    | ExplanationOfBenefit.careTeam.provider   | [{"Ref (95, 96, 99)":"Provider rendering, PCP and referring NPIs"}, {"Ref (168, 169, 170, 171)":"Provider rendering, PCP and referring names"}] |
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
 
