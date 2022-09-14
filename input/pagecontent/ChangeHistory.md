@@ -6,6 +6,7 @@
 | JIRA Ticket                                              | Change                                                                                                                             |
 |----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote5                                          |                                                                                                                                    |
+| [FHIR-38096](https://jira.hl7.org/browse/FHIR-38096)     | For Pdex Prior Authorization EOB, reviewAction extension not available at header level adjudication. |
 | [FHIR-37904](https://jira.hl7.org/browse/FHIR-37904)     | Add Privacy and Security section to IG |
 | [FHIR-36598](https://jira.hl7.org/browse/FHIR-36598)     | Review all mappings for Encounter. |
 | [FHIR-36495](https://jira.hl7.org/browse/FHIR-36495)     | CDS Card should not return an access token                                                                                         |

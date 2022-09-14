@@ -86,8 +86,8 @@ The column definitions are provided in the table below. Look for this style of t
 
 {% include style_insert_table_blue.html %}
 
-| US Core Element           | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
-|---------------------------|-------------|:----------:|---------------------------|----------------------------------------|
+| US Core/PDex Element                                                    | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
+|-------------------------------------------------------------------------|-------------|:----------:|---------------------------|----------------------------------------|
 | The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element            |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
 
 <i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
