@@ -53,7 +53,7 @@ allowedunits 0..1 MS and
 denialreason 0..* MS and
 consumedunits 0..1 MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
-* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
+* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
 * item.adjudication[denialreason].category = $AdjudicationCS#denialreason
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
@@ -76,6 +76,8 @@ adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 denialreason 0..* MS
 * adjudication[adjudicationamounttype].category from PDexAdjudication  (required)
 * adjudication[adjudicationamounttype].amount 1..1
+* adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+* adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization for the entire request."
 
 // End of addition from EOBInpatientProfile.fsh
 
