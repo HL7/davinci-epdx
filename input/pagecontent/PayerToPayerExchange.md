@@ -2,19 +2,13 @@
 
 {% include style_insert_table_blue.html %}
 
-TODO: update link to replace build.fhir.org when HRex publishes.
-
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in 
-FHIR by US Core, is a requirement of the CMS Interoperability Rule.
+FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
 
-All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
-of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of
+data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
-Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult
-the Data Provider's Server Capability Statement to determine which methods are made available by the
-data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member
-and provide consent:
+Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
 
 ### Member Match with Consent
 
@@ -28,52 +22,62 @@ The steps in the Member Match with Consent process are:
 
 - Establish a secure connection via mTLS
 - Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
-- Use Client Credentials to acquire OAuth2.0 token to perform $MemberMatch operation
-- The MemberMatch operation uses Patient Demographics and Coverage records to determine if a member is found
-- The $MemberMatch operation evaluates the Consent resource for a matched member
-- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a MemberMatch ID is provided to the requesting Payer (Payer2)
-- If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
+- Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation
+- The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found
+- The $member-match operation evaluates the Consent resource for a matched member
+- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
+- If a Patient ID is returned from $member-match, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
 #### mTLS Endpoint Discovery
 
 For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys.
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process.
 
-The mTLS Endpoint Bundle is profiled in this IG. It is comprised of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
 
 The profiles are: 
 
 - [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
-- [National Directory Endpoint Qry Exchange Endpoint](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Endpoint)
+- [National Directory Endpoint Qry Exchange Endpoint](http://build.fhir.org/ig/HL7/fhir-directory-query/StructureDefinition-NatlDirEndpointQry-Endpoint.html)
 - [National Directory Endpoint Qry Exchange Organization](http://build.fhir.org/ig/HL7/fhir-directory-query/StructureDefinition-NatlDirEndpointQry-Organization.html)
  
+The profiles in the mTLS bundle are modeled after the profiles in the National Directory Query IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
+
+
+#### OAuth2.0 Dynamic Client Registration
+
+Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol (DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be made to the $member-match operation endpoint.
+
+
 #### The $member-match operation
 
-The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
+The $member-match operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the $member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
 - [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
 
-The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
+The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the $member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique MemberMatch Identifier in the $MemberMatch Operation Response.
+- Return a Unique Patient Identifier in the $member-match Operation Response.
 
-If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response.
+When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
+
+If the receiving payer matches to a unique member but is unable to comply with the consent request a Patient ID is NOT returned in the $member-match response and a 422 status code is returned with an Operation Outcome that indicates that the consent request could not be complied with.
 
 #### Consent Revocation
 
-The following guidance is provided for a situation where a member wishes to revoke consent for a previously grannted Payer-to-payer exchange.
+The following guidance is provided for a situation where a member wishes to revoke consent for a previously granted Payer-to-Payer exchange.
 
 As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
 Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.
 
-This approach does not preclude the member contracting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.
+This approach does not preclude the member contacting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.
 
 #### Consent Request Language
 
@@ -120,21 +124,6 @@ It is a member's option to share their health information with their new health 
 | Immediate Enrollment | Date of enrollment | 90 days after Plan Start Date |
 | Concurrent Plan Coverage | Date of enrollment | Plan Period End Date (typically 12 months from plan start date) |
 
-#### Alternate Data Retrieval Flow
-
-<div style="height=auto;width=90%;">
-{% include credential-consent-flow.svg %}
-</div>
-
-<p id="publish-box">
-NOTE: Ballot Feedback sought regarding where and hoe the scoping and consent verification steps are performed after a successful MemberMatch.
-</p>
-
-The choices to perform the scoping and consent verification are:
-
-1. As part of the OAuth transaction that receives the MemberMatch ID
-2. During the data retrieval for each resource or operation endpoint that is accessed.
-
 
 ### Data Retrieval Methods
 
@@ -174,22 +163,16 @@ Each of the above methods **SHALL** support the retrieval of the profiles and re
 
 ### Query all clinical resources individually
 
-Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as
-identified in the table above. Using the search capability of each resource enables the _revInclude and _include
-parameters to be used to retrieve the associated Provenance and supporting records.
+Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.
 
 ### Patient/{id}/$everything-pdex operation
 
-Health Plans **SHOULD** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex
-operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
+Health Plans **SHOULD** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
 However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
 
-It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation does not support the full range of query parameters
-available to a regular search request. In cases where Provenance is being requested as part of the
-$everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
-the **_type** parameter of the $everything-pdex operation.
+It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation does not support the full range of query parameters available to a regular search request. In cases where Provenance is being requested as part of the $everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in the **_type** parameter of the $everything-pdex operation.
 
 The following resource/profiles are retrievable using the $everything-pdex operation:
 
@@ -198,8 +181,7 @@ Example of _type parameter:
     _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
            Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not
-directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
+The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
 
 The server *SHOULD* filter the ExplanationOfBenefit resource to include only PDex Prior Authorization profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
 
@@ -214,8 +196,7 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 [Bulk Data Export Operation Request
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles
-identified in the table at the top of this section.
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles identified in the table at the top of this section.
 
 
 [Next Page - Data Mapping](DataMapping.html)
