@@ -50,6 +50,11 @@ The profiles in the mTLS bundle are modeled after the profiles in the National D
 
 Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol (DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be made to the $member-match operation endpoint.
 
+#### Future Direction for Discovery and Registration
+
+Futre versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access OAuth2.0 Dynamic Client Registration (DCRP) to register for a set of client credentials. Those credentials provide access to the $member-match operation.
+
+A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust framework. The endpoint information for those payers would point to a Unified Data Access Profiles service, as defined in the FHIR At Scale Taskforce (FAST) [Security for Scalable Registration, Authentication, and Authorization IG](https://build.fhir.org/ig/HL7/fhir-udap-security-ig/). UDAP would be used to request a client credential that can be used to perform a $member-match and subsequently to request an OAuth2.0 token that is scoped to the member/patient returned from a successful match operation. 
 
 #### The $member-match operation
 
