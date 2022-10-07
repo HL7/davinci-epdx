@@ -51,8 +51,8 @@ RuleSet: ItemAdjudicationSlicing
 * item.adjudication ^slicing.discriminator.path = "category"
 * item.adjudication.category from PDexAdjudicationCategoryDiscriminator (required)
 
-RuleSet: EOBHeaderItemAdjudicationInvariant
-* obeys EOB-institutional-item-or-header-adjudication
+// RuleSet: EOBHeaderItemAdjudicationInvariant
+// * obeys EOB-institutional-item-or-header-adjudication
 
 RuleSet: HCPCSCopyrightNotice
 * ^copyright = "See information on the use of HCPCS Level I (proprietary and owned by American Medical Association) and Level II codes [here](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/HCPCS_Coding_Questions)"

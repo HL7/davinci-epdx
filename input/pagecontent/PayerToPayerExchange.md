@@ -52,7 +52,7 @@ Once payers have setup a secure mTLS connection, the new Payer will query the Dy
 
 #### Future Direction for Discovery and Registration
 
-Futre versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access OAuth2.0 Dynamic Client Registration (DCRP) to register for a set of client credentials. Those credentials provide access to the $member-match operation.
+Future versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access OAuth2.0 Dynamic Client Registration (DCRP) to register for a set of client credentials. Those credentials provide access to the $member-match operation.
 
 A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust framework. The endpoint information for those payers would point to a Unified Data Access Profiles service, as defined in the FHIR At Scale Taskforce (FAST) [Security for Scalable Registration, Authentication, and Authorization IG](https://build.fhir.org/ig/HL7/fhir-udap-security-ig/). UDAP would be used to request a client credential that can be used to perform a $member-match and subsequently to request an OAuth2.0 token that is scoped to the member/patient returned from a successful match operation. 
 
@@ -112,6 +112,10 @@ The following minimal content from the Consent record is used to validate a data
 - Payer requesting retrieval of data is matched
 
 If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
+
+The exchange of Consent is being carried out between two covered entities and the content and conditions for an exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document reference link would be to a document maintained by the requesting payer. The content of the referenced document would NOT be used for any determination as part of the automated $member-match operation. The referenced document's only purpose is to provide evidence of an appropriate signature of the consenting member/patient.
+
+It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the validity of a consent request. This would be part of the Trust Framework agreed by the covered entities that are party to the framework rules.
 
 #### Period of Consent Validity
 
@@ -192,7 +196,7 @@ The server *SHOULD* filter the ExplanationOfBenefit resource to include only PDe
 
 ### Bulk FHIR Asynchronous protocols
 
-    /Patient/{id}/$export
+    /Patient/$export
 
 Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
 [Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The
@@ -201,7 +205,10 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 [Bulk Data Export Operation Request
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
+
 The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles identified in the table at the top of this section.
+
+The patient parameter supplied to the $export operation **SHOULD** be constrained to the Patient Identifier that the access token is scoped to. 
 
 
 [Next Page - Data Mapping](DataMapping.html)
