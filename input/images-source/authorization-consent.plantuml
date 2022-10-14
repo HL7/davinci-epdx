@@ -55,7 +55,7 @@ group Step 2b: Establish common member - secure transaction
   when Access Token is issued in Step 3
   endnote
 
-	Payer1 -> Payer2 : Return MemberMatch ID
+	Payer1 -> Payer2 : Return Member Identifier
   note right
     This process assumes Payer1 provides a unique ID for
     the member that crosses all relevant
@@ -65,18 +65,18 @@ group Step 2b: Establish common member - secure transaction
     and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
 
-  	Payer2 receives the MemberMatch ID from Payer1.
-    The MemberMatch ID is only returned if member
+  	Payer2 receives the Member Identifier from Payer1.
+    The Member Identifier is only returned if member
     is matched AND consent can be complied with
     per date and policy constraints.
   endnote
 end
 
 group Step 3: Request Access token for Member Access
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using MemberMatch ID
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Member Identifier
   note right
   	Token endpoint matches to member using
-    MemberMatch ID and confirms that
+    Member Identifier and confirms that
     consent is still valid
   endnote
   Payer1 -> Payer2 : Return access token
