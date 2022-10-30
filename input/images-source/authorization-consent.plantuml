@@ -48,11 +48,14 @@ group Step 2b: Establish common member - secure transaction
   Payer1 -> Payer1 : Store or Compute Consent \n(all / non-sensitive) for Member
   note right
   Member: ID
-  Payer: ID
+  Payer: ID (Client Credential)
   Policy: all | non-sensitive
   Consent Period: start, end
   This information will be need to be checked
-  when Access Token is issued in Step 3
+  when Access Token is issued in Step 3.
+  The consent information will only be stored if the Policy
+  Scope can be complied with. An inability to comply with the scope
+  will lead to a 422 error being returned from the $member-match.
   endnote
 
 	Payer1 -> Payer2 : Return Member Identifier
@@ -76,8 +79,10 @@ group Step 3: Request Access token for Member Access
 	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Member Identifier
   note right
   	Token endpoint matches to member using
-    Member Identifier and confirms that
-    consent is still valid
+    Member Identifier and queries consent records to find
+    the latest consent that matches on Member and Payer Identifiers.
+    The Access Token process then confirms current date is within
+    the consent period and the policy scope can be complied with.
   endnote
   Payer1 -> Payer2 : Return access token
   note right
