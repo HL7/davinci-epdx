@@ -53,7 +53,7 @@ group Step 2b: Establish common member - secure transaction
   Consent Period: start, end
   This information will be need to be checked
   when Access Token is issued in Step 3.
-  The consent information will only be stored if the Policy
+  An active consent information will only be stored if the Policy
   Scope can be complied with. An inability to comply with the scope
   will lead to a 422 error being returned from the $member-match.
   endnote
@@ -80,9 +80,11 @@ group Step 3: Request Access token for Member Access
   note right
   	Token endpoint matches to member using
     Member Identifier and queries consent records to find
-    the latest consent that matches on Member and Payer Identifiers.
+    the latest active consent that matches on Member and Payer Identifiers.
     The Access Token process then confirms current date is within
-    the consent period and the policy scope can be complied with.
+    the consent period and the policy scope can be complied with. Checking the consent
+    record is active provides for the receiving payer to invalidate the consent record
+    if a request is recieved via other channels to cancel the consent.
   endnote
   Payer1 -> Payer2 : Return access token
   note right
