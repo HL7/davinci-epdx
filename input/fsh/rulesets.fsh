@@ -1,8 +1,8 @@
 // Invariants
-Invariant: EOB-institutional-item-or-header-adjudication
-Description: "Institutional EOB:  Should have adjudication at the item or header level, but not both"
-Expression: "(adjudication.exists() != item.adjudication.exists())"
-Severity: #error
+//Invariant: EOB-institutional-item-or-header-adjudication
+//Description: "Institutional EOB:  Should have adjudication at the item or header level, but not both"
+//Expression: "(adjudication.exists() != item.adjudication.exists())"
+//Severity: #error
 
 Invariant: adjudication-has-amount-type-slice
 Description: "If Adjudication is present, it must have at least one adjudicationamounttype slice"

@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Nov 17, 2022 13:04+0000 for FHIR v5.0.0-cibuild 
+  Generated on Wed, Nov 23, 2022 14:50+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -28170,6 +28170,11 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The population group to which this applies.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="library" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Logic used by the clinical use definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="undesirableEffect" type="ClinicalUseDefinition.UndesirableEffect" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Describe the possible undesirable effects (negative outcomes) from the use of the medicinal product as treatment.</xs:documentation>
@@ -28209,6 +28214,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="indication" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The indication which this is a contraidication for.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="applicability" minOccurs="0" maxOccurs="1" type="Expression">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether the indication is applicable or not, after having applied its other elements.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="otherTherapy" type="ClinicalUseDefinition.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
@@ -28278,6 +28288,11 @@ of the resource representation.</xs:documentation>
           <xs:element name="undesirableEffect" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">An unwanted side effect or negative outcome that may happen if you use the drug (or other subject of this resource) for this indication.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="applicability" minOccurs="0" maxOccurs="1" type="Expression">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether the indication is applicable or not, after having applied its other elements.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="otherTherapy" type="ClinicalUseDefinition.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
@@ -30659,9 +30674,14 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">The patient/healthcare practitioner or group of persons to whom this consent applies.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="dateTime" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Date and time the consent instance was agreed to.</xs:documentation>
+              <xs:documentation xml:lang="en">Date the consent instance was agreed to.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Effective period for this Consent Resource and all provisions unless specified in that provision.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="grantor" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -30789,22 +30809,22 @@ of the resource representation.</xs:documentation>
         <xs:sequence>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="ConsentProvisionType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.</xs:documentation>
+              <xs:documentation xml:lang="en">Action  to take - permit or deny - when the provision conditions are met.  Not permitted in root provision, required in all nested provisions.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The timeframe in this rule is valid.</xs:documentation>
+              <xs:documentation xml:lang="en">Timeframe for this provision.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" type="Consent.Actor" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Who or what is controlled by this rule. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').</xs:documentation>
+              <xs:documentation xml:lang="en">Who or what is controlled by this provision. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="action" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Actions controlled by this Rule.</xs:documentation>
+              <xs:documentation xml:lang="en">Actions controlled by this provision.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="securityLabel" minOccurs="0" maxOccurs="unbounded" type="Coding">
@@ -30814,27 +30834,32 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="unbounded" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The context of the activities a user is taking - why the user is accessing the data - that are controlled by this rule.</xs:documentation>
+              <xs:documentation xml:lang="en">The context of the activities a user is taking - why the user is accessing the data - that are controlled by this provision.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="class" minOccurs="0" maxOccurs="unbounded" type="Coding">
+          <xs:element name="documentType" minOccurs="0" maxOccurs="unbounded" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to.</xs:documentation>
+              <xs:documentation xml:lang="en">The documentType(s) covered by this provision. The type can be a CDA document, or some other type that indicates what sort of information the consent relates to.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="resourceType" minOccurs="0" maxOccurs="unbounded" type="Coding">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The resourceType(s) covered by this provision. The type can be a FHIR resource type or a profile on a type that indicates what information the consent relates to.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If this code is found in an instance, then the rule applies.</xs:documentation>
+              <xs:documentation xml:lang="en">If this code is found in an instance, then the provision applies.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dataPeriod" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Clinical or Operational Relevant period of time that bounds the data controlled by this rule.</xs:documentation>
+              <xs:documentation xml:lang="en">Clinical or Operational Relevant period of time that bounds the data controlled by this provision.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="data" type="Consent.Data" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The resources controlled by this rule if specific resources are referenced.</xs:documentation>
+              <xs:documentation xml:lang="en">The resources controlled by this provision if specific resources are referenced.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
@@ -30844,7 +30869,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="provision" type="Consent.Provision" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Rules which provide exceptions to the base rule or subrules.</xs:documentation>
+              <xs:documentation xml:lang="en">Provisions which provide exceptions to the base provision or subprovisions.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -52779,11 +52804,6 @@ For resource issues, this will be a simple XPath limited to element names, repet
               <xs:documentation xml:lang="en">Allows specifying that an item is on the market for sale, or that it is not available, and the dates and locations associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="characteristic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Allows the key features to be recorded, such as &quot;hospital pack&quot;, &quot;nurse prescribable&quot;, &quot;calendar pack&quot;.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="copackagedIndicator" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies if the package contains different items, such as when a drug product is supplied with another item e.g. a diluent or adjuvant.</xs:documentation>
@@ -52802,6 +52822,11 @@ For resource issues, this will be a simple XPath limited to element names, repet
           <xs:element name="packaging" type="PackagedProductDefinition.Packaging" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A packaging item, as a container for medically related items, possibly with other packaging items within, or a packaging component, such as bottle cap (which is not a device or a medication manufactured item).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="characteristic" type="PackagedProductDefinition.Property" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Allows the key features to be recorded, such as &quot;hospital pack&quot;, &quot;nurse prescribable&quot;, &quot;calendar pack&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -52846,6 +52871,11 @@ For resource issues, this will be a simple XPath limited to element names, repet
               <xs:documentation xml:lang="en">The physical type of the container of the items.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="componentPart" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Is this a part of the packaging (e.g. a cap or bottle stopper), rather than the packaging itself (e.g. a bottle or vial). The latter type are designed be a container, but the former are not.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="integer">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of packaging items contained at this layer of the package. This does not relate to the number of contained items but relates solely to the number of packaging items. When looking at the outermost layer it is always 1. If there are two boxes within, at the next layer it would be 2.</xs:documentation>
@@ -52883,7 +52913,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="packaging" type="PackagedProductDefinition.Packaging" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allows containers (and parts of containers) parwithin containers, still a single packaged product.  See also PackagedProductDefinition.packaging.containedItem.item(PackagedProductDefinition).</xs:documentation>
+              <xs:documentation xml:lang="en">Allows containers (and parts of containers) within containers, still as a part of a single packaged product. See also PackagedProductDefinition.packaging.containedItem.item(PackagedProductDefinition).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

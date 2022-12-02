@@ -12,7 +12,7 @@ The intended use for this operation is to provide a payer with access to the ent
 * extension[=].valueInteger = 5
 * extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
 * extension[=].valueCode = #trial-use
-* url = "http://hl7.org/fhir/OperationDefinition/patient-everything-pdex"
+* url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/patient-everything-pdex"
 * version = "4.0.1"
 * id = "patient-everything-pdex"
 * name = "PatientEverythingPdex"
