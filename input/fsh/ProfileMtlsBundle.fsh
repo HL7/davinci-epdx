@@ -1,8 +1,8 @@
-Profile:        MtlsBundle
-Parent:         Bundle
-Id:             mtls-bundle
-Title:          "mTLS Endpoint Bundle"
-Description:    "A bundle of Endpoint and Organization resources to enable mTLS endpoint discovery and configuration."
+Profile: MtlsBundle
+Parent: Bundle
+Id: mtls-bundle
+Title: "mTLS Endpoint Bundle"
+Description: "A bundle of Endpoint and Organization resources to enable mTLS endpoint discovery and configuration."
 * insert PdexStructureDefinitionContent
 * type 1..1 MS
 * type ^short = "Fixed=Collection"
@@ -19,6 +19,7 @@ Alias: $BundleTypeCS = http://hl7.org/fhir/bundle-type
 
 ValueSet: BundleTypeVS
 Title: "mTLS Bundle Type Value Set"
-Description:  "Categories of bundle."
+Description: "Categories of bundle."
+* ^experimental = true
 * codes from system $BundleTypeCS
 * $BundleTypeCS#collection   // Bundle is always collection

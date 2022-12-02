@@ -34,16 +34,33 @@ Usage: #example
 * careTeam[0].responsible = true
 * insurance.coverage = Reference(883210)
 
+* item[0].sequence = 1
 * item[0].category = $X12ServiceType#3 "Consultation"
 * item[0].productOrService = http://www.ama-assn.org/go/cpt#99202
 // * item[0].productOrService = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes#BB201 "Behavior Only, ADL Index 6 - 10/Medicare 5 day assessment (Full)"
-* item[0].sequence = 1
+
+* item[0].adjudication[adjudicationamounttype].extension[reviewAction].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction"
 * item[0].adjudication[adjudicationamounttype].id = "1"
 * item[0].adjudication[adjudicationamounttype].category = $HL7AdjudicationCS#submitted "Submitted Amount"
 
 * item[0].adjudication[adjudicationamounttype].amount.value = 300.99
 * item[0].adjudication[adjudicationamounttype].amount.currency = urn:iso:std:iso:4217#USD "United States dollar"
-// * item[0].adjudication[denialreason].category.coding
+
+
+//* item[0].adjudication[allowedunits].id = "2"
+//* item[0].adjudication[allowedunits].category = $HL7AdjudicationCS#submitted "Submitted Amount"
+//* item[0].adjudication[allowedunits].value = 1.0
+//
+//* item[0].adjudication[denialreason].category.coding
+//* item[0].adjudication[denialreason].id = "3"
+//* item[0].adjudication[denialreason].reason =
+//* item[0].adjudication[denialreason].category = $HL7AdjudicationCS#submitted "Submitted Amount"
+//* item[0].adjudication[denialreason].value = 0.0
+
+//* item[0].adjudication[consumedunits].id = "4"
+//* item[0].adjudication[consumedunits].category = $HL7AdjudicationCS#submitted "Submitted Amount"
+//* item[0].adjudication[consumedunits].value = 0.0
+
 
 * outcome = #queued
 * diagnosis[0].diagnosisCodeableConcept = http://hl7.org/fhir/sid/icd-10-cm#G89.4
