@@ -24,7 +24,7 @@ This implementation guide was the work of the Da Vinci Project PDex work group (
 * Allscripts (Emma Jones, Jeffrey Danford)
 * Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Gini McGlothin, Morry Payne, Clarissa Winchester)
 * Cerner (Hans Buitendijk, Kevin Shekleton, Michelle Miller)
-* Epic (Danielle Friend, Isaac Vetter)
+* Epic (Danielle Friend, Isaac Vetter, Spencer Utley)
 * Health Care Data Standards (Mary Kay McDaniel)
 * Optum (Linda Michaelsen, Nicholas Radov)
 * Newwave/Onyx Technology, LLC (Mark Scrimshire, Santhi Chebrolu)
