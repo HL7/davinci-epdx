@@ -80,7 +80,7 @@ Description: "Example of mTLS Managing Organization"
 // ------------------------------
 
 Instance: diamondonyxhealth2
-InstanceOf: NatlDirEndpointQry-Organization
+InstanceOf: MtlsOrganization
 Description: "Example of mTLS Managing Organization"
 // * id = "diamondonyxhealth1"
 * identifier.value = "diamondonyxhealth2"
@@ -95,7 +95,7 @@ Description: "Example of mTLS Managing Organization"
 // ---------------------------------
 
 Instance: diamond-mtls-endpoint1
-InstanceOf: NatlDirEndpointQry-Endpoint
+InstanceOf: MtlsEndpoint
 Description: "National Directory Query Endpoint Profile as an example of Payer mTLS Endpoint that is linked from Organization and incorporated in bundle"
 // * id = "diamond-mtls-endpoint1"
 * identifier.value = "diamond-mtls-endpoint1"

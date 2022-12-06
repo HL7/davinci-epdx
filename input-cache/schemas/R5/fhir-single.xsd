@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Dec 2, 2022 19:20+0000 for FHIR v5.0.0-cibuild 
+  Generated on Tue, Dec 6, 2022 07:25+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -17187,9 +17187,24 @@ If a pattern[x] is declared on a repeating element, the pattern applies to all r
               <xs:documentation xml:lang="en">Formal constraints such as co-occurrence and other constraints that can be computationally evaluated within the context of the instance.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="mustHaveValue" type="boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Specifies for a primitive data type that the value of the data type cannot be replaced by an extension.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="valueAlternatives" type="canonical" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Specifies a list of extensions that can appear in place of a primitive value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="mustSupport" type="boolean" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If true, implementations that produce or consume resources SHALL provide &quot;support&quot; for the element in some meaningful way.  If false, the element may be ignored and not supported. If false, whether to populate or use the data element in any way is at the discretion of the implementation.</xs:documentation>
+              <xs:documentation xml:lang="en">If true, implementations that produce or consume resources SHALL provide &quot;support&quot; for the element in some meaningful way. Note that this is being phased out and replaced by obligations (see below).  If false, the element may be ignored and not supported. If false, whether to populate or use the data element in any way is at the discretion of the implementation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="obligation" type="ElementDefinition.Obligation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Documents obligations that apply to applications implementing this element. The obligations relate to application behaviour, not the content of the element itself in the resource instances that contain this element.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="isModifier" type="boolean" minOccurs="0" maxOccurs="1">
@@ -17259,14 +17274,56 @@ If a pattern[x] is declared on a repeating element, the pattern applies to all r
               <xs:documentation xml:lang="en">A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="xpath" type="string" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An XPath expression of constraint that can be executed to see if this constraint is met.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="source" type="canonical" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to the original source of the constraint, for traceability purposes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElementDefinition.Obligation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Captures constraints on each element within the resource, profile, or extension.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneType">
+        <xs:sequence>
+          <xs:element name="code" type="code" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Codes, potentially combination code, that describe the obligations that apply to implementing applications.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="actor" type="canonical" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Actor(s) to which the obligation applies.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" type="markdown" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Human readable documentation of the purpose or application of the obligation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="usage" type="UsageContext" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Qualifies the usage of the obligation. Typically obligations are qualified by jurisdiction, but they may also be qualified by gender, workflow status, clinical domain etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="filter" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A FHIRPath expression that restricts to the obligation to one of a set of repeats.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="filterDoco" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Documents the FHIRPath expression for the benefit of users who are not familiar with FHIRPath.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="process" type="uri" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A process that the obligation applies to. This might a canonical URL for an OperationDefinition, or some other reference.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -17498,6 +17555,53 @@ If a pattern[x] is declared on a repeating element, the pattern applies to all r
           <xs:element name="valueSet" type="canonical" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Refers to the value set that identifies the set of codes the binding refers to.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="additional" type="ElementDefinition.Additional" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional bindings that help applications implementing this element. Additional bindings do not replace the main binding but provide more information and/or context.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElementDefinition.Additional">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Captures constraints on each element within the resource, profile, or extension.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneType">
+        <xs:sequence>
+          <xs:element name="purpose" type="code" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The use of this additional binding.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="valueSet" type="canonical" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The valueSet that is being bound for the purpose.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" type="markdown" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Documentation of the purpose of use of the bindingproviding additional information about how it is intended to be used.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="shortDoco" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Concise documentation - for summary tables.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="usage" type="UsageContext" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Qualifies the usage of the binding. Typically bindings are qualified by jurisdiction, but they may also be qualified by gender, workflow status, clinical domain etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="any" type="boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether the binding applies to all repeats, or just to any one of them.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -38015,6 +38119,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
               <xs:documentation xml:lang="en">A unique string within the instance that is used to reference the version of the instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short descriptive label the version to be used in tables or diagrams.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">An explanation of what this specific version of the instance contains and represents.</xs:documentation>
@@ -46252,7 +46361,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="amount" minOccurs="0" maxOccurs="unbounded" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The measurable amount of substance in this component, expressable in different ways (e.g. by mass or volume).</xs:documentation>
+              <xs:documentation xml:lang="en">The measurable amount of total quantity of all substances in the component, expressable in different ways (e.g. by mass or volume).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="constituent" type="ManufacturedItemDefinition.Constituent" minOccurs="0" maxOccurs="unbounded">
@@ -62494,12 +62603,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:element name="SupplyRequest" type="SupplyRequest">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a request for a medication, substance or device used in the healthcare setting.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a request to deliver a medication, substance or device used in the healthcare setting to a particular destination for a particular person or organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="SupplyRequest">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a request for a medication, substance or device used in the healthcare setting.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a request to deliver a medication, substance or device used in the healthcare setting to a particular destination for a particular person or organization.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -62528,6 +62637,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates how quickly this SupplyRequest should be addressed with respect to other requests.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="deliverFor" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The patient to whom the supply will be given or for whom they will be used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="item" minOccurs="1" maxOccurs="1" type="CodeableReference">
@@ -62589,7 +62703,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="SupplyRequest.Parameter">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a request for a medication, substance or device used in the healthcare setting.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a request to deliver a medication, substance or device used in the healthcare setting to a particular destination for a particular person or organization.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
