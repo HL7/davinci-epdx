@@ -139,6 +139,10 @@ For the purposes of this IG we will use the following terms:
 
 A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](ChangeHistory.html).
 
+### Credits
+
+See the [Credits](credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
+
 ### FHIR Publisher
 
 This IG was built with Sushi and the FHIR Publisher (v1.1.98)
