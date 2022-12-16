@@ -176,25 +176,29 @@ Each of the above methods **SHALL** support the retrieval of the profiles and re
 
 Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.
 
-### Patient/{id}/$everything-pdex operation
+### Constraining Data Based Upon Permissions of the Requestor
 
-Health Plans **SHOULD** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
+The FHIR Server **SHALL** constrain the data returned from the server to a requestor based upon the access permissions of the requestor.
+
+For example, if a requestor queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
+
+This Constraining condition may be required in implementations where multiple types of data are being served up by a single FHIR Server. The condition is particularly relevant when implementing Operations such as $everything or $export. See the sections below.
+
+### $everything operation
+
+Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
+As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the requestor is permitted to access. This might require an implementer to filter records at a more granular level than the resource.
 
-It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation does not support the full range of query parameters available to a regular search request. In cases where Provenance is being requested as part of the $everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in the **_type** parameter of the $everything-pdex operation.
-
-The following resource/profiles are retrievable using the $everything-pdex operation:
+The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:
 
 Example of _type parameter:
 
     _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
            Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
-
-The server *SHOULD* filter the ExplanationOfBenefit resource to include only PDex Prior Authorization profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
+The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
 
 ### Bulk FHIR Asynchronous protocols
 
@@ -208,11 +212,10 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles identified in the table in the [Data Retrieval Methods](PayerToPayerExchange.html#data-retrieval-methods) section of this page.
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requestor is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](PayerToPayerExchange.html#data-retrieval-methods) section of this page.
 
-The patient parameter supplied to the $export operation **SHOULD** be constrained to the Patient Identifier that the access token is scoped to using the "patient" parameter.
 
-The _typeFilter parameter can be used to scope resources using search parameters to exclude non-clinical resources.
+The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
 
 
 [Next Page - Data Mapping](DataMapping.html)
