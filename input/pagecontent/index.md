@@ -141,7 +141,7 @@ A history of changes made since the publication of the STU1 version of the PDex 
 
 ### Credits
 
-See the [Credits](credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
+See the [Credits](Credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
 
 ### FHIR Publisher
 
