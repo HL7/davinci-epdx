@@ -14,7 +14,7 @@ Description: "Example of mTLS Endpoint bundle"
 * entry[0].resource.active = true
 * entry[0].resource.name = "DiamondOnyxHealth"
 * entry[0].resource.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
-// * entry[0].resource.endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
+* entry[0].resource.endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
 
 * entry[1].fullUrl = "Endpoint/diamond-mtls-endpoint2"
 * entry[1].resource.resourceType = "Endpoint"
@@ -88,7 +88,7 @@ Description: "Example of mTLS Managing Organization"
 * active = true
 * name = "DiamondOnyxHealth"
 * type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
-// * endpoint.reference = "Endpoint/diamond-mtls-endpoint2"
+* endpoint.reference = "Endpoint/diamond-mtls-endpoint2"
 // Removing Endpoint to avoid reciprocal links that prevent FHIR loading resources
 
 
