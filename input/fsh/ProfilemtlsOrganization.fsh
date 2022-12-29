@@ -10,7 +10,7 @@ Description:    "The mTLS Organization is used to identify the contct informatio
 // * type 1..1 MS
 // * type from OrgTypeVS (required)
 // * type ^short = "Fixed value=payer"
-* endpoint 1..1 MS
+* endpoint 0..1 MS
 * endpoint ^short = "Reference to Payer-to-Payer mTLS endpoint resource"
 * endpoint only Reference(MtlsEndpoint)
 
