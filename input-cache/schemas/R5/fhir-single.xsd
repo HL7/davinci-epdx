@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Dec 28, 2022 07:29+0000 for FHIR v5.0.0-snapshot3 
+  Generated on Wed, Jan 4, 2023 02:39+0000 for FHIR v5.0.0-snapshot3 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-snapshot3">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -22322,7 +22322,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The anatomical location(s) or region(s) of the specimen, lesion, or body structure.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="excludedStructure" type="BodyStructure.ExcludedStructure" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="excludedStructure" type="BodyStructure.IncludedStructure" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The anatomical location(s) or region(s) not occupied or represented by the specimen, lesion, or body structure.</xs:documentation>
            </xs:annotation>
@@ -22363,6 +22363,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Code that represents the included structure laterality.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="bodyLandmarkOrientation" type="BodyStructure.BodyLandmarkOrientation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Body locations in relation to a specific body landmark (tatoo, scar, other body structure).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="qualifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Code that represents the included structure qualifier.</xs:documentation>
@@ -22372,26 +22377,52 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="BodyStructure.ExcludedStructure">
+  <xs:complexType name="BodyStructure.BodyLandmarkOrientation">
     <xs:annotation>
       <xs:documentation xml:lang="en">Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="structure" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="landmarkDescription" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code that represents the excluded structure.</xs:documentation>
+              <xs:documentation xml:lang="en">A description of a landmark on the body used as a reference to locate something else.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="laterality" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="clockFacePosition" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code that represents the excluded structure laterality.</xs:documentation>
+              <xs:documentation xml:lang="en">An description of the direction away from a landmark something is located based on a radial clock dial.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="qualifier" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="distanceFromLandmark" type="BodyStructure.DistanceFromLandmark" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Code that represents the excluded structure qualifier.</xs:documentation>
+              <xs:documentation xml:lang="en">The distance in centimeters a certain observation is made from a body landmark.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="surfaceOrientation" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The surface area a body location is in relation to a landmark.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BodyStructure.DistanceFromLandmark">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="device" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An instrument, tool, analyzer, etc. used in the measurement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="measurementDevice" minOccurs="0" maxOccurs="unbounded" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The measured distance in cm a certain observation is made from a body landmark.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -53234,7 +53265,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="amount" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The number of this type of item within this packaging or for continuous items such as liquids it is the quantity (for example 25ml).</xs:documentation>
+              <xs:documentation xml:lang="en">The number of this type of item within this packaging or for continuous items such as liquids it is the quantity (for example 25ml). See also PackagedProductDefinition.containedItemQuantity (especially the long definition).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -64194,6 +64225,29 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A link to further details on the result.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="requirement" type="TestReport.Requirement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Links or references providing traceability to the testing requirements for this assert.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestReport.Requirement">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A summary of information based on the results of executing a TestScript.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Link or reference providing traceability to the testing requirement for this test.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="linkUri" type="uri"/>
+            <xs:element name="linkCanonical" type="canonical"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -64787,7 +64841,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The FHIRPath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.</xs:documentation>
+              <xs:documentation xml:lang="en">The FHIRPath expression for a specific value to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="headerField" minOccurs="0" maxOccurs="1" type="string">
@@ -64997,7 +65051,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="compareToSourceExpression" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The FHIRPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.</xs:documentation>
+              <xs:documentation xml:lang="en">The FHIRPath expression for a specific value to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="compareToSourcePath" minOccurs="0" maxOccurs="1" type="string">
@@ -65090,6 +65144,29 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Whether or not the test execution will produce a warning only on error for this assert.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="requirement" type="TestScript.Requirement" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Links or references providing traceability to the testing requirements for this assert.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Requirement">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Link or reference providing traceability to the testing requirement for this test.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="linkUri" type="uri"/>
+            <xs:element name="linkCanonical" type="canonical"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
