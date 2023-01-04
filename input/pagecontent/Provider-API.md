@@ -24,6 +24,10 @@ This combination of requests should cover all provider data requests, such as:
 - Send new data since I last requested for this set of patients.
 - Send just the lab results for this set of patients since this date.
 
-Access to the Provider API will be controlled in a similar manner to the Payer-to-Payer mTLS discovery API. Access will be restricted to Providers with a contractual relationship with a Payer. 
+Access to the Provider API will be controlled in a similar manner to the Payer-to-Payer mTLS discovery API. Access will be restricted to Providers with a contractual relationship with a Payer.
+
+the _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_ 
+to indicate that it is a PDex Provider API export.
+
 
 [Next Page - Data Mapping](DataMapping.html)
