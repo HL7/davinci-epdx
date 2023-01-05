@@ -14,8 +14,8 @@ The Payer Data Exchange Implementation Guide supports the Provider API by utiliz
 The Da Vinci Data Export Operation in the Member Attribution IG supports the Bulk FHIR API specification. The operation uses the Group resource. For the PDex Provider API the following capabilities need to be supported:
 
 - Get Group record
-- Request all information for members in the Group
-- Request information for a subset of members in the Group
+- Request all information for members in the Group.
+- Request information for a subset of members in the Group.
 - Request a limited set of information for a subset of members in the Group.
 
 This combination of requests should cover all provider data requests, such as:
@@ -26,7 +26,7 @@ This combination of requests should cover all provider data requests, such as:
 
 Access to the Provider API will be controlled in a similar manner to the Payer-to-Payer mTLS discovery API. Access will be restricted to Providers with a contractual relationship with a Payer.
 
-the _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_ 
+The _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_ 
 to indicate that it is a PDex Provider API export.
 
 

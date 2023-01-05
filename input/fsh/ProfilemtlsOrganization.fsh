@@ -1,8 +1,8 @@
-Profile:        MtlsOrganization
-Parent:         NatlDirEndpointQry-Organization
-Id:             mtls-managing-organization
-Title:          "mTLS Organization"
-Description:    "The mTLS Organization is used to identify the contct information for a Payer that owns a mTLS Endpoint."
+Profile:     MtlsOrganization
+Parent:      ndh-Organization
+Id:          mtls-managing-organization
+Title:       "mTLS Organization"
+Description: "The mTLS Organization record is used to identify the contact information for a Payer that owns a mTLS Endpoint."
 * insert PdexStructureDefinitionContent
 * identifier 1..* MS
 * identifier ^short = "Unique identifiers for Payer"
