@@ -40,8 +40,8 @@ The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And 
 The profiles are: 
 
 - [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
-- [National Directory Endpoint Qry Exchange Endpoint](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Endpoint)
-- [National Directory Endpoint Qry Exchange Organization](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Organization)
+- [National Directory NDH Exchange Endpoint](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndhEx-Endpoint.html)
+- [National Directory NDH Base Organization](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html)
  
 The profiles in the mTLS bundle are modeled after the profiles in the National Directory Query IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
 
