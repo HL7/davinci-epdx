@@ -77,14 +77,14 @@ Description: "Example of mTLS Endpoint bundle"
 * type = http://hl7.org/fhir/R4/codesystem-bundle-type.html#collection "Collection"
 * timestamp = "2022-07-04T15:00:00.000Z"
 * id = "example-mtls-endpoint-bundle2"
-* entry[0].fullUrl = "Organization/diamondonyxhealth3"
-* entry[=].resource = diamondonyxhealth3
-* entry[+].fullUrl = "Endpoint/diamond-mtls-endpoint3"
-* entry[=].resource = diamond-mtls-endpoint3
+* entry[0].fullUrl = "Organization/rubicononyxhealth3"
+* entry[=].resource = rubicononyxhealth3
+* entry[+].fullUrl = "Endpoint/rubicon-mtls-endpoint3"
+* entry[=].resource = rubicon-mtls-endpoint3
 
 * signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
 * signature.when = "2022-07-04T15:00:00.000Z"
-* signature.who.reference = "Organization/diamondonyxhealth3"
+* signature.who.reference = "Organization/rubicononyxhealth3"
 * signature.sigFormat = urn:ietf:bcp:13#application/x-x509-ca-cert
 
 

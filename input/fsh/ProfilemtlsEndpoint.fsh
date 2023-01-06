@@ -32,18 +32,18 @@ Description:    "The mTLS Endpoint is used to assist payers in defining their mT
 
 
 // --------------------------------
-Instance: diamond-mtls-endpoint3
+Instance: rubicon-mtls-endpoint3
 InstanceOf: MtlsEndpoint
 Description: "Payer mTLS Endpoint example that is linked from Organization and incorporated in bundle"
 // * id = "diamond-mtls-endpoint3"
-* identifier.value = "diamond-mtls-endpoint3"
+* identifier.value = "rubicon-mtls-endpoint3"
 * status = http://hl7.org/fhir/endpoint-status#active "Active"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest "HL7 FHIR"
 * name = "Payer-Payer Exchange"
 // * managingOrganization.reference = "Organization/diamondonyxhealth1"
-* managingOrganization.identifier.value = "Organization/diamondonyxhealth2"
-* address = "https://p2p.diamondonyx.example.com/mtlsendpoint"
+* managingOrganization.identifier.value = "Organization/rubicononyxhealth2"
+* address = "https://p2p.rubicononyx.example.com/mtlsendpoint"
 * extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ActReason#HOPERAT "healthcare operations"
 * extension[ig-supported].extension[igsSupportedType].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/IgTypeCS#FHIR "FHIR"
 // * extension[endpoint-type].extension[endpointType].valueCodeableConcept = $EndpointTypeCS#FHIR
