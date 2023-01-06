@@ -140,7 +140,7 @@ Once Health Plans have completed the Member Access stage of the Exchange the req
 data using one of the following three methods:
 
 1. Query all clinical resource individually
-2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
+2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
 3. Bulk FHIR Asynchronous protocols
 
 Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
