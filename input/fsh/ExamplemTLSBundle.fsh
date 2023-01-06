@@ -5,10 +5,11 @@ Description: "Example of mTLS Endpoint bundle"
 * type = http://hl7.org/fhir/R4/codesystem-bundle-type.html#collection "Collection"
 * timestamp = "2022-07-04T15:00:00.000Z"
 * id = "example-mtls-endpoint-bundle"
+* entry[0].fullUrl = "Organization/diamondonyxhealth2"
 * entry[0].resource = diamondonyxhealth2
-* entry[+].resource = diamond-mtls-endpoint2
+* entry[+].fullUrl = "Endpoint/diamond-mtls-endpoint2"
+* entry[=].resource = diamond-mtls-endpoint2
 // * entry[0].resource = "Organization/DiamondOnyxHealth1"
-//* entry[0].fullUrl = "Organization/diamondonyxhealth2"
 //* entry[=].resource.resourceType = "Organization"
 //* entry[=].resource.id = "diamondonyxhealth2"
 //* entry[=].resource.identifier.value = "Organization/diamondonyxhealth2"
@@ -18,7 +19,6 @@ Description: "Example of mTLS Endpoint bundle"
 //* entry[=].resource.name = "DiamondOnyxHealth"
 //* entry[=].resource.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
 //* entry[=].resource.endpoint = Reference(Endpoint/diamond-mtls-endpoint2)
-//* entry[+].fullUrl = "Endpoint/diamond-mtls-endpoint2"
 //* entry[=].resource.resourceType = "Endpoint"
 //* entry[=].resource.id = "diamond-mtls-endpoint2"
 //* entry[=].resource.identifier.value = "diamond-mtls-endpoint2"
