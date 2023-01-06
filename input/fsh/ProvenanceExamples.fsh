@@ -71,6 +71,7 @@ Description: "Example of an author Provenance record displaying a sole practitio
 * recorded = "2020-07-11T17:26:23.217+00:00"
 * agent[ProvenanceAuthor][0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * agent[ProvenanceAuthor][0].who.reference = "Practitioner/4"
+* agent[ProvenanceAuthor][=].onBehalfOf.reference = "Organization/ProviderOrg1"
 * entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entity.what.display = "No reference available"
 * entity.extension[sourceFormat].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource#x12837 "837 claim"
