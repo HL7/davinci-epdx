@@ -15,16 +15,16 @@ Description: "The mTLS Organization record is used to identify the contact infor
 * endpoint only Reference(MtlsEndpoint)
 
 // ---------------------------
-Instance: diamondonyxhealth3
+Instance: rubicononyxhealth3
 InstanceOf: MtlsOrganization
 Description: "Example of mTLS Managing Organization"
 // * id = "diamondonyxhealth3"
-* identifier.value = "diamondonyxhealth3"
+* identifier.value = "rubicononyxhealth3"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * active = true
-* name = "DiamondOnyxHealth"
+* name = "RubiconOnyxHealth"
 * type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
-* endpoint.reference = "Endpoint/diamond-mtls-endpoint3"
+* endpoint.reference = "Endpoint/rubicon-mtls-endpoint3"
 
 
 
