@@ -139,7 +139,7 @@ of attribution lists for exchange of data for groups of members may be considere
 Payer-to-Payer exchange can be accomplished by three methods. 
 
 1. Query all clinical resource individually
-2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
+2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
 3. Bulk FHIR Asynchronous protocols
 
 Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 

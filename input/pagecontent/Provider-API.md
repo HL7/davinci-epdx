@@ -9,7 +9,7 @@
 
 In December 2022, CMS released the [Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P](https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact). One of the requirements of the rule is for Impacted Payers to implement a Provider API. This is an API that conforms to the [HL7 FHIR Bulk Data API specification](https://hl7.org/fhir/uv/bulkdata/). The purpose of the Provider API is to enable Providers to query a Payer API for information about the members of the health plan where they have a current, or upcoming treatment relationship. The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
-The Payer Data Exchange Implementation Guide supports the Provider API by utilizing the [Da Vinci Data Export](http://build.fhir.org/ig/HL7/davinci-atr/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://build.fhir.org/ig/HL7/davinci-atr/index.html).
+The Payer Data Exchange Implementation Guide supports the Provider API by utilizing the [Da Vinci Data Export](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/2023Jan/index.html).
 
 The Da Vinci Data Export Operation in the Member Attribution IG supports the Bulk FHIR API specification. The operation uses the Group resource. For the PDex Provider API the following capabilities need to be supported:
 
