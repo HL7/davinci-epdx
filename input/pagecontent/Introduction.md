@@ -18,10 +18,8 @@ Ad-hoc PDex Member History Requests via CDS Hooks provides a mechanism for provi
 
 The same FHIR profiles used to support communication between the health plan and providers will also be used to provide the payload of member health information which will be exchanged between health plans when authorized by a health plan member.
 
-The [patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation is also included as part of this implementation. This is included to provide Health Plans with the ability to pull or push member-authorized health history via a FHIR bundle that can be exchanged over existing, or future, secure transports between trusted parties.
+While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API interactions and data formats may be the same.  
 
-While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API may be the same.  
-                                                                                                          
 The objectives with the above approach is to:
 
 - Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested by stakeholders across health care systems.
@@ -36,7 +34,6 @@ The first release of the PDex IG will focus on the following in-scope items. Ite
 - Ambulatory Care Provider queries
 - Member-authorized Payer-to-Payer information exchange
 - Member-authorized Payer-to-Third-Party Application information exchange
-- Use of [patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation to enable Payer Push via secure transport
 	
 ### Deferred Scope
 	
@@ -177,10 +174,6 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html)
 
 In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
-
-In addition, the [$patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation **SHOULD** be supported to enable a client application to request all, or a date-defined subset of FHIR resources for a member to be returned as a bundle. The $patient-everything operation is defined [here](https://www.hl7.org/fhir/operation-patient-everything.html): [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html). 
-
-The FHIR bundle that is the output of the $patient-everything-pdex operation can be returned via the REST API as a paged bundle. If the bundle is compiled for transfer by another method the bundle **SHOULD** be compiled as a non-paged bundle.
 
 #### Da Vinci PDex / HRex
 
