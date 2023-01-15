@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jan 9, 2023 13:50+0000 for FHIR v5.0.0-cibuild 
+  Generated on Sat, Jan 14, 2023 19:30+0000 for FHIR v5.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="5.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -2354,6 +2354,11 @@
       <xs:enumeration value="ChargeItemDefinition">
         <xs:annotation>
           <xs:documentation xml:lang="en">ChargeItemDefinition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ClinicalUseDefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="EventDefinition">
@@ -45102,7 +45107,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="substance" minOccurs="0" maxOccurs="1" type="CodeableReference">
+          <xs:element name="substance" minOccurs="1" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Relevant reference substance.</xs:documentation>
            </xs:annotation>
@@ -49555,7 +49560,7 @@ The MedicationUsage resource was previously called MedicationStatement.</xs:docu
               <xs:documentation xml:lang="en">A value for the characteristic.text.</xs:documentation>
             </xs:annotation>
             <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="valueString" type="string"/>
+            <xs:element name="valueMarkdown" type="markdown"/>
             <xs:element name="valueQuantity" type="Quantity"/>
             <xs:element name="valueInteger" type="integer"/>
             <xs:element name="valueDate" type="date"/>
@@ -65064,6 +65069,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The mime-type contents to compare against the request or response message 'Content-Type' header.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="defaultManualCompletion" minOccurs="0" maxOccurs="1" type="AssertionManualCompletionType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The default manual completion outcome applied to this assertion.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The FHIRPath expression to be evaluated against the request or response message contents - HTTP headers and payload.</xs:documentation>
@@ -65076,7 +65086,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="minimumId" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.</xs:documentation>
+              <xs:documentation xml:lang="en">The ID of a fixture. Asserts that the response contains at a minimum the fixture specified by minimumId.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="navigationLinks" minOccurs="0" maxOccurs="1" type="boolean">
@@ -65086,7 +65096,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="operator" minOccurs="0" maxOccurs="1" type="AssertionOperatorType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The operator type defines the conditional behavior of the assert. If not defined, the default is equals.</xs:documentation>
+              <xs:documentation xml:lang="en">The operator type defines the conditional behavior of the assert.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
@@ -65111,7 +65121,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="response" minOccurs="0" maxOccurs="1" type="AssertionResponseTypes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">okay | created | noContent | notModified | bad | forbidden | notFound | methodNotAllowed | conflict | gone | preconditionFailed | unprocessable.</xs:documentation>
+              <xs:documentation xml:lang="en">continue | switchingProtocols | okay | created | accepted | nonAuthoritativeInformation | noContent | resetContent | partialContent | multipleChoices | movedPermanently | found | seeOther | notModified | useProxy | temporaryRedirect | permanentRedirect | badRequest | unauthorized | paymentRequired | forbidden | notFound | methodNotAllowed | notAcceptable | proxyAuthenticationRequired | requestTimeout | conflict | gone | lengthRequired | preconditionFailed | contentTooLarge | uriTooLong | unsupportedMediaType | rangeNotSatisfiable | expectationFailed | misdirectedRequest | unprocessableContent | upgradeRequired | internalServerError | notImplemented | badGateway | serviceUnavailable | gatewayTimeout | httpVersionNotSupported.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="responseCode" minOccurs="0" maxOccurs="1" type="string">
@@ -65250,6 +65260,41 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="AssertionManualCompletionTypeEnum">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="fail">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Fail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pass">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Pass</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="skip">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Skip</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stop">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Stop</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AssertionManualCompletionType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en"></xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AssertionManualCompletionTypeEnum" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="AssertionDirectionTypeEnum">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="response">
@@ -65332,6 +65377,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:documentation xml:lang="en">evaluate</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="manualEval">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">manualEvaluate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="AssertionOperatorType">
@@ -65347,64 +65397,224 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:simpleType name="AssertionResponseTypesEnum">
     <xs:restriction base="code-primitive">
+      <xs:enumeration value="continue">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Continue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="switchingProtocols">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Switching Protocols</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="okay">
         <xs:annotation>
-          <xs:documentation xml:lang="en">okay</xs:documentation>
+          <xs:documentation xml:lang="en">OK</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="created">
         <xs:annotation>
-          <xs:documentation xml:lang="en">created</xs:documentation>
+          <xs:documentation xml:lang="en">Created</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="accepted">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Accepted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonAuthoritativeInformation">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Non-Authoritative Information</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="noContent">
         <xs:annotation>
-          <xs:documentation xml:lang="en">noContent</xs:documentation>
+          <xs:documentation xml:lang="en">No Content</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resetContent">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reset Content</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="partialContent">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Partial Content</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="multipleChoices">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Multiple Choices</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="movedPermanently">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Moved Permanently</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="found">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Found</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="seeOther">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">See Other</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="notModified">
         <xs:annotation>
-          <xs:documentation xml:lang="en">notModified</xs:documentation>
+          <xs:documentation xml:lang="en">Not Modified</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="bad">
+      <xs:enumeration value="useProxy">
         <xs:annotation>
-          <xs:documentation xml:lang="en">bad</xs:documentation>
+          <xs:documentation xml:lang="en">Use Proxy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="temporaryRedirect">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Temporary Redirect</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="permanentRedirect">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Permanent Redirect</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="badRequest">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bad Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unauthorized">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unauthorized</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="paymentRequired">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Payment Required</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="forbidden">
         <xs:annotation>
-          <xs:documentation xml:lang="en">forbidden</xs:documentation>
+          <xs:documentation xml:lang="en">Forbidden</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="notFound">
         <xs:annotation>
-          <xs:documentation xml:lang="en">notFound</xs:documentation>
+          <xs:documentation xml:lang="en">Not Found</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="methodNotAllowed">
         <xs:annotation>
-          <xs:documentation xml:lang="en">methodNotAllowed</xs:documentation>
+          <xs:documentation xml:lang="en">Method Not Allowed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notAcceptable">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Acceptable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="proxyAuthenticationRequired">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Proxy Authentication Required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="requestTimeout">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Request Timeout</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="conflict">
         <xs:annotation>
-          <xs:documentation xml:lang="en">conflict</xs:documentation>
+          <xs:documentation xml:lang="en">Conflict</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="gone">
         <xs:annotation>
-          <xs:documentation xml:lang="en">gone</xs:documentation>
+          <xs:documentation xml:lang="en">Gone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lengthRequired">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length Required</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="preconditionFailed">
         <xs:annotation>
-          <xs:documentation xml:lang="en">preconditionFailed</xs:documentation>
+          <xs:documentation xml:lang="en">Precondition Failed</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="unprocessable">
+      <xs:enumeration value="contentTooLarge">
         <xs:annotation>
-          <xs:documentation xml:lang="en">unprocessable</xs:documentation>
+          <xs:documentation xml:lang="en">Content Too Large</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="uriTooLong">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">URI Too Long</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unsupportedMediaType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unsupported Media Type</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rangeNotSatisfiable">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Range Not Satisfiable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="expectationFailed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Expectation Failed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="misdirectedRequest">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Misdirected Request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unprocessableContent">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unprocessable Content</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="upgradeRequired">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Upgrade Required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="internalServerError">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Internal Server Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="notImplemented">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Implemented</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="badGateway">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Bad Gateway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="serviceUnavailable">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Service Unavailable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gatewayTimeout">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Gateway Timeout</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="httpVersionNotSupported">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">HTTP Version Not Supported</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

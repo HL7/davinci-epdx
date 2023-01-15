@@ -44,8 +44,11 @@ Description: "Example of mTLS Managing Organization"
 * identifier.value = "diamondonyxhealth1"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * active = true
-* name = "DiamondOnyxHealth"
 * type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
+* name = "DiamondOnyxHealth"
+* telecom.system = http://hl7.org/fhir/contact-point-system#url "URL"
+* telecom.value = "https://diamond.1.onyxhealth.io"
+
 // * endpoint.reference = "Endpoint/diamond-mtls-endpoint1"
 
 
@@ -60,10 +63,12 @@ Description: "Example of mTLS Managing Organization"
 //* text.status = http://hl7.org/fhir/narrative-status#additional "Additional"
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"diamondonyxhealth2\"> </a></p><div style=\"display:  inline-block; background-color:  #d9e0e7; padding:  6px; margin:  4px; border:  1px solid #8da1b4; border-radius:  5px; line-height:  60%\"><p style=\"margin-bottom:  0px\">Resource Organization &quot;diamondonyxhealth2&quot; Updated &quot;2022-07-04 15:00:00+0000&quot; </p><p style=\"margin-bottom:  0px\">Profile: <a href=\"StructureDefinition-mtls-managing-organization.html\">mTLS Organization</a></p></div><p><b>identifier</b>: id:Â diamondonyxhealth2</p><p><b>active</b>: true</p><p><b>type</b>: Payer <span style=\"background:  LightGoldenRodYellow; margin:  4px; border:  1px solid khaki\"> (<a href=\"CodeSystem-OrgTypeCS.html\">Organization Type</a>#payer)</span></p><p><b>name</b>: DiamondOnyxHealth</p><p><b>endpoint</b>: <a href=\"Endpoint_diamond-mtls-endpoint2.html\">See above (Endpoint/diamond-mtls-endpoint2)</a></p></div>"
 * active = true
-* name = "DiamondOnyxHealth"
 * type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS#payer "Payer"
+* name = "DiamondOnyxHealth"
+* telecom.system = http://hl7.org/fhir/contact-point-system#url "URL"
+* telecom.value = "https://diamond.2.onyxhealth.io"
 * endpoint.reference = "Endpoint/diamond-mtls-endpoint2"
-// Removing Endpoint to avoid reciprocal links that prevent FHIR loading resources
+// Removing Endpoint to avoid reciprical links that prevent FHIR loading resources
 
 
 // ---------------------------------
