@@ -77,6 +77,7 @@ Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/ndh/StructureDefinition/base-e
 Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts
 Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework
 Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint
+Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets

@@ -33,9 +33,9 @@ The steps in the Member Match with Consent process are:
 
 For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process.
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
 
-The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And Organization profile. These profiles use the National Directory (NDH) IG Profiles. 
 
 The profiles are: 
 
@@ -43,7 +43,7 @@ The profiles are:
 - [National Directory NDH Exchange Endpoint](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndhEx-Endpoint.html)
 - [National Directory NDH Base Organization](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html)
  
-The profiles in the mTLS bundle are modeled after the profiles in the National Directory Query IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
+The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
 
 
 #### OAuth2.0 Dynamic Client Registration

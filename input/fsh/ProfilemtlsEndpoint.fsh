@@ -57,4 +57,30 @@ Description: "Payer mTLS Endpoint example that is linked from Organization and i
 * extension[secure-exchange-artifacts].extension[secureExchangeArtifactsType].valueString = "mtls Public Certificate"
 * extension[secure-exchange-artifacts].extension[certificate].valueBase64Binary = "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"
 * extension[secure-exchange-artifacts].extension[expirationDate].valueDateTime = "2023-08-10T15:00:00.000Z"
+* extension[associated-servers][0].extension[associatedServersType].url = "associatedServersType"
+* extension[associated-servers][0].extension[associatedServersType].valueString = "PDex-P2P-DCRP-Registration"
+* extension[associated-servers][0].extension[serverURL].url = "serverURL"
+* extension[associated-servers][0].extension[serverURL].valueString = "https://p2p.rubicononyx.example.com/oauth2/registration"
+* extension[associated-servers][1].extension[associatedServersType].url = "associatedServersType"
+* extension[associated-servers][1].extension[associatedServersType].valueString = "PDex-BaseURI"
+* extension[associated-servers][1].extension[serverURL].url = "serverURL"
+* extension[associated-servers][1].extension[serverURL].valueString = "https://p2p.rubicononyx.example.com/pdex/stu2"
 * payloadType = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS#NA "Not Applicable"
+
+
+//// ---------------------------------
+//Instance: rubicon-pdex-endpoint3
+//InstanceOf: ndh-Endpoint
+//Description: "Payer PDex Endpoint. Use Security Section to get to DCRP and Token endpoints."
+//* identifier.value = "rubicon-pdex-endpoint3"
+//* status = http://hl7.org/fhir/endpoint-status#active "Active"
+//* meta.lastUpdated = "2022-07-04T15:00:00.000Z"
+//* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest "HL7 FHIR"
+//* name = "PDex CapabilityStatement-BASEURI"
+//* managingOrganization.identifier.value = "Organization/rubicononyxhealth2"
+//* address = "https://fhir.rubicononyx.example.com/stu2/pdex"
+//* extension[endpoint-usecase].extension[endpointUsecasetype].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ActReason#HOPERAT "healthcare operations"
+//* extension[ig-supported].extension[igsSupportedType].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/IgTypeCS#FHIR "FHIR"
+//* extension[secured-endpoint].valueBoolean = true
+//* payloadType = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS#NA "Not Applicable"
+
