@@ -20,7 +20,7 @@ In the steps below "Received" refers to the information requested from a Health 
 4. Identify Received Organization resources in the bundle and use NPI, where available, to map to the Target Organization Resources. If the Organization is not found in the Target system create a record. Use the Target Organization Resource ID for any references to this Organization in the received bundle.
 5. Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system create a record. Use the Target Organization Resource ID for any references to this Location in the received bundle.
 
-It is recommended that the Id field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
+It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
 
 **Providing data in sub-element fields**
 
