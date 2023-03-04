@@ -34,4 +34,4 @@ Applications are registered with the API Endpoint. The application owner **MAY**
 - Another Covered Entity, such as a Provider.
 
 
-[Next Page - Credits](Credits.html)
+[Next Page - Change History](ChangeHistory.html)
