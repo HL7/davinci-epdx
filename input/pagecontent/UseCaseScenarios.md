@@ -21,9 +21,9 @@ Reference Implementations can be found in the Da Vinci GitHub account:
 - [PDex SMART-on-FHIR+CDS-Hook Patient Import App](https://github.com/HL7-DaVinci/PDex-Patient-Import-App)
 - [PDex Payer-to-Payer Patient Import App](https://github.com/HL7-DaVinci/PDex-Patient-Import-App)
 	
-## Patient Persona
+### Patient Persona
 
-### Provider to Health Plan scenario:
+#### Provider to Health Plan scenario:
 
 Lauren Dent is a 62-year-old female, living in Wisconsin but she spends winters in Tampa Bay, FL.
 
@@ -38,7 +38,7 @@ Lauren is in reasonable health but is managing a number of conditions:
 - A history of a normal colonoscopy 5 years earlier
 - A history of a pneumovax and zostavax 4 years earlier.
 
-### Member/Patient-mediated Payer-to-Payer Exchange:
+#### Member/Patient-mediated Payer-to-Payer Exchange:
 
 Arthur Dent is a 68-year-old Male.
 
@@ -46,7 +46,7 @@ He has recently switched from Medicare Advantage Plan A and enrolled in Medicare
 
 In this scenario, Arthur has signed up for a new  Medicare advantage plan with payer C during the open enrollment period. Before the initiation of his coverage beginning January 1, payer C has established communication with the patient and has provided the patient with a secure log in to the payer C patient portal. Patient continues to have an active login to payer B patient portal.
 
-## Useful Patient History for Providers
+### Useful Patient History for Providers
 
 When providers are building a health history for a new patient the information they are interested in **MAY** include:
 
@@ -97,7 +97,7 @@ These types of data **SHALL** be mapped to FHIR clinical resources as follows:
 It must be recognized that Payers may not have in-depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.
 
 
-## Versioning of FHIR Data
+### Versioning of FHIR Data
 
 A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources.
 

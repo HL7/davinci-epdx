@@ -1,12 +1,11 @@
-[Previous Page - Member-Authorized OAuth2 Exchange](Member-AuthorizedOAuth2Exchange.html)
+[Previous Page - Change History](ChangeHistory.html)
 
-Thuis Implementation Guide was made possible by the thoughtful contributions of the following people and organizations.
+This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations.
 
-This implementation guide was the work of the [Da Vinci Accelerator Project's](http://www.hl7.org/about/davinci/index.cfm?ref=common) PDex work group and the member organizations.
+This implementation guide was the work of the [Da Vinci Accelerator Project's](http://www.hl7.org/about/davinci/index.cfm?ref=common) PDex work group and Da Vinci member organizations.
 
 **Primary authors:**
 * Mark Scrimshire (OnyxHealth.io)
-* Tony Benson (Blue Cross Blue Shield of Alabama)
 
 **Project leads:**
 
@@ -26,6 +25,7 @@ This implementation guide was the work of the [Da Vinci Accelerator Project's](h
 This Implementation Guide is supported by the [HL7 Financial Management Work Group](http://www.hl7.org/Special/committees/fm) as the sponsoring work group.
 
 **Project participants included:**
+* Blue Cross Blue Shield of Alabama (Tony Benson) - Project Lead PDex STU1
 * Aegis (Richard Ettema, Sandra Vance)
 * Allscripts (Emma Jones, Jeffrey Danford)
 * Blue Cross Blue Shield of Alabama (Tony Benson, Kevin Lambert, Gini McGlothin, Morry Payne, Clarissa Winchester)
@@ -37,7 +37,7 @@ This Implementation Guide is supported by the [HL7 Financial Management Work Gro
 
 Our thanks to these and to the many others not explicitly listed who contributed their time, enthusiasm and expertise to this work.
 
-## Terminology
+### Terminology
 
 This IG defaults to using US Core Profiles and value sets. 
 
