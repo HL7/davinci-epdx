@@ -61,3 +61,5 @@ Because of the change in naming to use 2.0.0-ballot from 2.0.0 it was necessary 
     <version code="0.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
     <version code="2.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2" deprecated="true"/>
     <version code="0.1" deprecated="true"/>
+
+Branch connectathon33 has been created to freeze development for the New Orleans Connectathon on May 6-7, 2023.
