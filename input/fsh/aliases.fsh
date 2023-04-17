@@ -71,7 +71,7 @@ Alias: $X12ClaimAdjustmentReasonCodes = https://x12.org/codes/claim-adjustment-r
 Alias: $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication
 
 // National Directory
-Alias: $EndpointTypeCS = http://hl7.org/fhir/us/directory-query/CodeSystem/EndpointTypeCS
+Alias:  $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
 Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase
 Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-igsSupported
 Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts

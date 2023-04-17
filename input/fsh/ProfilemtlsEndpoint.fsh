@@ -16,19 +16,8 @@ Description:    "The mTLS Endpoint is used to assist payers in defining their mT
 * contact 0..* MS
 * address 1..1 MS
 * address ^short = "Provide a URL"
-//* extension contains
-//    $ExtnEndpointUsecase named endpoint-usecase 1..* MS and
-//    $ExtnIGsSupported named ig-supported 1..*  MS and
-//    $ExtnSecureExchangeArtifacts named secure-exchange-artifacts 1..* MS and
-//    $ExtnTrustFramework named trust-framework 1..* MS and
-//    $ExtnSecureEndpoint named secured-endpoint 0..1 MS
 
-//* extension[endpoint-usecase] 1..* MS
-//* extension[ig-supported] 1..* MS
-//* extension[secure-exchange-artifacts] 1..* MS
-//* extension[trust-framework] 1..* MS
-//* extension[secured-endpoint] 0..1 MS
-// * extension contains MtlsSignedObject named pdex-mtls-signedobject-extension 1..* MS
+* extension contains MtlsSignedObject named pdex-mtls-signedobject-extension 1..* MS
 
 
 // --------------------------------
