@@ -6,7 +6,7 @@ The PDex work group has made changes to the original version of the IG following
 The STU2 version of the IG incorporates changes to support the sharing of Prior Authorization information with members and providers. This is done through the profiling of the [ExplanationOfBenefit](PDexPriorAuthorization.html) resource. 
 
 CMS Guidance defines two sets of data to be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required, but if used these guides will provide information payers can employ to meet the requirements of the policies being finalized. 
-The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://build.fhir.org/ig/HL7/carin-bb/) defines how Claims and Encounter Data are to be provided; This DaVinci Payer Data Exchange IG (PDex) and the [US Core IG]({{site.data.fhir.ver.uscore}}/index.html) define how Clinical Data is to be provided. 
+The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/) defines how Claims and Encounter Data are to be provided; This DaVinci Payer Data Exchange IG (PDex) and the [US Core IG]({{site.data.fhir.ver.uscore}}/index.html) define how Clinical Data is to be provided. 
 
 ### Background
 There are two parallel paths pursued by the CARIN Alliance (**C**reating **A**ccess to **R**eal-time **In**formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
@@ -77,7 +77,7 @@ A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](
 - [HRex Coverage](Coverage.html) 
 - [PDex MedicationDispense](PDexMedicationDispense.html)
 
-Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. 
+Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. This mapping information is provided as gudiance only. It may require payers to apply disgression in how data is mapped from claims data to the relevant clinical resources. 
 
 
 
@@ -86,8 +86,8 @@ The column definitions are provided in the table below. Look for this style of t
 
 {% include style_insert_table_blue.html %}
 
-| US Core Element           | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
-|---------------------------|-------------|:----------:|---------------------------|----------------------------------------|
+| US Core/PDex Element                                                    | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
+|-------------------------------------------------------------------------|-------------|:----------:|---------------------------|----------------------------------------|
 | The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element            |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
 
 <i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
@@ -138,6 +138,10 @@ For the purposes of this IG we will use the following terms:
 ### Change History
 
 A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](ChangeHistory.html).
+
+### Credits
+
+See the [Credits](Credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
 
 ### FHIR Publisher
 

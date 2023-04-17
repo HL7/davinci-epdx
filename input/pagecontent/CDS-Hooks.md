@@ -26,7 +26,7 @@ This implementation guide extends/customizes CDS Hooks in 4 ways:
 
 Each way is described in the following sections.
 
-## Support for FHIR R4
+### Support for FHIR R4
 
 The hooks published in the CDS Hooks specification provide a list of context resources for the DSTU2 and STU3 versions of FHIR. The CDS Hook specification won't be updated to include R4 resources until after R4 is finalized. Because this implementation guide is being written to support FHIR R4 as well as STU3 and Argonaut (DSTU2), it provides guidance on what R4 resources are relevant for each hook (both pre-existing hooks as well as newly proposed hooks).
 
@@ -42,7 +42,7 @@ When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** e
 
 Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP **SHALL** attempt to write the selected records based upon the options listed below for graceful write degradation.
 
-### Graceful Write Degradation
+#### Graceful Write Degradation
 
 When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
 
@@ -60,7 +60,7 @@ To summarize this graceful degradation in functionality the priority for writing
 4. Where the DocumentReference does not support writing a PDF, store an HTML or XHTML version.
 5. Where the DocumentReference does not support HTML or XHTML content, write an ASCII text version.
 
-## Adding or Modifying Hooks
+### Adding or Modifying Hooks
 
 The base CDS hooks 1.0 specification defines the following hooks: 
 
@@ -75,11 +75,11 @@ The base CDS hooks 1.0 specification defines the following hooks:
 
 The expectation is that new hooks will be defined by and eventually formally approved by the community. The formal process for this proposal and maturity development process is still evolving. Individuals interested in this process can provide feedback [here](https://cds-hooks.hl7.org).
 
-### Additional Hooks
+#### Additional Hooks
 
 Defining new hooks is an expected part of the CDS Hooks specification and there is no need for hooks to be officially registered with the community for them to be used. However, using registered hooks increases the likelihood of broad adoption by the community - which increases the likelihood of broad uptake of this implementation guide. The project is proposing hooks that build on proposals made in the Da Vinci CRD IG. 
 
-### Modified Hooks
+#### Modified Hooks
 
 This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field. 
 
@@ -87,7 +87,7 @@ Subscriber Id or Member Id, if available, **SHOULD** be taken from the Patient's
 
 If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element **SHOULD** be used to uniquely identify the member.
 
-## PDex Hooks
+### PDex Hooks
 
 Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification. Connection to health plan systems **SHALL** be supported via the following hook:
 
@@ -143,7 +143,7 @@ If a Health Plan does not provide a Member Id on a coverage card the extension c
 
 Any identifiers associated with the coverage for the patient (which may include patient demographics) **SHOULD** be obtained from the FHIR Coverage record for the patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App.
 
-## Hook Configuration
+#### Hook Configuration
 
 PDex supports three common scenarios where CDS Hooks **SHOULD** be used:
 
@@ -209,17 +209,17 @@ An example CDS Hooks Response Card is shown below:
 </pre>
 
 
-## Systems
+### Systems
 
 This implementation guide sets expectations for two types of systems:
 
 1. Client Systems
 2. Payer Systems
 
-### Client Systems
+#### Client Systems
 Client systems are electronic medical records, Pharmacy systems and other clinical and administrative systems are responsible for the ordering and execution of patient-related services. These are systems whose users have a need for discovery of patient information from health plans who have provided coverage to the patient.
 
-### Payer Systems
+#### Payer Systems
 Payer systems are systems run by health plans/insurers that provide insurance coverage to the patient and can provide claims history clinical information and benefits information about the patient.
 
 The requirements and expectations described here are not intended to be exhaustive. Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.

@@ -2,9 +2,10 @@
   "resourceType": "CapabilityStatement",
   "id": "pdex-server",
   "text": {
-    "status": "generated"
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2 id=\"title\">PDex Server CapabilityStatement Based on US Core </h2><ul><li>Implementation Guide Version: 3.1.1</li><li>FHIR Version: 4.0.1</li><li>Supported formats: xml, json</li><li>Published by: Payer Data Exchange, Da Vinci Accelerator via the HL7 Financial Management Workgroup.</li></ul><p>This describes the expected capabilities of the PDex Server actor which is responsible for providing responses to the queries submitted by the PDex Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Servers are defined.</p></div>"
   },
-  "url": "http://hl7.org/fhir/us/core/CapabilityStatement/pdex-server",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-server",
   "version": "4.0.0",
   "name": "PdexServerCapabilityStatement",
   "title": "PDEX Server CapabilityStatement",
@@ -22,7 +23,7 @@
       ]
     }
   ],
-  "description": "This Section describes the expected capabilities of the PDEX Server actor which is responsible for providing responses to the queries submitted by the PDEX Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDEX Servers are defined. PDEX Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.",
+  "description": "This Section describes the expected capabilities of the PDex Server actor which is responsible for providing responses to the queries submitted by the PDex Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Servers are defined. PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.",
   "jurisdiction": [
     {
       "coding": [
@@ -48,7 +49,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "The PDEX Server **SHALL**: \n1. Support the US Core Patient resource profile.\n2. Support at least one additional resource profile from the list of US Core and PDEX Profiles. \n3. Implement the RESTful behavior according to the FHIR specification. \n4. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource. \n5. Support json source formats for all US Core and PDEX interactions. \n\nThe PDEX Server **SHOULD**: \n1. Support xml source formats for all US Core interactions.\n2. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance.",
+      "documentation": "The PDex Server **SHALL**: \n1. Support the US Core Patient resource profile.\n2. Support at least one additional resource profile from the list of US Core and PDex Profiles. \n3. Implement the RESTful behavior according to the FHIR specification.\n4. Support json source formats for all US Core and PDex interactions. \n5. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource.\n\nThe PDex Server **SHOULD**: \n1. Support xml source formats for all US Core interactions.\n2. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance.",
       "security": {
         "description": "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations. 2. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code."
       },

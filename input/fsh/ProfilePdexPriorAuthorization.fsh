@@ -1,8 +1,8 @@
-Profile:        PdexPriorAuthorization
-Parent:         ExplanationOfBenefit
-Id:             pdex-priorauthorization
-Title:          "PDex Prior Authorization"
-Description:    "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members"
+Profile: PdexPriorAuthorization
+Parent: ExplanationOfBenefit
+Id: pdex-priorauthorization
+Title: "PDex Prior Authorization"
+Description: "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members"
 * insert PdexStructureDefinitionContent
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * meta.profile 1..*
@@ -44,7 +44,7 @@ Description:    "The PDex Prior Authorization (PPA) profile is based on the Expl
 // Added from CARIN bb EOBInpatientProfile.fsh
 
 * item.productOrService from PDexPAInstitutionalProcedureCodes (required)
-* insert EOBHeaderItemAdjudicationInvariant
+// * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 * insert ItemAdjudicationSlicing
 * item.adjudication contains
@@ -53,17 +53,17 @@ allowedunits 0..1 MS and
 denialreason 0..* MS and
 consumedunits 0..1 MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
-* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization."
-* item.adjudication[denialreason].category = $AdjudicationCS#denialreason
+* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
+* item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason (exactly)
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
-* item.adjudication[allowedunits].category = $AdjudicationCS#allowedunits
+* item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits (exactly)
 * item.adjudication[allowedunits].value only decimal
 * item.adjudication[allowedunits].value 1..1 MS
 * item.adjudication[adjudicationamounttype].category from PDexAdjudication
 * item.adjudication[adjudicationamounttype].amount MS
 * item.adjudication[adjudicationamounttype].amount 1..1
-* item.adjudication[consumedunits].category = $AdjudicationCS#consumedunits
+* item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits (exactly)
 * item.adjudication[consumedunits].value only decimal
 * item.adjudication[consumedunits].value 1..1 MS
 
@@ -76,6 +76,8 @@ adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 denialreason 0..* MS
 * adjudication[adjudicationamounttype].category from PDexAdjudication  (required)
 * adjudication[adjudicationamounttype].amount 1..1
+* adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+* adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization for the entire request."
 
 // End of addition from EOBInpatientProfile.fsh
 

@@ -6,6 +6,7 @@
 CodeSystem: ProvenanceAgentRoleType
   Title: "Provenance Roles"
   Description: "CodeSystem for types of role relating to the creation or communication of referenced resources"
+* ^experimental = true
 * ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
@@ -19,6 +20,7 @@ CodeSystem: ProvenancePayerDataSource
 Title: "Provenance Payer Data Source Format"
 Description: "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^experimental = true
 * ^caseSensitive = false
 * #hl7v2other "HL7 v2" "HL7 v2 Message"
 * #hl7v2oru "HL7 v2 ORU" "HL7 v2 Structured Observation Report(ORU) message"
@@ -53,6 +55,7 @@ CodeSystem: IdentifierTypeCS
 Title: "Identifier Type"
 Description: "Identifier Type"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^experimental = true
 * ^caseSensitive = false
 * #tax "Tax ID Number" "Tax ID Number"
 * #npi "National Provider Identifier" "National Provider Identifier"
@@ -69,6 +72,7 @@ Description: "Identifier Type"
 CodeSystem: PriorAuthorizationValueCodes
 Title: "Prior Authorization Values"
 Description: "Codes used to define Prior Authorization categories"
+* ^experimental = true
 * ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
@@ -80,6 +84,7 @@ Description: "Codes used to define Prior Authorization categories"
 CodeSystem: PDexAdjudicationDiscriminator
 Title: "PDex Adjudication Discriminator"
 Description: "Used as the discriminator for the data elements in adjudication and item.adjudication"
+* ^experimental = true
 * ^caseSensitive = false
 * #allowedunits	"allowed units" "defines the adjudication slice to define allowed units"
 * #consumedunits "consumed units" "defines the adjudication slice to define consumed units"
@@ -93,6 +98,7 @@ Description: "Used as the discriminator for the data elements in adjudication an
 CodeSystem: PDexAdjudicationCS
 Title: "PDex Adjudication Codes"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+* ^experimental = true
 * ^caseSensitive = false
 * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
 * #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
@@ -125,6 +131,7 @@ Description: "Describes the various amount fields used when payers receive and a
 CodeSystem: PDexPayerAdjudicationStatus
 Title: "PDex Payer Adjudication Status"
 Description: "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"
+* ^experimental = true
 * ^caseSensitive = false
 * #innetwork	"In Network" "Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider"
 * #outofnetwork "Out Of Network" "Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider"
@@ -140,6 +147,7 @@ Description: "Describes the various status fields used when payers adjudicate a 
 CodeSystem: PDexSupportingInfoType
 Title: "PDex Supporting Info Type"
 Description: "Claim Information Category - Used as the discriminator for supportingInfo"
+* ^experimental = true
 * ^caseSensitive = false
 * #admissionperiod  "Admission Period" "Dates corresponding with the admission and discharge of the beneficiary to a facility"
 * #pointoforigin  "Point Of Origin"  "UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility."
@@ -166,6 +174,7 @@ Description: "Claim Information Category - Used as the discriminator for support
 CodeSystem: PDexIdentifierType
 Title: "PDex Identifier Type"
 Description: "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
+* ^experimental = true
 * ^caseSensitive = false
 // * #tax "Tax ID Number" "Tax ID Number"  - use the TAX code from the base codesystem
 * #npi "National Provider Identifier" "National Provider Identifier"
@@ -179,3 +188,16 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * #uc "Unique Claim ID" "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^caseSensitive = false
+
+// --------------------------
+CodeSystem: OrgTypeCS
+Title: "Organization Type"
+Description: "Categories of organizations based on criteria in provider directories."
+* ^experimental = true
+* #fac "Facility" "A physical healthcare facility"
+* #prvgrp "Provider Group" "A healthcare provider entity"
+* #payer "Payer" "A healthcare payer"
+* #atyprv "Atypical Provider" "Providers that do not provide healthcare"
+* #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
+* #ntwk "Network" "A healthcare provider insurance network"
+* ^caseSensitive = true

@@ -54,7 +54,7 @@ After authenticating the Member **SHALL** be presented with an Authorization scr
 
 #### $patient-everything Exchange Via Alternate Secure Transport
 
-The [$patient-everything-pdex](OperationDefinition-patient-everything-pdex.html) operation for an individual member enables the potential use of Bulk FHIR, using such formats as ND-JSON. This IG does not define the alternate secure transport mechanisms that may be used for exchange between Health Plans. However, the IG does allow for the use of Bulk FHIR formats to exchange data for an individual member where the member has authorized that exchange or Federal, state or local regulations authorize the sharing of information between parties. 
+The [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation for an individual member enables the potential use of Bulk FHIR, using such formats as ND-JSON. This IG does not define the alternate secure transport mechanisms that may be used for exchange between Health Plans. However, the IG does allow for the use of Bulk FHIR formats to exchange data for an individual member where the member has authorized that exchange or Federal, state or local regulations authorize the sharing of information between parties. 
 
 The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record.
 

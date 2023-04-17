@@ -1,8 +1,8 @@
 // Invariants
-Invariant: EOB-institutional-item-or-header-adjudication
-Description: "Institutional EOB:  Should have adjudication at the item or header level, but not both"
-Expression: "(adjudication.exists() != item.adjudication.exists())"
-Severity: #error
+//Invariant: EOB-institutional-item-or-header-adjudication
+//Description: "Institutional EOB:  Should have adjudication at the item or header level, but not both"
+//Expression: "(adjudication.exists() != item.adjudication.exists())"
+//Severity: #error
 
 Invariant: adjudication-has-amount-type-slice
 Description: "If Adjudication is present, it must have at least one adjudicationamounttype slice"
@@ -51,8 +51,8 @@ RuleSet: ItemAdjudicationSlicing
 * item.adjudication ^slicing.discriminator.path = "category"
 * item.adjudication.category from PDexAdjudicationCategoryDiscriminator (required)
 
-RuleSet: EOBHeaderItemAdjudicationInvariant
-* obeys EOB-institutional-item-or-header-adjudication
+// RuleSet: EOBHeaderItemAdjudicationInvariant
+// * obeys EOB-institutional-item-or-header-adjudication
 
 RuleSet: HCPCSCopyrightNotice
 * ^copyright = "See information on the use of HCPCS Level I (proprietary and owned by American Medical Association) and Level II codes [here](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/HCPCS_Coding_Questions)"
