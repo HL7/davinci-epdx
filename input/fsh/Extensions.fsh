@@ -71,3 +71,9 @@ Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+
+
+//Extension; Fhirig
+//Id: fhir-ig-extension
+//Description: "Payer-to-Payer FHIR IG"
+//

@@ -70,4 +70,4 @@ Alias: $X12ServiceType = https://x12.org/codes/service-type-codes
 Alias:  $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication
 
 // National Directory
-Alias:  $EndpointTypeCS = http://hl7.org/fhir/us/fhir-directory-query/CodeSystem/EndpointTypeCS
+Alias:  $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
