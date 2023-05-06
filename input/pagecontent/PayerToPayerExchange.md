@@ -2,19 +2,12 @@
 
 {% include style_insert_table_blue.html %}
 
-TODO: update link to replace build.fhir.org when HRex publishes.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core, is a requirement of the CMS Interoperability Rule.
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in 
-FHIR by US Core, is a requirement of the CMS Interoperability Rule.
-
-All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
+All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
 of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
-Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult
-the Data Provider's Server Capability Statement to determine which methods are made available by the
-data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member
-and provide consent:
+Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
 
 ### Member Match with Consent
 
@@ -37,11 +30,23 @@ The steps in the Member Match with Consent process are:
 
 #### mTLS Endpoint Discovery
 
-For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
+Payers need two capabilities in order to establish trusted connections with other Payers:
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys.
+1. A Discovery or Directory Service to be able to find other endpoints
+2. A Trust Framework in which both parties are members.
+   
+In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles.
 
-The mTLS Endpoint Bundle is profiled in this IG. It is comprised of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate. The Trust Framework endorsement process is detailed below in the Trust Framework section of this page.
+
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles. 
+
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles. 
+
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles. 
 
 The profiles are: 
 
@@ -49,26 +54,62 @@ The profiles are:
 - [National Directory Endpoint Qry Exchange Endpoint](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Endpoint)
 - [National Directory Endpoint Qry Exchange Organization](http://build.fhir.org/ig/HL7/fhir-directory-query/StructureDefinition-NatlDirEndpointQry-Organization.html)
  
+##### Trust Framework
+
+A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules. A manager of the Trust Framework would be appointed to administer the framework, the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.
+
+The Trust Manager responsibilities include:
+
+- Obtain and manage a Signing Certificate from a Trusted CA.
+- Manage submissions from Payers that includes their public identity certificate and completed Framework agreement. The Framework agreement confirms their participation in the Trust Framework and observation of the Trust Framework operating requirements.
+
+The management of payer submissions involves the following steps:
+
+1. Verifying the identity certificate.
+2. Verifying the signature to the Framework agreement.
+3. Signing the payer's public identity certificate  with a digital signature.
+4. Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.
+
+Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate in to an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there should still be two Organization records created.
+
+The completed bundle would be posted to a new branch of the public Github Repository. 
+
+The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of theRepository.
+
+Trust Framework members a responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
+
 #### The $member-match operation
 
-The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
+#### mTLS endpoint discovery
+
+Establishing a secure mTLS connection between payers requires a process to enable payers to discover the mTLS endpoints of other payers. An interim process that may be superceded by Trusted Exchange Framework and Common Agreement (TEFCA) services, or a trusted national directory of Payer endpoints, has been developed.
+
+Each Payer will publish an mTLS Endpoint bundle. This will be signed by a Certificate Authority and published to a github repository. Payers will be able to download the repository content to have access to a portfolio of signed Payer mTLS endpoint bundles.
+
+Each Payer endpoint will have a bundle the Bundle is profiled here:
+
+- 
+
+#### The $member-match operation
+
+The $member-match operation is defined in the [Hrex member-match operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
 - [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
 
-The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
+The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique MemberMatch Identifier in the $MemberMatch Operation Response.
+- Return a Unique MemberMatch Identifier in the $member-match Operation Response.
 
-If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response.
+If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $member-match response.
 
 #### Consent Revocation
 
-The following guidance is provided for a situation where a member wishes to revoke consent for a previously grannted Payer-to-payer exchange.
+The following guidance is provided for a situation where a member wishes to revoke consent for a previously granted Payer-to-payer exchange.
 
 As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
 Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.
