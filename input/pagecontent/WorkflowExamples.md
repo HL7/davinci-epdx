@@ -9,7 +9,7 @@ There are two Provider/Clinician workflow examples:
 1. First visit with new Provider
 2. Return visit with Provider
 
-## First Visit with New Provider
+### First Visit with New Provider
 
 The patient calls their new provider to arrange for an annual physical.
 
@@ -17,7 +17,7 @@ The receptionist in the doctor's office collects their personal information, hea
 
 The creation of an appointment activates a CDS Hook transaction: appointment-book. 
 
-## Return Visit with Provider
+### Return Visit with Provider
 
 The patient calls their provider to arrange a follow-up appointment.
 

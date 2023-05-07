@@ -12,15 +12,15 @@ RuleSet: CodeSystemStubBoilerplate
 * ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * ^jurisdiction[0].coding[0].code = #US
 * ^jurisdiction[0].coding[0].display = "United States of America"
+* ^experimental = true
 * ^caseSensitive = false
 * ^content = #not-present
 
 
-
-
 ValueSet: PDexPAInstitutionalProcedureCodes
 Title: "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
-Description: "The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.
+Description: """
+The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.
 
 The target set for this value set are the procedure codes from the CPT and HCPCS files and the rate codes from the HIPPS files.
 
@@ -72,10 +72,12 @@ with certain positions of the code indicating the case mix group itself, and oth
 providing additional information. The additional information varies among HIPPS codes
 pertaining to different payment systems, but often provides information about the clinical
 assessment used to arrive at the code. Which positions of the code carry the case mix
-group information may also vary by payment systems."
+group information may also vary by payment systems.
+"""
+* ^experimental = true
 * codes from system $CPT
-* codes from system CMSHCPCSCodes
-* codes from system CMSHIPPSCodes
+* codes from system $CMSHCPCSCodes
+* codes from system $CMSHIPPSCodes
 * include $HL7DataAbsentReason#not-applicable "Not Applicable"
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
 
@@ -83,56 +85,62 @@ See information on the use of HCPCS Level I (proprietary and owned by American M
 
 CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)"
 
-CodeSystem: CMSHCPCSCodes
-Title: "Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"
-Description: "The Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.
+//CodeSystem: CMSHCPCSCodes
+//Title: "Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"
+//Description: "The Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.
+//
+//General information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)
+//
+//Releases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)
+//
+//These files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data."
+//* ^url =  "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets"
+//* ^experimental = true
+//* ^caseSensitive = false
+//* insert CodeSystemStubBoilerplate
+//* insert HCPCSCopyrightNotice
 
-General information can be found here: [https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)
-
-Releases can be found here: [https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets](https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets)
-
-These files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data."
-* ^url =  "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets"
-* ^caseSensitive = false
-* insert CodeSystemStubBoilerplate
-* insert HCPCSCopyrightNotice
-
-CodeSystem: CMSHIPPSCodes
-Title: "Health Insurance Prospective Payment System (HIPPS)"
-Description: "Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets
-of patient characteristics (or case-mix groups) health insurers use to make payment
-determinations under several prospective payment systems. Case-mix groups are
-developed based on research into utilization patterns among various provider types. For
-the payment systems that use HIPPS codes, clinical assessment data is the basic input. A
-standard patient assessment instrument is interpreted by case-mix grouping software
-algorithms, which assign the case mix group. For payment purposes, at least one HIPPS
-code is defined to represent each case-mix group. These HIPPS codes are reported on
-claims to insurers.
-Institutional providers use HIPPS codes on claims in association with special revenue
-codes. One revenue code is defined for each prospective payment system that requires
-HIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837
-institutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44
-(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in
-data element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may
-appear on separate lines of a single claim.
-
-HIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,
-with certain positions of the code indicating the case mix group itself, and other positions
-providing additional information. The additional information varies among HIPPS codes
-pertaining to different payment systems, but often provides information about the clinical
-assessment used to arrive at the code. Which positions of the code carry the case mix
-group information may also vary by payment systems."
-* ^url =  "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes"
-* ^caseSensitive = false
-* insert CodeSystemStubBoilerplate
-* insert HIPPSCopyrightNotice
+//CodeSystem: CMSHIPPSCodes
+//Title: "Health Insurance Prospective Payment System (HIPPS)"
+//Description: "Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets
+//of patient characteristics (or case-mix groups) health insurers use to make payment
+//determinations under several prospective payment systems. Case-mix groups are
+//developed based on research into utilization patterns among various provider types. For
+//the payment systems that use HIPPS codes, clinical assessment data is the basic input. A
+//standard patient assessment instrument is interpreted by case-mix grouping software
+//algorithms, which assign the case mix group. For payment purposes, at least one HIPPS
+//code is defined to represent each case-mix group. These HIPPS codes are reported on
+//claims to insurers.
+//Institutional providers use HIPPS codes on claims in association with special revenue
+//codes. One revenue code is defined for each prospective payment system that requires
+//HIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837
+//institutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44
+//(\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in
+//data element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may
+//appear on separate lines of a single claim.
+//
+//HIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence,
+//with certain positions of the code indicating the case mix group itself, and other positions
+//providing additional information. The additional information varies among HIPPS codes
+//pertaining to different payment systems, but often provides information about the clinical
+//assessment used to arrive at the code. Which positions of the code carry the case mix
+//group information may also vary by payment systems."
+//* ^url =  "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes"
+//* ^experimental = true
+//* ^caseSensitive = false
+//* insert CodeSystemStubBoilerplate
+//* insert HIPPSCopyrightNotice
 
 RuleSet: HIPPSCopyrightNotice
-* ^copyright = "CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)"
+* ^copyright = """
+CMS maintains HIPPS. There are no known constraints on the use of HIPPS.
+See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)
+"""
 
 ValueSet: X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 Title: "X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"
-Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+Description: """
+X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
 
 The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.
 
@@ -144,10 +152,13 @@ External code lists maintained by X12 and external code lists maintained by othe
 
 [https://x12.org/codes](https://x12.org/codes)
 
-Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
-* codes from system X12ClaimAdjustmentReasonCodes
-* codes from system CMSRemittanceAdviceRemarkCodes
-* ^copyright = "**Intellectual Property Information**
+Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).
+"""
+* ^experimental = true
+* codes from system $X12ClaimAdjustmentReasonCodes
+* codes from system $CMSRemittanceAdviceRemarkCodes
+* ^copyright = """
+**Intellectual Property Information**
 
   All X12 products are subject to this IP policy, including published and draft works.
 
@@ -167,75 +178,78 @@ Additional information on X12 licensing program can be found here:
 
   To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com
 
-  The Centers for Medicare & Medicaid Services (CMS) maintain Remittance Advice Remark Codes (RARC) used throughout the US health care industry."
+  The Centers for Medicare & Medicaid Services (CMS) maintain Remittance Advice Remark Codes (RARC) used throughout the US health care industry.
+"""
 
-CodeSystem: X12ClaimAdjustmentReasonCodes
-Title: "X12 Claim Adjustment Reason Codes"
-Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+//CodeSystem: X12ClaimAdjustmentReasonCodes
+//Title: "X12 Claim Adjustment Reason Codes"
+//Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+//
+//The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.
+//
+//External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:
+//
+//[https://x12.org/codes](https://x12.org/codes)
+//
+//Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
+//* ^url = "https://x12.org/codes/claim-adjustment-reason-codes"
+//* ^experimental = true
+//* ^caseSensitive = false
+//* insert CodeSystemStubBoilerplate
+//* ^copyright = "**Intellectual Property Information**
+//
+//  All X12 products are subject to this IP policy, including published and draft works.
+//
+//  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+//
+//Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
+//
+//  **Licensing Information**
+//
+//  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
+//
+//Additional information on X12 licensing program can be found here:
+//
+//  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
+//
+//  **Purchasing Information:**
+//
+//  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."
 
-The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.
 
-External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:
-
-[https://x12.org/codes](https://x12.org/codes)
-
-Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
-* ^url = "https://x12.org/codes/claim-adjustment-reason-codes"
-* ^caseSensitive = false
-* insert CodeSystemStubBoilerplate
-* ^copyright = "**Intellectual Property Information**
-
-  All X12 products are subject to this IP policy, including published and draft works.
-
-  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
-
-Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
-
-  **Licensing Information**
-
-  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
-
-Additional information on X12 licensing program can be found here:
-
-  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
-
-  **Purchasing Information:**
-
-  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."
-
-
-CodeSystem: CMSRemittanceAdviceRemarkCodes
-Title: "X12 Remittance Advice Remark Codes"
-Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
-
-Remittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.
-
-Each RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.
-
-External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer, including the RARC codes. Can be found here:
-
-[https://x12.org/codes](https://x12.org/codes)
-
-Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
-* ^url = "https://x12.org/codes/remittance-advice-remark-codes"
-* ^caseSensitive = false
-* insert CodeSystemStubBoilerplate
-* ^copyright = "**Intellectual Property Information**
-
-  All X12 products are subject to this IP policy, including published and draft works.
-
-  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
-
-Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
-
-  **Licensing Information**
-
-  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
-
-Additional information on X12 licensing program can be found here:
-
-  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
-
-  **Purchasing Information:**
-
-  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."
+//CodeSystem: CMSRemittanceAdviceRemarkCodes
+//Title: "X12 Remittance Advice Remark Codes"
+//Description: "X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.
+//
+//Remittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.
+//
+//Each RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.
+//
+//External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer, including the RARC codes. Can be found here:
+//
+//[https://x12.org/codes](https://x12.org/codes)
+//
+//Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
+//* ^url = "https://x12.org/codes/remittance-advice-remark-codes"
+//* ^experimental = true
+//* ^caseSensitive = false
+//* insert CodeSystemStubBoilerplate
+//* ^copyright = "**Intellectual Property Information**
+//
+//  All X12 products are subject to this IP policy, including published and draft works.
+//
+//  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.
+//
+//Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)
+//
+//  **Licensing Information**
+//
+//  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.
+//
+//Additional information on X12 licensing program can be found here:
+//
+//  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)
+//
+//  **Purchasing Information:**
+//
+//  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com."

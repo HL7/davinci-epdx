@@ -48,14 +48,17 @@ group Step 2b: Establish common member - secure transaction
   Payer1 -> Payer1 : Store or Compute Consent \n(all / non-sensitive) for Member
   note right
   Member: ID
-  Payer: ID
+  Payer: ID (Client Credential)
   Policy: all | non-sensitive
   Consent Period: start, end
   This information will be need to be checked
-  when Access Token is issued in Step 3
+  when Access Token is issued in Step 3.
+  An active consent information will only be stored if the Policy
+  Scope can be complied with. An inability to comply with the scope
+  will lead to a 422 error being returned from the $member-match.
   endnote
 
-	Payer1 -> Payer2 : Return MemberMatch ID
+	Payer1 -> Payer2 : Return Member Identifier
   note right
     This process assumes Payer1 provides a unique ID for
     the member that crosses all relevant
@@ -65,19 +68,23 @@ group Step 2b: Establish common member - secure transaction
     and covered by member consent to trigger reciprocal
     app registration and $MemberMatch request
 
-  	Payer2 receives the MemberMatch ID from Payer1.
-    The MemberMatch ID is only returned if member
+  	Payer2 receives the Member Identifier from Payer1.
+    The Member Identifier is only returned if member
     is matched AND consent can be complied with
     per date and policy constraints.
   endnote
 end
 
 group Step 3: Request Access token for Member Access
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using MemberMatch ID
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Member Identifier
   note right
   	Token endpoint matches to member using
-    MemberMatch ID and confirms that
-    consent is still valid
+    Member Identifier and queries consent records to find
+    the latest active consent that matches on Member and Payer Identifiers.
+    The Access Token process then confirms current date is within
+    the consent period and the policy scope can be complied with. Checking the consent
+    record is active provides for the receiving payer to invalidate the consent record
+    if a request is recieved via other channels to cancel the consent.
   endnote
   Payer1 -> Payer2 : Return access token
   note right

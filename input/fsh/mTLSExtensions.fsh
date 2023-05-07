@@ -11,10 +11,13 @@ Description: "mTLS Endpoint Signed Object Extension"
 // * extension[Object].value[x] only string
 // * extension[Object].value[x] ^short = "This should be base64Binary but valuebase64Binary won't compile. Therefore setting to string"
 * extension[Object].value[x] ^short = "took .pem file (X509 Encoded) and converted to base64Binary using https://tomeko.net/online_tools/PEM_to_base64.php?lang=en \n Convert back with https://tomeko.net/online_tools/base64_to_PEM.php?lang=en"
+
+
 // --------------------------------
 ValueSet: MtlsObjectType
 Title: "mTLS Signed Object Types"
 Description: "The Object type"
+* ^experimental = true
 * codes from system MtlsObjectCode
 * ^copyright = "This Valueset is not copyrighted."
 
@@ -22,4 +25,6 @@ Description: "The Object type"
 CodeSystem: MtlsObjectCode
 Title: "mTLS Object Type Code"
 Description: "Codes for the Signed Object Types"
+* ^experimental = true
+* ^caseSensitive = false
 * #MTLS "mTLS signed Object"

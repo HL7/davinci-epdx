@@ -81,7 +81,6 @@ The Trust Manager would be responsible for reviewing and merging bundles submitt
 Trust Framework members a responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
 
 
-
 #### OAuth2.0 Dynamic Client Registration
 
 Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol (DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be made to the $member-match operation endpoint.
