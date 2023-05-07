@@ -31,6 +31,17 @@ The steps in the Member Match with Consent process are:
 
 #### mTLS Endpoint Discovery
 
+Payers need two capabilities in order to establish trusted connections with other Payers:
+
+1. A Discovery or Directory Service to be able to find other endpoints
+2. A Trust Framework in which both parties are members.
+
+In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles.
+
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate. The Trust Framework endorsement process is detailed below in the Trust Framework section of this page.
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles.
+
 For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: [https://github.com/HL7-DaVinci/pdex-payer-payer](https://github.com/HL7-DaVinci/pdex-payer-payer). The repository includes some supporting tools and documentation relating to mTLS discovery.
 
 Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
@@ -45,6 +56,30 @@ The profiles are:
  
 The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
 
+##### Trust Framework
+
+A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules. A manager of the Trust Framework would be appointed to administer the framework, the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.
+
+The Trust Manager responsibilities include:
+
+- Obtain and manage a Signing Certificate from a Trusted CA.
+- Manage submissions from Payers that includes their public identity certificate and completed Framework agreement. The Framework agreement confirms their participation in the Trust Framework and observation of the Trust Framework operating requirements.
+
+The management of payer submissions involves the following steps:
+
+1. Verifying the identity certificate.
+2. Verifying the signature to the Framework agreement.
+3. Signing the payer's public identity certificate  with a digital signature.
+4. Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.
+
+Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate in to an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there should still be two Organization records created.
+
+The completed bundle would be posted to a new branch of the public Github Repository.
+
+The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of theRepository.
+
+Trust Framework members a responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
+
 
 #### OAuth2.0 Dynamic Client Registration
 
@@ -58,7 +93,7 @@ A future workflow is likely to use the FAST National Directory to find other pay
 
 #### The $member-match operation
 
-The $member-match operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the $member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
+The $member-match operation is defined in the [Hrex member-match operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
