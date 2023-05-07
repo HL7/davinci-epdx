@@ -2,19 +2,13 @@
 
 {% include style_insert_table_blue.html %}
 
-TODO: update link to replace build.fhir.org when HRex publishes.
-
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in 
-FHIR by US Core, is a requirement of the CMS Interoperability Rule.
+FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
 
-All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
-of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of
+data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
-Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult
-the Data Provider's Server Capability Statement to determine which methods are made available by the
-data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member
-and provide consent:
+Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
 
 ### Member Match with Consent
 
@@ -28,52 +22,103 @@ The steps in the Member Match with Consent process are:
 
 - Establish a secure connection via mTLS
 - Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials
-- Use Client Credentials to acquire OAuth2.0 token to perform $MemberMatch operation
-- The MemberMatch operation uses Patient Demographics and Coverage records to determine if a member is found
-- The $MemberMatch operation evaluates the Consent resource for a matched member
-- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a MemberMatch ID is provided to the requesting Payer (Payer2)
-- If a MemberMatch Id is returned from $MemberMatch, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
+- Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation
+- The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found
+- The $member-match operation evaluates the Consent resource for a matched member
+- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
+- If a Patient ID is returned from $member-match, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
 #### mTLS Endpoint Discovery
 
-For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. 
+Payers need two capabilities in order to establish trusted connections with other Payers:
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys.
+1. A Discovery or Directory Service to be able to find other endpoints
+2. A Trust Framework in which both parties are members.
 
-The mTLS Endpoint Bundle is profiled in this IG. It is comprised of an Endpoint And Organization profile. These profiles use the National Directory Query IG Profiles. 
+In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles.
+
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate. The Trust Framework endorsement process is detailed below in the Trust Framework section of this page.
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles.
+
+For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: [https://github.com/HL7-DaVinci/pdex-payer-payer](https://github.com/HL7-DaVinci/pdex-payer-payer). The repository includes some supporting tools and documentation relating to mTLS discovery.
+
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
+
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And Organization profile. These profiles use the National Directory (NDH) IG Profiles. 
 
 The profiles are: 
 
 - [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
-- [National Directory Endpoint Qry Exchange Endpoint](http://hl7.org/fhir/us/directory-query/StructureDefinition/NatlDirEndpointQry-Endpoint)
-- [National Directory Endpoint Qry Exchange Organization](http://build.fhir.org/ig/HL7/fhir-directory-query/StructureDefinition-NatlDirEndpointQry-Organization.html)
+- [National Directory NDH Exchange Endpoint](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndhEx-Endpoint.html)
+- [National Directory NDH Base Organization](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html)
  
+The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
+
+##### Trust Framework
+
+A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules. A manager of the Trust Framework would be appointed to administer the framework, the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.
+
+The Trust Manager responsibilities include:
+
+- Obtain and manage a Signing Certificate from a Trusted CA.
+- Manage submissions from Payers that includes their public identity certificate and completed Framework agreement. The Framework agreement confirms their participation in the Trust Framework and observation of the Trust Framework operating requirements.
+
+The management of payer submissions involves the following steps:
+
+1. Verifying the identity certificate.
+2. Verifying the signature to the Framework agreement.
+3. Signing the payer's public identity certificate  with a digital signature.
+4. Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.
+
+Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate in to an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there should still be two Organization records created.
+
+The completed bundle would be posted to a new branch of the public Github Repository.
+
+The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of theRepository.
+
+Trust Framework members a responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
+
+
+
+#### OAuth2.0 Dynamic Client Registration
+
+Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol (DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be made to the $member-match operation endpoint.
+
+#### Future Direction for Discovery and Registration
+
+Future versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access OAuth2.0 Dynamic Client Registration (DCRP) to register for a set of client credentials. Those credentials provide access to the $member-match operation.
+
+A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust framework. The endpoint information for those payers would point to a Unified Data Access Profiles service, as defined in the FHIR At Scale Taskforce (FAST) [Security for Scalable Registration, Authentication, and Authorization IG](https://build.fhir.org/ig/HL7/fhir-udap-security-ig/). UDAP would be used to request a client credential that can be used to perform a $member-match and subsequently to request an OAuth2.0 token that is scoped to the member/patient returned from a successful match operation. 
+
 #### The $member-match operation
 
-The $MemberMatch operation is defined in the [Hrex MemberMatch operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the Member Match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
+The $member-match operation is defined in the [Hrex member-match operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
 - [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
 
-The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the MemberMatch operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
+The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the $member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique MemberMatch Identifier in the $MemberMatch Operation Response.
+- Return a Unique Patient Identifier in the $member-match Operation Response.
 
-If the receiving payer is unable to comply with the consent request a MemberMatch ID is NOT returned in the $MemberMatch response.
+When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
+
+If the receiving payer matches to a unique member but is unable to comply with the consent request a Patient ID is NOT returned in the $member-match response and a 422 status code is returned with an Operation Outcome that indicates that the consent request could not be complied with.
 
 #### Consent Revocation
 
-The following guidance is provided for a situation where a member wishes to revoke consent for a previously grannted Payer-to-payer exchange.
+The following guidance is provided for a situation where a member wishes to revoke consent for a previously granted Payer-to-Payer exchange.
 
 As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
 Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.
 
-This approach does not preclude the member contracting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.
+This approach does not preclude the member contacting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.
 
 #### Consent Request Language
 
@@ -104,6 +149,10 @@ The following minimal content from the Consent record is used to validate a data
 
 If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
 
+The exchange of Consent is being carried out between two covered entities and the content and conditions for an exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document reference link would be to a document maintained by the requesting payer. The content of the referenced document would NOT be used for any determination as part of the automated $member-match operation. The referenced document's only purpose is to provide evidence of an appropriate signature of the consenting member/patient.
+
+It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the validity of a consent request. This would be part of the Trust Framework agreed by the covered entities that are party to the framework rules.
+
 #### Period of Consent Validity
 
 Here are some scenarios that could inform the decision about an appropriate period of validity for a consent to exchange health information:
@@ -120,21 +169,6 @@ It is a member's option to share their health information with their new health 
 | Immediate Enrollment | Date of enrollment | 90 days after Plan Start Date |
 | Concurrent Plan Coverage | Date of enrollment | Plan Period End Date (typically 12 months from plan start date) |
 
-#### Alternate Data Retrieval Flow
-
-<div style="height=auto;width=90%;">
-{% include credential-consent-flow.svg %}
-</div>
-
-<p id="publish-box">
-NOTE: Ballot Feedback sought regarding where and hoe the scoping and consent verification steps are performed after a successful MemberMatch.
-</p>
-
-The choices to perform the scoping and consent verification are:
-
-1. As part of the OAuth transaction that receives the MemberMatch ID
-2. During the data retrieval for each resource or operation endpoint that is accessed.
-
 
 ### Data Retrieval Methods
 
@@ -142,70 +176,69 @@ Once Health Plans have completed the Member Access stage of the Exchange the req
 data using one of the following three methods:
 
 1. Query all clinical resource individually
-2. [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation
+2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
 3. Bulk FHIR Asynchronous protocols
 
 Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
 
-| Profile                                                                                                                                                                                                                                                                                    | Resource           |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| [US Core Allergy Intolerance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance)                                                                                                                                                                                 | AllergyIntolerance |
-| [US Core CarePlan](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan)                                                                                                                                                                                                      | CarePlan           |
-| [US Core CareTeam](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam)                                                                                                                                                                                                      | CareTeam           |
-| [US Core Condition](https://hl7.org/fhir/us/core/StructureDefinition/us-core-condition)                                                                                                                                                                                                    | Condition          |
-| [PDex Device](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device) <br/> [US Core ImplantableDevice](https://hl7.org/fhir/us/core/StructureDefinition/us-core-device)                                                                                                | Device             |
-| [US Core DiagnosticReport for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab)<br/>[US Core DiagnosticReport for Report and Note Exchange](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note) | DiagnosticReport   |
-| [US Core DocumentReference](https://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference)                                                                                                                                                                                    | DocumentReference  |
-| [US Core Encounter](https://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter)                                                                                                                                                                                                    | Encounter          |
-| [US Core Goal](https://hl7.org/fhir/us/core/StructureDefinition/us-core-goal)                                                                                                                                                                                                              | Goal               |
-| [US Core Immunization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization)                                                                                                                                                                                              | Immunization       |
-| [US Core Location](https://hl7.org/fhir/us/core/StructureDefinition/us-core-location)                                                                                                                                                                                                      | Location           |
-| [US Core Medication](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medication)                                                                                                                                                                                                  | Medication         |
-| [PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense)                                                                                                                                                                          | MedicationDispense |
-| [US Core MedicationRequest](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest)                                                                                                                                                                                    | MedicationRequest  |
-| [US Core Laboratory Result Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab)<br/>[US Core Pediatric BMI for Age Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age)<br/>[US Core Pediatric Head Occipital-frontal Circumference Observation](https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile)<br/>[US Core Pediatric Weight for Height Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height)<br/>[US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry)<br/>[US Core Smoking Status Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus)<br/>[VitalSigns](https://hl7.org/fhir/StructureDefinition/vitalspanel)                                                                           | Observation  |
-| [US Core Organization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)                                                                                                                                                                                             | Organization |
-| [US Core Patient](https://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)                                                                                                                                                                                                       | Patient      |
-| [US Core Practitioner](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)                                                                                                                                                                                             | Practitioner |
-| [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole)                                                                                                                                                                                     | PractitionerRole  |
-| [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)                                                                                                                                                                                                   | Procedure    |
-| [PDex Provenance](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-provenance)<br/>[US Core Provenance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance)                                                                                                                                                                                                                                   | Provenance   |
+| Profile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Resource           |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| [US Core Allergy Intolerance](https://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | AllergyIntolerance |
+| [US Core CarePlan](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | CarePlan           |
+| [US Core CareTeam](https://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | CareTeam           |
+| [US Core Condition](https://hl7.org/fhir/us/core/StructureDefinition/us-core-condition)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Condition          |
+| [PDex Device](https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device) <br/> [US Core ImplantableDevice](https://hl7.org/fhir/us/core/StructureDefinition/us-core-device)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Device             |
+| [US Core DiagnosticReport for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab)<br/>[US Core DiagnosticReport for Report and Note Exchange](https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | DiagnosticReport   |
+| [US Core DocumentReference](https://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | DocumentReference  |
+| [US Core Encounter](https://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Encounter          |
+| [US Core Goal](https://hl7.org/fhir/us/core/StructureDefinition/us-core-goal)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Goal               |
+| [US Core Immunization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Immunization       |
+| [US Core Location](https://hl7.org/fhir/us/core/StructureDefinition/us-core-location)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Location           |
+| [US Core Medication](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medication)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Medication         |
+| [PDex MedicationDispense](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | MedicationDispense |
+| [US Core MedicationRequest](https://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | MedicationRequest  |
+| [US Core Laboratory Result Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab)<br/>[US Core Pediatric BMI for Age Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age)<br/>[US Core Pediatric Head Occipital-frontal Circumference Observation](https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile)<br/>[US Core Pediatric Weight for Height Observation](https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height)<br/>[US Core Pulse Oximetry](https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry)<br/>[US Core Smoking Status Observation](https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus)<br/>[VitalSigns](https://hl7.org/fhir/StructureDefinition/vitalspanel) | Observation  |
+| [US Core Organization](https://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Organization |
+| [US Core Patient](https://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Patient      |
+| [US Core Practitioner](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Practitioner |
+| [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | PractitionerRole  |
+| [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)  | Procedure    |
+| [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html) | Coverage |
+| [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.html) | Prior Authorization |
+| [PDex Provenance](StructureDefinition-pdex-provenance.html)<br/>[US Core Provenance](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html)  | Provenance   |
 
 
 ### Query all clinical resources individually
 
-Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as
-identified in the table above. Using the search capability of each resource enables the _revInclude and _include
-parameters to be used to retrieve the associated Provenance and supporting records.
+Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.
 
-### Patient/{id}/$everything-pdex operation
+### Constraining Data Based Upon Permissions of the Requestor
 
-Health Plans **SHALL** support the use of the Patient/{id}/$everything-pdex operation. The $everything-pdex
-operation operates as per the Patient/{id}/$everything operation defined in the FHIR R4 specification here:
+The FHIR Server **SHALL** constrain the data returned from the server to a requestor based upon the access permissions of the requestor.
+
+For example, if a requestor queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
+
+This Constraining condition may be required in implementations where multiple types of data are being served up by a single FHIR Server. The condition is particularly relevant when implementing Operations such as $everything or $export. See the sections below.
+
+### $everything operation
+
+Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-However, $everything-pdex limits the data that can be retrieved to the resources and profiles detailed in the table above.
+As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the requestor is permitted to access. This might require an implementer to filter records at a more granular level than the resource.
 
-It must be noted that the [Patient/{id}/$everything-pdex](OperationDefinition-patient-everything-pdex.html) operation does not support the full range of query parameters
-available to a regular search request. In cases where Provenance is being requested as part of the
-$everything-pdex operation this is accomplished by specifying Provenance as one of a list of resources included in
-the **_type** parameter of the $everything-pdex operation.
-
-The following resource/profiles are retrievable using the $everything-pdex operation:
+The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:
 
 Example of _type parameter:
 
     _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
            Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-The $everything-pdex operation should also return resources that are referenced by clinical resources, but are not
-directly linked to a patient. These are: Location, Organization, Practitioner and PractitionerRole.
-
-The server *SHOULD* filter the ExplanationOfBenefit resource to include only PDex Prior Authorization profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
+The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
 
 ### Bulk FHIR Asynchronous protocols
 
-    /Patient/{id}/$export
+    /Patient/$export
 
 Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
 [Bulk Data Access Implementation Guide](https://hl7.org/fhir/uv/bulkdata/authorization/). The
@@ -214,8 +247,11 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 [Bulk Data Export Operation Request
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles
-identified in the table at the top of this section.
+
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requestor is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](PayerToPayerExchange.html#data-retrieval-methods) section of this page.
 
 
-[Next Page - Data Mapping](DataMapping.html)
+The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
+
+
+[Next Page - Provider API](Provider-API.html)
