@@ -1,0 +1,1394 @@
+{
+  "index-version" : 2,
+  "files" : [
+    {
+      "filename" : "ImplementationGuide-hl7.fhir.us.ndh.json",
+      "resourceType" : "ImplementationGuide",
+      "id" : "hl7.fhir.us.ndh",
+      "url" : "http://hl7.org/fhir/us/ndh/ImplementationGuide/hl7.fhir.us.ndh",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-DeliveryMethodVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "DeliveryMethodVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/DeliveryMethodVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-LanguageProficiencyVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "LanguageProficiencyVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/LanguageProficiencyVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-EndpointPayloadTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointPayloadTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointPayloadTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-contactpoint-availabletime.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-contactpoint-availabletime",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-contactpoint-availabletime",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-VirtualModalitiesVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "VirtualModalitiesVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/VirtualModalitiesVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Location.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Location",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Location",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Location"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-attestation-who.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-attestation-who",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-who",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-OrganizationAffiliationRoleVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "OrganizationAffiliationRoleVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/OrganizationAffiliationRoleVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-location-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "location-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/location-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-careteam-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-paymentAccepted.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-paymentAccepted",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-paymentAccepted",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "CodeSystem-OrgTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "OrgTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-rating.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-rating",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-rating",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-endpoint-connection-type-version.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-endpoint-connection-type-version",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-connection-type-version",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-HealthcareServiceCategoryVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "HealthcareServiceCategoryVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/HealthcareServiceCategoryVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "CodeSystem-EndpointPayloadTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointPayloadTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "ValueSet-IgTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "IgTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/IgTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-SpecialtyAndDegreeLicenseCertificateVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "SpecialtyAndDegreeLicenseCertificateVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/SpecialtyAndDegreeLicenseCertificateVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-InsurancePlanTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "InsurancePlanTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/InsurancePlanTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-general-cost-groupsize.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-general-cost-groupsize",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-groupsize",
+      "version" : "0.1.0",
+      "type" : "number"
+    },
+    {
+      "filename" : "CodeSystem-AcceptingPatientsCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "AcceptingPatientsCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/AcceptingPatientsCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-qualification-wherevalid-code.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-qualification-wherevalid-code",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-wherevalid-code",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-coverage-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-coverage-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "ValueSet-AcceptingPatientsVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "AcceptingPatientsVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-careteam-alias.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-careteam-alias",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-careteam-alias",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-organization-identifier-assigner.json",
+      "resourceType" : "SearchParameter",
+      "id" : "organization-identifier-assigner",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/organization-identifier-assigner",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-PractitionerRole.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-PractitionerRole",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-PractitionerRole",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "PractitionerRole"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-primarysource-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-primarysource-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Network.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Network",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Network",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Organization"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Verification.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Verification",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Verification",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "VerificationResult"
+    },
+    {
+      "filename" : "CodeSystem-HealthcareServiceCategoryCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "HealthcareServiceCategoryCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/HealthcareServiceCategoryCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-primarysource-who.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-primarysource-who",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-who",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-eligibility.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-eligibility",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-eligibility",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-coverage-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-coverage-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-endpoint-non-fhir-payload-type.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-endpoint-non-fhir-payload-type",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-non-fhir-payload-type",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-coverage-benefit-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-coverage-benefit-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-benefit-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ndhVe-Verification.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhVe-Verification",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhVe-Verification",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "VerificationResult"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-attestation-communication-method.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-attestation-communication-method",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-communication-method",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "CodeSystem-InsuranceProductTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "InsuranceProductTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/InsuranceProductTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-ndhEx-PractitionerRole.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhEx-PractitionerRole",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-PractitionerRole",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "PractitionerRole"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-specific-cost-benefit-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-specific-cost-benefit-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-practitionerrole-new-patient.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitionerrole-new-patient",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-location-new-patient.json",
+      "resourceType" : "SearchParameter",
+      "id" : "location-new-patient",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-practitionerrole-new-patient-from-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitionerrole-new-patient-from-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-new-patient-from-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-associatedServers.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-associatedServers",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-via-intermediary.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-via-intermediary",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-primarysource-validation-status.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-primarysource-validation-status",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-status",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-new-patient.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-new-patient",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "ValueSet-InsuranceProductTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "InsuranceProductTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/InsuranceProductTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "CodeSystem-EndpointConnectionTypeVersionCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointConnectionTypeVersionCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "ValueSet-NonIndividualSpecialtyAndDegreeLicenseCertificateVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "NonIndividualSpecialtyAndDegreeLicenseCertificateVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/NonIndividualSpecialtyAndDegreeLicenseCertificateVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-coverage-benefit-limit-value.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-coverage-benefit-limit-value",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-benefit-limit-value",
+      "version" : "0.1.0",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "StructureDefinition-ndhEx-Endpoint.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhEx-Endpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Endpoint",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Endpoint"
+    },
+    {
+      "filename" : "CodeSystem-EndpointFhirMineTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointFhirMineTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointFhirMineTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "ValueSet-MinEndpointConnectionTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "MinEndpointConnectionTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/MinEndpointConnectionTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-qualification-issuer.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-qualification-issuer",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-issuer",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-newpatients.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-newpatients",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-newpatients",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-SpecialtiesVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "SpecialtiesVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/SpecialtiesVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-QualificationStatusVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "QualificationStatusVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/QualificationStatusVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-status-date.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-status-date",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-status-date",
+      "version" : "0.1.0",
+      "type" : "date"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "ValueSet-NetworkTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "NetworkTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/NetworkTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-HealthcareService.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-HealthcareService",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-HealthcareService",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "HealthcareService"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-endpoint-usecase.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-endpoint-usecase",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-specific-cost-category.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-specific-cost-category",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-category",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "CodeSystem-EndpointConnectionTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointConnectionTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-location-new-patient-from-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "location-new-patient-from-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/location-new-patient-from-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-network-reference.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-network-reference",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-network-reference",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-EndpointCommonMineTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointCommonMineTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointCommonMineTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-status.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-status",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-status",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "CodeSystem-ValidationTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "ValidationTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/ValidationTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-primarysource-validation-date.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-primarysource-validation-date",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-primarysource-validation-date",
+      "version" : "0.1.0",
+      "type" : "date"
+    },
+    {
+      "filename" : "StructureDefinition-ndhEx-Location.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhEx-Location",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-Location",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Location"
+    },
+    {
+      "filename" : "CodeSystem-ConsentScopeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "ConsentScopeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/ConsentScopeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "ValueSet-ValidationProcessVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "ValidationProcessVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/ValidationProcessVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-qualification-code.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-qualification-code",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-code",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-secureEndpoint.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-secureEndpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-careteam-location.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-location",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-location",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-practitionerrole-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitionerrole-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "CapabilityStatement-ndh-query-BasicEndpoint.json",
+      "resourceType" : "CapabilityStatement",
+      "id" : "ndh-query-BasicEndpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-query-BasicEndpoint",
+      "version" : "0.1.0",
+      "kind" : "requirements"
+    },
+    {
+      "filename" : "CodeSystem-AccessibilityCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "AccessibilityCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/AccessibilityCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-careteam-name.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-name",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-name",
+      "version" : "0.1.0",
+      "type" : "string"
+    },
+    {
+      "filename" : "SearchParameter-location-accessibility.json",
+      "resourceType" : "SearchParameter",
+      "id" : "location-accessibility",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/location-accessibility",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-coverage-area.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-coverage-area",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-coverage-area",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "CodeSystem-QualificationStatusCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "QualificationStatusCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "CodeSystem-LanguageProficiencyCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "LanguageProficiencyCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/LanguageProficiencyCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-org-description.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-org-description",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-org-description",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-target.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-target",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-target",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-organization-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "organization-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/organization-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-specific-cost-benefit-cost-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-careteam-endpoint.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-endpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-endpoint",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-OrgTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "OrgTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/OrgTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-specific-cost-benefit-cost-value.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-specific-cost-benefit-cost-value",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-specific-cost-benefit-cost-value",
+      "version" : "0.1.0",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Endpoint.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Endpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Endpoint",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Endpoint"
+    },
+    {
+      "filename" : "CodeSystem-IgTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "IgTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/IgTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-endpoint-reference.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-endpoint-reference",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-reference",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-coverage-area.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-coverage-area",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-coverage-area",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-fundingSource.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-fundingSource",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-fundingSource",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-healthcareservice-reference.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-healthcareservice-reference",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-healthcareservice-reference",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-IndividualSpecialtyAndDegreeLicenseCertificateVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "IndividualSpecialtyAndDegreeLicenseCertificateVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/IndividualSpecialtyAndDegreeLicenseCertificateVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-AccessibilityVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "AccessibilityVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/AccessibilityVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "CapabilityStatement-ndh-exchange-server.json",
+      "resourceType" : "CapabilityStatement",
+      "id" : "ndh-exchange-server",
+      "url" : "http://hl7.org/fhir/us/ndh/CapabilityStatement/ndh-exchange-server",
+      "version" : "0.1.0",
+      "kind" : "requirements"
+    },
+    {
+      "filename" : "SearchParameter-careteam-organization.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-organization",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-organization",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "CodeSystem-OrgAliasTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "OrgAliasTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-practitioner-qualification.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-practitioner-qualification",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-practitioner-qualification",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-endpoint-mime-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "endpoint-mime-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-mime-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-identifier-assigner.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-identifier-assigner",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-identifier-assigner",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-NonIndividualSpecialtiesVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "NonIndividualSpecialtiesVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/NonIndividualSpecialtiesVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "ValueSet-HealthcareServiceTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "HealthcareServiceTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/HealthcareServiceTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-requiredDocument.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-requiredDocument",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-requiredDocument",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "CodeSystem-EndpointTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Practitioner.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Practitioner",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Practitioner",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Practitioner"
+    },
+    {
+      "filename" : "SearchParameter-careteam-identifier-assigner.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-identifier-assigner",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-identifier-assigner",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Restriction.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Restriction",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Restriction",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Consent"
+    },
+    {
+      "filename" : "SearchParameter-endpoint-usecase-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "endpoint-usecase-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-practitionerrole-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitionerrole-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitionerrole-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-OrganizationAffiliation.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-OrganizationAffiliation",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-OrganizationAffiliation",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "OrganizationAffiliation"
+    },
+    {
+      "filename" : "SearchParameter-endpoint-usecase-standard.json",
+      "resourceType" : "SearchParameter",
+      "id" : "endpoint-usecase-standard",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-usecase-standard",
+      "version" : "0.1.0",
+      "type" : "uri"
+    },
+    {
+      "filename" : "CodeSystem-EndpointCommonMineTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "EndpointCommonMineTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/EndpointCommonMineTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "ValueSet-IndividualAndGroupSpecialtiesVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "IndividualAndGroupSpecialtiesVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/IndividualAndGroupSpecialtiesVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-igsSupported.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-igsSupported",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-igsSupported",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-EndpointConnectionTypeVersionVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointConnectionTypeVersionVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVersionVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-CareTeam.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-CareTeam",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-CareTeam",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "CareTeam"
+    },
+    {
+      "filename" : "CodeSystem-CredentialStatusCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "CredentialStatusCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/CredentialStatusCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-accessibility.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-accessibility",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-accessibility",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-EndpointUsecaseVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointUsecaseVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointUsecaseVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-endpointType.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-endpointType",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpointType",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-attestation-onbehalfof.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-attestation-onbehalfof",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-attestation-onbehalfof",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-general-cost-cost.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-general-cost-cost",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-cost",
+      "version" : "0.1.0",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-delivery-method.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-delivery-method",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-delivery-method",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "CodeSystem-VirtualModalitiesCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "VirtualModalitiesCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/VirtualModalitiesCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-general-cost-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-general-cost-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-general-cost-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-dynamicRegistration.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-dynamicRegistration",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-dynamicRegistration",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-trustFramework.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-trustFramework",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-IdentifierStatusVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "IdentifierStatusVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/IdentifierStatusVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-ndhEx-HealthcareService.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhEx-HealthcareService",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-HealthcareService",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "HealthcareService"
+    },
+    {
+      "filename" : "ValueSet-EndpointTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-secureExchangeArtifacts.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-secureExchangeArtifacts",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-organizationaffiliation-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "organizationaffiliation-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/organizationaffiliation-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-Organization.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-Organization",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-Organization",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "Organization"
+    },
+    {
+      "filename" : "CodeSystem-TrustFrameworkTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "TrustFrameworkTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "CodeSystem-DeliveryMethodCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "DeliveryMethodCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/DeliveryMethodCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-communication-proficiency.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-communication-proficiency",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-communication-proficiency",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-EndpointConnectionTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointConnectionTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "CodeSystem-ProviderRoleCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "ProviderRoleCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/ProviderRoleCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-location-contains.json",
+      "resourceType" : "SearchParameter",
+      "id" : "location-contains",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/location-contains",
+      "version" : "0.1.0",
+      "type" : "special"
+    },
+    {
+      "filename" : "CodeSystem-InsurancePlanTypeCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "InsurancePlanTypeCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/InsurancePlanTypeCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-category.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-category",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-category",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-via-intermediary.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-via-intermediary",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-via-intermediary",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-healthcareservice-new-patient-from-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "healthcareservice-new-patient-from-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/healthcareservice-new-patient-from-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-TrustFrameworkTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "TrustFrameworkTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/TrustFrameworkTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-usage-restriction.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-usage-restriction",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-usage-restriction",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-network.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-network",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-network",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-identifier-status.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-identifier-status",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-identifier-status",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-base-ext-location-reference.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "base-ext-location-reference",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-location-reference",
+      "version" : "0.1.0",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "ValueSet-OrgAliasTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "OrgAliasTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/OrgAliasTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "CodeSystem-OrganizationAffiliationRoleCS.json",
+      "resourceType" : "CodeSystem",
+      "id" : "OrganizationAffiliationRoleCS",
+      "url" : "http://hl7.org/fhir/us/ndh/CodeSystem/OrganizationAffiliationRoleCS",
+      "version" : "0.1.0",
+      "content" : "complete"
+    },
+    {
+      "filename" : "StructureDefinition-ndhEx-OrganizationAffiliation.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndhEx-OrganizationAffiliation",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndhEx-OrganizationAffiliation",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "OrganizationAffiliation"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-type",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-type",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-careteam-service.json",
+      "resourceType" : "SearchParameter",
+      "id" : "careteam-service",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/careteam-service",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-insuranceplan-plan-identifier.json",
+      "resourceType" : "SearchParameter",
+      "id" : "insuranceplan-plan-identifier",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/insuranceplan-plan-identifier",
+      "version" : "0.1.0",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-qualification-period.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-qualification-period",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-qualification-period",
+      "version" : "0.1.0",
+      "type" : "date"
+    },
+    {
+      "filename" : "SearchParameter-endpoint-identifier-assigner.json",
+      "resourceType" : "SearchParameter",
+      "id" : "endpoint-identifier-assigner",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/endpoint-identifier-assigner",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-EndpointFhirMineTypeVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "EndpointFhirMineTypeVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/EndpointFhirMineTypeVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "StructureDefinition-ndh-InsurancePlan.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ndh-InsurancePlan",
+      "url" : "http://hl7.org/fhir/us/ndh/StructureDefinition/ndh-InsurancePlan",
+      "version" : "0.1.0",
+      "kind" : "resource",
+      "type" : "InsurancePlan"
+    },
+    {
+      "filename" : "SearchParameter-verificationresult-validator-organization.json",
+      "resourceType" : "SearchParameter",
+      "id" : "verificationresult-validator-organization",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/verificationresult-validator-organization",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "SearchParameter-network-coverage-area.json",
+      "resourceType" : "SearchParameter",
+      "id" : "network-coverage-area",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/network-coverage-area",
+      "version" : "0.1.0",
+      "type" : "reference"
+    },
+    {
+      "filename" : "ValueSet-PractitionerRoleVS.json",
+      "resourceType" : "ValueSet",
+      "id" : "PractitionerRoleVS",
+      "url" : "http://hl7.org/fhir/us/ndh/ValueSet/PractitionerRoleVS",
+      "version" : "0.1.0"
+    },
+    {
+      "filename" : "SearchParameter-practitioner-endpoint.json",
+      "resourceType" : "SearchParameter",
+      "id" : "practitioner-endpoint",
+      "url" : "http://hl7.org/fhir/us/ndh/SearchParameter/practitioner-endpoint",
+      "version" : "0.1.0",
+      "type" : "reference"
+    }
+  ]
+}
