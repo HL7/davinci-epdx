@@ -71,15 +71,20 @@ Alias: $X12ClaimAdjustmentReasonCodes = https://x12.org/codes/claim-adjustment-r
 Alias: $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication
 
 // National Directory
-Alias:  $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
+Alias: $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
+Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS
 Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase
 Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-igsSupported
 Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts
 Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework
 Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint
 Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers
+Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhFhirEndpointUseCaseCS
+Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
+Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias: $CMSHIPPSCodes = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias: $CMSRemittanceAdviceRemarkCodes = https://x12.org/codes/remittance-advice-remark-codes
+
