@@ -76,9 +76,9 @@ Upon completion of the submission process the Payer creates the endpoint and inc
 
 The completed bundle would be posted to a new branch of the public Github Repository.
 
-The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of theRepository.
+The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of the Repository.
 
-Trust Framework members a responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
+Trust Framework members are responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
 
 
 #### OAuth2.0 Dynamic Client Registration
@@ -87,7 +87,7 @@ Once payers have setup a secure mTLS connection, the new Payer will query the Dy
 
 #### Future Direction for Discovery and Registration
 
-Future versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access OAuth2.0 Dynamic Client Registration (DCRP) to register for a set of client credentials. Those credentials provide access to the $member-match operation.
+Future versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access an OAuth2.0 Dynamic Client Registration (DCRP) endpoint to register for a set of client credentials. Those credentials provide access to the $member-match operation.
 
 A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust framework. The endpoint information for those payers would point to a Unified Data Access Profiles service, as defined in the FHIR At Scale Taskforce (FAST) [Security for Scalable Registration, Authentication, and Authorization IG](https://build.fhir.org/ig/HL7/fhir-udap-security-ig/). UDAP would be used to request a client credential that can be used to perform a $member-match and subsequently to request an OAuth2.0 token that is scoped to the member/patient returned from a successful match operation. 
 
