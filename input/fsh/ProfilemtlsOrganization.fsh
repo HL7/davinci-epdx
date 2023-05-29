@@ -1,5 +1,5 @@
 Profile:     MtlsOrganization
-Parent:      ndh-Organization
+Parent:      $USCoreOrganization
 Id:          mtls-managing-organization
 Title:       "mTLS Organization"
 Description: "The mTLS Organization record is used to identify the contact information for a Payer that owns a mTLS Endpoint."
