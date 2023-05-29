@@ -13,11 +13,17 @@
 <artifact id="StructureDefinition/PriorAuthorizationUtilization" key="StructureDefinition-PriorAuthorizationUtilization" name="An attribute to express the amount of a service or item that has been utilized"/>
 <artifact id="StructureDefinition/DispenseRefill" key="StructureDefinition-DispenseRefill" name="An attribute to express the refill number of a prescription"/>
 <artifact deprecated="true" key="AppointmentResponse" name="AppointmentResponse"/>
+<artifact id="ValueSet/NdhAssociatedServersTypeVS" key="ValueSet-NdhAssociatedServersTypeVS" name="Associated Servers Type Value Set"/>
 <artifact id="Bundle/3000003" key="Bundle-3000003" name="BundleConditionWithProvenance"/>
 <artifact id="Bundle/1000000-1" key="Bundle-1000000-1" name="BundleExamplePayer1"/>
 <artifact id="Bundle/1000000-2" key="Bundle-1000000-2" name="BundleExamplePayer2"/>
 <artifact id="Bundle/1000000-3" key="Bundle-1000000-3" name="BundleExamplePayer3"/>
 <artifact id="Bundle/3000002" key="Bundle-3000002" name="BundleWithProvenance"/>
+<artifact id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
+<artifact id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>
+<artifact id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
+<artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
+<artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
 <artifact id="Bundle/2000002" key="Bundle-2000002" name="ExampleBundle1"/>
 <artifact id="Coverage/883210" key="Coverage-883210" name="ExampleCoverage"/>
 <artifact id="Device/543210" key="Device-543210" name="ExampleDevice"/>
@@ -48,6 +54,22 @@
 <artifact deprecated="true" id="CodeSystem/CMSHCPCSCodes" key="CodeSystem-CMSHCPCSCodes" name="Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"/>
 <artifact id="CodeSystem/IdentifierTypeCS" key="CodeSystem-IdentifierTypeCS" name="Identifier Type"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
+<artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
+<artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
+<artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
+<artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
+<artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
+<artifact id="StructureDefinition/base-ext-endpoint-rank" key="StructureDefinition-base-ext-endpoint-rank" name="NDH Endpoint Rank"/>
+<artifact id="StructureDefinition/base-ext-endpoint-usecase" key="StructureDefinition-base-ext-endpoint-usecase" name="NDH Endpoint Usecase"/>
+<artifact id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
+<artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
+<artifact id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
+<artifact id="CodeSystem/NdhVerificationStatusCS" key="CodeSystem-NdhVerificationStatusCS" name="NDH Resource Instance Verification Status Code System"/>
+<artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
+<artifact id="CodeSystem/NdhSecureExchangeArtifactsCS" key="CodeSystem-NdhSecureExchangeArtifactsCS" name="NDH Secure Exchange Artifacts Code System"/>
+<artifact id="StructureDefinition/base-ext-trustFramework" key="StructureDefinition-base-ext-trustFramework" name="NDH Trust Framework"/>
+<artifact id="StructureDefinition/base-ext-verification-status" key="StructureDefinition-base-ext-verification-status" name="NDH Verification Status"/>
+<artifact id="ValueSet/NdhVerificationStatusVS" key="ValueSet-NdhVerificationStatusVS" name="NDH Verification Status Value Set"/>
 <artifact id="CodeSystem/OrgTypeCS" key="CodeSystem-OrgTypeCS" name="Organization Type"/>
 <artifact id="ValueSet/OrgTypeVS" key="ValueSet-OrgTypeVS" name="Organization Type VS"/>
 <artifact id="Organization/Payer1" key="Organization-2" name="OrganizationPayer1"/>
@@ -89,6 +111,11 @@
 <artifact id="CodeSystem/ProvenanceAgentRoleType" key="CodeSystem-ProvenanceAgentRoleType" name="Provenance Roles"/>
 <artifact id="StructureDefinition/extension-reviewAction" key="StructureDefinition-extension-reviewAction" name="ReviewAction"/>
 <artifact id="StructureDefinition/extension-reviewActionCode" key="StructureDefinition-extension-reviewActionCode" name="ReviewActionCode"/>
+<artifact id="ValueSet/NdhSecureExchangeArtifactsVS" key="ValueSet-NdhSecureExchangeArtifactsVS" name="Secure Exchange Artifacts Value Set"/>
+<artifact id="ValueSet/TrustFrameworkTypeVS" key="ValueSet-TrustFrameworkTypeVS" name="Trust Framework Type Value Set"/>
+<artifact id="CodeSystem/TrustFrameworkTypeCS" key="CodeSystem-TrustFrameworkTypeCS" name="Trust FrameworkType Code System"/>
+<artifact id="CodeSystem/TrustProfileCS" key="CodeSystem-TrustProfileCS" name="Trust Profile Code System"/>
+<artifact id="ValueSet/TrustProfileVS" key="ValueSet-TrustProfileVS" name="Trust Profile Value Set"/>
 <artifact id="ValueSet/X12278ReviewDecisionReasonCode" key="ValueSet-X12278ReviewDecisionReasonCode" name="X12 278 Review Decision Reason Codes"/>
 <artifact deprecated="true" id="CodeSystem/X12ClaimAdjustmentReasonCodes" key="CodeSystem-X12ClaimAdjustmentReasonCodes" name="X12 Claim Adjustment Reason Codes"/>
 <artifact id="ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" key="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" name="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
@@ -107,7 +134,7 @@
 <artifact id="ValueSet/MtlsObjectType" key="ValueSet-MtlsObjectType" name="mTLS Signed Object Types"/>
 <artifact id="Organization/mtlsorganization1" key="Organization-mtlsorganization1" name="mtlsorganization1"/>
 <artifact id="Organization/mtlsorganization2" key="Organization-mtlsorganization2" name="mtlsorganization2"/>
-<artifact id="OperationDefinition/patient-everything-pdex" key="OperationDefinition-patient-everything-pdex" name="patient-everything-pdex"/>
+<artifact deprecated="true" id="OperationDefinition/patient-everything-pdex" key="OperationDefinition-patient-everything-pdex" name="patient-everything-pdex"/>
 <artifact id="Endpoint/rubicon-mtls-endpoint3" key="Endpoint-rubicon-mtls-endpoint3" name="rubicon-mtls-endpoint3"/>
 <artifact id="Organization/rubicononyxhealth3" key="Organization-rubicononyxhealth3" name="rubicononyxhealth3"/>
 <page key="NA" name="(NA)"/>

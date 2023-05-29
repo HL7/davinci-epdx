@@ -45,7 +45,7 @@ Description: "Example of mTLS Endpoint bundle"
 * entry[2].resource.extension[secureExchangeArtifacts].extension[expirationDate].valueDateTime = "2023-08-10T15:00:00.000Z"
 * entry[2].resource.payloadType = http://hl7.org/fhir/us/directory-query/CodeSystem/EndpointPayloadTypeCS#NA "Not Applicable"
 * entry[2].resource.payloadMimeType = urn:ietf:bcp:13#application/fhir+json
-* entry[2].resource.extension[FhirIg].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-fhir-ig"
+// * entry[2].resource.extension[FhirIg].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-fhir-ig"
 * entry[2].resource.extension[FhirIg].extension[ig-publication].url = "ig-publication"
 * entry[2].resource.extension[FhirIg].extension[ig-publication].valueUri = "http://hl7.org/fhir/us/davinci-pdex/index.html"
 * entry[2].resource.extension[FhirIg].extension[ig-name].url = "ig-name"
@@ -152,7 +152,7 @@ Description: "National Directory of Providers and Healthcare Services Endpoint P
 * payloadType = http://hl7.org/fhir/us/directory-query/CodeSystem/EndpointPayloadTypeCS#NA "Not Applicable"
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest "HL7 FHIR"
 * payloadMimeType = urn:ietf:bcp:13#application/fhir+json
-* extension[FhirIg].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-fhir-ig"
+// * extension[FhirIg].url = "http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-fhir-ig"
 * extension[FhirIg].extension[ig-publication].url = "ig-publication"
 * extension[FhirIg].extension[ig-publication].valueUri = "http://hl7.org/fhir/us/davinci-pdex/index.html"
 * extension[FhirIg].extension[ig-name].url = "ig-name"
