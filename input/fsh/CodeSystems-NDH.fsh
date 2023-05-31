@@ -1,14 +1,31 @@
 // CodeSystems used for NDH. Ported here to enable publication of PDex IG.
 //* CodeSystems
+// CredentialStatusCS
 // EndpointAccessControlMechanismCS
 // EndpointConnectionTypeCS
 // EndpointConnectionTypeVersionCS
+// EndpointFhirMimeTypeCS
+// EndpointHieSpecificConnectionTypeCS
+// EndpointPayloadTypeCS
 // NdhAssociatedServersTypeCS
 // NdhFhirEndpointUseCaseCS
 // NdhSecureExchangeArtifactsCS
 // NdhVerificationStatusCS
 // TrustFrameworkTypeCS
 // TrustProfileCS
+
+
+CodeSystem: CredentialStatusCS
+Title: "Credential Status Code System"
+Description: "This code system contains codes for indicating the status of a credential, such as an identifier or qualification."
+* ^experimental = false
+* #active	"active"	"The credential may be considered valid for use."
+* #inactive "inactive"	"The credential may not be considered valid for use."
+* #issued-in-error	"issued in error"	"The credential was mistakenly assigned and should not be considered valid for use."
+* #revoked	"revoked"	"The credential was revoked by the issuing organization and should not be considered valid for use."
+* #pending	"pending"	"The credential has not been officially assigned. It may or may not be considered valid for use."
+* #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
+* ^caseSensitive = true
 
 
 //web-server security (username token, x.509 certificate, saml assertion, kerberos ticket)
@@ -52,6 +69,71 @@ Title: "Endpoint Connection Type Version Code System"
 Description: "Endpoint Connection Type Version"
 * ^experimental = false
 * #4.3.0 "4.3.0" "FHIR Release 4B"
+* ^caseSensitive = true
+
+
+CodeSystem: EndpointFhirMimeTypeCS
+Title: "Endpoint FHIR MimeType Code System"
+Description: "Endpoint FHIR MimeType"
+* ^experimental = false
+* ^caseSensitive = true
+* #application/fhir+json "fhr+json"
+* #application/fhir+xml "fhir+xml"
+* #application/fhir+turtle "fhir+turtle"
+
+
+CodeSystem: EndpointHieSpecificConnectionTypeCS
+Title: "Endpoint HIE Specific Connection Type Code System"
+Description: "Endpoint HIE Specific Connection Type"
+* ^experimental = false
+* #XCPD-InitGateway-PatientDiscovery-AsyncResponse "XCPD-InitGateway-PatientDiscovery-AsyncResponse" "XCPD InitiatingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous Response"
+* #XCPD-RespGateway-PatientDiscovery "XCPD-RespGateway-PatientDiscovery" "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Synchronous"
+* #XCPD-RespGateway-PatientDiscovery-Async "XCPD-RespGateway-PatientDiscovery-Async" "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous"
+* #XCA-InitGateway-Query "XCA-InitGateway-Query" "XCA InitiatingGateway ITI-18 Registry Stored Query Synchronous"
+* #XCA-InitGateway-Retrieve "XCA-InitGateway-Retrieve" "XCA InitiatingGateway ITI-43 Retrieve Document Set Synchronous"
+* #XCA-InitGateway-Query-Async "XCA-InitGateway-Query-Async" "XCA InitiatingGateway ITI-18 Registry Stored Query Asynchronous"
+* #XCA-InitGateway-Retrieve-Async "XCA-InitGateway-Retrieve-Async" "XCA InitiatingGateway ITI-43 Retrieve Document Set Asynchronous"
+* #XCA-InitGateway-Query-AsyncResponse "XCA-InitGateway-Query-AsyncResponse" "XCA InitiatingGateway ITI-38 Cross Gateway Query Asynchronous Response"
+* #XCA-InitGateway-Retrieve-AsyncResponse "XCA-InitGateway-Retrieve-AsyncResponse" "XCA InitiatingGateway ITI-39 Cross Gateway Retrieve Asynchronous Response"
+* #XCA-RespGateway-Query "XCA-RespGateway-Query" "XCA RespondingGateway ITI-38 Cross Gateway Query Synchronous"
+* #XCA-RespGateway-Retrieve "XCA-RespGateway-Retrieve" "XCA RespondingGateway ITI-39 Cross Gateway Retrieve Synchronous"
+* #XCA-RespGateway-Query-Async "XCA-RespGateway-Query-Async" "XCA RespondingGateway ITI-38 Cross Gateway Query Asynchronous"
+* #XCA-RespGateway-Retrieve-Async "XCA-RespGateway-Retrieve-Async" "XCA RespondingGateway ITI-39 Cross Gateway Retrieve Asynchronous"
+* #XDS-Registry-Feed "XDS-Registry-Feed" "XDS Registry ITI-8 Patient Identity Feed Synchronous"
+* #XDS-Registry-Feed-v3 "XDS-Registry-Feed-v3" "XDS Registry ITI-44 Patient Identity Feed HL7v3 Synchronous"
+* #XDS-Registry-Register "XDS-Registry-Register" "XDS Registry ITI-42 Register Document Set-b Synchronous"
+* #XDS-Registry-Query "XDS-Registry-Query" "XDS Registry ITI-18 Registry Stored Query Synchronous"
+* #XDS-Registry-RegOnDemand "XDS-Registry-RegOnDemand" "XDS Registry ITI-61 Register On-Demand Document Entry Synchronous"
+* #XDS-Registry-Register-Async "XDS-Registry-Register-Async" "XDS Registry ITI-42 Register Document Set-b Asynchronous"
+* #XDS-Registry-Query-Async "XDS-Registry-Query-Async" "XDS Registry ITI-18 Registry Stored Query Asynchronous"
+* #XDS-Registry-RegOnDemand-Async "XDS-Registry-RegOnDemand-Async" "XDS Registry ITI-61 Register On-Demand Document Entry Asynchronous"
+* #XDS-Repository-ProvideReg "XDS-Repository-ProvideReg" "XDS Repository ITI-41 Provide&Register Document Set-b Synchronous"
+* #XDS-Repository-Retrieve "XDS-Repository-Retrieve" "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Synchronous"
+* #XDS-Repository-ProvideReg-Async "XDS-Repository-ProvideReg-Async" "XDS Repository ITI-41 Provide&Register Document Set-b Asynchronous"
+* #XDS-Repository-Retrieve-Async "XDS-Repository-Retrieve-Async" "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Asynchronous"
+* #XDS-Repository-Register-AsyncResponse "XDS-Repository-Register-AsyncResponse" "XDS Repository/IntegratedSourceRepository ITI-42 Register Document Set-b Asynchronous Response"
+* #XDS-OnDemandSource-Retrieve "XDS-OnDemandSource-Retrieve" "XDS OnDemandSource ITI-43 Retrieve Document Set Synchronous"
+* #XDS-OnDemandSource-Retrieve-Async "XDS-OnDemandSource-Retrieve-Async" "XDS OnDemandSource ITI-43 Retrieve Document Set Asynchronous"
+* #XDS-OnDemandSource-RegOnDemand-AsyncResponse "XDS-OnDemandSource-RegOnDemand-AsyncResponse" "XDS OnDemandSource ITI-61 Register On-Demand Document Entry Asynchronous Response"
+* #XDS-Source-ProvideReg-AsyncResponse "XDS-Source-ProvideReg-AsyncResponse" "XDS Document Source ITI-41 Provide&Register Document Set-b Asynchronous Response"
+* #XDS-Consumer-Query-AsyncResponse "XDS-Consumer-Query-AsyncResponse" "XDS Document Consumer ITI-18 Registry Stored Query Asynchronous Response"
+* #XDS-Consumer-Retrieve-AsyncResponse "XDS-Consumer-Retrieve-AsyncResponse" "XDS Document Consumer ITI-43 Retrieve Document Set Asynchronous Response"
+* #PDQ-Supplier-Query "PDQ-Supplier-Query" "PDQ Patient Demographics Supplier ITI-21 Patient Demographics Query Synchronous"
+* #PDQ-Supplier-VisitQuery "PDQ-Supplier-VisitQuery" "PDQ Patient Demographics Supplier ITI-22 Patient Demographics and Visit Query Synchronous"
+* #PIX-Xmanager-Feed "PIX-Xmanager-Feed" "PIX Patient Identity Cross-Reference Manager ITI-8 Patient Identity Feed Synchronous"
+* #PIX-Xmanager-Feed-v3 "PIX-Xmanager-Feed-v3" "PIX Patient Identity Cross-Reference Manager ITI-30 Patient Identity Management Synchronous"
+* #PIX-Xmanager-Query "PIX-Xmanager-Query" "PIX Patient Identity Cross-Reference Manager ITI-9 PIX Query Synchronous"
+* #PIX-Consumer "PIX-Consumer" "PIX Patient Identifier Cross-reference Consumer ITI-10 PIX Update Notification Synchronous"
+* #XDR-Recipient-ProvideReg "XDR-Recipient-ProvideReg" "XDR Document Recipient ITI-41 Provide and Register Document Set-B Synchronous"
+* #MHD-Recipient-ProvideReg "MHD-Recipient-ProvideReg" "MHD Document Recipient ITI-65 Provide Document Bundle"
+* ^caseSensitive = true
+
+
+CodeSystem: EndpointPayloadTypeCS
+  Title: "Endpoint Payload Types Code System"
+  Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
+* ^experimental = false
+* #NA "Not Applicable" "Not Applicable"
 * ^caseSensitive = true
 
 
@@ -154,5 +236,4 @@ Description: "Trust Profile"
 * ^caseSensitive = true
 * #udap "UDAP" "UDAP"
 * #smart "SMART" "SMART"
-
 

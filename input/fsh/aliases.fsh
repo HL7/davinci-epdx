@@ -72,7 +72,10 @@ Alias: $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudica
 
 // National Directory
 // NDH Import
-Alias:   $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
+Alias: $ConnectionTypeCS = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
+Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
+Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
+
 
 Alias: $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
 Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS

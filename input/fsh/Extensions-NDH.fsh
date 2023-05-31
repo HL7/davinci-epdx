@@ -7,6 +7,7 @@
 //    EndpointRank named endpoint-rank 0..1 and
 //    EndpointUsecase named endpoint-usecase 0..* and
 //    FhirIg named fhir-ig 0..* and
+//    IdentifierStatus
 //    SecureExchangeArtifacts named secure-exchange-artifacts 0..*  and
 //    TrustFramework named trust-framework 0..*  and
 //    VerificationStatus named verification-status 0..1
@@ -25,6 +26,23 @@ Description: "Associated Servers"
 * extension[serverURL].value[x] only string
 * extension[serverURL] ^short = "Binary"
 * extension[serverURL].value[x] 1..1
+
+
+Extension: ContactPointAvailableTime
+Id: base-ext-contactpoint-availabletime
+Title: "NDH Contactpoint Availabletime"
+Description: "An extension representing the days and times a contact point is available"
+* value[x] 0..0
+* extension contains
+   daysOfWeek 0..* MS and
+   allDay 0..1 MS and
+   availableStartTime 0..1 MS and
+   availableEndTime 0..1 MS
+* extension[daysOfWeek].value[x] only code
+* extension[daysOfWeek].valueCode from $DaysOfWeekVS
+* extension[allDay].value[x] only boolean
+* extension[availableStartTime].value[x] only time
+* extension[availableEndTime].value[x] only time
 
 
 Extension: DynamicRegistration
@@ -104,6 +122,20 @@ Description: "FHIR IG"
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
+
+
+Extension: IdentifierStatus
+Id: base-ext-identifier-status
+Title: "NDH Identifier Status"
+Description: "Describes the status of an identifier"
+* ^context.expression = "Identifier"
+* ^context.type = #element
+* ^date = "2017-11-20T11:33:43.51-05:00"
+* value[x] 1..1 MS
+* value[x] only code
+* value[x] from IdentifierStatusVS (required)
+* value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
+//* valueCode from IdentifierStatusVS (required)
 
 
 Extension: SecureExchangeArtifacts

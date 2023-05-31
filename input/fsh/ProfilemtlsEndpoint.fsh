@@ -32,9 +32,9 @@ Description: "The mTLS Endpoint is used to assist payers in defining their mTLS 
 * managingOrganization only Reference(MtlsOrganization)
 * managingOrganization MS
 * contact.extension contains
-    ContactPointAvailableTime named contactpoint-availabletime 0..* and
-    ViaIntermediary named via-intermediary 0..1
-* contact.extension[via-intermediary] ^short = "Via Intermediary"
+    ContactPointAvailableTime named contactpoint-availabletime 0..*
+//    ViaIntermediary named via-intermediary 0..1
+// * contact.extension[via-intermediary] ^short = "Via Intermediary"
 * payloadType 1..1
 * payloadType from EndpointPayloadTypeVS (extensible)
 * payloadMimeType from EndpointFhirMimeTypeVS
