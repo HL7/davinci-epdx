@@ -19,11 +19,18 @@
 <artifact id="Bundle/1000000-2" key="Bundle-1000000-2" name="BundleExamplePayer2"/>
 <artifact id="Bundle/1000000-3" key="Bundle-1000000-3" name="BundleExamplePayer3"/>
 <artifact id="Bundle/3000002" key="Bundle-3000002" name="BundleWithProvenance"/>
+<artifact id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
 <artifact id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
 <artifact id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>
 <artifact id="CodeSystem/EndpointConnectionTypeVersionCS" key="CodeSystem-EndpointConnectionTypeVersionCS" name="Endpoint Connection Type Version Code System"/>
+<artifact id="ValueSet/EndpointConnectionTypeVersionVS" key="ValueSet-EndpointConnectionTypeVersionVS" name="Endpoint Connection Type Version Value Set"/>
 <artifact id="CodeSystem/EndpointConnectionTypeCS" key="CodeSystem-EndpointConnectionTypeCS" name="Endpoint Connection Types (additional) Code System"/>
 <artifact id="ValueSet/EndpointConnectionTypeVS" key="ValueSet-EndpointConnectionTypeVS" name="Endpoint Connection Types Value Set"/>
+<artifact id="CodeSystem/EndpointFhirMimeTypeCS" key="CodeSystem-EndpointFhirMimeTypeCS" name="Endpoint FHIR MimeType Code System"/>
+<artifact id="ValueSet/EndpointFhirMimeTypeVS" key="ValueSet-EndpointFhirMimeTypeVS" name="Endpoint FHIR Mimetype Value Set"/>
+<artifact id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
+<artifact id="ValueSet/EndpointPayloadTypeVS" key="ValueSet-EndpointPayloadTypeVS" name="Endpoint Payload Type Value Set"/>
+<artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
 <artifact id="Bundle/2000002" key="Bundle-2000002" name="ExampleBundle1"/>
 <artifact id="Coverage/883210" key="Coverage-883210" name="ExampleCoverage"/>
 <artifact id="Device/543210" key="Device-543210" name="ExampleDevice"/>
@@ -52,10 +59,12 @@
 <artifact id="StructureDefinition/hrex-coverage" key="StructureDefinition-hrex-coverage" name="HRex Coverage Profile"/>
 <artifact deprecated="true" id="CodeSystem/CMSHIPPSCodes" key="CodeSystem-CMSHIPPSCodes" name="Health Insurance Prospective Payment System (HIPPS)"/>
 <artifact deprecated="true" id="CodeSystem/CMSHCPCSCodes" key="CodeSystem-CMSHCPCSCodes" name="Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"/>
+<artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
 <artifact id="CodeSystem/IdentifierTypeCS" key="CodeSystem-IdentifierTypeCS" name="Identifier Type"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
+<artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
 <artifact id="StructureDefinition/base-ext-dynamicRegistration" key="StructureDefinition-base-ext-dynamicRegistration" name="NDH Dynamic Registration"/>
 <artifact id="StructureDefinition/base-ext-endpointAccessControlMechanism" key="StructureDefinition-base-ext-endpointAccessControlMechanism" name="NDH Endpoint Access Control Mechanism"/>
 <artifact id="StructureDefinition/base-ext-endpoint-connection-type-version" key="StructureDefinition-base-ext-endpoint-connection-type-version" name="NDH Endpoint Connection Type Version"/>
@@ -64,6 +73,7 @@
 <artifact id="CodeSystem/NdhFhirEndpointUseCaseCS" key="CodeSystem-NdhFhirEndpointUseCaseCS" name="NDH FHIR Endpoint Use Case Code System"/>
 <artifact id="ValueSet/NdhFhirEndpointUseCaseVS" key="ValueSet-NdhFhirEndpointUseCaseVS" name="NDH FHIR Endpoint Usecase Value Set"/>
 <artifact id="StructureDefinition/base-ext-fhir-ig" key="StructureDefinition-base-ext-fhir-ig" name="NDH FHIR IG"/>
+<artifact id="StructureDefinition/base-ext-identifier-status" key="StructureDefinition-base-ext-identifier-status" name="NDH Identifier Status"/>
 <artifact id="CodeSystem/NdhVerificationStatusCS" key="CodeSystem-NdhVerificationStatusCS" name="NDH Resource Instance Verification Status Code System"/>
 <artifact id="StructureDefinition/base-ext-secureExchangeArtifacts" key="StructureDefinition-base-ext-secureExchangeArtifacts" name="NDH Secure Exchange Artifacts"/>
 <artifact id="CodeSystem/NdhSecureExchangeArtifactsCS" key="CodeSystem-NdhSecureExchangeArtifactsCS" name="NDH Secure Exchange Artifacts Code System"/>
@@ -120,11 +130,7 @@
 <artifact deprecated="true" id="CodeSystem/X12ClaimAdjustmentReasonCodes" key="CodeSystem-X12ClaimAdjustmentReasonCodes" name="X12 Claim Adjustment Reason Codes"/>
 <artifact id="ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" key="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" name="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
 <artifact deprecated="true" id="CodeSystem/CMSRemittanceAdviceRemarkCodes" key="CodeSystem-CMSRemittanceAdviceRemarkCodes" name="X12 Remittance Advice Remark Codes"/>
-<artifact id="Endpoint/diamond-mtls-endpoint1" key="Endpoint-diamond-mtls-endpoint1" name="diamond-mtls-endpoint1"/>
-<artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
-<artifact id="Organization/diamondonyxhealth2" key="Organization-diamondonyxhealth2" name="diamondonyxhealth2"/>
 <artifact id="Bundle/example-mtls-endpoint-bundle" key="Bundle-example-mtls-endpoint-bundle" name="example-mtls-endpoint-bundle"/>
-<artifact id="Bundle/example-mtls-endpoint-bundle2" key="Bundle-example-mtls-endpoint-bundle2" name="example-mtls-endpoint-bundle2"/>
 <artifact id="ValueSet/BundleTypeVS" key="ValueSet-BundleTypeVS" name="mTLS Bundle Type Value Set"/>
 <artifact id="StructureDefinition/mtls-endpoint" key="StructureDefinition-mtls-endpoint" name="mTLS Endpoint"/>
 <artifact id="StructureDefinition/mtls-bundle" key="StructureDefinition-mtls-bundle" name="mTLS Endpoint Bundle"/>
@@ -132,8 +138,6 @@
 <artifact id="StructureDefinition/mtls-managing-organization" key="StructureDefinition-mtls-managing-organization" name="mTLS Organization"/>
 <artifact id="StructureDefinition/pdex-mtls-signedobject-extension" key="StructureDefinition-pdex-mtls-signedobject-extension" name="mTLS Signed Object"/>
 <artifact id="ValueSet/MtlsObjectType" key="ValueSet-MtlsObjectType" name="mTLS Signed Object Types"/>
-<artifact id="Organization/mtlsorganization1" key="Organization-mtlsorganization1" name="mtlsorganization1"/>
-<artifact id="Organization/mtlsorganization2" key="Organization-mtlsorganization2" name="mtlsorganization2"/>
 <artifact deprecated="true" id="OperationDefinition/patient-everything-pdex" key="OperationDefinition-patient-everything-pdex" name="patient-everything-pdex"/>
 <artifact id="Endpoint/rubicon-mtls-endpoint3" key="Endpoint-rubicon-mtls-endpoint3" name="rubicon-mtls-endpoint3"/>
 <artifact id="Organization/rubicononyxhealth3" key="Organization-rubicononyxhealth3" name="rubicononyxhealth3"/>
