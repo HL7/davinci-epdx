@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, May 19, 2023 02:57+0000 for FHIR v6.0.0-cibuild 
+  Generated on Thu, Jun 1, 2023 02:42+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -15106,6 +15106,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
               <xs:documentation xml:lang="en">The date range of services associated with this account.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="covers" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An account that collects the charges for a specific set of services offered over a limited time period.  For example, a hospital account might contain all charges related to a given admission, including any inpatient appointments, and possibly re-admissions, of the billing for those re-admissions should be grouped with the initial admission for the purpose of claim submission.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="coverage" type="Account.Coverage" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.</xs:documentation>
@@ -16277,11 +16282,17 @@ A coverage may only be responsible for specific types of charges, and the sequen
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date (and perhaps time) when the adverse event occurred.</xs:documentation>
+              <xs:documentation xml:lang="en">The date (and perhaps time) when the cause of the AdverseEvent occurred.</xs:documentation>
             </xs:annotation>
-            <xs:element name="occurrenceDateTime" type="dateTime"/>
-            <xs:element name="occurrencePeriod" type="Period"/>
-            <xs:element name="occurrenceTiming" type="Timing"/>
+            <xs:element name="causeDateTime" type="dateTime"/>
+            <xs:element name="causePeriod" type="Period"/>
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date (and perhaps time) when the effect of the AdverseEvent occurred.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="effectDateTime" type="dateTime"/>
+            <xs:element name="effectPeriod" type="Period"/>
           </xs:choice>
           <xs:element name="detected" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>

@@ -8,13 +8,13 @@ NOTE: This resource is not included in the resource set returned by Payer-to-Pay
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [HRex Coverage resource](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html) are:
 
-| R4 Element              | Name          | Cardinality | Type                                 |
-|-------------------------|---------------|:-----------:|--------------------------------------|
-| Coverage.identifier     |  identifier   |     0..*    | Identifier                           |
-| Coverage.status         |  status       |     1..1    | code                                 |
-| Coverage.subscriberId   |  subscriberId |     0..1    | string                               |
-| Coverage.beneficiary    |  beneficiary  |     1..1    | Reference(US Core Patient Profile)   |
-| Coverage.payor          |  payor        |     1..*    | Reference(HRex Organization Profile) |
+| R4 Element              | Name          | Cardinality | Type                                         |
+|-------------------------|---------------|:-----------:|----------------------------------------------|
+| Coverage.identifier     |  identifier   |    0..1     | Identifier                                   |
+| Coverage.status         |  status       |    1..1     | code                                         |
+| Coverage.subscriberId   |  subscriberId |    0..1     | string                                       |
+| Coverage.beneficiary    |  beneficiary  |    1..1     | Reference(HRex Patient Demographics Profile) |
+| Coverage.payor          |  payor        |    1..1     | Reference(HRex Organization Profile)         |
 
 
 
