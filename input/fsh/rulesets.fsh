@@ -51,6 +51,16 @@ RuleSet: ItemAdjudicationSlicing
 * item.adjudication ^slicing.discriminator.path = "category"
 * item.adjudication.category from PDexAdjudicationCategoryDiscriminator (required)
 
+RuleSet: ItemAdjudicationExtensionSlicing
+* item.adjudication.extension ^slicing.rules = #closed
+* item.adjudication.extension ^slicing.ordered = false   // can be omitted, since false is the default
+* item.adjudication.extension ^slicing.description = "Slice based on value pattern"
+* item.adjudication.extension ^slicing.discriminator.type = #pattern
+* item.adjudication.extension ^slicing.discriminator.path = "category"
+* item.adjudication.category from PDexAdjudicationCategoryDiscriminator (required)
+
+
+
 // RuleSet: EOBHeaderItemAdjudicationInvariant
 // * obeys EOB-institutional-item-or-header-adjudication
 
