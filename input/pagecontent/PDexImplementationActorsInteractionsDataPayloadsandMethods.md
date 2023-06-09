@@ -145,7 +145,7 @@ Payer-to-Payer exchange can be accomplished by three methods.
 Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 
 determine which methods are made available by the data holder. 
 
-Please refer to [Section 4.2 - Payer To Payer Exchange](PayerToPayerExchange.html) for details about Payer-to-Payer
+Please refer to [Section 5.2 - Payer To Payer Exchange](PayerToPayerExchange.html) for details about Payer-to-Payer
 exchange workflows and data exchange methods. 
 
 
