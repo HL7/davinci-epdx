@@ -52,8 +52,7 @@ adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 allowedunits 0..1 MS and
 denialreason 0..* MS and
 consumedunits 0..1 MS
-* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
-* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
+// * insert ItemAdjudicationExtensionSlicing
 * item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason (exactly)
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
@@ -66,11 +65,13 @@ consumedunits 0..1 MS
 * item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits (exactly)
 * item.adjudication[consumedunits].value only decimal
 * item.adjudication[consumedunits].value 1..1 MS
+* item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+* item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
 
 * insert AdjudicationInvariant
 * insert AdjudicationSlicing
 * adjudication MS
-* item.adjudication  MS
+//* item.adjudication  MS
 * adjudication contains
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 denialreason 0..* MS
