@@ -43,7 +43,7 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 
 // Added from CARIN bb EOBInpatientProfile.fsh
 
-* item.productOrService from PDexPAInstitutionalProcedureCodes (required)
+* item.productOrService from PDexPAInstitutionalProcedureCodesVS (required)
 // * insert EOBHeaderItemAdjudicationInvariant
 // * insert ItemAdjudicationInvariant
 * insert ItemAdjudicationSlicing

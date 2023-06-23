@@ -27,6 +27,7 @@ Alias: $USCoreSmokingStatus = http://hl7.org/fhir/us/core/StructureDefinition/us
 // R4 Base Specification
 Alias: $R4ObservationVitalSigns = http://hl7.org/fhir/StructureDefinition/vitalsigns
 
+
 // Da Vinci Hrex IG
 Alias:   $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
 //Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
@@ -43,6 +44,8 @@ Alias: $Provenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pde
 // Code Systems
 Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
 Alias: $DeviceStatus = http://hl7.org/fhir/device-status
+Alias: $SignatureTypeCS = urn:iso-astm:E1762-95:2013
+Alias: $V2IdentifierTypeCS = http://terminology.hl7.org/CodeSystem/v2-0203
 
 // SNOMED CT
 Alias: $SnomedCT = http://snomed.info/sct|http://snomed.info/sct/731000124108
@@ -83,6 +86,8 @@ Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 //Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework
 //Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint
 //Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers
+//Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointAccessControlMechanismCS
+//Alias: $EndpointConnectionTypeVersionCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS
 //Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhFhirEndpointUseCaseCS
 //Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
 //Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS
@@ -90,6 +95,7 @@ Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 //Alias: $OrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS
 //Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhVerificationStatusCS
 //Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
+//Alias: $TrustProfileCS = http://hl7.org/fhir/us/ndh/CodeSystem/CodeSystem/TrustProfileCS
 
 // NDH incorporated into PDex
 Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS
@@ -99,6 +105,8 @@ Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/davinci-pdex/Struct
 Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework
 Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureEndpoint
 Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers
+Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointAccessControlMechanismCS
+Alias: $EndpointConnectionTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS
 Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS
 Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhSecureExchangeArtifactsCS
 Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS
@@ -106,7 +114,7 @@ Alias: $EndpointTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/Endpoint
 Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
 Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
 Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
-
+Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets

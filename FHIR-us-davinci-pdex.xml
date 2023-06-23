@@ -3,7 +3,6 @@
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
 <version code="2.0.0-ballot" url="http://hl7.org/fhir/us/davinci-pdex/2022May"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU1"/>
-<version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
 <version code="0.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
 <version code="2.0.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
 <version code="0.1" deprecated="true"/>
@@ -57,7 +56,7 @@
 <artifact id="SearchParameter/explanationofbenefit-type" key="SearchParameter-explanationofbenefit-type" name="ExplanationOfBenefit_Type"/>
 <artifact id="SearchParameter/explanationofbenefit-use" key="SearchParameter-explanationofbenefit-use" name="ExplanationOfBenefit_Use"/>
 <artifact id="ValueSet/FDANationalDrugCode" key="ValueSet-FDANationalDrugCode" name="FDA National Drug Code (NDC)"/>
-<artifact id="StructureDefinition/hrex-coverage" key="StructureDefinition-hrex-coverage" name="HRex Coverage Profile"/>
+<artifact deprecated="true" id="StructureDefinition/hrex-coverage" key="StructureDefinition-hrex-coverage" name="HRex Coverage Profile"/>
 <artifact deprecated="true" id="CodeSystem/CMSHIPPSCodes" key="CodeSystem-CMSHIPPSCodes" name="Health Insurance Prospective Payment System (HIPPS)"/>
 <artifact deprecated="true" id="CodeSystem/CMSHCPCSCodes" key="CodeSystem-CMSHCPCSCodes" name="Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes"/>
 <artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
@@ -111,7 +110,7 @@
 <artifact id="SearchParameter/pdex-medicationdispense-status" key="SearchParameter-pdex-medicationdispense-status" name="PdexMedicationDispenseStatus"/>
 <artifact id="ExplanationOfBenefit/PDexPriorAuth1" key="ExplanationOfBenefit-PDexPriorAuth1" name="PdexPriorAuth"/>
 <artifact id="CapabilityStatement/PdexServerCapabilityStatement" key="CapabilityStatement-PdexServerCapabilityStatement" name="PdexServerCapabilityStatement"/>
-<artifact id="ValueSet/PDexPriorAuthInstitutionalProcedureCodes" key="ValueSet-PDexPriorAuthInstitutionalProcedureCodes" name="Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
+<artifact id="ValueSet/PDexPAInstitutionalProcedureCodesVS" key="ValueSet-PDexPriorAuthInstitutionalProcedureCodes" name="Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
 <artifact id="CodeSystem/PriorAuthorizationValueCodes" key="CodeSystem-PriorAuthorizationValueCodes" name="Prior Authorization Values"/>
 <artifact id="ValueSet/PriorAuthorizationAmounts" key="ValueSet-PriorAuthorizationAmounts" name="Prior Authorization value categories"/>
 <artifact id="Coverage/Coverage1" key="Coverage-Coverage1" name="PriorAuthCoverage"/>
@@ -131,14 +130,18 @@
 <artifact deprecated="true" id="CodeSystem/X12ClaimAdjustmentReasonCodes" key="CodeSystem-X12ClaimAdjustmentReasonCodes" name="X12 Claim Adjustment Reason Codes"/>
 <artifact id="ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" key="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes" name="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
 <artifact deprecated="true" id="CodeSystem/CMSRemittanceAdviceRemarkCodes" key="CodeSystem-CMSRemittanceAdviceRemarkCodes" name="X12 Remittance Advice Remark Codes"/>
+<artifact id="Endpoint/diamond-mtls-endpoint1" key="Endpoint-diamond-mtls-endpoint1" name="diamond-mtls-endpoint1"/>
+<artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
+<artifact id="Bundle/example-mtls-endpoint-bundle" key="Bundle-example-mtls-endpoint-bundle" name="example-mtls-endpoint-bundle"/>
 <artifact id="ValueSet/BundleTypeVS" key="ValueSet-BundleTypeVS" name="mTLS Bundle Type Value Set"/>
 <artifact id="StructureDefinition/mtls-endpoint" key="StructureDefinition-mtls-endpoint" name="mTLS Endpoint"/>
 <artifact id="StructureDefinition/mtls-bundle" key="StructureDefinition-mtls-bundle" name="mTLS Endpoint Bundle"/>
-<artifact id="CodeSystem/MtlsObjectCode" key="CodeSystem-MtlsObjectCode" name="mTLS Object Type Code"/>
-<artifact id="StructureDefinition/mtls-managing-organization" key="StructureDefinition-mtls-managing-organization" name="mTLS Organization"/>
+<artifact id="CodeSystem/MtlsObjectCodeCS" key="CodeSystem-MtlsObjectCodeCS" name="mTLS Object Type Code"/>
+<artifact id="StructureDefinition/mtls-organization" key="StructureDefinition-mtls-organization" name="mTLS Organization"/>
 <artifact id="StructureDefinition/pdex-mtls-signedobject-extension" key="StructureDefinition-pdex-mtls-signedobject-extension" name="mTLS Signed Object"/>
 <artifact id="ValueSet/MtlsObjectType" key="ValueSet-MtlsObjectType" name="mTLS Signed Object Types"/>
-<artifact deprecated="true" id="OperationDefinition/patient-everything-pdex" key="OperationDefinition-patient-everything-pdex" name="patient-everything-pdex"/>
+<artifact id="Organization/DiamondOnyxHealth1" key="Organization-DiamondOnyxHealth1" name="mtlsorganization2"/>
+<artifact id="OperationDefinition/patient-everything-pdex" key="OperationDefinition-patient-everything-pdex" name="patient-everything-pdex"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>

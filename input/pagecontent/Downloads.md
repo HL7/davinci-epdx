@@ -1,13 +1,42 @@
 [Previous Page - Credits](Credits.html)
 
+### Downloadable Copy of Entire Specification
 
-- [Full Specification (zip)](full-ig.zip)
+A downloadable version of this IG is available so it can be hosted locally:
+
+- [Downloadable Copy(compressed folder)](full-ig.zip)
+
+### Examples
+
+All the examples that are used in this Implementation Guide available for download:
+
+- [JSON(compressed folder)](examples.json.zip)
+- [XML(compressed folder)](examples.xml.zip)
+
+### Definitions
+
 - [JSON Definitions (zip)](definitions.json.zip)
-- [JSON Examples (zip)](examples.json.zip)
 - [XML Definitions (zip)](definitions.xml.zip)
-- [XML Examples (zip)](examples.xml.zip)
 - [Turtle Definitions (zip)](definitions.ttl.zip)
 
+### IG/package dependencies
 
-[Next Page - Artifacts Summary](artifacts.html)
+The following dependencies are used in production of this guide:
+
+{% include dependency-table-short.xhtml %}
+
+### Globals table
+
+{% include globals-table.xhtml %}
+
+### Cross version analysis
+
+{% include cross-version-analysis-inline.xhtml %}
+
+### IP Statements
+
+{% include ip-statements.xhtml %}
+
+
+<p><a href="artifacts.html">[Next Page - Artifacts Summary]</a></p>
 

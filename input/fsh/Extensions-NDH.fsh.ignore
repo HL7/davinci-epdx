@@ -16,6 +16,9 @@ Extension: AssociatedServers
 Id: base-ext-associatedServers
 Title: "NDH Associated Servers"
 Description: "Associated Servers"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    associatedServersType  1..1 MS and
    serverURL 0..1 MS
@@ -33,6 +36,9 @@ Id: base-ext-contactpoint-availabletime
 Title: "NDH Contactpoint Availabletime"
 Description: "An extension representing the days and times a contact point is available"
 * value[x] 0..0
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    daysOfWeek 0..* MS and
    allDay 0..1 MS and
@@ -49,6 +55,9 @@ Extension: DynamicRegistration
 Id: base-ext-dynamicRegistration
 Title: "NDH Dynamic Registration"
 Description: "Dynamic Registration"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    trustProfile 0..1 and
    version  0..1 MS
@@ -64,6 +73,9 @@ Extension: EndpointAccessControlMechanism
 Id: base-ext-endpointAccessControlMechanism
 Title: "NDH Endpoint Access Control Mechanism"
 Description: "Endpoint Access Control Mechanism"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
@@ -73,6 +85,10 @@ Extension: EndpointConnectionTypeVersion
 Id: base-ext-endpoint-connection-type-version
 Title: "NDH Endpoint Connection Type Version"
 Description: "An extension for endpoint connection type version"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+//* ^context.type = #element
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept
 * value[x] from EndpointConnectionTypeVersionVS (extensible)
@@ -83,6 +99,10 @@ Extension: EndpointRank
 Id: base-ext-endpoint-rank
 Title: "NDH Endpoint Rank"
 Description: "Order established by a Role, Organization… for Endpoints capable of transferring the same content"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+//* ^context.type = #element
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 1..1
 * value[x] only positiveInt
 //* valuePositiveInt 1..1
@@ -92,6 +112,9 @@ Extension: EndpointUsecase
 Id: base-ext-endpoint-usecase
 Title: "NDH Endpoint Usecase"
 Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    endpointUsecasetype 1..1 MS and
@@ -109,6 +132,9 @@ Extension: FhirIg
 Id: base-ext-fhir-ig
 Title: "NDH FHIR IG"
 Description: "FHIR IG"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..0
 * extension contains
    ig-publication 0..1 and
@@ -128,6 +154,9 @@ Extension: IdentifierStatus
 Id: base-ext-identifier-status
 Title: "NDH Identifier Status"
 Description: "Describes the status of an identifier"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * ^context.expression = "Identifier"
 * ^context.type = #element
 * ^date = "2017-11-20T11:33:43.51-05:00"
@@ -142,6 +171,9 @@ Extension: SecureExchangeArtifacts
 Id: base-ext-secureExchangeArtifacts
 Title: "NDH Secure Exchange Artifacts"
 Description: "Secure Exchange Artifacts"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    secureExchangeArtifactsType  1..1 MS and
    certificate 0..1 MS and
@@ -162,6 +194,9 @@ Extension: TrustFramework
 Id: base-ext-trustFramework
 Title: "NDH Trust Framework"
 Description: "Trust Framework"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
    trustFrameworkType  1..1 MS and
    qualifier 0..1 MS and
@@ -185,6 +220,9 @@ Extension: VerificationStatus
 Id: base-ext-verification-status
 Title: "NDH Verification Status"
 Description: "Indicates a resource instance verification status"
+// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
