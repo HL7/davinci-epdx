@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Jun 1, 2023 02:42+0000 for FHIR v6.0.0-cibuild 
+  Generated on Thu, Jun 15, 2023 08:44+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -33629,14 +33629,34 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When this characteristic is used.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="conditionCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="conditionExpression" type="Expression"/>
+          </xs:choice>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Description of a component of the method to generate the statistic.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="value" minOccurs="0" maxOccurs="1" type="Quantity">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Further specification of the quantified value of the component of the method to generate the statistic.</xs:documentation>
+              <xs:documentation xml:lang="en">Further specification of the value of the component of the method to generate the statistic.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueRange" type="Range"/>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+          </xs:choice>
+          <xs:element name="intended" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The plan for analysis.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="applied" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The analysis that was applied.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="variable" type="Evidence.Variable" minOccurs="0" maxOccurs="unbounded">
@@ -33647,6 +33667,11 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="attributeEstimate" type="Evidence.AttributeEstimate" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">An attribute of the statistic used as a model characteristic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="modelCharacteristic" type="Evidence.ModelCharacteristic" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Model component.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

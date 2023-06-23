@@ -18,6 +18,15 @@ Description: "The mTLS Endpoint is used to assist payers in defining their mTLS 
 * extension[endpoint-usecase] ^short = "Endpoint Usecase"
 //* extension[usage-restriction] ^short = "Usage Restriction"
 * extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
+* extension[fhir-ig] ^short = "IGs supported"
+* extension[secure-exchange-artifacts] ^short = "Secure Exchange Artifacts"
+* extension[trust-framework] ^short = "Trust Framework"
+* extension[dynamic-registration] ^short = "Dynamic Registration"
+* extension[associated-servers] ^short = "Associated Servers"
+* extension[access-control-mechanism] ^short = "Access Control Mechanism"
+* extension[connection-type-version] ^short = "Connection Type Version"
+* extension[endpoint-rank] ^short = "Preferred order for connecting to the endpoint"
+* extension[verification-status] ^short = "Verification Status"
 * identifier MS
 * identifier ^short = "Unique identifier for Payer"
 * identifier.extension contains
@@ -37,5 +46,6 @@ Description: "The mTLS Endpoint is used to assist payers in defining their mTLS 
 * payloadType from EndpointPayloadTypeVS (extensible)
 * payloadMimeType from EndpointFhirMimeTypeVS
 * payloadMimeType MS
+* extension contains MtlsSignedObject named pdex-mtls-signedobject-extension 1..* MS
 
 

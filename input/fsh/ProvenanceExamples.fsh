@@ -27,7 +27,7 @@ Description: "Example of a Custodian Provenance record for the contents of a bun
 // * agent[ProvenanceAuthor][0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian "Custodian"
 // * agent[ProvenanceAuthor][0].type = ProvenanceAgentRoleType#custodian "Custodian"
 // Fails with error Cannot Assign
-* agent[0].who.reference = "Organization/Payer1"
+* agent[ProvenanceTransmitter][0].who.reference = "Organization/Payer1"
 
 
 Instance: ExampleProvenanceAuthorEncounter6

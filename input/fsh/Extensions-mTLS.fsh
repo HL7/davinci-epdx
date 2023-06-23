@@ -2,6 +2,8 @@ Extension: MtlsSignedObject
 Id: pdex-mtls-signedobject-extension
 Title: "mTLS Signed Object"
 Description: "mTLS Endpoint Signed Object Extension"
+* ^context.type = #element
+* ^context.expression = "Endpoint"
 * extension contains
   ObjectType 1..1 MS and
   Object 1..1 MS
@@ -18,11 +20,11 @@ ValueSet: MtlsObjectType
 Title: "mTLS Signed Object Types"
 Description: "The Object type"
 * ^experimental = true
-* codes from system MtlsObjectCode
+* codes from system MtlsObjectCodeCS
 * ^copyright = "This Valueset is not copyrighted."
 
 // --------------------------------
-CodeSystem: MtlsObjectCode
+CodeSystem: MtlsObjectCodeCS
 Title: "mTLS Object Type Code"
 Description: "Codes for the Signed Object Types"
 * ^experimental = true

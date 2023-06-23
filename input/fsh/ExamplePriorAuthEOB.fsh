@@ -36,7 +36,8 @@ Usage: #example
 
 * item[0].sequence = 1
 * item[0].category = $X12ServiceType#3 "Consultation"
-* item[0].productOrService = http://www.ama-assn.org/go/cpt#99202
+// * item[0].productOrService = http://www.ama-assn.org/go/cpt#99202
+* item[0].productOrService = $CPT#99202
 // * item[0].productOrService = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes#BB201 "Behavior Only, ADL Index 6 - 10/Medicare 5 day assessment (Full)"
 
 //* item[0].adjudication[adjudicationamounttype].extension[reviewAction].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction"

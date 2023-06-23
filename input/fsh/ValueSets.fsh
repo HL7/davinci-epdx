@@ -135,10 +135,7 @@ Based on the CARIN IG for Blue Button� Implementation Guide.
 * ^copyright = "This Valueset is not copyrighted."
 
 
-// 20210201 CAS: https://jira.hl7.org/browse/FHIR-30413 - Add HIPPS to Institutional item.productOrService Value Set
-// Approach adding a special valueset for inpatient
-ValueSet: PDexPriorAuthInstitutionalProcedureCodes
-// 20210215 CAS: FHIR-31074 - Please shorten the titles for the IP, OP, and Professional Procedure code and modifiers ValueSets
+ValueSet: PDexPAInstitutionalProcedureCodesVS
 Title: "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
 Description: """
 The Value Set is a combination of three Code Systems: CPT (HCPCS I), HCPCS II procedure codes, and HIPPS rate codes. They are submitted by providers to payers to convey the specific procedure performed. Procedure Codes leverage US Core Procedure Codes composition.
