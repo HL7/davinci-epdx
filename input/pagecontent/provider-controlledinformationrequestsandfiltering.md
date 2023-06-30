@@ -1,4 +1,4 @@
-[Previous Page - Use Case Scenarios](UseCaseScenarios.html)
+[Previous Page - Use Case Scenarios](usecasescenarios.html)
 
 The Payer Data Exchange Implementation Guide defines methods for Providers to request information from Health Plans.
 
@@ -11,4 +11,4 @@ Health Plans SHALL only restrict provider access to a member’s data where that
 Health Plan to Health Plan or Third-Party Application exchange is controlled by the Member using an member-mediated SMART-on-FHIR Authorization or via a member-directed payer-to-payer exchange.
 
 
-[Next Page - CDS-Hooks](CDS-Hooks.html)
+[Next Page - CDS-Hooks](cds-hooks.html)

@@ -1,5 +1,5 @@
 
-[Previous Page - Provider-controlled Information Requests and Filtering](Provider-controlledInformationRequestsandFiltering.html)
+[Previous Page - Provider-controlled Information Requests and Filtering](provider-controlledinformationrequestsandfiltering.html)
 
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 
@@ -224,4 +224,4 @@ Payer systems are systems run by health plans/insurers that provide insurance co
 
 The requirements and expectations described here are not intended to be exhaustive. Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
 
-[Next Page - Workflow Examples](WorkflowExamples.html)
+[Next Page - Workflow Examples](workflowexamples.html)

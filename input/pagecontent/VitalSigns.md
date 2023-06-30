@@ -51,4 +51,4 @@ See links to examples in the FHIR R4 specification here: [https://hl7.org/fhir/R
 
 
 
-[Next Page - Use Case Scenarios](UseCaseScenarios.html)
+[Next Page - Use Case Scenarios](usecasescenarios.html)

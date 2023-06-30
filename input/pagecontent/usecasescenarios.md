@@ -109,4 +109,4 @@ If a payer chooses to support FHIR resource data versioning of related resource 
 
 Supporting versioning of FHIR data implies supporting the [vread](https://www.hl7.org/fhir/http.html#vread) and [history](https://www.hl7.org/fhir/http.html#history) interactions in the FHIR specification.
 
-[Next Page - Provider-controlled Information Requests and Filtering](Provider-controlledInformationRequestsandFiltering.html)
+[Next Page - Provider-controlled Information Requests and Filtering](provider-controlledinformationrequestsandfiltering.html)

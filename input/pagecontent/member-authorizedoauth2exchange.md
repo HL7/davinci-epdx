@@ -1,4 +1,4 @@
-[Previous Page - Workflow Examples](WorkflowExamples.html)
+[Previous Page - Workflow Examples](workflowexamples.html)
 
 
 This IG provides a mechanism for Member-authorized exchange of their Health History:
@@ -34,4 +34,4 @@ Applications are registered with the API Endpoint. The application owner **MAY**
 - Another Covered Entity, such as a Provider.
 
 
-[Next Page - Change History](ChangeHistory.html)
+[Next Page - Change History](changehistory.html)

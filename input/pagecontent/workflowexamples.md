@@ -1,4 +1,4 @@
-[Previous Page - CDS-Hooks](CDS-Hooks.html)
+[Previous Page - CDS-Hooks](cds-hooks.html)
 
 Assumption: Supported Provider/Clinician workflow meet the HIPAA treatment, payment, and operations purposes per OCR guidance and are in compliance with federal and state regulations. [https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
 
@@ -29,4 +29,4 @@ In this scenario the Clinician that reviews the Member History is only intereste
 
 
 
-[Next Page - Member-Authorized OAuth2.0 Exchange](Member-AuthorizedOAuth2Exchange.html)
+[Next Page - Member-Authorized OAuth2.0 Exchange](member-authorizedoauth2exchange.html)

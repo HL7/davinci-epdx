@@ -1,4 +1,4 @@
-[Previous Page - Overview](Overview.html)
+[Previous Page - Overview](overview.html)
 
 The PDex Implementation Guide (IG) identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that is being communicated. 
 
@@ -240,4 +240,4 @@ When a Health Plan provides prescription drug coverage the list of covered medic
 
 
 
-[Next Page - Security and Privacy](SecurityAndPrivacy.html)
+[Next Page - Security and Privacy](securityandprivacy.html)
