@@ -40,7 +40,7 @@ This IG covers three methods of information exchange:
 
 #### CDS-Hooks and SMART-on-FHIR
 
-An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown below. This exchange flow is used for communication between Providers and Health Plans. The CDS-Hook will be used to perform a Patient/Member match and return a token that enables a SMART-on-FHIR App to access information via the Health Plan's FHIR API for the matched member.
+An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown in [section 8 - CDS Hooks](http://build.fhir.org/ig/HL7/davinci-epdx/cds-hooks.html#pdex-hooks). This exchange flow is used for communication between Providers and Health Plans. The CDS-Hook will be used to perform a Patient/Member match and return a token that enables a SMART-on-FHIR App to access information via the Health Plan's FHIR API for the matched member.
 
 
 #### OAuth2.0 or SMART-on-FHIR Member-authorized Exchange
