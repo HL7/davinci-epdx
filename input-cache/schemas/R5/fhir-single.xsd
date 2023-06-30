@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Jun 15, 2023 08:44+0000 for FHIR v6.0.0-cibuild 
+  Generated on Mon, Jun 26, 2023 15:14+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -24285,7 +24285,7 @@ of the resource representation.</xs:documentation>
               <xs:documentation xml:lang="en">Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="summary" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="summary" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A text summary of the investigations and the diagnosis.</xs:documentation>
            </xs:annotation>
@@ -24425,7 +24425,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="subject" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The medication, product, substance, device, procedure etc. for which this is an indication.</xs:documentation>
+              <xs:documentation xml:lang="en">The medication, product, substance, device, procedure etc. for which this is an indication, contraindication, interaction, undesirable effect, or warning.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -36696,7 +36696,7 @@ See guidance around (not) making local changes to elements [here](canonicalresou
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.</xs:documentation>
+              <xs:documentation xml:lang="en">The actual condition, allergy, or intolerance specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="outcome" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -36854,6 +36854,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
           <xs:element name="author" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The person, organization or device that created the flag.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="supportingInfo" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional information that may be relevant to the flag, such as why the flag was created or how to guide management of the flag.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

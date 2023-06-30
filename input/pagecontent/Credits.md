@@ -1,4 +1,4 @@
-[Previous Page - Change History](ChangeHistory.html)
+[Previous Page - Change Log](ChangeHistory.html)
 
 This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations.
 
@@ -46,4 +46,4 @@ If a resource is required that is not part of US Core it will be defined and ref
 If a resource is unique to the PDex IG it will be defined in this guide, together with any unique value sets or coding systems required to support the profile.
 
 
-[Next Page - Downloads](Downloads.html)
+[Next Page - FHIR Artifacts](artifacts.html)
