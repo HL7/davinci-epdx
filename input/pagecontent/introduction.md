@@ -71,7 +71,7 @@ The exchange of Healthcare network/directory information and Pharmacy network/di
 
 The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary/).
 
-The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](Member-AuthorizedOAuth2Exchange.html)
+The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](member-authorizedoauth2exchange.html)
 
 ### Supporting Specifications
 

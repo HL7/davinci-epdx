@@ -37,7 +37,7 @@ The PDex IG defines two types of data payload:
 
 All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
-See [Data Mapping](DataMapping.html) for details of the Data Payloads and operations.
+See [Data Mapping](datamapping.html) for details of the Data Payloads and operations.
 
 ### Interaction Methods
 
@@ -61,7 +61,7 @@ SMART-on-FHIR is expected to be used in conjunction with CDS Hooks in two princi
 1. When a new patient books an appointment
 2. When a patient returns for an appointment after a significant period (for example, after wintering in a different region).
 
-The CDS Hooks and SMART-on-FHIR application configuration is detailed in [CDS-Hooks](CDS-Hooks.html).
+The CDS Hooks and SMART-on-FHIR application configuration is detailed in [CDS-Hooks](cds-hooks.html).
 
 ##### Ad-hoc PDex Member History Request
 
@@ -115,7 +115,7 @@ Any subsequent Access Token issued based on the Refresh Token **SHALL** be restr
 
 The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Application is allowed to access. 
 
-The OAuth2.0 Member-authorized exchange is detailed in [Section: Member-Authorized OAuth2.0 Exchange](Member-AuthorizedOAuth2Exchange.html).
+The OAuth2.0 Member-authorized exchange is detailed in [Section: Member-Authorized OAuth2.0 Exchange](member-authorizedoauth2exchange.html).
 
 An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Health Plan exchange and Third-Party Application Exchange:
 
@@ -145,7 +145,7 @@ Payer-to-Payer exchange can be accomplished by three methods.
 Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 
 determine which methods are made available by the data holder. 
 
-Please refer to [Section 5.2 - Payer To Payer Exchange](PayerToPayerExchange.html) for details about Payer-to-Payer
+Please refer to [Section 5.2 - Payer To Payer Exchange](payertopayerexchange.html) for details about Payer-to-Payer
 exchange workflows and data exchange methods. 
 
 
