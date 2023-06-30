@@ -2,7 +2,7 @@
 title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 
 ---
-[Previous Page - Security and Privacy](SecurityAndPrivacy.html)
+[Previous Page - Security and Privacy](securityandprivacy.html)
 
 {% include style_insert_table_blue.html %}
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
@@ -149,4 +149,4 @@ Please refer to [Section 5.2 - Payer To Payer Exchange](PayerToPayerExchange.htm
 exchange workflows and data exchange methods. 
 
 
-[Next Page - Handling Data Provenance](HandlingDataProvenance.html)
+[Next Page - Handling Data Provenance](handlingdataprovenance.html)

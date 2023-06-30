@@ -1,4 +1,4 @@
-[Previous Page - Handling Data Provenance](HandlingDataProvenance.html)
+[Previous Page - Handling Data Provenance](handlingdataprovenance.html)
 
 {% include style_insert_table_blue.html %}
 
@@ -247,10 +247,10 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requestor is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](PayerToPayerExchange.html#data-retrieval-methods) section of this page.
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requestor is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) section of this page.
 
 
 The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
 
 
-[Next Page - Provider API](Provider-API.html)
+[Next Page - Provider API](provider-api.html)

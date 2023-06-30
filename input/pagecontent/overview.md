@@ -70,7 +70,7 @@ In the case of historical data, the Health Plan **SHOULD** identify the author, 
 
 Retrieving Provenance for resources is accomplished by adding "_revinclude=Provenance:target" to a search request.
 
-Provenance is covered in more detail in [Handling Data Provenance](HandlingDataProvenance.html).
+Provenance is covered in more detail in [Handling Data Provenance](handlingdataprovenance.html).
 
 
-[Next Page - Introduction](Introduction.html)
+[Next Page - Introduction](introduction.html)

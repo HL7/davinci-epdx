@@ -1,4 +1,4 @@
-[Previous Page - Payer-to-Payer Exchange](PayerToPayerExchange.html)
+[Previous Page - Payer-to-Payer Exchange](payertopayerexchange.html)
 
 <div class="stu-note">
 
@@ -30,4 +30,4 @@ The _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_
 to indicate that it is a PDex Provider API export.
 
 
-[Next Page - Data Mapping](DataMapping.html)
+[Next Page - Data Mapping](datamapping.html)

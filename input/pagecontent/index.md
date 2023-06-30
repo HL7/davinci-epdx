@@ -74,7 +74,7 @@ A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](
 - [US Core Patient](USCorePatient.html) 
 - [US Core Procedure](USCoreProcedure.html)
 - [US Core Observation(s)](USCoreLaboratoryResultObservation.html) 
-- [HRex Coverage](Coverage.html) 
+- [HRex Coverage](coverage.html) 
 - [PDex MedicationDispense](PDexMedicationDispense.html)
 
 Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. This mapping information is provided as gudiance only. It may require payers to apply disgression in how data is mapped from claims data to the relevant clinical resources. 
@@ -137,14 +137,14 @@ For the purposes of this IG we will use the following terms:
 
 ### Change History
 
-A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](ChangeHistory.html).
+A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](changehistory.html).
 
 ### Credits
 
-See the [Credits](Credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
+See the [Credits](credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.1.98)
+This IG was built with Sushi and the FHIR Publisher (v1.3.20 or greater)
 
-[Next Page: Overview](Overview.html)
+[Next Page: Overview](overview.html)

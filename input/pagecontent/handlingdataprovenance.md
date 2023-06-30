@@ -1,4 +1,4 @@
-[Previous Page - PDex Implementation, Actors, Interactions, Data Payloads and Methods](PDexImplementationActorsInteractionsDataPayloadsandMethods.html)
+[Previous Page - PDex Implementation, Actors, Interactions, Data Payloads and Methods](pdeximplementationactorsinteractionsdatapayloadsandmethods.html)
 
 Handling Provenance is an essential element in establishing confidence and trust as data is exchanged with other parties. The Provenance resource is used to document the source and handling of data. It documents the chain of custody of the information.
 
@@ -15,4 +15,4 @@ A Provenance resource **SHOULD** be provided with each member-related resource p
 This guide provides a pdex-provenance resource that is customized to the needs of the payer by focusing on their role as a transmitter and not originator of data.
 
 
-[Next Page - Payer-to-Payer Exchange](PayerToPayerExchange.html)
+[Next Page - Payer-to-Payer Exchange](payertopayerexchange.html)
