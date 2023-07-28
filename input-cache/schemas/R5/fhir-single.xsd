@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Jun 26, 2023 15:14+0000 for FHIR v6.0.0-cibuild 
+  Generated on Thu, Jul 20, 2023 13:51+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -26425,7 +26425,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The value of this property. If the type chosen for this element is 'code', then the property SHALL be defined in a ConceptMap.property element.</xs:documentation>
+              <xs:documentation xml:lang="en">The value of this property. If the type chosen for this element is 'code', then the property SHALL be defined in a ConceptMap.property element and that ConceptMap.property element SHALL have a system element.</xs:documentation>
             </xs:annotation>
             <xs:element name="valueCoding" type="Coding"/>
             <xs:element name="valueString" type="string"/>
@@ -26453,7 +26453,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Data element value that the map depends on / produces.</xs:documentation>
+              <xs:documentation xml:lang="en">Data element value that the map depends on / produces. If the data type is a code, that code SHALL come from the .group.source code system for .dependsOn.valueCode or from the .group.target code system for .product.valueCode.</xs:documentation>
             </xs:annotation>
             <xs:element name="valueCode" type="code"/>
             <xs:element name="valueCoding" type="Coding"/>
@@ -62524,7 +62524,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="description" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="1" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information about the specific installation that this terminology capability statement relates to.</xs:documentation>
            </xs:annotation>
@@ -62679,7 +62679,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Name of the supported expansion parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Description of support for parameter.</xs:documentation>
            </xs:annotation>

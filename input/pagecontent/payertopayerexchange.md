@@ -2,11 +2,9 @@
 
 {% include style_insert_table_blue.html %}
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in 
-FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
 
-All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
 
 Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
 
@@ -25,8 +23,8 @@ The steps in the Member Match with Consent process are:
 - Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation
 - The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found
 - The $member-match operation evaluates the Consent resource for a matched member
-- If a Member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
-- If a Patient ID is returned from $member-match, a request is made to OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member.
+- If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
+- If a Patient ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
 #### mTLS Endpoint Discovery
@@ -36,29 +34,29 @@ Payers need two capabilities in order to establish trusted connections with othe
 1. A Discovery or Directory Service to be able to find other endpoints
 2. A Trust Framework in which both parties are members.
 
-In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles.
+In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose, a public git repository will be established that will be used to store signed mTLS endpoint bundles.
 
 Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate. The Trust Framework endorsement process is detailed below in the Trust Framework section of this page.
 
 The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles: One for the Health Plan and One for the Managing Organization that operates the endpoint. These profiles use the National Directory (NDH) IG Profiles.
 
-For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: [https://github.com/HL7-DaVinci/pdex-payer-payer](https://github.com/HL7-DaVinci/pdex-payer-payer). The repository includes some supporting tools and documentation relating to mTLS discovery.
+For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose, a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: [https://github.com/HL7-DaVinci/pdex-payer-payer](https://github.com/HL7-DaVinci/pdex-payer-payer). The repository includes some supporting tools and documentation relating to mTLS discovery.
 
 Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
 
-The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And Organization profile. These profiles use the National Directory (NDH) IG Profiles. 
+The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint and two Organization profiles (One for the Health Plan, the other for the Operating entity that manages the Endpoint). These profiles use the National Directory (NDH) IG Profiles. 
 
 The profiles are: 
 
 - [mTLS Endpoint Bundle](StructureDefinition-mtls-bundle.html)
 - [National Directory NDH Exchange Endpoint](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndhEx-Endpoint.html)
-- [National Directory NDH Base Organization](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html)
+- [National Directory NDH Base Organization](https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html).
  
 The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data. 
 
 ##### Trust Framework
 
-A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules. A manager of the Trust Framework would be appointed to administer the framework, the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.
+A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules. A manager of the Trust Framework would be appointed to administer the framework: the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.
 
 The Trust Manager responsibilities include:
 
@@ -72,13 +70,13 @@ The management of payer submissions involves the following steps:
 3. Signing the payer's public identity certificate  with a digital signature.
 4. Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.
 
-Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate in to an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there should still be two Organization records created.
+Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate into an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there should still be two Organization records created.
 
-The completed bundle would be posted to a new branch of the public Github Repository.
+The completed bundle would be posted to a new branch of the public GitHub Repository.
 
-The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the Github repository into the main branch of the Repository.
+The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the GitHub repository into the main branch of the Repository.
 
-Trust Framework members are responsible for refreshing their copy of the main branch of the Github repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
+Trust Framework members are responsible for refreshing their copy of the main branch of the GitHub repository which would be used to refresh and update their list of mTLS and Authentication Endpoints for current validated members of the Trust Framework.
 
 
 #### OAuth2.0 Dynamic Client Registration
@@ -93,11 +91,11 @@ A future workflow is likely to use the FAST National Directory to find other pay
 
 #### The $member-match operation
 
-The $member-match operation is defined in the [Hrex member-match operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
+The $member-match operation is defined in the [HRex member-match operation](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html). The profiles used in the $member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us/davinci-hrex). These are:
 
 - [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
 - [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
-- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
+- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html).
 
 The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the $member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink is the current coverage for the member at the new/requesting payer.
 
@@ -108,7 +106,7 @@ In the case where a match is confirmed the receiving payer will:
 
 When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
 
-If the receiving payer matches to a unique member but is unable to comply with the consent request a Patient ID is NOT returned in the $member-match response and a 422 status code is returned with an Operation Outcome that indicates that the consent request could not be complied with.
+If the receiving payer matches to a unique member but is unable to comply with the consent request, a Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be returned with an Operation Outcome that indicates that the consent request could not be complied with.
 
 #### Consent Revocation
 
@@ -133,7 +131,7 @@ You [the Member] are:
 Please note that:
 - The scope of data sensitivity is determined by Federal and State regulations that apply in the state in which [Old Payer] operates.
 - If [Old Payer] is unable to identify and exclude sensitive data and you have chosen to exclude sensitive data from the request then [Old Payer] will be unable to comply with your request.
-- In the case where you have active coverage with both [Old Payer] and [New Payer] the ennd date for the Consent innstruction will be the anticipated end date of the health coverage with [New Payer]
+- In the case where you have active coverage with both [Old Payer] and [New Payer] the end date for the Consent instruction will be the anticipated end date of the health coverage with [New Payer].
 
 
 ### Evaluation of Consent
@@ -144,9 +142,9 @@ The following minimal content from the Consent record is used to validate a data
 - Member Identity is matched
 - Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
 - Date period for consent is valid
-- Payer requesting retrieval of data is matched
+- Payer requesting retrieval of data is matched.
 
-If a Consent is provided by an Authorized Representative the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
+If a Consent is provided by an Authorized Representative, the person's demographic details should be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
 
 The exchange of Consent is being carried out between two covered entities and the content and conditions for an exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document reference link would be to a document maintained by the requesting payer. The content of the referenced document would NOT be used for any determination as part of the automated $member-match operation. The referenced document's only purpose is to provide evidence of an appropriate signature of the consenting member/patient.
 
@@ -157,8 +155,8 @@ It is expected that the referenced document url/identifier could be used in an o
 Here are some scenarios that could inform the decision about an appropriate period of validity for a consent to exchange health information:
 
 - Medicare has an annual enrollment. This can result in beneficiaries signing up for a new health plan up to 3 months before their new health plan goes into effect.
-- When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period of time after the plan terminates.
-- Some plan beneficiaries may have concurrent coverage. For example, a Medicare and a Medicaid plan may be in effect for a beneficiary for the duration of coverage period. In this scenario health plans may need to exchange information about the beneficiary throughout the period of dual plan coverage in order to coordinate treatment.
+- When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period after the plan terminates.
+- Some plan beneficiaries may have concurrent coverage. For example, a Medicare and a Medicaid plan may be in effect for a beneficiary for the duration of coverage period. In this scenario health plans may need to exchange information about the beneficiary throughout the period of dual plan coverage to coordinate treatment.
 
 It is a member's option to share their health information with their new health plan. When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be:
 
@@ -176,7 +174,7 @@ data using one of the following three methods:
 
 1. Query all clinical resource individually
 2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
-3. Bulk FHIR Asynchronous protocols
+3. Bulk FHIR Asynchronous protocols.
 
 Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
 
@@ -213,9 +211,9 @@ Health Plans **SHALL** support search of a member's clinical data to each USCDI/
 
 ### Constraining Data Based Upon Permissions of the Requestor
 
-The FHIR Server **SHALL** constrain the data returned from the server to a requestor based upon the access permissions of the requestor.
+The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access permissions of the requester.
 
-For example, if a requestor queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
+For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
 
 This Constraining condition may be required in implementations where multiple types of data are being served up by a single FHIR Server. The condition is particularly relevant when implementing Operations such as $everything or $export. See the sections below.
 
@@ -224,7 +222,7 @@ This Constraining condition may be required in implementations where multiple ty
 Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the requestor is permitted to access. This might require an implementer to filter records at a more granular level than the resource.
+As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the requester is permitted to access. This might require an implementer to filter records at a more granular level than the resource.
 
 The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:
 
@@ -247,10 +245,10 @@ Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html
 Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
 
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requestor is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) section of this page.
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the requester is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) section of this page.
 
 
 The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
 
 
-[Next Page - Provider API](provider-api.html)
+[Next Page - Provider Access API](provider-api.html)

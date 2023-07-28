@@ -5,12 +5,12 @@ The PDex Implementation Guide (IG) identifies three actors and specifies three i
 **Actors:**
 1. Health Plans
 2. Providers
-3. Third-Party Applications
+3. Third-Party Applications.
   
 **Interactions:**
 1. Payer to Provider Exchange
 2. Member-authorized Health Plan to Health Plan Exchange
-3. Member-authorized Health Plan to Third Party Applications 
+3. Member-authorized Health Plan to Third Party Applications. 
 	
 The Blue Button 2.0 initiative (The CMS Blue Button 2.0 API and the CARIN Consumer-Directed Exchange IG) specifies the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a member's health and claims information as FHIR clinical profiles (based on US Core) that are more easily consumed by Electronic Medical Records (EMR) systems. 
                                                                                                           
@@ -20,7 +20,7 @@ The same FHIR profiles used to support communication between the health plan and
 
 While the authorization and communication mechanisms may differ between the provider-to-payer exchange and the member-authorized  Payer-to-Payer exchange or member-authorized Payer to Third-Party Application exchange the API interactions and data formats may be the same.  
 
-The objectives with the above approach is to:
+The objective with the above approach is to:
 
 - Minimize the proliferation of FHIR profiles by encouraging the re-use of FHIR profiles that have seen significant development effort invested by stakeholders across health care systems.
 - Consolidate the number of operational interfaces that health plans and  EMR systems need to maintain in order to meet regulatory requirements.
@@ -33,23 +33,23 @@ The first release of the PDex IG will focus on the following in-scope items. Ite
 	
 - Ambulatory Care Provider queries
 - Member-authorized Payer-to-Payer information exchange
-- Member-authorized Payer-to-Third-Party Application information exchange
+- Member-authorized Payer-to-Third-Party Application information exchange.
 	
 #### Deferred Scope
 	
 - In Patient Care Provider queries
-- Provider initiated data push
+- Provider initiated data push.
 	
 #### Out of Scope
 	
-- Wearable device data
+- Wearable device data.
 
 ### Member Consent
 
 Member/Patient Consent for scenarios covered in this Implementation Guide fall into two areas:
 
 1. Provider-Health Plan Exchange
-2. Member-mediated Information Exchange
+2. Member-mediated Information Exchange.
 
 #### Provider-Health Plan Exchange
 
@@ -59,7 +59,7 @@ Provider-Health Plan exchange of data is covered by the Health Insurance Portabi
 
 The CMS Interoperability and Patient Access Rule requires that a member to a new health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.
 
-The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016 be available via API.
+The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016, be available via API.
 
 A Member **SHALL** also be able to use APIs to share information with Third Party Applications. 
 
@@ -67,15 +67,15 @@ The Member-mediated Information Exchange method will build upon established OAut
 
 The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.
 
-The exchange of Healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-Plan-Net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/).
+The exchange of healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-Plan-Net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/).
 
 The exchange of Prescription drug formulary information is covered in the [PDex-formulary IG](http://hl7.org/fhir/us/Davinci-drug-formulary/).
 
-The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](member-authorizedoauth2exchange.html)
+The OAuth2.0-based exchange is covered in detail in the [Member-Authorized OAuth2 Exchange](member-authorizedoauth2exchange.html).
 
 ### Supporting Specifications
 
-This implementation guide is dependent on other specifications. Please submit any comments you have on these base specifications as follows:
+This Implementation Guide is dependent on other specifications. Please submit any comments you have on these base specifications as follows:
 
 - Feedback on CDS Hooks should be posted to the CDS Hooks [GitHub Issue List](https://github.com/cds-hooks/docs/issues)
 
@@ -87,13 +87,13 @@ Specification:
 
 - FHIR Core (FHIR)
 - US Core (FHIR)
-- US Da Vinci PDex (FHIR)
+- US Da Vinci PDex (FHIR).
 
 Individuals interested in participating in Payer Data exchange (PDex) or other HL7 Da Vinci projects can find information about the Da Vinci accelerator project [here](http://www.hl7.org/about/davinci).
 
 #### FHIR
 
-This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+This Implementation Guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this Implementation Guide.
 
 
 * [FHIR overview](http://hl7.org/fhir/R4/overview.html)
@@ -103,24 +103,24 @@ This implementation guide uses terminology, notations and design principles that
 * [Using codes](http://hl7.org/fhir/R4/terminologies.html)
 * [References between resources](http://hl7.org/fhir/R4/references.html)
 * [How to read resource and profile definitions](http://hl7.org/fhir/R4/formats.html)
-* [Base resource](http://hl7.org/fhir/R4/resource.html)
+* [Base resource](http://hl7.org/fhir/R4/resource.html).
 
 ### Implementation Assumptions
 
 Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles]({{site.data.fhir.ver.uscore}}/index.html). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
-Where profiles are specific to the PDex use case the profiles will be defined in this guide.
+Where profiles are specific to the PDex use case, the profiles will be defined in this guide.
 
 #### Implementation Hierarchy and Priorities
 
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
 1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [http://hl7.org/fhir/us/core/]({{site.data.fhir.ver.uscore}}/index.html) ) 
-2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) )
+2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) ).
 
-This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4 with DSTU2 (Argonaut) being the most popular implementation.
+This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.
 
-Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. Therefore, for profiles and APIs identified in this IG the FHIR R4 version **SHALL** be used.
+Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. Therefore, for profiles and APIs identified in this IG, the FHIR R4 version **SHALL** be used.
 
 ### PDex Data Payloads
 
@@ -129,9 +129,9 @@ The PDex IG defines four types of data payload:
 1. Member Membership, Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
 2. Healthcare Network Directory 
 3. Pharmacy Network Directory
-4. Medication Formulary
+4. Medication Formulary.
 
-The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016 onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share the data received from another health plan in the same electronic form and format in which it was received.   
+The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share the data received from another health plan in the same electronic form and format in which it was received.   
 
 The Directory and Formulary data payloads are covered in their respective Da Vinci Implementation Guides.
 
@@ -171,7 +171,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 - [US Core Procedure Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)
 - [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html)
 - [US Core Pulse Oximetry Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html)
-- [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html)
+- [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html).
 
 In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
@@ -181,7 +181,7 @@ In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/obser
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
-- [PDex Provenance](StructureDefinition-pdex-provenance.html)
+- [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
 #### CapabilityStatement
 
@@ -191,39 +191,39 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 {% include style_insert_table_blue.html %}
 
-| Resource Type                                 | Profile                                                                                        | Read | V-Read | Search | History |
-|-----------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|---------|
-| AllergyIntolerance                            | http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y | Y       |
-| CarePlan                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      | Y       |
-| CareTeam                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y    | Y       |
-| Condition                                     | http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html            | Y    | Y      | Y     | Y       |
-| Coverage                                      | http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      | Y       |
-| Device                                        | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html               | Y    | Y      | Y      | Y       |
-| DiagnosticReport for Laboratory Results Reporting | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html    | Y    | Y      | Y     | Y       |
-| DiagnosticReport for report and Note Exchange | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      | Y       |
-| DocumentReference                             | http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y       | Y       |
-| Encounter                                     |http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y       | Y       |
-| Goal                                          | http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y     | Y       |
-| Immunization                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      | Y       |
-| Implantable Device                      | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html    | Y    | Y      | Y      | Y       |
-| Laboratory Result Observation           | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html       | Y    | Y      | Y      | Y       |
-| Location                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html             | Y    | Y      | Y      | Y       |
-| Medication                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      | Y       |
-| MedicationDispense                            | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html           | Y    | Y      | Y      | Y       |
-| MedicationRequest                             | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html    | Y    | Y      | Y      | Y       |
-| Organization                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html         | Y    | Y      | Y    | Y       |
-| Patient                                       | http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      | Y       |
-| Pediatric BMI for Age Observation  | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html      | Y    | Y      | Y     | Y       |
-| Pediatric Head Occipital Frontal Circumference Percentile  | https://www.hl7.org/fhir/us/core/StructureDefinition-head-occipital-frontal-circumference-percentile.html  | Y    | Y      | Y      | Y       |
-| Pediatric Weight for Height Observation  | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html  | Y    | Y      | Y      | Y       |
-| Practitioner                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      | Y       |
-| PractitionerRole                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      | Y       |
-| Procedure                                     | http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y         | Y       |
-| Provenance                                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      | Y       |
-| PDex Provenance                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-provenance.html   | Y    | Y      | Y      | Y       |
-| Pulse Oximetry                         | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
-| Smoking Status Observation                    | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y       | Y       |
-| Vital Signs                                   | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y       | Y       |
+| Resource Type                                             | Profile                                                                                        | Read | V-Read | Search | History |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|---------|
+| AllergyIntolerance                                        | http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y | Y       |
+| CarePlan                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      | Y       |
+| CareTeam                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y    | Y       |
+| Condition                                                 | http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html            | Y    | Y      | Y     | Y       |
+| Coverage                                                  | http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      | Y       |
+| Device                                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html               | Y    | Y      | Y      | Y       |
+| DiagnosticReport for Laboratory Results Reporting         | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html    | Y    | Y      | Y     | Y       |
+| DiagnosticReport for Report and Note Exchange             | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      | Y       |
+| DocumentReference                                         | http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y       | Y       |
+| Encounter                                                 |http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y       | Y       |
+| Goal                                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y     | Y       |
+| Immunization                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      | Y       |
+| Implantable Device                                        | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html    | Y    | Y      | Y      | Y       |
+| Laboratory Result Observation                             | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html       | Y    | Y      | Y      | Y       |
+| Location                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html             | Y    | Y      | Y      | Y       |
+| Medication                                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      | Y       |
+| MedicationDispense                                        | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html           | Y    | Y      | Y      | Y       |
+| MedicationRequest                                         | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html    | Y    | Y      | Y      | Y       |
+| Organization                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html         | Y    | Y      | Y    | Y       |
+| Patient                                                   | http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      | Y       |
+| Pediatric BMI for Age Observation                         | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html      | Y    | Y      | Y     | Y       |
+| Pediatric Head Occipital Frontal Circumference Percentile | https://www.hl7.org/fhir/us/core/StructureDefinition-head-occipital-frontal-circumference-percentile.html  | Y    | Y      | Y      | Y       |
+| Pediatric Weight for Height Observation                   | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html  | Y    | Y      | Y      | Y       |
+| Practitioner                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      | Y       |
+| PractitionerRole                                          | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      | Y       |
+| Procedure                                                 | http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y         | Y       |
+| Provenance                                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      | Y       |
+| PDex Provenance                                           | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-provenance.html   | Y    | Y      | Y      | Y       |
+| Pulse Oximetry                                            | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
+| Smoking Status Observation                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y       | Y       |
+| Vital Signs                                               | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y       | Y       |
 
 
 #### Healthcare Network Directory 

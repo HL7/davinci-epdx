@@ -47,7 +47,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 See links to examples in the FHIR R4 specification here: [https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html)
 
-[https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html)
+[https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html).
 
 
 

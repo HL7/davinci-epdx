@@ -1,13 +1,13 @@
 [Previous Page - CDS-Hooks](cds-hooks.html)
 
-Assumption: Supported Provider/Clinician workflow meet the HIPAA treatment, payment, and operations purposes per OCR guidance and are in compliance with federal and state regulations. [https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
+Assumption: Supported Provider/Clinician workflow meet the HIPAA treatment, payment, and operations purposes per OCR guidance and are in compliance with federal and state regulations. [https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html).
 
 These are example use cases and there is no reason to assume they are exhaustive.
 
 There are two Provider/Clinician workflow examples:
 
 1. First visit with new Provider
-2. Return visit with Provider
+2. Return visit with Provider.
 
 ### First Visit with New Provider
 

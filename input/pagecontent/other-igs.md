@@ -16,7 +16,7 @@ PDex references the following Implementation Guides:
 - [Da Vinci Member Attribution (ATR) 2.0.0](http://hl7.org/fhir/us/davinci-atr/2023Jan/)
 - [FAST National Directory (NDH)](https://build.fhir.org/ig/HL7/fhir-us-ndh/)
 
-Note: The FAST National Directory IG has yet to be published. To enable PDex to leverage the profiles and extensions in the NDH IG the required Profiles, Extensions, Value Sets and Code Systems have heen copied into PDex. Once the NDH IG is published it is intended that the PDex IG would remove the NDH content in a future PDex STU update and reference the FAST NDH IG directly.
+Note: The FAST National Directory (NDH) IG has yet to be published. To enable PDex to leverage the profiles and extensions in the NDH IG the required Profiles, Extensions, Value Sets and Code Systems have been copied into PDex. Once the NDH IG is published it is intended that the PDex IG would remove the NDH content in a future PDex STU update and reference the FAST NDH IG directly.
 
 
 ### Profiles
@@ -37,7 +37,7 @@ The following profiles are referenced in this IG:
 
 #### Member Attribution (ATR)
 
-- [ATR Group Profile](http://hl7.org/fhir/us/davinci-atr/2023Jan/StructureDefinition-atr-group.html)
+- [ATR Group Profile](http://hl7.org/fhir/us/davinci-atr/2023Jan/StructureDefinition-atr-group.html).
 
 ### Operations
 
@@ -49,7 +49,7 @@ The following operations are referenced:
 
 #### Member Attribution (ATR)
 
-- [DaVinci Data Export Operation](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html)
+- [DaVinci Data Export Operation](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html).
 
 ### IG/package dependencies
 

@@ -12,9 +12,13 @@ Description: "A bundle of Endpoint and Organization resources to enable mTLS end
 //* entry 0..*
 //* entry[0].resource
 //* entry[0].resource.meta
-//* entry[0].resource.meta.profile = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-managing-organization
-//* entry[1].resource.meta.profile = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-endpoint
-// * entry.resource.meta.profile = mtls-managing-organization
+//* entry[0].resource.meta.profile = MtlsOrganization
+//* entry[1].resource
+//* entry[1].resource.meta
+//* entry[1].resource.meta.profile = MtlsEndpoint
+//* entry[2].resource
+//* entry[2].resource.meta
+//* entry[2].resource.meta.profile = MtlsOrganization
 * signature 1..1 MS
 * signature ^short = "Digital signature of Submitting Payer"
 // -------------------------------------

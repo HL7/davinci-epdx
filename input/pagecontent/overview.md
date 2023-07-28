@@ -2,7 +2,7 @@
 
 The PDex guide is based on the [HL7 FHIR 4.0.1](http://hl7.org/fhir/R4/) standard, as well as the [CDS Hooks](https://cds-hooks.org/),  [SMART on FHIR](http://docs.smarthealthit.org/) and [OAuth2.0](https://oauth.net/2/) standards, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
-This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a Venn diagram as shown below.
+This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition, the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a Venn diagram as shown below.
 
 <table><tr><td><img width="100%" height="auto" src="PDexAndUSCoreRelationship-v5.png" /></td></tr></table>
   
@@ -15,7 +15,7 @@ All data exchanged by Health Plans using the interactions covered in this IG **S
 **There are items in this guide that are subject to update**. This includes:
 - Value Sets
 - Code Systems
-- Examples
+- Examples.
 
 We have mapped the CARIN Alliance CPCDS as a generic representation of information held by Payers relevant to representation in US Core profiles.
 
@@ -36,7 +36,7 @@ Where data is passed via Payer Data Exchange, Payers have the ability to indicat
 This IG covers three methods of information exchange:
 1. CDS-Hooks and SMART-on-FHIR
 2. OAuth2.0 or SMART-on-FHIR Member-authorized Exchange
-3. $patient-everything exchange via alternate secure channels
+3. $patient-everything exchange via alternate secure channels.
 
 #### CDS-Hooks and SMART-on-FHIR
 
@@ -64,7 +64,7 @@ Data Segmentation capabilities for Bulk Data Transfer are currently being develo
 
 Since Health Plans compile information from many sources to create a Member's Health History it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.
 
-Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. Health Plans **SHALL** provide Provenance records that, at a minimum indicated that they are playing the role of Transmitter of the data in any PDex information exchange.
+Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange.
 
 In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data.
 
