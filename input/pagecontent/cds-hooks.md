@@ -28,9 +28,9 @@ Each way is described in the following sections.
 
 ### Support for FHIR R4
 
-The hooks published in the CDS Hooks specification provide a list of context resources for the DSTU2 and STU3 versions of FHIR. The CDS Hook specification won't be updated to include R4 resources until after R4 is finalized. Because this implementation guide is being written to support FHIR R4 as well as STU3 and Argonaut (DSTU2), it provides guidance on what R4 resources are relevant for each hook (both pre-existing hooks as well as newly proposed hooks).
+The hooks published in the CDS Hooks specification provide a list of context resources for the DSTU2 and STU3 versions of FHIR. The CDS Hook specification won't be updated to include R4 resources until after R4 is finalized. Because this implementation guide is being written to support FHIR R4 as well as STU3 and Argonaut (DSTU2), it provides guidance on what R4 resources are relevant for each hook (both pre-existing hooks, as well as newly proposed hooks).
 
-It is possible that the actual list of R4 resources provided for the hooks will differ from that proposed in this IG. Future versions of the implementation guide will adjust accordingly.
+It is possible that the actual list of R4 resources provided for the hooks will differ from that proposed in this IG. Future versions of the Implementation Guide will adjust accordingly.
 
 The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. The Payer's CDS Hooks service **SHALL** handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources.
 
@@ -44,18 +44,18 @@ Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a Do
 
 #### Graceful Write Degradation
 
-When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
+When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.
 
-Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record.
+Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record.
 
 Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record.
 
-Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record.
+Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record.
 
 To summarize this graceful degradation in functionality the priority for writing information to a target EMR should be:
 
 1. Write information to the respective target resources
-2. Where data can't be written to target resources, create a Document Reference that comprises a FHIR bundle and a human readable PDF of the records being committed.
+2. Where data can't be written to target resources, create a Document Reference that comprises a FHIR bundle and a human-readable PDF of the records being committed.
 3. Where the DocumentReference resource does not support committing a FHIR bundle, store the PDF document.
 4. Where the DocumentReference does not support writing a PDF, store an HTML or XHTML version.
 5. Where the DocumentReference does not support HTML or XHTML content, write an ASCII text version.
@@ -71,7 +71,7 @@ The base CDS hooks 1.0 specification defines the following hooks:
 - order-sign
 - appointment-book
 - encounter-start
-- encounter-discharge
+- encounter-discharge.
 
 The expectation is that new hooks will be defined by and eventually formally approved by the community. The formal process for this proposal and maturity development process is still evolving. Individuals interested in this process can provide feedback [here](https://cds-hooks.hl7.org).
 
@@ -91,7 +91,7 @@ If the Member Id is not available, the Subscriber ID and the patient information
 
 Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification. Connection to health plan systems **SHALL** be supported via the following hook:
 
-- appointment-book
+- appointment-book.
 
 The overall flow of the SMART-on-FHIR and CDS-Hooks interaction is summarized in the diagram below:
 
@@ -107,7 +107,7 @@ It is possible that this hook will change over the course of the review/approval
 
 This IG defines an extension to the appointment-book hook. The additional optional context fields are:
 
-- MemberId (optional): The number that identifies the unique person in the health plan system
+- MemberId (optional): The number that identifies the unique person in the health plan system.
 
 NOTE: Even pre-existing hooks are not yet locked down as normative and similar changes are possible, though perhaps less likely.
 
@@ -149,17 +149,18 @@ PDex supports three common scenarios where CDS Hooks **SHOULD** be used:
 
 - New Patient presents at Provider
 - Patient returns to Provider
-- Patient presents at Specialist
+- Patient presents at Specialist.
 
 The hook interaction for these scenarios is:
-* appointment-book
+
+* appointment-book.
 
 When a Card is returned from the CDS Hooks appointment-book service by a Health Plan it will provide the following elements:
 - An AppContext that enables the launch of a (pre-registered and credentialed) SMART-on-FHIR to perform the next steps.
 The URL for the Health Plan’s FHIR API
 - A result code indicating the result of a Member Search
 - The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system
-- An information card with a human readable interpretation of the Member Search Result
+- An information card with a human-readable interpretation of the Member Search Result
 - The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API.
  
 
@@ -180,7 +181,7 @@ As a minimum, search of FHIR Resources **SHOULD** support the following query pa
 
 - \_lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss
 - Period (i.e., Date / Time filters)
-- Inclusions or exclusions based upon Organization, Location or Practitioners
+- Inclusions or exclusions based upon Organization, Location or Practitioners.
 
 An example CDS Hooks Response Card is shown below:
 
@@ -211,10 +212,10 @@ An example CDS Hooks Response Card is shown below:
 
 ### Systems
 
-This implementation guide sets expectations for two types of systems:
+This Implementation Guide sets expectations for two types of systems:
 
 1. Client Systems
-2. Payer Systems
+2. Payer Systems.
 
 #### Client Systems
 Client systems are electronic medical records, Pharmacy systems and other clinical and administrative systems are responsible for the ordering and execution of patient-related services. These are systems whose users have a need for discovery of patient information from health plans who have provided coverage to the patient.
@@ -222,6 +223,6 @@ Client systems are electronic medical records, Pharmacy systems and other clinic
 #### Payer Systems
 Payer systems are systems run by health plans/insurers that provide insurance coverage to the patient and can provide claims history clinical information and benefits information about the patient.
 
-The requirements and expectations described here are not intended to be exhaustive. Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. The purpose of this implementation guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
+The requirements and expectations described here are not intended to be exhaustive. Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. The purpose of this Implementation Guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
 
 [Next Page - Workflow Examples](workflowexamples.html)

@@ -66,6 +66,6 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 ### Example Pulse Oximetry Resource
 
-Here is a US Core Example of a Pulse Oximetry observation: [http://hl7.org/fhir/us/core/Observation-satO2-fiO2.html](http://hl7.org/fhir/us/core/Observation-satO2-fiO2.html)
+Here is a US Core Example of a Pulse Oximetry observation: [http://hl7.org/fhir/us/core/Observation-satO2-fiO2.html](http://hl7.org/fhir/us/core/Observation-satO2-fiO2.html).
 
 [Next Page - US Core Smoking Status Observation](USCoreSmokingStatusObservation.html)

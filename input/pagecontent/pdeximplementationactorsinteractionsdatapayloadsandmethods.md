@@ -7,7 +7,7 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 {% include style_insert_table_blue.html %}
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
-The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core STU 3.1.1]({{site.data.fhir.ver.uscore}}/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated outputs from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
+The Member Health History is represented as a series of FHIR Resources that are based on a superset of [HL7 FHIR US Core STU 3.1.1]({{site.data.fhir.ver.uscore}}/index.html), HRex and PDex profiles. The content/payload of the Member Health History may be augmented by FHIR resources that are generated from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
 
 ### Actors
 
@@ -16,7 +16,7 @@ The following actors are recognized in the PDex IG:
 - **Health Plan**: The Insurance entity, or Payer, who handles claims for services provided to their plan members. 
 - **Member**: The health plan member / patient who is, or was, a member of a health plan.
 - **Provider**: The practitioner or clinician, or their representative, that initiates a data access request to retrieve member data from a health plan.
-- **Third-Party Application**: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a Hospital or Health Plan to a third party of their choosing.
+- **Third-Party Application**: Health Plan Members / Patients have a right under the Health Insurance Portability and Accountability Act of 1996 (HIPAA) to direct the information held by a covered entity, such as a hospital or Health Plan to a third party of their choosing.
 
 There are different terms used for an individual or patient in the Health Plan industry. Terms such as subscriber or member may be used. A subscriber and a member are not necessarily equivalent. For example, the subscriber may be the primary family member on a plan that covers the entire family. Therefore, the term Member will be used throughout this guide to identify the individual subject of the "member health history".
 
@@ -24,16 +24,16 @@ There are different terms used for an individual or patient in the Health Plan i
 
 The PDex IG is specifying three exchange interactions:
  
-1. Providers and Health Plans exchanging information about a Member where the provider has a current or pending treatment relationship.
-2. Health Plans via a Member authorized exchange when a Member has moved from enrollment in one health plan to another.
-3. Health Plans and Third-Party Applications that a Member has authorized to share their health information that is held by the health plan.
+1. Providers and Health Plans exchanging information about a member where the provider has a current or pending treatment relationship.
+2. Health Plans via a Member authorized exchange when a member has moved from enrollment in one health plan to another.
+3. Health Plans and Third-Party Applications that a member has authorized to share their health information that is held by the health plan.
 
 ### Data Payloads
 
 The PDex IG defines two types of data payload:
 
 1. Member Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
-2. Coverage (HealthPlan Membership data)
+2. Coverage (HealthPlan Membership data).
 
 All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
 
@@ -50,7 +50,7 @@ The PDex IG specifies three interaction methods. Their use depends upon the Acto
 There are three potential interaction methods:
 1. CDS Hooks with SMART on FHIR
 2. OAuth 2.0 and FHIR API
-3. Patient-everything-pdex via alternate secure transport
+3. Patient-everything-pdex via alternate secure transport.
 
 #### CDS Hooks with SMART-on-FHIR
 
@@ -78,11 +78,11 @@ The SMART on FHIR CDS Hook trigger approach was pioneered by the [Da Vinci Cover
 
 The PDex IG uses a similar approach to enable a CDS Hook. The CDS Hook used by PDex is:
 
-- Appointment-book
+- Appointment-book.
 
 This IG also proposes the creation of a new CDS Hook for the interaction defined in this IG. This hook would be:
 
-- Request-member-history
+- Request-member-history.
 
 An overview of the transaction flow is shown in figure 4-1:
 
@@ -127,26 +127,19 @@ An overview of the OAuth2.0 Flow using the FHIR API is shown below for both Heal
 
 #### Payer-to-Payer Data Exchange
 
-TODO: update link to replace build.fhir.org when HRex publishes.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core, is a requirement of the CMS Interoperability Rule.
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in
-FHIR by US Core, is a requirement of the CMS Interoperability Rule.
+All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of attribution lists for exchange of data for groups of members will be considered in a future version of the IG.
 
-All PDex Payer to Payer FHIR-based data exchanges in this IG will be limited to the exchange of
-data for a single member. Data Exchange for groups of Members is outside the current scope of this IG. Management
-of attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+Payer-to-Payer exchange can be accomplished by three methods: 
 
-Payer-to-Payer exchange can be accomplished by three methods. 
+1. Query all clinical resource individually.
+2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation.
+3. Bulk FHIR Asynchronous protocols.
 
-1. Query all clinical resource individually
-2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
-3. Bulk FHIR Asynchronous protocols
+Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. 
 
-Clients wishing to retrieve data should consult the Data Provider's Server Capability Statement to 
-determine which methods are made available by the data holder. 
-
-Please refer to [Section 5.2 - Payer To Payer Exchange](payertopayerexchange.html) for details about Payer-to-Payer
-exchange workflows and data exchange methods. 
+Please refer to [Section 5.2 - Payer-to-Payer Exchange](payertopayerexchange.html) for details about Payer-to-Payer exchange workflows and data exchange methods. 
 
 
 [Next Page - Handling Data Provenance](handlingdataprovenance.html)

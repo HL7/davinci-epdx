@@ -2,7 +2,7 @@
 
 This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations.
 
-This implementation guide was the work of the [Da Vinci Accelerator Project's](http://www.hl7.org/about/davinci/index.cfm?ref=common) PDex work group and Da Vinci member organizations.
+This Implementation Guide was the work of the [Da Vinci Accelerator Project's](http://www.hl7.org/about/davinci/index.cfm?ref=common) PDex work group and Da Vinci member organizations.
 
 **Primary authors:**
 * Mark Scrimshire (OnyxHealth.io)
