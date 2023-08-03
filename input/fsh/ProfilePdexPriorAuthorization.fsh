@@ -36,6 +36,22 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 
 * insurance.coverage only Reference(hrex-coverage)
 
+* item.extension contains
+    $ExtensionItemTraceNumber named itemTraceNumber 0..* MS and
+	$ExtensionItemPreAuthIssueDate named preAuthIssueDate 0..1 MS and
+	$ExtensionItemPreAuthPeriod named preAuthPeriod 0..1 MS and
+	$ExtensionAuthorizationNumber named previousAuthorizationNumber 0..1 MS and
+	$ExtensionAdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
+	$ExtensionItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
+	$ExtensionItemAuthorizedProvider named authorizedProvider 0..* MS
+* item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
+* item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
+* item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
+* item.extension[previousAuthorizationNumber] ^short = "A string assigned by the UMO to an authorized review outcome associated with this service item."
+* item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
+* item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
+* item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+
 * item.category 0..1 MS
 * item.category from https://x12.org/codes/service-type-codes
 * item.category ^binding.description = "Codes identifying business groupings for health care services or benefits. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."

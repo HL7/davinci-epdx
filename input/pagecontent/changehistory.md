@@ -5,15 +5,17 @@
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
 
-| JIRA Ticket                                              | Change                                                                                              |
-|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| BallotRec-Vote7                                          |                                                                                                     | 
-| TC: [FHIR-41497](https://jira.hl7.org/browse/FHIR-41497) | Missing reference to CDS Hooks diagram      |
-| TC: [FHIR-41399](https://jira.hl7.org/browse/FHIR-41399) | Text states "US Core v3.1.1" but URL behind "US Core FHIR R4" points to US Core V 6.0.0      |
-| TC: [FHIR-41398](https://jira.hl7.org/browse/FHIR-41398) | Typo at the bottom of section 5.0.4.3 ("4.2" vs. "5.2")     |
-| [FHIR-41381](https://jira.hl7.org/browse/FHIR-41381)     | Add narrative stating that the Prior Authorization profile also applies to the Payer to Payer use case     |
-| NDH Profiles and Extensions                              | Imported unpublished NDH Profiles, Extensions, CodeSystems and ValueSets into PDex for mTLS support |
+| JIRA Ticket                                              | Change                                                                                                                                                       |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BallotRec-Vote7                                          |                                                                                                                                                              | 
+| TC: [FHIR-41675](https://jira.hl7.org/browse/FHIR-41675) | Remove duplicate codes from Provenance Agent Type                                                                                                            |
+| TC: [FHIR-41497](https://jira.hl7.org/browse/FHIR-41497) | Missing reference to CDS Hooks diagram                                                                                                                       |
+| TC: [FHIR-41399](https://jira.hl7.org/browse/FHIR-41399) | Text states "US Core v3.1.1" but URL behind "US Core FHIR R4" points to US Core V 6.0.0                                                                      |
+| TC: [FHIR-41398](https://jira.hl7.org/browse/FHIR-41398) | Typo at the bottom of section 5.0.4.3 ("4.2" vs. "5.2")                                                                                                      |
+| [FHIR-41381](https://jira.hl7.org/browse/FHIR-41381)     | Add narrative stating that the Prior Authorization profile also applies to the Payer to Payer use case                                                       |
+| NDH Profiles and Extensions                              | Imported unpublished NDH Profiles, Extensions, CodeSystems and ValueSets into PDex for mTLS support                                                          |
 | [FHIR-41307](https://jira.hl7.org/browse/FHIR-41307)     | Conflicting Links to HRex Coverage Profile                                                                                                                   |
+| [FHIR-41177](https://jira.hl7.org/browse/FHIR-41177)     | Capturing adjudication (determination) date for pre-auth                                                                                                     |
 | [FHIR-40517](https://jira.hl7.org/browse/FHIR-40517)     | Section numbering is broken                                                                                                                                  |
 | Created Examples for mTLS                                | Created Examples for MtlsOrganization and MtlsEndpoint                                                                                                       | 
 | [FHIR-40357](https://jira.hl7.org/browse/FHIR-40357)     | Possible typo in Data Mapping specification                                                                                                                  | 
