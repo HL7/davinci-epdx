@@ -10,10 +10,12 @@ CodeSystem: ProvenanceAgentRoleType
 * ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
-* #author "Author" "Person or entity that originated the referenced resource"
-* #custodian "Custodian" "The entity that is accountable for maintaining a true an accurate copy of the original record"
+// Remove duplicate codes that are defined in http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type
+// or in http://terminology.hl7.org/CodeSystem/provenance-participant-type
+// * #author "Author" "Person or entity that originated the referenced resource"
+// * #custodian "Custodian" "The entity that is accountable for maintaining a true an accurate copy of the original record"
 * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"
-* #transmitter "Transmitter" "Provenance Transmitter"
+// * #transmitter "Transmitter" "Provenance Transmitter"
 
 
 CodeSystem: ProvenancePayerDataSource

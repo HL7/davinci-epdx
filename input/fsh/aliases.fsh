@@ -121,3 +121,13 @@ Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias: $CMSHIPPSCodes = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias: $CMSRemittanceAdviceRemarkCodes = https://x12.org/codes/remittance-advice-remark-codes
 
+// Da Vinci Prior Authorization Support 1.2.0-ballot
+Alias: $ExtensionItemTraceNumber = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber
+Alias: $ExtensionItemPreAuthIssueDate = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate
+Alias: $ExtensionItemPreAuthPeriod = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod
+Alias: $ExtensionAuthorizationNumber = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber
+Alias: $ExtensionAdministrationReferenceNumber = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber
+Alias: $ExtensionItemAuthorizedDate = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDate
+Alias: $ExtensionItemAuthorizedDetail = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail
+Alias: $ExtensionItemAuthorizedProvider = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider
+Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis
