@@ -131,3 +131,7 @@ Alias: $ExtensionItemAuthorizedDate = http://hl7.org/fhir/us/davinci-pas/Structu
 Alias: $ExtensionItemAuthorizedDetail = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail
 Alias: $ExtensionItemAuthorizedProvider = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider
 Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis
+
+
+//Other Aliases
+Alias:   $BCP13 = urn:ietf:bcp:13

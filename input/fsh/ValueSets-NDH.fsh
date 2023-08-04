@@ -65,8 +65,9 @@ ValueSet: EndpointFhirMimeTypeVS
 Title: "Endpoint FHIR Mimetype Value Set"
 Description: "Endpoint FHIR mimetype"
 * ^experimental = false
-* codes from system EndpointFhirMimeTypeCS
-
+* $BCP13#application/fhir+xml "FHIR XML"
+* $BCP13#application/fhir+json "FHIR JSON"
+* $BCP13#application/fhir+turtle "FHIR Turtle"
 
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"
