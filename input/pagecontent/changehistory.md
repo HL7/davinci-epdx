@@ -21,7 +21,7 @@
 | [FHIR-40357](https://jira.hl7.org/browse/FHIR-40357)     | Possible typo in Data Mapping specification                                                                                                                  | 
 | [FHIR-40239](https://jira.hl7.org/browse/FHIR-40239)     | Missing endpoint URLs?                                                                                                                                       | 
 | [FHIR-36626](https://jira.hl7.org/browse/FHIR-36626)     | Review all mappings as significant errors have been detected - Reviewed against CARIN-BB STU2                                                                | 
-| [FHIR-36602](https://jira.hl7.org/browse/FHIR-36602)     | Review all mappings as significant erors have been detected in the above mappings and are expected in other mappings.- Reviewed against CARIN-BB STU2        |
+| [FHIR-36602](https://jira.hl7.org/browse/FHIR-36602)     | Review all mappings as significant errors have been detected in the above mappings and are expected in other mappings.- Reviewed against CARIN-BB STU2       |
 | [FHIR-36601](https://jira.hl7.org/browse/FHIR-36601)     | Review all mappings for DiagnosticReport - Reviewed against CARIN-BB STU2                                                                                    | 
 | [FHIR-36598](https://jira.hl7.org/browse/FHIR-36598)     | Review all mappings for Encounter - Reviewed against CARIN-BB STU2                                                                                           | 
 | QA Report Fixes                                          | Apply fixes to resolve QA Report Errors.                                                                                                                     | 

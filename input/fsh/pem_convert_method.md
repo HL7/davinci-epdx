@@ -1,6 +1,7 @@
 # Convert .pem certificate file 
 
-To add a certificate file to the endpoint resource it should be converted to Base64Binary. There are various tools available to do this.
+To add a certificate file to the endpoint resource it should be converted to Base64Binary. 
+There are various tools available to do this.
 
 For the examples in this guide an online tool was used:
 

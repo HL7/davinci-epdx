@@ -13,7 +13,7 @@ PDex references the following Implementation Guides:
 
 - [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/)
 - [Da Vinci Health Record Exchange (HRex) 1.0.0](http://hl7.org/fhir/us/davinci-hrex/STU1/)
-- [Da Vinci Member Attribution (ATR) 2.0.0](http://hl7.org/fhir/us/davinci-atr/2023Jan/)
+- [Da Vinci Prior Authorization Support (PAS) 1.2.0](http://hl7.org/fhir/us/davinci-pas/2022May/)
 - [FAST National Directory (NDH)](https://build.fhir.org/ig/HL7/fhir-us-ndh/)
 
 Note: The FAST National Directory (NDH) IG has yet to be published. To enable PDex to leverage the profiles and extensions in the NDH IG the required Profiles, Extensions, Value Sets and Code Systems have been copied into PDex. Once the NDH IG is published it is intended that the PDex IG would remove the NDH content in a future PDex STU update and reference the FAST NDH IG directly.
@@ -35,10 +35,6 @@ The following profiles are referenced in this IG:
 - [HRex Parameters Member Match Request Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-in.html)
 - [HRex Parameters Member Match Response Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-out.html)
 
-#### Member Attribution (ATR)
-
-- [ATR Group Profile](http://hl7.org/fhir/us/davinci-atr/2023Jan/StructureDefinition-atr-group.html).
-
 ### Operations
 
 The following operations are referenced:
@@ -47,9 +43,6 @@ The following operations are referenced:
 
 - [HRex Member Match Operation](http://hl7.org/fhir/us/davinci-hrex/STU1/OperationDefinition-member-match.html)
 
-#### Member Attribution (ATR)
-
-- [DaVinci Data Export Operation](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html).
 
 ### IG/package dependencies
 

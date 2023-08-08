@@ -1,4 +1,4 @@
-[Previous Page - Provider Access API](provider-api.html)
+[Next Page - Payer-to-Payer Exchange](payertopayerexchange.html)
 
 Health Plans **SHALL** map claims and clinical information for a member to US Core v3.1.1 FHIR Resources based on R4.
 
