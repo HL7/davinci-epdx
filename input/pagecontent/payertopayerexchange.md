@@ -102,7 +102,7 @@ The Coverage Profile is used to provide data for the CoverageToMatch and the Cov
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the payer able to respond to a request for only non-sensitive data.
-- Return a Unique Patient Identifier in the $member-match Operation Response.
+- Return a Unique Patient Identifier (Patient FHIR ID) in the $member-match Operation Response.
 
 When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
 
