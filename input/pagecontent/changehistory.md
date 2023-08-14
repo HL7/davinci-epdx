@@ -8,6 +8,7 @@
 | JIRA Ticket                                              | Change                                                                                                                                                       |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote7                                          |                                                                                                                                                              | 
+| TC: endpoint example                                     | Update Endpoint example with new Trust Framework certificates in Base64Binary                                                                                |
 | TC: [FHIR-41675](https://jira.hl7.org/browse/FHIR-41675) | Remove duplicate codes from Provenance Agent Type                                                                                                            |
 | TC: [FHIR-41497](https://jira.hl7.org/browse/FHIR-41497) | Missing reference to CDS Hooks diagram                                                                                                                       |
 | TC: [FHIR-41399](https://jira.hl7.org/browse/FHIR-41399) | Text states "US Core v3.1.1" but URL behind "US Core FHIR R4" points to US Core V 6.0.0                                                                      |
