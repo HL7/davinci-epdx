@@ -15,6 +15,8 @@ RuleSet: CodeSystemStubBoilerplate
 * ^experimental = true
 * ^caseSensitive = false
 * ^content = #not-present
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: PDexPAInstitutionalProcedureCodes
@@ -79,10 +81,10 @@ group information may also vary by payment systems.
 * codes from system $CMSHCPCSCodes
 * codes from system $CMSHIPPSCodes
 * include $HL7DataAbsentReason#not-applicable "Not Applicable"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 * ^copyright = "Current Procedural Terminology (CPT) is copyright 2020 American Medical Association. All rights reserved
-
 See information on the use of HCPCS Level I (proprietary and owned by American Medical Association) and Level II codes [here](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/HCPCS_Coding_Questions)
-
 CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)"
 
 //CodeSystem: CMSHCPCSCodes
@@ -157,6 +159,8 @@ Click on the name of any external code list to access more information about the
 * ^experimental = true
 * codes from system $X12ClaimAdjustmentReasonCodes
 * codes from system $CMSRemittanceAdviceRemarkCodes
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 * ^copyright = """
 **Intellectual Property Information**
 

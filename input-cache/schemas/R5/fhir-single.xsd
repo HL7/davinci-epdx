@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jul 28, 2023 23:09+0000 for FHIR v6.0.0-cibuild 
+  Generated on Wed, Sep 20, 2023 00:41+0000 for FHIR v6.0.0-cibuild 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="6.0.0-cibuild">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -25788,7 +25788,7 @@ of the resource representation.</xs:documentation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An explicitly assigned identifer of a variation of the content in the Composition.</xs:documentation>
+              <xs:documentation xml:lang="en">An explicitly assigned identifier of a variation of the content in the Composition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="CompositionStatus">
@@ -31894,7 +31894,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An explicitly assigned identifer of a variation of the content in the DocumentReference.</xs:documentation>
+              <xs:documentation xml:lang="en">An explicitly assigned identifier of a variation of the content in the DocumentReference.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -39399,6 +39399,11 @@ See guidance around (not) making local changes to elements [here](canonicalresou
               <xs:documentation xml:lang="en">Each imaging selection includes one or more selected DICOM SOP instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="imageRegion3D" type="ImagingSelection.ImageRegion3D" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Each imaging selection might includes a 3D image region, specified by a region type and a set of 3D coordinates.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -39460,11 +39465,6 @@ See guidance around (not) making local changes to elements [here](canonicalresou
             <xs:annotation>
               <xs:documentation xml:lang="en">Each imaging selection instance or frame list might includes an image region, specified by a region type and a set of 2D coordinates.
        If the parent imagingSelection.instance contains a subset element of type frame, the image region applies to all frames in the subset list.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="imageRegion3D" type="ImagingSelection.ImageRegion3D" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Each imaging selection might includes a 3D image region, specified by a region type and a set of 3D coordinates.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>

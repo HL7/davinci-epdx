@@ -7,6 +7,9 @@ Description: "Payer Data Exchange Server Capability Statement"
 * name = "PdexServerCapabilityStatement1"
 * meta.profile = "http://hl7.org/fhir/StructureDefinition/CapabilityStatement"
 * description = "Payer Data Exchange Server Capability Statement"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension.valueCode = #fm
+
 * rest.mode = #server
 
 // AllergyIntolerance

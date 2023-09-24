@@ -10,6 +10,9 @@ RuleSet: PdexDefinitionContent
 * contact[1].telecom.system = #email
 * contact[1].telecom.value = "mailto:mark@ekivemark.com"
 * jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 // Define a rule set for commonly used rules for definition resources using other Sushi features
 RuleSet: PdexStructureDefinitionContent
@@ -22,12 +25,15 @@ RuleSet: PdexStructureDefinitionContent
 * ^contact[1].telecom.system = #email
 * ^contact[1].telecom.value = "mailto:mark@ekivemark.com"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 RuleSet: PdexCapabilityStatementContent
 * status = #draft
 * experimental = true
 * date = "2020-09-13"
-* publisher = "HL7 Da Vinci"
+* publisher = "HL7 International / Financial Management"
 * contact.name = "Mark Scrimshire"
 * contact.telecom.system = #email
 * contact.telecom.value = "mailto:mark@ekivemark.com"
@@ -35,4 +41,6 @@ RuleSet: PdexCapabilityStatementContent
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[1] = #xml
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension.valueCode = #fm
 * implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"

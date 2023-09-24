@@ -10,6 +10,9 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 * meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|2.0.0)
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 * status  1..1 MS
 * use 1..1 MS
 * use = #preauthorization
@@ -53,7 +56,8 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
 
 * item.category 0..1 MS
-* item.category from https://x12.org/codes/service-type-codes
+//* item.category from https://x12.org/codes/service-type-codes
+* item.category from PriorAuthServiceTypeCodes
 * item.category ^binding.description = "Codes identifying business groupings for health care services or benefits. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
 * item.encounter only Reference(us-core-encounter)
 

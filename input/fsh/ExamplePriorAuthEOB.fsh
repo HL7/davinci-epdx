@@ -10,6 +10,9 @@ Usage: #example
 * status = #active
 * identifier.value = "PA123412341234123412341234"
 * identifier.system = "https://www.exampleplan.com/fhir/EOBIdentifier"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension.valueCode = #fm
+
 * type = $HL7ClaimTypeCS#institutional
 * type.text = "Institutional"
 * preAuthRefPeriod.start = "2021-10-01"

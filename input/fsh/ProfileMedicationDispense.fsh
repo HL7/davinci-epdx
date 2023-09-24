@@ -5,6 +5,8 @@ Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
 * insert PdexStructureDefinitionContent
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 * subject 1..1 MS
 * subject only Reference(us-core-patient)
 * subject ^short = "The patient who is prescribed the medication"

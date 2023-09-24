@@ -10,6 +10,8 @@ Description:  "Agent role performed relating to referenced resource"
 * codes from system http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type
 * codes from system http://terminology.hl7.org/CodeSystem/provenance-participant-type
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: ProvenancePayerSourceFormat
@@ -18,6 +20,8 @@ Description: "Source Data formats used as the source for FHIR referenced record 
 * ^experimental = true
 * codes from system ProvenancePayerDataSource
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 // Taken from CARIN-BB
 ValueSet: FDANationalDrugCode
@@ -46,6 +50,8 @@ Users should note a few important items
 //
 * codes from system $FDANationalDrugCodeCS
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 ValueSet: PriorAuthorizationAmounts
 Title: "Prior Authorization value categories"
@@ -53,6 +59,8 @@ Description: "Codes to define Prior Authorization requested, agreed and utilized
 * ^experimental = true
 * codes from system PriorAuthorizationValueCodes
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 // ValueSet: ProcessPriority
 // Title: "Value Set used to assign a priority for the issue"
@@ -84,6 +92,8 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 * PDexAdjudicationCS#discount "Discount"
 * PDexAdjudicationCS#drugcost "Drug cost"
 * ^copyright = "This Valueset is not copyrighted."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 ValueSet: PDexAdjudicationCategoryDiscriminator
 Title: "PDex Adjudication Category Discriminator"
@@ -95,6 +105,8 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
 * codes from valueset PDexPayerBenefitPaymentStatus
 * codes from system PDexAdjudicationCS
 * ^copyright = "This Valueset is not copyrighted."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 ValueSet: PDexPayerBenefitPaymentStatus
 Title: "PDex Payer Benefit Payment Status"
@@ -104,14 +116,16 @@ Description: "Indicates the in network or out of network payment status of the c
 * PDexPayerAdjudicationStatus#outofnetwork "Out Of Network"
 * PDexPayerAdjudicationStatus#other "Other"
 * ^copyright = "This Valueset is not copyrighted."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
-// ValueSet: PriorAuthServiceTypeCodes
-// Title: "Prior Authorization Service Type Codes (X12)"
-// Description: "Indicates the Type of Service that a Prior Authorization is covering"
-// * ^experimental = true
-// * ^jurisdiction.coding = urn:iso:std:iso:3166#US
-// * codes from PDexServiceTypeCodes
-
+ValueSet: PriorAuthServiceTypeCodes
+Title: "Prior Authorization Service Type Codes (X12)"
+Description: "Indicates the Type of Service that a Prior Authorization is covering"
+* ^experimental = true
+* ^jurisdiction.coding = urn:iso:std:iso:3166#US
+//* codes from PDexServiceTypeCodes
+* codes from system $X12ServiceType
 
 ValueSet: X12278ReviewDecisionReasonCode
 Title: "X12 278 Review Decision Reason Codes"
@@ -122,6 +136,8 @@ This value set contains codes maintained by X12. All X12 work products are copyr
 See their website for licensing terms and conditions.
 """
 * codes from system https://codesystem.x12.org/external/886
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: PDexSupportingInfoType
@@ -133,6 +149,8 @@ Based on the CARIN IG for Blue Button� Implementation Guide.
 * ^experimental = true
 * codes from system PDexSupportingInfoType
 * ^copyright = "This Valueset is not copyrighted."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: PDexPAInstitutionalProcedureCodesVS
@@ -204,6 +222,8 @@ See information on the use of HCPCS Level I (proprietary and owned by American M
 
 CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See more information about HIPPS codes [here](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes)
 """
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 // --------------------------
 ValueSet: OrgTypeVS
@@ -212,3 +232,5 @@ Description:  "Categories of organizations based on criteria in provider directo
 * ^experimental = true
 * codes from system OrgTypeCS
 * OrgTypeCS#payer   // Organization profile uses only this type
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
