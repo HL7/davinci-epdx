@@ -19,6 +19,8 @@ Title: "Associated Servers Type Value Set"
 Description: "Associated Servers Type"
 * ^experimental = false
 * codes from system NdhAssociatedServersTypeCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: TrustProfileVS
@@ -26,6 +28,8 @@ Title: "Trust Profile Value Set"
 Description:  "Codes for documenting trust profile"
 * ^experimental = false
 * codes from system TrustProfileCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: EndpointAccessControlMechanismVS
@@ -33,6 +37,8 @@ Title: "Endpoint Access Control Mechanism Value Set"
 Description: "Codes for documenting access control mechanism"
 * ^experimental = false
 * codes from system EndpointAccessControlMechanismCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: EndpointConnectionTypeVS
@@ -42,6 +48,8 @@ Description:  "Endpoint Connection Types"
 * codes from system $ConnectionTypeCS
 * codes from system EndpointConnectionTypeCS
 * codes from system EndpointHieSpecificConnectionTypeCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: EndpointConnectionTypeVersionVS
@@ -59,6 +67,8 @@ Description: "Endpoint Connection Type Version"
 * $FHIRVersionCS#4.0.1  "FHIR Release 4 Technical Correction"
 //* codes from system EndpointConnectionTypeVersionCS
 * EndpointConnectionTypeVersionCS#4.3.0 "FHIR Release 4B"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: EndpointFhirMimeTypeVS
@@ -68,12 +78,16 @@ Description: "Endpoint FHIR mimetype"
 * $BCP13#application/fhir+xml "FHIR XML"
 * $BCP13#application/fhir+json "FHIR JSON"
 * $BCP13#application/fhir+turtle "FHIR Turtle"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 ValueSet: EndpointPayloadTypeVS
 Title: "Endpoint Payload Type Value Set"
 Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
 * ^experimental = false
 * EndpointPayloadTypeCS#NA  "Not Applicable"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: IdentifierStatusVS
@@ -81,6 +95,8 @@ Title: "Identifier Status Value Set"
 Description: "Codes for Identifier Status"
 * ^experimental = false
 * codes from system CredentialStatusCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: NdhFhirEndpointUseCaseVS
@@ -88,6 +104,8 @@ Title: "NDH FHIR Endpoint Usecase Value Set"
 Description:  "Codes for documenting business use case by a general grouping by business area."
 * ^experimental = false
 * codes from system NdhFhirEndpointUseCaseCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: NdhSecureExchangeArtifactsVS
@@ -95,6 +113,8 @@ Title: "Secure Exchange Artifacts Value Set"
 Description: "Secure Exchange Artifacts"
 * ^experimental = false
 * codes from system NdhSecureExchangeArtifactsCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: TrustFrameworkTypeVS
@@ -102,6 +122,8 @@ Title: "Trust Framework Type Value Set"
 Description: "Trust Framework Type"
 * ^experimental = false
 * codes from system TrustFrameworkTypeCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 ValueSet: NdhVerificationStatusVS
@@ -109,4 +131,6 @@ Title: "NDH Verification Status Value Set"
 Description:  "Codes for verification status"
 * ^experimental = false
 * codes from system NdhVerificationStatusCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 

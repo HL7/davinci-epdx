@@ -31,3 +31,5 @@ Description: "Categories of bundle."
 * ^experimental = true
 * codes from system $BundleTypeCS
 * $BundleTypeCS#collection   // Bundle is always collection
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm

@@ -19,6 +19,8 @@ Description: "Attributes that identify the source record format from which data 
 //  * extension[source].valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
 * value[x] only CodeableConcept
 * valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 //
 //Extension for MedicationDispense
@@ -35,6 +37,8 @@ Description: "Attribute that identifies the refill number of a prescription. e.g
 
 * value[x] ^short = "Refill number of this prescription"
 * value[x] only Quantity
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 // * extension contains refillNum 0..1
 
@@ -50,9 +54,10 @@ Description: "Attribute that expresses the amount of an item or service that has
 //* ^context.type = #element
 * ^context.type = #element
 * ^context.expression = "ExplanationOfBenefit"
-
 * value[x] ^short = "Amount/Quantity of an item or service that has been consumed/utilized"
 * value[x] only Quantity or Ratio
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 Extension: LevelOfServiceCode
 Id: extension-levelOfServiceCode
@@ -62,6 +67,8 @@ Description: "A code specifying the level of service being requested (UM06)"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 (required)
 * valueCodeableConcept ^binding.description = "Codes specifying the level of service rendered. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: ReviewAction
@@ -78,6 +85,8 @@ Description: "The details of the review action that is necessary for the authori
 * extension[reasonCode] ^short = "Explanation of the review denial or partial approval"
 * extension[secondSurgicalOpinionFlag].value[x] only boolean
 * extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 Extension: ReviewActionCode
 Id: extension-reviewActionCode
@@ -87,6 +96,8 @@ Description: "The code describing the result of the review."
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 //Extension; Fhirig
@@ -129,6 +140,8 @@ Description: "Associated Servers"
 * extension[serverURL].value[x] only string
 * extension[serverURL] ^short = "Binary"
 * extension[serverURL].value[x] 1..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: ContactPointAvailableTime
@@ -149,6 +162,8 @@ Description: "An extension representing the days and times a contact point is av
 * extension[allDay].value[x] only boolean
 * extension[availableStartTime].value[x] only time
 * extension[availableEndTime].value[x] only time
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: DynamicRegistration
@@ -167,6 +182,8 @@ Description: "Dynamic Registration"
 * extension[version].value[x] only string
 * extension[version] ^short = "Trust Profile Version"
 * extension[version].value[x] 0..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: EndpointAccessControlMechanism
@@ -179,6 +196,8 @@ Description: "Endpoint Access Control Mechanism"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: EndpointConnectionTypeVersion
@@ -193,6 +212,8 @@ Description: "An extension for endpoint connection type version"
 * value[x] only CodeableConcept
 * value[x] from EndpointConnectionTypeVersionVS (extensible)
 //* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: EndpointRank
@@ -206,6 +227,8 @@ Description: "Order established by a Role, Organization… for Endpoints capable
 * value[x] 1..1
 * value[x] only positiveInt
 //* valuePositiveInt 1..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: EndpointUsecase
@@ -226,6 +249,8 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 * extension[standard].value[x] only uri
 * extension[standard].value[x] 1..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: FhirIg
@@ -248,6 +273,8 @@ Description: "FHIR IG"
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: IdentifierStatus
@@ -265,6 +292,8 @@ Description: "Describes the status of an identifier"
 * value[x] from IdentifierStatusVS (required)
 * value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
 //* valueCode from IdentifierStatusVS (required)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: SecureExchangeArtifacts
@@ -288,6 +317,8 @@ Description: "Secure Exchange Artifacts"
 * extension[expirationDate].value[x] only dateTime
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: TrustFramework
@@ -314,6 +345,8 @@ Description: "Trust Framework"
 * extension[publicCertificate].value[x] only base64Binary
 * extension[publicCertificate] ^short = "Public Certificate"
 * extension[publicCertificate].value[x] 1..1
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 Extension: VerificationStatus
@@ -326,5 +359,7 @@ Description: "Indicates a resource instance verification status"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 

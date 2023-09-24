@@ -26,6 +26,9 @@ Description: "This code system contains codes for indicating the status of a cre
 * #pending	"pending"	"The credential has not been officially assigned. It may or may not be considered valid for use."
 * #unknown	"unknown"	"The status of this credential is unknown. It may or may not be considered valid for use."
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 //web-server security (username token, x.509 certificate, saml assertion, kerberos ticket)
@@ -43,6 +46,8 @@ Description: "Endpoint Access Control Mechanism"
 * #wss-kerberos-token "WSS Kerberos Token" "WSS Kerberos Token"
 * #wss-x509-token "WSS X509 Token" "WSS X509 Token"
 * #wss-custom-token "WSS Custom Token" "WSS Custom Token"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 CodeSystem:  EndpointConnectionTypeCS
@@ -60,6 +65,9 @@ CodeSystem:  EndpointConnectionTypeCS
 * #ihe-pix "IHE PIX" "IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed"
 * #ihe-mhd "IHE MHD" "IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 //since our Ig fhir base is 4.0.1, http://hl7.org/fhir/FHIR-version will not contain the version beyond 4.0.1
@@ -70,6 +78,9 @@ Description: "Endpoint Connection Type Version"
 * ^experimental = false
 * #4.3.0 "4.3.0" "FHIR Release 4B"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 CodeSystem: EndpointFhirMimeTypeCS
@@ -80,6 +91,9 @@ Description: "Endpoint FHIR MimeType"
 * #application/fhir+json "fhr+json"
 * #application/fhir+xml "fhir+xml"
 * #application/fhir+turtle "fhir+turtle"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 CodeSystem: EndpointHieSpecificConnectionTypeCS
@@ -127,6 +141,9 @@ Description: "Endpoint HIE Specific Connection Type"
 * #XDR-Recipient-ProvideReg "XDR-Recipient-ProvideReg" "XDR Document Recipient ITI-41 Provide and Register Document Set-B Synchronous"
 * #MHD-Recipient-ProvideReg "MHD-Recipient-ProvideReg" "MHD Document Recipient ITI-65 Provide Document Bundle"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 CodeSystem: EndpointPayloadTypeCS
@@ -135,6 +152,9 @@ CodeSystem: EndpointPayloadTypeCS
 * ^experimental = false
 * #NA "Not Applicable" "Not Applicable"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 CodeSystem: NdhAssociatedServersTypeCS
@@ -165,6 +185,9 @@ Description: "NDH Associated Servers Type"
 //* #trust-anchor-bundle-server "Trust Anchor Bundle Server" "Trust Anchor Bundle Server"
 //* #direct-service-server "Direct Service Server" "Direct Service Server"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
 
 
 CodeSystem: NdhFhirEndpointUseCaseCS
@@ -172,6 +195,8 @@ Title: "NDH FHIR Endpoint Use Case Code System"
 Description: "NDH FHIR Endpoint Use Case"
 * ^experimental = false
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 * #cdex "CDex" "Clinical Data Exchange"
 * #patientAccess "Patient Access" "Patient Access"
 * #pasOperation "PAS Operation" "PAS Operation"
@@ -203,6 +228,8 @@ Description: "NDH Secure Exchange Artifacts"
 //* #introspection-endpoint-certificate "Introspection endpoint certificate" "Introspection endpoint certificate"
 //* #registration-endpoint-certificate "Registration endpoint certificate" "Registration endpoint certificate"
 //* #management-endpoint-certificate "Management endpoint certificate" "Management endpoint certificate"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 CodeSystem: NdhVerificationStatusCS
@@ -213,6 +240,8 @@ Description: "NDH Resource Instance Verification Status"
 * #complete "Complete" "Complete"
 * #incomplete "Incomplete" "Incomplete"
 * #not-required "Not Required" "Not Required"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 CodeSystem: TrustFrameworkTypeCS
@@ -227,6 +256,8 @@ Description: "Trust Framework Type"
 * #Exchange	"Exchange Required by Federal Regulations"
 * #PCDH "Patient Centered Data Home"
 * ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 CodeSystem: TrustProfileCS
@@ -236,4 +267,6 @@ Description: "Trust Profile"
 * ^caseSensitive = true
 * #udap "UDAP" "UDAP"
 * #smart "SMART" "SMART"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
