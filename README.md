@@ -63,3 +63,8 @@ Because of the change in naming to use 2.0.0-ballot from 2.0.0 it was necessary 
     <version code="0.1" deprecated="true"/>
 
 Branch connectathon33 has been created to freeze development for the New Orleans Connectathon on May 6-7, 2023.
+
+Branch pre-publish_stu2 is the branch for publishing the post-ballot STU2 Version of the PDex IG.
+
+Branch post-publish_stu2 was create from the pre-publish_stu2 branch and will be used to capture new and updated 
+content that will go into a future update of the PDex IG.
