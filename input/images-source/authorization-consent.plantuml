@@ -94,11 +94,11 @@ end
 == Data Requests ==
 group #LightBlue Step 4: Exchange PDex (USCDI) Information via API
   Payer2 -> Payer1 : Use Patient-scoped access token to access API
-	Payer1 -> Payer2 : Return $everything-pdex or \nincremental data as appropriate/supported \nby Payer1 Capability Statement
+	Payer1 -> Payer2 : Return $everything or \nincremental data as appropriate/supported \nby Payer1 Capability Statement
   note right
   	Use retrieval method, as defined in use case scenarios, such as:
       1.) Individual search against each USCDI resource
-      2.) $everything-pdex operation
+      2.) $everything operation
       3.) asynchronous Bulk FHIR methods.
   endnote
 end

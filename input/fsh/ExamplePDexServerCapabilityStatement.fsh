@@ -1,6 +1,7 @@
 Instance: PdexServerCapabilityStatement
 InstanceOf: CapabilityStatement
 Description: "Payer Data Exchange Server Capability Statement"
+Usage: #definition
 
 * insert PdexCapabilityStatementContent
 * id = "PdexServerCapabilityStatement"
