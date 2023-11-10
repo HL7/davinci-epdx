@@ -234,3 +234,14 @@ Description:  "Categories of organizations based on criteria in provider directo
 * OrgTypeCS#payer   // Organization profile uses only this type
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
+
+
+// -------------------------
+ValueSet: PDexProviderExportModeVS
+Title: "PDex Provider Export Value Set"
+Description: "Provider Request Export Mode "
+* ^experimental = false
+* codes from system PdexProviderExportModeCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
