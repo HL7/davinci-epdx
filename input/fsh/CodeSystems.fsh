@@ -230,3 +230,14 @@ Description: "Categories of organizations based on criteria in provider director
 //* ^experimental = true
 //* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 //* ^extension.valueCode = #fm
+
+// -----------------------------------
+CodeSystem: PdexProviderExportModeCS
+Title: "PDex Provider Export Mode"
+Description: "Data Export Mode Types for Provider Export Operation."
+* ^experimental = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+* #download "Download" "Download data and incorporate to records"
+* #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
+* ^caseSensitive = true
