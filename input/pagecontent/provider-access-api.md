@@ -42,5 +42,10 @@ The download option **SHALL** be used when the provider is retrieving data that 
 
 From the Data Provider's perspective the download exportMode will cause the Payer to track the latest download date/time for the Patients. These values will be updated in an extension associated with the Patient for which a download was requested.
 
+#### Attribution List
+
+- Define Profile for Member-Matched Group.
+- Define Extension for LastTransmission for Member in Attribution Group
+
 
 [Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)

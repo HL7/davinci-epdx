@@ -238,6 +238,6 @@ Description: "Data Export Mode Types for Provider Export Operation."
 * ^experimental = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-* #download "Download" "Download data and incorporate to records"
+* #delta "Delta" "Request new data/records since last requested date for a regular, pre-defined set of resource types."
 * #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
 * ^caseSensitive = true

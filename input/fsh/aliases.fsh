@@ -135,3 +135,6 @@ Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/Stru
 
 //Other Aliases
 Alias:   $BCP13 = urn:ietf:bcp:13
+
+// ATR
+Alias: $ATRGroup = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group
