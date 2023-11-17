@@ -363,3 +363,16 @@ Description: "Indicates a resource instance verification status"
 * ^extension.valueCode = #fm
 
 
+
+// ---------------------------------------
+// Payer-to-Payer Group Attribution Extensions
+Extension: LastTransmission
+Id: base-ext-last-transmission
+Title: "Member Last Transmission"
+Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
+* ^context.type = #element
+* value[x] 0..1
+* value[x] only dateTime
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+

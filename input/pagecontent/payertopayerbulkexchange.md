@@ -22,13 +22,23 @@ The requesting Payer will have obtained an access token in accordance with the [
 
 ### Bulk Member Match with Consent
 
-The Bulk Member Match Operation will use the [PDex Parameters Multiple Member Match Request Parameter Bundle Profile](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html). The profile defines an exportMode and supports a parameter bundle that matches the Parameter content of the Payer-to-Payer Single Member Exchange Request profile.
+The Bulk Member Match Operation will use the following Parameters:
+
+- In: [PDexMultiMemberMatchRequestParameterBundle](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
+- Out: [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html)
+
+The Request profile supports a parameter bundle that matches the Parameter content of the Payer-to-Payer Single Member Exchange Request profile.
+
+The Response Profile provides a Group or Patient identifier that can be used by the requesting payer to retrieve data.
+
+The Operation Definition for Bulk Member Match is:
+
+[PDex Bulk Member Match](OperationDefinition-bulk-member-match.html)
 
 
 
 NOTES:
-- Define Profile for Member-Matched Group.
-- Re-define output from Member-Match to enable Patient/{ID} or Group/{ID}
+- Define Profile for P2P Bulk Exchange Group List
 - Define Export Operation that will check Consent (Scope and period)
 - Re-define Operation Outcome to report on Failed Matches and Failed Consent capability.
 - Should Payer 2 be able to search and retrieve Group/{ID} record?
