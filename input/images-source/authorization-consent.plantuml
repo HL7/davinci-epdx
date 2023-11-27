@@ -1,0 +1,105 @@
+@startuml
+skinparam svgDimensionStyle false
+autonumber
+participant "Payer2 | New Payer | Requesting Payer" as Payer2
+participant "Payer1 | Old Payer | Receiving Payer" as Payer1
+participant "Payer Directory | Certificate Authority" as PayerDirectory
+== Connection Intitialization ==
+group #LightGreen Step 1a: Verify Exchange, establish mutual TLS, and verify trust.
+	Payer2 -> PayerDirectory : Query
+  note left
+  	Payer2 searches registry
+    for Payer1 details
+  endnote
+	PayerDirectory -> Payer2 : Return endpoint, mutual TLS public cert,
+	Payer2 -> Payer2 : Verify Cert
+	Payer2 -> Payer1 : Establish Mutual TLS
+	Payer1 -> PayerDirectory : Query mutual TLS Public Cert
+  note right
+  	Payer1 queries registry
+    for Payer2 details
+  endnote
+	PayerDirectory ->> Payer1 : Return mTLS public cert
+	Payer1 -> Payer1 : Verify Cert
+end
+group #lightGreen Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection
+	Payer2 -> Payer1 : Request registration (JWT with registration details)
+	note left
+  	Payer2 submits JWT with
+    service registration details
+  endnote
+  Payer1 -> Payer2 : Return Client Credentials (ClientID/ClientSecret)
+
+end
+== Secure Transaction Capability Established ==
+
+== Member Connection ==
+group Step 2a: Get $MemberMatch Operation Token
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to request access \nto $MemberMatch operation only
+  Payer1 -> Payer2 : Return access token
+  note right
+  	Token endpoint issues access token using
+    Payer2 OAuth Credentials
+  endnote
+end
+group Step 2b: Establish common member - secure transaction
+	Payer2 -> Payer1 : Send bundle (Patient Demographics, \nCoverage & Consent) to $MemberMatch operation
+	Payer1 -> Payer1 : Verify member
+  Payer1 -> Payer1 : Store or Compute Consent \n(all / non-sensitive) for Member
+  note right
+  Member: ID
+  Payer: ID (Client Credential)
+  Policy: all | non-sensitive
+  Consent Period: start, end
+  This information will be need to be checked
+  when Access Token is issued in Step 3.
+  An active consent information will only be stored if the Policy
+  Scope can be complied with. An inability to comply with the scope
+  will lead to a 422 error being returned from the $member-match.
+  endnote
+
+	Payer1 -> Payer2 : Return Member Identifier (Patient FHIR ID)
+  note right
+    This process assumes Payer1 provides a unique ID for
+    the member that crosses all relevant
+    contract arrangements.
+
+    Payer1 may determine concurrent coverage is in effect
+    and covered by member consent to trigger reciprocal
+    app registration and $MemberMatch request
+
+  	Payer2 receives the Member Identifier (Patient FHIR ID) from Payer1.
+    The Member Identifier (Patient FHIR ID) is only returned if member
+    is matched AND consent can be complied with
+    per date and policy constraints.
+  endnote
+end
+
+group Step 3: Request Access token for Member Access
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Member Identifier
+  note right
+  	Token endpoint matches to member using
+    Member Identifier and queries consent records to find
+    the latest active consent that matches on Member and Payer Identifiers.
+    The Access Token process then confirms current date is within
+    the consent period and the policy scope can be complied with. Checking the consent
+    record is active provides for the receiving payer to invalidate the consent record
+    if a request is recieved via other channels to cancel the consent.
+  endnote
+  Payer1 -> Payer2 : Return access token
+  note right
+  	token is scoped to single Patient
+  endnote
+end
+== Data Requests ==
+group #LightBlue Step 4: Exchange PDex (USCDI) Information via API
+  Payer2 -> Payer1 : Use Patient-scoped access token to access API
+	Payer1 -> Payer2 : Return $everything or \nincremental data as appropriate/supported \nby Payer1 Capability Statement
+  note right
+  	Use retrieval method, as defined in use case scenarios, such as:
+      1.) Individual search against each USCDI resource
+      2.) $everything operation
+      3.) asynchronous Bulk FHIR methods.
+  endnote
+end
+@enduml
