@@ -145,6 +145,6 @@ See the [Credits](credits.html) page for a list of contributors to the creation 
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.5.4 or greater).
+This IG was built with Sushi and the FHIR Publisher (v1.5.5 or greater).
 
 [Next Page: Implementation Guide](ImplementationGuide-hl7.fhir.us.davinci-pdex.html)
