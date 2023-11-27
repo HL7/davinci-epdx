@@ -1,4 +1,4 @@
-[Previous Page - index](index.html)
+[Previous Page - Implementation Guide](ImplementationGuide-hl7.fhir.us.davinci-pdex.html)
 
 The PDex guide is based on the [HL7 FHIR 4.0.1](http://hl7.org/fhir/R4/) standard, as well as the [CDS Hooks](https://cds-hooks.org/),  [SMART on FHIR](http://docs.smarthealthit.org/) and [OAuth2.0](https://oauth.net/2/) standards, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 

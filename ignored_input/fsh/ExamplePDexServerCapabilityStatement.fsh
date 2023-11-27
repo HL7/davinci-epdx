@@ -10,7 +10,8 @@ Usage: #definition
 * description = "Payer Data Exchange Server Capability Statement"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension.valueCode = #fm
-
+* implementationGuide[0] = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.0.0"
+    ],
 * rest.mode = #server
 
 // AllergyIntolerance

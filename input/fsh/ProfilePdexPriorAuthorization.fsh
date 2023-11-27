@@ -73,16 +73,16 @@ allowedunits 0..1 MS and
 denialreason 0..* MS and
 consumedunits 0..1 MS
 // * insert ItemAdjudicationExtensionSlicing
-* item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason (exactly)
+* item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason // (exactly)
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
 * item.adjudication[denialreason].reason 1..1 MS
-* item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits (exactly)
+* item.adjudication[allowedunits].category = PDexAdjudicationDiscriminator#allowedunits  // (exactly)
 * item.adjudication[allowedunits].value only decimal
 * item.adjudication[allowedunits].value 1..1 MS
 * item.adjudication[adjudicationamounttype].category from PDexAdjudication
 * item.adjudication[adjudicationamounttype].amount MS
 * item.adjudication[adjudicationamounttype].amount 1..1
-* item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits (exactly)
+* item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits // (exactly)
 * item.adjudication[consumedunits].value only decimal
 * item.adjudication[consumedunits].value 1..1 MS
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
