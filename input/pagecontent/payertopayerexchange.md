@@ -1,4 +1,4 @@
-[Previous Page - Provider Access API](provider-access-api.html)
+[Previous Page - Handling Data Provenance](handlingdataprovenance.html)
 
 {% include style_insert_table_blue.html %}
 
@@ -251,4 +251,4 @@ The Patient Export Operation for Payer-to-Payer exchange should be constrained t
 The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
 
 
-[Next Page - Payer-to-Payer Exchange (Bulk)](payertopayerbulkexchange.html)
+[Next Page - Data Mapping](datamapping.html)
