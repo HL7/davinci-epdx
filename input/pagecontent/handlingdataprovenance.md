@@ -6,11 +6,13 @@ The PDex IG will define [PDex Provenance](PDexProvenance.html) examples that mee
 
 Provenance requirements for the Payer Community may be a super-set of those of the Provider-focused Argonaut community.
 
-Health Plans **SHOULD** accept and retain Provenance records received with data from other sources such as a Member-authorized Payer-to-Payer exchange.
+Health Plans SHALL accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange.
 
-When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related Provenance record(s) to reflect the original source of the data. 
+Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange.
 
-A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. 
+When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data.
+
+A Provenance resource SHOULD be provided with each member-related resource provided by the Health Plan's FHIR API when requested, such as via the _RevInclude parameter.
 
 This guide provides a pdex-provenance resource that is customized to the needs of the payer by focusing on their role as a transmitter and not originator of data.
 
