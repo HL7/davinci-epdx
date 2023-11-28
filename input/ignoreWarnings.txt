@@ -11,11 +11,12 @@ The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/0
 The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved
 The Implementation Guide contains no examples for this extension
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
-WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
 WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes
-WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated;
 WARNING: ValueSet.where(id = 'X12278ReviewDecisionReasonCode'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/external/886
 WARNING: ValueSet.where(id = 'X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated
+WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
+
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
