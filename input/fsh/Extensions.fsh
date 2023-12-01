@@ -366,13 +366,40 @@ Description: "Indicates a resource instance verification status"
 
 // ---------------------------------------
 // Payer-to-Payer Group Attribution Extensions
+// date/time data exported for member
 Extension: LastTransmission
 Id: base-ext-last-transmission
 Title: "Member Last Transmission"
 Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
 * ^context.type = #element
+* ^context.expression = "Group"
 * value[x] 0..1
 * value[x] only dateTime
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
+
+// type of data exported (taken from _type parameter in DavinciDataExport Operation
+Extension: LastTypes
+Id: base-ext-last-types
+Title: "Member Last Resource Types"
+Description: "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."
+* ^context.type = #element
+* ^context.expression = "Group"
+* value[x] 0..1
+* value[x] only string
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// type of data exported with filter (taken from _typeFilter parameter in DavinciDataExport Operation
+Extension: LastFilters
+Id: base-ext-last-typefilter
+Title: "Member Last Resource Filters"
+Description: "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."
+* ^context.type = #element
+* ^context.expression = "Group"
+* value[x] 0..1
+* value[x] only string
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
