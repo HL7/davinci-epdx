@@ -1,114 +1,3 @@
-//
-//  Extensions for Payer Data Exchange
-//
-
-Extension: ProvenanceSourceFrom
-Title: "An attribute to describe the data source a resource was constructed from"
-Description: "Attributes that identify the source record format from which data in the referenced resources was derived"
-
-* insert PdexStructureDefinitionContent
-
-//  * extension contains
-//  source 0..1
-* ^context.type = #element
-* ^context.expression = "Provenance.entity"
-
-* value[x] ^short = "Source record format from which data was derived"
-//  * extension[source].url ProvenancePayerSourceFormat
-//  * extension[source].value[x] only CodeableConcept
-//  * extension[source].valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
-* value[x] only CodeableConcept
-* valueCodeableConcept from ProvenancePayerSourceFormat (extensible)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-//
-//Extension for MedicationDispense
-//
-
-Extension: DispenseRefill
-Title: "An attribute to express the refill number of a prescription"
-Description: "Attribute that identifies the refill number of a prescription. e.g., 0, 1, 2, etc."
-* insert PdexStructureDefinitionContent
-// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-//* ^context.type = #element
-* ^context.type = #element
-* ^context.expression = "MedicationDispense"
-
-* value[x] ^short = "Refill number of this prescription"
-* value[x] only Quantity
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-// * extension contains refillNum 0..1
-
-// * extension[refillNum] ^short = "Refill number of this prescription"
-// * extension[refillNum].valueSimpleQuantity only SimpleQuantity
-
-
-Extension: PriorAuthorizationUtilization
-Title: "An attribute to express the amount of a service or item that has been utilized"
-Description: "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization."
-* insert PdexStructureDefinitionContent
-// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-//* ^context.type = #element
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
-* value[x] ^short = "Amount/Quantity of an item or service that has been consumed/utilized"
-* value[x] only Quantity or Ratio
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-Extension: LevelOfServiceCode
-Id: extension-levelOfServiceCode
-Description: "A code specifying the level of service being requested (UM06)"
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 (required)
-* valueCodeableConcept ^binding.description = "Codes specifying the level of service rendered. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-Extension: ReviewAction
-Id: extension-reviewAction
-Description: "The details of the review action that is necessary for the authorization."
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
-* extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1
-* extension[code] ^short = "Healthcare Services Outcome"
-* extension[number].value[x] only string
-* extension[number] ^short = "Item Level Review Number"
-* extension[reasonCode].value[x] only CodeableConcept
-* extension[reasonCode].valueCodeableConcept from X12278ReviewDecisionReasonCode (required)
-* extension[reasonCode] ^short = "Explanation of the review denial or partial approval"
-* extension[secondSurgicalOpinionFlag].value[x] only boolean
-* extension[secondSurgicalOpinionFlag] ^short = "Whether a second surgical opinion is need for approval"
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-Extension: ReviewActionCode
-Id: extension-reviewActionCode
-Description: "The code describing the result of the review."
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
-* value[x] only CodeableConcept
-* valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
-* valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-//Extension; Fhirig
-//Id: fhir-ig-extension
-//Description: "Payer-to-Payer FHIR IG"
-//
-
-// --------------------------------------------
-// NDH Extensions
-// --------------------------------------------
-
 // Extensions used for NDH. Ported here to enable publication of PDex IG.
 //* extension contains
 //    AssociatedServers named associated-servers 0..* and
@@ -140,8 +29,6 @@ Description: "Associated Servers"
 * extension[serverURL].value[x] only string
 * extension[serverURL] ^short = "Binary"
 * extension[serverURL].value[x] 1..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: ContactPointAvailableTime
@@ -162,8 +49,6 @@ Description: "An extension representing the days and times a contact point is av
 * extension[allDay].value[x] only boolean
 * extension[availableStartTime].value[x] only time
 * extension[availableEndTime].value[x] only time
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: DynamicRegistration
@@ -182,8 +67,6 @@ Description: "Dynamic Registration"
 * extension[version].value[x] only string
 * extension[version] ^short = "Trust Profile Version"
 * extension[version].value[x] 0..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: EndpointAccessControlMechanism
@@ -196,8 +79,6 @@ Description: "Endpoint Access Control Mechanism"
 * value[x] 1..1
 * value[x] only CodeableConcept
 * value[x] from EndpointAccessControlMechanismVS (extensible)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: EndpointConnectionTypeVersion
@@ -212,8 +93,6 @@ Description: "An extension for endpoint connection type version"
 * value[x] only CodeableConcept
 * value[x] from EndpointConnectionTypeVersionVS (extensible)
 //* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: EndpointRank
@@ -227,8 +106,6 @@ Description: "Order established by a Role, Organization… for Endpoints capable
 * value[x] 1..1
 * value[x] only positiveInt
 //* valuePositiveInt 1..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: EndpointUsecase
@@ -249,8 +126,6 @@ Description: "EndpointUseCase is an enumeration of the specific use cases (servi
 * extension[standard] ^short = "A URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 * extension[standard].value[x] only uri
 * extension[standard].value[x] 1..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: FhirIg
@@ -273,8 +148,6 @@ Description: "FHIR IG"
 * extension[ig-version].value[x] only string
 * extension[ig-version] ^short = "IG Version"
 * extension[ig-version].value[x] 1..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: IdentifierStatus
@@ -292,8 +165,6 @@ Description: "Describes the status of an identifier"
 * value[x] from IdentifierStatusVS (required)
 * value[x] ^short = "active|inactive|issued-in-error|revoked|pending"
 //* valueCode from IdentifierStatusVS (required)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: SecureExchangeArtifacts
@@ -317,8 +188,6 @@ Description: "Secure Exchange Artifacts"
 * extension[expirationDate].value[x] only dateTime
 * extension[expirationDate].value[x] 1..1
 * extension[expirationDate] ^short = "Expiration Date"
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: TrustFramework
@@ -345,8 +214,6 @@ Description: "Trust Framework"
 * extension[publicCertificate].value[x] only base64Binary
 * extension[publicCertificate] ^short = "Public Certificate"
 * extension[publicCertificate].value[x] 1..1
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
 
 Extension: VerificationStatus
@@ -359,47 +226,4 @@ Description: "Indicates a resource instance verification status"
 * value[x] 0..1
 * value[x] only CodeableConcept
 * value[x] from NdhVerificationStatusVS (extensible)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
 
-
-
-// ---------------------------------------
-// Payer-to-Payer Group Attribution Extensions
-// date/time data exported for member
-Extension: LastTransmission
-Id: base-ext-last-transmission
-Title: "Member Last Transmission"
-Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
-* ^context.type = #element
-* ^context.expression = "Group"
-* value[x] 0..1
-* value[x] only dateTime
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-// type of data exported (taken from _type parameter in DavinciDataExport Operation
-Extension: LastTypes
-Id: base-ext-last-types
-Title: "Member Last Resource Types"
-Description: "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."
-* ^context.type = #element
-* ^context.expression = "Group"
-* value[x] 0..1
-* value[x] only string
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-// type of data exported with filter (taken from _typeFilter parameter in DavinciDataExport Operation
-Extension: LastFilters
-Id: base-ext-last-typefilter
-Title: "Member Last Resource Filters"
-Description: "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."
-* ^context.type = #element
-* ^context.expression = "Group"
-* value[x] 0..1
-* value[x] only string
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm

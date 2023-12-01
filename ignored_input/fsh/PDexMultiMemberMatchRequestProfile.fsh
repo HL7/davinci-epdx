@@ -12,7 +12,6 @@ Description: """The Parameters profile for Da Vinci Find Member using Patient an
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #closed
 * parameter contains
-    exportMode 1..1 MS and
     memberMatchBundle 1..* MS
 * parameter[memberMatchBundle]
   * name = "memberMatchBundle" (exactly)
@@ -21,7 +20,6 @@ Description: """The Parameters profile for Da Vinci Find Member using Patient an
     * ^slicing.discriminator.type = #value
     * ^slicing.discriminator.path = "name"
     * ^slicing.rules = #closed
-
   * part contains
       memberPatient 1..1 MS and
       CoverageToMatch 1..1 MS and
@@ -47,8 +45,6 @@ Description: """The Parameters profile for Da Vinci Find Member using Patient an
     * name MS
     * resource 1.. MS
     * resource only HRexConsent
-
-
 
 
 //// --------------------------------------------
