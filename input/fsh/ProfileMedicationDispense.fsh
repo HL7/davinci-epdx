@@ -30,10 +30,10 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * performer 0..*
 * performer only BackboneElement
 * performer ^short = "Who performed the dispense event"
-* performer.function 0..1
-* performer.function only CodeableConcept
-* performer.function ^short = "Trial fill, partial fill, emergency fill, etc."
-* performer.function from http://hl7.org/fhir/ValueSet/medicationdispense-performer-function (example)
+//* performer.function 0..1
+//* performer.function only CodeableConcept
+//* performer.function ^short = "Trial fill, partial fill, emergency fill, etc."
+//* performer.function from http://hl7.org/fhir/ValueSet/medicationdispense-performer-function (example)
 * performer.actor 1..1
 * performer.actor only Reference(us-core-practitioner or us-core-practitionerrole or us-core-organization)
 * performer.actor ^short = "Individual or device performing the dispense"
