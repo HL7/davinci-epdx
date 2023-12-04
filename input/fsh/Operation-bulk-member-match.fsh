@@ -32,3 +32,11 @@ Usage: #definition
 //  * insert parameter(#CoverageToLink, #in, 0, "1", #Resource, "Parameter that identifies the coverage information of the member as they are known by the requesting payer.  This information allows the matching payer to link their member coverage information to that of the requesting payer to ease subsequent exchanges\, including evaluating authorization to share information in subsequent queries.  This parameter is optional as this operation may be invoked by non-payer systems.  However\, it is considered 'mustSupport'.  If the client invoking the operation is a payer\, they SHALL include their coverage information for the member when invoking the operation.")
 //* parameter[+]
 //  * insert parameter(#MemberIdentifier, #out, 1, "1", #Identifier, "This is the member identifier information for the patient as known by the server that is the target of the operation.")
+
+
+// -------------------------------------------------------------------
+// Add Parameters Definition
+// pdex-parameters-multi-member-match-bundle-in
+// pdex-parameters-multi-member-match-bundle-out
+
+
