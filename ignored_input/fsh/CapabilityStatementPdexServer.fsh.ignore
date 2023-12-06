@@ -1,0 +1,29 @@
+Instance: NewPdexServerCapabilityStatement
+InstanceOf: CapabilityStatement
+Description: "This Section describes the expected capabilities of the PDex Server actor which is responsible for providing responses to the queries submitted by the PDex Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Servers are defined. PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."
+* id = "pdex-server"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2 id=\"title\">PDex Server CapabilityStatement Based on US Core </h2><ul><li>Implementation Guide Version: 3.1.1</li><li>FHIR Version: 4.0.1</li><li>Supported formats: xml, json</li><li>Published by: Payer Data Exchange, Da Vinci Accelerator via the HL7 Financial Management Workgroup.</li></ul><p>This describes the expected capabilities of the PDex Server actor which is responsible for providing responses to the queries submitted by the PDex Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Servers are defined.</p></div>"
+* url = "http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-server"
+* version = "4.0.0"
+* name = "PdexServerCapabilityStatement"
+* title = "PDEX Server CapabilityStatement"
+* status = #active
+* experimental = false
+* date = "2020-11-03"
+* publisher = "HL7 International - Da Vinci Accelerator"
+* contact[0].telecom[0].system = #url
+* contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/fm"
+* jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
+* jurisdiction[0].coding[0].code = #US
+* jurisdiction[0].coding[0].display = "United States of America"
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format = #json
+* patchFormat = #application/json-patch+json
+* implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|1.1.0"
+* rest[0].mode = #server
+* rest[0].documentation = "The PDex Server **SHALL**: \n1. Support the US Core Patient resource profile.\n2. Support at least one additional resource profile from the list of US Core and PDex Profiles. \n3. Implement the RESTful behavior according to the FHIR specification.\n4. Support json source formats for all US Core and PDex interactions. \n5. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource.\n\nThe PDex Server **SHOULD**: \n1. Support xml source formats for all US Core interactions.\n2. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance."
+* rest[0].security.description = "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations. 2. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code."
+* rest[0].resource[0].type = #AllergyIntolerance
+* rest[0].resource[0].supportedProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance"

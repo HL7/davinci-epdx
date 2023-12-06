@@ -8,6 +8,9 @@ Description: "The mTLS Organization record is used to identify the contact infor
 * identifier ^short = "Unique identifiers for Payer"
 * identifier.type MS
 * identifier.value MS
+* identifier.extension contains
+    IdentifierStatus named identifier-status 0..1
+
 * active 1..1 MS
 // * type 1..1 MS
 // * type from OrgTypeVS (required)
@@ -18,6 +21,10 @@ Description: "The mTLS Organization record is used to identify the contact infor
 * telecom.system 1..1 MS
 * telecom.system = http://hl7.org/fhir/contact-point-system#url "URL"
 * telecom.value ^short = "URL of Member Support as published on Member ID card"
+* telecom.extension contains
+        ContactPointAvailableTime named contactpoint-availabletime 0..*
+* contact.telecom.extension contains
+       ContactPointAvailableTime named contactpoint-availabletime 0..*
 * endpoint 0..1 MS
 * endpoint ^short = "Reference to Payer-to-Payer mTLS endpoint resource"
 * endpoint only Reference(MtlsEndpoint)

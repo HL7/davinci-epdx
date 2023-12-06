@@ -115,6 +115,8 @@ Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
 Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
 Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
 Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
+Alias: $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
+Alias: $NPICS = http://hl7.org/fhir/sid/us-npi
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
