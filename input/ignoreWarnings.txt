@@ -1,29 +1,44 @@
 == Suppressed Messages ==
 
-# Access to CPT Codes
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
-
-
-# Access to X12 Codes
+# X12 Code Systems and Value Sets that are referenced in the guide but not freely available
+ValueSet https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 not found
+ValueSet https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 not found
+%Unable to provide support for code system https://codesystem.x12.org/external/886
+%Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
+%The definition for the Code System with URI 'https://x12.org/codes/service-type-codes' doesnt provide any codes so the code cannot be validated
 The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.value[x] could not be resolved
 The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved
-The Implementation Guide contains no examples for this extension
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
 WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes
-WARNING: ValueSet.where(id = 'X12278ReviewDecisionReasonCode'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/external/886
-WARNING: ValueSet.where(id = 'X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
+INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.extension[0].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://codesystem.x12.org/005010/1338' could not be found so the code cannot be validated
+INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].adjudication[0].extension[0].extension[1].value.ofType(CodeableConcept).coding[0]: Code System URI 'https://codesystem.x12.org/005010/306' could not be found so the code cannot be validated
 
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
 
-# MedicationDispense NOT defined in required US Core version 3.1.1
+
+# MedicationDispense NOT defined in required US Core version 3.1.1 - Variance Tracker: FHIR-43297 2023-12-07 Motion to approve variance as requested: Mark Scrimshire/Brett Marquard: 19-0-1
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile
+
+
+# HIPPS Codes not available
+WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService: Code System URI 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found so the code cannot be validated
+WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService: Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.0.0
+WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService: Code System URI 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.0.0
 
 
 # Reviewed and identified as not being HTML tags.
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+# Termninology Related information
+%Reference to draft item http://terminology.hl7.org/CodeSystem/provenance-participant-type|0.1.0
+
+
+# Unable to support CPT Codes
+%code system http://www.ama-assn.org/go/cpt
+
+# Information Messages
+INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService.coding[0]: The definition for the Code System with URI 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' doesnt provide any codes so the code cannot be validated
