@@ -367,7 +367,7 @@ Description: "Indicates a resource instance verification status"
 
 
 // ---------------------------------------
-// Payer-to-Payer Group Attribution Extensions
+// Provider Access API ATRGroup Attribution Extensions
 // date/time data exported for member
 Extension: LastTransmission
 Id: base-ext-last-transmission
@@ -403,5 +403,20 @@ Description: "Indicates the filters applied to the resources exported in the las
 * ^context.expression = "Group"
 * value[x] 0..1
 * value[x] only string
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// ---------------------------------------
+// Payer-to-Payer Group Attribution Extensions
+// Parameters from the Member-Match Operation used to perform the member-match
+Extension: MatchParameters
+Id: base-ext-match-parameters
+Title: "Member-Match Input Parameters"
+Description: "Input Parameters supplied for the indiviual member match (Patient Demographics, CoverageToMatch, CoverageToLink[optional] and Consent)"
+* ^context.type = #element
+* ^context.expression = "Group"
+* value[x] 0..1
+* value[x] only Reference(PDexMultiMemberMatchRequestParameters)
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
