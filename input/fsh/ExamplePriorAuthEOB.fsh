@@ -52,7 +52,7 @@ Usage: #example
 * item.adjudication[adjudicationamounttype].category = $HL7AdjudicationCS#submitted "Submitted Amount"
 * item.adjudication[adjudicationamounttype].amount.value = 300.99
 * item.adjudication[adjudicationamounttype].amount.currency = urn:iso:std:iso:4217#USD "United States dollar"
-* // item.adjudication.[adjudicationamounttype].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
+// * item.adjudication.[adjudicationamounttype].category = http://terminology.hl7.org/CodeSystem/adjudication#submitted
 * item.adjudication[adjudicationamounttype].extension[reviewAction].extension[number].valueString = "AUTH0001"
 * item.adjudication[adjudicationamounttype].extension[reviewAction].extension[code].valueCodeableConcept = https://codesystem.x12.org/005010/306#A1 "Certified in total"
 

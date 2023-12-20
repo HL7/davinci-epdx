@@ -1,5 +1,5 @@
 // ------------------------------
-Profile: PDexProviderGroup
+Profile: PDexMemberMatchGroup
 //Parent: $DaVinciPatientList
 Parent: $ATRGroup
 Id: pdex-provider-group
