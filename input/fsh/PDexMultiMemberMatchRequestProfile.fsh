@@ -3,6 +3,7 @@ Parent: Parameters
 Id: pdex-parameters-multi-member-match-bundle-in
 Title: "PDex $multi-member-match request"
 Description: "A Parameters profile defining the inputs to a $bulk-member-match operation performed by a payer system"
+* id = "payer-multi-member-match-in"
 * parameter 0..* 
 * parameter MS
 * parameter.name = "MemberBundle"
@@ -11,11 +12,11 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
   * ^slicing.discriminator.path = "name"
   * ^slicing.rules = #closed
 * parameter.part contains
-    memberPatient 1..1 MS and
+    MemberPatient 1..1 MS and
     CoverageToMatch 1..1 MS and
     CoverageToLink 0..1 MS and
     Consent 1..1 MS
-* parameter.part[memberPatient]
+* parameter.part[MemberPatient]
   * name = "MemberPatient" (exactly)
   * name MS
   * resource 1.. MS
@@ -33,5 +34,5 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
 * parameter.part[Consent]
   * name = "Consent" (exactly)
   * name MS
-  * resource 1.. MS
+  * resource 0.. MS
   * resource only HRexConsent

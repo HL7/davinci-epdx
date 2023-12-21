@@ -141,3 +141,12 @@ Alias:   $BCP13 = urn:ietf:bcp:13
 // ATR
 Alias: $ATRGroup = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group
 Alias: $DaVinciPatientList = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list
+
+// HRex Aliases
+Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
+Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $provenance-participant-type = http://terminology.hl7.org/CodeSystem/provenance-participant-type
+Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
