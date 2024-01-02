@@ -39,7 +39,7 @@ Alias: $PdexMedicationDispense = http://hl7.org/fhir/us/davinci-pdex/StructureDe
 //  Alias: $PdexSourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance
 Alias: $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 Alias: $Provenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
-
+Alias: $MemberMatchResult = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS
 
 // Code Systems
 Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
@@ -150,3 +150,5 @@ Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
 Alias: $provenance-participant-type = http://terminology.hl7.org/CodeSystem/provenance-participant-type
 Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
+Alias: $standard-status = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+Alias: $fmm = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm

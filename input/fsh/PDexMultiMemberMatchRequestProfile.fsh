@@ -4,7 +4,7 @@ Id: pdex-parameters-multi-member-match-bundle-in
 Title: "PDex $multi-member-match request"
 Description: "A Parameters profile defining the inputs to a $bulk-member-match operation performed by a payer system"
 * id = "payer-multi-member-match-in"
-* parameter 0..* 
+* parameter 0..*
 * parameter MS
 * parameter.name = "MemberBundle"
 * parameter.part ..4 MS
@@ -35,4 +35,6 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
   * name = "Consent" (exactly)
   * name MS
   * resource 0.. MS
-  * resource only HRexConsent
+//  * resource only HRexConsent
+// HRex Consent has invalid structure definition - uri policy slice is not correctly formatted.
+  * resource only PDexConsent

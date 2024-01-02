@@ -409,14 +409,17 @@ Description: "Indicates the filters applied to the resources exported in the las
 
 // ---------------------------------------
 // Payer-to-Payer Group Attribution Extensions
-// Parameters from the Member-Match Operation used to perform the member-match
+// Patient Parameters from the Member-Match Operation used to perform the member-match 
+// Named matchedMember in Member-match response
 Extension: MatchParameters
 Id: base-ext-match-parameters
-Title: "Member-Match Input Parameters"
-Description: "Input Parameters supplied for the indiviual member match (Patient Demographics, CoverageToMatch, CoverageToLink[optional] and Consent)"
+Title: "Member-Match Input Patient Parameter"
+Description: "Input Patient Parameter supplied for the indiviual member match (Patient Demographics."
 * ^context.type = #element
 * ^context.expression = "Group"
 * value[x] 0..1
-* value[x] only Reference(PDexMultiMemberMatchRequestParameters)
+// * value[x] only Reference(PDexMultiMemberMatchRequestParameters)
+* value[x] only Reference(Patient)
+
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm

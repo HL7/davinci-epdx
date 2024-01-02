@@ -1,16 +1,37 @@
 // ------------------------------
+// Successful Match Profile
 Profile: PDexMemberMatchGroup
-//Parent: $DaVinciPatientList
 Parent: Group
 Id: pdex-member-match-group
 Title: "PDex Member Match Group"
-Description: "A Group List created by the Bulk Member-Match operation. Based on the Group resource. An Extension is added to capture the submitted parameters for the member-match and an extension to record the success or failure of the match "
+Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer API access by Other Payers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters for the access request."
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
+* contained 0..* 
+* code 1..1 MS
+* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS 
+* member.entity.extension contains MatchParameters named matchedMember 0..1 MS
+* member.entity.extension[matchedMember] ^comment = "Add the patient record from the successful MemberMatch for an individual member in the Member-Match Request MemberBundle (Patient Demographics)."
 
-* member.extension contains MatchParameters named matchedMember 0..1 MS
-* member.extension[matchedMember] ^comment = "Add the content from the successful MemberMatch for an individual member in the Member-Match Request MemberBundle (Patient Demographics, CoverageFrom, optional CoverageLinkTo and Consent)"
+// ------------------------------
+// No Match Profile 
+//
+Profile: PDexMemberNoMatchGroup
+Parent: Group
+Id: pdex-member-no-match-group
+Title: "PDex Member No Match Group"
+Description: "A Group List created by the Payer to provide information back to a requesting payer about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics for the access request. The match may have failed for one of two reasons. a) No match on member. b) Matched but unable to comply with consent request."
+* insert PdexStructureDefinitionContent
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+* contained 0..* 
+* code 1..1 MS
+* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS 
+* member.entity ^comment = "Enter using a relative reference to the failed patient record."
+* member.entity.extension contains MatchParameters named nonMatchedMember 0..1 MS
+* member.entity.extension[nonMatchedMember] ^comment = "Add the patient record from the failed Member Match request (Patient Demographics)."
+
 
 
 
