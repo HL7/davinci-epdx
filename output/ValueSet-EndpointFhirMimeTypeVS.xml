@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="EndpointFhirMimeTypeVS"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <code>urn:ietf:bcp:13</code><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>application/fhir+xml</td><td>FHIR XML</td></tr><tr><td>application/fhir+json</td><td>FHIR JSON</td></tr><tr><td>application/fhir+turtle</td><td>FHIR Turtle</td></tr></table></li></ul></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointFhirMimeTypeVS"/>
+  <version value="2.0.0"/>
+  <name value="EndpointFhirMimeTypeVS"/>
+  <title value="Endpoint FHIR Mimetype Value Set"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Endpoint FHIR mimetype"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="urn:ietf:bcp:13"/>
+      <concept>
+        <code value="application/fhir+xml"/>
+        <display value="FHIR XML"/>
+      </concept>
+      <concept>
+        <code value="application/fhir+json"/>
+        <display value="FHIR JSON"/>
+      </concept>
+      <concept>
+        <code value="application/fhir+turtle"/>
+        <display value="FHIR Turtle"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

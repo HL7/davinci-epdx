@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="OrgTypeCS"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">fac<a name="OrgTypeCS-fac"> </a></td><td>Facility</td><td>A physical healthcare facility</td></tr><tr><td style="white-space:nowrap">prvgrp<a name="OrgTypeCS-prvgrp"> </a></td><td>Provider Group</td><td>A healthcare provider entity</td></tr><tr><td style="white-space:nowrap">payer<a name="OrgTypeCS-payer"> </a></td><td>Payer</td><td>A healthcare payer</td></tr><tr><td style="white-space:nowrap">atyprv<a name="OrgTypeCS-atyprv"> </a></td><td>Atypical Provider</td><td>Providers that do not provide healthcare</td></tr><tr><td style="white-space:nowrap">bus<a name="OrgTypeCS-bus"> </a></td><td>Non-Healthcare Business</td><td>An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility</td></tr><tr><td style="white-space:nowrap">ntwk<a name="OrgTypeCS-ntwk"> </a></td><td>Network</td><td>A healthcare provider insurance network</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS"/>
+  <version value="2.0.0"/>
+  <name value="OrgTypeCS"/>
+  <title value="Organization Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Categories of organizations based on criteria in provider directories."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="6"/>
+  <concept>
+    <code value="fac"/>
+    <display value="Facility"/>
+    <definition value="A physical healthcare facility"/>
+  </concept>
+  <concept>
+    <code value="prvgrp"/>
+    <display value="Provider Group"/>
+    <definition value="A healthcare provider entity"/>
+  </concept>
+  <concept>
+    <code value="payer"/>
+    <display value="Payer"/>
+    <definition value="A healthcare payer"/>
+  </concept>
+  <concept>
+    <code value="atyprv"/>
+    <display value="Atypical Provider"/>
+    <definition value="Providers that do not provide healthcare"/>
+  </concept>
+  <concept>
+    <code value="bus"/>
+    <display value="Non-Healthcare Business"/>
+    <definition value="An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"/>
+  </concept>
+  <concept>
+    <code value="ntwk"/>
+    <display value="Network"/>
+    <definition value="A healthcare provider insurance network"/>
+  </concept>
+</CodeSystem>

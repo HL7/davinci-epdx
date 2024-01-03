@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Endpoint xmlns="http://hl7.org/fhir">
+  <id value="diamond-mtls-endpoint2"/>
+  <meta>
+    <lastUpdated value="2022-07-04T15:00:00.000Z"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-endpoint"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Endpoint</b><a name="diamond-mtls-endpoint2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Endpoint &quot;diamond-mtls-endpoint2&quot; Updated &quot;2022-07-04 15:00:00+0000&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-mtls-endpoint.html">mTLS Endpoint</a></p></div><blockquote><p><b>mTLS Signed Object</b></p><blockquote><p><b>url</b></p><code>ObjectType</code></blockquote><p><b>value</b>: mTLS signed Object <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-MtlsObjectCodeCS.html">mTLS Object Type Code</a>#MTLS)</span></p><blockquote><p><b>url</b></p><code>Object</code></blockquote><p><b>value</b>: (base64 data - 1279 bytes)</p></blockquote><blockquote><p><b>NDH Endpoint Usecase</b></p><blockquote><p><b>url</b></p><code>endpointUsecasetype</code></blockquote><p><b>value</b>: Payer to Payer <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-NdhFhirEndpointUseCaseCS.html">NDH FHIR Endpoint Use Case Code System</a>#payerToPayer)</span></p><blockquote><p><b>url</b></p><code>standard</code></blockquote><p><b>value</b>: <code>hl7.org/fhir/us/davinci-pdex</code></p></blockquote><blockquote><p><b>NDH FHIR IG</b></p><blockquote><p><b>url</b></p><code>ig-publication</code></blockquote><p><b>value</b>: <code>hl7.org/fhir/us/davinci-pdex/2022May</code></p><blockquote><p><b>url</b></p><code>ig-name</code></blockquote><p><b>value</b>: Da Vinci Payer Data Exchange</p><blockquote><p><b>url</b></p><code>ig-version</code></blockquote><p><b>value</b>: 2.0.0</p></blockquote><blockquote><p><b>NDH Trust Framework</b></p><blockquote><p><b>url</b></p><code>trustFrameworkType</code></blockquote><p><b>value</b>: Payer to Payer Trust Network <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-TrustFrameworkTypeCS.html">Trust FrameworkType Code System</a>#PayerToPayer)</span></p><blockquote><p><b>url</b></p><code>qualifier</code></blockquote><p><b>value</b>: Yes</p><blockquote><p><b>url</b></p><code>signedArtifact</code></blockquote><p><b>value</b>: (base64 data - 1426 bytes)</p><blockquote><p><b>url</b></p><code>publicCertificate</code></blockquote><p><b>value</b>: (base64 data - 451 bytes)</p></blockquote><blockquote><p><b>NDH Dynamic Registration</b></p><blockquote><p><b>url</b></p><code>trustProfile</code></blockquote><p><b>value</b>: SMART <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-TrustProfileCS.html">Trust Profile Code System</a>#smart)</span></p><blockquote><p><b>url</b></p><code>version</code></blockquote><p><b>value</b>: 1.0</p></blockquote><blockquote><p><b>NDH Associated Servers</b></p><blockquote><p><b>url</b></p><code>associatedServersType</code></blockquote><p><b>value</b>: Authorization/Registration Server <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-NdhAssociatedServersTypeCS.html">NDH Associated Servers Type Code System</a>#authorization-registration-server)</span></p><blockquote><p><b>url</b></p><code>serverURL</code></blockquote><p><b>value</b>: https://example.com/oauth/registration/</p></blockquote><p><b>NDH Endpoint Access Control Mechanism</b>: Mutual TLS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-EndpointAccessControlMechanismCS.html">Endpoint Access Control Mechanism Code System</a>#mutual-tls)</span></p><p><b>NDH Endpoint Connection Type Version</b>: HL7 FHIR Operation <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-EndpointConnectionTypeCS.html">Endpoint Connection Types (additional) Code System</a>#hl7-fhir-opn)</span></p><p><b>NDH Endpoint Rank</b>: 1</p><p><b>NDH Verification Status</b>: Not Required <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-NdhVerificationStatusCS.html">NDH Resource Instance Verification Status Code System</a>#not-required)</span></p><p><b>identifier</b>: id: Diamond-mtls-endpoint2</p><p><b>status</b>: active</p><p><b>connectionType</b>: HL7 FHIR (Details: http://terminology.hl7.org/CodeSystem/endpoint-connection-type code hl7-fhir-rest = 'HL7 FHIR', stated as 'HL7 FHIR')</p><p><b>name</b>: Payer-Payer Exchange</p><p><b>managingOrganization</b>: <a href="Organization-DiamondOnyxHealth1.html">Organization/DiamondOnyxHealth1</a> &quot;DiamondOnyxHealth&quot;</p><p><b>payloadType</b>: Not Applicable <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-EndpointPayloadTypeCS.html">Endpoint Payload Types Code System</a>#NA)</span></p><p><b>address</b>: <a href="https://mtls-dev-dmdh.safhir.io/mtlsendpoint">https://mtls-dev-dmdh.safhir.io/mtlsendpoint</a></p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension">
+    <extension url="ObjectType">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/MtlsObjectCodeCS"/>
+          <code value="MTLS"/>
+          <display value="mTLS signed Object"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="Object">
+      <valueBase64Binary value="MIIE+zCCA+OgAwIBAgISA/DY57CPqtRoFlG0JOdQZnRzMA0GCSqGSIb3DQEBCwUAMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJSMzAeFw0yMzA3MjcwMTU2NTBaFw0yMzEwMjUwMTU2NDlaMCIxIDAeBgNVBAMTF210bHMtZGV2LWRtZGguc2FmaGlyLmlvMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArgSWqFdWPDyX93O9ERnzAzfCqKLFrEsAnOSS5/fyil2qAE85y3/1v8VsrSsiUHz2SUXxQQ0dJGBT3jlZB+KZ9AtNhEAvvQiWtuzNNgO8Q7iVeh/8C+WP7XazGXzaEcpbtOqoM+JGqwWkRu2zlpJmFjAhIIasQMFH2HOWOukRN+8J4n6xy1JqqpDiUc3N77trY+R3PbuEfv0vOLwUYTBq+k1y3gQOy/Xl7l5J9+ugC3ftk+PMmByTbU6+ZDAK6QAGoY2SdwzY4dG36KlYsWA08cvgLUs3IaMxPK008YVx27a6/mJua3xhTnh/6muGyOUpmlYBCJJg43FOskeqNIIxaQIDAQABo4ICGTCCAhUwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBT2H5abr3gkO0t5KpwP0K966DCuZTAfBgNVHSMEGDAWgBQULrMXt1hWy65QCUDmH6+dixTCxjBVBggrBgEFBQcBAQRJMEcwIQYIKwYBBQUHMAGGFWh0dHA6Ly9yMy5vLmxlbmNyLm9yZzAiBggrBgEFBQcwAoYWaHR0cDovL3IzLmkubGVuY3Iub3JnLzAiBgNVHREEGzAZghdtdGxzLWRldi1kbWRoLnNhZmhpci5pbzATBgNVHSAEDDAKMAgGBmeBDAECATCCAQQGCisGAQQB1nkCBAIEgfUEgfIA8AB1ALc++yTfnE26dfI5xbpY9Gxd/ELPep81xJ4dCYEl7bSZAAABiZVHEwAAAAQDAEYwRAIgVM1RAExo1mO7EDQ11PFzE6ewkx9TBzSrQMsxX9dkC5QCIA2tta+kt2aSk8lwqLBCEiSSSPXLg/1sbHrODtCjACsZAHcAejKMVNi3LbYg6jjgUh7phBZwMhOFTTvSK8E6V6NS61IAAAGJlUcTCAAABAMASDBGAiEAl1l1FIWpFnVupbIKz+PlPLmgKAtxkJiK6s9uVD1P81MCIQDRsPgnSaFlQbr4KdMc/B3KWZwjkXqoUmI6x1XApPY6gjANBgkqhkiG9w0BAQsFAAOCAQEAhELGwBfs7GsABz5kCUyLunMbdsb6VKjPrBABVTbG9amFcBVxDBSRBNx/NC8itT5k4u2JRnvjVQ/N2vtRqRZR564TwVnMow2ZIW2v9vUhQeX3LkIzzJq0CCLDO39PX1YPUDVCkzH1RV4AxuM26+We4+xmnXixNK6iKJjCvW2S0Q9CA6lQ2COi/tgUq8IIoKy5vFfjHsXul9aGMdzK39fxmO8QRysKBIVWfzb62bUNFO9FGVc7GbEGocqy20TiKBkUjR27T97Q1cMDwtzLwS/G2YKnEVtIJLk/cKG4UKcWx+pCHqvDaHRWUNQ2kofypCS+lLBQFQhXpSG8IwzOww54Kg=="/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase">
+    <extension url="endpointUsecasetype">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS"/>
+          <code value="payerToPayer"/>
+          <display value="Payer to Payer"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="standard">
+      <valueUri value="hl7.org/fhir/us/davinci-pdex"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig">
+    <extension url="ig-publication">
+      <valueUri value="hl7.org/fhir/us/davinci-pdex/2022May"/>
+    </extension>
+    <extension url="ig-name">
+      <valueString value="Da Vinci Payer Data Exchange"/>
+    </extension>
+    <extension url="ig-version">
+      <valueString value="2.0.0"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework">
+    <extension url="trustFrameworkType">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS"/>
+          <code value="PayerToPayer"/>
+          <display value="Payer to Payer Trust Network"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="qualifier">
+      <valueString value="Yes"/>
+    </extension>
+    <extension url="signedArtifact">
+      <valueBase64Binary value="TUlJRUdEQ0NBd0FDRkRadnUxQTdWWTJlT083b2h3Q2ZvMmxFS1hORU1BMEdDU3FHU0liM0RRRUJDd1VBTUlIUQpNUXN3Q1FZRFZRUUdFd0pWVXpFUk1BOEdBMVVFQ0F3SVRXRnllV3hoYm1ReEZUQVRCZ05WQkFjTURGZHBibVJ6CmIzSWdUV2xzYkRFZE1Cc0dBMVVFQ2d3VVQyNTVlQ0JVWldOb2JtOXNiMmQ1TENCTVRFTXhGekFWQmdOVkJBc00KRGxCaGVXVnlMWFJ2TFZCaGVXVnlNVEV3THdZRFZRUUREQ2gwY25WemRDMXRZVzVoWjJWeUxYQmhlV1Z5ZEc5dwpZWGxsY2k1dmJubDRhR1ZoYkhSb0xtbHZNU3d3S2dZSktvWklodmNOQVFrQkZoMXRZWEpyTG5OamNtbHRjMmhwCmNtVkFiMjU1ZUdobFlXeDBhQzVwYnpBZUZ3MHlNekE0TVRFeE5qSTBNakZhRncweU5EQTRNVEF4TmpJME1qRmEKTUlHL01Rc3dDUVlEVlFRR0V3SlZVekVSTUE4R0ExVUVDQXdJVFdGeWVXeGhibVF4RlRBVEJnTlZCQWNNREZkcApibVJ6YjNJZ1RXbHNiREVXTUJRR0ExVUVDZ3dOVDI1NWVFaGxZV3gwYUM1cGJ6RWVNQndHQTFVRUN3d1ZUMjU1CmVFOVRMVkJoZVdWeUxYUnZMVkJoZVdWeU1TQXdIZ1lEVlFRRERCZHRkR3h6TFdSbGRpMWtiV1JvTG5OaFptaHAKY2k1cGJ6RXNNQ29HQ1NxR1NJYjNEUUVKQVJZZGJXRnlheTV6WTNKcGJYTm9hWEpsUUc5dWVYaG9aV0ZzZEdndQphVzh3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRQ3VCSmFvVjFZOFBKZjNjNzBSCkdmTUROOEtvb3NXc1N3Q2M1SkxuOS9LS1hhb0FUem5MZi9XL3hXeXRLeUpRZlBaSlJmRkJEUjBrWUZQZU9Wa0gKNHBuMEMwMkVRQys5Q0phMjdNMDJBN3hEdUpWNkgvd0w1WS90ZHJNWmZOb1J5bHUwNnFnejRrYXJCYVJHN2JPVwprbVlXTUNFZ2hxeEF3VWZZYzVZNjZSRTM3d25pZnJITFVtcXFrT0pSemMzdnUydGo1SGM5dTRSKy9TODR2QlJoCk1HcjZUWExlQkE3TDllWHVYa24zNjZBTGQrMlQ0OHlZSEpOdFRyNWtNQXJwQUFhaGpaSjNETmpoMGJmb3FWaXgKWURUeHkrQXRTemNob3pFOHJUVHhoWEhidHJyK1ltNXJmR0ZPZUgvcWE0Ykk1U21hVmdFSWttRGpjVTZ5UjZvMApnakZwQWdNQkFBRXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBS1JpMGlabTFuellmbmZlTXRycjlYaStTQlRFCm1lbktjMlB2N2pEWjRnU1dsejByTXRnTHg2Q2JhMzlwTm03L2drSmZMT2VaUG1kMFJzOVh5a1RQWXVXM0k0VWoKZGprUUk2MVpDZkxGS0szRXVmYVUxYXM1RUQvK1FIQmM2Y25ETVlsMk9nbVJqU1VCVGJkMDByZUR0TjlnUEdXOQpoYzY4cXZpOEhNRDhFZnBOQ1ZWR2lGMlRtdjh3RU1VL0p3TDM0eHJZMmh1bmJ3SWJwOHM2NTJGblQ1Sk93eWUzCjN0c1lENE9zNkVrTnlsY0RjdlRtOFk0ZnEwc0RQbGF3ZFREa3FVNldtTkZUVCtwQzEvNFhTanlzbTV2STd0eTUKd0hLWkVnOXBZS05yVW9YYWpYdzB1WTJIVzdXcy8xUW5aS3gyalFGb1lQRG0xOXRPdXRjY0RoSDRYdDA9Cg=="/>
+    </extension>
+    <extension url="publicCertificate">
+      <valueBase64Binary value="LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE1TFA2YXNiZVRuUVlOaEtOUTg3VApUOTZMYkY1ZXVFVEVpMTZXZXR6K1pka1p6dHZ6TnVKQ0hFdUZDTUFCSEMrb25iMGpad3Y1Mk5zU2xkRHRjUjZDCkdzM2xpRzdCUHVUeExTaVgrRTZnbzhBQ0lqSDFCTkZNMC90WmFpZEo5RTRvWnhab09VUm05RFFMN0xUa0M1eGYKMWt0a3k0NHFWck9SWTg3bk1pNHZPc3dSOXZwcVZDNzlYa3lyK3ZlZWJtbFFhVG9NajBpaWVxNDk1Y3hYTmtINgpNZ0Z3Yy9FQTRpdFVZU2E3RzltMmdScmcwVlJrbGw1bTVBaGxWNHduQzZHQ1RmS1NDVmwxM1NFN1hvRm5LNjdYCnlla2E4dDRlcWY3aEVhZEp5WWlVOGNzUkFHT1Q3bm5kNThMcnlheTVxS0FmdEV1bmNEQ2dNbVhWeE9CcDRSb1QKS3dJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-dynamicRegistration">
+    <extension url="trustProfile">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS"/>
+          <code value="smart"/>
+          <display value="SMART"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="version">
+      <valueString value="1.0"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers">
+    <extension url="associatedServersType">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS"/>
+          <code value="authorization-registration-server"/>
+          <display value="Authorization/Registration Server"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="serverURL">
+      <valueString value="https://example.com/oauth/registration/"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpointAccessControlMechanism">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointAccessControlMechanismCS"/>
+        <code value="mutual-tls"/>
+        <display value="Mutual TLS"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-connection-type-version">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS"/>
+        <code value="hl7-fhir-opn"/>
+        <display value="HL7 FHIR Operation"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-rank">
+    <valuePositiveInt value="1"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-verification-status">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS"/>
+        <code value="not-required"/>
+        <display value="Not Required"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <identifier>
+    <value value="Diamond-mtls-endpoint2"/>
+  </identifier>
+  <status value="active"/>
+  <connectionType>
+    <system value="http://terminology.hl7.org/CodeSystem/endpoint-connection-type"/>
+    <code value="hl7-fhir-rest"/>
+    <display value="HL7 FHIR"/>
+  </connectionType>
+  <name value="Payer-Payer Exchange"/>
+  <managingOrganization>
+    <reference value="Organization/DiamondOnyxHealth1"/>
+  </managingOrganization>
+  <payloadType>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS"/>
+      <code value="NA"/>
+      <display value="Not Applicable"/>
+    </coding>
+  </payloadType>
+  <address value="https://mtls-dev-dmdh.safhir.io/mtlsendpoint"/>
+</Endpoint>

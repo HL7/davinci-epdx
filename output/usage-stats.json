@@ -1,0 +1,799 @@
+{
+  "package": "hl7.fhir.us.davinci-pdex",
+  "version": "2.0.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "US",
+  "extensions": [
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
+      "title": "An attribute to express the refill number of a prescription",
+      "types": [
+        "Quantity"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization",
+      "title": "An attribute to express the amount of a service or item that has been utilized",
+      "types": [
+        "Quantity",
+        "Ratio"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+      "title": "An attribute to describe the data source a resource was constructed from",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers",
+      "title": "NDH Associated Servers",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime",
+      "title": "NDH Contactpoint Availabletime",
+      "types": [
+        "code",
+        "boolean",
+        "time",
+        "time",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-dynamicRegistration",
+      "title": "NDH Dynamic Registration",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-connection-type-version",
+      "title": "NDH Endpoint Connection Type Version",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-rank",
+      "title": "NDH Endpoint Rank",
+      "types": [
+        "positiveInt"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase",
+      "title": "NDH Endpoint Usecase",
+      "types": [
+        "CodeableConcept",
+        "uri",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpointAccessControlMechanism",
+      "title": "NDH Endpoint Access Control Mechanism",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig",
+      "title": "NDH FHIR IG",
+      "types": [
+        "uri",
+        "string",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status",
+      "title": "NDH Identifier Status",
+      "types": [
+        "code"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts",
+      "title": "NDH Secure Exchange Artifacts",
+      "types": [
+        "CodeableConcept",
+        "base64Binary",
+        "dateTime",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework",
+      "title": "NDH Trust Framework",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "base64Binary",
+        "base64Binary",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-verification-status",
+      "title": "NDH Verification Status",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode",
+      "title": "LevelOfServiceCode",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction",
+      "title": "ReviewAction",
+      "types": [
+        "string",
+        "CodeableConcept",
+        "boolean",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode",
+      "title": "ReviewActionCode",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension",
+      "title": "mTLS Signed Object",
+      "types": [
+        "CodeableConcept",
+        "base64Binary",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    }
+  ],
+  "profiles": {
+    "Bundle": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-bundle",
+        "title": "mTLS Endpoint Bundle"
+      }
+    ],
+    "Endpoint": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-endpoint",
+        "title": "mTLS Endpoint"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization",
+        "title": "mTLS Organization"
+      }
+    ],
+    "Device": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
+        "title": "PDex Device"
+      }
+    ],
+    "MedicationDispense": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
+        "title": "PDex MedicationDispense"
+      }
+    ],
+    "ExplanationOfBenefit": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization",
+        "title": "PDex Prior Authorization"
+      }
+    ],
+    "Provenance": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
+        "title": "PDex Provenance"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation": [
+      "CapabilityStatement.rest.interaction",
+      "CapabilityStatement.rest.resource",
+      "CapabilityStatement.rest.resource.interaction",
+      "CapabilityStatement.rest.resource.operation",
+      "CapabilityStatement.rest.resource.searchParam",
+      "SearchParameter.multipleAnd",
+      "SearchParameter.multipleOr"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination": [
+      "CapabilityStatement.rest.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "SearchParameter"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg": [
+      "CapabilityStatement",
+      "CodeSystem",
+      "ImplementationGuide",
+      "SearchParameter",
+      "StructureDefinition",
+      "ValueSet"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page",
+      "ImplementationGuide.definition.page.page.page",
+      "ImplementationGuide.definition.page.page.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber": [
+      "ExplanationOfBenefit.item"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill": [
+      "MedicationDispense"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization": [
+      "ExplanationOfBenefit.total"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom": [
+      "Bundle.entry.resource.entity",
+      "Provenance.entity"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime": [
+      "Endpoint.contact",
+      "Organization.contact.telecom",
+      "Organization.telecom"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-dynamicRegistration": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-connection-type-version": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-rank": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpointAccessControlMechanism": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status": [
+      "Endpoint.identifier",
+      "Organization.identifier"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-verification-status": [
+      "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode": [
+      "ExplanationOfBenefit"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction": [
+      "ExplanationOfBenefit.adjudication",
+      "ExplanationOfBenefit.item.adjudication"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode": [
+      "Extension"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension": [
+      "Endpoint"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+<html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
+
+</pre><hr/>
+<a name="l1"> </a><h3>1</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"eafd711c-efe9-4416-8b86-29972b49d522"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/731000124108"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:590
+content-type:application/fhir+json
+date:Wed, 03 Jan 2024 13:27:21 GMT
+last-modified:Wed, 03 Jan 2024 13:27:21 GMT
+pragma:no-cache
+server:nginx
+x-request-id:60-4101575
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"},{"name" : "message","valueString" : "The CodeSystem http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem is unknown"},"location" : ["Coding.system"]}]}}]}
+
+--- 1 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"}},{"name":"displayLanguage","valueString":"en, en-US"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"cache-id","valueId":"eafd711c-efe9-4416-8b86-29972b49d522"},{"name":"system-version","valueUri":"http://snomed.info/sct|http://snomed.info/sct/731000124108"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:590
+content-type:application/fhir+json
+date:Wed, 03 Jan 2024 13:27:21 GMT
+last-modified:Wed, 03 Jan 2024 13:27:21 GMT
+pragma:no-cache
+server:nginx
+x-request-id:60-4101575
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"},{"name" : "message","valueString" : "The CodeSystem http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem is unknown"},"location" : ["Coding.system"]}]}}]}
+</pre></head></html>

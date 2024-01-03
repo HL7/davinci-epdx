@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PriorAuthServiceTypeCodes",
+  "id": "PriorAuthServiceTypeCodes",
+  "title": "Prior Authorization Service Type Codes (X12)",
+  "description": "Indicates the Type of Service that a Prior Authorization is covering",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes",
+  "experimental": true,
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "https://x12.org/codes/service-type-codes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,625 @@
+[
+  {
+    "id" : "pdex-server",
+    "type" : "CapabilityStatement",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-server",
+    "version" : "2.0.0",
+    "name" : "PdexServerCapabilityStatement"
+  },
+  {
+    "id" : "CredentialStatusCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/CredentialStatusCS",
+    "version" : "2.0.0",
+    "name" : "CredentialStatusCS"
+  },
+  {
+    "id" : "EndpointAccessControlMechanismCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointAccessControlMechanismCS",
+    "version" : "2.0.0",
+    "name" : "EndpointAccessControlMechanismCS"
+  },
+  {
+    "id" : "EndpointConnectionTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS",
+    "version" : "2.0.0",
+    "name" : "EndpointConnectionTypeCS"
+  },
+  {
+    "id" : "EndpointConnectionTypeVersionCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeVersionCS",
+    "version" : "2.0.0",
+    "name" : "EndpointConnectionTypeVersionCS"
+  },
+  {
+    "id" : "EndpointFhirMimeTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointFhirMimeTypeCS",
+    "version" : "2.0.0",
+    "name" : "EndpointFhirMimeTypeCS"
+  },
+  {
+    "id" : "EndpointHieSpecificConnectionTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointHieSpecificConnectionTypeCS",
+    "version" : "2.0.0",
+    "name" : "EndpointHieSpecificConnectionTypeCS"
+  },
+  {
+    "id" : "EndpointPayloadTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS",
+    "version" : "2.0.0",
+    "name" : "EndpointPayloadTypeCS"
+  },
+  {
+    "id" : "IdentifierTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/IdentifierTypeCS",
+    "version" : "2.0.0",
+    "name" : "IdentifierTypeCS"
+  },
+  {
+    "id" : "MtlsObjectCodeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/MtlsObjectCodeCS",
+    "version" : "2.0.0",
+    "name" : "MtlsObjectCodeCS"
+  },
+  {
+    "id" : "NdhAssociatedServersTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS",
+    "version" : "2.0.0",
+    "name" : "NdhAssociatedServersTypeCS"
+  },
+  {
+    "id" : "NdhFhirEndpointUseCaseCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS",
+    "version" : "2.0.0",
+    "name" : "NdhFhirEndpointUseCaseCS"
+  },
+  {
+    "id" : "NdhSecureExchangeArtifactsCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhSecureExchangeArtifactsCS",
+    "version" : "2.0.0",
+    "name" : "NdhSecureExchangeArtifactsCS"
+  },
+  {
+    "id" : "NdhVerificationStatusCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS",
+    "version" : "2.0.0",
+    "name" : "NdhVerificationStatusCS"
+  },
+  {
+    "id" : "OrgTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS",
+    "version" : "2.0.0",
+    "name" : "OrgTypeCS"
+  },
+  {
+    "id" : "PDexAdjudicationCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS",
+    "version" : "2.0.0",
+    "name" : "PDexAdjudicationCS"
+  },
+  {
+    "id" : "PDexAdjudicationDiscriminator",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator",
+    "version" : "2.0.0",
+    "name" : "PDexAdjudicationDiscriminator"
+  },
+  {
+    "id" : "PDexIdentifierType",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType",
+    "version" : "2.0.0",
+    "name" : "PDexIdentifierType"
+  },
+  {
+    "id" : "PDexPayerAdjudicationStatus",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus",
+    "version" : "2.0.0",
+    "name" : "PDexPayerAdjudicationStatus"
+  },
+  {
+    "id" : "PDexSupportingInfoType",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType",
+    "version" : "2.0.0",
+    "name" : "PDexSupportingInfoType"
+  },
+  {
+    "id" : "PdexProviderExportModeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexProviderExportModeCS",
+    "version" : "2.0.0",
+    "name" : "PdexProviderExportModeCS"
+  },
+  {
+    "id" : "PriorAuthorizationValueCodes",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes",
+    "version" : "2.0.0",
+    "name" : "PriorAuthorizationValueCodes"
+  },
+  {
+    "id" : "ProvenanceAgentRoleType",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType",
+    "version" : "2.0.0",
+    "name" : "ProvenanceAgentRoleType"
+  },
+  {
+    "id" : "ProvenancePayerDataSource",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+    "version" : "2.0.0",
+    "name" : "ProvenancePayerDataSource"
+  },
+  {
+    "id" : "TrustFrameworkTypeCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS",
+    "version" : "2.0.0",
+    "name" : "TrustFrameworkTypeCS"
+  },
+  {
+    "id" : "TrustProfileCS",
+    "type" : "CodeSystem",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS",
+    "version" : "2.0.0",
+    "name" : "TrustProfileCS"
+  },
+  {
+    "id" : "hl7.fhir.us.davinci-pdex",
+    "type" : "ImplementationGuide",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
+    "version" : "2.0.0",
+    "name" : "DaVinciPayerDataExchange"
+  },
+  {
+    "id" : "explanationofbenefit-identifier",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-identifier",
+    "version" : "2.0.0",
+    "name" : "ExplanationOfBenefit_Identifier"
+  },
+  {
+    "id" : "explanationofbenefit-patient",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-patient",
+    "version" : "2.0.0",
+    "name" : "ExplanationOfBenefit_Patient"
+  },
+  {
+    "id" : "explanationofbenefit-service-date",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-service-date",
+    "version" : "2.0.0",
+    "name" : "ExplanationOfBenefit_ServiceDate"
+  },
+  {
+    "id" : "explanationofbenefit-type",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-type",
+    "version" : "2.0.0",
+    "name" : "ExplanationOfBenefit_Type"
+  },
+  {
+    "id" : "explanationofbenefit-use",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-use",
+    "version" : "2.0.0",
+    "name" : "ExplanationOfBenefit_Use"
+  },
+  {
+    "id" : "pdex-medicationdispense-patient",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-patient",
+    "version" : "2.0.0",
+    "name" : "PdexMedicationDispensePatient"
+  },
+  {
+    "id" : "pdex-medicationdispense-status",
+    "type" : "SearchParameter",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-medicationdispense-status",
+    "version" : "2.0.0",
+    "name" : "PdexMedicationDispenseStatus"
+  },
+  {
+    "id" : "DispenseRefill",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
+    "version" : "2.0.0",
+    "name" : "DispenseRefill"
+  },
+  {
+    "id" : "PriorAuthorizationUtilization",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization",
+    "version" : "2.0.0",
+    "name" : "PriorAuthorizationUtilization"
+  },
+  {
+    "id" : "ProvenanceSourceFrom",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+    "version" : "2.0.0",
+    "name" : "ProvenanceSourceFrom"
+  },
+  {
+    "id" : "base-ext-associatedServers",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers",
+    "version" : "2.0.0",
+    "name" : "AssociatedServers"
+  },
+  {
+    "id" : "base-ext-contactpoint-availabletime",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime",
+    "version" : "2.0.0",
+    "name" : "ContactPointAvailableTime"
+  },
+  {
+    "id" : "base-ext-dynamicRegistration",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-dynamicRegistration",
+    "version" : "2.0.0",
+    "name" : "DynamicRegistration"
+  },
+  {
+    "id" : "base-ext-endpoint-connection-type-version",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-connection-type-version",
+    "version" : "2.0.0",
+    "name" : "EndpointConnectionTypeVersion"
+  },
+  {
+    "id" : "base-ext-endpoint-rank",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-rank",
+    "version" : "2.0.0",
+    "name" : "EndpointRank"
+  },
+  {
+    "id" : "base-ext-endpoint-usecase",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase",
+    "version" : "2.0.0",
+    "name" : "EndpointUsecase"
+  },
+  {
+    "id" : "base-ext-endpointAccessControlMechanism",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpointAccessControlMechanism",
+    "version" : "2.0.0",
+    "name" : "EndpointAccessControlMechanism"
+  },
+  {
+    "id" : "base-ext-fhir-ig",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig",
+    "version" : "2.0.0",
+    "name" : "FhirIg"
+  },
+  {
+    "id" : "base-ext-identifier-status",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status",
+    "version" : "2.0.0",
+    "name" : "IdentifierStatus"
+  },
+  {
+    "id" : "base-ext-secureExchangeArtifacts",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts",
+    "version" : "2.0.0",
+    "name" : "SecureExchangeArtifacts"
+  },
+  {
+    "id" : "base-ext-trustFramework",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework",
+    "version" : "2.0.0",
+    "name" : "TrustFramework"
+  },
+  {
+    "id" : "base-ext-verification-status",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-verification-status",
+    "version" : "2.0.0",
+    "name" : "VerificationStatus"
+  },
+  {
+    "id" : "extension-levelOfServiceCode",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode",
+    "version" : "2.0.0",
+    "name" : "LevelOfServiceCode"
+  },
+  {
+    "id" : "extension-reviewAction",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction",
+    "version" : "2.0.0",
+    "name" : "ReviewAction"
+  },
+  {
+    "id" : "extension-reviewActionCode",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode",
+    "version" : "2.0.0",
+    "name" : "ReviewActionCode"
+  },
+  {
+    "id" : "mtls-bundle",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-bundle",
+    "version" : "2.0.0",
+    "name" : "MtlsBundle"
+  },
+  {
+    "id" : "mtls-endpoint",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-endpoint",
+    "version" : "2.0.0",
+    "name" : "MtlsEndpoint"
+  },
+  {
+    "id" : "mtls-organization",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization",
+    "version" : "2.0.0",
+    "name" : "MtlsOrganization"
+  },
+  {
+    "id" : "pdex-device",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
+    "version" : "2.0.0",
+    "name" : "PdexDevice"
+  },
+  {
+    "id" : "pdex-medicationdispense",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
+    "version" : "2.0.0",
+    "name" : "PdexMedicationDispense"
+  },
+  {
+    "id" : "pdex-mtls-signedobject-extension",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension",
+    "version" : "2.0.0",
+    "name" : "MtlsSignedObject"
+  },
+  {
+    "id" : "pdex-priorauthorization",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization",
+    "version" : "2.0.0",
+    "name" : "PdexPriorAuthorization"
+  },
+  {
+    "id" : "pdex-provenance",
+    "type" : "StructureDefinition",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance",
+    "version" : "2.0.0",
+    "name" : "Provenance"
+  },
+  {
+    "id" : "BundleTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/BundleTypeVS",
+    "version" : "2.0.0",
+    "name" : "BundleTypeVS"
+  },
+  {
+    "id" : "EndpointAccessControlMechanismVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointAccessControlMechanismVS",
+    "version" : "2.0.0",
+    "name" : "EndpointAccessControlMechanismVS"
+  },
+  {
+    "id" : "EndpointConnectionTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointConnectionTypeVS",
+    "version" : "2.0.0",
+    "name" : "EndpointConnectionTypeVS"
+  },
+  {
+    "id" : "EndpointConnectionTypeVersionVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointConnectionTypeVersionVS",
+    "version" : "2.0.0",
+    "name" : "EndpointConnectionTypeVersionVS"
+  },
+  {
+    "id" : "EndpointFhirMimeTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointFhirMimeTypeVS",
+    "version" : "2.0.0",
+    "name" : "EndpointFhirMimeTypeVS"
+  },
+  {
+    "id" : "EndpointPayloadTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointPayloadTypeVS",
+    "version" : "2.0.0",
+    "name" : "EndpointPayloadTypeVS"
+  },
+  {
+    "id" : "FDANationalDrugCode",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode",
+    "version" : "2.0.0",
+    "name" : "FDANationalDrugCode"
+  },
+  {
+    "id" : "IdentifierStatusVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/IdentifierStatusVS",
+    "version" : "2.0.0",
+    "name" : "IdentifierStatusVS"
+  },
+  {
+    "id" : "MtlsObjectType",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/MtlsObjectType",
+    "version" : "2.0.0",
+    "name" : "MtlsObjectType"
+  },
+  {
+    "id" : "NdhAssociatedServersTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/NdhAssociatedServersTypeVS",
+    "version" : "2.0.0",
+    "name" : "NdhAssociatedServersTypeVS"
+  },
+  {
+    "id" : "NdhFhirEndpointUseCaseVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/NdhFhirEndpointUseCaseVS",
+    "version" : "2.0.0",
+    "name" : "NdhFhirEndpointUseCaseVS"
+  },
+  {
+    "id" : "NdhSecureExchangeArtifactsVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/NdhSecureExchangeArtifactsVS",
+    "version" : "2.0.0",
+    "name" : "NdhSecureExchangeArtifactsVS"
+  },
+  {
+    "id" : "NdhVerificationStatusVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/NdhVerificationStatusVS",
+    "version" : "2.0.0",
+    "name" : "NdhVerificationStatusVS"
+  },
+  {
+    "id" : "OrgTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/OrgTypeVS",
+    "version" : "2.0.0",
+    "name" : "OrgTypeVS"
+  },
+  {
+    "id" : "PDexAdjudication",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication",
+    "version" : "2.0.0",
+    "name" : "PDexAdjudication"
+  },
+  {
+    "id" : "PDexAdjudicationCategoryDiscriminator",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator",
+    "version" : "2.0.0",
+    "name" : "PDexAdjudicationCategoryDiscriminator"
+  },
+  {
+    "id" : "PDexPAInstitutionalProcedureCodes",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes",
+    "version" : "2.0.0",
+    "name" : "PDexPAInstitutionalProcedureCodes"
+  },
+  {
+    "id" : "PDexPAInstitutionalProcedureCodesVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS",
+    "version" : "2.0.0",
+    "name" : "PDexPAInstitutionalProcedureCodesVS"
+  },
+  {
+    "id" : "PDexPayerBenefitPaymentStatus",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus",
+    "version" : "2.0.0",
+    "name" : "PDexPayerBenefitPaymentStatus"
+  },
+  {
+    "id" : "PDexProviderExportModeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexProviderExportModeVS",
+    "version" : "2.0.0",
+    "name" : "PDexProviderExportModeVS"
+  },
+  {
+    "id" : "PDexSupportingInfoType",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexSupportingInfoType",
+    "version" : "2.0.0",
+    "name" : "PDexSupportingInfoType"
+  },
+  {
+    "id" : "PriorAuthServiceTypeCodes",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes",
+    "version" : "2.0.0",
+    "name" : "PriorAuthServiceTypeCodes"
+  },
+  {
+    "id" : "PriorAuthorizationAmounts",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthorizationAmounts",
+    "version" : "2.0.0",
+    "name" : "PriorAuthorizationAmounts"
+  },
+  {
+    "id" : "ProvenanceAgentType",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType",
+    "version" : "2.0.0",
+    "name" : "ProvenanceAgentType"
+  },
+  {
+    "id" : "ProvenancePayerSourceFormat",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat",
+    "version" : "2.0.0",
+    "name" : "ProvenancePayerSourceFormat"
+  },
+  {
+    "id" : "TrustFrameworkTypeVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/TrustFrameworkTypeVS",
+    "version" : "2.0.0",
+    "name" : "TrustFrameworkTypeVS"
+  },
+  {
+    "id" : "TrustProfileVS",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/TrustProfileVS",
+    "version" : "2.0.0",
+    "name" : "TrustProfileVS"
+  },
+  {
+    "id" : "X12278ReviewDecisionReasonCode",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode",
+    "version" : "2.0.0",
+    "name" : "X12278ReviewDecisionReasonCode"
+  },
+  {
+    "id" : "X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes",
+    "type" : "ValueSet",
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes",
+    "version" : "2.0.0",
+    "name" : "X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"
+  }
+]

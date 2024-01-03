@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="PDexPayerAdjudicationStatus"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">innetwork<a name="PDexPayerAdjudicationStatus-innetwork"> </a></td><td>In Network</td><td>Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider</td></tr><tr><td style="white-space:nowrap">outofnetwork<a name="PDexPayerAdjudicationStatus-outofnetwork"> </a></td><td>Out Of Network</td><td>Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider</td></tr><tr><td style="white-space:nowrap">other<a name="PDexPayerAdjudicationStatus-other"> </a></td><td>Other</td><td>Indicates other network status or when a network does not apply</td></tr><tr><td style="white-space:nowrap">contracted<a name="PDexPayerAdjudicationStatus-contracted"> </a></td><td>Contracted</td><td>Indicates the provider was contracted for the service</td></tr><tr><td style="white-space:nowrap">noncontracted<a name="PDexPayerAdjudicationStatus-noncontracted"> </a></td><td>Non-Contracted</td><td>Indicates the provider was not contracted for the service</td></tr><tr><td style="white-space:nowrap">paid<a name="PDexPayerAdjudicationStatus-paid"> </a></td><td>Paid</td><td>Indicates if the claim was approved for payment</td></tr><tr><td style="white-space:nowrap">denied<a name="PDexPayerAdjudicationStatus-denied"> </a></td><td>Denied</td><td>Indicates if the claim was denied</td></tr><tr><td style="white-space:nowrap">partiallypaid<a name="PDexPayerAdjudicationStatus-partiallypaid"> </a></td><td>Partially Paid</td><td>Indicates that some line items on the claim were denied</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus"/>
+  <version value="2.0.0"/>
+  <name value="PDexPayerAdjudicationStatus"/>
+  <title value="PDex Payer Adjudication Status"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This CodeSystem is not copyrighted."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="8"/>
+  <concept>
+    <code value="innetwork"/>
+    <display value="In Network"/>
+    <definition value="Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider"/>
+  </concept>
+  <concept>
+    <code value="outofnetwork"/>
+    <display value="Out Of Network"/>
+    <definition value="Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider"/>
+  </concept>
+  <concept>
+    <code value="other"/>
+    <display value="Other"/>
+    <definition value="Indicates other network status or when a network does not apply"/>
+  </concept>
+  <concept>
+    <code value="contracted"/>
+    <display value="Contracted"/>
+    <definition value="Indicates the provider was contracted for the service"/>
+  </concept>
+  <concept>
+    <code value="noncontracted"/>
+    <display value="Non-Contracted"/>
+    <definition value="Indicates the provider was not contracted for the service"/>
+  </concept>
+  <concept>
+    <code value="paid"/>
+    <display value="Paid"/>
+    <definition value="Indicates if the claim was approved for payment"/>
+  </concept>
+  <concept>
+    <code value="denied"/>
+    <display value="Denied"/>
+    <definition value="Indicates if the claim was denied"/>
+  </concept>
+  <concept>
+    <code value="partiallypaid"/>
+    <display value="Partially Paid"/>
+    <definition value="Indicates that some line items on the claim were denied"/>
+  </concept>
+</CodeSystem>

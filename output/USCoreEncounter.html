@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>US Core Encounter - Da Vinci Payer Data Exchange v2.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.3.10"}
+    h3,h4,h5,h6{--heading-prefix:"6.3.10"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.0.0 - STU2
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer</a>
+      </li>
+      <li>
+        <a href="changehistory.html">Change Log</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li>
+    <a href="other-igs.html">Other IG Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='pdeximplementationactorsinteractionsdatapayloadsandmethods.html'><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><a href='datamapping.html'><b>Data Mapping</b></a></li><li><b>US Core Encounter</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>US Core Encounter</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p><a href="USCoreDocumentReference.html">Previous Page - US Core DocumentReference</a></p>
+
+<p>An example mapping of Health Plan data for Members to the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter profile</a> is shown below:</p>
+
+<style>
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        border:2px solid #000088;
+        width:90%;
+        overflow-wrap: anywhere;
+    }
+
+    th{
+        border:2px solid #000088;
+        background-color:lightskyblue;
+    }
+
+    td{
+        border:1px solid #000088;
+    }
+</style>
+
+<p>When populating the encounter resource period - if claim has period, populate period; if only a date, populate the end date in a period element.</p>
+
+<p>Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.</p>
+
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">US Core Encounter</a> resource are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Encounter.identifier</td>
+      <td>identifier</td>
+      <td style="text-align: center">0..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.value</td>
+      <td>value</td>
+      <td style="text-align: center">1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Encounter.status</td>
+      <td>status</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Encounter.class</td>
+      <td>class</td>
+      <td style="text-align: center">1..1</td>
+      <td>Coding</td>
+    </tr>
+    <tr>
+      <td>Encounter.type</td>
+      <td>type</td>
+      <td style="text-align: center">1..*</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Encounter.subject</td>
+      <td>subject</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(US Core Patient Profile)</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant</td>
+      <td>participant</td>
+      <td style="text-align: center">0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.type</td>
+      <td>type</td>
+      <td style="text-align: center">0..*</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.period</td>
+      <td>period</td>
+      <td style="text-align: center">0..1</td>
+      <td>Period</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.individual</td>
+      <td>individual</td>
+      <td style="text-align: center">0..1</td>
+      <td>Reference(US Core Practitioner Profile)</td>
+    </tr>
+    <tr>
+      <td>Encounter.period</td>
+      <td>period</td>
+      <td style="text-align: center">0..1</td>
+      <td>Period</td>
+    </tr>
+    <tr>
+      <td>Encounter.reasonCode</td>
+      <td>reasonCode</td>
+      <td style="text-align: center">0..*</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization</td>
+      <td>hospitalization</td>
+      <td style="text-align: center">0..1</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization.dischargeDisposition</td>
+      <td>dischargeDisposition</td>
+      <td style="text-align: center">0..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+    <tr>
+      <td>Encounter.location</td>
+      <td>location</td>
+      <td style="text-align: center">0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Encounter.location.location</td>
+      <td>location</td>
+      <td style="text-align: center">1..1</td>
+      <td>Reference(Location)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
+
+<p>Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included in the table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>US Core Element</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
+      <th>CARIN-BB Element</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Encounter.identifier</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.identifier</td>
+      <td>[{“35”:”Payer claim unique identifier”}]. Note: Assign Payer System URI for Unique Claim Id in Encounter.identifier.system. SetClaim Id in Encounter.identifier.value</td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.system</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Assign Payer System URI for Unique Claim Id in Encounter.identifier.system. Set Claim Id in Encounter.identifier.value</td>
+    </tr>
+    <tr>
+      <td>Encounter.identifier.value</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Assign Claim Id in Encounter.identifier.value</td>
+    </tr>
+    <tr>
+      <td>Encounter.status</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td>ExplanationOfBenefit.status</td>
+      <td>[{“140”:”Claim processing status code<br />”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.statusHistory.period</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>[{“177, 178”:”Statement From Date<br />Statement Through Date<br />”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.class</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Use ExplanationOfBenefit.type [institutional|oral|pharmacy|professional|vision]  to map to ActCode [IMP|AMB|AMB|AMB]</td>
+    </tr>
+    <tr>
+      <td>Encounter.classHistory.period</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">1..1</td>
+      <td>ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}, {“90, 119”:”Service from date, Service to date”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.type</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
+      <td>ExplanationOfBenefit.type</td>
+      <td>HCPCS codes are contained within CPT Code System.</td>
+    </tr>
+    <tr>
+      <td>Encounter.subject</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td>ExplanationOfBenefit.patient</td>
+      <td>[{“Ref (1), Ref (109)”:”Member id, Patient account number”}, {“Ref (191)”:”Unique Member ID”}, {“Ref (110)”:”Medical record number”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.type</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.careTeam.role</td>
+      <td>[{“165”:”Care Team Role”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.period</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: Provide information if available</td>
+    </tr>
+    <tr>
+      <td>Encounter.participant.individual</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>ExplanationOfBenefit.careTeam.provider</td>
+      <td>[{“Ref (93, 96, 98, 99, 173)”:”Provider attending, PCP, operating, <br />referring and supervising NPIs”}, {“Ref (166, 169, 182, 171, 174)”:”Provider <br />attending, PCP, operating, referring and supervising names”},<br />{“Ref (94, 167)”:”Claim Billing Provider NPI, <br />Claim Billing Provider Name”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.period</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>ExplanationOfBenefit.item.serviced.servicedPeriod, ExplanationOfBenefit.item.serviced.servicedDate</td>
+      <td>[{“18, 19”:”Member Admission Date<br />Member Discharge Date”}, {“90, 119”:”Service from date, Service to date”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.length</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>. Note: Provide information if available</td>
+    </tr>
+    <tr>
+      <td>Encounter.reasonCode</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
+      <td>. Note: Provide information if available</td>
+    </tr>
+    <tr>
+      <td>Encounter.diagnosis</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.diagnosis.onAdmission</td>
+      <td>[{“21, 22, 23, 30, 31”:”Diagnosis Code”}, {“28, 29”:”Present on admission”}]</td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>. Note: Provide information if available</td>
+    </tr>
+    <tr>
+      <td>Encounter.hospitalization.dischargeDisposition</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: Provide information if available</td>
+    </tr>
+    <tr>
+      <td>Encounter.location</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td>ExplanationOfBenefit.locationReference</td>
+      <td>Note: Reference to location where Encounter took place</td>
+    </tr>
+    <tr>
+      <td>Encounter.location.location</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Reference to location where Encounter took place</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
+
+<h4 id="example-encounter-resource">Example Encounter Resource</h4>
+
+<p>An example mapping of an Encounter resource is shown here:</p>
+
+<pre>
+{
+  "resourceType" : "Encounter",
+  "id" : "example-1",
+  "meta" : {
+    "lastUpdated" : "2017-05-26T11:56:57.250-04:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;<p><b>Generated Narrative</b></p><p><b>id</b>: example-1</p><p><b>meta</b>: </p><p><b>status</b>: finished</p><p><b>class</b>: &lt;span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\"&gt;ambulatory&lt;/span&gt;</p><p><b>type</b>: &lt;span title=\"Codes: {http://www.ama-assn.org/go/cpt 99201}\"&gt;Office Visit&lt;/span&gt;</p><p><b>subject</b>: &lt;a href=\"Patient-example.html\"&gt;Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw , Amy V. Baxter ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: 1987-02-20&lt;/a&gt;</p><p><b>period</b>: Nov 1, 2015, 10:00:14 PM --&gt; Nov 1, 2015, 11:00:14 PM</p>&lt;/div&gt;"
+  },
+  "status" : "finished",
+  "class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "AMB",
+    "display" : "ambulatory"
+  },
+  "type" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://www.ama-assn.org/go/cpt",
+          "code" : "99201"
+        }
+      ],
+      "text" : "Office Visit"
+    }
+  ],
+  "subject" : {
+    "reference" : "Patient/example"
+  },
+  "period" : {
+    "start" : "2015-11-01T17:00:14-05:00",
+    "end" : "2015-11-01T18:00:14-05:00"
+  }
+}
+</pre>
+
+<p>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/index.html">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">Encounter Profiles </a>.</p>
+
+<p><a href="USCoreGoal.html">Next Page - US Core Goal</a></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 3, 2024 08:27-0500">2024-01-03</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexAdjudication"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html\"><code>http://terminology.hl7.org/CodeSystem/adjudication</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html#adjudication-submitted\">submitted</a></td><td style=\"color: #cccccc\">Submitted Amount</td><td>The total submitted amount for the claim or group or line item.</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html#adjudication-copay\">copay</a></td><td style=\"color: #cccccc\">CoPay</td><td>Patient Co-Payment</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html#adjudication-eligible\">eligible</a></td><td style=\"color: #cccccc\">Eligible Amount</td><td>Amount of the change which is considered for adjudication.</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html#adjudication-deductible\">deductible</a></td><td style=\"color: #cccccc\">Deductible</td><td>Amount deducted from the eligible amount prior to adjudication.</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-adjudication.html#adjudication-benefit\">benefit</a></td><td style=\"color: #cccccc\">Benefit Amount</td><td>Amount payable under the coverage</td></tr></table></li><li>Include these codes as defined in <a href=\"CodeSystem-PDexAdjudicationCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-coinsurance\">coinsurance</a></td><td>Coinsurance</td><td>The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-noncovered\">noncovered</a></td><td>Noncovered</td><td>The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-priorpayerpaid\">priorpayerpaid</a></td><td>Prior payer paid</td><td>The reduction in the payment amount to reflect the carrier as a secondary payor.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-paidbypatient\">paidbypatient</a></td><td>Paid by patient</td><td>The amount paid by the patient at the point of service.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-paidtopatient\">paidtopatient</a></td><td>Paid to patient</td><td>paid to patient</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-paidtoprovider\">paidtoprovider</a></td><td>Paid to provider</td><td>The amount paid to the provider.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-memberliability\">memberliability</a></td><td>Member liability</td><td>The amount of the member's liability.</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-discount\">discount</a></td><td>Discount</td><td>The amount of the discount</td></tr><tr><td><a href=\"CodeSystem-PDexAdjudicationCS.html#PDexAdjudicationCS-drugcost\">drugcost</a></td><td>Drug cost</td><td>Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "PDexAdjudication"] ; # 
+  fhir:title [ fhir:v "PDex Adjudication"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values\ndefined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This Valueset is not copyrighted."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/adjudication"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "submitted" ]
+       ] [
+         fhir:code [ fhir:v "copay" ]
+       ] [
+         fhir:code [ fhir:v "eligible" ]
+       ] [
+         fhir:code [ fhir:v "deductible" ]
+       ] [
+         fhir:code [ fhir:v "benefit" ]
+       ] )
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "coinsurance" ] ;
+         fhir:display [ fhir:v "Coinsurance" ]
+       ] [
+         fhir:code [ fhir:v "noncovered" ] ;
+         fhir:display [ fhir:v "Noncovered" ]
+       ] [
+         fhir:code [ fhir:v "priorpayerpaid" ] ;
+         fhir:display [ fhir:v "Prior payer paid" ]
+       ] [
+         fhir:code [ fhir:v "paidbypatient" ] ;
+         fhir:display [ fhir:v "Paid by patient" ]
+       ] [
+         fhir:code [ fhir:v "paidtopatient" ] ;
+         fhir:display [ fhir:v "Paid to patient" ]
+       ] [
+         fhir:code [ fhir:v "paidtoprovider" ] ;
+         fhir:display [ fhir:v "Paid to provider" ]
+       ] [
+         fhir:code [ fhir:v "memberliability" ] ;
+         fhir:display [ fhir:v "Member liability" ]
+       ] [
+         fhir:code [ fhir:v "discount" ] ;
+         fhir:display [ fhir:v "Discount" ]
+       ] [
+         fhir:code [ fhir:v "drugcost" ] ;
+         fhir:display [ fhir:v "Drug cost" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

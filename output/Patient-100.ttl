@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/100> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "100"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2020-07-07T13:26:22.0314215+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en-US"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Johnny Appleseed </b> male, DoB: 1986-01-01 ( Member Number: https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>Medical record number: 1234-234-1243-12345678901m</li><li>Health Plan Identifier: 1234-234-1243-12345678901u</li><li>Patient external identifier: 1234-234-1243-12345678901a</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: (443)555-1212</li><li>ph: (410)678-2323</li><li>123 Main Street Pittsburgh PA 12519 </li></ul></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "https://www.xxxhealthplan.com/fhir/memberidentifier"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "https://www.xxxhealthplan.com/fhir/medicalrecordnumber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901m" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "XV" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "https://www.xxxhealthplan.com/fhir/uniquememberidentifier"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901u" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PT" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "https://www.xxxhealthplan.com/fhir/patacctnum"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901a" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Appleseed" ] ;
+     fhir:given ( [ fhir:v "Johnny" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(443)555-1212" ] ;
+     fhir:rank [ fhir:v "1"^^xsd:positiveInteger ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(410)678-2323" ] ;
+     fhir:rank [ fhir:v "2"^^xsd:positiveInteger ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1986-01-01"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:type [ fhir:v "physical" ] ;
+     fhir:line ( [ fhir:v "123 Main Street" ] ) ;
+     fhir:city [ fhir:v "Pittsburgh" ] ;
+     fhir:state [ fhir:v "PA" ] ;
+     fhir:postalCode [ fhir:v "12519" ]
+  ] ) ; # 
+  fhir:maritalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "UNK" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

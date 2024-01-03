@@ -1,0 +1,100 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexAdjudicationCS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">coinsurance<a name=\"PDexAdjudicationCS-coinsurance\"> </a></td><td>Co-insurance</td><td>The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%.</td></tr><tr><td style=\"white-space:nowrap\">noncovered<a name=\"PDexAdjudicationCS-noncovered\"> </a></td><td>Noncovered</td><td>The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract.</td></tr><tr><td style=\"white-space:nowrap\">priorpayerpaid<a name=\"PDexAdjudicationCS-priorpayerpaid\"> </a></td><td>Prior payer paid</td><td>The reduction in the payment amount to reflect the carrier as a secondary payor.</td></tr><tr><td style=\"white-space:nowrap\">paidbypatient<a name=\"PDexAdjudicationCS-paidbypatient\"> </a></td><td>Paid by patient</td><td>The amount paid by the patient at the point of service.</td></tr><tr><td style=\"white-space:nowrap\">paidtoprovider<a name=\"PDexAdjudicationCS-paidtoprovider\"> </a></td><td>Paid to provider</td><td>The amount paid to the provider.</td></tr><tr><td style=\"white-space:nowrap\">paidtopatient<a name=\"PDexAdjudicationCS-paidtopatient\"> </a></td><td>Paid to patient</td><td>paid to patient</td></tr><tr><td style=\"white-space:nowrap\">memberliability<a name=\"PDexAdjudicationCS-memberliability\"> </a></td><td>Member liability</td><td>The amount of the member's liability.</td></tr><tr><td style=\"white-space:nowrap\">discount<a name=\"PDexAdjudicationCS-discount\"> </a></td><td>Discount</td><td>The amount of the discount</td></tr><tr><td style=\"white-space:nowrap\">drugcost<a name=\"PDexAdjudicationCS-drugcost\"> </a></td><td>Drug cost</td><td>Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationCS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "PDexAdjudicationCS"] ; # 
+  fhir:title [ fhir:v "PDex Adjudication Codes"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This CodeSystem is not copyrighted."] ; # 
+  fhir:caseSensitive [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "coinsurance" ] ;
+     fhir:display [ fhir:v "Co-insurance" ] ;
+     fhir:definition [ fhir:v "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%." ]
+  ] [
+     fhir:code [ fhir:v "noncovered" ] ;
+     fhir:display [ fhir:v "Noncovered" ] ;
+     fhir:definition [ fhir:v "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract." ]
+  ] [
+     fhir:code [ fhir:v "priorpayerpaid" ] ;
+     fhir:display [ fhir:v "Prior payer paid" ] ;
+     fhir:definition [ fhir:v "The reduction in the payment amount to reflect the carrier as a secondary payor." ]
+  ] [
+     fhir:code [ fhir:v "paidbypatient" ] ;
+     fhir:display [ fhir:v "Paid by patient" ] ;
+     fhir:definition [ fhir:v "The amount paid by the patient at the point of service." ]
+  ] [
+     fhir:code [ fhir:v "paidtoprovider" ] ;
+     fhir:display [ fhir:v "Paid to provider" ] ;
+     fhir:definition [ fhir:v "The amount paid to the provider." ]
+  ] [
+     fhir:code [ fhir:v "paidtopatient" ] ;
+     fhir:display [ fhir:v "Paid to patient" ] ;
+     fhir:definition [ fhir:v "paid to patient" ]
+  ] [
+     fhir:code [ fhir:v "memberliability" ] ;
+     fhir:display [ fhir:v "Member liability" ] ;
+     fhir:definition [ fhir:v "The amount of the member's liability." ]
+  ] [
+     fhir:code [ fhir:v "discount" ] ;
+     fhir:display [ fhir:v "Discount" ] ;
+     fhir:definition [ fhir:v "The amount of the discount" ]
+  ] [
+     fhir:code [ fhir:v "drugcost" ] ;
+     fhir:display [ fhir:v "Drug cost" ] ;
+     fhir:definition [ fhir:v "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

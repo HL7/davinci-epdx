@@ -1,0 +1,136 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexSupportingInfoType"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">admissionperiod<a name=\"PDexSupportingInfoType-admissionperiod\"> </a></td><td>Admission Period</td><td>Dates corresponding with the admission and discharge of the beneficiary to a facility</td></tr><tr><td style=\"white-space:nowrap\">pointoforigin<a name=\"PDexSupportingInfoType-pointoforigin\"> </a></td><td>Point Of Origin</td><td>UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility.</td></tr><tr><td style=\"white-space:nowrap\">admtype<a name=\"PDexSupportingInfoType-admtype\"> </a></td><td>Admission Type</td><td>UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled.</td></tr><tr><td style=\"white-space:nowrap\">billingnetworkcontractingstatus<a name=\"PDexSupportingInfoType-billingnetworkcontractingstatus\"> </a></td><td>Billing Network Contracting Status</td><td>Indicates that the Billing Provider has a contract with the Payer as of the effective date of service or admission.</td></tr><tr><td style=\"white-space:nowrap\">brandgenericindicator<a name=\"PDexSupportingInfoType-brandgenericindicator\"> </a></td><td>Brand Generic Indicator</td><td>NCPDP code indicating whether the plan adjudicated the claim as a brand or generic drug.</td></tr><tr><td style=\"white-space:nowrap\">clmrecvddate<a name=\"PDexSupportingInfoType-clmrecvddate\"> </a></td><td>Claim Received Date</td><td>Date the claim was received by the payer.</td></tr><tr><td style=\"white-space:nowrap\">compoundcode<a name=\"PDexSupportingInfoType-compoundcode\"> </a></td><td>Compound Code</td><td>NCPDP code indicating whether or not the prescription is a compound.</td></tr><tr><td style=\"white-space:nowrap\">dawcode<a name=\"PDexSupportingInfoType-dawcode\"> </a></td><td>DAW (Dispense As Written) Code</td><td>NCPDP code indicating the prescriber's instruction regarding substitution of generic equivalents or order to dispense the specific prescribed medication.</td></tr><tr><td style=\"white-space:nowrap\">dayssupply<a name=\"PDexSupportingInfoType-dayssupply\"> </a></td><td>Days Supply</td><td>NCPDP value indicating the Number of days supply of medication dispensed by the pharmacy.</td></tr><tr><td style=\"white-space:nowrap\">discharge-status<a name=\"PDexSupportingInfoType-discharge-status\"> </a></td><td>Discharge Status</td><td>UB-04 Discharge Status (FL-17) indicates the patient’s status as of the discharge date for a facility stay.</td></tr><tr><td style=\"white-space:nowrap\">drg<a name=\"PDexSupportingInfoType-drg\"> </a></td><td>DRG</td><td>DRG (Diagnosis Related Group), including the code system, the DRG version and the code value</td></tr><tr><td style=\"white-space:nowrap\">performingnetworkcontractingstatus<a name=\"PDexSupportingInfoType-performingnetworkcontractingstatus\"> </a></td><td>Performing Network Contracting Status</td><td>Indicates that the Performing Provider has a contract with the Payer as of the effective date of service or admission.</td></tr><tr><td style=\"white-space:nowrap\">refillnum<a name=\"PDexSupportingInfoType-refillnum\"> </a></td><td>Refill Number</td><td>NCPDP value indicating the number fill of the current dispensed supply (0, 1, 2, etc.)</td></tr><tr><td style=\"white-space:nowrap\">rxorigincode<a name=\"PDexSupportingInfoType-rxorigincode\"> </a></td><td>Rx Origin Code</td><td>NCPDP code indicating whether the prescription was transmitted as an electronic prescription, by phone, by fax, or as a written paper copy.</td></tr><tr><td style=\"white-space:nowrap\">servicefacility<a name=\"PDexSupportingInfoType-servicefacility\"> </a></td><td>Service Facility</td><td>The facility where the service occurred.  Examples include hospitals, nursing homes, laboratories or homeless shelters.</td></tr><tr><td style=\"white-space:nowrap\">typeofbill<a name=\"PDexSupportingInfoType-typeofbill\"> </a></td><td>Type of Bill</td><td>UB-04 Type of Bill (FL-04) provides specific information for payer purposes.</td></tr><tr><td style=\"white-space:nowrap\">medicalrecordnumber<a name=\"PDexSupportingInfoType-medicalrecordnumber\"> </a></td><td>Medical Record Number</td><td>Patient Medical Record Number associated with the specific claim.</td></tr><tr><td style=\"white-space:nowrap\">patientaccountnumber<a name=\"PDexSupportingInfoType-patientaccountnumber\"> </a></td><td>Patient Account Number</td><td>Patient Account Number associated with the specific claim.</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "PDexSupportingInfoType"] ; # 
+  fhir:title [ fhir:v "PDex Supporting Info Type"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Claim Information Category - Used as the discriminator for supportingInfo"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This CodeSystem is not copyrighted."] ; # 
+  fhir:caseSensitive [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "18"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "admissionperiod" ] ;
+     fhir:display [ fhir:v "Admission Period" ] ;
+     fhir:definition [ fhir:v "Dates corresponding with the admission and discharge of the beneficiary to a facility" ]
+  ] [
+     fhir:code [ fhir:v "pointoforigin" ] ;
+     fhir:display [ fhir:v "Point Of Origin" ] ;
+     fhir:definition [ fhir:v "UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility." ]
+  ] [
+     fhir:code [ fhir:v "admtype" ] ;
+     fhir:display [ fhir:v "Admission Type" ] ;
+     fhir:definition [ fhir:v "UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled." ]
+  ] [
+     fhir:code [ fhir:v "billingnetworkcontractingstatus" ] ;
+     fhir:display [ fhir:v "Billing Network Contracting Status" ] ;
+     fhir:definition [ fhir:v "Indicates that the Billing Provider has a contract with the Payer as of the effective date of service or admission." ]
+  ] [
+     fhir:code [ fhir:v "brandgenericindicator" ] ;
+     fhir:display [ fhir:v "Brand Generic Indicator" ] ;
+     fhir:definition [ fhir:v "NCPDP code indicating whether the plan adjudicated the claim as a brand or generic drug." ]
+  ] [
+     fhir:code [ fhir:v "clmrecvddate" ] ;
+     fhir:display [ fhir:v "Claim Received Date" ] ;
+     fhir:definition [ fhir:v "Date the claim was received by the payer." ]
+  ] [
+     fhir:code [ fhir:v "compoundcode" ] ;
+     fhir:display [ fhir:v "Compound Code" ] ;
+     fhir:definition [ fhir:v "NCPDP code indicating whether or not the prescription is a compound." ]
+  ] [
+     fhir:code [ fhir:v "dawcode" ] ;
+     fhir:display [ fhir:v "DAW (Dispense As Written) Code" ] ;
+     fhir:definition [ fhir:v "NCPDP code indicating the prescriber's instruction regarding substitution of generic equivalents or order to dispense the specific prescribed medication." ]
+  ] [
+     fhir:code [ fhir:v "dayssupply" ] ;
+     fhir:display [ fhir:v "Days Supply" ] ;
+     fhir:definition [ fhir:v "NCPDP value indicating the Number of days supply of medication dispensed by the pharmacy." ]
+  ] [
+     fhir:code [ fhir:v "discharge-status" ] ;
+     fhir:display [ fhir:v "Discharge Status" ] ;
+     fhir:definition [ fhir:v "UB-04 Discharge Status (FL-17) indicates the patient’s status as of the discharge date for a facility stay." ]
+  ] [
+     fhir:code [ fhir:v "drg" ] ;
+     fhir:display [ fhir:v "DRG" ] ;
+     fhir:definition [ fhir:v "DRG (Diagnosis Related Group), including the code system, the DRG version and the code value" ]
+  ] [
+     fhir:code [ fhir:v "performingnetworkcontractingstatus" ] ;
+     fhir:display [ fhir:v "Performing Network Contracting Status" ] ;
+     fhir:definition [ fhir:v "Indicates that the Performing Provider has a contract with the Payer as of the effective date of service or admission." ]
+  ] [
+     fhir:code [ fhir:v "refillnum" ] ;
+     fhir:display [ fhir:v "Refill Number" ] ;
+     fhir:definition [ fhir:v "NCPDP value indicating the number fill of the current dispensed supply (0, 1, 2, etc.)" ]
+  ] [
+     fhir:code [ fhir:v "rxorigincode" ] ;
+     fhir:display [ fhir:v "Rx Origin Code" ] ;
+     fhir:definition [ fhir:v "NCPDP code indicating whether the prescription was transmitted as an electronic prescription, by phone, by fax, or as a written paper copy." ]
+  ] [
+     fhir:code [ fhir:v "servicefacility" ] ;
+     fhir:display [ fhir:v "Service Facility" ] ;
+     fhir:definition [ fhir:v "The facility where the service occurred.  Examples include hospitals, nursing homes, laboratories or homeless shelters." ]
+  ] [
+     fhir:code [ fhir:v "typeofbill" ] ;
+     fhir:display [ fhir:v "Type of Bill" ] ;
+     fhir:definition [ fhir:v "UB-04 Type of Bill (FL-04) provides specific information for payer purposes." ]
+  ] [
+     fhir:code [ fhir:v "medicalrecordnumber" ] ;
+     fhir:display [ fhir:v "Medical Record Number" ] ;
+     fhir:definition [ fhir:v "Patient Medical Record Number associated with the specific claim." ]
+  ] [
+     fhir:code [ fhir:v "patientaccountnumber" ] ;
+     fhir:display [ fhir:v "Patient Account Number" ] ;
+     fhir:definition [ fhir:v "Patient Account Number associated with the specific claim." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

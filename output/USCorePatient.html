@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>US Core Patient - Da Vinci Payer Data Exchange v2.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"6.3.20"}
+    h3,h4,h5,h6{--heading-prefix:"6.3.20"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.0.0 - STU2
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer</a>
+      </li>
+      <li>
+        <a href="changehistory.html">Change Log</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li>
+    <a href="other-igs.html">Other IG Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='pdeximplementationactorsinteractionsdatapayloadsandmethods.html'><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><a href='datamapping.html'><b>Data Mapping</b></a></li><li><b>US Core Patient</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>US Core Patient</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p><a href="USCoreOrganization.html">Previous Page - US Core Organization</a></p>
+
+<p>The <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient profile</a> <strong>SHALL</strong> be used to express a member’s demographic information.</p>
+
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">US Core Patient profile</a> are:</p>
+
+<style>
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        border:2px solid #000088;
+        width:90%;
+        overflow-wrap: anywhere;
+    }
+
+    th{
+        border:2px solid #000088;
+        background-color:lightskyblue;
+    }
+
+    td{
+        border:1px solid #000088;
+    }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>R4 Element</th>
+      <th>Name</th>
+      <th style="text-align: center">Cardinality</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient.us-core-race</td>
+      <td>us-core-race</td>
+      <td style="text-align: center">0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-ethnicity</td>
+      <td>us-core-ethnicity</td>
+      <td style="text-align: center">0..1</td>
+      <td>(Complex)</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-birthsex</td>
+      <td>us-core-birthsex</td>
+      <td style="text-align: center">0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier</td>
+      <td>identifier</td>
+      <td style="text-align: center">1..*</td>
+      <td>Identifier</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>uri</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.value</td>
+      <td>value</td>
+      <td style="text-align: center">1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name</td>
+      <td>name</td>
+      <td style="text-align: center">1..*</td>
+      <td>HumanName</td>
+    </tr>
+    <tr>
+      <td>Patient.name.family</td>
+      <td>family</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.name.given</td>
+      <td>given</td>
+      <td style="text-align: center">0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom</td>
+      <td>telecom</td>
+      <td style="text-align: center">0..*</td>
+      <td>ContactPoint</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.system</td>
+      <td>system</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.value</td>
+      <td>value</td>
+      <td style="text-align: center">1..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.use</td>
+      <td>use</td>
+      <td style="text-align: center">0..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.gender</td>
+      <td>gender</td>
+      <td style="text-align: center">1..1</td>
+      <td>code</td>
+    </tr>
+    <tr>
+      <td>Patient.birthDate</td>
+      <td>birthDate</td>
+      <td style="text-align: center">0..1</td>
+      <td>date</td>
+    </tr>
+    <tr>
+      <td>Patient.address</td>
+      <td>address</td>
+      <td style="text-align: center">0..*</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>Patient.address.line</td>
+      <td>line</td>
+      <td style="text-align: center">0..*</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.address.city</td>
+      <td>city</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.address.state</td>
+      <td>state</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.address.postalCode</td>
+      <td>postalCode</td>
+      <td style="text-align: center">0..1</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>Patient.address.period</td>
+      <td>period</td>
+      <td style="text-align: center">0..1</td>
+      <td>Period</td>
+    </tr>
+    <tr>
+      <td>Patient.communication</td>
+      <td>communication</td>
+      <td style="text-align: center">0..*</td>
+      <td>BackboneElement</td>
+    </tr>
+    <tr>
+      <td>Patient.communication.language</td>
+      <td>language</td>
+      <td style="text-align: center">1..1</td>
+      <td>CodeableConcept</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
+
+<p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient resource from the CPCDS file are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>US Core Element</th>
+      <th style="text-align: center">Must Support</th>
+      <th style="text-align: center">Cardinality</th>
+      <th>CARIN-BB Element</th>
+      <th>CPCDS Element Mapping or Implementer Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient.meta.lastUpdated</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.meta.lastUpdated</td>
+      <td>[{“163”:”Member Demographics Last Updated Date”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-race</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.us-core-race</td>
+      <td>[{“128”:”Race Code”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-ethnicity</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.us-core-ethnicity</td>
+      <td>[{“129”:”Ethnicity”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.us-core-birthsex</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.us-core-birthsex</td>
+      <td>[{“153”:”Birth Sex”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
+      <td>Patient.identifier</td>
+      <td>[{“MMI=1”:”Member id”}, {“191”:”Unique Member ID”}, {“PatnAcctNr=109, MedRecNr=110”:”Patient account number, Medical record number”}]. Note: Assign Payer System URI for Member Ids in Patient.identifier.system. Set Member Id in Patient.identifier.value</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.system</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Assign Payer System URI for Member Ids in Patient.identifier.system</td>
+    </tr>
+    <tr>
+      <td>Patient.identifier.value</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Set Member Id in Patient.identifier.value</td>
+    </tr>
+    <tr>
+      <td>Patient.name</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..*</td>
+      <td>Patient.name</td>
+      <td>[{“130”:”Patient Name”}] Note: Split Member Name into Patient.name.family, Patient.name.given</td>
+    </tr>
+    <tr>
+      <td>Patient.name.family</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: Split Member Name into Patient.name.family, Patient.name.given</td>
+    </tr>
+    <tr>
+      <td>Patient.name.given</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
+      <td>Note: Split Member Name into Patient.name.family, Patient.name.given</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
+      <td>Note: Provide contact information from member record, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.system</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: phone | fax | email | pager | url | sms | other - if avaiable</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.value</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: provide contact information from member record, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.telecom.use</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: provide home | work | temp | old | mobile if known</td>
+    </tr>
+    <tr>
+      <td>Patient.gender</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td>Patient.gender</td>
+      <td>[{“71”:”Gender code”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.birthDate</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.birthDate</td>
+      <td>[{“70”:”Date of birth”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.deceasedBoolean</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td>Patient.deceasedBoolean</td>
+      <td>[{“150”:”Deceased”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.deceasedDateTime</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td>Patient.deceasedDateTime</td>
+      <td>[{“124”:”Date of death”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
+      <td>Note: Provide address elements, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.address.line</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td>Patient.address.line</td>
+      <td>[{“158”:”Street Address”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address.city</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: Provide city, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.address.district</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.address.district</td>
+      <td>[{“125”:”County”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address.state</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.address.state</td>
+      <td>[{“126”:”State”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address.postalCode</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.address.postalCode</td>
+      <td>[{“131”:”Zip”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address.country</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">0..1</td>
+      <td>Patient.address.country</td>
+      <td>[{“127”:”Country”}]</td>
+    </tr>
+    <tr>
+      <td>Patient.address.period</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..1</td>
+      <td> </td>
+      <td>Note: Provide validity period for address, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.communication</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">0..*</td>
+      <td> </td>
+      <td>. Note: Provide preferred communication language via language code below, if available</td>
+    </tr>
+    <tr>
+      <td>Patient.communication.language</td>
+      <td style="text-align: center">S</td>
+      <td style="text-align: center">1..1</td>
+      <td> </td>
+      <td>Note: Provide preferred communication language, if available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i><a href="index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources">Table Definition</a></i></p>
+
+<p>The Member Number will be entered in the <strong>identifier</strong> field. The code <strong>MB</strong>  <strong>SHALL</strong> be used to identify the member identifier.  See the example below:</p>
+
+<pre>
+{
+      "use" : "member",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    }
+</pre>
+
+<h4 id="example-patient-resource">Example Patient Resource</h4>
+
+<p>An example mapping of a Patient resource is shown here:</p>
+
+<pre>
+{
+  "resourceType" : "Patient",
+  "id" : "example",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns="http://www.w3.org/1999/xhtml">
+			<p>
+				<b>Generated Narrative with Details</b>
+			</p>
+			<p>
+				<b>id</b>: example</p>
+			<p>
+				<b>identifier</b>: Medical Record Number = 1032702 (USUAL)</p>
+			<p>
+				<b>identifier</b>: Health Plan Member Number = 987654321 (USUAL)</p>
+			<p>
+				<b>active</b>: true</p>
+			<p>
+				<b>name</b>: Arthur B. Dent </p>
+			<p>
+				<b>telecom</b>: ph: 555-555-5555(HOME), amy.shaw@example.com</p>
+			<p>
+				<b>gender</b>: </p>
+			<p>
+				<b>birthsex</b>: Male</p>
+			<p>
+				<b>birthDate</b>: Jan 22, 1953</p>
+			<p>
+				<b>address</b>: 6518 Meadowridge Rd, Elkridge, MD 21075 US </p>
+			<p>
+				<b>race</b>: White, American Indian or Alaska Native, Asian, Shoshone, Filipino</p>
+			<p>
+				<b>ethnicity</b>: Hispanic or Latino, Dominican, Mexican</p>
+		</div>"
+  },
+  "extension" : [
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2106-3",
+            "display" : "White"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1002-5",
+            "display" : "American Indian or Alaska Native"
+          }
+        },
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2028-9",
+            "display" : "Asian"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "1586-7",
+            "display" : "Shoshone"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2036-2",
+            "display" : "Filipino"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Mixed"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension" : [
+        {
+          "url" : "ombCategory",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2135-2",
+            "display" : "Hispanic or Latino"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2184-0",
+            "display" : "Dominican"
+          }
+        },
+        {
+          "url" : "detailed",
+          "valueCoding" : {
+            "system" : "urn:oid:2.16.840.1.113883.6.238",
+            "code" : "2148-5",
+            "display" : "Mexican"
+          }
+        },
+        {
+          "url" : "text",
+          "valueString" : "Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode" : "M"
+    }
+  ],
+  "identifier" : [
+    {
+      "use" : "member",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MB",
+            "display" : "Member Number"
+          }
+        ],
+        "text" : "Health Plan Member Number"
+      },
+      "system" : "http://plan.healthplan.com",
+      "value" : "987654321"
+    },
+    {
+      "use" : "usual",
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://hl7.org/fhir/v2/0203",
+            "code" : "MR",
+            "display" : "Medical Record Number"
+          }
+        ],
+        "text" : "Medical Record Number"
+      },
+      "system" : "http://hospital.smarthealthit.org",
+      "value" : "1032702"
+    }
+  ],
+  "active" : true,
+  "name" : [
+    {
+      "family" : "Dent",
+      "given" : [
+        "Arthur",
+        "B."
+      ]
+    }
+  ],
+  "telecom" : [
+    {
+      "system" : "phone",
+      "value" : "555-555-5555",
+      "use" : "home"
+    },
+    {
+      "system" : "email",
+      "value" : "arthur.dent@example.com"
+    }
+  ],
+  "gender" : "male",
+  "birthDate" : "1953-01-22",
+  "address" : [
+    {
+      "line" : [
+        "6518 Meadowridge Rd"
+      ],
+      "city" : "Elkridge",
+      "state" : "MD",
+      "postalCode" : "21075",
+      "country" : "US"
+    }
+  ]
+}
+</pre>
+
+<p>Refer to the US Core Additional examples of the <a href="http://hl7.org/fhir/us/core/index.html">US Core R4 Implementation Guide</a> for further examples of completed <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html">Patient Profiles </a>.</p>
+
+<p><a href="USCorePediatricBMIforAgeObservation.html">Next Page - US Core Pediatric BMI for Age Observation</a></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 3, 2024 08:27-0500">2024-01-03</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

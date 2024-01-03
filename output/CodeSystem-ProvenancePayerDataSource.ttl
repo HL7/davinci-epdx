@@ -1,0 +1,167 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ProvenancePayerDataSource"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">hl7v2other<a name=\"ProvenancePayerDataSource-hl7v2other\"> </a></td><td>HL7 v2</td><td>HL7 v2 Message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2oru<a name=\"ProvenancePayerDataSource-hl7v2oru\"> </a></td><td>HL7 v2 ORU</td><td>HL7 v2 Structured Observation Report(ORU) message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2adt<a name=\"ProvenancePayerDataSource-hl7v2adt\"> </a></td><td>HL7 v2 ADT</td><td>HL7 v2 Admit, Discharge Transfer (ADT) message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2r01<a name=\"ProvenancePayerDataSource-hl7v2r01\"> </a></td><td>HL7 v2 R01</td><td>HL7 v2 Observation (R01) message</td></tr><tr><td style=\"white-space:nowrap\">hl7v2rsp<a name=\"ProvenancePayerDataSource-hl7v2rsp\"> </a></td><td>HL7 v2 RSP</td><td>HL7 V2 Immunization Record Response</td></tr><tr><td style=\"white-space:nowrap\">hl7v2orm<a name=\"ProvenancePayerDataSource-hl7v2orm\"> </a></td><td>HL7 v2 ORM</td><td>HL7 v2 Orders</td></tr><tr><td style=\"white-space:nowrap\">hl7v2mdm<a name=\"ProvenancePayerDataSource-hl7v2mdm\"> </a></td><td>HL7 v2 MDM</td><td>Medical Document Management</td></tr><tr><td style=\"white-space:nowrap\">hl7v2vxu<a name=\"ProvenancePayerDataSource-hl7v2vxu\"> </a></td><td>HL7 v2 VXU</td><td>HL7 V2 Immunization Transaction</td></tr><tr><td style=\"white-space:nowrap\">hl7v3<a name=\"ProvenancePayerDataSource-hl7v3\"> </a></td><td>HL7 v3</td><td>HL7 v3 Message</td></tr><tr><td style=\"white-space:nowrap\">hl7ccda<a name=\"ProvenancePayerDataSource-hl7ccda\"> </a></td><td>HL7 C-CDA</td><td>HL7 Consolidated-Clinical Document Architecture</td></tr><tr><td style=\"white-space:nowrap\">hl7cda<a name=\"ProvenancePayerDataSource-hl7cda\"> </a></td><td>HL7 CDA</td><td>HL7 CDA documents that are not C-CDA</td></tr><tr><td style=\"white-space:nowrap\">hl7cdaqrda<a name=\"ProvenancePayerDataSource-hl7cdaqrda\"> </a></td><td>HL7 CDA QRDA</td><td>HL7 Quality Reporting Document</td></tr><tr><td style=\"white-space:nowrap\">hl7fhirdstu2<a name=\"ProvenancePayerDataSource-hl7fhirdstu2\"> </a></td><td>FHIR DSTU2</td><td>HL7 FHIR DSTU2</td></tr><tr><td style=\"white-space:nowrap\">hl7fhirdstu3<a name=\"ProvenancePayerDataSource-hl7fhirdstu3\"> </a></td><td>FHIR STU3</td><td>HL7 FHIR STU3</td></tr><tr><td style=\"white-space:nowrap\">hl7fhirr4<a name=\"ProvenancePayerDataSource-hl7fhirr4\"> </a></td><td>FHIR R4</td><td>HL7 FHIR R4</td></tr><tr><td style=\"white-space:nowrap\">x12837<a name=\"ProvenancePayerDataSource-x12837\"> </a></td><td>837 claim</td><td>X12 837 Claim</td></tr><tr><td style=\"white-space:nowrap\">x12278<a name=\"ProvenancePayerDataSource-x12278\"> </a></td><td>278</td><td>X12 Prior Authorization</td></tr><tr><td style=\"white-space:nowrap\">x12275<a name=\"ProvenancePayerDataSource-x12275\"> </a></td><td>275</td><td>X12 Attachment</td></tr><tr><td style=\"white-space:nowrap\">x12other<a name=\"ProvenancePayerDataSource-x12other\"> </a></td><td>X12</td><td>X12 non-specific transaction</td></tr><tr><td style=\"white-space:nowrap\">script<a name=\"ProvenancePayerDataSource-script\"> </a></td><td>NCPDP SCRIPT</td><td>National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)</td></tr><tr><td style=\"white-space:nowrap\">ncpdp<a name=\"ProvenancePayerDataSource-ncpdp\"> </a></td><td>NCPDP Telecommunication</td><td>NCPDP Telecommunication transaction (pharmacy claims)</td></tr><tr><td style=\"white-space:nowrap\">capture<a name=\"ProvenancePayerDataSource-capture\"> </a></td><td>Direct Capture</td><td>Direct Capture, such as into a payers case management system</td></tr><tr><td style=\"white-space:nowrap\">customtx<a name=\"ProvenancePayerDataSource-customtx\"> </a></td><td>Trading Partner Format</td><td>Trading Partner Proprietary format</td></tr><tr><td style=\"white-space:nowrap\">image<a name=\"ProvenancePayerDataSource-image\"> </a></td><td>Image</td><td>Fax or scanned document</td></tr><tr><td style=\"white-space:nowrap\">unstructured<a name=\"ProvenancePayerDataSource-unstructured\"> </a></td><td>Unstructured Document</td><td>PDF, text and other unstructured document</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"ProvenancePayerDataSource-other\"> </a></td><td>Other</td><td>Any other document format not specifically defined</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "ProvenancePayerDataSource"] ; # 
+  fhir:title [ fhir:v "Provenance Payer Data Source Format"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "26"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "hl7v2other" ] ;
+     fhir:display [ fhir:v "HL7 v2" ] ;
+     fhir:definition [ fhir:v "HL7 v2 Message" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2oru" ] ;
+     fhir:display [ fhir:v "HL7 v2 ORU" ] ;
+     fhir:definition [ fhir:v "HL7 v2 Structured Observation Report(ORU) message" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2adt" ] ;
+     fhir:display [ fhir:v "HL7 v2 ADT" ] ;
+     fhir:definition [ fhir:v "HL7 v2 Admit, Discharge Transfer (ADT) message" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2r01" ] ;
+     fhir:display [ fhir:v "HL7 v2 R01" ] ;
+     fhir:definition [ fhir:v "HL7 v2 Observation (R01) message" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2rsp" ] ;
+     fhir:display [ fhir:v "HL7 v2 RSP" ] ;
+     fhir:definition [ fhir:v "HL7 V2 Immunization Record Response" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2orm" ] ;
+     fhir:display [ fhir:v "HL7 v2 ORM" ] ;
+     fhir:definition [ fhir:v "HL7 v2 Orders" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2mdm" ] ;
+     fhir:display [ fhir:v "HL7 v2 MDM" ] ;
+     fhir:definition [ fhir:v "Medical Document Management" ]
+  ] [
+     fhir:code [ fhir:v "hl7v2vxu" ] ;
+     fhir:display [ fhir:v "HL7 v2 VXU" ] ;
+     fhir:definition [ fhir:v "HL7 V2 Immunization Transaction" ]
+  ] [
+     fhir:code [ fhir:v "hl7v3" ] ;
+     fhir:display [ fhir:v "HL7 v3" ] ;
+     fhir:definition [ fhir:v "HL7 v3 Message" ]
+  ] [
+     fhir:code [ fhir:v "hl7ccda" ] ;
+     fhir:display [ fhir:v "HL7 C-CDA" ] ;
+     fhir:definition [ fhir:v "HL7 Consolidated-Clinical Document Architecture" ]
+  ] [
+     fhir:code [ fhir:v "hl7cda" ] ;
+     fhir:display [ fhir:v "HL7 CDA" ] ;
+     fhir:definition [ fhir:v "HL7 CDA documents that are not C-CDA" ]
+  ] [
+     fhir:code [ fhir:v "hl7cdaqrda" ] ;
+     fhir:display [ fhir:v "HL7 CDA QRDA" ] ;
+     fhir:definition [ fhir:v "HL7 Quality Reporting Document" ]
+  ] [
+     fhir:code [ fhir:v "hl7fhirdstu2" ] ;
+     fhir:display [ fhir:v "FHIR DSTU2" ] ;
+     fhir:definition [ fhir:v "HL7 FHIR DSTU2" ]
+  ] [
+     fhir:code [ fhir:v "hl7fhirdstu3" ] ;
+     fhir:display [ fhir:v "FHIR STU3" ] ;
+     fhir:definition [ fhir:v "HL7 FHIR STU3" ]
+  ] [
+     fhir:code [ fhir:v "hl7fhirr4" ] ;
+     fhir:display [ fhir:v "FHIR R4" ] ;
+     fhir:definition [ fhir:v "HL7 FHIR R4" ]
+  ] [
+     fhir:code [ fhir:v "x12837" ] ;
+     fhir:display [ fhir:v "837 claim" ] ;
+     fhir:definition [ fhir:v "X12 837 Claim" ]
+  ] [
+     fhir:code [ fhir:v "x12278" ] ;
+     fhir:display [ fhir:v "278" ] ;
+     fhir:definition [ fhir:v "X12 Prior Authorization" ]
+  ] [
+     fhir:code [ fhir:v "x12275" ] ;
+     fhir:display [ fhir:v "275" ] ;
+     fhir:definition [ fhir:v "X12 Attachment" ]
+  ] [
+     fhir:code [ fhir:v "x12other" ] ;
+     fhir:display [ fhir:v "X12" ] ;
+     fhir:definition [ fhir:v "X12 non-specific transaction" ]
+  ] [
+     fhir:code [ fhir:v "script" ] ;
+     fhir:display [ fhir:v "NCPDP SCRIPT" ] ;
+     fhir:definition [ fhir:v "National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)" ]
+  ] [
+     fhir:code [ fhir:v "ncpdp" ] ;
+     fhir:display [ fhir:v "NCPDP Telecommunication" ] ;
+     fhir:definition [ fhir:v "NCPDP Telecommunication transaction (pharmacy claims)" ]
+  ] [
+     fhir:code [ fhir:v "capture" ] ;
+     fhir:display [ fhir:v "Direct Capture" ] ;
+     fhir:definition [ fhir:v "Direct Capture, such as into a payers case management system" ]
+  ] [
+     fhir:code [ fhir:v "customtx" ] ;
+     fhir:display [ fhir:v "Trading Partner Format" ] ;
+     fhir:definition [ fhir:v "Trading Partner Proprietary format" ]
+  ] [
+     fhir:code [ fhir:v "image" ] ;
+     fhir:display [ fhir:v "Image" ] ;
+     fhir:definition [ fhir:v "Fax or scanned document" ]
+  ] [
+     fhir:code [ fhir:v "unstructured" ] ;
+     fhir:display [ fhir:v "Unstructured Document" ] ;
+     fhir:definition [ fhir:v "PDF, text and other unstructured document" ]
+  ] [
+     fhir:code [ fhir:v "other" ] ;
+     fhir:display [ fhir:v "Other" ] ;
+     fhir:definition [ fhir:v "Any other document format not specifically defined" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

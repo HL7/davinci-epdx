@@ -1,0 +1,56 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "4516773c-f6c3-4204-bdfc-d51b6b373e52-15",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/4516773c-f6c3-4204-bdfc-d51b6b373e52-15",
+  "name" : "IntersectionPDexPayerAdjudicationStatusAndPDexPayerAdjudicationStatus",
+  "title" : "Intersection of PDex Payer Adjudication Status And PDex Payer Adjudication Status",
+  "status" : "active",
+  "date" : "2024-01-03T08:27:31-05:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "concept" : [{
+    "code" : "innetwork",
+    "display" : "In Network",
+    "definition" : "Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider"
+  },
+  {
+    "code" : "outofnetwork",
+    "display" : "Out Of Network",
+    "definition" : "Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider"
+  },
+  {
+    "code" : "other",
+    "display" : "Other",
+    "definition" : "Indicates other network status or when a network does not apply"
+  },
+  {
+    "code" : "contracted",
+    "display" : "Contracted",
+    "definition" : "Indicates the provider was contracted for the service"
+  },
+  {
+    "code" : "noncontracted",
+    "display" : "Non-Contracted",
+    "definition" : "Indicates the provider was not contracted for the service"
+  },
+  {
+    "code" : "paid",
+    "display" : "Paid",
+    "definition" : "Indicates if the claim was approved for payment"
+  },
+  {
+    "code" : "denied",
+    "display" : "Denied",
+    "definition" : "Indicates if the claim was denied"
+  },
+  {
+    "code" : "partiallypaid",
+    "display" : "Partially Paid",
+    "definition" : "Indicates that some line items on the claim were denied"
+  }]
+}

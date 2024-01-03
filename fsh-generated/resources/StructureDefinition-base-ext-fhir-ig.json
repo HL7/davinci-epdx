@@ -1,0 +1,137 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "base-ext-fhir-ig",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig",
+  "name": "FhirIg",
+  "title": "NDH FHIR IG",
+  "status": "draft",
+  "description": "FHIR IG",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Endpoint"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "NDH FHIR IG",
+        "definition": "FHIR IG"
+      },
+      {
+        "id": "Extension.extension:ig-publication",
+        "path": "Extension.extension",
+        "sliceName": "ig-publication",
+        "short": "IG Publication",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:ig-publication.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:ig-publication.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "ig-publication"
+      },
+      {
+        "id": "Extension.extension:ig-publication.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:ig-name",
+        "path": "Extension.extension",
+        "sliceName": "ig-name",
+        "short": "IG Name",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:ig-name.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:ig-name.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "ig-name"
+      },
+      {
+        "id": "Extension.extension:ig-name.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:ig-version",
+        "path": "Extension.extension",
+        "sliceName": "ig-version",
+        "short": "IG Version",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:ig-version.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:ig-version.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "ig-version"
+      },
+      {
+        "id": "Extension.extension:ig-version.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

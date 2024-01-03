@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexIdentifierType"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">npi<a name=\"PDexIdentifierType-npi\"> </a></td><td>National Provider Identifier</td><td>National Provider Identifier</td></tr><tr><td style=\"white-space:nowrap\">payerid<a name=\"PDexIdentifierType-payerid\"> </a></td><td>Payer ID</td><td>Payer ID</td></tr><tr><td style=\"white-space:nowrap\">naiccode<a name=\"PDexIdentifierType-naiccode\"> </a></td><td>NAIC Code</td><td>NAIC Code</td></tr><tr><td style=\"white-space:nowrap\">pat<a name=\"PDexIdentifierType-pat\"> </a></td><td>Patient Account Number</td><td>Patient Account Number</td></tr><tr><td style=\"white-space:nowrap\">um<a name=\"PDexIdentifierType-um\"> </a></td><td>Unique Member ID</td><td>Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business</td></tr><tr><td style=\"white-space:nowrap\">uc<a name=\"PDexIdentifierType-uc\"> </a></td><td>Unique Claim ID</td><td>Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "PDexIdentifierType"] ; # 
+  fhir:title [ fhir:v "PDex Identifier Type"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This CodeSystem is not copyrighted."] ; # 
+  fhir:caseSensitive [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "npi" ] ;
+     fhir:display [ fhir:v "National Provider Identifier" ] ;
+     fhir:definition [ fhir:v "National Provider Identifier" ]
+  ] [
+     fhir:code [ fhir:v "payerid" ] ;
+     fhir:display [ fhir:v "Payer ID" ] ;
+     fhir:definition [ fhir:v "Payer ID" ]
+  ] [
+     fhir:code [ fhir:v "naiccode" ] ;
+     fhir:display [ fhir:v "NAIC Code" ] ;
+     fhir:definition [ fhir:v "NAIC Code" ]
+  ] [
+     fhir:code [ fhir:v "pat" ] ;
+     fhir:display [ fhir:v "Patient Account Number" ] ;
+     fhir:definition [ fhir:v "Patient Account Number" ]
+  ] [
+     fhir:code [ fhir:v "um" ] ;
+     fhir:display [ fhir:v "Unique Member ID" ] ;
+     fhir:definition [ fhir:v "Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business" ]
+  ] [
+     fhir:code [ fhir:v "uc" ] ;
+     fhir:display [ fhir:v "Unique Claim ID" ] ;
+     fhir:definition [ fhir:v "Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NdhFhirEndpointUseCaseCS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">cdex<a name=\"NdhFhirEndpointUseCaseCS-cdex\"> </a></td><td>CDex</td><td>Clinical Data Exchange</td></tr><tr><td style=\"white-space:nowrap\">patientAccess<a name=\"NdhFhirEndpointUseCaseCS-patientAccess\"> </a></td><td>Patient Access</td><td>Patient Access</td></tr><tr><td style=\"white-space:nowrap\">pasOperation<a name=\"NdhFhirEndpointUseCaseCS-pasOperation\"> </a></td><td>PAS Operation</td><td>PAS Operation</td></tr><tr><td style=\"white-space:nowrap\">payerAttachment<a name=\"NdhFhirEndpointUseCaseCS-payerAttachment\"> </a></td><td>Payer Attachment</td><td>Payer Attachment</td></tr><tr><td style=\"white-space:nowrap\">payerToPayer<a name=\"NdhFhirEndpointUseCaseCS-payerToPayer\"> </a></td><td>Payer to Payer</td><td>Payer to Payer</td></tr><tr><td style=\"white-space:nowrap\">providerApi<a name=\"NdhFhirEndpointUseCaseCS-providerApi\"> </a></td><td>Provider API</td><td>Provider API</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "NdhFhirEndpointUseCaseCS"] ; # 
+  fhir:title [ fhir:v "NDH FHIR Endpoint Use Case Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "NDH FHIR Endpoint Use Case"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "cdex" ] ;
+     fhir:display [ fhir:v "CDex" ] ;
+     fhir:definition [ fhir:v "Clinical Data Exchange" ]
+  ] [
+     fhir:code [ fhir:v "patientAccess" ] ;
+     fhir:display [ fhir:v "Patient Access" ] ;
+     fhir:definition [ fhir:v "Patient Access" ]
+  ] [
+     fhir:code [ fhir:v "pasOperation" ] ;
+     fhir:display [ fhir:v "PAS Operation" ] ;
+     fhir:definition [ fhir:v "PAS Operation" ]
+  ] [
+     fhir:code [ fhir:v "payerAttachment" ] ;
+     fhir:display [ fhir:v "Payer Attachment" ] ;
+     fhir:definition [ fhir:v "Payer Attachment" ]
+  ] [
+     fhir:code [ fhir:v "payerToPayer" ] ;
+     fhir:display [ fhir:v "Payer to Payer" ] ;
+     fhir:definition [ fhir:v "Payer to Payer" ]
+  ] [
+     fhir:code [ fhir:v "providerApi" ] ;
+     fhir:display [ fhir:v "Provider API" ] ;
+     fhir:definition [ fhir:v "Provider API" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

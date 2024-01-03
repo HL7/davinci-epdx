@@ -1,0 +1,223 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointHieSpecificConnectionTypeCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "EndpointHieSpecificConnectionTypeCS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointHieSpecificConnectionTypeCS</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">XCPD-InitGateway-PatientDiscovery-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XCPD-InitGateway-PatientDiscovery-AsyncResponse\"> </a></td><td>XCPD InitiatingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XCPD-RespGateway-PatientDiscovery<a name=\"EndpointHieSpecificConnectionTypeCS-XCPD-RespGateway-PatientDiscovery\"> </a></td><td>XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XCPD-RespGateway-PatientDiscovery-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XCPD-RespGateway-PatientDiscovery-Async\"> </a></td><td>XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Query<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Query\"> </a></td><td>XCA InitiatingGateway ITI-18 Registry Stored Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Retrieve<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Retrieve\"> </a></td><td>XCA InitiatingGateway ITI-43 Retrieve Document Set Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Query-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Query-Async\"> </a></td><td>XCA InitiatingGateway ITI-18 Registry Stored Query Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Retrieve-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Retrieve-Async\"> </a></td><td>XCA InitiatingGateway ITI-43 Retrieve Document Set Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Query-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Query-AsyncResponse\"> </a></td><td>XCA InitiatingGateway ITI-38 Cross Gateway Query Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XCA-InitGateway-Retrieve-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-InitGateway-Retrieve-AsyncResponse\"> </a></td><td>XCA InitiatingGateway ITI-39 Cross Gateway Retrieve Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XCA-RespGateway-Query<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-RespGateway-Query\"> </a></td><td>XCA RespondingGateway ITI-38 Cross Gateway Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-RespGateway-Retrieve<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-RespGateway-Retrieve\"> </a></td><td>XCA RespondingGateway ITI-39 Cross Gateway Retrieve Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-RespGateway-Query-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-RespGateway-Query-Async\"> </a></td><td>XCA RespondingGateway ITI-38 Cross Gateway Query Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XCA-RespGateway-Retrieve-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XCA-RespGateway-Retrieve-Async\"> </a></td><td>XCA RespondingGateway ITI-39 Cross Gateway Retrieve Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Feed<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Feed\"> </a></td><td>XDS Registry ITI-8 Patient Identity Feed Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Feed-v3<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Feed-v3\"> </a></td><td>XDS Registry ITI-44 Patient Identity Feed HL7v3 Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Register<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Register\"> </a></td><td>XDS Registry ITI-42 Register Document Set-b Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Query<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Query\"> </a></td><td>XDS Registry ITI-18 Registry Stored Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-RegOnDemand<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-RegOnDemand\"> </a></td><td>XDS Registry ITI-61 Register On-Demand Document Entry Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Register-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Register-Async\"> </a></td><td>XDS Registry ITI-42 Register Document Set-b Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-Query-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-Query-Async\"> </a></td><td>XDS Registry ITI-18 Registry Stored Query Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Registry-RegOnDemand-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Registry-RegOnDemand-Async\"> </a></td><td>XDS Registry ITI-61 Register On-Demand Document Entry Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Repository-ProvideReg<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Repository-ProvideReg\"> </a></td><td>XDS Repository ITI-41 Provide&amp;Register Document Set-b Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Repository-Retrieve<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Repository-Retrieve\"> </a></td><td>XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Repository-ProvideReg-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Repository-ProvideReg-Async\"> </a></td><td>XDS Repository ITI-41 Provide&amp;Register Document Set-b Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Repository-Retrieve-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Repository-Retrieve-Async\"> </a></td><td>XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-Repository-Register-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Repository-Register-AsyncResponse\"> </a></td><td>XDS Repository/IntegratedSourceRepository ITI-42 Register Document Set-b Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XDS-OnDemandSource-Retrieve<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-OnDemandSource-Retrieve\"> </a></td><td>XDS OnDemandSource ITI-43 Retrieve Document Set Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-OnDemandSource-Retrieve-Async<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-OnDemandSource-Retrieve-Async\"> </a></td><td>XDS OnDemandSource ITI-43 Retrieve Document Set Asynchronous</td></tr><tr><td style=\"white-space:nowrap\">XDS-OnDemandSource-RegOnDemand-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-OnDemandSource-RegOnDemand-AsyncResponse\"> </a></td><td>XDS OnDemandSource ITI-61 Register On-Demand Document Entry Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XDS-Source-ProvideReg-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Source-ProvideReg-AsyncResponse\"> </a></td><td>XDS Document Source ITI-41 Provide&amp;Register Document Set-b Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XDS-Consumer-Query-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Consumer-Query-AsyncResponse\"> </a></td><td>XDS Document Consumer ITI-18 Registry Stored Query Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">XDS-Consumer-Retrieve-AsyncResponse<a name=\"EndpointHieSpecificConnectionTypeCS-XDS-Consumer-Retrieve-AsyncResponse\"> </a></td><td>XDS Document Consumer ITI-43 Retrieve Document Set Asynchronous Response</td></tr><tr><td style=\"white-space:nowrap\">PDQ-Supplier-Query<a name=\"EndpointHieSpecificConnectionTypeCS-PDQ-Supplier-Query\"> </a></td><td>PDQ Patient Demographics Supplier ITI-21 Patient Demographics Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">PDQ-Supplier-VisitQuery<a name=\"EndpointHieSpecificConnectionTypeCS-PDQ-Supplier-VisitQuery\"> </a></td><td>PDQ Patient Demographics Supplier ITI-22 Patient Demographics and Visit Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">PIX-Xmanager-Feed<a name=\"EndpointHieSpecificConnectionTypeCS-PIX-Xmanager-Feed\"> </a></td><td>PIX Patient Identity Cross-Reference Manager ITI-8 Patient Identity Feed Synchronous</td></tr><tr><td style=\"white-space:nowrap\">PIX-Xmanager-Feed-v3<a name=\"EndpointHieSpecificConnectionTypeCS-PIX-Xmanager-Feed-v3\"> </a></td><td>PIX Patient Identity Cross-Reference Manager ITI-30 Patient Identity Management Synchronous</td></tr><tr><td style=\"white-space:nowrap\">PIX-Xmanager-Query<a name=\"EndpointHieSpecificConnectionTypeCS-PIX-Xmanager-Query\"> </a></td><td>PIX Patient Identity Cross-Reference Manager ITI-9 PIX Query Synchronous</td></tr><tr><td style=\"white-space:nowrap\">PIX-Consumer<a name=\"EndpointHieSpecificConnectionTypeCS-PIX-Consumer\"> </a></td><td>PIX Patient Identifier Cross-reference Consumer ITI-10 PIX Update Notification Synchronous</td></tr><tr><td style=\"white-space:nowrap\">XDR-Recipient-ProvideReg<a name=\"EndpointHieSpecificConnectionTypeCS-XDR-Recipient-ProvideReg\"> </a></td><td>XDR Document Recipient ITI-41 Provide and Register Document Set-B Synchronous</td></tr><tr><td style=\"white-space:nowrap\">MHD-Recipient-ProvideReg<a name=\"EndpointHieSpecificConnectionTypeCS-MHD-Recipient-ProvideReg\"> </a></td><td>MHD Document Recipient ITI-65 Provide Document Bundle</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointHieSpecificConnectionTypeCS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "EndpointHieSpecificConnectionTypeCS"] ; # 
+  fhir:title [ fhir:v "Endpoint HIE Specific Connection Type Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Endpoint HIE Specific Connection Type"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "40"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "XCPD-InitGateway-PatientDiscovery-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XCPD-InitGateway-PatientDiscovery-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XCPD InitiatingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XCPD-RespGateway-PatientDiscovery" ] ;
+     fhir:display [ fhir:v "XCPD-RespGateway-PatientDiscovery" ] ;
+     fhir:definition [ fhir:v "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCPD-RespGateway-PatientDiscovery-Async" ] ;
+     fhir:display [ fhir:v "XCPD-RespGateway-PatientDiscovery-Async" ] ;
+     fhir:definition [ fhir:v "XCPD RespondingGateway ITI-55 Cross Gateway Patient Discovery Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Query" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Query" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-18 Registry Stored Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Retrieve" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Retrieve" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-43 Retrieve Document Set Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Query-Async" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Query-Async" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-18 Registry Stored Query Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Retrieve-Async" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Retrieve-Async" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-43 Retrieve Document Set Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Query-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Query-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-38 Cross Gateway Query Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XCA-InitGateway-Retrieve-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XCA-InitGateway-Retrieve-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XCA InitiatingGateway ITI-39 Cross Gateway Retrieve Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XCA-RespGateway-Query" ] ;
+     fhir:display [ fhir:v "XCA-RespGateway-Query" ] ;
+     fhir:definition [ fhir:v "XCA RespondingGateway ITI-38 Cross Gateway Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-RespGateway-Retrieve" ] ;
+     fhir:display [ fhir:v "XCA-RespGateway-Retrieve" ] ;
+     fhir:definition [ fhir:v "XCA RespondingGateway ITI-39 Cross Gateway Retrieve Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-RespGateway-Query-Async" ] ;
+     fhir:display [ fhir:v "XCA-RespGateway-Query-Async" ] ;
+     fhir:definition [ fhir:v "XCA RespondingGateway ITI-38 Cross Gateway Query Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XCA-RespGateway-Retrieve-Async" ] ;
+     fhir:display [ fhir:v "XCA-RespGateway-Retrieve-Async" ] ;
+     fhir:definition [ fhir:v "XCA RespondingGateway ITI-39 Cross Gateway Retrieve Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Feed" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Feed" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-8 Patient Identity Feed Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Feed-v3" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Feed-v3" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-44 Patient Identity Feed HL7v3 Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Register" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Register" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-42 Register Document Set-b Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Query" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Query" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-18 Registry Stored Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-RegOnDemand" ] ;
+     fhir:display [ fhir:v "XDS-Registry-RegOnDemand" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-61 Register On-Demand Document Entry Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Register-Async" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Register-Async" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-42 Register Document Set-b Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-Query-Async" ] ;
+     fhir:display [ fhir:v "XDS-Registry-Query-Async" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-18 Registry Stored Query Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Registry-RegOnDemand-Async" ] ;
+     fhir:display [ fhir:v "XDS-Registry-RegOnDemand-Async" ] ;
+     fhir:definition [ fhir:v "XDS Registry ITI-61 Register On-Demand Document Entry Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Repository-ProvideReg" ] ;
+     fhir:display [ fhir:v "XDS-Repository-ProvideReg" ] ;
+     fhir:definition [ fhir:v "XDS Repository ITI-41 Provide&Register Document Set-b Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Repository-Retrieve" ] ;
+     fhir:display [ fhir:v "XDS-Repository-Retrieve" ] ;
+     fhir:definition [ fhir:v "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Repository-ProvideReg-Async" ] ;
+     fhir:display [ fhir:v "XDS-Repository-ProvideReg-Async" ] ;
+     fhir:definition [ fhir:v "XDS Repository ITI-41 Provide&Register Document Set-b Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Repository-Retrieve-Async" ] ;
+     fhir:display [ fhir:v "XDS-Repository-Retrieve-Async" ] ;
+     fhir:definition [ fhir:v "XDS Repository/IntegratedSourceRepository ITI-43 Retrieve Document Set Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Repository-Register-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XDS-Repository-Register-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XDS Repository/IntegratedSourceRepository ITI-42 Register Document Set-b Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XDS-OnDemandSource-Retrieve" ] ;
+     fhir:display [ fhir:v "XDS-OnDemandSource-Retrieve" ] ;
+     fhir:definition [ fhir:v "XDS OnDemandSource ITI-43 Retrieve Document Set Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-OnDemandSource-Retrieve-Async" ] ;
+     fhir:display [ fhir:v "XDS-OnDemandSource-Retrieve-Async" ] ;
+     fhir:definition [ fhir:v "XDS OnDemandSource ITI-43 Retrieve Document Set Asynchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDS-OnDemandSource-RegOnDemand-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XDS-OnDemandSource-RegOnDemand-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XDS OnDemandSource ITI-61 Register On-Demand Document Entry Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Source-ProvideReg-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XDS-Source-ProvideReg-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XDS Document Source ITI-41 Provide&Register Document Set-b Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Consumer-Query-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XDS-Consumer-Query-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XDS Document Consumer ITI-18 Registry Stored Query Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "XDS-Consumer-Retrieve-AsyncResponse" ] ;
+     fhir:display [ fhir:v "XDS-Consumer-Retrieve-AsyncResponse" ] ;
+     fhir:definition [ fhir:v "XDS Document Consumer ITI-43 Retrieve Document Set Asynchronous Response" ]
+  ] [
+     fhir:code [ fhir:v "PDQ-Supplier-Query" ] ;
+     fhir:display [ fhir:v "PDQ-Supplier-Query" ] ;
+     fhir:definition [ fhir:v "PDQ Patient Demographics Supplier ITI-21 Patient Demographics Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "PDQ-Supplier-VisitQuery" ] ;
+     fhir:display [ fhir:v "PDQ-Supplier-VisitQuery" ] ;
+     fhir:definition [ fhir:v "PDQ Patient Demographics Supplier ITI-22 Patient Demographics and Visit Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "PIX-Xmanager-Feed" ] ;
+     fhir:display [ fhir:v "PIX-Xmanager-Feed" ] ;
+     fhir:definition [ fhir:v "PIX Patient Identity Cross-Reference Manager ITI-8 Patient Identity Feed Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "PIX-Xmanager-Feed-v3" ] ;
+     fhir:display [ fhir:v "PIX-Xmanager-Feed-v3" ] ;
+     fhir:definition [ fhir:v "PIX Patient Identity Cross-Reference Manager ITI-30 Patient Identity Management Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "PIX-Xmanager-Query" ] ;
+     fhir:display [ fhir:v "PIX-Xmanager-Query" ] ;
+     fhir:definition [ fhir:v "PIX Patient Identity Cross-Reference Manager ITI-9 PIX Query Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "PIX-Consumer" ] ;
+     fhir:display [ fhir:v "PIX-Consumer" ] ;
+     fhir:definition [ fhir:v "PIX Patient Identifier Cross-reference Consumer ITI-10 PIX Update Notification Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "XDR-Recipient-ProvideReg" ] ;
+     fhir:display [ fhir:v "XDR-Recipient-ProvideReg" ] ;
+     fhir:definition [ fhir:v "XDR Document Recipient ITI-41 Provide and Register Document Set-B Synchronous" ]
+  ] [
+     fhir:code [ fhir:v "MHD-Recipient-ProvideReg" ] ;
+     fhir:display [ fhir:v "MHD-Recipient-ProvideReg" ] ;
+     fhir:definition [ fhir:v "MHD Document Recipient ITI-65 Provide Document Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

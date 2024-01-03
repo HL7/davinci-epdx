@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="PDexIdentifierType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">npi<a name="PDexIdentifierType-npi"> </a></td><td>National Provider Identifier</td><td>National Provider Identifier</td></tr><tr><td style="white-space:nowrap">payerid<a name="PDexIdentifierType-payerid"> </a></td><td>Payer ID</td><td>Payer ID</td></tr><tr><td style="white-space:nowrap">naiccode<a name="PDexIdentifierType-naiccode"> </a></td><td>NAIC Code</td><td>NAIC Code</td></tr><tr><td style="white-space:nowrap">pat<a name="PDexIdentifierType-pat"> </a></td><td>Patient Account Number</td><td>Patient Account Number</td></tr><tr><td style="white-space:nowrap">um<a name="PDexIdentifierType-um"> </a></td><td>Unique Member ID</td><td>Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business</td></tr><tr><td style="white-space:nowrap">uc<a name="PDexIdentifierType-uc"> </a></td><td>Unique Claim ID</td><td>Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType"/>
+  <version value="2.0.0"/>
+  <name value="PDexIdentifierType"/>
+  <title value="PDex Identifier Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This CodeSystem is not copyrighted."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="6"/>
+  <concept>
+    <code value="npi"/>
+    <display value="National Provider Identifier"/>
+    <definition value="National Provider Identifier"/>
+  </concept>
+  <concept>
+    <code value="payerid"/>
+    <display value="Payer ID"/>
+    <definition value="Payer ID"/>
+  </concept>
+  <concept>
+    <code value="naiccode"/>
+    <display value="NAIC Code"/>
+    <definition value="NAIC Code"/>
+  </concept>
+  <concept>
+    <code value="pat"/>
+    <display value="Patient Account Number"/>
+    <definition value="Patient Account Number"/>
+  </concept>
+  <concept>
+    <code value="um"/>
+    <display value="Unique Member ID"/>
+    <definition value="Indicates that the patient identifier is a unique member identifier assigned by a payer across all lines of business"/>
+  </concept>
+  <concept>
+    <code value="uc"/>
+    <display value="Unique Claim ID"/>
+    <definition value="Indicates that the claim identifier is that assigned by a payer for a claim received from a provider or subscriber"/>
+  </concept>
+</CodeSystem>

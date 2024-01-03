@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href="http://terminology.hl7.org/5.0.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html"><code>https://x12.org/codes/claim-adjustment-reason-codes</code></a></li><li>Include all codes defined in <a href="http://terminology.hl7.org/5.0.0/CodeSystem-RARC.html"><code>https://x12.org/codes/remittance-advice-remark-codes</code></a></li></ul></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"/>
+  <version value="2.0.0"/>
+  <name value="X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes"/>
+  <title value="X12 Claim Adjustment Reason Codes - Remittance Advice Remark Codes"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="X12, chartered by the American National Standards Institute for more than 40 years, develops and maintains EDI standards and XML schemas which drive business processes globally. X12's diverse membership includes technologists and business process experts in health care, insurance, transportation, finance, government, supply chain and other industries.&#xA;&#xA;The X12 Claim Adjustment Reason Codes describe why a claim or service line was paid differently than it was billed. These codes are listed within an X12 implementation guide (TR3) and maintained by X12.&#xA;&#xA;Remittance Advice Remark Codes (RARCs) are used to provide additional explanation for an adjustment already described by a Claim Adjustment Reason Code (CARC) or to convey information about remittance processing.&#xA;&#xA;Each RARC identifies a specific message as shown in the Remittance Advice Remark Code List. There are two types of RARCs, supplemental and informational. The majority of the RARCs are supplemental; these are generally referred to as RARCs without further distinction. Supplemental RARCs provide additional explanation for an adjustment already described by a CARC. The second type of RARC is informational; these RARCs are all prefaced with Alert: and are often referred to as Alerts. Alerts are used to convey information about remittance processing and are never related to a specific adjustment or CARC.&#xA;&#xA;External code lists maintained by X12 and external code lists maintained by others and distributed by WPC on behalf of the maintainer can be found here:&#xA;&#xA;[https://x12.org/codes](https://x12.org/codes)&#xA;&#xA;Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="**Intellectual Property Information**&#xA;&#xA;  All X12 products are subject to this IP policy, including published and draft works.&#xA;&#xA;  X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.&#xA;&#xA;Additional IP information can be found here: [https://x12.org/products/ip-use](https://x12.org/products/ip-use)&#xA;&#xA;  **Licensing Information**&#xA;&#xA;  Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.&#xA;&#xA;Additional information on X12 licensing program can be found here:&#xA;&#xA;  [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)&#xA;&#xA;  **Purchasing Information:**&#xA;&#xA;  To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com&#xA;&#xA;  The Centers for Medicare &amp; Medicaid Services (CMS) maintain Remittance Advice Remark Codes (RARC) used throughout the US health care industry."/>
+  <compose>
+    <include>
+      <system value="https://x12.org/codes/claim-adjustment-reason-codes"/>
+    </include>
+    <include>
+      <system value="https://x12.org/codes/remittance-advice-remark-codes"/>
+    </include>
+  </compose>
+</ValueSet>
