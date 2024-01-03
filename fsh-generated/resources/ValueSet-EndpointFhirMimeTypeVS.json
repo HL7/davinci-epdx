@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "EndpointFhirMimeTypeVS",
+  "id": "EndpointFhirMimeTypeVS",
+  "title": "Endpoint FHIR Mimetype Value Set",
+  "description": "Endpoint FHIR mimetype",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointFhirMimeTypeVS",
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "urn:ietf:bcp:13",
+        "concept": [
+          {
+            "code": "application/fhir+xml",
+            "display": "FHIR XML"
+          },
+          {
+            "code": "application/fhir+json",
+            "display": "FHIR JSON"
+          },
+          {
+            "code": "application/fhir+turtle",
+            "display": "FHIR Turtle"
+          }
+        ]
+      }
+    ]
+  }
+}

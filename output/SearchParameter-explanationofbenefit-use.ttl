@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-use> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "explanationofbenefit-use"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2022-05-27T20:06:13.000+00:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ExplanationOfBenefit_Use <a style=\"padding-left: 3px; padding-right: 3px; border: 1px grey solid; font-weight: bold; color: black; background-color: #fff5e6\" href=\"http://hl7.org/fhir/R4/versions.html#std-process\" title=\"Standards Status = Trial Use\">TU</a></h2><p>Parameter <code>use</code>:<code>token</code></p><div><p>The use of the ExplanationOfBenefit</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/explanationofbenefit.html\">ExplanationOfBenefit</a></td></tr><tr><td>Expression</td><td><code>ExplanationOfBenefit.use</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: It's up to the server whether the parameter can have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "trial-use" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-use"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "ExplanationOfBenefit_Use"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2022-05-27T20:06:13.000+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The use of the ExplanationOfBenefit"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "use"] ; # 
+  fhir:base ( [ fhir:v "ExplanationOfBenefit"] ) ; # 
+  fhir:type [ fhir:v "token"] ; # 
+  fhir:expression [ fhir:v "ExplanationOfBenefit.use"] ; # 
+  fhir:xpathUsage [ fhir:v "normal"] . # 
+
+# -------------------------------------------------------------------------------------
+

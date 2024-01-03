@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/123456> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "123456"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"123456\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;123456&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-documentreference.html\">US Core DocumentReference Profile</a></p></div><p><b>status</b>: current</p><p><b>type</b>: 51852-2 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#51852-2)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Patient/1</a> &quot; APPLESEED&quot;</p><p><b>date</b>: Oct 9, 2020, 11:26:23 AM</p><p><b>author</b>: <a href=\"Organization-ProviderOrg1.html\">Organization/ProviderOrg1</a> &quot;Provider 1&quot;</p><p><b>custodian</b>: <a href=\"Organization-Payer1.html\">Organization/Payer1</a> &quot;Payer 1&quot;</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Url</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>application/pdf</td><td><code>/Binary/1-pdf</code></td><td>Uri where the data can be found = [base]/Binary/1-pdf\nor base64encode document and include in content.attachment.data element</td></tr></table><p><b>format</b>: urn:ihe:iti:xds:2017:mimeTypeSufficient (Details: http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem code null = 'null', stated as 'urn:ihe:iti:xds:2017:mimeTypeSufficient')</p></blockquote></div>"
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:51852-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "51852-2" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:date [ fhir:v "2020-10-09T15:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+     fhir:reference [ fhir:v "Organization/ProviderOrg1" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+     fhir:reference [ fhir:v "Organization/Payer1" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "application/pdf" ] ;
+       fhir:url [ fhir:v "/Binary/1-pdf"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Uri where the data can be found = [base]/Binary/1-pdf\nor base64encode document and include in content.attachment.data element" ]
+     ] ;
+     fhir:format [
+       fhir:system [ fhir:v "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"^^xsd:anyURI ] ;
+       fhir:display [ fhir:v "urn:ihe:iti:xds:2017:mimeTypeSufficient" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:us .
+
+# -------------------------------------------------------------------------------------
+

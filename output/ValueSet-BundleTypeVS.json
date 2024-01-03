@@ -1,0 +1,64 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "BundleTypeVS",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"http://hl7.org/fhir/R4/codesystem-bundle-type.html\"><code>http://hl7.org/fhir/bundle-type</code></a></li><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-bundle-type.html\"><code>http://hl7.org/fhir/bundle-type</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-bundle-type.html#bundle-type-collection\">collection</a></td><td style=\"color: #cccccc\">Collection</td><td>The bundle is a set of resources collected into a single package for ease of distribution that imposes no processing obligations or behavioral rules beyond persistence.</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/BundleTypeVS",
+  "version" : "2.0.0",
+  "name" : "BundleTypeVS",
+  "title" : "mTLS Bundle Type Value Set",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2024-01-03T08:27:17-05:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Categories of bundle.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/bundle-type"
+    },
+    {
+      "system" : "http://hl7.org/fhir/bundle-type",
+      "concept" : [{
+        "code" : "collection"
+      }]
+    }]
+  }
+}

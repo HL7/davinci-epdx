@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NdhAssociatedServersTypeCS"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">proxy-server<a name=\"NdhAssociatedServersTypeCS-proxy-server\"> </a></td><td>Proxy Server</td><td>Proxy Server</td></tr><tr><td style=\"white-space:nowrap\">indentity-provider-server<a name=\"NdhAssociatedServersTypeCS-indentity-provider-server\"> </a></td><td>Identity Provider Server</td><td>Identity Provider Server</td></tr><tr><td style=\"white-space:nowrap\">record-locator-service-server<a name=\"NdhAssociatedServersTypeCS-record-locator-service-server\"> </a></td><td>Record Locator Service Server</td><td>Record Locator Service Server</td></tr><tr><td style=\"white-space:nowrap\">master-patient-index-server<a name=\"NdhAssociatedServersTypeCS-master-patient-index-server\"> </a></td><td>Master Patient Index (MPI) Server</td><td>Master Patient Index (MPI) Server</td></tr><tr><td style=\"white-space:nowrap\">authorization-authentication-server<a name=\"NdhAssociatedServersTypeCS-authorization-authentication-server\"> </a></td><td>Authorization/Authentication Server</td><td>Authorization/Authentication Server</td></tr><tr><td style=\"white-space:nowrap\">authorization-registration-server<a name=\"NdhAssociatedServersTypeCS-authorization-registration-server\"> </a></td><td>Authorization/Registration Server</td><td>Authorization/Registration Server</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "NdhAssociatedServersTypeCS"] ; # 
+  fhir:title [ fhir:v "NDH Associated Servers Type Code System"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "NDH Associated Servers Type"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "6"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "proxy-server" ] ;
+     fhir:display [ fhir:v "Proxy Server" ] ;
+     fhir:definition [ fhir:v "Proxy Server" ]
+  ] [
+     fhir:code [ fhir:v "indentity-provider-server" ] ;
+     fhir:display [ fhir:v "Identity Provider Server" ] ;
+     fhir:definition [ fhir:v "Identity Provider Server" ]
+  ] [
+     fhir:code [ fhir:v "record-locator-service-server" ] ;
+     fhir:display [ fhir:v "Record Locator Service Server" ] ;
+     fhir:definition [ fhir:v "Record Locator Service Server" ]
+  ] [
+     fhir:code [ fhir:v "master-patient-index-server" ] ;
+     fhir:display [ fhir:v "Master Patient Index (MPI) Server" ] ;
+     fhir:definition [ fhir:v "Master Patient Index (MPI) Server" ]
+  ] [
+     fhir:code [ fhir:v "authorization-authentication-server" ] ;
+     fhir:display [ fhir:v "Authorization/Authentication Server" ] ;
+     fhir:definition [ fhir:v "Authorization/Authentication Server" ]
+  ] [
+     fhir:code [ fhir:v "authorization-registration-server" ] ;
+     fhir:display [ fhir:v "Authorization/Registration Server" ] ;
+     fhir:definition [ fhir:v "Authorization/Registration Server" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

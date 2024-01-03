@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="PDexSupportingInfoType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">admissionperiod<a name="PDexSupportingInfoType-admissionperiod"> </a></td><td>Admission Period</td><td>Dates corresponding with the admission and discharge of the beneficiary to a facility</td></tr><tr><td style="white-space:nowrap">pointoforigin<a name="PDexSupportingInfoType-pointoforigin"> </a></td><td>Point Of Origin</td><td>UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility.</td></tr><tr><td style="white-space:nowrap">admtype<a name="PDexSupportingInfoType-admtype"> </a></td><td>Admission Type</td><td>UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled.</td></tr><tr><td style="white-space:nowrap">billingnetworkcontractingstatus<a name="PDexSupportingInfoType-billingnetworkcontractingstatus"> </a></td><td>Billing Network Contracting Status</td><td>Indicates that the Billing Provider has a contract with the Payer as of the effective date of service or admission.</td></tr><tr><td style="white-space:nowrap">brandgenericindicator<a name="PDexSupportingInfoType-brandgenericindicator"> </a></td><td>Brand Generic Indicator</td><td>NCPDP code indicating whether the plan adjudicated the claim as a brand or generic drug.</td></tr><tr><td style="white-space:nowrap">clmrecvddate<a name="PDexSupportingInfoType-clmrecvddate"> </a></td><td>Claim Received Date</td><td>Date the claim was received by the payer.</td></tr><tr><td style="white-space:nowrap">compoundcode<a name="PDexSupportingInfoType-compoundcode"> </a></td><td>Compound Code</td><td>NCPDP code indicating whether or not the prescription is a compound.</td></tr><tr><td style="white-space:nowrap">dawcode<a name="PDexSupportingInfoType-dawcode"> </a></td><td>DAW (Dispense As Written) Code</td><td>NCPDP code indicating the prescriber's instruction regarding substitution of generic equivalents or order to dispense the specific prescribed medication.</td></tr><tr><td style="white-space:nowrap">dayssupply<a name="PDexSupportingInfoType-dayssupply"> </a></td><td>Days Supply</td><td>NCPDP value indicating the Number of days supply of medication dispensed by the pharmacy.</td></tr><tr><td style="white-space:nowrap">discharge-status<a name="PDexSupportingInfoType-discharge-status"> </a></td><td>Discharge Status</td><td>UB-04 Discharge Status (FL-17) indicates the patient’s status as of the discharge date for a facility stay.</td></tr><tr><td style="white-space:nowrap">drg<a name="PDexSupportingInfoType-drg"> </a></td><td>DRG</td><td>DRG (Diagnosis Related Group), including the code system, the DRG version and the code value</td></tr><tr><td style="white-space:nowrap">performingnetworkcontractingstatus<a name="PDexSupportingInfoType-performingnetworkcontractingstatus"> </a></td><td>Performing Network Contracting Status</td><td>Indicates that the Performing Provider has a contract with the Payer as of the effective date of service or admission.</td></tr><tr><td style="white-space:nowrap">refillnum<a name="PDexSupportingInfoType-refillnum"> </a></td><td>Refill Number</td><td>NCPDP value indicating the number fill of the current dispensed supply (0, 1, 2, etc.)</td></tr><tr><td style="white-space:nowrap">rxorigincode<a name="PDexSupportingInfoType-rxorigincode"> </a></td><td>Rx Origin Code</td><td>NCPDP code indicating whether the prescription was transmitted as an electronic prescription, by phone, by fax, or as a written paper copy.</td></tr><tr><td style="white-space:nowrap">servicefacility<a name="PDexSupportingInfoType-servicefacility"> </a></td><td>Service Facility</td><td>The facility where the service occurred.  Examples include hospitals, nursing homes, laboratories or homeless shelters.</td></tr><tr><td style="white-space:nowrap">typeofbill<a name="PDexSupportingInfoType-typeofbill"> </a></td><td>Type of Bill</td><td>UB-04 Type of Bill (FL-04) provides specific information for payer purposes.</td></tr><tr><td style="white-space:nowrap">medicalrecordnumber<a name="PDexSupportingInfoType-medicalrecordnumber"> </a></td><td>Medical Record Number</td><td>Patient Medical Record Number associated with the specific claim.</td></tr><tr><td style="white-space:nowrap">patientaccountnumber<a name="PDexSupportingInfoType-patientaccountnumber"> </a></td><td>Patient Account Number</td><td>Patient Account Number associated with the specific claim.</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoType"/>
+  <version value="2.0.0"/>
+  <name value="PDexSupportingInfoType"/>
+  <title value="PDex Supporting Info Type"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Claim Information Category - Used as the discriminator for supportingInfo"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This CodeSystem is not copyrighted."/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="18"/>
+  <concept>
+    <code value="admissionperiod"/>
+    <display value="Admission Period"/>
+    <definition value="Dates corresponding with the admission and discharge of the beneficiary to a facility"/>
+  </concept>
+  <concept>
+    <code value="pointoforigin"/>
+    <display value="Point Of Origin"/>
+    <definition value="UB-04 Source of Admission (FL-15) identifies the place where the patient was identified as needing admission to a facility."/>
+  </concept>
+  <concept>
+    <code value="admtype"/>
+    <display value="Admission Type"/>
+    <definition value="UB-04 Priority of the admission (FL-14) indicates, for example, an admission type of elective indicates that the patient's condition permitted time for medical services to be scheduled."/>
+  </concept>
+  <concept>
+    <code value="billingnetworkcontractingstatus"/>
+    <display value="Billing Network Contracting Status"/>
+    <definition value="Indicates that the Billing Provider has a contract with the Payer as of the effective date of service or admission."/>
+  </concept>
+  <concept>
+    <code value="brandgenericindicator"/>
+    <display value="Brand Generic Indicator"/>
+    <definition value="NCPDP code indicating whether the plan adjudicated the claim as a brand or generic drug."/>
+  </concept>
+  <concept>
+    <code value="clmrecvddate"/>
+    <display value="Claim Received Date"/>
+    <definition value="Date the claim was received by the payer."/>
+  </concept>
+  <concept>
+    <code value="compoundcode"/>
+    <display value="Compound Code"/>
+    <definition value="NCPDP code indicating whether or not the prescription is a compound."/>
+  </concept>
+  <concept>
+    <code value="dawcode"/>
+    <display value="DAW (Dispense As Written) Code"/>
+    <definition value="NCPDP code indicating the prescriber's instruction regarding substitution of generic equivalents or order to dispense the specific prescribed medication."/>
+  </concept>
+  <concept>
+    <code value="dayssupply"/>
+    <display value="Days Supply"/>
+    <definition value="NCPDP value indicating the Number of days supply of medication dispensed by the pharmacy."/>
+  </concept>
+  <concept>
+    <code value="discharge-status"/>
+    <display value="Discharge Status"/>
+    <definition value="UB-04 Discharge Status (FL-17) indicates the patient’s status as of the discharge date for a facility stay."/>
+  </concept>
+  <concept>
+    <code value="drg"/>
+    <display value="DRG"/>
+    <definition value="DRG (Diagnosis Related Group), including the code system, the DRG version and the code value"/>
+  </concept>
+  <concept>
+    <code value="performingnetworkcontractingstatus"/>
+    <display value="Performing Network Contracting Status"/>
+    <definition value="Indicates that the Performing Provider has a contract with the Payer as of the effective date of service or admission."/>
+  </concept>
+  <concept>
+    <code value="refillnum"/>
+    <display value="Refill Number"/>
+    <definition value="NCPDP value indicating the number fill of the current dispensed supply (0, 1, 2, etc.)"/>
+  </concept>
+  <concept>
+    <code value="rxorigincode"/>
+    <display value="Rx Origin Code"/>
+    <definition value="NCPDP code indicating whether the prescription was transmitted as an electronic prescription, by phone, by fax, or as a written paper copy."/>
+  </concept>
+  <concept>
+    <code value="servicefacility"/>
+    <display value="Service Facility"/>
+    <definition value="The facility where the service occurred.  Examples include hospitals, nursing homes, laboratories or homeless shelters."/>
+  </concept>
+  <concept>
+    <code value="typeofbill"/>
+    <display value="Type of Bill"/>
+    <definition value="UB-04 Type of Bill (FL-04) provides specific information for payer purposes."/>
+  </concept>
+  <concept>
+    <code value="medicalrecordnumber"/>
+    <display value="Medical Record Number"/>
+    <definition value="Patient Medical Record Number associated with the specific claim."/>
+  </concept>
+  <concept>
+    <code value="patientaccountnumber"/>
+    <display value="Patient Account Number"/>
+    <definition value="Patient Account Number associated with the specific claim."/>
+  </concept>
+</CodeSystem>

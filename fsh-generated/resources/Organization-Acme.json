@@ -1,0 +1,86 @@
+{
+  "resourceType": "Organization",
+  "id": "Acme",
+  "meta": {
+    "lastUpdated": "2020-07-07T13:26:22.0314215+00:00",
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"
+    ]
+  },
+  "telecom": [
+    {
+      "system": "url",
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "daysOfWeek",
+              "valueCode": "mon"
+            },
+            {
+              "url": "daysOfWeek",
+              "valueCode": "tue"
+            },
+            {
+              "url": "daysOfWeek",
+              "valueCode": "wed"
+            },
+            {
+              "url": "daysOfWeek",
+              "valueCode": "thu"
+            },
+            {
+              "url": "daysOfWeek",
+              "valueCode": "fri"
+            },
+            {
+              "url": "availableStartTime",
+              "valueTime": "08:00:00"
+            },
+            {
+              "url": "availableEndTime",
+              "valueTime": "17:00:00"
+            }
+          ],
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status",
+          "valueCode": "active"
+        }
+      ],
+      "value": "1356362586"
+    }
+  ],
+  "language": "en-US",
+  "active": true,
+  "name": "Acme of CT",
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "payer",
+          "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS",
+          "display": "Payer"
+        }
+      ]
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "456 Main Street"
+      ],
+      "city": "Norwalk",
+      "state": "CT",
+      "postalCode": "00014-1234"
+    }
+  ]
+}

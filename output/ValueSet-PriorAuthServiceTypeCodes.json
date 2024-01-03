@@ -1,0 +1,58 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "PriorAuthServiceTypeCodes",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-X12ServiceTypeCodes.html\"><code>https://x12.org/codes/service-type-codes</code></a></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes",
+  "version" : "2.0.0",
+  "name" : "PriorAuthServiceTypeCodes",
+  "title" : "Prior Authorization Service Type Codes (X12)",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2024-01-03T08:27:17-05:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Indicates the Type of Service that a Prior Authorization is covering",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://x12.org/codes/service-type-codes"
+    }]
+  }
+}

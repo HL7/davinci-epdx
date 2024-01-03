@@ -1,0 +1,149 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "base-ext-secureExchangeArtifacts",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts",
+  "name": "SecureExchangeArtifacts",
+  "title": "NDH Secure Exchange Artifacts",
+  "status": "draft",
+  "description": "Secure Exchange Artifacts",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Endpoint"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "NDH Secure Exchange Artifacts",
+        "definition": "Secure Exchange Artifacts"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:secureExchangeArtifactsType",
+        "path": "Extension.extension",
+        "sliceName": "secureExchangeArtifactsType",
+        "short": "Secure Artifact Type",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:secureExchangeArtifactsType.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:secureExchangeArtifactsType.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "secureExchangeArtifactsType"
+      },
+      {
+        "id": "Extension.extension:secureExchangeArtifactsType.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/NdhSecureExchangeArtifactsVS"
+        }
+      },
+      {
+        "id": "Extension.extension:certificate",
+        "path": "Extension.extension",
+        "sliceName": "certificate",
+        "short": "Certificate",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:certificate.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:certificate.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "certificate"
+      },
+      {
+        "id": "Extension.extension:certificate.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "base64Binary"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:expirationDate",
+        "path": "Extension.extension",
+        "sliceName": "expirationDate",
+        "short": "Expiration Date",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:expirationDate.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:expirationDate.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "expirationDate"
+      },
+      {
+        "id": "Extension.extension:expirationDate.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

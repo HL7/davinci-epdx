@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000001> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1000001"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-07-09T15:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Provenance</b><a name=\"1000001\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Provenance &quot;1000001&quot; Version &quot;1&quot; Updated &quot;2020-07-09 15:26:23+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provenance.html\">PDex Provenance</a></p></div><p><b>target</b>: <a href=\"Bundle-2000002.html\">Bundle/2000002</a></p><p><b>recorded</b>: Jul 9, 2020, 11:26:23 AM</p><h3>Agents</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Who</b></td></tr><tr><td style=\"display: none\">*</td><td>Transmitter <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem-us-core-provenance-participant-type.html\">US Core Provenance Participant Type Extension Codes</a>#transmitter)</span></td><td><a href=\"Organization-Payer1.html\">Organization/Payer1</a> &quot;Payer 1&quot;</td></tr></table><h3>Entities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Role</b></td><td><b>What</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>source</td><td><span>: No reference available</span></td></tr></table></div>"
+  ] ; # 
+  fhir:target ( [
+     fhir:link <http://hl7.org/fhir/us/davinci-pdex/Bundle/2000002> ;
+     fhir:reference [ fhir:v "Bundle/2000002" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-07-09T15:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "transmitter" ] ;
+         fhir:display [ fhir:v "Transmitter" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+       fhir:reference [ fhir:v "Organization/Payer1" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "hl7v2adt" ] ;
+           fhir:display [ fhir:v "HL7 v2 ADT" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Bundle/2000002> a fhir:us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:us .
+
+# -------------------------------------------------------------------------------------
+

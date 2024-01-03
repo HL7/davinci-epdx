@@ -1,0 +1,101 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "EndpointConnectionTypeVersionVS",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html\"><code>http://hl7.org/fhir/FHIR-version</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-0.460.4680\">0.0.80</a></td><td>DSTU 1 Official version</td><td>DSTU 1 Official version.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-0.460.4681\">0.0.81</a></td><td>DSTU 1 Official version Technical Errata #1</td><td>DSTU 1 Official version Technical Errata #1.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-0.460.4682\">0.0.82</a></td><td>DSTU 1 Official version Technical Errata #2</td><td>DSTU 1 Official version Technical Errata #2.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-1.460.461\">1.0.1</a></td><td>DSTU 2 (Official version)</td><td>DSTU 2 (Official version).</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-1.460.462\">1.0.2</a></td><td>DSTU 2 (Official version with 1 technical errata)</td><td>DSTU 2 (Official version) with 1 technical errata.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-3.460.460\">3.0.0</a></td><td>FHIR Release 3 (STU)</td><td>FHIR Release 3 (STU).</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-3.460.461\">3.0.1</a></td><td>FHIR Release 3 (STU) with 1 technical errata</td><td>FHIR Release 3 (STU) with 1 technical errata.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-4.460.460\">4.0.0</a></td><td>FHIR Release 4 (Normative + STU)</td><td>FHIR Release 4 (Normative + STU).</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-FHIR-version.html#FHIR-version-4.460.461\">4.0.1</a></td><td>FHIR Release 4 Technical Correction</td><td>FHIR Release 4 Technical Correction.</td></tr></table></li><li>Include these codes as defined in <a href=\"CodeSystem-EndpointConnectionTypeVersionCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeVersionCS</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-EndpointConnectionTypeVersionCS.html#EndpointConnectionTypeVersionCS-4.463.460\">4.3.0</a></td><td>FHIR Release 4B</td><td>FHIR Release 4B</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointConnectionTypeVersionVS",
+  "version" : "2.0.0",
+  "name" : "EndpointConnectionTypeVersionVS",
+  "title" : "Endpoint Connection Type Version Value Set",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2024-01-03T08:27:17-05:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Endpoint Connection Type Version",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/FHIR-version",
+      "concept" : [{
+        "code" : "0.0.80",
+        "display" : "DSTU 1 Official version"
+      },
+      {
+        "code" : "0.0.81",
+        "display" : "DSTU 1 Official version Technical Errata #1"
+      },
+      {
+        "code" : "0.0.82",
+        "display" : "DSTU 1 Official version Technical Errata #2"
+      },
+      {
+        "code" : "1.0.1",
+        "display" : "DSTU 2 (Official version)"
+      },
+      {
+        "code" : "1.0.2",
+        "display" : "DSTU 2 (Official version with 1 technical errata)"
+      },
+      {
+        "code" : "3.0.0",
+        "display" : "FHIR Release 3 (STU)"
+      },
+      {
+        "code" : "3.0.1",
+        "display" : "FHIR Release 3 (STU) with 1 technical errata"
+      },
+      {
+        "code" : "4.0.0",
+        "display" : "FHIR Release 4 (Normative + STU)"
+      },
+      {
+        "code" : "4.0.1",
+        "display" : "FHIR Release 4 Technical Correction"
+      }]
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeVersionCS",
+      "concept" : [{
+        "code" : "4.3.0",
+        "display" : "FHIR Release 4B"
+      }]
+    }]
+  }
+}

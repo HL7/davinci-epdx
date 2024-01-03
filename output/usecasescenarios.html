@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Use Case Scenarios - Da Vinci Payer Data Exchange v2.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.0.0 - STU2
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer</a>
+      </li>
+      <li>
+        <a href="changehistory.html">Change Log</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li>
+    <a href="other-igs.html">Other IG Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Use Case Scenarios</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Use Case Scenarios</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#patient-persona" id="markdown-toc-patient-persona">Patient Persona</a></li>
+  <li><a href="#useful-patient-history-for-providers" id="markdown-toc-useful-patient-history-for-providers">Useful Patient History for Providers</a></li>
+  <li><a href="#versioning-of-fhir-data" id="markdown-toc-versioning-of-fhir-data">Versioning of FHIR Data</a></li>
+</ul>
+
+</div>
+<p><a href="VitalSigns.html">Previous Page - VitalSigns</a></p>
+
+<p>This implementation guide addresses a Provider-to-Payer use case:</p>
+
+<ul>
+  <li>Patient at Primary Care Provider.</li>
+</ul>
+
+<p>The other use case is for Member/Patient-mediated Payer-to-Payer Exchange:</p>
+
+<ul>
+  <li>A member enrolls with a new health plan and accesses their prior health plan to authorize sharing of the health history.</li>
+</ul>
+
+<p>The examples used in this guide are based on Payers providing claims from events where a member visits an ambulatory provider or when a member switches health plan.</p>
+
+<p>Three example data requests from Providers to Health Plans are covered in this IG and the associated Reference Implementation:</p>
+
+<ol>
+  <li>What Encounters has the patient had since mm/dd/yyyy, excluding encounters at my organization.</li>
+  <li>What procedures has the patient had?</li>
+  <li>What medications has the patient received (i.e., a claim for a medication has been settled by the health plan).</li>
+</ol>
+
+<p>Reference Implementations can be found in the Da Vinci GitHub account:</p>
+
+<ul>
+  <li><a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex SMART-on-FHIR+CDS-Hook Patient Import App</a></li>
+  <li><a href="https://github.com/HL7-DaVinci/PDex-Patient-Import-App">PDex Payer-to-Payer Patient Import App</a>.</li>
+</ul>
+
+<h3 id="patient-persona">Patient Persona</h3>
+
+<h4 id="provider-to-health-plan-scenario">Provider to Health Plan scenario:</h4>
+
+<p>Lauren Dent is a 62-year-old female, living in Wisconsin but she spends winters in Tampa Bay, FL.</p>
+
+<p>Lauren works on a seasonal basis and has just accepted a new position with her employer and has moved to Madison, WI to live with her daughter, leaving her previous home in La Crosse, WI. As a result of the move, she has selected a new Primary Care Provider.</p>
+
+<p>Lauren is in reasonable health but is managing a number of conditions:</p>
+
+<ul>
+  <li>She has been diagnosed as Pre-Diabetic and is being treated with medications.</li>
+  <li>She is taking medication for hypertension.</li>
+  <li>She had a knee replacement 5 years ago.</li>
+  <li>She had a procedure seven years ago to correct a problem with a disc in her lower back.</li>
+  <li>A history of a normal colonoscopy 5 years earlier.</li>
+  <li>A history of a pneumovax and zostavax 4 years earlier.</li>
+</ul>
+
+<h4 id="memberpatient-mediated-payer-to-payer-exchange">Member/Patient-mediated Payer-to-Payer Exchange:</h4>
+
+<p>Arthur Dent is a 68-year-old Male.</p>
+
+<p>He has recently switched from Medicare Advantage Plan A and enrolled in Medicare Advantage Plan B.</p>
+
+<p>In this scenario, Arthur has signed up for a new  Medicare advantage plan with payer C during the open enrollment period. Before the initiation of his coverage beginning January 1, payer C has established communication with the patient and has provided the patient with a secure log in to the payer C patient portal. Patient continues to have an active login to payer B patient portal.</p>
+
+<h3 id="useful-patient-history-for-providers">Useful Patient History for Providers</h3>
+
+<p>When providers are building a health history for a new patient the information they are interested in <strong>MAY</strong> include:</p>
+
+<ul>
+  <li>Ambulatory events</li>
+  <li>In-patient events</li>
+  <li>Medications</li>
+  <li>Procedures.</li>
+</ul>
+
+<p>This Guide will focus on a method to enable a provider to query the health record of a health plan member they are treating for information that is of interest to them in relation to the care of the member. The CDS-Hooks method that is described in a later section enables a provider to query for information in the member’s health record at the health plan using US Core profiles and search parameters and subsequently select, either manually or by pre-defined automated tools, the records they want to commit to the patient’s health record in the provider’s EMR.</p>
+
+<p>For example, as part of an event or episode of care the provider <strong>MAY</strong> be interested in the following types of data:</p>
+
+<ul>
+  <li>Consultations/Encounters</li>
+  <li>Practitioners who the patient has seen</li>
+  <li>Care Plans</li>
+  <li>Laboratory test results</li>
+  <li>Image Studies</li>
+  <li>Medical Devices</li>
+  <li>Procedures</li>
+  <li>Diagnoses</li>
+  <li>Vital Signs</li>
+  <li>Medications</li>
+  <li>Immunizations</li>
+  <li>Allergies</li>
+  <li>Notes</li>
+  <li>Family History.</li>
+</ul>
+
+<p>These types of data <strong>SHALL</strong> be mapped to FHIR clinical resources as follows:</p>
+
+<style>
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        border:2px solid #000088;
+        width:90%;
+        overflow-wrap: anywhere;
+    }
+
+    th{
+        border:2px solid #000088;
+        background-color:lightskyblue;
+    }
+
+    td{
+        border:1px solid #000088;
+    }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data type</th>
+      <th>FHIR R4/US Core STU3 profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Consultation</td>
+      <td>Encounter: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html</a></td>
+    </tr>
+    <tr>
+      <td>Practitioners who the patient has seen</td>
+      <td>CareTeam: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html</a></td>
+    </tr>
+    <tr>
+      <td>Care Plan</td>
+      <td>CarePlan: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html</a></td>
+    </tr>
+    <tr>
+      <td>Laboratory test results</td>
+      <td>DiagnosticReport for Laboratory Results Reporting: <a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html</a></td>
+    </tr>
+    <tr>
+      <td>Image studies</td>
+      <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html</a></td>
+    </tr>
+    <tr>
+      <td>Medical Devices</td>
+      <td>Device: <a href="http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html">http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html </a></td>
+    </tr>
+    <tr>
+      <td>Procedures</td>
+      <td>Procedure: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html</a></td>
+    </tr>
+    <tr>
+      <td>Condition</td>
+      <td>Condition: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html</a></td>
+    </tr>
+    <tr>
+      <td>Vital signs</td>
+      <td>Observation-VitalSigns: <a href="http://hl7.org/fhir/R4/observation-vitalsigns.html">http://hl7.org/fhir/R4/observation-vitalsigns.html</a></td>
+    </tr>
+    <tr>
+      <td>Medications</td>
+      <td>MedicationDispense: <a href="http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html">http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html</a></td>
+    </tr>
+    <tr>
+      <td>Immunizations</td>
+      <td>Immunization: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html</a></td>
+    </tr>
+    <tr>
+      <td>Allergies</td>
+      <td>AllergyIntolerance: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html</a></td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td>DiagnosticReport for report and Note Exchange: <a href="https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html">https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html</a></td>
+    </tr>
+    <tr>
+      <td>FamilyHistory</td>
+      <td>DocumentReference: <a href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html">http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Payers may not have in-depth health history for a health plan member since the majority of the information may be derived from claims information which lacks the depth of clinical content that supports a claim.</p>
+
+<h3 id="versioning-of-fhir-data">Versioning of FHIR Data</h3>
+
+<p>A payer <strong>SHOULD</strong> provide the most recent version of the Patient, Practitioner, Organization and Location resources.</p>
+
+<p>A payer <strong>MAY</strong> choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> guidance in the HTTP section of the FHIR specification.</p>
+
+<p>If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource <strong>SHALL</strong> use the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> format of reference:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[type]/[id]/_history/[vid]
+</code></pre></div></div>
+
+<p>Supporting versioning of FHIR data implies supporting the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> and <a href="https://www.hl7.org/fhir/http.html#history">history</a> interactions in the FHIR specification.</p>
+
+<p><a href="provider-controlledinformationrequestsandfiltering.html">Next Page - Provider-controlled Information Requests and Filtering</a></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 3, 2024 08:27-0500">2024-01-03</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

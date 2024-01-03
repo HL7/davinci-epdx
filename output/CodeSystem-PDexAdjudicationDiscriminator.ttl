@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexAdjudicationDiscriminator"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">allowedunits<a name=\"PDexAdjudicationDiscriminator-allowedunits\"> </a></td><td>allowed units</td><td>defines the adjudication slice to define allowed units</td></tr><tr><td style=\"white-space:nowrap\">consumedunits<a name=\"PDexAdjudicationDiscriminator-consumedunits\"> </a></td><td>consumed units</td><td>defines the adjudication slice to define consumed units</td></tr><tr><td style=\"white-space:nowrap\">denialreason<a name=\"PDexAdjudicationDiscriminator-denialreason\"> </a></td><td>Denial Reason</td><td>defines the adjudication slice to identify the denial reason</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fm" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "2.0.0"] ; # 
+  fhir:name [ fhir:v "PDexAdjudicationDiscriminator"] ; # 
+  fhir:title [ fhir:v "PDex Adjudication Discriminator"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2024-01-03T08:27:17-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Used as the discriminator for the data elements in adjudication and item.adjudication"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This CodeSystem is not copyrighted."] ; # 
+  fhir:caseSensitive [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "allowedunits" ] ;
+     fhir:display [ fhir:v "allowed units" ] ;
+     fhir:definition [ fhir:v "defines the adjudication slice to define allowed units" ]
+  ] [
+     fhir:code [ fhir:v "consumedunits" ] ;
+     fhir:display [ fhir:v "consumed units" ] ;
+     fhir:definition [ fhir:v "defines the adjudication slice to define consumed units" ]
+  ] [
+     fhir:code [ fhir:v "denialreason" ] ;
+     fhir:display [ fhir:v "Denial Reason" ] ;
+     fhir:definition [ fhir:v "defines the adjudication slice to identify the denial reason" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

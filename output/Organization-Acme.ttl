@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Acme> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Acme"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2020-07-07T13:26:22.0314215+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en-US"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p><b>Generated Narrative: Organization</b><a name=\"Acme\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;Acme&quot; Updated &quot;2020-07-07 13:26:22+0000&quot;  (Language &quot;en-US&quot;) </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-mtls-organization.html\">mTLS Organization</a></p></div><p><b>identifier</b>: id: <a href=\"http://terminology.hl7.org/5.0.0/NamingSystem-npi.html\">#</a>1356362586</p><p><b>active</b>: true</p><p><b>type</b>: Payer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-OrgTypeCS.html\">Organization Type</a>#payer)</span></p><p><b>name</b>: Acme of CT</p><p><b>telecom</b>: </p><p><b>address</b>: 456 Main Street Norwalk CT 00014-1234 </p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "active" ]
+     ] ) ;
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1356362586" ]
+  ] ) ; # 
+  fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "payer" ] ;
+       fhir:display [ fhir:v "Payer" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Acme of CT"] ; # 
+  fhir:telecom ( [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "mon" ]
+       ] [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tue" ]
+       ] [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "wed" ]
+       ] [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "thu" ]
+       ] [
+         fhir:url [ fhir:v "daysOfWeek"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fri" ]
+       ] [
+         fhir:url [ fhir:v "availableStartTime"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "08:00:00"^^xsd:time ]
+       ] [
+         fhir:url [ fhir:v "availableEndTime"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "17:00:00"^^xsd:time ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime"^^xsd:anyURI ]
+     ] ) ;
+     fhir:system [ fhir:v "url" ]
+  ] ) ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "456 Main Street" ] ) ;
+     fhir:city [ fhir:v "Norwalk" ] ;
+     fhir:state [ fhir:v "CT" ] ;
+     fhir:postalCode [ fhir:v "00014-1234" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

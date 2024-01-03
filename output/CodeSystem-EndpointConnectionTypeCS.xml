@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="EndpointConnectionTypeCS"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">hl7-fhir-opn<a name="EndpointConnectionTypeCS-hl7-fhir-opn"> </a></td><td>HL7 FHIR Operation</td><td>Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement.</td></tr><tr><td style="white-space:nowrap">rest-non-fhir<a name="EndpointConnectionTypeCS-rest-non-fhir"> </a></td><td>REST (not FHIR)</td><td>Interact with a server using HTTP/REST but not FHIR.  Should be used for web portals.</td></tr><tr><td style="white-space:nowrap">ihe-xcpd<a name="EndpointConnectionTypeCS-ihe-xcpd"> </a></td><td>IHE XCPD</td><td>IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery</td></tr><tr><td style="white-space:nowrap">ihe-xca<a name="EndpointConnectionTypeCS-ihe-xca"> </a></td><td>IHE XCA</td><td>IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access</td></tr><tr><td style="white-space:nowrap">ihe-xdr<a name="EndpointConnectionTypeCS-ihe-xdr"> </a></td><td>IHE XDR</td><td>IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange</td></tr><tr><td style="white-space:nowrap">ihe-xds<a name="EndpointConnectionTypeCS-ihe-xds"> </a></td><td>IHE XDS</td><td>IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing</td></tr><tr><td style="white-space:nowrap">ihe-iid<a name="EndpointConnectionTypeCS-ihe-iid"> </a></td><td>IHE IID</td><td>IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display</td></tr><tr><td style="white-space:nowrap">ihe-pdq<a name="EndpointConnectionTypeCS-ihe-pdq"> </a></td><td>IHE PDQ</td><td>IHE Patient Demographics Query (PDQ) - http://wiki.ihe.net/index.php/Patient_Demographics_Query</td></tr><tr><td style="white-space:nowrap">ihe-pix<a name="EndpointConnectionTypeCS-ihe-pix"> </a></td><td>IHE PIX</td><td>IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed</td></tr><tr><td style="white-space:nowrap">ihe-mhd<a name="EndpointConnectionTypeCS-ihe-mhd"> </a></td><td>IHE MHD</td><td>IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS"/>
+  <version value="2.0.0"/>
+  <name value="EndpointConnectionTypeCS"/>
+  <title value="Endpoint Connection Types (additional) Code System"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2024-01-03T08:27:17-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Extension codes for http://terminology.hl7.org/CodeSystem/endpoint-connection-type"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="10"/>
+  <concept>
+    <code value="hl7-fhir-opn"/>
+    <display value="HL7 FHIR Operation"/>
+    <definition value="Interact with a FHIR server interface using FHIR's RESTful interface using an operation other than messaging. For details on its version/capabilities you should connect the value in Endpoint.address and retrieve the FHIR CapabilityStatement."/>
+  </concept>
+  <concept>
+    <code value="rest-non-fhir"/>
+    <display value="REST (not FHIR)"/>
+    <definition value="Interact with a server using HTTP/REST but not FHIR.  Should be used for web portals."/>
+  </concept>
+  <concept>
+    <code value="ihe-xcpd"/>
+    <display value="IHE XCPD"/>
+    <definition value="IHE Cross Community Patient Discovery Profile (XCPD) - http://wiki.ihe.net/index.php/Cross-Community_Patient_Discovery"/>
+  </concept>
+  <concept>
+    <code value="ihe-xca"/>
+    <display value="IHE XCA"/>
+    <definition value="IHE Cross Community Access Profile (XCA) - http://wiki.ihe.net/index.php/Cross-Community_Access"/>
+  </concept>
+  <concept>
+    <code value="ihe-xdr"/>
+    <display value="IHE XDR"/>
+    <definition value="IHE Cross-Enterprise Document Reliable Exchange (XDR) - http://wiki.ihe.net/index.php/Cross-enterprise_Document_Reliable_Interchange"/>
+  </concept>
+  <concept>
+    <code value="ihe-xds"/>
+    <display value="IHE XDS"/>
+    <definition value="IHE Cross-Enterprise Document Sharing (XDS) - http://wiki.ihe.net/index.php/Cross-Enterprise_Document_Sharing"/>
+  </concept>
+  <concept>
+    <code value="ihe-iid"/>
+    <display value="IHE IID"/>
+    <definition value="IHE Invoke Image Display (IID) - http://wiki.ihe.net/index.php/Invoke_Image_Display"/>
+  </concept>
+  <concept>
+    <code value="ihe-pdq"/>
+    <display value="IHE PDQ"/>
+    <definition value="IHE Patient Demographics Query (PDQ) - http://wiki.ihe.net/index.php/Patient_Demographics_Query"/>
+  </concept>
+  <concept>
+    <code value="ihe-pix"/>
+    <display value="IHE PIX"/>
+    <definition value="IHE Patient Identity Feed (PIX) - http://wiki.ihe.net/index.php/Patient_Identity_Feed"/>
+  </concept>
+  <concept>
+    <code value="ihe-mhd"/>
+    <display value="IHE MHD"/>
+    <definition value="IHE Mobile Healthcare (MHD) - http://wiki.ihe.net/index.php/Mobile_Healthcare"/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,359 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mtls-endpoint",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-endpoint",
+  "version": "0.1.19",
+  "name": "MtlsEndpoint",
+  "title": "mTLS Endpoint",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "The mTLS Endpoint is used to assist payers in defining their mTLS endpoints and discovering other Payer's mTLS endpoints",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Endpoint",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Endpoint",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Endpoint.extension",
+        "path": "Endpoint.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Endpoint.extension:endpoint-usecase",
+        "path": "Endpoint.extension",
+        "sliceName": "endpoint-usecase",
+        "short": "Endpoint Usecase",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:fhir-ig",
+        "path": "Endpoint.extension",
+        "sliceName": "fhir-ig",
+        "short": "IGs supported",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-fhir-ig"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:secure-exchange-artifacts",
+        "path": "Endpoint.extension",
+        "sliceName": "secure-exchange-artifacts",
+        "short": "Secure Exchange Artifacts",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:trust-framework",
+        "path": "Endpoint.extension",
+        "sliceName": "trust-framework",
+        "short": "Trust Framework",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:dynamic-registration",
+        "path": "Endpoint.extension",
+        "sliceName": "dynamic-registration",
+        "short": "Dynamic Registration",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-dynamicRegistration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:associated-servers",
+        "path": "Endpoint.extension",
+        "sliceName": "associated-servers",
+        "short": "Associated Servers",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:access-control-mechanism",
+        "path": "Endpoint.extension",
+        "sliceName": "access-control-mechanism",
+        "short": "Access Control Mechanism",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpointAccessControlMechanism"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:connection-type-version",
+        "path": "Endpoint.extension",
+        "sliceName": "connection-type-version",
+        "short": "Connection Type Version",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-connection-type-version"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:endpoint-rank",
+        "path": "Endpoint.extension",
+        "sliceName": "endpoint-rank",
+        "short": "Preferred order for connecting to the endpoint",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-rank"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:verification-status",
+        "path": "Endpoint.extension",
+        "sliceName": "verification-status",
+        "short": "Verification Status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-verification-status"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.extension:pdex-mtls-signedobject-extension",
+        "path": "Endpoint.extension",
+        "sliceName": "pdex-mtls-signedobject-extension",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Endpoint.identifier",
+        "path": "Endpoint.identifier",
+        "short": "Unique identifier for Payer",
+        "mustSupport": true
+      },
+      {
+        "id": "Endpoint.identifier.extension:identifier-status",
+        "path": "Endpoint.identifier.extension",
+        "sliceName": "identifier-status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-identifier-status"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.identifier.assigner",
+        "path": "Endpoint.identifier.assigner",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.status",
+        "path": "Endpoint.status",
+        "fixedCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "Endpoint.connectionType",
+        "path": "Endpoint.connectionType",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointConnectionTypeVS"
+        }
+      },
+      {
+        "id": "Endpoint.name",
+        "path": "Endpoint.name",
+        "short": "Payer-Payer Exchange",
+        "mustSupport": true
+      },
+      {
+        "id": "Endpoint.managingOrganization",
+        "path": "Endpoint.managingOrganization",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Endpoint.contact.extension:contactpoint-availabletime",
+        "path": "Endpoint.contact.extension",
+        "sliceName": "contactpoint-availabletime",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-contactpoint-availabletime"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Endpoint.payloadType",
+        "path": "Endpoint.payloadType",
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointPayloadTypeVS"
+        }
+      },
+      {
+        "id": "Endpoint.payloadMimeType",
+        "path": "Endpoint.payloadMimeType",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointFhirMimeTypeVS"
+        }
+      }
+    ]
+  }
+}

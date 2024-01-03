@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Payer source of data - Da Vinci Payer Data Exchange v2.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"14.48"}
+    h3,h4,h5,h6{--heading-prefix:"14.48"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.0.0 - STU2
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">PDex IG Content
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Overview</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer</a>
+      </li>
+      <li>
+        <a href="changehistory.html">Change Log</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li>
+    <a href="other-igs.html">Other IG Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR Artifacts</b></a></li><li><b>Payer source of data</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-ProvenancePayerSourceFormat.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ProvenancePayerSourceFormat.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ProvenancePayerSourceFormat.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Payer source of data
+(Experimental)
+  </h2>
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat|2.0.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2024-01-03
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">ProvenancePayerSourceFormat</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Source Data formats used as the source for FHIR referenced record by the Payer.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-ProvenanceSourceFrom.html">An attribute to describe the data source a resource was constructed from</a></li>
+ <li><a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include all codes defined in <a href="CodeSystem-ProvenancePayerDataSource.html"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</code></a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on <a href="CodeSystem-ProvenancePayerDataSource.html">codesystem Provenance Payer Data Source Format v2.0.0 (CodeSystem)</a></p><p>This value set contains 26 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2other"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2other">hl7v2other</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2</td><td><div><p>HL7 v2 Message</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2oru"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2oru">hl7v2oru</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 ORU</td><td><div><p>HL7 v2 Structured Observation Report(ORU) message</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2adt"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2adt">hl7v2adt</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 ADT</td><td><div><p>HL7 v2 Admit, Discharge Transfer (ADT) message</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2r01"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2r01">hl7v2r01</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 R01</td><td><div><p>HL7 v2 Observation (R01) message</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2rsp"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2rsp">hl7v2rsp</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 RSP</td><td><div><p>HL7 V2 Immunization Record Response</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2orm"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2orm">hl7v2orm</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 ORM</td><td><div><p>HL7 v2 Orders</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2mdm"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2mdm">hl7v2mdm</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 MDM</td><td><div><p>Medical Document Management</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v2vxu"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v2vxu">hl7v2vxu</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v2 VXU</td><td><div><p>HL7 V2 Immunization Transaction</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7v3"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7v3">hl7v3</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 v3</td><td><div><p>HL7 v3 Message</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7ccda"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7ccda">hl7ccda</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 C-CDA</td><td><div><p>HL7 Consolidated-Clinical Document Architecture</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7cda"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7cda">hl7cda</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 CDA</td><td><div><p>HL7 CDA documents that are not C-CDA</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7cdaqrda"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7cdaqrda">hl7cdaqrda</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>HL7 CDA QRDA</td><td><div><p>HL7 Quality Reporting Document</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7fhirdstu2"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7fhirdstu2">hl7fhirdstu2</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>FHIR DSTU2</td><td><div><p>HL7 FHIR DSTU2</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7fhirdstu3"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7fhirdstu3">hl7fhirdstu3</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>FHIR STU3</td><td><div><p>HL7 FHIR STU3</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-hl7fhirr4"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-hl7fhirr4">hl7fhirr4</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>FHIR R4</td><td><div><p>HL7 FHIR R4</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-x12837"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-x12837">x12837</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>837 claim</td><td><div><p>X12 837 Claim</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-x12278"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-x12278">x12278</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>278</td><td><div><p>X12 Prior Authorization</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-x12275"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-x12275">x12275</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>275</td><td><div><p>X12 Attachment</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-x12other"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-x12other">x12other</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>X12</td><td><div><p>X12 non-specific transaction</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-script"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-script">script</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>NCPDP SCRIPT</td><td><div><p>National Council for Prescription Drug Programs (NCPDP) SCRIPT message (eRx)</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-ncpdp"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-ncpdp">ncpdp</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>NCPDP Telecommunication</td><td><div><p>NCPDP Telecommunication transaction (pharmacy claims)</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-capture"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-capture">capture</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>Direct Capture</td><td><div><p>Direct Capture, such as into a payers case management system</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-customtx"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-customtx">customtx</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>Trading Partner Format</td><td><div><p>Trading Partner Proprietary format</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-image"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-image">image</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>Image</td><td><div><p>Fax or scanned document</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-unstructured"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-unstructured">unstructured</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>Unstructured Document</td><td><div><p>PDF, text and other unstructured document</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---hl7.org-fhir-us-davinci-pdex-CodeSystem-ProvenancePayerDataSource-other"> </a>  <a href="CodeSystem-ProvenancePayerDataSource.html#ProvenancePayerDataSource-other">other</a></td><td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource</td><td>Other</td><td><div><p>Any other document format not specifically defined</p>
+</div></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 3, 2024 08:27-0500">2024-01-03</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: #81BEF7" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
