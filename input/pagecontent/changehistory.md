@@ -5,6 +5,8 @@
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
 
+Finalizing IG for STU2 Publication. Further updates will be incorporated into an STU2 Update.
+
 | JIRA Ticket                                              | Change                                                                                                                                                       |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | BallotRec-Vote7                                          |                                                                                                                                                              | 
