@@ -17,4 +17,4 @@ A Provenance resource SHOULD be provided with each member-related resource provi
 This guide provides a pdex-provenance resource that is customized to the needs of the payer by focusing on their role as a transmitter and not originator of data.
 
 
-[Next Page - Payer To Payer Exchange](payertopayerexchange.html)
+[Next Page - Payer-to-Payer Exchange](payertopayerexchange.html)
