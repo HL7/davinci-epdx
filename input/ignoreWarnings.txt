@@ -17,11 +17,11 @@ INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].a
 
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
 # MedicationDispense NOT defined in required US Core version 3.1.1 - Variance Tracker: FHIR-43297 2023-12-07 Motion to approve variance as requested: Mark Scrimshire/Brett Marquard: 19-0-1
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
 # HIPPS Codes not available
@@ -42,3 +42,4 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # Information Messages
 INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService.coding[0]: The definition for the Code System with URI 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' doesnt provide any codes so the code cannot be validated
+INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].adjudication[0].category: Reference to draft item http://terminology.hl7.org/CodeSystem/adjudication|0.1.0

@@ -165,6 +165,7 @@ Description: "An extension representing the days and times a contact point is av
 * extension[availableStartTime].value[x] only time
 * extension[availableEndTime].value[x] only time
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+
 * ^extension.valueCode = #fm
 
 
