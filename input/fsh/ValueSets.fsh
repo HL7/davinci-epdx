@@ -245,3 +245,13 @@ Description: "Provider Request Export Mode "
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
+
+// -------------------------
+// Type of multi-member match group
+ValueSet: PDexMultiMemberMatchResultVS
+Title: "PDex Multi-Member Match Result Value Set"
+Description: "Codes to describe the results group from a multi-member Match operation"
+* ^experimental = true
+* codes from system PdexMultiMemberMatchResultCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm

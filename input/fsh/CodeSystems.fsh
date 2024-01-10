@@ -238,6 +238,17 @@ Description: "Data Export Mode Types for Provider Export Operation."
 * ^experimental = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-* #download "Download" "Download data and incorporate to records"
+* #delta "Delta" "Request new data/records since last requested date for a regular, pre-defined set of resource types."
 * #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
 * ^caseSensitive = true
+
+// -----------------------------------
+CodeSystem: PdexMultiMemberMatchResultCS
+Title: "PDex Multi-Member Match Result Code System"
+Description: "Code set to describe the results group from a multi-member Match operation"
+* ^experimental = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+* #match "Matched" "Group of successfully matched members from a multi-member match operation."
+* #nomatch "Not Matched" "Group of submitted members that failed to result in a match in the multi-member match operation."
+* #consentconstraint "Consent Constraint" "Group of successfully matched members but consent request cannot be complied with."
