@@ -242,6 +242,7 @@ Usage: #example
   * name = "NoMatch"
   * resource
     * resourceType = "Group"
+    * contained[0] = input-3
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true
     * code = $MemberMatchResult#nomatch "No Match"
@@ -258,11 +259,11 @@ Usage: #example
       * entity
         * reference = "#3"
         * extension[nonMatchedMember].valueReference.reference = "#3"
-
 * parameter[ConsentConstraint]
   * name = "ConsentConstraint"
   * resource
     * resourceType = "Group"
+    * contained[0] = input-4
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true
     * code = $MemberMatchResult#consentconstraint "Consent Constraint"

@@ -14,11 +14,23 @@ Since Payer-to-Pyer Exchange is an "opt-in" choice for Members it is necessary f
 
 - Patient Demographics
 - Prior Coverage
+- (optional) Current, or future, coverage provided by the Requesting Plan
 - Consent Record
 
 The Bulk Exchange will be based upon the workflows identified in the Payer-to-Payer (Single Member) exchange. The variations to support bulk exchange are documented in this section of the IG.
 
 The requesting Payer will have obtained an access token in accordance with the [SMART Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/2021May/authorization.html) process, as documented in the [FHIR Bulk Data Access IG (1.1.0 STU2)](http://hl7.org/fhir/uv/bulkdata/2021May/index.html). 
+
+The bulk Payer-to-Payer exchange is started by supplying a Parameter bundle to the [$bulk-member-match operation](OperationDefinition-bulk-member-match.html). A set of OAuth2.0/SMART-on-FHIR Client Credentials **SHALL** be required to access the secured $bulk-member-match operation endpoint.
+
+For each member submitted to the $bulk-member-match operation the following parameters will be supplied as a **parameter.part** element in the [$multi-member-match-bundle-in](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) parameter bundle. 
+
+- MemberPatient: - [HRex Patient demographics](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
+- CoverageToMatch - details of the prior health plan coverage, supplied by the member, typically from the health plan coverage card. Uses the [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
+- CoverageToLink - Optional parameter. Details of new or prospective health plan coverage, provided by the health plan based upon the member’s enrolment. Uses the [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
+- Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the [PDex Consent Profile](StructureDefinition-pdex-consent.html)
+
+An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
 ### Bulk Member Match with Consent
 
@@ -27,13 +39,12 @@ The Bulk Member Match Operation will use the following Parameters:
 - In: [PDexMultiMemberMatchRequestParameterBundle](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 - Out: [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html)
 
-The Request profile supports a parameter bundle that matches the Parameter content of the Payer-to-Payer Single Member Exchange Request profile.
-
-The Response Profile provides a Group or Patient identifier that can be used by the requesting payer to retrieve data.
+The Response Profile provides a Group identifier that can be used by the requesting payer to retrieve data.
 
 The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-bulk-member-match.html)
+
 
 
 
