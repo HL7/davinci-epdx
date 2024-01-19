@@ -406,6 +406,22 @@ Description: "Indicates the filters applied to the resources exported in the las
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
+// ---------------------------------------
+// indicate whether a member has opted out of data sharing
+Extension: OptedOut
+Id: base-ext-optedout
+Title: "Member Opt-out of Data Sharing"
+Description: "Members can be attributed to a Provider but they may have chosen to opt out of data sharing with providers."
+* ^context.type = #element
+* ^context.expression = "Group"
+* value[x] 0..1
+* value[x] only boolean
+* value[x] ^short = "1|True = Opted-out"
+* value[x] ^comment = "When set to true it indicates that this member has opted out of data sharing and no data should be exchanged with the attributed provider."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
 
 // ---------------------------------------
 // Payer-to-Payer Group Attribution Extensions
@@ -423,3 +439,4 @@ Description: "Input Patient Parameter supplied for the indiviual member match (P
 
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
+

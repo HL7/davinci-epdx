@@ -3,6 +3,14 @@
 
 {% include style_insert_table_blue.html %}
 
+
+### STU 2.1.0 Update
+
+| JIRA Ticket                                              | Change                                                                                                                                                      |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Define OptedOut Extension to capture member optout        | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders                          | 
+
+
 ### STU 2.0.0-ballot:Ballot Reconciliation
 
 | JIRA Ticket                                              | Change                                                                                                                                                      |
