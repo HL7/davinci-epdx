@@ -8,7 +8,8 @@
 
 | JIRA Ticket                                              | Change                                                                                                                                                      |
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Define OptedOut Extension to capture member optout        | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders                          | 
+| Decision to remove optout members from Group       | Remove OptOut Extension                         | 
+| Define OptedOut Extension to capture member optout        | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders            | 
 
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
