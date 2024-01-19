@@ -60,5 +60,6 @@ The following dependencies are used in production of this guide:
 
 <br/>
 
-<p><a href="downloads.html">[Next Page - Downloads]</a></p>
+
+<p><a href="Downloads.html">[Next Page - Downloads]</a></p>
 
