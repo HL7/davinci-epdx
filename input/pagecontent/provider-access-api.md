@@ -70,8 +70,5 @@ track the data retrieved for a member by the provider. The extensions are:
 
 These extensions **SHOULD** be updated by the Da Vinci Data Export PDex Use Case Operation.
 
-- Define Profile for Member-Matched Group.
-- Define Extension for LastTransmission for Member in Attribution Group.
-
 
 [Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)
