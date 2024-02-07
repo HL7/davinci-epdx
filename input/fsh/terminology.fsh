@@ -1,6 +1,6 @@
 /*
 IG-Specific Terminology
-Also copy content from DaVici-PAS duue to use of PAS extensions
+Also copy content from DaVici-PAS due to use of PAS extensions
 */
 
 /*
