@@ -20,10 +20,6 @@ INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].a
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
-# MedicationDispense NOT defined in required US Core version 3.1.1 - Variance Tracker: FHIR-43297 2023-12-07 Motion to approve variance as requested: Mark Scrimshire/Brett Marquard: 19-0-1
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-
 # HIPPS Codes not available
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService: Code System URI 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found so the code cannot be validated
 WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].productOrService: Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.0.0

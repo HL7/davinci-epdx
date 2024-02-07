@@ -1,6 +1,6 @@
 [Previous Page - Payer-to-Payer Exchange (single member)](payertopayerexchange.html)
 
-When requested by a Health Plan member, the Exchange of clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core 3.1.1, is a requirement of the Advancing Interoperability and Prior Authorization Rule. The rule requires Payers to support the bulk exchange of data for multiple members.
+When requested by a Health Plan member, the Exchange of clinical data, as scoped by USCDI version 3 and represented in FHIR by US Core 6.1.0, is a requirement of the Advancing Interoperability and Prior Authorization Rule. The rule requires Payers to support the bulk exchange of data for multiple members.
 
 The PDex Payer-to-Payer FHIR-based bulk data exchange in this section of the IG will support the exchange of data for multiple members.
 

@@ -1,5 +1,5 @@
 Profile:        PdexMedicationDispense
-Parent:         MedicationDispense
+Parent:         USCoreMedicationDispenseProfile
 Id:             pdex-medicationdispense
 Title:          "PDex MedicationDispense"
 Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
@@ -45,10 +45,12 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * authorizingPrescription 0..*
 * authorizingPrescription only Reference(us-core-medicationrequest)
 
-* type 0..1
-* type only CodeableConcept
-* type ^short = "Trial fill, partial fill, emergency fill, etc."
-* type from http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType (example)
+// US Core 6.1.0 has an extensible binding using
+// http://terminology.hl7.org/5.0.0/ValueSet-v3-ActPharmacySupplyType.html
+//* type 0..1
+//* type only CodeableConcept
+//* type ^short = "Trial fill, partial fill, emergency fill, etc."
+//* type from http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType (example)
 
 * quantity 0..1
 * quantity only SimpleQuantity
