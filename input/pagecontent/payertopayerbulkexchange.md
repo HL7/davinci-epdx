@@ -19,7 +19,7 @@ Since Payer-to-Pyer Exchange is an "opt-in" choice for Members it is necessary f
 
 The Bulk Exchange will be based upon the workflows identified in the Payer-to-Payer (Single Member) exchange. The variations to support bulk exchange are documented in this section of the IG.
 
-The requesting Payer will have obtained an access token in accordance with the [SMART Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/2021May/authorization.html) process, as documented in the [FHIR Bulk Data Access IG (1.1.0 STU2)](http://hl7.org/fhir/uv/bulkdata/2021May/index.html). 
+The requesting Payer will have obtained an access token in accordance with the [SMART Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/STU2/authorization.html) process, as documented in the [FHIR Bulk Data Access IG (1.1.0 STU2)](http://hl7.org/fhir/uv/bulkdata/STU2/). 
 
 The bulk Payer-to-Payer exchange is started by supplying a Parameter bundle to the [$bulk-member-match operation](OperationDefinition-bulk-member-match.html). A set of OAuth2.0/SMART-on-FHIR Client Credentials **SHALL** be required to access the secured $bulk-member-match operation endpoint.
 

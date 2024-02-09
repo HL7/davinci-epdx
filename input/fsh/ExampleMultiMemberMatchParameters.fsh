@@ -220,7 +220,8 @@ Usage: #example
     * contained[+] = input-2
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true
-    * code = $MemberMatchResult#match "Matched"
+    // * code = $MemberMatchResult#match "Matched"
+    * code = PdexMultiMemberMatchResultCS#match "Matched"
     * managingEntity
       * identifier
         * system = "http://hl7.org/fhir/sid/us-npi"
@@ -245,7 +246,7 @@ Usage: #example
     * contained[0] = input-3
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true
-    * code = $MemberMatchResult#nomatch "No Match"
+    * code = $MemberMatchResult#nomatch "Not Matched"
     * managingEntity
       * identifier
         * system = "http://hl7.org/fhir/sid/us-npi"

@@ -25,7 +25,7 @@ The following profiles are referenced in this IG:
 
 #### US Core
 
-- [US Core Profiles](http://hl7.org/fhir/us/core/STU6.1/profiles.html#profiles)
+- [US Core Profiles](http://hl7.org/fhir/us/core/STU6.1/profiles-and-extensions.html#profiles)
 
 #### Health Record Exchange (HRex)
 

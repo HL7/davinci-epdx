@@ -114,6 +114,11 @@ Usage: #example
 * identifier[3].value = "1234-234-1243-12345678901a"
 * identifier[3].system = "https://www.xxxhealthplan.com/fhir/patacctnum"
 
+// US Core 6.1.0 enforces 10 Digit NPI
+// US Core checks for correct Check digit in 10th position
+// https://simplycalc.com/luhn-calculate.php to calculate 10th digit
+
+
 Instance: OrganizationPayer1
 InstanceOf: us-core-organization
 Description: "Example of the Payer Organization"
@@ -124,7 +129,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "1234567897"
 * name = "Payer 1"
 * active = true
 
@@ -138,7 +143,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "2345678904"
 * name = "Payer 1"
 * active = true
 
@@ -154,7 +159,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "2345679027"
 * name = "Payer 2"
 * active = true
 
@@ -169,7 +174,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "3456798218"
 * name = "Payer 2"
 * active = true
 
@@ -184,7 +189,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "3456789019"
 * name = "Provider 1"
 * active = true
 
@@ -198,7 +203,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "3456798010"
 * name = "Provider 2"
 * active = true
 
@@ -211,7 +216,7 @@ Description: "Example of a Practitioner Record"
 * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "874635264"
+* identifier[0].value = "8746352676"
 * name[0].family = "Smith"
 * name[0].given[0] = "Susan"
 * name[0].suffix = "MD"

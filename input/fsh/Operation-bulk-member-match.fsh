@@ -14,8 +14,8 @@ Usage: #definition
 * system = false
 * type = true
 * instance = false
-* inputProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-* outputProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+* inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+* outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 * parameter[0]
 * parameter[0].name = #MemberBundle
 * parameter[0].use = #in

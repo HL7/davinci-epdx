@@ -3,7 +3,7 @@ Parent: Parameters
 Id: pdex-parameters-multi-member-match-bundle-in
 Title: "PDex $multi-member-match request"
 Description: "A Parameters profile defining the inputs to a $bulk-member-match operation performed by a payer system"
-* id = "payer-multi-member-match-in"
+// * id = "1010101010"
 * parameter 0..*
 * parameter MS
 * parameter.name = "MemberBundle"

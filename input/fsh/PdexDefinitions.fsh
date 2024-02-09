@@ -1,8 +1,8 @@
 // Define a rule set for commonly used rules for definition resources using instances
 
 RuleSet: PdexDefinitionContent
-* status = #draft      // draft until final published
-* experimental = true  // true until ready for pilot, then false
+* status = #active     // draft until final published
+* experimental = false  // true until ready for pilot, then false
 * version = "0.1.19"    // Follow IG Versioning rules
 * publisher = "HL7 International"
 * contact[0].telecom.system = #url
@@ -16,8 +16,8 @@ RuleSet: PdexDefinitionContent
 
 // Define a rule set for commonly used rules for definition resources using other Sushi features
 RuleSet: PdexStructureDefinitionContent
-* ^status = #draft      // draft until final published
-* ^experimental = true  // true until ready for pilot, then false
+* ^status = #active      // draft until final published
+* ^experimental = false  // true until ready for pilot, then false
 * ^version = "0.1.19"    // Follow IG Versioning rules
 * ^publisher = "HL7 International"
 * ^contact[0].telecom.system = #url
@@ -30,9 +30,9 @@ RuleSet: PdexStructureDefinitionContent
 
 
 RuleSet: PdexCapabilityStatementContent
-* status = #draft
-* experimental = true
-* date = "2020-09-13"
+* status = #active
+* experimental = false
+* date = "2024-01-06"
 * publisher = "HL7 International / Financial Management"
 * contact.name = "Mark Scrimshire"
 * contact.telecom.system = #email

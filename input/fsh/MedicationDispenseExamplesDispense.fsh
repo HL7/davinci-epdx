@@ -14,6 +14,7 @@ Description: "Example of a MedicationDispense from a Claim"
 * type =  http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * quantity.value = 60
 * daysSupply.value = 30
+* whenHandedOver = "2020-07-09"
 
 
 //Instance: ExampleMedicationDispenseRefill

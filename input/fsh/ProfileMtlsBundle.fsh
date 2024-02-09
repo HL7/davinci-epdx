@@ -28,7 +28,7 @@ Alias: $BundleTypeCS = http://hl7.org/fhir/bundle-type
 ValueSet: BundleTypeVS
 Title: "mTLS Bundle Type Value Set"
 Description: "Categories of bundle."
-* ^experimental = true
+* ^experimental = false
 * codes from system $BundleTypeCS
 * $BundleTypeCS#collection   // Bundle is always collection
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

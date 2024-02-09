@@ -12,7 +12,7 @@ RuleSet: CodeSystemStubBoilerplate
 * ^jurisdiction[0].coding[0].system = "urn:iso:std:iso:3166"
 * ^jurisdiction[0].coding[0].code = #US
 * ^jurisdiction[0].coding[0].display = "United States of America"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^content = #not-present
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -97,7 +97,7 @@ CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See mor
 //
 //These files contain the Level II alphanumeric HCPCS procedure and modifier codes, their long and short descriptions, and applicable Medicare administrative, coverage and pricing data."
 //* ^url =  "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets"
-//* ^experimental = true
+//* ^experimental = false
 //* ^caseSensitive = false
 //* insert CodeSystemStubBoilerplate
 //* insert HCPCSCopyrightNotice
@@ -128,7 +128,7 @@ CMS maintains HIPPS. There are no known constraints on the use of HIPPS. See mor
 //assessment used to arrive at the code. Which positions of the code carry the case mix
 //group information may also vary by payment systems."
 //* ^url =  "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes"
-//* ^experimental = true
+//* ^experimental = false
 //* ^caseSensitive = false
 //* insert CodeSystemStubBoilerplate
 //* insert HIPPSCopyrightNotice
@@ -156,7 +156,7 @@ External code lists maintained by X12 and external code lists maintained by othe
 
 Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes).
 """
-* ^experimental = true
+* ^experimental = false
 * codes from system $X12ClaimAdjustmentReasonCodes
 * codes from system $CMSRemittanceAdviceRemarkCodes
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -197,7 +197,7 @@ Additional information on X12 licensing program can be found here:
 //
 //Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
 //* ^url = "https://x12.org/codes/claim-adjustment-reason-codes"
-//* ^experimental = true
+//* ^experimental = false
 //* ^caseSensitive = false
 //* insert CodeSystemStubBoilerplate
 //* ^copyright = "**Intellectual Property Information**
@@ -235,7 +235,7 @@ Additional information on X12 licensing program can be found here:
 //
 //Click on the name of any external code list to access more information about the code list, view the codes, or submit a maintenance request. These external code lists were previously published on either [www.wpc-edi.com/reference](http://www.wpc-edi.com/reference) or [www.x12.org/codes](http://www.x12.org/codes)."
 //* ^url = "https://x12.org/codes/remittance-advice-remark-codes"
-//* ^experimental = true
+//* ^experimental = false
 //* ^caseSensitive = false
 //* insert CodeSystemStubBoilerplate
 //* ^copyright = "**Intellectual Property Information**
