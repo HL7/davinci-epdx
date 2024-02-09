@@ -1,6 +1,6 @@
 
 
-US Core supports the [US Core Implantable Device](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-implantable-device.html) resource. However, 
+US Core supports the [US Core Implantable Device](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-implantable-device.html) resource. However, 
  payers may need to record information about other non-implantable devices that are used by their members. The PDex-Device profile is used to record this type of information. 
 
 NOTE: FHIR-29796: PDex Device uses base resource not US Core Implantable Device Profile. 
