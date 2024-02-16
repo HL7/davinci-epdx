@@ -18,10 +18,33 @@ The API will enable a provider to ask a Payer "What do you know about my Patient
 The Payer Data Exchange Implementation Guide supports the Provider Access API by
 utilizing the [Da Vinci Data Export](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/2023Jan/index.html).
 
+### How does Provider Access Work?
+
+#### Attribution List driven
+
+The Provider Access API is centered around Attribution lists that enable a Provider/Provider Organization or 
+Facility to retrieve data for health plan members that are assigned to that Provider. The data retrieval uses a 
+FHIR Bulk data export operation to retrieve the requested data.
+
+Members have the ability to opt-out of data sharing with providers.
+
+The Health Plan is responsible for managing Attribution Lists. Attribution Lists should be 
+discrete lists at the Organization + Facility + Provider level. This level of granularity is needed
+to account for Providers working across different organizations, or at different facilities that
+may use different EMRs.
+
+Health plans **MAY** use claims data as a source to identify existing treatment relationships. 
+Health plans ** MAY** utilize their own rules for determining the attribution of members to Providers.
+
+Attribution lists **SHALL** be available for searching via a secure RESTful API. 
+Access to the Group resource to READ attribution lists should be scoped to the appropriate Organization, 
+Facility, Provider or their authorized representative that is acting on the behalf of the Provider.
+
 The Da Vinci Data Export Operation in the Member Attribution IG supports the Bulk FHIR API specification.
 The operation uses the Group resource. For the PDex Provider Access API the following capabilities
 need to be supported:
 
+- Search for Group.
 - Get Group record.
 - Request all information for members in the Group.
 - Request information for a subset of members in the Group.
@@ -33,7 +56,8 @@ This combination of requests should cover all provider data requests, such as:
 - Send new data since I last requested for this set of patients.
 - Send just the lab results for this set of patients since this date.
 
-Access to the Provider Access API will be controlled in a similar manner to the Payer-to-Payer mTLS discovery API. Access will be restricted to Providers with a contractual relationship with a Payer.
+Access **SHALL**l be controlled using client credentials that are compliant with SMART-On-FHIR.
+Access will be restricted to Providers with a contractual relationship with a Payer.
 
 The _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_
 to indicate that it is a PDex export.
@@ -57,14 +81,16 @@ These values will be updated in an extension associated with the Patient for whi
 
 #### Attribution List
 
-The Payer is responsible for maintaining the attribution list that assigns Members to Providers. The payer **SHALL**
-take account of members that have chosen to opt out of sharing data with providers. Those opted-out members will be
-omitted from any Provider Attribution list.
+The Payer is responsible for maintaining the attribution list that assigns Members to Providers. 
+The payer **SHALL** take account of members that have chosen to opt out of sharing data with providers. 
+Those opted-out members will be omitted from any Provider Attribution list. The Da Vinci Attribution (ATR) 
+IG provides transactions to manage the Group resource through Add, change and delete member actions.
 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the
-members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the ATRGroup Profile
-from the Da Vinci Member Attribution IG. The Profile adds three extensions to the member element. These are used to
-track the data retrieved for a member by the provider. The extensions are:
+members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
+ATRGroup Profile from the Da Vinci Member Attribution IG. The Profile adds three extensions to the 
+member element. These are used to track the data retrieved for a member by the provider. 
+These extensions are:
 
 - [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
 - [lastResources](StructureDefinition-base-ext-last-types.html)
