@@ -56,7 +56,7 @@ This combination of requests should cover all provider data requests, such as:
 - Send new data since I last requested for this set of patients.
 - Send just the lab results for this set of patients since this date.
 
-Access **SHALL**l be controlled using client credentials that are compliant with SMART-On-FHIR.
+Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.
 Access will be restricted to Providers with a contractual relationship with a Payer.
 
 The _exportType_ parameter **SHALL** contain: _hl7.fhir.us.davinci-pdex_
@@ -97,6 +97,26 @@ These extensions are:
 - [lastFilters](StructureDefinition-base-ext-last-typefilter.html)
 
 These extensions **SHOULD** be updated by the Da Vinci Data Export PDex Use Case Operation.
+
+#### Da Vinci Data Export Operation - PDex Provider Use Case
+
+Provider Representative:
+
+- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. Where {id} is the PDexProviderGroup(s) attributed to the Organization, Facility and Provider they are representing.
+- **SHALL** be permitted to SEARCH /Group. The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with the Provider Representative's account. 
+- **MAY** be associated with more than one attribution group list.
+- **SHALL** be permitted to GET /Group/{id} for any Attribution Group list they are associated with.
+- **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id{ they are associated with.
+
+The $davinci-data-export operation enables a Provider Representative to perform granular requests for data. 
+
+Data can be constrained by:
+
+- Patient subset
+- Date range
+- Resource Type
+- Resource filter (valid search parameters for a resource)
+
 
 
 [Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)
