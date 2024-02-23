@@ -6,10 +6,11 @@
 
 ### STU 2.1.0 Update
 
-| JIRA Ticket                                              | Change                                                                                                                                                      |
-|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Decision to remove optout members from Group       | Remove OptOut Extension                         | 
-| Define OptedOut Extension to capture member optout        | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders            | 
+| JIRA Ticket                                        | Change                                                                                                            |
+|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Add Provider Access API Diagram                    | Created Plantuml for Provider Access API                                                                          |
+| Decision to remove optout members from Group       | Remove OptOut Extension                                                                                           | 
+| Define OptedOut Extension to capture member optout | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders | 
 
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
