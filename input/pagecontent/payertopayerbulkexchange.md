@@ -48,16 +48,16 @@ The Operation Definition for Bulk Member Match is:
 
 
 
-NOTES:
-- Define Profile for P2P Bulk Exchange Group List
+NOTES TODO:
 - Define Export Operation that will check Consent (Scope and period)
-- Re-define Operation Outcome to report on Failed Matches and Failed Consent capability.
 - Should Payer 2 be able to search and retrieve Group/{ID} record?
 - Define $pdex-p2p-export operation
-
+- Refresh token requirements
+- 
 <div style="height=auto;width=90%;">
 {% include bulk-p2p-exchange.svg %}
 </div>
+
 
 
 [Next Page - Data Mapping](datamapping.html)

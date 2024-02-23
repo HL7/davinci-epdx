@@ -1,0 +1,66 @@
+@startuml
+skinparam svgDimensionStyle false
+participant "In-Network Provider" as Provider
+participant "Payer" as Payer
+participant "Provider Representative | EMR" as EMR
+Participant "Member | Patient" as Member
+entity "Attribution Process" as Attribution
+database "FHIR Store" as FHIRServer
+database "Claims" as Claims
+== Member Attribution Creation and Maintenance ==
+Payer -> Attribution : Attribution rules and data
+note left
+  Payer provides
+  Attribution processing rules
+  and any Additional Data Sources
+endnote
+Claims -> Attribution : Historical Claims data
+Member -> Attribution : Opt-in/Opt-out decision
+note left
+  Default is for Member to be
+  Opted-in to data sharing
+endnote
+EMR --> Attribution: AppointmentBook Hook
+note left
+  CDS Hooks (as defined in
+  Da Vinci CRD IG)
+endnote
+EMR --> Attribution: EncounterStart Hook
+Attribution -> FHIRServer: PDexProviderGroup
+note right
+	PDexProviderGroup Group resource at
+  Organization + Location + Provider
+  level of granularity
+endnote
+
+== Provider Bulk Access API ==
+Provider -> EMR: Authorizes Representative
+note left
+  Provider/Provider Organization authorizes
+  EMR/Provider Representative to retrieve
+  Attribution data on their behalf
+endnote
+EMR -> Payer: Request SMART Bulk Access Credential
+Payer -> EMR: Payer issues Bulk Access Credential
+EMR -> FHIRServer: SEARCH /Group
+FHIRServer -> EMR: Bundle response
+note right #Pink
+  PDexProviderGroup resources returned.
+  Group records returned will be bounded by the
+  access permission of the Provider Representative
+endnote
+EMR -> FHIRServer: /Group/{id}/$davinci-data-export
+note left
+  Bulk request can request a subset of Members,
+  a subset of resources and/or a date period.
+endnote
+FHIRServer -> EMR: $DaVinci-data-export notifies Reuestor that transaction is completed
+note right
+FHIR Store compiles bundles in response to
+request, notifies requestor and requestor retrieves
+Bulk NDJson bundle(s). Content comprises:
+- US Core Clinical data,
+- PDex Prior Authorizations
+- CARIN EOBs (Non-Financial profiled claims and encounter data)
+endnote
+@enduml

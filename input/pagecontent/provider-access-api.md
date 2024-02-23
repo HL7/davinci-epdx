@@ -20,6 +20,16 @@ utilizing the [Da Vinci Data Export](http://hl7.org/fhir/us/davinci-atr/2023Jan/
 
 ### How does Provider Access Work?
 
+The diagram below illustrates how health plans may construct and maintain their Member Attribution lists 
+for Organizations, Locations and Providers. It also illustrates how a Provider Representative, such as 
+an EMR, can query the health plan for the PDexProviderGroup resources they are permitted to see and then
+use the Group/{id} endpoint for those records to request Member clinical, prior authorization and 
+non-financial claims and encounter data.
+
+<div style="height=auto;width=90%;">
+{% include provider-access-api.svg %}
+</div>
+
 #### Attribution List driven
 
 The Provider Access API is centered around Attribution lists that enable a Provider/Provider Organization or 
@@ -28,13 +38,16 @@ FHIR Bulk data export operation to retrieve the requested data.
 
 Members have the ability to opt-out of data sharing with providers.
 
-The Health Plan is responsible for managing Attribution Lists. Attribution Lists should be 
+The Health Plan is responsible for managing Attribution Lists. Attribution Lists **SHOULD** be 
 discrete lists at the Organization + Facility + Provider level. This level of granularity is needed
 to account for Providers working across different organizations, or at different facilities that
-may use different EMRs.
+may use different EMRs. A health plan can adopt it's own methodology for managing and maintaining 
+provider attribution lists.
 
 Health plans **MAY** use claims data as a source to identify existing treatment relationships. 
-Health plans ** MAY** utilize their own rules for determining the attribution of members to Providers.
+Health plans **MAY** utilize their own rules for determining the attribution of members to Providers.
+Health plans **SHOULD** use the Coverage Requirements Discovery IG's AppointmentBook and OrderSelect 
+CDS Hooks as a means to determine impending treatment relationships.
 
 Attribution lists **SHALL** be available for searching via a secure RESTful API. 
 Access to the Group resource to READ attribution lists should be scoped to the appropriate Organization, 
@@ -117,6 +130,9 @@ Data can be constrained by:
 - Resource Type
 - Resource filter (valid search parameters for a resource)
 
+## TODO
 
+- Refresh Token
+- Add diagram to help understand flow of Provider Access API 
 
 [Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)
