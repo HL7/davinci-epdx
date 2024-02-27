@@ -36,6 +36,10 @@ The following profiles are referenced in this IG:
 - [HRex Parameters Member Match Request Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-in.html)
 - [HRex Parameters Member Match Response Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-out.html)
 
+#### Da Vinci Member Attribution (ATR)
+
+- [ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html)
+
 ### Operations
 
 The following operations are referenced:
@@ -44,6 +48,9 @@ The following operations are referenced:
 
 - [HRex Member Match Operation](http://hl7.org/fhir/us/davinci-hrex/STU1/OperationDefinition-member-match.html)
 
+#### Da Vinci Member Attribution (ATR)
+
+- [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html)
 
 ### IG/package dependencies
 

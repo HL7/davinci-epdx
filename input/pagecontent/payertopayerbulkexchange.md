@@ -81,8 +81,8 @@ Requesting/New Payer:
 - **SHALL** be permitted to GET /Group/{id} for any PDex Member Match Group list they are associated with.
 - **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.
 
-While the $Davinci-data-export-operation enables granular resource requests the operation **SHOULD** be used 
-with two scenarios:
+While the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) 
+enables granular resource requests the operation **SHOULD** be used with two scenarios:
 
 - Requesting all data within the previous 5 years for all members in the list.
 - Requesting all data for all members in the list since the last request.
