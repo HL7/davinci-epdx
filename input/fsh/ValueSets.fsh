@@ -237,13 +237,14 @@ Description:  "Categories of organizations based on criteria in provider directo
 
 
 // -------------------------
-ValueSet: PDexProviderExportModeVS
-Title: "PDex Provider Export Value Set"
-Description: "Provider Request Export Mode "
-* ^experimental = false
-* codes from system PdexProviderExportModeCS
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
+// eliminating - Adding fragment to exportType parameter in $Davinci-data-export
+// ValueSet: PDexProviderExportModeVS
+// Title: "PDex Provider Export Value Set"
+// Description: "Provider Request Export Mode "
+// * ^experimental = false
+// * codes from system PdexProviderExportModeCS
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
 
 
 // -------------------------

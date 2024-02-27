@@ -232,15 +232,16 @@ Description: "Categories of organizations based on criteria in provider director
 //* ^extension.valueCode = #fm
 
 // -----------------------------------
-CodeSystem: PdexProviderExportModeCS
-Title: "PDex Provider Export Mode"
-Description: "Data Export Mode Types for Provider Export Operation."
-* ^experimental = false
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-* #delta "Delta" "Request new data/records since last requested date for a regular, pre-defined set of resource types."
-* #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
-* ^caseSensitive = true
+// CodeSystem: PdexProviderExportModeCS
+// Title: "PDex Provider Export Mode"
+// Description: "Data Export Mode Types for Provider Export Operation."
+// * ^experimental = false
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+// * #delta "Delta" "Request new data/records since last requested date for a regular, pre-defined set of resource types."
+// * #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
+// * #p2p "Payer-to-Payer" "Retrieve data for purposes of Payer-to-Payer Exchange."
+// * ^caseSensitive = true
 
 // -----------------------------------
 CodeSystem: PdexMultiMemberMatchResultCS
