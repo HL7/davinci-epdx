@@ -17,7 +17,7 @@ members of the health plan where they have a current, or upcoming treatment rela
 The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
 The Payer Data Exchange Implementation Guide supports the Provider Access API by
-utilizing the [Da Vinci Data Export](http://hl7.org/fhir/us/davinci-atr/2023Jan/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/2023Jan/index.html).
+utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/2023Jan/index.html).
 
 ### How does Provider Access Work?
 
@@ -87,8 +87,10 @@ member actions.
 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the
 members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
-ATRGroup Profile from the Da Vinci Member Attribution IG. The Profile adds three extensions to the 
-member element. These are used to track the data retrieved for a member by the provider. 
+[ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html) Profile 
+from the[Da Vinci Member Attribution (ATR) 2.0.0 IG](http://hl7.org/fhir/us/davinci-atr/STU2/). 
+The Profile adds three extensions to the member element. 
+These are used to track the data retrieved for a member by the provider. 
 These extensions are:
 
 - [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
