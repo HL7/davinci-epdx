@@ -1,29 +1,38 @@
 @startuml
 skinparam svgDimensionStyle false
 participant "In-Network Provider" as Provider
-participant "Payer" as Payer
 participant "Provider Representative | EMR" as EMR
 Participant "Member | Patient" as Member
+participant "Payer" as Payer
 entity "Attribution Process" as Attribution
-database "FHIR Store" as FHIRServer
+database "Payer FHIR Store" as FHIRServer
 database "Claims" as Claims
 == Member Attribution Creation and Maintenance ==
 Payer -> Attribution : Attribution rules and data
-note left
+note right
   Payer provides
   Attribution processing rules
   and any Additional Data Sources
 endnote
 Claims -> Attribution : Historical Claims data
+note right
+  Claims data provides evidence of a
+  treatment relationship between
+  Member and Provider
+endnote
 Member -> Attribution : Opt-in/Opt-out decision
 note left
   Default is for Member to be
   Opted-in to data sharing
 endnote
 EMR --> Attribution: AppointmentBook Hook
-note left
+note left #LawnGreen
   CDS Hooks (as defined in
   Da Vinci CRD IG)
+endnote
+note right
+  Hooks provide a potential indicator of
+  an impending treatment relationship
 endnote
 EMR --> Attribution: EncounterStart Hook
 Attribution -> FHIRServer: PDexProviderGroup

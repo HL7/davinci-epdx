@@ -6,11 +6,13 @@
 
 ### STU 2.1.0 Update
 
-| JIRA Ticket                                        | Change                                                                                                            |
-|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| Add Provider Access API Diagram                    | Created Plantuml for Provider Access API                                                                          |
-| Decision to remove optout members from Group       | Remove OptOut Extension                                                                                           | 
-| Define OptedOut Extension to capture member optout | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders | 
+| JIRA Ticket                                                  | Change                                                                                                            |
+|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Expand narrative for Provider Access and Payer-to-Payer APIs | Removed ExportModeVS and ExportModeCS, replaced by exportType with fragment                                       |
+| [FHIR-44807](https://jira.hl7.org/browse/FHIR-44807)         | Drop Must Support from item.adjudication[consumeUnits] In PDex Prior Authorization                                |
+| Add Provider Access API Diagram                              | Created Plantuml for Provider Access API                                                                          |
+| Decision to remove optout members from Group                 | Remove OptOut Extension                                                                                           | 
+| Define OptedOut Extension to capture member optout           | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders | 
 
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
