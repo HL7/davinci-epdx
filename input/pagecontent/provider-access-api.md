@@ -17,7 +17,7 @@ members of the health plan where they have a current, or upcoming treatment rela
 The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
 The Payer Data Exchange Implementation Guide supports the Provider Access API by
-utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/2023Jan/index.html).
+utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/STU2/).
 
 ### How does Provider Access Work?
 
