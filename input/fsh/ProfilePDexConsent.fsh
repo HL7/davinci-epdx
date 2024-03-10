@@ -4,7 +4,7 @@ Parent: Consent
 Id: pdex-consent
 Title: "PDex Consent Profile"
 Description: "The PDex Consent Profile defines the constraints for representing a member's consent to the sharing of their healthcare information to other organizations."
-* ^extension[$standard-status].valueCode = #draft
+* ^extension[$standard-status].valueCode = #trial-use
 * ^extension[$fmm].valueInteger = 0
 * ^status = #active
 * ^experimental = false

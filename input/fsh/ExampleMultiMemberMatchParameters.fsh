@@ -5,12 +5,11 @@ Title: "$multi-member-match payer example request"
 Description: "Example of more than one member being submitted to the PDex Payer-to-Payer Multiple Member Match Operation."
 Usage: #example
 * id = "payer-multi-member-match-in"
-// * parameter
-* parameter[0].name = "MemberBundle"
-* parameter[=].part[MemberPatient]
-  * name = "MemberPatient"
+* parameter[0].part[MemberPatient]
   * resource
     * resourceType = "Patient"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "1"
     * identifier
       * type = $V2IdentifierTypeCS#MB
@@ -24,10 +23,12 @@ Usage: #example
       * given[+] = "Ann"
     * gender = #female
     * birthDate = "1974-12-25"
+// ----------------------
 * parameter[=].part[CoverageToMatch]
-  * name = "CoverageToMatch"
   * resource
     * resourceType = "Coverage"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "9876B1"
     * identifier
       * system = "http://example.org/old-payer"
@@ -54,10 +55,12 @@ Usage: #example
     * class[+]
       * type = $coverage-class#class
       * value = "SILVER"
+// ----------------------
 * parameter[=].part[Consent]
-  * name = "Consent"
   * resource
     * resourceType = "Consent"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "consent-1"
     * status = #active
     * scope = $consentscope#patient-privacy
@@ -86,10 +89,12 @@ Usage: #example
             * value = "0123456789"
           * display = "New Health Plan"
       * action = $consentaction#disclose
+// ----------------------
 * parameter[=].part[CoverageToLink]
-  * name = "CoverageToLink"
   * resource
     * resourceType = "Coverage"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "AA87654"
     * identifier
       * system = "http://example.org/new-payer/identifiers/coverage"
@@ -104,11 +109,11 @@ Usage: #example
 // ------------------
 // Record 2 in bundle
 // ------------------
-* parameter[+].name = "MemberBundle"
-* parameter[=].part[MemberPatient]
-  * name = "MemberPatient"
+* parameter[+].part[MemberPatient]
   * resource
     * resourceType = "Patient"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "2"
     * identifier
       * type = $V2IdentifierTypeCS#MB
@@ -123,9 +128,11 @@ Usage: #example
     * gender = #female
     * birthDate = "1958-12-25"
 * parameter[=].part[CoverageToMatch]
-  * name = "CoverageToMatch"
+//  * name = "CoverageToMatch"
   * resource
     * resourceType = "Coverage"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "876B10"
     * identifier
       * system = "http://example.org/old-payer"
@@ -153,9 +160,11 @@ Usage: #example
       * type = $coverage-class#class
       * value = "SILVER"
 * parameter[=].part[Consent]
-  * name = "Consent"
+//  * name = "Consent"
   * resource
     * resourceType = "Consent"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "consent-2"
     * status = #active
     * scope = $consentscope#patient-privacy
@@ -185,9 +194,11 @@ Usage: #example
           * display = "New Health Plan"
       * action = $consentaction#disclose
 * parameter[=].part[CoverageToLink]
-  * name = "CoverageToLink"
+//  * name = "CoverageToLink"
   * resource
     * resourceType = "Coverage"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "AA87654"
     * identifier
       * system = "http://example.org/new-payer/identifiers/coverage"
@@ -210,11 +221,12 @@ Title: "$multi-member-match payer example response"
 Description: "Example of group record being returned in response to PDex Payer-to-Payer Multiple Member Match Operation."
 Usage: #example
 * id = "payer-multi-member-match-out"
-
 * parameter[ResourceIdentifier]
   * name = "ResourceIdentifier"
   * resource
     * resourceType = "Group"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "07e72a15407547bf9d03f522aa536a72"
     * contained[0] = input-1
     * contained[+] = input-2
@@ -242,6 +254,8 @@ Usage: #example
   * name = "NoMatch"
   * resource
     * resourceType = "Group"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * contained[0] = input-3
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true
@@ -263,6 +277,8 @@ Usage: #example
   * name = "ConsentConstraint"
   * resource
     * resourceType = "Group"
+    * text.status = #generated
+    * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * contained[0] = input-4
     * type =  http://hl7.org/fhir/group-type#person "Person"
     * actual = true

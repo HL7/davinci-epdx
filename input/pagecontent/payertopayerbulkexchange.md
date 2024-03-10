@@ -34,9 +34,9 @@ Bulk Exchange workflow is based upon the workflows identified in the Payer-to-Pa
 exchange. The variations to support bulk exchange are documented in this section of the IG.
 
 The requesting Payer **SHALL** obtain an access token in accordance with the 
-[SMART Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/STU2/authorization.html) 
+[SMART Backend Services Authorization](http://hl7.org/fhir/uv/bulkdata/STU2/) 
 process, as documented in the 
-[FHIR Bulk Data Access IG (2.0.0 STU2)](http://hl7.org/fhir/uv/bulkdata/STU2/index.html). 
+[FHIR Bulk Data Access IG (2.0.0 STU2)](http://hl7.org/fhir/uv/bulkdata/STU2/). 
 
 The bulk Payer-to-Payer exchange is initiated by supplying a Parameter bundle to the 
 [$bulk-member-match operation](OperationDefinition-bulk-member-match.html). A set of OAuth2.0/SMART-on-FHIR Client Credentials 

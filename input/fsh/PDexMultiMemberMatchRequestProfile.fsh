@@ -3,38 +3,37 @@ Parent: Parameters
 Id: pdex-parameters-multi-member-match-bundle-in
 Title: "PDex $multi-member-match request"
 Description: "A Parameters profile defining the inputs to a $bulk-member-match operation performed by a payer system"
-* id = "payer-multi-member-match-in"
-* parameter 0..*
-* parameter MS
+// * id = "payermultimembermatchin"
+* parameter 0..* MS
 * parameter.name = "MemberBundle"
 * parameter.part ..4 MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
-  * ^slicing.rules = #closed
+  * ^slicing.ordered = false
+  * ^slicing.rules = #openAtEnd
+  * ^slicing.description = "slicing pattern for parameter.part"
 * parameter.part contains
     MemberPatient 1..1 MS and
     CoverageToMatch 1..1 MS and
     CoverageToLink 0..1 MS and
     Consent 1..1 MS
 * parameter.part[MemberPatient]
-  * name = "MemberPatient" (exactly)
   * name MS
+  * name = "MemberPatient" (exactly)
   * resource 1.. MS
   * resource only HRexPatientDemographics
-* parameter.part[CoverageToMatch]
+* parameter.part[CoverageToMatch]   
+  * name MS
   * name = "CoverageToMatch" (exactly)
-  * name MS
   * resource 1.. MS
   * resource only HRexCoverage
-* parameter.part[CoverageToLink]
+* parameter.part[CoverageToLink]   
+  * name MS
   * name = "CoverageToLink" (exactly)
-  * name MS
   * resource 1.. MS
   * resource only HRexCoverage
-* parameter.part[Consent]
-  * name = "Consent" (exactly)
+* parameter.part[Consent]  
   * name MS
-  * resource 0.. MS
-//  * resource only HRexConsent
-// HRex Consent has invalid structure definition - uri policy slice is not correctly formatted.
+  * name = "Consent" (exactly)
+  * resource 1.. MS
   * resource only PDexConsent

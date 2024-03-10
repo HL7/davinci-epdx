@@ -8,7 +8,9 @@
 
 | JIRA Ticket                                                  | Change                                                                                                            |
 |--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| Add DAVinci-data-export-operation to Oher-igs.md             | Add link to Da Vinci Data Export Operaiton in other-igs.md                                                        |
+| New MembersOptedOut Extension                                | Extension to capture number of Attributed Members excluded from the list through Opt-Out                          |
+| TC: [FHIR-44906](https://jira.hl7.org/browse/FHIR-44906)     | Fix broken link to Bulk Data Access IG                                                                            |
+| Add DaVinci-data-export-operation to Oher-igs.md             | Add link to Da Vinci Data Export Operaiton in other-igs.md                                                        |
 | Expand narrative for Provider Access and Payer-to-Payer APIs | Removed ExportModeVS and ExportModeCS, replaced by exportType with fragment                                       |
 | [FHIR-44807](https://jira.hl7.org/browse/FHIR-44807)         | Drop Must Support from item.adjudication[consumeUnits] In PDex Prior Authorization                                |
 | Add Provider Access API Diagram                              | Created Plantuml for Provider Access API                                                                          |
