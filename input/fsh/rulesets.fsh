@@ -84,7 +84,7 @@ RuleSet: Metaprofile-supportedProfile-slice
 // * agent contains ProvenanceCommitter 0..*
 
 //------------------------------------------------
-// Rulesets for Operation Parameter Insert
+// RuleSets for Operation Parameter Insert
 RuleSet: parameter(name, use, min, max, type, documentation) 
 * name = {name}
 * use = {use}
@@ -99,3 +99,4 @@ RuleSet: parameterComplex(name, use, min, max, documentation)
 * min = {min}
 * max = {max}
 * documentation = {documentation}
+

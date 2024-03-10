@@ -368,7 +368,21 @@ Description: "Indicates a resource instance verification status"
 
 
 // ---------------------------------------
-// Provider Access API ATRGroup Attribution Extensions
+// // Provider Access API ATRGroup Attribution Extensions
+// Extension: MembersOptedOut
+// Id: base-ext-members-opted-out
+// Title: "Members Opted-out"
+// Description: "Indicates the number of members that have opted out of sharing "
+// * ^context.type = #element
+// * ^context.expression = "Group"
+// * value[x] 0..1
+// * value[x] only Quantity
+// * value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+
+
+
 // date/time data exported for member
 Extension: LastTransmission
 Id: base-ext-last-transmission
@@ -433,11 +447,26 @@ Id: base-ext-match-parameters
 Title: "Member-Match Input Patient Parameter"
 Description: "Input Patient Parameter supplied for the indiviual member match (Patient Demographics."
 * ^context.type = #element
-* ^context.expression = "Group"
+* ^context.expression = "Group.member.entity"
 * value[x] 0..1
 // * value[x] only Reference(PDexMultiMemberMatchRequestParameters)
 * value[x] only Reference(Patient)
 
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// ---------------------------------------
+// Provider Access API ATRGroup Attribution Extensions
+Extension: MembersOptedOut
+Id: base-ext-members-opted-out
+Title: "Members Opted-out"
+Description: "Indicates the number of members that have opted out of sharing "
+* ^context.type = #element
+* ^context.expression = "Group.member.entity"
+* value[x] 0..1
+* value[x] only Quantity
+* value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 

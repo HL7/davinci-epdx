@@ -8,17 +8,16 @@ Description: "The Provider Attribution Group List. Based on the Da Vinci Attribu
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-
+* extension contains MembersOptedOut named optedOut 0..1 MS
+* extension[optedOut] ^comment = "Number of would be attributed Members that used their right to Opt-out of sharing data with providers."
 * member.extension contains  
    LastTransmission named lastTransmitted 0..1 MS and
    LastTypes named lastResources 0..1 MS and
-   LastFilters named lastFilters 0..1 MS 
+   LastFilters named lastFilters 0..1 MS
 
-// * member.extension[OptOut] ^comment = "Boolean True value indicates member has opted out of data sharing. No data should be exchanged."
 * member.extension[lastTransmitted] ^comment = "Use the data/time of execution of the #DavinciDataexport operation"
 * member.extension[lastResources] ^comment = "Take the comma-delimited string value from the $DaVinci-data-export.resourceTypes parameter in the operation request."
 * member.extension[lastFilters] ^comment = "Take the comma-delimited string value from the $DaVinci-data-export.filterQueries parameter in the operation request."
-
 
 
 
