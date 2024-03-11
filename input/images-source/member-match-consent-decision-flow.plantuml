@@ -1,0 +1,38 @@
+@startuml
+skinparam svgDimensionStyle false
+
+start
+
+if (Is Member Matched?) then (Yes)
+  :check consent;
+else (nothing)
+  #pink:Write Member to NotMatched Group;
+  detach
+endif
+
+
+switch (Can Payer Comply with Consent Request?)
+case (Sensitive Data is excluded)
+  #palegreen:write Member to Matched Member Group;
+
+case (Sensitive data is tagged)
+  #palegreen:write member to Matched Member Group;
+
+case (Sensitive data is NOT tagged)
+  #pink:write member to Consent Contraint Group;
+
+endswitch
+
+label returngroups
+:write MatchedMember Group to FHIR Store;
+:compile Member-Match response;
+note right
+  Return: 
+    1. Matched Member Group
+    2. NotMatched Group
+    3. Consent Constrint Group
+endnote
+:Return Groups;
+stop
+
+@enduml
