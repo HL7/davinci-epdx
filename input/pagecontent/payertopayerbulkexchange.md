@@ -71,6 +71,13 @@ The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-bulk-member-match.html)
 
+The Bulk Member Match Operation **SHALL**** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. The following decision tree illustrates how the the Consent determination **SHALL** be made.
+
+<div style="height=auto;width=90%;">
+{% include member-match-consent-decision-flow.svg %}
+</div>
+
+
 ### DaVinci-Data-Export Operation
 
 Requesting/New Payer:
