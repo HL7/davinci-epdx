@@ -5,14 +5,14 @@
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
 US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
 
-All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of data for a 
-single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of 
-attribution lists for exchange of data for groups of members may be considered in a future version of the IG.
+Payers **MAY** choose to implement Payer-to-Payer Excchange for a single member by following the content provided in this section of the IG.
 
-Payer-to-Payer exchange can be accomplished by three methods. Clients wishing to retrieve data should consult 
+Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. Bulk Payer-to-Payer Exchange
+**MAY** be used to exchange data for a SINGLE member.
+
+Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods. Clients wishing to retrieve data **SHOULD** consult 
 the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. 
-Each retrieval method **SHALL** be preceded by the use of the following interaction to match a member and 
-provide consent:
+Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
 
 ### Member Match with Consent
 
@@ -32,6 +32,16 @@ The steps in the Member Match with Consent process are:
 - If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
 - If a Patient ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
+
+The process for evaluating consent uses the same logic and decision flow used
+in the bulk Payer-to-Payer Exchange. However, the outcome in the Single Member Match operation is different in that either Patient information is returned for the Matched Member or an Operation Outcome is returned.
+
+The decision flow is shown below:
+
+<div style="height=auto;width=90%;">
+{% include single-member-match-consent-decision-flow.svg %}
+</div>
+
 
 #### mTLS Endpoint Discovery
 

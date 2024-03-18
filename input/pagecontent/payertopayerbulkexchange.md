@@ -1,26 +1,40 @@
 [Previous Page - Payer-to-Payer Exchange (single member)](payertopayerexchange.html)
 
-When requested by a Health Plan member, the Exchange of clinical data, as scoped by USCDI 
-version 1 or version 3 and represented in FHIR by US Core 3.1.1 or 6.1.0, is a requirement 
-of the Advancing Interoperability and Prior Authorization Rule published in February 2024. 
-The rule requires Payers to support the bulk exchange of data for multiple members.
+When requested by a Health Plan member, the Exchange of clinical data, as
+scoped by USCDI version 1 or version 3 and represented in FHIR by US Core 
+3.1.1 or 6.1.0, is a requirement of the Advancing Interoperability and 
+Prior Authorization Rule published in February 2024. The rule requires 
+Payers to support the bulk exchange of data for multiple members.
 
-The PDex Payer-to-Payer FHIR-based bulk data exchange in this section of the IG 
-supports the exchange of data for multiple members.
+The PDex Payer-to-Payer FHIR-based bulk data exchange in this section of 
+the IG supports the exchange of data for a single member, or 
+multiple members. 
 
-Bulk Payer-to-Payer exchange **SHALL** be accomplished by the use of the Bulk FHIR API 
-specification. 
+Bulk Payer-to-Payer exchange **SHALL** be accomplished by the use of the 
+Bulk FHIR API specification. 
 
-The Advancing Interoperability and Prior Authorization Final Rule requires that the Member 
-consent to the retrieval of their data from their prior health plan.
+The Advancing Interoperability and Prior Authorization Final Rule requires 
+that the Member consent to the retrieval of their data from their prior 
+health plan.
+
+The Advancing Interoperability and Prior Authorization Final Rule requires that health plans **SHALL** limit the data exchanged to data with a service date no earlier than 5 years prior to the date of the data request. 
+
+The Advancing Interoperability and Prior Authorization Final Rule requires that Prior Authorizations exchanged via the Payer-to-Payer Exchange API **SHALL** include the supporting clinical data used to make the prior authorization determination. The supporting data **SHALL** include unstructured data used in the prior authorization determination. 
+
+The data returned by the Bulk Payer-to-Payer Exchange API **SHALL** include the following types of data:
+
+- US Core 3.1.1 Clinical Data with additional PDex defined Profiles.
+- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the [CARIN Consumer Directed Payer Data Exchange](http://hl7.org/fhir/us/carin-bb/) Implementation Guide.
+- Prior Authorizations and supporting clinical data as defined by this guide. 
 
 ### Performing Bulk Data Exchange
 
-Payer-to-Payer Exchange is an "opt-in" choice for Members. Therefore, it is necessary for 
-the requesting (or New) health plan to request permission (i.e., consent) from the Member 
-to retrieve the data from their prior plan. As per the process for a single member exchange
-([Payer-to-Payer (single Member)](payertopayerexchange.html)), the following data **SHALL** be exchanged with 
-the prior plan for each Member that provides their consent:
+Payer-to-Payer Exchange is an "opt-in" choice for Members. The requesting (or New) health plan **SHALL** request permission (i.e., consent) from the Member 
+to retrieve the data from their prior plan. 
+[Payer-to-Payer (single Member) Exchange](payertopayerexchange.html)), **SHALL** exchange the same data. 
+
+The following data **SHALL** be exchanged with 
+the prior plan for each Member that provides their consent in order for the prior plan to attempt to match the Member:
 
 - Patient Demographics
 - Prior Coverage
@@ -73,6 +87,8 @@ The Operation Definition for Bulk Member Match is:
 
 The Bulk Member Match Operation **SHALL**** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. The following decision tree illustrates how the the Consent determination **SHALL** be made.
 
+The consent decision logic is the same for Single Member Match and Bulk Member Match. It is the result of the decision that differs. For Single Member Match an Operation either the Patient information is returned or an Operation Outcome is generated. In Bulk Member Match a member is assigned to a Matched, Non-Matched or Consent Contrained Group and processing continues until every member has been evaluated and the resulting Groups are returned in the Operation response.
+
 <div style="height=auto;width=90%;">
 {% include member-match-consent-decision-flow.svg %}
 </div>
@@ -124,30 +140,27 @@ The exportType field **SHALL** have the following value:
 Resources in the Patient Access API can extend back to January 1, 2016.
 For Payer-to-Payer Exchange only data updated within five years of the transaction request
 date **SHALL** be returned via the API. The _since parameter **SHOULD** be used for resource 
-requests when the full history is not required. It is expected that providers **MAY** 
+requests when the full history is not required. It is expected that Payers **MAY** 
 first request data for members without limiting the request using the _since parameter. 
-Subsequent requests **MAY** then use _since to limit data to information that is new.
+Subsequent requests **MAY** then use _since to limit data to information that is new. This would enable the Payer to request "Run-off" data that the prior plan received after the initial enrollment by the member in the new plan.
 
 If the _since parameter is earlier than five years before the transaction request the date/time 
 will be overridden and set to five years before the transaction request. 
 
 ##### _until
 
-The _until parameter **MAY** be used less frequently. It is most likely to be used with the  
-hl7.fhir.us.davinci-pdex#provider-snapshot exportType to retrieve member data for a specific
-period.
+The _until parameter **MAY** be used less frequently. It is most likely to be used by the Payer to retrieve member data for a specific period. This may be the case where two Payers both share a Member that has concurrent coverage with multiple Payers. For example when requesting data for a particular quarterly period.
 
 ##### _type
 
-The _type parameter **MAY** be used to restrict the resources retrieved by the Provider. This
-enables providers to only retrieve the resource types they are interested in seeing. If this
+The _type parameter **MAY** be used to restrict the resources retrieved by the Payer. If this
 parameter is not used all available resources **SHALL** be returned by the Payer, subject to
 the constraints applied by other input parameters.
 
 ##### _typeFilter
 
 The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the
-Provider. For example, to only retrieve Observations of a certain type. The _typeFilter, if
+Payer. For example, to only retrieve Observations of a certain type. The _typeFilter, if
 used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource
 being filtered.
 
@@ -169,7 +182,7 @@ client is authorized.
 
 Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group
 resources and perform Bulk export operations. Access Tokens **SHALL** be required to access the Group resources
-and and the Bulk export operation. Access and Refresh Tokens **SHOULD** be issued to support the client requesting and
+and the Bulk export operation. Access and Refresh Tokens **SHOULD** be issued to support the client requesting and
 subsequently retrieving the bulk data response to their request.
 
 
