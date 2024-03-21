@@ -3,7 +3,7 @@ skinparam svgDimensionStyle false
 
 start
 note left
-Bulk Member-match Consent Decision Flow
+Single Member-match Consent Decision Flow
 endnote
 if (is bundle format valid) then (no)
   #pink:return 422 Unprocessable Entity in
@@ -14,33 +14,26 @@ label MatchMember
 if (Is Member Matched?) then (Yes)
   :check consent;
 else (nothing)
-  #pink:Write Member to NotMatched Group;
+  #pink:return 422 Unprocessable Entity in
+  Operation Outcome - No Match;
   detach
 endif
 
 
 switch (Can Payer Comply with Consent Request?)
 case (Sensitive Data is excluded)
-  #palegreen:write Member to Matched Member Group;
+  #palegreen:Capture Consent.
+  Return Matched Member Information;
 
 case (Sensitive data is tagged)
-  #palegreen:write member to Matched Member Group;
+  #palegreen:Capture Consent.
+  Return Matched Member Information;
 
 case (Sensitive data is NOT tagged)
-  #pink:write member to Consent Contraint Group;
+  #pink:return 422 Unprocessable Entity in
+          Operation Outcome - Consent Constraint;
 
 endswitch
-
-label returngroups
-:write MatchedMember Group to FHIR Store;
-:compile Member-Match response;
-note right
-  Return:
-    1. Matched Member Group
-    2. NotMatched Group
-    3. Consent Constraint Group
-endnote
-:Return Groups in response bundle;
 stop
 
 @enduml
