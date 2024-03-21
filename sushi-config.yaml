@@ -36,11 +36,17 @@ dependencies:
   hl7.fhir.us.davinci-atr: 2.0.0
   hl7.fhir.us.ndh: 1.0.0-ballot
   # hl7.fhir.us.directory-query: 1.0.0-ballot
-  hl7.terminology.r4: 5.3.0
+  # hl7.fhir.uv.extensions.r4: 1.0.0
   hl7.fhir.uv.extensions: 5.1.0-ballot1
+  hl7.terminology.r4: 5.3.0
+
 parameters:
   show-inherited-invariants: false
   path-expansion-params: ../../input/expansion-params.json
+  apply-jurisdiction: true
+  apply-publisher: true
+  auto-oid-root: 2.16.840.1.113883.4.642.40.8
+  generate: example-narratives
 # for using US ed of SNOMED
 copyrightYear: 2020+
 releaseLabel: STU2 # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -71,7 +77,7 @@ pages:
     payertopayerexchange.md:
       title: Payer-to-Payer Exchange (single member)
     payertopayerbulkexchange.md:
-      title: Payer-to-Payer Exchange (bulk)
+      title: Payer-to-Payer Exchange (bulk)  
     datamapping.md:
       title: Data Mapping
       USCoreAllergyIntolerance.md:
