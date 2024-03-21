@@ -326,11 +326,11 @@ profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".
     /Patient/$export
 
 Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
-[Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/). The
+[Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/STU2/). The
 request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
-Export](https://hl7.org/fhir/uv/bulkdata/OperationDefinition-patient-export.html) and the
+Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the
 [Bulk Data Export Operation Request
-Flow](https://hl7.org/fhir/uv/bulkdata/export.html#bulk-data-export-operation-request-flow).
+Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow).
 
 
 The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the 

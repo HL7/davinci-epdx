@@ -122,7 +122,7 @@ selection criteria that filters Health Plan provided information and automatical
 meet their criteria. For the purposes of this IG and accompanying Reference Implementation the manual provider 
 selection method was used to illustrate the record import capability.
 
-The [Da Vinci Documentation Templates and Rules Implementation Guide](http://hl7.org/fhir/us/davinci-dtr/index.html) (DTR-IG) 
+The [Da Vinci Documentation Templates and Rules Implementation Guide]({{site.data.fhir.ver.davinci-dtr}}/index.html) (DTR-IG) 
 provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided 
 SMART Apps should function.
 

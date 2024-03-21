@@ -11,7 +11,7 @@ has not been fully tested.</i></b>
 In December 2022, CMS released the [Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P](https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact). 
 This rule was finalized in February 2024.  
 One of the requirements of the rule is for Impacted Payers to implement a Provider Access API. This is an API that 
-conforms to the [HL7 FHIR Bulk Data API specification](https://hl7.org/fhir/uv/bulkdata/).
+conforms to the [HL7 FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/).
 The purpose of the Provider Access API is to enable Providers to query a Payer API for information about the
 members of the health plan where they have a current, or upcoming treatment relationship.
 The API will enable a provider to ask a Payer "What do you know about my Patients?"
