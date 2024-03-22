@@ -7,7 +7,8 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * meta.profile 1..*
 * insert Metaprofile-supportedProfile-slice
-* meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|2.0.0)
+// * meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|2.0.0)
+* meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization)
 * extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -71,7 +72,7 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 allowedunits 0..1 MS and
 denialreason 0..* MS and
-consumedunits 0..1 MS
+consumedunits 0..1
 // * insert ItemAdjudicationExtensionSlicing
 * item.adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason // (exactly)
 * item.adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
@@ -84,7 +85,7 @@ consumedunits 0..1 MS
 * item.adjudication[adjudicationamounttype].amount 1..1
 * item.adjudication[consumedunits].category = PDexAdjudicationDiscriminator#consumedunits // (exactly)
 * item.adjudication[consumedunits].value only decimal
-* item.adjudication[consumedunits].value 1..1 MS
+* item.adjudication[consumedunits].value 1..1
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
 

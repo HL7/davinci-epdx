@@ -53,7 +53,7 @@ Description: "Attribute that expresses the amount of an item or service that has
 // Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 //* ^context.type = #element
 * ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
+* ^context.expression = "ExplanationOfBenefit.total"
 * value[x] ^short = "Amount/Quantity of an item or service that has been consumed/utilized"
 * value[x] only Quantity or Ratio
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -75,7 +75,7 @@ Extension: ReviewAction
 Id: extension-reviewAction
 Description: "The details of the review action that is necessary for the authorization."
 * ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
+* ^context.expression = "ExplanationOfBenefit.item.adjudication"
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1
 * extension[code] ^short = "Healthcare Services Outcome"
 * extension[number].value[x] only string
@@ -92,7 +92,7 @@ Extension: ReviewActionCode
 Id: extension-reviewActionCode
 Description: "The code describing the result of the review."
 * ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
+* ^context.expression = "ExplanationOfBenefit.item.adjudication.extension"
 * value[x] only CodeableConcept
 * valueCodeableConcept from https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 (required)
 * valueCodeableConcept ^binding.description = "Codes indicating type of action. These codes are listed within an X12 implementation guide (TR3) and maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions."
@@ -150,8 +150,10 @@ Title: "NDH Contactpoint Availabletime"
 Description: "An extension representing the days and times a contact point is available"
 * value[x] 0..0
 // Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-* ^context.type = #element
-* ^context.expression = "Endpoint"
+* ^context.type = #fhirpath
+* ^context.expression = "descendants()"
+//* ^context.type = #element
+//* ^context.expression = ["Endpoint",
 * extension contains
    daysOfWeek 0..* MS and
    allDay 0..1 MS and
@@ -163,6 +165,7 @@ Description: "An extension representing the days and times a contact point is av
 * extension[availableStartTime].value[x] only time
 * extension[availableEndTime].value[x] only time
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+
 * ^extension.valueCode = #fm
 
 
@@ -362,4 +365,98 @@ Description: "Indicates a resource instance verification status"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
+
+
+// ---------------------------------------
+// // Provider Access API ATRGroup Attribution Extensions
+
+
+// date/time data exported for member
+Extension: LastTransmission
+Id: base-ext-last-transmission
+Title: "Member Last Transmission"
+Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
+* ^context.type = #element
+* ^context.expression = "Group.member"
+* value[x] 0..1
+* value[x] only dateTime
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// type of data exported (taken from _type parameter in DavinciDataExport Operation
+Extension: LastTypes
+Id: base-ext-last-types
+Title: "Member Last Resource Types"
+Description: "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."
+* ^context.type = #element
+* ^context.expression = "Group.member"
+* value[x] 0..1
+* value[x] only string
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// type of data exported with filter (taken from _typeFilter parameter in DavinciDataExport Operation
+Extension: LastFilters
+Id: base-ext-last-typefilter
+Title: "Member Last Resource Filters"
+Description: "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."
+* ^context.type = #element
+* ^context.expression = "Group.member"
+* value[x] 0..1
+* value[x] only string
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+// ---------------------------------------
+// indicate whether a member has opted out of data sharing
+// This is not being implemented
+// Will have a quantity of members opted out at the root of the Group resource.
+// Extension: OptedOut
+// Id: base-ext-optedout
+// Title: "Member Opt-out of Data Sharing"
+// Description: "Members can be attributed to a Provider but they may have chosen to opt out of data sharing with providers."
+// * ^context.type = #element
+// * ^context.expression = "Group"
+// * value[x] 0..1
+// * value[x] only Quantity
+// * value[x] ^short = "1|True = Opted-out"
+// * value[x] ^comment = "When set to true it indicates that this member has opted out of data sharing and no data should be exchanged with the attributed provider."
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+
+
+
+// ---------------------------------------
+// Payer-to-Payer Group Attribution Extensions
+// Patient Parameters from the Member-Match Operation used to perform the member-match 
+// Named matchedMember in Member-match response
+Extension: MatchParameters
+Id: base-ext-match-parameters
+Title: "Member-Match Input Patient Parameter"
+Description: "Input Patient Parameter supplied for the indiviual member match (Patient Demographics."
+* ^context.type = #element
+* ^context.expression = "Group.member.entity"
+* value[x] 0..1
+// * value[x] only Reference(PDexMultiMemberMatchRequestParameters)
+* value[x] only Reference(Patient)
+
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// ---------------------------------------
+// Provider Access API ATRGroup Attribution Extensions
+Extension: MembersOptedOut
+Id: base-ext-members-opted-out
+Title: "Members Opted-out"
+Description: "Indicates the number of members that have opted out of sharing "
+* ^context.type = #element
+* ^context.expression = "Group"
+* value[x] 0..1
+* value[x] only Quantity
+* value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 

@@ -1,29 +1,49 @@
 == Suppressed Messages ==
 
-# Access to CPT Codes
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
-
-
-# Access to X12 Codes
-The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.value[x] could not be resolved
-The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved
-The Implementation Guide contains no examples for this extension
-WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
+# X12 Code Systems and Value Sets that are referenced in the guide but not freely available
+%Unable to provide support for code system https://codesystem.x12.org/external/886
+%Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
 WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes
-WARNING: ValueSet.where(id = 'X12278ReviewDecisionReasonCode'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/external/886
-WARNING: ValueSet.where(id = 'X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/claim-adjustment-reason-codes
-WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated
-WARNING: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.item[0].category: Code System URI 'https://x12.org/codes/service-type-codes' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.0.0
+%A definition for CodeSystem 'https://x12.org/codes/%
+%ValueSet 'https://valueset.x12.org/%
+%https://x12.org/codes/service-type-codes was not found%
+%https://codesystem.x12.org/005010/1338' could not be found%
+%https://codesystem.x12.org/005010/306' could not be found%
+
+
+# FDA National Drug Codes - too many codes to display
+%ValueSet/FDANationalDrugCode' expansion has too many codes to display%
 
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# MedicationDispense NOT defined in required US Core version 3.1.1
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile
+# MedicationDispense NOT defined in required US Core version 3.1.1 - Variance Tracker: FHIR-43297 2023-12-07 Motion to approve variance as requested: Mark Scrimshire/Brett Marquard: 19-0-1
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+# HIPPS Codes not available
+%https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes%
 
 
 # Reviewed and identified as not being HTML tags.
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+
+# Terminology Related Information - Reference to Draft or Experimental Code Systems
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/%
+%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/%
+
+# MIME Types could not be expanded
+%http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded%
+
+# AMA CodeSystem has a grammar and can't be enumerated
+%http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated%
+
+# Tooling issue - to be fixed in post 1.6.2 publisher release
+%The value provided ('auto-oid-root') was not found in the value set 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|0.1.0), and a code is required from this value set%
+%Parameters.parameter.part: minimum required = 3, but only found 0%
+%a matching slice is required, but not found (from http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in|2.1.0)%
+%but must be 'MemberBundle'%
+%Unable to check auto-oid-root because The assigned auto-oid-root value '2.16.840.1.113883.4.642.40.8' does not match the value of '2.16.840.1.113883.4.642.40.8'%
+%A definition for CodeSystem 'urn:iso:std:iso:3166' could not be found%
+%code system urn:iso:std:iso:3166 was not found%

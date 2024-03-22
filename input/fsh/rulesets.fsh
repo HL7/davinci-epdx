@@ -82,3 +82,21 @@ RuleSet: Metaprofile-supportedProfile-slice
 // * agent ^slicing.ordered = false
 // * agent ^slicing.description = "Slice based on value"
 // * agent contains ProvenanceCommitter 0..*
+
+//------------------------------------------------
+// RuleSets for Operation Parameter Insert
+RuleSet: parameter(name, use, min, max, type, documentation) 
+* name = {name}
+* use = {use}
+* min = {min}
+* max = {max}
+* type = {type}
+* documentation = {documentation}
+
+RuleSet: parameterComplex(name, use, min, max, documentation) 
+* name = {name}
+* use = {use}
+* min = {min}
+* max = {max}
+* documentation = {documentation}
+

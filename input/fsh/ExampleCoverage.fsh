@@ -1,6 +1,7 @@
 Instance: PriorAuthCoverage
 InstanceOf: $HrexCoverage
 Description: "Health Plan Coverage for Prior Authorization"
+Usage: #example
 * id = "Coverage1"
 * status = http://hl7.org/fhir/fm-status#active "Active"
 * identifier[0].system = "http://example.org/old-payer/identifiers/coverage"

@@ -39,7 +39,7 @@ Alias: $PdexMedicationDispense = http://hl7.org/fhir/us/davinci-pdex/StructureDe
 //  Alias: $PdexSourceProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-source-provenance
 Alias: $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 Alias: $Provenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
-
+Alias: $MemberMatchResult = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS
 
 // Code Systems
 Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
@@ -115,6 +115,8 @@ Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
 Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
 Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
 Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
+Alias: $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
+Alias: $NPICS = http://hl7.org/fhir/sid/us-npi
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
@@ -135,3 +137,18 @@ Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/Stru
 
 //Other Aliases
 Alias:   $BCP13 = urn:ietf:bcp:13
+
+// ATR
+Alias: $ATRGroup = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group
+Alias: $DaVinciPatientList = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/davinci-patient-list
+
+// HRex Aliases
+Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
+Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $v3-ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
+Alias: $provenance-participant-type = http://terminology.hl7.org/CodeSystem/provenance-participant-type
+Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
+Alias: $standard-status = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+Alias: $fmm = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm

@@ -1,6 +1,7 @@
 Instance: ExampleDocumentReference
 InstanceOf: us-core-documentreference
 Description: "Example of a US Core DocumentReference with a linked PDF document. The document could also be embedded."
+Usage: #example
 * id = "123456"
 * status = http://hl7.org/fhir/document-reference-status#current
 // * type = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type#UNK
@@ -26,6 +27,7 @@ Description: "Example of a US Core DocumentReference with a linked PDF document.
 Instance: ExampleDocRefProvenance
 InstanceOf: pdex-provenance
 Description: "Example of a PDex Provenance record for a PDF embedded or linked in a DocumentReference resource."
+Usage: #example
 * id = "1000016"
 * meta.versionId = "1"
 * meta.lastUpdated = "2020-10-09T15:26:23.217+00:00"

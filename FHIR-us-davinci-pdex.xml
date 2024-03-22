@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="1.0.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
-<version code="2.0.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
+<version code="2.1.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
+<version code="2.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
 <version code="2.0.0-ballot" url="http://hl7.org/fhir/us/davinci-pdex/2022May"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU1"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
@@ -10,6 +11,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Parameters/payer-multi-member-match-in" key="Parameters-payer-multi-member-match-in" name="$multi-member-match payer example request"/>
+<artifact id="Parameters/payer-multi-member-match-out" key="Parameters-payer-multi-member-match-out" name="$multi-member-match payer example response"/>
+<artifact id="Organization/Acme" key="Organization-Acme" name="Acme"/>
 <artifact id="StructureDefinition/ProvenanceSourceFrom" key="StructureDefinition-ProvenanceSourceFrom" name="An attribute to describe the data source a resource was constructed from"/>
 <artifact id="StructureDefinition/PriorAuthorizationUtilization" key="StructureDefinition-PriorAuthorizationUtilization" name="An attribute to express the amount of a service or item that has been utilized"/>
 <artifact id="StructureDefinition/DispenseRefill" key="StructureDefinition-DispenseRefill" name="An attribute to express the refill number of a prescription"/>
@@ -32,6 +36,7 @@
 <artifact id="CodeSystem/EndpointHieSpecificConnectionTypeCS" key="CodeSystem-EndpointHieSpecificConnectionTypeCS" name="Endpoint HIE Specific Connection Type Code System"/>
 <artifact id="ValueSet/EndpointPayloadTypeVS" key="ValueSet-EndpointPayloadTypeVS" name="Endpoint Payload Type Value Set"/>
 <artifact id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
+<artifact id="Group/Example-PDex-Provider-Group" key="Group-Example-PDex-Provider-Group" name="Example-PDex-Provider-Group"/>
 <artifact id="Bundle/2000002" key="Bundle-2000002" name="ExampleBundle1"/>
 <artifact id="Coverage/883210" key="Coverage-883210" name="ExampleCoverage"/>
 <artifact id="Device/543210" key="Device-543210" name="ExampleDevice"/>
@@ -63,6 +68,11 @@
 <artifact id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
 <artifact id="CodeSystem/IdentifierTypeCS" key="CodeSystem-IdentifierTypeCS" name="Identifier Type"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
+<artifact id="StructureDefinition/base-ext-last-typefilter" key="StructureDefinition-base-ext-last-typefilter" name="Member Last Resource Filters"/>
+<artifact id="StructureDefinition/base-ext-last-types" key="StructureDefinition-base-ext-last-types" name="Member Last Resource Types"/>
+<artifact id="StructureDefinition/base-ext-last-transmission" key="StructureDefinition-base-ext-last-transmission" name="Member Last Transmission"/>
+<artifact id="StructureDefinition/base-ext-match-parameters" key="StructureDefinition-base-ext-match-parameters" name="Member-Match Input Patient Parameter"/>
+<artifact id="StructureDefinition/base-ext-members-opted-out" key="StructureDefinition-base-ext-members-opted-out" name="Members Opted-out"/>
 <artifact id="StructureDefinition/base-ext-associatedServers" key="StructureDefinition-base-ext-associatedServers" name="NDH Associated Servers"/>
 <artifact id="CodeSystem/NdhAssociatedServersTypeCS" key="CodeSystem-NdhAssociatedServersTypeCS" name="NDH Associated Servers Type Code System"/>
 <artifact id="StructureDefinition/base-ext-contactpoint-availabletime" key="StructureDefinition-base-ext-contactpoint-availabletime" name="NDH Contactpoint Availabletime"/>
@@ -90,25 +100,36 @@
 <artifact id="Organization/ProviderOrg1" key="Organization-3" name="OrganizationProvider1"/>
 <artifact id="Organization/ProviderOrg2" key="Organization-ProviderOrg2" name="OrganizationProvider2"/>
 <artifact id="CapabilityStatement/pdex-server" key="CapabilityStatement-pdex-server" name="PDEX Server CapabilityStatement"/>
+<artifact id="StructureDefinition/pdex-parameters-multi-member-match-bundle-in" key="StructureDefinition-pdex-parameters-multi-member-match-bundle-in" name="PDex $multi-member-match request"/>
+<artifact id="StructureDefinition/pdex-parameters-multi-member-match-bundle-out" key="StructureDefinition-pdex-parameters-multi-member-match-bundle-out" name="PDex $multi-member-match response"/>
 <artifact id="ValueSet/PDexAdjudication" key="ValueSet-PDexAdjudication" name="PDex Adjudication"/>
 <artifact id="ValueSet/PDexAdjudicationCategoryDiscriminator" key="ValueSet-PDexAdjudicationCategoryDiscriminator" name="PDex Adjudication Category Discriminator"/>
 <artifact id="CodeSystem/PDexAdjudicationCS" key="CodeSystem-PDexAdjudicationCS" name="PDex Adjudication Codes"/>
 <artifact id="CodeSystem/PDexAdjudicationDiscriminator" key="CodeSystem-PDexAdjudicationDiscriminator" name="PDex Adjudication Discriminator"/>
+<artifact id="OperationDefinition/bulk-member-match" key="OperationDefinition-bulk-member-match" name="PDex Bulk Member Match Operation"/>
+<artifact id="StructureDefinition/pdex-consent" key="StructureDefinition-pdex-consent" name="PDex Consent Profile"/>
 <artifact id="StructureDefinition/pdex-device" key="StructureDefinition-pdex-device" name="PDex Device"/>
 <artifact id="CodeSystem/PDexIdentifierType" key="CodeSystem-PDexIdentifierType" name="PDex Identifier Type"/>
 <artifact id="StructureDefinition/pdex-medicationdispense" key="StructureDefinition-pdex-medicationdispense" name="PDex MedicationDispense"/>
+<artifact id="StructureDefinition/pdex-member-match-group" key="StructureDefinition-pdex-member-match-group" name="PDex Member Match Group"/>
+<artifact id="StructureDefinition/pdex-member-no-match-group" key="StructureDefinition-pdex-member-no-match-group" name="PDex Member No Match Group"/>
+<artifact id="CodeSystem/PdexMultiMemberMatchResultCS" key="CodeSystem-PdexMultiMemberMatchResultCS" name="PDex Multi-Member Match Result Code System"/>
+<artifact id="ValueSet/PDexMultiMemberMatchResultVS" key="ValueSet-PDexMultiMemberMatchResultVS" name="PDex Multi-Member Match Result Value Set"/>
 <artifact id="CodeSystem/PDexPayerAdjudicationStatus" key="CodeSystem-PDexPayerAdjudicationStatus" name="PDex Payer Adjudication Status"/>
 <artifact id="ValueSet/PDexPayerBenefitPaymentStatus" key="ValueSet-PDexPayerBenefitPaymentStatus" name="PDex Payer Benefit Payment Status"/>
 <artifact id="StructureDefinition/pdex-priorauthorization" key="StructureDefinition-pdex-priorauthorization" name="PDex Prior Authorization"/>
 <artifact id="StructureDefinition/pdex-provenance" key="Provenance" name="PDex Provenance"/>
-<artifact id="CodeSystem/PdexProviderExportModeCS" key="CodeSystem-PdexProviderExportModeCS" name="PDex Provider Export Mode"/>
-<artifact id="ValueSet/PDexProviderExportModeVS" key="ValueSet-PDexProviderExportModeVS" name="PDex Provider Export Value Set"/>
+<artifact deprecated="true" id="CodeSystem/PdexProviderExportModeCS" key="CodeSystem-PdexProviderExportModeCS" name="PDex Provider Export Mode"/>
+<artifact deprecated="true" id="ValueSet/PDexProviderExportModeVS" key="ValueSet-PDexProviderExportModeVS" name="PDex Provider Export Value Set"/>
+<artifact id="StructureDefinition/pdex-provider-group" key="StructureDefinition-pdex-provider-group" name="PDex Provider Group"/>
 <artifact id="CodeSystem/PDexSupportingInfoType" key="CodeSystem-PDexSupportingInfoType" name="PDex Supporting Info Type"/>
 <artifact id="ValueSet/PDexSupportingInfoType" key="ValueSet-PDexSupportingInfoType" name="PDex SupportingInfo Type"/>
 <artifact deprecated="true" key="Patient" name="Patient"/>
 <artifact id="Patient/1" key="Patient-1" name="Patient1"/>
 <artifact id="Patient/1-2" key="Patient-1-2" name="Patient1-2"/>
 <artifact id="Patient/100" key="Patient-100" name="Patient100"/>
+<artifact id="Patient/1001" key="Patient-1001" name="Patient1001"/>
+<artifact id="Patient/2002" key="Patient-2002" name="Patient2002"/>
 <artifact id="ValueSet/ProvenancePayerSourceFormat" key="ValueSet-ProvenancePayerSourceFormat" name="Payer source of data"/>
 <artifact id="SearchParameter/pdex-medicationdispense-patient" key="SearchParameter-pdex-medicationdispense-patient" name="PdexMedicationDispensePatient"/>
 <artifact id="SearchParameter/pdex-medicationdispense-status" key="SearchParameter-pdex-medicationdispense-status" name="PdexMedicationDispenseStatus"/>
@@ -137,6 +158,9 @@
 <artifact id="Endpoint/diamond-mtls-endpoint1" key="Endpoint-diamond-mtls-endpoint1" name="diamond-mtls-endpoint1"/>
 <artifact id="Endpoint/diamond-mtls-endpoint2" key="Endpoint-diamond-mtls-endpoint2" name="diamond-mtls-endpoint2"/>
 <artifact id="Bundle/example-mtls-endpoint-bundle" key="Bundle-example-mtls-endpoint-bundle" name="example-mtls-endpoint-bundle"/>
+<artifact id="Group/example-pdex-member-consent-constraint-group" key="Group-example-pdex-member-consent-constraint-group" name="example-pdex-member-consent-constraint-group"/>
+<artifact id="Group/07e72a15407547bf9d03f522aa536a72.1" key="Group-07e72a15407547bf9d03f522aa536a72.1" name="example-pdex-member-match-group"/>
+<artifact id="Group/example-pdex-member-no-match-group" key="Group-example-pdex-member-no-match-group" name="example-pdex-member-no-match-group"/>
 <artifact id="ValueSet/BundleTypeVS" key="ValueSet-BundleTypeVS" name="mTLS Bundle Type Value Set"/>
 <artifact id="StructureDefinition/mtls-endpoint" key="StructureDefinition-mtls-endpoint" name="mTLS Endpoint"/>
 <artifact id="StructureDefinition/mtls-bundle" key="StructureDefinition-mtls-bundle" name="mTLS Endpoint Bundle"/>
@@ -169,7 +193,9 @@
 <page key="PDexPriorAuthorization" name="PDex Prior Authorization"/>
 <page key="PDexProvenance" name="PDex Provenance"/>
 <page deprecated="true" key="PayerToPayerExchange" name="Payer-to-Payer Exchange"/>
+<page key="payertopayerbulkexchange" name="Payer-to-Payer Exchange (bulk)"/>
 <page key="payertopayerexchange" name="Payer-to-Payer Exchange (single member)"/>
+<page key="provider-access-api" name="Provider Access API"/>
 <page key="Provider-controlledInformationRequestsandFiltering" name="Provider-controlled Information Requests and Filtering"/>
 <page key="securityandprivacy" name="Security and Privacy"/>
 <page key="toc" name="Table of Contents"/>
@@ -202,4 +228,5 @@
 <page key="UseCaseScenarios" name="Use Case Scenarios"/>
 <page key="VitalSigns" name="VitalSigns"/>
 <page key="WorkflowExamples" name="Workflow Examples"/>
+<page deprecated="true" key="downloads" name="downloads"/>
 </specification>

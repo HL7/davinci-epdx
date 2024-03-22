@@ -1,9 +1,10 @@
 // Define a rule set for commonly used rules for definition resources using instances
 
 RuleSet: PdexDefinitionContent
-* status = #draft      // draft until final published
-* experimental = true  // true until ready for pilot, then false
-* version = "0.1.19"    // Follow IG Versioning rules
+* status = #active      // draft until final published
+// * status = #draft      // draft until final published
+* experimental = false  // true until ready for pilot, then false
+* version = "2.1.0"    // Follow IG Versioning rules
 * publisher = "HL7 International"
 * contact[0].telecom.system = #url
 * contact[0].telecom.value = "http://hl7.org/Special/committees/pafm/index.cfm"
@@ -16,9 +17,10 @@ RuleSet: PdexDefinitionContent
 
 // Define a rule set for commonly used rules for definition resources using other Sushi features
 RuleSet: PdexStructureDefinitionContent
-* ^status = #draft      // draft until final published
-* ^experimental = true  // true until ready for pilot, then false
-* ^version = "0.1.19"    // Follow IG Versioning rules
+//* ^status = #draft      // draft until final published
+* ^status = #active      // draft until final published
+* ^experimental = false  // true until ready for pilot, then false
+* ^version = "2.1.0"    // Follow IG Versioning rules
 * ^publisher = "HL7 International"
 * ^contact[0].telecom.system = #url
 * ^contact[0].telecom.value = "http://hl7.org/Special/committees/fm"
@@ -44,3 +46,11 @@ RuleSet: PdexCapabilityStatementContent
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension.valueCode = #fm
 * implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+
+
+//-----------------------------------------------------
+// Default Div insert
+//----------------------------------------------------
+RuleSet: DefaultDiv
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"

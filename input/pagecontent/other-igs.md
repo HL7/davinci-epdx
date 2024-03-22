@@ -13,6 +13,7 @@ PDex references the following Implementation Guides:
 
 - [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/)
 - [Da Vinci Health Record Exchange (HRex) 1.0.0](http://hl7.org/fhir/us/davinci-hrex/STU1/)
+- [Da Vinci Member Attribution (ATR) 2.0.0](http://hl7.org/fhir/us/davinci-atr/STU2/)
 - [Da Vinci Prior Authorization Support (PAS) 2..00](http://hl7.org/fhir/us/davinci-pas/STU2/)
 - [FAST National Directory (NDH)](https://build.fhir.org/ig/HL7/fhir-us-ndh/)
 
@@ -35,6 +36,10 @@ The following profiles are referenced in this IG:
 - [HRex Parameters Member Match Request Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-in.html)
 - [HRex Parameters Member Match Response Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-parameters-member-match-out.html)
 
+#### Da Vinci Member Attribution (ATR)
+
+- [ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html)
+
 ### Operations
 
 The following operations are referenced:
@@ -43,6 +48,9 @@ The following operations are referenced:
 
 - [HRex Member Match Operation](http://hl7.org/fhir/us/davinci-hrex/STU1/OperationDefinition-member-match.html)
 
+#### Da Vinci Member Attribution (ATR)
+
+- [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html)
 
 ### IG/package dependencies
 
@@ -60,5 +68,6 @@ The following dependencies are used in production of this guide:
 
 <br/>
 
-<p><a href="downloads.html">[Next Page - Downloads]</a></p>
+
+<p><a href="Downloads.html">[Next Page - Downloads]</a></p>
 

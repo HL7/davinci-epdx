@@ -9,10 +9,10 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
-version: 2.0.0
+version: 2.1.0
 name: DaVinciPayerDataExchange
 title: Da Vinci Payer Data Exchange
-status: draft  # draft | active | retired | unknown
+status: active  # draft | active | retired | unknown
 publisher:
   name: HL7 International / Financial Management
   url: http://www.hl7.org/Special/committees/fm
@@ -32,14 +32,22 @@ fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 dependencies:
   hl7.fhir.us.core: 3.1.1
   hl7.fhir.us.davinci-hrex: 1.0.0
-  hl7.fhir.us.davinci-pas: 2.0.0
-  # hl7.fhir.us.ndh: 1.0.0-ballot
-  # hl7.fhir.us.ndh: 0.1.0
+  hl7.fhir.us.davinci-pas: 2.0.1
+  hl7.fhir.us.davinci-atr: 2.0.0
+  hl7.fhir.us.ndh: 1.0.0-ballot
+  hl7.fhir.us.davinci-dtr: 2.0.0
   # hl7.fhir.us.directory-query: 1.0.0-ballot
-  hl7.fhir.uv.extensions.r4: 1.0.0
+  # hl7.fhir.uv.extensions.r4: 1.0.0
+  hl7.fhir.uv.extensions: 5.1.0-ballot1
+  hl7.terminology.r4: 5.3.0
+
 parameters:
   show-inherited-invariants: false
   path-expansion-params: ../../input/expansion-params.json
+  apply-jurisdiction: true
+  apply-publisher: true
+  auto-oid-root: 2.16.840.1.113883.4.642.40.8
+  generate: example-narratives
 # for using US ed of SNOMED
 copyrightYear: 2020+
 releaseLabel: STU2 # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -65,8 +73,12 @@ pages:
     title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
     handlingdataprovenance.md:
       title: Handling Data Provenance
+    provider-access-api.md:
+      title: Provider Access API
     payertopayerexchange.md:
       title: Payer-to-Payer Exchange (single member)
+    payertopayerbulkexchange.md:
+      title: Payer-to-Payer Exchange (bulk)  
     datamapping.md:
       title: Data Mapping
       USCoreAllergyIntolerance.md:
@@ -147,7 +159,7 @@ pages:
     title: Change History
   credits.md:
     title: Credits
-  downloads.md:
+  Downloads.md:
     title: Downloads
   artifacts.html:
     title: FHIR Artifacts
@@ -163,11 +175,13 @@ menu:
   PDex IG Content: #pdeximplementationactorsinteractionsdatapayloadsandmethods.html
     Overview: overview.html
     Introduction: introduction.html
+    Provider Access: provider-access-api.html
+    Payer-to-Payer(bulk): payertopayerbulkexchange.html
+    Payer-to-Payer(single): payertopayerexchange.html
     Data Mapping: datamapping.html
     CDS Hooks: cds-hooks.html
-    Payer-to-Payer: payertopayerexchange.html
     Change Log: changehistory.html
     Credits: credits.html
   FHIR Artifacts: artifacts.html
   Other IG Artifacts: other-igs.html
-  Downloads: downloads.html
+  Downloads: Downloads.html

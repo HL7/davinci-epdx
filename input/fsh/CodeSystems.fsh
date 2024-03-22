@@ -6,7 +6,7 @@
 CodeSystem: ProvenanceAgentRoleType
   Title: "Provenance Roles"
   Description: "CodeSystem for types of role relating to the creation or communication of referenced resources"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
@@ -24,7 +24,7 @@ CodeSystem: ProvenancePayerDataSource
 Title: "Provenance Payer Data Source Format"
 Description: "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -61,7 +61,7 @@ CodeSystem: IdentifierTypeCS
 Title: "Identifier Type"
 Description: "Identifier Type"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -80,7 +80,7 @@ Description: "Identifier Type"
 CodeSystem: PriorAuthorizationValueCodes
 Title: "Prior Authorization Values"
 Description: "Codes used to define Prior Authorization categories"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^caseSensitive = false
@@ -94,7 +94,7 @@ Description: "Codes used to define Prior Authorization categories"
 CodeSystem: PDexAdjudicationDiscriminator
 Title: "PDex Adjudication Discriminator"
 Description: "Used as the discriminator for the data elements in adjudication and item.adjudication"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -110,7 +110,7 @@ Description: "Used as the discriminator for the data elements in adjudication an
 CodeSystem: PDexAdjudicationCS
 Title: "PDex Adjudication Codes"
 Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -145,7 +145,7 @@ Description: "Describes the various amount fields used when payers receive and a
 CodeSystem: PDexPayerAdjudicationStatus
 Title: "PDex Payer Adjudication Status"
 Description: "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -163,7 +163,7 @@ Description: "Describes the various status fields used when payers adjudicate a 
 CodeSystem: PDexSupportingInfoType
 Title: "PDex Supporting Info Type"
 Description: "Claim Information Category - Used as the discriminator for supportingInfo"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -192,7 +192,7 @@ Description: "Claim Information Category - Used as the discriminator for support
 CodeSystem: PDexIdentifierType
 Title: "PDex Identifier Type"
 Description: "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -213,7 +213,7 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 CodeSystem: OrgTypeCS
 Title: "Organization Type"
 Description: "Categories of organizations based on criteria in provider directories."
-* ^experimental = true
+* ^experimental = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 * #fac "Facility" "A physical healthcare facility"
@@ -227,17 +227,30 @@ Description: "Categories of organizations based on criteria in provider director
 //CodeSystem: PDexServiceTypeCodes
 //Title: "Service Type Codes"
 //Description: "X12 Service Type Codes used in Prior Authorization"
-//* ^experimental = true
+//* ^experimental = false
 //* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 //* ^extension.valueCode = #fm
 
 // -----------------------------------
-CodeSystem: PdexProviderExportModeCS
-Title: "PDex Provider Export Mode"
-Description: "Data Export Mode Types for Provider Export Operation."
-* ^experimental = true
+// CodeSystem: PdexProviderExportModeCS
+// Title: "PDex Provider Export Mode"
+// Description: "Data Export Mode Types for Provider Export Operation."
+// * ^experimental = false
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+// * #delta "Delta" "Request new data/records since last requested date for a regular, pre-defined set of resource types."
+// * #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
+// * #p2p "Payer-to-Payer" "Retrieve data for purposes of Payer-to-Payer Exchange."
+// * ^caseSensitive = true
+
+// -----------------------------------
+CodeSystem: PdexMultiMemberMatchResultCS
+Title: "PDex Multi-Member Match Result Code System"
+Description: "Code set to describe the results group from a multi-member Match operation"
+* ^experimental = false
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-* #download "Download" "Download data and incorporate to records"
-* #snapshot "Snapshot" "Retrieve data for snapshot purposes that will NOT be incorporated into the Patient Record."
+* #match "Matched" "Group of successfully matched members from a multi-member match operation."
+* #nomatch "Not Matched" "Group of submitted members that failed to result in a match in the multi-member match operation."
+* #consentconstraint "Consent Constraint" "Group of successfully matched members but consent request cannot be complied with."
 * ^caseSensitive = true
