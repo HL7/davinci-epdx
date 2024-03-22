@@ -1,6 +1,7 @@
 Instance: example-mtls-endpoint-bundle
 InstanceOf: MtlsBundle
 Description: "Example of mTLSbundle for Payer Endpoint for Payer-to-Payer Exchange"
+Usage: #example
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * type = http://hl7.org/fhir/R4/codesystem-bundle-type.html#collection "Collection"
 * timestamp = "2022-07-04T15:00:00.000Z"
