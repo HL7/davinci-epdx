@@ -4,6 +4,7 @@
 Instance: example-pdex-member-match-group
 InstanceOf:  PDexMemberMatchGroup
 Description: "Example of PDex Member Match Group that returns successful matches and creates a Group resource for use with bulk operations."
+Usage: #example
 * meta.lastUpdated = "2024-03-20T09:00:00.000Z"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
@@ -38,6 +39,7 @@ Description: "Example of PDex Member Match Group that returns successful matches
 Instance: example-pdex-member-no-match-group
 InstanceOf:  PDexMemberNoMatchGroup
 Description: "Example of PDex Member Match Group that returns unsuccessful matches."
+Usage: #example
 * meta.lastUpdated = "2024-03-20T09:00:00.000Z"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
@@ -65,6 +67,7 @@ Description: "Example of PDex Member Match Group that returns unsuccessful match
 Instance: example-pdex-member-consent-constraint-group
 InstanceOf:  PDexMemberNoMatchGroup
 Description: "Example of PDex Member Match Group that returns matches that fail the consent decision flow."
+Usage: #example
 * meta.lastUpdated = "2024-03-20T09:00:00.000Z"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"

@@ -369,18 +369,6 @@ Description: "Indicates a resource instance verification status"
 
 // ---------------------------------------
 // // Provider Access API ATRGroup Attribution Extensions
-// Extension: MembersOptedOut
-// Id: base-ext-members-opted-out
-// Title: "Members Opted-out"
-// Description: "Indicates the number of members that have opted out of sharing "
-// * ^context.type = #element
-// * ^context.expression = "Group"
-// * value[x] 0..1
-// * value[x] only Quantity
-// * value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
-
 
 
 // date/time data exported for member
@@ -389,7 +377,7 @@ Id: base-ext-last-transmission
 Title: "Member Last Transmission"
 Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
 * ^context.type = #element
-* ^context.expression = "Group"
+* ^context.expression = "Group.member"
 * value[x] 0..1
 * value[x] only dateTime
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -402,7 +390,7 @@ Id: base-ext-last-types
 Title: "Member Last Resource Types"
 Description: "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."
 * ^context.type = #element
-* ^context.expression = "Group"
+* ^context.expression = "Group.member"
 * value[x] 0..1
 * value[x] only string
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -415,7 +403,7 @@ Id: base-ext-last-typefilter
 Title: "Member Last Resource Filters"
 Description: "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."
 * ^context.type = #element
-* ^context.expression = "Group"
+* ^context.expression = "Group.member"
 * value[x] 0..1
 * value[x] only string
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -423,18 +411,20 @@ Description: "Indicates the filters applied to the resources exported in the las
 
 // ---------------------------------------
 // indicate whether a member has opted out of data sharing
-Extension: OptedOut
-Id: base-ext-optedout
-Title: "Member Opt-out of Data Sharing"
-Description: "Members can be attributed to a Provider but they may have chosen to opt out of data sharing with providers."
-* ^context.type = #element
-* ^context.expression = "Group"
-* value[x] 0..1
-* value[x] only boolean
-* value[x] ^short = "1|True = Opted-out"
-* value[x] ^comment = "When set to true it indicates that this member has opted out of data sharing and no data should be exchanged with the attributed provider."
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
+// This is not being implemented
+// Will have a quantity of members opted out at the root of the Group resource.
+// Extension: OptedOut
+// Id: base-ext-optedout
+// Title: "Member Opt-out of Data Sharing"
+// Description: "Members can be attributed to a Provider but they may have chosen to opt out of data sharing with providers."
+// * ^context.type = #element
+// * ^context.expression = "Group"
+// * value[x] 0..1
+// * value[x] only Quantity
+// * value[x] ^short = "1|True = Opted-out"
+// * value[x] ^comment = "When set to true it indicates that this member has opted out of data sharing and no data should be exchanged with the attributed provider."
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
 
 
 
@@ -463,7 +453,7 @@ Id: base-ext-members-opted-out
 Title: "Members Opted-out"
 Description: "Indicates the number of members that have opted out of sharing "
 * ^context.type = #element
-* ^context.expression = "Group.member.entity"
+* ^context.expression = "Group"
 * value[x] 0..1
 * value[x] only Quantity
 * value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 

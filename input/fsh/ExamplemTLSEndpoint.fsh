@@ -3,6 +3,7 @@
 Instance: diamond-mtls-endpoint1
 InstanceOf: mtls-endpoint
 Description: "NDH Endpoint compliant Profile as an example of Payer mTLS Endpoint that is linked from Organization and incorporated in bundle"
+Usage: #example
 * identifier.value = "Diamond-mtls-endpoint1"
 * status = http://hl7.org/fhir/endpoint-status#active "Active"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
@@ -43,6 +44,7 @@ Description: "NDH Endpoint compliant Profile as an example of Payer mTLS Endpoin
 Instance: diamond-mtls-endpoint2
 InstanceOf: mtls-endpoint
 Description: "National Directory Query Endpoint Profile as an example of Payer mTLS Endpoint that is linked from Organization and incorporated in bundle"
+Usage: #example
 * identifier.value = "Diamond-mtls-endpoint2"
 * status = http://hl7.org/fhir/endpoint-status#active "Active"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"

@@ -20,6 +20,7 @@ Instance: mtlsorganization2
 //InstanceOf: $USCoreOrganization
 InstanceOf: MtlsOrganization
 Description: "Example of mTLS Organization"
+Usage: #example
 * id = "DiamondOnyxHealth1"
 //* identifier.type = $V2IdentifierTypeCS#TAX
 //* identifier.value = "DiamondOnyxHealth1"
