@@ -1,5 +1,11 @@
 [Previous Page - Payer-to-Payer Exchange (single member)](payertopayerexchange.html)
 
+<div class="stu-note">
+
+<b><i>Provider Access API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot and
+has not been fully tested.</i></b>
+</div>
+
 When requested by a Health Plan member, the Exchange of clinical data, as
 scoped by USCDI version 1 or version 3 and represented in FHIR by US Core 
 3.1.1 or 6.1.0, is a requirement of the Advancing Interoperability and 
