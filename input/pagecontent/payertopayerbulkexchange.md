@@ -2,7 +2,7 @@
 
 <div class="stu-note">
 
-<b><i>Provider Access API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot and
+<b><i>PPayer-to-Payer API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot and
 has not been fully tested.</i></b>
 </div>
 
@@ -106,7 +106,7 @@ The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-bulk-member-match.html)
 
-The Bulk Member Match Operation **SHALL**** evaluate the consent request for 
+The Bulk Member Match Operation **SHALL** evaluate the consent request for 
 each member and determine whether the request for only Non-Sensitive data, 
 as determined by federal and state regulations that apply to the data holder, 
 can be complied with. The following decision tree illustrates how the the Consent 
@@ -235,7 +235,7 @@ and search the Group resources and perform Bulk export operations. Access Tokens
 Access and Refresh Tokens **SHALL** be issued to support the client requesting and
 subsequently retrieving the bulk data response to their request.
 
-Registering of a client application or ervice to perform the bulk Payer-to-Payer 
+Registering of a client application or service to perform the bulk Payer-to-Payer 
 Exchange should be registered in accordance with the approach defined in the 
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol 

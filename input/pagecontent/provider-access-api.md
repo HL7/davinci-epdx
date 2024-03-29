@@ -220,5 +220,13 @@ resources and perform Bulk export operations. Access Tokens **SHALL** be require
 and and the Bulk export operation. Access and Refresh Tokens **SHOULD** be issued to support the client requesting and 
 subsequently retrieving the bulk data response to their request.
 
+Registering of a client application or service to perform the bulk Payer-to-Payer
+Exchange should be registered in accordance with the approach defined in the
+[SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
+That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
+(DCRP). An alternative approach that is closely aligned with the DCRP protocol is
+to use the B2B protocols detailed in the [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/)
+IG.
+
 
 [Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)
