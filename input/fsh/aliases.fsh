@@ -152,3 +152,6 @@ Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-Particip
 Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
 Alias: $standard-status = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 Alias: $fmm = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+
+// Terminology Server
+Alias: $CoverageRelationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship
