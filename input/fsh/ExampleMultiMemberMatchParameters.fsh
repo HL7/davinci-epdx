@@ -34,6 +34,8 @@ Usage: #example
       * system = "http://example.org/old-payer"
       * value = "DH10001235"
     * status = #draft
+    * subscriberId = "1234564321"
+    * relationship = $CoverageRelationship#self
     * beneficiary.reference = "Patient/1"
     * period
       * start = "2011-05-23"
@@ -100,6 +102,8 @@ Usage: #example
       * system = "http://example.org/new-payer/identifiers/coverage"
       * value = "234567"
     * status = #active
+    * subscriberId = "23456754321"
+    * relationship = $CoverageRelationship#self
     * beneficiary.reference = "Patient/1"
     * payor
       * identifier
@@ -138,6 +142,8 @@ Usage: #example
       * system = "http://example.org/old-payer"
       * value = "DH10001235"
     * status = #draft
+    * subscriberId = "9876543789"
+    * relationship = $CoverageRelationship#self
     * beneficiary.reference = "Patient/2"
     * period
       * start = "2011-05-23"
@@ -204,6 +210,8 @@ Usage: #example
       * system = "http://example.org/new-payer/identifiers/coverage"
       * value = "234567"
     * status = #active
+    * subscriberId = "432156789"
+    * relationship = $CoverageRelationship#self
     * beneficiary.reference = "Patient/2"
     * payor
       * identifier

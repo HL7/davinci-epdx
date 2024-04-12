@@ -124,7 +124,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "1022248102"
 * name = "Payer 1"
 * active = true
 
@@ -138,7 +138,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "3939079547"
 * name = "Payer 1"
 * active = true
 
@@ -154,7 +154,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "2739701805"
 * name = "Payer 2"
 * active = true
 
@@ -169,7 +169,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "9795834974"
 * name = "Payer 2"
 * active = true
 
@@ -184,7 +184,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345678"
+* identifier[0].value = "1982947230"
 * name = "Provider 1"
 * active = true
 
@@ -198,7 +198,7 @@ Usage: #example
 * language = #en-US
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "345679"
+* identifier[0].value = "1982943213"
 * name = "Provider 2"
 * active = true
 
@@ -211,12 +211,12 @@ Description: "Example of a Practitioner Record"
 * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "874635264"
+* identifier[0].value = "7623044604"
 * name[0].family = "Smith"
 * name[0].given[0] = "Susan"
 * name[0].suffix = "MD"
 * telecom[0].system =  http://hl7.org/fhir/contact-point-system#phone
-* telecom[0].value = "3015551234"
+* telecom[0].value = "3015551237"
 * gender = http://hl7.org/fhir/administrative-gender#female
 * birthDate = "1965-11-15"
 

@@ -3,7 +3,9 @@
 <div class="stu-note">
 
 <b><i>Provider Access API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot and 
-has not been fully tested.</i></b>
+has not been fully tested. It is included to support the requirements of the CMS prior Authorization Rule (CMS-0057).
+The bulk data transfer is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
+</i></b>
 </div>
 
 ## Provider Access API

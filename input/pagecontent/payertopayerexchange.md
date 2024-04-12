@@ -2,6 +2,10 @@
 
 {% include style_insert_table_blue.html %}
 
+<b><i>PThis page has been updated to redlect the release of the CMS Prior Authorization Rule (CMS-0057).
+The changes have been made to stay in sync with the bulk transfer requirements of the rule. </i></b>
+</div>
+
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
 US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
 
