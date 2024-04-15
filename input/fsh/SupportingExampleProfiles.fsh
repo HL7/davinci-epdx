@@ -216,7 +216,7 @@ Description: "Example of a Practitioner Record"
 * name[0].given[0] = "Susan"
 * name[0].suffix = "MD"
 * telecom[0].system =  http://hl7.org/fhir/contact-point-system#phone
-* telecom[0].value = "3015551237"
+* telecom[0].value = "1982943213"
 * gender = http://hl7.org/fhir/administrative-gender#female
 * birthDate = "1965-11-15"
 

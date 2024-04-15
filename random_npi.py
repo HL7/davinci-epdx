@@ -47,7 +47,7 @@ def my_luhn_calculator(number):
     https://www.eclaims.com/articles/how-to-calculate-the-npi-check-digit
     """
     digits = [int(d) for d in str(number)[:9]][::-1]  # Starting from the right - so we reverse the digits
-    print(f"{digits}")
+    # print(f"{digits}")
     checksum = 0
     for index, i in enumerate(digits):
         if index % 2 == 0: # even item
@@ -100,11 +100,12 @@ def generate_10_digit_number(number=None, alternate=False):
     else:
         # Ensure the number is exactly 9 characters long by adding zeros to the front if necessary
         number = str(number).zfill(9)
-    if alternate:
-        check_digit = calculate_npi_check_digit(number)
-    else:
-        # check_digit = luhn_algorithm(number)
-        check_digit = my_luhn_calculator(number)
+#     if alternate:
+#         check_digit = calculate_npi_check_digit(number)
+#     else:
+#         # check_digit = luhn_algorithm(number)
+#         check_digit = my_luhn_calculator(number)
+    check_digit = my_luhn_calculator(number)
     # Format the 10-digit number as a 10-digit number
     formatted_number = f'{int(str(number)[:9] + str(check_digit)):010d}'
     return formatted_number
