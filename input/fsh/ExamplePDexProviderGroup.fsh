@@ -9,6 +9,7 @@ Usage: #example
 * identifier[npi].value = "1122334455"
 * identifier[tin].system = "urn:oid:2.16.840.1.113883.4.4"
 * identifier[tin].value = "99-12345"
+* code = $MemberAttribution#pdexprovidergroup "PDex Provider Group"
 * active = true
 * type = #person
 * actual = true
