@@ -8,7 +8,7 @@ Description:  "Agent role performed relating to referenced resource"
 * ^experimental = true
 * codes from system ProvenanceAgentRoleType
 * codes from system http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type
-* codes from system http://terminology.hl7.org/CodeSystem/provenance-participant-type
+* codes from system http://terminology.hl7.org/CodeSystem/provenance-participant-type|0.1.0
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
