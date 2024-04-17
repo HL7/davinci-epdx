@@ -1,10 +1,11 @@
 [Previous Page - index](index.html)
 
-|||
-|----------------------------------------------------|-------------------------------------|
-|*Official URL*: http://hl7.org/fhir/us/davinci-pdex | *Version*: 2.0.0 |
-|*NPM package name*: hl7.fhir.us.davinci-pdex  |*ComputableName*: DaVinciPayerDataExchange |
+|                                                                                                          ||
+|----------------------------------------------------------------------------------------------------------|-------------------------------------|
+| *Official URL*: http://hl7.org/fhir/us/davinci-pdex                                                      | *Version*: 2.0.0 |
+| *NPM package name*: hl7.fhir.us.davinci-pdex                                                             |*ComputableName*: DaVinciPayerDataExchange |
 | *Copyright/Legal*: Used by permission of HL7 International, all rights reserved Creative Commons License |
+| *Other Identifiers*: OID:2.16.840.1.113883.4.642.40.8                                                    |
 {:.grid}
 
 

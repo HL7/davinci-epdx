@@ -211,12 +211,12 @@ Description: "Example of a Practitioner Record"
 * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
 * identifier[0].type = IdentifierTypeCS#npi
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
-* identifier[0].value = "7623044604"
+* identifier[0].value = "1982943213"
 * name[0].family = "Smith"
 * name[0].given[0] = "Susan"
 * name[0].suffix = "MD"
 * telecom[0].system =  http://hl7.org/fhir/contact-point-system#phone
-* telecom[0].value = "1982943213"
+* telecom[0].value = "4102943213"
 * gender = http://hl7.org/fhir/administrative-gender#female
 * birthDate = "1965-11-15"
 
