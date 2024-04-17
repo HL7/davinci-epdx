@@ -40,6 +40,7 @@ Alias: $PdexMedicationDispense = http://hl7.org/fhir/us/davinci-pdex/StructureDe
 Alias: $PdexProvenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 Alias: $Provenance = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance
 Alias: $MemberMatchResult = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS
+Alias: $MemberAttribution = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS
 
 // Code Systems
 Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc

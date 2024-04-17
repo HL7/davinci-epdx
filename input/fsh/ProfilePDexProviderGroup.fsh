@@ -8,6 +8,8 @@ Description: "The Provider Attribution Group List. Based on the Da Vinci Attribu
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
+* code 1..1 MS
+* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * extension contains MembersOptedOut named optedOut 0..1 MS
 * extension[optedOut] ^comment = "Number of would be attributed Members that used their right to Opt-out of sharing data with providers."
 * member.extension contains  
