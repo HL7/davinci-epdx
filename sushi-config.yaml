@@ -30,8 +30,19 @@ description: "This specification has undergone ballot and connectathon testing. 
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 dependencies:
-  hl7.fhir.us.core: 3.1.1
-  hl7.fhir.us.davinci-hrex: 1.0.0
+  hl7.fhir.us.core: 
+    id: uscore3
+    version: 3.1.1
+    reason: |
+      Defines USCDI 1 resources that will be exposed by PDex APIs.  
+  hl7.fhir.us.davinci-hrex: 
+    id: hrex
+    version: current
+    reason: |
+      Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
+
+  # hl7.fhir.us.davinci-hrex: 1.1.0
+  # hl7.fhir.us.davinci-hrex: 1.1.0-preview
   hl7.fhir.us.davinci-pas: 2.0.1
   hl7.fhir.us.davinci-atr: 2.0.0
   hl7.fhir.us.ndh: 1.0.0-ballot

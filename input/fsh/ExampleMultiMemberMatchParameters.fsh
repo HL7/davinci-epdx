@@ -30,7 +30,7 @@ Usage: #example
     * text.status = #generated
     * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "9876B1"
-    * identifier
+    * identifier[memberid]
       * system = "http://example.org/old-payer"
       * value = "DH10001235"
     * status = #draft
@@ -45,10 +45,10 @@ Usage: #example
         * system = "http://hl7.org/fhir/sid/us-npi"
         * value = "9876543210"
       * display = "Old Health Plan"
-    * class[0]
+    * class[group]
       * type = $coverage-class#group
       * value = "CB135"
-    * class[+]
+    * class[plan]
       * type = $coverage-class#plan
       * value = "B37FC"
     * class[+]
@@ -98,7 +98,7 @@ Usage: #example
     * text.status = #generated
     * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "AA87654"
-    * identifier
+    * identifier[memberid]
       * system = "http://example.org/new-payer/identifiers/coverage"
       * value = "234567"
     * status = #active
@@ -138,7 +138,7 @@ Usage: #example
     * text.status = #generated
     * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "876B10"
-    * identifier
+    * identifier[memberid]
       * system = "http://example.org/old-payer"
       * value = "DH10001235"
     * status = #draft
@@ -153,10 +153,10 @@ Usage: #example
         * system = "http://hl7.org/fhir/sid/us-npi"
         * value = "9876543210"
       * display = "Old Health Plan"
-    * class[0]
+    * class[group]
       * type = $coverage-class#group
       * value = "CB135"
-    * class[+]
+    * class[plan]
       * type = $coverage-class#plan
       * value = "B37FC"
     * class[+]
@@ -206,7 +206,7 @@ Usage: #example
     * text.status = #generated
     * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
     * id = "AA87654"
-    * identifier
+    * identifier[memberid]
       * system = "http://example.org/new-payer/identifiers/coverage"
       * value = "234567"
     * status = #active
