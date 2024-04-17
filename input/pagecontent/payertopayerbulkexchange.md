@@ -244,6 +244,19 @@ That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Prot
 to use the B2B protocols detailed in the [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) 
 IG.
 
+### Scopes for Operations
+
+[SMART App Launch STU2.1](http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch)
+defines granular scopes for resources. Following the model proposed in the section on
+[FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
+the following scopes are proposed to control access to the Da Vinci Data Export Operation for Payer-to-Payer bulk exchange:
+
+- user/Group.u?operation=bulk-member-match
+- user/Group.u?operation=davinci-data-export#payertopayer&restriction=id
+
+The *user* Context allows *(u)pdate* access to the *Group* resource to execute the *bulk-member-match* operation 
+and the *davinci-data-export* operation for *payertopayer* exchange with the data export being restricted 
+to the Group *id(s)* that the user is authorized to access.
 
 
 [Next Page - Data Mapping](datamapping.html)
