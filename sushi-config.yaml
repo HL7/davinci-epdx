@@ -31,11 +31,16 @@ license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 dependencies:
   hl7.fhir.us.core: 
+    id: uscore6
+    version: 6.1.0
+    reason: |
+      Defines USCDI 3 resources that will be exposed by PDex APIs.
+  hl7.fhir.us.core.3.1.1:
     id: uscore3
     version: 3.1.1
     reason: |
-      Defines USCDI 1 resources that will be exposed by PDex APIs.  
-  hl7.fhir.us.davinci-hrex: 
+      Defines USCDI 1 resources that will be exposed by PDex APIs.
+  hl7.fhir.us.davinci-hrex:
     id: hrex
     version: current
     reason: |

@@ -12,7 +12,7 @@ The PDex work group has made changes to the original version of the IG following
 The STU2 version of the IG incorporates changes to support the sharing of Prior Authorization information with members, providers and other payers. This is done through the profiling of the [ExplanationOfBenefit](PDexPriorAuthorization.html) resource. This version of the Implementation guide also introduces two Bulk APIs that enable the data available through the Patient Access API to also be made available to In-Network/Contracted Providers and Other Health Plans through the [Provider Access API](provider-access-api.html) and the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). 
 
 CMS Guidance defines two sets of data to be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required but is recommended. If used these guides will provide information payers can employ to meet the requirements of the policies being finalized. 
-The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/) defines how Claims and Encounter Data are to be provided; This Da Vinci Payer Data Exchange IG (PDex) and the [US Core IG]({{site.data.fhir.ver.uscore}}/index.html) define how Clinical Data is to be provided. 
+The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/) defines how Claims and Encounter Data are to be provided; This Da Vinci Payer Data Exchange IG (PDex) and the [US Core 3.1.1 IG]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0 IG]({{site.data.fhir.ver.uscore6}}) define how Clinical Data is to be provided. 
 
 ### Background
 There are two parallel paths pursued by the CARIN Alliance (**C**reating **A**ccess to **R**eal-time **In**formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. The Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
@@ -32,12 +32,12 @@ At this point we have two solutions that provide an overlapping but different se
 5. Information related to medication administration from pharmacy benefit managers in pharmacy networks, 
 6. FHIR resources, and any other source of clinical information related to the member.
  
-Unlike the [US Core 3.1.1 Implementation Guide](http://hl7.org/fhir/us/core/STU3.1.1), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
+Unlike the [US Core 3.1.1 IG]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0 IG]({{site.data.fhir.ver.uscore6}}), PDex provides guidance to payers on how to make the following information available via the Patient Access API:
 
 1. Provenance appropriate for payer data exchange (extended US Core Provenance)
-2. Dispensed medications (not covered in US Core)
+2. Dispensed medications (not covered in [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}))
 3. Medical devices that are not implantable devices (not covered in US Core)
-4. Common Payer Consumer Data Set (CPCDS) to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1.1 information
+4. Common Payer Consumer Data Set (CPCDS) to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1 information
 5. Clinical data received by payers (e.g., laboratory results) from multiple sources (e.g., claims, HL7 V2, CDA) to the appropriate FHIR US Core and PDex profile data elements.
 
 <table>
@@ -155,6 +155,6 @@ See the [Credits](credits.html) page for a list of contributors to the creation 
 
 ### FHIR Publisher
 
-This IG was built with Sushi and the FHIR Publisher (v1.6.3 or greater).
+This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
 
 [Next Page: Implementation Guide](ImplementationGuide-hl7.fhir.us.davinci-pdex.html)

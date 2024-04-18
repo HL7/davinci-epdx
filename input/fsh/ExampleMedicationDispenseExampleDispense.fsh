@@ -1,5 +1,5 @@
 Instance: ExampleMedicationDispenseClaim
-InstanceOf: pdex-medicationdispense
+InstanceOf:  PdexMedicationDispense
 Description: "Example of a MedicationDispense from a Claim"
 * id = "1000001"
 * meta.versionId = "1"
@@ -15,10 +15,3 @@ Description: "Example of a MedicationDispense from a Claim"
 * quantity.value = 60
 * daysSupply.value = 30
 
-
-//Instance: ExampleMedicationDispenseRefill
-//InstanceOf: DispenseRefill
-//Description: "Example of a MedicationDispense Refill Extension"
-//* id = "1"
-//* url = "refillNum"
-//* valueQuantity = 1

@@ -1,8 +1,13 @@
 [Previous Page - US Core Practitioner](USCorePractitioner.html)
 
-The  [US Core PractitionerRole profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)  **SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
+The [US Core 3.1.1 PractitionerRole]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html) or
+[US Core 6.1.0 PractitionerRole]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitionerrole.html)
+**SHALL** be used to record information about the roles that practitioners take in providing services to their patients.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core PractitionerRole](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 PractitionerRole]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html) or
+[US Core 6.1.0 PractitionerRole]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitionerrole.html)
+resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -282,7 +287,9 @@ An example mapping of an PractitionerRole resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [US Core Practitioner Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html).
+Refer to the US Core Additional examples of the [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or
+[US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Implementation Guide for further examples of completed
+PractitionerRole Profiles.
 
 
 

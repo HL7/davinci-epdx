@@ -1,6 +1,9 @@
 [Previous Page - US Core DocumentReference](USCoreDocumentReference.html)
 
-An example mapping of Health Plan data for Members to the [US Core Encounter profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) is shown below:
+An example mapping of Health Plan data for Members to the
+[US Core 3.1.1 Encounter]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-encounter.html) or
+[US Core 6.1.0 Encounter]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-encounter.html) resource 
+is shown below:
 
 {% include style_insert_table_blue.html %}
 
@@ -9,7 +12,9 @@ When populating the encounter resource period - if claim has period, populate pe
 Add warning text to alert the user that Claims consider the date of service to be the date when the service is completed therefore one generally cannot infer the start date of a diagnosis or the encounter to be the same as the service date of a line item.
 
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Encounter](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the 
+[US Core 3.1.1 Encounter]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-encounter.html) or
+[US Core 6.1.0 Encounter]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-encounter.html) resource are:
 
 | R4 Element                                     | Name                  | Cardinality | Type                                    |
 |------------------------------------------------|-----------------------|:-----------:|-----------------------------------------|
@@ -108,8 +113,9 @@ An example mapping of an Encounter resource is shown here:
 </pre>
 
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [Encounter Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html).
-
+Refer to the US Core Additional examples of the [US Core 3.1.1 Implementation Guide]({{site.data.fhir.ver.uscore3}}) 
+or [US Core 6.1.0 Implementation Guide]({{site.data.fhir.ver.uscore6}}) for further examples of completed 
+Encounter Profiles.
 
 
 

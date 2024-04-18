@@ -1,8 +1,8 @@
-Profile:        PdexMedicationDispense
-Parent:         MedicationDispense
-Id:             pdex-medicationdispense
-Title:          "PDex MedicationDispense"
-Description:    "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
+Profile: PdexMedicationDispense
+Parent: USCoreMedicationDispenseProfile|6.1.0
+Id: pdex-medicationdispense
+Title: "PDex MedicationDispense"
+Description: "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"
 * insert PdexStructureDefinitionContent
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -48,7 +48,7 @@ Description:    "Prescription Medications dispensed by a pharmacy to a health pl
 * type 0..1
 * type only CodeableConcept
 * type ^short = "Trial fill, partial fill, emergency fill, etc."
-* type from http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType (example)
+* type from http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType
 
 * quantity 0..1
 * quantity only SimpleQuantity

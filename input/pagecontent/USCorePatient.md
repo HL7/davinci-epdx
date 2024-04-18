@@ -1,8 +1,13 @@
 [Previous Page - US Core Organization](USCoreOrganization.html)
 
-The [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html) **SHALL** be used to express a member's demographic information.
+The [US Core 3.1.1 Patient]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html) or
+[US Core 6.1.0 Patient]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html) resource 
+*SHALL** be used to express a member's demographic information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Patient profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html) are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Patient]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html) or
+[US Core 6.1.0 Patient]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html) resource
+are:
 
 {% include style_insert_table_blue.html %}
 
@@ -296,7 +301,9 @@ An example mapping of a Patient resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [Patient Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html).
+Refer to the US Core Additional examples of the [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or 
+[US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Implementation Guide for further examples of completed 
+Patient Profiles.
 
 
 

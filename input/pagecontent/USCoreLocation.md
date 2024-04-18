@@ -1,8 +1,14 @@
 [Previous Page - US Core Laboratory Result Observation](USCoreLaboratoryResultObservation.html)
 
-The  [US Core Location profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)  **SHALL** be used to record location/facility-specific information.
+The  
+[US Core 3.1.1 Location]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html) or
+[US Core 6.1.0 Location]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html) 
+**SHALL** be used to record location/facility-specific information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the  [US Core Location](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the  
+[US Core 3.1.1 Location]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html) or
+[US Core 6.1.0 Location]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html)
+resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -72,8 +78,9 @@ An example mapping of a Location resource is shown here:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [US Core Location Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html).
-
+Refer to the US Core Additional examples of the [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or
+[US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Implementation Guide for further examples of completed 
+Location Profiles.
 
 
 

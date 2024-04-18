@@ -1,10 +1,16 @@
 [Previous Page - US Core Immunization](USCoreImmunization.html)
 
-Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
+Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the
+[US Core 3.1.1 Implantable Device]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-implantable-device.html) or
+[US Core 6.1.0 Implantable Device]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-implantable-device.html)
+ resource when the information is structured and coded.
 
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.  
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Implantable Device](http://hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Implantable Device]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-implantable-device.html) or
+[US Core 6.1.0 Implantable Device]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-implantable-device.html)
+resource are:
 
 {% include style_insert_table_blue.html %}
 

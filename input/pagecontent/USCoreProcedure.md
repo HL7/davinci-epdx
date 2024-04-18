@@ -1,8 +1,13 @@
 [Previous Page - PDex Prior Authorization](PDexPriorAuthorization.html)
 
-The  [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html) **SHALL** be used to record a member's health events.
+The [US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or
+[US Core 6.1.0 Procedure]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-procedure.html)
+**SHALL** be used to record a member's health events.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html) are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or
+[US Core 6.1.0 Procedure]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-procedure.html)
+are:
 
 {% include style_insert_table_blue.html %}
 
@@ -94,8 +99,9 @@ is presented below:
 }
 </pre>
 
-Refer to the US Core Additional examples of the [US Core R4 Implementation Guide](http://hl7.org/fhir/us/core/index.html) for further examples of completed [US Core Procedure Profiles ](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html).
-
+Refer to the US Core Additional examples of the [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or
+[US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Implementation Guide for further examples of completed
+Procedure Profiles.
 
 
 [Next Page - PDex Provenance](PDexProvenance.html)
