@@ -11,7 +11,8 @@ other Implementation Guides.
 
 PDex references the following Implementation Guides:
 
-- [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/)
+- [US Core 3.1.1]({{site.data.fhir.ver.uscore3}})
+- [US Core 6.1.0]({{site.data.fhir.ver.uscore6}})
 - [Da Vinci Health Record Exchange (HRex) 1.0.0](http://hl7.org/fhir/us/davinci-hrex/STU1/)
 - [Da Vinci Member Attribution (ATR) 2.0.0](http://hl7.org/fhir/us/davinci-atr/STU2/)
 - [Da Vinci Prior Authorization Support (PAS) 2..00](http://hl7.org/fhir/us/davinci-pas/STU2/)
@@ -26,7 +27,9 @@ The following profiles are referenced in this IG:
 
 #### US Core
 
-- [US Core Profiles](http://hl7.org/fhir/us/core/STU3.1.1/profiles.html#profiles)
+- [US Core 3.1.1 Profiles]({{site.data.fhir.ver.uscore3}}/profiles.html)
+- [US Core 6.1.0 Profiles]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
+
 
 #### Health Record Exchange (HRex)
 

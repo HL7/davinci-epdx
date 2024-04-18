@@ -5,12 +5,17 @@ They are supported to enable a payer to produce FHIR resources from
 data provided in other formats.
 
 For some resources, payers are unlikely to have the clinical information
-necessary to create a valid US Core resource. The [US Core Goal Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html) is one potential example of a resource that payers may be 
+necessary to create a valid US Core resource. The
+[US Core 3.1.1 Goal]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-goal.html) or
+[US Core 6.1.0 Goal]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-goal.html) resource
+is one potential example of a resource that payers may be 
 unable to create from the source clinical data they have available.
 
 A valid US Core Goal profile in addition to a reference to a member, using the US Core Patient resource, will require a lifecycleStatus, a description of the goal and, optionally, a target date.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Goal](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the 
+[US Core 3.1.1 Goal]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-goal.html) or
+[US Core 6.1.0 Goal]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-goal.html) resource are:
 
 {% include style_insert_table_blue.html %}
 

@@ -1,6 +1,9 @@
 [Previous Page - US Core Medication](USCoreMedication.html)
 
-The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims.
+The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims when sharing data using
+the [US Core 3.1.1 Implementation Guide]({{site.data.fhir.ver.uscore3}}). When using the  [US Core 6.1.0 Implementation Guide]({{site.data.fhir.ver.uscore6}}) 
+to exchange data the [US Core MedicationDispense profile]({{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medicationdispense.html) should be used.
+
 
 {% include style_insert_table_blue.html %}
 

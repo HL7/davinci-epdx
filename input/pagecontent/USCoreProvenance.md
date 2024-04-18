@@ -1,10 +1,18 @@
 [Previous Page - PDex Provenance](PDexProvenance.html)
 
-[US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) is provided as a reference for situations where payers receive detailed clinical data via formats such as C-CDA and in converting to a FHIR format are able to identify the detailed information about the originating event and can therefore create an appropriate Provenance record.
+
+[US Core 3.1.1 Procvenance]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-provenance.html) or
+[US Core 6.1.0 Provenance]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html)
+is provided as a reference for situations where payers receive detailed clinical data 
+via formats such as C-CDA and in converting to a FHIR format are able to identify the detailed information about the 
+originating event and can therefore create an appropriate Provenance record.
 
 In all other cases a payer SHALL create a [PDex Provenance](PDexProvenance.html) profile that identifies their role as a "Transmitter" of the information.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Procvenance]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-provenance.html) or
+[US Core 6.1.0 Provenance]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html)
+are:
 
 {% include style_insert_table_blue.html %}
 

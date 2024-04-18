@@ -1,8 +1,12 @@
 [Previous Page - PDex MedicationDispense](PDexMedicationDispense.html)
 
-Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource.
+Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the
+[US Core 3.1.1 MedicationRequest]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medicationrequest.html) or
+[US Core 6.1.0 MedicationRequest]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationrequest.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core MedicationRequest](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 MedicationRequest]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medicationrequest.html) or
+[US Core 6.1.0 MedicationRequest]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationrequest.html) resource are:
 
 {% include style_insert_table_blue.html %}
 

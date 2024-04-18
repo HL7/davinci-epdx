@@ -1,8 +1,11 @@
 [Previous Page - US Core CarePlan](USCoreCarePlan.html)
 
-Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource.
+Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the
+[US Core 3.1.1 CareTeam]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careteam.html) or
+[US Core 6.1.0 CareTeam]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-careteam.html)resource are:
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core CareTeam](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html) resource are:
+
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided are:
 
 | R4 Element           | Name         | Cardinality | Type                                                                                               |
 |----------------------|--------------|:-----------:|----------------------------------------------------------------------------------------------------|

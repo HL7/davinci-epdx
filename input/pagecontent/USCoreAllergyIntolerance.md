@@ -1,6 +1,12 @@
 [Previous Page - Data Mapping](datamapping.html)
 
-Where a Health Plan has information about a member's allergies the  [US Core AllergyIntolerance profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)  **SHALL** be used to record them.
+Where a Health Plan has information about a member's allergies the  US Core AllergyIntolerance profile
+ **SHALL** be used to record them.
+
+The US Core AllergyIntolerance profile is found here:
+
+- [US Core 3.1.1 AllergyIntolerance]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-allergyintolerance.html)
+- [US Core 6.1.0 AllergyIntolerance]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-allergyintolerance.html)
 
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core AllergyIntolerance resource are:

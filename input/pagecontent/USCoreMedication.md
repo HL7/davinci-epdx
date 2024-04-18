@@ -1,8 +1,12 @@
 [Previous Page - US Core Location](USCoreLocation.html)
 
-Where a Health Plan has access to Medication information, they **SHALL** make the information available using the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource.
+Where a Health Plan has access to Medication information, they **SHALL** make the information available using the
+[US Core 3.1.1 Medication]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medication.html) or
+[US Core 6.1.0 Medication]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html) resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Medication](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Medication]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medication.html) or
+[US Core 6.1.0 Medication]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html) resource are:
 
 {% include style_insert_table_blue.html %}
 

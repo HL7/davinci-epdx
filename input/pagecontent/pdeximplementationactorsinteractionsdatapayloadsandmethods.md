@@ -8,9 +8,10 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
 The Member Health History is represented as a series of FHIR Resources that are based on a superset 
-of [HL7 FHIR US Core STU 3.1.1]({{site.data.fhir.ver.uscore}}/index.html), HRex and PDex profiles. 
+of [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}), HRex and PDex profiles. 
 The content/payload of the Member Health History may be augmented by FHIR resources that are 
-generated from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination.
+generated from other HL7 Da Vinci IG use cases, such as Coverage Requirements Determination(CRD) or Prior Authorization
+Support (PAS).
 
 ### Actors
 
@@ -122,7 +123,7 @@ selection criteria that filters Health Plan provided information and automatical
 meet their criteria. For the purposes of this IG and accompanying Reference Implementation the manual provider 
 selection method was used to illustrate the record import capability.
 
-The [Da Vinci Documentation Templates and Rules Implementation Guide]({{site.data.fhir.ver.davinci-dtr}}/index.html) (DTR-IG) 
+The [Da Vinci Documentation Templates and Rules Implementation Guide]({{site.data.fhir.ver.davinci-dtr}}) (DTR-IG) 
 provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided 
 SMART Apps should function.
 

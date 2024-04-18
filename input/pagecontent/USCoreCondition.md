@@ -1,6 +1,8 @@
 [Previous Page - US Core CareTeam](USCoreCareTeam.html)
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Condition](http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html) resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core 3.1.1 Condition]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-condition.html) or
+[US Core 6.1.0 Condition]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition.html)resource are:
 
 {% include style_insert_table_blue.html %}
 

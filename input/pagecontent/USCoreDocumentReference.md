@@ -1,6 +1,9 @@
 [Previous Page - US Core DiagnosticReport for Report and Note Exchange](USCoreDiagnosticReportforReportandNoteExchange.html)
 
-The Health Plan **SHALL** use the [US Core DocumentReference](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html) resource to exchange: 
+The Health Plan **SHALL** use the
+[US Core 3.1.1 DocumentReference]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-documentreference.html) or
+[US Core 6.1.0 DocumentReference]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-documentreference.html) 
+resource to exchange:
  
 - Unstructured data
 - Imaging data
