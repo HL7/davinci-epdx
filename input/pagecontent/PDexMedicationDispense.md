@@ -2,7 +2,7 @@
 
 The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims when sharing data using
 the [US Core 3.1.1 Implementation Guide]({{site.data.fhir.ver.uscore3}}). When using the  [US Core 6.1.0 Implementation Guide]({{site.data.fhir.ver.uscore6}}) 
-to exchange data the [US Core MedicationDispense profile]({{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-medicationdispense.html) should be used.
+to exchange data the [US Core MedicationDispense profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationdispense.html) should be used.
 
 
 {% include style_insert_table_blue.html %}
@@ -24,7 +24,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 #### Health Plan Mapping Assistance
 
-A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispense profile](https://build.fhir.org/ig/HL7/davinci-hrex/StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance to implementers:
+A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of  data for Members to the [PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html). This is shown below as an assistance to implementers:
 
 | PDex Element                              | Must Support | Cardinality | CARIN-BB Element                                                                       | CPCDS Element Mapping or Implementer Note                                                                                                                                                                 |
 |-------------------------------------------|:------------:|:-----------:|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

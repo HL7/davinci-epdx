@@ -18,8 +18,6 @@ WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# MedicationDispense NOT defined in required US Core version 3.1.1 - Variance Tracker: FHIR-43297 2023-12-07 Motion to approve variance as requested: Mark Scrimshire/Brett Marquard: 19-0-1
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense').baseDefinition: US FHIR Usage rules require that all profiles on MedicationDispense derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # HIPPS Codes not available
 %https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes%
@@ -39,8 +37,6 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # AMA CodeSystem has a grammar and can't be enumerated
 %http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated%
 
-# Migration of appropriate CodeSystems to THO is planned for the next release of this IG.
-%Most code systems defined in HL7 IGs will need to move to THO later during the process.%
 
 # Tooling issue - to be fixed in post 1.6.2 publisher release
 %Parameters.parameter.part: minimum required = 3, but only found 0%

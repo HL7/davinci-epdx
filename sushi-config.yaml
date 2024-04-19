@@ -30,22 +30,23 @@ description: "This specification has undergone ballot and connectathon testing. 
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 dependencies:
-  hl7.fhir.us.core: 
-    id: uscore6
-    version: 6.1.0
-    reason: |
-      Defines USCDI 3 resources that will be exposed by PDex APIs.
   hl7.fhir.us.core.3.1.1:
-    id: uscore3
     version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore3
     reason: |
       Defines USCDI 1 resources that will be exposed by PDex APIs.
+  hl7.fhir.us.core:
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore6
+    reason: |
+      Defines USCDI 3 resources that will be exposed by PDex APIs.
   hl7.fhir.us.davinci-hrex:
-    id: hrex
     version: current
+    id: hrex
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
-
   # hl7.fhir.us.davinci-hrex: 1.1.0
   # hl7.fhir.us.davinci-hrex: 1.1.0-preview
   hl7.fhir.us.davinci-pas: 2.0.1
@@ -57,7 +58,6 @@ dependencies:
   hl7.fhir.uv.extensions: 5.1.0-ballot1
   hl7.terminology.r4: 5.3.0
   # hl7.fhir.uv.tools: 0.2.0-snapshot
-
 parameters:
   show-inherited-invariants: false
   path-expansion-params: ../../input/expansion-params.json

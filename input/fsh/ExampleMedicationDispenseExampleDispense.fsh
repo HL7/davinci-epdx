@@ -3,7 +3,7 @@ InstanceOf:  PdexMedicationDispense
 Description: "Example of a MedicationDispense from a Claim"
 * id = "1000001"
 * meta.versionId = "1"
-* meta.lastUpdated = "2020-07-09T15:26:23.217+00:00"
+* meta.lastUpdated = "2024-04-17T15:26:23.217+00:00"
 //  * extension[refillNum].id = "1"
 * extension[refillNum].valueQuantity.value = 1
 * status = http://terminology.hl7.org/CodeSystem/medicationdispense-status#completed
@@ -13,5 +13,6 @@ Description: "Example of a MedicationDispense from a Claim"
 * location.reference = "Location/5"
 * type =  http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * quantity.value = 60
+* whenHandedOver = 2024-04-15T09:00:23.217+00:00
 * daysSupply.value = 30
 
