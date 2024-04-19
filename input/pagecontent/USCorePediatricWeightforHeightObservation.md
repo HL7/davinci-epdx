@@ -1,11 +1,20 @@
 [Previous Page - US Core Pediatric Head Occipital-frontal Circumference Observation](USCorePediatricHeadOccipital.html)
 
-The US Core IG profiles the Observation resource for a variety of purposes. For example:
-- [Smoking status](https://hl7.org/fhir/us/core/Observation-some-day-smoker.html)
-- [Pediatric BMI for Age](http://hl7.org/fhir/us/core/Observation-pediatric-bmi-example.html)
-- [Pediatric Weight for Height](https://hl7.org/fhir/us/core/Observation-pediatric-wt-example.html)
+The [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) IG profiles the Observation resource for a variety of purposes.
+For example:
+- [Smoking status]({{site.data.fhir.ver.uscore3}}/Observation-some-day-smoker.html)
+- [Pediatric BMI for Age]({{site.data.fhir.ver.uscore3}}/Observation-pediatric-bmi-example.html)
+- [Pediatric Weight for Height]({{site.data.fhir.ver.uscore3}}/Observation-pediatric-wt-example.html)
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Observation](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html) resource are:
+[US Core 6.1.0 ]({{site.data.fhir.ver.uscore6}}) defines those same profiles:
+- [Smoking status]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-smokingstatus.html)
+- [Pediatric BMI for Age]({{site.data.fhir.ver.uscore6}}/StructureDefinition-pediatric-bmi-for-age.html)
+- [Pediatric Weight for Height]({{site.data.fhir.ver.uscore6}}/StructureDefinition-pediatric-weight-for-height.html)
+
+
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
+[US Core Observation]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-observation-lab.html) resource are:
+
 
 {% include style_insert_table_blue.html %}
 

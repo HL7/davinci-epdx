@@ -2,7 +2,9 @@
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 Condition]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-condition.html) or
-[US Core 6.1.0 Condition]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition.html)resource are:
+[US Core 6.1.0 Condition Encounter Diagnosis]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition-encounter-diagnosis.html) or
+[US Core 6.1.0 Condition Problems and Health Concerns]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition-problems-health-concerns.html)
+resources are:
 
 {% include style_insert_table_blue.html %}
 

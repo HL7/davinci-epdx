@@ -2,11 +2,17 @@
 
 This IG supports the full complement of US Core profiles. They are supported to enable a payer to produce FHIR resources from data provided in other formats.
 
-For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [US Core Smoking Status](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html) is one potential example of an Observation profile that payers may be unable to create from the source clinical data they have available.
+For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The 
+[US Core 3.1.1 Smoking Status]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html) or 
+[Smoking status]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-smokingstatus.html) is one potential example of 
+an Observation profile that payers may be unable to create from the source clinical data they have available.
 
-A Smoking Status observation requires codes and values for smoking observation. Payers may not have access to the detail data needed to create a valid observation resource.
+A Smoking Status observation requires codes and values for smoking observation. Payers may not have access to the 
+detail data needed to create a valid observation resource.
 
-The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Smoking Status](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html) Observation resource are:
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the 
+[US Core 3.1.1 Smoking Status]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html) or 
+[Smoking status]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-smokingstatus.html) Observation resource are:
 
 {% include style_insert_table_blue.html %}
 
@@ -24,7 +30,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 ### Example Smoking Status Observation
 
-US Core Smoking Status Observation: [https://hl7.org/fhir/us/core/Observation-some-day-smoker.html](https://hl7.org/fhir/us/core/Observation-some-day-smoker.html)
+[US Core Smoking Status Observation example]({{site.data.fhir.ver.uscore3}}/Observation-some-day-smoker.html):
 
 <pre>
 {
