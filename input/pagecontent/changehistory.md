@@ -8,6 +8,7 @@
 
 | JIRA Ticket                                                  | Change                                                                                                            |
 |--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Added US Core 6.1.0 Support                                  | Added support for US Core 6.1.0 in addition to US Core 3.1.1. Based on L McKenzie Publishing Guidance             |
 | New MembersOptedOut Extension                                | Extension to capture number of Attributed Members excluded from the list through Opt-Out                          |
 | TC: [FHIR-44906](https://jira.hl7.org/browse/FHIR-44906)     | Fix broken link to Bulk Data Access IG                                                                            |
 | Add DaVinci-data-export-operation to Oher-igs.md             | Add link to Da Vinci Data Export Operaiton in other-igs.md                                                        |

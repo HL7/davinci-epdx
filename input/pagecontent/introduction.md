@@ -107,7 +107,7 @@ This Implementation Guide uses terminology, notations and design principles that
 
 ### Implementation Assumptions
 
-Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles]({{site.data.fhir.ver.uscore}}/index.html). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
+Wherever possible, the PDex IG will use established [US Core STU 3.1.1 Profiles]({{site.data.fhir.ver.uscore3}}) or [US Core STU 6.1.0 Profiles]({{site.data.fhir.ver.uscore6}}). Where information must be presented in FHIR resources that fall outside of the US Core Implementation Guide (IG) the HL7 Da Vinci Health Record exchange (HRex) IG will define the necessary Da Vinci FHIR profiles or will refer to other Implementation Guides, as necessary.
 
 Where profiles are specific to the PDex use case, the profiles will be defined in this guide.
 
@@ -115,8 +115,12 @@ Where profiles are specific to the PDex use case, the profiles will be defined i
 
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
-1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [http://hl7.org/fhir/us/core/]({{site.data.fhir.ver.uscore}}/index.html) ) 
-2. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) ).
+1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [{{site.data.fhir.ver.uscore3}}/STU3.1.1]({{site.data.fhir.ver.uscore3}}))
+2. HL7 FHIR US Core STU6 v6.1.0 (based on FHIR R4 - [{{site.data.fhir.ver.uscore3}}/STU6.1]({{site.data.fhir.ver.uscore6}}))
+3. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) ).
+
+Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superceding US Core 3.1.1. 
+Prior to that date Implementers may choose to implement either version of US Core.
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.
 
@@ -145,45 +149,99 @@ The Read and Search Operations **SHALL** be supported for the FHIR Profiles cove
 
 The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History"  **SHOULD** include the following profiles where payers have data to support the use of those profiles:
 
-#### US Core Profiles
+#### US Core Profiles (STU3 - 3.1.1)
 
-- [US Core AllergyIntolerance Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html)
-- [US Core CarePlan Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html)
-- [US Core CareTeam Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html)
-- [US Core Condition Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html)
-- [US Core DiagnosticReport Profile for Laboratory Results Reporting](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html)
-- [US Core DiagnosticReport Profile for Report and Note exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html)
-- [US Core DocumentReference Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html)
-- [US Core Encounter Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html)
-- [US Core Goal Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html)
-- [US Core Immunization Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html)
+- [US Core AllergyIntolerance Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-allergyintolerance.html)
+- [US Core CarePlan Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careplan.html)
+- [US Core CareTeam Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careteam.html)
+- [US Core Condition Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-condition.html)
+- [US Core DiagnosticReport Profile for Laboratory Results Reporting]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-lab.html)
+- [US Core DiagnosticReport Profile for Report and Note exchange]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-note.html)
+- [US Core DocumentReference Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-documentreference.html)
+- [US Core Encounter Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-encounter.html)
+- [US Core Goal Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-goal.html)
+- [US Core Immunization Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-immunization.html)
 - [US Core Implantable Device Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html)
 - [US Core Laboratory Result Observation Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)
-- [US Core Location Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html)
-- [US Core Medication Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html)
-- [US Core MedicationRequest Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html)
-- [US Core Organization Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html)
-- [US Core Patient Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html)
-- [US Core Pediatric BMI for Age Observation Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html)
-- [US Core Pediatric Weight for Height Observation Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html)
-- [US Core Practitioner Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html)
-- [US Core PractitionerRole Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html)
-- [US Core Procedure Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html)
-- [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html)
-- [US Core Pulse Oximetry Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html)
-- [US Core Smoking Status Observation Profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html).
+- [US Core Location Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html)
+- [US Core Medication Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medication.html)
+- [US Core MedicationRequest Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medicationrequest.html)
+- [US Core Organization Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-organization.html)
+- [US Core Patient Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html)
+- [US Core Pediatric BMI for Age Observation Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-bmi-for-age.html)
+- [US Core Pediatric Weight for Height Observation Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-weight-for-height.html)
+- [US Core Practitioner Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitioner.html)
+- [US Core PractitionerRole Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html)
+- [US Core Procedure Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html)
+- [US Core Provenance Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-provenance.html)
+- [US Core Pulse Oximetry Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-pulse-oximetry.html)
+- [US Core Smoking Status Observation Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html).
 
-In addition, US Core uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
+In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
+
+#### US Core Profiles (STU6 - 6.1.0)
+
+- [USCore AllergyIntolerance Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-allergyintolerance.html)
+- [USCore CarePlan Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-careplan.html)
+- [USCore CareTeam Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-careteam.html)
+- [USCore Condition Encounter Diagnosis Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition-encounter-diagnosis.html )
+- [USCore Condition Problems and Health Concerns Profile]({{site.data.fhir.ver.uscore6}}StructureDefinition-us-core-condition-problems-health-concerns.html)
+- [USCore Coverage Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-coverage.html)
+- [USCore Implantable Device Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-implantable-device.html)
+- [USCore DiagnosticReport Profile for Laboratory Results Reporting]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-diagnosticreport-lab.html)
+- [USCore DiagnosticReport Profile for Report and Note Exchange]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-diagnosticreport-note.html) 
+- [USCore DocumentReference Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-documentreference.html)
+- [USCore Encounter Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-encounter.html)
+- [USCore Goal Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-goal.html)
+- [USCore Immunization Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-immunization.html)
+- [USCore Location Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html)
+- [USCore Medication Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html)
+- [USCore MedicationDispense Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationdispense.html)
+- [USCore MedicationRequest Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationrequest.html)
+- [USCore Observation Clinical Result Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-clinical-result.html)
+- [USCore Laboratory Result Observation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-lab.html)
+- [USCore Observation Occupation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-occupation.html)
+- [USCore Observation Pregnancy Intent Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-pregnancyintent.html)
+- [USCore Observation Pregnancy Status Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-pregnancystatus.html)
+- [USCore Observation Screening Assessment Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-screening-assessment.html)
+- [USCore Observation Sexual Orientation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-observation-sexual-orientation.html)
+- [USCore Simple Observation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-simple-observation.html)
+- [USCore Smoking Status Observation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-smokingstatus.html)
+- [USCore Vital Signs Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-vital-signs.html)
+- [USCore Pediatric Head Occipital Frontal Circumference Percentile Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-head-occipital-frontal-circumference-percentile.html)
+- [USCore Pediatric BMI for Age Observation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-pediatric-bmi-for-age.html)
+- [USCore Pediatric Weight for Height Observation Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-pediatric-weight-for-height.html)
+- [USCore Blood Pressure Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-blood-pressure.html)
+- [USCore BMI Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-bmi.html)
+- [USCore Body Height Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-body-height.html)
+- [USCore Body Temperature Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-body-temperature.html)
+- [USCore Body Weight Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-body-weight.html)
+- [USCore Head Circumference Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-head-circumference.html)
+- [USCore Heart Rate Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-heart-rate.html)
+- [USCore Pulse Oximetry Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-pulse-oximetry.html)
+- [USCore Respiratory Rate Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-respiratory-rate.html)
+- [USCore Organization Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-organization.html)
+- [USCore Patient Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html)
+- [USCore Practitioner Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitioner.html)
+- [USCore PractitionerRole Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitionerrole.html)
+- [USCore Procedure Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-procedure.html)
+- [USCore Provenance Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html)
+- [USCore QuestionnaireResponse Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-questionnaireresponse.html)
+- [USCore RelatedPerson Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-relatedperson.html)
+- [USCore ServiceRequest Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-servicerequest.html)
+- [USCore Specimen Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-specimen.html)
+
+To understand the changes between US Core 3.1.1 and US Core 6.1.0 check out the [Cross Version Comparisons Section]({{site.data.fhir.ver.uscore6}}/changes-between-versions.html#cross-version-comparisons) section of the US Core 6.1.0 IG.
 
 #### Da Vinci PDex / HRex
 
 - [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
-- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) 
+- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0.
 - [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
-#### CapabilityStatement
+#### CapabilityStatement (STU3 - US Core 3.1.1)
 
 The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.
 
@@ -191,39 +249,39 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 
 {% include style_insert_table_blue.html %}
 
-| Resource Type                                             | Profile                                                                                        | Read | V-Read | Search | History |
-|-----------------------------------------------------------|------------------------------------------------------------------------------------------------|------|--------|--------|---------|
-| AllergyIntolerance                                        | http://hl7.org/fhir/us/core/StructureDefinition-us-core-allergyintolerance.html   | Y    | Y      | Y | Y       |
-| CarePlan                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html             | Y    | Y      | Y      | Y       |
-| CareTeam                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-careteam.html             | Y    | Y      | Y    | Y       |
-| Condition                                                 | http://hl7.org/fhir/us/core/StructureDefinition-us-core-condition.html            | Y    | Y      | Y     | Y       |
-| Coverage                                                  | http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-coverage.html               | Y    | Y      | Y      | Y       |
-| Device                                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html               | Y    | Y      | Y      | Y       |
-| DiagnosticReport for Laboratory Results Reporting         | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html    | Y    | Y      | Y     | Y       |
-| DiagnosticReport for Report and Note Exchange             | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      | Y       |
-| DocumentReference                                         | http://hl7.org/fhir/us/core/StructureDefinition-us-core-documentreference.html    | Y    | Y      | Y       | Y       |
-| Encounter                                                 |http://hl7.org/fhir/us/core/StructureDefinition-us-core-encounter.html            | Y    | Y      | Y       | Y       |
-| Goal                                                      | http://hl7.org/fhir/us/core/StructureDefinition-us-core-goal.html                 | Y    | Y      | Y     | Y       |
-| Immunization                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html         | Y    | Y      | Y      | Y       |
-| Implantable Device                                        | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-implantable-device.html    | Y    | Y      | Y      | Y       |
-| Laboratory Result Observation                             | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html       | Y    | Y      | Y      | Y       |
-| Location                                                  | http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html             | Y    | Y      | Y      | Y       |
-| Medication                                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medication.html           | Y    | Y      | Y      | Y       |
-| MedicationDispense                                        | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html           | Y    | Y      | Y      | Y       |
-| MedicationRequest                                         | http://hl7.org/fhir/us/core/StructureDefinition-us-core-medicationrequest.html    | Y    | Y      | Y      | Y       |
-| Organization                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html         | Y    | Y      | Y    | Y       |
-| Patient                                                   | http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html              | Y    | Y      | Y      | Y       |
-| Pediatric BMI for Age Observation                         | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-bmi-for-age.html      | Y    | Y      | Y     | Y       |
-| Pediatric Head Occipital Frontal Circumference Percentile | https://www.hl7.org/fhir/us/core/StructureDefinition-head-occipital-frontal-circumference-percentile.html  | Y    | Y      | Y      | Y       |
-| Pediatric Weight for Height Observation                   | https://www.hl7.org/fhir/us/core/StructureDefinition-pediatric-weight-for-height.html  | Y    | Y      | Y      | Y       |
-| Practitioner                                              | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitioner.html         | Y    | Y      | Y      | Y       |
-| PractitionerRole                                          | http://hl7.org/fhir/us/core/StructureDefinition-us-core-practitionerrole.html     | Y    | Y      | Y      | Y       |
-| Procedure                                                 | http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html            | Y    | Y      | Y         | Y       |
-| Provenance                                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html           | Y    | Y      | Y      | Y       |
+| Resource Type                                             | Profile                                                                           | Read | V-Read | Search | History |
+|-----------------------------------------------------------|-----------------------------------------------------------------------------------|------|--------|--------|---------|
+| AllergyIntolerance                                        | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-allergyintolerance.html | Y    | Y      | Y | Y       |
+| CarePlan                                                  | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careplan.html         | Y    | Y      | Y      | Y       |
+| CareTeam                                                  | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careteam.html         | Y    | Y      | Y    | Y       |
+| Condition                                                 | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-condition.html        | Y    | Y      | Y     | Y       |
+| Coverage                                                  | http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-coverage.html | Y    | Y      | Y      | Y       |
+| Device                                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html         | Y    | Y      | Y      | Y       |
+| DiagnosticReport for Laboratory Results Reporting         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-lab.html | Y    | Y      | Y     | Y       |
+| DiagnosticReport for Report and Note Exchange             | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      | Y       |
+| DocumentReference                                         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-documentreference.html | Y    | Y      | Y       | Y       |
+| Encounter                                                 |{{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-encounter.html         | Y    | Y      | Y       | Y       |
+| Goal                                                      | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-goal.html             | Y    | Y      | Y     | Y       |
+| Immunization                                              | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-immunization.html     | Y    | Y      | Y      | Y       |
+| Implantable Device                                        | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-implantable-device.html | Y    | Y      | Y      | Y       |
+| Laboratory Result Observation                             | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-observation-lab.html | Y    | Y      | Y      | Y       |
+| Location                                                  | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html         | Y    | Y      | Y      | Y       |
+| Medication                                                | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medication.html       | Y    | Y      | Y      | Y       |
+| MedicationDispense                                        | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-medicationdispense.html | Y    | Y      | Y      | Y       |
+| MedicationRequest                                         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medicationrequest.html | Y    | Y      | Y      | Y       |
+| Organization                                              | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-organization.html     | Y    | Y      | Y    | Y       |
+| Patient                                                   | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html          | Y    | Y      | Y      | Y       |
+| Pediatric BMI for Age Observation                         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-bmi-for-age.html    | Y    | Y      | Y     | Y       |
+| Pediatric Head Occipital Frontal Circumference Percentile | {{site.data.fhir.ver.uscore3}}/StructureDefinition-head-occipital-frontal-circumference-percentile.html | Y    | Y      | Y      | Y       |
+| Pediatric Weight for Height Observation                   | {{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-weight-for-height.html | Y    | Y      | Y      | Y       |
+| Practitioner                                              | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitioner.html     | Y    | Y      | Y      | Y       |
+| PractitionerRole                                          | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html | Y    | Y      | Y      | Y       |
+| Procedure                                                 | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html        | Y    | Y      | Y         | Y       |
+| Provenance                                                | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-provenance.html       | Y    | Y      | Y      | Y       |
 | PDex Provenance                                           | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-provenance.html   | Y    | Y      | Y      | Y       |
-| Pulse Oximetry                                            | https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
-| Smoking Status Observation                                | http://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html        | Y    | Y      | Y       | Y       |
-| Vital Signs                                               | http://hl7.org/fhir/R4/observation-vitalsigns.html                                             | Y    | Y      | Y       | Y       |
+| Pulse Oximetry                                            | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-pulse-oximetry.html   | Y    | Y      | Y    | Y       |
+| Smoking Status Observation                                | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html    | Y    | Y      | Y       | Y       |
+| Vital Signs                                               | http://hl7.org/fhir/R4/observation-vitalsigns.html                                | Y    | Y      | Y       | Y       |
 
 
 #### Healthcare Network Directory 
