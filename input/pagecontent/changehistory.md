@@ -8,6 +8,7 @@
 
 | JIRA Ticket                                                  | Change                                                                                                                                                 |
 |--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Update Clinical-Financial picture in overview.md             | Update Clinical Financial image on overview page.                                                                                                      |
 | [FHIR-45356](https://jira.hl7.org/browse/FHIR-45356)         | Change milsEndpoint examples to use correct code from NdhAssociatedServersTypeCS                                                                       |
 | [FHIR-45355](https://jira.hl7.org/browse/FHIR-45355)         | Removed copied NDH Extensions, Code Systems and Value Sets. Point to content in NDH 1.0.0-ballot, allowing replicated content to be removed from PDex. |
 | [FHIR-45352](https://jira.hl7.org/browse/FHIR-45352)         | Added support for US Core 6.1.0 in addition to US Core 3.1.1. Based on L McKenzie Publishing Guidance                                                  |
