@@ -92,22 +92,35 @@ members attributed to a Provider, Provider Group or Organization. PDexProviderGr
 [ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html) Profile 
 from the[Da Vinci Member Attribution (ATR) 2.0.0 IG](http://hl7.org/fhir/us/davinci-atr/STU2/). 
 
-The profile adds an extension at the root level. This is used to optionally record the number of potentially 
+The profile adds an extension at the root level. This is used to, optionally, record the number of potentially 
 attributed members that instead used their right to opt-out of sharing data with providers. By recording this quantity
-it can help providers reconcile their attribution lists with those managed by the Payer, The extension is:
+it **MAY** help providers reconcile their attribution lists with those managed by the Payer, The extension is:
 
 - MembersOptedOut
 
 
-The Profile adds three extensions to the member element. 
-These are used to track the data retrieved for a member by the provider. 
-These extensions are:
+The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) Profile adds three extensions to the member element. 
+These are used to track the data retrieved for a member by the provider. This enables sophissticated providers
+to fine tune their requests for data. For example, Retrieving the group resource a Provider could create a Provider
+Access data request that repeated the parameters supplied to [lastResources](StructureDefinition-base-ext-last-types.html) 
+and [lastFilters](StructureDefinition-base-ext-last-typefilter.html) and compile a list of Patients with the same [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
+date. The Provider Access API is flexible enough that a Provider could submit a request for the data for a single Patient, repeating the 
+previously used parameters. A Provider could also compile a request that omitted resources that were previously asked for,
+avoiding data duplication. Providing these member-level extensions is meant as an aid to Providers and Payers to enable
+granular data sharing. Providers, or Payers wishing to take advantage of these elements **SHOULD** consider implementing
+their own independent data tracking capabilities to understand what data has been provided to a Provider for specific members.
+
+The member-level extensions are primarily intended for instances where a Provider does not want to download *ALL information
+for ALL attributed members.*
+
+The member-level extensions are:
 
 - [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
 - [lastResources](StructureDefinition-base-ext-last-types.html)
 - [lastFilters](StructureDefinition-base-ext-last-typefilter.html)
 
 These extensions **SHALL** be updated by the Da Vinci Data Export PDex Use Case Operation.
+
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
