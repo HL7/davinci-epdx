@@ -6,7 +6,7 @@ Description: "A bundle of Endpoint and Organization resources to enable mTLS end
 * insert PdexStructureDefinitionContent
 * type 1..1 MS
 * type ^short = "Fixed=Collection"
-* type from BundleTypeVS (required)
+* type from $BundleTypeVS (required)
 * timestamp 1..1 MS
 * timestamp ^short = "Date of creation"
 //* entry 0..*
@@ -24,12 +24,13 @@ Description: "A bundle of Endpoint and Organization resources to enable mTLS end
 // -------------------------------------
 
 Alias: $BundleTypeCS = http://hl7.org/fhir/bundle-type
+Alias: $BundleTypeVS = http://hl7.org/fhir/ValueSet/bundle-type
 
-ValueSet: BundleTypeVS
-Title: "mTLS Bundle Type Value Set"
-Description: "Categories of bundle."
-* ^experimental = true
-* codes from system $BundleTypeCS
-* $BundleTypeCS#collection   // Bundle is always collection
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
+// ValueSet: BundleTypeVS
+// Title: "mTLS Bundle Type Value Set"
+// Description: "Categories of bundle."
+// * ^experimental = true
+// * codes from system $BundleTypeCS
+// * $BundleTypeCS#collection   // Bundle is always collection
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm

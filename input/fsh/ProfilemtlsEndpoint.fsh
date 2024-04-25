@@ -35,7 +35,7 @@ Description: "The mTLS Endpoint is used to assist payers in defining their mTLS 
 * status MS
 * status = #active (exactly)
 * connectionType MS
-* connectionType from EndpointConnectionTypeVS (extensible)
+* connectionType from $EndpointConnectionTypeVS (extensible)
 * name MS
 * name ^short = "Payer-Payer Exchange"
 * managingOrganization only Reference(MtlsOrganization)
@@ -43,8 +43,8 @@ Description: "The mTLS Endpoint is used to assist payers in defining their mTLS 
 * contact.extension contains
     ContactPointAvailableTime named contactpoint-availabletime 0..*
 * payloadType 1..1
-* payloadType from EndpointPayloadTypeVS (extensible)
-* payloadMimeType from EndpointFhirMimeTypeVS
+* payloadType from $EndpointPayloadTypeVS (extensible)
+* payloadMimeType from $EndpointFhirMimeTypeVS
 * payloadMimeType MS
 * extension contains MtlsSignedObject named pdex-mtls-signedobject-extension 1..* MS
 

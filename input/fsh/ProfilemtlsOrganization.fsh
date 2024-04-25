@@ -12,9 +12,6 @@ Description: "The mTLS Organization record is used to identify the contact infor
     IdentifierStatus named identifier-status 0..1
 
 * active 1..1 MS
-// * type 1..1 MS
-// * type from OrgTypeVS (required)
-// * type ^short = "Fixed value=payer"
 
 * telecom 1..* MS
 * telecom ^short = "Provide URL(s) for member support as required on Member ID card"
