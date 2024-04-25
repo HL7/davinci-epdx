@@ -80,44 +80,65 @@ Alias: $FHIRVersionCS = http://hl7.org/fhir/FHIR-version
 Alias: $DaysOfWeekVS  = http://hl7.org/fhir/ValueSet/days-of-week
 
 //// NDH Aliases
-//Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS
-//Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase
-//Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-igsSupported
-//Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts
-//Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework
-//Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint
-//Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers
-//Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointAccessControlMechanismCS
-//Alias: $EndpointConnectionTypeVersionCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS
-//Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhFhirEndpointUseCaseCS
-//Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
-//Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS
-//Alias: $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
-//Alias: $OrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS
-//Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhVerificationStatusCS
-//Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
-//Alias: $TrustProfileCS = http://hl7.org/fhir/us/ndh/CodeSystem/CodeSystem/TrustProfileCS
+Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-endpoint-usecase
+Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-igsSupported
+Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureExchangeArtifacts
+Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-trustFramework
+Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-secureEndpoint
+Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/ndh/StructureDefinition/base-ext-associatedServers
+
+Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhAssociatedServersTypeCS
+Alias: $NdhAssociatedServersTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/NdhAssociatedServersTypeVS
+Alias: $CredentialStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/CredentialStatusCS
+
+Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointAccessControlMechanismCS
+Alias: $EndpointAccessControlMechanismVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointAccessControlMechanismVS
+Alias: $EndpointConnectionTypeVersionCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS
+Alias: $EndpointConnectionTypeVersionVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVersionVS
+Alias: $EndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS
+Alias: $EndpointConnectionTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVS
+Alias: $EndpointFhirMimeTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointFhirMimeTypeVS
+Alias: $EndpointPayloadTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointPayloadTypeVS
+Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhFhirEndpointUseCaseCS
+Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
+Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS
+Alias: $EndpointTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointTypeCS
+Alias: $OrgTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/OrgTypeCS
+Alias: $NdhFhirEndpointUseCaseCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhFhirEndpointUseCaseCS
+Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhVerificationStatusCS
+Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustFrameworkTypeCS
+Alias: $TrustProfileCS = http://hl7.org/fhir/us/ndh/CodeSystem/TrustProfileCS
+Alias: $TrustProfileVS = http://hl7.org/fhir/us/ndh/ValueSet/TrustProfileVS
+Alias: $IdentifierStatusVS = http://hl7.org/fhir/us/ndh/ValueSet/IdentifierStatusVS
+Alias: $NdhFhirEndpointUseCaseVS = http://hl7.org/fhir/us/ndh/ValueSet/NdhFhirEndpointUseCaseVS
+Alias: $TrustFrameworkTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/TrustFrameworkTypeVS
+Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhVerificationStatusCS
+Alias: $NdhVerificationStatusVS = http://hl7.org/fhir/us/ndh/ValueSet/NdhVerificationStatusVS
+Alias: $NdhSecureExchangeArtifactsCS = http://hl7.org/fhir/us/ndh/CodeSystem/NdhSecureExchangeArtifactsCS
+Alias: $NdhSecureExchangeArtifactsVS = http://hl7.org/fhir/us/ndh/ValueSet/NdhSecureExchangeArtifactsVS
 
 // NDH incorporated into PDex
-Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS
-Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase
-Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-igsSupported
-Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts
-Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework
-Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureEndpoint
-Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers
-Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointAccessControlMechanismCS
-Alias: $EndpointConnectionTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS
-Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS
-Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhSecureExchangeArtifactsCS
-Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS
-Alias: $EndpointTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointTypeCS
-Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
-Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
-Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
-Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
+// Alias: $AssocServersTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhAssociatedServersTypeCS
+// Alias: $ExtnEndpointUsecase = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-endpoint-usecase
+// Alias: $ExtnIGsSupported = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-igsSupported
+// Alias: $ExtnSecureExchangeArtifacts = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureExchangeArtifacts
+// Alias: $ExtnTrustFramework = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-trustFramework
+// Alias: $ExtnSecureEndpoint = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-secureEndpoint
+// Alias: $ExtnAssociatedServers = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-associatedServers
+// Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointAccessControlMechanismCS
+// Alias: $EndpointConnectionTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointConnectionTypeCS
+// Alias: $EndPointUseCaseCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhFhirEndpointUseCaseCS
+// Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhSecureExchangeArtifactsCS
+// Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS
+// Alias: $EndpointTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointTypeCS
+// Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
+// Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
+// Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
+// Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
 Alias: $NUCCProviderTaxonomy = http://nucc.org/provider-taxonomy
 Alias: $NPICS = http://hl7.org/fhir/sid/us-npi
+
+// Replaced NDH ValueSets defined in ValueSets-NDH.fsh
 
 // CMS HCPS Codes
 Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
