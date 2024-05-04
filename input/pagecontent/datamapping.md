@@ -35,4 +35,4 @@ linked below:
 - [US Core 6.1.0 Profiles and Extensions]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
 
 
-[Next Page - US Core Allergy Intolerance](USCoreAllergyIntolerance.html)
+[Next Page - Capability Statements](capability-statements.html)

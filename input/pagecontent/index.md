@@ -1,6 +1,6 @@
 <div class="stu-note">
 
-<b><i>This page has been updated to reflect the release of the CMS Piror Authorization Rule (CMS-0057).</i></b>
+<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057).</i></b>
 </div>
 
 
@@ -43,7 +43,7 @@ Unlike the [US Core 3.1.1 IG]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0 
 <table>
 	<tr>
 		<td>
-			<img  width="100%" height="auto" src="DataViewAdminFinancialClinicalInterop.png">
+			<img width="100%" height="auto" src="Payer-Admin-Financial-Clinical-Data-interchange.png">
 		</td>	
 	</tr>	
 </table>
