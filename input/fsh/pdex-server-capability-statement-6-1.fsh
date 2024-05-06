@@ -517,7 +517,8 @@ Usage: #definition
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].type = #Device
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"
+* rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device"
 * rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile.extension.valueCode = #SHALL
 * rest.resource[=].documentation = "* Implantable medical devices that have UDI information **SHALL** represent the UDI code in `Device.udiCarrier.carrierHRF`.\n   - All of the five UDI-PI elements that are present in the UDI code **SHALL** be represented in the corresponding US Core Implantable Device Profile element.\n   \n   UDI may not be present in all scenarios such as historical implantable devices, patient reported implant information, payer reported devices, or improperly documented implants. If UDI is not present and the manufacturer and/or model number information is available, they **SHOULD** be included to support historical reports of implantable medical devices as follows:\n\n   manufacturer -> `Device.manufacturer`  \n   model -> `Device.model`  \n\n* Servers **SHOULD** support query by Device.type to allow clients to request the patient's devices by a specific type. Note: The Device.type is too granular to differentiate implantable vs. non-implantable devices."
@@ -2078,7 +2079,8 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Provenance
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
+* rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance"
+* rest.resource[=].supportedProfile[+] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile.extension.valueCode = #SHALL
 * rest.resource[=].documentation = "* The US Core Provenance resource **SHALL** be supported for these US Core resources:\n    * AllergyIntolerance\n    * CarePlan\n    * CareTeam\n    * Condition\n    * Coverage\n    * Device\n    * DiagnosticReport\n    * DocumentReference\n    * Encounter\n    * Goal\n    * Immunization\n    * MedicationDispense\n    * MedicationRequest\n    * Observation\n    * Patient\n    * Procedure\n    * QuestionnaireResponse\n    * RelatedPerson\n    * ServiceRequest\n* If a system receives a provider in `Provenance.agent.who` as free text they must capture who sent them the information as the organization. On request they **SHALL** provide this organization as the source and **MAY** include the free text provider.\n* Systems that need to know the activity has occurred **SHOULD** populate the activity."
