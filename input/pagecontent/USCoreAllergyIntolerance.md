@@ -1,4 +1,4 @@
-[Previous Page - Data Mapping](datamapping.html)
+[Previous Page - Capability Statements](capability-statements.html)
 
 Where a Health Plan has information about a member's allergies the  US Core AllergyIntolerance profile
  **SHALL** be used to record them.

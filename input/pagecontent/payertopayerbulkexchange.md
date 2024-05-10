@@ -251,8 +251,8 @@ defines granular scopes for resources. Following the model proposed in the secti
 [FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
 the following scopes are proposed to control access to the Da Vinci Data Export Operation for Payer-to-Payer bulk exchange:
 
-- user/Group.u?operation=bulk-member-match
-- user/Group.u?operation=davinci-data-export#payertopayer&restriction=id
+- system/Group.u?operation=bulk-member-match
+- system/Group.u?operation=davinci-data-export#payertopayer&restriction=id
 
 The *user* Context allows *(u)pdate* access to the *Group* resource to execute the *bulk-member-match* operation 
 and the *davinci-data-export* operation for *payertopayer* exchange with the data export being restricted 
