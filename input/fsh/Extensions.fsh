@@ -409,23 +409,6 @@ Description: "Indicates the filters applied to the resources exported in the las
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
-// ---------------------------------------
-// indicate whether a member has opted out of data sharing
-// This is not being implemented
-// Will have a quantity of members opted out at the root of the Group resource.
-// Extension: OptedOut
-// Id: base-ext-optedout
-// Title: "Member Opt-out of Data Sharing"
-// Description: "Members can be attributed to a Provider but they may have chosen to opt out of data sharing with providers."
-// * ^context.type = #element
-// * ^context.expression = "Group"
-// * value[x] 0..1
-// * value[x] only Quantity
-// * value[x] ^short = "1|True = Opted-out"
-// * value[x] ^comment = "When set to true it indicates that this member has opted out of data sharing and no data should be exchanged with the attributed provider."
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
-
 
 
 // ---------------------------------------
@@ -435,7 +418,7 @@ Description: "Indicates the filters applied to the resources exported in the las
 Extension: MatchParameters
 Id: base-ext-match-parameters
 Title: "Member-Match Input Patient Parameter"
-Description: "Input Patient Parameter supplied for the indiviual member match (Patient Demographics."
+Description: "Input Patient Parameter supplied for the individual member match (Patient Demographics)."
 * ^context.type = #element
 * ^context.expression = "Group.member.entity"
 * value[x] 0..1
