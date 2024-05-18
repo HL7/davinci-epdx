@@ -252,7 +252,7 @@ defines granular scopes for resources. Following the model proposed in the secti
 the following scopes are proposed to control access to the Da Vinci Data Export Operation for Payer-to-Payer bulk exchange:
 
 - http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/bulk-member-match
-- system.Group.u?code=match
+- system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS|match
 
 This would be the scope to execute the *bulk-member-match* operation 
 and the *davinci-data-export* operation for *payertopayer* exchange with the data export being restricted 

@@ -250,7 +250,7 @@ defines granular scopes for resources. Following the model proposed in the secti
 [FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
 the following scopes are proposed to control access to the Da Vinci Data Export Operation for Provider Access:
 
-- system.Group.u?code=pdexprovidergroup
+- system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS|pdexprovidergroup
 
 This would be the scope to execute the *davinci-data-export* operation 
 with it being restricted to the Group *id(s)* that the user is authorized to access.
