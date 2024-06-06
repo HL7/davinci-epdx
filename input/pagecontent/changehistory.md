@@ -6,24 +6,25 @@
 
 ### STU 2.1.0 Update
 
-| JIRA Ticket                                                  | Change                                                                                                                                                 |
-|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Edited Scopes for Operations                                 | Edited scopes for Operations used in Payer-to-Payer and Provider Access APIs                                                                           |
-| Added Informative Extension to Pages                         | Added Informative Extension to Pages in Sushi-config.yaml                                                                                              |
-| Added Change History to Menu                                 | Add Change History page to Menu                                                                                                                        |
-| [FHIR-45364](https://jira.hl7.org/browse/FHIR-45364)         | Provide Use case examples for use of custom extensions in PDex Provider Group                                                                          |
-| Update Clinical-Financial picture in overview.md             | Update Clinical Financial image on overview page.                                                                                                      |
-| [FHIR-45356](https://jira.hl7.org/browse/FHIR-45356)         | Change milsEndpoint examples to use correct code from NdhAssociatedServersTypeCS                                                                       |
+| JIRA Ticket                                                  | Change                                                                                                                                     |
+|--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| More specific Group.code value for Operation Scope           | More specific Group.code value using CodeSystem URL for Operation Scope                                                                    |
+| Edited Scopes for Operations                                 | Edited scopes for Operations used in Payer-to-Payer and Provider Access APIs                                                               |
+| Added Informative Extension to Pages                         | Added Informative Extension to Pages in Sushi-config.yaml                                                                                  |
+| Added Change History to Menu                                 | Add Change History page to Menu                                                                                                            |
+| [FHIR-45364](https://jira.hl7.org/browse/FHIR-45364)         | Provide Use case examples for use of custom extensions in PDex Provider Group                                                              |
+| Update Clinical-Financial picture in overview.md             | Update Clinical Financial image on overview page.                                                                                          |
+| [FHIR-45356](https://jira.hl7.org/browse/FHIR-45356)         | Change milsEndpoint examples to use correct code from NdhAssociatedServersTypeCS                                                           |
 | [FHIR-45355](https://jira.hl7.org/browse/FHIR-45355)         | Removed copied NDH Extensions, Code Systems and Value Sets. Point to content in NDH 1.0.0-ballot, allowing replicated content to be removed from PDex. |
-| [FHIR-45352](https://jira.hl7.org/browse/FHIR-45352)         | Added support for US Core 6.1.0 in addition to US Core 3.1.1. Based on L McKenzie Publishing Guidance                                                  |
-| New MembersOptedOut Extension                                | Extension to capture number of Attributed Members excluded from the list through Opt-Out                                                               |
-| TC: [FHIR-44906](https://jira.hl7.org/browse/FHIR-44906)     | Fix broken link to Bulk Data Access IG                                                                                                                 |
-| Add DaVinci-data-export-operation to Other-igs.md            | Add link to Da Vinci Data Export Operation in other-igs.md                                                                                             |
-| Expand narrative for Provider Access and Payer-to-Payer APIs | Removed ExportModeVS and ExportModeCS, replaced by exportType with fragment                                                                            |
-| [FHIR-44807](https://jira.hl7.org/browse/FHIR-44807)         | Drop Must Support from item.adjudication[consumeUnits] In PDex Prior Authorization                                                                     |
-| Add Provider Access API Diagram                              | Created Plantuml for Provider Access API                                                                                                               |
-| Decision to remove optout members from Group                 | Remove OptOut Extension                                                                                                                                | 
-| Define OptedOut Extension to capture member optout           | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders                                      | 
+| [FHIR-45352](https://jira.hl7.org/browse/FHIR-45352)         | Added support for US Core 6.1.0 in addition to US Core 3.1.1. Based on L McKenzie Publishing Guidance                                      |
+| New MembersOptedOut Extension                                | Extension to capture number of Attributed Members excluded from the list through Opt-Out                                                   |
+| TC: [FHIR-44906](https://jira.hl7.org/browse/FHIR-44906)     | Fix broken link to Bulk Data Access IG                                                                                                     |
+| Add DaVinci-data-export-operation to Other-igs.md            | Add link to Da Vinci Data Export Operation in other-igs.md                                                                                 |
+| Expand narrative for Provider Access and Payer-to-Payer APIs | Removed ExportModeVS and ExportModeCS, replaced by exportType with fragment                                                                |
+| [FHIR-44807](https://jira.hl7.org/browse/FHIR-44807)         | Drop Must Support from item.adjudication[consumeUnits] In PDex Prior Authorization                                                         |
+| Add Provider Access API Diagram                              | Created Plantuml for Provider Access API                                                                                                   |
+| Decision to remove optout members from Group                 | Remove OptOut Extension                                                                                                                    | 
+| Define OptedOut Extension to capture member optout           | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders                          | 
 
 
 ### STU 2.0.0-ballot:Ballot Reconciliation
