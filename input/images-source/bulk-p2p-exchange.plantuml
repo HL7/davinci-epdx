@@ -60,18 +60,18 @@ group Step 2b: Establish Common Members - secure operation
 end
 
 group Step 3: Request Access token forGroup/{ID}
-	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Group/{ID}/$pdex-p2p-export
+	Payer2 -> Payer1 : Use OAuth2.0 token endpoint to \nrequest access using Group/{ID}/$davinci-data-export
   Payer1 -> Payer2 : Return access token
 end
 == Data Requests ==
 group #LightBlue Step 4: Exchange PDex (USCDI) Information via API
-  Payer2 -> Payer1 : Use Access Token to call \n/Group/{ID}/$pdex-p2p-export operation.
+  Payer2 -> Payer1 : Use Access Token to call \n/Group/{ID}/$davinci-data-export operation.
 	Payer1 -> Payer2 : Performs Async operation as per \nFHIR Bulk Data Export specification to return bundle to requesting Payer
   note right
   	Operation will validate Consent Scope and Valid Consent Period.
     This will be based upon data saved during Member-Match process for
     each Member.
-    Payer1 should check whether Member has provided more recent over-riding
+    Payer1 should check whether Member has provided more recent overriding
     consent instruction directly.
   endnote
 end

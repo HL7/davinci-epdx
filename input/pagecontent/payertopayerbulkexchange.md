@@ -127,6 +127,17 @@ The consent decision flow for the bulk member match is shown in the following di
 </div>
 
 
+### Da Vinci Data Export Payload
+
+The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
+that are attributed to them via an existing , or impending treatment relationship. Under the requirements of the CMS
+Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
+
+- US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
+- [CARIN Blue Button non-Financial Profiles](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html)
+- [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
+
+
 ### DaVinci-Data-Export Operation
 
 Requesting/New Payer:
@@ -252,7 +263,7 @@ defines granular scopes for resources. Following the model proposed in the secti
 the following scopes are proposed to control access to the Da Vinci Data Export Operation for Payer-to-Payer bulk exchange:
 
 - http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/bulk-member-match
-- system.Group.u?code=match
+- system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS|match
 
 This would be the scope to execute the *bulk-member-match* operation 
 and the *davinci-data-export* operation for *payertopayer* exchange with the data export being restricted 

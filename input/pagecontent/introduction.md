@@ -116,7 +116,7 @@ Where profiles are specific to the PDex use case, the profiles will be defined i
 The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in the following order of descending priority:
 
 1. HL7 FHIR US Core STU3 v3.1.1 (based on FHIR R4 - [{{site.data.fhir.ver.uscore3}}/STU3.1.1]({{site.data.fhir.ver.uscore3}}))
-2. HL7 FHIR US Core STU6 v6.1.0 (based on FHIR R4 - [{{site.data.fhir.ver.uscore3}}/STU6.1]({{site.data.fhir.ver.uscore6}}))
+2. HL7 FHIR US Core STU6 v6.1.0 (based on FHIR R4 - [{{site.data.fhir.ver.uscore}}/STU6.1]({{site.data.fhir.ver.uscore6}}))
 3. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) ).
 
 Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superceding US Core 3.1.1. 

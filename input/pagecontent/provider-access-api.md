@@ -121,6 +121,16 @@ The member-level extensions are:
 
 These extensions **SHALL** be updated by the Da Vinci Data Export PDex Use Case Operation.
 
+### Da Vinci Data Export Payload
+
+The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
+that are attributed to them via an existing , or impending treatment relationship. Under the requirements of the CMS
+Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
+
+- US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
+- [CARIN Blue Button non-Financial Profiles](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html)
+- [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
+
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
@@ -250,7 +260,7 @@ defines granular scopes for resources. Following the model proposed in the secti
 [FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
 the following scopes are proposed to control access to the Da Vinci Data Export Operation for Provider Access:
 
-- system.Group.u?code=pdexprovidergroup
+- system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS|pdexprovidergroup
 
 This would be the scope to execute the *davinci-data-export* operation 
 with it being restricted to the Group *id(s)* that the user is authorized to access.
