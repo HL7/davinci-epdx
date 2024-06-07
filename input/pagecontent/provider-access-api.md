@@ -121,6 +121,16 @@ The member-level extensions are:
 
 These extensions **SHALL** be updated by the Da Vinci Data Export PDex Use Case Operation.
 
+### Da Vinci Data Export Payload
+
+The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
+that are attributed to them via an existing , or impending treatment relationship. Under the requirements of the CMS
+Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
+
+- US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
+- [CARIN Blue Button non-Financial Profiles](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html)
+- [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
+
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
