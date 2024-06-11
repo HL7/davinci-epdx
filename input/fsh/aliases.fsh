@@ -32,6 +32,8 @@ Alias: $R4ObservationVitalSigns = http://hl7.org/fhir/StructureDefinition/vitals
 Alias:   $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
 //Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
 Alias: $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
+Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
 
 // Da Vinci Pdex IG
 Alias: $PdexDevice = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device

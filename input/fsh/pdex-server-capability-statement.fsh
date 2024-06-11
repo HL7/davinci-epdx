@@ -230,6 +230,28 @@ Usage: #definition
 * rest.resource[=].searchParam[=].name = "code"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-code"
 * rest.resource[=].searchParam[=].type = #token
+
+// ---------------------------------------
+* rest.resource[+].type = #Consent
+* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/pdex-provider-consent"
+* rest.resource[=].interaction[0].code = #read
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[+].code = #vread
+* rest.resource[=].interaction[+].code = #history-instance
+* rest.resource[=].interaction[+].code = #history-type
+* rest.resource[=].readHistory = true
+* rest.resource[=].referencePolicy = #resolves
+* rest.resource[=].searchRevInclude = "Provenance:target"
+* rest.resource[=].searchParam[0].name = "_id"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "patient"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-patient"
+* rest.resource[=].searchParam[=].type = #reference
+
+// ---------------------------------------
 * rest.resource[+].type = #Coverage
 * rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
 * rest.resource[=].interaction[0].code = #read
