@@ -12,7 +12,11 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * status MS
 * scope = $consentscope#patient-privacy
 * scope MS
-
+* category ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "$this"
+  * ^slicing.rules = #open
+* category contains disclosure 1..1 MS
+* category[disclosure] = $v3-ActCode#IDSCL
 * patient 1.. MS
 * patient only Reference(USCorePatientProfile|6.1.0)
 
@@ -26,5 +30,17 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * provision.type ^comment = "deny | permit. Member must actively choose to deny sharing. Absence of a record is interpreted as Permit."
 * provision.period 1.. MS
 * provision.period.start 1.. MS
+* provision.actor ^slicing.discriminator.type = #pattern
+  * ^slicing.discriminator.path = "role"
+  * ^slicing.rules = #open
+* provision.actor contains
+    source 1..* MS
+* provision.actor[source] ^short = "Authorized or Not to disclose"
+  * ^comment = "Multiple repetitions are allowed."
+  * role = $provenance-participant-type#performer
+  * role MS
+    * ^comment = "This code isn't in the value set, but there's no code that represents the function of 'discloser' or 'performer', so need to go outside the value set.  Multiple "
+  * reference only Reference(HRexOrganization)
+  * reference MS
 * provision.action 1..1
 * provision.action = $consentaction#disclose

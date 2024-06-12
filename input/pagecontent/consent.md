@@ -18,8 +18,9 @@ with providers via the [Provider Access API](provider-access-api.html). By defau
 that have an existing, or impending treatment relationship. This implementation Guide provides a [Consent profile](StructureDefinition-pdex-provider-consent.html)
 that expresses a Member's decision to opt-out, i.e., Deny sharing of their data, A Member can also revoke that denial.
 
-[PDex Provider Consent Profile](StructureDefinition-pdex-provider-consent.html)
+[PDex Provider Consent Profile](StructureDefinition-pdex-provider-consent.html).
 
+Example Member Opt-out: [PDex Provider Access API Opt-out](Consent-no-consent-1.html).
 
 
 [Next Page - Coverage](coverage.html)
