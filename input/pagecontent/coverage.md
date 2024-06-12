@@ -1,4 +1,4 @@
-[Previous Page - US Core Condition](USCoreCondition.html)
+[Previous Page - Consent](consent.html)
 
 The [Coverage resource](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html) is profiled in the Da Vinci HRex IG. 
 

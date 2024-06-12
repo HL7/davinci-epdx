@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
-<version code="current" url=""/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2022May" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
+<version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
 <version code="2.1.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
+<version code="2.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
+<version code="2.0.0-ballot" url="http://hl7.org/fhir/us/davinci-pdex/2022May"/>
+<version code="1.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU1"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
 <version code="0.0.1" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2019Jun"/>
 <version code="0.1" deprecated="true"/>
@@ -21,7 +24,6 @@
 <artifact id="Bundle/1000000-2" key="Bundle-1000000-2" name="BundleExamplePayer2"/>
 <artifact id="Bundle/1000000-3" key="Bundle-1000000-3" name="BundleExamplePayer3"/>
 <artifact id="Bundle/3000002" key="Bundle-3000002" name="BundleWithProvenance"/>
-<artifact id="Consent/consent-10" key="Consent-consent-10" name="ConsentExample"/>
 <artifact deprecated="true" id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
 <artifact deprecated="true" id="CodeSystem/EndpointAccessControlMechanismCS" key="CodeSystem-EndpointAccessControlMechanismCS" name="Endpoint Access Control Mechanism Code System"/>
 <artifact deprecated="true" id="ValueSet/EndpointAccessControlMechanismVS" key="ValueSet-EndpointAccessControlMechanismVS" name="Endpoint Access Control Mechanism Value Set"/>
@@ -106,7 +108,6 @@
 <artifact id="CodeSystem/PDexAdjudicationCS" key="CodeSystem-PDexAdjudicationCS" name="PDex Adjudication Codes"/>
 <artifact id="CodeSystem/PDexAdjudicationDiscriminator" key="CodeSystem-PDexAdjudicationDiscriminator" name="PDex Adjudication Discriminator"/>
 <artifact id="OperationDefinition/bulk-member-match" key="OperationDefinition-bulk-member-match" name="PDex Bulk Member Match Operation"/>
-<artifact id="StructureDefinition/pdex-consent" key="StructureDefinition-pdex-consent" name="PDex Consent Profile"/>
 <artifact id="StructureDefinition/pdex-device" key="StructureDefinition-pdex-device" name="PDex Device"/>
 <artifact id="CodeSystem/PDexIdentifierType" key="CodeSystem-PDexIdentifierType" name="PDex Identifier Type"/>
 <artifact id="StructureDefinition/pdex-medicationdispense" key="StructureDefinition-pdex-medicationdispense" name="PDex MedicationDispense"/>
@@ -180,6 +181,7 @@
 <page key="CDS-Hooks" name="CDS Hooks"/>
 <page key="capability-statements" name="Capability Statements"/>
 <page key="ChangeHistory" name="Change History"/>
+<page key="consent" name="Consent"/>
 <page key="Coverage" name="Coverage"/>
 <page key="Credits" name="Credits"/>
 <page key="DataMapping" name="Data Mapping"/>
