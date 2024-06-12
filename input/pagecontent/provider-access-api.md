@@ -33,6 +33,18 @@ non-financial claims and encounter data.
 {% include provider-access-api.svg %}
 </div>
 
+### Member Opt-out
+
+A health plan member is entitled to opt-out of data sharing via the Provider Access API. PDex defines a consent profile 
+that enables a member to deny sharing via the Provider Access API. A member should also be able to update their preference 
+to revoke a previous denial. 
+
+Health Plans **SHOULD** implement the pdex-provider-consent to enable a member to express their sharing preference.
+
+The PDex Server Capability Statement enables the Consent record to be written to the Patient Access API.
+
+See the [PDex Provider Consent here](StructureDefinition-pdex-provider-consent.html)
+
 ### Attribution List driven
 
 The Provider Access API is centered around Attribution lists that enable a Provider/Provider Organization or 
@@ -75,6 +87,12 @@ This combination of requests should cover all provider data requests, such as:
 
 Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.
 Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.
+
+The $davinci-data-export operations **SHALL** be submitted using a HTTP POST.
+The HTTP Header **SHALL** include:
+
+    Prefer: respond-async
+
 
 ### Attribution List
 

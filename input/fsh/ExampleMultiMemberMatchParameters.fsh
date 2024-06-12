@@ -66,7 +66,7 @@ Usage: #example
     * id = "consent-1"
     * status = #active
     * scope = $consentscope#patient-privacy
-    * category = $v3-ActCode#IDSCL
+    * category[disclosure] = $v3-ActCode#IDSCL
     * patient.reference = "Patient/1"
     * performer.reference = "Patient/1"
     * sourceReference.reference = "http://example.org/DocumentReference/someconsent-1"
@@ -174,7 +174,7 @@ Usage: #example
     * id = "consent-2"
     * status = #active
     * scope = $consentscope#patient-privacy
-    * category = $v3-ActCode#IDSCL
+    * category[disclosure] = $v3-ActCode#IDSCL
     * patient.reference = "Patient/2"
     * performer.reference = "Patient/2"
     * sourceReference.reference = "http://example.org/DocumentReference/someconsen-2"

@@ -92,6 +92,11 @@ element for a member:
 
 An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
+The PDex $multi-member-match and the subsequent $davinci-data-export operations **SHALL** be submitted using a HTTP POST.
+The HTTP Header **SHALL** include:
+
+    Prefer: respond-async
+
 
 ### Bulk Member Match with Consent
 

@@ -28,10 +28,6 @@ Alias: $USCoreSmokingStatus = http://hl7.org/fhir/us/core/StructureDefinition/us
 Alias: $R4ObservationVitalSigns = http://hl7.org/fhir/StructureDefinition/vitalsigns
 
 
-// Da Vinci Hrex IG
-Alias:   $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
-//Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
-Alias: $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
 
 // Da Vinci Pdex IG
 Alias: $PdexDevice = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device
@@ -174,6 +170,12 @@ Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-Particip
 Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
 Alias: $standard-status = http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
 Alias: $fmm = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+
+// Da Vinci Hrex IG
+Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
+//Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
+Alias: $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
+Alias: $HRexConsent = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent
 
 // Terminology Server
 Alias: $CoverageRelationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship

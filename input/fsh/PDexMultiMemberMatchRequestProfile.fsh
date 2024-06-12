@@ -36,4 +36,4 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
 * parameter.part[Consent].name MS
 * parameter.part[Consent].name = "Consent" (exactly)
 * parameter.part[Consent].resource 1.. MS
-* parameter.part[Consent].resource only PDexConsent
+* parameter.part[Consent].resource only $HRexConsent
