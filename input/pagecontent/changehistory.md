@@ -8,7 +8,7 @@
 
 | JIRA Ticket                                                               | Change                                                                                                                                                 |
 |---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [FHIR-46132](https://jira.hl7.org/browse/FHIR-46132) | Define Consent Profile for Provider Access Opt-out                                                                                                     |
+| [FHIR-46132](https://jira.hl7.org/browse/FHIR-46132) | Define Consent Profile for Provider Access Opt-out. Make clear it is optional and provided as assistance for recording opt-out                         |
 | Identify Provider Access and Payer-to-Payer as Async APIs                 | Add section to Payer-to-Payer Bulk and Provider Access API narrative pages to use HTTP POST and operate as Async Operations                            |
 | Add new Data Payload section                                              | Add Data Payload section to Provider Access Narrative and Payer-to-Payer bulk API narrative.                                                           |
 | Add new Capability Statements                                             | Add capability Statements for Provider Access and Payer-to-Payer API access.                                                                           |
