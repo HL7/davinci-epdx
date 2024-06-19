@@ -21,10 +21,10 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * patient only Reference(USCorePatientProfile|6.1.0)
 
 * performer 1..1 MS
-* performer only Reference(HRexOrganization)
+* performer only Reference(USCorePatientProfile)
 * organization 1..1 MS
 * organization only Reference(HRexOrganization)
-
+* policyRule = http://terminology.hl7.org/CodeSystem/consentpolicycodes#cric "Common Rule Informed Consent"
 * provision 1.. MS
 * provision.type 1.. MS
 * provision.type ^comment = "deny | permit. Member must actively choose to deny sharing. Absence of a record is interpreted as Permit."

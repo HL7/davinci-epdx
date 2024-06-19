@@ -11,6 +11,7 @@ Usage: #example
 * patient.reference = "Patient/1"
 * performer.reference = "Patient/1"
 * organization = Reference(Payer1-1)
+* policyRule = http://terminology.hl7.org/CodeSystem/consentpolicycodes#cric "Common Rule Informed Consent"
 * provision
   * type = #deny
   * period
