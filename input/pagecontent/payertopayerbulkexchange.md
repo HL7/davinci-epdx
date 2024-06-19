@@ -56,9 +56,9 @@ The following data **SHALL** be exchanged with
 the prior plan for each Member that provides their consent in order for the 
 prior plan to attempt to match the Member:
 
-- Patient Demographics
-- Prior Coverage
-- Consent Record
+- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
+- [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
+- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html).
 
 The following information **MAY** be exchanged with the prior plan for a member:
 
@@ -83,7 +83,7 @@ For each member submitted to the $bulk-member-match operation the following para
 
 - MemberPatient: - [HRex Patient demographics](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
 - CoverageToMatch - details of the prior health plan coverage, supplied by the member, typically from the health plan coverage card. Uses the [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
-- Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the [PDex Consent Profile](StructureDefinition-pdex-consent.html)
+- Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the [HRex Consent Profile]({{hrex}}/StructureDefinition-hrex-consent.html)
 
 Optionally the new health plan **MAY** include the following element in the **parameter.part**
 element for a member:
@@ -135,7 +135,7 @@ The consent decision flow for the bulk member match is shown in the following di
 ### Da Vinci Data Export Payload
 
 The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
-that are attributed to them via an existing , or impending treatment relationship. Under the requirements of the CMS
+that are attributed to them via an existing, or impending treatment relationship. Under the requirements of the CMS
 Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
 
 - US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
@@ -144,6 +144,8 @@ Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD*
 
 
 ### DaVinci-Data-Export Operation
+
+The [davinci-data-export Operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) and the optional parameters are defined in the [Da Vinci Member Attribution (ATR) List Implementation Guide STU2](http://hl7.org/fhir/us/davinci-atr/STU2/).
 
 Requesting/New Payer:
 
