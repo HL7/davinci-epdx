@@ -2,8 +2,8 @@
 
 <div class="stu-note">
 
-<b><i>Payer-to-Payer API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot and
-has not been fully tested. This has been incorporated to meet the requirements of the CMS 
+<b><i>Payer-to-Payer API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot but
+has been tested at multiple Connectathons. This has been incorporated to meet the requirements of the CMS 
 Prior Authorization Rule  (CMS-0057)</i></b>
 </div>
 
@@ -40,8 +40,9 @@ authorization determination.
 The data available to be returned by the Bulk Payer-to-Payer Exchange API **SHALL** 
 include the following types of data:
 
-- [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/) Clinical Data with additional PDex defined Profiles.
-- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the [CARIN Consumer Directed Payer Data Exchange](http://hl7.org/fhir/us/carin-bb/) Implementation Guide.
+- [US Core 3.1.1]({{uscore3}}) oe [US Core 6,1,0]({{uscore}})Clinical Data with additional PDex defined Profiles.
+- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the 
+- [CARIN Consumer Directed Payer Data Exchange](http://hl7.org/fhir/us/carin-bb/) Implementation Guide.
 - [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide. 
 
 
