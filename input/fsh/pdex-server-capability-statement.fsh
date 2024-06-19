@@ -233,7 +233,7 @@ Usage: #definition
 
 // ---------------------------------------
 * rest.resource[+].type = #Consent
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/pdex-provider-consent"
+* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #create
 * rest.resource[=].interaction[+].code = #search-type

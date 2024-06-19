@@ -7,7 +7,8 @@ Consent is used in two places in this Implementation Guide:
 
 ### Payer-to-Payer Member Match
 
-In Payer-to-Payer Member Match the requesting payer will include a [HRex Consent]({{hrex}}/StructureDefinition-hrex-consent.html) record.
+In Payer-to-Payer Member Match the requesting payer will include a 
+[HRex Consent](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html) record.
 The record records the Member's agreement to allow the requesting Payer to retrieve data from the member's old health plan and identifies
 the scope of the data to be retrieved: all data, or only Non-Sensitive data.
 
