@@ -2,6 +2,7 @@
 
 {% include style_insert_table_blue.html %}
 
+<div class="stu-note">
 <b><i>PThis page has been updated to redlect the release of the CMS Prior Authorization Rule (CMS-0057).
 The changes have been made to stay in sync with the bulk transfer requirements of the rule. </i></b>
 </div>
@@ -251,9 +252,9 @@ It is a member's option to share their health information with their new health 
 
 ### Data Retrieval Methods
 
-Once Health Plans have completed the Member Access stage of the Exchange the requesting Health Plan **SHALL** 
-utilize the access token returned from the Member Access step to request/retrieve 
-data using one of the following three methods:
+Once Health Plans have completed the Member Access stage of the Exchange the requesting 
+Health Plan **SHALL** utilize the access token returned from the Member Access step to 
+request/retrieve data using one of the following three methods:
 
 1. Query all clinical resource individually
 2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
@@ -302,18 +303,19 @@ permissions of the requester.
 For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see 
 Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
 
-This Constraining condition may be required in implementations where multiple types of data are being served up 
-by a single FHIR Server. The condition is particularly relevant when implementing Operations such as 
-$everything or $export. See the sections below.
+This Constraining condition may be required in implementations where multiple types of data are being
+served up by a single FHIR Server. The condition is particularly relevant when implementing Operations
+such as $everything or $export. See the sections below.
 
 ### $everything operation
 
-Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything operation is 
-defined in the FHIR R4 specification here:
+Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything 
+operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the requester is 
-permitted to access. This might require an implementer to filter records at a more granular level than the resource.
+As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the
+requester is permitted to access. This might require an implementer to filter records at a more 
+granular level than the resource.
 
 The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:
 
@@ -332,13 +334,11 @@ profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".
 Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
 [Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/STU2/). The
 request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
-Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the
-[Bulk Data Export Operation Request
-Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow).
+Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the[Bulk Data Export Operation Request Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow).
 
 
-The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and profiles that the 
-requester is permitted to access, such as the profiles identified in the table in 
+The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and
+profiles that the requester is permitted to access, such as the profiles identified in the table in 
 the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) section of this page.
 
 
