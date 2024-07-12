@@ -2,9 +2,10 @@
 
 <div class="stu-note">
 
-<b><i>Payer-to-Payer API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot but
-has been tested at multiple Connectathons. This has been incorporated to meet the requirements of the CMS 
-Prior Authorization Rule  (CMS-0057)</i></b>
+<b><i>Payer-to-Payer API bulk data guidance in this version of the IG is draft only. 
+It has not appeared in ballot but has been tested at multiple Connectathons. 
+This has been incorporated to meet the requirements of the CMS Prior Authorization Rule 
+(CMS-0057)</i></b>
 </div>
 
 When requested by a Health Plan member, the Exchange of clinical data, as

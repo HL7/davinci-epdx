@@ -12,10 +12,16 @@ the ONC's HTI-1 rule that implements US Core 6.1.0 as the base standard of US Co
 
 The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule (CMS-9115) and the subsequent Advancing Interoperability and Improving Prior Authorization Rule (CMS-0057).
 
-The STU2 version of the IG incorporates changes to support the sharing of Prior Authorization information with members, providers and other payers. This is done through the profiling of the [ExplanationOfBenefit](PDexPriorAuthorization.html) resource. This version of the Implementation guide also introduces two Bulk APIs that enable the data available through the Patient Access API to also be made available to In-Network/Contracted Providers and Other Health Plans through the [Provider Access API](provider-access-api.html) and the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). 
+The STU2.1 version of the IG incorporates changes to support the sharing of Prior Authorization information with members, providers and other payers. This is done through the profiling of the [ExplanationOfBenefit](PDexPriorAuthorization.html) resource. This version of the Implementation guide also introduces two Bulk APIs that enable the data available through the Patient Access API to also be made available to In-Network/Contracted Providers and Other Health Plans through the [Provider Access API](provider-access-api.html) and the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). 
 
 CMS Guidance defines two sets of data to be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required but is recommended. If used these guides will provide information payers can employ to meet the requirements of the policies being finalized. 
 The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/) defines how Claims and Encounter Data are to be provided; This Da Vinci Payer Data Exchange IG (PDex) and the [US Core 3.1.1 IG]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0 IG]({{site.data.fhir.ver.uscore6}}) define how Clinical Data is to be provided. 
+
+This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
+secure exchange of information between Providers and Payers and between payers. 
+Incorporating prescriptive definitions for connecting, registering and authorizing access to the 
+Provider Access or Payer-to-Payer API risks complicating the adoption of solutions that will 
+enable secure exchange of data, at scale.
 
 ### Background
 There are two parallel paths pursued by the CARIN Alliance (**C**reating **A**ccess to **R**eal-time **In**formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. The Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.

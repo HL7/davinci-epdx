@@ -2,9 +2,10 @@
 
 <div class="stu-note">
 
-<b><i>Provider Access API bulk data guidance in this version of the IG is draft only. It has not appeared in ballot but 
-has been tested at Connectathons. It is included to support the requirements of the CMS prior Authorization Rule (CMS-0057).
-The bulk data transfer is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
+<b><i>Provider Access API bulk data guidance in this version of the IG is draft only. 
+It has not appeared in ballot but has been tested at Connectathons. It is included to support 
+the requirements of the CMS prior Authorization Rule (CMS-0057).
+The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
 </i></b>
 </div>
 
@@ -12,14 +13,23 @@ The bulk data transfer is based upon published guidance in the Da Vinci Member A
 
 In December 2022, CMS released the [Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P](https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact). 
 This rule was finalized in February 2024.  
-One of the requirements of the rule is for Impacted Payers to implement a Provider Access API. This is an API that 
-conforms to the [HL7 FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/).
-The purpose of the Provider Access API is to enable Providers to query a Payer API for information about the
-members of the health plan where they have a current, or upcoming treatment relationship.
+One of the requirements of the rule is for Impacted Payers to implement a Provider Access API. 
+This is an API that conforms to the [HL7 FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/).
+The purpose of the Provider Access API is to enable Providers to query a Payer API for information 
+about the members of the health plan where they have a current, or upcoming treatment relationship.
 The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
 The Payer Data Exchange Implementation Guide supports the Provider Access API by
 utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/STU2/).
+
+This IG is not overly prescriptive in how to construct and manage Member Attribution lists.
+Health plans are responsible for managing Member Attribution Lists accoding to their own business rules
+for determining whether a Provider and Member have an existing, or implending treatment relationship.
+
+This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
+secure exchange of information between Providers and Payers. Incorporating prescriptive definitions for
+connecting, registering and authorizing access to the Provider Access API risks complicating the adoption
+of solutions that will enable secure exchange of data, at scale.
 
 ### How does Provider Access Work?
 
@@ -28,6 +38,16 @@ for Organizations, Locations and Providers. It also illustrates how a Provider R
 an EMR, can query the health plan for the PDexProviderGroup resources they are permitted to see and then
 use the Group/{id} endpoint for those records to request Member clinical, prior authorization and 
 non-financial claims and encounter data.
+
+The typical use case is expected to be one where an EMR retrieves data from a health plan for one or more 
+providers using automated service functions. The retrieving system or service, such as an EMR, 
+is presumed to have implemented Role-based access to ensure that only authenticated abd authorized 
+personnel, or systems, have access to the retrieved data.
+
+It is recommended that, at a minimum, health plans create Member Attribution Lists using the NPI data for 
+the Rendering Provider. Health plans **MAY** choose to construct alternative or additional, Attribution
+Lists that cover more than one provider, for example by creating an Attribution list for all providers
+at a specific facility.
 
 <div style="height=auto;width=90%;">
 {% include provider-access-api.svg %}
@@ -96,40 +116,43 @@ The HTTP Header **SHALL** include:
 
 ### Attribution List
 
-The Payer **SHALL** be responsible for managing and maintaining the attribution list that assigns Members to Providers. 
-The payer **SHALL** take account of members that have chosen to opt out of sharing data with providers. 
-Those opted-out members **SHALL** be omitted from the Provider Attribution list. The Payer **MAY** choose to 
-maintain a separate Group resource for a Provider that identities the Opted-out Members that would otherwise have
-been Attributed to the Provider. If a Payer maintains an Opted-out Group resource it is the Payers responsibility
-to ensure that a Provider is unable to download data about those opted-out members using a bulk export operation.
-The Da Vinci Attribution (ATR)IG provides transactions to manage the Group resource through Add, change and delete 
-member actions.
+The Payer **SHALL** be responsible for managing and maintaining the attribution list that assigns 
+Members to Providers. The payer **SHALL** take account of members that have chosen to opt out of 
+sharing data with providers. Those opted-out members **SHALL** be omitted from the Provider 
+Attribution list. The Payer **MAY** choose to maintain a separate Group resource for a Provider 
+that identities the Opted-out Members that would otherwise have been Attributed to the Provider. 
+If a Payer maintains an Opted-out Group resource it is the Payers responsibility
+to ensure that a Provider is unable to download data about those opted-out members using a bulk 
+export operation. The Da Vinci Attribution (ATR)IG provides transactions to manage the Group 
+resource through Add, change and delete member actions.
 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the
 members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
 [ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html) Profile 
 from the[Da Vinci Member Attribution (ATR) 2.0.0 IG](http://hl7.org/fhir/us/davinci-atr/STU2/). 
 
-The profile adds an extension at the root level. This is used to, optionally, record the number of potentially 
-attributed members that instead used their right to opt-out of sharing data with providers. By recording this quantity
-it **MAY** help providers reconcile their attribution lists with those managed by the Payer, The extension is:
+The profile adds an extension at the root level. This is used to, optionally, record the number 
+of potentially attributed members that instead used their right to opt-out of sharing data with 
+providers. By recording this quantity it **MAY** help providers reconcile their attribution lists 
+with those managed by the Payer, The extension is:
 
 - MembersOptedOut
 
-
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) Profile adds three extensions to the member element. 
-These are used to track the data retrieved for a member by the provider. This enables sophissticated providers
-to fine tune their requests for data. For example, Retrieving the group resource a Provider could create a Provider
-Access data request that repeated the parameters supplied to [lastResources](StructureDefinition-base-ext-last-types.html) 
-and [lastFilters](StructureDefinition-base-ext-last-typefilter.html) and compile a list of Patients with the same [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
-date. The Provider Access API is flexible enough that a Provider could submit a request for the data for a single Patient, repeating the 
-previously used parameters. A Provider could also compile a request that omitted resources that were previously asked for,
-avoiding data duplication. Providing these member-level extensions is meant as an aid to Providers and Payers to enable
-granular data sharing. Providers, or Payers wishing to take advantage of these elements **SHOULD** consider implementing
-their own independent data tracking capabilities to understand what data has been provided to a Provider for specific members.
+These are used to track the data retrieved for a member by the provider. This enables sophisticated
+providers to fine tune their requests for data. For example, Retrieving the group resource a 
+Provider could create a Provider Access data request that repeated the parameters supplied to
+[lastResources](StructureDefinition-base-ext-last-types.html) and [lastFilters](StructureDefinition-base-ext-last-typefilter.html) and compile a list of Patients with the 
+same [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) date. The Provider Access API is flexible enough that a Provider 
+could submit a request for the data for a single Patient, repeating the previously used parameters. 
+A Provider could also compile a request that omitted resources that were previously asked for,
+avoiding data duplication. Providing these member-level extensions is meant as an aid to Providers 
+and Payers to enable granular data sharing. Providers, or Payers wishing to take advantage of these
+elements **SHOULD** consider implementing their own independent data tracking capabilities to 
+understand what data has been provided to a Provider for specific members.
 
-The member-level extensions are primarily intended for instances where a Provider does not want to download *ALL information
-for ALL attributed members.*
+The member-level extensions are primarily intended for instances where a Provider does not want to
+download *ALL information for ALL attributed members.*
 
 The member-level extensions are:
 
@@ -160,7 +183,8 @@ Provider Representative:
 - **SHALL** be permitted to GET /Group/{id} for any Attribution Group list they are associated with.
 - **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.
 
-The $davinci-data-export operation enables a Provider Representative to perform granular requests for data. 
+The $davinci-data-export operation enables a Provider Representative to perform granular requests 
+for data. 
 
 Data can be constrained by:
 
@@ -259,17 +283,25 @@ them to the client that originated the export. Health plans **SHALL** limit the 
 only those FHIR resources for which the client is authorized. 
 
 Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group 
-resources and perform Bulk export operations. Access Tokens **SHALL** be required to access the Group resources
-and and the Bulk export operation. Access and Refresh Tokens **SHOULD** be issued to support the client requesting and 
-subsequently retrieving the bulk data response to their request.
+resources and perform Bulk export operations. Access Tokens **SHALL** be required to access the Group
+resources and and the Bulk export operation. Access and Refresh Tokens **SHOULD** be issued to support 
+the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer
 Exchange should be registered in accordance with the approach defined in the
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is
-to use the B2B protocols detailed in the [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/)
-IG.
+to use the B2B protocols detailed in the 
+[HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) IG.
+
+If the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html)) section are used, it is recommended that the subject_id
+in the B2B Authorization Extension Object (Key Name: "hl7-b2b") contain the NPI of the Provider 
+for which Attributed Patient data is being requested. For instances where health plan generated 
+attribution lists cover more than a single provider, the subject_id could be the FHIR Id of the 
+Group being requested. The use of the Group FHIR ID as the subject_id is based upon the 
+assunption that health plans have access controls in place to restrict the requestor to only having
+access to Group records they are authorized to access.
 
 ### Scopes for Operations
 

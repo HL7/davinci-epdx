@@ -8,6 +8,7 @@
 
 | JIRA Ticket                                                  | Change                                                                                                                                                 |
 |--------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Updates from PDex community meeting 2024-07-12               | Use rendering provider NPI as minimum for Attribution Lists. Add EMR Role-based security Assumption. Add UDAP subject_id recommendation.               |
 | Add ajudicationActionDate to EOB                             | Created WhenAdjudicated Extension to hold a DateTime element that can be used in EOB item.adjudication and adjudication.                               |
 | [FHIR-46132](https://jira.hl7.org/browse/FHIR-46132)         | Define Consent Profile for Provider Access Opt-out. Make clear it is optional and provided as assistance for recording opt-out                         |
 | Identify Provider Access and Payer-to-Payer as Async APIs    | Add section to Payer-to-Payer Bulk and Provider Access API narrative pages to use HTTP POST and operate as Async Operations                            |
