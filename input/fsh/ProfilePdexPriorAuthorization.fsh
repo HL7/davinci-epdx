@@ -87,8 +87,9 @@ consumedunits 0..1
 * item.adjudication[consumedunits].value only decimal
 * item.adjudication[consumedunits].value 1..1
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+  and WhenAdjudicated named adjudicationActionDate 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
-
+* item.adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occured."
 * insert AdjudicationInvariant
 * insert AdjudicationSlicing
 * adjudication MS
@@ -99,7 +100,9 @@ denialreason 0..* MS
 * adjudication[adjudicationamounttype].category from PDexAdjudication  (required)
 * adjudication[adjudicationamounttype].amount 1..1
 * adjudication.extension contains ReviewAction named reviewAction 0..1 MS
+  and WhenAdjudicated named adjudicationActionDate 0..1 MS
 * adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization for the entire request."
+* adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occured."
 
 // End of addition from EOBInpatientProfile.fsh
 

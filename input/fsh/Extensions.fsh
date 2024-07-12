@@ -413,7 +413,7 @@ Description: "Indicates the filters applied to the resources exported in the las
 
 // ---------------------------------------
 // Payer-to-Payer Group Attribution Extensions
-// Patient Parameters from the Member-Match Operation used to perform the member-match 
+// Patient Parameters from the Member-Match Operation used to perform the member-match
 // Named matchedMember in Member-match response
 Extension: MatchParameters
 Id: base-ext-match-parameters
@@ -439,7 +439,22 @@ Description: "Indicates the number of members that have opted out of sharing "
 * ^context.expression = "Group"
 * value[x] 0..1
 * value[x] only Quantity
-* value[x] ^comment = "Number of Attributed Members that are excluded through opt-out." 
+* value[x] ^comment = "Number of Attributed Members that are excluded through opt-out."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
+
+// ---------------------------------------
+// Prior Authorization ExplanationOfBenefit Adjudication All Slices
+// Add Date Time
+Extension: WhenAdjudicated
+Id: base-ext-when-adjudicated
+Title: "When Adjudicated"
+Description: "Date and Time when Adjudication Action took place. NOTE: that this extension may be replaced by an inter-version extension after R6 version of the EOB implements this DataTime element."
+* ^context.type = #element
+* ^context.expression = "ExplanationOfBenefit"
+* value[x] 0..1
+* value[x] only dateTime
+* value[x] ^comment = "Date or data and time when the adjudication action occured."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
