@@ -24,7 +24,7 @@ Usage: #definition
 * parameter[0].type = #Reference
 * parameter[0].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * parameter[0].documentation = "Bundle of Member information. Repeat bundle for each member to be submitted to bulk member-match, as defined in PDex $multi-member-match request."
-// //  * insert parameter(#MemberBundle, #in, 1,"1", #Resource, "Bundle of Member information. Repeat bundle for each member to be submitted to bulk member-match, as defined in pdex-parameters-multi-member-match-bundle-in.")  
+// //  * insert parameter(#MemberBundle, #in, 1,"1", #Resource, "Bundle of Member information. Repeat bundle for each member to be submitted to bulk member-match, as defined in pdex-parameters-multi-member-match-bundle-in.")
 // * parameter[0].part[0]
 //   * insert parameter(#MemberPatient, #in, 1, "1", #Resource, "Parameter submitted by the new plan **SHALL** contain US Core Patient containing member demographics.")
 //   * referencedFrom[0]
@@ -58,7 +58,7 @@ Usage: #definition
 // * parameter[=].min = 0
 // * parameter[=].max = "1"
 // * parameter[=].type = #Parameters
-// * parameter[=].documentation = "A group resource representing matched members." 
+// * parameter[=].documentation = "A group resource representing matched members."
 
 
 // * parameter[+].name = #NoMatch
@@ -67,7 +67,7 @@ Usage: #definition
 // * parameter[=].min = 0
 // * parameter[=].max = "1"
 // * parameter[=].type = #Parameters
-// * parameter[=].documentation = "A group resource representing Non-Matched members." 
+// * parameter[=].documentation = "A group resource representing Non-Matched members."
 
 // * parameter[+].name = #ConsentConstraint
 // * parameter[=].resource = PDexMemberNoMatchGroup
@@ -75,5 +75,5 @@ Usage: #definition
 // * parameter[=].min = 0
 // * parameter[=].max = "1"
 // * parameter[=].type = #Parameters
-// * parameter[=].documentation = "A group resource representing members that may have matched but Payer is unable to comply with Consent conditions." 
+// * parameter[=].documentation = "A group resource representing members that may have matched but Payer is unable to comply with Consent conditions."
 

@@ -5,6 +5,7 @@ Title: "$multi-member-match payer example request"
 Description: "Example of more than one member being submitted to the PDex Payer-to-Payer Multiple Member Match Operation."
 Usage: #example
 * id = "payer-multi-member-match-in"
+// * parameter[0].name = "MemberBundle"
 * parameter[0].part[MemberPatient]
   * resource
     * resourceType = "Patient"
@@ -113,6 +114,7 @@ Usage: #example
 // ------------------
 // Record 2 in bundle
 // ------------------
+// * parameter[+].name = "MemberBundle"
 * parameter[+].part[MemberPatient]
   * resource
     * resourceType = "Patient"
