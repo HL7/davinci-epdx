@@ -3,14 +3,15 @@
 {% include style_insert_table_blue.html %}
 
 <div class="stu-note">
-<b><i>PThis page has been updated to redlect the release of the CMS Prior Authorization Rule (CMS-0057).
+<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057).
 The changes have been made to stay in sync with the bulk transfer requirements of the rule. </i></b>
 </div>
 
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
-US Core 3.1.1, is a requirement of the CMS Interoperability Rule.
+US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of
+USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with the ONC's HTI-1 Rule.
 
-Payers **MAY** choose to implement Payer-to-Payer Excchange for a single member by following the content provided in this section of the IG.
+Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.
 
 Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. Bulk Payer-to-Payer Exchange
 **MAY** be used to exchange data for a SINGLE member.
