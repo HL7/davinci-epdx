@@ -1,4 +1,4 @@
-[Previous Page - index](index.html)
+[Previous Page - Introduction](introduction.html)
 
 |                                                                                                          |                                            |
 |----------------------------------------------------------------------------------------------------------|--------------------------------------------|
@@ -34,4 +34,5 @@ This IG Contains the following dependencies on other IGs.
 
 {{ ip-statement | remove: '<p>' | remove: '</p>'}}
 
-[Next Page: Overview](overview.html)
+[Next Page - Security and Privacy](securityandprivacy.html)
+
