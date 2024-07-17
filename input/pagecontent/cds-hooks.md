@@ -1,6 +1,15 @@
 
 [Previous Page - Provider-controlled Information Requests and Filtering](provider-controlledinformationrequestsandfiltering.html)
 
+<div class="stu-note">
+<b><i>This page was published in STU1.0. It has been superceded by the Provider Access API requirements 
+in the CMS Prior Authorization Rule (CMS-0057).
+There has been limited, if any implementation of the CDS Hooks capability defined in this guide. This 
+section could be considered for retirement.
+</i></b>
+</div>
+
+
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 
 This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR.

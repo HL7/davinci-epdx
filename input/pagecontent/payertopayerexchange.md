@@ -346,5 +346,19 @@ the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) s
 The _typeFilter parameter can be used to scope resources using search parameters to exclude resources 
 that are not required, such as non-clinical resources.
 
+### Scopes for Operations
+
+[SMART App Launch STU2.1](http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch)
+defines granular scopes for resources. Following the model proposed in the section on
+[FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
+the following scope is proposed to control access to the member-match  
+Operations for Payer-to-Payer single-member exchange:
+
+- http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
+
+This would be the scope to execute the *single-member-match* operation
+for *payertopayer* exchange with any subsequent export being restricted
+to the Patient *id(s)* that the user is authorized to access.
+
 
 [Next Page - Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)

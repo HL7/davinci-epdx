@@ -1,17 +1,42 @@
 [Previous Page - Overview](overview.html)
 
+<div class="stu-note">
+
+<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057).
+The guide has also been updated to support the adoption of US Core 6.1.0, in addition to existing support for US Core 3.1.1. This change is implemented to enable implementers to comply with both the
+CMS-0057 Rule and the ONC's HTI-1 rule that implements US Core 6.1.0 as the base standard of US Core
+as of January 1, 2026.</i></b>
+
+</div>
+
 The PDex Implementation Guide (IG) identifies three actors and specifies three interactions that occur. Each interaction differs based upon the actors involved and the data payload that is being communicated. 
 
 **Actors:**
-1. Health Plans
-2. Providers
+1. Health Plans.
+2. Providers.
 3. Third-Party Applications.
   
 **Interactions:**
-1. Payer to Provider Exchange
-2. Member-authorized Health Plan to Health Plan Exchange
+1. Payer to Provider Exchange using CDS Hooks.
+2. Member-authorized Health Plan to Health Plan Exchange.
 3. Member-authorized Health Plan to Third Party Applications. 
+
+### PDex STU2.1
+
+The STU2.1 Version of the PDex IG introduces two important new Interactions:
+
+1. Payer-to-Payer Bulk Exchange.
+2. Payer-Provider Bulk Exchange.
 	
+Payer-Provider Bulk Exchange is a bulk exchange of data for Members that have not chosen to opt-out
+of data sharing with providers. This exchange effectively supercedes the original Payer Provider 
+exchange that used CDS Hooks.
+
+Payer-to-Payer Bulk Exchange is a bulk exchange of data for Members that have opted in to enable a 
+payer to retrieve data from a prior plan.
+
+### Interaction with CARIN Consumer-Directed Exchange IG
+
 The Blue Button 2.0 initiative (The CMS Blue Button 2.0 API and the CARIN Consumer-Directed Exchange IG) specifies the profiles used to communicate claims information between health plans and their members. The PDex Implementation Guide (IG) is focused on presenting a member's health and claims information as FHIR clinical profiles (based on US Core) that are more easily consumed by Electronic Medical Records (EMR) systems. 
                                                                                                           
 Ad-hoc PDex Member History Requests via CDS Hooks provides a mechanism for providers/clinicians to request information from health plans about the medical history of their patient as part of their regular workflow.  The requestor should be aware that the Health Plan may not have a complete medical history of services provided due to delays in billing, patient ability to pay for services, etc.
@@ -31,13 +56,13 @@ The first release of the PDex IG will focus on the following in-scope items. Ite
 	
 #### In Scope
 	
-- Ambulatory Care Provider queries
-- Member-authorized Payer-to-Payer information exchange
+- Ambulatory Care Provider queries.
+- Member-authorized Payer-to-Payer information exchange.
 - Member-authorized Payer-to-Third-Party Application information exchange.
 	
 #### Deferred Scope
 	
-- In Patient Care Provider queries
+- In Patient Care Provider queries.
 - Provider initiated data push.
 	
 #### Out of Scope
@@ -51,9 +76,26 @@ Member/Patient Consent for scenarios covered in this Implementation Guide fall i
 1. Provider-Health Plan Exchange
 2. Member-mediated Information Exchange.
 
+
+#### Payer-to-Payer Exchange
+
+Under the CMS Prior Authorization Rule (CMS-0057) the Payer-to-Payer API is an op-in API. A member must
+actively opt-in to have their payer retrieve data from their prior payer. The member must provide the 
+necessary coverage and demographics information to their health plan to enable them to be matched by their
+prior payer.
+
+Claims and Encounter data included in the data exchange is required to exclude financial data.
+
 #### Provider-Health Plan Exchange
 
-Provider-Health Plan exchange of data is covered by the Health Insurance Portability and Accountability Act (HIPAA) under the [Treatment Payment and Health Care Operations](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) provision.
+Provider-Health Plan exchange of data is covered by the Health Insurance Portability and Accountability Act (HIPAA) under the [Treatment Payment and Health Care Operations](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) provision. 
+
+Under the CMS Prior Authorization Rule (CMS-0057) the Provider Access API is an opt-out API. A member's
+data is included by default in an exchange with an in-network provider unless the member has chosen to
+opt-out of sharing with any providers.
+
+Claims and Encounter data included in the data exchange is required to exclude financial data.
+
 
 #### Member-mediated Information Exchange
 
@@ -299,5 +341,4 @@ The provision of a Member-accessible Pharmacy Network Directory API is detailed 
 When a Health Plan provides prescription drug coverage the list of covered medications is known as a "Formulary."  The provision of a Member-accessible Prescription Drug Formulary API is detailed in the companion, subsidiary Payer Data Exchange Drug Formulary Implementation Guide ([PDex-formulary IG](https://build.fhir.org/ig/HL7/davinci-pdex-formulary/)).
 
 
-
-[Next Page - Security and Privacy](securityandprivacy.html)
+[Next Page: Implementation Guide](ImplementationGuide-hl7.fhir.us.davinci-pdex.html)

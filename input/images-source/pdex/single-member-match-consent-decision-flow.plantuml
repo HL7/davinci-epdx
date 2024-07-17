@@ -1,0 +1,39 @@
+@startuml
+skinparam svgDimensionStyle false
+
+start
+note left
+Single Member-match Consent Decision Flow
+endnote
+if (is bundle format valid) then (no)
+  #pink:return 422 Unprocessable Entity in
+  Operation Outcome - Bad bundle format;
+  stop
+else (yes)
+label MatchMember
+if (Is Member Matched?) then (Yes)
+  :check consent;
+else (nothing)
+  #pink:return 422 Unprocessable Entity in
+  Operation Outcome - No Match;
+  detach
+endif
+
+
+switch (Can Payer Comply with Consent Request?)
+case (Sensitive Data is excluded)
+  #palegreen:Capture Consent.
+  Return Matched Member Information;
+
+case (Sensitive data is tagged)
+  #palegreen:Capture Consent.
+  Return Matched Member Information;
+
+case (Sensitive data is NOT tagged)
+  #pink:return 422 Unprocessable Entity in
+          Operation Outcome - Consent Constraint;
+
+endswitch
+stop
+
+@enduml

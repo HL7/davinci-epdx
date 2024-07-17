@@ -11,7 +11,7 @@ This has been incorporated to meet the requirements of the CMS Prior Authorizati
 When requested by a Health Plan member, the Exchange of clinical data, as
 scoped by USCDI version 1 or version 3 and represented in FHIR by US Core 
 3.1.1 or 6.1.0, is a requirement of the Advancing Interoperability and 
-Prior Authorization Rule published in February 2024. The rule requires 
+Prior Authorization Rule (CMS-0057) published in February 2024. The rule requires 
 Payers to support the bulk exchange of data for multiple members.
 
 The PDex Payer-to-Payer FHIR-based bulk data exchange in this section of 
@@ -230,6 +230,9 @@ retrieved by the Payer. For example, to only retrieve Observations of a certain
 type. The _typeFilter, if used, **SHALL** comprise one, or more, valid FHIR 
 search queries for the respective resource being filtered.
 
+NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters 
+supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**
+be followed.
 
 The overall workflow for Bulk Payer-to-Payer Exchange is shown in the diagram below:
 
@@ -269,7 +272,8 @@ IG.
 [SMART App Launch STU2.1](http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch)
 defines granular scopes for resources. Following the model proposed in the section on
 [FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
-the following scopes are proposed to control access to the Da Vinci Data Export Operation for Payer-to-Payer bulk exchange:
+the following scopes are proposed to control access to the Bulk-member-match  
+and Da Vinci Data Export Operations for Payer-to-Payer bulk exchange:
 
 - http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/bulk-member-match
 - system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS|match

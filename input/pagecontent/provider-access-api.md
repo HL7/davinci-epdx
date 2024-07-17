@@ -83,7 +83,7 @@ for managing Member Attribution.
 Health plans:
 - **MAY** use claims data as a source to identify existing treatment relationships. 
 - **MAY** utilize their own rules for determining the attribution of members to Providers.
-- **SHOULD** use the Coverage Requirements Discovery IG's AppointmentBook and OrderSelect CDS Hooks as a means to determine impending treatment relationships.
+- **SHOULD** use the Coverage Requirements Discovery IG's AppointmentBook and EncounterStart CDS Hooks as a means to determine impending treatment relationships.
 
 Attribution lists **SHALL** be searchable via a secure RESTful API. Access to the Group resource to READ 
 attribution lists should be scoped to the appropriate Organization, Facility, Provider or their 
@@ -271,6 +271,11 @@ When _typeFilter is used the export operation **SHALL** record the content of th
 parameter in the [lastFilters](StructureDefinition-base-ext-last-typefilter.html) element for each Member for which data is retrieved. The
 [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction
 or the value of the _until parameter, if it is earlier.
+
+NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
+supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**
+be followed.
+
 
 ### Access and Refresh Tokens
 
