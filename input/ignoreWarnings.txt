@@ -19,9 +19,6 @@ WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.
 %https://codesystem.x12.org/005010/306' could not be found%
 
 
-# FDA National Drug Codes - too many codes to display
-%ValueSet/FDANationalDrugCode' expansion has too many codes to display%
-
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
@@ -38,11 +35,6 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/%
 %Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/%
 
-# MIME Types could not be expanded
-%http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded%
-
-# AMA CodeSystem has a grammar and can't be enumerated
-%http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated%
 
 
 # Tooling issue? Investigating whether a Publisher recursion issue. Parameter.part is defined by Parameter. https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Parameter.2Epart.20errors
@@ -56,5 +48,5 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # mtlsOrganization resource may be replaced by equivalent FAST-NDH profiles
 %The repeating element has a pattern. The pattern will apply to all the repeats%
 
-# Error looking up X12 code within codeableConcept
-%java.net.UnknownHostException: tx.fhir.org%
+# Error looking up X12 code
+%A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found%
