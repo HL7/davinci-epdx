@@ -5,7 +5,7 @@ Usage: #definition
 * url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/bulk-member-match"
 * name = "BulkMemberMatch"
 * title = "PDex Bulk Member Match Operation"
-* status = #draft
+* status = #active
 * kind = #operation
 * description = "The **$bulk-member-match** operation that can be invoked by either a payer or an EHR or other system, allows one health plan to retrieve a unique identifier for a group resource containing matched members from another health plan using a member's demographic, coverage information with an accompanying consent record.  This identifier can then be used to perform subsequent queries and operations. Health Plans implementing a deterministic match will require a match on member id or subscriber id at a minimum (i.e. A pure demographic match will not be supported by such implementations.)."
 * affectsState = true

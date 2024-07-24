@@ -451,8 +451,10 @@ Extension: WhenAdjudicated
 Id: base-ext-when-adjudicated
 Title: "When Adjudicated"
 Description: "Date and Time when Adjudication Action took place. NOTE: that this extension may be replaced by an inter-version extension after R6 version of the EOB implements this DataTime element."
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit"
+* ^context[0].type = #element
+* ^context[0].expression = "ExplanationOfBenefit.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item.adjudication"
 * value[x] 0..1
 * value[x] only dateTime
 * value[x] ^comment = "Date or data and time when the adjudication action occured."

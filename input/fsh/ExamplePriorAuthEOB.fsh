@@ -47,6 +47,7 @@ Usage: #example
 * item.productOrService = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes#BB201 "Behavior Only, ADL Index 6 - 10/Medicare 5 day assessment (Full)"
 
 * item.adjudication[adjudicationamounttype].extension[reviewAction].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction"
+* item.adjudication[adjudicationamounttype].extension[adjudicationActionDate].valueDateTime = "2024-07-23T17:26:23.217+00:00"
 
 * item.adjudication[adjudicationamounttype].id = "1"
 * item.adjudication[adjudicationamounttype].category = $HL7AdjudicationCS#submitted "Submitted Amount"
@@ -77,6 +78,7 @@ Usage: #example
 * diagnosis[0].sequence = 1
 * insurance[0].focal = true
 * insurance[0].coverage[0] = Reference(Coverage/Coverage1)
+
 
 * total.category = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes#eligible "Eligible"
 * total.extension[priorauth-utilization].url = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization"
