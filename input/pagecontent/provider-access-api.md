@@ -162,6 +162,19 @@ The member-level extensions are:
 
 These extensions **SHALL** be updated by the Da Vinci Data Export PDex Use Case Operation.
 
+### Searching for Attributed Groups
+
+A Provider Representative may need to manage multiple attribution lists. The FHIR Group resource 
+supports searching on characteristic. To enable searching the 
+[PDexMemberMatchGroup Profile](StructureDefinition-pdex-member-match-group.html)
+sets the characteristic element to include the "pdexprovidergroup" code, the identifier of the 
+provider in (characteristic.valueReference), sets characteristic.exclude to false and 
+characteristic.period.start to the date attribution list creation or update.
+
+Implementers **SHALL** support the standard search parameters for group that are specified in the base
+Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefinition-pdex-member-match-group.html).
+
+
 ### Da Vinci Data Export Payload
 
 The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
@@ -169,9 +182,20 @@ that are attributed to them via an existing , or impending treatment relationshi
 Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
 
 - US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
-- [CARIN Blue Button non-Financial Profiles](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html)
 - [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
+- [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
 
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the [CARIN Consumer Directed Payer Data Exchange IG]({{site.data.fhir.ver.carinbb}}) which defines the following
+non-financial profiles:
+
+- [Inpatient Institutional Basis Profile]({{carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+- [Outpatient Institutional Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+- [Professional NonClinician Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+- [Oral Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+- [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
@@ -300,13 +324,13 @@ That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Prot
 to use the B2B protocols detailed in the 
 [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) IG.
 
-If the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html)) section are used, it is recommended that the subject_id
-in the B2B Authorization Extension Object (Key Name: "hl7-b2b") contain the NPI of the Provider 
-for which Attributed Patient data is being requested. For instances where health plan generated 
-attribution lists cover more than a single provider, the subject_id could be the FHIR Id of the 
-Group being requested. The use of the Group FHIR ID as the subject_id is based upon the 
-assunption that health plans have access controls in place to restrict the requestor to only having
-access to Group records they are authorized to access.
+If the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html)) section are used, 
+it is recommended that the subject_id in the B2B Authorization Extension Object (Key Name: "hl7-b2b") 
+contain the NPI of the Provider for which Attributed Patient data is being requested. For instances 
+where health plan generated attribution lists cover more than a single provider, the subject_id could 
+be the FHIR Id of the Group being requested. The use of the Group FHIR ID as the subject_id is based 
+upon the assumption that health plans have access controls in place to restrict the requestor to only 
+having access to Group records they are authorized to access.
 
 ### Scopes for Operations
 

@@ -15,6 +15,12 @@ Usage: #example
 * actual = true
 * name = "Attributed List of Health Plan Members for Practitioner 1122334455."
 * managingEntity.reference = "Organization/ProviderOrg1"
+* characteristic.code = $MemberAttribution#pdexprovidergroup "PDex Provider Group"
+* characteristic.valueReference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* characteristic.valueReference.identifier.value = "0123456789"
+* characteristic.exclude = false
+* characteristic.period.start = "2024-03-21"
+
 * member[0].id = "0"
 * member[=].entity.reference = "Patient/1001"
 * member[=].extension[lastTransmitted].valueDateTime = "2024-03-21T17:18:00.000Z"

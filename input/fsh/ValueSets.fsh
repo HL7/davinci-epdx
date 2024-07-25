@@ -104,6 +104,7 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
 * codes from valueset PDexAdjudication
 * codes from valueset PDexPayerBenefitPaymentStatus
 * codes from system PDexAdjudicationCS
+* codes from system PDexAdjudicationDiscriminator
 * ^copyright = "This Valueset is not copyrighted."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm

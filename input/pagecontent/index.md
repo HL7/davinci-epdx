@@ -118,6 +118,14 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 
 In addition, we are creating a supplemental guide to provide more examples of how to populate the resources that are being exchanged based on the nature of the source information (e.g., lab results via V2 transactions, CDA, or claims).
 
+### Endpoint Discovery
+
+Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following:
+
+- Patient Access API.
+- Provider Access API.
+- Payer-to-Payer API (single member and multiple members).
+
 ### Intellectual Property
 
 This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP").  Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used.  It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
