@@ -185,24 +185,38 @@ Application Exchange:
 
 #### Payer-to-Payer Data Exchange
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core, 
-is a requirement of the CMS Interoperability Rule.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 or version 3 and represented in FHIR by US Core 3.1.1 or US Core 6.1.0, is a requirement of the CMS Prior Authorization Rule (CMS-0057).
 
-All PDex Payer-to-Payer FHIR-based data exchanges in this IG will be limited to the exchange of data for a 
-single member. Data Exchange for groups of Members is outside the current scope of this IG. Management of 
-attribution lists for exchange of data for groups of members will be considered in a future version of the IG.
+The CMS Prior Authorization Rule (CMS-0057) requires Payers to make available Prior Authorization decisions and 
+updates via the Patient, Provider and Payer-to-Payer Access APIs. The Rule also requires the exchange of the 
+supporting clinical data, used in arriving at the Prior Authorization decision, (based on US Core 3.1.1 and, 
+in the future, US Core 6.1.0) via those same APIs.
 
-Payer-to-Payer exchange can be accomplished by three methods: 
+For Patient and Provider Access APIs, the requirement is to exchange structured clinical data used in arriving 
+at the Prior Authorization Decision.
 
-1. Query all clinical resource individually.
-2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation.
-3. Bulk FHIR Asynchronous protocols.
+For the Payer-to-Payer API, the rule also requires any Unstructured data used in arriving at the Prior 
+Authorization decision to be exchanged.
+
+Payer-to-Payer exchange can be accomplished by two methods: 
+
+1. [Payer-to-Payer Exchange for a single member](payertopayerexchange.html)
+2. [Payer-to-Payer Bulk Exchange for multiple members](payertopayerbulkexchange.html)
 
 Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to 
 determine which methods are made available by the data holder. 
 
-Please refer to [Section 5.2 - Payer-to-Payer Exchange](payertopayerexchange.html) for details about Payer-to-Payer exchange 
-workflows and data exchange methods. 
+The exchange of Unstructured data does not require a Payer to translate the unstructured content into structured
+FHIR resources such as Observations or Conditions, etc.
+
+Payers **SHOULD**: 
+- base 64 encode as an attachment (e.g. images, digitized clinical notes or fax content) and create a binary record, as per the [FHIR R4 Binary resource](http://hl7.org/fhir/R4/binary.html)
+- Create a DocumentReference using [US Core 3.1.1 Document Reference]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-documentreference.html) or [US Core 6.1.0 Document Reference]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-documentreference.html)
+
+Payers are required to exchange Unstructured data with other Payers via the Payer-to-Payer API.
+
+Payers **MAY** choose to exchange unstructured data with Patients and Providers, via their respective APIs, 
+using the same content provided to Payers. i,e. Attaching as a binary resource and referenced in a DocumentReference.
 
 
 [Next Page - Handling Data Provenance](handlingdataprovenance.html)
