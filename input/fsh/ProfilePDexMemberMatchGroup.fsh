@@ -8,14 +8,24 @@ Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer AP
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-* contained 0..* 
+* contained 0..*
 * code 1..1 MS
-* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS 
+* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
+* characteristic.code MS
+* characteristic.code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
+* characteristic.code = #match
+* characteristic.valueReference MS
+* characteristic.valueReference ^comment = "Organization Identifier Reference of the Payer requesting the member match"
+* characteristic.exclude = false
+* characteristic.exclude ^comment = "Exclude is set to False"
+* characteristic.period MS
+* characteristic.period ^comment = "Enter date match performed (i.e. current date) as Period.start"
+
 * member.entity.extension contains MatchParameters named matchedMember 0..1 MS
 * member.entity.extension[matchedMember] ^comment = "Add the patient record from the successful MemberMatch for an individual member in the Member-Match Request MemberBundle (Patient Demographics)."
 
 // ------------------------------
-// No Match Profile 
+// No Match Profile
 //
 Profile: PDexMemberNoMatchGroup
 Parent: Group
@@ -25,9 +35,9 @@ Description: "A Group List created by the Payer to provide information back to a
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
-* contained 0..* 
+* contained 0..*
 * code 1..1 MS
-* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS 
+* code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * member.entity ^comment = "Enter using a relative reference to the failed patient record."
 * member.entity.extension contains MatchParameters named nonMatchedMember 0..1 MS
 * member.entity.extension[nonMatchedMember] ^comment = "Add the patient record from the failed Member Match request (Patient Demographics)."

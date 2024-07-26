@@ -42,9 +42,21 @@ The data available to be returned by the Bulk Payer-to-Payer Exchange API **SHAL
 include the following types of data:
 
 - [US Core 3.1.1]({{uscore3}}) oe [US Core 6,1,0]({{uscore6}})Clinical Data with additional PDex defined Profiles.
-- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the 
-- [CARIN Consumer Directed Payer Data Exchange](http://hl7.org/fhir/us/carin-bb/) Implementation Guide.
+- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the
 - [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide. 
+- [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
+
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the [CARIN Consumer Directed Payer Data Exchange IG]({{site.data.fhir.ver.carinbb}}) which defines the following
+non-financial profiles:
+
+- [Inpatient Institutional Basis Profile]({{carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+- [Outpatient Institutional Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+- [Professional NonClinician Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+- [Oral Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+- [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 
 ### Performing Bulk Data Exchange
@@ -133,6 +145,17 @@ The consent decision flow for the bulk member match is shown in the following di
 {% include member-match-consent-decision-flow.svg %}
 </div>
 
+### Searching for Matched Groups
+
+A payer may send multiple requests for member matching to another Payer. This can result in multiple
+Matched Group records being created. The FHIR Group resource supports searching on characteristic. 
+To enable searching the [PDexMemberMatchGroup Profile](StructureDefinition-pdex-member-match-group.html)
+sets the characteristic element to include the "match" code, the identifier of the requesting payer
+in (characteristic.valueReference), sets characteristic.exclude to false and characteristic.period.start to the date of the match request.
+
+Implementers **SHALL** support the standard search parameters for group that are specified in the base 
+Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefinition-pdex-member-match-group.html).
+
 
 ### Da Vinci Data Export Payload
 
@@ -141,7 +164,7 @@ that are attributed to them via an existing, or impending treatment relationship
 Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
 
 - US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
-- [CARIN Blue Button non-Financial Profiles](https://build.fhir.org/ig/HL7/carin-bb/artifacts.html)
+- [CARIN Blue Button non-Financial Profiles]({{site.data.fhir.ver.carinbb}}/artifacts.html)
 - [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
 
 
@@ -179,7 +202,7 @@ changed their opt-in/opt-out status for sharing with health plans.
 Data that **SHALL** be available via the API includes:
 
 - [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/) Clinical Data with additional PDex defined Profiles.
-- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the [CARIN Consumer Directed Payer Data Exchange](http://hl7.org/fhir/us/carin-bb/) Implementation Guide.
+- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit Basis profiles defined in the [CARIN Consumer Directed Payer Data Exchange]({{site.data.fhir.ver.carinbb}}) Implementation Guide.
 - [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
 
 Claims and clinical data **SHALL** be limited to records with a service date 

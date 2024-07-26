@@ -59,6 +59,17 @@ There are three potential interaction methods:
 2. OAuth 2.0 and FHIR API
 3. Patient-everything-pdex via alternate secure transport.
 
+This version of the IG adds new APIs that support the requirements of the CMS Prior Authorization Rule (CMS-0057).
+These APIs are:
+
+- [Provider Access API](provider-access-api.html).
+- [Payer-to-Payer Bulk API](payertopayerbulkexchange.html)
+
+Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That
+method has been superceded by the [Provider Access API](provider-access-api.html) that meets the requirements of
+the CMS Prior Authorization Rule (CMS-0057).
+
+
 #### CDS Hooks with SMART-on-FHIR
 
 Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org/) to initiate Payer Data 

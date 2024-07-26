@@ -14,6 +14,11 @@ Usage: #example
 * type = http://hl7.org/fhir/group-type#person "Person"
 * actual = true
 * code = $MemberMatchResult#match "Matched"
+* characteristic.code = $MemberMatchResult#match "Matched"
+* characteristic.valueReference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* characteristic.valueReference.identifier.value = "0123456789"
+* characteristic.exclude = false
+* characteristic.period.start = "2024-03-20"
 * name = "Matched Members"
 * managingEntity
   * identifier

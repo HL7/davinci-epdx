@@ -38,6 +38,16 @@ This IG covers three methods of information exchange:
 2. OAuth2.0 or SMART-on-FHIR Member-authorized Exchange
 3. $patient-everything exchange via alternate secure channels.
 
+This version of the IG adds new APIs that support the requirements of the CMS Prior Authorization Rule (CMS-0057). 
+These APIs are:
+
+- [Provider Access API](provider-access-api.html).
+- [Payer-to-Payer Bulk API](payertopayerbulkexchange.html)
+
+Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That 
+method has been superseded by the [Provider Access API](provider-access-api.html) that meets the requirements of
+the CMS Prior Authorization Rule (CMS-0057).
+
 #### CDS-Hooks and SMART-on-FHIR
 
 An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown in [section 8 - CDS Hooks](http://build.fhir.org/ig/HL7/davinci-epdx/cds-hooks.html#pdex-hooks). This exchange flow is used for communication between Providers and Health Plans. The CDS-Hook will be used to perform a Patient/Member match and return a token that enables a SMART-on-FHIR App to access information via the Health Plan's FHIR API for the matched member.

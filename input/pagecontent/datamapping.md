@@ -8,6 +8,19 @@ Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the [CARIN Consumer Directed Payer Data Exchange IG]({{site.data.fhir.ver.carinbb}}) which defines the following
+non-financial profiles:
+
+- [Inpatient Institutional Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html) 
+- [Outpatient Institutional Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+- [Professional NonClinician Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+- [Oral Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+- [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+
+
 Dental and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the exchanges described in this IG.
 
 Mapping is also required when data is exchanged between systems. The PDex IG exchanges are centered around the Members/Patients. FHIR platforms generate their own ids when creating resources. Consequently, a Patient resource in one system can have a different FHIR Resource ID from that Patient in another system. When a bundle of resources is retrieved from a Health Plan's FHIR API it will be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything FHIR bundle.

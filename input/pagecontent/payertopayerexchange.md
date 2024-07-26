@@ -261,7 +261,7 @@ request/retrieve data using one of the following three methods:
 2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
 3. Bulk FHIR Asynchronous protocols.
 
-Each of the above methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
+Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
 
 | Profile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Resource           |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
@@ -288,6 +288,27 @@ Each of the above methods **SHALL** support the retrieval of the profiles and re
 | [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html) | Coverage |
 | [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.html) | Prior Authorization |
 | [PDex Provenance](StructureDefinition-pdex-provenance.html)<br/>[US Core Provenance](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html)  | Provenance   |
+
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the [CARIN Consumer Directed Payer Data Exchange IG]({{site.data.fhir.ver.carinbb}}) which defines the following
+non-financial profiles:
+
+- [Inpatient Institutional Basis Profile]({{carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+- [Outpatient Institutional Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+- [Professional NonClinician Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+- [Oral Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+- [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+
+### Request Access Token for Member Access
+
+In step 3 of the Member-match process, the requesting Payer will have received a FHIR ID for the matched member
+(the MemberMatch ID). This Id should be submitted to the Access Token Endpoint with a JWT where the subject Id
+is the MemberMatch ID. The Authorization Server **SHOULD** use the Subject ID, confirms that consent for the
+Requesting Payer to access the Matched Member is still valid and therefore issue an access token that is scoped
+to the FHIR ID of the matched member, consequently bounding any subsequent FHIR API request to that specific
+Patient FHIR ID.
 
 
 ### Query all clinical resources individually
