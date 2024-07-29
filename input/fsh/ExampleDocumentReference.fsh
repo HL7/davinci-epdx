@@ -6,7 +6,8 @@ Usage: #example
 * status = http://hl7.org/fhir/document-reference-status#current
 // * type = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type#UNK
 //* type = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK
-* type =  http://loinc.org#51852-2
+* type =  http://loinc.org#34133-9
+// * type =  http://loinc.org#51852-2
 // * category = http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-category#clinical-note
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject.reference = "Patient/1"
