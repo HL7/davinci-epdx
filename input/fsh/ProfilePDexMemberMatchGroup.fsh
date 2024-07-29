@@ -12,8 +12,8 @@ Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer AP
 * code 1..1 MS
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * characteristic.code MS
-* characteristic.code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
-* characteristic.code = #match
+* characteristic.code.coding from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
+* characteristic.code.coding.code = #match
 * characteristic.valueReference MS
 * characteristic.valueReference ^comment = "Organization Identifier Reference of the Payer requesting the member match"
 * characteristic.exclude = false
