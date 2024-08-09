@@ -188,7 +188,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # capabilitystatement-search-parameter-combination Slicing: configuration replicated from US Core 6.1.0 - Resource[20].exension[5].extension[0]
 %INFORMATION: CapabilityStatement/pdex-server-6-1: CapabilityStatement.rest[0].resource[20].extension[5].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0-ballot1 (this may not be a problem, but you should check that it's not intended to match a slice)%
 
-x# capabilitystatement-search-parameter-combination Slicing: configuration replicated from US Core 6.1.0 - Resource[22].exension[1].extension[0]
+# capabilitystatement-search-parameter-combination Slicing: configuration replicated from US Core 6.1.0 - Resource[22].exension[1].extension[0]
 %INFORMATION: CapabilityStatement/pdex-server-6-1: CapabilityStatement.rest[0].resource[22].extension[1].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0-ballot1 (this may not be a problem, but you should check that it's not intended to match a slice)%
 
 # capabilitystatement-search-parameter-combination Slicing: configuration replicated from US Core 6.1.0 - Resource[22].exension[2].extension[0]
@@ -244,3 +244,6 @@ x# capabilitystatement-search-parameter-combination Slicing: configuration repli
 
 # Multi-Member Match Request Slicing: Slicing not required for Patient record in submission Parameters.parameter[0].part[0].resource/*Patient/2*/.identifier[0]
 %INFORMATION: Parameters/payer-multi-member-match-in: Parameters.parameter[1].part[0].resource/*Patient/2*/.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics|1.1.0-ballot (this may not be a problem, but you should check that it's not intended to match a slice)%
+
+# Error looking up X12 code.but code is valid.
+%INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
