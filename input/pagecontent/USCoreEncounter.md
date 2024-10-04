@@ -71,7 +71,7 @@ Fields that can be mapped from the CARIN Blue Button IG CPCDS File are included 
 
 An example mapping of an Encounter resource is shown here:
 
-<pre>
+<pre class="json">
 {
   "resourceType" : "Encounter",
   "id" : "example-1",
@@ -83,7 +83,7 @@ An example mapping of an Encounter resource is shown here:
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: example-1</p><p><b>meta</b>: </p><p><b>status</b>: finished</p><p><b>class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p><p><b>type</b>: <span title=\"Codes: {http://www.ama-assn.org/go/cpt 99201}\">Office Visit</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw , Amy V. Baxter ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: 1987-02-20</a></p><p><b>period</b>: Nov 1, 2015, 10:00:14 PM --&gt; Nov 1, 2015, 11:00:14 PM</p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">&lt;p&gt;&lt;b&gt;Generated Narrative</b></p><p><&lt;b&gt;id&lt;/b&gt;: example-1</p>&lt;p&gt;&lt;b&gt;meta</b>: </p>&lt;p&gt;&lt;b&gt;status</b>: finished</p>&lt;p&gt;&lt;b&gt;class</b>: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p>&lt;p&gt;&lt;b&gt;type</b>: <span title=\"Codes: {http://www.ama-assn.org/go/cpt 99201}\">Office Visit</span></p>&lt;p&gt;&lt;b&gt;subject</b>: <a href=\"Patient-example.html\">Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw , Amy V. Baxter ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: 1987-02-20</a></p>&lt;p&gt;&lt;b&gt;period</b>: Nov 1, 2015, 10:00:14 PM --&gt; Nov 1, 2015, 11:00:14 PM</p></div>"
   },
   "status" : "finished",
   "class" : {

@@ -25,7 +25,7 @@ secure exchange of information between Providers and Payers and between payers.
 Incorporating prescriptive definitions for connecting, registering and authorizing access to the 
 Provider Access or Payer-to-Payer API risks complicating the adoption of solutions that will 
 enable secure exchange of data, at scale. Health Plans implementing the Da Vinci guides that address the CMS Prior Authorization Rule (Payer Data Exchange, Coverage Requirements Discovery, Documents templates and Rules and Prior Authorization Support) are urged to continue to engage with their respective work groups in order to 
-be aware of ongoing developments and emergent implementation approaches, as the industry works to evolve methods that will enable adoption of these Interoperability Standards at scale. Developements are to be expected in the area of automated registration and access to the secure APIs documented 
+be aware of ongoing developments and emergent implementation approaches, as the industry works to evolve methods that will enable adoption of these Interoperability Standards at scale. Developments are to be expected in the area of automated registration and access to the secure APIs documented 
 in these IGs.
 
 ### Background
@@ -104,15 +104,15 @@ A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](
 
 Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. This mapping information is provided as guidance only. It may require payers to use discretion in mapping claims data to the relevant clinical resources. 
 
-With the CMS Prior Authorization Rule (CMS-0057) recommending the series of Da Vinci Burden Reduction Implementation Guides (Coverage Requirements Discovery, Documents Templates and Rules and Prior Authorization Support) it is expected that Payers will receive more clinical data from Providers. Much of that data will be in structured form, as defined by the US Core Implementation Guide. The Payer-to-Payer Bulk API also requires the exchange of unstructured data that supports a Prior Authorization decision. Such data would be mebedded in a DocumentReference resource for exchange. This is likely to result in Payers having far more clinical data to exchange wih Members, Providers and other Payers.
+With the CMS Prior Authorization Rule (CMS-0057) recommending the series of Da Vinci Burden Reduction Implementation Guides (Coverage Requirements Discovery, Documents Templates and Rules and Prior Authorization Support) it is expected that Payers will receive more clinical data from Providers. Much of that data will be in structured form, as defined by the US Core Implementation Guide. The Payer-to-Payer Bulk API also requires the exchange of unstructured data that supports a Prior Authorization decision. Such data would be embedded in a DocumentReference resource for exchange. This is likely to result in Payers having far more clinical data to exchange wih Members, Providers and other Payers.
 
-The column definitions are provided in the table below. Look for this style of table in the Profiles defined in this IG.
+The column definitions are provided in the table below. Look for this style of table in the Data Mapping pages and Profiles defined in this IG.
 
 {% include style_insert_table_blue.html %}
 
-| US Core/PDex Element                                                    | MustSupport | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
-|-------------------------------------------------------------------------|-------------|:----------:|---------------------------|----------------------------------------|
-| The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element            |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
+| US Core/PDex Element                                                    | Must Support                       | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
+|-------------------------------------------------------------------------|------------------------------------|:----------:|---------------------------|----------------------------------------|
+| The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
 
 <i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
 

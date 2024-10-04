@@ -3,7 +3,7 @@
 <div class="stu-note">
 
 <b><i>Provider Access API bulk data guidance in this version of the IG is draft only. 
-It has not appeared in ballot but has been tested at Connectathons. It is included to support 
+It has not appeared on the ballot but has been tested at Connectathons. It is included to support 
 the requirements of the CMS prior Authorization Rule (CMS-0057).
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
 </i></b>
@@ -23,8 +23,8 @@ The Payer Data Exchange Implementation Guide supports the Provider Access API by
 utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/STU2/).
 
 This IG is not overly prescriptive in how to construct and manage Member Attribution lists.
-Health plans are responsible for managing Member Attribution Lists accoding to their own business rules
-for determining whether a Provider and Member have an existing, or implending treatment relationship.
+Health plans are responsible for managing Member Attribution Lists according to their own business rules
+for determining whether a Provider and Member have an existing, or impending treatment relationship.
 
 This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
 secure exchange of information between Providers and Payers. Incorporating prescriptive definitions for
@@ -41,11 +41,11 @@ non-financial claims and encounter data.
 
 The typical use case is expected to be one where an EMR retrieves data from a health plan for one or more 
 providers using automated service functions. The retrieving system or service, such as an EMR, 
-is presumed to have implemented Role-based access to ensure that only authenticated abd authorized 
+is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
 personnel, or systems, have access to the retrieved data.
 
 It is recommended that, at a minimum, health plans create Member Attribution Lists using the NPI data for 
-the Rendering Provider. Health plans **MAY** choose to construct alternative or additional, Attribution
+the Rendering Provider. Health plans **MAY** choose to construct alternative or additional Attribution
 Lists that cover more than one provider, for example by creating an Attribution list for all providers
 at a specific facility.
 
@@ -117,7 +117,7 @@ The HTTP Header **SHALL** include:
 ### Attribution List
 
 The Payer **SHALL** be responsible for managing and maintaining the attribution list that assigns 
-Members to Providers. The payer **SHALL** take account of members that have chosen to opt out of 
+Members to Providers. The payer **SHALL** take account of members that have chosen to Opt-out of 
 sharing data with providers. Those opted-out members **SHALL** be omitted from the Provider 
 Attribution list. The Payer **MAY** choose to maintain a separate Group resource for a Provider 
 that identities the Opted-out Members that would otherwise have been Attributed to the Provider. 

@@ -191,7 +191,17 @@ The Read and Search Operations **SHALL** be supported for the FHIR Profiles cove
 
 The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History"  **SHOULD** include the following profiles where payers have data to support the use of those profiles:
 
-#### US Core Profiles (STU3 - 3.1.1)
+##### US Core
+
+This IG supports three versions of US Core that represents a member's health history.
+
+- US Core 3.1.1
+- US Core 6.1.0
+- US Core 7.0.0
+
+To understand the changes between US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0 check out the [Cross Version Comparisons Section]({{site.data.fhir.ver.uscore6}}/changes-between-versions.html#cross-version-comparisons) section of the US Core 6.1.0 and US Core 7.0.0. IGs.
+
+##### US Core Profiles (STU3 - 3.1.1)
 
 - [US Core AllergyIntolerance Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-allergyintolerance.html)
 - [US Core CarePlan Profile]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careplan.html)
@@ -221,7 +231,7 @@ The FHIR Resources that comprise the Member Clinical and Claims-derived history,
 
 In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4/observation-vitalsigns.html) from the FHIR Specification.
 
-#### US Core Profiles (STU6 - 6.1.0)
+##### US Core Profiles (STU6 - 6.1.0)
 
 - [USCore AllergyIntolerance Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-allergyintolerance.html)
 - [USCore CarePlan Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-careplan.html)
@@ -273,15 +283,17 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [USCore ServiceRequest Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-servicerequest.html)
 - [USCore Specimen Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-specimen.html)
 
-To understand the changes between US Core 3.1.1 and US Core 6.1.0 check out the [Cross Version Comparisons Section]({{site.data.fhir.ver.uscore6}}/changes-between-versions.html#cross-version-comparisons) section of the US Core 6.1.0 IG.
+##### US Core Profiles (STU6 - 7.0.0)
 
-#### Da Vinci PDex / HRex
+**TO BE DONE**
+
+##### Da Vinci PDex / HRex
 
 - [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
 - [PDex Provider Consent](StructureDefinition-pdex-provider-consent.html)
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
-- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0.
+- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0
 - [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
 #### CapabilityStatement (STU3 - US Core 3.1.1)
@@ -300,7 +312,7 @@ The Permitted Operations for the FHIR Profiles covered in this payload section a
 | Condition          | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-condition.html          | Y    | Y      | Y     | Y       | |
 | Consent            | StructureDefinition-pdex-provider-consent.html                             | Y    | Y      | Y      | Y       | Y |
 | Coverage                                                  | http://hl7.org/fhir/us/davinci-hrex/2019Jun/StructureDefinition-hrex-coverage.html | Y    | Y      | Y      |  Y       | |
-`| Device                                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html         | Y    | Y      | Y      | Y       | |
+| Device                                                    | http://hl7.org/fhir/us/davinci-epdx/StructureDefinition-pdex-device.html         | Y    | Y      | Y      | Y       | |
 | DiagnosticReport for Laboratory Results Reporting         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-lab.html | Y    | Y      | Y     | Y       | |
 | DiagnosticReport for Report and Note Exchange             | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-diagnosticreport-note.html | Y    | Y      | Y      | Y       | |
 | DocumentReference                                         | {{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-documentreference.html | Y    | Y      | Y       | Y       | |
