@@ -36,13 +36,13 @@ The steps in the Member Match with Consent process are:
 - The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found
 - The $member-match operation evaluates the Consent resource for a matched member
 - If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
-- If a Patient ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token that is scoped to the identified shared member
+- If a Patient ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
-Note that some of these steps are optional depending on the authorization and trust framework being used.
+Some of these steps are optional depending on the authorization and trust framework being used.
 
 The process for evaluating consent uses the same logic and decision flow used
-in the bulk Payer-to-Payer Exchange. However, the outcome in the Single Member Match operation is different in that either Patient information is returned for the Matched Member or an Operation Outcome is returned.
+in the bulk Payer-to-Payer Exchange. However, the outcome in the Single Member Match operation is different because either Patient information is returned for the Matched Member or an Operation Outcome is returned.
 
 The decision flow is shown below:
 
@@ -67,7 +67,7 @@ When no match is found, or if multiple matches are found, a 422 Unprocessable en
 
 If the receiving payer matches to a unique member but is unable to comply with the consent request, a
 Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be
-returned with an Operation Outcome that indicates that the consent request could not be complied with.
+returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 ### Evaluation of Consent
 
@@ -91,12 +91,12 @@ would NOT be used for any determination as part of the automated $member-match o
 only purpose is to provide evidence of an appropriate signature of the consenting member/patient.
 
 It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the
-validity of a consent request. This would be part of the Trust Framework agreed by the covered entities that
+validity of a consent request. This would be part of the Trust Framework agreed by the covered entities who
 are party to the framework rules.
 
 If the receiving payer matches to a unique member but is unable to comply with the consent request, a
 Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be
-returned with an Operation Outcome that indicates that the consent request could not be complied with.
+returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 #### Period of Consent Validity
 

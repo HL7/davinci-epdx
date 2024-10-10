@@ -3,6 +3,20 @@
 
 {% include style_insert_table_blue.html %}
 
+### STU2.1.0-ballot Reconciliation
+
+| JIRA Ticket                                             | Change                                                            |
+|---------------------------------------------------------|-------------------------------------------------------------------|
+| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                       |
+| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages          |
+| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                              |
+| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections      |
+| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectly |
+| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                 |
+| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                       |
+| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile?                         |
+| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections                             |
+| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos                                      |
 
 ### STU 2.1.0 Update
 

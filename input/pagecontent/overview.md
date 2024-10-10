@@ -59,7 +59,7 @@ The sharing of data with a member controlled Third Party App is accomplished thr
 
 The SMART-on-FHIR application framework is a well-defined mechanism for enabling Member/Patient authorization to share information with a SMART-on-FHIR application. The member **SHALL** authenticate using credentials that have been issued by or are recognized and accepted by the Health Plan. These are typically the member's customer portal credentials for accessing the health plan.
 
-After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan.
+After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan Application that has client application credentials registered with the Health Plan.
 
 
 #### $patient-everything Exchange Via Alternate Secure Transport
