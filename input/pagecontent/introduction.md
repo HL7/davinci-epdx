@@ -99,7 +99,7 @@ Claims and Encounter data included in the data exchange is required to exclude f
 
 #### Member-mediated Information Exchange
 
-The CMS Interoperability and Patient Access Rule requires that a member to a new health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.
+The CMS Interoperability and Patient Access Rule requires that a member new to a health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.
 
 The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016, be available via API.
 
