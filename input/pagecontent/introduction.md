@@ -178,7 +178,12 @@ The PDex IG defines four types of data payload:
 3. Pharmacy Network Directory
 4. Medication Formulary.
 
-The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. When data is transferred from one plan to another the receiving health plan is only obligated to share the data received from another health plan in the same electronic form and format in which it was received.   
+The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. When data is transferred from one plan to another the health plan receiving the data request is only obligated to share member health data for Five years prior to the date of the request. The data can include:
+
+    - CARIN Blue Button Claims data (without the financial content)
+    - US Core Clinical Data (Structured Data)
+    - Unstructured clinical data used to determine a prior authorization decision
+    - PDex Prior Authorization profile.
 
 The Directory and Formulary data payloads are covered in their respective Da Vinci Implementation Guides.
 

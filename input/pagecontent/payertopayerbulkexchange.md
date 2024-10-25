@@ -32,6 +32,17 @@ earlier than 5 years prior to the date of the data request. Prior Authorizations
 Authorizations that have changed status within the last year, as of the date of 
 request for information.
 
+Status changes of Prior Authorizations will be determined by the Prior Authorization 
+Processor. This IG is representing the change in status. For example, a Prior Authorization 
+may be denied, but then approved upon appeal. A prior Authorization might be pended and then
+subsequently approved or denied.
+
+If the Prior Authorization processor changes the status of the Prior Authorization then the
+date of change will be recorded, In the Provider and Payer-to-Payer APIs and Prior 
+Authorization that has changed status in the previous 12 months (from the date of enquiry)
+**SHALL** be included in the API response.
+
+
 The Advancing Interoperability and Prior Authorization Final Rule requires that 
 Prior Authorizations exchanged via the Payer-to-Payer Exchange API **SHALL** include 
 the supporting clinical data used to make the prior authorization determination. 
@@ -129,8 +140,11 @@ The Operation Definition for Bulk Member Match is:
 The Bulk Member Match Operation **SHALL** evaluate the consent request for 
 each member and determine whether the request for only Non-Sensitive data, 
 as determined by federal and state regulations that apply to the data holder, 
-can be complied with. The following decision tree illustrates how the the Consent 
+can be complied with. The following decision tree illustrates how the Consent 
 determination **SHALL** be made.
+
+Consent **SHALL** be evaluated at the time of the data request to ensure that the Member
+has not contacted their previous payer to override sharing consent.
 
 The consent decision logic is the same for Single Member Match and Bulk Member Match. 
 It is the result of the decision that differs. For Single Member Match Operation, 
@@ -195,7 +209,7 @@ The latter option is to enable two scenarios:
 For members with concurrent coverage this will enable data to be requested at 
 least quarterly.
 
-The Data Export operation **SHOULD** check the consent status for each member 
+The Data Export operation **SHALL** check the consent status for each member 
 at the time of execution. This is necessary to identify members that may have 
 changed their opt-in/opt-out status for sharing with health plans.
 
