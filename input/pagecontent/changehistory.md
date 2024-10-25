@@ -7,12 +7,17 @@
 
 | JIRA Ticket                                             | Change                                                           |
 |---------------------------------------------------------|------------------------------------------------------------------|
-| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                          |
-| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                        |
-| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                  |
-| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages      |
-| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                    |
-| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections   |
+| [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369)    | Conflicting statements on OAuth-authorized exchange              |
+| [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056)    | multiple CapabilityStatement descriptions not in sync and should be collapsed |
+| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change SHOULD to SHALL                                           |
+| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change SHOULD to SHALL                                           |
+| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                 |
+| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                              |
+| TC:[FHIR-48675](https://jira.hl7.org/browse/FHIR-48675) | Add Hyperlink to PDex Server Capability Statement                |
+| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                      |
+| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages         |
+| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                             |
+| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections     |
 | TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl |
 | TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                |
 | TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                      |

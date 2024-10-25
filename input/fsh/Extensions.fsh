@@ -34,16 +34,14 @@ Description: "Attribute that identifies the refill number of a prescription. e.g
 //* ^context.type = #element
 * ^context.type = #element
 * ^context.expression = "MedicationDispense"
-
 * value[x] ^short = "Refill number of this prescription"
 * value[x] only Quantity
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
-// * extension contains refillNum 0..1
-
+// * extension contains refillNum 0..1=
 // * extension[refillNum] ^short = "Refill number of this prescription"
-// * extension[refillNum].valueSimpleQuantity only SimpleQuantity
+// * extension[refillNum].valueQuantity only Quantity
 
 
 Extension: PriorAuthorizationUtilization
