@@ -1,11 +1,11 @@
 
-[Previous Page - Provider-controlled Information Requests and Filtering](provider-controlledinformationrequestsandfiltering.html)
+[Previous Page - Use Case Scenarios](usecasescenarios.html)
 
 <div class="stu-note">
 <b><i>This page was published in STU1.0. It has been superceded by the Provider Access API requirements 
 in the CMS Prior Authorization Rule (CMS-0057).
-There has been limited, if any implementation of the CDS Hooks capability defined in this guide. This 
-section could be considered for retirement.
+There has been limited, if any implementation of the CDS Hooks capability defined in this guide. 
+This section on CDS Hooks will be removed in the next version of this IG.
 </i></b>
 </div>
 
