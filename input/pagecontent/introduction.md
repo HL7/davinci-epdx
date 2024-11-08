@@ -329,7 +329,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [USCore Practitioner Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html)
 - [USCore PractitionerRole Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitionerrole.html)
 - [USCore Procedure Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-procedure.html)
-- [USCore Provenance Profile]({{site.data.fhir.ver.uscore67}/StructureDefinition-us-core-provenance.html)
+- [USCore Provenance Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-provenance.html)
 - [USCore QuestionnaireResponse Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-questionnaireresponse.html)
 - [USCore RelatedPerson Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-relatedperson.html)
 - [USCore ServiceRequest Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-servicerequest.html)
