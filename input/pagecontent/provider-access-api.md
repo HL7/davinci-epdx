@@ -59,9 +59,9 @@ A health plan member is entitled to opt-out of data sharing via the Provider Acc
 that enables a member to deny sharing via the Provider Access API. A member should also be able to update their preference 
 to revoke a previous denial. 
 
-Health Plans **SHOULD** implement the pdex-provider-consent to enable a member to express their sharing preference.
+Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference.
 
-The PDex Server Capability Statement enables the Consent record to be written to the Patient Access API.
+The [PDex Server Capability Statement](CapabilityStatement-pdex-server.html) enables the Consent record to be written to the Patient Access API.
 
 See the [PDex Provider Consent here](StructureDefinition-pdex-provider-consent.html)
 

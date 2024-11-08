@@ -5,6 +5,7 @@
 
 ### STU2.1.0-ballot Reconciliation
 
+
 | JIRA Ticket                                             | Change                                                             |
 |---------------------------------------------------------|--------------------------------------------------------------------|
 | [FHIR-48701](https://jira.hl7.org/browse/FHIR-483701)   | AppointmentBook hook usage for Provider Access use case            |

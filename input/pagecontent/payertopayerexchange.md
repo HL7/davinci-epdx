@@ -211,11 +211,11 @@ and _include parameters to be used to retrieve the associated Provenance and sup
 
 ### $everything operation
 
-Health Plans **SHOULD** support the use of the $everything operation. The Patient/{id}/$everything 
+Health Plans **SHALL** support the use of the $everything operation. The Patient/{id}/$everything 
 operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-As noted in the previous section, $everything **SHOULD** limit the data retrieved to that which the
+As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the
 requester is permitted to access. This might require an implementer to filter records at a more 
 granular level than the resource.
 
