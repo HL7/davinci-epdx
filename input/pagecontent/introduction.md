@@ -108,7 +108,7 @@ A Member **SHALL** also be able to use APIs to share information with Third Part
 
 The Member-mediated Information Exchange method will build upon established OAuth2.0 protocols for patient access to their health and claims information that enables the sharing of information with third-party applications. The process of Member Authentication, typically using the member's user credentials from the Health Plan's portal, and OAuth2.0 authorization to share will form the basis of the member Consent to share.
 
-The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario.
+The health history payload for the exchange would be the same FHIR resources that are passed to providers under the Provider-Payer exchange scenario. The [Use Case Scenarios page](usecasescenarios.html) contains examples of how the health history could be utilized.
 
 The exchange of healthcare network/directory information and Pharmacy network/directory information is covered in the [PDex-Plan-Net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/).
 
@@ -195,7 +195,7 @@ The Read and Search Operations **SHALL** be supported for the FHIR Profiles cove
 
 #### Member Health History
 
-The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History"  **SHOULD** include the following profiles where payers have data to support the use of those profiles:
+The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History" **SHOULD** include the following profiles where payers have data to support the use of those profiles:
 
 ##### US Core
 
@@ -289,9 +289,57 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [USCore ServiceRequest Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-servicerequest.html)
 - [USCore Specimen Profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-specimen.html)
 
-##### US Core Profiles (STU6 - 7.0.0)
+##### US Core Profiles (STU7 - 7.0.0)
 
-**TO BE DONE**
+- [USCore AllergyIntolerance Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-allergyintolerance.html)
+- [USCore CarePlan Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-careplan.html)
+- [USCore CareTeam Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-careteam.html)
+- [USCore Condition Encounter Diagnosis Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-condition-encounter-diagnosis.html )
+- [USCore Condition Problems and Health Concerns Profile]({{site.data.fhir.ver.uscore7}}StructureDefinition-us-core-condition-problems-health-concerns.html)
+- [USCore Coverage Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-coverage.html)
+- [USCore Implantable Device Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-implantable-device.html)
+- [USCore DiagnosticReport Profile for Laboratory Results Reporting]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-diagnosticreport-lab.html)
+- [USCore DiagnosticReport Profile for Report and Note Exchange]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-diagnosticreport-note.html)
+- [USCore DocumentReference Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-documentreference.html)
+- [USCore Encounter Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-encounter.html)
+- [USCore Goal Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-goal.html)
+- [USCore Immunization Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-immunization.html)
+- [USCore Location Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-location.html)
+- [USCore Medication Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-medication.html)
+- [USCore MedicationDispense Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-medicationdispense.html)
+- [USCore MedicationRequest Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-medicationrequest.html)
+- [USCore Observation Clinical Result Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-clinical-result.html)
+- [USCore Laboratory Result Observation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-lab.html)
+- [USCore Observation Occupation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-occupation.html)
+- [USCore Observation Pregnancy Intent Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-pregnancyintent.html)
+- [USCore Observation Pregnancy Status Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-pregnancystatus.html)
+- [USCore Observation Screening Assessment Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-screening-assessment.html)
+- [USCore Observation Sexual Orientation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-observation-sexual-orientation.html)
+- [USCore Simple Observation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-simple-observation.html)
+- [USCore Smoking Status Observation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-smokingstatus.html)
+- [USCore Vital Signs Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-vital-signs.html)
+- [USCore Pediatric Head Occipital Frontal Circumference Percentile Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-head-occipital-frontal-circumference-percentile.html)
+- [USCore Pediatric BMI for Age Observation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-pediatric-bmi-for-age.html)
+- [USCore Pediatric Weight for Height Observation Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-pediatric-weight-for-height.html)
+- [USCore Blood Pressure Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-blood-pressure.html)
+- [USCore BMI Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-bmi.html)
+- [USCore Body Height Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-body-height.html)
+- [USCore Body Temperature Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-body-temperature.html)
+- [USCore Body Weight Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-body-weight.html)
+- [USCore Head Circumference Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-head-circumference.html)
+- [USCore Heart Rate Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-heart-rate.html)
+- [USCore Pulse Oximetry Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-pulse-oximetry.html)
+- [USCore Respiratory Rate Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-respiratory-rate.html)
+- [USCore Organization Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-organization.html)
+- [USCore Patient Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-patient.html)
+- [USCore Practitioner Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitioner.html)
+- [USCore PractitionerRole Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-practitionerrole.html)
+- [USCore Procedure Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-procedure.html)
+- [USCore Provenance Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-provenance.html)
+- [USCore QuestionnaireResponse Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-questionnaireresponse.html)
+- [USCore RelatedPerson Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-relatedperson.html)
+- [USCore ServiceRequest Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-servicerequest.html)
+- [USCore Specimen Profile]({{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-specimen.html)
 
 ##### Da Vinci PDex / HRex
 

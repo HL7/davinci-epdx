@@ -5,32 +5,28 @@
 
 ### STU2.1.0-ballot Reconciliation
 
-| JIRA Ticket                                             | Change                                                                           |
-|---------------------------------------------------------|----------------------------------------------------------------------------------|
-| [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369)    | Conflicting statements on OAuth-authorized exchange                              |
-| [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076)    | Remove Superceded CDS Hooks page                                                 |
-| [FHIR-48074](https://jira.hl7.org/browse/FHIR-48074)    | provider-controlled information requests and filtering page not easily reachable |
-| [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056)    | multiple CapabilityStatement descriptions not in sync and should be collapsed    |
-| [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787)    | Clarify concept of changed status                                                |
-| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change SHOULD to SHALL                                                           |
-| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794)    | Change SHOULD to SHALL                                                           |
-| [FHIR-47792](https://jira.hl7.org/browse/FHIR-47792)    | rewrite for clarity/grammar                                                      |
-| [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787)    | clarify concept of changed status                                                |
-| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change SHOULD to SHALL                                                           |
-| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                                 |
-| [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783)    | Clarify the regulatory requirements                                              |
-| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                              |
-| TC:[FHIR-48675](https://jira.hl7.org/browse/FHIR-48675) | Add Hyperlink to PDex Server Capability Statement                                |
-| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                                      |
-| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages                         |
-| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                                             |
-| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections                     |
-| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl                 |
-| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                                |
-| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                                      |
-| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile?                                        |
-| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections                                            |
-| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos                                                     |
+
+| JIRA Ticket                                             | Change                                                             |
+|---------------------------------------------------------|--------------------------------------------------------------------|
+| [FHIR-48701](https://jira.hl7.org/browse/FHIR-483701)   | AppointmentBook hook usage for Provider Access use case            |
+| [FHIR-48313](https://jira.hl7.org/browse/FHIR-48313)    | What are implementers supposed to follow for exportType            |
+| [FHIR-48073](https://jira.hl7.org/browse/FHIR-48073)    | Use Case Scenarios page not easily reachable                       |
+| [FHIR-48072](https://jira.hl7.org/browse/FHIR-48072)    | Data Mapping Conformance Requirements                              |
+| [FHIR-48058](https://jira.hl7.org/browse/FHIR-48058)    | Unclear references to Da Vinci ATR                                 |
+| [FHIR-47055](https://jira.hl7.org/browse/FHIR-47055)    | Don't require five year time limit on bulk Payer to Payer exchange |
+| [FHIR-46761](https://jira.hl7.org/browse/FHIR-46761)    | Add Prev / bottom / Next to header/footer                          |
+| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                   |
+| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                |
+| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                        |
+| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages           |
+| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                               |
+| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections       |
+| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl   |
+| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                  |
+| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                        |
+| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile?                          |
+| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections                              |
+| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos                                       |
 
 ### STU 2.1.0 Update
 

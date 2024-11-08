@@ -1,6 +1,6 @@
 [Previous Page - VitalSigns](VitalSigns.html)
 
-This implementation guide addresses a Provider-to-Payer use case:
+This implementation guide addresses Payer-to-Payer and Provider Access APIs that enable a members health history to be exchanged. The IG also enables a member's health history to be retrieved by a third-party application that the patient has authorized. This page outlines some patient personas to demonstrate how the exchange of the patient's health history could be used to benefit the member. For example:
 
 - Patient at Primary Care Provider.
 

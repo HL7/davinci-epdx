@@ -83,13 +83,13 @@ for managing Member Attribution.
 Health plans:
 - **MAY** use claims data as a source to identify existing treatment relationships. 
 - **MAY** utilize their own rules for determining the attribution of members to Providers.
-- **SHOULD** use the Coverage Requirements Discovery IG's AppointmentBook and EncounterStart CDS Hooks as a means to determine impending treatment relationships.
+- **SHOULD** use the [Coverage Requirements Discovery IG's](https://hl7.org/fhir/us/davinci-crd/STU2.1-preview/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.
 
 Attribution lists **SHALL** be searchable via a secure RESTful API. Access to the Group resource to READ 
 attribution lists should be scoped to the appropriate Organization, Facility, Provider or their 
 authorized representative that is acting on the behalf of the Provider.
 
-The Da Vinci Data Export Operation in the Member Attribution IG supports the Bulk FHIR API specification.
+The [Da Vinci Data Export Operation](https://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) in the [Member Attribution IG](https://hl7.org/fhir/us/davinci-atr/STU2/) supports the Bulk FHIR API specification.
 The operation uses the Group resource. For the PDex Provider Access API the following capabilities
 **SHOULD** be supported:
 
@@ -108,7 +108,7 @@ This combination of requests should cover all provider data requests, such as:
 Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.
 Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.
 
-The $davinci-data-export operations **SHALL** be submitted using a HTTP POST.
+The [$davinci-data-export operations](https://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTP POST.
 The HTTP Header **SHALL** include:
 
     Prefer: respond-async
@@ -123,8 +123,15 @@ Attribution list. The Payer **MAY** choose to maintain a separate Group resource
 that identities the Opted-out Members that would otherwise have been Attributed to the Provider. 
 If a Payer maintains an Opted-out Group resource it is the Payers responsibility
 to ensure that a Provider is unable to download data about those opted-out members using a bulk 
-export operation. The Da Vinci Attribution (ATR)IG provides transactions to manage the Group 
-resource through Add, change and delete member actions.
+export operation. The [Da Vinci Member Attribution (ATR) IG](https://hl7.org/fhir/us/davinci-atr/STU2/) 
+provides transactions to manage the Group resource through Add, change and delete member actions.
+
+The [AttributionListStatus extension](https://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-ext-attributionListStatus.html) can have one of three values:
+- draft: Used when building a list and it is not considered ready for use.
+- final: Used for lists that may be governed by contractual considerations and should bot be changed.
+- open: Use for lists that can be amended. For example when a provider is still accepting patients. 
+
+A provider **MAY** have more than one list. For example, a list marked as Final related to a Value-based care contract and an "open" list where the Provider is still accepting patients under a different care arrangement. 
 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the
 members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
@@ -136,7 +143,7 @@ of potentially attributed members that instead used their right to opt-out of sh
 providers. By recording this quantity it **MAY** help providers reconcile their attribution lists 
 with those managed by the Payer, The extension is:
 
-- MembersOptedOut
+- [MembersOptedOut](StructureDefinition-base-ext-members-opted-out.html)
 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) Profile adds three extensions to the member element. 
 These are used to track the data retrieved for a member by the provider. This enables sophisticated
@@ -160,7 +167,7 @@ The member-level extensions are:
 - [lastResources](StructureDefinition-base-ext-last-types.html)
 - [lastFilters](StructureDefinition-base-ext-last-typefilter.html)
 
-These extensions **SHALL** be updated by the Da Vinci Data Export PDex Use Case Operation.
+These extensions **SHALL** be updated by the [$davinci-data-export](https://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) PDex Use Case Operation.
 
 ### Searching for Attributed Groups
 

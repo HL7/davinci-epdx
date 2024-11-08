@@ -9,7 +9,10 @@ The changes have been made to stay in sync with the bulk transfer requirements o
 
 The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
 US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of
-USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with the ONC's HTI-1 Rule.
+USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with ASTP's HTI-1 Rule.
+
+The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
+years prior to the date of the request.
 
 Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.
 
@@ -248,7 +251,7 @@ The FHIR Server **SHALL** constrain the data returned from the server to a reque
 permissions of the requester.
 
 For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see
-Prior Authorization records, and not EOB Claims, the FHIR Server **shall** filter the data accordingly.
+Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly.
 
 This Constraining condition may be required in implementations where multiple types of data are being
 served up by a single FHIR Server. The condition is particularly relevant when implementing Operations

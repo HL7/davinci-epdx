@@ -1,10 +1,11 @@
 [Previous Page - Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)
 
-Health Plans **SHALL** map claims and clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) FHIR Resources based on R4.
+Health Plans **SHALL** map claims and clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}), [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) or [US Core v7.0.0]({{site.data.fhir.ver.uscore7}})FHIR Resources based on R4. This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this 
+was not defined in US Core 3.1.1.
 
 US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core.
 
-Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}).
+Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) or [US Core 7.0.0. FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}).
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
