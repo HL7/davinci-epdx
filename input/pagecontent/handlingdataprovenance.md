@@ -6,7 +6,7 @@ The PDex IG will define [PDex Provenance](PDexProvenance.html) examples that mee
 
 Provenance requirements for the Payer Community may be a super-set of those of the Provider-focused Argonaut community.
 
-Health Plans SHALL accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange.
+Health Plans SHOULD accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange.
 
 Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange.
 
