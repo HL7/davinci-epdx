@@ -136,7 +136,7 @@ A provider **MAY** have more than one list. For example, a list marked as Final 
 The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the
 members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
 [ATRGroup](http://hl7.org/fhir/us/davinci-atr/STU2/StructureDefinition-atr-group.html) Profile 
-from the[Da Vinci Member Attribution (ATR) 2.0.0 IG](http://hl7.org/fhir/us/davinci-atr/STU2/). 
+from the [Da Vinci Member Attribution (ATR) 2.0.0 IG](http://hl7.org/fhir/us/davinci-atr/STU2/). 
 
 The profile adds an extension at the root level. This is used to, optionally, record the number 
 of potentially attributed members that instead used their right to opt-out of sharing data with 
