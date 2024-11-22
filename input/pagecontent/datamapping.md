@@ -8,6 +8,20 @@ Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
+## Capability Statements
+
+  [PDex Server CapabilityStatement with US Core 6.1. support](CapabilityStatement-pdex-server-6-1.html) 
+
+This Section describes the expected capabilities of the PDex with US Core 6.1 Support Server actor which is responsible for providing responses to the queries submitted by the PDex Requesters. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex and US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and the ONC [U.S. Core Data for Interoperability (USCDI) Version 3 July 2022](https://www.healthit.gov/isa/sites/isa/files/2022-07/USCDI-Version-3-July-2022-Final.pdf).  PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.
+   
+
+
+[PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.html)
+
+This Section describes the expected capabilities of the PDex Server actor which supports US Core 3.1.1 and is responsible for providing responses to the queries submitted by PDex Requesters. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Servers for US Core 3.1.1 are defined. PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.
+
+The profiles referenced in the Data Mapping Section are included in the above Server Capability Statements.
+
 The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
 Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
 The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
@@ -35,11 +49,11 @@ In the steps below "Received" refers to the information requested from a Health 
 
 It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
 
-### Providing data in sub-element fields
+## Providing data in sub-element fields
 
 In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. If a field is marked as MUST SUPPORT the receiver must be able to consume it without generating an error, unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of "0..1" or "0..\*" the sub-element field does not need to be populated.
 
-### US Core Profiles
+## US Core Profiles
 
 This IG supports the use of multiple US Core versions. The profiles supported by the respective versions are 
 linked below:
@@ -48,4 +62,4 @@ linked below:
 - [US Core 6.1.0 Profiles and Extensions]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
 
 
-[Next Page - Capability Statements](capability-statements.html)
+[Next Page - US Core Allergy Intolerance](USCoreAllergyIntolerance.html)
