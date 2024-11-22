@@ -10,11 +10,9 @@ The mapping of a patient's coverage and claims information to the relevant FHIR 
 
 ## Capability Statements
 
-  [PDex Server CapabilityStatement with US Core 6.1. support](CapabilityStatement-pdex-server-6-1.html) 
+[PDex Server CapabilityStatement with US Core 6.1. support](CapabilityStatement-pdex-server-6-1.html) 
 
 This Section describes the expected capabilities of the PDex with US Core 6.1 Support Server actor which is responsible for providing responses to the queries submitted by the PDex Requesters. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex and US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and the ONC [U.S. Core Data for Interoperability (USCDI) Version 3 July 2022](https://www.healthit.gov/isa/sites/isa/files/2022-07/USCDI-Version-3-July-2022-Final.pdf).  PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.
-   
-
 
 [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.html)
 
@@ -52,6 +50,36 @@ It is recommended that the Identifier field in a resource be used to record the 
 ## Providing data in sub-element fields
 
 In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. If a field is marked as MUST SUPPORT the receiver must be able to consume it without generating an error, unless the field is a sub-element of another field where that parent field does NOT have a minimum cardinality of 1. For example, if the parent field has a cardinality of "0..1" or "0..\*" the sub-element field does not need to be populated.
+
+## Mapping Adjudicated Claims and Encounter Information to Clinical Resources
+
+A table providing a mapping from the [Consumer-Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/) to fields in the respective clinical profiles (US Core and PDex) is provided in the narrative pages for the following profiles:
+- [US Core CareTeam](USCoreCareTeam.html)
+- [US Core Condition](USCoreCondition.html)
+- [US Core Encounter](USCoreEncounter.html)
+- [US Core Patient](USCorePatient.html)
+- [US Core Procedure](USCoreProcedure.html)
+- [US Core Observation(s)](USCoreLaboratoryResultObservation.html)
+- [HRex Coverage](coverage.html)
+- [PDex MedicationDispense](PDexMedicationDispense.html).
+
+Tables are provided to assist implementers in mapping adjudicated claims data represented in the Consumer-Directed Payer Data Exchange IG to clinical resources that may be exchanged as part of workflows identified in this Da Vinci Payer Data Exchange IG. The tables identify the source profile element and the associated Common Payer Consumer Data Set (CPCDS) mapping. CPCDS is a format developed by a consortium of health plans to support the creation of Consumer-Directed Payer Data Exchange IG resources from claims and associated data. CPCDS is not a HL7-managed data set. It is provided only as an informative resource to assist health plans in mapping data to FHIR profiles in a consistent manner. This mapping information is provided as guidance only. It may require payers to use discretion in mapping claims data to the relevant clinical resources.
+
+With the CMS Prior Authorization Rule (CMS-0057) recommending the series of Da Vinci Burden Reduction Implementation Guides (Coverage Requirements Discovery, Documents Templates and Rules and Prior Authorization Support) it is expected that Payers will receive more clinical data from Providers. Much of that data will be in structured form, as defined by the US Core Implementation Guide. The Payer-to-Payer Bulk API also requires the exchange of unstructured data that supports a Prior Authorization decision. Such data would be embedded in a DocumentReference resource for exchange. This is likely to result in Payers having far more clinical data to exchange wih Members, Providers and other Payers.
+
+The column definitions are provided in the table below. Look for this style of table in the Data Mapping pages and Profiles defined in this IG.
+
+{% include style_insert_table_blue.html %}
+
+| US Core/PDex Element                                                    | Must Support                       | Cardinality | CARIN-BB Element          | CPCDS Element Mapping or Implementer Note      |
+|-------------------------------------------------------------------------|------------------------------------|:----------:|---------------------------|----------------------------------------|
+| The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element |   Defines the cardinality of the target element   | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
+
+<i>Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. </i>
+
+<i>Note: In the CPCDS Element Mapping column the element ["{163]":"...."}] or ["Ref(x,xx,xxx)":"..."] refers to the CPCDS element Id: Element name in the CPCDS tables.</i>
+
+The IG will continue to be tested at connectathons and will continue to utilize commonly adopted standards (e.g., US Core profiles) that have been tested by other groups (e.g., Argonaut). USCDI concepts are encapsulated in US Core Profiles on FHIR Resources. The Code Systems, Value Sets and codings used in this IG are based on US Core Profiles. Regardless of the way in which payers store their administrative and clinical information they will need to map it appropriately to these profiles.
 
 ## US Core Profiles
 

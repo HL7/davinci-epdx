@@ -15,6 +15,7 @@
 | [FHIR-48077](https://jira.hl7.org/browse/FHIR-48077)    | provenance details are spread across several pages and are inconsistently linked                    |
 | [FHIR-48073](https://jira.hl7.org/browse/FHIR-48073)    | Use Case Scenarios page not easily reachable                                                        |
 | [FHIR-48072](https://jira.hl7.org/browse/FHIR-48072)    | Data Mapping Conformance Requirements                                                               |
+| [FHIR-48070](https://jira.hl7.org/browse/FHIR-48070)    | integrate separate sections on data mapping                                                         |
 | [FHIR-48058](https://jira.hl7.org/browse/FHIR-48058)    | Unclear references to Da Vinci ATR                                                                  |
 | [FHIR-48037](https://jira.hl7.org/browse/FHIR-48037)    | CapabilityStatements don't belong under Data Mapping                                                |
 | [FHIR-47057](https://jira.hl7.org/browse/FHIR-47057)    | Don't require mapping claims data to US Core resources if sending as ExplanationOfBenefit resources |
