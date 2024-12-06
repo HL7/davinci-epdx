@@ -7,6 +7,14 @@ CMS-0057 Rule and the ONC's HTI-1 rule that implements US Core 6.1.0 as the base
 as of January 1, 2026.</i></b>
 </div>
 
+<div style="width: 100%;" >
+<h3 id="plain-language-summary-about-hl7-and-this-guide">Plain Language Summary about HL7 and this Guide<a class="anchorjs-link " href="#plain-language-summary-about-hl7-and-this-guide" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
+  <button class="btn btn-info btn-lg collapsed" type="button" title="Click to Open or Close the Plain Language Summary" data-toggle="collapse" data-target="#plain-lang-summary" aria-expanded="false" aria-controls="collapseExample">
+    Welcome! Thank-you for wanting to learn about this guide.  Click Here to see the Plain Language Summary
+  </button>
+</h3>
+</div>
+
 
 
 **The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles established from FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**
@@ -129,7 +137,12 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 #### Must Support
 
-For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide.
+For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.htmml#must-support) section in the Introduction page.
+
+#### Security and Privacy
+
+Security and Privacy are critically important when exchanging information. Please refer to the [Security and Privacy](securityandprivacy.html) page in this IG and
+the guidance it references in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2024SEP/security.html).
 
 #### Patient/Subject Terminology
 

@@ -356,6 +356,19 @@ The FHIR CapabilityStatement defines the resources and operations permitted on t
 
 The Permitted Operations for the FHIR Profiles covered in this payload section are defined in the [PDex Server Capability Statement](CapabilityStatement-pdex-server.html)
 
+#### Must Support
+
+For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows:
+
+PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement.
+PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.
+In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results.
+When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system.
+In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension.
+PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information.
+
+NOTE: Typically PDex Responder Actor = Server and PDex Requestor Actor = Client
+NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR RESTful API based on the HTTP protocol, along with FHIR Data Types, FHIR Search and FHIR Resource formats before implementing PDex requirements.
 
 #### Healthcare Network Directory 
 

@@ -8,6 +8,14 @@
 | JIRA Ticket                                             | Change                                                                                              |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | STU2.1 Block Vote 3                                     |                                                                                                     |
+| [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                           |
+| [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                            |
+| [FHIR-48057](https://jira.hl7.org/browse/FHIR-48057)    | Missing must support definition                                                                     |
+| [FHIR-48023](https://jira.hl7.org/browse/FHIR-48023)    | Sub-field must support language inconsistency                                                       |
+| [FHIR-47778](https://jira.hl7.org/browse/FHIR-47778)    | Include the full HRex privacy and security requirements                                             | 
+| [FHIR-47761](https://jira.hl7.org/browse/FHIR-47761)    | Security and Privacy and Access Permissions Page not accessible                                     | 
+| [FHIR-47562](https://jira.hl7.org/browse/FHIR-47562)    | Please add a "Plain Language Summary about HL7 and this Guide" to the home page.                    | 
+| [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056)    | Clarify OAuth2.0 workflow for Payer to Payer                                                        | 
 |                                                         |                                                                                                     |
 | STU2.1 Block Vote 2                                     |                                                                                                     |
 | [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701)    | AppointmentBook hook usage for Provider Access use case                                             |

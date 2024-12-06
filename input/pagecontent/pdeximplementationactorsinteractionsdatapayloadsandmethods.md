@@ -143,6 +143,13 @@ it is committed to their system.
 
 #### OAuth2.0 and FHIR API
 
+This section outlines the approach for a member to mediate the sharing of data between health plans, or with an app of 
+their choice using the Patient Access API and the SMART-on-FHIR App Launch methods. In the STU2.1 version of the 
+Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable data exchange to occur between
+health plans ([Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)), at the direction of the member, 
+or to enable exchange with a Provider ([Provider Access API](provider-access-api.html)) unless a member has actively 
+opted-out of data sharing with Providers. 
+
 The well-defined mechanism for enabling Member/Patient authorization to share information with an application using 
 the FHIR API is to use OAuth2.0 as the Authorization protocol. The member **SHALL** authenticate using 
 credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.

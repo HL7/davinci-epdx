@@ -56,24 +56,26 @@ Description: "CodeSystem for source formats that identify what non-FHIR source w
 * #other "Other" "Any other document format not specifically defined"
 
 
+// Use THO IDentifierType $IdentifierTypeCS = http://terminology.hl7.org/CodeSystem/v2-0203
 
-CodeSystem: IdentifierTypeCS
-Title: "Identifier Type"
-Description: "Identifier Type"
-* ^jurisdiction.coding = urn:iso:std:iso:3166#US
-* ^experimental = false
-* ^caseSensitive = false
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-* #tax "Tax ID Number" "Tax ID Number"
-* #npi "National Provider Identifier" "National Provider Identifier"
-* #clia "CLIA" "CLIA"
-* #payerid "Payer ID" "Payer ID"
-* #mb "Member ID" "Member ID"
-* #mr "Medical Record Number" "Medical Record Number"
-* #pt "Patient Account Number" "Patient Account Number"
-* #um "Unique Member ID" "Unique Member ID"
-* #cn "Claim Number" "Claim Number"
+// FHIR-48088
+// CodeSystem: IdentifierTypeCS
+// Title: "Identifier Type"
+// Description: "Identifier Type"
+// * ^jurisdiction.coding = urn:iso:std:iso:3166#US
+// * ^experimental = false
+// * ^caseSensitive = false
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+// * #tax "Tax ID Number" "Tax ID Number"
+// * #npi "National Provider Identifier" "National Provider Identifier"
+// * #clia "CLIA" "CLIA"
+// * #payerid "Payer ID" "Payer ID"
+// * #mb "Member ID" "Member ID"
+// * #mr "Medical Record Number" "Medical Record Number"
+// * #pt "Patient Account Number" "Patient Account Number"
+// * #um "Unique Member ID" "Unique Member ID"
+// * #cn "Claim Number" "Claim Number"
 
 
 
@@ -107,25 +109,26 @@ Description: "Used as the discriminator for the data elements in adjudication an
 // CodeSystemStubs.fsh contains stubs for external codesystems.
 // taken from CARIN-BB
 // Add Carin-BB Code System to Aliases
-CodeSystem: PDexAdjudicationCS
-Title: "PDex Adjudication Codes"
-Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
-* ^experimental = false
-* ^caseSensitive = false
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-* #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
-* #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
-* #priorpayerpaid "Prior payer paid" "The reduction in the payment amount to reflect the carrier as a secondary payor."
-* #paidbypatient "Paid by patient" "The amount paid by the patient at the point of service."
-* #paidtoprovider "Paid to provider" "The amount paid to the provider."
-* #paidtopatient "Paid to patient" "paid to patient"
-* #memberliability "Member liability" "The amount of the member's liability."
-* #discount "Discount" "The amount of the discount"
-* #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"
-//* #paid "Paid" "paid"
-//* #denied "Denied"  "denied"
-* ^copyright = "This CodeSystem is not copyrighted."
+// FHIR-48088
+// CodeSystem: PDexAdjudicationCS
+// Title: "PDex Adjudication Codes"
+// Description: "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication."
+// * ^experimental = false
+// * ^caseSensitive = false
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+// * #coinsurance "Co-insurance" "The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%."
+// * #noncovered "Noncovered" "The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract."
+// * #priorpayerpaid "Prior payer paid" "The reduction in the payment amount to reflect the carrier as a secondary payor."
+// * #paidbypatient "Paid by patient" "The amount paid by the patient at the point of service."
+// * #paidtoprovider "Paid to provider" "The amount paid to the provider."
+// * #paidtopatient "Paid to patient" "paid to patient"
+// * #memberliability "Member liability" "The amount of the member's liability."
+// * #discount "Discount" "The amount of the discount"
+// * #drugcost "Drug cost" "Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration"
+// * #paid "Paid" "paid"
+// * #denied "Denied"  "denied"
+// * ^copyright = "This CodeSystem is not copyrighted."
 // * #innetwork "In-network" "in-network"
 // * #outofnetwork "Out-of-network" "out-of-network"
 // * #other "Other" "other"
@@ -210,19 +213,21 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * ^caseSensitive = false
 
 // --------------------------
-CodeSystem: OrgTypeCS
-Title: "Organization Type"
-Description: "Categories of organizations based on criteria in provider directories."
-* ^experimental = false
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-* #fac "Facility" "A physical healthcare facility"
-* #prvgrp "Provider Group" "A healthcare provider entity"
-* #payer "Payer" "A healthcare payer"
-* #atyprv "Atypical Provider" "Providers that do not provide healthcare"
-* #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
-* #ntwk "Network" "A healthcare provider insurance network"
-* ^caseSensitive = true
+// // Utilizing https://hl7.org/fhir/us/ndh/2023Sep/CodeSystem/OrgTypeCS
+// FHIR-48088
+// CodeSystem: OrgTypeCS
+// Title: "Organization Type"
+// Description: "Categories of organizations based on criteria in provider directories."
+// * ^experimental = false
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
+// * #fac "Facility" "A physical healthcare facility"
+// * #prvgrp "Provider Group" "A healthcare provider entity"
+// * #payer "Payer" "A healthcare payer"
+// * #atyprv "Atypical Provider" "Providers that do not provide healthcare"
+// * #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
+// * #ntwk "Network" "A healthcare provider insurance network"
+// * ^caseSensitive = true
 
 //CodeSystem: PDexServiceTypeCodes
 //Title: "Service Type Codes"
