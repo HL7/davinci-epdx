@@ -25,6 +25,8 @@ The following dependencies are used in production of this guide:
 
 {% include dependency-table-short.xhtml %}
 
+
+
 ### Globals table
 
 {% include globals-table.xhtml %}

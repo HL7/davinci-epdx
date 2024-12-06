@@ -122,7 +122,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "1022248102"
 * name = "Payer 1"
@@ -136,7 +136,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "3939079547"
 * name = "Payer 1"
@@ -152,7 +152,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2020-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "2739701805"
 * name = "Payer 2"
@@ -167,7 +167,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2020-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "9795834974"
 * name = "Payer 2"
@@ -182,7 +182,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "1982947230"
 * name = "Provider 1"
@@ -196,7 +196,7 @@ Usage: #example
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
 * meta.lastUpdated = "2019-12-12T09:14:11+00:00"
 * language = #en-US
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "1982943213"
 * name = "Provider 2"
@@ -209,7 +209,7 @@ Description: "Example of a Practitioner Record"
 * id = "4"
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
 * meta.lastUpdated = "2020-07-12T18:26:23.217+00:00"
-* identifier[0].type = IdentifierTypeCS#npi
+* identifier[0].type = $IdentifierTypeCS#NPI
 * identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[0].value = "1982943213"
 * name[0].family = "Smith"

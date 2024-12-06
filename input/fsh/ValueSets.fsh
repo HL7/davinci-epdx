@@ -74,7 +74,7 @@ ValueSet: PDexAdjudication
 Title: "PDex Adjudication"
 Description: """
 Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values
-defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the PDex Adjudication CodeSystem.
+defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem.
 """
 * ^experimental = true
 * $HL7AdjudicationCS#submitted
@@ -82,15 +82,15 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 * $HL7AdjudicationCS#eligible
 * $HL7AdjudicationCS#deductible
 * $HL7AdjudicationCS#benefit
-* PDexAdjudicationCS#coinsurance "Coinsurance"
-* PDexAdjudicationCS#noncovered "Noncovered"
-* PDexAdjudicationCS#priorpayerpaid "Prior payer paid"
-* PDexAdjudicationCS#paidbypatient "Paid by patient"
-* PDexAdjudicationCS#paidtopatient "Paid to patient"
-* PDexAdjudicationCS#paidtoprovider "Paid to provider"
-* PDexAdjudicationCS#memberliability "Member liability"
-* PDexAdjudicationCS#discount "Discount"
-* PDexAdjudicationCS#drugcost "Drug cost"
+* $AdjudicationCS#coinsurance "Coinsurance"
+* $AdjudicationCS#noncovered "Noncovered"
+* $AdjudicationCS#priorpayerpaid "Prior payer paid"
+* $AdjudicationCS#paidbypatient "Paid by patient"
+* $AdjudicationCS#paidtopatient "Paid to patient"
+* $AdjudicationCS#paidtoprovider "Paid to provider"
+* $AdjudicationCS#memberliability "Member liability"
+* $AdjudicationCS#discount "Discount"
+* $AdjudicationCS#drugcost "Drug cost"
 * ^copyright = "This Valueset is not copyrighted."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -103,7 +103,7 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
 * ^experimental = true
 * codes from valueset PDexAdjudication
 * codes from valueset PDexPayerBenefitPaymentStatus
-* codes from system PDexAdjudicationCS
+* codes from system $AdjudicationCS
 * codes from system PDexAdjudicationDiscriminator
 * ^copyright = "This Valueset is not copyrighted."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

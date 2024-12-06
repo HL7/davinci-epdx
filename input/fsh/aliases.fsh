@@ -43,6 +43,8 @@ Alias: $FDANationalDrugCodeCS = http://hl7.org/fhir/sid/ndc
 Alias: $DeviceStatus = http://hl7.org/fhir/device-status
 Alias: $SignatureTypeCS = urn:iso-astm:E1762-95:2013
 Alias: $V2IdentifierTypeCS = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: $IdentifierTypeCS = http://terminology.hl7.org/CodeSystem/v2-0203
+
 
 // SNOMED CT
 Alias: $SnomedCT = http://snomed.info/sct|http://snomed.info/sct/731000124108
@@ -66,7 +68,8 @@ Alias: $HL7RelatedClaim = http://terminology.hl7.org/CodeSystem/ex-relatedclaimr
 Alias: $X12ServiceType = https://x12.org/codes/service-type-codes
 Alias: $X12ClaimAdjustmentReasonCodes = https://x12.org/codes/claim-adjustment-reason-codes
 
-// CARIN BB
+// Point to CARIN BB Adjudication Code System
+// FHIR-48088
 Alias: $AdjudicationCS = http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication
 
 // National Directory
@@ -127,7 +130,6 @@ Alias: $NdhSecureExchangeArtifactsVS = http://hl7.org/fhir/us/ndh/ValueSet/NdhSe
 // Alias: $SecureExchangeArtifactsCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhSecureExchangeArtifactsCS
 // Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS
 // Alias: $EndpointTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointTypeCS
-// Alias: $OrgTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS
 // Alias: $NdhVerificationStatusCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/NdhVerificationStatusCS
 // Alias: $TrustFrameworkTypeCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS
 // Alias: $TrustProfileCS = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS
@@ -154,7 +156,7 @@ Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/Stru
 
 
 //Other Aliases
-Alias:   $BCP13 = urn:ietf:bcp:13
+Alias: $BCP13 = urn:ietf:bcp:13
 
 // ATR
 Alias: $ATRGroup = http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group

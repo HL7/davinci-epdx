@@ -53,6 +53,9 @@ The following operations are referenced:
 
 #### Da Vinci Member Attribution (ATR)
 
+**NOTE:** exportType parameter **SHALL** be populated with a value for all PDex implementations of the $Davinci-data-export-operation. 
+i.e., [Provider Access API](provider-access-api.html) and [Payer-to-Payer Bulk API](payertopayerbulkexchange.html).
+
 - [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html)
 
 ### IG/package dependencies
@@ -72,5 +75,5 @@ The following dependencies are used in production of this guide:
 <br/>
 
 
-<p><a href="Downloads.html">[Next Page - Downloads]</a></p>
+<p><a href="PDexDownloads.html">[Next Page - Downloads]</a></p>
 
