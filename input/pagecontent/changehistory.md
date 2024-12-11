@@ -10,12 +10,17 @@
 | STU2.1 Block Vote 3                                     |                                                                                                     |
 | [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                           |
 | [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                            |
+| [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079)    | Separate API details from the Data payload section                                                  |
+| [FHIR-48063](https://jira.hl7.org/browse/FHIR-48063)    | Member-authorized exchange is underspecified                                                        |
+| [FHIR-48061](https://jira.hl7.org/browse/FHIR-48061)    | "PDex Implementation, Actors, Interactions, Data Payloads and Methods" page important or redundant? |
 | [FHIR-48057](https://jira.hl7.org/browse/FHIR-48057)    | Missing must support definition                                                                     |
+| [FHIR-48036](https://jira.hl7.org/browse/FHIR-48036)    | Separate data mapping and patient matching discussion                                               |
 | [FHIR-48023](https://jira.hl7.org/browse/FHIR-48023)    | Sub-field must support language inconsistency                                                       |
 | [FHIR-47778](https://jira.hl7.org/browse/FHIR-47778)    | Include the full HRex privacy and security requirements                                             | 
 | [FHIR-47761](https://jira.hl7.org/browse/FHIR-47761)    | Security and Privacy and Access Permissions Page not accessible                                     | 
 | [FHIR-47562](https://jira.hl7.org/browse/FHIR-47562)    | Please add a "Plain Language Summary about HL7 and this Guide" to the home page.                    | 
 | [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056)    | Clarify OAuth2.0 workflow for Payer to Payer                                                        | 
+| [FHIR-47053](https://jira.hl7.org/browse/FHIR-47053)    | Require MemberId parameter to be returned in $member-match                                          | 
 |                                                         |                                                                                                     |
 | STU2.1 Block Vote 2                                     |                                                                                                     |
 | [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701)    | AppointmentBook hook usage for Provider Access use case                                             |
