@@ -50,6 +50,11 @@ the CMS Prior Authorization Rule (CMS-0057).
 
 #### CDS-Hooks and SMART-on-FHIR
 
+**Note: This section is being considered for removal in the next release of this IG.**
+
+The [PDex Implementation, Actors, Interactions, Data Payloads and Methods](pdeximplementationactorsinteractionsdatapayloadsandmethods.html) section provides an introduction to the CDS Hooks method of exchange. That section also includes information the Actors involved in data exchange and the methods of exchange of the
+data payloads covered by this IG.
+
 An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown in [section 8 - CDS Hooks](http://build.fhir.org/ig/HL7/davinci-epdx/cds-hooks.html#pdex-hooks). This exchange flow is used for communication between Providers and Health Plans. The CDS-Hook will be used to perform a Patient/Member match and return a token that enables a SMART-on-FHIR App to access information via the Health Plan's FHIR API for the matched member.
 
 

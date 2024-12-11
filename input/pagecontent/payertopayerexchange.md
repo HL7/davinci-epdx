@@ -38,8 +38,8 @@ The steps in the Member Match with Consent process are:
 - Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation
 - The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found
 - The $member-match operation evaluates the Consent resource for a matched member
-- If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a Patient ID is provided to the requesting Payer (Payer2)
-- If a Patient ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member
+- If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a unique Member ID is provided to the requesting Payer (Payer2)
+- If a Member ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
 Some of these steps are optional depending on the authorization and trust framework being used.

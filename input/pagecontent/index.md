@@ -17,7 +17,7 @@ as of January 1, 2026.</i></b>
 
 
 
-**The Payer Data Exchange (PDex) Implementation Guide (IG) is provided for Payers/Health Plans to enable them to create a Member's Health History using clinical resources (based on US Core Profiles established from FHIR R4) which can be understood by providers and, if they choose to, committed to their Electronic Medical Records (EMR) System.**
+{% include index-plain-language-summary.html %}
 
 The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule (CMS-9115) and the subsequent Advancing Interoperability and Improving Prior Authorization Rule (CMS-0057).
 

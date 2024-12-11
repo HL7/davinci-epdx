@@ -35,7 +35,15 @@ non-financial profiles:
 
 Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/).
 
-Mapping is also required when data is exchanged between systems. The PDex IG exchanges are centered around the Members/Patients. FHIR platforms generate their own ids when creating resources. Consequently, a Patient resource in one system can have a different FHIR Resource ID from that Patient in another system. When a bundle of resources is retrieved from a Health Plan's FHIR API it will be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything FHIR bundle.
+## Ingesting Exchanged Data
+
+Mapping is required when data is exchanged between systems. The PDex IG exchanges are centered around the Members/Patients. 
+FHIR platforms generate their own ids when creating resources. Consequently, a Patient resource in one system can have a different 
+FHIR Resource ID from that Patient in another system. When a bundle of resources is retrieved from a Health Plan's FHIR API it will 
+be necessary to map identifiers to determine whether a record in the target system needs to be updated or created. 
+The following step-by-step approach is proposed for handling the import of a bundle of resources received as part of a Patient-everything 
+FHIR bundle or as a result of a Payer-to-Payer Exchange (See [Payer-to-Payer Exchange (Bulk)](payertopayerbulkexchange.html) or
+[Payer-to-Payer Exchange (single member)](payertopayerexchange.html)).
 
 In the steps below "Received" refers to the information requested from a Health Plan's FHIR API. "Target" refers to the target FHIR API of the organization making the request. In the Payer-to-Payer exchange scenario the New Plan is the Target, and the Old Health Plan provides the "Received" bundle. 
 
