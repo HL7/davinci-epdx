@@ -171,27 +171,11 @@ Amongst Health Plans there has been limited adoption of FHIR specifications and 
 
 ### PDex Data Payloads
 
-The PDex IG defines four types of data payload:
+The PDex IG covers the following data types:
 
-1. Member Membership, Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
-2. Healthcare Network Directory 
-3. Pharmacy Network Directory
-4. Medication Formulary.
-
-The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. When data is transferred from one plan to another the health plan receiving the data request is only obligated to share member health data for Five years prior to the date of the request. The data can include:
-
-    - CARIN Blue Button Claims data (without the financial content)
-    - US Core Clinical Data (Structured Data)
-    - Unstructured clinical data used to determine a prior authorization decision
-    - PDex Prior Authorization profile.
-
-The Directory and Formulary data payloads are covered in their respective Da Vinci Implementation Guides.
-
-All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
-
-The FHIR CapabilityStatement defines the resources and operations supported by the resources exposed via the FHIR API.
-
-The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. The V-Read and History operations **MAY** be supported.
+- Clinical History
+- Claims-derived History
+- Prior Authorizations
 
 #### Member Health History
 
@@ -350,7 +334,23 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0
 - [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
-#### CapabilityStatement (STU3 - US Core 3.1.1)
+#### CapabilityStatement (STU3 - US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0)
+
+The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. 
+When data is transferred from one plan to another the health plan receiving the data request is only obligated to share member 
+health data for Five years prior to the date of the request. The data can include:
+
+- CARIN Blue Button Claims data (without the financial content)
+- US Core Clinical Data (Structured Data)
+- Unstructured clinical data used to determine a prior authorization decision
+- PDex Prior Authorization profile.
+
+All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
+
+The FHIR CapabilityStatement defines the resources and operations supported by the resources exposed via the FHIR API.
+
+The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. 
+The V-Read and History operations **MAY** be supported.
 
 The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.
 

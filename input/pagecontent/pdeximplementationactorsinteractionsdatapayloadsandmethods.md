@@ -5,6 +5,14 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 [Previous Page - Security and Privacy](securityandprivacy.html)
 
 {% include style_insert_table_blue.html %}
+
+<div class="stu-note">
+
+<b><i>The use of CDS Hooks to enable Providers to retrieve data from Payers has been superseded by the inclusion 
+of the Provider Access Bulk API in the STU2.1 release of this IG. The .CDS Hooks with SMART-on-FHIR section
+on this page is being considered for removal in the next version of this IG.</i></b>
+</div>
+
 This section defines the Actors, Exchange Interactions and Data Payloads covered by the PDex IG.
 
 The Member Health History is represented as a series of FHIR Resources that are based on a superset 
@@ -71,6 +79,8 @@ the CMS Prior Authorization Rule (CMS-0057).
 
 
 #### CDS Hooks with SMART-on-FHIR
+
+**Note: This section is being considered for removal in the next release of this IG.**
 
 Clinical systems will use the specification and workflows defined by [CDS Hooks](https://cds-hooks.hl7.org/) to initiate Payer Data 
 Exchange  with Health Plans. Implementers must be familiar with all aspects of this specification.
@@ -141,14 +151,19 @@ SMART Apps should function.
 All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if 
 it is committed to their system.
 
-#### OAuth2.0 and FHIR API
+#### OAuth2.0 and FHIR API for Member-Mediated Exchange
 
 This section outlines the approach for a member to mediate the sharing of data between health plans, or with an app of 
-their choice using the Patient Access API and the SMART-on-FHIR App Launch methods. In the STU2.1 version of the 
-Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable data exchange to occur between
-health plans ([Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)), at the direction of the member, 
-or to enable exchange with a Provider ([Provider Access API](provider-access-api.html)) unless a member has actively 
-opted-out of data sharing with Providers. 
+their choice using the Patient Access API and the SMART-on-FHIR App Launch methods. If a Payer, as the new health plan, 
+wished to offer members the ability to retrieve data from prior health plans they would need to provide an application 
+that could be registered with other health plans to enable members to authenticate with their prior health plan 
+and authorize sharing with their new health plan. The application would then retrieve data that is shared via the 
+Patient Access API and could load that data into the member's record.
+
+In the STU2.1 version of the Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable 
+data exchange to occur between health plans ([Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)), at the 
+direction of the member, or to enable exchange with a Provider ([Provider Access API](provider-access-api.html)) 
+unless a member has actively opted-out of data sharing with Providers. 
 
 The well-defined mechanism for enabling Member/Patient authorization to share information with an application using 
 the FHIR API is to use OAuth2.0 as the Authorization protocol. The member **SHALL** authenticate using 
