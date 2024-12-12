@@ -5,7 +5,6 @@
 Extension: ProvenanceSourceFrom
 Title: "An attribute to describe the data source a resource was constructed from"
 Description: "Attributes that identify the source record format from which data in the referenced resources was derived"
-
 * insert PdexStructureDefinitionContent
 
 //  * extension contains

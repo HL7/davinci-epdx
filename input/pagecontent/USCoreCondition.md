@@ -16,7 +16,7 @@ resources are:
 | Condition.code               |  code               |     1..1    | CodeableConcept                    |
 | Condition.subject            |  subject            |     1..1    | Reference(US Core Patient Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 The essential fields to be provided in the Condition resource from the CPCDS file are:
 
@@ -28,7 +28,7 @@ The essential fields to be provided in the Condition resource from the CPCDS fil
 | Condition.code                |       S      |     1..1    | ExplanationOfBenefit.diagnosis.diagnosis | [{"6, 7, 8, 21, 22, 23, 30":"Diagnosis Code"}]                                                                                                                   |
 | Condition.subject             |       S      |     1..1    | ExplanationOfBenefit.patient             | [{"Ref (1)":"Member id"}]                                                                                                                       |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example Condition Resource
 

@@ -151,6 +151,7 @@ Usage: #definition
 * rest.resource[=].interaction[=].code = #history-type
 * rest.resource[=].referencePolicy = #resolves
 * rest.resource[=].referencePolicy.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].referencePolicy.extension.valueCode = #SHOULD
 * rest.resource[=].searchRevInclude.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchRevInclude.extension.valueCode = #SHALL
 * rest.resource[=].searchRevInclude = "Provenance:target"
@@ -1507,8 +1508,7 @@ Usage: #definition
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+* rest.resource[=].extension[=].valueCode = #SHOULD
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "birthdate"
 * rest.resource[=].extension[=].extension[+].url = "required"

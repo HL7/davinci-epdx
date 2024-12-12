@@ -21,7 +21,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | DiagnosticReport.performer                              |  performer                |     0..*    | Reference(US Core Practitioner Profile \| US Core Organization Profile) |
 | DiagnosticReport.result                                 |  result                   |     0..*    | Reference(US Core Laboratory Result Observation Profile)                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example DiagnosticReport for Report and Note exchange Resource
 

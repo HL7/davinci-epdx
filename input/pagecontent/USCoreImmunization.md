@@ -23,7 +23,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Immunization.performer.actor               |  actor         | 1..1        | Reference(Practitioner \| PractitionerRole \| Organization) |
 |  Immunization.protocolApplied.doseNumber[x] |  doseNumber[x] | 1..1        |                                                             |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example Immunization Resource:
 

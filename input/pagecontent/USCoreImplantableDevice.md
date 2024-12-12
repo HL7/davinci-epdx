@@ -28,7 +28,7 @@ resource are:
 |  Device.type                        |  type               |     1..1    | CodeableConcept                    |
 |  Device.patient                     |  patient            |     1..1    | Reference(US Core Patient Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example Implantable Device Resource
 

@@ -24,7 +24,7 @@ resource are:
 |  Location.address.postalCode   |  postalCode           |     0..1    | string                                  |
 |  Location.managingOrganization |  managingOrganization |     0..1    | Reference(US Core Organization Profile) |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 
 #### Example Location Resource

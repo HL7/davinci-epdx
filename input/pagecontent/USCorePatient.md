@@ -38,7 +38,7 @@ are:
 |  Patient.communication.language |  language          |     1..1    | CodeableConcept                     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the Patient resource from the CPCDS file are:
@@ -74,7 +74,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Patient.communication |       S      |     0..*    |                            | . Note: Provide preferred communication language via language code below, if available |
 | Patient.communication.language |       S      |     1..1    |                            | Note: Provide preferred communication language, if available |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 The Member Number will be entered in the **identifier** field. The code **MB**  **SHALL** be used to identify the member identifier.  See the example below:
 

@@ -1,6 +1,6 @@
 [Previous Page - Introduction](introduction.html)
 
-The PDex IG adopts the Security and Privacy approach detailed in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2024SEP/security.html).
+The PDex IG adopts the Security and Privacy approach detailed in the [Health Record Exchange (HRex) IG]({{site.data.fhir.ver.hrex}}/security.html).
 The Security and Privacy section of the HRex IG addresses:
 
 - [Statutes, Regulations, and Guiding Principles](https://hl7.org/fhir/us/davinci-hrex/2024Sep/security.html#statutes-regulations-and-guiding-principles)

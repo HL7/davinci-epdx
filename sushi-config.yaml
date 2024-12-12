@@ -52,15 +52,15 @@ dependencies:
     reason: | 
       Needed for systems supporting USCDI v4
   hl7.fhir.us.davinci-hrex:
-    version: 1.1.0-ballot
+    version: 1.1.0
     id: hrex
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   # hl7.fhir.us.davinci-hrex: 1.1.0
   # hl7.fhir.us.davinci-hrex: 1.1.0-preview
   hl7.fhir.us.carin-bb:
-    version: 2.0.0
-    # version: 2.1.0-snapshot1
+    #version: 2.0.0
+    version: 2.1.0-snapshot1
     uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb
     id: carinbb
   hl7.fhir.us.davinci-pas: 2.0.1
@@ -70,7 +70,8 @@ dependencies:
   # hl7.fhir.us.directory-query: 1.0.0-ballot
   # hl7.fhir.uv.extensions.r4: 1.0.0
   hl7.fhir.uv.extensions: 5.1.0-ballot1
-  hl7.terminology.r4: 5.5.0
+  hl7.terminology.r4: 6.1.0
+  # hl7.terminology.r4: 5.5.0
   # hl7.fhir.uv.tools: 0.2.0-snapshot
 parameters:
   show-inherited-invariants: false
@@ -371,24 +372,31 @@ pages:
 # │  To use a provided ig-data/input/includes/menu.xml.ignore file, delete the "menu" property below.     │
 # ╰───────────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: index.html
-  Table of Contents: toc.html
-  PDex IG Content: #pdeximplementationactorsinteractionsdatapayloadsandmethods.html
+  IG Home: index.html
+  Background:
     Overview: overview.html
     Introduction: introduction.html
+  Specification:
+    Actors, Interactions and Payloads: pdeximplementationactorsinteractionsdatapayloadsandmethods.html
     Provider Access: provider-access-api.html
     Payer-to-Payer(bulk): payertopayerbulkexchange.html
     Payer-to-Payer(single): payertopayerexchange.html
     Data Mapping: datamapping.html
     CDS Hooks: cds-hooks.html
     Use Case Scenarios: usecasescenarios.html
-    Change Log: changehistory.html
-    Credits: credits.html
   FHIR Artifacts: artifacts.html
-  Other IG Artifacts: other-igs.html
+  Base Specs:
+    Other IGs: other-igs.html
+    HRex 1.1.0: new-tab https://hl7.org/fhir/us/davinci-hrex/STU1.1/
+    US Core 3.1.1: new-tab https://www.hl7.org/fhir/us/core/STU3.1.1/
+    US Core 6.1.0: new-tab https://hl7.org/fhir/us/core/STU6.1/
+    US Core 7.0.0: new-tab https://hl7.org/fhir/us/core/STU7/
   Support:
-    Project Home: new-tab https://confluence.hl7.org/pages/viewpage.action?pageId=116462704
+    Project Page: new-tab https://confluence.hl7.org/pages/viewpage.action?pageId=116462704
+    Implementer Support: new-tab https://confluence.hl7.org/display/DVP/PDex+Implementer+Support
+    Specification Dashboard: new-tab https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314
     Discussion Forum: new-tab https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex
-    Propose a Change: new-tab http://hl7.org/fhir-issues
+    Propose a Change: new-tab  https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex
     Downloads: PDexDownloads.html
-  Change History:   changehistory.html
+    Credits: credits.html
+  Change Log: changehistory.html

@@ -23,7 +23,7 @@ resource are:
 |  PractitionerRole.telecom.value  |  value        |     1..1    | string                                  |
 |  PractitionerRole.endpoint       |  endpoint     |     0..*    | Reference(Endpoint)                     |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example PractitionerRole Resource
 

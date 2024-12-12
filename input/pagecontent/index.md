@@ -102,7 +102,7 @@ See the [Table of Contents](toc.html) for more information.
 
 ### Mapping Adjudicated Claims, Encounter and Prior Authorization Information
 
-The [Data Mapping](daamapping.html) section addresses the mapping of Claims and Encounter data to Clinical profiles. Some 
+The [Data Mapping](datamapping.html) section addresses the mapping of Claims and Encounter data to Clinical profiles. Some 
 US Core profiles correlate with data provided in the [Consumer-Directed Payer Data Exchange (Blue Button 2.0)IG](http://hl7.org/fhir/us/carin-bb/). 
 The Data Mapping section provides tables to assist implementers in mapping between these IGs.
 
@@ -137,12 +137,12 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 #### Must Support
 
-For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.htmml#must-support) section in the Introduction page.
+For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.html#must-support) section in the Introduction page.
 
 #### Security and Privacy
 
 Security and Privacy are critically important when exchanging information. Please refer to the [Security and Privacy](securityandprivacy.html) page in this IG and
-the guidance it references in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/2024SEP/security.html).
+the guidance it references in the [Health Record Exchange (HRex) IG]({{site.data.fhir.ver.hrex}}/security.html).
 
 #### Patient/Subject Terminology
 

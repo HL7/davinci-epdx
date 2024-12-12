@@ -48,7 +48,7 @@ The [Pdex Provenance](StructureDefinition-pdex-provenance.html) record **SHOULD*
 | Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource) In general this will be a text string indicating the source is defined by the role code                                                     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 ### Example Provenance Records
 

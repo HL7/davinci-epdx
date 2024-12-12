@@ -22,7 +22,7 @@ resource are:
 |  Practitioner.name.family                  |  family         |     1..1    | string             |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 
 #### Example Practitioner Resource

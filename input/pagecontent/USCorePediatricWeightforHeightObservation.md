@@ -43,7 +43,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  Observation.component.value[x]            |  value[x]         |     0..1    |                                    |
 |  Observation.dataAbsentReason              |  dataAbsentReason |     0..1    | CodeableConcept                    |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### An Example Pediatric Weight For Height Observation Resource
 
