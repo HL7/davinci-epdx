@@ -8,6 +8,7 @@
 | JIRA Ticket                                             | Change                                                                                              |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | STU2.1 Block Vote 3                                     |                                                                                                     |
+| TC:[FHIR-48991](https://jira.hl7.org/browse/FHIR-48991) | Fix broken Links and other issues identified in QA Report                                           |
 | [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                           |
 | [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                            |
 | [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079)    | Separate API details from the Data payload section                                                  |
@@ -209,5 +210,16 @@ The following changes were applied in the Proposed STU 2.0.0 update:
 |[FHIR-33216](https://jira.hl7.org/browse/FHIR-33216)| Add guidance for use of Consent resource in $member-match operation - superceded by updated to [Payer-to-Payer exchange](payertopayerexchange.html)                                                                                                             |
 | [FHIR-33713](https://jira.hl7.org/browse/FHIR-33713)| Add [Provenance custodian](Provenance-1000101.html) record for receipt of member data from prior payer                                                                                                                                                          |
 
+### STU 1.0.0
+
+First version of the PDex IG.
+
+### STU 0.1.0
+
+Draft of PDex IG
+
+### STU 0.0.1
+
+Skeleton version of PDex IG
 
 [Next Page - Credits](credits.html)

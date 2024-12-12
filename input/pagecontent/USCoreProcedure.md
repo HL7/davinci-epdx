@@ -19,7 +19,7 @@ are:
 |  Procedure.performed[x]            |  performed[x] |     1..1    |                                                                                                   |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance to implementers:
@@ -37,7 +37,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 | Procedure.location |              |     0..1    | ExplanationOfBenefit.item.location. locationCodeableConcept, ExplanationOfBenefit.item.supportingInfo.location. locationCodeableConcept | [{"46":"Place of service code"}, {"97, 170, 176":"Service Facility NPI (if available), Name, Address"}] |
 | Procedure.reasonCode  |              |     0..*    | ExplanationOfBenefit.diagnosis.diagnosis  | [{“22, 23”:”Diagnosis Code”}] |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 Note: Procedure records should only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies should not be created as prodcudure records.
 

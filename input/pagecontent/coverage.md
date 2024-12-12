@@ -18,7 +18,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Health Plan Mapping Assistance
 A collaboration of Health Plan experts have performed an evaluation of claims information and developed a mapping of  data for Members to the [Coverage profile](http://hl7.org/fhir/R4/coverage.html). This is shown below as an assistance  to implementers:
@@ -36,7 +36,7 @@ A collaboration of Health Plan experts have performed an evaluation of claims in
 | Coverage.class.name       |             |     0..1    | Coverage.class.name       | [{"Plan=155":"Plan Name"}, {"Group=135":"Group Name"}     |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 It is important to note a difference between Coverage information provided in the CARIN-BB IG and the PDex IG. The PDex IG Coverage expresses the current state of health plan coverage whereas the CARIN-BB Coverage is intended to express the coverage that was valid at the date of service or admission.
 

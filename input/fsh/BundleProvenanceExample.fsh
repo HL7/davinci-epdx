@@ -28,7 +28,7 @@ Description: "A bundle that returns provenance using _revinclude=Provenance:targ
 * entry[1].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * entry[1].resource.target[0].reference = "MedicationDispense/1000001"
 * entry[1].resource.recorded = "2020-07-12T18:26:23.217+00:00"
-* entry[1].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[1].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[1].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[1].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[1].resource.entity.what.display = "No reference available"
@@ -75,7 +75,7 @@ Description: "A bundle that returns Conditions with provenance using _revinclude
 * entry[2].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * entry[2].resource.target[0].reference = "Condition/101"
 * entry[2].resource.recorded = "1995-09-20T18:26:23.217+00:00"
-* entry[2].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[2].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[2].resource.agent[0].who.reference = "Organization/ProviderOrg2"
 * entry[2].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[2].resource.entity.what.display = "No reference available"
@@ -162,7 +162,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[3].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[3].resource.target[0].reference = "https://example.com/base/Encounter/6-1"
 * entry[3].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[3].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[3].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[3].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[3].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[3].resource.entity.what.display = "No reference available"
@@ -177,7 +177,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "Encounter/7-1"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[4].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[4].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
@@ -192,7 +192,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[5].resource.meta.lastUpdated = "2019-12-31T20:26:23.217+00:00"
 * entry[5].resource.target[0].reference = "Bundle/1000000-1"
 * entry[5].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[5].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[5].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[5].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[5].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[5].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -288,7 +288,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "https://example.com/base/Encounter/6-1-2"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[4].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[4].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
@@ -303,7 +303,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[5].resource.meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * entry[5].resource.target[0].reference = "Encounter/7-1-2"
 * entry[5].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[5].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[5].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[5].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[5].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[5].resource.entity.what.display = "No reference available"
@@ -322,7 +322,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[6].resource.target[3].reference = "Provenance/1000002-1-2"
 * entry[6].resource.target[4].reference = "Provenance/1000003-1-2"
 * entry[6].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[6].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[6].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[6].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[6].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[6].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -334,7 +334,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[7].resource.meta.lastUpdated = "2020-06-15T20:26:23.217+00:00"
 * entry[7].resource.target[0].reference = "Encounter/8-2"
 * entry[7].resource.recorded = "2020-06-15T20:26:23.217+00:00"
-* entry[7].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[7].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[7].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[7].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[7].resource.entity.what.display = "No reference available"
@@ -349,7 +349,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[8].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[8].resource.target[0].reference = "Bundle/1000000-2"
 * entry[8].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[8].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[8].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[8].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[8].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[8].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -444,7 +444,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2021-01-14T19:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "https://example.com/base/Encounter/6-1-2-3"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[4].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[4].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[4].resource.entity.what.display = "No reference available"
@@ -459,7 +459,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[5].resource.meta.lastUpdated = "2021-10-01T20:26:23.217+00:00"
 * entry[5].resource.target[0].reference = "Encounter/7-1-2-3"
 * entry[5].resource.recorded = "2020-07-10T16:26:23.217+00:00"
-* entry[5].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[5].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[5].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[5].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[5].resource.entity.what.display = "No reference available"
@@ -474,7 +474,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[6].resource.meta.lastUpdated = "2021-10-01T20:26:23.217+00:00"
 * entry[6].resource.target[0].reference = "Encounter/8-2-3"
 * entry[6].resource.recorded = "2021-03-10T16:26:23.217+00:00"
-* entry[6].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[6].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[6].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[6].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[6].resource.entity.what.display = "No reference available"
@@ -493,7 +493,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[7].resource.target[3].reference = "Provenance/1000002-1-2-3"
 * entry[7].resource.target[4].reference = "Provenance/1000003-1-2-3"
 * entry[7].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[7].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[7].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[7].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[7].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[7].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -506,7 +506,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[8].resource.target[0].reference = "Encounter/8-2-3"
 * entry[8].resource.target[1].reference = "Provenance/1000005-2"
 * entry[8].resource.recorded = "2020-06-15T20:26:23.217+00:00"
-* entry[8].resource.agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* entry[8].resource.agent[0].type = $provenance-participant-type#author "Author"
 * entry[8].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[8].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
 * entry[8].resource.entity.what.display = "No reference available"
@@ -521,7 +521,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[9].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[9].resource.target[0].reference = "Bundle/1000000-2"
 * entry[9].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[9].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[9].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[9].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[9].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[9].search.mode = http://hl7.org/fhir/search-entry-mode#include
@@ -533,7 +533,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[10].resource.meta.lastUpdated = "2020-12-31T20:26:23.217+00:00"
 * entry[10].resource.target[0].reference = "Bundle/1000000-2"
 * entry[10].resource.recorded = "2019-12-31T20:26:23.217+00:00"
-* entry[10].resource.agent[0].type = http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type#transmitter "Transmitter"
+* entry[10].resource.agent[0].type = $uscore-provenance-participant-type#transmitter "Transmitter"
 * entry[10].resource.agent[0].who.reference = "Organization/Payer1"
 * entry[10].resource.agent[0].role.coding = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#TRANS
 // * entry[10].search.mode = http://hl7.org/fhir/search-entry-mode#include

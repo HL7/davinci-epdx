@@ -24,7 +24,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 |  MedicationRequest.dosageInstruction.text |  text |     0..1    | String                                                                                             |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example MedicationRequest Resource
 

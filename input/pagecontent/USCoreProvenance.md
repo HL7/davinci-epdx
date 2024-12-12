@@ -38,7 +38,7 @@ are:
 |  Provenance.entity.role                                    |  role                        |     1..1    | code                                                                                               |
 |  Provenance.entity.what                                    |  what                        |     1..1    | Reference(Resource)                                                                                |
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 ### Example US Core Provenance Resource
 

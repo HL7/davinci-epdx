@@ -18,7 +18,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | MedicationDispense.substitution.wasSubstituted |  wasSubstituted |     1..1    | boolean                                                                                           |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 
 
@@ -41,7 +41,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 | MedicationDispense.whenHandedOver         |              |     0..1    | ExplanationOfBenefit.item.servicedDate                                                 | [{"90":"Service (from) date"}]                                                                                                                                                                            |
 
 
-<i>[Table Definition](index.html#mapping-adjudicated-claims-and-encounter-information-to-clinical-resources)</i>
+<i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 #### Example MedicationDispense Resource
 
