@@ -8,7 +8,7 @@
 | JIRA Ticket                                             | Change                                                                                              |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | STU2.1 Block Vote 3                                     |                                                                                                     |
-| TC:[FHIR-48991](https://jira.hl7.org/browse/FHIR-48991) | Fix broken Links and other issues identified in QA Report                                           |
+| [FHIR-48991](https://jira.hl7.org/browse/FHIR-48991)    | Fix broken Links and other issues identified in QA Report                                           |
 | [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                           |
 | [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                            |
 | [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079)    | Separate API details from the Data payload section                                                  |

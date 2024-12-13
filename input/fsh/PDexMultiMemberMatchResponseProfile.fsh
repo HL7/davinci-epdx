@@ -5,7 +5,8 @@ Title: "PDex $multi-member-match response"
 Description: "A Parameters profile defining the result of a $bulk-member-match operation performed by a payer system"
 // * contained 0..*
 // * contained only Patient
-* parameter 1..3 
+* ^experimental = true
+* parameter 1..3
 * parameter MS
   * ^slicing.discriminator.type = #value
   * ^slicing.discriminator.path = "name"
@@ -14,22 +15,21 @@ Description: "A Parameters profile defining the result of a $bulk-member-match o
     ResourceIdentifier 0..1 MS and
     NoMatch 0..1 MS and
     ConsentConstraint 0..1 MS
-* parameter[ResourceIdentifier]    
+* parameter[ResourceIdentifier]
   * name = "ResourceIdentifier" (exactly)
   * name MS
-  * resource 0..1 
+  * resource 0..1
   * resource MS
   * resource only PDexMemberMatchGroup
 * parameter[NoMatch]
   * name = "NoMatch" (exactly)
   * name MS
-  * resource 0..1 
+  * resource 0..1
   * resource MS
   * resource only PDexMemberNoMatchGroup
 * parameter[ConsentConstraint]
   * name = "ConsentConstraint" (exactly)
   * name MS
-  * resource 0..1 
+  * resource 0..1
   * resource MS
   * resource only PDexMemberNoMatchGroup
- 

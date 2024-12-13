@@ -121,9 +121,11 @@ Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.
 - Provider Access API.
 - Payer-to-Payer API (single member and multiple members).
 
-### Intellectual Property
+### Intellectual Property Considerations
 
 This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP").  Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used.  It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
+
+{% include ip-statements.xhtml %}
 
 ### Conventions
 
@@ -135,9 +137,9 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.
 
-#### Must Support
+#### MustSupport
 
-For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.html#must-support) section in the Introduction page.
+For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.html#mustsupport) section in the Introduction page.
 
 #### Security and Privacy
 
@@ -154,7 +156,7 @@ For the purposes of this IG we will use the following terms:
 
 * **member** id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:
 
-    * Member
+    * Memberƒ
     * Subscriber 
     * Beneficiary
     * Dependent
@@ -163,11 +165,15 @@ For the purposes of this IG we will use the following terms:
     * Covered Party
     * Subject of Care.
 
+### Dependencies
+
+{% include dependency-table-nontech.xhtml %}
+
 ### Change History
 
 A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](changehistory.html).
 
-### Credits
+### Project and Participants
 
 See the [Credits](credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
 

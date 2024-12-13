@@ -5,6 +5,7 @@ Parent: Group
 Id: pdex-member-match-group
 Title: "PDex Member Match Group"
 Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer API access by Other Payers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters for the access request."
+* ^experimental = true
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
@@ -32,6 +33,7 @@ Parent: Group
 Id: pdex-member-no-match-group
 Title: "PDex Member No Match Group"
 Description: "A Group List created by the Payer to provide information back to a requesting payer about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics for the access request. The match may have failed for one of two reasons. a) No match on member. b) Matched but unable to comply with consent request."
+* ^experimental = true
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm

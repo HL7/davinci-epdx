@@ -247,3 +247,12 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # Error looking up X12 code.but code is valid.
 %INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
+
+# Da Vinci Template Warnings
+%The Change Log page (changehistory.html) does not include any Jira tracker items links for the section with title STU%
+
+# UUEncode the Jira link to avoid an XML error with issuetype
+%The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?%
+
+# FHIR-49009 Raised for issue in US Core 7.0.0 failing to recognize THO CodeSystem.
+%None of the codings provided are in the value set 'US Core Provenance Participant Type Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-provenance-participant-type|7.0.0), and a coding from this value set is required) (codes = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author)%

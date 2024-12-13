@@ -5,6 +5,7 @@ Parent: $ATRGroup
 Id: pdex-provider-group
 Title: "PDex Provider Group"
 Description: "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters."
+* ^experimental = true
 * insert PdexStructureDefinitionContent
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm

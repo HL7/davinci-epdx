@@ -3,7 +3,7 @@
 RuleSet: PdexDefinitionContent
 * status = #active      // draft until final published
 // * status = #draft      // draft until final published
-* experimental = false  // true until ready for pilot, then false
+* experimental = true  // true until ready for pilot, then false
 * version = "2.1.0"    // Follow IG Versioning rules
 * publisher = "HL7 International"
 * contact[0].telecom.system = #url
@@ -19,7 +19,7 @@ RuleSet: PdexDefinitionContent
 RuleSet: PdexStructureDefinitionContent
 //* ^status = #draft      // draft until final published
 * ^status = #active      // draft until final published
-* ^experimental = false  // true until ready for pilot, then false
+* ^experimental = true  // true until ready for pilot, then false
 * ^version = "2.1.0"    // Follow IG Versioning rules
 * ^publisher = "HL7 International"
 * ^contact[0].telecom.system = #url

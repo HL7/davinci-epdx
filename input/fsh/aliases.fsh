@@ -182,3 +182,7 @@ Alias: $HRexConsent = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hr
 
 // Terminology Server
 Alias: $CoverageRelationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship
+
+// PDex Provenance Code Systems
+Alias: $pdex-provenance-participant-type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType
+Alias: $pdex-provenance-payer-data-source = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource

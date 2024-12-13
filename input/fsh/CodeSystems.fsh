@@ -17,6 +17,7 @@ CodeSystem: ProvenanceAgentRoleType
 // * #author "Author" "Person or entity that originated the referenced resource"
 // * #custodian "Custodian" "The entity that is accountable for maintaining a true an accurate copy of the original record"
 * #source "Source" "Organization, Practitioner or Payer who was the source of the referenced resource"
+* #author "Author" "An agent that originates, or significant changes to, the entity and therefore has responsibility for the information given in the entity"
 // * #transmitter "Transmitter" "Provenance Transmitter"
 
 
