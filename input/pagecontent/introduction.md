@@ -334,7 +334,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0
 - [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
-#### CapabilityStatement (STU3 - US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0)
+### CapabilityStatement (STU3 - US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0)
 
 The CMS Interoperability rule requires Health Plans to make available data they hold for a member from Jan 1, 2016, onwards. 
 When data is transferred from one plan to another the health plan receiving the data request is only obligated to share member 
@@ -356,7 +356,18 @@ The FHIR CapabilityStatement defines the resources and operations permitted on t
 
 The Permitted Operations for the FHIR Profiles covered in this payload section are defined in the [PDex Server Capability Statement](CapabilityStatement-pdex-server.html)
 
-#### Must Support
+The Capability Statements in this IG are:
+
+- [Server CapabilityStatement (STU3 - US Core 3.1.1)](CapabilityStatement-pdex-server.html)
+- [Server CapabilityStatement (STU6 - US Core 6.1.0)](CapabilityStatement-pdex-server-6-1.html)
+- [Provider Access Server CapabilityStatement](CapabilityStatement-pdex-provider-access-server.html)
+- [Payer Access Server CapabilityStatement](CapabilityStatement-pdex-payer-access-server.html)
+
+#### Conformance Expectations
+
+This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide. As well, profiles in this implementation guide make use of the [mustSupport](http://hl7.org/fhir/R4/profiling.html#mustsupport) element. Base expectations for the interpretations of these terms are set in the [FHIR core specification](http://hl7.org/fhir/R4/conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html).
+
+### MustSupport
 
 For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows:
 
@@ -366,6 +377,9 @@ In situations where information on a particular data element is not present and 
 When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system.
 In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension.
 PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information.
+
+Additional information about MustSupport can be found in the [Da Vinci HRex Conformance Page]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport) and the 
+[US Core Must Support page]({{site.data.fhir.ver.uscore7}}/must-support.html).
 
 NOTE: Typically PDex Responder Actor = Server and PDex Requestor Actor = Client
 NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR RESTful API based on the HTTP protocol, along with FHIR Data Types, FHIR Search and FHIR Resource formats before implementing PDex requirements.

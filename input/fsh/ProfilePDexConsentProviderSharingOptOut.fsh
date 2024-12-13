@@ -3,10 +3,10 @@ Parent: Consent
 Id: pdex-provider-consent
 Title: "PDex Provider Access Consent Profile"
 Description: "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data."
+* ^experimental = true
 * ^extension[$standard-status].valueCode = #draft
 * ^extension[$fmm].valueInteger = 0
 * ^status = #draft
-* ^experimental = false
 * . ^definition = "This Consent profile conveys high-level computable information about a member's preference to not share information with providers,"
 * status = #active (exactly)
 * status MS

@@ -4,6 +4,7 @@ Id: pdex-parameters-multi-member-match-bundle-in
 Title: "PDex $multi-member-match request"
 Description: "A Parameters profile defining the inputs to a $bulk-member-match operation performed by a payer system"
 // * id = "payermultimembermatchin"
+* ^experimental = true
 * parameter 0..* MS
 * parameter.name = "MemberBundle"
 * parameter.part ..4 MS

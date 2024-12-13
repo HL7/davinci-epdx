@@ -9,6 +9,7 @@ Description: "Attributes that identify the source record format from which data 
 
 //  * extension contains
 //  source 0..1
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "Provenance.entity"
 
@@ -71,6 +72,7 @@ Description: "A code specifying the level of service being requested (UM06)"
 Extension: ReviewAction
 Id: extension-reviewAction
 Description: "The details of the review action that is necessary for the authorization."
+* ^experimental = true
 * ^context.type = #element
 * ^context.expression = "ExplanationOfBenefit.item.adjudication"
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1

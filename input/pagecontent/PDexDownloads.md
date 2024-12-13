@@ -52,7 +52,7 @@ Link to current version of FHIR validator:
 
 Validator Instructions for use:
 
-[Validator Instructions](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar)
+[Validator Instructions](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)
 
 
 <p><a href="toc.html">[Next Page - Table of Contents]</a></p>

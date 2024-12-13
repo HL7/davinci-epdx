@@ -2,7 +2,51 @@
 
 The PDex guide is based on the [HL7 FHIR 4.0.1](http://hl7.org/fhir/R4/) standard, as well as the [CDS Hooks](https://cds-hooks.org/),  [SMART on FHIR](http://docs.smarthealthit.org/) and [OAuth2.0](https://oauth.net/2/) standards, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
-This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 3.1.1]({{site.data.fhir.ver.uscore3}}) or [HL7 FHIR� US Core Implementation Guide STU3 Release 6.1.0]({{site.data.fhir.ver.uscore6}}) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition, the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a Venn diagram as shown below.
+To understand how to read an Implementation Guide implementers should refer to the [How to Read page](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html) in the FHIR Specification.
+
+### FHIR
+
+This implementation guide uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
+
+- [FHIR Overview](http://hl7.org/fhir/R4/overview.html)
+- [Developer's Introduction](http://hl7.org/fhir/R4/overview-dev.html) (or [Clinical Introduction](http://hl7.org/fhir/R4/overview-clinical.html))()
+- [FHIR Data Types](http://hl7.org/fhir/R4/datatypes.html)
+- [Using Codes](http://hl7.org/fhir/R4/terminologies.html)
+- [References Between Resources](http://hl7.org/fhir/R4/references.html)
+- [How to Read Resource & Profile Definitions](http://hl7.org/fhir/R4/) and additional [IG reading guidance](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html)
+- [Base Resource](http://hl7.org/fhir/R4/resource.html)
+- [Resource Formats](http://hl7.org/fhir/R4/formats.html)
+
+- This implementation guide supports the [R4](http://hl7.org/fhir/R4/index.html) version of the FHIR standard and builds on the US Core [3.1 (USCDI v1)]({{site.data.fhir.ver.uscore3}}), 
+- [6.1 (USCDI v3)]({{site.data.fhir.ver.uscore6}}) and [7.0 (USCDI v4)]({{site.data.fhir.ver.uscore7}}) implementation guides and implementers need to familiarize themselves with the profiles in those guides. The profiles in this IG conform with all three releases of US Core.
+
+This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 3.1.1]({{site.data.fhir.ver.uscore3}}), [HL7 FHIR� US Core Implementation Guide STU6 Release 6.1.0]({{site.data.fhir.ver.uscore6}}), or [HL7 FHIR� US Core Implementation Guide STU7 Release 7.0.0]({{site.data.fhir.ver.uscore7}}) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition, the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a Venn diagram as shown below.
+
+This IG also utilizes resources from the FHIR R4 Base Specification. Implementers should therefore refer to the following resources from the base specification:
+
+- [Bundle](http://hl7.org/fhir/R4/bundle.html)
+- [CapabilityStatement](http://hl7.org/fhir/R4/capabilitystatement.html)
+- [CodeSystem](http://hl7.org/fhir/R4/codesystem.html)
+- [Consent](http://hl7.org/fhir/R4/consent.html)
+- [Coverage](http://hl7.org/fhir/R4/coverage.html)
+- [Device](http://hl7.org/fhir/R4/device.html)
+- [DocumentReference](http://hl7.org/fhir/R4/documentreference.html)
+- [Encounter](http://hl7.org/fhir/R4/encounter.html)
+- [Endpoint](http://hl7.org/fhir/R4/endpoint.html)
+- [ExplanationOfBenefit](http://hl7.org/fhir/R4/explanationofbenefit.html)
+- [Group](http://hl7.org/fhir/R4/group.html)
+- [Location](http://hl7.org/fhir/R4/location.html)
+- [MedicationDispense](http://hl7.org/fhir/R4/medicationdispense.html)
+- [OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html)
+- [Organization](http://hl7.org/fhir/R4/organization.html)
+- [Parameters](http://hl7.org/fhir/R4/parameters.html)
+- [Patient](http://hl7.org/fhir/R4/patient.html)
+- [Practitioner](http://hl7.org/fhir/R4/practitioner.html)
+- [Provenance](http://hl7.org/fhir/R4/provenance.html)
+- [SearchParameter](http://hl7.org/fhir/R4/searchparameter.html)
+- [StructureDefinition](http://hl7.org/fhir/R4/structuredefinition.html)
+- [ValueSet](http://hl7.org/fhir/R4/valueset.html)
+
 
 <table><tr><td><img width="100%" height="auto" src="PDexAndUSCoreRelationship-v5.png" /></td></tr></table>
   
