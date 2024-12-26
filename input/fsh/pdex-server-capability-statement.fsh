@@ -1347,9 +1347,11 @@ Usage: #definition
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[0].url = "required"
-* rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+// removed extension[1] error
+// * rest.resource[=].extension[=].extension[0].url = "required"
+// * rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+// * rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+// * rest.resource[=].extension[=].valueCode = #SHOULD
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "patient"
 * rest.resource[=].extension[=].extension[+].url = "required"
@@ -1508,7 +1510,8 @@ Usage: #definition
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].extension[=].valueCode = #SHOULD
+// fix extension[1] errors
+// * rest.resource[=].extension[=].valueCode = #SHOULD
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "birthdate"
 * rest.resource[=].extension[=].extension[+].url = "required"
