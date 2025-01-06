@@ -5,63 +5,64 @@
 
 ### STU2.1.0-ballot Reconciliation
 
-| JIRA Ticket                                             | Change                                                                                              |
-|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| STU2.1 Block Vote 3                                     |                                                                                                     |
-| [FHIR-48991](https://jira.hl7.org/browse/FHIR-48991)    | Fix broken Links and other issues identified in QA Report                                           |
-| [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                           |
-| [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                            |
-| [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079)    | Separate API details from the Data payload section                                                  |
-| [FHIR-48063](https://jira.hl7.org/browse/FHIR-48063)    | Member-authorized exchange is underspecified                                                        |
+| JIRA Ticket                                             | Change                                                                                             |
+|---------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| [FHIR-49110](https://jira.hl7.org/browse/FHIR-49110)     | Optional inclusion of Financials in Provider Access API to support VBC use cases                  |
+| STU2.1 Block Vote 3                                     |                                                                                                    |
+| [FHIR-48991](https://jira.hl7.org/browse/FHIR-48991)    | Fix broken Links and other issues identified in QA Report                                          |
+| [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                          |
+| [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                           |
+| [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079)    | Separate API details from the Data payload section                                                 |
+| [FHIR-48063](https://jira.hl7.org/browse/FHIR-48063)    | Member-authorized exchange is underspecified                                                       |
 | [FHIR-48061](https://jira.hl7.org/browse/FHIR-48061)    | "PDex Implementation, Actors, Interactions, Data Payloads and Methods" page important or redundant? |
-| [FHIR-48057](https://jira.hl7.org/browse/FHIR-48057)    | Missing must support definition                                                                     |
-| [FHIR-48036](https://jira.hl7.org/browse/FHIR-48036)    | Separate data mapping and patient matching discussion                                               |
-| [FHIR-48023](https://jira.hl7.org/browse/FHIR-48023)    | Sub-field must support language inconsistency                                                       |
-| [FHIR-47778](https://jira.hl7.org/browse/FHIR-47778)    | Include the full HRex privacy and security requirements                                             | 
-| [FHIR-47761](https://jira.hl7.org/browse/FHIR-47761)    | Security and Privacy and Access Permissions Page not accessible                                     | 
-| [FHIR-47562](https://jira.hl7.org/browse/FHIR-47562)    | Please add a "Plain Language Summary about HL7 and this Guide" to the home page.                    | 
-| [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056)    | Clarify OAuth2.0 workflow for Payer to Payer                                                        | 
-| [FHIR-47053](https://jira.hl7.org/browse/FHIR-47053)    | Require MemberId parameter to be returned in $member-match                                          | 
-|                                                         |                                                                                                     |
-| STU2.1 Block Vote 2                                     |                                                                                                     |
-| [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701)    | AppointmentBook hook usage for Provider Access use case                                             |
-| [FHIR-48313](https://jira.hl7.org/browse/FHIR-48313)    | What are implementers supposed to follow for exportType                                             |
-| [FHIR-48077](https://jira.hl7.org/browse/FHIR-48077)    | provenance details are spread across several pages and are inconsistently linked                    |
-| [FHIR-48073](https://jira.hl7.org/browse/FHIR-48073)    | Use Case Scenarios page not easily reachable                                                        |
-| [FHIR-48072](https://jira.hl7.org/browse/FHIR-48072)    | Data Mapping Conformance Requirements                                                               |
-| [FHIR-48070](https://jira.hl7.org/browse/FHIR-48070)    | integrate separate sections on data mapping                                                         |
-| [FHIR-48058](https://jira.hl7.org/browse/FHIR-48058)    | Unclear references to Da Vinci ATR                                                                  |
-| [FHIR-48037](https://jira.hl7.org/browse/FHIR-48037)    | CapabilityStatements don't belong under Data Mapping                                                |
+| [FHIR-48057](https://jira.hl7.org/browse/FHIR-48057)    | Missing must support definition                                                                    |
+| [FHIR-48036](https://jira.hl7.org/browse/FHIR-48036)    | Separate data mapping and patient matching discussion                                              |
+| [FHIR-48023](https://jira.hl7.org/browse/FHIR-48023)    | Sub-field must support language inconsistency                                                      |
+| [FHIR-47778](https://jira.hl7.org/browse/FHIR-47778)    | Include the full HRex privacy and security requirements                                            | 
+| [FHIR-47761](https://jira.hl7.org/browse/FHIR-47761)    | Security and Privacy and Access Permissions Page not accessible                                    | 
+| [FHIR-47562](https://jira.hl7.org/browse/FHIR-47562)    | Please add a "Plain Language Summary about HL7 and this Guide" to the home page.                   | 
+| [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056)    | Clarify OAuth2.0 workflow for Payer to Payer                                                       | 
+| [FHIR-47053](https://jira.hl7.org/browse/FHIR-47053)    | Require MemberId parameter to be returned in $member-match                                         | 
+|                                                         |                                                                                                    |
+| STU2.1 Block Vote 2                                     |                                                                                                    |
+| [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701)    | AppointmentBook hook usage for Provider Access use case                                            |
+| [FHIR-48313](https://jira.hl7.org/browse/FHIR-48313)    | What are implementers supposed to follow for exportType                                            |
+| [FHIR-48077](https://jira.hl7.org/browse/FHIR-48077)    | provenance details are spread across several pages and are inconsistently linked                   |
+| [FHIR-48073](https://jira.hl7.org/browse/FHIR-48073)    | Use Case Scenarios page not easily reachable                                                       |
+| [FHIR-48072](https://jira.hl7.org/browse/FHIR-48072)    | Data Mapping Conformance Requirements                                                              |
+| [FHIR-48070](https://jira.hl7.org/browse/FHIR-48070)    | integrate separate sections on data mapping                                                        |
+| [FHIR-48058](https://jira.hl7.org/browse/FHIR-48058)    | Unclear references to Da Vinci ATR                                                                 |
+| [FHIR-48037](https://jira.hl7.org/browse/FHIR-48037)    | CapabilityStatements don't belong under Data Mapping                                               |
 | [FHIR-47057](https://jira.hl7.org/browse/FHIR-47057)    | Don't require mapping claims data to US Core resources if sending as ExplanationOfBenefit resources |
-| [FHIR-47055](https://jira.hl7.org/browse/FHIR-47055)    | Don't require five year time limit on bulk Payer to Payer exchange                                  |
-| [FHIR-47054](https://jira.hl7.org/browse/FHIR-47054)    | Make saving Provenance information received through Payer to Payer optional                         |
-| [FHIR-46761](https://jira.hl7.org/browse/FHIR-46761)    | Add Prev / bottom / Next to header/footer                                                           |
-| STU2.1 Block Vote 1                                     |                                                                                                     |
-| [FHIR-48675](https://jira.hl7.org/browse/FHIR-48675)    | Add Hyperlink to PDex Server Capability Statement                                                   |
-| [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369)    | Conflicting statements on OAuth-authorized exchange                                                 |
-| [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076)    | With Mod: Remove superseded CDS Hooks page                                                          |
-| [FHIR-48074](https://jira.hl7.org/browse/FHIR-48074)    | With Mod: provider-controlled information requests and filtering page not easily reachable          |
-| [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056)    | With Mod: Multiple CapabilityStatement descriptions not in sync and should be collapsed             |
-| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794)    | Change SHOULD to SHALL                                                                              |
-| [FHIR-47792](https://jira.hl7.org/browse/FHIR-47792)    | rewrite for clarity and grammar                                                                     |
-| [FHIR-47789](https://jira.hl7.org/browse/FHIR-47789)    | Not Persuasive: Change SHOULD to SHALL                                                              |
-| [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787)    | Clarify concept of changed status                                                                   |
-| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change SHOULD to SHALL                                                                              |
-| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change SHOULD to SHALL                                                                              |
-| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                                                    |
-| [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783)    | Clarify the Regulatory requirements                                                                 |
-| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                                                 |
-| STU2.1 Technical Corrections                            |                                                                                                     |
-| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                                                         |
-| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages                                            |
-| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                                                                |
-| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections                                        |
-| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl                                    |
-| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                                                   |
-| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                                                         |
-| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile?                                                           |
-| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections                                                               |
-| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos                                                                        |
+| [FHIR-47055](https://jira.hl7.org/browse/FHIR-47055)    | Don't require five year time limit on bulk Payer to Payer exchange                                 |
+| [FHIR-47054](https://jira.hl7.org/browse/FHIR-47054)    | Make saving Provenance information received through Payer to Payer optional                        |
+| [FHIR-46761](https://jira.hl7.org/browse/FHIR-46761)    | Add Prev / bottom / Next to header/footer                                                          |
+| STU2.1 Block Vote 1                                     |                                                                                                    |
+| [FHIR-48675](https://jira.hl7.org/browse/FHIR-48675)    | Add Hyperlink to PDex Server Capability Statement                                                  |
+| [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369)    | Conflicting statements on OAuth-authorized exchange                                                |
+| [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076)    | With Mod: Remove superseded CDS Hooks page                                                         |
+| [FHIR-48074](https://jira.hl7.org/browse/FHIR-48074)    | With Mod: provider-controlled information requests and filtering page not easily reachable         |
+| [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056)    | With Mod: Multiple CapabilityStatement descriptions not in sync and should be collapsed            |
+| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794)    | Change SHOULD to SHALL                                                                             |
+| [FHIR-47792](https://jira.hl7.org/browse/FHIR-47792)    | rewrite for clarity and grammar                                                                    |
+| [FHIR-47789](https://jira.hl7.org/browse/FHIR-47789)    | Not Persuasive: Change SHOULD to SHALL                                                             |
+| [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787)    | Clarify concept of changed status                                                                  |
+| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change SHOULD to SHALL                                                                             |
+| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change SHOULD to SHALL                                                                             |
+| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                                                   |
+| [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783)    | Clarify the Regulatory requirements                                                                |
+| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                                                |
+| STU2.1 Technical Corrections                            |                                                                                                    |
+| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                                                        |
+| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages                                           |
+| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                                                               |
+| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections                                       |
+| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl                                   |
+| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page                                                  |
+| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering                                                                        |
+| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile?                                                          |
+| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections                                                              |
+| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos                                                                       |
 
 ### STU 2.1.0 Update
 
