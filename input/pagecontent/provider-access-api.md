@@ -19,6 +19,14 @@ The purpose of the Provider Access API is to enable Providers to query a Payer A
 about the members of the health plan where they have a current, or upcoming treatment relationship.
 The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
+Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases 
+Clinical, Prior Authorization and Claims and Encounter data (without the financial data), the data **MAY** be 
+configured to include financial data (including Allowed and Paid amounts and other information in the full 
+CARIN Blue Button ExplanationOfBenefit resources) for other use cases, including:
+- Value-Based Care contracts and Risk-based Provider Programs where the provider partner organization is “At Risk” for those services.
+- Services that occur at a provider partner organization's facility even if those services are not associated with a Value-Based Care contract.
+- Situations where the financial information is publicly available.
+
 The Payer Data Exchange Implementation Guide supports the Provider Access API by
 utilizing the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) operation in the [Da Vinci Member Attribution Implementation Guide](http://hl7.org/fhir/us/davinci-atr/STU2/).
 
