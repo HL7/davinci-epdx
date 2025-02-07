@@ -3,7 +3,7 @@ Parent: ExplanationOfBenefit
 Id: pdex-priorauthorization
 Title: "PDex Prior Authorization"
 Description: "The PDex Prior Authorization (PPA) profile is based on the ExplanationOfBenefit resource and is provided to enable payers to express Prior Authorization information to members."
-* ^experimental = true
+* ^experimental = false
 * insert PdexStructureDefinitionContent
 * ^jurisdiction.coding = urn:iso:std:iso:3166#US
 * meta.profile 1..*
