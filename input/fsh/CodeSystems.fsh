@@ -164,7 +164,7 @@ Description: "Describes the various status fields used when payers adjudicate a 
 * ^copyright = "This CodeSystem is not copyrighted."
 * ^caseSensitive = false
 
-CodeSystem: PDexSupportingInfoType
+CodeSystem: PDexSupportingInfoTypeCS
 Title: "PDex Supporting Info Type"
 Description: "Claim Information Category - Used as the discriminator for supportingInfo"
 * ^experimental = false

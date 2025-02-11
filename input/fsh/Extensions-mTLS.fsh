@@ -33,6 +33,6 @@ Title: "mTLS Object Type Code"
 Description: "Codes for the Signed Object Types"
 * ^experimental = false
 * ^caseSensitive = false
-* #MTLS "mTLS signed Object"
+* #MTLS "mTLS signed Object" "An mTLS-signed object is a data object (like a message, request, or token) that is validated and secured using mTLS certificates."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm

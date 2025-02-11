@@ -148,7 +148,7 @@ Used as the discriminator for the types of supporting information for the PDEX P
 Based on the CARIN IG for Blue Button� Implementation Guide.
 """
 * ^experimental = true
-* codes from system PDexSupportingInfoType
+* codes from system PDexSupportingInfoTypeCS
 * ^copyright = "This Valueset is not copyrighted."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
