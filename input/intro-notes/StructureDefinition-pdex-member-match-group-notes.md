@@ -16,4 +16,4 @@
    For example, Matched Group lists for a Payer.
 
 
-[Back to Artifacts](artifacts.html#structures-resource-profiles)
+[Back to Artifacts](artifacts.html)

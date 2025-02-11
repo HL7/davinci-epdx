@@ -16,4 +16,4 @@
     For example, Attributed Group lists for Practitioners working in a Facility where the system accessing is accessing on behalf of the facility.
 
 
-[Back to Artifacts](artifacts.html#structures-resource-profiles)
+[Back to Artifacts](artifacts.html)
