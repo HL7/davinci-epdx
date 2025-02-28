@@ -373,7 +373,7 @@ Patient FHIR ID.
 
 ### Scopes for Operations
 
-[SMART App Launch STU2.1](http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch)
+[SMART App Launch STU 2.1](http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch)
 defines granular scopes for resources. Following the model proposed in the section on
 [FHIR Resource Scope Syntax](https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data)
 the following scope is proposed to control access to the member-match  

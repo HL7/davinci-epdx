@@ -22,9 +22,9 @@ The PDex Implementation Guide (IG) identifies three actors and specifies three i
 2. Member-authorized Health Plan to Health Plan Exchange.
 3. Member-authorized Health Plan to Third Party Applications. 
 
-### PDex STU2.1
+### PDex STU 2.1
 
-The STU2.1 Version of the PDex IG introduces two important new Interactions:
+The STU 2.1 Version of the PDex IG introduces two important new Interactions:
 
 1. Payer-to-Payer Bulk Exchange.
 2. Payer-Provider Bulk Exchange.
