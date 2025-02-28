@@ -3,12 +3,12 @@
 
 {% include style_insert_table_blue.html %}
 
-### STU2.1.0-ballot Reconciliation
+### STU 2.1.0-ballot Reconciliation
 
 | JIRA Ticket                                             | Change                                                                                             |
 |---------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| [FHIR-49110](https://jira.hl7.org/browse/FHIR-49110)     | Optional inclusion of Financials in Provider Access API to support VBC use cases                  |
-| STU2.1 Block Vote 3                                     |                                                                                                    |
+| [FHIR-49110](https://jira.hl7.org/browse/FHIR-49110)    | Optional inclusion of Financials in Provider Access API to support VBC use cases                  |
+| STU 2.1 Block Vote 3                                    |                                                                                                    |
 | [FHIR-48991](https://jira.hl7.org/browse/FHIR-48991)    | Fix broken Links and other issues identified in QA Report                                          |
 | [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922)    | $davinci-data-export param exportType should be mandatory                                          |
 | [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088)    | Code Systems should be in THO or be granted an exemption                                           |
@@ -24,7 +24,7 @@
 | [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056)    | Clarify OAuth2.0 workflow for Payer to Payer                                                       | 
 | [FHIR-47053](https://jira.hl7.org/browse/FHIR-47053)    | Require MemberId parameter to be returned in $member-match                                         | 
 |                                                         |                                                                                                    |
-| STU2.1 Block Vote 2                                     |                                                                                                    |
+| STU 2.1 Block Vote 2                                    |                                                                                                    |
 | [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701)    | AppointmentBook hook usage for Provider Access use case                                            |
 | [FHIR-48313](https://jira.hl7.org/browse/FHIR-48313)    | What are implementers supposed to follow for exportType                                            |
 | [FHIR-48077](https://jira.hl7.org/browse/FHIR-48077)    | provenance details are spread across several pages and are inconsistently linked                   |
@@ -37,7 +37,7 @@
 | [FHIR-47055](https://jira.hl7.org/browse/FHIR-47055)    | Don't require five year time limit on bulk Payer to Payer exchange                                 |
 | [FHIR-47054](https://jira.hl7.org/browse/FHIR-47054)    | Make saving Provenance information received through Payer to Payer optional                        |
 | [FHIR-46761](https://jira.hl7.org/browse/FHIR-46761)    | Add Prev / bottom / Next to header/footer                                                          |
-| STU2.1 Block Vote 1                                     |                                                                                                    |
+| STU 2.1 Block Vote 1                                    |                                                                                                    |
 | [FHIR-48675](https://jira.hl7.org/browse/FHIR-48675)    | Add Hyperlink to PDex Server Capability Statement                                                  |
 | [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369)    | Conflicting statements on OAuth-authorized exchange                                                |
 | [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076)    | With Mod: Remove superseded CDS Hooks page                                                         |
@@ -52,7 +52,7 @@
 | [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                                                   |
 | [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783)    | Clarify the Regulatory requirements                                                                |
 | [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                                                |
-| STU2.1 Technical Corrections                            |                                                                                                    |
+| STU 2.1 Technical Corrections                           |                                                                                                    |
 | TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json                                                        |
 | TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages                                           |
 | TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded                                                                               |

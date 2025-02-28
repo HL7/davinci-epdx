@@ -9,7 +9,7 @@ title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
 <div class="stu-note">
 
 <b><i>The use of CDS Hooks to enable Providers to retrieve data from Payers has been superseded by the inclusion 
-of the Provider Access Bulk API in the STU2.1 release of this IG. The .CDS Hooks with SMART-on-FHIR section
+of the Provider Access Bulk API in the STU 2.1 release of this IG. The .CDS Hooks with SMART-on-FHIR section
 on this page is being considered for removal in the next version of this IG.</i></b>
 </div>
 
@@ -160,7 +160,7 @@ that could be registered with other health plans to enable members to authentica
 and authorize sharing with their new health plan. The application would then retrieve data that is shared via the 
 Patient Access API and could load that data into the member's record.
 
-In the STU2.1 version of the Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable 
+In the STU 2.1 version of the Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable 
 data exchange to occur between health plans ([Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)), at the 
 direction of the member, or to enable exchange with a Provider ([Provider Access API](provider-access-api.html)) 
 unless a member has actively opted-out of data sharing with Providers. 
