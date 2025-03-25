@@ -122,6 +122,10 @@ The HTTP Header **SHALL** include:
 
     Prefer: respond-async
 
+The [PDex $multi-member-match operation](OperationDefinition-bulk-member-match.html) SHALL be performed as an 
+Asynchronous operation. This should follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) 
+defined in FHIR R4. Implementers SHALL follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) 
+of the Async Request Pattern.
 
 ### Bulk Member Match with Consent
 
