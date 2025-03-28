@@ -24,7 +24,7 @@ group Step 2a: Get $MemberMatch Operation Token
   endnote
 end
 group Step 2b: Establish Common Members - secure operation
-	Payer2 -> Payer1 : Send bundle of bundles (Patient Demographics, \nCoverage & Consent for each member) to $MemberMatch operation
+	Payer2 -> Payer1 : Send bundle of bundles (Patient Demographics, \nCoverage & Consent for each member) to $MemberMatch async operation
 	Payer1 -> Payer1 : Match EACH member
   Payer1 -> Payer1 : Store or Compute Consent \n(all / non-sensitive) for EACH Member
   note right
@@ -32,18 +32,24 @@ group Step 2b: Establish Common Members - secure operation
   Payer: ID (Client Credential)
   Policy: all | non-sensitive
   Consent Period: start, end
-  This information will be need to be checked
+  This information will need to be checked
   when Access Token is issued in Step 3.
   An active consent information will only be stored if the Policy
   Scope can be complied with. An inability to comply with the scope
-  will lead to a 422 error being returned from the $member-match for the
-  member.
+  will lead to a the member information being added to a "Consent Constraint" group.
   endnote
   note left
   Successful Match results in Patient/{ID} for Member
   being appended to a dynamically created Group record by Payer 1.
+  Failed matches and Consent Constrained matches are compiled into
+  temporary group resource records that are included in the Parameter Response bundle.
+  Upon completion of the match process the parameter response bundle is created.
+  The response bundle is written to a storage location. The location is returned to the requesting
+  party in accordance with the FHIR Async protocol.
   endnote
-	Payer1 -> Payer2 : Return Group Identifier (Group FHIR ID).
+	Payer1 -> Payer2 : Notify Payer that parameter Response bundle is available.
+	Payer2 -> Payer1 : Retrieves Parameter Response bundle.
+	Payer2 -> Payer2 : extract Matched Group Id to use in $davinci-data-export operation.
   note right
     This process assumes Payer1 provides Patient/{ID} for
     each member that crosses all relevant
