@@ -66,8 +66,10 @@ Branch connectathon33 has been created to freeze development for the New Orleans
 
 Branch pre-publish_stu2 is the branch for publishing the post-ballot STU2 Version of the PDex IG.
 
-Branch post-publish_stu2 was create from the pre-publish_stu2 branch and will be used to capture new and updated 
+Branch post-publish_stu2 was created from the pre-publish_stu2 branch and will be used to capture new and updated 
 content that will go into a future update of the PDex IG.
+
+Sushi is Version 3.14.0
 
 Note: A change in the template caused an error where image-sources/** couldn't be found.
 I created image-sources/pdex and copied plantuml files in to the directory and publisher worked.
