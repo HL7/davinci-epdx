@@ -8,7 +8,9 @@ WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.
 %ValueSet 'https://valueset.x12.org/%
 %https://x12.org/codes/service-type-codes was not found%
 %https://codesystem.x12.org/005010/306' could not be found%
-
+%A definition for CodeSystem 'https://codesystem.x12.org/005010%
+%URL value 'https://codesystem.x12.org/005010/%
+%URL value 'https://codesystem.x12.org/external/886' does not resolve%
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
@@ -27,7 +29,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/%
 
 
-# These are PDex specific code systems: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS, PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType, PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS, PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes, ProvenanceAgentRoleType, ProvenancePayerDataSource
+# TSMG 2025-04-21 Motion passes 8-0-0 Exceptions Granted for PDex specific code systems: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS, PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType, PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS, PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes, ProvenanceAgentRoleType, ProvenancePayerDataSource
 %Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)%
 
 
@@ -67,3 +69,41 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # Using Universal extensions in FHIR 4.0.1
 %version 4.0.1, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0%
+
+# Warning introduced in Publisher 1.8.23+
+%The canonical URL for an Implementation Guide must point directly to the implementation guide resource%
+%URI value 'https://example.com%
+&URI value 'https://xxxhealthplan.com%
+%URL value 'https://www.xxxhealthplan.com%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'%
+%URL value 'https://mtls-dev-dmdh.safhir.io/mtlsendpoint'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-%
+%URL value '/Binary/1-pdf' does not resolve%
+%URL value 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem%
+%URL value 'hl7.org/fhir/us/davinci-pdex' does not resolve%
+%URL value 'https://p2p.diamondonyx.example.com%
+%URL value 'https://www.exampleplan.com%
+%The ImplementationGuide uses package hl7.fhir.us.core#6.1.0 released on 2023-06-30, but the most recent appropriate version is 7.0.0.%
+%URL value 'urn:oid:2.16.840.1.113883.6.300' does not resolve%
+%The discriminator type 'pattern' is deprecated in R5+%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/carin-bb%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem/data-absent-reason%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-%
+%The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21%
+%The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated%
+%Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core%
+%There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-pas%
+%Error from http://tx.fhir.org/r4: The value set 'http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode' expansion has too many codes to display (>10000)%
+%Error from http://tx.fhir.org/r4: The code System "http://www.ama-assn.org/go/cpt"%
+%URL value 'https://example.com/base/fhir%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/OperationDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/uv/sdc/StructureDefinition%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CodeSystem/us-core%

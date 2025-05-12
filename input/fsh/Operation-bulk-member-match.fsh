@@ -11,6 +11,7 @@ Usage: #definition
 * affectsState = true
 * code = #bulk-member-match
 * resource = #Group
+// * resource[0] = "Group"
 * system = false
 * type = true
 * instance = false

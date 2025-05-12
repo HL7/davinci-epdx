@@ -98,6 +98,10 @@ consumedunits 0..1
 * adjudication contains
 adjudicationamounttype 0..* MS and   /* restricted to 1..* by invariant */
 denialreason 0..* MS
+* adjudication[denialreason].category = PDexAdjudicationDiscriminator#denialreason // (exactly)
+* adjudication[denialreason].reason from X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes
+* adjudication[denialreason].reason 1..1 MS
+
 * adjudication[adjudicationamounttype].category from PDexAdjudication  (required)
 * adjudication[adjudicationamounttype].amount 1..1
 * adjudication.extension contains ReviewAction named reviewAction 0..1 MS
