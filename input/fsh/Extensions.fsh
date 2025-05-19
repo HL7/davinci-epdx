@@ -73,8 +73,12 @@ Extension: ReviewAction
 Id: extension-reviewAction
 Description: "The details of the review action that is necessary for the authorization."
 * ^experimental = true
-* ^context.type = #element
-* ^context.expression = "ExplanationOfBenefit.item.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.item.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.adjudication"
+* ^context[+].type = #element
+* ^context[=].expression = "ExplanationOfBenefit.addItem.adjudication"
 * extension contains ReviewActionCode named code 0..1 and number 0..1 and reasonCode 0..* and secondSurgicalOpinionFlag 0..1
 * extension[code] ^short = "Healthcare Services Outcome"
 * extension[number].value[x] only string

@@ -85,15 +85,16 @@ RuleSet: Metaprofile-supportedProfile-slice
 
 //------------------------------------------------
 // RuleSets for Operation Parameter Insert
-RuleSet: parameter(name, use, min, max, type, documentation) 
+RuleSet: parameter(name, use, min, max, type, targetProfile, documentation)
 * name = {name}
 * use = {use}
 * min = {min}
 * max = {max}
 * type = {type}
+* targetProfile = {targetProfile}
 * documentation = {documentation}
 
-RuleSet: parameterComplex(name, use, min, max, documentation) 
+RuleSet: parameterComplex(name, use, min, max, documentation)
 * name = {name}
 * use = {use}
 * min = {min}

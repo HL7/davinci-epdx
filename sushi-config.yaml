@@ -33,24 +33,32 @@ copyright: >-
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 dependencies:
-  hl7.fhir.us.core.3.1.1:
-    version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore3
-    reason: |
-      Defines USCDI 1 resources that will be exposed by PDex APIs.
   hl7.fhir.us.core:
-    version: 6.1.0
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore6
-    reason: |
-      Defines USCDI 3 resources that will be exposed by PDex APIs.
-  hl7.fhir.us.core.v700:
+    id: uscore7
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore7
-    reason: | 
+    # uri: http://hl7.org/fhir/us/core/STU7/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/STU7/ImplementationGuide/
+    reason: |
       Needed for systems supporting USCDI v4
+  hl7.fhir.us.core.v610:
+    id: uscore6
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/v610/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/STU6.1/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/STU6.1/ImplementationGuide/
+    reason: |
+      Defines USCDI v3 resources that will be exposed by PDex APIs.
+  hl7.fhir.us.core.v311:
+    id: uscore3
+    version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/v311/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/STU3.1.1/ImplementationGuide/hl7.fhir.us.core
+    # uri: http://hl7.org/fhir/us/core/STU3.1.1/ImplementationGuide/
+    reason: |
+      Defines USCDI v1 resources that will be exposed by PDex APIs.
   hl7.fhir.us.davinci-hrex:
     version: 1.1.0
     id: hrex
@@ -67,13 +75,24 @@ dependencies:
   hl7.fhir.us.davinci-atr: 2.0.0
   # hl7.fhir.us.ndh: 1.0.0-ballot
   hl7.fhir.us.ndh:
-    version: 1.0.0-ballot
+    version: 1.0.0
+    # version: 1.0.0-ballot
     uri: http://hl7.org/fhir/us/ndh/ImplementationGuide/hl7.fhir.us.ndh
   hl7.fhir.us.davinci-dtr: 2.1.0
   # hl7.fhir.us.directory-query: 1.0.0-ballot
-  # hl7.fhir.uv.extensions.r4: 1.0.0
-  hl7.fhir.uv.extensions: 5.1.0-ballot1
-  hl7.terminology.r4: 6.1.0
+  hl7.fhir.uv.extensions.r4:
+    version: 5.2.0
+    # version: 1.0.0
+  # hl7.fhir.uv.extensions:
+    # version: 5.1.0-ballot1
+    # version: 5.2.0
+  hl7.terminology.r4:
+    version: 6.3.0
+    uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
+    reason: |
+      Defines terminologies and coddesystems used in HIR IGs
+    # version: 6.2.0
+    # version: 6.1.0
   # hl7.terminology.r4: 5.5.0
   # hl7.fhir.uv.tools: 0.2.0-snapshot
 parameters:

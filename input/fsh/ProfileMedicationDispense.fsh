@@ -1,5 +1,5 @@
 Profile: PdexMedicationDispense
-Parent: USCoreMedicationDispenseProfile|6.1.0
+Parent: USCoreMedicationDispenseProfile|7.0.0
 Id: pdex-medicationdispense
 Title: "PDex MedicationDispense"
 Description: "Prescription Medications dispensed by a pharmacy to a health plan member and paid for in full, or in part, by the health plan"

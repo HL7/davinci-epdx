@@ -30,7 +30,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format = #json
 * patchFormat = #application/json-patch+json
-* implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.0.0"
+* implementationGuide = "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.1.0"
 * rest.mode = #server
 * rest.documentation = "The PDex Payer Access Server **SHALL**: \n1. Support the US Core 3.1.1 or US Core 6.1.0 resources accessed via the Group resource.\n2. Implement the RESTful behavior according to the FHIR specification for bulk asynchronous access.\n3. Support json source formats for all US Core and PDex interactions. \n4. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource.\n\nThe PDex Payer Access Server **SHOULD**: \n1. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance."
 * rest.security.description = "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations. 2. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code."
