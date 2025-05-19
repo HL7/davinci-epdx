@@ -7,6 +7,7 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
 * ^experimental = true
 * parameter 0..* MS
 * parameter.name = "MemberBundle"
+* parameter.name ^short = "Member Bundle: Patient, Coverage to Match, optional Coverage, and Consent"
 * parameter.part ..4 MS
 * parameter.part ^slicing.discriminator.type = #value
 * parameter.part ^slicing.discriminator.path = "$this.name"

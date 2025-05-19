@@ -1,5 +1,5 @@
 Instance: ExampleMedicationDispenseClaim
-InstanceOf:  PdexMedicationDispense
+InstanceOf: PdexMedicationDispense
 Description: "Example of a MedicationDispense from a Claim"
 * id = "1000001"
 * meta.versionId = "1"

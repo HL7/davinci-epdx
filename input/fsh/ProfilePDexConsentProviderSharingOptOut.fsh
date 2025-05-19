@@ -18,7 +18,7 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * category contains disclosure 1..1 MS
 * category[disclosure] = $v3-ActCode#IDSCL
 * patient 1.. MS
-* patient only Reference(USCorePatientProfile|6.1.0)
+* patient only Reference(USCorePatientProfile|7.0.0)
 
 * performer 1..1 MS
 * performer only Reference(USCorePatientProfile)

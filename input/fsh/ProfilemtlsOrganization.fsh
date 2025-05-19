@@ -6,6 +6,10 @@ Description: "The mTLS Organization record is used to identify the contact infor
 * insert PdexStructureDefinitionContent
 * identifier 0..* MS
 * identifier ^short = "Unique identifiers for Payer"
+* identifier[NAIC]  MS
+* identifier[NAIC] ^short = "NAIC Code"
+* identifier[CLIA]  MS
+* identifier[CLIA] ^short = "Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories"
 * identifier.type MS
 * identifier.value MS
 * identifier.extension contains
