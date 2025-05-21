@@ -92,7 +92,7 @@ Alias: $CredentialStatusCS = http://hl7.org/fhir/us/ndh/CodeSystem/CredentialSta
 
 Alias: $EndpointAccessControlMechanismCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointAccessControlMechanismCS
 Alias: $EndpointAccessControlMechanismVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointAccessControlMechanismVS
-Alias: $EndpointConnectionTypeVersionCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS
+// Alias: $EndpointConnectionTypeVersionCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeVersionCS
 Alias: $EndpointConnectionTypeVersionVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVersionVS
 Alias: $EndpointConnectionTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointConnectionTypeCS
 Alias: $EndpointConnectionTypeVS = http://hl7.org/fhir/us/ndh/ValueSet/EndpointConnectionTypeVS
