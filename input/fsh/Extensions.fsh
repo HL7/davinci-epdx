@@ -206,20 +206,20 @@ Description: "Endpoint Access Control Mechanism"
 * ^extension.valueCode = #fm
 
 
-Extension: EndpointConnectionTypeVersion
-Id: base-ext-endpoint-connection-type-version
-Title: "NDH Endpoint Connection Type Version"
-Description: "An extension for endpoint connection type version"
-// Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
-//* ^context.type = #element
-* ^context.type = #element
-* ^context.expression = "Endpoint"
-* value[x] 0..1 MS
-* value[x] only CodeableConcept
-* value[x] from $EndpointConnectionTypeVersionVS (extensible)
-//* valueCodeableConcept from $EndpointConnectionTypeVersionVS (extensible)
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
+// Extension: EndpointConnectionTypeVersion
+// Id: base-ext-endpoint-connection-type-version
+// Title: "NDH Endpoint Connection Type Version"
+// Description: "An extension for endpoint connection type version"
+// // Attempting to resolve warning: Review the extension type: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+// //* ^context.type = #element
+// * ^context.type = #element
+// * ^context.expression = "Endpoint"
+// * value[x] 0..1 MS
+// * value[x] only CodeableConcept
+// * value[x] from $EndpointConnectionTypeVersionVS (extensible)
+// //* valueCodeableConcept from $EndpointConnectionTypeVersionVS (extensible)
+// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+// * ^extension.valueCode = #fm
 
 
 Extension: EndpointRank
