@@ -81,9 +81,9 @@ The following data **SHALL** be exchanged with
 the prior plan for each Member that provides their consent in order for the 
 prior plan to attempt to match the Member:
 
-- [HRex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-patient-demographics.html)
-- [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html)
-- [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html).
+- [HRex Patient Demographics Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
+- [HRex Coverage Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
+- [HRex Consent Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-consent.html).
 
 The following information **MAY** be exchanged with the prior plan for a member:
 
@@ -106,14 +106,14 @@ For each member submitted to the $bulk-member-match operation the following para
 **SHALL** be supplied as a **parameter.part** element in the 
 [$multi-member-match-bundle-in](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) parameter bundle. 
 
-- MemberPatient: - [HRex Patient demographics](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-patient-demographics.html)
-- CoverageToMatch - details of the prior health plan coverage, supplied by the member, typically from the health plan coverage card. Uses the [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
-- Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the [HRex Consent Profile](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-consent.html)
+- MemberPatient: - [HRex Patient demographics]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
+- CoverageToMatch - details of the prior health plan coverage, supplied by the member, typically from the health plan coverage card. Uses the [HRex Coverage Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
+- Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the [HRex Consent Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-consent.html)
 
 Optionally the new health plan **MAY** include the following element in the **parameter.part**
 element for a member:
 
-- CoverageToLink - Optional parameter. Details of new or prospective health plan coverage, provided by the health plan based upon the member’s enrolment. Uses the [HRex Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-coverage.html)
+- CoverageToLink - Optional parameter. Details of new or prospective health plan coverage, provided by the health plan based upon the member’s enrolment. Uses the [HRex Coverage Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
 
 An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
@@ -188,7 +188,7 @@ Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD*
 
 ### DaVinci-Data-Export Operation
 
-The [davinci-data-export Operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) and the optional parameters are defined in the [Da Vinci Member Attribution (ATR) List Implementation Guide STU2](http://hl7.org/fhir/us/davinci-atr/STU2/).
+The [davinci-data-export Operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) and the optional parameters are defined in the [Da Vinci Member Attribution (ATR) List Implementation Guide STU2.1]({{site.data.fhir.ver.atr}}).
 
 Requesting/New Payer:
 
@@ -199,7 +199,7 @@ Requesting/New Payer:
 - **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.
 - **SHALL** be permitted to retrieve data with a service date within 5 years of the date of the request for information.
 
-While the [$Davinci-data-export-operation](http://hl7.org/fhir/us/davinci-atr/STU2/OperationDefinition-davinci-data-export.html) 
+While the [$Davinci-data-export-operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) 
 enables granular resource requests the operation **SHOULD** be used with two scenarios:
 
 - Requesting all data within the previous 5 years for all members in the list.
@@ -219,7 +219,7 @@ changed their opt-in/opt-out status for sharing with health plans.
 
 Data that **SHALL** be available via the API includes:
 
-- [US Core 3.1.1](http://hl7.org/fhir/us/core/STU3.1.1/) Clinical Data with additional PDex defined Profiles.
+- [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) Clinical Data with additional PDex defined Profiles.
 - Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit Basis profiles defined in the [CARIN Consumer Directed Payer Data Exchange]({{site.data.fhir.ver.carinbb}}) Implementation Guide.
 - [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
 

@@ -74,12 +74,12 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Group-characteristic"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "A common characteristic of all members of a group."
-* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
-* rest.resource[=].searchParam[=].name = "Group-characteristic-value-reference"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference"
-* rest.resource[=].searchParam[=].type = #composite
-* rest.resource[=].searchParam[=].documentation = "multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true. multipleOr: The parameter may only have one value (no comma separators)."
+// * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+// * rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+// * rest.resource[=].searchParam[=].name = "Group-characteristic-value-reference"
+// * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference"
+// * rest.resource[=].searchParam[=].type = #composite
+// * rest.resource[=].searchParam[=].documentation = "multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true. multipleOr: The parameter may only have one value (no comma separators)."
 * rest.resource[=].operation[+].name = "davinci-data-export"
 * rest.resource[=].operation[=].definition = "http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"
 * rest.resource[=].operation[=].documentation = "Each DaVinci use case as part of its implementation guide can define the exportType parameter and the behavior expected."

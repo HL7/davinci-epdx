@@ -386,11 +386,11 @@ NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR REST
 
 #### Healthcare Network Directory 
 
-The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/)).
+The provision of a Member-accessible Healthcare Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG]({{site.data.fhir.ver.plannet}})).
 
 #### Pharmacy Network Directory
 
-The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG](http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/)). A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
+The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG]({{site.data.fhir.ver.plannet}})). A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory.
 
 #### Medication Formulary
 
