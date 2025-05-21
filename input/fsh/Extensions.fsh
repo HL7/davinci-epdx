@@ -216,8 +216,8 @@ Description: "An extension for endpoint connection type version"
 * ^context.expression = "Endpoint"
 * value[x] 0..1 MS
 * value[x] only CodeableConcept
-* value[x] from EndpointConnectionTypeVersionVS (extensible)
-//* valueCodeableConcept from EndpointConnectionTypeVersionVS (extensible)
+* value[x] from $EndpointConnectionTypeVersionVS (extensible)
+//* valueCodeableConcept from $EndpointConnectionTypeVersionVS (extensible)
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
