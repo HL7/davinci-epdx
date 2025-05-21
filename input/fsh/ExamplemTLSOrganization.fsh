@@ -45,7 +45,8 @@ Usage: #example
 * type = OrgTypeCS#payer "Payer"
 * identifier[NPI].value = "1356362586"
 * identifier[NPI].system = $NPICS
-* identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+// * identifier.extension[identifier-status].valueCode = CredentialStatusCS#active
+* identifier.extension[identifier-status].valueCode = #active
 //* extension[qualification][0].extension[code].valueCodeableConcept =   $NUCCProviderTaxonomy#3336C0003X "Community/Retail Pharmacy"
 //* extension[qualification][=].extension[status].valueCode = http://hl7.org/fhir/us/ndh/CodeSystem/QualificationStatusCS#active
 //* alias[0].extension[org-alias-type].valueCodeableConcept = http://hl7.org/fhir/us/ndh/CodeSystem/OrgAliasTypeCS#historical
