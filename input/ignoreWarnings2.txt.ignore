@@ -16,21 +16,40 @@ WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
+# HIPPS Codes not available
+%https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes%
+
+
 # Reviewed and identified as not being HTML tags.
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
+
+# Terminology Related Information - Reference to Draft or Experimental Code Systems
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/%
+%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/%
 
 
 # TSMG 2025-04-21 Motion passes 8-0-0 https://confluence.hl7.org/spaces/TSMG/pages/325464658/2025-04-21+TSMG+Agenda+and+Minutes. Exceptions Granted for PDex specific code systems: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS, PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType, PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS, PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes, ProvenanceAgentRoleType, ProvenancePayerDataSource
 %Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)%
 
 
-# Unable to resolve X12 005010 code
+# mtlsOrganization resource may be replaced by equivalent FAST-NDH profiles
+%The repeating element has a pattern. The pattern will apply to all the repeats%
+
+
+# The validator is unable to  properly validate the US Core value set but the code was manually checked and is correct.
+%None of the codings provided are in the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|6.1.0)%
+
+
+# Error looking up X12 code.but code is valid.
+%INFORMATION: ExplanationOfBenefit/PDexPriorAuth1: ExplanationOfBenefit.extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
+
+# Unable to resolve X12 codes
 %https://valueset.x12.org/x217/005010%
 
 # Da Vinci Template Warnings
 %The Change Log page (changehistory.html) does not include any Jira tracker items links for the section with title STU%
-
+%This IG does not include an explicit dependency on US Core%
 %The home page (index.html) must include an h3 section%
 
 # UUEncode the Jira link to avoid an XML error with issuetype
@@ -44,6 +63,9 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # Using UV Extensions in V4.0.1 IG
 %This IG is version 4.0.1, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0%
+
+# FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
+%PDex Device%
 
 # Using Universal extensions in FHIR 4.0.1
 %version 4.0.1, while the IG 'hl7.fhir.uv.extensions' is from version 5.0.0%
@@ -86,12 +108,8 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %There are multiple different potential matches for the url 'http://terminology.hl7.org/CodeSystem%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CodeSystem/us-core%
 
-# warnings from New OperationDefinition validation
-%The in profile does not have a parameter 'MemberBundle' but it is in the parameters list%
-%The out profile defines a parameter 'ResourceIdentifier' but this is not in the parameters list%
-%The out profile defines a parameter 'NoMatch' but this is not in the parameters list%
-%The out profile defines a parameter 'ConsentConstraint' but this is not in the parameters list%
-%The out profile does not have a parameter 'MatchedMembers' but it is in the parameters list%
-%	The out profile does not have a parameter 'NonMatchedMembers' but it is in the parameters list%
-%The out profile does not have a parameter 'ConsentConstrainedMembers' but it is in the parameters list%
-%The out profile does not have a parameter 'NonMatchedMembers' but it is in the parameters list%
+# Unable Resolving multiple versions of US Core
+%The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
+%The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core%
+%The packageId hl7.fhir.us.core.v311 points to the canonical http://hl7.org/fhir/us/core%
+
