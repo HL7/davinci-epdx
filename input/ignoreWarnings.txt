@@ -11,6 +11,8 @@ WARNING: ValueSet.where(id = 'PriorAuthServiceTypeCodes'): Error from http://tx.
 %A definition for CodeSystem 'https://codesystem.x12.org/005010%
 %URL value 'https://codesystem.x12.org/005010/%
 %URL value 'https://codesystem.x12.org/external/886' does not resolve%
+%Error from https://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes%
+
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
@@ -95,3 +97,24 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %	The out profile does not have a parameter 'NonMatchedMembers' but it is in the parameters list%
 %The out profile does not have a parameter 'ConsentConstrainedMembers' but it is in the parameters list%
 %The out profile does not have a parameter 'NonMatchedMembers' but it is in the parameters list%
+
+# Reference to Draft CodeSystem
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0%
+
+# References to Experimental CodeSystem
+%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|1.0.1%
+
+# Unable to Check HIPPS Codes
+%Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.1.0' because the code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes| was not found%
+%A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found, so the code cannot be validated%
+
+# FHIR-49009: Implementation Guide Errors v610@npm: format fails. for v610
+%The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v610%
+%The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core/v610 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
+
+ FHIR-49009: Implementation Guide Errors v610@npm: format fails. for v311
+%The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v311%
+%The packageId hl7.fhir.us.core.v311 points to the canonical http://hl7.org/fhir/us/core/v311 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
+
+# Information: Repeating Element
+%The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)%
