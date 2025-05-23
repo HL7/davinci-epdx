@@ -27,7 +27,7 @@ Usage: #example
 //* identifier.system = "http://diamondonyxhealth.io/payer/plan"
 * meta.lastUpdated = "2022-07-04T15:00:00.000Z"
 * active = true
-* type = $OrgTypeCS#payer "Payer"
+* type = $OrgTypeCS#pay "Payer"
 * name = "DiamondOnyxHealth"
 * telecom.system = http://hl7.org/fhir/contact-point-system#url "URL"
 * telecom.value = "https://diamond.1.onyxhealth.io"

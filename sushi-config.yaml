@@ -32,33 +32,29 @@ copyright: >-
   Used by permission of HL7 International, all rights reserved Creative Commons License
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+
+####### per zulip: https://chat.fhir.org/#narrow/channel/179239-tooling/topic/NPM.20Aliases
 dependencies:
   hl7.fhir.us.core:
     id: uscore7
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU7/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU7/ImplementationGuide/
     reason: |
-      Needed for systems supporting USCDI v4
+      Defines USCDI v4 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.
   hl7.fhir.us.core.v610:
     id: uscore6
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/v610/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU6.1/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU6.1/ImplementationGuide/
     reason: |
-      Defines USCDI v3 resources that will be exposed by PDex APIs.
+      Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
   hl7.fhir.us.core.v311:
     id: uscore3
     version: 3.1.1
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/v311/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU3.1.1/ImplementationGuide/hl7.fhir.us.core
-    # uri: http://hl7.org/fhir/us/core/STU3.1.1/ImplementationGuide/
     reason: |
-      Defines USCDI v1 resources that will be exposed by PDex APIs.
+      Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.
+
+######
   hl7.fhir.us.davinci-hrex:
     version: 1.1.0
     id: hrex

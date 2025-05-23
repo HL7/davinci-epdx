@@ -75,6 +75,7 @@ Description: "A bundle that returns Conditions with provenance using _revinclude
 * entry[2].resource.meta.profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
 * entry[2].resource.target[0].reference = "Condition/101"
 * entry[2].resource.recorded = "1995-09-20T18:26:23.217+00:00"
+// * entry[2].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[2].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[2].resource.agent[0].who.reference = "Organization/ProviderOrg2"
 * entry[2].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
@@ -162,6 +163,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[3].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[3].resource.target[0].reference = "https://example.com/base/Encounter/6-1"
 * entry[3].resource.recorded = "2020-07-10T16:26:23.217+00:00"
+// * entry[3].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[3].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[3].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[3].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
@@ -177,6 +179,7 @@ Description: "The bundle pulled from Payer1 by Payer 2 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2019-10-15T20:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "Encounter/7-1"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
+// * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
@@ -288,6 +291,7 @@ Description: "The bundle pulled from Payer2 by Payer 3 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2019-07-14T19:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "https://example.com/base/Encounter/6-1-2"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
+// * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source
@@ -444,6 +448,7 @@ Description: "The bundle pulled from Payer3 by Payer 4 when a member switches to
 * entry[4].resource.meta.lastUpdated = "2021-01-14T19:26:23.217+00:00"
 * entry[4].resource.target[0].reference = "https://example.com/base/Encounter/6-1-2-3"
 * entry[4].resource.recorded = "2020-07-10T16:26:23.217+00:00"
+// * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].type.coding = $provenance-participant-type#author "Author"
 * entry[4].resource.agent[0].who.reference = "Organization/ProviderOrg1"
 * entry[4].resource.entity.role = http://hl7.org/fhir/provenance-entity-role#source

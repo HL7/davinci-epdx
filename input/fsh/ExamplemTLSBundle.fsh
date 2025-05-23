@@ -24,7 +24,7 @@ Usage: #example
 * entry[1].resource.identifier.value = "Diamond-mtls-endpoint2"
 * entry[1].resource.status = http://hl7.org/fhir/endpoint-status#active "Active"
 * entry[1].resource.connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#hl7-fhir-rest "HL7 FHIR"
-* entry[1].resource.payloadType = $EndpointPayloadTypeCS#NA "Not Applicable"
+* entry[1].resource.payloadType = $EndpointPayloadTypeCS#not-applicable "Not Applicable"
 * entry[1].resource.name = "Payer-Payer Exchange"
 * entry[1].resource.managingOrganization.reference = "Organization/DiamondOnyxHealth1"
 * entry[1].resource.address = "https://mtls-dev-dmdh.safhir.io/mtlsendpoint"
