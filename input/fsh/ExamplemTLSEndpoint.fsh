@@ -31,7 +31,7 @@ Usage: #example
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept = $AssocServersTypeCS#authorization-authentication-server "Authorization/Authentication Server"
 * extension[associated-servers].extension[serverURL].valueString = "https://example.com/oauth/registration/"
 * extension[access-control-mechanism].valueCodeableConcept = $EndpointAccessControlMechanismCS#mutual-tls "Mutual TLS"
-* extension[connection-type-version].valueCodeableConcept = $EndpointConnectionTypeCS#hl7-fhir-opn "HL7 FHIR Operation"
+* extension[connection-type-version].valueCodeableConcept = $EndpointConnectionTypeCS#rest-non-fhir	"REST (not FHIR)"
 * extension[endpoint-rank].valuePositiveInt = 1
 * extension[verification-status].valueCodeableConcept = $NdhVerificationStatusCS#not-required "Not Required"
 * payloadType = $EndpointPayloadTypeCS#not-applicable "Not Applicable"
@@ -69,7 +69,7 @@ Usage: #example
 * extension[associated-servers].extension[associatedServersType].valueCodeableConcept = $AssocServersTypeCS#authorization-authentication-server "Authorization/Authentication Server"
 * extension[associated-servers].extension[serverURL].valueString = "https://example.com/oauth/registration/"
 * extension[access-control-mechanism].valueCodeableConcept = $EndpointAccessControlMechanismCS#mutual-tls "Mutual TLS"
-* extension[connection-type-version].valueCodeableConcept = $EndpointConnectionTypeCS#hl7-fhir-opn "HL7 FHIR Operation"
+* extension[connection-type-version].valueCodeableConcept = $EndpointConnectionTypeCS##rest-non-fhir	"REST (not FHIR)"
 * extension[endpoint-rank].valuePositiveInt = 1
 * extension[verification-status].valueCodeableConcept = $NdhVerificationStatusCS#not-required "Not Required"
 // * payloadType = $EndpointPayloadTypeCS#NA "Not Applicable"
