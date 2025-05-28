@@ -124,6 +124,34 @@ The **$bulk-member-match** operation that can be invoked by either a payer or an
 * instance = false
 * inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+* parameter[+].name = #MemberBundle
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "*"
+* parameter[=].type = #string
+* parameter[=].documentation = "Input bundle of member info (defined in inputProfile)"
+
+* parameter[+].name = #MatchedMembers
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #string
+* parameter[=].documentation = "Output for matched members"
+
+* parameter[+].name = #NonMatchedMembers
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #string
+* parameter[=].documentation = "Output for non-matched members"
+
+* parameter[+].name = #ConsentConstrainedMembers
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #string
+* parameter[=].documentation = "Output for consent-constrained members"
+
 
 // * parameter[+].name = #MemberBundle
 // * parameter[=].use = #in
