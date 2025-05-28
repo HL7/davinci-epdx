@@ -12,6 +12,8 @@ Usage: #example
 * parameter[MemberBundle][0].part[MemberPatient].name = "MemberPatient"
 * parameter[MemberBundle][0].part[MemberPatient].resource.resourceType = "Patient"
 * parameter[MemberBundle][0].part[MemberPatient].resource.id = "patient-1"
+* parameter[MemberBundle][0].part[MemberPatient].resource.text.status = #generated
+* parameter[MemberBundle][0].part[MemberPatient].resource.text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
 * parameter[MemberBundle][0].part[MemberPatient].resource.identifier[+].type = $V2IdentifierTypeCS#MB
 * parameter[MemberBundle][0].part[MemberPatient].resource.identifier[=].system = "http://example.org/old-payer/identifiers/member"
 * parameter[MemberBundle][0].part[MemberPatient].resource.identifier[=].value = "55678"
@@ -128,6 +130,7 @@ Usage: #example
 
 Instance: patientin2
 InstanceOf: Patient
+Description: "Example Patienr Record for Member Match Operation"
 * id = "patient-2"
 * identifier[+].type = $V2IdentifierTypeCS#MB
 * identifier[=].system = "http://example.org/old-payer/identifiers/member"
@@ -168,6 +171,7 @@ InstanceOf: Patient
 
 Instance: coveragein2
 InstanceOf: $HRexCoverage
+Description: "Example Coverage record for Old Payer in Member Match operation"
 * id = "coverage-2"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
@@ -211,6 +215,7 @@ InstanceOf: $HRexCoverage
 
 Instance: coveragelink2
 InstanceOf: $HRexCoverage
+Description: "Example Coverage from new payer for Member Match operation"
 * id =  "coverage-link-2"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
@@ -255,6 +260,7 @@ InstanceOf: $HRexCoverage
 
 Instance: consentin2
 InstanceOf: $HRexConsent
+Description: "Example Consent record for member match submission"
 * id = "consent-2"
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
