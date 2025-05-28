@@ -125,34 +125,36 @@ The **$bulk-member-match** operation that can be invoked by either a payer or an
 * inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 
-* parameter[+].name = #MemberBundle
-* parameter[=].use = #in
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].documentation = "Parameters conforming to PDex $multi-member-match request"
-* parameter[=].type = #Parameters
-* parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-
-* parameter[+].name = #MatchedMembers
-* parameter[=].use = #out
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].documentation = "Bundle of Groups for matched members"
-* parameter[=].type = #Parameters
-* parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
-
-* parameter[+].name = #NonMatchedMembers
-* parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Bundle of Groups for non-matched members"
-* parameter[=].type = #Parameters
-* parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
-
-* parameter[+].name = #ConsentConstrainedMembers
-* parameter[=].use = #out
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Bundle of Groups for consent-constrained matches"
-* parameter[=].type = #Parameters
-* parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+// * parameter[+].name = #MemberBundle
+// * parameter[=].use = #in
+// * parameter[=].min = 1
+// * parameter[=].max = "*"
+// * parameter[=].documentation = "Parameters conforming to PDex $multi-member-match request"
+// // * parameter[=].type = #Parameters
+// * parameter[=].type = #string
+// * parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+* inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+* outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+// * parameter[+].name = #MatchedMembers
+// * parameter[=].use = #out
+// * parameter[=].min = 1
+// * parameter[=].max = "1"
+// * parameter[=].documentation = "Bundle of Groups for matched members"
+// * parameter[=].type = #Parameters
+// * parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+//
+// * parameter[+].name = #NonMatchedMembers
+// * parameter[=].use = #out
+// * parameter[=].min = 0
+// * parameter[=].max = "1"
+// * parameter[=].documentation = "Bundle of Groups for non-matched members"
+// * parameter[=].type = #Parameters
+// * parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+//
+// * parameter[+].name = #ConsentConstrainedMembers
+// * parameter[=].use = #out
+// * parameter[=].min = 0
+// * parameter[=].max = "1"
+// * parameter[=].documentation = "Bundle of Groups for consent-constrained matches"
+// * parameter[=].type = #Parameters
+// * parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
