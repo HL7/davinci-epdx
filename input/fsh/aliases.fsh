@@ -176,10 +176,12 @@ Alias: $standard-status = http://hl7.org/fhir/StructureDefinition/structuredefin
 Alias: $fmm = http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
 
 // Da Vinci Hrex IG
-Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
-//Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
+// Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
+Alias: $HrexCoverage = http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/hrex-coverage
 Alias: $HrexOperationMemberMatch = http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match
 Alias: $HRexConsent = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent
+Alias: $HRexPatientDemographics = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics
+Alias: $HRexCoverage = http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
 
 // Terminology Server
 Alias: $CoverageRelationship = http://terminology.hl7.org/CodeSystem/subscriber-relationship

@@ -1,5 +1,5 @@
 Instance: ExampleCoverage
-InstanceOf: $HrexCoverage
+InstanceOf: $HRexCoverage
 Description: "Example of a Coverage for a Member"
 * id = "883210"
 * meta.versionId = "1"

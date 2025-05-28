@@ -1,5 +1,5 @@
 Instance: PDexCoverageExample
-InstanceOf: $HrexCoverage
+InstanceOf: $HRexCoverage
 Description: "Health Plan Coverage for Prior Authorization"
 Usage: #example
 * id = "Coverage1"
