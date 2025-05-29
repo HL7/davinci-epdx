@@ -8,9 +8,9 @@ as of January 1, 2026.</i></b>
 </div>
 
 
-# General
 
-# In this version
+
+# In this PDex version
 
 The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule (CMS-9115) and the subsequent Advancing Interoperability and Improving Prior Authorization Rule (CMS-0057).
 
