@@ -7,17 +7,10 @@ CMS-0057 Rule and the ONC's HTI-1 rule that implements US Core 6.1.0 as the base
 as of January 1, 2026.</i></b>
 </div>
 
-<div style="width: 100%;" >
-<h3 id="plain-language-summary-about-hl7-and-this-guide">Plain Language Summary about HL7 and this Guide<a class="anchorjs-link " href="#plain-language-summary-about-hl7-and-this-guide" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>
-  <button class="btn btn-info btn-lg collapsed" type="button" title="Click to Open or Close the Plain Language Summary" data-toggle="collapse" data-target="#plain-lang-summary" aria-expanded="false" aria-controls="collapseExample">
-    Welcome! Thank-you for wanting to learn about this guide.  Click Here to see the Plain Language Summary
-  </button>
-</h3>
-</div>
 
+# General
 
-
-{% include index-plain-language-summary.html %}
+# In this version
 
 The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule (CMS-9115) and the subsequent Advancing Interoperability and Improving Prior Authorization Rule (CMS-0057).
 
