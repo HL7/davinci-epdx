@@ -99,12 +99,12 @@ process, as documented in the
 [FHIR Bulk Data Access IG (2.0.0 STU2)](http://hl7.org/fhir/uv/bulkdata/STU2/). 
 
 The bulk Payer-to-Payer exchange is initiated by supplying a Parameter bundle to the 
-[$bulk-member-match operation](OperationDefinition-bulk-member-match.html). A set of OAuth2.0/SMART-on-FHIR Client Credentials 
-**SHALL** be required to access the secured $bulk-member-match operation endpoint.
+[$bulk-member-match operation](OperationDefinition-BulkMemberMatch.html). A set of OAuth2.0/SMART-on-FHIR Client Credentials 
+**SHALL** be required to access the secured bulk-member-match operation endpoint.
 
-For each member submitted to the $bulk-member-match operation the following parameters 
+For each member submitted to the bulk-member-match operation the following parameters 
 **SHALL** be supplied as a **parameter.part** element in the 
-[$multi-member-match-bundle-in](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) parameter bundle. 
+[multi-member-match-bundle-in](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) parameter bundle. 
 
 - MemberPatient: - [HRex Patient demographics]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
 - CoverageToMatch - details of the prior health plan coverage, supplied by the member, typically from the health plan coverage card. Uses the [HRex Coverage Profile]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
@@ -117,12 +117,12 @@ element for a member:
 
 An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
-The PDex $multi-member-match and the subsequent $davinci-data-export operations **SHALL** be submitted using a HTTP POST.
+The PDex multi-member-match and the subsequent davinci-data-export operations **SHALL** be submitted using a HTTP POST.
 The HTTP Header **SHALL** include:
 
     Prefer: respond-async
 
-The [PDex $multi-member-match operation](OperationDefinition-bulk-member-match.html) SHALL be performed as an 
+The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) SHALL be performed as an 
 Asynchronous operation. This should follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) 
 defined in FHIR R4. Implementers SHALL follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) 
 of the Async Request Pattern.
@@ -139,7 +139,7 @@ payer to retrieve data.
 
 The Operation Definition for Bulk Member Match is:
 
-[PDex Bulk Member Match](OperationDefinition-bulk-member-match.html)
+[PDex Bulk Member Match](OperationDefinition-BulkMemberMatch.html)
 
 The Bulk Member Match Operation **SHALL** evaluate the consent request for 
 each member and determine whether the request for only Non-Sensitive data, 
@@ -199,7 +199,7 @@ Requesting/New Payer:
 - **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.
 - **SHALL** be permitted to retrieve data with a service date within 5 years of the date of the request for information.
 
-While the [$Davinci-data-export-operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) 
+While the [davinci-data-export-operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) 
 enables granular resource requests the operation **SHOULD** be used with two scenarios:
 
 - Requesting all data within the previous 5 years for all members in the list.
