@@ -5,7 +5,7 @@ Usage: #definition
 Title: "PDex Bulk Member Match Operation"
 Description: "Bulk Member Match Operation"
 * experimental = true
-* url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/bulk-member-match"
+* url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"
 * version = "2.1.0"
 * name = "BulkMemberMatch"
 * status = #active
