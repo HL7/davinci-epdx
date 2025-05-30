@@ -10,7 +10,8 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #open
-* parameter contains MemberBundle 1..1 MS
+* parameter contains MemberBundle 1..* MS
+// * parameter contains MemberBundle 1..1 MS
 
 * parameter[MemberBundle].name = "MemberBundle"
 * parameter[MemberBundle].name ^short = "Bundle of member elements to match"

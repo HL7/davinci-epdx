@@ -128,14 +128,20 @@ The **$bulk-member-match** operation that can be invoked by either a payer or an
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "*"
-* parameter[=].type = #string
+// * parameter[=].type = #string
+* parameter[=].type = #Parameters
+* parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+
 * parameter[=].documentation = "Input bundle of member info (defined in inputProfile)"
 
 * parameter[+].name = #MatchedMembers
 * parameter[=].use = #out
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].type = #string
+// * parameter[=].type = #string
+* parameter[=].type = #Parameters
+// * parameter[=].type = #Group
+* parameter[=].targetProfile = "http://hl7.org/fhir/StructureDefinition/Group"
 * parameter[=].documentation = "Output for matched members"
 
 * parameter[+].name = #NonMatchedMembers
@@ -160,9 +166,8 @@ The **$bulk-member-match** operation that can be invoked by either a payer or an
 // * parameter[=].documentation = "Parameters conforming to PDex $multi-member-match request"
 // // * parameter[=].type = #Parameters
 // * parameter[=].type = #string
-// * parameter[=].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-* inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-* outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
+// * inputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+// * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 // * parameter[+].name = #MatchedMembers
 // * parameter[=].use = #out
 // * parameter[=].min = 1
