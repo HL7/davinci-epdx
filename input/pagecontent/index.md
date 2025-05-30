@@ -1,7 +1,7 @@
 
 <div class="stu-note">
 
-<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057).
+<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057) in 2024.
 The guide has also been updated to support the adoption of US Core 6.1.0, in addition to existing support for US Core 3.1.1. This change is implemented to enable implementers to comply with both the 
 CMS-0057 Rule and the ONC's HTI-1 rule that implements US Core 6.1.0 as the base standard of US Core 
 as of January 1, 2026.</i></b>
