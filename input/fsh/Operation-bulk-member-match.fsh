@@ -1,4 +1,4 @@
-Instance: BulkMemberMatchOperationDefinition
+Instance: BulkMemberMatch
 InstanceOf: OperationDefinition
 Usage: #definition
 // Id: bulk-member-match
