@@ -19,6 +19,42 @@ Description: "Bulk Member Match Operation"
 * inputProfile  = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 
+// // ─── Add “in” parameter for MemberBundle ─────────────────────────────────────
+// * parameter[0].name = "MemberBundle"
+// * parameter[0].use = #in
+// * parameter[0].min = 1
+// * parameter[0].max = "1"
+// * parameter[0].type = "Bundle"
+// // * parameter[0].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+// * parameter[0].documentation = "Bundle containing multiple Members to be matched."
+//
+// // ─── Add “out” parameter for MatchedMembers ─────────────────────────────────
+// * parameter[1].name = "MatchedMembers"
+// * parameter[1].use = #out
+// * parameter[1].min = 0
+// * parameter[1].max = "*"
+// * parameter[1].type = "Bundle"
+// // * parameter[1].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#MatchedMembers"
+// * parameter[1].documentation = "Bundle of members successfully matched."
+//
+// // ─── Add “out” parameter for NonMatchedMembers ──────────────────────────────
+// * parameter[2].name = "NonMatchedMembers"
+// * parameter[2].use = #out
+// * parameter[2].min = 0
+// * parameter[2].max = "*"
+// * parameter[2].type = "Bundle"
+// // * parameter[2].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#NonMatchedMembers"
+// * parameter[2].documentation = "Bundle of members that could not be matched."
+//
+// // ─── Add “out” parameter for ConsentConstrainedMembers ───────────────────────
+// * parameter[3].name = "ConsentConstrainedMembers"
+// * parameter[3].use = #out
+// * parameter[3].min = 0
+// * parameter[3].max = "*"
+// * parameter[3].type = "Bundle"
+// // * parameter[3].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#ConsentConstrainedMembers"
+// * parameter[3].documentation = "Bundle of members excluded due to consent constraints."
+
 // // **Step 1: slice parameter by name**
 // * parameter ^slicing.discriminator[0].type = #value
 // * parameter ^slicing.discriminator[0].path = "name"
