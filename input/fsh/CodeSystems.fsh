@@ -214,21 +214,21 @@ Description: "Identifier Type codes that extend those defined in http://terminol
 * ^caseSensitive = false
 
 // --------------------------
-// // Utilizing https://hl7.org/fhir/us/ndh/2023Sep/CodeSystem/OrgTypeCS
+// Utilizing https://hl7.org/fhir/us/ndh/2023Sep/CodeSystem/OrgTypeCS
 // FHIR-48088
-// CodeSystem: OrgTypeCS
-// Title: "Organization Type"
-// Description: "Categories of organizations based on criteria in provider directories."
-// * ^experimental = false
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
-// * #fac "Facility" "A physical healthcare facility"
-// * #prvgrp "Provider Group" "A healthcare provider entity"
-// * #payer "Payer" "A healthcare payer"
-// * #atyprv "Atypical Provider" "Providers that do not provide healthcare"
-// * #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
-// * #ntwk "Network" "A healthcare provider insurance network"
-// * ^caseSensitive = true
+CodeSystem: OrgTypeCS
+Title: "Organization Type"
+Description: "Categories of organizations based on criteria in provider directories."
+* ^experimental = false
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+* #fac "Facility" "A physical healthcare facility"
+* #prvgrp "Provider Group" "A healthcare provider entity"
+* #payer "Payer" "A healthcare payer"
+* #atyprv "Atypical Provider" "Providers that do not provide healthcare"
+* #bus "Non-Healthcare Business" "An organization that does not meet the definitions of a Healthcare or Atypical Provider, and is not a payer or healthcare facility"
+* #ntwk "Network" "A healthcare provider insurance network"
+* ^caseSensitive = true
 
 //CodeSystem: PDexServiceTypeCodes
 //Title: "Service Type Codes"

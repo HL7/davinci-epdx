@@ -56,14 +56,17 @@ Description: "A Parameters profile defining the result of a $bulk-member-match o
 
 // 3) Define your three slices
 * parameter contains MatchedMembers 1..1
+* parameter[MatchedMembers].value[x] 0..0
 * parameter[MatchedMembers].name = "MatchedMembers"
 * parameter[MatchedMembers].resource only PDexMemberMatchGroup
 
 * parameter contains NonMatchedMembers 0..1
 * parameter[NonMatchedMembers].name = "NonMatchedMembers"
+* parameter[NonMatchedMembers].value[x] 0..0
 * parameter[NonMatchedMembers].resource only PDexMemberNoMatchGroup
 
 * parameter contains ConsentConstrainedMembers 0..1
 * parameter[ConsentConstrainedMembers].name = "ConsentConstrainedMembers"
+* parameter[ConsentConstrainedMembers].value[x] 0..0
 * parameter[ConsentConstrainedMembers].resource only PDexMemberNoMatchGroup
 

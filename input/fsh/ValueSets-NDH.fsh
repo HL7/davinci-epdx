@@ -81,14 +81,13 @@
 // * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 // * ^extension.valueCode = #fm
 
-// ValueSet: EndpointPayloadTypeVS
-// Title: "Endpoint Payload Type Value Set"
-// Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
-// * ^experimental = false
-// * EndpointPayloadTypeCS#NA  "Not Applicable"
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
-
+ValueSet: EndpointPayloadTypeVS
+Title: "Endpoint Payload Type Value Set"
+Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
+* ^experimental = false
+* EndpointPayloadTypeCS#NA  "Not Applicable"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 // ValueSet: IdentifierStatusVS
 // Title: "Identifier Status Value Set"
@@ -117,13 +116,13 @@
 // * ^extension.valueCode = #fm
 
 
-// ValueSet: TrustFrameworkTypeVS
-// Title: "Trust Framework Type Value Set"
-// Description: "Trust Framework Type"
-// * ^experimental = false
-// * codes from system TrustFrameworkTypeCS
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
+ValueSet: TrustFrameworkTypeVS
+Title: "Trust Framework Type Value Set"
+Description: "Trust Framework Type"
+* ^experimental = false
+* codes from system TrustFrameworkTypeCS
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 // ValueSet: NdhVerificationStatusVS
