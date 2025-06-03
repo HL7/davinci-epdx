@@ -146,15 +146,14 @@
 
 
 // Alias: $EndpointPayloadTypeCS = http://hl7.org/fhir/us/ndh/CodeSystem/EndpointPayloadTypeCS
-// CodeSystem: EndpointPayloadTypeCS
-//   Title: "Endpoint Payload Types Code System"
-//   Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
-// * ^experimental = false
-// * #NA "Not Applicable" "Not Applicable"
-// * ^caseSensitive = true
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
-
+CodeSystem: EndpointPayloadTypeCS
+Title: "Endpoint Payload Types Code System"
+Description:  "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
+* ^experimental = false
+* #NA "Not Applicable" "Not Applicable"
+* ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
 // CodeSystem: NdhAssociatedServersTypeCS
@@ -244,28 +243,28 @@
 // * ^extension.valueCode = #fm
 
 
-// CodeSystem: TrustFrameworkTypeCS
-// Title: "Trust FrameworkType Code System"
-// Description: "Trust Framework Type"
-// * ^experimental = false
-// * #DirectTrust "Direct Trust"
-// * #CareQuality "Carequality"
-// * #Commonwell "Commonwell"
-// * #TEFCA "TEFCA"
-// * #PayerToPayer	"Payer to Payer Trust Network"
-// * #Exchange	"Exchange Required by Federal Regulations"
-// * #PCDH "Patient Centered Data Home"
-// * ^caseSensitive = true
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
+CodeSystem: TrustFrameworkTypeCS
+Title: "Trust FrameworkType Code System"
+Description: "Trust Framework Type"
+* ^experimental = false
+* #DirectTrust "Direct Trust"
+* #CareQuality "Carequality"
+* #Commonwell "Commonwell"
+* #TEFCA "TEFCA"
+* #PayerToPayer	"Payer to Payer Trust Network"
+* #Exchange	"Exchange Required by Federal Regulations"
+* #PCDH "Patient Centered Data Home"
+* ^caseSensitive = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
 
 
-// CodeSystem: TrustProfileCS
-// Title: "Trust Profile Code System"
-// Description: "Trust Profile"
-// * ^experimental = false
-// * ^caseSensitive = true
-// * #udap "UDAP" "UDAP"
-// * #smart "SMART" "SMART"
-// * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-// * ^extension.valueCode = #fm
+CodeSystem: TrustProfileCS
+Title: "Trust Profile Code System"
+Description: "Trust Profile"
+* ^experimental = false
+* ^caseSensitive = true
+* #udap "UDAP" "UDAP"
+* #smart "SMART" "SMART"
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
