@@ -247,13 +247,13 @@ CodeSystem: TrustFrameworkTypeCS
 Title: "Trust FrameworkType Code System"
 Description: "Trust Framework Type"
 * ^experimental = false
-* #DirectTrust "Direct Trust"
-* #CareQuality "Carequality"
-* #Commonwell "Commonwell"
-* #TEFCA "TEFCA"
-* #PayerToPayer	"Payer to Payer Trust Network"
-* #Exchange	"Exchange Required by Federal Regulations"
-* #PCDH "Patient Centered Data Home"
+* #DirectTrust "Direct Trust" "Direct Trust"
+* #CareQuality "Carequality" "Carequality"
+* #Commonwell "Commonwell" "Commonwell"
+* #TEFCA "TEFCA" "Trusted Exchange Framework and Common Agreement"
+* #PayerToPayer	"Payer to Payer Trust Network" "Payer to Payer Trust Network"
+* #Exchange	"Exchange Required by Federal Regulations" "Exchange Required by Federal Regulations"
+* #PCDH "Patient Centered Data Home" "Patient Centered Data Home"
 * ^caseSensitive = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
