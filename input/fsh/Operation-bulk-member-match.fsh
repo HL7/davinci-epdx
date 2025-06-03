@@ -20,6 +20,83 @@ Description: "Bulk Member Match Operation"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 
 // // ─── Add “in” parameter for MemberBundle ─────────────────────────────────────
+//* parameter[0].name = #MemberBundle
+//* parameter[0].use = #in
+//* parameter[0].min = 1
+//* parameter[0].max = "1"
+//* parameter[0].type = #Bundle
+// * parameter[0].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+//* parameter[0].documentation = "Bundle containing multiple Members to be matched."
+
+// 2) Declare your one slice for MemberBundle
+//* parameter contains MemberBundle 1..*
+* parameter[+].name = #MemberBundle
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "*"
+//* parameter[MemberBundle].type = #Bundle
+// * parameter[0].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
+//* parameter[=].documentation = "Bundle containing multiple Members to be matched."
+
+
+* parameter[=].part[+].name = #MemberPatient
+* parameter[=].part[=].use = #in
+* parameter[=].part[=].type = #Patient
+* parameter[=].part[=].min = 1
+* parameter[=].part[=].max = "1"
+* parameter[=].part[=].targetProfile = Canonical($HRexPatientDemographics)
+
+
+* parameter[=].part[+].name = #CoverageToMatch
+* parameter[=].part[=].use = #in
+* parameter[=].part[=].type = #Coverage
+* parameter[=].part[=].min = 1
+* parameter[=].part[=].max = "1"
+* parameter[=].part[=].targetProfile = Canonical($HRexCoverage)
+
+
+* parameter[=].part[+].name = #CoverageToLink
+* parameter[=].part[=].use = #in
+* parameter[=].part[=].type = #Coverage
+* parameter[=].part[=].min = 0
+* parameter[=].part[=].max = "1"
+* parameter[=].part[=].targetProfile = Canonical($HRexCoverage)
+
+
+* parameter[=].part[+].name = #Consent
+* parameter[=].part[=].use = #in
+* parameter[=].part[=].type = #Consent
+* parameter[=].part[=].min = 1
+* parameter[=].part[=].max = "1"
+* parameter[=].part[=].targetProfile = Canonical($HRexConsent)
+
+
+
+* parameter[+].name = #MatchedMembers
+* parameter[=].use = #out
+* parameter[=].type = #Group
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].targetProfile = Canonical(PDexMemberMatchGroup)
+
+
+* parameter[+].name = #NonMatchedMembers
+* parameter[=].use = #out
+* parameter[=].type = #Group
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
+
+
+* parameter[+].name = #ConsentConstrainedMembers
+* parameter[=].use = #out
+* parameter[=].type = #Group
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
+
+
+// // ─── Add “in” parameter for MemberBundle ─────────────────────────────────────
 // * parameter[0].name = "MemberBundle"
 // * parameter[0].use = #in
 // * parameter[0].min = 1
