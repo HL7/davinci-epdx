@@ -11,7 +11,7 @@
 %URL value 'https://codesystem.x12.org/005010/%
 %Error from https://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes%
 %No definition could be found for URL value 'https://codesystem.x12.org/external/886%
-
+%https://valueset.x12.org/x217/005010%
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
@@ -21,13 +21,9 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/St
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
 
-
 # TSMG 2025-04-21 Motion passes 8-0-0 https://confluence.hl7.org/spaces/TSMG/pages/325464658/2025-04-21+TSMG+Agenda+and+Minutes. Exceptions Granted for PDex specific code systems: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS, PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType, PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS, PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes, ProvenanceAgentRoleType, ProvenancePayerDataSource
 %Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)%
 
-
-# Unable to resolve X12 005010 code
-%https://valueset.x12.org/x217/005010%
 
 # Da Vinci Template Warnings
 %The Change Log page (changehistory.html) does not include any Jira tracker items links for the section with title STU%
@@ -79,11 +75,9 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.1.0' because the code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes| was not found%
 %A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found, so the code cannot be validated%
 
-# FHIR-49009: Implementation Guide Errors v610@npm: format fails. for v610
+# FHIR-49009: Implementation Guide Errors v610@npm: format fails for v610 or V311
 %The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v610%
 %The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core/v610 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
-
-# FHIR-49009: Implementation Guide Errors v610@npm: format fails. for v311
 %The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v311%
 %The packageId hl7.fhir.us.core.v311 points to the canonical http://hl7.org/fhir/us/core/v311 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
 
@@ -98,10 +92,4 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # Example link - Warning introduced in Publisher 2.0.3
 %No definition could be found for URL value 'hl7.org/fhir/us/davinci-pdex'%
-
-# OperatioDefinition Validation
-%The in profile defines a parameter 'MemberBundle' but this is not in the parameters list%
-%The out profile defines a parameter 'MatchedMembers' but this is not in the parameters list%
-%The out profile defines a parameter 'NonMatchedMembers' but this is not in the parameters list%
-%The out profile defines a parameter 'ConsentConstrainedMembers' but this is not in the parameters list%
 
