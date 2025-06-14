@@ -42,6 +42,7 @@ The [PDex work group can be found on confluence](https://confluence.hl7.org/page
 
 **Technical support and guidance:**
 * Rick Geimer (Lantana Consulting Group)
+* Corey Spears (Lantana Consulting Group)
 
 **Sponsoring Work Group**
 
