@@ -1,0 +1,77 @@
+# US Core Immunization - Da Vinci Payer Data Exchange v2.1.1
+
+* [**Table of Contents**](toc.md)
+* [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
+* [**Data Mapping**](datamapping.md)
+* **US Core Immunization**
+
+## US Core Immunization
+
+| |
+| :--- |
+| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+
+[Previous Page - US Core Goal](USCoreGoal.md)
+
+Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the [US Core 3.1.1 Immunization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-immunization.html) or [US Core 6.1.0 Immunization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
+
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Immunization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-immunization.html) or [US Core 6.1.0 Immunization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-immunization.html) resource are:
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Immunization.status | status | 1..1 | code |
+| Immunization.statusReason | statusReason | 0..1 | CodeableConcept |
+| Immunization.vaccineCode | vaccineCode | 1..1 | CodeableConcept |
+| Immunization.patient | patient | 1..1 | Reference(US Core Patient Profile) |
+| Immunization.occurrence[x] | occurrence[x] | 1..1 |   |
+| Immunization.primarySource | primarySource | 1..1 | boolean |
+| Immunization.performer.actor | actor | 1..1 | Reference(Practitioner | PractitionerRole | Organization) |
+| Immunization.protocolApplied.doseNumber[x] | doseNumber[x] | 1..1 |   |
+
+*[Table Definition](index.md#mapping-adjudicated-claims-encounter-and-prior-authorization-information)*
+
+#### Example Immunization Resource:
+
+An example mapping of an Immunization resource is shown below:
+
+```
+
+{
+  "resourceType" : "Immunization",
+  "id" : "imm-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization"
+    ]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated Narrative with Detailsid: imm-1meta: status: completedvaccineCode: influenza, injectable, quadrivalent, contains preservative <span style=\"background: LightGoldenRodYellow\">(Details : {http://hl7.org/fhir/sid/cvx code '158' = 'influenza, injectable, quadrivalent', given as 'influenza, injectable, quadrivalent, contains preservative'}; {http://hl7.org/fhir/sid/ndc code '49281-0621-15' = '49281-0621-15', given as 'FLUZONE QUADRIVALENT'})</span>patient: <a href=\"Patient-example.html\">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007</a>occurrence: Jan 8, 2016, 12:00:00 AMprimarySource: false</div>"
+  },
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [
+      {
+        "system" : "http://hl7.org/fhir/sid/cvx",
+        "code" : "158",
+        "display" : "influenza, injectable, quadrivalent, contains preservative"
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/ndc",
+        "code" : "49281-0621-15",
+        "display" : "FLUZONE QUADRIVALENT"
+      }
+    ]
+  },
+  "patient" : {
+    "reference" : "Patient/example",
+    "display" : "Amy Shaw"
+  },
+  "occurrenceDateTime" : "2016-01-08",
+  "primarySource" : false
+}
+
+```
+
+[Next Page - US Core ImplantableDevice](USCoreImplantableDevice.md)
+

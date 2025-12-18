@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="BulkMemberMatchDataExport"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition BulkMemberMatchDataExport</b></p><a name="BulkMemberMatchDataExport"> </a><a name="hcBulkMemberMatchDataExport"> </a><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>_outputFormat</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a><br/>(<a href="https://hl7.org/fhir/R4/search.html#string">string</a>)</td><td/><td><div><p>The format for the bulk files (default: application/fhir+ndjson). Must be application/fhir+ndjson for this operation.</p>
+</div></td></tr><tr><td>IN</td><td>_since</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#instant">instant</a></td><td/><td><div><p>Only include resources modified since this instant (format: YYYY-MM-DDTHH:MM:SS+HH:MM)</p>
+</div></td></tr><tr><td>IN</td><td>_type</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Comma-separated list of resource types to include in the bulk export (e.g., Patient,Condition,MedicationRequest). If omitted, all relevant types are included.</p>
+</div></td></tr><tr><td>IN</td><td>_elements</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Comma-separated list of elements to include in the bulk export (e.g., Condition.code,Condition.subject)</p>
+</div></td></tr><tr><td>OUT</td><td>exportManifest</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td/><td><div><p>URL to the manifest file containing references to ndjson files with bulk member health data. The manifest file is accessed using the returned URL with an OAuth2 bearer token.</p>
+</div></td></tr></table><div><p>This operation is invoked on Group resources to export bulk member health data in FHIR format. The response includes a manifest file with URLs to ndjson files.</p>
+</div></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport"/>
+  <version value="2.1.1"/>
+  <name value="BulkMemberMatchDataExport"/>
+  <title value="Bulk Member Match Data Export"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="true"/>
+  <date value="2024-12-16T00:00:00Z"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <code value="davinci-data-export"/>
+  <comment value="This operation is invoked on Group resources to export bulk member health data in FHIR format. The response includes a manifest file with URLs to ndjson files."/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="_outputFormat"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The format for the bulk files (default: application/fhir+ndjson). Must be application/fhir+ndjson for this operation."/>
+    <type value="string"/>
+    <searchType value="string"/>
+  </parameter>
+  <parameter>
+    <name value="_since"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Only include resources modified since this instant (format: YYYY-MM-DDTHH:MM:SS+HH:MM)"/>
+    <type value="instant"/>
+  </parameter>
+  <parameter>
+    <name value="_type"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Comma-separated list of resource types to include in the bulk export (e.g., Patient,Condition,MedicationRequest). If omitted, all relevant types are included."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="_elements"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Comma-separated list of elements to include in the bulk export (e.g., Condition.code,Condition.subject)"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="exportManifest"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="URL to the manifest file containing references to ndjson files with bulk member health data. The manifest file is accessed using the returned URL with an OAuth2 bearer token."/>
+    <type value="url"/>
+  </parameter>
+</OperationDefinition>

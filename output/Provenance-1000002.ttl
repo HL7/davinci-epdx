@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Provenance/1000002> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1000002"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2019-07-14T19:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Provenance 1000002</b></p><a name=\"1000002\"> </a><a name=\"hc1000002\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2019-07-14 19:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provenance.html\">PDex Provenance</a></p></div><p>Provenance for <a href=\"Encounter-6.html\">Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2020-07-10 16:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}\">Author</span></td><td><a href=\"Organization-ProviderOrg1.html\">Organization Provider 1</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Encounter/6> ;
+     fhir:reference [ fhir:v "Encounter/6" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+       fhir:reference [ fhir:v "Organization/ProviderOrg1" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>
+           ] ;
+           fhir:code [ fhir:v "hl7ccda" ] ;
+           fhir:display [ fhir:v "HL7 C-CDA" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Encounter/6> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

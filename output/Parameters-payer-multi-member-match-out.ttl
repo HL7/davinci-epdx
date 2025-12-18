@@ -1,0 +1,326 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Parameters/payer-multi-member-match-out> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "payer-multi-member-match-out"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out>
+     ] )
+  ] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "MatchedMembers" ] ;
+     fhir:Parameters.parameter.resource ( [
+       a fhir:Group ;
+       fhir:id [ fhir:v "07e72a15407547bf9d03f522aa536a72" ] ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Matched members group</div>"^^rdf:XMLLiteral ]
+       ] ;
+       fhir:contained ( [
+         a fhir:Patient ;
+         fhir:id [ fhir:v "1" ] ;
+         fhir:identifier ( [
+           fhir:type [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+                 fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+               ] ;
+               fhir:code [ fhir:v "MB" ]
+             ] )
+           ] ;
+           fhir:system [
+             fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
+             fhir:l <http://example.org/old-payer/identifiers/member>
+           ] ;
+           fhir:value [ fhir:v "55678" ] ;
+           fhir:assigner [
+             fhir:display [ fhir:v "Old Payer" ]
+           ]
+         ] ) ;
+         fhir:name ( [
+           fhir:use [ fhir:v "official" ] ;
+           fhir:family [ fhir:v "Person" ] ;
+           fhir:given ( [ fhir:v "Patricia" ] [ fhir:v "Ann" ] )
+         ] ) ;
+         fhir:gender [ fhir:v "female" ] ;
+         fhir:birthDate [ fhir:v "1974-12-25"^^xsd:date ]
+       ] [
+         a fhir:Patient ;
+         fhir:id [ fhir:v "2" ] ;
+         fhir:identifier ( [
+           fhir:type [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+                 fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+               ] ;
+               fhir:code [ fhir:v "MB" ]
+             ] )
+           ] ;
+           fhir:system [
+             fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
+             fhir:l <http://example.org/old-payer/identifiers/member>
+           ] ;
+           fhir:value [ fhir:v "45567" ] ;
+           fhir:assigner [
+             fhir:display [ fhir:v "Old Payer" ]
+           ]
+         ] ) ;
+         fhir:name ( [
+           fhir:use [ fhir:v "official" ] ;
+           fhir:family [ fhir:v "Smith" ] ;
+           fhir:given ( [ fhir:v "William" ] [ fhir:v "John" ] )
+         ] ) ;
+         fhir:gender [ fhir:v "male" ] ;
+         fhir:birthDate [ fhir:v "1958-12-25"^^xsd:date ]
+       ] ) ;
+       fhir:identifier ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/sid/us-npi>
+         ] ;
+         fhir:value [ fhir:v "0123456789" ]
+       ] ) ;
+       fhir:type [ fhir:v "person" ] ;
+       fhir:actual [ fhir:v true ] ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+           ] ;
+           fhir:code [ fhir:v "match" ] ;
+           fhir:display [ fhir:v "Matched" ]
+         ] )
+       ] ;
+       fhir:managingEntity [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "9876543210" ]
+         ] ;
+         fhir:display [ fhir:v "Old Health Plan" ]
+       ] ;
+       fhir:member ( [
+         fhir:entity [
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1001> ;
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters>
+             ] ;
+             fhir:value [
+               a fhir:Reference ;
+               fhir:l <#1> ;
+               fhir:reference [ fhir:v "#1" ]
+             ]
+           ] ) ;
+           fhir:reference [ fhir:v "Patient/1001" ]
+         ]
+       ] [
+         fhir:entity [
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/2002> ;
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters>
+             ] ;
+             fhir:value [
+               a fhir:Reference ;
+               fhir:l <#2> ;
+               fhir:reference [ fhir:v "#2" ]
+             ]
+           ] ) ;
+           fhir:reference [ fhir:v "Patient/2002" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "NonMatchedMembers" ] ;
+     fhir:Parameters.parameter.resource ( [
+       a fhir:Group ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Non-matched members group</div>"^^rdf:XMLLiteral ]
+       ] ;
+       fhir:contained ( [
+         a fhir:Patient ;
+         fhir:id [ fhir:v "3" ] ;
+         fhir:identifier ( [
+           fhir:type [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+                 fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+               ] ;
+               fhir:code [ fhir:v "MB" ]
+             ] )
+           ] ;
+           fhir:system [
+             fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
+             fhir:l <http://example.org/old-payer/identifiers/member>
+           ] ;
+           fhir:value [ fhir:v "45567" ] ;
+           fhir:assigner [
+             fhir:display [ fhir:v "Old Payer" ]
+           ]
+         ] ) ;
+         fhir:name ( [
+           fhir:use [ fhir:v "official" ] ;
+           fhir:family [ fhir:v "Jones" ] ;
+           fhir:given ( [ fhir:v "Adam" ] [ fhir:v "Jacob" ] )
+         ] ) ;
+         fhir:gender [ fhir:v "male" ] ;
+         fhir:birthDate [ fhir:v "1957-12-25"^^xsd:date ]
+       ] ) ;
+       fhir:identifier ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/sid/us-npi>
+         ] ;
+         fhir:value [ fhir:v "0123456789" ]
+       ] ) ;
+       fhir:type [ fhir:v "person" ] ;
+       fhir:actual [ fhir:v true ] ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+           ] ;
+           fhir:code [ fhir:v "nomatch" ] ;
+           fhir:display [ fhir:v "Not Matched" ]
+         ] )
+       ] ;
+       fhir:managingEntity [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "9876543210" ]
+         ] ;
+         fhir:display [ fhir:v "Old Health Plan" ]
+       ] ;
+       fhir:member ( [
+         fhir:entity [
+           fhir:l <#3> ;
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters>
+             ] ;
+             fhir:value [
+               a fhir:Reference ;
+               fhir:l <#3> ;
+               fhir:reference [ fhir:v "#3" ]
+             ]
+           ] ) ;
+           fhir:reference [ fhir:v "#3" ]
+         ]
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "ConsentConstrainedMembers" ] ;
+     fhir:Parameters.parameter.resource ( [
+       a fhir:Group ;
+       fhir:text [
+         fhir:status [ fhir:v "generated" ] ;
+         fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Consent-constrained members group</div>"^^rdf:XMLLiteral ]
+       ] ;
+       fhir:contained ( [
+         a fhir:Patient ;
+         fhir:id [ fhir:v "4" ] ;
+         fhir:identifier ( [
+           fhir:type [
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+                 fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+               ] ;
+               fhir:code [ fhir:v "MB" ]
+             ] )
+           ] ;
+           fhir:system [
+             fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
+             fhir:l <http://example.org/old-payer/identifiers/member>
+           ] ;
+           fhir:value [ fhir:v "45567" ] ;
+           fhir:assigner [
+             fhir:display [ fhir:v "Old Payer" ]
+           ]
+         ] ) ;
+         fhir:name ( [
+           fhir:use [ fhir:v "official" ] ;
+           fhir:family [ fhir:v "Noway" ] ;
+           fhir:given ( [ fhir:v "Janis" ] [ fhir:v "Noelle" ] )
+         ] ) ;
+         fhir:gender [ fhir:v "female" ] ;
+         fhir:birthDate [ fhir:v "1956-12-25"^^xsd:date ]
+       ] ) ;
+       fhir:identifier ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/sid/us-npi>
+         ] ;
+         fhir:value [ fhir:v "0123456789" ]
+       ] ) ;
+       fhir:type [ fhir:v "person" ] ;
+       fhir:actual [ fhir:v true ] ;
+       fhir:code [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+           ] ;
+           fhir:code [ fhir:v "consentconstraint" ] ;
+           fhir:display [ fhir:v "Consent Constraint" ]
+         ] )
+       ] ;
+       fhir:managingEntity [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "9876543210" ]
+         ] ;
+         fhir:display [ fhir:v "Old Health Plan" ]
+       ] ;
+       fhir:member ( [
+         fhir:entity [
+           fhir:l <#4> ;
+           fhir:extension ( [
+             fhir:url [
+               fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"^^xsd:anyURI ;
+               fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters>
+             ] ;
+             fhir:value [
+               a fhir:Reference ;
+               fhir:l <#4> ;
+               fhir:reference [ fhir:v "#4" ]
+             ]
+           ] ) ;
+           fhir:reference [ fhir:v "#4" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/2002> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

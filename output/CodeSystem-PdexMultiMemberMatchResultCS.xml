@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="PdexMultiMemberMatchResultCS"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem PdexMultiMemberMatchResultCS</b></p><a name="PdexMultiMemberMatchResultCS"> </a><a name="hcPdexMultiMemberMatchResultCS"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">match<a name="PdexMultiMemberMatchResultCS-match"> </a></td><td>Matched</td><td>Group of successfully matched members from a multi-member match operation.</td></tr><tr><td style="white-space:nowrap">nomatch<a name="PdexMultiMemberMatchResultCS-nomatch"> </a></td><td>Not Matched</td><td>Group of submitted members that failed to result in a match in the multi-member match operation.</td></tr><tr><td style="white-space:nowrap">consentconstraint<a name="PdexMultiMemberMatchResultCS-consentconstraint"> </a></td><td>Consent Constraint</td><td>Group of successfully matched members but consent request cannot be complied with.</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+  <version value="2.1.1"/>
+  <name value="PdexMultiMemberMatchResultCS"/>
+  <title value="PDex Multi-Member Match Result Code System"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-17T14:48:28-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Code set to describe the results group from a multi-member Match operation"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License"/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="match"/>
+    <display value="Matched"/>
+    <definition value="Group of successfully matched members from a multi-member match operation."/>
+  </concept>
+  <concept>
+    <code value="nomatch"/>
+    <display value="Not Matched"/>
+    <definition value="Group of submitted members that failed to result in a match in the multi-member match operation."/>
+  </concept>
+  <concept>
+    <code value="consentconstraint"/>
+    <display value="Consent Constraint"/>
+    <definition value="Group of successfully matched members but consent request cannot be complied with."/>
+  </concept>
+</CodeSystem>

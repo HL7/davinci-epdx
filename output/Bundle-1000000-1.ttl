@@ -1,0 +1,434 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Bundle/1000000-1> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1000000-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Bundle"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "transaction-response"] ; # 
+  fhir:timestamp [ fhir:v "2019-12-31T20:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://example.com/base/fhir/Patient?ct=W2idG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/fhir/Patient?ct=W2idG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Patient/1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Patient/1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Patient/1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Encounter/6-1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Encounter/6-1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Encounter/6-1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Encounter/7-1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Encounter/7-1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Encounter/7-1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Provenance/1000002-1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Provenance/1000002-1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Provenance/1000002-1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Provenance/1000003-1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Provenance/1000003-1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Provenance/1000003-1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Provenance/1000004-1"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Provenance/1000004-1>
+     ] ;
+     fhir:resource ( <https://example.com/base/Provenance/1000004-1> ) ;
+     fhir:response [
+       fhir:status [ fhir:v "200" ]
+     ]
+  ] ) . # 
+
+<https://example.com/base/Patient/1> a fhir:Patient ;
+  fhir:id [ fhir:v "1"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-07-07T13:26:22.0314215+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en-US"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><a name=\"Patient_1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 1</b></p><a name=\"1\"> </a><a name=\"hc1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2019-07-07 13:26:22+0000; Language: en-US</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-patient.html\">US Core Patient Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-NullFlavor UNK}\">unknown</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>Medical record number/1234-234-1243-12345678901m</li><li>Health Plan Identifier/1234-234-1243-12345678901u</li><li>Patient external identifier/1234-234-1243-12345678901a</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: (443)555-1212</li><li>ph: (410)678-2323</li><li>123 Main Street Pittsburgh PA 12519 </li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://www.xxxhealthplan.com/fhir/memberidentifier"^^xsd:anyURI ;
+       fhir:l <https://www.xxxhealthplan.com/fhir/memberidentifier>
+     ] ;
+     fhir:value [ fhir:v "https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://www.xxxhealthplan.com/fhir/medicalrecordnumber"^^xsd:anyURI ;
+       fhir:l <https://www.xxxhealthplan.com/fhir/medicalrecordnumber>
+     ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901m" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "XV" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://www.xxxhealthplan.com/fhir/uniquememberidentifier"^^xsd:anyURI ;
+       fhir:l <https://www.xxxhealthplan.com/fhir/uniquememberidentifier>
+     ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901u" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "PT" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "https://www.xxxhealthplan.com/fhir/patacctnum"^^xsd:anyURI ;
+       fhir:l <https://www.xxxhealthplan.com/fhir/patacctnum>
+     ] ;
+     fhir:value [ fhir:v "1234-234-1243-12345678901a" ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "Appleseed" ] ;
+     fhir:given ( [ fhir:v "Johnny" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(443)555-1212" ] ;
+     fhir:rank [ fhir:v "1"^^xsd:positiveInteger ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "(410)678-2323" ] ;
+     fhir:rank [ fhir:v "2"^^xsd:positiveInteger ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1986-01-01"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:type [ fhir:v "physical" ] ;
+     fhir:line ( [ fhir:v "123 Main Street" ] ) ;
+     fhir:city [ fhir:v "Pittsburgh" ] ;
+     fhir:state [ fhir:v "PA" ] ;
+     fhir:postalCode [ fhir:v "12519" ]
+  ] ) ; # 
+  fhir:maritalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-NullFlavor>
+       ] ;
+       fhir:code [ fhir:v "UNK" ]
+     ] )
+  ] . # 
+
+<https://example.com/base/Encounter/6-1> a fhir:Encounter ;
+  fhir:id [ fhir:v "6-1"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-07-14T19:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_6-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter 6-1</b></p><a name=\"6-1\"> </a><a name=\"hc6-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2019-07-14 19:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-encounter.html\">US Core Encounter Profile</a></p></div><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (Ambulatory)</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 11429006}\">Consultation</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "AMB" ] ;
+     fhir:display [ fhir:v "Ambulatory" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       a sct:11429006 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/731000124108" ] ;
+       fhir:code [ fhir:v "11429006" ] ;
+       fhir:display [ fhir:v "Consultation" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<https://example.com/base/Encounter/7-1> a fhir:Encounter ;
+  fhir:id [ fhir:v "7-1"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-10-15T20:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_7-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter 7-1</b></p><a name=\"7-1\"> </a><a name=\"hc7-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2019-10-15 20:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-encounter.html\">US Core Encounter Profile</a></p></div><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\">ActCode: AMB</a> (Ambulatory)</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 11429006}\">Consultation</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "finished"] ; # 
+  fhir:class [
+     fhir:system [
+       fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+       fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+     ] ;
+     fhir:code [ fhir:v "AMB" ] ;
+     fhir:display [ fhir:v "Ambulatory" ]
+  ] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       a sct:11429006 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/731000124108" ] ;
+       fhir:code [ fhir:v "11429006" ] ;
+       fhir:display [ fhir:v "Consultation" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] . # 
+
+<https://example.com/base/Provenance/1000002-1> a fhir:Provenance ;
+  fhir:id [ fhir:v "1000002-1"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2019-07-14T19:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Provenance_1000002-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Provenance 1000002-1</b></p><a name=\"1000002-1\"> </a><a name=\"hc1000002-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2019-07-14 19:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provenance.html\">PDex Provenance</a></p></div><p>Provenance for <a href=\"Bundle-1000000-1.html#https-//example.com/base/Encounter/6-1\">Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2020-07-10 16:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}\">Author</span></td><td><a href=\"Organization-ProviderOrg1.html\">Organization Provider 1</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <https://example.com/base/Encounter/6-1> ;
+     fhir:reference [ fhir:v "https://example.com/base/Encounter/6-1" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+       fhir:reference [ fhir:v "Organization/ProviderOrg1" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>
+           ] ;
+           fhir:code [ fhir:v "hl7ccda" ] ;
+           fhir:display [ fhir:v "HL7 C-CDA" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> a fhir:Us .
+
+<https://example.com/base/Provenance/1000003-1> a fhir:Provenance ;
+  fhir:id [ fhir:v "1000003-1"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2019-10-15T20:26:23.217+00:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Provenance_1000003-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Provenance 1000003-1</b></p><a name=\"1000003-1\"> </a><a name=\"hc1000003-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2019-10-15 20:26:23+0000</p></div><p>Provenance for <a href=\"Bundle-1000000-1.html#Encounter_7-1\">Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2020-07-10 16:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}\">Author</span></td><td><a href=\"Organization-ProviderOrg1.html\">Organization Provider 1</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Encounter/7-1> ;
+     fhir:reference [ fhir:v "Encounter/7-1" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-07-10T16:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+       fhir:reference [ fhir:v "Organization/ProviderOrg1" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>
+           ] ;
+           fhir:code [ fhir:v "hl7ccda" ] ;
+           fhir:display [ fhir:v "HL7 C-CDA" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Encounter/7-1> a fhir:Us .
+
+<https://example.com/base/Provenance/1000004-1> a fhir:Provenance ;
+  fhir:id [ fhir:v "1000004-1"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2019-12-31T20:26:23.217+00:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Provenance_1000004-1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Provenance 1000004-1</b></p><a name=\"1000004-1\"> </a><a name=\"hc1000004-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2019-12-31 20:26:23+0000</p></div><p>Provenance for <a href=\"Bundle-1000000-1.html\">Bundle: type = transaction-response; timestamp = 2019-12-31 20:26:23+0000</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2019-12-31 20:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>Role</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type transmitter}\">Transmitter</span></td><td/><td><a href=\"Organization-Payer1.html\">Organization Payer 1</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Bundle/1000000-1> ;
+     fhir:reference [ fhir:v "Bundle/1000000-1" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2019-12-31T20:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "transmitter" ] ;
+         fhir:display [ fhir:v "Transmitter" ]
+       ] )
+     ] ;
+     fhir:role ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/contractsignertypecodes"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/contractsignertypecodes>
+         ] ;
+         fhir:code [ fhir:v "TRANS" ]
+       ] )
+     ] ) ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+       fhir:reference [ fhir:v "Organization/Payer1" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

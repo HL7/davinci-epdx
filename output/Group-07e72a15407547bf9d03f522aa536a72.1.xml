@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="07e72a15407547bf9d03f522aa536a72.1"/>
+  <meta>
+    <lastUpdated value="2024-03-20T09:00:00.000Z"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Default Generated text for resource.</div>
+  </text>
+  <contained>
+    <Patient>
+      <id value="1"/>
+      <identifier>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+            <code value="MB"/>
+          </coding>
+        </type>
+        <system value="http://example.org/old-payer/identifiers/member"/>
+        <value value="55678"/>
+        <assigner>
+          <display value="Old Payer"/>
+        </assigner>
+      </identifier>
+      <name>
+        <use value="official"/>
+        <family value="Person"/>
+        <given value="Patricia"/>
+        <given value="Ann"/>
+      </name>
+      <gender value="female"/>
+      <birthDate value="1974-12-25"/>
+    </Patient>
+  </contained>
+  <contained>
+    <Patient>
+      <id value="2"/>
+      <identifier>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+            <code value="MB"/>
+          </coding>
+        </type>
+        <system value="http://example.org/old-payer/identifiers/member"/>
+        <value value="45567"/>
+        <assigner>
+          <display value="Old Payer"/>
+        </assigner>
+      </identifier>
+      <name>
+        <use value="official"/>
+        <family value="Smith"/>
+        <given value="William"/>
+        <given value="John"/>
+      </name>
+      <gender value="male"/>
+      <birthDate value="1958-12-25"/>
+    </Patient>
+  </contained>
+  <identifier>
+    <system value="http://hl7.org/fhir/sid/us-npi"/>
+    <value value="0123456789"/>
+  </identifier>
+  <type value="person"/>
+  <actual value="true"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+      <code value="match"/>
+      <display value="Matched"/>
+    </coding>
+  </code>
+  <name value="Matched Members"/>
+  <managingEntity>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="9876543210"/>
+    </identifier>
+    <display value="Old Health Plan"/>
+  </managingEntity>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+        <code value="match"/>
+        <display value="Matched"/>
+      </coding>
+    </code>
+    <valueReference>
+      <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="0123456789"/>
+      </identifier>
+    </valueReference>
+    <exclude value="false"/>
+    <period>
+      <start value="2024-03-20"/>
+    </period>
+  </characteristic>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+        <valueReference>
+          <reference value="#1"/>
+        </valueReference>
+      </extension>
+      <reference value="Patient/1001"/>
+    </entity>
+  </member>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+        <valueReference>
+          <reference value="#2"/>
+        </valueReference>
+      </extension>
+      <reference value="Patient/2002"/>
+    </entity>
+  </member>
+</Group>

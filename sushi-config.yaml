@@ -9,7 +9,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
-version: 2.1.0
+version: 2.1.1
 name: DaVinciPayerDataExchange
 title: Da Vinci Payer Data Exchange
 status: active  # draft | active | retired | unknown
@@ -173,6 +173,11 @@ pages:
           valueCode: informative
     provider-access-api.md:
       title: Provider Access API
+      extension:
+        - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: informative
+    provider-access-api-v2.md:
+      title: Provider Access API(v2)
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: informative
@@ -418,6 +423,7 @@ menu:
     Actors, Interactions and Payloads: pdeximplementationactorsinteractionsdatapayloadsandmethods.html
     Privacy, Safety, and Security: securityandprivacy.html
     Provider Access: provider-access-api.html
+    Provider Access (v2): provider-access-api-v2.html
     Payer-to-Payer(bulk): payertopayerbulkexchange.html
     Payer-to-Payer(single): payertopayerexchange.html
     Data Mapping: datamapping.html

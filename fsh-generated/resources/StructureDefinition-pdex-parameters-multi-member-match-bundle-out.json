@@ -1,0 +1,122 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-parameters-multi-member-match-bundle-out",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out",
+  "name": "PDexMultiMemberMatchResponseParameters",
+  "title": "PDex $multi-member-match response",
+  "status": "active",
+  "experimental": true,
+  "description": "A Parameters profile defining the result of a $bulk-member-match operation performed by a payer system",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Parameters",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Parameters",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Parameters.parameter",
+        "path": "Parameters.parameter",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "name"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "3"
+      },
+      {
+        "id": "Parameters.parameter:MatchedMembers",
+        "path": "Parameters.parameter",
+        "sliceName": "MatchedMembers",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:MatchedMembers.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "MatchedMembers"
+      },
+      {
+        "id": "Parameters.parameter:MatchedMembers.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Parameters.parameter:MatchedMembers.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "Group",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:NonMatchedMembers",
+        "path": "Parameters.parameter",
+        "sliceName": "NonMatchedMembers",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:NonMatchedMembers.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "NonMatchedMembers"
+      },
+      {
+        "id": "Parameters.parameter:NonMatchedMembers.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Parameters.parameter:NonMatchedMembers.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "Group",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:ConsentConstrainedMembers",
+        "path": "Parameters.parameter",
+        "sliceName": "ConsentConstrainedMembers",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Parameters.parameter:ConsentConstrainedMembers.name",
+        "path": "Parameters.parameter.name",
+        "patternString": "ConsentConstrainedMembers"
+      },
+      {
+        "id": "Parameters.parameter:ConsentConstrainedMembers.value[x]",
+        "path": "Parameters.parameter.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Parameters.parameter:ConsentConstrainedMembers.resource",
+        "path": "Parameters.parameter.resource",
+        "type": [
+          {
+            "code": "Group",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

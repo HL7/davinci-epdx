@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Coverage/coverage-link-2> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "coverage-link-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/old-payer"^^xsd:anyURI ;
+       fhir:l <http://example.org/old-payer>
+     ] ;
+     fhir:value [ fhir:v "234568" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:subscriberId [ fhir:v "432156790"] ; # 
+  fhir:beneficiary [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/2> ;
+     fhir:reference [ fhir:v "Patient/2" ]
+  ] ; # 
+  fhir:relationship [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/subscriber-relationship"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/subscriber-relationship>
+       ] ;
+       fhir:code [ fhir:v "self" ]
+     ] )
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2011-05-23"^^xsd:date ] ;
+     fhir:end [ fhir:v "2012-05-23"^^xsd:date ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "0123456789" ]
+     ] ;
+     fhir:display [ fhir:v "New Health Plan" ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/2> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

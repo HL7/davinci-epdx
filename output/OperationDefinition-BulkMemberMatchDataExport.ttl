@@ -1,0 +1,135 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "BulkMemberMatchDataExport"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition BulkMemberMatchDataExport</b></p><a name=\"BulkMemberMatchDataExport\"> </a><a name=\"hcBulkMemberMatchDataExport\"> </a><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>_outputFormat</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"https://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td><div><p>The format for the bulk files (default: application/fhir+ndjson). Must be application/fhir+ndjson for this operation.</p>\n</div></td></tr><tr><td>IN</td><td>_since</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#instant\">instant</a></td><td/><td><div><p>Only include resources modified since this instant (format: YYYY-MM-DDTHH:MM:SS+HH:MM)</p>\n</div></td></tr><tr><td>IN</td><td>_type</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Comma-separated list of resource types to include in the bulk export (e.g., Patient,Condition,MedicationRequest). If omitted, all relevant types are included.</p>\n</div></td></tr><tr><td>IN</td><td>_elements</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Comma-separated list of elements to include in the bulk export (e.g., Condition.code,Condition.subject)</p>\n</div></td></tr><tr><td>OUT</td><td>exportManifest</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>URL to the manifest file containing references to ndjson files with bulk member health data. The manifest file is accessed using the returned URL with an OAuth2 bearer token.</p>\n</div></td></tr></table><div><p>This operation is invoked on Group resources to export bulk member health data in FHIR format. The response includes a manifest file with URLs to ndjson files.</p>\n</div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-wg>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "fm"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "informative" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport>
+  ] ; # 
+  fhir:version [ fhir:v "2.1.1"] ; # 
+  fhir:name [ fhir:v "BulkMemberMatchDataExport"] ; # 
+  fhir:title [ fhir:v "Bulk Member Match Data Export"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2024-12-16T00:00:00Z"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "davinci-data-export"] ; # 
+  fhir:comment [ fhir:v "This operation is invoked on Group resources to export bulk member health data in FHIR format. The response includes a manifest file with URLs to ndjson files."] ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v true] ; # 
+  fhir:instance [ fhir:v true] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "_outputFormat" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The format for the bulk files (default: application/fhir+ndjson). Must be application/fhir+ndjson for this operation." ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "_since" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Only include resources modified since this instant (format: YYYY-MM-DDTHH:MM:SS+HH:MM)" ] ;
+     fhir:type [ fhir:v "instant" ]
+  ] [
+     fhir:name [ fhir:v "_type" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Comma-separated list of resource types to include in the bulk export (e.g., Patient,Condition,MedicationRequest). If omitted, all relevant types are included." ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "_elements" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "Comma-separated list of elements to include in the bulk export (e.g., Condition.code,Condition.subject)" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "exportManifest" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "URL to the manifest file containing references to ndjson files with bulk member health data. The manifest file is accessed using the returned URL with an OAuth2 bearer token." ] ;
+     fhir:type [ fhir:v "url" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

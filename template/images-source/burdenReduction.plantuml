@@ -1,0 +1,82 @@
+@startuml
+hide footbox
+actor "Provider"
+box "Clinical System" #LightGreen
+  participant EHR
+  database "EHR repository"
+end box
+box "Payer" #LightBlue
+  participant "Hooks Service"
+  participant "DTR client"
+  control converter as "Prior Auth\nconverter"
+  database "Rules repository"
+  participant processor as "Prior Auth\nprocessor"
+end box
+
+== Coverage Requirements Discovery (CRD) ==
+
+note right of EHR #white
+  For "what if" scenarios
+  EHR is played by DTR client
+end note
+"Provider" -> "EHR" : Create or update\norder / referral / etc.
+Activate EHR
+  "EHR" -> "Hooks Service" : Is there anything provider should know? 
+Activate "Hooks Service"
+  "Hooks Service" -> "Rules repository" : Retrieve member coverage and rules
+  "Hooks Service" --> "EHR repository" : Retrieve patient data
+Deactivate "Rules repository"  
+  "Hooks Service" -> processor : Pre-emptive prior authorization?
+Activate processor
+  "Hooks Service" <- processor : No / Yes(with auth number):
+Deactivate processor
+  "EHR" <- "Hooks Service" : Cards, system actions:
+Deactivate "Hooks Service"
+  "EHR" -> "Provider": "Be aware that:"
+  note right of Provider: No coverage requirements; or
+  note right of Provider: Prior auth is needed, here it is; and/or
+  note right of Provider: See __link__ to opioid guidelines; and/or
+  note right of Provider: That lab test was already run, results are here:... ; and/or
+  note right of Provider #aqua
+    There are documents to fill out
+    Click __here__ to launch DTR
+  end note
+Deactivate EHR
+== Documentation, Templates & Rules (DTR) ==
+"Provider" -> "EHR": Launch DTR
+  "EHR" -> "DTR client": Launch DTR (app or internal)
+Activate "DTR client"
+  "DTR client" <-> "Rules repository": Get Questionnaire package\n(Questionnaires,\nValueSets, Libraries)
+Activate "Rules repository"
+  "DTR client" -> "EHR repository": Retrieve data to populate\nQuestionnaireResponse / execute CQL
+Activate Provider
+  "DTR client" --> "Rules repository": Get next-question
+  "Rules repository" --> processor : Grant prior auth?
+Activate processor
+  "Rules repository" <-- processor : No /\nYes(w/ number)
+Deactivate processor
+  "DTR client" <-- "Rules repository": Updated Questionnaire\nw/ new question(s)
+  "DTR client" <- "Provider": User completes & verifies QuestionnaireResponse
+Deactivate Provider
+Deactivate "Rules repository"
+  "DTR client" -> "EHR repository": Store completed QuestionnaireResponse
+Deactivate "DTR client"
+== Prior Authorization Support (PAS) ==
+Provider -> EHR: "Request prior auth"
+alt FHIR Direct
+  EHR -> processor: FHIR prior auth request\n//(with completed form(s) from DTR process)//
+Activate processor
+  EHR <- processor: FHIR prior auth response
+Deactivate processor
+Else FHIR w/ X12 conversion
+  EHR -> converter: FHIR prior auth request\n//(with completed form(s) from DTR process)//
+Activate converter
+  converter -> processor: "X12 (+FHIR) prior auth request\nwith completed form(s)"
+Activate processor
+  processor -> converter: X12 prior auth response
+Deactivate processor
+  converter -> EHR: FHIR prior auth response
+Deactivate converter
+End
+EHR -> Provider: Display prior auth response
+@enduml

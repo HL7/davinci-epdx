@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="PDexAdjudicationCategoryDiscriminator"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet PDexAdjudicationCategoryDiscriminator</b></p><a name="PDexAdjudicationCategoryDiscriminator"> </a><a name="hcPDexAdjudicationCategoryDiscriminator"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href="ValueSet-PDexAdjudication.html">PDex Adjudication</a></li><li>Import all the codes that are contained in <a href="ValueSet-PDexPayerBenefitPaymentStatus.html">PDex Payer Benefit Payment Status</a></li><li>Include all codes defined in <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html"><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></a><span title="Version is not explicitly stated, which means it is fixed to 2.1.0, the version found through the package references"> version &#x1F4E6;2.1.0</span></li><li>Include all codes defined in <a href="CodeSystem-PDexAdjudicationDiscriminator.html"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;2.1.1</span></li></ul></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator"/>
+  <version value="2.1.1"/>
+  <name value="PDexAdjudicationCategoryDiscriminator"/>
+  <title value="PDex Adjudication Category Discriminator"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2025-12-17T14:48:28-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="This Valueset is not copyrighted."/>
+  <compose>
+    <include>
+      <valueSet value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication"/>
+    </include>
+    <include>
+      <valueSet value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus"/>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication"/>
+    </include>
+    <include>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator"/>
+    </include>
+  </compose>
+</ValueSet>

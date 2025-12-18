@@ -1,0 +1,78 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "PDexAdjudicationCategoryDiscriminator",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PDexAdjudicationCategoryDiscriminator</b></p><a name=\"PDexAdjudicationCategoryDiscriminator\"> </a><a name=\"hcPDexAdjudicationCategoryDiscriminator\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-PDexAdjudication.html\">PDex Adjudication</a></li><li>Import all the codes that are contained in <a href=\"ValueSet-PDexPayerBenefitPaymentStatus.html\">PDex Payer Benefit Payment Status</a></li><li>Include all codes defined in <a href=\"http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html\"><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.1.0, the version found through the package references\"> version &#x1F4E6;2.1.0</span></li><li>Include all codes defined in <a href=\"CodeSystem-PDexAdjudicationDiscriminator.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version &#x1F4E6;2.1.1</span></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator",
+  "version" : "2.1.1",
+  "name" : "PDexAdjudicationCategoryDiscriminator",
+  "title" : "PDex Adjudication Category Discriminator",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2025-12-17T14:48:28-05:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "copyright" : "This Valueset is not copyrighted.",
+  "compose" : {
+    "include" : [{
+      "valueSet" : ["http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication"]
+    },
+    {
+      "valueSet" : ["http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus"]
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator"
+    }]
+  }
+}

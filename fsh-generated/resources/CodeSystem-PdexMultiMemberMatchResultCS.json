@@ -1,0 +1,36 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PdexMultiMemberMatchResultCS",
+  "id": "PdexMultiMemberMatchResultCS",
+  "title": "PDex Multi-Member Match Result Code System",
+  "description": "Code set to describe the results group from a multi-member Match operation",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+  "concept": [
+    {
+      "code": "match",
+      "display": "Matched",
+      "definition": "Group of successfully matched members from a multi-member match operation."
+    },
+    {
+      "code": "nomatch",
+      "display": "Not Matched",
+      "definition": "Group of submitted members that failed to result in a match in the multi-member match operation."
+    },
+    {
+      "code": "consentconstraint",
+      "display": "Consent Constraint",
+      "definition": "Group of successfully matched members but consent request cannot be complied with."
+    }
+  ],
+  "experimental": false,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "caseSensitive": true,
+  "count": 3
+}

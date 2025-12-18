@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="provider-member-match-request-001"/>
+  <parameter>
+    <name value="MembersToMatch"/>
+    <part>
+      <name value="MemberPatient"/>
+      <resource>
+        <Patient>
+          <id value="patient-prov-001"/>
+          <identifier>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="MB"/>
+              </coding>
+            </type>
+            <system value="http://example.org/provider-org/patient-ids"/>
+            <value value="PAT-001"/>
+            <assigner>
+              <display value="Provider Organization"/>
+            </assigner>
+          </identifier>
+          <name>
+            <use value="official"/>
+            <family value="Johnson"/>
+            <given value="Robert"/>
+            <given value="Michael"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <value value="555-123-4567"/>
+          </telecom>
+          <gender value="male"/>
+          <birthDate value="1965-08-15"/>
+          <address>
+            <use value="home"/>
+            <line value="123 Main Street"/>
+            <city value="Springfield"/>
+            <state value="IL"/>
+            <postalCode value="62701"/>
+          </address>
+        </Patient>
+      </resource>
+    </part>
+    <part>
+      <name value="CoverageToMatch"/>
+      <resource>
+        <Coverage>
+          <id value="coverage-to-match-001"/>
+          <meta>
+            <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
+          </meta>
+          <status value="draft"/>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+              <code value="EHPLANS"/>
+            </coding>
+          </type>
+          <subscriber>
+            <reference value="Patient/patient-prov-001"/>
+          </subscriber>
+          <subscriberId value="12345678"/>
+          <beneficiary>
+            <reference value="Patient/patient-prov-001"/>
+          </beneficiary>
+          <relationship>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/subscriber-relationship"/>
+              <code value="self"/>
+            </coding>
+          </relationship>
+          <period>
+            <start value="2023-01-01"/>
+            <end value="2023-12-31"/>
+          </period>
+          <payor>
+            <identifier>
+              <system value="http://hl7.org/fhir/sid/us-npi"/>
+              <value value="9876543210"/>
+            </identifier>
+            <display value="Previous Health Plan"/>
+          </payor>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="group"/>
+              </coding>
+            </type>
+            <value value="EMPLOY-12345"/>
+          </class>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="plan"/>
+              </coding>
+            </type>
+            <value value="PPO-GOLD"/>
+          </class>
+        </Coverage>
+      </resource>
+    </part>
+    <part>
+      <name value="TreatmentAttestation"/>
+      <resource>
+        <Consent>
+          <id value="treatment-attestation-001"/>
+          <meta>
+            <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"/>
+          </meta>
+          <status value="active"/>
+          <scope>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+              <code value="treatment"/>
+            </coding>
+          </scope>
+          <category>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
+              <code value="treat"/>
+              <display value="Treatment"/>
+            </coding>
+          </category>
+          <category>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="64292-6"/>
+              <display value="Release of information consent"/>
+            </coding>
+          </category>
+          <patient>
+            <reference value="Patient/patient-prov-001"/>
+          </patient>
+          <dateTime value="2024-12-10T14:30:00Z"/>
+          <performer>
+            <reference value="Practitioner/provider-001"/>
+            <display value="Dr. Susan Smith, MD"/>
+          </performer>
+          <organization>
+            <reference value="Organization/provider-org-001"/>
+            <display value="Springfield Medical Center"/>
+          </organization>
+          <sourceReference>
+            <reference value="DocumentReference/treatment-attestation-form-001"/>
+            <display value="Provider Attestation Form"/>
+          </sourceReference>
+          <policy>
+            <authority value="https://example.org/compliance"/>
+            <uri value="https://example.org/provider-attestation-policy"/>
+          </policy>
+          <provision>
+            <type value="permit"/>
+            <period>
+              <start value="2024-01-15"/>
+            </period>
+            <actor>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                  <code value="IRCP"/>
+                  <display value="information recipient"/>
+                </coding>
+              </role>
+              <reference>
+                <reference value="Practitioner/provider-001"/>
+                <display value="Dr. Susan Smith"/>
+              </reference>
+            </actor>
+            <purpose>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+              <code value="TREATMENT"/>
+              <display value="Treatment"/>
+            </purpose>
+          </provision>
+        </Consent>
+      </resource>
+    </part>
+    <part>
+      <name value="CoverageToLink"/>
+      <resource>
+        <Coverage>
+          <id value="coverage-link-001"/>
+          <meta>
+            <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
+          </meta>
+          <status value="draft"/>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+              <code value="EHPLANS"/>
+            </coding>
+          </type>
+          <subscriber>
+            <reference value="Patient/patient-prov-001"/>
+          </subscriber>
+          <subscriberId value="NEW-12345678"/>
+          <beneficiary>
+            <reference value="Patient/patient-prov-001"/>
+          </beneficiary>
+          <relationship>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/subscriber-relationship"/>
+              <code value="self"/>
+            </coding>
+          </relationship>
+          <period>
+            <start value="2024-01-01"/>
+            <end value="2024-12-31"/>
+          </period>
+          <payor>
+            <identifier>
+              <system value="http://hl7.org/fhir/sid/us-npi"/>
+              <value value="5555555555"/>
+            </identifier>
+            <display value="Current Payer"/>
+          </payor>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="group"/>
+              </coding>
+            </type>
+            <value value="EMPLOY-NEW"/>
+          </class>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="plan"/>
+              </coding>
+            </type>
+            <value value="PPO-PREMIUM"/>
+          </class>
+        </Coverage>
+      </resource>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="MembersToMatch"/>
+    <part>
+      <name value="MemberPatient"/>
+      <resource>
+        <Patient>
+          <id value="patient-prov-002"/>
+          <identifier>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="MB"/>
+              </coding>
+            </type>
+            <system value="http://example.org/provider-org/patient-ids"/>
+            <value value="PAT-002"/>
+            <assigner>
+              <display value="Provider Organization"/>
+            </assigner>
+          </identifier>
+          <name>
+            <use value="official"/>
+            <family value="Williams"/>
+            <given value="Sarah"/>
+            <given value="Elizabeth"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <value value="555-987-6543"/>
+          </telecom>
+          <gender value="female"/>
+          <birthDate value="1978-03-22"/>
+          <address>
+            <use value="home"/>
+            <line value="456 Oak Avenue"/>
+            <city value="Columbus"/>
+            <state value="OH"/>
+            <postalCode value="43085"/>
+          </address>
+        </Patient>
+      </resource>
+    </part>
+    <part>
+      <name value="CoverageToMatch"/>
+      <resource>
+        <Coverage>
+          <id value="coverage-to-match-002"/>
+          <meta>
+            <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
+          </meta>
+          <status value="draft"/>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+              <code value="EHPLANS"/>
+            </coding>
+          </type>
+          <subscriber>
+            <reference value="Patient/patient-prov-002"/>
+          </subscriber>
+          <subscriberId value="87654321"/>
+          <beneficiary>
+            <reference value="Patient/patient-prov-002"/>
+          </beneficiary>
+          <relationship>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/subscriber-relationship"/>
+              <code value="self"/>
+            </coding>
+          </relationship>
+          <period>
+            <start value="2023-06-01"/>
+            <end value="2024-05-31"/>
+          </period>
+          <payor>
+            <identifier>
+              <system value="http://hl7.org/fhir/sid/us-npi"/>
+              <value value="1111111111"/>
+            </identifier>
+            <display value="Another Health Plan"/>
+          </payor>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="group"/>
+              </coding>
+            </type>
+            <value value="EMPLOY-67890"/>
+          </class>
+          <class>
+            <type>
+              <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
+                <code value="plan"/>
+              </coding>
+            </type>
+            <value value="HMO-BASIC"/>
+          </class>
+        </Coverage>
+      </resource>
+    </part>
+    <part>
+      <name value="TreatmentAttestation"/>
+      <resource>
+        <Consent>
+          <id value="treatment-attestation-002"/>
+          <meta>
+            <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"/>
+          </meta>
+          <status value="active"/>
+          <scope>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+              <code value="treatment"/>
+            </coding>
+          </scope>
+          <category>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
+              <code value="treat"/>
+              <display value="Treatment"/>
+            </coding>
+          </category>
+          <category>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="64292-6"/>
+              <display value="Release of information consent"/>
+            </coding>
+          </category>
+          <patient>
+            <reference value="Patient/patient-prov-002"/>
+          </patient>
+          <dateTime value="2024-12-09T10:15:00Z"/>
+          <performer>
+            <reference value="Practitioner/provider-002"/>
+            <display value="Dr. James Brown, MD"/>
+          </performer>
+          <organization>
+            <reference value="Organization/provider-org-002"/>
+            <display value="Columbus Clinic"/>
+          </organization>
+          <sourceReference>
+            <reference value="DocumentReference/treatment-attestation-form-002"/>
+            <display value="Provider Attestation Form"/>
+          </sourceReference>
+          <policy>
+            <uri value="https://example.org/provider-attestation-policy"/>
+          </policy>
+          <provision>
+            <type value="permit"/>
+            <period>
+              <start value="2024-02-01"/>
+            </period>
+            <actor>
+              <role>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                  <code value="IRCP"/>
+                  <display value="information recipient"/>
+                </coding>
+              </role>
+              <reference>
+                <reference value="Practitioner/provider-002"/>
+                <display value="Dr. James Brown"/>
+              </reference>
+            </actor>
+            <purpose>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+              <code value="TREATMENT"/>
+              <display value="Treatment"/>
+            </purpose>
+          </provision>
+        </Consent>
+      </resource>
+    </part>
+  </parameter>
+</Parameters>

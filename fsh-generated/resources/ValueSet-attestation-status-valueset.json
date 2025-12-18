@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AttestationStatusValueSet",
+  "id": "attestation-status-valueset",
+  "title": "Treatment Attestation Status",
+  "description": "Allowed statuses for treatment relationship attestations",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/attestation-status-valueset",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/consent-state-codes",
+        "filter": [
+          {
+            "property": "code",
+            "op": "=",
+            "value": "active"
+          }
+        ]
+      },
+      {
+        "system": "http://hl7.org/fhir/consent-state-codes",
+        "filter": [
+          {
+            "property": "code",
+            "op": "=",
+            "value": "entered-in-error"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "base-ext-members-opted-out",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out",
+  "name": "MembersOptedOut",
+  "title": "Members Opted-out",
+  "status": "active",
+  "description": "Indicates the number of members that have opted out of sharing ",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Group"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Members Opted-out",
+        "definition": "Indicates the number of members that have opted out of sharing "
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "comment": "Number of Attributed Members that are excluded through opt-out.",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      }
+    ]
+  }
+}

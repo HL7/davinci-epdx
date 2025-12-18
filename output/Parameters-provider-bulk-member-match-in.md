@@ -1,0 +1,266 @@
+# Provider Bulk Member Match Request Example - Da Vinci Payer Data Exchange v2.1.1
+
+* [**Table of Contents**](toc.md)
+* [**FHIR Artifacts**](artifacts.md)
+* **Provider Bulk Member Match Request Example**
+
+## Example Parameters: Provider Bulk Member Match Request Example
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Parameters",
+  "id" : "provider-bulk-member-match-in",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
+    ]
+  },
+  "parameter" : [
+    {
+      "name" : "MemberBundle",
+      "part" : [
+        {
+          "name" : "MemberPatient",
+          "resource" : {
+            "resourceType" : "Patient",
+            "id" : "patient-provider-1",
+            "text" : {
+              "status" : "generated",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Patient Patricia Ann Person</div>"
+            },
+            "identifier" : [
+              {
+                "type" : {
+                  "coding" : [
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code" : "MB"
+                    }
+                  ]
+                },
+                "system" : "http://example.org/provider-emr/identifiers/patient",
+                "value" : "EMR-98765",
+                "assigner" : {
+                  "display" : "Provider 1 EMR System"
+                }
+              }
+            ],
+            "name" : [
+              {
+                "use" : "official",
+                "family" : "Person",
+                "given" : ["Patricia", "Ann"]
+              }
+            ],
+            "gender" : "female",
+            "birthDate" : "1974-12-25"
+          }
+        },
+        {
+          "name" : "CoverageToMatch",
+          "resource" : {
+            "resourceType" : "Coverage",
+            "id" : "coverage-provider-1",
+            "text" : {
+              "status" : "generated",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Coverage information from insurance card</div>"
+            },
+            "identifier" : [
+              {
+                "type" : {
+                  "coding" : [
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code" : "MB"
+                    }
+                  ]
+                },
+                "system" : "http://example.org/health-plan",
+                "value" : "HP-12345678"
+              }
+            ],
+            "status" : "active",
+            "subscriberId" : "SUB-987654321",
+            "beneficiary" : {
+              "reference" : "Patient/patient-provider-1"
+            },
+            "relationship" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+                  "code" : "self"
+                }
+              ]
+            },
+            "period" : {
+              "start" : "2024-01-01",
+              "end" : "2024-12-31"
+            },
+            "payor" : [
+              {
+                "identifier" : {
+                  "system" : "http://hl7.org/fhir/sid/us-npi",
+                  "value" : "1234567890"
+                },
+                "display" : "Example Health Plan"
+              }
+            ],
+            "class" : [
+              {
+                "type" : {
+                  "coding" : [
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+                      "code" : "group"
+                    }
+                  ]
+                },
+                "value" : "GRP-001"
+              },
+              {
+                "type" : {
+                  "coding" : [
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+                      "code" : "plan"
+                    }
+                  ]
+                },
+                "value" : "PLAN-GOLD"
+              }
+            ]
+          }
+        },
+        {
+          "name" : "Consent",
+          "resource" : {
+            "resourceType" : "Consent",
+            "id" : "consent-provider-1",
+            "text" : {
+              "status" : "generated",
+              "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Provider attestation to treatment relationship</div>"
+            },
+            "status" : "active",
+            "scope" : {
+              "coding" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
+                  "code" : "treatment"
+                }
+              ]
+            },
+            "category" : [
+              {
+                "coding" : [
+                  {
+                    "system" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+                    "code" : "treat",
+                    "display" : "Treatment"
+                  }
+                ]
+              },
+              {
+                "coding" : [
+                  {
+                    "system" : "http://loinc.org",
+                    "code" : "64292-6",
+                    "display" : "Release of information consent"
+                  }
+                ]
+              }
+            ],
+            "patient" : {
+              "reference" : "Patient/patient-provider-1"
+            },
+            "dateTime" : "2024-11-14T10:30:00Z",
+            "performer" : [
+              {
+                "reference" : "Practitioner/4",
+                "display" : "Dr. Susan Smith"
+              }
+            ],
+            "sourceReference" : {
+              "reference" : "DocumentReference/provider-attestation-doc-1"
+            },
+            "policy" : [
+              {
+                "uri" : "https://example.org/provider-attestation-policy"
+              }
+            ],
+            "verification" : [
+              {
+                "verified" : true,
+                "verifiedWith" : {
+                  "reference" : "Organization/ProviderOrg1"
+                },
+                "verificationDate" : "2024-11-14T10:30:00Z"
+              }
+            ],
+            "provision" : {
+              "type" : "permit",
+              "period" : {
+                "start" : "2024-01-15"
+              },
+              "actor" : [
+                {
+                  "role" : {
+                    "coding" : [
+                      {
+                        "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                        "code" : "IRCP"
+                      }
+                    ]
+                  },
+                  "reference" : {
+                    "identifier" : {
+                      "system" : "http://hl7.org/fhir/sid/us-npi",
+                      "value" : "1982943213"
+                    },
+                    "display" : "Dr. Susan Smith"
+                  }
+                },
+                {
+                  "role" : {
+                    "coding" : [
+                      {
+                        "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
+                        "code" : "PROV"
+                      }
+                    ]
+                  },
+                  "reference" : {
+                    "identifier" : {
+                      "system" : "http://hl7.org/fhir/sid/us-npi",
+                      "value" : "1982947230"
+                    },
+                    "display" : "Provider 1"
+                  }
+                }
+              ],
+              "purpose" : [
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                  "code" : "TREAT"
+                },
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                  "code" : "HPAYMT"
+                },
+                {
+                  "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                  "code" : "HOPERAT"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+```

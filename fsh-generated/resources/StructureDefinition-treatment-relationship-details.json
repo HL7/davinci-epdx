@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "treatment-relationship-details",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details",
+  "name": "TreatmentRelationshipDetails",
+  "title": "Treatment Relationship Details",
+  "status": "active",
+  "description": "Details about a specific treatment relationship between a member and provider",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Group.member.entity"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Treatment Relationship Details",
+        "definition": "Details about a specific treatment relationship between a member and provider"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Details of treatment relationship",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+# ExampleProvenanceAuthorEncounter7 - Da Vinci Payer Data Exchange v2.1.1
+
+* [**Table of Contents**](toc.md)
+* [**FHIR Artifacts**](artifacts.md)
+* **ExampleProvenanceAuthorEncounter7**
+
+## Example Provenance: ExampleProvenanceAuthorEncounter7
+
+| |
+| :--- |
+| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+
+version: 1; Last updated: 2019-10-15 20:26:23+0000
+
+Profile: [PDex Provenance](StructureDefinition-pdex-provenance.md)
+
+Provenance for [Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Patient encounter procedure](Encounter-7.md)
+
+Summary
+
+| | |
+| :--- | :--- |
+| Recorded | 2020-07-10 16:26:23+0000 |
+
+**Agents**
+
+* **Type**: Author
+  * **who**: [Organization Provider 1](Organization-ProviderOrg1.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Provenance",
+  "id" : "1000003",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2019-10-15T20:26:23.217+00:00",
+    "profile" : [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
+    ]
+  },
+  "target" : [
+    {
+      "reference" : "Encounter/7"
+    }
+  ],
+  "recorded" : "2020-07-10T16:26:23.217+00:00",
+  "agent" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code" : "author",
+            "display" : "Author"
+          }
+        ]
+      },
+      "who" : {
+        "reference" : "Organization/ProviderOrg1"
+      }
+    }
+  ],
+  "entity" : [
+    {
+      "extension" : [
+        {
+          "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+                "code" : "hl7ccda",
+                "display" : "HL7 C-CDA"
+              }
+            ]
+          }
+        }
+      ],
+      "role" : "source",
+      "what" : {
+        "display" : "No reference available"
+      }
+    }
+  ]
+}
+
+```

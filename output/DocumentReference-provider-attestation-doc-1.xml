@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="provider-attestation-doc-1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: DocumentReference provider-attestation-doc-1</b></p><a name="provider-attestation-doc-1"> </a><a name="hcprovider-attestation-doc-1"> </a><p><b>status</b>: Current</p><p><b>docStatus</b>: Final</p><p><b>type</b>: <span title="Codes:{http://loinc.org 64292-6}">Release of information consent</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/consentcategorycodes treat}">Treatment</span></p><p><b>subject</b>: <a href="Patient-1.html">Patricia Ann Person</a></p><p><b>date</b>: 2024-11-14 10:30:00+0000</p><p><b>author</b>: <a href="Practitioner-4.html">Dr. Susan Smith</a></p><p><b>authenticator</b>: <a href="Organization-ProviderOrg1.html">Provider 1</a></p><p><b>custodian</b>: <a href="Organization-ProviderOrg1.html">Provider 1</a></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Url</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>application/pdf</td><td><a href="https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://example.org/provider1/attestations/2024/attestation-001.pdf">https://example.org/provider1/attestations/2024/attestation-001.pdf</a></td><td>Provider Treatment Relationship Attestation Form</td><td>2024-11-14 10:30:00+0000</td></tr></table><p><b>format</b>: IHE.FormatCode.codesystem: urn:ihe:iti:xds:2017:mimeTypeSufficient (urn:ihe:iti:xds:2017:mimeTypeSufficient)</p></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Period</b></td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td>2024-01-15 --&gt; (ongoing)</td><td><a href="Encounter-6.html">Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation</a></td></tr></table></div>
+  </text>
+  <status value="current"/>
+  <docStatus value="final"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="64292-6"/>
+      <display value="Release of information consent"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
+      <code value="treat"/>
+      <display value="Treatment"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/1"/>
+    <display value="Patricia Ann Person"/>
+  </subject>
+  <date value="2024-11-14T10:30:00Z"/>
+  <author>
+    <reference value="Practitioner/4"/>
+    <display value="Dr. Susan Smith"/>
+  </author>
+  <authenticator>
+    <reference value="Organization/ProviderOrg1"/>
+    <display value="Provider 1"/>
+  </authenticator>
+  <custodian>
+    <reference value="Organization/ProviderOrg1"/>
+    <display value="Provider 1"/>
+  </custodian>
+  <content>
+    <attachment>
+      <contentType value="application/pdf"/>
+      <url value="https://example.org/provider1/attestations/2024/attestation-001.pdf"/>
+      <title value="Provider Treatment Relationship Attestation Form"/>
+      <creation value="2024-11-14T10:30:00Z"/>
+    </attachment>
+    <format>
+      <system value="http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"/>
+      <code value="urn:ihe:iti:xds:2017:mimeTypeSufficient"/>
+    </format>
+  </content>
+  <context>
+    <period>
+      <start value="2024-01-15"/>
+    </period>
+    <related>
+      <reference value="Encounter/6"/>
+    </related>
+  </context>
+</DocumentReference>

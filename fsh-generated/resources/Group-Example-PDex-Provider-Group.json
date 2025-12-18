@@ -1,0 +1,93 @@
+{
+  "resourceType": "Group",
+  "id": "Example-PDex-Provider-Group",
+  "meta": {
+    "lastUpdated": "2024-03-21T17:18:00.000Z",
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group"
+    ]
+  },
+  "type": "person",
+  "actual": true,
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus",
+      "valueCode": "final"
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out",
+      "valueQuantity": {
+        "value": 5
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "1122334455"
+    },
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.4",
+      "value": "99-12345"
+    }
+  ],
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "pdexprovidergroup",
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
+            "display": "PDex Provider Group"
+          }
+        ]
+      },
+      "exclude": false,
+      "valueReference": {
+        "identifier": {
+          "system": "http://hl7.org/fhir/sid/us-npi",
+          "value": "0123456789"
+        }
+      },
+      "period": {
+        "start": "2024-03-21"
+      }
+    }
+  ],
+  "member": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission",
+          "valueDateTime": "2024-03-21T17:18:00.000Z"
+        },
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types",
+          "valueString": "Patient,Condition,Observation,Procedure"
+        },
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter",
+          "valueString": "Condition?recordedDate=ge2023-09-23,Procedure?performed=ge2023-03-21"
+        }
+      ],
+      "id": "0",
+      "entity": {
+        "reference": "Patient/1001"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "pdexprovidergroup",
+        "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
+        "display": "PDex Provider Group"
+      }
+    ]
+  },
+  "active": true,
+  "name": "Attributed List of Health Plan Members for Practitioner 1122334455.",
+  "managingEntity": {
+    "reference": "Organization/ProviderOrg1"
+  }
+}

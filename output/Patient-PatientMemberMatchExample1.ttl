@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/PatientMemberMatchExample1> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PatientMemberMatchExample1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientMemberMatchExample1</b></p><a name=\"PatientMemberMatchExample1\"> </a><a name=\"hcPatientMemberMatchExample1\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Robert Michael Johnson (official) Male, DoB: 1965-08-15 ( Member Number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 555-123-4567</li><li>123 Main Street Springfield IL 62701 (home)</li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/provider-org/patient-ids"^^xsd:anyURI ;
+       fhir:l <http://example.org/provider-org/patient-ids>
+     ] ;
+     fhir:value [ fhir:v "PAT-001" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Provider Organization" ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Johnson" ] ;
+     fhir:given ( [ fhir:v "Robert" ] [ fhir:v "Michael" ] )
+  ] ) ; # 
+  fhir:telecom ( [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "555-123-4567" ]
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1965-08-15"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:use [ fhir:v "home" ] ;
+     fhir:line ( [ fhir:v "123 Main Street" ] ) ;
+     fhir:city [ fhir:v "Springfield" ] ;
+     fhir:state [ fhir:v "IL" ] ;
+     fhir:postalCode [ fhir:v "62701" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

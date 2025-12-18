@@ -1,0 +1,121 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Consent/consent-2> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "consent-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:scope [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
+       ] ;
+       fhir:code [ fhir:v "patient-privacy" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "IDSCL" ]
+     ] )
+  ] ) ; # 
+  fhir:patient [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/2> ;
+     fhir:reference [ fhir:v "Patient/2" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/2> ;
+     fhir:reference [ fhir:v "Patient/2" ]
+  ] ) ; # 
+  fhir:source [
+     a fhir:Reference ;
+     fhir:l <http://example.org/DocumentReference/someconsent-2> ;
+     fhir:reference [ fhir:v "http://example.org/DocumentReference/someconsent-2" ]
+  ] ; # 
+  fhir:policy ( [
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-consent.html#regular"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-consent.html#regular>
+     ]
+  ] ) ; # 
+  fhir:provision [
+     fhir:type [ fhir:v "permit" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2023-12-01"^^xsd:date ] ;
+       fhir:end [ fhir:v "2024-03-31"^^xsd:date ]
+     ] ;
+     fhir:actor ( [
+       fhir:role [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+           ] ;
+           fhir:code [ fhir:v "performer" ]
+         ] )
+       ] ;
+       fhir:reference [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "9876543210" ]
+         ] ;
+         fhir:display [ fhir:v "Old Health Plan" ]
+       ]
+     ] [
+       fhir:role [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v3-ParticipationType>
+           ] ;
+           fhir:code [ fhir:v "IRCP" ]
+         ] )
+       ] ;
+       fhir:reference [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "0123456789" ]
+         ] ;
+         fhir:display [ fhir:v "New Health Plan" ]
+       ]
+     ] ) ;
+     fhir:action ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/consentaction"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/consentaction>
+         ] ;
+         fhir:code [ fhir:v "disclose" ]
+       ] )
+     ] )
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/2> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

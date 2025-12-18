@@ -1,0 +1,231 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Bundle/3000003> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "3000003"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Bundle"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:timestamp [ fhir:v "2020-09-28T23:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:total [ fhir:v "2"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://example.com/base/fhir/Condition?ct=W1sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/fhir/Condition?ct=W1sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Condition/101"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Condition/101>
+     ] ;
+     fhir:resource ( <https://example.com/base/Condition/101> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Condition/102"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Condition/102>
+     ] ;
+     fhir:resource ( <https://example.com/base/Condition/102> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Provenance/3101"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Provenance/3101>
+     ] ;
+     fhir:resource ( <https://example.com/base/Provenance/3101> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://example.com/base/Condition/101> a fhir:Condition ;
+  fhir:id [ fhir:v "101"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_101\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 101</b></p><a name=\"101\"> </a><a name=\"hc101\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 442311008}\">liveborn born in hospital</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>onset</b>: 1995-09-20</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-ver-status>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-category>
+       ] ;
+       fhir:code [ fhir:v "problem-list-item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:442311008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "442311008" ] ;
+       fhir:display [ fhir:v "liveborn born in hospital" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "1995-09-20"^^xsd:date
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<https://example.com/base/Condition/102> a fhir:Condition ;
+  fhir:id [ fhir:v "102"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_102\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 102</b></p><a name=\"102\"> </a><a name=\"hc102\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 247824007}\">Fear of becoming fat</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>onset</b>: 2020-03-13</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-clinical>
+       ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-ver-status>
+       ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/condition-category>
+       ] ;
+       fhir:code [ fhir:v "problem-list-item" ] ;
+       fhir:display [ fhir:v "Problem List Item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:247824007 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:code [ fhir:v "247824007" ] ;
+       fhir:display [ fhir:v "Fear of becoming fat" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:DateTime ;
+     fhir:v "2020-03-13"^^xsd:date
+  ] . # 
+
+<https://example.com/base/Provenance/3101> a fhir:Provenance ;
+  fhir:id [ fhir:v "3101"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-09-28T23:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Provenance_3101\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Provenance 3101</b></p><a name=\"3101\"> </a><a name=\"hc3101\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-09-28 23:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provenance.html\">PDex Provenance</a></p></div><p>Provenance for <a href=\"Bundle-3000003.html#Condition_101\">Condition liveborn born in hospital</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>1995-09-20 18:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}\">Author</span></td><td><a href=\"Organization-ProviderOrg2.html\">Organization Provider 2</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Condition/101> ;
+     fhir:reference [ fhir:v "Condition/101" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "1995-09-20T18:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "author" ] ;
+         fhir:display [ fhir:v "Author" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg2> ;
+       fhir:reference [ fhir:v "Organization/ProviderOrg2" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>
+           ] ;
+           fhir:code [ fhir:v "hl7ccda" ] ;
+           fhir:display [ fhir:v "HL7 C-CDA" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Condition/101> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg2> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

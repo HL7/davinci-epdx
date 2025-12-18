@@ -1,0 +1,77 @@
+# VitalSigns - Da Vinci Payer Data Exchange v2.1.1
+
+* [**Table of Contents**](toc.md)
+* [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
+* [**Data Mapping**](datamapping.md)
+* **VitalSigns**
+
+## VitalSigns
+
+| |
+| :--- |
+| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+
+[Previous Page - US Core Smoking Status Observation](USCoreSmokingStatusObservation.md)
+
+This IG supports the full complement of US Core profiles. They are supported to enable a payer to produce FHIR resources from data provided in other formats.
+
+For some resources, payers are unlikely to have the clinical information necessary to create a valid US Core resource. The [Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) are referenced in [US Core 3.1.1](http://hl7.org/fhir/us/core/3.1.1) but uses the profile from the base FHIR specification and does not create a US Core specific profile. Payers may be unable to create a valid Vital Signs record from the source clinical data they have available. In [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) a set of US Core specific Vital Signs profiles are defined:
+
+* [US Core Vital Signs Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-vital-signs.html) 
+* [US Core Pediatric Head Occipital Frontal Circumference Percentile Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-head-occipital-frontal-circumference-percentile.html)
+* [US Core Pediatric BMI for Age Observation Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-bmi-for-age.html)
+* [US Core Pediatric Weight for Height](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-weight-for-height.html)
+* [US Core Blood Pressure Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-blood-pressure.html)
+* [US Core BMI Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-bmi.html)
+* [US Core Body Height Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-height.html)
+* [US Core Body Temperature Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-temperature.html)
+* [US Core Body Weight Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-body-weight.html)
+* [US Core Head Circumference Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-head-circumference.html)
+* [US Core Heart Rate Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-heart-rate.html)
+* [US Core Pulse Oximetry Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-pulse-oximetry.html)
+* [US Core Respiratory Rate Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-respiratory-rate.html)
+ 
+
+A Vital Signs resource requires a status, a magic value for what is being measured, the patient information and a time when the observation was taken. Payers may not have access to the detail measurement data needed to create a valid Vital Signs resource.
+
+The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Base R4 Vital Signs](http://hl7.org/fhir/R4/observation-vitalsigns.html) or [US Core 6.1.0 Vital Signs](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-vital-signs.html) profiles are:
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Observation.status | status | 1..1 | code |
+| Observation.category | category |   | (Slice Definition) |
+| Observation.category:VSCat | category:VSCat | 1..1 | CodeableConcept |
+| Observation.category:VSCat.coding | coding | 1..* | Coding |
+| Observation.category:VSCat.coding.system | system | 1..1 | uri |
+| Observation.category:VSCat.coding.code | code | 1..1 | code |
+| Observation.code | code | 1..1 | CodeableConcept |
+| Observation.subject | subject | 1..1 | Reference(Patient) |
+| Observation.effective[x] | effective[x] | 1..1 |   |
+| Observation.value[x] | value[x] | 0..1 |   |
+| Observation.dataAbsentReason | dataAbsentReason | 0..1 | CodeableConcept |
+| Observation.component | component | 0..* | BackboneElement |
+| Observation.component.code | code | 1..1 | CodeableConcept |
+| Observation.component.value[x] | value[x] | 0..1 |   |
+| Observation.component.dataAbsentReason | dataAbsentReason | 0..1 | CodeableConcept |
+
+*[Table Definition](index.md#mapping-adjudicated-claims-encounter-and-prior-authorization-information)*
+
+### Examples of Vital Signs Resources
+
+* Vital Signs Panel: Vital signs, weight, height, head circumference, oxygen saturation and BMI panel
+* Respiratory Rate
+* Heart rate
+* Oxygen Saturation
+* Body Temperature
+* Body Height
+* Head Circumference
+* Body Weight
+* Body Mass Index
+* Blood Pressure (systolic and diastolic)
+
+See links to examples in the FHIR R4 specification here: [https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html)
+
+[https://hl7.org/fhir/R4/observation-vitalsigns.html](https://hl7.org/fhir/R4/observation-vitalsigns.html).
+
+[Next Page - Use Case Scenarios](usecasescenarios.md)
+

@@ -1,0 +1,61 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "base-ext-when-adjudicated",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-when-adjudicated",
+  "name": "WhenAdjudicated",
+  "title": "When Adjudicated",
+  "status": "active",
+  "description": "Date and Time when Adjudication Action took place. NOTE: that this extension may be replaced by an inter-version extension after R6 version of the EOB implements this DataTime element.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "ExplanationOfBenefit.adjudication"
+    },
+    {
+      "type": "element",
+      "expression": "ExplanationOfBenefit.item.adjudication"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "When Adjudicated",
+        "definition": "Date and Time when Adjudication Action took place. NOTE: that this extension may be replaced by an inter-version extension after R6 version of the EOB implements this DataTime element."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-when-adjudicated"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "comment": "Date or data and time when the adjudication action occured.",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      }
+    ]
+  }
+}

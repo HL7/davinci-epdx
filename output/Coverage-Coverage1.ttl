@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Coverage/Coverage1> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Coverage1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage Coverage1</b></p><a name=\"Coverage1\"> </a><a name=\"hcCoverage1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html\">HRex Member Match Coverage Profile</a></p></div><p><b>identifier</b>: Member Number/234567</p><p><b>status</b>: Active</p><p><b>subscriberId</b>: 93542106</p><p><b>beneficiary</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/subscriber-relationship self}\">Self</span></p><p><b>payor</b>: <a href=\"Organization-Payer1.html\">Organization Payer 1</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/old-payer/identifiers/coverage"^^xsd:anyURI ;
+       fhir:l <http://example.org/old-payer/identifiers/coverage>
+     ] ;
+     fhir:value [ fhir:v "234567" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:subscriberId [ fhir:v "93542106"] ; # 
+  fhir:beneficiary [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:relationship [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/subscriber-relationship"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/subscriber-relationship>
+       ] ;
+       fhir:code [ fhir:v "self" ]
+     ] )
+  ] ; # 
+  fhir:payor ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+     fhir:reference [ fhir:v "Organization/Payer1" ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

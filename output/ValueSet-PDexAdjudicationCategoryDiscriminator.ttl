@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexAdjudicationCategoryDiscriminator"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PDexAdjudicationCategoryDiscriminator</b></p><a name=\"PDexAdjudicationCategoryDiscriminator\"> </a><a name=\"hcPDexAdjudicationCategoryDiscriminator\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-PDexAdjudication.html\">PDex Adjudication</a></li><li>Import all the codes that are contained in <a href=\"ValueSet-PDexPayerBenefitPaymentStatus.html\">PDex Payer Benefit Payment Status</a></li><li>Include all codes defined in <a href=\"http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html\"><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.1.0, the version found through the package references\"> version ?2.1.0</span></li><li>Include all codes defined in <a href=\"CodeSystem-PDexAdjudicationDiscriminator.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.1.1</span></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-wg>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "fm"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "informative" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator>
+  ] ; # 
+  fhir:version [ fhir:v "2.1.1"] ; # 
+  fhir:name [ fhir:v "PDexAdjudicationCategoryDiscriminator"] ; # 
+  fhir:title [ fhir:v "PDex Adjudication Category Discriminator"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2025-12-17T14:48:28-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This Valueset is not copyrighted."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:valueSet ( [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus>
+       ] )
+     ] [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication>
+       ]
+     ] [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator>
+       ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

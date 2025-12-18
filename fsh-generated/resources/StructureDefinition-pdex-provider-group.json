@@ -1,0 +1,187 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-provider-group",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group",
+  "version": "2.1.0",
+  "name": "PDexProviderGroup",
+  "title": "PDex Provider Group",
+  "status": "active",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Group",
+  "baseDefinition": "http://hl7.org/fhir/us/davinci-atr/StructureDefinition/atr-group",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Group.extension:optedOut",
+        "path": "Group.extension",
+        "sliceName": "optedOut",
+        "comment": "Number of would be attributed Members that used their right to Opt-out of sharing data with providers.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.code",
+        "path": "Group.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS"
+        }
+      },
+      {
+        "id": "Group.characteristic.code",
+        "path": "Group.characteristic.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "pdexprovidergroup",
+              "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
+              "display": "PDex Provider Group"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Group.characteristic.value[x]",
+        "path": "Group.characteristic.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Group.characteristic.value[x]:valueReference",
+        "path": "Group.characteristic.value[x]",
+        "sliceName": "valueReference",
+        "comment": "Provider/Organization Identifier Reference that is being attributed with members",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.characteristic.exclude",
+        "path": "Group.characteristic.exclude",
+        "comment": "Exclude is set to False",
+        "patternBoolean": false
+      },
+      {
+        "id": "Group.characteristic.period",
+        "path": "Group.characteristic.period",
+        "comment": "Enter date attribution was created or updated.(i.e. current date) as Period.start",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.extension:lastTransmitted",
+        "path": "Group.member.extension",
+        "sliceName": "lastTransmitted",
+        "comment": "Use the data/time of execution of the #DavinciDataexport operation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.extension:lastResources",
+        "path": "Group.member.extension",
+        "sliceName": "lastResources",
+        "comment": "Take the comma-delimited string value from the $DaVinci-data-export.resourceTypes parameter in the operation request.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.extension:lastFilters",
+        "path": "Group.member.extension",
+        "sliceName": "lastFilters",
+        "comment": "Take the comma-delimited string value from the $DaVinci-data-export.filterQueries parameter in the operation request.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

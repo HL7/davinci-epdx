@@ -1,0 +1,165 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Bundle/3000002> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "3000002"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Bundle"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/Bundle>
+     ] )
+  ] ; # 
+  fhir:type [ fhir:v "searchset"] ; # 
+  fhir:timestamp [ fhir:v "2020-09-28T23:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:total [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:link ( [
+     fhir:relation [ fhir:v "self" ] ;
+     fhir:url [
+       fhir:v "https://example.com/base/fhir/MedicationDispense?ct=W3sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/fhir/MedicationDispense?ct=W3sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU>
+     ]
+  ] ) ; # 
+  fhir:entry ( [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/MedicationDispense/1000001"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/MedicationDispense/1000001>
+     ] ;
+     fhir:resource ( <https://example.com/base/MedicationDispense/1000001> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "match" ]
+     ]
+  ] [
+     fhir:fullUrl [
+       fhir:v "https://example.com/base/Provenance/321000001"^^xsd:anyURI ;
+       fhir:l <https://example.com/base/Provenance/321000001>
+     ] ;
+     fhir:resource ( <https://example.com/base/Provenance/321000001> ) ;
+     fhir:search [
+       fhir:mode [ fhir:v "include" ]
+     ]
+  ] ) . # 
+
+<https://example.com/base/MedicationDispense/1000001> a fhir:MedicationDispense ;
+  fhir:id [ fhir:v "1000001"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationDispense_1000001\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationDispense 1000001</b></p><a name=\"1000001\"> </a><a name=\"hc1000001\"> </a><p><b>status</b>: Completed</p><p><b>medication</b>: <span title=\"Codes:{http://hl7.org/fhir/sid/ndc 54458-872-10}\">Lisinopril, 30 TABLET in 1 BLISTER PACK (54458-872-10) (package)</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-4.html\">Practitioner Susan Smith </a></td></tr></table><p><b>location</b>: <a href=\"Location-5.html\">Location MyFavorite Pharmacy</a></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode RF}\">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/ndc"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/ndc>
+       ] ;
+       fhir:code [ fhir:v "54458-872-10" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> ;
+       fhir:reference [ fhir:v "Practitioner/4" ]
+     ]
+  ] ) ; # 
+  fhir:location [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Location/5> ;
+     fhir:reference [ fhir:v "Location/5" ]
+  ] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "RF" ]
+     ] )
+  ] ; # 
+  fhir:quantity [
+     fhir:value [ fhir:v "60"^^xsd:decimal ]
+  ] ; # 
+  fhir:daysSupply [
+     fhir:value [ fhir:v "30"^^xsd:decimal ]
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Location/5> a fhir:Us .
+
+<https://example.com/base/Provenance/321000001> a fhir:Provenance ;
+  fhir:id [ fhir:v "321000001"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2020-09-28T23:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Provenance_321000001\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Provenance 321000001</b></p><a name=\"321000001\"> </a><a name=\"hc321000001\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2020-09-28 23:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provenance.html\">PDex Provenance</a></p></div><p>Provenance for <a href=\"MedicationDispense-1000001.html\">MedicationDispense: extension = 1; status = completed; medication[x] = Lisinopril, 30 TABLET in 1 BLISTER PACK (54458-872-10) (package); type = Refill; quantity = 60; daysSupply = 30; whenHandedOver = 2024-04-15 09:00:23+0000</a></p><p>Summary</p><table class=\"grid\"><tr><td>Recorded</td><td>2020-07-12 18:26:23+0000</td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title=\"Codes:{http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type transmitter}\">Transmitter</span></td><td><a href=\"Organization-Payer1.html\">Organization Payer 1</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:target ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001> ;
+     fhir:reference [ fhir:v "MedicationDispense/1000001" ]
+  ] ) ; # 
+  fhir:recorded [ fhir:v "2020-07-12T18:26:23.217+00:00"^^xsd:dateTime] ; # 
+  fhir:agent ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type>
+         ] ;
+         fhir:code [ fhir:v "transmitter" ] ;
+         fhir:display [ fhir:v "Transmitter" ]
+       ] )
+     ] ;
+     fhir:who [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+       fhir:reference [ fhir:v "Organization/Payer1" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource>
+           ] ;
+           fhir:code [ fhir:v "hl7ccda" ] ;
+           fhir:display [ fhir:v "HL7 C-CDA" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:display [ fhir:v "No reference available" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

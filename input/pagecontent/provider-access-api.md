@@ -2,9 +2,8 @@
 
 <div class="stu-note">
 
-<b><i>Provider Access API bulk data guidance in this version of the IG is draft only. 
-It has not appeared on the ballot but has been tested at Connectathons. It is included to support 
-the requirements of the CMS prior Authorization Rule (CMS-0057).
+<b><i>Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. 
+It has been frrequently tested at Connectathons. It is supports the requirements of the CMS prior Authorization Rule (CMS-0057).
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
 </i></b>
 </div>
@@ -362,4 +361,4 @@ with it being restricted to the Group *id(s)* that the user is authorized to acc
 
 
 
-[Next Page - Payer-to-Payer Exchange (Single Member)](payertopayerexchange.html)
+[Next Page - Provider Access (v2)](provider-access-api-v2.html)

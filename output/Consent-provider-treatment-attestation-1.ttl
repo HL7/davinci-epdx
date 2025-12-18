@@ -1,0 +1,164 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Consent/provider-treatment-attestation-1> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "provider-treatment-attestation-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent provider-treatment-attestation-1</b></p><a name=\"provider-treatment-attestation-1\"> </a><a name=\"hcprovider-treatment-attestation-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-provider-treatment-relationship-consent.html\">Provider Attestation to Treatment Relationship</a></p></div><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentscope treatment}\">Treatment</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentcategorycodes treat}\">Treatment</span>, <span title=\"Codes:{http://loinc.org 64292-6}\">Release of information consent</span></p><p><b>patient</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>dateTime</b>: 2024-11-14 10:30:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-4.html\">Dr. Susan Smith</a></p><p><b>organization</b>: <a href=\"Organization-ProviderOrg1.html\">Provider 1</a></p><p><b>source</b>: <a href=\"DocumentReference-provider-attestation-doc-1.html\">Provider Attestation Form</a></p><h3>Policies</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Authority</b></td><td><b>Uri</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://example.org/health-authority\">https://example.org/health-authority</a></td><td><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://example.org/provider-attestation-policy\">https://example.org/provider-attestation-policy</a></td></tr></table><h3>Verifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Verified</b></td><td><b>VerifiedWith</b></td><td><b>VerificationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>true</td><td><a href=\"Organization-ProviderOrg1.html\">Provider 1</a></td><td>2024-11-14 10:30:00+0000</td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-01-15 --&gt; (ongoing)</p><blockquote><p><b>actor</b></p><p><b>role</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType IRCP}\">information recipient</span></p><p><b>reference</b>: <a href=\"Practitioner-4.html\">Dr. Susan Smith</a></p></blockquote><blockquote><p><b>actor</b></p><p><b>role</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleClass PROV}\">healthcare provider</span></p><p><b>reference</b>: <a href=\"Organization-ProviderOrg1.html\">Provider 1</a></p></blockquote><p><b>purpose</b>: <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-TREAT\">ActReason: TREAT</a> (treatment), <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-HPAYMT\">ActReason: HPAYMT</a> (healthcare payment), <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-HOPERAT\">ActReason: HOPERAT</a> (healthcare operations)</p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:scope [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
+       ] ;
+       fhir:code [ fhir:v "treatment" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentcategorycodes"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentcategorycodes>
+       ] ;
+       fhir:code [ fhir:v "treat" ] ;
+       fhir:display [ fhir:v "Treatment" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a loinc:64292-6 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "64292-6" ] ;
+       fhir:display [ fhir:v "Release of information consent" ]
+     ] )
+  ] ) ; # 
+  fhir:patient [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:dateTime [ fhir:v "2024-11-14T10:30:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> ;
+     fhir:reference [ fhir:v "Practitioner/4" ] ;
+     fhir:display [ fhir:v "Dr. Susan Smith" ]
+  ] ) ; # 
+  fhir:organization ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+     fhir:reference [ fhir:v "Organization/ProviderOrg1" ] ;
+     fhir:display [ fhir:v "Provider 1" ]
+  ] ) ; # 
+  fhir:source [
+     a fhir:Reference ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/DocumentReference/provider-attestation-doc-1> ;
+     fhir:reference [ fhir:v "DocumentReference/provider-attestation-doc-1" ] ;
+     fhir:display [ fhir:v "Provider Attestation Form" ]
+  ] ; # 
+  fhir:policy ( [
+     fhir:authority [
+       fhir:v "https://example.org/health-authority"^^xsd:anyURI ;
+       fhir:l <https://example.org/health-authority>
+     ] ;
+     fhir:uri [
+       fhir:v "https://example.org/provider-attestation-policy"^^xsd:anyURI ;
+       fhir:l <https://example.org/provider-attestation-policy>
+     ]
+  ] ) ; # 
+  fhir:verification ( [
+     fhir:verified [ fhir:v true ] ;
+     fhir:verifiedWith [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+       fhir:reference [ fhir:v "Organization/ProviderOrg1" ] ;
+       fhir:display [ fhir:v "Provider 1" ]
+     ] ;
+     fhir:verificationDate [ fhir:v "2024-11-14T10:30:00Z"^^xsd:dateTime ]
+  ] ) ; # 
+  fhir:provision [
+     fhir:type [ fhir:v "permit" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2024-01-15"^^xsd:date ]
+     ] ;
+     fhir:actor ( [
+       fhir:role [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v3-ParticipationType>
+           ] ;
+           fhir:code [ fhir:v "IRCP" ] ;
+           fhir:display [ fhir:v "information recipient" ]
+         ] )
+       ] ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> ;
+         fhir:reference [ fhir:v "Practitioner/4" ] ;
+         fhir:display [ fhir:v "Dr. Susan Smith" ]
+       ]
+     ] [
+       fhir:role [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/v3-RoleClass"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/v3-RoleClass>
+           ] ;
+           fhir:code [ fhir:v "PROV" ] ;
+           fhir:display [ fhir:v "healthcare provider" ]
+         ] )
+       ] ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+         fhir:reference [ fhir:v "Organization/ProviderOrg1" ] ;
+         fhir:display [ fhir:v "Provider 1" ]
+       ]
+     ] ) ;
+     fhir:purpose ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
+       ] ;
+       fhir:code [ fhir:v "TREAT" ] ;
+       fhir:display [ fhir:v "treatment" ]
+     ] [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
+       ] ;
+       fhir:code [ fhir:v "HPAYMT" ] ;
+       fhir:display [ fhir:v "healthcare payment" ]
+     ] [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
+       ] ;
+       fhir:code [ fhir:v "HOPERAT" ] ;
+       fhir:display [ fhir:v "healthcare operations" ]
+     ] )
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/provider-attestation-doc-1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,31 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "bfdf8e79-c90d-4258-82b7-955fd996cf87-26",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/bfdf8e79-c90d-4258-82b7-955fd996cf87-26",
+  "name" : "UnionPdexMultiMemberMatchResultCSAndPdexMultiMemberMatchResultCS",
+  "title" : "Union of PDex Multi-Member Match Result Code System And PDex Multi-Member Match Result Code System",
+  "status" : "active",
+  "date" : "2025-12-17T14:55:15-05:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "concept" : [{
+    "code" : "match",
+    "display" : "Matched",
+    "definition" : "Group of successfully matched members from a multi-member match operation."
+  },
+  {
+    "code" : "nomatch",
+    "display" : "Not Matched",
+    "definition" : "Group of submitted members that failed to result in a match in the multi-member match operation."
+  },
+  {
+    "code" : "consentconstraint",
+    "display" : "Consent Constraint",
+    "definition" : "Group of successfully matched members but consent request cannot be complied with."
+  }]
+}

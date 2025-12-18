@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Consent/no-consent-1> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "no-consent-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent no-consent-1</b></p><a name=\"no-consent-1\"> </a><a name=\"hcno-consent-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-provider-consent.html\">PDex Provider Access Consent Profile</a></p></div><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}\">Privacy Consent</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode IDSCL}\">information disclosure</span></p><p><b>patient</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>performer</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>organization</b>: <a href=\"Organization-Payer1-1.html\">Organization Payer 1</a></p><p><b>policyRule</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentpolicycodes cric}\">Common Rule Informed Consent</span></p><blockquote><p><b>provision</b></p><p><b>type</b>: Opt Out</p><p><b>period</b>: 2024-06-11 --&gt; (ongoing)</p><h3>Actors</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type performer}\">Performer</span></td><td>My Health Plan (Identifier: <a href=\"http://terminology.hl7.org/3.1.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">NPI</a>/0123456789)</td></tr></table><p><b>action</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentaction disclose}\">Disclose</span></p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:scope [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
+       ] ;
+       fhir:code [ fhir:v "patient-privacy" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "IDSCL" ]
+     ] )
+  ] ) ; # 
+  fhir:patient [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ) ; # 
+  fhir:organization ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1-1> ;
+     fhir:reference [ fhir:v "Organization/Payer1-1" ]
+  ] ) ; # 
+  fhir:policyRule [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentpolicycodes"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentpolicycodes>
+       ] ;
+       fhir:code [ fhir:v "cric" ] ;
+       fhir:display [ fhir:v "Common Rule Informed Consent" ]
+     ] )
+  ] ; # 
+  fhir:provision [
+     fhir:type [ fhir:v "deny" ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2024-06-11"^^xsd:date ]
+     ] ;
+     fhir:actor ( [
+       fhir:role [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/provenance-participant-type"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/provenance-participant-type>
+           ] ;
+           fhir:code [ fhir:v "performer" ]
+         ] )
+       ] ;
+       fhir:reference [
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "0123456789" ]
+         ] ;
+         fhir:display [ fhir:v "My Health Plan" ]
+       ]
+     ] ) ;
+     fhir:action ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/consentaction"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/consentaction>
+         ] ;
+         fhir:code [ fhir:v "disclose" ]
+       ] )
+     ] )
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1-1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Consent xmlns="http://hl7.org/fhir">
+  <id value="consent-2"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Default Generated text for resource.</div>
+  </text>
+  <status value="active"/>
+  <scope>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+      <code value="patient-privacy"/>
+    </coding>
+  </scope>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+      <code value="IDSCL"/>
+    </coding>
+  </category>
+  <patient>
+    <reference value="Patient/2"/>
+  </patient>
+  <performer>
+    <reference value="Patient/2"/>
+  </performer>
+  <sourceReference>
+    <reference value="http://example.org/DocumentReference/someconsent-2"/>
+  </sourceReference>
+  <policy>
+    <uri value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition-hrex-consent.html#regular"/>
+  </policy>
+  <provision>
+    <type value="permit"/>
+    <period>
+      <start value="2023-12-01"/>
+      <end value="2024-03-31"/>
+    </period>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+          <code value="performer"/>
+        </coding>
+      </role>
+      <reference>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="9876543210"/>
+        </identifier>
+        <display value="Old Health Plan"/>
+      </reference>
+    </actor>
+    <actor>
+      <role>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+          <code value="IRCP"/>
+        </coding>
+      </role>
+      <reference>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="0123456789"/>
+        </identifier>
+        <display value="New Health Plan"/>
+      </reference>
+    </actor>
+    <action>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/consentaction"/>
+        <code value="disclose"/>
+      </coding>
+    </action>
+  </provision>
+</Consent>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="opt-out-reason"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem opt-out-reason</b></p><a name="opt-out-reason"> </a><a name="hcopt-out-reason"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">privacy-concern<a name="opt-out-reason-privacy-concern"> </a></td><td>Privacy Concern</td><td>Member is concerned about privacy</td></tr><tr><td style="white-space:nowrap">data-security<a name="opt-out-reason-data-security"> </a></td><td>Data Security Concern</td><td>Member has concerns about data security</td></tr><tr><td style="white-space:nowrap">unknown-use<a name="opt-out-reason-unknown-use"> </a></td><td>Unknown Use</td><td>Member is unsure how data will be used</td></tr><tr><td style="white-space:nowrap">provider-relationship<a name="opt-out-reason-provider-relationship"> </a></td><td>Provider Relationship</td><td>Member prefers not to share data with specific provider</td></tr><tr><td style="white-space:nowrap">member-choice<a name="opt-out-reason-member-choice"> </a></td><td>Member Choice</td><td>Member exercised their right to opt-out</td></tr><tr><td style="white-space:nowrap">other<a name="opt-out-reason-other"> </a></td><td>Other</td><td>Other reason not specified</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason"/>
+  <version value="2.1.1"/>
+  <name value="OptOutReasonCodeSystem"/>
+  <title value="Opt-Out Reason"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-17T14:48:28-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Reasons for opting out of data sharing"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License"/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="6"/>
+  <concept>
+    <code value="privacy-concern"/>
+    <display value="Privacy Concern"/>
+    <definition value="Member is concerned about privacy"/>
+  </concept>
+  <concept>
+    <code value="data-security"/>
+    <display value="Data Security Concern"/>
+    <definition value="Member has concerns about data security"/>
+  </concept>
+  <concept>
+    <code value="unknown-use"/>
+    <display value="Unknown Use"/>
+    <definition value="Member is unsure how data will be used"/>
+  </concept>
+  <concept>
+    <code value="provider-relationship"/>
+    <display value="Provider Relationship"/>
+    <definition value="Member prefers not to share data with specific provider"/>
+  </concept>
+  <concept>
+    <code value="member-choice"/>
+    <display value="Member Choice"/>
+    <definition value="Member exercised their right to opt-out"/>
+  </concept>
+  <concept>
+    <code value="other"/>
+    <display value="Other"/>
+    <definition value="Other reason not specified"/>
+  </concept>
+</CodeSystem>

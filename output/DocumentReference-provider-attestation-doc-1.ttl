@@ -1,0 +1,98 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/provider-attestation-doc-1> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "provider-attestation-doc-1"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference provider-attestation-doc-1</b></p><a name=\"provider-attestation-doc-1\"> </a><a name=\"hcprovider-attestation-doc-1\"> </a><p><b>status</b>: Current</p><p><b>docStatus</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 64292-6}\">Release of information consent</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentcategorycodes treat}\">Treatment</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Patricia Ann Person</a></p><p><b>date</b>: 2024-11-14 10:30:00+0000</p><p><b>author</b>: <a href=\"Practitioner-4.html\">Dr. Susan Smith</a></p><p><b>authenticator</b>: <a href=\"Organization-ProviderOrg1.html\">Provider 1</a></p><p><b>custodian</b>: <a href=\"Organization-ProviderOrg1.html\">Provider 1</a></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Url</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>application/pdf</td><td><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://example.org/provider1/attestations/2024/attestation-001.pdf\">https://example.org/provider1/attestations/2024/attestation-001.pdf</a></td><td>Provider Treatment Relationship Attestation Form</td><td>2024-11-14 10:30:00+0000</td></tr></table><p><b>format</b>: IHE.FormatCode.codesystem: urn:ihe:iti:xds:2017:mimeTypeSufficient (urn:ihe:iti:xds:2017:mimeTypeSufficient)</p></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Period</b></td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td>2024-01-15 --&gt; (ongoing)</td><td><a href=\"Encounter-6.html\">Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:docStatus [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:64292-6 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "64292-6" ] ;
+       fhir:display [ fhir:v "Release of information consent" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/consentcategorycodes"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/consentcategorycodes>
+       ] ;
+       fhir:code [ fhir:v "treat" ] ;
+       fhir:display [ fhir:v "Treatment" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ] ;
+     fhir:display [ fhir:v "Patricia Ann Person" ]
+  ] ; # 
+  fhir:date [ fhir:v "2024-11-14T10:30:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> ;
+     fhir:reference [ fhir:v "Practitioner/4" ] ;
+     fhir:display [ fhir:v "Dr. Susan Smith" ]
+  ] ) ; # 
+  fhir:authenticator [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+     fhir:reference [ fhir:v "Organization/ProviderOrg1" ] ;
+     fhir:display [ fhir:v "Provider 1" ]
+  ] ; # 
+  fhir:custodian [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> ;
+     fhir:reference [ fhir:v "Organization/ProviderOrg1" ] ;
+     fhir:display [ fhir:v "Provider 1" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "application/pdf" ] ;
+       fhir:url [
+         fhir:v "https://example.org/provider1/attestations/2024/attestation-001.pdf"^^xsd:anyURI ;
+         fhir:l <https://example.org/provider1/attestations/2024/attestation-001.pdf>
+       ] ;
+       fhir:title [ fhir:v "Provider Treatment Relationship Attestation Form" ] ;
+       fhir:creation [ fhir:v "2024-11-14T10:30:00Z"^^xsd:dateTime ]
+     ] ;
+     fhir:format [
+       fhir:system [
+         fhir:v "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"^^xsd:anyURI ;
+         fhir:l <http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem>
+       ] ;
+       fhir:code [ fhir:v "urn:ihe:iti:xds:2017:mimeTypeSufficient" ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:period [
+       fhir:start [ fhir:v "2024-01-15"^^xsd:date ]
+     ] ;
+     fhir:related ( [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Encounter/6> ;
+       fhir:reference [ fhir:v "Encounter/6" ]
+     ] )
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/ProviderOrg1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Encounter/6> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

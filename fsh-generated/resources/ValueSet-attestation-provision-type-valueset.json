@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AttestationProvisionTypeValueSet",
+  "id": "attestation-provision-type-valueset",
+  "title": "Treatment Attestation Provision Type",
+  "description": "Allowed provision types for treatment relationship attestations",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/attestation-provision-type-valueset",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/consent-provision-type",
+        "filter": [
+          {
+            "property": "code",
+            "op": "=",
+            "value": "permit"
+          }
+        ]
+      }
+    ]
+  }
+}

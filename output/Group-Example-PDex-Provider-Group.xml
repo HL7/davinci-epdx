@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="Example-PDex-Provider-Group"/>
+  <meta>
+    <lastUpdated value="2024-03-21T17:18:00.000Z"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Group Example-PDex-Provider-Group</b></p><a name="Example-PDex-Provider-Group"> </a><a name="hcExample-PDex-Provider-Group"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Last updated: 2024-03-21 17:18:00+0000</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pdex-provider-group.html">PDex Provider Group</a></p></div><p><b>Attribution List Status</b>: final</p><p><b>Members Opted-out</b>: 5</p><p><b>identifier</b>: <a href="http://terminology.hl7.org/3.1.0/NamingSystem-npi.html" title="National Provider Identifier">NPI</a>/1122334455, <a href="http://terminology.hl7.org/4.0.0/NamingSystem-USEIN.html" title="An Employer Identification Number (EIN) is also known as a Federal Tax Identification Number, and is used to identify a business entity.">USEIN</a>/99-12345</p><p><b>active</b>: true</p><p><b>type</b>: Person</p><p><b>actual</b>: true</p><p><b>code</b>: <span title="Codes:{http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS pdexprovidergroup}">PDex Provider Group</span></p><p><b>name</b>: Attributed List of Health Plan Members for Practitioner 1122334455.</p><p><b>managingEntity</b>: <a href="Organization-ProviderOrg1.html">Organization Provider 1</a></p><h3>Characteristics</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Value[x]</b></td><td><b>Exclude</b></td><td><b>Period</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS pdexprovidergroup}">PDex Provider Group</span></td><td>Identifier: <a href="http://terminology.hl7.org/3.1.0/NamingSystem-npi.html" title="National Provider Identifier">NPI</a>/0123456789</td><td>false</td><td>2024-03-21 --&gt; (ongoing)</td></tr></table><blockquote><p><b>member</b></p><blockquote><p><b>id</b></p>0</blockquote><p><b>Member Last Transmission</b>: 2024-03-21 17:18:00+0000</p><p><b>Member Last Resource Types</b>: Patient,Condition,Observation,Procedure</p><p><b>Member Last Resource Filters</b>: Condition?recordedDate=ge2023-09-23,Procedure?performed=ge2023-03-21</p><p><b>entity</b>: <a href="Patient-1001.html">Patricia Ann Person (official) Female, DoB: 1974-12-25 ( Member Number)</a></p></blockquote></div>
+  </text>
+  <extension url="http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributionListStatus">
+    <valueCode value="final"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out">
+    <valueQuantity>
+      <value value="5"/>
+    </valueQuantity>
+  </extension>
+  <identifier>
+    <system value="http://hl7.org/fhir/sid/us-npi"/>
+    <value value="1122334455"/>
+  </identifier>
+  <identifier>
+    <system value="urn:oid:2.16.840.1.113883.4.4"/>
+    <value value="99-12345"/>
+  </identifier>
+  <active value="true"/>
+  <type value="person"/>
+  <actual value="true"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS"/>
+      <code value="pdexprovidergroup"/>
+      <display value="PDex Provider Group"/>
+    </coding>
+  </code>
+  <name value="Attributed List of Health Plan Members for Practitioner 1122334455."/>
+  <managingEntity>
+    <reference value="Organization/ProviderOrg1"/>
+  </managingEntity>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS"/>
+        <code value="pdexprovidergroup"/>
+        <display value="PDex Provider Group"/>
+      </coding>
+    </code>
+    <valueReference>
+      <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="0123456789"/>
+      </identifier>
+    </valueReference>
+    <exclude value="false"/>
+    <period>
+      <start value="2024-03-21"/>
+    </period>
+  </characteristic>
+  <member id="0">
+    <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission">
+      <valueDateTime value="2024-03-21T17:18:00.000Z"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types">
+      <valueString value="Patient,Condition,Observation,Procedure"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter">
+      <valueString value="Condition?recordedDate=ge2023-09-23,Procedure?performed=ge2023-03-21"/>
+    </extension>
+    <entity>
+      <reference value="Patient/1001"/>
+    </entity>
+  </member>
+</Group>

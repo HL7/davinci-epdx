@@ -3,6 +3,13 @@
 
 {% include style_insert_table_blue.html %}
 
+### STU 2.1.1 Update
+| JIRA Ticket                                             | Change                                                                                              |
+|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184)    | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API  |
+| [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    | 
+Provider access details in the payer-payer section of the IG at 6.4.4 |
+
 ### STU 2.1.0-ballot Reconciliation
 
 | JIRA Ticket                                             | Change                                                                                              |

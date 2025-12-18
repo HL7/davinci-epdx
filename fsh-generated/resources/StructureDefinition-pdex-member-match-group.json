@@ -1,0 +1,141 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-member-match-group",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group",
+  "version": "2.1.0",
+  "name": "PDexMemberMatchGroup",
+  "title": "PDex Member Match Group",
+  "status": "active",
+  "experimental": true,
+  "publisher": "HL7 International",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/Special/committees/fm"
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email",
+          "value": "mailto:mark@ekivemark.com"
+        }
+      ]
+    }
+  ],
+  "description": "A Group List created by the Payer to enable Bulk Payer-to-Payer API access by Other Payers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters for the access request.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Group",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Group",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Group.code",
+        "path": "Group.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS"
+        }
+      },
+      {
+        "id": "Group.characteristic.code",
+        "path": "Group.characteristic.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.characteristic.code.coding",
+        "path": "Group.characteristic.code.coding",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS"
+        }
+      },
+      {
+        "id": "Group.characteristic.code.coding.code",
+        "path": "Group.characteristic.code.coding.code",
+        "patternCode": "match"
+      },
+      {
+        "id": "Group.characteristic.value[x]",
+        "path": "Group.characteristic.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Group.characteristic.value[x]:valueReference",
+        "path": "Group.characteristic.value[x]",
+        "sliceName": "valueReference",
+        "comment": "Organization Identifier Reference of the Payer requesting the member match",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.characteristic.exclude",
+        "path": "Group.characteristic.exclude",
+        "comment": "Exclude is set to False",
+        "patternBoolean": false
+      },
+      {
+        "id": "Group.characteristic.period",
+        "path": "Group.characteristic.period",
+        "comment": "Enter date match performed (i.e. current date) as Period.start",
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.entity.extension:matchedMember",
+        "path": "Group.member.entity.extension",
+        "sliceName": "matchedMember",
+        "comment": "Add the patient record from the successful MemberMatch for an individual member in the Member-Match Request MemberBundle (Patient Demographics).",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

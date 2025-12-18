@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="provider-member-match-response-001"/>
+  <parameter>
+    <name value="MatchedMembers"/>
+    <resource>
+      <Group>
+        <id value="matched-treatment-relationship-group-001"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Matched Members with Treatment Relationships</h2><p>Members with confirmed treatment relationships who are authorized for provider data access</p></div>
+        </text>
+        <identifier>
+          <system value="http://example.org/payer/match-groups"/>
+          <value value="MTG-2024-12-16-001"/>
+          <assigner>
+            <display value="Example Payer"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1982947230"/>
+          <assigner>
+            <display value="Provider Organization"/>
+          </assigner>
+        </identifier>
+        <active value="true"/>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+            <code value="match"/>
+            <display value="Matched"/>
+          </coding>
+        </code>
+        <quantity value="2"/>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="5555555555"/>
+          </identifier>
+          <display value="Current Payer"/>
+        </managingEntity>
+        <characteristic>
+          <code>
+            <coding>
+              <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+              <code value="match"/>
+              <display value="Matched"/>
+            </coding>
+          </code>
+          <valueReference>
+            <identifier>
+              <system value="http://hl7.org/fhir/sid/us-npi"/>
+              <value value="1982947230"/>
+            </identifier>
+            <display value="Provider Organization"/>
+          </valueReference>
+          <exclude value="false"/>
+          <period>
+            <start value="2024-12-16"/>
+          </period>
+        </characteristic>
+        <member>
+          <entity>
+            <reference value="Patient/payer-member-001"/>
+            <display value="Robert Michael Johnson - Payer Member"/>
+          </entity>
+          <inactive value="false"/>
+        </member>
+        <member>
+          <entity>
+            <reference value="Patient/payer-member-002"/>
+            <display value="Sarah Elizabeth Williams - Payer Member"/>
+          </entity>
+          <inactive value="false"/>
+        </member>
+      </Group>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="NonMatchedMembers"/>
+    <resource>
+      <Group>
+        <id value="nomatch-group-001"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Non-Matched Members</h2><p>Members submitted by provider that were not found in payer system</p></div>
+        </text>
+        <identifier>
+          <system value="http://example.org/payer/match-groups"/>
+          <value value="NMG-2024-12-16-001"/>
+          <assigner>
+            <display value="Example Payer"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1982947230"/>
+          <assigner>
+            <display value="Provider Organization"/>
+          </assigner>
+        </identifier>
+        <active value="true"/>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+            <code value="nomatch"/>
+            <display value="Not Matched"/>
+          </coding>
+        </code>
+        <quantity value="0"/>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="5555555555"/>
+          </identifier>
+          <display value="Current Payer"/>
+        </managingEntity>
+        <characteristic>
+          <code>
+            <coding>
+              <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+              <code value="nomatch"/>
+              <display value="Not Matched"/>
+            </coding>
+          </code>
+          <exclude value="false"/>
+          <period>
+            <start value="2024-12-16"/>
+          </period>
+        </characteristic>
+      </Group>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="TreatmentAttestationConstrainedMembers"/>
+    <resource>
+      <Group>
+        <id value="attestation-constrained-group-001"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Treatment Attestation Constrained</h2><p>Members for whom treatment attestation could not be verified or does not meet payer requirements</p></div>
+        </text>
+        <identifier>
+          <system value="http://example.org/payer/match-groups"/>
+          <value value="ACG-2024-12-16-001"/>
+          <assigner>
+            <display value="Example Payer"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1982947230"/>
+          <assigner>
+            <display value="Provider Organization"/>
+          </assigner>
+        </identifier>
+        <active value="true"/>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+            <code value="nomatch"/>
+            <display value="Not Matched"/>
+          </coding>
+        </code>
+        <quantity value="0"/>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="5555555555"/>
+          </identifier>
+          <display value="Current Payer"/>
+        </managingEntity>
+        <characteristic>
+          <code>
+            <coding>
+              <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+              <code value="nomatch"/>
+              <display value="Not Matched"/>
+            </coding>
+          </code>
+          <exclude value="false"/>
+          <period>
+            <start value="2024-12-16"/>
+          </period>
+        </characteristic>
+      </Group>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="OptOutConstrainedMembers"/>
+    <resource>
+      <Group>
+        <id value="optout-constrained-group-001"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Members who have Opted-Out</h2><p>Members found but who have exercised opt-out rights</p></div>
+        </text>
+        <identifier>
+          <system value="http://example.org/payer/match-groups"/>
+          <value value="OOG-2024-12-16-001"/>
+          <assigner>
+            <display value="Example Payer"/>
+          </assigner>
+        </identifier>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1982947230"/>
+          <assigner>
+            <display value="Provider Organization"/>
+          </assigner>
+        </identifier>
+        <active value="true"/>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+            <code value="nomatch"/>
+            <display value="Not Matched"/>
+          </coding>
+        </code>
+        <quantity value="0"/>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="5555555555"/>
+          </identifier>
+          <display value="Current Payer"/>
+        </managingEntity>
+        <characteristic>
+          <code>
+            <coding>
+              <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS"/>
+              <code value="nomatch"/>
+              <display value="Not Matched"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS"/>
+              <code value="provider-specific"/>
+              <display value="Provider-Specific Opt-Out"/>
+            </coding>
+          </valueCodeableConcept>
+          <exclude value="false"/>
+          <period>
+            <start value="2024-12-16"/>
+          </period>
+        </characteristic>
+      </Group>
+    </resource>
+  </parameter>
+</Parameters>

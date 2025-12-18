@@ -1,0 +1,107 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "opt-out-reason",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem opt-out-reason</b></p><a name=\"opt-out-reason\"> </a><a name=\"hcopt-out-reason\"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">privacy-concern<a name=\"opt-out-reason-privacy-concern\"> </a></td><td>Privacy Concern</td><td>Member is concerned about privacy</td></tr><tr><td style=\"white-space:nowrap\">data-security<a name=\"opt-out-reason-data-security\"> </a></td><td>Data Security Concern</td><td>Member has concerns about data security</td></tr><tr><td style=\"white-space:nowrap\">unknown-use<a name=\"opt-out-reason-unknown-use\"> </a></td><td>Unknown Use</td><td>Member is unsure how data will be used</td></tr><tr><td style=\"white-space:nowrap\">provider-relationship<a name=\"opt-out-reason-provider-relationship\"> </a></td><td>Provider Relationship</td><td>Member prefers not to share data with specific provider</td></tr><tr><td style=\"white-space:nowrap\">member-choice<a name=\"opt-out-reason-member-choice\"> </a></td><td>Member Choice</td><td>Member exercised their right to opt-out</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"opt-out-reason-other\"> </a></td><td>Other</td><td>Other reason not specified</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 2,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason",
+  "version" : "2.1.1",
+  "name" : "OptOutReasonCodeSystem",
+  "title" : "Opt-Out Reason",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-12-17T14:48:28-05:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Reasons for opting out of data sharing",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 6,
+  "concept" : [{
+    "code" : "privacy-concern",
+    "display" : "Privacy Concern",
+    "definition" : "Member is concerned about privacy"
+  },
+  {
+    "code" : "data-security",
+    "display" : "Data Security Concern",
+    "definition" : "Member has concerns about data security"
+  },
+  {
+    "code" : "unknown-use",
+    "display" : "Unknown Use",
+    "definition" : "Member is unsure how data will be used"
+  },
+  {
+    "code" : "provider-relationship",
+    "display" : "Provider Relationship",
+    "definition" : "Member prefers not to share data with specific provider"
+  },
+  {
+    "code" : "member-choice",
+    "display" : "Member Choice",
+    "definition" : "Member exercised their right to opt-out"
+  },
+  {
+    "code" : "other",
+    "display" : "Other",
+    "definition" : "Other reason not specified"
+  }]
+}

@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "opt-out-reason",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason",
+  "name": "OptOutReason",
+  "title": "Opt-Out Reason",
+  "status": "active",
+  "description": "The reason a member has chosen to opt out of data sharing",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Group.characteristic"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Opt-Out Reason",
+        "definition": "The reason a member has chosen to opt out of data sharing"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Reason for opt-out",
+        "definition": "The member's stated reason for opting out",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pdex/ValueSet/opt-out-reason-valueset"
+        }
+      }
+    ]
+  }
+}

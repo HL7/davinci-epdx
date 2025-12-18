@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="PatientMemberMatchExample1"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Patient PatientMemberMatchExample1</b></p><a name="PatientMemberMatchExample1"> </a><a name="hcPatientMemberMatchExample1"> </a><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Robert Michael Johnson (official) Male, DoB: 1965-08-15 ( Member Number)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Detail</td><td colspan="3"><ul><li>ph: 555-123-4567</li><li>123 Main Street Springfield IL 62701 (home)</li></ul></td></tr></table></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="MB"/>
+      </coding>
+    </type>
+    <system value="http://example.org/provider-org/patient-ids"/>
+    <value value="PAT-001"/>
+    <assigner>
+      <display value="Provider Organization"/>
+    </assigner>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <family value="Johnson"/>
+    <given value="Robert"/>
+    <given value="Michael"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="555-123-4567"/>
+  </telecom>
+  <gender value="male"/>
+  <birthDate value="1965-08-15"/>
+  <address>
+    <use value="home"/>
+    <line value="123 Main Street"/>
+    <city value="Springfield"/>
+    <state value="IL"/>
+    <postalCode value="62701"/>
+  </address>
+</Patient>

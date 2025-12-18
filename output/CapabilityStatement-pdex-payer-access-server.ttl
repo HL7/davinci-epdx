@@ -1,0 +1,263 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-payer-access-server> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "pdex-payer-access-server"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement pdex-payer-access-server</b></p><a name=\"pdex-payer-access-server\"> </a><a name=\"hcpdex-payer-access-server\"> </a><h2 id=\"title\">PDex Payer Access Server CapabilityStatement</h2><ul><li>Implementation Guide Version: 2.1.1 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>json</code></li><li>Supported Patch Formats: <code>application/json-patch+json</code></li><li>Published on: 2024-05-02 </li><li>Published by: HL7 International / Financial Management </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h3 id=\"shallIGs\">SHALL Support the Following Implementation Guides</h3><ul><li><a href=\"index.html\">http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.1.0</a></li></ul><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div><p>The PDex Payer Access Server <strong>SHALL</strong>:</p>\n<ol>\n<li>Support the US Core 3.1.1 or US Core 6.1.0 resources accessed via the Group resource.</li>\n<li>Implement the RESTful behavior according to the FHIR specification for bulk asynchronous access.</li>\n<li>Support json source formats for all US Core and PDex interactions.</li>\n<li>Return the following response classes:</li>\n</ol>\n<ul>\n<li>(Status 400): invalid parameter</li>\n<li>(Status 401/4xx): unauthorized request</li>\n<li>(Status 403): insufficient scope</li>\n<li>(Status 404): unknown resource</li>\n<li>(Status 410): deleted resource.</li>\n</ul>\n<p>The PDex Payer Access Server <strong>SHOULD</strong>:</p>\n<ol>\n<li>Identify the US Core profiles supported as part of the FHIR <code>meta.profile</code> attribute for each instance.</li>\n</ol>\n</div><div class=\"lead\"><em>Security</em></div><blockquote><div><ol>\n<li>See the <a href=\"http://hl7.org/fhir/us/core/security.html\">US Core Security Considerations</a> section for requirements and recommendations. 2. A server <strong>SHALL</strong> reject any unauthorized requests by returning an <code>HTTP 401</code> unauthorized response code.</li>\n</ol>\n</div></blockquote></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET past versions of resources (vread interaction)\">V-R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th class=\"text-center\"><b title=\"GET changes to a resource (history interaction on instance)\">H-I</b></th><th class=\"text-center\"><b title=\"GET changes for all resources of the type (history interaction on type)\">H-T</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#Group1-1\">Group</a></td><td>Supported Profiles<br/>  <a href=\"StructureDefinition-pdex-member-match-group.html\">PDex Member Match Group</a></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"><span title=\"SHOULD\">Y</span></td><td class=\"text-center\"><span title=\"SHALL\"><b>Y</b></span></td><td class=\"text-center\"/><td class=\"text-center\"/><td class=\"text-center\"><span title=\"SHOULD\">Y</span></td><td class=\"text-center\"><span title=\"MAY\">y?</span></td><td>identifier, characteristic</td><td/><td/><td><code>$bulk-member-match</code>, <code>$davinci-data-export</code></td></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Group1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: SHALL </span>Group</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <br/><code>search-type</code><div><p>Allows discovery of existing groups. SHOULD be limited to groups a requestor is permitted to access.</p>\n</div><code>read</code><div><p>Allows retrieval of a specific Group Resource.</p>\n</div></li><li><strong>SHOULD</strong> support <br/><code>vread</code><div><p>Allows retrieval of a historical version of a Group Resource.</p>\n</div><code>history-instance</code><div><p>Allows review of changes to a Group Resource over time.</p>\n</div></li><li><strong>MAY</strong> support <br/><code>history-type</code><div><p>Retrieve the change history fora Group Resource.</p>\n</div></li></ul></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-pdex-member-match-group.html\">PDex Member Match Group</a></p></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/group.html#search\">identifier</a></td><td><code>token</code></td><td><div><p>The client <strong>SHALL</strong> provide at least a code value and <strong>MAY</strong> provide both the system and code values.</p>\n<p>The server <strong>SHALL</strong> support both.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/R4/group.html#search\">characteristic</a></td><td><code>token</code></td><td><div><p>A common characteristic of all members of a group.</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href=\"OperationDefinition-BulkMemberMatch.html\">$bulk-member-match</a></td><td><div><p>Client will submit multi-member-match-request bundle. Server will respond with a multi-member-match-response and instantiate a Group resource conforming to the PDexMemberMatchGroup that contains a set of matched members that the Server identified.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td><a href=\"http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html\">$davinci-data-export</a></td><td><div><p>Each DaVinci use case as part of its implementation guide can define the exportType parameter and the behavior expected.</p>\n</div></td></tr></tbody></table></div></div></div></div></div></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-wg>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "fm"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 2 ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-payer-access-server"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-payer-access-server>
+  ] ; # 
+  fhir:version [ fhir:v "2.1.1"] ; # 
+  fhir:name [ fhir:v "PdexPayerAccessServerCapabilityStatement"] ; # 
+  fhir:title [ fhir:v "PDex Payer Access Server CapabilityStatement"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2024-05-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This Section describes the expected capabilities of the PDex Payer Access Server actor which is responsible for providing responses to the queries submitted by the PDex Payer Access Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Payer Access Servers are defined. PDex Payer Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "Used by permission of HL7 International, all rights reserved Creative Commons License"] ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "json"] ) ; # 
+  fhir:patchFormat ( [ fhir:v "application/json-patch+json"] ) ; # 
+  fhir:implementationGuide ( [
+     fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.1.0"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex?version=2.1.0>
+  ] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:documentation [ fhir:v "The PDex Payer Access Server **SHALL**: \n1. Support the US Core 3.1.1 or US Core 6.1.0 resources accessed via the Group resource.\n2. Implement the RESTful behavior according to the FHIR specification for bulk asynchronous access.\n3. Support json source formats for all US Core and PDex interactions. \n4. Return the following response classes:\n  - (Status 400): invalid parameter\n  - (Status 401/4xx): unauthorized request\n  - (Status 403): insufficient scope \n  - (Status 404): unknown resource \n  - (Status 410): deleted resource.\n\nThe PDex Payer Access Server **SHOULD**: \n1. Identify the US Core profiles supported as part of the FHIR `meta.profile` attribute for each instance." ] ;
+     fhir:security [
+       fhir:description [ fhir:v "1. See the [US Core Security Considerations](http://hl7.org/fhir/us/core/security.html) section for requirements and recommendations. 2. A server **SHALL** reject any unauthorized requests by returning an `HTTP 401` unauthorized response code." ]
+     ] ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+         ] ;
+         fhir:value [
+           a fhir:Code ;
+           fhir:v "SHALL"
+         ]
+       ] ) ;
+       fhir:type [ fhir:v "Group" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group>
+       ] ) ;
+       fhir:interaction ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "search-type" ] ;
+         fhir:documentation [ fhir:v "Allows discovery of existing groups. SHOULD be limited to groups a requestor is permitted to access." ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "read" ] ;
+         fhir:documentation [ fhir:v "Allows retrieval of a specific Group Resource." ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHOULD"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "vread" ] ;
+         fhir:documentation [ fhir:v "Allows retrieval of a historical version of a Group Resource." ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHOULD"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "history-instance" ] ;
+         fhir:documentation [ fhir:v "Allows review of changes to a Group Resource over time." ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "MAY"
+           ]
+         ] ) ;
+         fhir:code [ fhir:v "history-type" ] ;
+         fhir:documentation [ fhir:v "Retrieve the change history fora Group Resource." ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Group-identifier"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Group-identifier>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The client **SHALL** provide at least a code value and **MAY** provide both the system and code values.\n\nThe server **SHALL** support both." ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "SHALL"
+           ]
+         ] ) ;
+         fhir:name [ fhir:v "characteristic" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/SearchParameter/Group-characteristic"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/SearchParameter/Group-characteristic>
+         ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A common characteristic of all members of a group." ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "bulk-member-match" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch>
+         ] ;
+         fhir:documentation [ fhir:v "Client will submit multi-member-match-request bundle. Server will respond with a multi-member-match-response and instantiate a Group resource conforming to the PDexMemberMatchGroup that contains a set of matched members that the Server identified." ]
+       ] [
+         fhir:name [ fhir:v "davinci-data-export" ] ;
+         fhir:definition [
+           fhir:v "http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export>
+         ] ;
+         fhir:documentation [ fhir:v "Each DaVinci use case as part of its implementation guide can define the exportType parameter and the behavior expected." ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Provider Access API - Da Vinci Payer Data Exchange v2.1.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6.2"}
+    h3,h4,h5,h6{--heading-prefix:"6.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" data-no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" data-no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.1.1 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Reading this IG</a>
+      </li>
+      <li>
+        <a href="usecasescenarios.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="credits.html">Project and Participants</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
+      </li>
+      <li>
+        <a href="securityandprivacy.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="provider-access-api.html">Provider Access</a>
+      </li>
+      <li>
+        <a href="provider-access-api-v2.html">Provider Access (v2)</a>
+      </li>
+      <li>
+        <a href="payertopayerbulkexchange.html">Payer-to-Payer(bulk)</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer(single)</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/">FHIR R4 Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/">HRex 1.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.hl7.org/fhir/us/core/STU3.1.1/">US Core 3.1.1</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU6.1/">US Core 6.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU7/">US Core 7.0.0</a>
+      </li>
+      <li>
+        <a href="other-igs.html">Other IGs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704">Project Page</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support">Implementer Support</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314">Specification Dashboard</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a target="_blank" href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex">Propose a Change</a>
+      </li>
+      <li>
+        <a href="PDexDownloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changehistory.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='pdeximplementationactorsinteractionsdatapayloadsandmethods.html'><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Provider Access API</b></li>
+
+          <span style="float:right;">
+
+            <a href="handlingdataprovenance.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="provider-access-api-v2.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Provider Access API</h2>
+  
+
+
+
+
+
+  <table class="colsi">
+    <tr>
+  
+      <td>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        
+      </td>
+  
+  
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#provider-access-api" id="markdown-toc-provider-access-api">Provider Access API</a>    <ul>
+      <li><a href="#how-does-provider-access-work" id="markdown-toc-how-does-provider-access-work">How does Provider Access Work?</a></li>
+      <li><a href="#member-opt-out" id="markdown-toc-member-opt-out">Member Opt-out</a></li>
+      <li><a href="#attribution-list-driven" id="markdown-toc-attribution-list-driven">Attribution List driven</a></li>
+      <li><a href="#attribution-list" id="markdown-toc-attribution-list">Attribution List</a></li>
+      <li><a href="#searching-for-attributed-groups" id="markdown-toc-searching-for-attributed-groups">Searching for Attributed Groups</a></li>
+      <li><a href="#da-vinci-data-export-payload" id="markdown-toc-da-vinci-data-export-payload">Da Vinci Data Export Payload</a></li>
+      <li><a href="#da-vinci-data-export-operation---pdex-provider-use-case" id="markdown-toc-da-vinci-data-export-operation---pdex-provider-use-case">Da Vinci Data Export Operation - PDex Provider Use Case</a></li>
+      <li><a href="#access-and-refresh-tokens" id="markdown-toc-access-and-refresh-tokens">Access and Refresh Tokens</a></li>
+      <li><a href="#scopes-for-operations" id="markdown-toc-scopes-for-operations">Scopes for Operations</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<p><a href="handlingdataprovenance.html">Previous Page - Handling Data Provenance</a></p>
+
+<div class="stu-note">
+
+<b><i>Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. 
+It has been frrequently tested at Connectathons. It is supports the requirements of the CMS prior Authorization Rule (CMS-0057).
+The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
+</i></b>
+</div>
+
+<h2 id="provider-access-api">Provider Access API</h2>
+
+<p>In December 2022, CMS released the <a href="https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact">Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P</a>. 
+This rule was finalized in February 2024.<br />
+One of the requirements of the rule is for Impacted Payers to implement a Provider Access API. 
+This is an API that conforms to the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">HL7 FHIR Bulk Data API specification</a>.
+The purpose of the Provider Access API is to enable Providers to query a Payer API for information 
+about the members of the health plan where they have a current, or upcoming treatment relationship.
+The API will enable a provider to ask a Payer "What do you know about my Patients?"</p>
+
+<p>Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases 
+Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by 
+regulation or other agreements, the data <strong>MAY</strong> be configured to include financial data (including Allowed and 
+Paid amounts and other information in the full CARIN Blue Button ExplanationOfBenefit resources) for other use cases, including:</p>
+<ul>
+  <li>Value-Based Care contracts and Risk-based Provider Programs where the provider partner organization is “At Risk” for those services.</li>
+  <li>Services that occur at a provider partner organization's facility even if those services are not associated with a Value-Based Care contract.</li>
+  <li>Situations where the financial information is publicly available.</li>
+</ul>
+
+<p>The Payer Data Exchange Implementation Guide supports the Provider Access API by
+utilizing the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$Davinci-data-export-operation</a> operation in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution Implementation Guide</a>.</p>
+
+<p>This IG is not overly prescriptive in how to construct and manage Member Attribution lists.
+Health plans are responsible for managing Member Attribution Lists according to their own business rules
+for determining whether a Provider and Member have an existing, or impending treatment relationship.</p>
+
+<p>This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
+secure exchange of information between Providers and Payers. Incorporating prescriptive definitions for
+connecting, registering and authorizing access to the Provider Access API risks complicating the adoption
+of solutions that will enable secure exchange of data, at scale.</p>
+
+<h3 id="how-does-provider-access-work">How does Provider Access Work?</h3>
+
+<p>The diagram below illustrates how health plans may construct and maintain their Member Attribution lists 
+for Organizations, Locations and Providers. It also illustrates how a Provider Representative, such as 
+an EMR, can query the health plan for the PDexProviderGroup resources they are permitted to see and then
+use the Group/{id} endpoint for those records to request Member clinical, prior authorization and 
+non-financial claims and encounter data.</p>
+
+<p>The typical use case is expected to be one where an EMR retrieves data from a health plan for one or more 
+providers using automated service functions. The retrieving system or service, such as an EMR, 
+is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
+personnel, or systems, have access to the retrieved data.</p>
+
+<p>It is recommended that, at a minimum, health plans create Member Attribution Lists using the NPI data for 
+the Rendering Provider. Health plans <strong>MAY</strong> choose to construct alternative or additional Attribution
+Lists that cover more than one provider, for example by creating an Attribution list for all providers
+at a specific facility.</p>
+
+<div style="height=auto;width=90%;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" preserveAspectRatio="none" version="1.1" viewBox="0 0 1563 963" zoomAndPan="magnify"><defs /><g><g><title>In-Network Provider</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="293.814" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="297" x2="297" y1="67.4883" y2="884.7363" /></g><g><title>Provider Representative | EMR</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="487.9434" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="491.6279" x2="491.6279" y1="67.4883" y2="884.7363" /></g><g><title>Member | Patient</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="671.1763" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="674.2588" x2="674.2588" y1="67.4883" y2="884.7363" /></g><g><title>Payer</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="771.25" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="775.0938" x2="775.0938" y1="67.4883" y2="884.7363" /></g><g><title>Attribution Process</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="958.1309" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="961.2715" x2="961.2715" y1="67.4883" y2="884.7363" /></g><g><title>Payer FHIR Store</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="1104.939" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1108.561" x2="1108.561" y1="67.4883" y2="884.7363" /></g><g><title>Claims</title><rect fill="#000000" fill-opacity="0.00000" height="817.248" width="8" x="1199.1763" y="67.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1202.3169" x2="1202.3169" y1="67.4883" y2="884.7363" /></g><g class="participant participant-head" data-participant="Provider"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151.6279" x="222" y="36" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137.6279" x="229" y="56.5352">In-Network Provider</text></g><g class="participant participant-tail" data-participant="Provider"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151.6279" x="222" y="883.7363" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137.6279" x="229" y="904.2715">In-Network Provider</text></g><g class="participant participant-head" data-participant="EMR"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="216.6309" x="383.6279" y="36" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202.6309" x="390.6279" y="56.5352">Provider Representative | EMR</text></g><g class="participant participant-tail" data-participant="EMR"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="216.6309" x="383.6279" y="883.7363" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202.6309" x="390.6279" y="904.2715">Provider Representative | EMR</text></g><g class="participant participant-head" data-participant="Member"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129.835" x="610.2588" y="36" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.835" x="617.2588" y="56.5352">Member | Patient</text></g><g class="participant participant-tail" data-participant="Member"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129.835" x="610.2588" y="883.7363" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115.835" x="617.2588" y="904.2715">Member | Patient</text></g><g class="participant participant-head" data-participant="Payer"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="50.3125" x="750.0938" y="36" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36.3125" x="757.0938" y="56.5352">Payer</text></g><g class="participant participant-tail" data-participant="Payer"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="50.3125" x="750.0938" y="883.7363" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36.3125" x="757.0938" y="904.2715">Payer</text></g><g class="participant participant-head" data-participant="Attribution"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129.7188" x="894.2715" y="64.5352">Attribution Process</text><ellipse cx="962.1309" cy="35" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;" /><line style="stroke:#181818;stroke-width:0.5;" x1="950.1309" x2="974.1309" y1="49" y2="49" /></g><g class="participant participant-tail" data-participant="Attribution"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129.7188" x="894.2715" y="897.2715">Attribution Process</text><ellipse cx="962.1309" cy="916.2246" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;" /><line style="stroke:#181818;stroke-width:0.5;" x1="950.1309" x2="974.1309" y1="930.2246" y2="930.2246" /></g><g class="participant participant-head" data-participant="FHIRServer"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.7559" x="1050.561" y="64.5352">Payer FHIR Store</text><path d="M1090.939,15 C1090.939,5 1108.939,5 1108.939,5 C1108.939,5 1126.939,5 1126.939,15 L1126.939,41 C1126.939,51 1108.939,51 1108.939,51 C1108.939,51 1090.939,51 1090.939,41 L1090.939,15" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;" /><path d="M1090.939,15 C1090.939,25 1108.939,25 1108.939,25 C1108.939,25 1126.939,25 1126.939,15" fill="none" style="stroke:#181818;stroke-width:1.5;" /></g><g class="participant participant-tail" data-participant="FHIRServer"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.7559" x="1050.561" y="897.2715">Payer FHIR Store</text><path d="M1090.939,910.2246 C1090.939,900.2246 1108.939,900.2246 1108.939,900.2246 C1108.939,900.2246 1126.939,900.2246 1126.939,910.2246 L1126.939,936.2246 C1126.939,946.2246 1108.939,946.2246 1108.939,946.2246 C1108.939,946.2246 1090.939,946.2246 1090.939,936.2246 L1090.939,910.2246" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;" /><path d="M1090.939,910.2246 C1090.939,920.2246 1108.939,920.2246 1108.939,920.2246 C1108.939,920.2246 1126.939,920.2246 1126.939,910.2246" fill="none" style="stroke:#181818;stroke-width:1.5;" /></g><g class="participant participant-head" data-participant="Claims"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.7188" x="1177.3169" y="64.5352">Claims</text><path d="M1185.1763,15 C1185.1763,5 1203.1763,5 1203.1763,5 C1203.1763,5 1221.1763,5 1221.1763,15 L1221.1763,41 C1221.1763,51 1203.1763,51 1203.1763,51 C1203.1763,51 1185.1763,51 1185.1763,41 L1185.1763,15" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;" /><path d="M1185.1763,15 C1185.1763,25 1203.1763,25 1203.1763,25 C1203.1763,25 1221.1763,25 1221.1763,15" fill="none" style="stroke:#181818;stroke-width:1.5;" /></g><g class="participant participant-tail" data-participant="Claims"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45.7188" x="1177.3169" y="897.2715">Claims</text><path d="M1185.1763,910.2246 C1185.1763,900.2246 1203.1763,900.2246 1203.1763,900.2246 C1203.1763,900.2246 1221.1763,900.2246 1221.1763,910.2246 L1221.1763,936.2246 C1221.1763,946.2246 1203.1763,946.2246 1203.1763,946.2246 C1203.1763,946.2246 1185.1763,946.2246 1185.1763,936.2246 L1185.1763,910.2246" fill="#E2E2F0" style="stroke:#181818;stroke-width:1.5;" /><path d="M1185.1763,910.2246 C1185.1763,920.2246 1203.1763,920.2246 1203.1763,920.2246 C1203.1763,920.2246 1221.1763,920.2246 1221.1763,910.2246" fill="none" style="stroke:#181818;stroke-width:1.5;" /></g><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1556.8511" x="0" y="98.1436" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1556.8511" y1="98.1436" y2="98.1436" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1556.8511" y1="101.1436" y2="101.1436" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="329.231" x="613.8101" y="87.4883" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="310.9463" x="619.8101" y="104.0566">Member Attribution Creation and Maintenance</text><g class="message" data-participant-1="Payer" data-participant-2="Attribution"><polygon fill="#181818" points="950.1309,156.4199,960.1309,160.4199,950.1309,164.4199,954.1309,160.4199" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="775.25" x2="956.1309" y1="160.4199" y2="160.4199" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162.8809" x="782.25" y="155.6777">Attribution rules and data</text></g><path d="M967,125.7988 L967,180.7988 L1192,180.7988 L1192,135.7988 L1182,125.7988 L967,125.7988" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1182,125.7988 L1182,135.7988 L1192,135.7988 L1182,125.7988" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91.8569" x="973" y="143.3672">Payer provides</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="176.5093" x="973" y="158.6777">Attribution processing rules</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204.4834" x="973" y="173.9883">and any Additional Data Sources</text><g class="message" data-participant-1="Claims" data-participant-2="Attribution"><polygon fill="#181818" points="973.1309,222.3516,963.1309,226.3516,973.1309,230.3516,969.1309,226.3516" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="967.1309" x2="1202.1763" y1="226.3516" y2="226.3516" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137.541" x="979.1309" y="221.6094">Historical Claims data</text></g><path d="M1208,191.7305 L1208,246.7305 L1448,246.7305 L1448,201.7305 L1438,191.7305 L1208,191.7305" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1438,191.7305 L1438,201.7305 L1448,201.7305 L1438,191.7305" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="219.5146" x="1214" y="209.2988">Claims data provides evidence of a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="197.666" x="1214" y="224.6094">treatment relationship between</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="134.6973" x="1214" y="239.9199">Member and Provider</text><g class="message" data-participant-1="Member" data-participant-2="Attribution"><polygon fill="#181818" points="950.1309,280.6279,960.1309,284.6279,950.1309,288.6279,954.1309,284.6279" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="675.1763" x2="956.1309" y1="284.6279" y2="284.6279" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157.2822" x="682.1763" y="279.8857">Opt-in/Opt-out decision</text></g><path d="M474,257.6621 L474,297.6621 L669,297.6621 L669,267.6621 L659,257.6621 L474,257.6621" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M659,257.6621 L659,267.6621 L669,267.6621 L659,257.6621" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174.2559" x="480" y="275.2305">Default is for Member to be</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="157.6313" x="480" y="290.541">Opted-in to data sharing</text><g class="message" data-participant-1="EMR" data-participant-2="Attribution"><polygon fill="#181818" points="950.1309,341.9043,960.1309,345.9043,950.1309,349.9043,954.1309,345.9043" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="491.9434" x2="956.1309" y1="345.9043" y2="345.9043" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150.5981" x="498.9434" y="341.1621">AppointmentBook Hook</text></g><path d="M306,308.2832 L306,348.2832 L486,348.2832 L486,318.2832 L476,308.2832 L306,308.2832" fill="#7CFC00" style="stroke:#181818;stroke-width:0.5;" /><path d="M476,308.2832 L476,318.2832 L486,318.2832 L476,308.2832" fill="#7CFC00" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159.25" x="312" y="325.8516">CDS Hooks (as defined in</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104.3174" x="312" y="341.1621">Da Vinci CRD IG)</text><path d="M967,308.2832 L967,348.2832 L1227,348.2832 L1227,318.2832 L1217,308.2832 L967,308.2832" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1217,308.2832 L1217,318.2832 L1227,318.2832 L1217,308.2832" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239.3257" x="973" y="325.8516">Hooks provide a potential indicator of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231.6704" x="973" y="341.1621">an impending treatment relationship</text><g class="message" data-participant-1="EMR" data-participant-2="Attribution"><polygon fill="#181818" points="950.1309,371.2148,960.1309,375.2148,950.1309,379.2148,954.1309,375.2148" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2.0,2.0;" x1="491.9434" x2="956.1309" y1="375.2148" y2="375.2148" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129.7778" x="498.9434" y="370.4727">EncounterStart Hook</text></g><g class="message" data-participant-1="Attribution" data-participant-2="FHIRServer"><polygon fill="#181818" points="1096.939,418.8359,1106.939,422.8359,1096.939,426.8359,1100.939,422.8359" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="962.1309" x2="1102.939" y1="422.8359" y2="422.8359" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122.8081" x="969.1309" y="418.0938">PDexProviderGroup</text></g><path d="M1113,388.2148 L1113,443.2148 L1374,443.2148 L1374,398.2148 L1364,388.2148 L1113,388.2148" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1364,388.2148 L1364,398.2148 L1374,398.2148 L1364,388.2148" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="240.6016" x="1119" y="405.7832">PDexProviderGroup Group resource at</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="224.104" x="1123.1133" y="421.0938">Organization + Location + Provider</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118.1299" x="1123.1133" y="436.4043">level of granularity</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1556.8511" x="0" y="469.8018" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1556.8511" y1="469.8018" y2="469.8018" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1556.8511" y1="472.8018" y2="472.8018" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="184.168" x="686.3416" y="459.1465" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="165.8833" x="692.3416" y="475.7148">Provider Bulk Access API</text><g class="message" data-participant-1="Provider" data-participant-2="EMR"><polygon fill="#181818" points="479.9434,528.0781,489.9434,532.0781,479.9434,536.0781,483.9434,532.0781" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="297.814" x2="485.9434" y1="532.0781" y2="532.0781" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165.2422" x="304.814" y="527.3359">Authorizes Representative</text></g><path d="M5,497.457 L5,552.457 L292,552.457 L292,507.457 L282,497.457 L5,497.457" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M282,497.457 L282,507.457 L292,507.457 L282,497.457" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="266.8809" x="11" y="515.0254">Provider/Provider Organization authorizes</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="250.6816" x="11" y="530.3359">EMR/Provider Representative to retrieve</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="197.063" x="11" y="545.6465">Attribution data on their behalf</text><g class="message" data-participant-1="EMR" data-participant-2="Payer"><polygon fill="#181818" points="763.25,575.6992,773.25,579.6992,763.25,583.6992,767.25,579.6992" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="491.9434" x2="769.25" y1="579.6992" y2="579.6992" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="244.7974" x="498.9434" y="574.957">Request SMART Bulk Access Credential</text></g><g class="message" data-participant-1="Payer" data-participant-2="EMR"><polygon fill="#181818" points="502.9434,605.0098,492.9434,609.0098,502.9434,613.0098,498.9434,609.0098" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="496.9434" x2="774.25" y1="609.0098" y2="609.0098" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223.4121" x="508.9434" y="604.2676">Payer issues Bulk Access Credential</text></g><g class="message" data-participant-1="EMR" data-participant-2="FHIRServer"><polygon fill="#181818" points="1096.939,634.3203,1106.939,638.3203,1096.939,642.3203,1100.939,638.3203" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="491.9434" x2="1102.939" y1="638.3203" y2="638.3203" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99.6646" x="498.9434" y="633.5781">SEARCH /Group</text></g><g class="message" data-participant-1="FHIRServer" data-participant-2="EMR"><polygon fill="#181818" points="502.9434,681.9414,492.9434,685.9414,502.9434,689.9414,498.9434,685.9414" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="496.9434" x2="1107.939" y1="685.9414" y2="685.9414" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104.2031" x="508.9434" y="681.1992">Bundle response</text></g><path d="M1113,651.3203 L1113,706.3203 L1442,706.3203 L1442,661.3203 L1432,651.3203 L1113,651.3203" fill="#FFC0CB" style="stroke:#181818;stroke-width:0.5;" /><path d="M1432,651.3203 L1432,661.3203 L1442,661.3203 L1432,651.3203" fill="#FFC0CB" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="250.542" x="1119" y="668.8887">PDexProviderGroup resources returned.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="297.1528" x="1119" y="684.1992">Group records returned will be bounded by the</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="308.6992" x="1119" y="699.5098">access permission of the Provider Representative</text><g class="message" data-participant-1="EMR" data-participant-2="FHIRServer"><polygon fill="#181818" points="1096.939,740.2178,1106.939,744.2178,1096.939,748.2178,1100.939,744.2178" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="491.9434" x2="1102.939" y1="744.2178" y2="744.2178" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="216.3599" x="498.9434" y="739.4756">/Group/{id}/$davinci-data-export</text></g><path d="M169,717.252 L169,757.252 L486,757.252 L486,727.252 L476,717.252 L169,717.252" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M476,717.252 L476,727.252 L486,727.252 L476,717.252" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="296.3022" x="175" y="734.8203">Bulk request can request a subset of Members,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274.4155" x="175" y="750.1309">a subset of resources and/or a date period.</text><g class="message" data-participant-1="FHIRServer" data-participant-2="EMR"><polygon fill="#181818" points="502.9434,821.46,492.9434,825.46,502.9434,829.46,498.9434,825.46" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="496.9434" x2="1107.939" y1="825.46" y2="825.46" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="439.3911" x="508.9434" y="820.7178">$DaVinci-data-export notifies Reuestor that transaction is completed</text></g><path d="M1113,767.873 L1113,868.873 L1545,868.873 L1545,777.873 L1535,767.873 L1113,767.873" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1535,767.873 L1535,777.873 L1545,777.873 L1535,767.873" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274.022" x="1119" y="785.4414">FHIR Store compiles bundles in response to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="318.7729" x="1119" y="800.752">request, notifies requestor and requestor retrieves</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270.8481" x="1119" y="816.0625">Bulk NDJson bundle(s). Content comprises:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146.9736" x="1119" y="831.373">- US Core Clinical data,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174.5288" x="1119" y="846.6836">- PDex Prior Authorizations</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="411.9121" x="1119" y="861.9941">- CARIN EOBs (Non-Financial profiled claims and encounter data)</text></g></svg>
+</div>
+
+<h3 id="member-opt-out">Member Opt-out</h3>
+
+<p>A health plan member is entitled to opt-out of data sharing via the Provider Access API. PDex defines a consent profile 
+that enables a member to deny sharing via the Provider Access API. A member should also be able to update their preference 
+to revoke a previous denial.</p>
+
+<p>Health Plans <strong>SHALL</strong> implement the pdex-provider-consent to enable a member to express their sharing preference.</p>
+
+<p>The <a href="CapabilityStatement-pdex-server.html">PDex Server Capability Statement</a> enables the Consent record to be written to the Patient Access API.</p>
+
+<p>See the <a href="StructureDefinition-pdex-provider-consent.html">PDex Provider Consent here</a></p>
+
+<h3 id="attribution-list-driven">Attribution List driven</h3>
+
+<p>The Provider Access API is centered around Attribution lists that enable a Provider/Provider Organization or 
+Facility to retrieve data for health plan members that are assigned to that Provider. The data retrieval uses a 
+FHIR Bulk data export operation to retrieve the requested data.</p>
+
+<p>Members <strong>SHALL</strong> have the ability to opt-out of data sharing with providers.</p>
+
+<p>The Health Plan is responsible for managing Attribution Lists. Attribution Lists <strong>SHOULD</strong> be 
+discrete lists at the Organization + Facility + Provider level. This level of granularity is needed
+to account for Providers working across different organizations, or at different facilities that
+may use different EMRs. A health plan <strong>MAY</strong> adopt their own methodology for managing and maintaining 
+provider attribution lists. Health plans are encouraged, for transparency purposes, to share their methodology 
+for managing Member Attribution.</p>
+
+<p>Health plans:</p>
+<ul>
+  <li><strong>MAY</strong> use claims data as a source to identify existing treatment relationships.</li>
+  <li><strong>MAY</strong> utilize their own rules for determining the attribution of members to Providers.</li>
+  <li><strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/us/davinci-crd/STU2.1/hooks.html">Coverage Requirements Discovery IG's</a> appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.</li>
+</ul>
+
+<p>Attribution lists <strong>SHALL</strong> be searchable via a secure RESTful API. Access to the Group resource to READ 
+attribution lists should be scoped to the appropriate Organization, Facility, Provider or their 
+authorized representative that is acting on the behalf of the Provider.</p>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">Da Vinci Data Export Operation</a> in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Member Attribution IG</a> supports the Bulk FHIR API specification.
+The operation uses the Group resource. For the PDex Provider Access API the following capabilities
+<strong>SHOULD</strong> be supported:</p>
+
+<ul>
+  <li>Search for Group.</li>
+  <li>Get Group record.</li>
+  <li>Request all information for members in the Group.</li>
+  <li>Request information for a subset of members in the Group.</li>
+  <li>Request a limited set of information for a subset of members in the Group.</li>
+</ul>
+
+<p>This combination of requests should cover all provider data requests, such as:</p>
+
+<ul>
+  <li>Send all data for this set of patients that are new to my practice.</li>
+  <li>Send new data since I last requested for this set of patients.</li>
+  <li>Send just the lab results for this set of patients since this date.</li>
+</ul>
+
+<p>Access <strong>SHALL</strong> be controlled using client credentials that are compliant with SMART-On-FHIR.
+Access <strong>SHOULD</strong> be restricted to Providers with a contractual relationship with a Payer.</p>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export operations</a> <strong>SHALL</strong> be submitted using a HTTP POST.
+The HTTP Header <strong>SHALL</strong> include:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prefer: respond-async
+</code></pre></div></div>
+
+<h3 id="attribution-list">Attribution List</h3>
+
+<p>The Payer <strong>SHALL</strong> be responsible for managing and maintaining the attribution list that assigns 
+Members to Providers. The payer <strong>SHALL</strong> take account of members that have chosen to Opt-out of 
+sharing data with providers. Those opted-out members <strong>SHALL</strong> be omitted from the Provider 
+Attribution list. The Payer <strong>MAY</strong> choose to maintain a separate Group resource for a Provider 
+that identities the Opted-out Members that would otherwise have been Attributed to the Provider. 
+If a Payer maintains an Opted-out Group resource it is the Payers responsibility
+to ensure that a Provider is unable to download data about those opted-out members using a bulk 
+export operation. The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution (ATR) IG</a> 
+provides transactions to manage the Group resource through Add, change and delete member actions.</p>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/StructureDefinition-ext-attributionListStatus.html">AttributionListStatus extension</a> can have one of three values:</p>
+<ul>
+  <li>draft: Used when building a list and it is not considered ready for use.</li>
+  <li>final: Used for lists that may be governed by contractual considerations and should bot be changed.</li>
+  <li>open: Use for lists that can be amended. For example when a provider is still accepting patients.</li>
+</ul>
+
+<p>A provider <strong>MAY</strong> have more than one list. For example, a list marked as Final related to a Value-based care contract and an "open" list where the Provider is still accepting patients under a different care arrangement.</p>
+
+<p>The <a href="StructureDefinition-pdex-provider-group.html">PDexProviderGroup</a> profile <strong>SHALL</strong> be used to record the
+members attributed to a Provider, Provider Group or Organization. PDexProviderGroup is based on the 
+<a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/StructureDefinition-atr-group.html">ATRGroup</a> Profile 
+from the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution (ATR) 2.1.0 IG</a>.</p>
+
+<p>The profile adds an extension at the root level. This is used to, optionally, record the number 
+of potentially attributed members that instead used their right to opt-out of sharing data with 
+providers. By recording this quantity it <strong>MAY</strong> help providers reconcile their attribution lists 
+with those managed by the Payer, The extension is:</p>
+
+<ul>
+  <li><a href="StructureDefinition-base-ext-members-opted-out.html">MembersOptedOut</a></li>
+</ul>
+
+<p>The <a href="StructureDefinition-pdex-provider-group.html">PDexProviderGroup</a> Profile adds three extensions to the member element. 
+These are used to track the data retrieved for a member by the provider. This enables sophisticated
+providers to fine tune their requests for data. For example, Retrieving the group resource a 
+Provider could create a Provider Access data request that repeated the parameters supplied to
+<a href="StructureDefinition-base-ext-last-types.html">lastResources</a> and <a href="StructureDefinition-base-ext-last-typefilter.html">lastFilters</a> and compile a list of Patients with the 
+same <a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a> date. The Provider Access API is flexible enough that a Provider 
+could submit a request for the data for a single Patient, repeating the previously used parameters. 
+A Provider could also compile a request that omitted resources that were previously asked for,
+avoiding data duplication. Providing these member-level extensions is meant as an aid to Providers 
+and Payers to enable granular data sharing. Providers, or Payers wishing to take advantage of these
+elements <strong>SHOULD</strong> consider implementing their own independent data tracking capabilities to 
+understand what data has been provided to a Provider for specific members.</p>
+
+<p>The member-level extensions are primarily intended for instances where a Provider does not want to
+download <em>ALL information for ALL attributed members.</em></p>
+
+<p>The member-level extensions are:</p>
+
+<ul>
+  <li><a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a></li>
+  <li><a href="StructureDefinition-base-ext-last-types.html">lastResources</a></li>
+  <li><a href="StructureDefinition-base-ext-last-typefilter.html">lastFilters</a></li>
+</ul>
+
+<p>These extensions <strong>SHALL</strong> be updated by the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export</a> PDex Use Case Operation.</p>
+
+<h3 id="searching-for-attributed-groups">Searching for Attributed Groups</h3>
+
+<p>A Provider Representative may need to manage multiple attribution lists. The FHIR Group resource 
+supports searching on characteristic. To enable searching the 
+<a href="StructureDefinition-pdex-member-match-group.html">PDexMemberMatchGroup Profile</a>
+sets the characteristic element to include the "pdexprovidergroup" code, the identifier of the 
+provider in (characteristic.valueReference), sets characteristic.exclude to false and 
+characteristic.period.start to the date attribution list creation or update.</p>
+
+<p>Implementers <strong>SHALL</strong> support the standard search parameters for group that are specified in the base
+Group resource in FHIR R4 specification: <a href="StructureDefinition-pdex-member-match-group.html">Group Search Parameters</a>.</p>
+
+<h3 id="da-vinci-data-export-payload">Da Vinci Data Export Payload</h3>
+
+<p>The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
+that are attributed to them via an existing , or impending treatment relationship. Under the requirements of the CMS
+Prior Authorization Rule (CMS-0057) the data available through the API <strong>SHOULD</strong> include:</p>
+
+<ul>
+  <li>US Core Clinical data (<a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1</a> or <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1</a></li>
+  <li><a href="StructureDefinition-pdex-priorauthorization.html">PDex Prior Authorization Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles </a>, as detailed below.</li>
+</ul>
+
+<p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
+non-financial profiles:</p>
+
+<ul>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
+</ul>
+
+<h3 id="da-vinci-data-export-operation---pdex-provider-use-case">Da Vinci Data Export Operation - PDex Provider Use Case</h3>
+
+<p>Provider Representative:</p>
+
+<ul>
+  <li><strong>SHALL</strong> be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. Where {id} is the PDexProviderGroup(s) attributed to the Organization, Facility and Provider they are representing.</li>
+  <li><strong>SHALL</strong> be permitted to SEARCH /Group. The search function and the bundle contents returned <strong>SHALL</strong> be restricted to the {ids} that are associated with the Provider Representative's account.</li>
+  <li><strong>MAY</strong> be associated with more than one attribution group list.</li>
+  <li><strong>SHALL</strong> be permitted to GET /Group/{id} for any Attribution Group list they are associated with.</li>
+  <li><strong>SHALL</strong> be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.</li>
+</ul>
+
+<p>The $davinci-data-export operation enables a Provider Representative to perform granular requests 
+for data.</p>
+
+<p>Data can be constrained by:</p>
+
+<ul>
+  <li>Patient subset</li>
+  <li>Date range</li>
+  <li>Resource Type</li>
+  <li>Resource filter (valid search parameters for a resource)</li>
+</ul>
+
+<p>Data available via the API includes:</p>
+
+<ul>
+  <li>Clinical resources (US Core and PDex)</li>
+  <li>Prior Authorizations and supporting structured documentation</li>
+  <li>Non-Financial claims and encounters (CARIN Blue Button)</li>
+</ul>
+
+<p>The Data Export operation <strong>SHALL</strong> check the consent status for each member at the time 
+of execution. This is necessary to identify members that may have changed their opt-out 
+status for sharing with providers.</p>
+
+<h4 id="da-vinci-data-export-parameter-handling">Da Vinci Data Export Parameter Handling</h4>
+
+<h5 id="patient">patient</h5>
+
+<p>If the patient parameter is not provided data <strong>SHALL</strong> be retrieved for all members 
+in the Group. If the patient parameter is provided the operation <strong>SHALL</strong> ignore references 
+to patients that are invalid, or not a member of the group.</p>
+
+<h5 id="exporttype">exportType</h5>
+
+<p>This is an optional parameter in the Da Vinci Data Export Operation.
+The exportType parameter <strong>SHALL</strong> have one of the following values:</p>
+
+<ul>
+  <li>hl7.fhir.us.davinci-pdex#provider-delta</li>
+  <li>hl7.fhir.us.davinci-pdex#provider-download</li>
+  <li>hl7.fhir.us.davinci-pdex#provider-snapshot</li>
+</ul>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-delta option <strong>SHALL</strong> be used when the provider is
+retrieving new, or updated data that will be stored as part of the patient record.</p>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-download option <strong>SHALL</strong> be used when the provider is
+retrieving data that will be stored as part of the patient record.</p>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-snapshot value <strong>SHOULD</strong> be used when a provider
+wants to download data for viewing.</p>
+
+<p>From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType
+parameter will require the Data Provider/Payer to track the latest download
+date/time for the Patients that the provider requests data for.  These values <strong>SHALL</strong>
+be updated in an extension associated with the Patient for which a download was requested.</p>
+
+<h5 id="_since">_since</h5>
+
+<p>Resources in the Patient Access and Provider Access API can extend back to January 1, 2016. 
+The _since parameter <strong>SHOULD</strong> be used for resource requests when the full history is not 
+required. It is expected that providers <strong>MAY</strong> first request data for members without 
+limiting the request using the _since parameter. Subsequent requests <strong>MAY</strong> then use _since
+to limit data to information that is new.</p>
+
+<h5 id="_until">_until</h5>
+
+<p>The _until parameter <strong>MAY</strong> be used less frequently. It is most likely to be used with the<br />
+hl7.fhir.us.davinci-pdex#provider-snapshot exportType to retrieve member data for a specific 
+period.</p>
+
+<h5 id="_type">_type</h5>
+
+<p>The _type parameter <strong>MAY</strong> be used to restrict the resources retrieved by the Provider. This 
+enables providers to only retrieve the resource types they are interested in seeing. If this 
+parameter is not used all available resources <strong>SHALL</strong> be returned by the Payer, subject to
+the constraints applied by other input parameters.</p>
+
+<p>When _type is used the export operation <strong>SHALL</strong> record the content of the _type parameter in the
+<a href="StructureDefinition-base-ext-last-types.html">lastResources</a> element for each Member for which data is retrieved. The
+<a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a> <strong>SHALL</strong> be recorded with either the Date/Time of the Export Transaction
+or the value of the _until parameter, if it is earlier.</p>
+
+<h5 id="_typefilter">_typeFilter</h5>
+
+<p>The _typeFilter parameter <strong>MAY</strong> be used to further restrict the resources retrieved by the 
+Provider. For example, to only retrieve Observations of a certain type. The _typeFilter, if 
+used, <strong>SHALL</strong> comprise one, or more, valid FHIR search queries for the respective resource 
+being filtered.</p>
+
+<p>When _typeFilter is used the export operation <strong>SHALL</strong> record the content of the _typeFilter 
+parameter in the <a href="StructureDefinition-base-ext-last-typefilter.html">lastFilters</a> element for each Member for which data is retrieved. The
+<a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a> <strong>SHALL</strong> be recorded with either the Date/Time of the Export Transaction
+or the value of the _until parameter, if it is earlier.</p>
+
+<p>NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
+supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs <strong>SHALL</strong>
+be followed.</p>
+
+<h3 id="access-and-refresh-tokens">Access and Refresh Tokens</h3>
+
+<p>Implementers <strong>SHOULD</strong> implement OAuth 2.0 access management in accordance with the SMART Backend Services 
+Authorization Profile. When SMART Backend Services Authorization is used, Bulk Data Status Request and Bulk Data 
+Output File Requests with requiresAccessToken=true <strong>SHALL</strong> be protected the same way the Bulk Data Kick-off Request, 
+including an access token with scopes that cover all resources being exported. A server <strong>MAY</strong> 
+additionally restrict Bulk Data Status Request and Bulk Data Output File Requests by limiting 
+them to the client that originated the export. Health plans <strong>SHALL</strong> limit the data returned to 
+only those FHIR resources for which the client is authorized.</p>
+
+<p>Clients <strong>SHALL</strong> require OAuth client credentials to enable secure access to read and search the Group 
+resources and perform Bulk export operations. Access Tokens <strong>SHALL</strong> be required to access the Group
+resources and and the Bulk export operation. Access and Refresh Tokens <strong>SHOULD</strong> be issued to support 
+the client requesting and subsequently retrieving the bulk data response to their request.</p>
+
+<p>Registering of a client application or service to perform the bulk Payer-to-Payer
+Exchange should be registered in accordance with the approach defined in the
+<a href="https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys">SMART App Launch IG</a>.
+That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
+(DCRP). An alternative approach that is closely aligned with the DCRP protocol is
+to use the B2B protocols detailed in the 
+<a href="http://hl7.org/fhir/us/udap-security/STU1/">HL7 Security for Scalable Registration, Authentication, and Authorization</a> IG.</p>
+
+<p>If the protocols detailed in the above UDAP Security IG's <a href="https://hl7.org/fhir/us/udap-security/b2b.html">Business to Business</a>) section are used, 
+it is recommended that the subject_id in the B2B Authorization Extension Object (Key Name: "hl7-b2b") 
+contain the NPI of the Provider for which Attributed Patient data is being requested. For instances 
+where health plan generated attribution lists cover more than a single provider, the subject_id could 
+be the FHIR Id of the Group being requested. The use of the Group FHIR ID as the subject_id is based 
+upon the assumption that health plans have access controls in place to restrict the requestor to only 
+having access to Group records they are authorized to access.</p>
+
+<h3 id="scopes-for-operations">Scopes for Operations</h3>
+
+<p><a href="http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch">SMART App Launch STU 2.1</a> 
+defines granular scopes for resources. Following the model proposed in the section on 
+<a href="https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data">FHIR Resource Scope Syntax</a>
+the following scopes are proposed to control access to the Da Vinci Data Export Operation for Provider Access:</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS</td>
+          <td>pdexprovidergroup</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>This would be the scope to execute the <em>davinci-data-export</em> operation 
+with it being restricted to the Group <em>id(s)</em> that the user is authorized to access.</p>
+
+<p><a href="provider-access-api-v2.html">Next Page - Provider Access (v2)</a></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="handlingdataprovenance.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="provider-access-api-v2.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

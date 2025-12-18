@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>PDex Adjudication Category Discriminator - Da Vinci Payer Data Exchange v2.1.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"13.71"}
+    h3,h4,h5,h6{--heading-prefix:"13.71"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" data-no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" data-no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.1.1 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Reading this IG</a>
+      </li>
+      <li>
+        <a href="usecasescenarios.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="credits.html">Project and Participants</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
+      </li>
+      <li>
+        <a href="securityandprivacy.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="provider-access-api.html">Provider Access</a>
+      </li>
+      <li>
+        <a href="provider-access-api-v2.html">Provider Access (v2)</a>
+      </li>
+      <li>
+        <a href="payertopayerbulkexchange.html">Payer-to-Payer(bulk)</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer(single)</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/">FHIR R4 Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/">HRex 1.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.hl7.org/fhir/us/core/STU3.1.1/">US Core 3.1.1</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU6.1/">US Core 6.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU7/">US Core 7.0.0</a>
+      </li>
+      <li>
+        <a href="other-igs.html">Other IGs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704">Project Page</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support">Implementer Support</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314">Specification Dashboard</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a target="_blank" href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex">Propose a Change</a>
+      </li>
+      <li>
+        <a href="PDexDownloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changehistory.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>FHIR Artifacts</b></a></li><li><b>PDex Adjudication Category Discriminator</b></li>
+
+          <span style="float:right;">
+
+            <a href="ValueSet-PDexAdjudication.ttl.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="ValueSet-PDexAdjudicationCategoryDiscriminator-testing.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: PDex Adjudication Category Discriminator
+(Experimental)
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudicationCategoryDiscriminator|2.1.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          <i>
+            
+            Standards status:
+          </i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+          
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">PDexAdjudicationCategoryDiscriminator</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: This Valueset is not copyrighted.</p>
+</td>
+    </tr>
+
+  </table>
+
+<p>
+<p>Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-pdex-priorauthorization.html">PDex Prior Authorization</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="PDexAdjudicationCategoryDiscriminator"> </a><a name="hcPDexAdjudicationCategoryDiscriminator"> </a><p>This value set includes codes based on the following rules:</p>
+<ul><li>Import all the codes that are contained in <a href="ValueSet-PDexAdjudication.html">PDex Adjudication</a></li>
+<li>Import all the codes that are contained in <a href="ValueSet-PDexPayerBenefitPaymentStatus.html">PDex Payer Benefit Payment Status</a></li>
+<li>Include all codes defined in <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html"><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></a><span title="Version is not explicitly stated, which means it is fixed to 2.1.0, the version found through the package references"> version &#x1F4E6;2.1.0</span></li>
+<li>Include all codes defined in <a href="CodeSystem-PDexAdjudicationDiscriminator.html"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;2.1.1</span></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px"><p>Expansion performed internally based on:</p><ul><li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html">codesystem C4BB Adjudication Code System v2.1.0 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication|2.1.0" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="CodeSystem-PDexAdjudicationDiscriminator.html">codesystem PDex Adjudication Discriminator v2.1.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator|2.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="CodeSystem-PDexPayerAdjudicationStatus.html">codesystem PDex Payer Adjudication Status v2.1.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus|2.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html">codesystem Adjudication Value Codes v1.0.1 (CodeSystem)</a><span class="copy-text-inline"><button data-clipboard-text="http://terminology.hl7.org/CodeSystem/adjudication|1.0.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="ValueSet-PDexAdjudication.html">valueset PDex Adjudication v2.1.1 (ValueSet)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication|2.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li><li><a href="ValueSet-PDexPayerBenefitPaymentStatus.html">valueset PDex Payer Benefit Payment Status v2.1.1 (ValueSet)</a><span class="copy-text-inline"><button data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus|2.1.1" title="Click to Copy URL" class="btn-copy"> </button></span></li></ul></div><p>This value set contains 23 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Definition</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/adjudication-submitted"> </a><code>http://terminology.hl7.org/CodeSystem/adjudication</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-submitted">submitted</a></td><td>Submitted Amount</td><td>The total submitted amount for the claim or group or line item.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;, &quot;version&quot;: &quot;1.0.1&quot;, &quot;code&quot;: &quot;submitted&quot;, &quot;display&quot;: &quot;Submitted Amount&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;&gt;&lt;version value=&quot;1.0.1&quot;&gt;&lt;code value=&quot;submitted&quot;&gt;&lt;display value=&quot;Submitted Amount&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/adjudication-copay"> </a><code>http://terminology.hl7.org/CodeSystem/adjudication</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-copay">copay</a></td><td>CoPay</td><td>Patient Co-Payment</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;, &quot;version&quot;: &quot;1.0.1&quot;, &quot;code&quot;: &quot;copay&quot;, &quot;display&quot;: &quot;CoPay&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;&gt;&lt;version value=&quot;1.0.1&quot;&gt;&lt;code value=&quot;copay&quot;&gt;&lt;display value=&quot;CoPay&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/adjudication-eligible"> </a><code>http://terminology.hl7.org/CodeSystem/adjudication</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-eligible">eligible</a></td><td>Eligible Amount</td><td>Amount of the change which is considered for adjudication.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;, &quot;version&quot;: &quot;1.0.1&quot;, &quot;code&quot;: &quot;eligible&quot;, &quot;display&quot;: &quot;Eligible Amount&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;&gt;&lt;version value=&quot;1.0.1&quot;&gt;&lt;code value=&quot;eligible&quot;&gt;&lt;display value=&quot;Eligible Amount&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/adjudication-deductible"> </a><code>http://terminology.hl7.org/CodeSystem/adjudication</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-deductible">deductible</a></td><td>Deductible</td><td>Amount deducted from the eligible amount prior to adjudication.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;, &quot;version&quot;: &quot;1.0.1&quot;, &quot;code&quot;: &quot;deductible&quot;, &quot;display&quot;: &quot;Deductible&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;&gt;&lt;version value=&quot;1.0.1&quot;&gt;&lt;code value=&quot;deductible&quot;&gt;&lt;display value=&quot;Deductible&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://terminology.hl7.org/CodeSystem/adjudication-benefit"> </a><code>http://terminology.hl7.org/CodeSystem/adjudication</code></td><td style="white-space:nowrap">  <a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-benefit">benefit</a></td><td>Benefit Amount</td><td>Amount payable under the coverage</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;, &quot;version&quot;: &quot;1.0.1&quot;, &quot;code&quot;: &quot;benefit&quot;, &quot;display&quot;: &quot;Benefit Amount&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://terminology.hl7.org/CodeSystem/adjudication&quot;&gt;&lt;version value=&quot;1.0.1&quot;&gt;&lt;code value=&quot;benefit&quot;&gt;&lt;display value=&quot;Benefit Amount&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-coinsurance"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-coinsurance">coinsurance</a></td><td>Coinsurance</td><td>The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;coinsurance&quot;, &quot;display&quot;: &quot;Coinsurance&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;coinsurance&quot;&gt;&lt;display value=&quot;Coinsurance&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-noncovered"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-noncovered">noncovered</a></td><td>Noncovered</td><td>The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;noncovered&quot;, &quot;display&quot;: &quot;Noncovered&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;noncovered&quot;&gt;&lt;display value=&quot;Noncovered&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-priorpayerpaid"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-priorpayerpaid">priorpayerpaid</a></td><td>Prior payer paid</td><td>The reduction in the payment amount to reflect the carrier as a secondary payer.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;priorpayerpaid&quot;, &quot;display&quot;: &quot;Prior payer paid&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;priorpayerpaid&quot;&gt;&lt;display value=&quot;Prior payer paid&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidbypatient"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatient">paidbypatient</a></td><td>Paid by patient</td><td>The total amount paid by the patient without specifying the source.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidbypatient&quot;, &quot;display&quot;: &quot;Paid by patient&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidbypatient&quot;&gt;&lt;display value=&quot;Paid by patient&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidtopatient"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtopatient">paidtopatient</a></td><td>Paid to patient</td><td>paid to patient</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidtopatient&quot;, &quot;display&quot;: &quot;Paid to patient&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidtopatient&quot;&gt;&lt;display value=&quot;Paid to patient&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidtoprovider"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtoprovider">paidtoprovider</a></td><td>Paid to provider</td><td>The amount paid to the provider.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidtoprovider&quot;, &quot;display&quot;: &quot;Paid to provider&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidtoprovider&quot;&gt;&lt;display value=&quot;Paid to provider&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-memberliability"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-memberliability">memberliability</a></td><td>Member liability</td><td>The amount of the member's liability.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;memberliability&quot;, &quot;display&quot;: &quot;Member liability&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;memberliability&quot;&gt;&lt;display value=&quot;Member liability&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-discount"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-discount">discount</a></td><td>Discount</td><td>The amount of the discount</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;discount&quot;, &quot;display&quot;: &quot;Discount&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;discount&quot;&gt;&lt;display value=&quot;Discount&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-drugcost"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-drugcost">drugcost</a></td><td>Drug cost</td><td>Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;drugcost&quot;, &quot;display&quot;: &quot;Drug cost&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;drugcost&quot;&gt;&lt;display value=&quot;Drug cost&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus-innetwork"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexPayerAdjudicationStatus.html#PDexPayerAdjudicationStatus-innetwork">innetwork</a></td><td>In Network</td><td>Indicates the claim or claim line was paid in network.  This does not indicate the contracting status of the provider</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;innetwork&quot;, &quot;display&quot;: &quot;In Network&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;innetwork&quot;&gt;&lt;display value=&quot;In Network&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus-outofnetwork"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexPayerAdjudicationStatus.html#PDexPayerAdjudicationStatus-outofnetwork">outofnetwork</a></td><td>Out Of Network</td><td>Indicates the claim or claim line was paid out of network.  This does not indicate the contracting status of the provider</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;outofnetwork&quot;, &quot;display&quot;: &quot;Out Of Network&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;outofnetwork&quot;&gt;&lt;display value=&quot;Out Of Network&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus-other"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexPayerAdjudicationStatus.html#PDexPayerAdjudicationStatus-other">other</a></td><td>Other</td><td>Indicates other network status or when a network does not apply</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;other&quot;, &quot;display&quot;: &quot;Other&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;other&quot;&gt;&lt;display value=&quot;Other&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidbypatientcash"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatientcash">paidbypatientcash</a></td><td>Paid by patient - cash</td><td>The amount paid by the patient using cash, check, or other personal account.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidbypatientcash&quot;, &quot;display&quot;: &quot;Paid by patient - cash&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidbypatientcash&quot;&gt;&lt;display value=&quot;Paid by patient - cash&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidbypatientother"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatientother">paidbypatientother</a></td><td>Paid by patient - other</td><td>The amount paid by the patient using a method different than cash (cash, check, or personal account) or health account.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidbypatientother&quot;, &quot;display&quot;: &quot;Paid by patient - other&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidbypatientother&quot;&gt;&lt;display value=&quot;Paid by patient - other&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication-paidbypatienthealthaccount"> </a><code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication</code></td><td style="white-space:nowrap">  <a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatienthealthaccount">paidbypatienthealthaccount</a></td><td>Paid by patient - health account</td><td>The amount paid by the patient using another method like HSA, HRA, FSA or other type of health account.</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;, &quot;version&quot;: &quot;2.1.0&quot;, &quot;code&quot;: &quot;paidbypatienthealthaccount&quot;, &quot;display&quot;: &quot;Paid by patient - health account&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&quot;&gt;&lt;version value=&quot;2.1.0&quot;&gt;&lt;code value=&quot;paidbypatienthealthaccount&quot;&gt;&lt;display value=&quot;Paid by patient - health account&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator-allowedunits"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexAdjudicationDiscriminator.html#PDexAdjudicationDiscriminator-allowedunits">allowedunits</a></td><td>allowed units</td><td>defines the adjudication slice to define allowed units</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;allowedunits&quot;, &quot;display&quot;: &quot;allowed units&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;allowedunits&quot;&gt;&lt;display value=&quot;allowed units&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator-consumedunits"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexAdjudicationDiscriminator.html#PDexAdjudicationDiscriminator-consumedunits">consumedunits</a></td><td>consumed units</td><td>defines the adjudication slice to define consumed units</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;consumedunits&quot;, &quot;display&quot;: &quot;consumed units&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;consumedunits&quot;&gt;&lt;display value=&quot;consumed units&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator-denialreason"> </a><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator</code></td><td style="white-space:nowrap">  <a href="CodeSystem-PDexAdjudicationDiscriminator.html#PDexAdjudicationDiscriminator-denialreason">denialreason</a></td><td>Denial Reason</td><td>defines the adjudication slice to identify the denial reason</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;, &quot;version&quot;: &quot;2.1.1&quot;, &quot;code&quot;: &quot;denialreason&quot;, &quot;display&quot;: &quot;Denial Reason&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator&quot;&gt;&lt;version value=&quot;2.1.1&quot;&gt;&lt;code value=&quot;denialreason&quot;&gt;&lt;display value=&quot;Denial Reason&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="ValueSet-PDexAdjudication.ttl.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="ValueSet-PDexAdjudicationCategoryDiscriminator-testing.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

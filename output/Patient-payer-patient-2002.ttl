@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-patient-2002> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "payer-patient-2002"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient payer-patient-2002</b></p><a name=\"payer-patient-2002\"> </a><a name=\"hcpayer-patient-2002\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">John Michael Doe (official) Male, DoB: 1985-06-15 ( Member Number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Medical record number/MR-2002-PLAN</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">456 Oak Avenue Springfield IL 62702 </td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/health-plan/identifiers/member"^^xsd:anyURI ;
+       fhir:l <http://example.org/health-plan/identifiers/member>
+     ] ;
+     fhir:value [ fhir:v "HP-87654321" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Example Health Plan" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MR" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/health-plan/identifiers/medical-record"^^xsd:anyURI ;
+       fhir:l <http://example.org/health-plan/identifiers/medical-record>
+     ] ;
+     fhir:value [ fhir:v "MR-2002-PLAN" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Example Health Plan" ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Doe" ] ;
+     fhir:given ( [ fhir:v "John" ] [ fhir:v "Michael" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1985-06-15"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "456 Oak Avenue" ] ) ;
+     fhir:city [ fhir:v "Springfield" ] ;
+     fhir:state [ fhir:v "IL" ] ;
+     fhir:postalCode [ fhir:v "62702" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -134,18 +134,15 @@ The Bulk Member Match Operation will use the following Parameters:
 - In: [PDexMultiMemberMatchRequestParameterBundle](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 - Out: [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html)
 
-The Response Profile provides a Group identifier that can be used by the requesting/new
-payer to retrieve data.
+The Response Profile provides a Group identifier that can be used by the requesting/new payer to retrieve data.
 
 The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-BulkMemberMatch.html)
 
-The Bulk Member Match Operation **SHALL** evaluate the consent request for 
-each member and determine whether the request for only Non-Sensitive data, 
-as determined by federal and state regulations that apply to the data holder, 
-can be complied with. The following decision tree illustrates how the Consent 
-determination **SHALL** be made.
+The Bulk Member Match Operation follows the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/) and returns a manifest with references to matched member data. The requesting payer uses this manifest to retrieve the Member-Match Response through the bulk data export mechanism.
+
+The Bulk Member Match Operation **SHALL** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. The following decision tree illustrates how the Consent determination **SHALL** be made.
 
 Consent **SHALL** be evaluated at the time of the data request to ensure that the Member
 has not contacted their previous payer to override sharing consent.
@@ -177,13 +174,13 @@ Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefi
 
 ### Da Vinci Data Export Payload
 
-The Provider Access is meant to enable in-network providers to retrieve the information they want about one or more patients
-that are attributed to them via an existing, or impending treatment relationship. Under the requirements of the CMS
+The Payer-to-Payer data export operation is meant to retrieve the information requested by the member when they join a new payer. The payer rtrieves their information using Payer-to-Payer exchange. Under the requirements of the CMS
 Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:
 
 - US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
 - [CARIN Blue Button non-Financial Profiles]({{site.data.fhir.ver.carinbb}}/artifacts.html)
 - [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
+- US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}}) that supports the Prior Authorizatiojn decision. This includes **Unstructured** data, such as images or faxes, used to make the Prior Authorization determination. These unstructured documents can be encoded and attached to a DocumentReference to enable exchange using the US Core APIs.
 
 
 ### DaVinci-Data-Export Operation

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="1000017"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2020-07-09T15:26:23.217+00:00"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Provenance 1000017</b></p><a name="1000017"> </a><a name="hc1000017"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 1; Last updated: 2020-07-09 15:26:23+0000</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a></p></div><p>Provenance for <a href="Bundle-3000002.html">Bundle: type = searchset; timestamp = 2020-09-28 23:26:23+0000; total = 1</a></p><p>Summary</p><table class="grid"><tr><td>Recorded</td><td>2020-07-09 15:26:23+0000</td></tr></table><p><b>Agents</b></p><table class="grid"><tr><td><b>Type</b></td><td><b>Role</b></td><td><b>who</b></td></tr><tr><td><span title="Codes:{http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type transmitter}">Transmitter</span></td><td/><td><a href="Organization-Payer1.html">Organization Payer 1</a></td></tr></table></div>
+  </text>
+  <target>
+    <reference value="Bundle/3000002"/>
+  </target>
+  <recorded value="2020-07-09T15:26:23.217+00:00"/>
+  <agent>
+    <type>
+      <coding>
+        <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type"/>
+        <code value="transmitter"/>
+        <display value="Transmitter"/>
+      </coding>
+    </type>
+    <role>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+        <code value="TRANS"/>
+      </coding>
+    </role>
+    <who>
+      <reference value="Organization/Payer1"/>
+    </who>
+  </agent>
+</Provenance>

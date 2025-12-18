@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Coverage/CoverageMatchExample1> a fhir:Coverage ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CoverageMatchExample1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage CoverageMatchExample1</b></p><a name=\"CoverageMatchExample1\"> </a><a name=\"hcCoverageMatchExample1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html\">HRex Member Match Coverage Profile</a></p></div><p><b>status</b>: Draft</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode EHPLANS}\">EHPLANS</span></p><p><b>subscriber</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Patient/patient-prov-001\">Patient/patient-prov-001</a></p><p><b>subscriberId</b>: 12345678</p><p><b>beneficiary</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Patient/patient-prov-001\">Patient/patient-prov-001</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/subscriber-relationship self}\">Self</span></p><p><b>period</b>: 2023-01-01 --&gt; 2023-12-31</p><p><b>payor</b>: Previous Health Plan (Identifier: <a href=\"http://terminology.hl7.org/3.1.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">NPI</a>/9876543210)</p><blockquote><p><b>class</b></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/coverage-class group}\">Group</span></p><p><b>value</b>: EMPLOY-12345</p></blockquote><blockquote><p><b>class</b></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/coverage-class plan}\">Plan</span></p><p><b>value</b>: PPO-GOLD</p></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "EHPLANS" ]
+     ] )
+  ] ; # 
+  fhir:subscriber [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> ;
+     fhir:reference [ fhir:v "Patient/patient-prov-001" ]
+  ] ; # 
+  fhir:subscriberId [ fhir:v "12345678"] ; # 
+  fhir:beneficiary [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> ;
+     fhir:reference [ fhir:v "Patient/patient-prov-001" ]
+  ] ; # 
+  fhir:relationship [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/subscriber-relationship"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/subscriber-relationship>
+       ] ;
+       fhir:code [ fhir:v "self" ]
+     ] )
+  ] ; # 
+  fhir:period [
+     fhir:start [ fhir:v "2023-01-01"^^xsd:date ] ;
+     fhir:end [ fhir:v "2023-12-31"^^xsd:date ]
+  ] ; # 
+  fhir:payor ( [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "9876543210" ]
+     ] ;
+     fhir:display [ fhir:v "Previous Health Plan" ]
+  ] ) ; # 
+  fhir:class ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
+         ] ;
+         fhir:code [ fhir:v "group" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "EMPLOY-12345" ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
+         ] ;
+         fhir:code [ fhir:v "plan" ]
+       ] )
+     ] ;
+     fhir:value [ fhir:v "PPO-GOLD" ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

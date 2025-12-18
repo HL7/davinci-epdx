@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Coverage xmlns="http://hl7.org/fhir">
+  <id value="coverage-link-2"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Default Generated text for resource.</div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="MB"/>
+      </coding>
+    </type>
+    <system value="http://example.org/old-payer"/>
+    <value value="234568"/>
+  </identifier>
+  <status value="draft"/>
+  <subscriberId value="432156790"/>
+  <beneficiary>
+    <reference value="Patient/2"/>
+  </beneficiary>
+  <relationship>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/subscriber-relationship"/>
+      <code value="self"/>
+    </coding>
+  </relationship>
+  <period>
+    <start value="2011-05-23"/>
+    <end value="2012-05-23"/>
+  </period>
+  <payor>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="0123456789"/>
+    </identifier>
+    <display value="New Health Plan"/>
+  </payor>
+</Coverage>

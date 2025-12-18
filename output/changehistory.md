@@ -1,0 +1,239 @@
+# Change History - Da Vinci Payer Data Exchange v2.1.1
+
+* [**Table of Contents**](toc.md)
+* **Change History**
+
+## Change History
+
+| |
+| :--- |
+| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+
+[Previous Page - Member-Authorized OAuth2 Exchange](member-authorizedoauth2exchange.md)
+
+### STU 2.1.1 Update
+
+| JIRA Ticket | Change | |———————————————————|—————————————————————————————————–| | [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184) | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API | | [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183) | Provider access details in the payer-payer section of the IG at 6.4.4 |
+
+### STU 2.1.0-ballot Reconciliation
+
+| | |
+| :--- | :--- |
+| [FHIR-50105](https://jira.hl7.org/browse/FHIR-50105) | Clarify Asynchronous Response for Bulk Member Match |
+| [FHIR-49110](https://jira.hl7.org/browse/FHIR-49110) | Optional inclusion of Financials in Provider Access API to support VBC use cases |
+| STU 2.1 Block Vote 3 |   |
+| [FHIR-48991](https://jira.hl7.org/browse/FHIR-48991) | Fix broken Links and other issues identified in QA Report |
+| [FHIR-48922](https://jira.hl7.org/browse/FHIR-48922) | $davinci-data-export param exportType should be mandatory |
+| [FHIR-48088](https://jira.hl7.org/browse/FHIR-48088) | Code Systems should be in THO or be granted an exemption |
+| [FHIR-48079](https://jira.hl7.org/browse/FHIR-48079) | Separate API details from the Data payload section |
+| [FHIR-48063](https://jira.hl7.org/browse/FHIR-48063) | Member-authorized exchange is underspecified |
+| [FHIR-48061](https://jira.hl7.org/browse/FHIR-48061) | "PDex Implementation, Actors, Interactions, Data Payloads and Methods" page important or redundant? |
+| [FHIR-48057](https://jira.hl7.org/browse/FHIR-48057) | Missing must support definition |
+| [FHIR-48036](https://jira.hl7.org/browse/FHIR-48036) | Separate data mapping and patient matching discussion |
+| [FHIR-48023](https://jira.hl7.org/browse/FHIR-48023) | Sub-field must support language inconsistency |
+| [FHIR-47778](https://jira.hl7.org/browse/FHIR-47778) | Include the full HRex privacy and security requirements |
+| [FHIR-47761](https://jira.hl7.org/browse/FHIR-47761) | Security and Privacy and Access Permissions Page not accessible |
+| [FHIR-47562](https://jira.hl7.org/browse/FHIR-47562) | Please add a "Plain Language Summary about HL7 and this Guide" to the home page. |
+| [FHIR-47056](https://jira.hl7.org/browse/FHIR-47056) | Clarify OAuth2.0 workflow for Payer to Payer |
+| [FHIR-47053](https://jira.hl7.org/browse/FHIR-47053) | Require MemberId parameter to be returned in $member-match |
+|   |   |
+| STU 2.1 Block Vote 2 |   |
+| [FHIR-48701](https://jira.hl7.org/browse/FHIR-48701) | AppointmentBook hook usage for Provider Access use case |
+| [FHIR-48313](https://jira.hl7.org/browse/FHIR-48313) | What are implementers supposed to follow for exportType |
+| [FHIR-48077](https://jira.hl7.org/browse/FHIR-48077) | provenance details are spread across several pages and are inconsistently linked |
+| [FHIR-48073](https://jira.hl7.org/browse/FHIR-48073) | Use Case Scenarios page not easily reachable |
+| [FHIR-48072](https://jira.hl7.org/browse/FHIR-48072) | Data Mapping Conformance Requirements |
+| [FHIR-48070](https://jira.hl7.org/browse/FHIR-48070) | integrate separate sections on data mapping |
+| [FHIR-48058](https://jira.hl7.org/browse/FHIR-48058) | Unclear references to Da Vinci ATR |
+| [FHIR-48037](https://jira.hl7.org/browse/FHIR-48037) | CapabilityStatements don't belong under Data Mapping |
+| [FHIR-47057](https://jira.hl7.org/browse/FHIR-47057) | Don't require mapping claims data to US Core resources if sending as ExplanationOfBenefit resources |
+| [FHIR-47055](https://jira.hl7.org/browse/FHIR-47055) | Don't require five year time limit on bulk Payer to Payer exchange |
+| [FHIR-47054](https://jira.hl7.org/browse/FHIR-47054) | Make saving Provenance information received through Payer to Payer optional |
+| [FHIR-46761](https://jira.hl7.org/browse/FHIR-46761) | Add Prev / bottom / Next to header/footer |
+| STU 2.1 Block Vote 1 |   |
+| [FHIR-48675](https://jira.hl7.org/browse/FHIR-48675) | Add Hyperlink to PDex Server Capability Statement |
+| [FHIR-48369](https://jira.hl7.org/browse/FHIR-48369) | Conflicting statements on OAuth-authorized exchange |
+| [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076) | With Mod: Remove superseded CDS Hooks page |
+| [FHIR-48074](https://jira.hl7.org/browse/FHIR-48074) | With Mod: provider-controlled information requests and filtering page not easily reachable |
+| [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056) | With Mod: Multiple CapabilityStatement descriptions not in sync and should be collapsed |
+| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794) | Change SHOULD to SHALL |
+| [FHIR-47792](https://jira.hl7.org/browse/FHIR-47792) | rewrite for clarity and grammar |
+| [FHIR-47789](https://jira.hl7.org/browse/FHIR-47789) | Not Persuasive: Change SHOULD to SHALL |
+| [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787) | Clarify concept of changed status |
+| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786) | Change SHOULD to SHALL |
+| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785) | Change SHOULD to SHALL |
+| [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784) | Confusing Phrase |
+| [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783) | Clarify the Regulatory requirements |
+| [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681) | Add US Core 7.0.0 support to the IG |
+| STU 2.1 Technical Corrections |   |
+| TC:[FHIR-48071](https://jira.hl7.org/browse/FHIR-48071) | Rendered text in the middle of example json |
+| TC:[FHIR-48068](https://jira.hl7.org/browse/FHIR-48068) | Reference to profile pages instead of data mapping pages |
+| TC:[FHIR-48067](https://jira.hl7.org/browse/FHIR-48067) | mebedded -> embedded |
+| TC:[FHIR-48065](https://jira.hl7.org/browse/FHIR-48065) | member health history us core sections should be subsections |
+| TC:[FHIR-48040](https://jira.hl7.org/browse/FHIR-48040) | device row in capability statement table shifted over incorrectl |
+| TC:[FHIR-48039](https://jira.hl7.org/browse/FHIR-48039) | un-rendered link on the capability statement page |
+| TC:[FHIR-48024](https://jira.hl7.org/browse/FHIR-48024) | Incorrect Section Numbering |
+| TC:[FHIR-48022](https://jira.hl7.org/browse/FHIR-48022) | Oral Basis Profile is the Dental Profile? |
+| TC:[FHIR-47973](https://jira.hl7.org/browse/FHIR-47973) | Large number of technical corrections |
+| TC:[FHIR-47788](https://jira.hl7.org/browse/FHIR-47788) | grammatical errors and typos |
+
+### STU 2.1.0 Update
+
+| | |
+| :--- | :--- |
+| TC:[FHIR-46479](https://jira.hl7.org/browse/FHIR-46479) | Change CARIN Blue Button IG link to 2.1.0-snapshot1 |
+| [FHIR-46476](https://jira.hl7.org/browse/FHIR-46476) | Provide guidance on handling of unstructured data for exchange via Payer-to-Payer API |
+| [FHIR-45992](https://jira.hl7.org/browse/FHIR-45992) | Overview page should mention different APIs instead of exchange methods |
+| [FHIR-42964](https://jira.hl7.org/browse/FHIR-42964)[FHIR-43375](https://jira.hl7.org/browse/FHIR-43375) | Add more Clarity to Step 3- Request Access token for Member Access , How to communicate the Patient ID or Member id when Request Access token for Member Access |
+| [FHIR-45969](https://jira.hl7.org/browse/FHIR-45969) | Specify a means to search for different types of groups. |
+| [FHIR-46444](https://jira.hl7.org/browse/FHIR-46444) | Add Endpoint discovery expectations to index.html |
+| Add links to C4BB Basis Profiles for use in Payer and PRovider APIs | Point to C4BB Basis (Non-Financial) Profiles to enable EOBs to be exchanged via Provider Access and Payer-to-Payer API. Update relevant narrative pages. |
+| Updates from CMS Connectathon 2024-07-17 | Add comment about search parameters for _t[changehistory.md](changehistory.md)ypeFilter. Re-work introduction page to Explain the differences between the different APIs. Patient, Provider and Payer-to-Payer. Change Order Select to Encounter Start in Provider Access API Section. CDS Hooks. Should this be retired? Note to say it pre-dates CMS Regulations. Add scope for Single-member match add 6.4.6 to single-member match and change the scope to fit. Re-order Table of Contents - PDex IG not before introduction. |
+| Updates from PDex community meeting 2024-07-12 | Use rendering provider NPI as minimum for Attribution Lists. Add EMR Role-based security Assumption. Add UDAP subject_id recommendation. |
+| [FHIR-45353](https://jira.hl7.org/browse/FHIR-45353) | Capturing adjudication (determination) date for pre-auth. Created WhenAdjudicated Extension to hold a DateTime element that can be used in EOB item.adjudication and adjudication. |
+| [FHIR-46132](https://jira.hl7.org/browse/FHIR-46132) | Define Consent Profile for Provider Access Opt-out. Make clear it is optional and provided as assistance for recording opt-out |
+| Identify Provider Access and Payer-to-Payer as Async APIs | Add section to Payer-to-Payer Bulk and Provider Access API narrative pages to use HTTP POST and operate as Async Operations |
+| Add new Data Payload section | Add Data Payload section to Provider Access Narrative and Payer-to-Payer bulk API narrative. |
+| Add new Capability Statements | Add capability Statements for Provider Access and Payer-to-Payer API access. |
+| Fix Payer-to-Payer bulk exchange workflow digram | Change from $pdex-p2p-export to $davinci-data-export |
+| More specific Group.code value for Operation Scope | More specific Group.code value using CodeSystem URL for Operation Scope |
+| Edited Scopes for Operations | Edited scopes for Operations used in Payer-to-Payer and Provider Access APIs |
+| Added Informative Extension to Pages | Added Informative Extension to Pages in Sushi-config.yaml |
+| Added Change History to Menu | Add Change History page to Menu |
+| [FHIR-45364](https://jira.hl7.org/browse/FHIR-45364) | Provide Use case examples for use of custom extensions in PDex Provider Group |
+| Update Clinical-Financial picture in overview.md | Update Clinical Financial image on overview page. |
+| [FHIR-45356](https://jira.hl7.org/browse/FHIR-45356) | Change milsEndpoint examples to use correct code from NdhAssociatedServersTypeCS |
+| [FHIR-45355](https://jira.hl7.org/browse/FHIR-45355) | Removed copied NDH Extensions, Code Systems and Value Sets. Point to content in NDH 1.0.0-ballot, allowing replicated content to be removed from PDex. |
+| [FHIR-45352](https://jira.hl7.org/browse/FHIR-45352) | Added support for US Core 6.1.0 in addition to US Core 3.1.1. Based on L McKenzie Publishing Guidance |
+| New MembersOptedOut Extension | Extension to capture number of Attributed Members excluded from the list through Opt-Out |
+| TC:[FHIR-44906](https://jira.hl7.org/browse/FHIR-44906) | Fix broken link to Bulk Data Access IG |
+| Add DaVinci-data-export-operation to Other-igs.md | Add link to Da Vinci Data Export Operation in other-igs.md |
+| Expand narrative for Provider Access and Payer-to-Payer APIs | Removed ExportModeVS and ExportModeCS, replaced by exportType with fragment |
+| [FHIR-44807](https://jira.hl7.org/browse/FHIR-44807) | Drop Must Support from item.adjudication[consumeUnits] In PDex Prior Authorization |
+| Add Provider Access API Diagram | Created Plantuml for Provider Access API |
+| Decision to remove optout members from Group | Remove OptOut Extension |
+| Define OptedOut Extension to capture member optout | Added OptedOut Extension to PDexProviderGroup to record member opt out from data sharing with attributedproviders |
+
+### STU 2.0.0-ballot:Ballot Reconciliation
+
+| | |
+| :--- | :--- |
+| Payer-to-Payer Bulk Exchange Draft | Draft of PDex Multi Member Match Operation and Request and Response Bundles |
+| BallotRec-Vote7 |   |
+| TC: endpoint example | Update Endpoint example with new Trust Framework certificates in Base64Binary |
+| TC:[FHIR-41675](https://jira.hl7.org/browse/FHIR-41675) | Remove duplicate codes from Provenance Agent Type |
+| TC:[FHIR-41497](https://jira.hl7.org/browse/FHIR-41497) | Missing reference to CDS Hooks diagram |
+| TC:[FHIR-41399](https://jira.hl7.org/browse/FHIR-41399) | Text states "US Core v3.1.1" but URL behind "US Core FHIR R4" points to US Core V 6.0.0 |
+| TC:[FHIR-41398](https://jira.hl7.org/browse/FHIR-41398) | Typo at the bottom of section 5.0.4.3 ("4.2" vs. "5.2") |
+| [FHIR-41381](https://jira.hl7.org/browse/FHIR-41381) | Add narrative stating that the Prior Authorization profile also applies to the Payer to Payer use case |
+| NDH Profiles and Extensions | Imported unpublished NDH Profiles, Extensions, CodeSystems and ValueSets into PDex for mTLS support |
+| [FHIR-41307](https://jira.hl7.org/browse/FHIR-41307) | Conflicting Links to HRex Coverage Profile |
+| [FHIR-41177](https://jira.hl7.org/browse/FHIR-41177) | Capturing adjudication (determination) date for pre-auth |
+| [FHIR-40517](https://jira.hl7.org/browse/FHIR-40517) | Section numbering is broken |
+| Created Examples for mTLS | Created Examples for MtlsOrganization and MtlsEndpoint |
+| [FHIR-40357](https://jira.hl7.org/browse/FHIR-40357) | Possible typo in Data Mapping specification |
+| [FHIR-40239](https://jira.hl7.org/browse/FHIR-40239) | Missing endpoint URLs? |
+| [FHIR-36626](https://jira.hl7.org/browse/FHIR-36626) | Review all mappings as significant errors have been detected - Reviewed against CARIN-BB STU2 |
+| [FHIR-36602](https://jira.hl7.org/browse/FHIR-36602) | Review all mappings as significant errors have been detected in the above mappings and are expected in other mappings.- Reviewed against CARIN-BB STU2 |
+| [FHIR-36601](https://jira.hl7.org/browse/FHIR-36601) | Review all mappings for DiagnosticReport - Reviewed against CARIN-BB STU2 |
+| [FHIR-36598](https://jira.hl7.org/browse/FHIR-36598) | Review all mappings for Encounter - Reviewed against CARIN-BB STU2 |
+| QA Report Fixes | Apply fixes to resolve QA Report Errors. |
+| TC:[FHIR-39434](https://jira.hl7.org/browse/FHIR-39424) | Update table of profiles for payer-to-payer exchange |
+| [FHIR-39424](https://jira.hl7.org/browse/FHIR-39434) | We need a new OperationDefinition for patient-export-pdex |
+| [FHIR-39314](https://jira.hl7.org/browse/FHIR-39314) | Need detail w.r.t. reconciling new session with Consent from earlier interaction |
+| [FHIR-36626](https://jira.hl7.org/browse/FHIR-36626) | Review all mappings as significant errors have been detected - fixed table layout and reconcile to CARIN-BB STU2 - CareTeam, Condition, Coverage, Encounter |
+| BallotRec-Vote6 |   |
+| TC:[FHIR-38767](https://jira.hl7.org/browse/FHIR-38767) | Typo in 5.2.1.3 Future Direction for Discovery and Registration |
+| [FHIR-38708](https://jira.hl7.org/browse/FHIR-38708) | Clarification on payer directory queries |
+| [FHIR-38707](https://jira.hl7.org/browse/FHIR-38707) | Clarifications on dynamic client registration and first token request |
+| [FHIR-38706](https://jira.hl7.org/browse/FHIR-38706) | Consent reference to DocumentReference in member match request clarification - |
+| TC:[FHIR-38705](https://jira.hl7.org/browse/FHIR-38705) | Endpoint bundle example is not valid |
+| TC:[FHIR-38696](https://jira.hl7.org/browse/FHIR-38696) | Wrong link - NationalDirectory Endpoint resource |
+| [FHIR-38650](https://jira.hl7.org/browse/FHIR-38650) | PDex defines an incorrect request pattern for Patient-level bulk export |
+| [FHIR-38097](https://jira.hl7.org/browse/FHIR-38097) | ExplanationOfBenefit description clarification for use of item level, header level adjudication |
+| BallotRec-Vote5 |   |
+| [FHIR-38096](https://jira.hl7.org/browse/FHIR-38096) | For Pdex Prior Authorization EOB, reviewAction extension not available at header level adjudication. |
+| [FHIR-37904](https://jira.hl7.org/browse/FHIR-37904) | Add Privacy and Security section to IG |
+| [FHIR-36598](https://jira.hl7.org/browse/FHIR-36598) | Review all mappings for Encounter. |
+| [FHIR-36495](https://jira.hl7.org/browse/FHIR-36495) | CDS Card should not return an access token |
+| [FHIR-36315](https://jira.hl7.org/browse/FHIR-36315) | Unclear definitions of filtering vs restricting cases |
+| TC:[FHIR-36174](https://jira.hl7.org/browse/FHIR-36174) | Correction in StructureDefinition-pdex-provenance |
+| BallotRec-Vote4 |   |
+| Added mTLS Discovery Profiles | Added mTLS Discovery profiles and referenced in Payer-to-Payer Exchange page. |
+| [FHIR-37778](https://jira.hl7.org/browse/FHIR-37778) | Link to the HREX Coverage takes you to the Patient Demographic Profile |
+| [FHIR-37645](https://jira.hl7.org/browse/FHIR-37645) | Consent presentation for P2P |
+| [FHIR-37644](https://jira.hl7.org/browse/FHIR-37644) | Consent Revocation for P2P |
+| [FHIR-36599](https://jira.hl7.org/browse/FHIR-36599) | Review 835 and all mappings to diagnostics. |
+| [FHIR-36572](https://jira.hl7.org/browse/FHIR-36572) | Create a Formal Specification or Conformance Expectations page/section |
+| [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462) | Incorrect Diagram, Consent considerations, everything operation (Duplicate of[FHIR-36461](https://jira.hl7.org/browse/FHIR-36461)) |
+| [FHIR-36254](https://jira.hl7.org/browse/FHIR-36254) | Missing details of payer-to-payer mutual authentication |
+| [FHIR-36223](https://jira.hl7.org/browse/FHIR-36223) | PDEX defined their own version of an already existing code system |
+| TC:[FHIR-36176](https://jira.hl7.org/browse/FHIR-36176) | Correction needed in ExplanationOfBenefit-PDexPriorAuth1.json |
+| [FHIR-36078](https://jira.hl7.org/browse/FHIR-36078) | CareTeam for a patient is not the same thing as "a random collection of Providers that treated the patient once" |
+| BallotRec-Vote3 |   |
+| [FHIR-37577](https://jira.hl7.org/browse/FHIR-37577) | Change use of _profile to ExplanationOfBenefit.use to filter on "preauthorization" |
+| [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576) | Duplicate to FHIR-37577 |
+| [FHIR-37546](https://jira.hl7.org/browse/FHIR-37546) | Consent expiration for P2P Data Exchange |
+| [FHIR-36767](https://jira.hl7.org/browse/FHIR-36767) | $member-match operation conformance not defined |
+| [FHIR-36629](https://jira.hl7.org/browse/FHIR-36629) | change from are expected to SHALL |
+| [FHIR-36601](https://jira.hl7.org/browse/FHIR-36601) | Review all mappings for DiagnosticReport (MedicationDispense). |
+| [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462) | Incorrect Diagram, Consent considerations, everything operation |
+| BallotRec-Vote2 |   |
+| [FHIR-36885](https://jira.hl7.org/browse/FHIR-36885) | ExplanationOfBenefit.use = preauthorization |
+| [FHIR-36772](https://jira.hl7.org/browse/FHIR-36772) | PDEX Provenance page. Broken section |
+| [FHIR-36767](https://jira.hl7.org/browse/FHIR-36767) | $member-match operation conformance not defined |
+| [FHIR-36600](https://jira.hl7.org/browse/FHIR-36600) | Review all mappings for Coverage |
+| [FHIR-36597](https://jira.hl7.org/browse/FHIR-36597) | Invalid data population instruction for Condition |
+| [FHIR-36596](https://jira.hl7.org/browse/FHIR-36596) | Invalid data population instruction for CareTeam |
+| [FHIR-36563](https://jira.hl7.org/browse/FHIR-36563) | No issues; this section is dense but necessary in defining scope. |
+| [FHIR-36352](https://jira.hl7.org/browse/FHIR-36352) | Expand CPCDS Undefined Acronym |
+| [FHIR-36337](https://jira.hl7.org/browse/FHIR-36337) | Update Name Column for Lab Result |
+| TC:[FHIR-36075](https://jira.hl7.org/browse/FHIR-36075) | Link to US Core 3.1.1 actually links to HL7 home |
+| TC:[FHIR-36314](https://jira.hl7.org/browse/FHIR-36314) | Formatting fixes in Care Team element table |
+| Ballot-Rec-Vote1 |   |
+| TC:[FHIR-37366](https://jira.hl7.org/browse/FHIR-37366) | Vital Signs not referenced in Capability Statement |
+| [FHIR-36603](https://jira.hl7.org/browse/FHIR-36603) | Note that CPCDS is external and informative |
+| [FHIR-36580](https://jira.hl7.org/browse/FHIR-36580) | Update references to HRex to published 1.0.0 version |
+| TC:[FHIR-36575](https://jira.hl7.org/browse/FHIR-36575) | Make the CapabilityStatement rendering more reader friendly |
+| [FHIR-36573](https://jira.hl7.org/browse/FHIR-36573) | Correction: Added pages to drop-down menu |
+| TC:[FHIR-36569](https://jira.hl7.org/browse/FHIR-36569) | Create a Change Notes or History page |
+| [FHIR-36564](https://jira.hl7.org/browse/FHIR-36564) | Add clarifying markup for CPCDS mapping tables |
+| [FHIR-36562](https://jira.hl7.org/browse/FHIR-36562) | Add CARIN Acronym on first use |
+| TC:[FHIR-36255](https://jira.hl7.org/browse/FHIR-36255) | Formatting issues for PDEX server capability statement |
+| [FHIR-36237](https://jira.hl7.org/browse/FHIR-36237) | Sending Duplicative Data |
+| TC:[FHIR-36080](https://jira.hl7.org/browse/FHIR-36080) | link to published FHIR v4.0.1 |
+| TC:[FHIR-36079](https://jira.hl7.org/browse/FHIR-36079) | removed double link to ChangeHistory |
+
+Technical Corrections are prefixed with "TC: "
+
+### STU 2.0.0
+
+The following changes were applied in the Proposed STU 2.0.0 update:
+
+| | |
+| :--- | :--- |
+| TC:[FHIR-36026](https://jira.hl7.org/browse/FHIR-36026) | Multiple Technical Corrections |
+| [FHIR-35868](https://jira.hl7.org/browse/FHIR-35868) | Revert US Core References back to 3.1.1 |
+| [FHIR-34308](https://jira.hl7.org/browse/FHIR-34308) | Update US Core and PDex inter-relationship diagram to add Prior Auth in Overview page. |
+| [FHIR-33382](https://jira.hl7.org/browse/FHIR-33382) | Change references to US Core to link to the current 4.0.0 version. Reverted - see[FHIR-35868](https://jira.hl7.org/browse/FHIR-35868)above. |
+| [FHIR-33218](https://jira.hl7.org/browse/FHIR-33218) | Update Payer-to-Payer Exchange section to clarify use of Bulk FHIR protocols for retrieval of data for a single patient/member only. The flow has been subject to substantial assessment at multiple connectathons and test events. |
+| [FHIR-33217](https://jira.hl7.org/browse/FHIR-33217) | Add a[PDex Prior Authorization profile](StructureDefinition-pdex-priorauthorization.md), based on the EOB resource to support the exchange of Prior Authorization information with Members. Added Slices to item adjudication and added consumedunits slice |
+| [FHIR-33141](https://jira.hl7.org/browse/FHIR-33141) | Revert[PDex Provenance](StructureDefinition-pdex-provenance.md)Recorded definition to the US Core Provenance version |
+| [FHIR-33173](https://jira.hl7.org/browse/FHIR-33173) | Add clarification to use of $everything operation - superceded by updates to[Payer-to-Payer exchange](payertopayerexchange.md) |
+| [FHIR-33216](https://jira.hl7.org/browse/FHIR-33216) | Add guidance for use of Consent resource in $member-match operation - superceded by updated to[Payer-to-Payer exchange](payertopayerexchange.md) |
+| [FHIR-33713](https://jira.hl7.org/browse/FHIR-33713) | Add[Provenance custodian](Provenance-1000101.md)record for receipt of member data from prior payer |
+
+### STU 1.0.0
+
+First version of the PDex IG.
+
+### STU 0.1.0
+
+Draft of PDex IG
+
+### STU 0.0.1
+
+Skeleton version of PDex IG
+
+[Next Page - Credits](credits.md)
+

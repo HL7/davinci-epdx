@@ -1,0 +1,283 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/ExplanationOfBenefit/PDexPriorAuth1> a fhir:ExplanationOfBenefit ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PDexPriorAuth1"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2024-02-06T09:14:11+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en-US"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p class=\"res-header-id\"><b>Generated Narrative: ExplanationOfBenefit PDexPriorAuth1</b></p><a name=\"PDexPriorAuth1\"> </a><a name=\"hcPDexPriorAuth1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2024-02-06 09:14:11+0000; Language: en-US</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-priorauthorization.html\">PDex Prior Authorization</a></p></div><p><b>LevelOfServiceCode</b>: <span title=\"Codes:{https://codesystem.x12.org/005010/1338 U}\">Urgent</span></p><p><b>identifier</b>: <code>https://www.exampleplan.com/fhir/EOBIdentifier</code>/PA123412341234123412341234</p><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/claim-type institutional}\">Institutional</span></p><p><b>use</b>: Preauthorization</p><p><b>patient</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>billablePeriod</b>: 2021-10-01 --&gt; 2021-10-31</p><p><b>created</b>: 2021-09-20 00:00:00+0000</p><p><b>insurer</b>: <a href=\"Organization-Payer1.html\">Example Health Plan</a></p><p><b>provider</b>: <a href=\"Organization-Payer2.html\">Another Example Health Plan</a></p><p><b>priority</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/processpriority normal}\">Normal</span></p><p><b>fundsReserveRequested</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/fundsreserve provider}\">Provider</span></p><p><b>fundsReserve</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/fundsreserve none}\">None</span></p><h3>Relateds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Relationship</b></td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship associated}\">Associated Claim</span></td><td>XCLM1001</td></tr></table><p><b>outcome</b>: Queued</p><p><b>preAuthRefPeriod</b>: 2021-10-01 --&gt; 2021-10-31</p><h3>CareTeams</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Provider</b></td><td><b>Responsible</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><a href=\"Organization-Payer1.html\">Organization Payer 1</a></td><td>true</td></tr></table><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Sequence</b></td><td><b>Diagnosis[x]</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>1</td><td><span title=\"Codes:{http://hl7.org/fhir/sid/icd-10-cm G89.4}\">Chronic pain syndrome</span></td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/ex-diagnosistype principal}\">Principal Diagnosis</span></td></tr></table><h3>Insurances</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td style=\"display: none\">*</td><td>true</td><td><a href=\"Coverage-Coverage1.html\">Coverage: identifier = Member Number; status = active; subscriberId = 93542106; relationship = Self</a></td></tr></table><blockquote><p><b>item</b></p><p><b>sequence</b>: 1</p><p><b>category</b>: <span title=\"Codes:{https://x12.org/codes/service-type-codes 3}\">Consultation</span></p><p><b>productOrService</b>: <span title=\"Codes:{https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes BB201}\">Behavior Only, ADL Index 6 - 10/Medicare 5 day assessment (Full)</span></p><blockquote><p><b>adjudication</b></p><blockquote><p><b>id</b></p>1</blockquote><blockquote><p><b>ReviewAction</b></p><ul><li>number: AUTH0001</li><li>http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode: <span title=\"Codes:{https://codesystem.x12.org/005010/306 A1}\">Certified in total</span></li></ul></blockquote><p><b>When Adjudicated</b>: 2024-07-23 17:26:23+0000</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/adjudication submitted}\">Submitted Amount</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>300.99</td><td>United States dollar</td></tr></table></blockquote></blockquote><blockquote><p><b>total</b></p><p><b>An attribute to express the amount of a service or item that has been utilized</b>: 1</p><p><b>category</b>: <span title=\"Codes:{http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes eligible}\">Eligible</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>100</td><td>United States dollar</td></tr></table></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://codesystem.x12.org/005010/1338"^^xsd:anyURI ;
+           fhir:l <https://codesystem.x12.org/005010/1338>
+         ] ;
+         fhir:code [ fhir:v "U" ] ;
+         fhir:display [ fhir:v "Urgent" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "https://www.exampleplan.com/fhir/EOBIdentifier"^^xsd:anyURI ;
+       fhir:l <https://www.exampleplan.com/fhir/EOBIdentifier>
+     ] ;
+     fhir:value [ fhir:v "PA123412341234123412341234" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/claim-type"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/claim-type>
+       ] ;
+       fhir:code [ fhir:v "institutional" ]
+     ] ) ;
+     fhir:text [ fhir:v "Institutional" ]
+  ] ; # 
+  fhir:use [ fhir:v "preauthorization"] ; # 
+  fhir:patient [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:billablePeriod [
+     fhir:start [ fhir:v "2021-10-01"^^xsd:date ] ;
+     fhir:end [ fhir:v "2021-10-31"^^xsd:date ]
+  ] ; # 
+  fhir:created [ fhir:v "2021-09-20T00:00:00+00:00"^^xsd:dateTime] ; # 
+  fhir:insurer [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+     fhir:reference [ fhir:v "Organization/Payer1" ] ;
+     fhir:display [ fhir:v "Example Health Plan" ]
+  ] ; # 
+  fhir:provider [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer2> ;
+     fhir:reference [ fhir:v "Organization/Payer2" ] ;
+     fhir:display [ fhir:v "Another Example Health Plan" ]
+  ] ; # 
+  fhir:priority [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/processpriority"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/processpriority>
+       ] ;
+       fhir:code [ fhir:v "normal" ] ;
+       fhir:display [ fhir:v "Normal" ]
+     ] )
+  ] ; # 
+  fhir:fundsReserveRequested [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/fundsreserve"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/fundsreserve>
+       ] ;
+       fhir:code [ fhir:v "provider" ] ;
+       fhir:display [ fhir:v "Provider" ]
+     ] )
+  ] ; # 
+  fhir:fundsReserve [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/fundsreserve"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/fundsreserve>
+       ] ;
+       fhir:code [ fhir:v "none" ] ;
+       fhir:display [ fhir:v "None" ]
+     ] )
+  ] ; # 
+  fhir:related ( [
+     fhir:relationship [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship>
+         ] ;
+         fhir:code [ fhir:v "associated" ] ;
+         fhir:display [ fhir:v "Associated Claim" ]
+       ] )
+     ] ;
+     fhir:reference [
+       fhir:value [ fhir:v "XCLM1001" ]
+     ]
+  ] ) ; # 
+  fhir:outcome [ fhir:v "queued"] ; # 
+  fhir:preAuthRefPeriod ( [
+     fhir:start [ fhir:v "2021-10-01"^^xsd:date ] ;
+     fhir:end [ fhir:v "2021-10-31"^^xsd:date ]
+  ] ) ; # 
+  fhir:careTeam ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:provider [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+       fhir:reference [ fhir:v "Organization/Payer1" ]
+     ] ;
+     fhir:responsible [ fhir:v true ]
+  ] ) ; # 
+  fhir:diagnosis ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:diagnosis [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/sid/icd-10-cm"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/sid/icd-10-cm>
+         ] ;
+         fhir:code [ fhir:v "G89.4" ]
+       ] )
+     ] ;
+     fhir:type ( [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/ex-diagnosistype"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/ex-diagnosistype>
+         ] ;
+         fhir:code [ fhir:v "principal" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:insurance ( [
+     fhir:focal [ fhir:v true ] ;
+     fhir:coverage [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Coverage/Coverage1> ;
+       fhir:reference [ fhir:v "Coverage/Coverage1" ]
+     ]
+  ] ) ; # 
+  fhir:item ( [
+     fhir:sequence [ fhir:v "1"^^xsd:positiveInteger ] ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://x12.org/codes/service-type-codes"^^xsd:anyURI ;
+           fhir:l <https://x12.org/codes/service-type-codes>
+         ] ;
+         fhir:code [ fhir:v "3" ] ;
+         fhir:display [ fhir:v "Consultation" ]
+       ] )
+     ] ;
+     fhir:productOrService [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes"^^xsd:anyURI ;
+           fhir:l <https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes>
+         ] ;
+         fhir:code [ fhir:v "BB201" ] ;
+         fhir:display [ fhir:v "Behavior Only, ADL Index 6 - 10/Medicare 5 day assessment (Full)" ]
+       ] )
+     ] ;
+     fhir:adjudication ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:extension ( [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "number"^^xsd:anyURI ;
+             fhir:l fhir:number
+           ] ;
+           fhir:value [
+             a fhir:String ;
+             fhir:v "AUTH0001"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewActionCode>
+           ] ;
+           fhir:value [
+             a fhir:CodeableConcept ;
+             fhir:coding ( [
+               fhir:system [
+                 fhir:v "https://codesystem.x12.org/005010/306"^^xsd:anyURI ;
+                 fhir:l <https://codesystem.x12.org/005010/306>
+               ] ;
+               fhir:code [ fhir:v "A1" ] ;
+               fhir:display [ fhir:v "Certified in total" ]
+             ] )
+           ]
+         ] ) ;
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-reviewAction>
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-when-adjudicated"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-when-adjudicated>
+         ] ;
+         fhir:value [
+           a fhir:DateTime ;
+           fhir:v "2024-07-23T17:26:23.217+00:00"^^xsd:dateTime
+         ]
+       ] ) ;
+       fhir:category [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/adjudication"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/adjudication>
+           ] ;
+           fhir:code [ fhir:v "submitted" ] ;
+           fhir:display [ fhir:v "Submitted Amount" ]
+         ] )
+       ] ;
+       fhir:amount [
+         fhir:value [ fhir:v 300.99 ] ;
+         fhir:currency [ fhir:v "USD" ]
+       ]
+     ] )
+  ] ) ; # 
+  fhir:total ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization>
+       ] ;
+       fhir:value [
+         a fhir:Quantity ;
+         fhir:value [ fhir:v "1"^^xsd:decimal ]
+       ]
+     ] ) ;
+     fhir:category [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes>
+         ] ;
+         fhir:code [ fhir:v "eligible" ] ;
+         fhir:display [ fhir:v "Eligible" ]
+       ] )
+     ] ;
+     fhir:amount [
+       fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+       fhir:currency [ fhir:v "USD" ]
+     ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer2> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Coverage/Coverage1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

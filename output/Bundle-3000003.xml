@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="3000003"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+  </meta>
+  <type value="searchset"/>
+  <timestamp value="2020-09-28T23:26:23.217+00:00"/>
+  <total value="2"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://example.com/base/fhir/Condition?ct=W1sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"/>
+  </link>
+  <entry>
+    <fullUrl value="https://example.com/base/Condition/101"/>
+    <resource>
+      <Condition>
+        <id value="101"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_101"> </a><p class="res-header-id"><b>Generated Narrative: Condition 101</b></p><a name="101"> </a><a name="hc101"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 442311008}">liveborn born in hospital</span></p><p><b>subject</b>: <a href="Patient-1.html">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>onset</b>: 1995-09-20</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="442311008"/>
+            <display value="liveborn born in hospital"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/1"/>
+        </subject>
+        <onsetDateTime value="1995-09-20"/>
+      </Condition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.com/base/Condition/102"/>
+    <resource>
+      <Condition>
+        <id value="102"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_102"> </a><p class="res-header-id"><b>Generated Narrative: Condition 102</b></p><a name="102"> </a><a name="hc102"> </a><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}">Problem List Item</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 247824007}">Fear of becoming fat</span></p><p><b>subject</b>: <a href="Patient-1.html">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><p><b>onset</b>: 2020-03-13</p></div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+            <code value="problem-list-item"/>
+            <display value="Problem List Item"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="247824007"/>
+            <display value="Fear of becoming fat"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/1"/>
+        </subject>
+        <onsetDateTime value="2020-03-13"/>
+      </Condition>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.com/base/Provenance/3101"/>
+    <resource>
+      <Provenance>
+        <id value="3101"/>
+        <meta>
+          <versionId value="1"/>
+          <lastUpdated value="2020-09-28T23:26:23.217+00:00"/>
+          <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Provenance_3101"> </a><p class="res-header-id"><b>Generated Narrative: Provenance 3101</b></p><a name="3101"> </a><a name="hc3101"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 1; Last updated: 2020-09-28 23:26:23+0000</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a></p></div><p>Provenance for <a href="Bundle-3000003.html#Condition_101">Condition liveborn born in hospital</a></p><p>Summary</p><table class="grid"><tr><td>Recorded</td><td>1995-09-20 18:26:23+0000</td></tr></table><p><b>Agents</b></p><table class="grid"><tr><td><b>Type</b></td><td><b>who</b></td></tr><tr><td><span title="Codes:{http://terminology.hl7.org/CodeSystem/provenance-participant-type author}">Author</span></td><td><a href="Organization-ProviderOrg2.html">Organization Provider 2</a></td></tr></table></div>
+        </text>
+        <target>
+          <reference value="Condition/101"/>
+        </target>
+        <recorded value="1995-09-20T18:26:23.217+00:00"/>
+        <agent>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+              <code value="author"/>
+              <display value="Author"/>
+            </coding>
+          </type>
+          <who>
+            <reference value="Organization/ProviderOrg2"/>
+          </who>
+        </agent>
+        <entity>
+          <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom">
+            <valueCodeableConcept>
+              <coding>
+                <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource"/>
+                <code value="hl7ccda"/>
+                <display value="HL7 C-CDA"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <role value="source"/>
+          <what>
+            <display value="No reference available"/>
+          </what>
+        </entity>
+      </Provenance>
+    </resource>
+    <search>
+      <mode value="include"/>
+    </search>
+  </entry>
+</Bundle>

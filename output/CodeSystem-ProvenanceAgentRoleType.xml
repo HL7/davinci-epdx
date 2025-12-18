@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="ProvenanceAgentRoleType"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem ProvenanceAgentRoleType</b></p><a name="ProvenanceAgentRoleType"> </a><a name="hcProvenanceAgentRoleType"> </a><p>This case-insensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">source<a name="ProvenanceAgentRoleType-source"> </a></td><td>Source</td><td>Organization, Practitioner or Payer who was the source of the referenced resource</td></tr><tr><td style="white-space:nowrap">author<a name="ProvenanceAgentRoleType-author"> </a></td><td>Author</td><td>An agent that originates, or significant changes to, the entity and therefore has responsibility for the information given in the entity</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType"/>
+  <version value="2.1.1"/>
+  <name value="ProvenanceAgentRoleType"/>
+  <title value="Provenance Roles"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-17T14:48:28-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem for types of role relating to the creation or communication of referenced resources"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License"/>
+  <caseSensitive value="false"/>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="source"/>
+    <display value="Source"/>
+    <definition value="Organization, Practitioner or Payer who was the source of the referenced resource"/>
+  </concept>
+  <concept>
+    <code value="author"/>
+    <display value="Author"/>
+    <definition value="An agent that originates, or significant changes to, the entity and therefore has responsibility for the information given in the entity"/>
+  </concept>
+</CodeSystem>

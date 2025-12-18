@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="opt-out-scope"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem opt-out-scope</b></p><a name="opt-out-scope"> </a><a name="hcopt-out-scope"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">global<a name="opt-out-scope-global"> </a></td><td>Global Opt-Out</td><td>Member has opted out from all data sharing</td></tr><tr><td style="white-space:nowrap">provider-specific<a name="opt-out-scope-provider-specific"> </a></td><td>Provider-Specific Opt-Out</td><td>Member has opted out for specific provider(s)</td></tr><tr><td style="white-space:nowrap">purpose-specific<a name="opt-out-scope-purpose-specific"> </a></td><td>Purpose-Specific Opt-Out</td><td>Member has opted out for specific purpose(s)</td></tr><tr><td style="white-space:nowrap">payer-specific<a name="opt-out-scope-payer-specific"> </a></td><td>Payer-Specific Opt-Out</td><td>Member has opted out for specific payer(s)</td></tr><tr><td style="white-space:nowrap">provider-category<a name="opt-out-scope-provider-category"> </a></td><td>Provider Category Opt-Out</td><td>Member has opted out for specific provider category/specialty</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope"/>
+  <version value="2.1.1"/>
+  <name value="OptOutScopeCodeSystem"/>
+  <title value="Opt-Out Scope"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-12-17T14:48:28-05:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="The scope of a member's opt-out election"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License"/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="global"/>
+    <display value="Global Opt-Out"/>
+    <definition value="Member has opted out from all data sharing"/>
+  </concept>
+  <concept>
+    <code value="provider-specific"/>
+    <display value="Provider-Specific Opt-Out"/>
+    <definition value="Member has opted out for specific provider(s)"/>
+  </concept>
+  <concept>
+    <code value="purpose-specific"/>
+    <display value="Purpose-Specific Opt-Out"/>
+    <definition value="Member has opted out for specific purpose(s)"/>
+  </concept>
+  <concept>
+    <code value="payer-specific"/>
+    <display value="Payer-Specific Opt-Out"/>
+    <definition value="Member has opted out for specific payer(s)"/>
+  </concept>
+  <concept>
+    <code value="provider-category"/>
+    <display value="Provider Category Opt-Out"/>
+    <definition value="Member has opted out for specific provider category/specialty"/>
+  </concept>
+</CodeSystem>

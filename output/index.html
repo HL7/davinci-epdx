@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Home - Da Vinci Payer Data Exchange v2.1.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/hl7.css" rel="stylesheet"/>
+    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"1"}
+    h3,h4,h5,h6{--heading-prefix:"1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" data-no-external="true" href="http://hl7.org">
+            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" data-no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.1.1 - STU 2.1
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Reading this IG</a>
+      </li>
+      <li>
+        <a href="usecasescenarios.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="credits.html">Project and Participants</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
+      </li>
+      <li>
+        <a href="securityandprivacy.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="provider-access-api.html">Provider Access</a>
+      </li>
+      <li>
+        <a href="provider-access-api-v2.html">Provider Access (v2)</a>
+      </li>
+      <li>
+        <a href="payertopayerbulkexchange.html">Payer-to-Payer(bulk)</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer(single)</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/">FHIR R4 Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/">HRex 1.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://www.hl7.org/fhir/us/core/STU3.1.1/">US Core 3.1.1</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU6.1/">US Core 6.1.0</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://hl7.org/fhir/us/core/STU7/">US Core 7.0.0</a>
+      </li>
+      <li>
+        <a href="other-igs.html">Other IGs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704">Project Page</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support">Implementer Support</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314">Specification Dashboard</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex">Discussion Forum</a>
+      </li>
+      <li>
+        <a target="_blank" href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex">Propose a Change</a>
+      </li>
+      <li>
+        <a href="PDexDownloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changehistory.html">Change Log</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Home</b></li>
+
+          <span style="float:right;">
+
+            <a href="toc.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="overview.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Home</h2>
+  
+
+
+
+
+
+
+  <table class="colstu">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex|2.1.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          <i>
+            
+              IG
+            
+            Standards status:
+          </i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+          
+          
+        
+      </td>
+
+      <td>
+        <a href="http://hl7.org/fhir/versions.html#maturity">Maturity Level</a>: 2
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">DaVinciPayerDataExchange</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Used by permission of HL7 International, all rights reserved Creative Commons License</p>
+</td>
+    </tr>
+
+  </table>
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#in-this-pdex-version" id="markdown-toc-in-this-pdex-version">In this PDex version</a>    <ul>
+      <li><a href="#continuing-standards-evolution" id="markdown-toc-continuing-standards-evolution">Continuing Standards Evolution</a></li>
+      <li><a href="#background" id="markdown-toc-background">Background</a></li>
+      <li><a href="#mapping-adjudicated-claims-encounter-and-prior-authorization-information" id="markdown-toc-mapping-adjudicated-claims-encounter-and-prior-authorization-information">Mapping Adjudicated Claims, Encounter and Prior Authorization Information</a></li>
+      <li><a href="#endpoint-discovery" id="markdown-toc-endpoint-discovery">Endpoint Discovery</a></li>
+      <li><a href="#intellectual-property-considerations" id="markdown-toc-intellectual-property-considerations">Intellectual Property Considerations</a></li>
+      <li><a href="#conventions" id="markdown-toc-conventions">Conventions</a></li>
+      <li><a href="#dependencies" id="markdown-toc-dependencies">Dependencies</a></li>
+      <li><a href="#change-history" id="markdown-toc-change-history">Change History</a></li>
+      <li><a href="#project-and-participants" id="markdown-toc-project-and-participants">Project and Participants</a></li>
+      <li><a href="#fhir-publisher" id="markdown-toc-fhir-publisher">FHIR Publisher</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+<div class="stu-note">
+
+<b><i>This page has been updated to reflect the release of the CMS Prior Authorization Rule (CMS-0057) in 2024.
+The guide has also been updated to support the adoption of US Core 6.1.0, in addition to existing support for US Core 3.1.1 and support for US Core 7.0.0. This change is implemented to enable implementers to comply with both the CMS-0057 Rule and the ONC's HTI-1 rule that implements US Core 6.1.0 as the base standard of US Core 
+as of January 1, 2026.</i></b>
+</div>
+
+<h1 id="in-this-pdex-version">In this PDex version</h1>
+
+<p>The PDex work group has made changes to the original version of the IG following the publication of the final CMS Interoperability and Patient Access Rule (CMS-9115) and the subsequent Advancing Interoperability and Improving Prior Authorization Rule (CMS-0057).</p>
+
+<p>The STU 2.1 version of the IG incorporates changes to support the sharing of Prior Authorization information with members, providers and other payers. This is done through the profiling of the <a href="PDexPriorAuthorization.html">ExplanationOfBenefit</a> resource. This version of the Implementation guide also introduces two Bulk APIs that enable the data available through the Patient Access API to also be made available to In-Network/Contracted Providers and other Health Plans through the <a href="provider-access-api.html">Provider Access API</a> and the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a>.</p>
+
+<p>CMS Guidance defines two sets of data to be made available by payers in the Patient Access API:  Claims and Encounter Data and Clinical data.  They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required but is recommended. If used these guides will provide information payers can employ to meet the requirements of the policies being finalized. 
+The <a href="">CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)</a> defines how Claims and Encounter Data are to be provided; This Da Vinci Payer Data Exchange IG (PDex) and the <a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1 IG</a>, <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1.0 IG</a> or <a href="http://hl7.org/fhir/us/core/STU7">US Core 7.0.0 IG</a> define how Clinical Data is to be provided.</p>
+
+<p>This version of the Implementation Guide introduces support for <a href="http://hl7.org/fhir/us/core/STU7">US Core 7.0.0 IG</a>. Since the IG embraces US Core the support for <a href="http://hl7.org/fhir/us/core/STU7">US Core 7.0.0</a> is similar to the support for <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1.0</a> which required minimal changes to the PDex IG. Throughout this IG references to <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1.0</a> can also be interpreted as supporting <a href="http://hl7.org/fhir/us/core/STU7">US Core 7.0.0</a> which is expected to supercede <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1.0</a> in 2028.</p>
+
+<h3 id="continuing-standards-evolution">Continuing Standards Evolution</h3>
+
+<p>This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
+secure exchange of information between Providers and Payers and between payers. 
+Incorporating prescriptive definitions for connecting, registering and authorizing access to the 
+Provider Access or Payer-to-Payer API risks complicating the adoption of solutions that will 
+enable secure exchange of data, at scale. Health Plans implementing the Da Vinci guides that address the CMS Prior Authorization Rule (Payer Data Exchange, Coverage Requirements Discovery, Documents templates and Rules and Prior Authorization Support) are urged to continue to engage with their respective work groups in order to 
+be aware of ongoing developments and emergent implementation approaches, as the industry works to evolve methods that will enable adoption of these Interoperability Standards at scale. Developments are to be expected in the area of automated registration and access to the secure APIs documented 
+in these IGs.</p>
+
+<h3 id="background">Background</h3>
+<p>There are two parallel paths pursued by the CARIN Alliance (<strong>C</strong>reating <strong>A</strong>ccess to <strong>R</strong>eal-time <strong>In</strong>formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. The Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.</p>
+
+<p>The CARIN Alliance focused on replicating the CMS Blue Button 2.0 solution directed at providing beneficiaries access to claims information for Medicare Fee For Service (FFS) in the form of a FHIR based ExplanationOfBenefit (EOB). The CARIN Alliance Consumer-Directed Payer Data Exchange (CARIN IG for Blue Button®) solution was intended to provide the same information based on commercial payer databases, at least for Medicare Advantage products. The CMS Interoperability and Patient Access Final Rule expanded the scope of a Blue Button 2.0 equivalent to include not just Medicare Advantage but also Medicaid HMO, CHIP HMO and QHP's in the federal marketplace.</p>
+
+<p>The Da Vinci Payer Data Exchange (PDex) solution started with the goal of providing payer sourced information to providers in the form of FHIR resources consistent with US Core profiles for FHIR Release 4 (R4). The CMS Interoperability Final Rule directs covered payers (as noted above) to make Encounter and Clinical data available to members through an API (defined by the ONC 21st Century Cures Act Final Rule) for, at a minimum, information defined in USCDI release 1.1. Since PDex was already focused on making the same information available through a compliant API, Da Vinci expanded the scope of PDex to include not only payer to provider exchange at the request of the provider but also payer to third party application exchange at the request of the member.</p>
+
+<p>In addition, the CMS Interoperability Final Rule requires a covered plan, at the member’s request, to make their information (as defined by USCDI release 1.1), at a minimum available to any other plan as directed by the member. This ability must exist for up to 5 years after the member leaves the plan. Da Vinci expanded the scope of the PDex Implementation Guide to support this exchange. This aspect of the CMS-9115 Interoperability and Patient Access Rule was never enforced. However, in the following Prior Authorization Rule (CMS-0057) CMS requires Payers to enable Payers to perform a Payer-to-Payer exchange of data for opted-in and matched members that have moved to a new plan from a regulated health plan.</p>
+
+<p>At this point we have two solutions that provide an overlapping but different set of information for the members of a health plan. The first is the CARIN IG for Blue Button® which is focused on providing claims information, including the adjudication information, in the form of a FHIR ExplanationOfBenefit (EOB).  The second solution is to provide all payer information related to the clinical condition and care of the patient using US Core profiles on FHIR R4 resources. In the latter case, USCDI information coming from claims is represented as US Core resources and includes, at a minimum: encounters, providers, organizations, locations, dates of service, diagnoses (conditions), procedures and observations. This information would also include clinical information from sources other than claims maintained by the payer, such as:</p>
+
+<ol>
+  <li>Laboratory results received via HL7 V2 ORU transactions,</li>
+  <li>Clinical data from HL7 consolidated CDAs,</li>
+  <li>Information derived from HL7 V2 ADT transactions,</li>
+  <li>Information received or extracted from immunization registries,</li>
+  <li>Information related to medication administration from pharmacy benefit managers in pharmacy networks,</li>
+  <li>FHIR resources, and any other source of clinical information related to the member.</li>
+</ol>
+
+<p>Unlike the <a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1 IG</a> or <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1.0 IG</a>, PDex provides guidance to payers on how to make the following information available via the Patient Access API:</p>
+
+<ol>
+  <li>Provenance appropriate for payer data exchange (extended US Core Provenance)</li>
+  <li>Dispensed medications (not covered in <a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1</a>)</li>
+  <li>Medical devices that are not implantable devices (not covered in US Core)</li>
+  <li>Common Payer Consumer Data Set (CPCDS) to US Core and PDex profiles to satisfy the requirement for exchange of USCDI V1 information</li>
+  <li>Clinical data received by payers (e.g., laboratory results) from multiple sources (e.g., claims, HL7 V2, CDA) to the appropriate FHIR US Core and PDex profile data elements.</li>
+</ol>
+
+<table>
+	<tr>
+		<td>
+			<img width="100%" height="auto" src="Payer-Admin-Financial-Clinical-Data-interchange.png" />
+		</td>	
+	</tr>	
+</table>
+
+<p>This IG uses the same Member Health History "payload" for member-authorized exchange of information with other Health Plans, in network providers and with Third-Party Applications. It describes the interaction patterns that, when followed, allow the various parties involved in managing healthcare and payer data to more easily integrate and exchange data securely and effectively.</p>
+
+<p>This IG covers the exchange of:</p>
+<ul>
+  <li>Claims-based information via clinical FHIR profiles, namely US Core plus payer-specific profiles for Device and MedicationDispense</li>
+  <li>Clinical Information (such as Lab Results, Allergies and Conditions)</li>
+</ul>
+
+<p>In support of the Prior Authorization Rule (CMS-0057) This IG adds support for Prior Authorizations and the supporting clinical information used in reaching a decision. This information iis added to the Patient Access API and is also available to In-Network Providers and other Payers through the Provider Access and Payer-to-Payer Bulk APIs.</p>
+
+<p>This IG covers the exchange of this information using US Core and Da Vinci Health Record Exchange (HRex) Profiles. This superset of clinical profiles forms the Health Plan Member's Health History.</p>
+
+<p>This IG covers the exchange of a Member's Health History in the following scenarios:</p>
+<ul>
+  <li>Provider requested Provider-Health Plan Exchange using CDS-Hooks and SMART-on-FHIR</li>
+  <li>Member-authorized Health Plan to Health Plan exchange</li>
+  <li>Member-authorized Health Plan to Third-Party Application exchange</li>
+</ul>
+
+<p>The latter two scenarios are provided to meet the requirements identified in the CMS Interoperability Notice for Proposed Rule Making issued on February 11, 2019. To meet the requirements of the CMS Prior Authorization Rule this IG adds two new APIs:</p>
+
+<ul>
+  <li><a href="provider-access-api.html">Provider Access Bulk API</a></li>
+  <li><a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a></li>
+</ul>
+
+<p><strong>There are items in this guide that are subject to update</strong>. This includes:</p>
+<ul>
+  <li>Value Sets</li>
+  <li>Code Systems</li>
+  <li>Examples.</li>
+</ul>
+
+<p>See the <a href="toc.html">Table of Contents</a> for more information.</p>
+
+<h3 id="mapping-adjudicated-claims-encounter-and-prior-authorization-information">Mapping Adjudicated Claims, Encounter and Prior Authorization Information</h3>
+
+<p>The <a href="datamapping.html">Data Mapping</a> section addresses the mapping of Claims and Encounter data to Clinical profiles. Some 
+US Core profiles correlate with data provided in the <a href="">Consumer-Directed Payer Data Exchange (Blue Button 2.0) IG</a>. 
+The Data Mapping section provides tables to assist implementers in mapping between these IGs.</p>
+
+<p>With the CMS Prior Authorization Rule (CMS-0057) recommending the series of Da Vinci Burden Reduction Implementation Guides (Coverage Requirements Discovery, Documents Templates and Rules and Prior Authorization Support) it is expected that Payers will receive more clinical data from Providers. Much of that data will be in structured form, as defined by the US Core Implementation Guide. The Payer-to-Payer Bulk API also requires the exchange of unstructured data that supports a Prior Authorization decision. Such data would be embedded in a DocumentReference resource for exchange. This is likely to result in Payers having far more clinical data to exchange wih Members, Providers and other Payers.</p>
+
+<p>The IG will continue to be tested at connectathons and will continue to utilize commonly adopted standards (e.g., US Core profiles) that have been tested by other groups (e.g., Argonaut). USCDI concepts are encapsulated in US Core Profiles on FHIR Resources. The Code Systems, Value Sets and codings used in this IG are based on US Core Profiles. Regardless of the way in which payers store their administrative and clinical information they will need to map it appropriately to these profiles.</p>
+
+<p>In addition, we are creating a supplemental guide to provide more examples of how to populate the resources that are being exchanged based on the nature of the source information (e.g., lab results via V2 transactions, CDA, or claims).</p>
+
+<h3 id="endpoint-discovery">Endpoint Discovery</h3>
+
+<p>Implementers of this IG <strong>SHOULD</strong> support the <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html">endpoint discovery</a> mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following:</p>
+
+<ul>
+  <li>Patient Access API.</li>
+  <li>Provider Access API.</li>
+  <li>Payer-to-Payer API (single member and multiple members).</li>
+</ul>
+
+<h3 id="intellectual-property-considerations">Intellectual Property Considerations</h3>
+
+<p>This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP").  Implementers and testers of this specification <strong>SHALL</strong> abide by the license requirements for each terminology content artifact utilized within a functioning implementation. Terminology licenses <strong>SHALL</strong> be obtained from the Third-Party IP owner for each code system and/or other specified artifact used.  It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.</p>
+
+<p>This publication includes IP covered under the following statements.</p>
+<ul>
+<li>All X12 products are subject to this IP policy, including published and draft works.X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.Additional IP information can be found <a href="https://x12.org/products/ip-use">here</a>
+Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.Additional information on X12 licensing program can be found <a href="https://x12.org/products/licensing-program">here</a>
+To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com.<div data-fhir="generated" id="ipp_1" onclick="if (document.getElementById('ipp2_1').innerHTML != '') {document.getElementById('ipp_1').innerHTML = document.getElementById('ipp2_1').innerHTML; document.getElementById('ipp2_1').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_1" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html">X12 Claim Adjustment Reason Codes</a>: <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a> and <a href="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.html">X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes</a></li>
+</ul>
+</div></li>
+<li>All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.Please see <a href="https://x12.org/products/licensing-program"><a href="https://x12.org/products/licensing-program">https://x12.org/products/licensing-program</a></a>
+<div data-fhir="generated" id="ipp_2" onclick="if (document.getElementById('ipp2_2').innerHTML != '') {document.getElementById('ipp_2').innerHTML = document.getElementById('ipp2_2').innerHTML; document.getElementById('ipp2_2').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_2" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ServiceTypeCodes.html">X12 Service Type Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a>, <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a> and <a href="ValueSet-PriorAuthServiceTypeCodes.html">PriorAuthServiceTypeCodes</a></li>
+</ul>
+</div></li>
+<li>CMS maintains HIPPS. There are no known constraints on the use of HIPPS.<div data-fhir="generated" id="ipp_3" onclick="if (document.getElementById('ipp2_3').innerHTML != '') {document.getElementById('ipp_3').innerHTML = document.getElementById('ipp2_3').innerHTML; document.getElementById('ipp2_3').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_3" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html">Health Insurance Prospective Payment System (HIPPS)</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a>, <a href="ValueSet-PDexPAInstitutionalProcedureCodes.html">PDexPAInstitutionalProcedureCodes</a>, <a href="ValueSet-PDexPAInstitutionalProcedureCodesVS.html">PDexPAInstitutionalProcedureCodesVS</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></li>
+</ul>
+</div></li>
+<li>ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: <a href="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</a><div data-fhir="generated" id="ipp_4" onclick="if (document.getElementById('ipp2_4').innerHTML != '') {document.getElementById('ipp_4').innerHTML = document.getElementById('ipp2_4').innerHTML; document.getElementById('ipp2_4').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_4" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>: <a href="StructureDefinition-base-ext-associatedServers.html">AssociatedServers</a>, <a href="ValueSet-attestation-provision-type-valueset.html">AttestationProvisionTypeValueSet</a><span id="ips_4" onclick="document.getElementById('ips_4').innerHTML = document.getElementById('ips2_4').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 102 more</span></span><span id="ips2_4" style="display: none">, <a href="ValueSet-attestation-status-valueset.html">AttestationStatusValueSet</a>, <a href="OperationDefinition-BulkMemberMatch.html">BulkMemberMatch</a>, <a href="OperationDefinition-BulkMemberMatchDataExport.html">BulkMemberMatchDataExport</a>, <a href="StructureDefinition-base-ext-contactpoint-availabletime.html">ContactPointAvailableTime</a>, <a href="index.html">DaVinciPayerDataExchange</a>, <a href="StructureDefinition-DispenseRefill.html">DispenseRefill</a>, <a href="StructureDefinition-base-ext-dynamicRegistration.html">DynamicRegistration</a>, <a href="StructureDefinition-base-ext-endpointAccessControlMechanism.html">EndpointAccessControlMechanism</a>, <a href="CodeSystem-EndpointPayloadTypeCS.html">EndpointPayloadTypeCS</a>, <a href="ValueSet-EndpointPayloadTypeVS.html">EndpointPayloadTypeVS</a>, <a href="StructureDefinition-base-ext-endpoint-rank.html">EndpointRank</a>, <a href="StructureDefinition-base-ext-endpoint-usecase.html">EndpointUsecase</a>, <a href="SearchParameter-explanationofbenefit-identifier.html">ExplanationOfBenefit_Identifier</a>, <a href="SearchParameter-explanationofbenefit-patient.html">ExplanationOfBenefit_Patient</a>, <a href="SearchParameter-explanationofbenefit-service-date.html">ExplanationOfBenefit_ServiceDate</a>, <a href="SearchParameter-explanationofbenefit-type.html">ExplanationOfBenefit_Type</a>, <a href="SearchParameter-explanationofbenefit-use.html">ExplanationOfBenefit_Use</a>, <a href="ValueSet-FDANationalDrugCode.html">FDANationalDrugCode</a>, <a href="StructureDefinition-base-ext-fhir-ig.html">FhirIg</a>, <a href="SearchParameter-group-code.html">Group_Code</a>, <a href="StructureDefinition-base-ext-identifier-status.html">IdentifierStatus</a>, <a href="StructureDefinition-base-ext-last-typefilter.html">LastFilters</a>, <a href="StructureDefinition-base-ext-last-transmission.html">LastTransmission</a>, <a href="StructureDefinition-base-ext-last-types.html">LastTypes</a>, <a href="StructureDefinition-extension-levelOfServiceCode.html">LevelOfServiceCode</a>, <a href="StructureDefinition-base-ext-match-parameters.html">MatchParameters</a>, <a href="StructureDefinition-member-opt-out-group.html">MemberOptOut</a>, <a href="StructureDefinition-member-provider-treatment-relationship-group.html">MemberProviderTreatmentRelationship</a>, <a href="StructureDefinition-base-ext-members-opted-out.html">MembersOptedOut</a>, <a href="StructureDefinition-mtls-bundle.html">MtlsBundle</a>, <a href="StructureDefinition-mtls-endpoint.html">MtlsEndpoint</a>, <a href="CodeSystem-MtlsObjectCodeCS.html">MtlsObjectCodeCS</a>, <a href="ValueSet-MtlsObjectTypeVS.html">MtlsObjectTypeVS</a>, <a href="StructureDefinition-mtls-organization.html">MtlsOrganization</a>, <a href="StructureDefinition-pdex-mtls-signedobject-extension.html">MtlsSignedObject</a>, <a href="StructureDefinition-opt-out-details.html">OptOutDetails</a>, <a href="StructureDefinition-opt-out-reason.html">OptOutReason</a>, <a href="CodeSystem-opt-out-reason.html">OptOutReasonCodeSystem</a>, <a href="ValueSet-opt-out-reason-valueset.html">OptOutReasonValueSet</a>, <a href="CodeSystem-opt-out-scope.html">OptOutScopeCodeSystem</a>, <a href="ValueSet-opt-out-scope-valueset.html">OptOutScopeValueSet</a>, <a href="CodeSystem-OrgTypeCS.html">OrgTypeCS</a>, <a href="ValueSet-OrgTypeVS.html">OrgTypeVS</a>, <a href="ValueSet-PDexAdjudication.html">PDexAdjudication</a>, <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.html">PDexAdjudicationCategoryDiscriminator</a>, <a href="CodeSystem-PDexAdjudicationDiscriminator.html">PDexAdjudicationDiscriminator</a>, <a href="CodeSystem-PDexIdentifierType.html">PDexIdentifierType</a>, <a href="CodeSystem-pdex-member-characteristic-code.html">PDexMemberCharacteristicCode</a>, <a href="StructureDefinition-pdex-member-match-group.html">PDexMemberMatchGroup</a>, <a href="StructureDefinition-pdex-member-no-match-group.html">PDexMemberNoMatchGroup</a>, <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDexMultiMemberMatchRequestParameters</a>, <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDexMultiMemberMatchResponseParameters</a>, <a href="ValueSet-PDexMultiMemberMatchResultVS.html">PDexMultiMemberMatchResultVS</a>, <a href="ValueSet-PDexPAInstitutionalProcedureCodes.html">PDexPAInstitutionalProcedureCodes</a>, <a href="ValueSet-PDexPAInstitutionalProcedureCodesVS.html">PDexPAInstitutionalProcedureCodesVS</a>, <a href="CodeSystem-PDexPayerAdjudicationStatus.html">PDexPayerAdjudicationStatus</a>, <a href="ValueSet-PDexPayerBenefitPaymentStatus.html">PDexPayerBenefitPaymentStatus</a>, <a href="StructureDefinition-pdex-provider-group.html">PDexProviderGroup</a>, <a href="StructureDefinition-pdex-provider-consent.html">PDexProviderSharingConsent</a>, <a href="CapabilityStatement-pdex-server-6-1.html">PDexServerCapabilityStatement61</a>, <a href="ValueSet-PDexSupportingInfoType.html">PDexSupportingInfoType</a>, <a href="CodeSystem-PDexSupportingInfoTypeCS.html">PDexSupportingInfoTypeCS</a>, <a href="StructureDefinition-pdex-device.html">PdexDevice</a>, <a href="StructureDefinition-pdex-medicationdispense.html">PdexMedicationDispense</a>, <a href="SearchParameter-pdex-medicationdispense-patient.html">PdexMedicationDispensePatient</a>, <a href="SearchParameter-pdex-medicationdispense-status.html">PdexMedicationDispenseStatus</a>, <a href="CodeSystem-PdexMemberAttributionCS.html">PdexMemberAttributionCS</a>, <a href="CodeSystem-PdexMultiMemberMatchResultCS.html">PdexMultiMemberMatchResultCS</a>, <a href="CapabilityStatement-pdex-payer-access-server.html">PdexPayerAccessServerCapabilityStatement</a>, <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a>, <a href="CapabilityStatement-pdex-provider-access-server.html">PdexProviderAccessServerCapabilityStatement</a>, <a href="CapabilityStatement-pdex-server.html">PdexServerCapabilityStatement</a>, <a href="ValueSet-PriorAuthServiceTypeCodes.html">PriorAuthServiceTypeCodes</a>, <a href="ValueSet-PriorAuthorizationAmounts.html">PriorAuthorizationAmounts</a>, <a href="StructureDefinition-PriorAuthorizationUtilization.html">PriorAuthorizationUtilization</a>, <a href="CodeSystem-PriorAuthorizationValueCodes.html">PriorAuthorizationValueCodes</a>, <a href="StructureDefinition-pdex-provenance.html">Provenance</a>, <a href="CodeSystem-ProvenanceAgentRoleType.html">ProvenanceAgentRoleType</a>, <a href="ValueSet-ProvenanceAgentType.html">ProvenanceAgentType</a>, <a href="CodeSystem-ProvenancePayerDataSource.html">ProvenancePayerDataSource</a>, <a href="ValueSet-ProvenancePayerSourceFormat.html">ProvenancePayerSourceFormat</a>, <a href="StructureDefinition-ProvenanceSourceFrom.html">ProvenanceSourceFrom</a>, <a href="OperationDefinition-ProviderMemberMatch.html">ProviderMemberMatch</a>, <a href="StructureDefinition-provider-member-match-group.html">ProviderMemberMatchGroup</a>, <a href="StructureDefinition-provider-member-no-match-group.html">ProviderMemberNoMatchGroup</a>, <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html">ProviderMultiMemberMatchRequestParameters</a>, <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html">ProviderMultiMemberMatchResponseParameters</a>, <a href="StructureDefinition-provider-treatment-relationship-consent.html">ProviderTreatmentAttestation</a>, <a href="StructureDefinition-extension-reviewAction.html">ReviewAction</a>, <a href="StructureDefinition-extension-reviewActionCode.html">ReviewActionCode</a>, <a href="StructureDefinition-base-ext-secureExchangeArtifacts.html">SecureExchangeArtifacts</a>, <a href="StructureDefinition-treatment-relationship-details.html">TreatmentRelationshipDetails</a>, <a href="CodeSystem-treatment-relationship-type.html">TreatmentRelationshipTypeCodeSystem</a>, <a href="ValueSet-treatment-relationship-type-valueset.html">TreatmentRelationshipTypeValueSet</a>, <a href="StructureDefinition-base-ext-trustFramework.html">TrustFramework</a>, <a href="CodeSystem-TrustFrameworkTypeCS.html">TrustFrameworkTypeCS</a>, <a href="ValueSet-TrustFrameworkTypeVS.html">TrustFrameworkTypeVS</a>, <a href="CodeSystem-TrustProfileCS.html">TrustProfileCS</a>, <a href="StructureDefinition-base-ext-verification-status.html">VerificationStatus</a>, <a href="StructureDefinition-base-ext-when-adjudicated.html">WhenAdjudicated</a>, <a href="ValueSet-X12278ReviewDecisionReasonCode.html">X12278ReviewDecisionReasonCode</a> and <a href="ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.html">X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes</a></span></li>
+</ul>
+</div></li>
+<li>These codes are excerpted from ASTM Standard, E1762-95(2013) - Standard Guide for Electronic Authentication of Health Care Information, Copyright by ASTM International, 100 Barr Harbor Drive, West Conshohocken, PA 19428. Copies of this standard are available through the ASTM Web Site at www.astm.org.<div data-fhir="generated" id="ipp_5" onclick="if (document.getElementById('ipp2_5').innerHTML != '') {document.getElementById('ipp_5').innerHTML = document.getElementById('ipp2_5').innerHTML; document.getElementById('ipp2_5').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_5" style="display: none">
+<ul>
+<li><a href="http://hl7.org/fhir/R4/codesystem-signature-type.html">Signature Type Codes</a>: <a href="Bundle-example-mtls-endpoint-bundle.html">Bundle/example-mtls-endpoint-bundle</a></li>
+</ul>
+</div></li>
+<li>This CodeSystem is not copyrighted.<div data-fhir="generated" id="ipp_6" onclick="if (document.getElementById('ipp2_6').innerHTML != '') {document.getElementById('ipp_6').innerHTML = document.getElementById('ipp2_6').innerHTML; document.getElementById('ipp2_6').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_6" style="display: none">
+<ul>
+<li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html">C4BB Adjudication Code System</a>: <a href="ValueSet-PDexAdjudication.html">PDexAdjudication</a>, <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.html">PDexAdjudicationCategoryDiscriminator</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></li>
+<li><a href="CodeSystem-PDexAdjudicationDiscriminator.html">PDex Adjudication Discriminator</a>: <a href="ValueSet-PDexAdjudicationCategoryDiscriminator.html">PDexAdjudicationCategoryDiscriminator</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></li>
+<li><a href="CodeSystem-PDexPayerAdjudicationStatus.html">PDex Payer Adjudication Status</a>: <a href="ValueSet-PDexPayerBenefitPaymentStatus.html">PDexPayerBenefitPaymentStatus</a></li>
+<li><a href="CodeSystem-PDexSupportingInfoTypeCS.html">PDex Supporting Info Type</a>: <a href="ValueSet-PDexSupportingInfoType.html">PDexSupportingInfoType</a></li>
+</ul>
+</div></li>
+<li>This is an example set based on ASTM Standard, E1762-95 (2013) HL7 RoleClass OID 2.16.840.1.113883.5.110, HL7 Role Code 2.16.840.1.113883.5.111, HL7 ParticipationType OID: 2.16.840.1.113883.5.90, HL7 ParticipationFunction codes at OID: 2.16.840.1.113883.5.88, and HL7 Security and Privacy Domain Analysis Model roles classes.<div data-fhir="generated" id="ipp_7" onclick="if (document.getElementById('ipp2_7').innerHTML != '') {document.getElementById('ipp_7').innerHTML = document.getElementById('ipp2_7').innerHTML; document.getElementById('ipp2_7').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_7" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-contractsignertypecodes.html">Contract Signer Type Codes</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a>, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a> and <a href="Provenance-1000017.html">Provenance/1000017</a></li>
+</ul>
+</div></li>
+<li>This material contains content from <a href="http://loinc.org">LOINC</a>. LOINC is copyright &copy; 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the <a href="http://loinc.org/license">license</a>. LOINC&reg; is a registered United States trademark of Regenstrief Institute, Inc.<div data-fhir="generated" id="ipp_8" onclick="if (document.getElementById('ipp2_8').innerHTML != '') {document.getElementById('ipp_8').innerHTML = document.getElementById('ipp2_8').innerHTML; document.getElementById('ipp2_8').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_8" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-loinc.html">LOINC</a>: <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a>, <a href="Consent-treatment-attestation-ex1.html">Consent/treatment-attestation-ex1</a><span id="ips_11" onclick="document.getElementById('ips_11').innerHTML = document.getElementById('ips2_11').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 6 more</span></span><span id="ips2_11" style="display: none">, <a href="Consent-treatment-attestation-ex2.html">Consent/treatment-attestation-ex2</a>, <a href="DocumentReference-123456.html">DocumentReference/123456</a>, <a href="DocumentReference-provider-attestation-doc-1.html">DocumentReference/provider-attestation-doc-1</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a> and <a href="StructureDefinition-provider-treatment-relationship-consent.html">ProviderTreatmentAttestation</a></span></li>
+</ul>
+</div></li>
+<li>This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact <a href="https://www.snomed.org/get-snomed">https://www.snomed.org/get-snomed</a> or <a href="mailto:info@snomed.org">info@snomed.org</a>.<div data-fhir="generated" id="ipp_9" onclick="if (document.getElementById('ipp2_9').innerHTML != '') {document.getElementById('ipp_9').innerHTML = document.getElementById('ipp2_9').innerHTML; document.getElementById('ipp2_9').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_9" style="display: none">
+<ul>
+<li><a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED Clinical Terms&amp;reg; (SNOMED CT&amp;reg;)</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_12" onclick="document.getElementById('ips_12').innerHTML = document.getElementById('ips2_12').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 7 more</span></span><span id="ips2_12" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Bundle-3000003.html">Bundle/3000003</a>, <a href="Device-543210.html">Device/543210</a>, <a href="Encounter-6.html">Encounter/6</a>, <a href="Encounter-7.html">Encounter/7</a>, <a href="Encounter-8.html">Encounter/8</a> and <a href="StructureDefinition-pdex-device.html">PdexDevice</a></span></li>
+</ul>
+</div></li>
+<li>This material derives from the HL7 Terminology (THO). THO is copyright &copy;1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: <a href="https://terminology.hl7.org/license.html">https://terminology.hl7.org/license.html</a><div data-fhir="generated" id="ipp_10" onclick="if (document.getElementById('ipp2_10').innerHTML != '') {document.getElementById('ipp_10').innerHTML = document.getElementById('ipp2_10').innerHTML; document.getElementById('ipp2_10').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_10" style="display: none">
+<ul>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html">Adjudication Value Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a>, <a href="ValueSet-PDexAdjudication.html">PDexAdjudication</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-claim-type.html">Claim Type Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-condition-category.html">Condition Category Codes</a>: <a href="Bundle-3000003.html">Bundle/3000003</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>: <a href="Bundle-3000003.html">Bundle/3000003</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>: <a href="Bundle-3000003.html">Bundle/3000003</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-consentaction.html">Consent Action Codes</a>: <a href="Consent-consent-2.html">Consent/consent-2</a>, <a href="Consent-no-consent-1.html">Consent/no-consent-1</a>, <a href="StructureDefinition-pdex-provider-consent.html">PDexProviderSharingConsent</a> and <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-consentcategorycodes.html">Consent Category Codes</a>: <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a>, <a href="Consent-treatment-attestation-ex1.html">Consent/treatment-attestation-ex1</a><span id="ips_19" onclick="document.getElementById('ips_19').innerHTML = document.getElementById('ips2_19').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span></span><span id="ips2_19" style="display: none">, <a href="Consent-treatment-attestation-ex2.html">Consent/treatment-attestation-ex2</a>, <a href="DocumentReference-provider-attestation-doc-1.html">DocumentReference/provider-attestation-doc-1</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a> and <a href="StructureDefinition-provider-treatment-relationship-consent.html">ProviderTreatmentAttestation</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-consentpolicycodes.html">Consent PolicyRule Codes</a>: <a href="Consent-no-consent-1.html">Consent/no-consent-1</a> and <a href="StructureDefinition-pdex-provider-consent.html">PDexProviderSharingConsent</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-consentscope.html">Consent Scope Codes</a>: <a href="Consent-consent-2.html">Consent/consent-2</a>, <a href="Consent-no-consent-1.html">Consent/no-consent-1</a><span id="ips_21" onclick="document.getElementById('ips_21').innerHTML = document.getElementById('ips2_21').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 8 more</span></span><span id="ips2_21" style="display: none">, <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a>, <a href="Consent-treatment-attestation-ex1.html">Consent/treatment-attestation-ex1</a>, <a href="Consent-treatment-attestation-ex2.html">Consent/treatment-attestation-ex2</a>, <a href="StructureDefinition-pdex-provider-consent.html">PDexProviderSharingConsent</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a> and <a href="StructureDefinition-provider-treatment-relationship-consent.html">ProviderTreatmentAttestation</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-coverage-class.html">Coverage Class Codes</a>: <a href="Coverage-CoverageLinkExample1.html">Coverage/CoverageLinkExample1</a>, <a href="Coverage-CoverageMatchExample1.html">Coverage/CoverageMatchExample1</a><span id="ips_22" onclick="document.getElementById('ips_22').innerHTML = document.getElementById('ips2_22').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span></span><span id="ips2_22" style="display: none">, <a href="Coverage-CoverageMatchExample2.html">Coverage/CoverageMatchExample2</a>, <a href="Coverage-coverage-2.html">Coverage/coverage-2</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a> and <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-data-absent-reason.html">DataAbsentReason</a>: <a href="Bundle-example-mtls-endpoint-bundle.html">Bundle/example-mtls-endpoint-bundle</a>, <a href="StructureDefinition-mtls-endpoint.html">MtlsEndpoint</a><span id="ips_23" onclick="document.getElementById('ips_23').innerHTML = document.getElementById('ips2_23').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span id="ips2_23" style="display: none">, <a href="ValueSet-PDexPAInstitutionalProcedureCodes.html">PDexPAInstitutionalProcedureCodes</a>, <a href="ValueSet-PDexPAInstitutionalProcedureCodesVS.html">PDexPAInstitutionalProcedureCodesVS</a>, <a href="Endpoint-diamond-mtls-endpoint2.html">Payer-Payer Exchange</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-endpoint-connection-type.html">Endpoint Connection Type</a>: <a href="Bundle-example-mtls-endpoint-bundle.html">Bundle/example-mtls-endpoint-bundle</a>, <a href="StructureDefinition-mtls-endpoint.html">MtlsEndpoint</a> and <a href="Endpoint-diamond-mtls-endpoint2.html">Payer-Payer Exchange</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-ex-diagnosistype.html">Example Diagnosis Type Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-ex-relatedclaimrelationship.html">Example Related Claim Relationship Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-fundsreserve.html">Funds Reservation Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-organization-type.html">Organization type</a>: <a href="Organization-DiamondOnyxHealth1.html">DiamondOnyxHealth</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-processpriority.html">Process Priority Codes</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a> and <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-professional-credential-status.html">Professional Credential Status</a>: <a href="StructureDefinition-base-ext-identifier-status.html">IdentifierStatus</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-subscriber-relationship.html">SubscriberPolicyholder Relationship Codes</a>: <a href="Coverage-883210.html">Coverage/883210</a>, <a href="Coverage-Coverage1.html">Coverage/Coverage1</a><span id="ips_31" onclick="document.getElementById('ips_31').innerHTML = document.getElementById('ips2_31').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 8 more</span></span><span id="ips2_31" style="display: none">, <a href="Coverage-CoverageLinkExample1.html">Coverage/CoverageLinkExample1</a>, <a href="Coverage-CoverageMatchExample1.html">Coverage/CoverageMatchExample1</a>, <a href="Coverage-CoverageMatchExample2.html">Coverage/CoverageMatchExample2</a>, <a href="Coverage-coverage-2.html">Coverage/coverage-2</a>, <a href="Coverage-coverage-link-2.html">Coverage/coverage-link-2</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a> and <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v2-0203.html">identifierType</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_32" onclick="document.getElementById('ips_32').innerHTML = document.getElementById('ips2_32').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 28 more</span></span><span id="ips2_32" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Coverage-883210.html">Coverage/883210</a>, <a href="Coverage-Coverage1.html">Coverage/Coverage1</a>, <a href="Coverage-coverage-2.html">Coverage/coverage-2</a>, <a href="Coverage-coverage-link-2.html">Coverage/coverage-link-2</a>, <a href="Group-example-pdex-member-consent-constraint-group.html">Group/example-pdex-member-consent-constraint-group</a>, <a href="Group-example-pdex-member-no-match-group.html">Group/example-pdex-member-no-match-group</a>, <a href="Group-07e72a15407547bf9d03f522aa536a72.1.html">Matched Members</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-payer-multi-member-match-out.html">Parameters/payer-multi-member-match-out</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a>, <a href="Parameters-provider-bulk-member-match-out.html">Parameters/provider-bulk-member-match-out</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a>, <a href="Patient-1.html">Patient/1</a>, <a href="Patient-1-2.html">Patient/1-2</a>, <a href="Patient-100.html">Patient/100</a>, <a href="Patient-1001.html">Patient/1001</a>, <a href="Patient-2002.html">Patient/2002</a>, <a href="Patient-PatientMemberMatchExample1.html">Patient/PatientMemberMatchExample1</a>, <a href="Patient-PatientMemberMatchExample2.html">Patient/PatientMemberMatchExample2</a>, <a href="Patient-patient-2.html">Patient/patient-2</a>, <a href="Patient-payer-patient-1001.html">Patient/payer-patient-1001</a>, <a href="Patient-payer-patient-2002.html">Patient/payer-patient-2002</a>, <a href="Organization-Payer1.html">Payer 1</a>, <a href="Organization-Payer2.html">Payer 2</a>, <a href="Practitioner-4.html">Practitioner/4</a>, <a href="Organization-ProviderOrg1.html">Provider 1</a> and <a href="Organization-ProviderOrg2.html">Provider 2</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActCode.html">ActCode</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_33" onclick="document.getElementById('ips_33').innerHTML = document.getElementById('ips2_33').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 16 more</span></span><span id="ips2_33" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Bundle-2000002.html">Bundle/2000002</a>, <a href="Bundle-3000002.html">Bundle/3000002</a>, <a href="Consent-consent-2.html">Consent/consent-2</a>, <a href="Consent-no-consent-1.html">Consent/no-consent-1</a>, <a href="Coverage-CoverageLinkExample1.html">Coverage/CoverageLinkExample1</a>, <a href="Coverage-CoverageMatchExample1.html">Coverage/CoverageMatchExample1</a>, <a href="Coverage-CoverageMatchExample2.html">Coverage/CoverageMatchExample2</a>, <a href="Encounter-6.html">Encounter/6</a>, <a href="Encounter-7.html">Encounter/7</a>, <a href="Encounter-8.html">Encounter/8</a>, <a href="MedicationDispense-1000001.html">MedicationDispense/1000001</a>, <a href="StructureDefinition-pdex-provider-consent.html">PDexProviderSharingConsent</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a> and <a href="StructureDefinition-pdex-medicationdispense.html">PdexMedicationDispense</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActReason.html">ActReason</a>: <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a>, <a href="Consent-treatment-attestation-ex1.html">Consent/treatment-attestation-ex1</a><span id="ips_34" onclick="document.getElementById('ips_34').innerHTML = document.getElementById('ips2_34').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span></span><span id="ips2_34" style="display: none">, <a href="Consent-treatment-attestation-ex2.html">Consent/treatment-attestation-ex2</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a>, <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a>, <a href="Provenance-1000101.html">Provenance/1000101</a> and <a href="StructureDefinition-provider-treatment-relationship-consent.html">ProviderTreatmentAttestation</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-DataOperation.html">DataOperation</a>: <a href="Provenance-1000101.html">Provenance/1000101</a></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-NullFlavor.html">NullFlavor</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_36" onclick="document.getElementById('ips_36').innerHTML = document.getElementById('ips2_36').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 4 more</span></span><span id="ips2_36" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Patient-1.html">Patient/1</a>, <a href="Patient-1-2.html">Patient/1-2</a> and <a href="Patient-100.html">Patient/100</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-ParticipationType.html">ParticipationType</a>: <a href="Consent-consent-2.html">Consent/consent-2</a>, <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a><span id="ips_37" onclick="document.getElementById('ips_37').innerHTML = document.getElementById('ips2_37').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 5 more</span></span><span id="ips2_37" style="display: none">, <a href="Consent-treatment-attestation-ex1.html">Consent/treatment-attestation-ex1</a>, <a href="Consent-treatment-attestation-ex2.html">Consent/treatment-attestation-ex2</a>, <a href="Parameters-payer-multi-member-match-in.html">Parameters/payer-multi-member-match-in</a>, <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a> and <a href="Parameters-provider-member-match-request-001.html">Parameters/provider-member-match-request-001</a></span></li>
+<li><a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-RoleClass.html">RoleClass</a>: <a href="Consent-provider-treatment-attestation-1.html">Consent/provider-treatment-attestation-1</a> and <a href="Parameters-provider-bulk-member-match-in.html">Parameters/provider-bulk-member-match-in</a></li>
+</ul>
+</div></li>
+<li>Used by permission of HL7 International, all rights reserved Creative Commons License<div data-fhir="generated" id="ipp_11" onclick="if (document.getElementById('ipp2_11').innerHTML != '') {document.getElementById('ipp_11').innerHTML = document.getElementById('ipp2_11').innerHTML; document.getElementById('ipp2_11').innerHTML = ''}"> <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show Usage</span></div><div id="ipp2_11" style="display: none">
+<ul>
+<li><a href="http://hl7.org/fhir/us/core/STU7/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>: <a href="DocumentReference-123456.html">DocumentReference/123456</a></li>
+<li><a href="http://hl7.org/fhir/us/core/STU7/CodeSystem-us-core-provenance-participant-type.html">US Core Provenance Participant Type Extension Codes</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_40" onclick="document.getElementById('ips_40').innerHTML = document.getElementById('ips2_40').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 8 more</span></span><span id="ips2_40" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Bundle-3000002.html">Bundle/3000002</a>, <a href="StructureDefinition-pdex-provenance.html">Provenance</a>, <a href="Provenance-1000001.html">Provenance/1000001</a>, <a href="Provenance-1000016.html">Provenance/1000016</a>, <a href="Provenance-1000017.html">Provenance/1000017</a>, <a href="Provenance-1000101.html">Provenance/1000101</a> and <a href="ValueSet-ProvenanceAgentType.html">ProvenanceAgentType</a></span></li>
+<li><a href="CodeSystem-EndpointPayloadTypeCS.html">Endpoint Payload Types Code System</a>: <a href="ValueSet-EndpointPayloadTypeVS.html">EndpointPayloadTypeVS</a></li>
+<li><a href="CodeSystem-MtlsObjectCodeCS.html">mTLS Object Type Code</a>: <a href="ValueSet-MtlsObjectTypeVS.html">MtlsObjectTypeVS</a>, <a href="StructureDefinition-pdex-mtls-signedobject-extension.html">MtlsSignedObject</a> and <a href="Endpoint-diamond-mtls-endpoint2.html">Payer-Payer Exchange</a></li>
+<li><a href="CodeSystem-OrgTypeCS.html">Organization Type</a>: <a href="Organization-Acme.html">Acme of CT</a> and <a href="ValueSet-OrgTypeVS.html">OrgTypeVS</a></li>
+<li><a href="CodeSystem-PdexMemberAttributionCS.html">PDex Provider Access API Attribution Code System</a>: <a href="Group-Example-PDex-Provider-Group.html">Attributed List of Health Plan Members for Practitioner 1122334455.</a>, <a href="StructureDefinition-member-opt-out-group.html">MemberOptOut</a><span id="ips_44" onclick="document.getElementById('ips_44').innerHTML = document.getElementById('ips2_44').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 7 more</span></span><span id="ips2_44" style="display: none">, <a href="StructureDefinition-member-provider-treatment-relationship-group.html">MemberProviderTreatmentRelationship</a>, <a href="StructureDefinition-pdex-member-match-group.html">PDexMemberMatchGroup</a>, <a href="StructureDefinition-pdex-member-no-match-group.html">PDexMemberNoMatchGroup</a>, <a href="ValueSet-PDexMultiMemberMatchResultVS.html">PDexMultiMemberMatchResultVS</a>, <a href="StructureDefinition-pdex-provider-group.html">PDexProviderGroup</a>, <a href="StructureDefinition-provider-member-match-group.html">ProviderMemberMatchGroup</a> and <a href="StructureDefinition-provider-member-no-match-group.html">ProviderMemberNoMatchGroup</a></span></li>
+<li><a href="CodeSystem-PdexMultiMemberMatchResultCS.html">PDex Multi-Member Match Result Code System</a>: <a href="Group-example-pdex-member-consent-constraint-group.html">Group/example-pdex-member-consent-constraint-group</a>, <a href="Group-example-pdex-member-no-match-group.html">Group/example-pdex-member-no-match-group</a><span id="ips_45" onclick="document.getElementById('ips_45').innerHTML = document.getElementById('ips2_45').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 11 more</span></span><span id="ips2_45" style="display: none">, <a href="Group-07e72a15407547bf9d03f522aa536a72.1.html">Matched Members</a>, <a href="StructureDefinition-member-opt-out-group.html">MemberOptOut</a>, <a href="StructureDefinition-member-provider-treatment-relationship-group.html">MemberProviderTreatmentRelationship</a>, <a href="StructureDefinition-pdex-member-match-group.html">PDexMemberMatchGroup</a>, <a href="StructureDefinition-pdex-member-no-match-group.html">PDexMemberNoMatchGroup</a>, <a href="ValueSet-PDexMultiMemberMatchResultVS.html">PDexMultiMemberMatchResultVS</a>, <a href="StructureDefinition-pdex-provider-group.html">PDexProviderGroup</a>, <a href="Parameters-payer-multi-member-match-out.html">Parameters/payer-multi-member-match-out</a>, <a href="Parameters-provider-bulk-member-match-out.html">Parameters/provider-bulk-member-match-out</a>, <a href="StructureDefinition-provider-member-match-group.html">ProviderMemberMatchGroup</a> and <a href="StructureDefinition-provider-member-no-match-group.html">ProviderMemberNoMatchGroup</a></span></li>
+<li><a href="CodeSystem-PriorAuthorizationValueCodes.html">Prior Authorization Values</a>: <a href="ExplanationOfBenefit-PDexPriorAuth1.html">ExplanationOfBenefit/PDexPriorAuth1</a>, <a href="StructureDefinition-pdex-priorauthorization.html">PdexPriorAuthorization</a> and <a href="ValueSet-PriorAuthorizationAmounts.html">PriorAuthorizationAmounts</a></li>
+<li><a href="CodeSystem-ProvenanceAgentRoleType.html">Provenance Roles</a>: <a href="StructureDefinition-pdex-provenance.html">Provenance</a> and <a href="ValueSet-ProvenanceAgentType.html">ProvenanceAgentType</a></li>
+<li><a href="CodeSystem-ProvenancePayerDataSource.html">Provenance Payer Data Source Format</a>: <a href="Bundle-1000000-1.html">Bundle/1000000-1</a>, <a href="Bundle-1000000-2.html">Bundle/1000000-2</a><span id="ips_48" onclick="document.getElementById('ips_48').innerHTML = document.getElementById('ips2_48').innerHTML">... <span style="cursor: pointer; border: 1px grey solid; background-color: #fcdcb3; padding-left: 3px; padding-right: 3px; color: black">Show 13 more</span></span><span id="ips2_48" style="display: none">, <a href="Bundle-1000000-3.html">Bundle/1000000-3</a>, <a href="Bundle-3000002.html">Bundle/3000002</a>, <a href="Bundle-3000003.html">Bundle/3000003</a>, <a href="StructureDefinition-pdex-provenance.html">Provenance</a>, <a href="Provenance-1000001.html">Provenance/1000001</a>, <a href="Provenance-1000002.html">Provenance/1000002</a>, <a href="Provenance-1000003.html">Provenance/1000003</a>, <a href="Provenance-1000004.html">Provenance/1000004</a>, <a href="Provenance-1000005.html">Provenance/1000005</a>, <a href="Provenance-1000006.html">Provenance/1000006</a>, <a href="Provenance-1000016.html">Provenance/1000016</a>, <a href="ValueSet-ProvenancePayerSourceFormat.html">ProvenancePayerSourceFormat</a> and <a href="StructureDefinition-ProvenanceSourceFrom.html">ProvenanceSourceFrom</a></span></li>
+<li><a href="CodeSystem-TrustFrameworkTypeCS.html">Trust FrameworkType Code System</a>: <a href="StructureDefinition-base-ext-trustFramework.html">TrustFramework</a> and <a href="ValueSet-TrustFrameworkTypeVS.html">TrustFrameworkTypeVS</a></li>
+<li><a href="CodeSystem-opt-out-reason.html">Opt-Out Reason</a>: <a href="StructureDefinition-opt-out-reason.html">OptOutReason</a> and <a href="ValueSet-opt-out-reason-valueset.html">OptOutReasonValueSet</a></li>
+<li><a href="CodeSystem-opt-out-scope.html">Opt-Out Scope</a>: <a href="StructureDefinition-member-opt-out-group.html">MemberOptOut</a> and <a href="ValueSet-opt-out-scope-valueset.html">OptOutScopeValueSet</a></li>
+<li><a href="CodeSystem-treatment-relationship-type.html">Treatment Relationship Type</a>: <a href="ValueSet-treatment-relationship-type-valueset.html">TreatmentRelationshipTypeValueSet</a></li>
+</ul>
+</div></li>
+</ul>
+<!--$$1$$-->
+
+<h3 id="conventions">Conventions</h3>
+
+<p>This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:</p>
+
+<p><strong>SHALL</strong> indicates requirements that must be met to be conformant with the specification.</p>
+
+<p><strong>SHOULD</strong> indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance.</p>
+
+<p><strong>MAY</strong> describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.</p>
+
+<h4 id="mustsupport">MustSupport</h4>
+
+<p>For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the <a href="introduction.html#mustsupport">Must Support</a> section in the Introduction page.</p>
+
+<h4 id="security-and-privacy">Security and Privacy</h4>
+
+<p>Security and Privacy are critically important when exchanging information. Please refer to the <a href="securityandprivacy.html">Security and Privacy</a> page in this IG and
+the guidance it references in the <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html">Health Record Exchange (HRex) IG</a>.</p>
+
+<h4 id="patientsubject-terminology">Patient/Subject Terminology</h4>
+
+<p>It is important to differentiate in the Implementation Guide between identifiers used by the Provider/EMR and those used by the Payer/Health Plan to identify the patient/subject/member.</p>
+
+<p>For the purposes of this IG we will use the following terms:</p>
+
+<ul>
+  <li>
+    <p><strong>patient</strong> or <strong>subject</strong> id will be used to express the identifier used by the provider to identify a patient/subject.</p>
+  </li>
+  <li>
+    <p><strong>member</strong> id will be used to express the identifier used by the payer/health plan to identify an individual member. Health Plans may historically have referred to these individual members as:</p>
+
+    <ul>
+      <li>Memberƒ</li>
+      <li>Subscriber</li>
+      <li>Beneficiary</li>
+      <li>Dependent</li>
+      <li>Group Member</li>
+      <li>Plan Member</li>
+      <li>Covered Party</li>
+      <li>Subject of Care.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<table style="border: 1px #F0F0F0 solid;"><thead><tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"><th><b>Implementation Guide</b></th><th><b>Version(s)</b></th><th><b>Reason</b></th></tr></thead><tbody><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/uv/bulkdata"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/uv/bulkdata/STU2">Bulk Data Access IG</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/uv/bulkdata" /></span></td><td><span class="copy-text" title="package: hl7.fhir.uv.bulkdata#2.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.bulkdata/2.0.0">2.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.bulkdata#2.0.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Member Attribution (ATR) List (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td rowspan="2"><span class="copy-text" title="canonical: http://hl7.org/fhir/us/carin-bb"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/carin-bb" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.carin-bb#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.carin-bb/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.carin-bb#2.1.0" /></span></td><td></td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.fhir.us.carin-bb#2.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.carin-bb/2.0.0">2.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.carin-bb#2.0.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td rowspan="2"><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-crd"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-crd/STU2.1">Da Vinci - Coverage Requirements Discovery</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-crd" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-crd#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-crd#2.1.0" /></span></td><td></td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="package: hl7.fhir.us.davinci-crd#2.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.0.0">2.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-crd#2.0.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-dtr"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-dtr/STU2.1">Da Vinci - Documentation Templates and Rules</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-dtr" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-dtr#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-dtr/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-dtr#2.1.0" /></span></td><td>Imported by Da Vinci Clinical Data Exchange (CDex) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-atr"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci - Member Attribution (ATR) List</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-atr" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-atr#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-atr/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-atr#2.1.0" /></span></td><td></td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-cdex"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/us/davinci-cdex/STU2.1">Da Vinci Clinical Data Exchange (CDex)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-cdex" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-cdex#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.davinci-cdex/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-cdex#2.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Member Attribution (ATR) List (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td rowspan="2"><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-hrex"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-hrex/STU1.1">Da Vinci Health Record Exchange (HRex)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-hrex" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-hrex#1.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.1.0">1.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-hrex#1.1.0" /></span></td><td><p>Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core</p>
+</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="package: hl7.fhir.us.davinci-hrex#1.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.0.0">1.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-hrex#1.0.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Coverage Requirements Discovery (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-pdex-plan-net"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.2">Da Vinci PDex Plan Net</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex-plan-net" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-pdex-plan-net#1.2.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-pdex-plan-net/1.2.0">1.2.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-pdex-plan-net#1.2.0" /></span></td><td>Imported by Da Vinci - Member Attribution (ATR) List (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/davinci-pas"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/davinci-pas/STU2.1">Da Vinci Prior Authorization Support (PAS) FHIR IG</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/davinci-pas" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.davinci-pas#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.davinci-pas/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.davinci-pas#2.1.0" /></span></td><td></td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td rowspan="3"><span class="copy-text" title="canonical: http://hl7.org/fhir/extensions"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/extensions/5.1.0">FHIR Extensions Pack</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/extensions" /></span></td><td><span class="copy-text" title="package: hl7.fhir.uv.extensions.r4#5.2.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.2.0">5.2.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.extensions.r4#5.2.0" /></span></td><td>Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.fhir.uv.extensions.r4#5.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.1.0">5.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.extensions.r4#5.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Health Record Exchange (HRex) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.fhir.uv.extensions.r4#1.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/1.0.0">1.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.extensions.r4#1.0.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Coverage Requirements Discovery (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/R4">FHIR R4 package : Core</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir" /></span></td><td><span class="copy-text" title="package: hl7.fhir.r4.core#4.0.1"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1">4.0.1</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.r4.core#4.0.1" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td rowspan="7"><span class="copy-text" title="canonical: http://terminology.hl7.org"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://terminology.hl7.org/5.5.0">HL7 Terminology (THO)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://terminology.hl7.org" /></span></td><td><span class="copy-text" title="package: hl7.terminology.r4#6.3.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.terminology.r4/6.3.0">6.3.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#6.3.0" /></span></td><td><p>Defines terminologies and coddesystems used in HIR IGs</p>
+</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#6.2.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/6.2.0">6.2.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#6.2.0" /></span></td><td style="font-style: italic;">Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#6.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/6.1.0">6.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#6.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Health Record Exchange (HRex) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#5.5.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/5.5.0">5.5.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#5.5.0" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#5.3.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/5.3.0">5.3.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#5.3.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Coverage Requirements Discovery (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#5.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/5.0.0">5.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#5.0.0" /></span></td><td style="font-style: italic;">Imported by Subscriptions R5 Backport (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.terminology.r4#4.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.terminology.r4/4.0.0">4.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.terminology.r4#4.0.0" /></span></td><td style="font-style: italic;">Imported by Security for Scalable Registration, Authentication, and Authorization (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/us/ndh"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/ndh/STU1">National Directory of Healthcare Providers &amp; Services (NDH)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/ndh" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.ndh#1.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.ndh/1.0.0">1.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.ndh#1.0.0" /></span></td><td></td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="canonical: http://fhir.org/packages/us.cdc.phinvads"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://fhir.org/packages/us.cdc.phinvads">Public Health Information Network Vocabulary Access and Distribution System (PHIN VADS)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://fhir.org/packages/us.cdc.phinvads" /></span></td><td><span class="copy-text" title="package: us.cdc.phinvads#0.12.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.cdc.phinvads/0.12.0">0.12.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.cdc.phinvads#0.12.0" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td rowspan="2"><span class="copy-text" title="canonical: http://hl7.org/fhir/smart-app-launch"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/smart-app-launch/STU2">SMART App Launch</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/smart-app-launch" /></span></td><td><span class="copy-text" title="package: hl7.fhir.uv.smart-app-launch#2.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.smart-app-launch/2.1.0">2.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.smart-app-launch#2.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Member Attribution (ATR) List (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="package: hl7.fhir.uv.smart-app-launch#2.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.smart-app-launch/2.0.0">2.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.smart-app-launch#2.0.0" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td rowspan="2"><span class="copy-text" title="canonical: http://hl7.org/fhir/us/udap-security"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/us/udap-security/2021Sep">Security for Scalable Registration, Authentication, and Authorization</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/udap-security" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.udap-security#1.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.udap-security/1.0.0">1.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.udap-security#1.0.0" /></span></td><td style="font-style: italic;">Imported by National Directory of Healthcare Providers &amp; Services (NDH) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: hl7.fhir.us.udap-security#0.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.us.udap-security/0.1.0">0.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.udap-security#0.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Health Record Exchange (HRex) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/uv/sdc"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/uv/sdc/STU3">Structured Data Capture</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/uv/sdc" /></span></td><td><span class="copy-text" title="package: hl7.fhir.uv.sdc#3.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.sdc/3.0.0">3.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.sdc#3.0.0" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="canonical: http://hl7.org/fhir/uv/subscriptions-backport"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://hl7.org/fhir/uv/subscriptions-backport/STU1.1">Subscriptions R5 Backport</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/uv/subscriptions-backport" /></span></td><td><span class="copy-text" title="package: hl7.fhir.uv.subscriptions-backport.r4#1.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/hl7.fhir.uv.subscriptions-backport.r4/1.1.0">1.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.uv.subscriptions-backport.r4#1.1.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td rowspan="3"><span class="copy-text" title="canonical: http://hl7.org/fhir/us/core"><a style="font-size: 11px; font-family: verdana; font-weight:bold" href="http://hl7.org/fhir/us/core/STU7">US Core</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://hl7.org/fhir/us/core" /></span></td><td><span class="copy-text" title="package: hl7.fhir.us.core#7.0.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.core/7.0.0">7.0.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.core#7.0.0" /></span></td><td><p>Defines USCDI v4 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.</p>
+</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="package: hl7.fhir.us.core.v610#6.1.0"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.core/6.1.0">6.1.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.core.v610#6.1.0" /></span></td><td><p>Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers</p>
+</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: white"><td><span class="copy-text" title="package: hl7.fhir.us.core.3.1.1#3.1.1"><a style="font-size: 11px; font-family: verdana; font-weight: bold" href="https://simplifier.net/packages/hl7.fhir.us.core/3.1.1">3.1.1</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="hl7.fhir.us.core.3.1.1#3.1.1" /></span></td><td><p>Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.</p>
+</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td rowspan="5"><span class="copy-text" title="canonical: http://fhir.org/packages/us.nlm.vsac"><a style="font-size: 11px; font-family: verdana; font-weight:normal" href="http://fhir.org/packages/us.nlm.vsac">Value Set Authority Center (VSAC)</a><button class="btn-copy" title="Click to copy URL" data-clipboard-text="http://fhir.org/packages/us.nlm.vsac" /></span></td><td><span class="copy-text" title="package: us.nlm.vsac#0.7.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.nlm.vsac/0.7.0">0.7.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.nlm.vsac#0.7.0" /></span></td><td style="font-style: italic;">Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: us.nlm.vsac#0.21.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.nlm.vsac/0.21.0">0.21.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.nlm.vsac#0.21.0" /></span></td><td style="font-style: italic;">Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: us.nlm.vsac#0.19.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.nlm.vsac/0.19.0">0.19.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.nlm.vsac#0.19.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci Health Record Exchange (HRex) (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: us.nlm.vsac#0.18.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.nlm.vsac/0.18.0">0.18.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.nlm.vsac#0.18.0" /></span></td><td style="font-style: italic;">Imported by US Core (and potentially others)</td></tr><tr style="font-size: 11px; font-family: verdana; vertical-align: top; background-color: #F7F7F7"><td><span class="copy-text" title="package: us.nlm.vsac#0.11.0"><a style="font-size: 11px; font-family: verdana; font-weight: normal" href="https://simplifier.net/packages/us.nlm.vsac/0.11.0">0.11.0</a><button class="btn-copy" title="Click to copy package" data-clipboard-text="us.nlm.vsac#0.11.0" /></span></td><td style="font-style: italic;">Imported by Da Vinci - Coverage Requirements Discovery (and potentially others)</td></tr></tbody></table>
+<!--$$3$$-->
+
+<h3 id="change-history">Change History</h3>
+
+<p>A history of changes made since the publication of the STU1 version of the PDex IG is maintained in <a href="changehistory.html">ChangeHistory</a>.</p>
+
+<h3 id="project-and-participants">Project and Participants</h3>
+
+<p>See the <a href="credits.html">Credits</a> page for a list of contributors to the creation and maintenance of this Implementation Guide.</p>
+
+<h3 id="fhir-publisher">FHIR Publisher</h3>
+
+<p>This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).</p>
+
+<p><a href="overview.html">Next Page: Overview</a></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="toc.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="overview.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="payer-multi-member-match-out"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"/>
+  </meta>
+  <parameter>
+    <name value="MatchedMembers"/>
+    <resource>
+      <Group>
+        <id value="07e72a15407547bf9d03f522aa536a72"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Matched members group</div>
+        </text>
+        <contained>
+          <Patient>
+            <id value="1"/>
+            <identifier>
+              <type>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                  <code value="MB"/>
+                </coding>
+              </type>
+              <system value="http://example.org/old-payer/identifiers/member"/>
+              <value value="55678"/>
+              <assigner>
+                <display value="Old Payer"/>
+              </assigner>
+            </identifier>
+            <name>
+              <use value="official"/>
+              <family value="Person"/>
+              <given value="Patricia"/>
+              <given value="Ann"/>
+            </name>
+            <gender value="female"/>
+            <birthDate value="1974-12-25"/>
+          </Patient>
+        </contained>
+        <contained>
+          <Patient>
+            <id value="2"/>
+            <identifier>
+              <type>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                  <code value="MB"/>
+                </coding>
+              </type>
+              <system value="http://example.org/old-payer/identifiers/member"/>
+              <value value="45567"/>
+              <assigner>
+                <display value="Old Payer"/>
+              </assigner>
+            </identifier>
+            <name>
+              <use value="official"/>
+              <family value="Smith"/>
+              <given value="William"/>
+              <given value="John"/>
+            </name>
+            <gender value="male"/>
+            <birthDate value="1958-12-25"/>
+          </Patient>
+        </contained>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="0123456789"/>
+        </identifier>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+            <code value="match"/>
+            <display value="Matched"/>
+          </coding>
+        </code>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="9876543210"/>
+          </identifier>
+          <display value="Old Health Plan"/>
+        </managingEntity>
+        <member>
+          <entity>
+            <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+              <valueReference>
+                <reference value="#1"/>
+              </valueReference>
+            </extension>
+            <reference value="Patient/1001"/>
+          </entity>
+        </member>
+        <member>
+          <entity>
+            <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+              <valueReference>
+                <reference value="#2"/>
+              </valueReference>
+            </extension>
+            <reference value="Patient/2002"/>
+          </entity>
+        </member>
+      </Group>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="NonMatchedMembers"/>
+    <resource>
+      <Group>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Non-matched members group</div>
+        </text>
+        <contained>
+          <Patient>
+            <id value="3"/>
+            <identifier>
+              <type>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                  <code value="MB"/>
+                </coding>
+              </type>
+              <system value="http://example.org/old-payer/identifiers/member"/>
+              <value value="45567"/>
+              <assigner>
+                <display value="Old Payer"/>
+              </assigner>
+            </identifier>
+            <name>
+              <use value="official"/>
+              <family value="Jones"/>
+              <given value="Adam"/>
+              <given value="Jacob"/>
+            </name>
+            <gender value="male"/>
+            <birthDate value="1957-12-25"/>
+          </Patient>
+        </contained>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="0123456789"/>
+        </identifier>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+            <code value="nomatch"/>
+            <display value="Not Matched"/>
+          </coding>
+        </code>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="9876543210"/>
+          </identifier>
+          <display value="Old Health Plan"/>
+        </managingEntity>
+        <member>
+          <entity>
+            <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+              <valueReference>
+                <reference value="#3"/>
+              </valueReference>
+            </extension>
+            <reference value="#3"/>
+          </entity>
+        </member>
+      </Group>
+    </resource>
+  </parameter>
+  <parameter>
+    <name value="ConsentConstrainedMembers"/>
+    <resource>
+      <Group>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Consent-constrained members group</div>
+        </text>
+        <contained>
+          <Patient>
+            <id value="4"/>
+            <identifier>
+              <type>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                  <code value="MB"/>
+                </coding>
+              </type>
+              <system value="http://example.org/old-payer/identifiers/member"/>
+              <value value="45567"/>
+              <assigner>
+                <display value="Old Payer"/>
+              </assigner>
+            </identifier>
+            <name>
+              <use value="official"/>
+              <family value="Noway"/>
+              <given value="Janis"/>
+              <given value="Noelle"/>
+            </name>
+            <gender value="female"/>
+            <birthDate value="1956-12-25"/>
+          </Patient>
+        </contained>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="0123456789"/>
+        </identifier>
+        <type value="person"/>
+        <actual value="true"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+            <code value="consentconstraint"/>
+            <display value="Consent Constraint"/>
+          </coding>
+        </code>
+        <managingEntity>
+          <identifier>
+            <system value="http://hl7.org/fhir/sid/us-npi"/>
+            <value value="9876543210"/>
+          </identifier>
+          <display value="Old Health Plan"/>
+        </managingEntity>
+        <member>
+          <entity>
+            <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+              <valueReference>
+                <reference value="#4"/>
+              </valueReference>
+            </extension>
+            <reference value="#4"/>
+          </entity>
+        </member>
+      </Group>
+    </resource>
+  </parameter>
+</Parameters>

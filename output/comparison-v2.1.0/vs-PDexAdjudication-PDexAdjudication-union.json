@@ -1,0 +1,73 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "bfdf8e79-c90d-4258-82b7-955fd996cf87-254",
+  "url" : "http://hl7.org/fhir/comparison/ValueSet/bfdf8e79-c90d-4258-82b7-955fd996cf87-254",
+  "name" : "UnionPDexAdjudicationAndPDexAdjudication",
+  "title" : "Union of PDex Adjudication And PDex Adjudication",
+  "status" : "active",
+  "date" : "2025-12-17T14:55:58-05:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "concept" : [{
+        "code" : "submitted"
+      },
+      {
+        "code" : "copay"
+      },
+      {
+        "code" : "eligible"
+      },
+      {
+        "code" : "deductible"
+      },
+      {
+        "code" : "benefit"
+      }]
+    },
+    {
+      "concept" : [{
+        "code" : "coinsurance",
+        "display" : "Coinsurance"
+      },
+      {
+        "code" : "noncovered",
+        "display" : "Noncovered"
+      },
+      {
+        "code" : "priorpayerpaid",
+        "display" : "Prior payer paid"
+      },
+      {
+        "code" : "paidbypatient",
+        "display" : "Paid by patient"
+      },
+      {
+        "code" : "paidtopatient",
+        "display" : "Paid to patient"
+      },
+      {
+        "code" : "paidtoprovider",
+        "display" : "Paid to provider"
+      },
+      {
+        "code" : "memberliability",
+        "display" : "Member liability"
+      },
+      {
+        "code" : "discount",
+        "display" : "Discount"
+      },
+      {
+        "code" : "drugcost",
+        "display" : "Drug cost"
+      }]
+    }]
+  }
+}

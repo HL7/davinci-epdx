@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/MedicationDispense/1000001> a fhir:MedicationDispense ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1000001"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2024-04-17T15:26:23.217+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationDispense 1000001</b></p><a name=\"1000001\"> </a><a name=\"hc1000001\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2024-04-17 15:26:23+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-pdex-medicationdispense.html\">PDex MedicationDispense</a></p></div><p><b>An attribute to express the refill number of a prescription</b>: 1</p><p><b>status</b>: Completed</p><p><b>medication</b>: <span title=\"Codes:{http://hl7.org/fhir/sid/ndc 54458-872-10}\">Lisinopril, 30 TABLET in 1 BLISTER PACK (54458-872-10) (package)</span></p><p><b>subject</b>: <a href=\"Patient-1.html\">Johnny Appleseed  Male, DoB: 1986-01-01 ( Member Number)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-4.html\">Practitioner Susan Smith </a></td></tr></table><p><b>location</b>: <a href=\"Location-5.html\">Location MyFavorite Pharmacy</a></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode RF}\">Refill</span></p><p><b>quantity</b>: 60</p><p><b>daysSupply</b>: 30</p><p><b>whenHandedOver</b>: 2024-04-15 09:00:23+0000</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill>
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "1"^^xsd:decimal ]
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:medication [
+     a fhir:CodeableConcept ;
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/ndc"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/ndc>
+       ] ;
+       fhir:code [ fhir:v "54458-872-10" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+     fhir:reference [ fhir:v "Patient/1" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:actor [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> ;
+       fhir:reference [ fhir:v "Practitioner/4" ]
+     ]
+  ] ) ; # 
+  fhir:location [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Location/5> ;
+     fhir:reference [ fhir:v "Location/5" ]
+  ] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+         fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
+       ] ;
+       fhir:code [ fhir:v "RF" ]
+     ] )
+  ] ; # 
+  fhir:quantity [
+     fhir:value [ fhir:v "60"^^xsd:decimal ]
+  ] ; # 
+  fhir:daysSupply [
+     fhir:value [ fhir:v "30"^^xsd:decimal ]
+  ] ; # 
+  fhir:whenHandedOver [ fhir:v "2024-04-15T09:00:23.217+00:00"^^xsd:dateTime] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/4> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Location/5> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

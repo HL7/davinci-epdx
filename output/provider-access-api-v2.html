@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Provider Access API(v2) - Da Vinci Payer Data Exchange v2.1.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir-ig.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"6.3"}
+    h3,h4,h5,h6{--heading-prefix:"6.3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="hl7-nav">
+          <a id="hl7-logo" href="http://hl7.org" data-no-external="true">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a id="family-logo" href="http://hl7.org/fhir" data-no-external="true"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" href="searchform.html" data-no-external="true"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+        <div id="project-nav">
+          <a id="project-logo" href="http://hl7.org/about/davinci" data-no-external="true"><img src="assets/images/da-vinci_logo.jpg" alt="Visit the Da Vinci website" height="55"/> </a>
+        </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
+            <br/>
+            <span style="display:inline-block;">2.1.1 - STU 2.1
+
+
+
+  <img src="assets/images/usa.svg" alt="United States of America flag" title="United States of America" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">IG Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview.html">Reading this IG</a>
+      </li>
+      <li>
+        <a href="usecasescenarios.html">Use Cases</a>
+      </li>
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+      <li>
+        <a href="credits.html">Project and Participants</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
+      </li>
+      <li>
+        <a href="securityandprivacy.html">Privacy, Safety, and Security</a>
+      </li>
+      <li>
+        <a href="provider-access-api.html">Provider Access</a>
+      </li>
+      <li>
+        <a href="provider-access-api-v2.html">Provider Access (v2)</a>
+      </li>
+      <li>
+        <a href="payertopayerbulkexchange.html">Payer-to-Payer(bulk)</a>
+      </li>
+      <li>
+        <a href="payertopayerexchange.html">Payer-to-Payer(single)</a>
+      </li>
+      <li>
+        <a href="datamapping.html">Data Mapping</a>
+      </li>
+      <li>
+        <a href="cds-hooks.html">CDS Hooks</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">FHIR Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="http://hl7.org/fhir/R4/" target="_blank">FHIR R4 Spec</a>
+      </li>
+      <li>
+        <a href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/" target="_blank">HRex 1.1.0</a>
+      </li>
+      <li>
+        <a href="https://www.hl7.org/fhir/us/core/STU3.1.1/" target="_blank">US Core 3.1.1</a>
+      </li>
+      <li>
+        <a href="https://hl7.org/fhir/us/core/STU6.1/" target="_blank">US Core 6.1.0</a>
+      </li>
+      <li>
+        <a href="https://hl7.org/fhir/us/core/STU7/" target="_blank">US Core 7.0.0</a>
+      </li>
+      <li>
+        <a href="other-igs.html">Other IGs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704" target="_blank">Project Page</a>
+      </li>
+      <li>
+        <a href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support" target="_blank">Implementer Support</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314" target="_blank">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex" target="_blank">Discussion Forum</a>
+      </li>
+      <li>
+        <a href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex" target="_blank">Propose a Change</a>
+      </li>
+      <li>
+        <a href="PDexDownloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="credits.html">Credits</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="changehistory.html">Change Log</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html"><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Provider Access API(v2)</b></li>
+
+          <span style="float:right;">
+
+            <a href="provider-access-api.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="payertopayerexchange.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Provider Access API(v2)</h2>
+  
+
+
+
+
+
+  <table class="colsi">
+    <tr>
+  
+      <td>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        
+      </td>
+  
+  
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#provider-access-api" id="markdown-toc-provider-access-api">Provider Access API</a>    <ul>
+      <li><a href="#key-differences-from-version-1-of-provider-access" id="markdown-toc-key-differences-from-version-1-of-provider-access">Key differences from version 1 of Provider Access</a></li>
+      <li><a href="#how-does-provider-access-work" id="markdown-toc-how-does-provider-access-work">How does Provider Access Work?</a></li>
+      <li><a href="#member-opt-out" id="markdown-toc-member-opt-out">Member Opt-out</a></li>
+      <li><a href="#treatment-relationship-driven-access" id="markdown-toc-treatment-relationship-driven-access">Treatment Relationship Driven Access</a></li>
+      <li><a href="#treatment-relationships" id="markdown-toc-treatment-relationships">Treatment Relationships</a></li>
+      <li><a href="#provider-member-match-operation-examples" id="markdown-toc-provider-member-match-operation-examples">Provider-Member-Match Operation Examples</a></li>
+      <li><a href="#bulk-data-export-with-manifest" id="markdown-toc-bulk-data-export-with-manifest">Bulk Data Export with Manifest</a></li>
+      <li><a href="#da-vinci-data-export-operation---pdex-provider-use-case" id="markdown-toc-da-vinci-data-export-operation---pdex-provider-use-case">Da Vinci Data Export Operation - PDex Provider Use Case</a></li>
+      <li><a href="#access-and-refresh-tokens" id="markdown-toc-access-and-refresh-tokens">Access and Refresh Tokens</a></li>
+      <li><a href="#scopes-for-operations" id="markdown-toc-scopes-for-operations">Scopes for Operations</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<p><a href="provider-access-api.html">Previous Page - Provider Access API (v1)</a></p>
+
+<div class="stu-note">
+
+<b><i>Provider Access API bulk (v2)</i></b>
+
+Data guidance in this version of the IG is based on feedback from payers that need to create large Treatment Relationship Lists (TRL) for in-network/contracted practitioners and organizations. 
+This version of the API adds a Provider-Member-Match operation that is built on the Payer-to-Payer Bulk Member Match that has been ballotted and extensively tested at Connectathons. 
+
+The Provider-Member-Match is provided to support the requirements of the CMS prior Authorization Rule (CMS-0057) for payers that need to create large group lists that represent treatment relationships between in-network providers and health plan members.
+
+All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
+
+The Provider-Member-Match operation should be submitted as a first step. This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
+</div>
+
+<p>This version of the API uses a variation of the Bulk Member Match, from the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a>. This is formalized as the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>. The $davinci-data-export operation specified in the original <a href="provider-access-api.html">Provider Access v1</a> is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.</p>
+
+<p>Providers and Payers are encouraged to support Provider Access (v2). It provides a number of benefits to both Providers and Payers. These benefits include:</p>
+
+<ul>
+  <li>Providers can notify patients of new patients they are treating.</li>
+  <li>Provider can submit a member match for members they are planning to treat without retrieving the information for all members that are attributed to them.</li>
+  <li>The Provider-member-match enables data exchange to be focused on members who are actively seeking care.</li>
+  <li>If providers focus on active patientes, the default list of members to retrieve data for will be smaller than requesting an entire list. This will be easier and more efficient to process for payers.</li>
+  <li>Payers can still apply member opt-out checks to the list provided by the provider.</li>
+  <li>Payers can apply business rules to determine a current or impending treatment relationship between provider and member.</li>
+  <li>Some payers have expressed a desire to provide more granular opt-out. Version 2 of the Provider Access API makes this easier to accomplish.</li>
+</ul>
+
+<p>The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG and operates as per the original version of the <a href="provider-access-api.html">Provider Access API</a>.</p>
+
+<p>&lt;/div&gt;</p>
+
+<h2 id="provider-access-api">Provider Access API</h2>
+
+<p>In December 2022, CMS released the <a href="https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact">Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P</a>. This rule was finalized in February 2024.<br/>
+One of the requirements of the rule is for Impacted Payers to implement a Provider Access API. 
+This is an API that conforms to the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">HL7 FHIR Bulk Data API specification</a> but follows the query parameters required by the $davinci-data-export operation defined in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution Implementation Guide</a>.
+The purpose of the Provider Access API (v2) is to enable Providers to query a Payer API for information about the members of the health plan where they have a current, or upcoming treatment relationship. This version of the API is designed to support health plans that need to create large Treatment Relationship Lists for in-network providers or organizations. The API will enable a provider to ask a Payer "What do you know about my Patients?"</p>
+
+<p>Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by regulation or other agreements, the data <strong>MAY</strong> be configured to include financial data (including Allowed and 
+Paid amounts and other information in the full CARIN Blue Button ExplanationOfBenefit resources) for other use cases, including:</p>
+<ul>
+  <li>Value-Based Care contracts and Risk-based Provider Programs where the provider partner organization is “At Risk” for those services.</li>
+  <li>Services that occur at a provider partner organization's facility even if those services are not associated with a Value-Based Care contract.</li>
+  <li>Situations where the financial information is publicly available.</li>
+</ul>
+
+<p>The Payer Data Exchange Implementation Guide supports the Provider Access API by
+utilizing the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$Davinci-data-export-operation</a> operation in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution Implementation Guide</a>.</p>
+
+<p>This IG is not overly prescriptive in defining how a health plan determines an existing or impending treatment relationship between members and providers. In version 2 of the Provider Access API we will refer to the lists as Treatment Relationship Lists (TRLs).</p>
+
+<p>Health plans are responsible for establishing the TRL. This is accomplished by applying their own business rules.</p>
+
+<p>This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the secure exchange of information between Providers and Payers. Incorporating prescriptive definitions for connecting, registering and authorizing access to the Provider Access API risks complicating the adoption of solutions that will enable secure exchange of data, at scale.</p>
+
+<h3 id="key-differences-from-version-1-of-provider-access">Key differences from version 1 of Provider Access</h3>
+
+<p>Rather than creating large, dynamic lists of members associated with a provider the health plan will maintain two lists:</p>
+
+<ol>
+  <li>Member Opt-Out List</li>
+  <li>Member-Provider TRL</li>
+</ol>
+
+<p>These lists <strong>MAY</strong> be created using a FHIR Group resource, or implementers <strong>MAY</strong> choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:</p>
+
+<ul>
+  <li><a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group</a> - contains members who have opted out of data sharing</li>
+  <li><a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group</a> - contains providers with treatment relationships to a specific member</li>
+</ul>
+
+<h4 id="member-opt-out-list">Member Opt-Out List</h4>
+<p>The member Opt-out list, if not determined by a response from a legacy system or API, <strong>SHALL</strong> be a Group resource conforming to the <a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group Profile</a> and managed by the Health Plan that <strong>SHALL</strong> contain all members that have chosen to opt-out of Provider Access API Data Sharing. If a member revokes their opt-out choice their Identifier(s) <strong>SHALL</strong> be removed from the Member Opt-Out List. See the <a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group Profile</a> for details on opt-out scope, reasons, and member-specific details.</p>
+
+<h4 id="member-provider-trl">Member-Provider TRL</h4>
+<p>The Member-Provider TRL <strong>MAY</strong> be determined by referencing a legacy syystem or API. Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer <strong>SHALL</strong> create a Member-Treatment Group conforming to the <a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group Profile</a> that has the member as the "key" to the list (via a characteristic containing the Patient ID). The providers <strong>SHALL</strong> be represented as the cohort, or subjects in the list (as group members). The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. This list <strong>SHALL</strong> then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member.</p>
+
+<p>The payer <strong>MAY</strong> apply their own rules for determining a Treatment Relationship.</p>
+
+<h3 id="how-does-provider-access-work">How does Provider Access Work?</h3>
+
+<p>The Member Opt-Out List and the Member-Provider TRLs <strong>SHALL</strong> be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>.</p>
+<ul>
+  <li>The provider submits a bulk member-match request for one or more members using the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>.</li>
+  <li>The payer <strong>SHOULD</strong> determine whether the provider is in-network, or has an appropriate contractual relationship.</li>
+  <li>Each member request <strong>SHALL</strong> contain:
+    <ul>
+      <li><a name="l782">​</a>Patient demographics conforming to <a href="StructureDefinition-hrex-patient-demographics.html">HRex Patient Demographics</a></li>
+      <li><a name="l787">​</a>Health plan coverage information conforming to <a href="StructureDefinition-hrex-coverage.html">HRex Coverage</a></li>
+      <li>A treatment relationship attestation from the provider using the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a> (a Consent resource)</li>
+    </ul>
+  </li>
+  <li>The CoverageToMatch <strong>SHALL</strong> contain the Member's coverage information.</li>
+  <li>The Treatment attestation <strong>SHALL</strong> be submitted as a Consent resource conforming to the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a> in each member request.</li>
+  <li>The health plan <strong>SHALL</strong> evaluate the request and determine:
+    <ul>
+      <li>If the member has Opted-Out of sharing (by checking the Member Opt-Out List)</li>
+      <li>If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member</li>
+      <li>If the treatment attestation can be verified and meets the payer's requirements</li>
+    </ul>
+  </li>
+  <li>When the member data passes these checks, the member <strong>SHALL</strong> be added to a <a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group</a> resource conforming to the matched members response. The Group Id of the matched group <strong>SHALL</strong> be returned to the Provider upon completion of the operation.</li>
+  <li>Members who fail any check shall be returned in separate Group resources:
+    <ul>
+      <li>Non-matched members in a <a href="StructureDefinition-pdex-member-no-match-group.html">PDex Member No Match Group</a></li>
+      <li>Treatment attestation constrained members in a <a href="StructureDefinition-pdex-member-no-match-group.html">PDex Member No Match Group</a></li>
+      <li>Opt-out constrained members in a <a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group</a></li>
+    </ul>
+  </li>
+  <li>The provider <strong>SHALL</strong> use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. Alternatively, the provider <strong>MAY</strong> perform a new Provider-mMember-Match operation to receive a new Matched Member Group.</li>
+  <li>The matched group resource <strong>MAY</strong> be a short-lived group. No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.</li>
+  <li>Implementer feedback is sought on whether requests for less than 10 members <strong>SHOULD</strong> be handled as an interactive request, with larger bulk requests being processed as an asynchronous process.</li>
+  <li>Implementer feedback is sought on whether an upper limit on the number of members in a Provider-Member-Match operation should be specified.</li>
+  <li>Providers <strong>SHALL</strong> be able to search and retrieve the contents of the Matched Member Group resource.</li>
+  <li>Providers <strong>SHALL</strong> assume that the Matched Group is short-lived and subsequent requests for member data <strong>SHALL</strong> be initiated by performing a member match operation to retrieve an updated Matched Group List.</li>
+</ul>
+
+<p>The typical use case is expected to be one where an EMR retrieves data from a health plan for one or more 
+providers, or for an organization, using automated service functions. The retrieving system or service, such as an EMR, 
+is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
+personnel, or systems, have access to the retrieved data.</p>
+
+<p>It is recommended that, at a minimum, health plans <strong>SHOULD</strong> create Member-Provider TRLs using the NPI data for 
+the Rendering Provider. Health plans <strong>MAY</strong> choose to include organizations or locations in a Member-Proider TRL.</p>
+
+<h3 id="member-opt-out">Member Opt-out</h3>
+
+<p>A health plan member <strong>SHALL</strong> be entitled to Opt-Out from their data being shared via the Provider Access API. PDex defines a consent profile that <strong>MAY</strong> be used to enable a member to deny sharing via the Provider Access API. A member <strong>SHALL</strong> be able to update their preference 
+to revoke a previous denial. When a member Opts-Out of sharing, their Member Id <strong>SHALL</strong> be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. The Member Opt-Out List is a dynamic Group resource. If a member revokes their Opt-Out their Member Id <strong>SHALL</strong> be removed from the Member Opt-Out List.</p>
+
+<p>Health Plans <strong>MAY</strong> implement the pdex-provider-consent to enable a member to express their sharing preference.</p>
+
+<p>The <a href="CapabilityStatement-pdex-server.html">PDex Server Capability Statement</a> enables the Consent record to be written to the Patient Access API.</p>
+
+<p>See the <a href="StructureDefinition-pdex-provider-consent.html">PDex Provider Consent here</a></p>
+
+<h3 id="treatment-relationship-driven-access">Treatment Relationship Driven Access</h3>
+
+<p>The Provider Access API version 2 uses the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a> to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a>. If a Treatment Relationship is established, the member's data <strong>SHALL</strong> be available to a Provider through the member's inclusion in the <a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group</a> that is used to request a $davinci-data-export operation.</p>
+
+<p>Members <strong>SHALL</strong> have the ability to opt-out of data sharing with providers. Opt-outs are managed using the <a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group Profile</a>, which supports multiple opt-out scopes:</p>
+<ul>
+  <li><strong>Global Opt-Out</strong>: Member has opted out from all data sharing</li>
+  <li><strong>Provider-Specific Opt-Out</strong>: Member has opted out for specific provider(s)</li>
+  <li><strong>Purpose-Specific Opt-Out</strong>: Member has opted out for specific purpose(s)</li>
+  <li><strong>Payer-Specific Opt-Out</strong>: Member has opted out for specific payer(s)</li>
+  <li><strong>Provider Category Opt-Out</strong>: Member has opted out for specific provider category/specialty</li>
+</ul>
+
+<p>Each opt-out can include the member's stated reason (privacy concern, data security concern, unknown use, provider relationship, member choice, or other).</p>
+
+<p>Health plans:</p>
+<ul>
+  <li><strong>MAY</strong> use claims data as a source to identify existing Treatment Relationships.</li>
+  <li><strong>MAY</strong> utilize their own rules for determining a Treatment Relationship between members and Providers.</li>
+  <li><strong>MAY</strong> use the <a href="http://hl7.org/fhir/us/davinci-crd/STU2.1/hooks.html">Coverage Requirements Discovery IG's</a> appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.</li>
+</ul>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">Da Vinci Data Export Operation</a> in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Member Attribution IG</a> supports the Bulk FHIR API specification.
+The operation uses a Group resource. For the PDex Provider Access API the following capabilities
+<strong>SHOULD</strong> be supported:</p>
+
+<ul>
+  <li>Get Group record.</li>
+  <li>Request all information for members in the Group.</li>
+  <li>Request information for a subset of members in the Group.</li>
+  <li>Request a limited set of information for a subset of members in the Group.</li>
+</ul>
+
+<p>This combination of requests should cover all provider data requests, such as:</p>
+
+<ul>
+  <li>Send all data for this set of patients that are new to my practice.</li>
+  <li>Send new data since I last requested for this set of patients.</li>
+  <li>Send just the lab results for this set of patients since this date.</li>
+</ul>
+
+<p>Access <strong>SHALL</strong> be controlled using client credentials that are compliant with SMART-On-FHIR.
+Access <strong>SHOULD</strong> be restricted to Providers with a contractual relationship with a Payer.</p>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export operations</a> <strong>SHALL</strong> be submitted using a HTTPS POST.
+The HTTPS Header <strong>SHALL</strong> include:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prefer: respond-async
+</code></pre></div></div>
+
+<h3 id="treatment-relationships">Treatment Relationships</h3>
+
+<p>The Payer <strong>SHALL</strong> be responsible for managing and maintaining the Treatment Relationship between 
+Members and Providers. The payer <strong>SHALL</strong> take account of members that have chosen to Opt-Out of 
+sharing data with providers. Those Opted-Out members <strong>SHALL</strong> be included in a Member Opted-Out List.</p>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Da Vinci Member Attribution (ATR) IG</a> 
+provides transactions to manage the Group resources through Add, change and delete member actions. PDex provides specific Group profiles for Provider Access use cases:</p>
+<ul>
+  <li><a href="StructureDefinition-member-opt-out-group.html">Member Opt-Out Group</a> - for maintaining member opt-out preferences</li>
+  <li><a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group</a> - for maintaining treatment relationships with detailed attestation information</li>
+</ul>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/StructureDefinition-ext-attributionListStatus.html">AttributionListStatus extension</a> can have one of three values:</p>
+<ul>
+  <li>draft: Used when building a list and it is not considered ready for use.</li>
+</ul>
+
+<h3 id="provider-member-match-operation-examples">Provider-Member-Match Operation Examples</h3>
+
+<p>The <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a> supports providers in matching their patients against a payer's records and establishing treatment relationships for bulk data access.</p>
+
+<p>The Provider-Member-Match operation follows the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">FHIR Bulk Data API specification</a> and returns a response containing a manifest with references to the matched member data. The provider uses this manifest to retrieve the Member-Match Response through the bulk data export mechanism.</p>
+
+<p><a name="l1168">​</a><strong>Example Request:</strong>
+The <a href="Parameters-ProviderMemberMatchRequestExample.html">Provider-Member-Match Request Example</a> demonstrates a provider submitting multiple patients with demographics, coverage information, and treatment attestations to a payer.</p>
+
+<p><a name="l1176">​</a><strong>Example Response:</strong>
+The <a href="Parameters-ProviderMemberMatchResponseExample.html">Provider-Member-Match Response Example</a> demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:</p>
+<ul>
+  <li><strong>MatchedMembers Group</strong>: Patients successfully matched with confirmed treatment relationships (using <a href="StructureDefinition-member-provider-treatment-relationship-group.html">Member-Provider Treatment Relationship Group</a> profile)</li>
+  <li><strong>NonMatchedMembers Group</strong>: Patients not found in payer system</li>
+  <li><strong>TreatmentAttestationConstrainedMembers Group</strong>: Patients with unverifiable treatment attestations</li>
+  <li><strong>OptOutConstrainedMembers Group</strong>: Patients who have opted out</li>
+</ul>
+
+<p>The provider retrieves the detailed Member-Match Response by polling the status endpoint and retrieving the files referenced in the manifest, consistent with the FHIR Bulk Data API specification.</p>
+
+<h3 id="bulk-data-export-with-manifest">Bulk Data Export with Manifest</h3>
+
+<p>Once providers receive a Matched Members Group from the Provider-Member-Match operation, they can use it with the $davinci-data-export operation to retrieve bulk member health data.</p>
+
+<p>The bulk data response follows the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">FHIR Bulk Data API specification</a> and includes:</p>
+<ul>
+  <li>A manifest file with references to ndjson files containing member data</li>
+  <li>Proper OAuth2 access token handling</li>
+  <li>Compliant response headers and file format</li>
+</ul>
+
+<p><a name="l1237">​</a>See <a href="BulkDataExportManifest.html">Bulk Data Export Manifest</a> for detailed information on:</p>
+<ul>
+  <li>Manifest file structure</li>
+  <li>ndjson format specification</li>
+  <li>Security requirements</li>
+  <li>
+    <p>Complete workflow from member-match through data retrieval
+Prior Authorization Rule (CMS-0057) the data available through the API <strong>SHOULD</strong> include:</p>
+  </li>
+  <li>US Core Clinical data (<a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1</a> or <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1</a></li>
+  <li><a href="StructureDefinition-pdex-priorauthorization.html">PDex Prior Authorization Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles </a>, as detailed below.</li>
+</ul>
+
+<p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
+Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
+the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
+non-financial profiles:</p>
+
+<ul>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
+</ul>
+
+<h3 id="da-vinci-data-export-operation---pdex-provider-use-case">Da Vinci Data Export Operation - PDex Provider Use Case</h3>
+
+<p>Provider Representative:</p>
+
+<ul>
+  <li><strong>SHALL</strong> be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. Where {id} is the Matched Member Group created by a preceding Provider Member-Match operation.</li>
+  <li><strong>SHALL</strong> be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation.</li>
+  <li><strong>SHALL</strong> be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation.</li>
+</ul>
+
+<p>The $davinci-data-export operation enables a Provider Representative to perform granular requests 
+for data.</p>
+
+<p>Data <strong>MAY</strong> be constrained by:</p>
+
+<ul>
+  <li>Patient subset</li>
+  <li>Date range</li>
+  <li>Resource Type</li>
+  <li>Resource filter (valid search parameters for a resource)</li>
+</ul>
+
+<p>Data available via the API includes:</p>
+
+<ul>
+  <li>Clinical resources (US Core and PDex)</li>
+  <li>Prior Authorizations and supporting structured documentation</li>
+  <li>Non-Financial claims and encounters (CARIN Blue Button)</li>
+</ul>
+
+<p>The Data Export operation <strong>SHALL</strong> check the consent status for each member at the time of execution. This is necessary to identify members that may have changed their opt-out 
+status for sharing with providers.</p>
+
+<h4 id="da-vinci-data-export-parameter-handling">Da Vinci Data Export Parameter Handling</h4>
+
+<h5 id="patient">patient</h5>
+
+<p>If the patient parameter is not provided data <strong>SHALL</strong> be retrieved for all members 
+in the Group. If the patient parameter is provided the operation <strong>SHALL</strong> ignore references 
+to patients that are invalid, or not a member of the group.</p>
+
+<h5 id="exporttype">exportType</h5>
+
+<p>This is an optional parameter in the Da Vinci Data Export Operation.
+The exportType parameter <strong>SHALL</strong> have one of the following values:</p>
+
+<ul>
+  <li>hl7.fhir.us.davinci-pdex#provider-delta</li>
+  <li>hl7.fhir.us.davinci-pdex#provider-download</li>
+  <li>hl7.fhir.us.davinci-pdex#provider-snapshot</li>
+</ul>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-delta option <strong>SHALL</strong> be used when the provider is
+retrieving new, or updated data that will be stored as part of the patient record.</p>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-download option <strong>SHALL</strong> be used when the provider is
+retrieving data that will be stored as part of the patient record.</p>
+
+<p>The hl7.fhir.us.davinci-pdex#provider-snapshot value <strong>SHOULD</strong> be used when a provider
+wants to download data for viewing.</p>
+
+<p>From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType
+parameter will require the Data Provider/Payer to track the latest download
+date/time for the Patients that the provider requests data for.  These values <strong>SHALL</strong>
+be updated in an extension associated with the Patient for which a download was requested.</p>
+
+<h5 id="_since">_since</h5>
+
+<p>Resources in the Patient Access and Provider Access API can extend back to January 1, 2016. 
+The _since parameter <strong>SHOULD</strong> be used for resource requests when the full history is not 
+required. It is expected that providers <strong>MAY</strong> first request data for members without 
+limiting the request using the _since parameter. Subsequent requests <strong>MAY</strong> then use _since
+to limit data to information that is new.</p>
+
+<h5 id="_until">_until</h5>
+
+<p>The _until parameter <strong>MAY</strong> be used less frequently. It is most likely to be used with the<br/>
+hl7.fhir.us.davinci-pdex#provider-snapshot exportType to retrieve member data for a specific 
+period.</p>
+
+<h5 id="_type">_type</h5>
+
+<p>The _type parameter <strong>MAY</strong> be used to restrict the resources retrieved by the Provider. This 
+enables providers to only retrieve the resource types they are interested in seeing. If this 
+parameter is not used all available resources <strong>SHALL</strong> be returned by the Payer, subject to
+the constraints applied by other input parameters.</p>
+
+<p>When _type is used the export operation <strong>SHALL</strong> record the content of the _type parameter in the
+<a href="StructureDefinition-base-ext-last-types.html">lastResources</a> element for each Member for which data is retrieved. The
+<a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a> <strong>SHALL</strong> be recorded with either the Date/Time of the Export Transaction
+or the value of the _until parameter, if it is earlier.</p>
+
+<h5 id="_typefilter">_typeFilter</h5>
+
+<p>The _typeFilter parameter <strong>MAY</strong> be used to further restrict the resources retrieved by the 
+Provider. For example, to only retrieve Observations of a certain type. The _typeFilter, if 
+used, <strong>SHALL</strong> comprise one, or more, valid FHIR search queries for the respective resource 
+being filtered.</p>
+
+<p>When _typeFilter is used the export operation <strong>SHALL</strong> record the content of the _typeFilter 
+parameter in the <a href="StructureDefinition-base-ext-last-typefilter.html">lastFilters</a> element for each Member for which data is retrieved. The
+<a href="StructureDefinition-base-ext-last-transmission.html">lastTransmitted</a> <strong>SHALL</strong> be recorded with either the Date/Time of the Export Transaction
+or the value of the _until parameter, if it is earlier.</p>
+
+<p>NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
+supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs <strong>SHALL</strong>
+be followed.</p>
+
+<h3 id="access-and-refresh-tokens">Access and Refresh Tokens</h3>
+
+<p>Implementers <strong>SHOULD</strong> implement OAuth 2.0 access management in accordance with the SMART Backend Services 
+Authorization Profile. When SMART Backend Services Authorization is used, Bulk Data Status Request and Bulk Data 
+Output File Requests with requiresAccessToken=true <strong>SHALL</strong> be protected the same way the Bulk Data Kick-off Request, 
+including an access token with scopes that cover all resources being exported. A server <strong>MAY</strong> 
+additionally restrict Bulk Data Status Request and Bulk Data Output File Requests by limiting 
+them to the client that originated the export. Health plans <strong>SHALL</strong> limit the data returned to 
+only those FHIR resources for which the client is authorized.</p>
+
+<p>Clients <strong>SHALL</strong> require OAuth client credentials to enable secure access to read and search the Group 
+resources and perform Bulk export operations. Access Tokens <strong>SHALL</strong> be required to access the Group
+resources and and the Bulk export operation. Access and Refresh Tokens <strong>SHOULD</strong> be issued to support 
+the client requesting and subsequently retrieving the bulk data response to their request.</p>
+
+<p>Registering of a client application or service to perform the bulk Payer-to-Payer
+Exchange should be registered in accordance with the approach defined in the
+<a href="https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys">SMART App Launch IG</a>.
+That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
+(DCRP). An alternative approach that is closely aligned with the DCRP protocol is
+to use the B2B protocols detailed in the 
+<a href="http://hl7.org/fhir/us/udap-security/STU1/">HL7 Security for Scalable Registration, Authentication, and Authorization</a> IG.</p>
+
+<p>If the protocols detailed in the above UDAP Security IG's <a href="https://hl7.org/fhir/us/udap-security/b2b.html">Business to Business</a>) section are used, 
+it is recommended that the subject_id in the B2B Authorization Extension Object (Key Name: "hl7-b2b") 
+contain the NPI of the Provider for which Attributed Patient data is being requested. For instances 
+where health plan generated attribution lists cover more than a single provider, the subject_id could 
+be the FHIR Id of the Group being requested. The use of the Group FHIR ID as the subject_id is based 
+upon the assumption that health plans have access controls in place to restrict the requestor to only 
+having access to Group records they are authorized to access.</p>
+
+<h3 id="scopes-for-operations">Scopes for Operations</h3>
+
+<p><a href="http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch">SMART App Launch STU 2.1</a> 
+defines granular scopes for resources. Following the model proposed in the section on 
+<a href="https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data">FHIR Resource Scope Syntax</a>
+the following scopes are proposed to control access to the Da Vinci Data Export Operation for Provider Access:</p>
+
+<ul>
+  <li>
+    <p>http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/provider-member-match</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>system.Group.u?code=http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS</td>
+          <td>pdexprovidergroup</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>This would be the scope to execute the <em>davinci-data-export</em> operation 
+with it being restricted to the Group <em>id(s)</em> that the user is authorized to access.</p>
+
+<p><a href="payertopayerexchange.html">Next Page - Payer-to-Payer Exchange (Single Member)</a></p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&nbsp;
+
+                <a href="provider-access-api.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&nbsp;
+
+                <a href="payertopayerexchange.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History</a> |
+                 <a rel="license" style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir-issues" target="_blank">Propose a change</a>
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

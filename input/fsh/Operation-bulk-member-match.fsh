@@ -3,7 +3,7 @@ InstanceOf: OperationDefinition
 Usage: #definition
 // Id: bulk-member-match
 Title: "PDex Bulk Member Match Operation"
-Description: "Bulk Member Match Operation"
+Description: "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format."
 * experimental = true
 * url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"
 * version = "2.1.0"
@@ -16,6 +16,7 @@ Description: "Bulk Member Match Operation"
 * instance = false
 * date = "2025-05-14T21:28:59+02:00"
 * publisher = "HL7 International / Financial Management"
+* comment = "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk data export and retrieve the associated member health history in ndjson format. See BulkMemberMatchDataExport operation for details on the bulk export manifest structure."
 * inputProfile  = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 

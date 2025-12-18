@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Extends the HL7 template with additional Da Vinci-specific IG validation rules
+  -->
+<project name="ProcessIg-HL7">
+  <import file="ant-hl7.xml"/>
+  <!-- TODO
+Must include an explanation of how the "Approaches to Exchanging Data" decision tree was navigated in choosing the IG exchange approach
+Check for profiles on elements with type: Reference, date, dateTime, CodeableConcept, Quantity
+Check target profile declared for elements with type canonical, Reference
+Check for use of 'aggregation' in profiles used inside Bundles
+mustSupport included on all elements in differential unless they have fixed value or pattern
+mustSupport included on all type declarations
+Ensure conformance language page says "In order to conform to this implementation guide, a system SHALL conform to at least one of the CapabilityStatements listed here."
+-->
+  <loadfile property="htmlEntries" srcFile="htmlEntities.dtd"/>
+  <target name="onLoad.updateIg" depends="onLoad.findSpreadsheets">
+    <!-- Override base template to set additional parameters -->
+    <xslt in="${onLoad.ig.source}xml" out="${onLoad.ig.dest}xml" style="${ig.scripts}/onLoad.davinci.xslt">
+      <param name="spreadsheetList" expression="${prop.spreadsheet.contents}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkIg">
+    <xslt in="${ig.template}/onGenerate-ig-updated.xml" out="${ig.template}/oncheck-validation-davinci-ig.json" style="${ig.scripts}/onCheck.ig.davinci.checkIg.xslt"/>
+  </target>
+  <target name="onCheck.davinci.checkMenu">
+    <xslt basedir="${ig.root}" destdir="${ig.template}" extension=".oncheck-validation.json" style="${ig.scripts}/onCheck.ig.davinci.checkMenu.xslt">
+      <include name="input/includes/menu.xml"/>
+      <include name="fsh-generated/includes/menu.xml"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.findFiles">
+    <property name="dir.output" value="${ig.root}/output"/>
+    <xslt basedir="${ig.root}" destdir="${ig.template}" extension=".properties" style="${ig.scripts}/onCheck.ig.davinci.getFileProps.xslt">
+      <include name="input/includes/menu.xml"/>
+      <include name="fsh-generated/includes/menu.xml"/>
+    </xslt>
+    <concat destfile="${ig.template}/root.properties">
+      <fileset dir="${ig.template}" includes="**/menu.properties"/>
+    </concat>
+    <loadproperties srcFile="${ig.template}/root.properties"/>
+    <echo message="reading file: ${reading_file}"/>
+  </target>
+  <target name="onCheck.davinci.findHomeLinks" depends="onCheck.davinci.findFiles">
+    <copy file="${dir.output}/index.html" tofile="${ig.template}/index.html"/>
+    <replace file="${ig.template}/index.html" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/index.html" out="${ig.template}/onCheck.links.home.xml"/>
+  </target>
+  <target name="onCheck.davinci.findReadLinks" depends="onCheck.davinci.findFiles" if="reading_file">
+    <copy file="${dir.output}/${reading_file}" tofile="${ig.template}/${reading_file}"/>
+    <replace file="${ig.template}/${reading_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${reading_file}" out="${ig.template}/onCheck.links.read.xml"/>
+  </target>
+  <target name="onCheck.davinci.findProjectLinks" depends="onCheck.davinci.findFiles" if="project_file">
+    <copy file="${dir.output}/${project_file}" tofile="${ig.template}/${project_file}"/>
+    <replace file="${ig.template}/${project_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${project_file}" out="${ig.template}/onCheck.links.project.xml"/>
+  </target>
+  <target name="onCheck.davinci.findConformanceLinks" depends="onCheck.davinci.findFiles" if="conformance_file">
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findCapabilities.xslt" in="${ig.template}/onGenerate-ig-working.xml" out="${ig.template}/davinci.capabilities.xml"/>
+    <copy file="${dir.output}/${conformance_file}" tofile="${ig.template}/${conformance_file}"/>
+    <replace file="${ig.template}/${conformance_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${conformance_file}" out="${ig.template}/onCheck.links.conformance.xml"/>
+    <concat encoding="UTF-8" destfile="${ig.template}/onCheck.conformance.xml" fixlastline="yes">
+      <fileset file="${ig.template}/onCheck.links.conformance.xml"/>
+      <fileset file="${ig.template}/davinci.capabilities.xml"/>
+      <header filtering="no">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;root&gt;</header>
+      <footer filtering="no">&lt;/root&gt;</footer>
+      <filterchain>
+        <linecontains negate="true">
+          <contains value="?xml version"/>
+        </linecontains>
+      </filterchain>
+    </concat>
+  </target>
+  <target name="onCheck.davinci.findSecurityLinks" depends="onCheck.davinci.findFiles" if="security_file">
+    <copy file="${dir.output}/${security_file}" tofile="${ig.template}/${security_file}"/>
+    <replace file="${ig.template}/${security_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${security_file}" out="${ig.template}/onCheck.links.security.xml"/>
+  </target>
+  <target name="onCheck.davinci.findDownloadLinks" depends="onCheck.davinci.findFiles" if="downloads_file">
+    <copy file="${dir.output}/${downloads_file}" tofile="${ig.template}/${downloads_file}"/>
+    <replace file="${ig.template}/${downloads_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${downloads_file}" out="${ig.template}/onCheck.links.downloads.xml"/>
+  </target>
+  <target name="onCheck.davinci.findChangeLinks" depends="onCheck.davinci.findFiles" if="change_file">
+    <copy file="${dir.output}/${change_file}" tofile="${ig.template}/${change_file}"/>
+    <replace file="${ig.template}/${change_file}" token="&lt;!DOCTYPE HTML>" value="${htmlEntries}"/>
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findSectionLinks.xslt" in="${ig.template}/${change_file}" out="${ig.template}/onCheck.links.change.xml"/>
+  </target>
+  <target name="onCheck.davinci.checkHome" depends="onCheck.davinci.findHomeLinks">
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.checkHome.xslt" in="${ig.template}/onCheck.links.home.xml" out="${ig.template}/oncheck-validation-davinci-home.json"/>
+  </target>
+  <target name="onCheck.davinci.checkRead" depends="onCheck.davinci.findReadLinks" if="reading_file">
+    <xslt style="${ig.scripts}/onCheck.ig.davinci.findResources.xslt" in="${ig.template}/onGenerate-ig-working.xml" out="${ig.template}/davinci.resources.xml"/>
+    <concat encoding="UTF-8" destfile="${ig.template}/onCheck.read.xml" fixlastline="yes">
+      <fileset file="${ig.template}/onCheck.links.read.xml"/>
+      <fileset file="${ig.template}/davinci.resources.xml"/>
+      <header filtering="no">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;root&gt;</header>
+      <footer filtering="no">&lt;/root&gt;</footer>
+      <filterchain>
+        <linecontains negate="true">
+          <contains value="?xml version"/>
+        </linecontains>
+      </filterchain>
+    </concat>
+    <xslt in="${ig.template}/onCheck.read.xml" out="${ig.template}/oncheck-validation-davinci-read.json" style="${ig.scripts}/onCheck.ig.davinci.checkRead.xslt">
+      <param name="location" expression="${reading_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkProject" depends="onCheck.davinci.findProjectLinks" if="project_file">
+    <xslt in="${ig.template}/onCheck.links.project.xml" out="${ig.template}/oncheck-validation-davinci-project.json" style="${ig.scripts}/onCheck.ig.davinci.checkProject.xslt">
+      <param name="location" expression="${project_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkConformance" depends="onCheck.davinci.findConformanceLinks" if="conformance_file">
+    <xslt in="${ig.template}/onCheck.conformance.xml" out="${ig.template}/oncheck-validation-davinci-conformance.json" style="${ig.scripts}/onCheck.ig.davinci.checkConformance.xslt">
+      <param name="location" expression="${conformance_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkSecurity" depends="onCheck.davinci.findSecurityLinks" if="security_file">
+    <xslt in="${ig.template}/onCheck.links.security.xml" out="${ig.template}/oncheck-validation-davinci-security.json" style="${ig.scripts}/onCheck.ig.davinci.checkSecurity.xslt">
+      <param name="location" expression="${security_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkDownloads" depends="onCheck.davinci.findDownloadLinks" if="downloads_file">
+    <xslt in="${ig.template}/onCheck.links.downloads.xml" out="${ig.template}/oncheck-validation-davinci-downloads.json" style="${ig.scripts}/onCheck.ig.davinci.checkDownloads.xslt">
+      <param name="location" expression="${downloads_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkChange" depends="onCheck.davinci.findChangeLinks" if="change_file">
+    <concat encoding="UTF-8" destfile="${ig.template}/onCheck.change.xml" fixlastline="yes">
+      <fileset file="${ig.template}/onCheck.links.change.xml"/>
+      <fileset file="${ig.template}/jira-new.xml"/>
+      <header filtering="no">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;root&gt;</header>
+      <footer filtering="no">&lt;/root&gt;</footer>
+      <filterchain>
+        <linecontains negate="true">
+          <contains value="?xml version"/>
+        </linecontains>
+      </filterchain>
+    </concat>
+    <xslt in="${ig.template}/onCheck.change.xml" out="${ig.template}/oncheck-validation-davinci-change.json" style="${ig.scripts}/onCheck.ig.davinci.checkChange.xslt">
+      <param name="location" expression="${change_file}"/>
+    </xslt>
+  </target>
+  <target name="onCheck.davinci.checkFiles" depends="onCheck.davinci.checkHome, onCheck.davinci.checkRead, onCheck.davinci.checkProject, onCheck.davinci.checkConformance, onCheck.davinci.checkSecurity, onCheck.davinci.checkDownloads, onCheck.davinci.checkChange"/>
+  <target name="onCheck.davinci" depends="onCheck.davinci.checkIg,onCheck.davinci.checkMenu,onCheck.davinci.checkFiles" extensionOf="onCheck.extend"/>
+</project>
