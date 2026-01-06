@@ -1,6 +1,6 @@
 [Previous Page - US Core Location](USCoreLocation.html)
 
-Where a Health Plan has access to Medication information, they **SHALL** make the information available using the
+§pdex-29: Where a Health Plan has access to Medication information, they **SHALL** make the information available using the §
 [US Core 3.1.1 Medication]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medication.html) or
 [US Core 6.1.0 Medication]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medication.html) resource.
 

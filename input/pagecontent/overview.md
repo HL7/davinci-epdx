@@ -54,7 +54,7 @@ Implementers of this specification therefore need to understand some basic infor
 
 The purpose of this Implementation Guide is to enable data to be exchanged between Health Plans (Payers) and Practitioners (Providers) and via Member-authorized exchange between Health Plans and Third-Party Applications, or with other health plans. 
 
-All data exchanged by Health Plans using the interactions covered in this IG **SHALL** be transformed to FHIR R4 resources.  Health Plans **MAY** have both data from clinical and claims sources that they store in their Systems of Record. This IG does not require Health Plans to store this data in FHIR formats, rather only capable of transforming to FHIR resources for the purposes of data exchange with Providers, other Health Plans and Third-Party Applications for the interactions covered in this IG.
+§pdex-112: All data exchanged by Health Plans using the interactions covered in this IG **SHALL** be transformed to FHIR R4 resources. § §pdex-113: Health Plans **MAY** have both data from clinical and claims sources that they store in their Systems of Record. § This IG does not require Health Plans to store this data in FHIR formats, rather only capable of transforming to FHIR resources for the purposes of data exchange with Providers, other Health Plans and Third-Party Applications for the interactions covered in this IG.
 
 **There are items in this guide that are subject to update**. This includes:
 - Value Sets
@@ -106,16 +106,16 @@ An overview of the flow of the CDS-Hooks and SMART-on-FHIR exchange is shown in 
 
 The sharing of data with a member controlled Third Party App is accomplished through the Member's HIPAA Right of Access. As such the member is able to use their data in any way they desire. 
 
-The SMART-on-FHIR application framework is a well-defined mechanism for enabling Member/Patient authorization to share information with a SMART-on-FHIR application. The member **SHALL** authenticate using credentials that have been issued by or are recognized and accepted by the Health Plan. These are typically the member's customer portal credentials for accessing the health plan.
+The SMART-on-FHIR application framework is a well-defined mechanism for enabling Member/Patient authorization to share information with a SMART-on-FHIR application. §pdex-114: The member **SHALL** authenticate using credentials that have been issued by or are recognized and accepted by the Health Plan. § These are typically the member's customer portal credentials for accessing the health plan.
 
-After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan Application that has client application credentials registered with the Health Plan.
+§pdex-115: After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan Application that has client application credentials registered with the Health Plan. §
 
 
 #### $patient-everything Exchange Via Alternate Secure Transport
 
 The [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation for an individual member enables the potential use of Bulk FHIR, using such formats as ND-JSON. This IG does not define the alternate secure transport mechanisms that may be used for exchange between Health Plans. However, the IG does allow for the use of Bulk FHIR formats to exchange data for an individual member where the member has authorized that exchange or Federal, state or local regulations authorize the sharing of information between parties. 
 
-The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record.
+§pdex-116: The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record. §
 
 Data Segmentation capabilities for Bulk Data Transfer are currently being developed by FHIR community members which may have an impact on future revisions of the IG.
 
@@ -123,9 +123,9 @@ Data Segmentation capabilities for Bulk Data Transfer are currently being develo
 
 Since Health Plans compile information from many sources to create a Member's Health History it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.
 
-Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange.
+§pdex-117: Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. § §pdex-118: Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. § §pdex-119: Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange. §
 
-In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data.
+§pdex-120: In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data. §
 
 Retrieving Provenance for resources is accomplished by adding "_revinclude=Provenance:target" to a search request.
 

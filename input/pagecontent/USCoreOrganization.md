@@ -1,7 +1,7 @@
 [Previous Page - US Core MedicationRequest](USCoreMedicationRequest.html)
 
 When a Health Plan is documenting information about organizations in relation to the Member's Health History, they 
-**SHOULD** use the
+§pdex-31: **SHOULD** use the §
 [US Core 3.1.1 Organization]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-organization.html) or
 [US Core 6.1.0 Organization]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-organization.html) resource.
 

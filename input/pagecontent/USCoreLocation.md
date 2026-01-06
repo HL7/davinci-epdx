@@ -3,7 +3,7 @@
 The  
 [US Core 3.1.1 Location]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html) or
 [US Core 6.1.0 Location]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html) 
-**SHALL** be used to record location/facility-specific information.
+§pdex-28: **SHALL** be used to record location/facility-specific information. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the  
 [US Core 3.1.1 Location]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-location.html) or

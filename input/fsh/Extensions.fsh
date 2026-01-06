@@ -463,3 +463,19 @@ Description: "Date and Time when Adjudication Action took place. NOTE: that this
 * value[x] ^comment = "Date or data and time when the adjudication action occured."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
+
+// ---------------------------------------
+// Provider Access Consent Use Case Extension
+Extension: ProviderAccessUseCase
+Id: pdex-provider-access-use-case
+Title: "Provider Access Use Case"
+Description: "Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers."
+* ^experimental = true
+* ^context.type = #element
+* ^context.expression = "Consent.provision.action"
+* value[x] 0..1
+* value[x] only boolean
+* value[x] ^short = "Indicates Provider Access use case applicability"
+* value[x] ^comment = "When true, indicates this consent action applies to the Provider Access API use case."
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm

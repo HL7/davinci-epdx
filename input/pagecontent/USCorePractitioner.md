@@ -2,7 +2,7 @@
 
 The [US Core 3.1.1 Practitioner]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitioner.html) or
 [US Core 6.1.0 Practitioner]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitioner.html) 
-**SHALL** be used to record information about Practitioners.
+§pdex-34: **SHALL** be used to record information about Practitioners. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 Practitioner]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitioner.html) or

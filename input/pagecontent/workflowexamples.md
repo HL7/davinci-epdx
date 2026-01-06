@@ -25,7 +25,7 @@ The receptionist in the doctor's office collects their personal information, che
 
 The creation of an appointment activates a CDS Hook transaction: appointment-book. 
 
-In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system.
+§pdex-356: In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system. §
 
 
 

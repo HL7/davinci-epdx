@@ -1,6 +1,6 @@
 [Previous Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.html)
 
-Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
+§pdex-19: Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the 
 [US Core 3.1.1 CarePlan]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careplan.html) or

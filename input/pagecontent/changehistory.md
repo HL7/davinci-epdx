@@ -6,6 +6,8 @@
 ### STU 2.1.1 Update
 | JIRA Ticket                                             | Change                                                                                              |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Add search parameter and extension to enable easier retrieval of Provider Access Opt-Out | 
+| [FHIR-53793](https://jira.hl7.org/browse/FHIR-53793)    | Create a listing of all Conformance Requirements in the Narrative of the IG  |
 | [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184)    | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API  |
 | [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    | 
 Provider access details in the payer-payer section of the IG at 6.4.4 |

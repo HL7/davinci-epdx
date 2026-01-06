@@ -1,6 +1,6 @@
 [Previous Page - PDex MedicationDispense](PDexMedicationDispense.html)
 
-Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the
+§pdex-30: Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the §
 [US Core 3.1.1 MedicationRequest]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-medicationrequest.html) or
 [US Core 6.1.0 MedicationRequest]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationrequest.html) resource.
 

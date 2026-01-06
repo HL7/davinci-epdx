@@ -42,5 +42,9 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
     * ^comment = "This code isn't in the value set, but there's no code that represents the function of 'discloser' or 'performer', so need to go outside the value set.  Multiple "
   * reference only Reference(HRexOrganization)
   * reference MS
-* provision.action 1..1
-* provision.action = $consentaction#disclose
+* provision.action 1..1 MS
+* provision.action from http://hl7.org/fhir/ValueSet/consent-action (required)
+* provision.action ^short = "Action permitted or denied - use 'disclose' with provision.type='deny' for Provider Access opt-out"
+* provision.action ^comment = "To opt-out of Provider Access data sharing, set provision.type to 'deny' and provision.action to 'disclose'. The ProviderAccessUseCase extension identifies this consent as specific to the Provider Access API."
+* provision.action.extension contains ProviderAccessUseCase named providerAccessUseCase 0..1 MS
+* provision.action.extension[providerAccessUseCase] ^short = "Indicates this action applies to Provider Access API"

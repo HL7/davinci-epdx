@@ -2,7 +2,7 @@
 
 The [US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or
 [US Core 6.1.0 Procedure]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-procedure.html)
-**SHALL** be used to record a member's health events.
+§pdex-36: **SHALL** be used to record a member's health events. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or

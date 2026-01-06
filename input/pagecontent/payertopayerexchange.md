@@ -14,14 +14,14 @@ USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance w
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.
 
-Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.
+§pdex-176: Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
 
-Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. Bulk Payer-to-Payer Exchange
-**MAY** be used to exchange data for a SINGLE member.
+§pdex-177: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange
+§pdex-178: **MAY** be used to exchange data for a SINGLE member. §
 
-Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods. Clients wishing to retrieve data **SHOULD** consult 
+§pdex-179: Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods. § §pdex-180: Clients wishing to retrieve data **SHOULD** consult §
 the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. 
-Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent:
+§pdex-181: Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent: §
 
 ### Member Match with Consent
 
@@ -29,7 +29,7 @@ Each retrieval method for a single member **SHALL** be preceded by the use of th
 {% include authorization-consent.svg %}
 </div>
 
-Health Plans **SHALL** support the $member-match operation.
+§pdex-182: Health Plans **SHALL** support the $member-match operation. §
 
 The steps in the Member Match with Consent process are:
 
@@ -69,12 +69,12 @@ is the current coverage for the member at the new/requesting payer.
 When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
 
 If the receiving payer matches to a unique member but is unable to comply with the consent request, a
-Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be
+§pdex-183: Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be §
 returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 ### Evaluation of Consent
 
-The receiving payer **MAY** store the Consent record for the member.
+§pdex-184: The receiving payer **MAY** store the Consent record for the member. §
 The following minimal content from the Consent record is used to validate a data request:
 
 - Member Identity is matched
@@ -98,7 +98,7 @@ validity of a consent request. This would be part of the Trust Framework agreed 
 are party to the framework rules.
 
 If the receiving payer matches to a unique member but is unable to comply with the consent request, a
-Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be
+§pdex-185: Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be §
 returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 #### Period of Consent Validity
@@ -110,7 +110,7 @@ exchange health information:
 - When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period after the plan terminates.
 - Some plan beneficiaries may have concurrent coverage. For example, a Medicare and a Medicaid plan may be in effect for a beneficiary for the duration of coverage period. In this scenario health plans may need to exchange information about the beneficiary throughout the period of dual plan coverage to coordinate treatment.
 
-It is a member's option to share their health information with their new health plan. When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be:
+It is a member's option to share their health information with their new health plan. §pdex-186: When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be: §
 
 | Scenario  | Consent Start Date | Consent End Date |
 |-----------|--------------------|------------------|
@@ -156,14 +156,14 @@ Please note that:
 ### Data Retrieval Methods
 
 Once Health Plans have completed the Member Access stage of the Exchange the requesting 
-Health Plan **SHALL** utilize the access token returned from the Member Access step to 
+§pdex-187: Health Plan **SHALL** utilize the access token returned from the Member Access step to §
 request/retrieve data using one of the following three methods:
 
 1. Query all clinical resource individually
 2. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html) operation
 3. Bulk FHIR Asynchronous protocols.
 
-Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below.
+§pdex-188: Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below. §
 
 | Profile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Resource           |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
@@ -205,17 +205,17 @@ non-financial profiles:
 
 ### Query all clinical resources individually
 
-Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, 
+§pdex-189: Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, §
 as identified in the table above. Using the search capability of each resource enables the _revInclude 
 and _include parameters to be used to retrieve the associated Provenance and supporting records.
 
 ### $everything operation
 
-Health Plans **SHALL** support the use of the $everything operation. The Patient/{id}/$everything 
+§pdex-190: Health Plans **SHALL** support the use of the $everything operation. § The Patient/{id}/$everything 
 operation is defined in the FHIR R4 specification here:
 [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the
+§pdex-191: As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the §
 requester is permitted to access. This might require an implementer to filter records at a more 
 granular level than the resource.
 
@@ -226,16 +226,16 @@ Example of _type parameter:
     _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
            Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 
-The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization 
+§pdex-192: The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization §
 profiled records. e.g., ExplanationOfBenefit.use does not equal "claim". 
 
 ### Bulk FHIR Asynchronous protocols
 
     /Patient/$export
 
-Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR
+§pdex-193: Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR §
 [Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/STU2/). The
-request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level
+§pdex-194: request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level §
 Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the[Bulk Data Export Operation Request Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow).
 
 The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and
@@ -247,11 +247,11 @@ that are not required, such as non-clinical resources.
 
 ### Constraining Data Based Upon Permissions of the Requestor
 
-The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access
+§pdex-195: The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access §
 permissions of the requester.
 
 For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see
-Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly.
+§pdex-196: Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly. §
 
 This Constraining condition may be required in implementations where multiple types of data are being
 served up by a single FHIR Server. The condition is particularly relevant when implementing Operations
@@ -366,7 +366,7 @@ made to the $member-match operation endpoint.
 
 In step 3 of the Member-match process, the requesting Payer will have received a FHIR ID for the matched member
 (the MemberMatch ID). This Id should be submitted to the Access Token Endpoint with a JWT where the subject Id
-is the MemberMatch ID. The Authorization Server **SHOULD** use the Subject ID, confirms that consent for the
+is the MemberMatch ID. §pdex-197: The Authorization Server **SHOULD** use the Subject ID, confirms that consent for the §
 Requesting Payer to access the Matched Member is still valid and therefore issue an access token that is scoped
 to the FHIR ID of the matched member, consequently bounding any subsequent FHIR API request to that specific
 Patient FHIR ID.

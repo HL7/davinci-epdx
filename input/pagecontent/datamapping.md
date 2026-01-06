@@ -1,10 +1,10 @@
 [Previous Page - Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html)
 
-Health Plans **SHOULD** map claims and clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}), [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) or [US Core v7.0.0]({{site.data.fhir.ver.uscore7}})FHIR Resources based on R4. This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this was not defined in US Core 3.1.1.
+§pdex-69: Health Plans **SHOULD** map claims and clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}), [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) or [US Core v7.0.0]({{site.data.fhir.ver.uscore7}})FHIR Resources based on R4. § This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this was not defined in US Core 3.1.1.
 
-US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core.
+US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. §pdex-70: As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core. §
 
-Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) or [US Core 7.0.0. FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}).
+Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) or [US Core 7.0.0. §pdex-71: FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}). §
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
@@ -33,7 +33,7 @@ non-financial profiles:
 - [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 
-Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/).
+§pdex-72: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
 
 ## Ingesting Exchanged Data
 
@@ -57,9 +57,9 @@ It is recommended that the Identifier field in a resource be used to record the 
 
 ## Providing data in sub-element fields
 
-In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element.
+In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. §pdex-73: If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. § §pdex-74: For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. § §pdex-75: Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element. §
 
-If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error.
+§pdex-76: If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error. §
 
 
 ## Mapping Adjudicated Claims and Encounter Information to Clinical Resources

@@ -48,7 +48,7 @@ In this scenario, Arthur has signed up for a new  Medicare advantage plan with p
 
 ### Useful Patient History for Providers
 
-When providers are building a health history for a new patient the information they are interested in **MAY** include:
+§pdex-350: When providers are building a health history for a new patient the information they are interested in **MAY** include: §
 
 - Ambulatory events
 - In-patient events
@@ -57,7 +57,7 @@ When providers are building a health history for a new patient the information t
 
 This Guide will focus on a method to enable a provider to query the health record of a health plan member they are treating for information that is of interest to them in relation to the care of the member. The CDS-Hooks method that is described in a later section enables a provider to query for information in the member's health record at the health plan using US Core profiles and search parameters and subsequently select, either manually or by pre-defined automated tools, the records they want to commit to the patient's health record in the provider's EMR.
 
-For example, as part of an event or episode of care the provider **MAY** be interested in the following types of data:
+§pdex-351: For example, as part of an event or episode of care the provider **MAY** be interested in the following types of data: §
 
 * Consultations/Encounters
 * Practitioners who the patient has seen
@@ -74,7 +74,7 @@ For example, as part of an event or episode of care the provider **MAY** be inte
 * Notes 
 * Family History.
 
-These types of data **SHALL** be mapped to FHIR clinical resources as follows:
+§pdex-352: These types of data **SHALL** be mapped to FHIR clinical resources as follows: §
 {% include style_insert_table_blue.html %}
 
 | Data type                              | FHIR R4/US Core STU3 profile                                                                                  |
@@ -99,11 +99,11 @@ Payers may not have in-depth health history for a health plan member since the m
 
 ### Versioning of FHIR Data
 
-A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources.
+§pdex-353: A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources. §
 
-A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
+§pdex-354: A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. § In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
 
-If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource **SHALL** use the [vread](https://www.hl7.org/fhir/http.html#vread) format of reference:
+§pdex-355: If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource **SHALL** use the [vread](https://www.hl7.org/fhir/http.html#vread) format of reference: §
 
     [type]/[id]/_history/[vid]
 
