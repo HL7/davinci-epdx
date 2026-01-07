@@ -11,7 +11,7 @@ Usage: #example
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
 
 // Category includes both treatment relationship and attestation
-* category[0] = http://terminology.hl7.org/CodeSystem/consentcategorycodes#treat "Treatment"
+* category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * category[1] = http://loinc.org#64292-6 "Release of information consent"
 
 // Patient reference - the member for whom treatment relationship is attested
@@ -58,8 +58,8 @@ Usage: #example
 
 // Verification - attestation has been verified
 * verification[0].verified = true
-* verification[0].verifiedWith.reference = "Organization/ProviderOrg1"
-* verification[0].verifiedWith.display = "Provider 1"
+* verification[0].verifiedWith.reference = "Patient/1"
+* verification[0].verifiedWith.display = "Patricia Ann Person"
 * verification[0].verificationDate = "2024-11-14T10:30:00Z"
 
 
@@ -127,7 +127,7 @@ Usage: #example
 * parameter[MemberBundle][0].part[Consent].resource.scope = $consentscope#treatment
 
 // Categories indicating treatment relationship
-* parameter[MemberBundle][0].part[Consent].resource.category[0] = http://terminology.hl7.org/CodeSystem/consentcategorycodes#treat "Treatment"
+* parameter[MemberBundle][0].part[Consent].resource.category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * parameter[MemberBundle][0].part[Consent].resource.category[1] = http://loinc.org#64292-6 "Release of information consent"
 
 // Patient subject of treatment relationship
@@ -169,7 +169,7 @@ Usage: #example
 
 // Verification
 * parameter[MemberBundle][0].part[Consent].resource.verification[0].verified = true
-* parameter[MemberBundle][0].part[Consent].resource.verification[0].verifiedWith.reference = "Organization/ProviderOrg1"
+* parameter[MemberBundle][0].part[Consent].resource.verification[0].verifiedWith.reference = "Patient/patient-provider-1"
 * parameter[MemberBundle][0].part[Consent].resource.verification[0].verificationDate = "2024-11-14T10:30:00Z"
 
 // CoverageToLink - not typically included in Provider Access scenario as provider is not linking to new coverage

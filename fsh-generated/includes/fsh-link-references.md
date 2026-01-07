@@ -83,6 +83,8 @@
 [OptOutReasonCodeSystem]: CodeSystem-opt-out-reason.html
 [OptOutScopeValueSet]: ValueSet-opt-out-scope-valueset.html
 [OptOutScopeCodeSystem]: CodeSystem-opt-out-scope.html
+[provider-org-001]: Organization-provider-org-001.html
+[provider-org-002]: Organization-provider-org-002.html
 [OrgTypeCS]: CodeSystem-OrgTypeCS.html
 [OrgTypeVS]: ValueSet-OrgTypeVS.html
 [Payer1]: Organization-Payer1.html
@@ -93,12 +95,16 @@
 [ProviderOrg2]: Organization-ProviderOrg2.html
 [PatientMemberMatchExample1]: Patient-PatientMemberMatchExample1.html
 [PatientMemberMatchExample2]: Patient-PatientMemberMatchExample2.html
+[patient-prov-001]: Patient-patient-prov-001.html
+[patient-prov-002]: Patient-patient-prov-002.html
 [1]: Patient-1.html
 [1-2]: Patient-1-2.html
 [100]: Patient-100.html
 [1001]: Patient-1001.html
 [2002]: Patient-2002.html
 [patient-2]: Patient-patient-2.html
+[payer-member-001]: Patient-payer-member-001.html
+[payer-member-002]: Patient-payer-member-002.html
 [ProvenancePayerSourceFormat]: ValueSet-ProvenancePayerSourceFormat.html
 [payer-patient-1001]: Patient-payer-patient-1001.html
 [payer-patient-2002]: Patient-payer-patient-2002.html
@@ -108,6 +114,9 @@
 [PDexAdjudicationCategoryDiscriminator]: ValueSet-PDexAdjudicationCategoryDiscriminator.html
 [PDexAdjudicationDiscriminator]: CodeSystem-PDexAdjudicationDiscriminator.html
 [BulkMemberMatch]: OperationDefinition-BulkMemberMatch.html
+[pdex-consent-action]: SearchParameter-pdex-consent-action.html
+[pdex-consent-provider-access]: SearchParameter-pdex-consent-provider-access.html
+[pdex-consent-provision-type]: SearchParameter-pdex-consent-provision-type.html
 [PdexDevice]: StructureDefinition-pdex-device.html
 [PDexIdentifierType]: CodeSystem-PDexIdentifierType.html
 [PdexMedicationDispense]: StructureDefinition-pdex-medicationdispense.html
@@ -123,6 +132,7 @@
 [Provenance]: StructureDefinition-pdex-provenance.html
 [PdexMemberAttributionCS]: CodeSystem-PdexMemberAttributionCS.html
 [no-consent-1]: Consent-no-consent-1.html
+[consent-permit-1]: Consent-consent-permit-1.html
 [PDexProviderSharingConsent]: StructureDefinition-pdex-provider-consent.html
 [PDexProviderGroup]: StructureDefinition-pdex-provider-group.html
 [pdex-provider-access-server]: CapabilityStatement-pdex-provider-access-server.html
@@ -135,6 +145,8 @@
 [PdexMedicationDispensePatient]: SearchParameter-pdex-medicationdispense-patient.html
 [PdexMedicationDispenseStatus]: SearchParameter-pdex-medicationdispense-status.html
 [PDexPriorAuth1]: ExplanationOfBenefit-PDexPriorAuth1.html
+[provider-001]: Practitioner-provider-001.html
+[provider-002]: Practitioner-provider-002.html
 [PDexPAInstitutionalProcedureCodesVS]: ValueSet-PDexPAInstitutionalProcedureCodesVS.html
 [PriorAuthServiceTypeCodes]: ValueSet-PriorAuthServiceTypeCodes.html
 [PriorAuthorizationAmounts]: ValueSet-PriorAuthorizationAmounts.html
@@ -145,6 +157,7 @@
 [ProvenanceAgentRoleType]: CodeSystem-ProvenanceAgentRoleType.html
 [ProviderMultiMemberMatchRequestParameters]: StructureDefinition-provider-parameters-multi-member-match-bundle-in.html
 [ProviderMultiMemberMatchResponseParameters]: StructureDefinition-provider-parameters-multi-member-match-bundle-out.html
+[ProviderAccessUseCase]: StructureDefinition-pdex-provider-access-use-case.html
 [provider-attestation-doc-1]: DocumentReference-provider-attestation-doc-1.html
 [ProviderTreatmentAttestation]: StructureDefinition-provider-treatment-relationship-consent.html
 [provider-bulk-member-match-in]: Parameters-provider-bulk-member-match-in.html
@@ -158,6 +171,8 @@
 [ReviewActionCode]: StructureDefinition-extension-reviewActionCode.html
 [treatment-attestation-ex1]: Consent-treatment-attestation-ex1.html
 [treatment-attestation-ex2]: Consent-treatment-attestation-ex2.html
+[treatment-attestation-form-001]: DocumentReference-treatment-attestation-form-001.html
+[treatment-attestation-form-002]: DocumentReference-treatment-attestation-form-002.html
 [AttestationProvisionTypeValueSet]: ValueSet-attestation-provision-type-valueset.html
 [AttestationStatusValueSet]: ValueSet-attestation-status-valueset.html
 [TreatmentRelationshipDetails]: StructureDefinition-treatment-relationship-details.html

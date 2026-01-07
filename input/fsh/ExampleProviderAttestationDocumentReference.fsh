@@ -12,7 +12,7 @@ Usage: #example
 * type = http://loinc.org#64292-6 "Release of information consent"
 
 // Category
-* category = http://terminology.hl7.org/CodeSystem/consentcategorycodes#treat "Treatment"
+* category = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 
 // Subject - the patient
 * subject.reference = "Patient/1"

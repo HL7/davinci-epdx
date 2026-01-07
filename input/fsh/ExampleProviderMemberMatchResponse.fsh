@@ -32,7 +32,7 @@ Usage: #example
   * active = true
   * type = #person
   * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#match "Matched"
+  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#match "Matched"
 
   // Managing entity - the Payer
   * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
@@ -40,7 +40,7 @@ Usage: #example
   * managingEntity.display = "Current Payer"
 
   // Characteristics - match result info
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#match "Matched"
+  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#match "Matched"
   * characteristic.valueReference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
   * characteristic.valueReference.identifier.value = "1982947230"
   * characteristic.valueReference.display = "Provider Organization"
@@ -83,13 +83,14 @@ Usage: #example
   * active = true
   * type = #person
   * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
 
   * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
   * managingEntity.identifier.value = "5555555555"
   * managingEntity.display = "Current Payer"
 
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.valueBoolean = true
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
@@ -118,13 +119,14 @@ Usage: #example
   * active = true
   * type = #person
   * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
 
   * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
   * managingEntity.identifier.value = "5555555555"
   * managingEntity.display = "Current Payer"
 
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.valueBoolean = true
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
@@ -152,14 +154,14 @@ Usage: #example
   * active = true
   * type = #person
   * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
 
   * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
   * managingEntity.identifier.value = "5555555555"
   * managingEntity.display = "Current Payer"
 
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS#nomatch "Not Matched"
-  * characteristic.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS#provider-specific "Provider-Specific Opt-Out"
+  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope#provider-specific "Provider-Specific Opt-Out"
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 

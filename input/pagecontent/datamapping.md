@@ -97,7 +97,7 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 This IG supports the use of multiple US Core versions. The profiles supported by the respective versions are 
 linked below:
 
-- [US Core 3.1.1 Profiles and Extensions]({{site.data.fhir.ver.uscore3}}/profiles.html)
+- [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/profiles.html)
 - [US Core 6.1.0 Profiles and Extensions]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
 
 

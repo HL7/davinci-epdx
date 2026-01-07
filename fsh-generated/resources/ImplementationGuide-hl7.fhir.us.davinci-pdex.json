@@ -866,6 +866,22 @@
       },
       {
         "reference": {
+          "reference": "Organization/provider-org-001"
+        },
+        "name": "Organization Provider Example 1",
+        "description": "Example provider organization for Provider-Member-Match operation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/provider-org-002"
+        },
+        "name": "Organization Provider Example 2",
+        "description": "Example provider organization for Provider-Member-Match operation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "CodeSystem/OrgTypeCS"
         },
         "name": "Organization Type",
@@ -946,6 +962,22 @@
       },
       {
         "reference": {
+          "reference": "Patient/patient-prov-001"
+        },
+        "name": "Patient Provider Example 1 - Robert Johnson",
+        "description": "Example patient as known to the provider for Provider-Member-Match operation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-prov-002"
+        },
+        "name": "Patient Provider Example 2 - Sarah Williams",
+        "description": "Example patient as known to the provider for Provider-Member-Match operation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Patient/1"
         },
         "name": "Patient1",
@@ -990,6 +1022,22 @@
         },
         "name": "patientin2",
         "description": "Example Patienr Record for Member Match Operation",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/payer-member-001"
+        },
+        "name": "Payer Member Example 1 - Robert Johnson",
+        "description": "Example patient as known to the payer after successful member match",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/payer-member-002"
+        },
+        "name": "Payer Member Example 2 - Sarah Williams",
+        "description": "Example patient as known to the payer after successful member match",
         "exampleBoolean": true
       },
       {
@@ -1062,6 +1110,30 @@
         },
         "name": "PDex Bulk Member Match Operation",
         "description": "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/pdex-consent-action"
+        },
+        "name": "PDex Consent Action Search Parameter",
+        "description": "Search for Consent resources by the action code in the provision. Use provision-action=disclose combined with provision-type=deny to find members who have opted out of Provider Access data sharing.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/pdex-consent-provider-access"
+        },
+        "name": "PDex Consent Provider Access Use Case Search Parameter",
+        "description": "Search for Consent resources that have the Provider Access Use Case extension set to true. This identifies consent records specific to the Provider Access API.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/pdex-consent-provision-type"
+        },
+        "name": "PDex Consent Provision Type Search Parameter",
+        "description": "Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing.",
         "exampleBoolean": false
       },
       {
@@ -1180,8 +1252,16 @@
         "reference": {
           "reference": "Consent/no-consent-1"
         },
-        "name": "PDex Provider Access Consent Example",
-        "description": "An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API.",
+        "name": "PDex Provider Access Consent Opt-Out Example",
+        "description": "An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API. Opt-out is expressed using provision.type='deny' with provision.action='disclose' and the ProviderAccessUseCase extension.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"
+      },
+      {
+        "reference": {
+          "reference": "Consent/consent-permit-1"
+        },
+        "name": "PDex Provider Access Consent Permit Example",
+        "description": "An example of a PDex Provider Access Consent where a member permits sharing of their data via the Provider Access API. Permit is expressed using provision.type='permit' with provision.action='disclose' and the ProviderAccessUseCase extension.",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"
       },
       {
@@ -1282,6 +1362,22 @@
       },
       {
         "reference": {
+          "reference": "Practitioner/provider-001"
+        },
+        "name": "Practitioner Provider Example 1 - Dr. Smith",
+        "description": "Example practitioner attesting to treatment relationship for Provider-Member-Match",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/provider-002"
+        },
+        "name": "Practitioner Provider Example 2 - Dr. Jones",
+        "description": "Example practitioner attesting to treatment relationship for Provider-Member-Match",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "ValueSet/PDexPAInstitutionalProcedureCodesVS"
         },
         "name": "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
@@ -1358,6 +1454,14 @@
         },
         "name": "Provider $multi-member-match Response",
         "description": "A Parameters profile defining the result of a $bulk-member-match operation performed by a payer system in response to a provider request. The response indicates which members were successfully matched and authorized for provider access, which were not found, and which have opted out of Provider Access API data sharing.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pdex-provider-access-use-case"
+        },
+        "name": "Provider Access Use Case",
+        "description": "Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers.",
         "exampleBoolean": false
       },
       {
@@ -1463,6 +1567,22 @@
         "name": "Treatment Attestation Example 2",
         "description": "Second provider's attestation to treatment relationship",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"
+      },
+      {
+        "reference": {
+          "reference": "DocumentReference/treatment-attestation-form-001"
+        },
+        "name": "Treatment Attestation Form Example 1",
+        "description": "Example signed attestation document for treatment relationship",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DocumentReference/treatment-attestation-form-002"
+        },
+        "name": "Treatment Attestation Form Example 2",
+        "description": "Example signed attestation document for treatment relationship",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -1583,6 +1703,17 @@
         {
           "nameUrl": "introduction.html",
           "title": "Introduction",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "informative"
+            }
+          ]
+        },
+        {
+          "nameUrl": "narrative-conformance.html",
+          "title": "Narrative Conformance",
           "generation": "markdown",
           "extension": [
             {

@@ -1,9 +1,9 @@
 [Previous Page - US Core Pediatric BMI for Age Observation](USCorePediatricBMIforAgeObservation.html)
 
 The US Core IG profiles the Observation resource for a variety of purposes. For example:
-- [Smoking status](https://hl7.org/fhir/us/core/Observation-some-day-smoker.html)
-- [Pediatric BMI for Age](http://hl7.org/fhir/us/core/Observation-pediatric-bmi-example.html)
-- [Pediatric Weight for Height](https://hl7.org/fhir/us/core/Observation-pediatric-wt-example.html)
+- [Smoking status]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html)
+- [Pediatric BMI for Age]({{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-bmi-for-age.html)
+- [Pediatric Weight for Height]({{site.data.fhir.ver.uscore3}}/StructureDefinition-pediatric-weight-for-height.html)
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core Observation](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html) resource are:
 

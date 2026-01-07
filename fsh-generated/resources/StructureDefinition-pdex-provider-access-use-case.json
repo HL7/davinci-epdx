@@ -1,0 +1,59 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pdex-provider-access-use-case",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fm"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case",
+  "name": "ProviderAccessUseCase",
+  "title": "Provider Access Use Case",
+  "status": "active",
+  "experimental": true,
+  "description": "Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Consent.provision.action"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Provider Access Use Case",
+        "definition": "Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "Indicates Provider Access use case applicability",
+        "comment": "When true, indicates this consent action applies to the Provider Access API use case.",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -8,11 +8,9 @@ Description: "Provenance is provided by the payer to identify the source of the 
 // * insert Agenttype-provenanceCommitter-slice
 // * agent[ProvenanceCommitter].type from http://hl7.org/fhir/us/core/ValueSet/us-core-provenance-participant-type
 * agent[ProvenanceAuthor].type 1..1
-* agent[ProvenanceAuthor].type from http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType
-// is this a fix
-// * agent.type 1..1
-* agent.type from http://hl7.org/fhir/us/core/ValueSet/us-core-provenance-participant-type
-// end of fix
+* agent[ProvenanceAuthor].type from http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (required)
+// Use ProvenanceAgentType for all agent types to allow author code in addition to transmitter
+* agent.type from http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType (extensible)
 * agent.who 1..1 MS
 * agent.who ^short = "Provide US Core Organization. If no Organization provide US Core Practitioner"
 * agent.who only Reference(us-core-organization or us-core-practitioner)

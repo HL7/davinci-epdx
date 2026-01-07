@@ -169,10 +169,32 @@
         "id": "Parameters.parameter:MemberBundle.part:CoverageToLink",
         "path": "Parameters.parameter.part",
         "sliceName": "CoverageToLink",
-        "short": "Not used in provider requests",
-        "definition": "CoverageToLink is not used in provider-initiated member match requests as providers are not linking historical coverage to new coverage. This element is only relevant for payer-to-payer member match operations.",
         "min": 0,
-        "max": "0"
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Parameters.parameter:MemberBundle.part:CoverageToLink.name",
+        "path": "Parameters.parameter.part.name",
+        "short": "Optional coverage to link (typically not used)",
+        "definition": "CoverageToLink is typically not used in provider-initiated member match requests as providers are not linking historical coverage to new coverage. This element is only relevant for payer-to-payer member match operations.",
+        "patternString": "CoverageToLink"
+      },
+      {
+        "id": "Parameters.parameter:MemberBundle.part:CoverageToLink.resource",
+        "path": "Parameters.parameter.part.resource",
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
+            ]
+          }
+        ]
       }
     ]
   }

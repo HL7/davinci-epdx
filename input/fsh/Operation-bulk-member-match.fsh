@@ -78,7 +78,7 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 * parameter[=].type = #Group
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(PDexMemberMatchGroup)
+* parameter[=].documentation = "Group resource containing matched members, conforming to PDexMemberMatchGroup profile"
 
 
 * parameter[+].name = #NonMatchedMembers
@@ -86,7 +86,7 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
+* parameter[=].documentation = "Group resource containing non-matched members, conforming to PDexMemberNoMatchGroup profile"
 
 
 * parameter[+].name = #ConsentConstrainedMembers
@@ -94,7 +94,7 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
+* parameter[=].documentation = "Group resource containing consent-constrained members, conforming to PDexMemberNoMatchGroup profile"
 
 
 // // ─── Add “in” parameter for MemberBundle ─────────────────────────────────────

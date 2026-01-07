@@ -30,7 +30,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 ### Example Smoking Status Observation
 
-[US Core Smoking Status Observation example]({{site.data.fhir.ver.uscore3}}/Observation-some-day-smoker.html):
+[US Core Smoking Status Observation example]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-smokingstatus.html):
 
 <pre>
 {

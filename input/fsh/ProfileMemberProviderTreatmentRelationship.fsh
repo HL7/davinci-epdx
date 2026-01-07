@@ -113,6 +113,7 @@ Title: "PDex Member Characteristic Code"
 Description: "Codes for member characteristics in PDex groups"
 * ^status = #active
 * ^experimental = false
+* ^caseSensitive = true
 * ^publisher = "HL7 International / Financial Management"
 * #pdex-member "PDex Member" "Identifies the member/patient in a PDex group"
 

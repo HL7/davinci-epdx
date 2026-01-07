@@ -1,0 +1,19 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "pdex-consent-provider-access",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provider-access",
+  "version": "2.1.0",
+  "name": "PDexConsentProviderAccess",
+  "status": "active",
+  "experimental": true,
+  "description": "Search for Consent resources that have the Provider Access Use Case extension set to true. This identifies consent records specific to the Provider Access API.",
+  "code": "provider-access",
+  "base": [
+    "Consent"
+  ],
+  "type": "token",
+  "expression": "Consent.provision.action.extension.where(url='http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case').value",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true
+}

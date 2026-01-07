@@ -27,7 +27,7 @@ The following profiles are referenced in this IG:
 
 #### US Core
 
-- [US Core 3.1.1 Profiles]({{site.data.fhir.ver.uscore3}}/profiles.html)
+- [US Core 3.1.1 Profiles](https://hl7.org/fhir/us/core/STU3.1.1/profiles.html)
 - [US Core 6.1.0 Profiles]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
 - [US Core 7.0.0 Profiles]({{site.data.fhir.ver.uscore7}}/profiles-and-extensions.html)
 

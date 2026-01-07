@@ -1,0 +1,20 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "pdex-consent-provision-type",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provision-type",
+  "version": "2.1.0",
+  "name": "PDexConsentProvisionType",
+  "status": "active",
+  "experimental": true,
+  "description": "Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing.",
+  "code": "provision-type",
+  "base": [
+    "Consent"
+  ],
+  "type": "token",
+  "expression": "Consent.provision.type",
+  "xpath": "f:Consent/f:provision/f:type",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "multipleAnd": true
+}

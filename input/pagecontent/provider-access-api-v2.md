@@ -78,8 +78,8 @@ Rather than creating large, dynamic lists of members associated with a provider 
 - The provider submits a bulk member-match request for one or more members using the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html).
 §pdex-223: - The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship. §
 §pdex-224: - Each member request **SHALL** contain: §
-  - Patient demographics conforming to [HRex Patient Demographics](StructureDefinition-hrex-patient-demographics.html)
-  - Health plan coverage information conforming to [HRex Coverage](StructureDefinition-hrex-coverage.html)
+  - Patient demographics conforming to [HRex Patient Demographics]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
+  - Health plan coverage information conforming to [HRex Coverage]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
   - A treatment relationship attestation from the provider using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) (a Consent resource)
 §pdex-225: - The CoverageToMatch **SHALL** contain the Member's coverage information. §
 §pdex-226: - The Treatment attestation **SHALL** be submitted as a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) in each member request. §
@@ -183,10 +183,10 @@ The [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.ht
 The Provider-Member-Match operation follows the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/) and returns a response containing a manifest with references to the matched member data. The provider uses this manifest to retrieve the Member-Match Response through the bulk data export mechanism.
 
 **Example Request:**
-The [Provider-Member-Match Request Example](Parameters-ProviderMemberMatchRequestExample.html) demonstrates a provider submitting multiple patients with demographics, coverage information, and treatment attestations to a payer.
+The [Provider-Member-Match Request Example](Parameters-provider-member-match-request-001.html) demonstrates a provider submitting multiple patients with demographics, coverage information, and treatment attestations to a payer.
 
 **Example Response:**
-The [Provider-Member-Match Response Example](Parameters-ProviderMemberMatchResponseExample.html) demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:
+The [Provider-Member-Match Response Example](Parameters-provider-member-match-response-001.html) demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:
 - **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) profile)
 - **NonMatchedMembers Group**: Patients not found in payer system
 - **TreatmentAttestationConstrainedMembers Group**: Patients with unverifiable treatment attestations
@@ -203,7 +203,7 @@ The bulk data response follows the [FHIR Bulk Data API specification](http://hl7
 - Proper OAuth2 access token handling
 - Compliant response headers and file format
 
-See [Bulk Data Export Manifest](BulkDataExportManifest.html) for detailed information on:
+See the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/) for detailed information on:
 - Manifest file structure
 - ndjson format specification
 - Security requirements

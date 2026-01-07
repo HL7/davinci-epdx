@@ -128,7 +128,7 @@ Title: "Coverage to Match Example 1"
 Description: "Member's previous coverage information to match"
 Usage: #example
 * status = #draft
-* type = $coverage-type#EHPLANS
+* type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-001"
 * subscriberId = "12345678"
 * relationship = $CoverageRelationship#self
@@ -150,7 +150,7 @@ Title: "Coverage to Match Example 2"
 Description: "Second member's previous coverage information"
 Usage: #example
 * status = #draft
-* type = $coverage-type#EHPLANS
+* type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-002"
 * subscriberId = "87654321"
 * relationship = $CoverageRelationship#self
@@ -172,7 +172,7 @@ Title: "Coverage to Link Example 1"
 Description: "New coverage information to link for the member"
 Usage: #example
 * status = #draft
-* type = $coverage-type#EHPLANS
+* type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-001"
 * subscriberId = "NEW-12345678"
 * relationship = $CoverageRelationship#self
@@ -200,7 +200,7 @@ Usage: #example
 * id = "treatment-attestation-ex1"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
-* category[0] = http://terminology.hl7.org/CodeSystem/consentcategorycodes#treat "Treatment"
+* category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * category[1] = http://loinc.org#64292-6 "Release of information consent"
 * patient.reference = "Patient/patient-prov-001"
 * dateTime = "2024-12-10T14:30:00Z"
@@ -217,7 +217,7 @@ Usage: #example
 * provision.actor[0].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
 * provision.actor[0].reference.reference = "Practitioner/provider-001"
 * provision.actor[0].reference.display = "Dr. Susan Smith"
-* provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREATMENT "Treatment"
+* provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT "treatment"
 
 
 Instance: TreatmentAttestationExample2
@@ -228,7 +228,7 @@ Usage: #example
 * id = "treatment-attestation-ex2"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
-* category[0] = http://terminology.hl7.org/CodeSystem/consentcategorycodes#treat "Treatment"
+* category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * category[1] = http://loinc.org#64292-6 "Release of information consent"
 * patient.reference = "Patient/patient-prov-002"
 * dateTime = "2024-12-09T10:15:00Z"
@@ -244,4 +244,4 @@ Usage: #example
 * provision.actor[0].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
 * provision.actor[0].reference.reference = "Practitioner/provider-002"
 * provision.actor[0].reference.display = "Dr. James Brown"
-* provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREATMENT "Treatment"
+* provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT "treatment"

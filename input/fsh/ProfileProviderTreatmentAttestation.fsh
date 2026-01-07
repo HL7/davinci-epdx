@@ -120,8 +120,9 @@ Id: attestation-status-valueset
 Title: "Treatment Attestation Status"
 Description: "Allowed statuses for treatment relationship attestations"
 * ^status = #active
-* include codes from system http://hl7.org/fhir/consent-state-codes where code = #active
-* include codes from system http://hl7.org/fhir/consent-state-codes where code = #entered-in-error
+* ^experimental = false
+* http://hl7.org/fhir/consent-state-codes#active "Active"
+* http://hl7.org/fhir/consent-state-codes#entered-in-error "Entered in Error"
 
 // ValueSet for valid provision types
 ValueSet: AttestationProvisionTypeValueSet
@@ -129,4 +130,5 @@ Id: attestation-provision-type-valueset
 Title: "Treatment Attestation Provision Type"
 Description: "Allowed provision types for treatment relationship attestations"
 * ^status = #active
-* include codes from system http://hl7.org/fhir/consent-provision-type where code = #permit
+* ^experimental = false
+* http://hl7.org/fhir/consent-provision-type#permit "Permit"

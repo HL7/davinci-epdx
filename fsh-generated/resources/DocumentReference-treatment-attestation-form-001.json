@@ -1,0 +1,69 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "treatment-attestation-form-001",
+  "meta": {
+    "lastUpdated": "2024-12-16T10:00:00Z"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Signed Treatment Relationship Attestation Form for Robert Johnson</p></div>"
+  },
+  "status": "current",
+  "docStatus": "final",
+  "type": {
+    "coding": [
+      {
+        "code": "64292-6",
+        "system": "http://loinc.org",
+        "display": "Release of information consent Document"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "64292-6",
+          "system": "http://loinc.org",
+          "display": "Release of information consent Document"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/patient-prov-001",
+    "display": "Robert Michael Johnson"
+  },
+  "date": "2024-12-16T09:30:00Z",
+  "author": [
+    {
+      "reference": "Practitioner/provider-001",
+      "display": "Dr. John Smith"
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/provider-org-001",
+    "display": "Example Provider Organization"
+  },
+  "description": "Signed attestation form documenting active treatment relationship between Dr. Smith and patient Robert Johnson",
+  "content": [
+    {
+      "attachment": {
+        "contentType": "application/pdf",
+        "language": "en-US",
+        "title": "Treatment Relationship Attestation Form",
+        "creation": "2024-12-16T09:30:00Z"
+      },
+      "format": {
+        "code": "urn:ihe:iti:xds:2017:mimeTypeSufficient",
+        "system": "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+        "display": "mimeType Sufficient"
+      }
+    }
+  ],
+  "context": {
+    "period": {
+      "start": "2024-01-01"
+    }
+  }
+}
