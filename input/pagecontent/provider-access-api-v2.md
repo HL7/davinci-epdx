@@ -28,8 +28,6 @@ Providers and Payers are encouraged to support Provider Access (v2). It provides
 
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG and operates as per the original version of the [Provider Access API](provider-access-api.html).
 
-</div>
-
 ## Provider Access API
 
 In December 2022, CMS released the [Advancing Interoperability and Improving Prior Authorization Processes Proposed Rule CMS-0057-P](https://www.cms.gov/newsroom/fact-sheets/advancing-interoperability-and-improving-prior-authorization-processes-proposed-rule-cms-0057-p-fact). This rule was finalized in February 2024.  
@@ -65,9 +63,11 @@ Rather than creating large, dynamic lists of members associated with a provider 
 - [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) - contains providers with treatment relationships to a specific member 
 
 #### Member Opt-Out List
+
 §pdex-215: The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing. § §pdex-216: If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List. § See the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html) for details on opt-out scope, reasons, and member-specific details.
 
 #### Member-Provider TRL
+
 §pdex-217: The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API. § §pdex-218: Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-member-provider-treatment-relationship-group.html) that has the member as the "key" to the list (via a characteristic containing the Patient ID). § §pdex-219: The providers **SHALL** be represented as the cohort, or subjects in the list (as group members). § The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. §pdex-220: This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member. § 
 
 §pdex-221: The payer **MAY** apply their own rules for determining a Treatment Relationship. § 
