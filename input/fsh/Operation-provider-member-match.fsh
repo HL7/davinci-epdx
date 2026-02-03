@@ -13,6 +13,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * status = #active
 * kind = #operation
 * code = #provider-member-match
+* resource = #Group
 * system = false
 * type = true
 * instance = false
@@ -77,26 +78,17 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].targetProfile = Canonical(MemberProviderTreatmentRelationship)
 * parameter[=].documentation = "A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data."
 
-// NonMatchedMembers - Group of members that could not be matched
+// NonMatchedMembers - Group of members that could not be matched or failed treatment attestation
 * parameter[+].name = #NonMatchedMembers
 * parameter[=].use = #out
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
-* parameter[=].documentation = "A Group resource containing members for whom no match could be found in the payer's member records."
+* parameter[=].documentation = "A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements."
 
-// TreatmentAttestationConstrainedMembers - Group of members excluded due to treatment attestation constraints
-* parameter[+].name = #TreatmentAttestationConstrainedMembers
-* parameter[=].use = #out
-* parameter[=].type = #Group
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
-* parameter[=].documentation = "A Group resource containing members for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements."
-
-// OptOutConstrainedMembers - Group of members excluded due to member opt-out
-* parameter[+].name = #OptOutConstrainedMembers
+// ConsentConstrainedMembers - Group of members excluded due to member opt-out
+* parameter[+].name = #ConsentConstrainedMembers
 * parameter[=].use = #out
 * parameter[=].type = #Group
 * parameter[=].min = 0

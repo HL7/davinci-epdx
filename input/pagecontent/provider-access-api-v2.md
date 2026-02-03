@@ -52,12 +52,12 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
 
 ### Key differences from version 1 of Provider Access
 
-Rather than creating large, dynamic lists of members associated with a provider the health plan will maintain two lists:
+§pdex-214a:Rather than creating large, dynamic lists of members associated with a provider the health plan **MAY** maintain two types of lists:§
 
 1. Member Opt-Out List
 2. Member-Provider TRL
 
-§pdex-214: These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. § In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:
+§pdex-214b: These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. § In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:
 
 - [Member Opt-Out Group](StructureDefinition-member-opt-out-group.html) - contains members who have opted out of data sharing
 - [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) - contains providers with treatment relationships to a specific member 
@@ -104,14 +104,14 @@ providers, or for an organization, using automated service functions. The retrie
 is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
 personnel, or systems, have access to the retrieved data.
 
-§pdex-236: It is recommended that, at a minimum, health plans **SHOULD** create Member-Provider TRLs using the NPI data for §
-the Rendering Provider. §pdex-237: Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL. §
+§pdex-236: When a health plan is using FHIR GRoups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider. §
+ §pdex-237: Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL. §
 
 
 ### Member Opt-out
 
 §pdex-238: A health plan member **SHALL** be entitled to Opt-Out from their data being shared via the Provider Access API. § §pdex-239: PDex defines a consent profile that **MAY** be used to enable a member to deny sharing via the Provider Access API. § §pdex-240: A member **SHALL** be able to update their preference §
-to revoke a previous denial. §pdex-241: When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. § The Member Opt-Out List is a dynamic Group resource. §pdex-242: If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List. § 
+to revoke a previous denial. §pdex-241: When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. § The Member Opt-Out List is a dynamic Group resource. §pdex-242: If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List or equivalent API response. § 
 
 §pdex-243: Health Plans **MAY** implement the pdex-provider-consent to enable a member to express their sharing preference. §
 
@@ -188,9 +188,8 @@ The [Provider-Member-Match Request Example](Parameters-provider-member-match-req
 **Example Response:**
 The [Provider-Member-Match Response Example](Parameters-provider-member-match-response-001.html) demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:
 - **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) profile)
-- **NonMatchedMembers Group**: Patients not found in payer system
-- **TreatmentAttestationConstrainedMembers Group**: Patients with unverifiable treatment attestations
-- **OptOutConstrainedMembers Group**: Patients who have opted out
+- **NonMatchedMembers Group**: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements
+- **ConsentConstrainedMembers Group**: Patients who have opted out of data sharing with providers
 
 The provider retrieves the detailed Member-Match Response by polling the status endpoint and retrieving the files referenced in the manifest, consistent with the FHIR Bulk Data API specification.
 

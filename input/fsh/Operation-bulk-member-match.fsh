@@ -11,12 +11,13 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 * status = #active
 * kind     = #operation
 * code     = #bulk-member-match
+* resource = #Group
 * system   = false
 * type     = true
 * instance = false
 * date = "2025-05-14T21:28:59+02:00"
 * publisher = "HL7 International / Financial Management"
-* comment = "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk data export and retrieve the associated member health history in ndjson format. See BulkMemberMatchDataExport operation for details on the bulk export manifest structure."
+* comment = "The Group resources returned by this operation can be used as input to the $davinci-data-export operation (defined in the Da Vinci Member Attribution IG) to perform bulk data export and retrieve the associated member health history in ndjson format."
 * inputProfile  = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
 * outputProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out"
 

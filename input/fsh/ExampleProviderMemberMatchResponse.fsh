@@ -5,7 +5,7 @@
 Instance: ProviderMemberMatchResponseExample
 InstanceOf: Parameters
 Title: "Provider-Member-Match Response Example"
-Description: "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members, treatment attestation constraints, and opt-out constraints."
+Description: "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out."
 Usage: #example
 * id = "provider-member-match-response-001"
 
@@ -99,17 +99,17 @@ Usage: #example
 
 
 // ------------------
-// Treatment Attestation Constrained Members - Attestation could not be verified
+// Consent-Constrained Members - Members who have opted out of data sharing
 // ------------------
-* parameter[+].name = "TreatmentAttestationConstrainedMembers"
+* parameter[+].name = "ConsentConstrainedMembers"
 * parameter[=].resource
   * resourceType = "Group"
-  * id = "attestation-constrained-group-001"
+  * id = "consent-constrained-group-001"
   * text.status = #generated
-  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Treatment Attestation Constrained</h2><p>Members for whom treatment attestation could not be verified or does not meet payer requirements</p></div>"
+  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Consent-Constrained Members</h2><p>Members found but who have exercised their right to opt out of Provider Access data sharing</p></div>"
 
   * identifier[0].system = "http://example.org/payer/match-groups"
-  * identifier[0].value = "ACG-2024-12-16-001"
+  * identifier[0].value = "CCG-2024-12-16-001"
   * identifier[0].assigner.display = "Example Payer"
 
   * identifier[1].system = "http://hl7.org/fhir/sid/us-npi"
@@ -119,48 +119,13 @@ Usage: #example
   * active = true
   * type = #person
   * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
 
   * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
   * managingEntity.identifier.value = "5555555555"
   * managingEntity.display = "Current Payer"
 
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
-  * characteristic.valueBoolean = true
-  * characteristic.exclude = false
-  * characteristic.period.start = "2024-12-16"
-
-  * quantity = 0
-
-
-// ------------------
-// Opt-Out Constrained Members - Members who have opted out
-// ------------------
-* parameter[+].name = "OptOutConstrainedMembers"
-* parameter[=].resource
-  * resourceType = "Group"
-  * id = "optout-constrained-group-001"
-  * text.status = #generated
-  * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Members who have Opted-Out</h2><p>Members found but who have exercised opt-out rights</p></div>"
-
-  * identifier[0].system = "http://example.org/payer/match-groups"
-  * identifier[0].value = "OOG-2024-12-16-001"
-  * identifier[0].assigner.display = "Example Payer"
-
-  * identifier[1].system = "http://hl7.org/fhir/sid/us-npi"
-  * identifier[1].value = "1982947230"
-  * identifier[1].assigner.display = "Provider Organization"
-
-  * active = true
-  * type = #person
-  * actual = true
-  * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
-
-  * managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-  * managingEntity.identifier.value = "5555555555"
-  * managingEntity.display = "Current Payer"
-
-  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#nomatch "Not Matched"
+  * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
   * characteristic.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope#provider-specific "Provider-Specific Opt-Out"
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"

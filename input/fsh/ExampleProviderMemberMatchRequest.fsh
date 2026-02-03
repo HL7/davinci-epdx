@@ -67,6 +67,8 @@ InstanceOf: Patient
 Title: "Patient for Member Match Example 1"
 Description: "Patient demographics submitted by provider for member match"
 Usage: #example
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Robert Michael Johnson - DOB: 1965-08-15, Male</p></div>"
 * identifier[0].type = $V2IdentifierTypeCS#MB
 * identifier[0].system = "http://example.org/provider-org/patient-ids"
 * identifier[0].value = "PAT-001"
@@ -95,6 +97,8 @@ InstanceOf: Patient
 Title: "Patient for Member Match Example 2"
 Description: "Second patient demographics submitted by provider for member match"
 Usage: #example
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sarah Elizabeth Williams - DOB: 1978-03-22, Female</p></div>"
 * identifier[0].type = $V2IdentifierTypeCS#MB
 * identifier[0].system = "http://example.org/provider-org/patient-ids"
 * identifier[0].value = "PAT-002"
@@ -127,6 +131,8 @@ InstanceOf: http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverag
 Title: "Coverage to Match Example 1"
 Description: "Member's previous coverage information to match"
 Usage: #example
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Coverage for Robert Johnson - Subscriber ID: 12345678, Previous Health Plan, PPO-GOLD</p></div>"
 * status = #draft
 * type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-001"
@@ -149,6 +155,8 @@ InstanceOf: http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverag
 Title: "Coverage to Match Example 2"
 Description: "Second member's previous coverage information"
 Usage: #example
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Coverage for Sarah Williams - Subscriber ID: 87654321, Another Health Plan, HMO-BASIC</p></div>"
 * status = #draft
 * type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-002"
@@ -171,6 +179,8 @@ InstanceOf: http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverag
 Title: "Coverage to Link Example 1"
 Description: "New coverage information to link for the member"
 Usage: #example
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>New Coverage for Robert Johnson - Subscriber ID: NEW-12345678, Current Payer, PPO-PREMIUM</p></div>"
 * status = #draft
 * type = $coverage-type#HIP "health insurance plan policy"
 * subscriber.reference = "Patient/patient-prov-001"
@@ -198,6 +208,8 @@ Title: "Treatment Attestation Example 1"
 Description: "Provider's attestation to active treatment relationship with patient"
 Usage: #example
 * id = "treatment-attestation-ex1"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relationship since 2024-01-15</p></div>"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
 * category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
@@ -226,6 +238,8 @@ Title: "Treatment Attestation Example 2"
 Description: "Second provider's attestation to treatment relationship"
 Usage: #example
 * id = "treatment-attestation-ex2"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01</p></div>"
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
 * category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"

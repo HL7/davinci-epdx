@@ -96,11 +96,9 @@ Step 2: Payer returns Group resources
    - parameter[0].name = "MatchedMembers"
    - parameter[0].resource = Group (MemberProviderTreatmentRelationship profile)
    - parameter[1].name = "NonMatchedMembers"
-   - parameter[1].resource = Group (PDexMemberNoMatchGroup profile)
-   - parameter[2].name = "TreatmentAttestationConstrainedMembers"
-   - parameter[2].resource = Group (PDexMemberNoMatchGroup profile)
-   - parameter[3].name = "OptOutConstrainedMembers"
-   - parameter[3].resource = Group (MemberOptOut profile)
+   - parameter[1].resource = Group (PDexMemberNoMatchGroup profile) - includes members not found and those with treatment attestation issues
+   - parameter[2].name = "ConsentConstrainedMembers"
+   - parameter[2].resource = Group (MemberOptOut profile) - members who have opted out of data sharing
 
 Step 3: Provider invokes $davinci-data-export on matched Group
    GET /Group/{matched-group-id}/$davinci-data-export
@@ -164,66 +162,14 @@ IMPORTANT NOTES ON COMPLIANT BULK RESPONSE
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Bulk Data Export Operation Enhancement
+// Bulk Data Export Note
 // ─────────────────────────────────────────────────────────────────────────────
-// This represents the expected behavior of the $davinci-data-export operation
-// when used with Group resources returned from Provider-Member-Match
-
-Instance: BulkMemberMatchDataExport
-InstanceOf: OperationDefinition
-Usage: #definition
-Title: "Bulk Member Match Data Export"
-Description: "When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group."
-* experimental = true
-* url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport"
-* version = "2.1.0"
-* name = "BulkMemberMatchDataExport"
-* status = #active
-* kind = #operation
-* code = #davinci-data-export
-* system = false
-* type = true
-* instance = true
-* date = "2024-12-16T00:00:00Z"
-* publisher = "HL7 International / Financial Management"
-* comment = "This operation is invoked on Group resources to export bulk member health data in FHIR format. The response includes a manifest file with URLs to ndjson files."
-
-// ─── Input Parameters ────────────────────────────────────────────────────────
-
-* parameter[+].name = #_outputFormat
-* parameter[=].use = #in
-* parameter[=].type = #string
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "The format for the bulk files (default: application/fhir+ndjson). Must be application/fhir+ndjson for this operation."
-* parameter[=].searchType = #string
-
-* parameter[+].name = #_since
-* parameter[=].use = #in
-* parameter[=].type = #instant
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Only include resources modified since this instant (format: YYYY-MM-DDTHH:MM:SS+HH:MM)"
-
-* parameter[+].name = #_type
-* parameter[=].use = #in
-* parameter[=].type = #string
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Comma-separated list of resource types to include in the bulk export (e.g., Patient,Condition,MedicationRequest). If omitted, all relevant types are included."
-
-* parameter[+].name = #_elements
-* parameter[=].use = #in
-* parameter[=].type = #string
-* parameter[=].min = 0
-* parameter[=].max = "1"
-* parameter[=].documentation = "Comma-separated list of elements to include in the bulk export (e.g., Condition.code,Condition.subject)"
-
-// ─── Output Parameter ────────────────────────────────────────────────────────
-
-* parameter[+].name = #exportManifest
-* parameter[=].use = #out
-* parameter[=].type = #url
-* parameter[=].min = 1
-* parameter[=].max = "1"
-* parameter[=].documentation = "URL to the manifest file containing references to ndjson files with bulk member health data. The manifest file is accessed using the returned URL with an OAuth2 bearer token."
+// The Provider Access API uses the existing $davinci-data-export operation
+// defined in the Da Vinci Member Attribution (ATR) IG. No separate operation
+// definition is needed here.
+//
+// The workflow is:
+// 1. Provider invokes $provider-member-match to get a MatchedMembers Group
+// 2. Provider invokes $davinci-data-export on that Group to retrieve bulk data
+//
+// See: https://hl7.org/fhir/us/davinci-atr/OperationDefinition-davinci-data-export.html
