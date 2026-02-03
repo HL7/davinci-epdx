@@ -227,7 +227,6 @@ Usage: #example
 * content[0].attachment.language = #en-US
 * content[0].attachment.title = "Treatment Relationship Attestation Form"
 * content[0].attachment.creation = "2024-12-16T09:30:00Z"
-* content[0].format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.period.start = "2024-01-01"
 
 
@@ -253,5 +252,4 @@ Usage: #example
 * content[0].attachment.language = #en-US
 * content[0].attachment.title = "Treatment Relationship Attestation Form"
 * content[0].attachment.creation = "2024-12-16T09:45:00Z"
-* content[0].format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds:2017:mimeTypeSufficient "mimeType Sufficient"
 * context.period.start = "2024-02-15"
