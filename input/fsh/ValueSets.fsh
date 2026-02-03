@@ -254,7 +254,7 @@ Description:  "Categories of organizations based on criteria in provider directo
 ValueSet: PDexMultiMemberMatchResultVS
 Title: "PDex Multi-Member Match Result Value Set"
 Description: "Codes to describe the results group from a multi-member Match operation or Member Attribution Process."
-* ^experimental = true
+* ^experimental = false
 * codes from system PdexMultiMemberMatchResultCS
 * codes from system PdexMemberAttributionCS
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

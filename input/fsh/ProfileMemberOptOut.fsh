@@ -65,9 +65,9 @@ Description: "A Group resource representing members who have opted out of data s
 
 // Opt-out scope characteristic
 * characteristic.code 1..1 MS
-* characteristic.code = #opt-out-scope "Opt-Out Scope"
-* characteristic.code ^short = "Identifies the opt-out scope"
-* characteristic.code ^definition = "The scope of the opt-out (global, provider-specific, or purpose-specific)"
+* characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
+* characteristic.code ^short = "Identifies this as a consent constraint group"
+* characteristic.code ^definition = "Fixed code indicating this group contains members with consent constraints (opt-outs)"
 
 // Opt-out scope value
 * characteristic.value[x] 1..1 MS
@@ -174,3 +174,48 @@ Description: "Detailed information about when and why a member opted out"
 * value[x] 1..1
 * value[x] only string
 * valueString ^short = "Details about the member's opt-out decision"
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Example: Member Opt-Out Group
+// ─────────────────────────────────────────────────────────────────────────────
+
+Instance: ExampleMemberOptOutGroup
+InstanceOf: MemberOptOut
+Title: "Example Member Opt-Out Group"
+Description: "Example of a Group containing members who have opted out of data sharing with providers"
+Usage: #example
+* id = "member-opt-out-group-001"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Member Opt-Out Group</h2><p>Members who have opted out of Provider Access data sharing</p></div>"
+
+// Identifier for the opt-out group
+* identifier[0].system = "http://example.org/payer/opt-out-groups"
+* identifier[0].value = "OPT-OUT-2024-001"
+* identifier[0].assigner.display = "Example Payer"
+
+// Required elements
+* active = true
+* type = #person
+* actual = true
+
+// Code identifying this as a consent constraint group
+* code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
+
+// Managing entity - the Payer
+* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* managingEntity.identifier.value = "5555555555"
+* managingEntity.display = "Example Payer Organization"
+
+// Characteristic - opt-out scope
+* characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
+* characteristic.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope#provider-specific "Provider-Specific Opt-Out"
+* characteristic.exclude = false
+* characteristic.period.start = "2024-06-01"
+
+// Member who has opted out
+* member[0].entity.reference = "Patient/1"
+* member[0].entity.display = "Jane Doe - Opted out of provider data sharing"
+* member[0].inactive = false
+
+* quantity = 1

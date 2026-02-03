@@ -64,7 +64,7 @@ Description: "A Group resource representing the treatment relationship between a
 * characteristic ^short = "Member/Patient identifier and other characteristics"
 * characteristic ^definition = "Characteristics of the group, including the member (patient) identifier"
 * characteristic.code 1..1 MS
-* characteristic.code = #pdex-member "PDex Member"
+* characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS#pdex-member "PDex Member"
 * characteristic.code ^short = "Identifies the member characteristic"
 * characteristic.code ^definition = "Fixed code to identify the member characteristic that contains the Patient ID"
 * characteristic.value[x] 1..1 MS
