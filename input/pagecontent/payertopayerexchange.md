@@ -7,9 +7,7 @@
 The changes have been made to stay in sync with the bulk transfer requirements of the rule. </i></b>
 </div>
 
-The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
-US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of
-USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with ASTP's HTI-1 Rule.
+The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with ASTP's HTI-1 Rule.
 
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.
@@ -30,6 +28,10 @@ the Data Provider's Server Capability Statement to determine which methods are m
 </div>
 
 §pdex-182: Health Plans **SHALL** support the $member-match operation. §
+
+<div class="stu-note">
+The use of mTLS to secure a connection is deprecated in favor of alternate methods that are emerging, such as [FAST HL7 UDAP Security for Scalable Registration, Authentication, and Authorization IG](https://hl7.org/fhir/us/udap-security) . New implementations are encouraged to adopt these other mechanisms, as defined in [Health Record Exchange IG](https://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html#exchange-security) (with the exception of mTLS authentication).
+</div>
 
 The steps in the Member Match with Consent process are:
 
