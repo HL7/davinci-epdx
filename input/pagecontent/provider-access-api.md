@@ -63,7 +63,7 @@ at a specific facility.
 ### Member Opt-out
 
 A health plan member is entitled to opt-out of data sharing via the Provider Access API. PDex defines a consent profile 
-that enables a member to deny sharing via the Provider Access API. A member should also be able to update their preference 
+that enables a member to deny sharing via the Provider Access API. A member **SHOULD** also be able to update their preference 
 to revoke a previous denial. 
 
 §pdex-292: Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference. §
@@ -93,7 +93,7 @@ Health plans:
 §pdex-298: - **SHOULD** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. §
 
 §pdex-299: Attribution lists **SHALL** be searchable via a secure RESTful API. § Access to the Group resource to READ 
-attribution lists should be scoped to the appropriate Organization, Facility, Provider or their 
+attribution lists **SHOULD** be scoped to the appropriate Organization, Facility, Provider or their 
 authorized representative that is acting on the behalf of the Provider.
 
 The [Da Vinci Data Export Operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) in the [Member Attribution IG]({{site.data.fhir.ver.atr}}) supports the Bulk FHIR API specification.
@@ -331,7 +331,7 @@ resources and and the Bulk export operation. §pdex-349: Access and Refresh Toke
 the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer
-Exchange should be registered in accordance with the approach defined in the
+Exchange **SHOULD** be registered in accordance with the approach defined in the
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is

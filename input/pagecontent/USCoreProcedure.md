@@ -39,7 +39,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-Note: Procedure records should only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies should not be created as prodcudure records.
+Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies **SHOULD NOT** be created as procedure records.
 
 #### Example Procedure Resource
 

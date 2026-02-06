@@ -27,7 +27,7 @@ implement access permissions in an alternative system, such as the Authorization
 The Payer-to-Payer APIs have a member-match operation that, in the case of a single member, returns a 
 Patient/{FHIR_id} after a successful match. In the case of a bulk member-match, the matched members
 are returned in a Matched Member Group resource. In both scenarios the requesting (New) Payer may
-perform this match operation multiple times and should only be granted access to data for the matched 
+perform this match operation multiple times and **SHOULD** only be granted access to data for the matched 
 members, whether in a Group or after a single match. An Implementer could choose to record the matched
 Id (either Patient or Group) in a Group record that is associated with the requesting entity. 
 Subsequently, when the requesting entity performs the data request (e.g. via the Da Vinci Data Export

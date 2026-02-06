@@ -101,7 +101,7 @@ Payers may not have in-depth health history for a health plan member since the m
 
 §pdex-353: A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources. §
 
-§pdex-354: A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. § In such cases resources should follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
+§pdex-354: A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. § In such cases resources **SHOULD** follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.
 
 §pdex-355: If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource **SHALL** use the [vread](https://www.hl7.org/fhir/http.html#vread) format of reference: §
 

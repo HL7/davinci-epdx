@@ -2,7 +2,7 @@
 
 The PDex guide is based on the [HL7 FHIR 4.0.1](http://hl7.org/fhir/R4/) standard, as well as the [CDS Hooks](https://cds-hooks.org/),  [SMART on FHIR](http://docs.smarthealthit.org/) and [OAuth2.0](https://oauth.net/2/) standards, which build additional capabilities on top of FHIR. This architecture is intended to maximize the number of clinical systems that conform to this guide as well as to allow for easy growth and extensibility of system capabilities in the future.
 
-To understand how to read an Implementation Guide implementers should refer to the [How to Read page](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html) in the FHIR Specification.
+To understand how to read an Implementation Guide implementers **SHOULD** refer to the [How to Read page](https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html) in the FHIR Specification.
 
 ### FHIR
 
@@ -22,7 +22,7 @@ This implementation guide uses terminology, notations and design principles that
 
 This Implementation Guide (IG) also utilizes the profiles detailed in the [HL7 FHIR� US Core Implementation Guide STU3 Release 3.1.1]({{site.data.fhir.ver.uscore3}}), [HL7 FHIR� US Core Implementation Guide STU6 Release 6.1.0]({{site.data.fhir.ver.uscore6}}), or [HL7 FHIR� US Core Implementation Guide STU7 Release 7.0.0]({{site.data.fhir.ver.uscore7}}) based on HL7 FHIR Release 4. This guide addresses use cases for payers to share clinical information with members, their authorized third-party applications, other payers or providers. In addition, the guide adds profiles and operations that are either not available or are unsuited for use by the payer community. An example of this is the MedicationDispense that is used to record the prescription medications supplied by a pharmacy to a health plan member. The relationship between US Core and Payer Data Exchange can be expressed in a Venn diagram as shown below.
 
-This IG also utilizes resources from the FHIR R4 Base Specification. Implementers should therefore refer to the following resources from the base specification:
+This IG also utilizes resources from the FHIR R4 Base Specification. Implementers **SHOULD** therefore refer to the following resources from the base specification:
 
 - [Bundle](http://hl7.org/fhir/R4/bundle.html)
 - [CapabilityStatement](http://hl7.org/fhir/R4/capabilitystatement.html)
@@ -71,7 +71,7 @@ Health Plans receive data from many other sources that contribute to a Member's 
 
 <table><tr><td><img width="100%" height="auto" src="MappingFromV2toFHIR.png" /></td></tr></table>
 
-If the same data element is included in the member’s record from multiple sources for the same event, that information only needs to be mapped to FHIR and made available via the Patient Access API once. Payers should look at the data they maintain and ensure that information relevant to the member’s care and treatment over time is accurately represented – in this way, it may not be appropriate to include a single data element only once across multiple events.
+If the same data element is included in the member’s record from multiple sources for the same event, that information only needs to be mapped to FHIR and made available via the Patient Access API once. Payers **SHOULD** look at the data they maintain and ensure that information relevant to the member’s care and treatment over time is accurately represented – in this way, it may not be appropriate to include a single data element only once across multiple events.
 
 Where data is passed via Payer Data Exchange, Payers have the ability to indicate the provenance of the information they are sending. Receiving plans are not required to deduplicate data they have received from other payers or otherwise review or validate the data they receive from another payer.
  

@@ -11,7 +11,7 @@ The Provider-Member-Match is provided to support the requirements of the CMS pri
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
-The Provider-Member-Match operation should be submitted as a first step. This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
+The Provider-Member-Match operation **SHOULD** be submitted as a first step. This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
 </div>
 
 This version of the API uses a variation of the Bulk Member Match, from the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). This is formalized as the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). The $davinci-data-export operation specified in the original [Provider Access v1](provider-access-api.html) is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.
@@ -88,7 +88,7 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
   - If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member
   - If the treatment attestation can be verified and meets the payer's requirements
 §pdex-228: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) resource conforming to the matched members response. § §pdex-229: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
-- Members who fail any check shall be returned in separate Group resources:
+- Members who fail any check **SHALL** be returned in separate Group resources:
   - Non-matched members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Treatment attestation constrained members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-member-opt-out-group.html) 
@@ -342,7 +342,7 @@ resources and and the Bulk export operation. §pdex-289: Access and Refresh Toke
 the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer
-Exchange should be registered in accordance with the approach defined in the
+Exchange **SHOULD** be registered in accordance with the approach defined in the
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is

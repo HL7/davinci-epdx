@@ -117,7 +117,7 @@ The Payer creates the Provenance record as follows:
 §pdex-09: The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. § 
 §pdex-10: Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide. § 
 
-This guide shall define extensions to the provenance value sets as required to document the provenance of the information exchange.
+This guide **SHALL** define extensions to the provenance value sets as required to document the provenance of the information exchange.
 
 #### Clinical Information without Provenance
 

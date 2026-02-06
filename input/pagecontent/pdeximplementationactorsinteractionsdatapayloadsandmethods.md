@@ -56,7 +56,7 @@ See [Data Mapping](datamapping.html) for details of the Data Payloads and operat
 The PDex IG is focused on provider, member, or plan directed exchange of a member's data. 
 
 All exchanges in this IG are for an individual. Where one member has permission to access the information 
-for another member of the health plan, they should provide appropriate credentials to enable the exchange 
+for another member of the health plan, they **SHOULD** provide appropriate credentials to enable the exchange 
 for that individual. 
 
 The PDex IG specifies three interaction methods. Their use depends upon the Actors involved and the Data 

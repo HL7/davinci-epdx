@@ -122,9 +122,9 @@ An example request bundle can be found here: [PDex $multi-member-match request](
 
     Prefer: respond-async
 
-§pdex-138: The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) SHALL be performed as an §
-Asynchronous operation. This should follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) 
-defined in FHIR R4. §pdex-139: Implementers SHALL follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) §
+§pdex-138: The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be performed as an §
+Asynchronous operation. This **SHOULD** follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html)
+defined in FHIR R4. §pdex-139: Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) §
 of the Async Request Pattern.
 
 ### Bulk Member Match with Consent
@@ -298,7 +298,7 @@ and search the Group resources and perform Bulk export operations. Access Tokens
 subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer 
-Exchange should be registered in accordance with the approach defined in the 
+Exchange **SHOULD** be registered in accordance with the approach defined in the
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol 
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is 
