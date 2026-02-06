@@ -69,7 +69,13 @@ Branch pre-publish_stu2 is the branch for publishing the post-ballot STU2 Versio
 Branch post-publish_stu2 was created from the pre-publish_stu2 branch and will be used to capture new and updated 
 content that will go into a future update of the PDex IG.
 
-Sushi is Version 3.14.0
+Sushi is Version 3.17.0
 
 Note: A change in the template caused an error where image-sources/** couldn't be found.
 I created image-sources/pdex and copied plantuml files in to the directory and publisher worked.
+
+
+## Conformance Language
+The STU2.1.1 update introduced a table of conformance language used in narrative text (markdown files).
+
+A narrative-conformance.md file was created with three section markers. The publisher populate a table to replace the markers. The table displays all {section marker}pdex-nnn {sentence} {section marker} entries found in the markdown files.
