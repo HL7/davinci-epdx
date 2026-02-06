@@ -862,7 +862,7 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].type = #Endpoint
-* rest.resource[=].documentation = "The Media Resource is a Must Support referenced resource when using the US Core PractitionerRole Profile."
+* rest.resource[=].documentation = "The Endpoint Resource is a Must Support referenced resource when using the US Core PractitionerRole Profile."
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #MAY
 * rest.resource[=].interaction[=].code = #search-type
@@ -881,6 +881,72 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 * rest.resource[=].referencePolicy.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].referencePolicy.extension.valueCode = #SHOULD
+
+// ExplanationOfBenefit
+* rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].valueCode = #SHALL
+* rest.resource[=].type = #ExplanationOfBenefit
+* rest.resource[=].supportedProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"
+* rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile.extension.valueCode = #SHALL
+* rest.resource[=].documentation = "When a Prior Authorization references another resource (e.g., Patient or Practitioner), the reference may be versioned or versionless. Payers **SHALL** use versioned references whenever they maintain point-in-time data (data that was effective as of the date of service or date of admission on the claim), but **MAY** use versionless references when they do not maintain versioned data. Clients **MAY** request referenced resources as part of an EOB search (by supplying the _include parameter) or directly using read or vread. Payers **SHALL** support both approaches, and **SHALL** return the same content for referenced resources in either case. \":iterate\" **SHOULD** be used if you request to include Coverage:payor in the EOB response bundle, e.g. GET [base]/ExplanationOfBenefit?[parameter=value]&_include=ExplanationOfBenefit:coverage&_include:iterate=Coverage:payor."
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHOULD
+* rest.resource[=].interaction[=].code = #vread
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHOULD
+* rest.resource[=].interaction[=].code = #history-instance
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #MAY
+* rest.resource[=].interaction[=].code = #history-type
+* rest.resource[=].interaction[=].documentation = "Searches using service-date, _lastUpdated, or type require a patient search argument.\n\n_include:* **SHALL** be supported.\n"
+* rest.resource[=].referencePolicy = #resolves
+* rest.resource[=].referencePolicy.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].referencePolicy.extension.valueCode = #SHOULD
+* rest.resource[=].searchInclude[0] = "ExplanationOfBenefit:patient"
+* rest.resource[=].searchInclude[+] = "ExplanationOfBenefit:provider"
+* rest.resource[=].searchInclude[+] = "ExplanationOfBenefit:care-team"
+* rest.resource[=].searchInclude[+] = "ExplanationOfBenefit:coverage"
+* rest.resource[=].searchInclude[+] = "ExplanationOfBenefit:insurer"
+* rest.resource[=].searchInclude[+] = "ExplanationOfBenefit:*"
+* rest.resource[=].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_id"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "patient"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-patient"
+* rest.resource[=].searchParam[=].type = #reference
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "_lastUpdated"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
+* rest.resource[=].searchParam[=].type = #date
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "type"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-type"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "identifier"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-identifier"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "service-date"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/explanationofbenefit-service-date"
+* rest.resource[=].searchParam[=].type = #date
+
+// Goal
 * rest.resource[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].valueCode = #SHALL
 * rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
