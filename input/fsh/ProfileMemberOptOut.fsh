@@ -7,7 +7,7 @@
 
 Profile: MemberOptOut
 Parent: Group
-Id: member-opt-out-group
+Id: pdex-member-opt-out
 Title: "Member Opt-Out Group"
 Description: "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios."
 
@@ -212,10 +212,12 @@ Usage: #example
 * characteristic.valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope#provider-specific "Provider-Specific Opt-Out"
 * characteristic.exclude = false
 * characteristic.period.start = "2024-06-01"
+* characteristic.extension[optOutReason].valueCodeableConcept = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason#privacy-concern "Privacy Concern"
 
 // Member who has opted out
 * member[0].entity.reference = "Patient/1"
 * member[0].entity.display = "Jane Doe - Opted out of provider data sharing"
+* member[0].entity.extension[optOutDetails].valueString = "Member requested opt-out on 2024-06-01 citing privacy concerns. Opt-out applies to all named providers."
 * member[0].inactive = false
 
 * quantity = 1

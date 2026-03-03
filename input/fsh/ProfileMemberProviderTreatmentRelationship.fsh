@@ -8,7 +8,7 @@
 
 Profile: MemberProviderTreatmentRelationship
 Parent: Group
-Id: member-provider-treatment-relationship-group
+Id: pdex-treatment-relationship
 Title: "Member-Provider Treatment Relationship Group"
 Description: "A Group resource representing the treatment relationship between a specific member/patient and one or more healthcare providers. The Payer is the managing organization. The member is identified through a characteristic containing the Patient ID. The group members are the providers that have an active or confirmed treatment relationship with the member."
 
@@ -68,6 +68,7 @@ Description: "A Group resource representing the treatment relationship between a
 * characteristic.code ^short = "Identifies the member characteristic"
 * characteristic.code ^definition = "Fixed code to identify the member characteristic that contains the Patient ID"
 * characteristic.value[x] 1..1 MS
+* characteristic.valueReference MS
 * characteristic.valueReference only Reference(Patient)
 * characteristic.valueReference ^short = "Reference to the member/patient"
 * characteristic.valueReference ^definition = "Reference to the Patient resource for the member"
@@ -145,3 +146,51 @@ Description: "Types of treatment relationships between members and providers"
 * ^status = #active
 * ^experimental = false
 * include codes from system TreatmentRelationshipTypeCodeSystem
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Example Instance
+// ─────────────────────────────────────────────────────────────────────────────
+
+Instance: Example-PDex-Treatment-Relationship-Group
+InstanceOf: MemberProviderTreatmentRelationship
+Title: "Example Member-Provider Treatment Relationship Group"
+Description: "Example of a Group resource representing the treatment relationship between a member and their providers"
+Usage: #example
+* id = "example-pdex-treatment-relationship-group"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Member-Provider Treatment Relationship Group</h2><p>Providers with an active treatment relationship with the member</p></div>"
+
+// Identifier for this treatment relationship group
+* identifier[0].system = "http://example.org/payer/treatment-relationship-groups"
+* identifier[0].value = "TRL-2024-001"
+* identifier[0].assigner.display = "Example Payer Organization"
+
+// Required elements
+* active = true
+* type = #device
+* actual = true
+
+// Code - match result for this group
+* code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#match "Matched"
+
+// Managing entity - the Payer
+* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* managingEntity.identifier.value = "5555555555"
+* managingEntity.display = "Example Payer Organization"
+
+// Characteristic - the member/patient key
+* characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS#pdex-member "PDex Member"
+* characteristic.valueReference = Reference(Patient/payer-patient-1001)
+* characteristic.exclude = false
+* characteristic.period.start = "2024-01-01"
+
+// Providers with treatment relationships to this member
+* member[0].entity = Reference(Practitioner/provider-001) "Dr. John Smith, MD"
+* member[0].entity.extension[treatmentDetails].valueString = "Primary care physician. Treatment relationship established 2024-01-15 based on office visit."
+* member[0].inactive = false
+* member[1].entity = Reference(Practitioner/provider-002) "Dr. Mary Jones, MD"
+* member[1].entity.extension[treatmentDetails].valueString = "Specialist referral. Treatment relationship established 2024-03-01 based on specialist referral from primary care."
+* member[1].inactive = false
+
+* quantity = 2

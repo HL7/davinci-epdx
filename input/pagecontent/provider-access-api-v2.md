@@ -59,16 +59,16 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
 
 §pdex-214b: These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. § In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:
 
-- [Member Opt-Out Group](StructureDefinition-member-opt-out-group.html) - contains members who have opted out of data sharing
-- [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) - contains providers with treatment relationships to a specific member 
+- [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) - contains members who have opted out of data sharing
+- [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) - contains providers with treatment relationships to a specific member 
 
 #### Member Opt-Out List
 
-§pdex-215: The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing. § §pdex-216: If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List. § See the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html) for details on opt-out scope, reasons, and member-specific details.
+§pdex-215: The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing. § §pdex-216: If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List. § See the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) for details on opt-out scope, reasons, and member-specific details.
 
 #### Member-Provider TRL
 
-§pdex-217: The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API. § §pdex-218: Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-member-provider-treatment-relationship-group.html) that has the member as the "key" to the list (via a characteristic containing the Patient ID). § §pdex-219: The providers **SHALL** be represented as the cohort, or subjects in the list (as group members). § The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. §pdex-220: This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member. § 
+§pdex-217: The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API. § §pdex-218: Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-pdex-treatment-relationship.html) that has the member as the "key" to the list (via a characteristic containing the Patient ID). § §pdex-219: The providers **SHALL** be represented as the cohort, or subjects in the list (as group members). § The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. §pdex-220: This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member. § 
 
 §pdex-221: The payer **MAY** apply their own rules for determining a Treatment Relationship. § 
 
@@ -87,11 +87,11 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
   - If the member has Opted-Out of sharing (by checking the Member Opt-Out List)
   - If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member
   - If the treatment attestation can be verified and meets the payer's requirements
-§pdex-228: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) resource conforming to the matched members response. § §pdex-229: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
+§pdex-228: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response. § §pdex-229: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
 - Members who fail any check **SHALL** be returned in separate Group resources:
   - Non-matched members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Treatment attestation constrained members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
-  - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-member-opt-out-group.html) 
+  - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) 
 §pdex-230: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. § §pdex-231: Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
 §pdex-232: - The matched group resource **MAY** be a short-lived group. § No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
 §pdex-233: - Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. § 
@@ -121,9 +121,9 @@ See the [PDex Provider Consent here](StructureDefinition-pdex-provider-consent.h
 
 ### Treatment Relationship Driven Access 
 
-The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-244: If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) that is used to request a $davinci-data-export operation. §
+The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-244: If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) that is used to request a $davinci-data-export operation. §
 
-§pdex-245: Members **SHALL** have the ability to opt-out of data sharing with providers. § Opt-outs are managed using the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html), which supports multiple opt-out scopes:
+§pdex-245: Members **SHALL** have the ability to opt-out of data sharing with providers. § Opt-outs are managed using the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html), which supports multiple opt-out scopes:
 - **Global Opt-Out**: Member has opted out from all data sharing
 - **Provider-Specific Opt-Out**: Member has opted out for specific provider(s)
 - **Purpose-Specific Opt-Out**: Member has opted out for specific purpose(s)
@@ -169,8 +169,8 @@ sharing data with providers. §pdex-256: Those Opted-Out members **SHALL** be in
 
 The [Da Vinci Member Attribution (ATR) IG]({{site.data.fhir.ver.atr}}) 
 provides transactions to manage the Group resources through Add, change and delete member actions. PDex provides specific Group profiles for Provider Access use cases:
-- [Member Opt-Out Group](StructureDefinition-member-opt-out-group.html) - for maintaining member opt-out preferences
-- [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) - for maintaining treatment relationships with detailed attestation information
+- [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) - for maintaining member opt-out preferences
+- [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) - for maintaining treatment relationships with detailed attestation information
 
 The [AttributionListStatus extension]({{site.data.fhir.ver.atr}}/StructureDefinition-ext-attributionListStatus.html) can have one of three values:
 - draft: Used when building a list and it is not considered ready for use.
@@ -187,7 +187,7 @@ The [Provider-Member-Match Request Example](Parameters-provider-member-match-req
 
 **Example Response:**
 The [Provider-Member-Match Response Example](Parameters-provider-member-match-response-001.html) demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:
-- **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) profile)
+- **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) profile)
 - **NonMatchedMembers Group**: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements
 - **ConsentConstrainedMembers Group**: Patients who have opted out of data sharing with providers
 

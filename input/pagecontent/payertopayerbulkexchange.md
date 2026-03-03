@@ -54,7 +54,7 @@ include the following types of data:
 
 - [US Core 3.1.1]({{uscore3}}) oe [US Core 6,1,0]({{uscore6}})Clinical Data with additional PDex defined Profiles.
 - Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the
-- [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide. 
+- [Prior Authorizations](StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
 - [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
 
 The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
@@ -218,7 +218,7 @@ changed their opt-in/opt-out status for sharing with health plans.
 
 - [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) Clinical Data with additional PDex defined Profiles.
 - Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit Basis profiles defined in the [CARIN Consumer Directed Payer Data Exchange]({{site.data.fhir.ver.carinbb}}) Implementation Guide.
-- [Prior Authorizations](/StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
+- [Prior Authorizations](StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
 
 §pdex-155: Claims and clinical data **SHALL** be limited to records with a service date §
 within 5 years of the date of request for data.
