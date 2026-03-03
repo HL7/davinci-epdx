@@ -69,7 +69,7 @@ Description: "A Parameters profile defining the result of a $bulk-member-match o
 // Provider Successful Match Group Profile
 Profile: ProviderMemberMatchGroup
 Parent: Group
-Id: provider-member-match-group
+Id: pdex-provider-member-match
 Title: "Provider Member Match Group"
 Description: "A Group List created by the Payer to enable Provider Access API access by providers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters from the provider's match request."
 * ^experimental = true
@@ -130,7 +130,7 @@ Description: "A Group List created by the Payer to enable Provider Access API ac
 // Provider No Match Group Profile
 Profile: ProviderMemberNoMatchGroup
 Parent: Group
-Id: provider-member-no-match-group
+Id: pdex-provider-member-no-match
 Title: "Provider Member No Match Group"
 Description: "A Group List created by the Payer to provide information back to a requesting provider about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics from the provider's request. The match may have failed for one of two reasons: a) No match on member (member not found in payer's system), or b) Matched but unable to comply due to member's opt-out of Provider Access API."
 * ^experimental = true
