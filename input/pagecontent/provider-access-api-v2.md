@@ -77,6 +77,7 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
 §pdex-222: The Member Opt-Out List and the Member-Provider TRLs **SHALL** be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). § 
 - The provider submits a bulk member-match request for one or more members using the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html).
 §pdex-223: - The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship. §
+§pdex-223a: - The payer **SHOULD** extract the rendering provider's NPI from the `subject_id` field of the UDAP B2B Authorization Extension Object (`hl7-b2b`) in the access token and verify it against the payer's provider directory before processing the $provider-member-match request. §
 §pdex-224: - Each member request **SHALL** contain: §
   - Patient demographics conforming to [HRex Patient Demographics]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
   - Health plan coverage information conforming to [HRex Coverage]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
@@ -349,13 +350,11 @@ That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Prot
 to use the B2B protocols detailed in the 
 [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) IG.
 
-If the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html)) section are used, 
-it is recommended that the subject_id in the B2B Authorization Extension Object (Key Name: "hl7-b2b") 
-contain the NPI of the Provider for which Attributed Patient data is being requested. For instances 
-where health plan generated attribution lists cover more than a single provider, the subject_id could 
-be the FHIR Id of the Group being requested. The use of the Group FHIR ID as the subject_id is based 
-upon the assumption that health plans have access controls in place to restrict the requestor to only 
-having access to Group records they are authorized to access.
+§pdex-290: When the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html) section are used, the `subject_id` in the B2B Authorization Extension Object (Key Name: `"hl7-b2b"`) **SHOULD** contain the NPI of the rendering provider on whose behalf member data is being requested. § The rendering provider NPI enables the payer to verify the requesting provider's identity and contractual status before issuing an access token.
+
+§pdex-291: For requests covering more than a single rendering provider (e.g., an organization-level request), the `subject_id` **MAY** be the FHIR Id of the Group being requested. § The use of the Group FHIR Id as the `subject_id` is based upon the assumption that health plans have access controls in place to restrict the requestor to only those Group records they are authorized to access.
+
+§pdex-292: The payer **SHOULD** validate the NPI supplied in the `subject_id` against their provider directory to confirm the provider is known, active, and has an in-network or contractual relationship before issuing an access token or processing a `$provider-member-match` request. §
 
 ### Scopes for Operations
 
