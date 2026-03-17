@@ -3,10 +3,11 @@
 
 {% include style_insert_table_blue.html %}
 
-### STU 2.1.1 Update
+### STU 2.2.0 Update
 | JIRA Ticket                                             | Change                                                                                              |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Add search parameter and extension to enable easier retrieval of Provider Access Opt-Out | 
+| [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | Resolve discrepancy between $provider-member-match OperationDefinition and Parameters IN profile: rename part parameter from `Consent` to `TreatmentAttestation` and container from `MemberBundle` to `MembersToMatch`; add links to IN/OUT Parameters profiles from operation definition page |
+| [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Add search parameter and extension to enable easier retrieval of Provider Access Opt-Out |
 | [FHIR-53793](https://jira.hl7.org/browse/FHIR-53793)    | Create a listing of all Conformance Requirements in the Narrative of the IG  |
 | [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184)    | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API  |
 | [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    | 
