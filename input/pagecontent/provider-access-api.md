@@ -238,6 +238,7 @@ This is an optional parameter in the Da Vinci Data Export Operation.
 
 §pdex-326: The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is §
 retrieving new, or updated data that will be stored as part of the patient record.
+§pdex-326a: When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval. § The client is responsible for tracking the date/time of their previous requests using an internal audit trail and using that value as the `_since` parameter in subsequent delta requests. The payer server has no obligation to infer a delta cutoff on the client's behalf.
 
 §pdex-327: The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is §
 retrieving data that will be stored as part of the patient record.
