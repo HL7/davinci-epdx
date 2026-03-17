@@ -14,7 +14,9 @@ Usage: #example
 * type = #person
 * actual = true
 * name = "Attributed List of Health Plan Members for Practitioner 1122334455."
-* managingEntity.reference = "Organization/ProviderOrg1"
+// managingEntity = the Payer that created and manages this attribution Group
+* managingEntity.reference = "Organization/Payer1"
+// characteristic.valueReference = the Provider/Organization being attributed with members
 * characteristic.code = $MemberAttribution#pdexprovidergroup "PDex Provider Group"
 * characteristic.valueReference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * characteristic.valueReference.identifier.value = "0123456789"
