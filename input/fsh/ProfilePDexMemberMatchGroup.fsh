@@ -10,7 +10,7 @@ Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer AP
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 * contained 0..*
-* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource."
+* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
 * code 1..1 MS
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * characteristic.code MS
@@ -25,6 +25,8 @@ Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer AP
 
 * member.entity.extension contains MatchParameters named matchedMember 1..1 MS
 * member.entity.extension[matchedMember] ^comment = "SHALL reference the contained Patient resource that was submitted by the requester for this member in the MemberBundle input parameter. This enables the requester to cross-reference each matched result back to their original submitted demographics."
+* member.entity.extension contains MatchCoverage named matchedCoverage 0..1 MS
+* member.entity.extension[matchedCoverage] ^comment = "MAY reference a contained Coverage resource that was submitted alongside the Patient in the MemberBundle input parameter. SHALL be populated when the same patient was submitted with multiple different Coverage plans, to allow the requester to distinguish which (patient + coverage) pair this member entry corresponds to."
 
 // ------------------------------
 // No Match Profile
@@ -39,12 +41,14 @@ Description: "A Group List created by the Payer to provide information back to a
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 * contained 0..*
-* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource."
+* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
 * code 1..1 MS
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * member.entity ^comment = "Enter using a relative reference to the failed patient record."
 * member.entity.extension contains MatchParameters named nonMatchedMember 1..1 MS
 * member.entity.extension[nonMatchedMember] ^comment = "SHALL reference the contained Patient resource that was submitted by the requester for this member in the MemberBundle input parameter. This enables the requester to cross-reference each non-matched or consent-constrained result back to their original submitted demographics."
+* member.entity.extension contains MatchCoverage named nonMatchedCoverage 0..1 MS
+* member.entity.extension[nonMatchedCoverage] ^comment = "MAY reference a contained Coverage resource that was submitted alongside the Patient in the MemberBundle input parameter. SHALL be populated when the same patient was submitted with multiple different Coverage plans, to allow the requester to distinguish which (patient + coverage) pair this member entry corresponds to."
 
 
 

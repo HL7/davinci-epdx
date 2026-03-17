@@ -399,6 +399,24 @@ Description: "Input Patient Parameter supplied for the individual member match (
 
 
 // ---------------------------------------
+// Coverage Parameters from the Member-Match Operation used to disambiguate
+// multiple MemberBundles for the same patient with different coverages.
+// Named matchedCoverage / nonMatchedCoverage in Member-match response.
+// Resolves FHIR-55927.
+Extension: MatchCoverage
+Id: base-ext-match-coverage
+Title: "Member-Match Input Coverage Parameter"
+Description: "Input Coverage Parameter supplied for the individual member match. When the same patient is submitted with multiple different coverage plans, this optional extension allows the responder to include the submitted Coverage resource alongside the submitted Patient resource, enabling the requester to unambiguously identify which (patient + coverage) pair each Group member entry corresponds to."
+* ^context.type = #element
+* ^context.expression = "Group.member.entity"
+* value[x] 0..1
+* value[x] only Reference(Coverage)
+
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #fm
+
+
+// ---------------------------------------
 // Provider Access API ATRGroup Attribution Extensions
 Extension: MembersOptedOut
 Id: base-ext-members-opted-out

@@ -10,6 +10,9 @@ Usage: #example
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Default Generated text for resource.</div>"
 * contained[0] = input-1
 * contained[+] = input-2
+// Optional: include submitted Coverage to disambiguate when same patient
+// appears in multiple MemberBundles with different coverages (FHIR-55927)
+* contained[+] = input-coverage-1
 * id = "07e72a15407547bf9d03f522aa536a72.1"
 * type = http://hl7.org/fhir/group-type#person "Person"
 * actual = true
@@ -33,6 +36,9 @@ Usage: #example
   * entity
     * reference = "Patient/1001"
     * extension[matchedMember].valueReference.reference = "#1"
+    // Optional matchedCoverage extension: identifies which submitted Coverage
+    // this entry corresponds to (used when same patient submitted with multiple coverages)
+    * extension[matchedCoverage].valueReference.reference = "#coverage-1"
 * member[+]
   * entity
     * reference = "Patient/2002"
@@ -93,3 +99,22 @@ Usage: #example
   * entity
     * reference = "#4"
     * extension[nonMatchedMember].valueReference.reference = "#4"
+
+// ------------------------------------------------------------------
+// Inline Coverage instance for matchedCoverage extension example
+// Represents the Coverage submitted by the requesting payer for
+// Patient/1001 in MemberBundle #1 (Employer Plan 123)
+// ------------------------------------------------------------------
+Instance: input-coverage-1
+InstanceOf: Coverage
+Usage: #inline
+* id = "coverage-1"
+* status = #active
+* subscriberId = "EMP-123456"
+* beneficiary.reference = "Patient/1001"
+* payor[0].identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* payor[0].identifier.value = "0123456789"
+* payor[0].display = "Old Health Plan"
+* class[0].type = http://terminology.hl7.org/CodeSystem/coverage-class#plan
+* class[0].value = "EMP-PLAN-123"
+* class[0].name = "Employer Plan 123"

@@ -146,6 +146,8 @@ The async completion manifest provides the URLs of the ndjson output files. The 
 
 Each Group member entry in the $bulk-member-match response (matched, non-matched, and consent-constrained) includes a `matchedMember` or `nonMatchedMember` extension that references a contained Patient resource. §pdex-139b: This contained Patient resource **SHALL** be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource `id` supplied by the requester. § Responders **SHALL NOT** abridge, modify, or substitute the submitted Patient resource. §pdex-139c: The contained Patient **SHALL** retain the original `id` and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted. §
 
+When the same patient is submitted across multiple MemberBundles with different Coverage plans (e.g., an employer plan and a secondary plan), the patient may appear in both MatchedMembers and NonMatchedMembers Groups. §pdex-139d: In this case the responder **SHALL** also include the submitted `CoverageToMatch` resource as a contained Coverage in the Group and populate the `matchedCoverage` (or `nonMatchedCoverage`) extension on `member.entity` to reference it. § This allows the requester to distinguish which (patient + coverage) pair each Group member entry corresponds to, and avoids user confusion when results are reviewed.
+
 The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-BulkMemberMatch.html)
