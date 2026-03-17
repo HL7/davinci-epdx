@@ -15,8 +15,13 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * category ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* category contains disclosure 1..1 MS
+* category contains
+    disclosure 1..1 MS and
+    apiPurpose 1..1 MS
 * category[disclosure] = $v3-ActCode#IDSCL
+* category[apiPurpose] = PDexConsentApiPurposeCS#provider-access
+* category[apiPurpose] ^short = "Identifies this Consent as applying to the Provider Access API"
+* category[apiPurpose] ^comment = "Fixed to 'provider-access'. Enables systems to locate Provider Access API Consent records for a member using a standard category search (GET /Consent?patient=X&category=provider-access) without relying on actor cross-referencing or custom extension searches."
 * patient 1.. MS
 * patient only Reference(USCorePatientProfile|7.0.0)
 
