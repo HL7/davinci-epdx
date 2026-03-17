@@ -72,6 +72,13 @@ non-financial profiles:
 
 ### Performing Bulk Data Exchange
 
+The Payer-to-Payer bulk data exchange consists of two sequential asynchronous operations:
+
+1. **[$bulk-member-match](OperationDefinition-BulkMemberMatch.html)**: The requesting payer submits member demographics and consent for one or more members. This operation **SHALL** run asynchronously and upon completion returns Group resources categorizing members as matched, non-matched, or consent-constrained. The Group Id for matched members is used in the next step.
+2. **[$davinci-data-export]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html)**: Using the matched members Group Id, the requesting payer initiates a bulk data export. This also runs asynchronously and upon completion returns a manifest of NDJSON files containing the member health data.
+
+Both operations follow the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html): each kick-off request returns an HTTP 202 Accepted response with a `Content-Location` header pointing to a status endpoint that clients **SHALL** poll to retrieve the completed result.
+
 Payer-to-Payer Exchange is an **"opt-in"** choice for Members. The requesting 
 §pdex-128: (or New) health plan **SHALL** request permission (i.e., consent) from the Member §
 to retrieve the data from their prior plan. 
@@ -117,15 +124,14 @@ element for a member:
 
 An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
-§pdex-136: The PDex multi-member-match and the subsequent davinci-data-export operations **SHALL** be submitted using a HTTP POST. §
+§pdex-136: The PDex [$multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be submitted using a HTTP POST. §
 §pdex-137: The HTTP Header **SHALL** include: §
 
     Prefer: respond-async
 
-§pdex-138: The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be performed as an §
-Asynchronous operation. This **SHOULD** follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html)
-defined in FHIR R4. §pdex-139: Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) §
-of the Async Request Pattern.
+§pdex-138: The $multi-member-match operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4. § §pdex-139: Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) of the Async Request Pattern.
+
+§pdex-139a: The subsequent [$davinci-data-export operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** also be submitted using a HTTP POST and **SHALL** be performed as an asynchronous Bulk Data export, per the [FHIR Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/STU2/). §
 
 ### Bulk Member Match with Consent
 

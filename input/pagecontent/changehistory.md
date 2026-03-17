@@ -15,6 +15,7 @@
 | [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184)    | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API  |
 | [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    |
 Provider access details in the payer-payer section of the IG at 6.4.4 |
+| [FHIR-49943](https://jira.hl7.org/browse/FHIR-49943)    | Clarify async usage of $multi-member-match: add two-step async flow overview paragraph; split ambiguous combined §pdex-136/137 statement into separate conformance requirements for $multi-member-match (async with Prefer: respond-async) and $davinci-data-export (async bulk export); update BulkMemberMatch OperationDefinition description and replace sync inline out parameters with async manifest pattern |
 
 ### STU 2.1.0-ballot Reconciliation
 
