@@ -608,9 +608,9 @@ Usage: #inline
 * id = "1"
 * identifier
   * type = $V2IdentifierTypeCS#MB
-  * system = "http://example.org/old-payer/identifiers/member"
+  * system = "http://example.org/new-payer/identifiers/member"
   * value = "55678"
-  * assigner.display = "Old Payer"
+  * assigner.display = "New Payer"
 * name
   * use = #official
   * family = "Person"
@@ -627,9 +627,9 @@ Usage: #inline
 * id = "2"
 * identifier
   * type = $V2IdentifierTypeCS#MB
-  * system = "http://example.org/old-payer/identifiers/member"
+  * system = "http://example.org/new-payer/identifiers/member"
   * value = "45567"
-  * assigner.display = "Old Payer"
+  * assigner.display = "New Payer"
 * name
   * use = #official
   * family = "Smith"
@@ -646,9 +646,9 @@ Usage: #inline
 * id = "3"
 * identifier
   * type = $V2IdentifierTypeCS#MB
-  * system = "http://example.org/old-payer/identifiers/member"
+  * system = "http://example.org/new-payer/identifiers/member"
   * value = "45567"
-  * assigner.display = "Old Payer"
+  * assigner.display = "New Payer"
 * name
   * use = #official
   * family = "Jones"
@@ -665,9 +665,9 @@ Usage: #inline
 * id = "4"
 * identifier
   * type = $V2IdentifierTypeCS#MB
-  * system = "http://example.org/old-payer/identifiers/member"
+  * system = "http://example.org/new-payer/identifiers/member"
   * value = "45567"
-  * assigner.display = "Old Payer"
+  * assigner.display = "New Payer"
 * name
   * use = #official
   * family = "Noway"

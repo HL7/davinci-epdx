@@ -142,6 +142,10 @@ The Bulk Member Match Operation will use the following Parameters:
 
 The Response Profile provides a Group identifier that can be used by the requesting/new payer to retrieve data.
 
+#### Cross-Referencing Match Results with Submitted Members
+
+Each Group member entry in the $bulk-member-match response (matched, non-matched, and consent-constrained) includes a `matchedMember` or `nonMatchedMember` extension that references a contained Patient resource. §pdex-139b: This contained Patient resource **SHALL** be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource `id` supplied by the requester. § Responders **SHALL NOT** abridge, modify, or substitute the submitted Patient resource. §pdex-139c: The contained Patient **SHALL** retain the original `id` and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted. §
+
 The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-BulkMemberMatch.html)
