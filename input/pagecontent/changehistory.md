@@ -10,8 +10,9 @@
 | [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Remove requirements to record export operation details (lastTransmitted, lastResources, lastFilters) as extensions on Patient/Group resources; replace with SHOULD guidance to use internal audit trails; remove LastTransmission, LastTypes and LastFilters extensions |
 | [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Add search parameter and extension to enable easier retrieval of Provider Access Opt-Out |
 | [FHIR-53793](https://jira.hl7.org/browse/FHIR-53793)    | Create a listing of all Conformance Requirements in the Narrative of the IG  |
+| [FHIR-50227](https://jira.hl7.org/browse/FHIR-50227)    | Reconcile PDex single $member-match with HRex response profile: clarify that `MemberIdentifier` (business identifier/UMB) is required per HRex and `MemberId` (Patient FHIR ID) SHOULD also be returned; fix terminology distinguishing business identifiers from Patient FHIR IDs; clarify authorization flow for both cases |
 | [FHIR-50184x](https://jira.hl7.org/browse/FHIR-50184)    | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API  |
-| [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    | 
+| [FHIR-50183x](https://jira.hl7.org/browse/FHIR-50183)    |
 Provider access details in the payer-payer section of the IG at 6.4.4 |
 
 ### STU 2.1.0-ballot Reconciliation
