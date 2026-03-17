@@ -120,6 +120,13 @@ This combination of requests should cover all provider data requests, such as:
 
     Prefer: respond-async
 
+§pdex-304a: The $davinci-data-export operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4. § The async interaction pattern is:
+
+1. **Kick-off request**: Provider submits HTTP POST to `Group/[id]/$davinci-data-export` with `Prefer: respond-async`. The server returns **HTTP 202 Accepted** with a `Content-Location` header pointing to a status endpoint. No data is returned in the kick-off response body.
+2. **Poll status endpoint**: Provider polls the `Content-Location` URL. The server returns HTTP 202 while processing is in progress. §pdex-304b: Implementers **SHALL** follow the [Bulk Data Status Request](https://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-status-request) guidance for polling behavior. §
+3. **Retrieve output**: When processing is complete the status endpoint returns HTTP 200 with a JSON manifest body listing URLs of NDJSON output files. The provider retrieves each NDJSON file to obtain the member health data.
+
+The payer does not "push" data to the provider — the provider polls and retrieves. This is the standard [FHIR Bulk Data Access](http://hl7.org/fhir/uv/bulkdata/STU2/) pattern.
 
 ### Attribution List
 
