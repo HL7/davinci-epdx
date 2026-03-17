@@ -372,45 +372,11 @@ Description: "Indicates a resource instance verification status"
 
 // ---------------------------------------
 // // Provider Access API ATRGroup Attribution Extensions
-
-
-// date/time data exported for member
-Extension: LastTransmission
-Id: base-ext-last-transmission
-Title: "Member Last Transmission"
-Description: "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."
-* ^context.type = #element
-* ^context.expression = "Group.member"
-* value[x] 0..1
-* value[x] only dateTime
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-// type of data exported (taken from _type parameter in DavinciDataExport Operation
-Extension: LastTypes
-Id: base-ext-last-types
-Title: "Member Last Resource Types"
-Description: "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."
-* ^context.type = #element
-* ^context.expression = "Group.member"
-* value[x] 0..1
-* value[x] only string
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
-
-
-// type of data exported with filter (taken from _typeFilter parameter in DavinciDataExport Operation
-Extension: LastFilters
-Id: base-ext-last-typefilter
-Title: "Member Last Resource Filters"
-Description: "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."
-* ^context.type = #element
-* ^context.expression = "Group.member"
-* value[x] 0..1
-* value[x] only string
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* ^extension.valueCode = #fm
+// NOTE: LastTransmission, LastTypes and LastFilters extensions were removed in v2.2.0
+// per FHIR-55987. Recording export operation details as extensions on Patient/Group
+// resources is problematic: the same Patient/Group can be used by different export
+// operations from different clients, and a client with only read permission would
+// end up modifying resources. Implementers should use internal audit trails instead.
 
 
 

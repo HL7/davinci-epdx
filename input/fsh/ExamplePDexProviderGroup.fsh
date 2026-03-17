@@ -23,7 +23,4 @@ Usage: #example
 
 * member[0].id = "0"
 * member[=].entity.reference = "Patient/1001"
-* member[=].extension[lastTransmitted].valueDateTime = "2024-03-21T17:18:00.000Z"
-* member[=].extension[lastResources].valueString = "Patient,Condition,Observation,Procedure"
-* member[=].extension[lastFilters].valueString = "Condition?recordedDate=ge2023-09-23,Procedure?performed=ge2023-03-21"
 

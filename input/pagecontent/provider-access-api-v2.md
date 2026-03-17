@@ -279,10 +279,7 @@ retrieving data that will be stored as part of the patient record.
 §pdex-268: The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider §
 wants to download data for viewing.
 
-From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType
-parameter will require the Data Provider/Payer to track the latest download
-date/time for the Patients that the provider requests data for. §pdex-269: These values **SHALL** §
-be updated in an extension associated with the Patient for which a download was requested.
+From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType parameter indicates that the retrieved data will be stored as part of the patient record. Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client.
 
 ##### _since
 
@@ -305,10 +302,6 @@ enables providers to only retrieve the resource types they are interested in see
 §pdex-275: parameter is not used all available resources **SHALL** be returned by the Payer, subject to §
 the constraints applied by other input parameters.
 
-§pdex-276: When _type is used the export operation **SHALL** record the content of the _type parameter in the §
-[lastResources](StructureDefinition-base-ext-last-types.html) element for each Member for which data is retrieved. The
-§pdex-277: [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction §
-or the value of the _until parameter, if it is earlier.
 
 ##### _typeFilter
 
@@ -317,10 +310,6 @@ Provider. For example, to only retrieve Observations of a certain type. The _typ
 §pdex-279: used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource §
 being filtered.
 
-§pdex-280: When _typeFilter is used the export operation **SHALL** record the content of the _typeFilter §
-parameter in the [lastFilters](StructureDefinition-base-ext-last-typefilter.html) element for each Member for which data is retrieved. The
-§pdex-281: [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction §
-or the value of the _until parameter, if it is earlier.
 
 NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
 §pdex-282: supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL** §
