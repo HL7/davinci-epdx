@@ -42,6 +42,31 @@ Title: "PDex Consent Action Search Parameter"
 * multipleOr = true
 * multipleAnd = true
 
+// Search Parameter for Group characteristic.valueReference
+// Resolves FHIR-51845: the standard Group 'value' search parameter only covers
+// characteristic.valueCodeableConcept and characteristic.valueBoolean; there is
+// no base search parameter for characteristic.valueReference. This custom parameter
+// enables searching PDexMemberMatchGroup and PDexProviderGroup by the requesting
+// payer/provider Organization reference stored in characteristic.valueReference.
+Instance: pdex-group-characteristic-value-reference
+InstanceOf: SearchParameter
+Usage: #definition
+Title: "PDex Group Characteristic Value Reference Search Parameter"
+* url = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference"
+* version = "2.2.0"
+* name = "PDexGroupCharacteristicValueReference"
+* status = #active
+* experimental = true
+* description = "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference)."
+* code = #characteristic-value-reference
+* base = #Group
+* type = #reference
+* expression = "Group.characteristic.value.ofType(Reference)"
+* xpathUsage = #normal
+* multipleOr = false
+* multipleAnd = true
+* target[+] = #Organization
+
 // Search Parameter for Provider Access Use Case extension
 Instance: pdex-consent-provider-access
 InstanceOf: SearchParameter
