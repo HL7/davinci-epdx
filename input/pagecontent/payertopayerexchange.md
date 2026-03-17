@@ -12,7 +12,7 @@ The Exchange of all of a member's clinical data, as scoped by USCDI version 1 an
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.
 
-§pdex-176: Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
+§pdex-176: Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
 
 §pdex-177: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange
 §pdex-178: **MAY** be used to exchange data for a SINGLE member. §
