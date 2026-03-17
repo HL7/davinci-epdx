@@ -2,7 +2,7 @@ Profile: PDexProviderSharingConsent
 Parent: Consent
 Id: pdex-provider-consent
 Title: "PDex Provider Access Consent Profile"
-Description: "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data."
+Description: "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA."
 * ^experimental = true
 * ^extension[$standard-status].valueCode = #draft
 * ^extension[$fmm].valueInteger = 0
@@ -26,7 +26,8 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * patient only Reference(USCorePatientProfile|7.0.0)
 
 * performer 1..1 MS
-* performer only Reference(USCorePatientProfile)
+* performer only Reference(USCorePatientProfile | $USCoreRelatedPerson)
+* performer ^comment = "The individual who performed the opt-out. This SHALL be either the patient themselves (US Core Patient Profile) or the patient's legally recognized personal representative acting on their behalf (US Core RelatedPerson Profile), such as a parent, guardian, or healthcare proxy, consistent with CMS-0057-F and HIPAA."
 * organization 1..1 MS
 * organization only Reference(HRexOrganization)
 * policyRule = http://terminology.hl7.org/CodeSystem/consentpolicycodes#cric "Common Rule Informed Consent"
