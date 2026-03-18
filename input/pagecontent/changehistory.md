@@ -4,8 +4,9 @@
 {% include style_insert_table_blue.html %}
 
 ### STU 2.2.0 Update
-| JIRA Ticket | Change |
-|---|---|
+
+| JIRA Ticket | Change                                                |
+|-------------|-------------------------------------------------------|
 | [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | $provider-member-match OperationDefinition parameter names are inconsistent with the Parameters profile |
 | [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Remove requirements to record export operation details as extensions on Patient/Group resources |
 | [FHIR-55981](https://jira.hl7.org/browse/FHIR-55981) | Use R5 specifications for async operations |
@@ -31,6 +32,7 @@
 | [FHIR-50184](https://jira.hl7.org/browse/FHIR-50184) | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API |
 | [FHIR-50183](https://jira.hl7.org/browse/FHIR-50183) | Provider access details in the payer-payer section of the IG at 6.4.4 |
 | [FHIR-49943](https://jira.hl7.org/browse/FHIR-49943) | Clarify async usage of $multi-member-match |
+
 
 ### STU 2.1.0-ballot Reconciliation
 
