@@ -77,12 +77,27 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 // ─── Output ──────────────────────────────────────────────────────────────────
 // This operation is async. The immediate kick-off response is HTTP 202 Accepted
 // with a Content-Location header; there is no synchronous Parameters response body.
-// Clients SHALL poll the Content-Location URL (Bulk Data status endpoint) until
-// the operation completes. The completed response delivers Group resources whose
-// content conforms to the outputProfile (pdex-parameters-multi-member-match-bundle-out):
-//   - MatchedMembers      (PDexMemberMatchGroup)
-//   - NonMatchedMembers   (PDexMemberNoMatchGroup)
-//   - ConsentConstrainedMembers (PDexMemberNoMatchGroup)
-// No inline out parameters are declared because output is delivered via the async
-// completion manifest (ndjson), not in a synchronous response body — consistent
-// with how $davinci-data-export handles its output. See outputProfile above.
+// Clients SHALL poll the Content-Location URL until the operation completes.
+// The completed response delivers Group resources via the async manifest (ndjson).
+// Out parameters are declared here to satisfy the outputProfile consistency check.
+
+* parameter[+].name = #MatchedMembers
+* parameter[=].use = #out
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members successfully matched. Delivered asynchronously via the bulk data completion manifest."
+
+* parameter[+].name = #NonMatchedMembers
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members that could not be matched. Delivered asynchronously via the bulk data completion manifest."
+
+* parameter[+].name = #ConsentConstrainedMembers
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members matched but excluded due to consent constraints. Delivered asynchronously via the bulk data completion manifest."
