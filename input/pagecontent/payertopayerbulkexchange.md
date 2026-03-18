@@ -79,6 +79,10 @@ The Payer-to-Payer bulk data exchange consists of two sequential asynchronous op
 
 Both operations follow the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html): each kick-off request returns an HTTP 202 Accepted response with a `Content-Location` header pointing to a status endpoint that clients **SHALL** poll to retrieve the completed result.
 
+<div class="stu-note">
+The R4 asynchronous request pattern was designed for bulk data export and delivers results as a JSON manifest pointing to NDJSON files. For an operation like $bulk-member-match that returns a bounded set of Group resources, this requires wrapping those resources in NDJSON files — an artificial fit. FHIR R5 introduced an <a href="https://hl7.org/fhir/R5/async-bundle.html">async-bundle pattern</a> that is a more natural match: upon completion the server returns a FHIR Bundle directly rather than a custom manifest. This IG targets FHIR R4 and adopts the R4 async pattern accordingly. When PDex moves to support FHIR R6, the async interaction pattern for $bulk-member-match will be reconsidered in light of the R6 async specification.
+</div>
+
 Payer-to-Payer Exchange is an **"opt-in"** choice for Members. The requesting 
 §pdex-128: (or New) health plan **SHALL** request permission (i.e., consent) from the Member §
 to retrieve the data from their prior plan. 
