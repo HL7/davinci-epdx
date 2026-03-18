@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="pdex-group-characteristic-value-reference"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: SearchParameter pdex-group-characteristic-value-reference</b></p><a name="pdex-group-characteristic-value-reference"> </a><a name="hcpdex-group-characteristic-value-reference"> </a><h2>PDexGroupCharacteristicValueReference</h2><p>Parameter <code>characteristic-value-reference</code>:<code>reference</code></p><div><p>Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference).</p>
+</div><table class="grid"><tr><td>Resource</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a></td></tr><tr><td>Expression</td><td><code>Group.characteristic.value.ofType(Reference)</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Target Resources</td><td><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: The parameter may only have one value (no comma separators)</li></ul></td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference"/>
+  <version value="2.2.0"/>
+  <name value="PDexGroupCharacteristicValueReference"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-03-17T22:49:33-04:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <code value="characteristic-value-reference"/>
+  <base value="Group"/>
+  <type value="reference"/>
+  <expression value="Group.characteristic.value.ofType(Reference)"/>
+  <xpathUsage value="normal"/>
+  <target value="Organization"/>
+  <multipleOr value="false"/>
+  <multipleAnd value="true"/>
+</SearchParameter>

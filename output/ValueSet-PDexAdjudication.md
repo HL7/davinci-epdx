@@ -1,4 +1,4 @@
-# PDex Adjudication - Da Vinci Payer Data Exchange v2.1.1
+# PDex Adjudication - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PDexAdjudication |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PDexAdjudication |
 | **Copyright/Legal**: This Valueset is not copyrighted. | |
 
  
@@ -18,6 +18,7 @@ Describes the various amount fields used when payers receive and adjudicate a cl
  **References** 
 
 * Included into [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md)
+* [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
 * [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
 
 ### Logical Definition (CLD)
@@ -47,142 +48,122 @@ Describes the various amount fields used when payers receive and adjudicate a cl
 {
   "resourceType" : "ValueSet",
   "id" : "PDexAdjudication",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "PDexAdjudication",
   "title" : "PDex Adjudication",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Describes the various amount fields used when payers receive and adjudicate a claim.  It includes the values\ndefined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those defined in the C4BB Adjudication CodeSystem.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "This Valueset is not copyrighted.",
   "compose" : {
-    "include" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/adjudication",
-        "concept" : [
-          {
-            "code" : "submitted"
-          },
-          {
-            "code" : "copay"
-          },
-          {
-            "code" : "eligible"
-          },
-          {
-            "code" : "deductible"
-          },
-          {
-            "code" : "benefit"
-          }
-        ]
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/adjudication",
+      "version" : "1.0.1",
+      "concept" : [{
+        "code" : "submitted"
       },
       {
-        "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
-        "concept" : [
-          {
-            "code" : "coinsurance",
-            "display" : "Coinsurance"
-          },
-          {
-            "code" : "noncovered",
-            "display" : "Noncovered"
-          },
-          {
-            "code" : "priorpayerpaid",
-            "display" : "Prior payer paid"
-          },
-          {
-            "code" : "paidbypatient",
-            "display" : "Paid by patient"
-          },
-          {
-            "code" : "paidtopatient",
-            "display" : "Paid to patient"
-          },
-          {
-            "code" : "paidtoprovider",
-            "display" : "Paid to provider"
-          },
-          {
-            "code" : "memberliability",
-            "display" : "Member liability"
-          },
-          {
-            "code" : "discount",
-            "display" : "Discount"
-          },
-          {
-            "code" : "drugcost",
-            "display" : "Drug cost"
-          }
-        ]
-      }
-    ]
+        "code" : "copay"
+      },
+      {
+        "code" : "eligible"
+      },
+      {
+        "code" : "deductible"
+      },
+      {
+        "code" : "benefit"
+      }]
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
+      "version" : "2.1.0",
+      "concept" : [{
+        "code" : "coinsurance",
+        "display" : "Coinsurance"
+      },
+      {
+        "code" : "noncovered",
+        "display" : "Noncovered"
+      },
+      {
+        "code" : "priorpayerpaid",
+        "display" : "Prior payer paid"
+      },
+      {
+        "code" : "paidbypatient",
+        "display" : "Paid by patient"
+      },
+      {
+        "code" : "paidtopatient",
+        "display" : "Paid to patient"
+      },
+      {
+        "code" : "paidtoprovider",
+        "display" : "Paid to provider"
+      },
+      {
+        "code" : "memberliability",
+        "display" : "Member liability"
+      },
+      {
+        "code" : "discount",
+        "display" : "Discount"
+      },
+      {
+        "code" : "drugcost",
+        "display" : "Drug cost"
+      }]
+    }]
   }
 }
 

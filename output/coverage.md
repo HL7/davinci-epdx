@@ -1,4 +1,4 @@
-# Coverage - Da Vinci Payer Data Exchange v2.1.1
+# Coverage - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -53,7 +53,7 @@ SubscriberId may not uniquely identify a health plan member. If beneficiary is s
 
 It may, for example, identify the parent who obtains coverage for a child. Therefore, the Coverage resource may provide a combination of identifiers and point to demographic information to uniquely identify a patient/member.
 
-Coverage.identifier **MAY** include a member identifier in the Coverage resource.
+§pdex-68: Coverage.identifier **MAY** include a member identifier in the Coverage resource. §
 
 #### Example Coverage Resource
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="treatment-attestation-form-002"/>
+  <meta>
+    <lastUpdated value="2024-12-16T10:00:00Z"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Signed Treatment Relationship Attestation Form for Sarah Williams</p></div>
+  </text>
+  <status value="current"/>
+  <docStatus value="final"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="64292-6"/>
+      <display value="Release of information consent Document"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="64292-6"/>
+      <display value="Release of information consent Document"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/patient-prov-002"/>
+    <display value="Sarah Elizabeth Williams"/>
+  </subject>
+  <date value="2024-12-16T09:45:00Z"/>
+  <author>
+    <reference value="Practitioner/provider-002"/>
+    <display value="Dr. Mary Jones"/>
+  </author>
+  <custodian>
+    <reference value="Organization/provider-org-002"/>
+    <display value="Second Example Provider Organization"/>
+  </custodian>
+  <description value="Signed attestation form documenting active treatment relationship between Dr. Jones and patient Sarah Williams"/>
+  <content>
+    <attachment>
+      <contentType value="application/pdf"/>
+      <language value="en-US"/>
+      <title value="Treatment Relationship Attestation Form"/>
+      <creation value="2024-12-16T09:45:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <period>
+      <start value="2024-02-15"/>
+    </period>
+  </context>
+</DocumentReference>

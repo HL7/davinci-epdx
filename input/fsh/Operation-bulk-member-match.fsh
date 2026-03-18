@@ -3,10 +3,10 @@ InstanceOf: OperationDefinition
 Usage: #definition
 // Id: bulk-member-match
 Title: "PDex Bulk Member Match Operation"
-Description: "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format."
+Description: "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.\n\nInput parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile."
 * experimental = true
 * url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"
-* version = "2.1.0"
+* version = "2.2.0"
 * name = "BulkMemberMatch"
 * status = #active
 * kind     = #operation
@@ -74,98 +74,30 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 
 
 
+// ─── Output ──────────────────────────────────────────────────────────────────
+// This operation is async. The immediate kick-off response is HTTP 202 Accepted
+// with a Content-Location header; there is no synchronous Parameters response body.
+// Clients SHALL poll the Content-Location URL until the operation completes.
+// The completed response delivers Group resources via the async manifest (ndjson).
+// Out parameters are declared here to satisfy the outputProfile consistency check.
+
 * parameter[+].name = #MatchedMembers
 * parameter[=].use = #out
-* parameter[=].type = #Group
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "Group resource containing matched members, conforming to PDexMemberMatchGroup profile"
-
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members successfully matched. Delivered asynchronously via the bulk data completion manifest."
 
 * parameter[+].name = #NonMatchedMembers
 * parameter[=].use = #out
-* parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Group resource containing non-matched members, conforming to PDexMemberNoMatchGroup profile"
-
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members that could not be matched. Delivered asynchronously via the bulk data completion manifest."
 
 * parameter[+].name = #ConsentConstrainedMembers
 * parameter[=].use = #out
-* parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "Group resource containing consent-constrained members, conforming to PDexMemberNoMatchGroup profile"
-
-
-// // ─── Add “in” parameter for MemberBundle ─────────────────────────────────────
-// * parameter[0].name = "MemberBundle"
-// * parameter[0].use = #in
-// * parameter[0].min = 1
-// * parameter[0].max = "1"
-// * parameter[0].type = "Bundle"
-// // * parameter[0].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-// * parameter[0].documentation = "Bundle containing multiple Members to be matched."
-//
-// // ─── Add “out” parameter for MatchedMembers ─────────────────────────────────
-// * parameter[1].name = "MatchedMembers"
-// * parameter[1].use = #out
-// * parameter[1].min = 0
-// * parameter[1].max = "*"
-// * parameter[1].type = "Bundle"
-// // * parameter[1].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#MatchedMembers"
-// * parameter[1].documentation = "Bundle of members successfully matched."
-//
-// // ─── Add “out” parameter for NonMatchedMembers ──────────────────────────────
-// * parameter[2].name = "NonMatchedMembers"
-// * parameter[2].use = #out
-// * parameter[2].min = 0
-// * parameter[2].max = "*"
-// * parameter[2].type = "Bundle"
-// // * parameter[2].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#NonMatchedMembers"
-// * parameter[2].documentation = "Bundle of members that could not be matched."
-//
-// // ─── Add “out” parameter for ConsentConstrainedMembers ───────────────────────
-// * parameter[3].name = "ConsentConstrainedMembers"
-// * parameter[3].use = #out
-// * parameter[3].min = 0
-// * parameter[3].max = "*"
-// * parameter[3].type = "Bundle"
-// // * parameter[3].profile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-out#ConsentConstrainedMembers"
-// * parameter[3].documentation = "Bundle of members excluded due to consent constraints."
-
-// // **Step 1: slice parameter by name**
-// * parameter ^slicing.discriminator[0].type = #value
-// * parameter ^slicing.discriminator[0].path = "name"
-// * parameter ^slicing.rules = #open
-//
-// // **Step 2: declare your slices**
-// * parameter contains
-//     MemberBundle 1..* and
-//     MatchedMembers 0..1 and
-//     NonMatchedMembers 0..1 and
-//     ConsentConstrainedMembers 0..1
-//
-// // **Step 3: now you can assign each slice’s properties**
-// * parameter[MemberBundle].name             = #MemberBundle
-// * parameter[MemberBundle].use              = #in
-// * parameter[MemberBundle].min              = 1
-// * parameter[MemberBundle].max              = "*"
-// * parameter[MemberBundle].type             = #Parameters
-// * parameter[MemberBundle].targetProfile    = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
-// * parameter[MemberBundle].documentation    = "Input bundle of member info"
-//
-// * parameter[MatchedMembers].name           = #MatchedMembers
-// * parameter[MatchedMembers].use            = #out
-// * parameter[MatchedMembers].type           = #Reference
-// * parameter[MatchedMembers].targetProfile  = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PDexMemberMatchGroup"
-//
-// * parameter[NonMatchedMembers].name        = #NonMatchedMembers
-// * parameter[NonMatchedMembers].use         = #out
-// * parameter[NonMatchedMembers].type        = #Reference
-// * parameter[NonMatchedMembers].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PDexMemberNoMatchGroup"
-//
-// * parameter[ConsentConstrainedMembers].name        = #ConsentConstrainedMembers
-// * parameter[ConsentConstrainedMembers].use         = #out
-// * parameter[ConsentConstrainedMembers].type        = #Reference
-// * parameter[ConsentConstrainedMembers].targetProfile = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PDexMemberNoMatchGroup"
+* parameter[=].type = #Group
+* parameter[=].documentation = "Group of members matched but excluded due to consent constraints. Delivered asynchronously via the bulk data completion manifest."

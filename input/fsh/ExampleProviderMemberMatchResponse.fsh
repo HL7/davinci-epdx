@@ -8,6 +8,7 @@ Title: "Provider-Member-Match Response Example"
 Description: "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out."
 Usage: #example
 * id = "provider-member-match-response-001"
+* meta.profile[0] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"
 
 // ------------------
 // Matched Members - Members with confirmed treatment relationships
@@ -94,8 +95,12 @@ Usage: #example
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
-  // Note: This group would be empty if all members matched successfully
-  * quantity = 0
+  // Member whose submitted demographics could not be matched in the payer system
+  * member[0].entity.reference = "Patient/patient-prov-002"
+  * member[0].entity.display = "Jane Smith (submitted demographics - no match found)"
+  * member[0].inactive = false
+
+  * quantity = 1
 
 
 // ------------------
@@ -130,4 +135,9 @@ Usage: #example
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
-  * quantity = 0
+  // Member who was matched but has opted out of Provider Access API data sharing
+  * member[0].entity.reference = "Patient/payer-member-002"
+  * member[0].entity.display = "Sarah Elizabeth Williams (matched but opted out of Provider Access)"
+  * member[0].inactive = false
+
+  * quantity = 1

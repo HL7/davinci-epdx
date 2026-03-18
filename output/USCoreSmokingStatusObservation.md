@@ -1,4 +1,4 @@
-# US Core Smoking Status Observation - Da Vinci Payer Data Exchange v2.1.1
+# US Core Smoking Status Observation - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -35,7 +35,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 ### Example Smoking Status Observation
 
-[US Core Smoking Status Observation example](http://hl7.org/fhir/us/core/3.1.1/Observation-some-day-smoker.html):
+[US Core Smoking Status Observation example](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-smokingstatus.html):
 
 ```
 

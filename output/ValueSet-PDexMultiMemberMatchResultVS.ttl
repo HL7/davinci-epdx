@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "PDexMultiMemberMatchResultVS"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PDexMultiMemberMatchResultVS</b></p><a name=\"PDexMultiMemberMatchResultVS\"> </a><a name=\"hcPDexMultiMemberMatchResultVS\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-PdexMultiMemberMatchResultCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.1.1</span></li><li>Include all codes defined in <a href=\"CodeSystem-PdexMemberAttributionCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.1.1</span></li></ul></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PDexMultiMemberMatchResultVS</b></p><a name=\"PDexMultiMemberMatchResultVS\"> </a><a name=\"hcPDexMultiMemberMatchResultVS\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-PdexMultiMemberMatchResultCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.2.0</span></li><li>Include all codes defined in <a href=\"CodeSystem-PdexMemberAttributionCS.html\"><code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2.2.0</span></li></ul></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:extension ( [
      fhir:url [
@@ -24,12 +24,32 @@
      ]
   ] [
      fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 2 ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
        fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
      ] ;
      fhir:value [
        a fhir:Code ;
-       fhir:v "informative" ;
+       fhir:v "trial-use" ;
        fhir:extension ( [
          fhir:url [
            fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
@@ -47,12 +67,12 @@
      fhir:v "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS"^^xsd:anyURI ;
      fhir:l <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS>
   ] ; # 
-  fhir:version [ fhir:v "2.1.1"] ; # 
+  fhir:version [ fhir:v "2.2.0"] ; # 
   fhir:name [ fhir:v "PDexMultiMemberMatchResultVS"] ; # 
   fhir:title [ fhir:v "PDex Multi-Member Match Result Value Set"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:experimental [ fhir:v true] ; # 
-  fhir:date [ fhir:v "2025-12-17T14:48:28-05:00"^^xsd:dateTime] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-17T22:49:33-04:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7 International / Financial Management" ] ;

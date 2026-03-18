@@ -1,4 +1,4 @@
-# PDexCoverageExample - Da Vinci Payer Data Exchange v2.1.1
+# PDexCoverageExample - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -33,42 +33,32 @@ Profile: [HRex Member Match Coverage Profile](http://hl7.org/fhir/us/davinci-hre
   "resourceType" : "Coverage",
   "id" : "Coverage1",
   "meta" : {
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"]
   },
-  "identifier" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "MB"
-          }
-        ]
-      },
-      "system" : "http://example.org/old-payer/identifiers/coverage",
-      "value" : "234567"
-    }
-  ],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MB"
+      }]
+    },
+    "system" : "http://example.org/old-payer/identifiers/coverage",
+    "value" : "234567"
+  }],
   "status" : "active",
   "subscriberId" : "93542106",
   "beneficiary" : {
     "reference" : "Patient/1"
   },
   "relationship" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-        "code" : "self"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+      "code" : "self"
+    }]
   },
-  "payor" : [
-    {
-      "reference" : "Organization/Payer1"
-    }
-  ]
+  "payor" : [{
+    "reference" : "Organization/Payer1"
+  }]
 }
 
 ```

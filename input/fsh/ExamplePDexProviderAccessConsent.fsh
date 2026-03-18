@@ -8,6 +8,7 @@ Usage: #example
 * status = #active
 * scope = $consentscope#patient-privacy
 * category[disclosure] = $v3-ActCode#IDSCL
+* category[apiPurpose] = PDexConsentApiPurposeCS#provider-access
 * patient.reference = "Patient/1"
 * performer.reference = "Patient/1"
 * organization = Reference(Payer1-1)
@@ -37,6 +38,7 @@ Usage: #example
 * status = #active
 * scope = $consentscope#patient-privacy
 * category[disclosure] = $v3-ActCode#IDSCL
+* category[apiPurpose] = PDexConsentApiPurposeCS#provider-access
 * patient.reference = "Patient/1"
 * performer.reference = "Patient/1"
 * organization = Reference(Payer1-1)

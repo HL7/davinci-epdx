@@ -72,6 +72,17 @@ non-financial profiles:
 
 ### Performing Bulk Data Exchange
 
+The Payer-to-Payer bulk data exchange consists of two sequential asynchronous operations:
+
+1. **[$bulk-member-match](OperationDefinition-BulkMemberMatch.html)**: The requesting payer submits member demographics and consent for one or more members. This operation **SHALL** run asynchronously and upon completion returns Group resources categorizing members as matched, non-matched, or consent-constrained. The Group Id for matched members is used in the next step.
+2. **[$davinci-data-export]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html)**: Using the matched members Group Id, the requesting payer initiates a bulk data export. This also runs asynchronously and upon completion returns a manifest of NDJSON files containing the member health data.
+
+Both operations follow the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html): each kick-off request returns an HTTP 202 Accepted response with a `Content-Location` header pointing to a status endpoint that clients **SHALL** poll to retrieve the completed result.
+
+<div class="stu-note">
+The R4 asynchronous request pattern was designed for bulk data export and delivers results as a JSON manifest pointing to NDJSON files. For an operation like $bulk-member-match that returns a bounded set of Group resources, this requires wrapping those resources in NDJSON files — an artificial fit. FHIR R5 introduced an <a href="https://hl7.org/fhir/R5/async-bundle.html">async-bundle pattern</a> that is a more natural match: upon completion the server returns a FHIR Bundle directly rather than a custom manifest. This IG targets FHIR R4 and adopts the R4 async pattern accordingly. When PDex moves to support FHIR R6, the async interaction pattern for $bulk-member-match will be reconsidered in light of the R6 async specification.
+</div>
+
 Payer-to-Payer Exchange is an **"opt-in"** choice for Members. The requesting 
 §pdex-128: (or New) health plan **SHALL** request permission (i.e., consent) from the Member §
 to retrieve the data from their prior plan. 
@@ -117,30 +128,35 @@ element for a member:
 
 An example request bundle can be found here: [PDex $multi-member-match request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
 
-§pdex-136: The PDex multi-member-match and the subsequent davinci-data-export operations **SHALL** be submitted using a HTTP POST. §
+§pdex-136: The PDex [$multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be submitted using a HTTP POST. §
 §pdex-137: The HTTP Header **SHALL** include: §
 
     Prefer: respond-async
 
-§pdex-138: The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be performed as an §
-Asynchronous operation. This **SHOULD** follow the methods identified in the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html)
-defined in FHIR R4. §pdex-139: Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) §
-of the Async Request Pattern.
+§pdex-138: The $multi-member-match operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4. § §pdex-139: Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) of the Async Request Pattern.
+
+§pdex-139a: The subsequent [$davinci-data-export operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** also be submitted using a HTTP POST and **SHALL** be performed as an asynchronous Bulk Data export, per the [FHIR Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/STU2/). §
 
 ### Bulk Member Match with Consent
 
 The Bulk Member Match Operation will use the following Parameters:
 
 - In: [PDexMultiMemberMatchRequestParameterBundle](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html)
-- Out: [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html)
+- Out: delivered asynchronously — upon completion the server writes [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html)-conformant Group resources to ndjson files referenced by the async completion manifest
 
-The Response Profile provides a Group identifier that can be used by the requesting/new payer to retrieve data.
+The async completion manifest provides the URLs of the ndjson output files. The Group resource for matched members provides the Group identifier that can be used by the requesting/new payer in the subsequent $davinci-data-export step.
+
+#### Cross-Referencing Match Results with Submitted Members
+
+Each Group member entry in the $bulk-member-match response (matched, non-matched, and consent-constrained) includes a `matchedMember` or `nonMatchedMember` extension that references a contained Patient resource. §pdex-139b: This contained Patient resource **SHALL** be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource `id` supplied by the requester. § Responders **SHALL NOT** abridge, modify, or substitute the submitted Patient resource. §pdex-139c: The contained Patient **SHALL** retain the original `id` and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted. §
+
+When the same patient is submitted across multiple MemberBundles with different Coverage plans (e.g., an employer plan and a secondary plan), the patient may appear in both MatchedMembers and NonMatchedMembers Groups. §pdex-139d: In this case the responder **SHALL** also include the submitted `CoverageToMatch` resource as a contained Coverage in the Group and populate the `matchedCoverage` (or `nonMatchedCoverage`) extension on `member.entity` to reference it. § This allows the requester to distinguish which (patient + coverage) pair each Group member entry corresponds to, and avoids user confusion when results are reviewed.
 
 The Operation Definition for Bulk Member Match is:
 
 [PDex Bulk Member Match](OperationDefinition-BulkMemberMatch.html)
 
-The Bulk Member Match Operation follows the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/) and returns a manifest with references to matched member data. The requesting payer uses this manifest to retrieve the Member-Match Response through the bulk data export mechanism.
+The $bulk-member-match operation follows the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off HTTP POST returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. When processing is complete, the status endpoint returns a manifest of ndjson file URLs — each ndjson file contains serialized Group resources ([MatchedMembers](StructureDefinition-pdex-member-match-group.html), [NonMatchedMembers](StructureDefinition-pdex-member-no-match-group.html), and/or ConsentConstrainedMembers) conforming to the [PDex Multi-Member Match Response profile](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html). The OperationDefinition does not declare inline out parameters for these Groups because the output is delivered via the async manifest, not in a synchronous HTTP response body — consistent with how $davinci-data-export handles its output.
 
 §pdex-140: The Bulk Member Match Operation **SHALL** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. § §pdex-141: The following decision tree illustrates how the Consent determination **SHALL** be made. §
 
@@ -150,9 +166,9 @@ has not contacted their previous payer to override sharing consent.
 The consent decision logic is the same for Single Member Match and Bulk Member Match. 
 It is the result of the decision that differs. For Single Member Match Operation, 
 either the Patient information is returned, or an Operation Outcome is generated. 
-In Bulk Member Match a member is assigned to a Matched, Non-Matched or Consent 
-Constrained Group and processing continues until every member has been evaluated 
-and the resulting Groups are returned in the Operation response.
+In Bulk Member Match a member is assigned to a Matched, Non-Matched or Consent
+Constrained Group and processing continues until every member has been evaluated.
+The resulting Group resources are serialized to ndjson and delivered via the async completion manifest — they are not returned in a synchronous HTTP response body.
 
 The consent decision flow for the bulk member match is shown in the following diagram:
 

@@ -1,4 +1,4 @@
-# PDex MedicationDispense - Da Vinci Payer Data Exchange v2.1.1
+# PDex MedicationDispense - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Medication](USCoreMedication.md)
 
-The [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.md) **SHALL** be used to record a member's prescription drug claims when sharing data using the [US Core 3.1.1 Implementation Guide](http://hl7.org/fhir/us/core/3.1.1). When using the [US Core 6.1.0 Implementation Guide](http://hl7.org/fhir/us/core/STU6.1) to exchange data the [US Core MedicationDispense profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medicationdispense.html) should be used.
+§pdex-01: The [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.md) **SHALL** be used to record a member's prescription drug claims when sharing data using § the [US Core 3.1.1 Implementation Guide](http://hl7.org/fhir/us/core/3.1.1). When using the [US Core 6.1.0 Implementation Guide](http://hl7.org/fhir/us/core/STU6.1) to exchange data the [US Core MedicationDispense profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medicationdispense.html) **SHOULD** be used.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [Da Vinci PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.md) profile are:
 

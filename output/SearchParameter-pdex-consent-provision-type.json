@@ -1,0 +1,69 @@
+{
+  "resourceType" : "SearchParameter",
+  "id" : "pdex-consent-provision-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter pdex-consent-provision-type</b></p><a name=\"pdex-consent-provision-type\"> </a><a name=\"hcpdex-consent-provision-type\"> </a><h2>PDexConsentProvisionType</h2><p>Parameter <code>provision-type</code>:<code>token</code></p><div><p>Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing.</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/consent.html\">Consent</a></td></tr><tr><td>Expression</td><td><code>Consent.provision.type</code></td></tr><tr><td>Processing Mode</td><td>Normal</td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may repeat in order to specify multiple values that must all be true</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provision-type",
+  "version" : "2.2.0",
+  "name" : "PDexConsentProvisionType",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2026-03-17T22:49:33-04:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "code" : "provision-type",
+  "base" : ["Consent"],
+  "type" : "token",
+  "expression" : "Consent.provision.type",
+  "xpathUsage" : "normal",
+  "multipleOr" : true,
+  "multipleAnd" : true
+}

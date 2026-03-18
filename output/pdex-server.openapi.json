@@ -7,7 +7,7 @@
       "name": "Creative Commons Zero v1.0 Universal",
       "url": "http://spdx.org/licenses/CC0-1.0.html"
     },
-    "version": "2.1.1",
+    "version": "2.2.0",
     "contact": {
       "name": "HL7 International / Financial Management",
       "email": "fm@lists.HL7.org",
@@ -9308,6 +9308,278 @@
             }
           }
         ]
+      }
+    },
+    "/DocumentReference/$docref": {
+      "summary": "Operation $docref on type DocumentReference",
+      "description": "Operation $docref on type DocumentReference",
+      "get": {
+        "summary": "$docref on type DocumentReference",
+        "description": "This operation is used to return all the references to documents related to a\npatient. It is invoked on a FHIR Server\u0027s DocumentReference endpoint (e.g., `[base]/DocumentReference/$docref`) and operates across all DocumentReference instances.\n\nThe operation requires a patient id and takes the optional input parameters:\n- start date\n- end date\n- document type\n- on-demand\n- profile\n\nand returns a *searchset* [Bundle](http://hl7.org/fhir/bundle.html) containing [DocumentReference](http://hl7.org/fhir/documentreference.html) resources for the patient. If the server has stored documents or can create documents for the patient and those documents are available for the user, the server returns the DocumentReference resources associated with documents. This operation\u0027s intended use is to provide a way for providers or patients to access their available documents. The document itself can be subsequently retrieved using the link provided  in the `DocumentReference.content.attachment.url element`. The link could be a FHIR endpoint to a [Binary](http://hl7.org/fhir/R4/binary.html) Resource or some other document repository.\n\nThis operation is *different* from a FHIR RESTful query on DocumentReference by patient and type and date range because: \n\n1. It is used to request a server to *generate* a document based on the specified parameters.\n\n1. If no parameters are specified, the server SHALL return a DocumentReference to the patient\u0027s current C-CDA CCD.\n\n1. If the server cannot *generate* a document based on the specified parameters, the operation will return an empty search bundle.\n\nUnless the client indicates they are only interested in \u0027on-demand\u0027 documents using the *on-demand* parameter, the server SHOULD return DocumentReference instances for *existing* documents that meet the request parameters  In this regard, this operation is *similar* to a FHIR RESTful query.",
+        "operationId": "op-docref-DocumentReference",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Group/$bulk-member-match": {
+      "summary": "Operation $bulk-member-match on type Group",
+      "description": "Operation $bulk-member-match on type Group",
+      "get": {
+        "summary": "$bulk-member-match on type Group",
+        "description": "Bulk Member Match Operation enables Payers to match multiple members against another Payer\u0027s records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.\n\nInput parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile.",
+        "operationId": "op-bulk-member-match-Group",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Group/{rid}/$davinci-data-export": {
+      "summary": "Operation $davinci-data-export on instance of Group",
+      "description": "Operation $davinci-data-export on an instance of Group",
+      "get": {
+        "summary": "$davinci-data-export on Group instance",
+        "description": "Exports data about members of the Group",
+        "operationId": "op-davinci-data-export-Group-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient/$member-match": {
+      "summary": "Operation $member-match on type Patient",
+      "description": "Operation $member-match on type Patient",
+      "post": {
+        "summary": "$member-match on type Patient",
+        "description": "The **$member-match** operation that can be invoked by either a payer or an EHR or other system, allows one health plan to retrieve a unique identifier for a member from another health plan using a member\u0027s demographic and coverage information.  This identifier can then be used to perform subsequent queries and operations. Members implementing a deterministic match will require a match on member id or subscriber id at a minimum (i.e. A pure demographic match will not be supported by such implementations.).",
+        "operationId": "op-member-match-Patient",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ValueSet/$expand": {
+      "summary": "Operation $expand on type ValueSet",
+      "description": "Operation $expand on type ValueSet",
+      "get": {
+        "summary": "$expand on type ValueSet",
+        "description": "The definition of a value set is used to create a simple collection of codes suitable for use for data entry or validation. \n\nIf the operation is not called at the instance level, one of the in parameters url, context or valueSet must be provided.  An expanded value set will be returned, or an OperationOutcome with an error message.",
+        "operationId": "op-expand-ValueSet",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ValueSet/{rid}/$expand": {
+      "summary": "Operation $expand on instance of ValueSet",
+      "description": "Operation $expand on an instance of ValueSet",
+      "get": {
+        "summary": "$expand on ValueSet instance",
+        "description": "The definition of a value set is used to create a simple collection of codes suitable for use for data entry or validation. \n\nIf the operation is not called at the instance level, one of the in parameters url, context or valueSet must be provided.  An expanded value set will be returned, or an OperationOutcome with an error message.",
+        "operationId": "op-expand-ValueSet-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/_history": {

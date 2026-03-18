@@ -1,4 +1,4 @@
-# ExampleMedicationDispenseClaim - Da Vinci Payer Data Exchange v2.1.1
+# ExampleMedicationDispenseClaim - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -27,7 +27,7 @@ Profile: [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.m
 | | |
 | :--- | :--- |
 | - | **Actor** |
-| * | [Practitioner Susan Smith](Practitioner-4.md) |
+| * | [Practitioner Susan Smith ](Practitioner-4.md) |
 
 **location**: [Location MyFavorite Pharmacy](Location-5.md)
 
@@ -50,47 +50,37 @@ Profile: [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.m
   "meta" : {
     "versionId" : "1",
     "lastUpdated" : "2024-04-17T15:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense"]
   },
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
-      "valueQuantity" : {
-        "value" : 1
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill",
+    "valueQuantity" : {
+      "value" : 1
     }
-  ],
+  }],
   "status" : "completed",
   "medicationCodeableConcept" : {
-    "coding" : [
-      {
-        "system" : "http://hl7.org/fhir/sid/ndc",
-        "code" : "54458-872-10"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/sid/ndc",
+      "code" : "54458-872-10"
+    }]
   },
   "subject" : {
     "reference" : "Patient/1"
   },
-  "performer" : [
-    {
-      "actor" : {
-        "reference" : "Practitioner/4"
-      }
+  "performer" : [{
+    "actor" : {
+      "reference" : "Practitioner/4"
     }
-  ],
+  }],
   "location" : {
     "reference" : "Location/5"
   },
   "type" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-        "code" : "RF"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "RF"
+    }]
   },
   "quantity" : {
     "value" : 60

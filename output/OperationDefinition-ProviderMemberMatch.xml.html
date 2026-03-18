@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDex Provider-Member-Match Operation - XML Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>PDex Provider-Member-Match Operation - XML Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.7"}
-    h3,h4,h5,h6{--heading-prefix:"13.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.6"}
+    h3,h4,h5,h6{--heading-prefix:"14.6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -326,11 +329,10 @@
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ProviderMemberMatch&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: OperationDefinition ProviderMemberMatch&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;ProviderMemberMatch&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcProviderMemberMatch&quot;&gt; &lt;/a&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;MembersToMatch&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..*&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/parameters.html&quot;&gt;Parameters&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Contains one or more members with patient demographics and coverage information to be matched against the payer's member records.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;MatchedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-member-provider-treatment-relationship-group.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group&quot;&gt;Member-Provider Treatment Relationship Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;NonMatchedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-pdex-member-no-match-group.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group&quot;&gt;PDex Member No Match Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members for whom no match could be found in the payer's member records.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;TreatmentAttestationConstrainedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-pdex-member-no-match-group.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group&quot;&gt;PDex Member No Match Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;OptOutConstrainedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-member-opt-out-group.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group&quot;&gt;Member Opt-Out Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members who have opted out of data sharing with providers or this specific provider.&lt;/p&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: OperationDefinition ProviderMemberMatch&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;ProviderMemberMatch&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcProviderMemberMatch&quot;&gt; &lt;/a&gt;&lt;p&gt;URL: [base]/Group/$provider-member-match&lt;/p&gt;&lt;h3&gt;Parameters&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;MembersToMatch&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..*&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/parameters.html&quot;&gt;Parameters&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition &lt;strong&gt;SHALL&lt;/strong&gt; conform to the MembersToMatch slice defined in the &lt;a href=&quot;StructureDefinition-provider-parameters-multi-member-match-bundle-in.html&quot;&gt;Provider $multi-member-match Request&lt;/a&gt; profile.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;MatchedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-pdex-treatment-relationship.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship&quot;&gt;Member-Provider Treatment Relationship Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;NonMatchedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-pdex-member-no-match-group.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group&quot;&gt;PDex Member No Match Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;OUT&lt;/td&gt;&lt;td&gt;ConsentConstrainedMembers&lt;/td&gt;&lt;td/&gt;&lt;td&gt;0..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/group.html&quot;&gt;Group&lt;/a&gt; (&lt;a href=&quot;StructureDefinition-pdex-member-opt-out.html&quot; title=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out&quot;&gt;Member Opt-Out Group&lt;/a&gt;)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;A Group resource containing members who have opted out of data sharing with providers or this specific provider.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.text">text</a>&gt;
@@ -350,7 +352,7 @@
   &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#OperationDefinition.extension">extension</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.1.1&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.2.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ProviderMemberMatch&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PDex Provider-Member-Match Operation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
@@ -386,7 +388,9 @@
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.description">description</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.
 
-The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.&quot;/&gt;
+The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.
+
+Input parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile.&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.jurisdiction">jurisdiction</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
@@ -397,6 +401,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;provider-member-match&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.comment">comment</a>
            <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Group&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.instance">instance</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
@@ -406,7 +411,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;*&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Contains one or more members with patient demographics and coverage information to be matched against the payer's member records.&quot;/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Parameters&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.part">part</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;MemberPatient&quot;/&gt;
@@ -447,7 +452,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Provider's attestation to an active treatment relationship with the patient. This replaces the general consent with a specific treatment relationship attestation.&quot;/&gt;
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions.&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Consent&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
                      <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent&quot;/&gt;
@@ -462,7 +467,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
                    <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Group&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group&quot;/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship&quot;/&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;NonMatchedMembers&quot;/&gt;
@@ -470,24 +475,13 @@ The matched members returned in the MatchedMembers Group can be used directly wi
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A Group resource containing members for whom no match could be found in the payer's member records.&quot;/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Group&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
                    <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group&quot;/&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;TreatmentAttestationConstrainedMembers&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A Group resource containing members for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Group&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group&quot;/&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;OptOutConstrainedMembers&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;ConsentConstrainedMembers&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;out&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;0&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1&quot;/&gt;
@@ -495,7 +489,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
                    <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;A Group resource containing members who have opted out of data sharing with providers or this specific provider.&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;Group&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.targetProfile">targetProfile</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group&quot;/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out&quot;/&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
 &lt;/<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">OperationDefinition</a>&gt;</code></pre>
 
@@ -543,7 +537,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

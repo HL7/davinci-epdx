@@ -1,4 +1,4 @@
-# PDex Implementation, Actors, Interactions, Data Payloads and Methods - Da Vinci Payer Data Exchange v2.1.1
+# PDex Implementation, Actors, Interactions, Data Payloads and Methods - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * **PDex Implementation, Actors, Interactions, Data Payloads and Methods**
@@ -43,7 +43,7 @@ The PDex IG defines two types of data payload:
 1. Member Clinical and Claims-derived History. Referred to in this IG as the "Member Health History"
 1. Coverage (HealthPlan Membership data).
 
-All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.
+§pdex-198: All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement. §
 
 See [Data Mapping](datamapping.md) for details of the Data Payloads and operations.
 
@@ -51,7 +51,7 @@ See [Data Mapping](datamapping.md) for details of the Data Payloads and operatio
 
 The PDex IG is focused on provider, member, or plan directed exchange of a member's data.
 
-All exchanges in this IG are for an individual. Where one member has permission to access the information for another member of the health plan, they should provide appropriate credentials to enable the exchange for that individual.
+All exchanges in this IG are for an individual. Where one member has permission to access the information for another member of the health plan, they **SHOULD** provide appropriate credentials to enable the exchange for that individual.
 
 The PDex IG specifies three interaction methods. Their use depends upon the Actors involved and the Data Payloads being exchanged.
 
@@ -109,13 +109,13 @@ An overview of the transaction flow is shown in figure 4-1:
 
 ##### Hook Actions
 
-When a Health Plan server responds to a CDS Hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/1.0/#link). Support for this option by Health Plan systems **SHOULD** be provided. The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to review the available Health Plan's data for their patient, select the data they want to commit to their EMR system and upon confirming their selection, enable the selected data to be written to the clinician's EMR system.
+When a Health Plan server responds to a CDS Hook, one of the possible actions is to allow the user to [invoke a SMART App](https://cds-hooks.hl7.org/1.0/#link). §pdex-199: Support for this option by Health Plan systems **SHOULD** be provided. § §pdex-200: The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to § review the available Health Plan's data for their patient, select the data they want to commit to their EMR system and upon confirming their selection, enable the selected data to be written to the clinician's EMR system.
 
 The objective of this flow is to place the decision about the data being deposited into the EMR into the hands of the responsible organization and their providers. This does not prevent an organization from defining data selection criteria that filters Health Plan provided information and automatically importing records that meet their criteria. For the purposes of this IG and accompanying Reference Implementation the manual provider selection method was used to illustrate the record import capability.
 
 The [Da Vinci Documentation Templates and Rules Implementation Guide](http://hl7.org/fhir/us/davinci-dtr/STU2.1) (DTR-IG) provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided SMART Apps should function.
 
-All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if it is committed to their system.
+§pdex-201: All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if § it is committed to their system.
 
 #### OAuth2.0 and FHIR API for Member-Mediated Exchange
 
@@ -123,20 +123,20 @@ This section outlines the approach for a member to mediate the sharing of data b
 
 In the STU 2.1 version of the Payer Data Exchange (PDex) IG additional bulk exchange methods are defined that enable data exchange to occur between health plans ([Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md)), at the direction of the member, or to enable exchange with a Provider ([Provider Access API](provider-access-api.md)) unless a member has actively opted-out of data sharing with Providers.
 
-The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. The member **SHALL** authenticate using credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.
+The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. §pdex-202: The member **SHALL** authenticate using § credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.
 
-The member will typically select a third-party application, service or new (target) Health Plan with whom they wish to share data. The member should review and agree with the Terms of Service and a Privacy Policy that details how the application or service will use the member's data from the (source) Health Plan. While authenticated to the application or service, the member **MAY** connect to the (source) Health Plan's authorization server. After authenticating to the (source) Health Plan's authorization server, the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with their intended application, service or (target) Health Plan. For this authorization to occur the Application, service or (target) Health Plan will require OAuth 2.0 client application credentials that are issued by the (source) Health Plan in order to register an authorization request.
+The member will typically select a third-party application, service or new (target) Health Plan with whom they wish to share data. The member should review and agree with the Terms of Service and a Privacy Policy that details how the application or service will use the member's data from the (source) Health Plan. §pdex-203: While authenticated to the application or service, the member **MAY** connect to the (source) Health Plan's § authorization server. After authenticating to the (source) Health Plan's authorization server, the Member §pdex-204: **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with § their intended application, service or (target) Health Plan. For this authorization to occur the Application, service or (target) Health Plan will require OAuth 2.0 client application credentials that are issued by the (source) Health Plan in order to register an authorization request.
 
-The Authorization process, in accordance with applicable privacy policy, **SHALL** provide a mechanism to support current regulations allowing members the right to decide what information is permitted to be exchanged.
+§pdex-205: The Authorization process, in accordance with applicable privacy policy, **SHALL** provide a mechanism to § support current regulations allowing members the right to decide what information is permitted to be exchanged.
  Examples of member authorized restrictions/permissions are 42CFR, State and Federal requirements for sensitive data.
 
-After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application.
+§pdex-206: After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be § returned to the requesting application.
 
-The scopes of the access token **SHALL** be restricted to the authorizing Member's information and the scopes approved.
+§pdex-207: The scopes of the access token **SHALL** be restricted to the authorizing Member's information and the scopes approved. §
 
-Any subsequent Access Token issued based on the Refresh Token **SHALL** be restricted (at least) to the same restrictions.
+§pdex-208: Any subsequent Access Token issued based on the Refresh Token **SHALL** be restricted (at least) to the same § restrictions.
 
-The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Application is allowed to access.
+§pdex-209: The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download § the information that the Application is allowed to access.
 
 The OAuth2.0 Member-authorized exchange is detailed in [Section: Member-Authorized OAuth2.0 Exchange](member-authorizedoauth2exchange.md).
 
@@ -161,18 +161,18 @@ Payer-to-Payer exchange can be accomplished by two methods:
 1. [Payer-to-Payer Exchange for a single member](payertopayerexchange.md)
 1. [Payer-to-Payer Bulk Exchange for multiple members](payertopayerbulkexchange.md)
 
-Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to determine which methods are made available by the data holder.
+§pdex-210: Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to § determine which methods are made available by the data holder.
 
 The exchange of Unstructured data does not require a Payer to translate the unstructured content into structured FHIR resources such as Observations or Conditions, etc.
 
-Payers **SHOULD**:
+§pdex-211: Payers **SHOULD**: §
 
 * base 64 encode as an attachment (e.g. images, digitized clinical notes or fax content) and create a binary record, as per the [FHIR R4 Binary resource](http://hl7.org/fhir/R4/binary.html)
 * Create a DocumentReference using [US Core 3.1.1 Document Reference](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-documentreference.html) or [US Core 6.1.0 Document Reference](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-documentreference.html)
 
 Payers are required to exchange Unstructured data with other Payers via the Payer-to-Payer API.
 
-Payers **MAY** choose to exchange unstructured data with Patients and Providers, via their respective APIs, using the same content provided to Payers. i,e. Attaching as a binary resource and referenced in a DocumentReference.
+§pdex-212: Payers **MAY** choose to exchange unstructured data with Patients and Providers, via their respective APIs, § using the same content provided to Payers. i,e. Attaching as a binary resource and referenced in a DocumentReference.
 
 [Next Page - Handling Data Provenance](handlingdataprovenance.md)
 

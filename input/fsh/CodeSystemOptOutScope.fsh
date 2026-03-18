@@ -1,4 +1,31 @@
 // ─────────────────────────────────────────────────────────────────────────────
+// CodeSystem for PDex API Purpose (Consent category discriminator)
+// Resolves FHIR-51377: provides a coded category to differentiate Consent
+// resources that apply to different CMS-mandated APIs.
+// ─────────────────────────────────────────────────────────────────────────────
+
+CodeSystem: PDexConsentApiPurposeCS
+Id: pdex-consent-api-purpose
+Title: "PDex Consent API Purpose"
+Description: "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member."
+* ^url = "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* #provider-access "Provider Access API" "Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)"
+* #payer-to-payer "Payer-to-Payer API" "Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)"
+* #patient-access "Patient Access API" "Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)"
+
+ValueSet: PDexConsentApiPurposeVS
+Id: pdex-consent-api-purpose-vs
+Title: "PDex Consent API Purpose Value Set"
+Description: "Value set of codes identifying which CMS-mandated API a Consent resource applies to."
+* ^url = "http://hl7.org/fhir/us/davinci-pdex/ValueSet/pdex-consent-api-purpose-vs"
+* ^status = #active
+* ^experimental = false
+* include codes from system PDexConsentApiPurposeCS
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CodeSystem for Opt-Out Scope
 // ─────────────────────────────────────────────────────────────────────────────
 

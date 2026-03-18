@@ -63,7 +63,7 @@ The first release of the PDex IG will focus on the following in-scope items. Ite
 	
 #### Deferred Scope
 	
-- In Patient Care Provider queries.
+- Inpatient Care Provider queries.
 - Provider initiated data push.
 	
 #### Out of Scope

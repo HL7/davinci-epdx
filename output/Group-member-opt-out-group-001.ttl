@@ -1,0 +1,122 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/member-opt-out-group-001> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "member-opt-out-group-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Member Opt-Out Group</h2><p>Members who have opted out of Provider Access data sharing</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://example.org/payer/opt-out-groups"^^xsd:anyURI ;
+       fhir:l <http://example.org/payer/opt-out-groups>
+     ] ;
+     fhir:value [ fhir:v "OPT-OUT-2024-001" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Example Payer" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:type [ fhir:v "person"] ; # 
+  fhir:actual [ fhir:v true] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+       ] ;
+       fhir:code [ fhir:v "consentconstraint" ] ;
+       fhir:display [ fhir:v "Consent Constraint" ]
+     ] )
+  ] ; # 
+  fhir:quantity [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:managingEntity [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "5555555555" ]
+     ] ;
+     fhir:display [ fhir:v "Example Payer Organization" ]
+  ] ; # 
+  fhir:characteristic ( [
+     fhir:extension ( [
+       fhir:url [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason>
+       ] ;
+       fhir:value [
+         a fhir:CodeableConcept ;
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason>
+           ] ;
+           fhir:code [ fhir:v "privacy-concern" ] ;
+           fhir:display [ fhir:v "Privacy Concern" ]
+         ] )
+       ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+         ] ;
+         fhir:code [ fhir:v "consentconstraint" ] ;
+         fhir:display [ fhir:v "Consent Constraint" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope>
+         ] ;
+         fhir:code [ fhir:v "provider-specific" ] ;
+         fhir:display [ fhir:v "Provider-Specific Opt-Out" ]
+       ] )
+     ] ;
+     fhir:exclude [ fhir:v false ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2024-06-01"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:member ( [
+     fhir:entity [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-details"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-details>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Member requested opt-out on 2024-06-01 citing privacy concerns. Opt-out applies to all named providers."
+         ]
+       ] ) ;
+       fhir:reference [ fhir:v "Patient/1" ] ;
+       fhir:display [ fhir:v "Jane Doe - Opted out of provider data sharing" ]
+     ] ;
+     fhir:inactive [ fhir:v false ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

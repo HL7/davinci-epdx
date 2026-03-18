@@ -1,4 +1,4 @@
-# Credits - Da Vinci Payer Data Exchange v2.1.1
+# Credits - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * **Credits**

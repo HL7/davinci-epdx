@@ -3,7 +3,7 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="PDexPAInstitutionalProcedureCodesVS"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet PDexPAInstitutionalProcedureCodesVS</b></p><a name="PDexPAInstitutionalProcedureCodesVS"> </a><a name="hcPDexPAInstitutionalProcedureCodesVS"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-CPT.html"><code>http://www.ama-assn.org/go/cpt</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include all codes defined in <a href="http://terminology.hl7.org/5.3.0/CodeSystem-hcpcs-Level-II.html"><code>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html"><code>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include these codes as defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-data-absent-reason.html"><code>http://terminology.hl7.org/CodeSystem/data-absent-reason</code></a><span title="Version is not explicitly stated, which means it is fixed to 1.0.0, the version found through the package references"> version &#x1F4E6;1.0.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/6.3.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-applicable">not-applicable</a></td><td>Not Applicable</td><td>There is no proper value for this element (e.g. last menstrual period for a male).</td></tr></table></li></ul></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet PDexPAInstitutionalProcedureCodesVS</b></p><a name="PDexPAInstitutionalProcedureCodesVS"> </a><a name="hcPDexPAInstitutionalProcedureCodesVS"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-CPT.html"><code>http://www.ama-assn.org/go/cpt</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include all codes defined in <a href="http://terminology.hl7.org/5.3.0/CodeSystem-hcpcs-Level-II.html"><code>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html"><code>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.1.0/CodeSystem-data-absent-reason.html"><code>http://terminology.hl7.org/CodeSystem/data-absent-reason</code></a><span title="Version is explicitly stated to be 1.0.0"> version &#x1F4CD;1.0.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.1.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-applicable">not-applicable</a></td><td>Not Applicable</td><td>There is no proper value for this element (e.g. last menstrual period for a male).</td></tr></table></li></ul></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="fm"/>
@@ -16,12 +16,12 @@
     </valueCode>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS"/>
-  <version value="2.1.1"/>
+  <version value="2.2.0"/>
   <name value="PDexPAInstitutionalProcedureCodesVS"/>
   <title value="Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"/>
   <status value="active"/>
   <experimental value="true"/>
-  <date value="2025-12-17T14:48:28-05:00"/>
+  <date value="2026-03-17T22:49:33-04:00"/>
   <publisher value="HL7 International / Financial Management"/>
   <contact>
     <name value="HL7 International / Financial Management"/>
@@ -69,6 +69,7 @@
     </include>
     <include>
       <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+      <version value="1.0.0"/>
       <concept>
         <code value="not-applicable"/>
         <display value="Not Applicable"/>

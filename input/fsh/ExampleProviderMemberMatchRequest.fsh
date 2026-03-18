@@ -8,9 +8,10 @@ Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
 Instance: ProviderMemberMatchRequestExample
 InstanceOf: Parameters
 Title: "Provider-Member-Match Request Example"
-Description: "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, coverage information, and treatment attestation to match against a payer's member records."
+Description: "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage."
 Usage: #example
 * id = "provider-member-match-request-001"
+* meta.profile[0] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
 
 // ------------------
 // Member 1: Successfully matched member
@@ -31,11 +32,6 @@ Usage: #example
 * parameter[=].part[+].name = "TreatmentAttestation"
 * parameter[=].part[=].resource = TreatmentAttestationExample1
 * parameter[=].part[=].resource.id = "treatment-attestation-001"
-
-// Coverage to link (optional - new coverage if transitioning plans)
-* parameter[=].part[+].name = "CoverageToLink"
-* parameter[=].part[=].resource = CoverageLinkExample1
-* parameter[=].part[=].resource.id = "coverage-link-001"
 
 // ------------------
 // Member 2: Another member to match
@@ -172,30 +168,6 @@ Usage: #example
 * class[group].value = "EMPLOY-67890"
 * class[plan].type = $coverage-class#plan
 * class[plan].value = "HMO-BASIC"
-
-
-Instance: CoverageLinkExample1
-InstanceOf: http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
-Title: "Coverage to Link Example 1"
-Description: "New coverage information to link for the member"
-Usage: #example
-* text.status = #generated
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>New Coverage for Robert Johnson - Subscriber ID: NEW-12345678, Current Payer, PPO-PREMIUM</p></div>"
-* status = #draft
-* type = $coverage-type#HIP "health insurance plan policy"
-* subscriber.reference = "Patient/patient-prov-001"
-* subscriberId = "NEW-12345678"
-* relationship = $CoverageRelationship#self
-* beneficiary.reference = "Patient/patient-prov-001"
-* period.start = "2024-01-01"
-* period.end = "2024-12-31"
-* payor[0].identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* payor[0].identifier.value = "5555555555"
-* payor[0].display = "Current Payer"
-* class[group].type = $coverage-class#group
-* class[group].value = "EMPLOY-NEW"
-* class[plan].type = $coverage-class#plan
-* class[plan].value = "PPO-PREMIUM"
 
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -1,4 +1,4 @@
-# US Core DiagnosticReport for Report and Note Exchange - Da Vinci Payer Data Exchange v2.1.1
+# US Core DiagnosticReport for Report and Note Exchange - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - US Core DiagnosticReport for Laboratory Results Reporting](USCoreDiagnosticReportforLaboratoryResultsReporting.md)
 
-Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.
+§pdex-23: Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
 

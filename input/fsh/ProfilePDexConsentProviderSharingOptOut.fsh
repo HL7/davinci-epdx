@@ -2,7 +2,7 @@ Profile: PDexProviderSharingConsent
 Parent: Consent
 Id: pdex-provider-consent
 Title: "PDex Provider Access Consent Profile"
-Description: "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data."
+Description: "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA."
 * ^experimental = true
 * ^extension[$standard-status].valueCode = #draft
 * ^extension[$fmm].valueInteger = 0
@@ -15,13 +15,19 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * category ^slicing.discriminator.type = #pattern
   * ^slicing.discriminator.path = "$this"
   * ^slicing.rules = #open
-* category contains disclosure 1..1 MS
+* category contains
+    disclosure 1..1 MS and
+    apiPurpose 1..1 MS
 * category[disclosure] = $v3-ActCode#IDSCL
+* category[apiPurpose] = PDexConsentApiPurposeCS#provider-access
+* category[apiPurpose] ^short = "Identifies this Consent as applying to the Provider Access API"
+* category[apiPurpose] ^comment = "Fixed to 'provider-access'. Enables systems to locate Provider Access API Consent records for a member using a standard category search (GET /Consent?patient=X&category=provider-access) without relying on actor cross-referencing or custom extension searches."
 * patient 1.. MS
 * patient only Reference(USCorePatientProfile|7.0.0)
 
 * performer 1..1 MS
-* performer only Reference(USCorePatientProfile)
+* performer only Reference(USCorePatientProfile or $USCoreRelatedPerson)
+* performer ^comment = "The individual who performed the opt-out. This SHALL be either the patient themselves (US Core Patient Profile) or the patient's legally recognized personal representative acting on their behalf (US Core RelatedPerson Profile), such as a parent, guardian, or healthcare proxy, consistent with CMS-0057-F and HIPAA."
 * organization 1..1 MS
 * organization only Reference(HRexOrganization)
 * policyRule = http://terminology.hl7.org/CodeSystem/consentpolicycodes#cric "Common Rule Informed Consent"

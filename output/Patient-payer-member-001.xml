@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="payer-member-001"/>
+  <meta>
+    <lastUpdated value="2024-12-16T10:30:00Z"/>
+    <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Robert Michael Johnson - Payer Member</p></div>
+  </text>
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="MB"/>
+        <display value="Member Number"/>
+      </coding>
+    </type>
+    <system value="http://example.org/payer/member-ids"/>
+    <value value="MBR-A12345678"/>
+    <assigner>
+      <display value="Example Payer"/>
+    </assigner>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <family value="Johnson"/>
+    <given value="Robert"/>
+    <given value="Michael"/>
+  </name>
+  <gender value="male"/>
+  <birthDate value="1965-03-15"/>
+  <address>
+    <line value="123 Main Street"/>
+    <city value="Anytown"/>
+    <state value="MA"/>
+    <postalCode value="02101"/>
+  </address>
+</Patient>

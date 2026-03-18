@@ -1,4 +1,4 @@
-# mtlsorganization2 - Da Vinci Payer Data Exchange v2.1.1
+# mtlsorganization2 - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -32,29 +32,21 @@ Profile: [mTLS Organization](StructureDefinition-mtls-organization.md)
   "id" : "DiamondOnyxHealth1",
   "meta" : {
     "lastUpdated" : "2022-07-04T15:00:00.000Z",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-organization"]
   },
   "active" : true,
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/organization-type",
-          "code" : "pay",
-          "display" : "Payer"
-        }
-      ]
-    }
-  ],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/organization-type",
+      "code" : "pay",
+      "display" : "Payer"
+    }]
+  }],
   "name" : "DiamondOnyxHealth",
-  "telecom" : [
-    {
-      "system" : "url",
-      "value" : "https://diamond.1.onyxhealth.io"
-    }
-  ]
+  "telecom" : [{
+    "system" : "url",
+    "value" : "https://diamond.1.onyxhealth.io"
+  }]
 }
 
 ```

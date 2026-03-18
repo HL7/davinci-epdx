@@ -1,4 +1,4 @@
-# example-pdex-member-no-match-group - Da Vinci Payer Data Exchange v2.1.1
+# example-pdex-member-no-match-group - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -22,58 +22,44 @@ Default Generated text for resource.
   "id" : "example-pdex-member-no-match-group",
   "meta" : {
     "lastUpdated" : "2024-03-20T09:00:00.000Z",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"]
   },
-  "contained" : [
-    {
-      "resourceType" : "Patient",
-      "id" : "3",
-      "identifier" : [
-        {
-          "type" : {
-            "coding" : [
-              {
-                "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-                "code" : "MB"
-              }
-            ]
-          },
-          "system" : "http://example.org/old-payer/identifiers/member",
-          "value" : "45567",
-          "assigner" : {
-            "display" : "Old Payer"
-          }
-        }
-      ],
-      "name" : [
-        {
-          "use" : "official",
-          "family" : "Jones",
-          "given" : ["Adam", "Jacob"]
-        }
-      ],
-      "gender" : "male",
-      "birthDate" : "1957-12-25"
-    }
-  ],
-  "identifier" : [
-    {
-      "system" : "http://hl7.org/fhir/sid/us-npi",
-      "value" : "0123456789"
-    }
-  ],
+  "contained" : [{
+    "resourceType" : "Patient",
+    "id" : "3",
+    "identifier" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code" : "MB"
+        }]
+      },
+      "system" : "http://example.org/new-payer/identifiers/member",
+      "value" : "45567",
+      "assigner" : {
+        "display" : "New Payer"
+      }
+    }],
+    "name" : [{
+      "use" : "official",
+      "family" : "Jones",
+      "given" : ["Adam", "Jacob"]
+    }],
+    "gender" : "male",
+    "birthDate" : "1957-12-25"
+  }],
+  "identifier" : [{
+    "system" : "http://hl7.org/fhir/sid/us-npi",
+    "value" : "0123456789"
+  }],
   "type" : "person",
   "actual" : true,
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
-        "code" : "nomatch",
-        "display" : "Not Matched"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+      "code" : "nomatch",
+      "display" : "Not Matched"
+    }]
   },
   "managingEntity" : {
     "identifier" : {
@@ -82,21 +68,17 @@ Default Generated text for resource.
     },
     "display" : "Old Health Plan"
   },
-  "member" : [
-    {
-      "entity" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters",
-            "valueReference" : {
-              "reference" : "#3"
-            }
-          }
-        ],
-        "reference" : "#3"
-      }
+  "member" : [{
+    "entity" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters",
+        "valueReference" : {
+          "reference" : "#3"
+        }
+      }],
+      "reference" : "#3"
     }
-  ]
+  }]
 }
 
 ```

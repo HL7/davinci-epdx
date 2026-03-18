@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "description": "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters.",
+  "description": "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile. The member element represents the patients attributed to the provider for data access purposes.",
   "jurisdiction": [
     {
       "coding": [
@@ -129,57 +129,6 @@
         "id": "Group.characteristic.period",
         "path": "Group.characteristic.period",
         "comment": "Enter date attribution was created or updated.(i.e. current date) as Period.start",
-        "mustSupport": true
-      },
-      {
-        "id": "Group.member.extension:lastTransmitted",
-        "path": "Group.member.extension",
-        "sliceName": "lastTransmitted",
-        "comment": "Use the data/time of execution of the #DavinciDataexport operation",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Group.member.extension:lastResources",
-        "path": "Group.member.extension",
-        "sliceName": "lastResources",
-        "comment": "Take the comma-delimited string value from the $DaVinci-data-export.resourceTypes parameter in the operation request.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "Group.member.extension:lastFilters",
-        "path": "Group.member.extension",
-        "sliceName": "lastFilters",
-        "comment": "Take the comma-delimited string value from the $DaVinci-data-export.filterQueries parameter in the operation request.",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter"
-            ]
-          }
-        ],
         "mustSupport": true
       }
     ]

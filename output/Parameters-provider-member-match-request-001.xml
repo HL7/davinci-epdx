@@ -2,6 +2,9 @@
 
 <Parameters xmlns="http://hl7.org/fhir">
   <id value="provider-member-match-request-001"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"/>
+  </meta>
   <parameter>
     <name value="MembersToMatch"/>
     <part>
@@ -9,6 +12,9 @@
       <resource>
         <Patient>
           <id value="patient-prov-001"/>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Robert Michael Johnson - DOB: 1965-08-15, Male</p></div>
+          </text>
           <identifier>
             <type>
               <coding>
@@ -52,11 +58,15 @@
           <meta>
             <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
           </meta>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Coverage for Robert Johnson - Subscriber ID: 12345678, Previous Health Plan, PPO-GOLD</p></div>
+          </text>
           <status value="draft"/>
           <type>
             <coding>
               <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
-              <code value="EHPLANS"/>
+              <code value="HIP"/>
+              <display value="health insurance plan policy"/>
             </coding>
           </type>
           <subscriber>
@@ -112,6 +122,9 @@
           <meta>
             <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"/>
           </meta>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relationship since 2024-01-15</p></div>
+          </text>
           <status value="active"/>
           <scope>
             <coding>
@@ -121,9 +134,9 @@
           </scope>
           <category>
             <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
-              <code value="treat"/>
-              <display value="Treatment"/>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+              <code value="IDSCL"/>
+              <display value="Information Disclosure"/>
             </coding>
           </category>
           <category>
@@ -173,71 +186,11 @@
             </actor>
             <purpose>
               <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-              <code value="TREATMENT"/>
-              <display value="Treatment"/>
+              <code value="TREAT"/>
+              <display value="treatment"/>
             </purpose>
           </provision>
         </Consent>
-      </resource>
-    </part>
-    <part>
-      <name value="CoverageToLink"/>
-      <resource>
-        <Coverage>
-          <id value="coverage-link-001"/>
-          <meta>
-            <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
-          </meta>
-          <status value="draft"/>
-          <type>
-            <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
-              <code value="EHPLANS"/>
-            </coding>
-          </type>
-          <subscriber>
-            <reference value="Patient/patient-prov-001"/>
-          </subscriber>
-          <subscriberId value="NEW-12345678"/>
-          <beneficiary>
-            <reference value="Patient/patient-prov-001"/>
-          </beneficiary>
-          <relationship>
-            <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/subscriber-relationship"/>
-              <code value="self"/>
-            </coding>
-          </relationship>
-          <period>
-            <start value="2024-01-01"/>
-            <end value="2024-12-31"/>
-          </period>
-          <payor>
-            <identifier>
-              <system value="http://hl7.org/fhir/sid/us-npi"/>
-              <value value="5555555555"/>
-            </identifier>
-            <display value="Current Payer"/>
-          </payor>
-          <class>
-            <type>
-              <coding>
-                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
-                <code value="group"/>
-              </coding>
-            </type>
-            <value value="EMPLOY-NEW"/>
-          </class>
-          <class>
-            <type>
-              <coding>
-                <system value="http://terminology.hl7.org/CodeSystem/coverage-class"/>
-                <code value="plan"/>
-              </coding>
-            </type>
-            <value value="PPO-PREMIUM"/>
-          </class>
-        </Coverage>
       </resource>
     </part>
   </parameter>
@@ -248,6 +201,9 @@
       <resource>
         <Patient>
           <id value="patient-prov-002"/>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Sarah Elizabeth Williams - DOB: 1978-03-22, Female</p></div>
+          </text>
           <identifier>
             <type>
               <coding>
@@ -291,11 +247,15 @@
           <meta>
             <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"/>
           </meta>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Coverage for Sarah Williams - Subscriber ID: 87654321, Another Health Plan, HMO-BASIC</p></div>
+          </text>
           <status value="draft"/>
           <type>
             <coding>
               <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
-              <code value="EHPLANS"/>
+              <code value="HIP"/>
+              <display value="health insurance plan policy"/>
             </coding>
           </type>
           <subscriber>
@@ -351,6 +311,9 @@
           <meta>
             <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"/>
           </meta>
+          <text>
+            <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01</p></div>
+          </text>
           <status value="active"/>
           <scope>
             <coding>
@@ -360,9 +323,9 @@
           </scope>
           <category>
             <coding>
-              <system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
-              <code value="treat"/>
-              <display value="Treatment"/>
+              <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+              <code value="IDSCL"/>
+              <display value="Information Disclosure"/>
             </coding>
           </category>
           <category>
@@ -411,8 +374,8 @@
             </actor>
             <purpose>
               <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-              <code value="TREATMENT"/>
-              <display value="Treatment"/>
+              <code value="TREAT"/>
+              <display value="treatment"/>
             </purpose>
           </provision>
         </Consent>

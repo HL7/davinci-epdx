@@ -1,4 +1,4 @@
-# ExampleLocation - Da Vinci Payer Data Exchange v2.1.1
+# ExampleLocation - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -26,9 +26,7 @@ Profile: [US Core Location Profile](http://hl7.org/fhir/us/core/STU7/StructureDe
   "id" : "5",
   "meta" : {
     "lastUpdated" : "2020-07-13T19:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"]
   },
   "name" : "MyFavorite Pharmacy"
 }

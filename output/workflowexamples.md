@@ -1,4 +1,4 @@
-# Workflow Examples - Da Vinci Payer Data Exchange v2.1.1
+# Workflow Examples - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**CDS Hooks**](cds-hooks.md)
@@ -37,7 +37,7 @@ The receptionist in the doctor's office collects their personal information, che
 
 The creation of an appointment activates a CDS Hook transaction: appointment-book.
 
-In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system.
+§pdex-356: In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system. §
 
 [Next Page - Member-Authorized OAuth2.0 Exchange](member-authorizedoauth2exchange.md)
 

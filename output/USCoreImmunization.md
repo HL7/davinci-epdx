@@ -1,4 +1,4 @@
-# US Core Immunization - Da Vinci Payer Data Exchange v2.1.1
+# US Core Immunization - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Goal](USCoreGoal.md)
 
-Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the [US Core 3.1.1 Immunization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-immunization.html) or [US Core 6.1.0 Immunization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
+§pdex-25: Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the § [US Core 3.1.1 Immunization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-immunization.html) or [US Core 6.1.0 Immunization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-immunization.html) resource when information is available in a structured and coded form.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Immunization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-immunization.html) or [US Core 6.1.0 Immunization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-immunization.html) resource are:
 

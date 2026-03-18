@@ -45,11 +45,11 @@
      fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
      fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
   ] ; # 
-  fhir:version [ fhir:v "2.1.1"] ; # 
+  fhir:version [ fhir:v "2.2.0"] ; # 
   fhir:name [ fhir:v "DaVinciPayerDataExchange"] ; # 
   fhir:title [ fhir:v "Da Vinci Payer Data Exchange"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2025-12-17T14:48:28-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-03-17T22:49:33-04:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
@@ -241,7 +241,7 @@
        fhir:l <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "6.3.0" ]
+     fhir:version [ fhir:v "7.1.0" ]
   ] ) ; # 
   fhir:definition [
      fhir:extension ( [
@@ -285,7 +285,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "STU 2.1"
+           fhir:v "STU 2.2"
          ]
        ] ) ;
        fhir:url [
@@ -957,7 +957,7 @@
        ] ;
        fhir:value [
          a fhir:Code ;
-         fhir:v "hl7.fhir.uv.tools.r4#0.9.0"
+         fhir:v "hl7.fhir.uv.tools.r4#1.1.0"
        ]
      ] [
        fhir:extension ( [
@@ -1000,7 +1000,7 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "STU 2.1"
+           fhir:v "STU 2.2"
          ]
        ] ) ;
        fhir:url [
@@ -1793,27 +1793,6 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "OperationDefinition"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport> ;
-         fhir:reference [ fhir:v "OperationDefinition/BulkMemberMatchDataExport" ]
-       ] ;
-       fhir:name [ fhir:v "Bulk Member Match Data Export" ] ;
-       fhir:description [ fhir:v "When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "Bundle"
          ]
        ] ) ;
@@ -1928,27 +1907,6 @@
        ] ;
        fhir:name [ fhir:v "consentin2" ] ;
        fhir:description [ fhir:v "Example Consent record for member match submission" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Coverage"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Coverage/CoverageLinkExample1> ;
-         fhir:reference [ fhir:v "Coverage/CoverageLinkExample1" ]
-       ] ;
-       fhir:name [ fhir:v "Coverage to Link Example 1" ] ;
-       fhir:description [ fhir:v "New coverage information to link for the member" ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v true
@@ -2122,6 +2080,116 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Group"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Group/member-opt-out-group-001> ;
+         fhir:reference [ fhir:v "Group/member-opt-out-group-001" ]
+       ] ;
+       fhir:name [ fhir:v "Example Member Opt-Out Group" ] ;
+       fhir:description [ fhir:v "Example of a Group containing members who have opted out of data sharing with providers" ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Group"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Group/example-pdex-treatment-relationship-group> ;
+         fhir:reference [ fhir:v "Group/example-pdex-treatment-relationship-group" ]
+       ] ;
+       fhir:name [ fhir:v "Example Member-Provider Treatment Relationship Group" ] ;
+       fhir:description [ fhir:v "Example of a Group resource representing the treatment relationship between a member and their providers" ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Group"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-consent-constrained-group> ;
+         fhir:reference [ fhir:v "Group/example-provider-consent-constrained-group" ]
+       ] ;
+       fhir:name [ fhir:v "Example Provider Consent Constrained Group" ] ;
+       fhir:description [ fhir:v "Example Group of members matched but excluded because they have opted out of the Provider Access API. Members in this group were found in the payer's system but have exercised their right to deny provider access." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Group"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-matched-group> ;
+         fhir:reference [ fhir:v "Group/example-provider-matched-group" ]
+       ] ;
+       fhir:name [ fhir:v "Example Provider Matched Members Group" ] ;
+       fhir:description [ fhir:v "Example Group of members successfully matched by the payer in response to a provider $bulk-member-match request. Members in this group have confirmed treatment relationships and are authorized for Provider Access API data retrieval." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Group"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-nomatch-group> ;
+         fhir:reference [ fhir:v "Group/example-provider-nomatch-group" ]
+       ] ;
+       fhir:name [ fhir:v "Example Provider No Match Group" ] ;
+       fhir:description [ fhir:v "Example Group of members that could not be matched by the payer in response to a provider $bulk-member-match request. Members in this group were not found in the payer's system." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match>
        ]
      ] [
        fhir:extension ( [
@@ -2819,78 +2887,36 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "StructureDefinition:extension"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter> ;
-         fhir:reference [ fhir:v "StructureDefinition/base-ext-last-typefilter" ]
-       ] ;
-       fhir:name [ fhir:v "Member Last Resource Filters" ] ;
-       fhir:description [ fhir:v "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "StructureDefinition:extension"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types> ;
-         fhir:reference [ fhir:v "StructureDefinition/base-ext-last-types" ]
-       ] ;
-       fhir:name [ fhir:v "Member Last Resource Types" ] ;
-       fhir:description [ fhir:v "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "StructureDefinition:extension"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission> ;
-         fhir:reference [ fhir:v "StructureDefinition/base-ext-last-transmission" ]
-       ] ;
-       fhir:name [ fhir:v "Member Last Transmission" ] ;
-       fhir:description [ fhir:v "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request." ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group> ;
-         fhir:reference [ fhir:v "StructureDefinition/member-opt-out-group" ]
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out> ;
+         fhir:reference [ fhir:v "StructureDefinition/pdex-member-opt-out" ]
        ] ;
        fhir:name [ fhir:v "Member Opt-Out Group" ] ;
        fhir:description [ fhir:v "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage> ;
+         fhir:reference [ fhir:v "StructureDefinition/base-ext-match-coverage" ]
+       ] ;
+       fhir:name [ fhir:v "Member-Match Input Coverage Parameter" ] ;
+       fhir:description [ fhir:v "Input Coverage Parameter supplied for the individual member match. When the same patient is submitted with multiple different coverage plans, this optional extension allows the responder to include the submitted Coverage resource alongside the submitted Patient resource, enabling the requester to unambiguously identify which (patient + coverage) pair each Group member entry corresponds to." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -2928,8 +2954,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group> ;
-         fhir:reference [ fhir:v "StructureDefinition/member-provider-treatment-relationship-group" ]
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship> ;
+         fhir:reference [ fhir:v "StructureDefinition/pdex-treatment-relationship" ]
        ] ;
        fhir:name [ fhir:v "Member-Provider Treatment Relationship Group" ] ;
        fhir:description [ fhir:v "A Group resource representing the treatment relationship between a specific member/patient and one or more healthcare providers. The Payer is the managing organization. The member is identified through a characteristic containing the Patient ID. The group members are the providers that have an active or confirmed treatment relationship with the member." ] ;
@@ -3471,6 +3497,48 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-001> ;
+         fhir:reference [ fhir:v "Organization/provider-org-001" ]
+       ] ;
+       fhir:name [ fhir:v "Organization Provider Example 1" ] ;
+       fhir:description [ fhir:v "Example provider organization for Provider-Member-Match operation" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> ;
+         fhir:reference [ fhir:v "Organization/provider-org-002" ]
+       ] ;
+       fhir:name [ fhir:v "Organization Provider Example 2" ] ;
+       fhir:description [ fhir:v "Example provider organization for Provider-Member-Match operation" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -3685,6 +3753,48 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> ;
+         fhir:reference [ fhir:v "Patient/patient-prov-001" ]
+       ] ;
+       fhir:name [ fhir:v "Patient Provider Example 1 - Robert Johnson" ] ;
+       fhir:description [ fhir:v "Example patient as known to the provider for Provider-Member-Match operation" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-002> ;
+         fhir:reference [ fhir:v "Patient/patient-prov-002" ]
+       ] ;
+       fhir:name [ fhir:v "Patient Provider Example 2 - Sarah Williams" ] ;
+       fhir:description [ fhir:v "Example patient as known to the provider for Provider-Member-Match operation" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1> ;
          fhir:reference [ fhir:v "Patient/1" ]
        ] ;
@@ -3807,6 +3917,48 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-001> ;
+         fhir:reference [ fhir:v "Patient/payer-member-001" ]
+       ] ;
+       fhir:name [ fhir:v "Payer Member Example 1 - Robert Johnson" ] ;
+       fhir:description [ fhir:v "Example patient as known to the payer after successful member match" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-002> ;
+         fhir:reference [ fhir:v "Patient/payer-member-002" ]
+       ] ;
+       fhir:name [ fhir:v "Payer Member Example 2 - Sarah Williams" ] ;
+       fhir:description [ fhir:v "Example patient as known to the payer after successful member match" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "ValueSet"
          ]
        ] ) ;
@@ -3819,48 +3971,6 @@
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Patient"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/payer-patient-1001> ;
-         fhir:reference [ fhir:v "Patient/payer-patient-1001" ]
-       ] ;
-       fhir:name [ fhir:v "Payer's Patient Record for Member 1001" ] ;
-       fhir:description [ fhir:v "The payer's internal patient record that was matched to provider-submitted-patient-1" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Patient"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/payer-patient-2002> ;
-         fhir:reference [ fhir:v "Patient/payer-patient-2002" ]
-       ] ;
-       fhir:name [ fhir:v "Payer's Patient Record for Member 2002" ] ;
-       fhir:description [ fhir:v "The payer's internal patient record that was matched to provider-submitted-patient-2" ] ;
-       fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -3983,7 +4093,112 @@
          fhir:reference [ fhir:v "OperationDefinition/BulkMemberMatch" ]
        ] ;
        fhir:name [ fhir:v "PDex Bulk Member Match Operation" ] ;
-       fhir:description [ fhir:v "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format." ] ;
+       fhir:description [ fhir:v "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.\n\nInput parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-action> ;
+         fhir:reference [ fhir:v "SearchParameter/pdex-consent-action" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Consent Action Search Parameter" ] ;
+       fhir:description [ fhir:v "Search for Consent resources by the action code in the provision. Use provision-action=disclose combined with provision-type=deny to find members who have opted out of Provider Access data sharing." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose> ;
+         fhir:reference [ fhir:v "CodeSystem/pdex-consent-api-purpose" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Consent API Purpose" ] ;
+       fhir:description [ fhir:v "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/ValueSet/pdex-consent-api-purpose-vs> ;
+         fhir:reference [ fhir:v "ValueSet/pdex-consent-api-purpose-vs" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Consent API Purpose Value Set" ] ;
+       fhir:description [ fhir:v "Value set of codes identifying which CMS-mandated API a Consent resource applies to." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provider-access> ;
+         fhir:reference [ fhir:v "SearchParameter/pdex-consent-provider-access" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Consent Provider Access Use Case Search Parameter" ] ;
+       fhir:description [ fhir:v "Search for Consent resources that have the Provider Access Use Case extension set to true. This identifies consent records specific to the Provider Access API." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provision-type> ;
+         fhir:reference [ fhir:v "SearchParameter/pdex-consent-provision-type" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Consent Provision Type Search Parameter" ] ;
+       fhir:description [ fhir:v "Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4005,6 +4220,27 @@
        ] ;
        fhir:name [ fhir:v "PDex Device" ] ;
        fhir:description [ fhir:v "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. \nFHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "SearchParameter"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference> ;
+         fhir:reference [ fhir:v "SearchParameter/pdex-group-characteristic-value-reference" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Group Characteristic Value Reference Search Parameter" ] ;
+       fhir:description [ fhir:v "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference)." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4297,8 +4533,30 @@
          fhir:l <http://hl7.org/fhir/us/davinci-pdex/Consent/no-consent-1> ;
          fhir:reference [ fhir:v "Consent/no-consent-1" ]
        ] ;
-       fhir:name [ fhir:v "PDex Provider Access Consent Example" ] ;
-       fhir:description [ fhir:v "An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API." ] ;
+       fhir:name [ fhir:v "PDex Provider Access Consent Opt-Out Example" ] ;
+       fhir:description [ fhir:v "An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API. Opt-out is expressed using provision.type='deny' with provision.action='disclose' and the ProviderAccessUseCase extension." ] ;
+       fhir:example [
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Consent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Consent/consent-permit-1> ;
+         fhir:reference [ fhir:v "Consent/consent-permit-1" ]
+       ] ;
+       fhir:name [ fhir:v "PDex Provider Access Consent Permit Example" ] ;
+       fhir:description [ fhir:v "An example of a PDex Provider Access Consent where a member permits sharing of their data via the Provider Access API. Permit is expressed using provision.type='permit' with provision.action='disclose' and the ProviderAccessUseCase extension." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"^^xsd:anyURI ;
@@ -4320,7 +4578,7 @@
          fhir:reference [ fhir:v "StructureDefinition/pdex-provider-consent" ]
        ] ;
        fhir:name [ fhir:v "PDex Provider Access Consent Profile" ] ;
-       fhir:description [ fhir:v "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data." ] ;
+       fhir:description [ fhir:v "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4341,7 +4599,7 @@
          fhir:reference [ fhir:v "StructureDefinition/pdex-provider-group" ]
        ] ;
        fhir:name [ fhir:v "PDex Provider Group" ] ;
-       fhir:description [ fhir:v "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters." ] ;
+       fhir:description [ fhir:v "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile. The member element represents the patients attributed to the provider for data access purposes." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4383,7 +4641,7 @@
          fhir:reference [ fhir:v "OperationDefinition/ProviderMemberMatch" ]
        ] ;
        fhir:name [ fhir:v "PDex Provider-Member-Match Operation" ] ;
-       fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format." ] ;
+       fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.\n\nInput parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4556,6 +4814,48 @@
          a fhir:Canonical ;
          fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Practitioner"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-001> ;
+         fhir:reference [ fhir:v "Practitioner/provider-001" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner Provider Example 1 - Dr. Smith" ] ;
+       fhir:description [ fhir:v "Example practitioner attesting to treatment relationship for Provider-Member-Match" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Practitioner"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> ;
+         fhir:reference [ fhir:v "Practitioner/provider-002" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner Provider Example 2 - Dr. Jones" ] ;
+       fhir:description [ fhir:v "Example practitioner attesting to treatment relationship for Provider-Member-Match" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -4775,6 +5075,27 @@
          ] ;
          fhir:value [
            a fhir:String ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case> ;
+         fhir:reference [ fhir:v "StructureDefinition/pdex-provider-access-use-case" ]
+       ] ;
+       fhir:name [ fhir:v "Provider Access Use Case" ] ;
+       fhir:description [ fhir:v "Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers." ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
            fhir:v "DocumentReference"
          ]
        ] ) ;
@@ -4817,56 +5138,12 @@
          ] ;
          fhir:value [
            a fhir:String ;
-           fhir:v "Parameters"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Parameters/provider-bulk-member-match-in> ;
-         fhir:reference [ fhir:v "Parameters/provider-bulk-member-match-in" ]
-       ] ;
-       fhir:name [ fhir:v "Provider Bulk Member Match Request Example" ] ;
-       fhir:description [ fhir:v "Example of a Bulk Member Match request for Provider Access, including provider treatment attestation consent. This differs from Payer-to-Payer member match by including current member demographics, current coverage, and provider attestation instead of old payer data and patient consent for data sharing between payers." ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
-           fhir:v "Parameters"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Parameters/provider-bulk-member-match-out> ;
-         fhir:reference [ fhir:v "Parameters/provider-bulk-member-match-out" ]
-       ] ;
-       fhir:name [ fhir:v "Provider Bulk Member Match Response Example" ] ;
-       fhir:description [ fhir:v "Example response to a Provider Bulk Member Match request showing matched members (authorized for provider access), non-matched members (not found in payer system), and consent-constrained members (opted out of Provider Access API)." ] ;
-       fhir:example [
-         a fhir:Canonical ;
-         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [
-           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
-           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
-         ] ;
-         fhir:value [
-           a fhir:String ;
            fhir:v "StructureDefinition:resource"
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-match-group> ;
-         fhir:reference [ fhir:v "StructureDefinition/provider-member-match-group" ]
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match> ;
+         fhir:reference [ fhir:v "StructureDefinition/pdex-provider-member-match" ]
        ] ;
        fhir:name [ fhir:v "Provider Member Match Group" ] ;
        fhir:description [ fhir:v "A Group List created by the Payer to enable Provider Access API access by providers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters from the provider's match request." ] ;
@@ -4886,8 +5163,8 @@
          ]
        ] ) ;
        fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-no-match-group> ;
-         fhir:reference [ fhir:v "StructureDefinition/provider-member-no-match-group" ]
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match> ;
+         fhir:reference [ fhir:v "StructureDefinition/pdex-provider-member-no-match" ]
        ] ;
        fhir:name [ fhir:v "Provider Member No Match Group" ] ;
        fhir:description [ fhir:v "A Group List created by the Payer to provide information back to a requesting provider about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics from the provider's request. The match may have failed for one of two reasons: a) No match on member (member not found in payer's system), or b) Matched but unable to comply due to member's opt-out of Provider Access API." ] ;
@@ -4933,10 +5210,11 @@
          fhir:reference [ fhir:v "Parameters/provider-member-match-request-001" ]
        ] ;
        fhir:name [ fhir:v "Provider-Member-Match Request Example" ] ;
-       fhir:description [ fhir:v "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, coverage information, and treatment attestation to match against a payer's member records." ] ;
+       fhir:description [ fhir:v "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage." ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in>
        ]
      ] [
        fhir:extension ( [
@@ -4954,10 +5232,11 @@
          fhir:reference [ fhir:v "Parameters/provider-member-match-response-001" ]
        ] ;
        fhir:name [ fhir:v "Provider-Member-Match Response Example" ] ;
-       fhir:description [ fhir:v "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members, treatment attestation constraints, and opt-out constraints." ] ;
+       fhir:description [ fhir:v "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out." ] ;
        fhir:example [
-         a fhir:Boolean ;
-         fhir:v true
+         a fhir:Canonical ;
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out>
        ]
      ] [
        fhir:extension ( [
@@ -5044,6 +5323,48 @@
          a fhir:Canonical ;
          fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"^^xsd:anyURI ;
          fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "DocumentReference"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-001> ;
+         fhir:reference [ fhir:v "DocumentReference/treatment-attestation-form-001" ]
+       ] ;
+       fhir:name [ fhir:v "Treatment Attestation Form Example 1" ] ;
+       fhir:description [ fhir:v "Example signed attestation document for treatment relationship" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/tools/StructureDefinition/resource-information>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "DocumentReference"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-002> ;
+         fhir:reference [ fhir:v "DocumentReference/treatment-attestation-form-002" ]
+       ] ;
+       fhir:name [ fhir:v "Treatment Attestation Form Example 2" ] ;
+       fhir:description [ fhir:v "Example signed attestation document for treatment relationship" ] ;
+       fhir:example [
+         a fhir:Boolean ;
+         fhir:v true
        ]
      ] [
        fhir:extension ( [
@@ -5388,6 +5709,34 @@
            fhir:l fhir:introduction.html
          ] ;
          fhir:title [ fhir:v "Introduction" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "informative"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "narrative-conformance.html"^^xsd:anyURI ;
+             fhir:l fhir:narrative-conformance.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "narrative-conformance.html"^^xsd:anyURI ;
+           fhir:l fhir:narrative-conformance.html
+         ] ;
+         fhir:title [ fhir:v "Narrative Conformance" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
@@ -6919,8 +7268,6 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/DispenseRefill> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatchDataExport> a fhir:Us .
-
 <http://hl7.org/fhir/us/davinci-pdex/Bundle/3000003> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Bundle/1000000-1> a fhir:Us .
@@ -6932,8 +7279,6 @@
 <http://hl7.org/fhir/us/davinci-pdex/Bundle/3000002> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Consent/consent-2> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Coverage/CoverageLinkExample1> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Coverage/CoverageMatchExample1> a fhir:Us .
 
@@ -6950,6 +7295,16 @@
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/EndpointPayloadTypeVS> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/member-opt-out-group-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/example-pdex-treatment-relationship-group> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-consent-constrained-group> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-matched-group> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/example-provider-nomatch-group> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Bundle/example-mtls-endpoint-bundle> a fhir:Us .
 
@@ -7015,17 +7370,13 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/extension-levelOfServiceCode> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter> a fhir:Us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group> a fhir:Us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group> a fhir:Us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-members-opted-out> a fhir:Us .
 
@@ -7077,6 +7428,10 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/OrgTypeVS> a fhir:Us .
@@ -7097,6 +7452,10 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/Patient/PatientMemberMatchExample2> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-002> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Patient/1-2> a fhir:Us .
@@ -7109,11 +7468,11 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-2> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-002> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenancePayerSourceFormat> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-patient-1001> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-patient-2002> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-parameters-multi-member-match-bundle-in> a fhir:Us .
 
@@ -7127,7 +7486,19 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-action> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/ValueSet/pdex-consent-api-purpose-vs> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provider-access> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-consent-provision-type> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType> a fhir:Us .
 
@@ -7157,6 +7528,8 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/Consent/no-consent-1> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/Consent/consent-permit-1> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group> a fhir:Us .
@@ -7181,6 +7554,10 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/ExplanationOfBenefit/PDexPriorAuth1> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes> a fhir:Us .
@@ -7201,17 +7578,15 @@
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out> a fhir:Us .
 
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case> a fhir:Us .
+
 <http://hl7.org/fhir/us/davinci-pdex/DocumentReference/provider-attestation-doc-1> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/Parameters/provider-bulk-member-match-in> a fhir:Us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match> a fhir:Us .
 
-<http://hl7.org/fhir/us/davinci-pdex/Parameters/provider-bulk-member-match-out> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-match-group> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-no-match-group> a fhir:Us .
+<http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Consent/provider-treatment-attestation-1> a fhir:Us .
 
@@ -7226,6 +7601,10 @@
 <http://hl7.org/fhir/us/davinci-pdex/Consent/treatment-attestation-ex1> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Consent/treatment-attestation-ex2> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-002> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/ValueSet/attestation-provision-type-valueset> a fhir:Us .
 

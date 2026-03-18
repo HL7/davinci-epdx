@@ -37,7 +37,9 @@
     <sch:title>f:Group/f:member/f:entity</sch:title>
     <sch:rule context="f:Group/f:member/f:entity">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
       <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>

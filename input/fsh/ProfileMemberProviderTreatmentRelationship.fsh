@@ -181,7 +181,7 @@ Usage: #example
 
 // Characteristic - the member/patient key
 * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS#pdex-member "PDex Member"
-* characteristic.valueReference = Reference(Patient/payer-patient-1001)
+* characteristic.valueReference = Reference(Patient/payer-member-001)
 * characteristic.exclude = false
 * characteristic.period.start = "2024-01-01"
 

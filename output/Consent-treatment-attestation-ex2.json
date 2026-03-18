@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent treatment-attestation-ex2</b></p><a name=\"treatment-attestation-ex2\"> </a><a name=\"hctreatment-attestation-ex2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-provider-treatment-relationship-consent.html\">Provider Attestation to Treatment Relationship</a></p></div><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentscope treatment}\">Treatment</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentcategorycodes treat}\">Treatment</span>, <span title=\"Codes:{http://loinc.org 64292-6}\">Release of information consent</span></p><p><b>patient</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Patient/patient-prov-002\">Patient/patient-prov-002</a></p><p><b>dateTime</b>: 2024-12-09 10:15:00+0000</p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Practitioner/provider-002\">Dr. James Brown, MD</a></p><p><b>organization</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Organization/provider-org-002\">Columbus Clinic</a></p><p><b>source</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/DocumentReference/treatment-attestation-form-002\">Provider Attestation Form</a></p><h3>Policies</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Uri</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://example.org/provider-attestation-policy\">https://example.org/provider-attestation-policy</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: Opt In</p><p><b>period</b>: 2024-02-01 --&gt; (ongoing)</p><h3>Actors</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType IRCP}\">information recipient</span></td><td><a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=http://hl7.org/fhir/us/core/Practitioner/provider-002\">Dr. James Brown</a></td></tr></table><p><b>purpose</b>: <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-TREATMENT\">ActReason: TREATMENT</a> (Treatment)</p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01</p></div>"
   },
   "status" : "active",
   "scope" : {
@@ -17,9 +17,9 @@
   },
   "category" : [{
     "coding" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
-      "code" : "treat",
-      "display" : "Treatment"
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "IDSCL",
+      "display" : "Information Disclosure"
     }]
   },
   {
@@ -68,8 +68,8 @@
     }],
     "purpose" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-      "code" : "TREATMENT",
-      "display" : "Treatment"
+      "code" : "TREAT",
+      "display" : "treatment"
     }]
   }
 }

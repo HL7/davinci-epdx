@@ -120,6 +120,13 @@ This combination of requests should cover all provider data requests, such as:
 
     Prefer: respond-async
 
+§pdex-304a: The $davinci-data-export operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4. § The async interaction pattern is:
+
+1. **Kick-off request**: Provider submits HTTP POST to `Group/[id]/$davinci-data-export` with `Prefer: respond-async`. The server returns **HTTP 202 Accepted** with a `Content-Location` header pointing to a status endpoint. No data is returned in the kick-off response body.
+2. **Poll status endpoint**: Provider polls the `Content-Location` URL. The server returns HTTP 202 while processing is in progress. §pdex-304b: Implementers **SHALL** follow the [Bulk Data Status Request](https://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-status-request) guidance for polling behavior. §
+3. **Retrieve output**: When processing is complete the status endpoint returns HTTP 200 with a JSON manifest body listing URLs of NDJSON output files. The provider retrieves each NDJSON file to obtain the member health data.
+
+The payer does not "push" data to the provider — the provider polls and retrieves. This is the standard [FHIR Bulk Data Access](http://hl7.org/fhir/uv/bulkdata/STU2/) pattern.
 
 ### Attribution List
 
@@ -152,29 +159,7 @@ with those managed by the Payer, The extension is:
 
 - [MembersOptedOut](StructureDefinition-base-ext-members-opted-out.html)
 
-The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) Profile adds three extensions to the member element. 
-These are used to track the data retrieved for a member by the provider. This enables sophisticated
-providers to fine tune their requests for data. For example, Retrieving the group resource a 
-Provider could create a Provider Access data request that repeated the parameters supplied to
-[lastResources](StructureDefinition-base-ext-last-types.html) and [lastFilters](StructureDefinition-base-ext-last-typefilter.html) and compile a list of Patients with the 
-same [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) date. The Provider Access API is flexible enough that a Provider 
-could submit a request for the data for a single Patient, repeating the previously used parameters. 
-A Provider could also compile a request that omitted resources that were previously asked for,
-avoiding data duplication. Providing these member-level extensions is meant as an aid to Providers 
-and Payers to enable granular data sharing. Providers, or Payers wishing to take advantage of these
-§pdex-312: elements **SHOULD** consider implementing their own independent data tracking capabilities to §
-understand what data has been provided to a Provider for specific members.
-
-The member-level extensions are primarily intended for instances where a Provider does not want to
-download *ALL information for ALL attributed members.*
-
-The member-level extensions are:
-
-- [lastTransmitted](StructureDefinition-base-ext-last-transmission.html)
-- [lastResources](StructureDefinition-base-ext-last-types.html)
-- [lastFilters](StructureDefinition-base-ext-last-typefilter.html)
-
-§pdex-313: These extensions **SHALL** be updated by the [$davinci-data-export]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) PDex Use Case Operation. §
+§pdex-312: Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed, by which client, and for which members. §
 
 ### Searching for Attributed Groups
 
@@ -260,6 +245,7 @@ This is an optional parameter in the Da Vinci Data Export Operation.
 
 §pdex-326: The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is §
 retrieving new, or updated data that will be stored as part of the patient record.
+§pdex-326a: When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval. § The client is responsible for tracking the date/time of their previous requests using an internal audit trail and using that value as the `_since` parameter in subsequent delta requests. The payer server has no obligation to infer a delta cutoff on the client's behalf.
 
 §pdex-327: The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is §
 retrieving data that will be stored as part of the patient record.
@@ -267,10 +253,7 @@ retrieving data that will be stored as part of the patient record.
 §pdex-328: The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider §
 wants to download data for viewing.
 
-From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType
-parameter will require the Data Provider/Payer to track the latest download
-date/time for the Patients that the provider requests data for. §pdex-329: These values **SHALL** §
-be updated in an extension associated with the Patient for which a download was requested.
+From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType parameter indicates that the retrieved data will be stored as part of the patient record. Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client.
 
 ##### _since
 
@@ -293,10 +276,6 @@ enables providers to only retrieve the resource types they are interested in see
 §pdex-335: parameter is not used all available resources **SHALL** be returned by the Payer, subject to §
 the constraints applied by other input parameters.
 
-§pdex-336: When _type is used the export operation **SHALL** record the content of the _type parameter in the §
-[lastResources](StructureDefinition-base-ext-last-types.html) element for each Member for which data is retrieved. The
-§pdex-337: [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction §
-or the value of the _until parameter, if it is earlier.
 
 ##### _typeFilter
 
@@ -305,10 +284,6 @@ Provider. For example, to only retrieve Observations of a certain type. The _typ
 §pdex-339: used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource §
 being filtered.
 
-§pdex-340: When _typeFilter is used the export operation **SHALL** record the content of the _typeFilter §
-parameter in the [lastFilters](StructureDefinition-base-ext-last-typefilter.html) element for each Member for which data is retrieved. The
-§pdex-341: [lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction §
-or the value of the _until parameter, if it is earlier.
 
 NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
 §pdex-342: supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL** §

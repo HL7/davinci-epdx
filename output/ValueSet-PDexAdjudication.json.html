@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDex Adjudication - JSON Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>PDex Adjudication - JSON Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.70"}
-    h3,h4,h5,h6{--heading-prefix:"13.70"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.72"}
+    h3,h4,h5,h6{--heading-prefix:"14.72"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -326,7 +329,7 @@
   "<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.id">id</a>" : "PDexAdjudication",
   "<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet PDexAdjudication&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;PDexAdjudication\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcPDexAdjudication\&quot;&gt; &lt;/a&gt;&lt;p&gt;This value set includes codes based on the following rules:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html\&quot;&gt;&lt;code&gt;http://terminology.hl7.org/CodeSystem/adjudication&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is not explicitly stated, which means it is fixed to 1.0.1, the version found through the package references\&quot;&gt; version &amp;#x1F4E6;1.0.1&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-submitted\&quot;&gt;submitted&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Submitted Amount&lt;/td&gt;&lt;td&gt;The total submitted amount for the claim or group or line item.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-copay\&quot;&gt;copay&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;CoPay&lt;/td&gt;&lt;td&gt;Patient Co-Payment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-eligible\&quot;&gt;eligible&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Eligible Amount&lt;/td&gt;&lt;td&gt;Amount of the change which is considered for adjudication.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-deductible\&quot;&gt;deductible&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Deductible&lt;/td&gt;&lt;td&gt;Amount deducted from the eligible amount prior to adjudication.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/6.3.0/CodeSystem-adjudication.html#adjudication-benefit\&quot;&gt;benefit&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Benefit Amount&lt;/td&gt;&lt;td&gt;Amount payable under the coverage&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html\&quot;&gt;&lt;code&gt;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is not explicitly stated, which means it is fixed to 2.1.0, the version found through the package references\&quot;&gt; version &amp;#x1F4E6;2.1.0&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-coinsurance\&quot;&gt;coinsurance&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Coinsurance&lt;/td&gt;&lt;td&gt;The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-noncovered\&quot;&gt;noncovered&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Noncovered&lt;/td&gt;&lt;td&gt;The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-priorpayerpaid\&quot;&gt;priorpayerpaid&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Prior payer paid&lt;/td&gt;&lt;td&gt;The reduction in the payment amount to reflect the carrier as a secondary payer.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatient\&quot;&gt;paidbypatient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid by patient&lt;/td&gt;&lt;td&gt;The total amount paid by the patient without specifying the source.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtopatient\&quot;&gt;paidtopatient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid to patient&lt;/td&gt;&lt;td&gt;paid to patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtoprovider\&quot;&gt;paidtoprovider&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid to provider&lt;/td&gt;&lt;td&gt;The amount paid to the provider.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-memberliability\&quot;&gt;memberliability&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Member liability&lt;/td&gt;&lt;td&gt;The amount of the member's liability.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-discount\&quot;&gt;discount&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Discount&lt;/td&gt;&lt;td&gt;The amount of the discount&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-drugcost\&quot;&gt;drugcost&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug cost&lt;/td&gt;&lt;td&gt;Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet PDexAdjudication&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;PDexAdjudication\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcPDexAdjudication\&quot;&gt; &lt;/a&gt;&lt;p&gt;This value set includes codes based on the following rules:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html\&quot;&gt;&lt;code&gt;http://terminology.hl7.org/CodeSystem/adjudication&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is explicitly stated to be 1.0.1\&quot;&gt; version &amp;#x1F4CD;1.0.1&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html#adjudication-submitted\&quot;&gt;submitted&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Submitted Amount&lt;/td&gt;&lt;td&gt;The total submitted amount for the claim or group or line item.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html#adjudication-copay\&quot;&gt;copay&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;CoPay&lt;/td&gt;&lt;td&gt;Patient Co-Payment&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html#adjudication-eligible\&quot;&gt;eligible&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Eligible Amount&lt;/td&gt;&lt;td&gt;Amount of the change which is considered for adjudication.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html#adjudication-deductible\&quot;&gt;deductible&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Deductible&lt;/td&gt;&lt;td&gt;Amount deducted from the eligible amount prior to adjudication.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html#adjudication-benefit\&quot;&gt;benefit&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Benefit Amount&lt;/td&gt;&lt;td&gt;Amount payable under the coverage&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html\&quot;&gt;&lt;code&gt;http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication&lt;/code&gt;&lt;/a&gt;&lt;span title=\&quot;Version is explicitly stated to be 2.1.0\&quot;&gt; version &amp;#x1F4CD;2.1.0&lt;/span&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-coinsurance\&quot;&gt;coinsurance&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Coinsurance&lt;/td&gt;&lt;td&gt;The amount the insured individual pays, as a set percentage of the cost of covered medical services, as an out-of-pocket payment to the provider. Example: Insured pays 20% and the insurer pays 80%.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-noncovered\&quot;&gt;noncovered&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Noncovered&lt;/td&gt;&lt;td&gt;The portion of the cost of this service that was deemed not eligible by the insurer because the service or member was not covered by the subscriber contract.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-priorpayerpaid\&quot;&gt;priorpayerpaid&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Prior payer paid&lt;/td&gt;&lt;td&gt;The reduction in the payment amount to reflect the carrier as a secondary payer.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidbypatient\&quot;&gt;paidbypatient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid by patient&lt;/td&gt;&lt;td&gt;The total amount paid by the patient without specifying the source.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtopatient\&quot;&gt;paidtopatient&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid to patient&lt;/td&gt;&lt;td&gt;paid to patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-paidtoprovider\&quot;&gt;paidtoprovider&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paid to provider&lt;/td&gt;&lt;td&gt;The amount paid to the provider.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-memberliability\&quot;&gt;memberliability&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Member liability&lt;/td&gt;&lt;td&gt;The amount of the member's liability.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-discount\&quot;&gt;discount&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Discount&lt;/td&gt;&lt;td&gt;The amount of the discount&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html#C4BBAdjudication-drugcost\&quot;&gt;drugcost&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Drug cost&lt;/td&gt;&lt;td&gt;Price paid for the drug excluding mfr or other discounts.  It typically is the sum of the following components: ingredient cost, dispensing fee, sales tax, and vaccine administration&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.extension">extension</a>" : [
     {
@@ -347,12 +350,12 @@
     }
   ],
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a>" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexAdjudication",
-  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a>" : "2.1.1",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a>" : "2.2.0",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a>" : "PDexAdjudication",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a>" : "PDex Adjudication",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a>" : "active",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a>" : true,
-  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2025-12-17T14:48:28-05:00",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2026-03-17T22:49:33-04:00",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a>" : "HL7 International / Financial Management",
   "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>" : [
     {
@@ -404,6 +407,7 @@
     "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>" : [
       {
         "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a>" : "http://terminology.hl7.org/CodeSystem/adjudication",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.version">version</a>" : "1.0.1",
         "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "submitted"
@@ -424,6 +428,7 @@
       },
       {
         "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a>" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.version">version</a>" : "2.1.0",
         "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "coinsurance",
@@ -511,7 +516,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

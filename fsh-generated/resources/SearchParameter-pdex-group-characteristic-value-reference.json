@@ -1,0 +1,22 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "pdex-group-characteristic-value-reference",
+  "url": "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference",
+  "version": "2.2.0",
+  "name": "PDexGroupCharacteristicValueReference",
+  "status": "active",
+  "experimental": true,
+  "description": "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference).",
+  "code": "characteristic-value-reference",
+  "base": [
+    "Group"
+  ],
+  "type": "reference",
+  "expression": "Group.characteristic.value.ofType(Reference)",
+  "xpathUsage": "normal",
+  "multipleOr": false,
+  "multipleAnd": true,
+  "target": [
+    "Organization"
+  ]
+}

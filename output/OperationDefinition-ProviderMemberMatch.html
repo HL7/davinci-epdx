@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDex Provider-Member-Match Operation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>PDex Provider-Member-Match Operation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.7"}
-    h3,h4,h5,h6{--heading-prefix:"13.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.6"}
+    h3,h4,h5,h6{--heading-prefix:"14.6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -129,6 +129,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -250,7 +253,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -304,7 +307,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">2.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch|2.1.1"/></span>
+      <span class="copy-text">2.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch|2.2.0"/></span>
       </td>
     </tr>
 
@@ -348,6 +351,8 @@
 
 <p>The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.</p>
 
+<p>Input parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html">Provider $multi-member-match Request</a> profile. Output parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html">Provider $multi-member-match Response</a> profile.</p>
+
 </p>
 
 
@@ -363,11 +368,10 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="ProviderMemberMatch"> </a><a name="hcProviderMemberMatch"> </a><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MembersToMatch</td><td/><td>1..*</td><td><a href="http://hl7.org/fhir/R4/parameters.html">Parameters</a></td><td/><td><div><p>Contains one or more members with patient demographics and coverage information to be matched against the payer's member records.</p>
-</div></td></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-member-provider-treatment-relationship-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group">Member-Provider Treatment Relationship Group</a>)</td><td/><td><div><p>A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.</p>
-</div></td></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-no-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group">PDex Member No Match Group</a>)</td><td/><td><div><p>A Group resource containing members for whom no match could be found in the payer's member records.</p>
-</div></td></tr><tr><td>OUT</td><td>TreatmentAttestationConstrainedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-no-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group">PDex Member No Match Group</a>)</td><td/><td><div><p>A Group resource containing members for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.</p>
-</div></td></tr><tr><td>OUT</td><td>OptOutConstrainedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-member-opt-out-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group">Member Opt-Out Group</a>)</td><td/><td><div><p>A Group resource containing members who have opted out of data sharing with providers or this specific provider.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="ProviderMemberMatch"> </a><a name="hcProviderMemberMatch"> </a><p>URL: [base]/Group/$provider-member-match</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MembersToMatch</td><td/><td>1..*</td><td><a href="http://hl7.org/fhir/R4/parameters.html">Parameters</a></td><td/><td><div><p>Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition <strong>SHALL</strong> conform to the MembersToMatch slice defined in the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html">Provider $multi-member-match Request</a> profile.</p>
+</div></td></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-treatment-relationship.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship">Member-Provider Treatment Relationship Group</a>)</td><td/><td><div><p>A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.</p>
+</div></td></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-no-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group">PDex Member No Match Group</a>)</td><td/><td><div><p>A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.</p>
+</div></td></tr><tr><td>OUT</td><td>ConsentConstrainedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-opt-out.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out">Member Opt-Out Group</a>)</td><td/><td><div><p>A Group resource containing members who have opted out of data sharing with providers or this specific provider.</p>
 </div></td></tr></table><div><p>The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.</p>
 </div></div>
 
@@ -416,7 +420,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

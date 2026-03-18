@@ -5,10 +5,10 @@ Instance: ProviderMemberMatch
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "PDex Provider-Member-Match Operation"
-Description: "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format."
+Description: "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.\n\nInput parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile."
 * experimental = true
 * url = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch"
-* version = "2.1.0"
+* version = "2.2.0"
 * name = "ProviderMemberMatch"
 * status = #active
 * kind = #operation
@@ -29,7 +29,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].type = #Parameters
 * parameter[=].min = 1
 * parameter[=].max = "*"
-* parameter[=].documentation = "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records."
+* parameter[=].documentation = "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile."
 
 // MembersToMatch.MemberPatient - The patient demographics for the member
 * parameter[=].part[+].name = #MemberPatient
@@ -65,7 +65,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].part[=].min = 1
 * parameter[=].part[=].max = "1"
 * parameter[=].part[=].targetProfile = Canonical(ProviderTreatmentAttestation)
-* parameter[=].part[=].documentation = "Provider's attestation to an active treatment relationship with the patient. This replaces the general consent with a specific treatment relationship attestation."
+* parameter[=].part[=].documentation = "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
 
 // ─── Output Parameters ────────────────────────────────────────────────────────
 

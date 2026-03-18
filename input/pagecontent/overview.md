@@ -121,9 +121,9 @@ Data Segmentation capabilities for Bulk Data Transfer are currently being develo
 
 ### Provenance
 
-Since Health Plans compile information from many sources to create a Member's Health History it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.
+Since Health Plans compile information from many sources to create a Member's Health History, it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.
 
-§pdex-117: Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data. § §pdex-118: Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. § §pdex-119: Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange. §
+§pdex-117: Health Plans **SHOULD** accept and retain provenance records that they receive as part of any exchange of FHIR data. § §pdex-118: Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. § §pdex-119: Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange. §
 
 §pdex-120: In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data. §
 

@@ -1,0 +1,129 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "pdex-consent-api-purpose"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem pdex-consent-api-purpose</b></p><a name=\"pdex-consent-api-purpose\"> </a><a name=\"hcpdex-consent-api-purpose\"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">provider-access<a name=\"pdex-consent-api-purpose-provider-access\"> </a></td><td>Provider Access API</td><td>Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)</td></tr><tr><td style=\"white-space:nowrap\">payer-to-payer<a name=\"pdex-consent-api-purpose-payer-to-payer\"> </a></td><td>Payer-to-Payer API</td><td>Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)</td></tr><tr><td style=\"white-space:nowrap\">patient-access<a name=\"pdex-consent-api-purpose-patient-access\"> </a></td><td>Patient Access API</td><td>Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-wg>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "fm"
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm>
+     ] ;
+     fhir:value [
+       a fhir:Integer ;
+       fhir:v 2 ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+     ] ;
+     fhir:value [
+       a fhir:Code ;
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom>
+         ] ;
+         fhir:value [
+           a fhir:Canonical ;
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [
+     fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose"^^xsd:anyURI ;
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose>
+  ] ; # 
+  fhir:version [ fhir:v "2.2.0"] ; # 
+  fhir:name [ fhir:v "PDexConsentApiPurposeCS"] ; # 
+  fhir:title [ fhir:v "PDex Consent API Purpose"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-03-17T22:49:33-04:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "fm@lists.HL7.org" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Mark Scrimshire (mark.scrimshire@onyxhealth.io)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "mailto:mark.scrimshire@onyxhealth.io" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "HL7 International - Financial Management" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ;
+         fhir:l <urn:iso:std:iso:3166>
+       ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "Used by permission of HL7 International, all rights reserved Creative Commons License"] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "provider-access" ] ;
+     fhir:display [ fhir:v "Provider Access API" ] ;
+     fhir:definition [ fhir:v "Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)" ]
+  ] [
+     fhir:code [ fhir:v "payer-to-payer" ] ;
+     fhir:display [ fhir:v "Payer-to-Payer API" ] ;
+     fhir:definition [ fhir:v "Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)" ]
+  ] [
+     fhir:code [ fhir:v "patient-access" ] ;
+     fhir:display [ fhir:v "Patient Access API" ] ;
+     fhir:definition [ fhir:v "Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

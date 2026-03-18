@@ -26,9 +26,6 @@
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-changeType': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-coverageReference': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-atr/StructureDefinition/ext-attributedProvider': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

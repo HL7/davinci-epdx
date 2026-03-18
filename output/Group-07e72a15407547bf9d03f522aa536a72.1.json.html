@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>example-pdex-member-match-group - JSON Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>example-pdex-member-match-group - JSON Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.122"}
-    h3,h4,h5,h6{--heading-prefix:"13.122"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.130"}
+    h3,h4,h5,h6{--heading-prefix:"14.130"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -348,10 +351,10 @@
               }
             ]
           },
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/old-payer/identifiers/member",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/new-payer/identifiers/member",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "55678",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Old Payer"
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "New Payer"
           }
         }
       ],
@@ -381,10 +384,10 @@
               }
             ]
           },
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/old-payer/identifiers/member",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/new-payer/identifiers/member",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "45567",
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Old Payer"
+            "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "New Payer"
           }
         }
       ],
@@ -400,6 +403,38 @@
       ],
       "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "male",
       "<a href="http://hl7.org/fhir/R4/patient.html#Patient.birthDate">birthDate</a>" : "1958-12-25"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/coverage.html">resourceType</a>" : "Coverage",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Coverage.id">id</a>" : "coverage-1",
+      "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.status">status</a>" : "active",
+      "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriberId">subscriberId</a>" : "EMP-123456",
+      "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.beneficiary">beneficiary</a>" : {
+        <a href="Patient-1001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/1001"
+      },
+      "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.payor">payor</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "0123456789"
+          },
+          "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Old Health Plan"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class">class</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.type">type</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "plan"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.value">value</a>" : "EMP-PLAN-123",
+          "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.name">name</a>" : "Employer Plan 123"
+        }
+      ]
     }
   ],
   "<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>" : [
@@ -458,6 +493,12 @@
             "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters",
             "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>" : {
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#1"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage",
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueReference</a>" : {
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#coverage-1"
             }
           }
         ],
@@ -524,7 +565,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

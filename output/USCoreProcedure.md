@@ -1,4 +1,4 @@
-# US Core Procedure - Da Vinci Payer Data Exchange v2.1.1
+# US Core Procedure - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - PDex Prior Authorization](PDexPriorAuthorization.md)
 
-The [US Core 3.1.1 Procedure](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-procedure.html) or [US Core 6.1.0 Procedure](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-procedure.html) **SHALL** be used to record a member's health events.
+The [US Core 3.1.1 Procedure](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-procedure.html) or [US Core 6.1.0 Procedure](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-procedure.html) §pdex-36: **SHALL** be used to record a member's health events. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Procedure](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-procedure.html) or [US Core 6.1.0 Procedure](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-procedure.html) are:
 
@@ -45,7 +45,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 
 *[Table Definition](index.md#mapping-adjudicated-claims-encounter-and-prior-authorization-information)*
 
-Note: Procedure records should only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies should not be created as prodcudure records.
+Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies **SHOULD NOT** be created as procedure records.
 
 #### Example Procedure Resource
 

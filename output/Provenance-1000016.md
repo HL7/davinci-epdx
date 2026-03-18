@@ -1,4 +1,4 @@
-# ExampleDocRefProvenance - Da Vinci Payer Data Exchange v2.1.1
+# ExampleDocRefProvenance - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -38,53 +38,39 @@ Summary
   "meta" : {
     "versionId" : "1",
     "lastUpdated" : "2020-10-09T15:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"]
   },
-  "target" : [
-    {
-      "reference" : "DocumentReference/123456"
-    }
-  ],
+  "target" : [{
+    "reference" : "DocumentReference/123456"
+  }],
   "recorded" : "2020-10-09T15:26:23.217+00:00",
-  "agent" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
-            "code" : "transmitter",
-            "display" : "Transmitter"
-          }
-        ]
-      },
-      "who" : {
-        "reference" : "Organization/ProviderOrg1"
-      }
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
+        "code" : "transmitter",
+        "display" : "Transmitter"
+      }]
+    },
+    "who" : {
+      "reference" : "Organization/ProviderOrg1"
     }
-  ],
-  "entity" : [
-    {
-      "extension" : [
-        {
-          "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
-                "code" : "unstructured"
-              }
-            ]
-          }
-        }
-      ],
-      "role" : "source",
-      "what" : {
-        "display" : "No reference available"
+  }],
+  "entity" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+          "code" : "unstructured"
+        }]
       }
+    }],
+    "role" : "source",
+    "what" : {
+      "display" : "No reference available"
     }
-  ]
+  }]
 }
 
 ```

@@ -1,4 +1,4 @@
-# An attribute to express the amount of a service or item that has been utilized - Da Vinci Payer Data Exchange v2.1.1
+# An attribute to express the amount of a service or item that has been utilized - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PriorAuthorizationUtilization |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PriorAuthorizationUtilization |
 | **Copyright/Legal**: Used by permission of HL7 International, all rights reserved Creative Commons License | |
 
 Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization.
@@ -43,129 +43,105 @@ Other representations of profile: [CSV](StructureDefinition-PriorAuthorizationUt
 {
   "resourceType" : "StructureDefinition",
   "id" : "PriorAuthorizationUtilization",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "PriorAuthorizationUtilization",
   "title" : "An attribute to express the amount of a service or item that has been utilized",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "ExplanationOfBenefit.total"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "ExplanationOfBenefit.total"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "An attribute to express the amount of a service or item that has been utilized",
-        "definition" : "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization."
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "An attribute to express the amount of a service or item that has been utilized",
+      "definition" : "Attribute that expresses the amount of an item or service that has been consumed under the current prior authorization."
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "short" : "Amount/Quantity of an item or service that has been consumed/utilized",
+      "type" : [{
+        "code" : "Quantity"
       },
       {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/PriorAuthorizationUtilization"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "short" : "Amount/Quantity of an item or service that has been consumed/utilized",
-        "type" : [
-          {
-            "code" : "Quantity"
-          },
-          {
-            "code" : "Ratio"
-          }
-        ]
-      }
-    ]
+        "code" : "Ratio"
+      }]
+    }]
   }
 }
 

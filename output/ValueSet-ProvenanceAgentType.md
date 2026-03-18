@@ -1,4 +1,4 @@
-# Provenance Agent Type - Da Vinci Payer Data Exchange v2.1.1
+# Provenance Agent Type - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:ProvenanceAgentType |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:ProvenanceAgentType |
 | **Copyright/Legal**: Used by permission of HL7 International, all rights reserved Creative Commons License | |
 
  
@@ -18,14 +18,13 @@ Agent role performed relating to referenced resource
  **References** 
 
 * [PDex Provenance](StructureDefinition-pdex-provenance.md)
+* [PDex Provenance](StructureDefinition-pdex-provenance.md)
 
 ### Logical Definition (CLD)
 
  
 
 ### Expansion
-
-No Expansion for this valueset (Unsupported Code System Version)
 
 -------
 
@@ -48,91 +47,74 @@ No Expansion for this valueset (Unsupported Code System Version)
 {
   "resourceType" : "ValueSet",
   "id" : "ProvenanceAgentType",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/ProvenanceAgentType",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "ProvenanceAgentType",
   "title" : "Provenance Agent Type",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Agent role performed relating to referenced resource",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
   "compose" : {
-    "include" : [
-      {
-        "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType"
-      },
-      {
-        "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type"
-      },
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
-        "version" : "7.0.0"
-      }
-    ]
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType"
+    },
+    {
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
+      "version" : "7.0.0"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+      "version" : "4.0.1"
+    }]
   }
 }
 

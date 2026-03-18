@@ -1,4 +1,4 @@
-# US Core Pediatric BMI for Age Observation - Da Vinci Payer Data Exchange v2.1.1
+# US Core Pediatric BMI for Age Observation - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -15,11 +15,11 @@
 
 The [US Core 3.1.1](http://hl7.org/fhir/us/core/3.1.1) IG profiles the Observation resource for a variety of purposes. For example:
 
-* [Smoking status](http://hl7.org/fhir/us/core/3.1.1/Observation-some-day-smoker.html)
-* [Pediatric BMI for Age](http://hl7.org/fhir/us/core/3.1.1/Observation-pediatric-bmi-example.html)
-* [Pediatric Weight for Height](http://hl7.org/fhir/us/core/3.1.1/Observation-pediatric-wt-example.html)
+* [Smoking status](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-smokingstatus.html)
+* [Pediatric BMI for Age](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-pediatric-bmi-for-age.html)
+* [Pediatric Weight for Height](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-pediatric-weight-for-height.html)
 
-[US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) defines those same profiles:
+[US Core 6.1.0 ](http://hl7.org/fhir/us/core/STU6.1) defines those same profiles:
 
 * [Smoking status](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-smokingstatus.html)
 * [Pediatric BMI for Age](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-pediatric-bmi-for-age.html)

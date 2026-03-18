@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="example-provider-nomatch-group"/>
+  <meta>
+    <lastUpdated value="2024-12-16T10:00:00Z"/>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Provider No Match Group</h2><p>Members submitted by the provider that were not found in the payer system.</p></div>
+  </text>
+  <contained>
+    <Patient>
+      <id value="prov-patient-2"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"/>
+      </meta>
+      <name>
+        <use value="official"/>
+        <family value="Smith"/>
+        <given value="Jane"/>
+      </name>
+      <gender value="female"/>
+      <birthDate value="1978-06-22"/>
+    </Patient>
+  </contained>
+  <identifier>
+    <system value="http://example.org/payer/match-groups"/>
+    <value value="NMG-2024-12-16-001"/>
+    <assigner>
+      <display value="Example Payer"/>
+    </assigner>
+  </identifier>
+  <active value="true"/>
+  <type value="person"/>
+  <actual value="true"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+      <code value="nomatch"/>
+      <display value="Not Matched"/>
+    </coding>
+  </code>
+  <managingEntity>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="5555555555"/>
+    </identifier>
+    <display value="Example Payer Organization"/>
+  </managingEntity>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters">
+        <valueReference>
+          <reference value="#prov-patient-2"/>
+        </valueReference>
+      </extension>
+      <reference value="#prov-patient-2"/>
+    </entity>
+  </member>
+</Group>

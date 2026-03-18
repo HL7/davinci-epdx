@@ -1,4 +1,4 @@
-# PDex Device - Da Vinci Payer Data Exchange v2.1.1
+# PDex Device - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PdexDevice |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PdexDevice |
 | **Copyright/Legal**: Used by permission of HL7 International, all rights reserved Creative Commons License | |
 
  
@@ -57,188 +57,164 @@ Other representations of profile: [CSV](StructureDefinition-pdex-device.csv), [E
 {
   "resourceType" : "StructureDefinition",
   "id" : "pdex-device",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "PdexDevice",
   "title" : "PDex Device",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. \nFHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "udi",
-      "uri" : "http://fda.gov/UDI",
-      "name" : "UDI Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "udi",
+    "uri" : "http://fda.gov/UDI",
+    "name" : "UDI Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Device",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Device",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Device",
-        "path" : "Device"
-      },
-      {
-        "id" : "Device.udiCarrier",
-        "path" : "Device.udiCarrier",
-        "max" : "1",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.udiCarrier.deviceIdentifier",
-        "path" : "Device.udiCarrier.deviceIdentifier",
-        "min" : 1,
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.udiCarrier.carrierAIDC",
-        "path" : "Device.udiCarrier.carrierAIDC",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.udiCarrier.carrierHRF",
-        "path" : "Device.udiCarrier.carrierHRF",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.status",
-        "path" : "Device.status",
-        "mustSupport" : true,
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://hl7.org/fhir/ValueSet/device-status"
-        }
-      },
-      {
-        "id" : "Device.distinctIdentifier",
-        "path" : "Device.distinctIdentifier",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.expirationDate",
-        "path" : "Device.expirationDate",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.lotNumber",
-        "path" : "Device.lotNumber",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.serialNumber",
-        "path" : "Device.serialNumber",
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.type",
-        "path" : "Device.type",
-        "min" : 1,
-        "mustSupport" : true,
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.org/fhir/ValueSet/device-kind"
-        }
-      },
-      {
-        "id" : "Device.patient",
-        "path" : "Device.patient",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-            ]
-          }
-        ],
-        "mustSupport" : true
-      },
-      {
-        "id" : "Device.url",
-        "path" : "Device.url",
-        "mustSupport" : true
+    "element" : [{
+      "id" : "Device",
+      "path" : "Device"
+    },
+    {
+      "id" : "Device.udiCarrier",
+      "path" : "Device.udiCarrier",
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.udiCarrier.deviceIdentifier",
+      "path" : "Device.udiCarrier.deviceIdentifier",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.udiCarrier.carrierAIDC",
+      "path" : "Device.udiCarrier.carrierAIDC",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.udiCarrier.carrierHRF",
+      "path" : "Device.udiCarrier.carrierHRF",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.status",
+      "path" : "Device.status",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/device-status"
       }
-    ]
+    },
+    {
+      "id" : "Device.distinctIdentifier",
+      "path" : "Device.distinctIdentifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.expirationDate",
+      "path" : "Device.expirationDate",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.lotNumber",
+      "path" : "Device.lotNumber",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.serialNumber",
+      "path" : "Device.serialNumber",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.type",
+      "path" : "Device.type",
+      "min" : 1,
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/device-kind"
+      }
+    },
+    {
+      "id" : "Device.patient",
+      "path" : "Device.patient",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.url",
+      "path" : "Device.url",
+      "mustSupport" : true
+    }]
   }
 }
 

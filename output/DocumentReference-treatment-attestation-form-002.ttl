@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-002> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "treatment-attestation-form-002"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2024-12-16T10:00:00Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Signed Treatment Relationship Attestation Form for Sarah Williams</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:docStatus [ fhir:v "final"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:64292-6 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "64292-6" ] ;
+       fhir:display [ fhir:v "Release of information consent Document" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a loinc:64292-6 ;
+       fhir:system [
+         fhir:v "http://loinc.org"^^xsd:anyURI ;
+         fhir:l <http://loinc.org>
+       ] ;
+       fhir:code [ fhir:v "64292-6" ] ;
+       fhir:display [ fhir:v "Release of information consent Document" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-002> ;
+     fhir:reference [ fhir:v "Patient/patient-prov-002" ] ;
+     fhir:display [ fhir:v "Sarah Elizabeth Williams" ]
+  ] ; # 
+  fhir:date [ fhir:v "2024-12-16T09:45:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> ;
+     fhir:reference [ fhir:v "Practitioner/provider-002" ] ;
+     fhir:display [ fhir:v "Dr. Mary Jones" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> ;
+     fhir:reference [ fhir:v "Organization/provider-org-002" ] ;
+     fhir:display [ fhir:v "Second Example Provider Organization" ]
+  ] ; # 
+  fhir:description [ fhir:v "Signed attestation form documenting active treatment relationship between Dr. Jones and patient Sarah Williams"] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "application/pdf" ] ;
+       fhir:language [ fhir:v "en-US" ] ;
+       fhir:title [ fhir:v "Treatment Relationship Attestation Form" ] ;
+       fhir:creation [ fhir:v "2024-12-16T09:45:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:period [
+       fhir:start [ fhir:v "2024-02-15"^^xsd:date ]
+     ]
+  ] . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-002> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

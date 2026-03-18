@@ -12,7 +12,7 @@ The Exchange of all of a member's clinical data, as scoped by USCDI version 1 an
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.
 
-§pdex-176: Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
+§pdex-176: Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
 
 §pdex-177: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange
 §pdex-178: **MAY** be used to exchange data for a SINGLE member. §
@@ -40,7 +40,7 @@ The steps in the Member Match with Consent process are:
 - Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation.
 - The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found.
 - The $member-match operation evaluates the Consent resource for a matched member.
-- If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a unique Member ID is provided to the requesting Payer (Payer2).
+- If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a `MemberIdentifier` (unique member business identifier) is returned to the requesting Payer (Payer2). A `MemberId` (Patient FHIR ID) **SHOULD** also be returned where available.
 - If a Member ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member.
 - If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
@@ -67,6 +67,17 @@ $member-match Operation are also defined in the [HRex IG](http://hl7.org/fhir/us
 The Coverage Profile is used to provide data for the CoverageToMatch and the CoverageToLink parameters in the
 $member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink
 is the current coverage for the member at the new/requesting payer.
+
+#### $member-match Response Parameters
+
+The [HRex $member-match response](http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html) defines two possible return parameters:
+
+- **`MemberIdentifier`** (Identifier): A unique member business identifier (e.g., a Unique Member Identifier/UMB) assigned by the responding payer. This parameter is **required** and **Must Support** per the HRex profile. Note: this is a FHIR business *Identifier* (system + value), not a Patient FHIR resource ID.
+- **`MemberId`** (Reference(Patient)): A reference to the Patient resource — the Patient FHIR ID — on the responding payer's system. This parameter is optional per the HRex profile.
+
+§pdex-197a: When a member is successfully matched and consent can be complied with, the responding payer **SHALL** return a `MemberIdentifier` and **SHOULD** also return a `MemberId` (Patient FHIR ID) in the $member-match response. §
+
+§pdex-197b: Implementers **SHALL** be prepared to handle $member-match responses that contain only a `MemberIdentifier`, or both a `MemberIdentifier` and a `MemberId`. § When a `MemberId` (Patient FHIR ID) is present in the response it **SHOULD** be used as the subject for the subsequent OAuth2.0 access token request. Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token.
 
 When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
 
@@ -117,7 +128,7 @@ It is a member's option to share their health information with their new health 
 In the case where a match is confirmed the receiving payer will:
 
 - Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the old payer able to respond to a request for only non-sensitive data.
-- Return a Unique Patient Identifier (Patient FHIR ID) in the $member-match Operation Response.
+- Return a `MemberIdentifier` (unique member business identifier) in the $member-match Operation Response and, where available, a `MemberId` (Patient FHIR ID).
 
 #### Consent Revocation
 
@@ -318,8 +329,7 @@ Once payers have setup a secure mTLS connection, the new Payer will query the Dy
 
 ### Request Access Token for Member Access
 
-In step 3 of the Member-match process, the requesting Payer will have received a FHIR ID for the matched member (the MemberMatch ID). This Id **SHOULD** be submitted to the Access Token Endpoint with a JWT where the subject Id is the MemberMatch ID. §pdex-197: The Authorization Server **SHOULD** use the Subject ID, confirms that consent for the §
-Requesting Payer to access the Matched Member is still valid and therefore issue an access token that is scoped to the FHIR ID of the matched member, consequently bounding any subsequent FHIR API request to that specific Patient FHIR ID.
+In step 3 of the Member-match process, the requesting Payer will have received a `MemberIdentifier` (member business identifier) and, where returned, a `MemberId` (Patient FHIR ID) for the matched member. §pdex-197: Where a `MemberId` (Patient FHIR ID) is returned from $member-match, it **SHOULD** be submitted to the Access Token Endpoint in the JWT `sub` claim. § The Authorization Server **SHOULD** use the Subject ID, confirm that consent for the Requesting Payer to access the Matched Member is still valid, and issue an access token scoped to that specific Patient FHIR ID, bounding any subsequent FHIR API request accordingly. Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token appropriately.
 
 ### Scopes for Operations
 

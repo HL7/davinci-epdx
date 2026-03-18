@@ -1,4 +1,4 @@
-# X12 278 Review Decision Reason Codes - Da Vinci Payer Data Exchange v2.1.1
+# X12 278 Review Decision Reason Codes - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:X12278ReviewDecisionReasonCode |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:X12278ReviewDecisionReasonCode |
 | **Copyright/Legal**: This value set contains codes maintained by X12. All X12 work products are copyrighted. See their website for licensing terms and conditions. | |
 
  
@@ -17,6 +17,7 @@ Codes used to identify the reason for the health care service review outcome.
 
  **References** 
 
+* [ReviewAction](StructureDefinition-extension-reviewAction.md)
 * [ReviewAction](StructureDefinition-extension-reviewAction.md)
 
 ### Logical Definition (CLD)
@@ -48,84 +49,66 @@ No Expansion for this valueset (Unknown Code System)
 {
   "resourceType" : "ValueSet",
   "id" : "X12278ReviewDecisionReasonCode",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "X12278ReviewDecisionReasonCode",
   "title" : "X12 278 Review Decision Reason Codes",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Codes used to identify the reason for the health care service review outcome.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "This value set contains codes maintained by X12. All X12 work products are copyrighted.\nSee their website for licensing terms and conditions.",
   "compose" : {
-    "include" : [
-      {
-        "system" : "https://codesystem.x12.org/external/886"
-      }
-    ]
+    "include" : [{
+      "system" : "https://codesystem.x12.org/external/886"
+    }]
   }
 }
 

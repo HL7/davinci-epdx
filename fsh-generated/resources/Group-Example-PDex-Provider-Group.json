@@ -54,28 +54,6 @@
       }
     }
   ],
-  "member": [
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission",
-          "valueDateTime": "2024-03-21T17:18:00.000Z"
-        },
-        {
-          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types",
-          "valueString": "Patient,Condition,Observation,Procedure"
-        },
-        {
-          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter",
-          "valueString": "Condition?recordedDate=ge2023-09-23,Procedure?performed=ge2023-03-21"
-        }
-      ],
-      "id": "0",
-      "entity": {
-        "reference": "Patient/1001"
-      }
-    }
-  ],
   "code": {
     "coding": [
       {
@@ -88,6 +66,14 @@
   "active": true,
   "name": "Attributed List of Health Plan Members for Practitioner 1122334455.",
   "managingEntity": {
-    "reference": "Organization/ProviderOrg1"
-  }
+    "reference": "Organization/Payer1"
+  },
+  "member": [
+    {
+      "id": "0",
+      "entity": {
+        "reference": "Patient/1001"
+      }
+    }
+  ]
 }
