@@ -11,6 +11,7 @@ Title: "Provider-Member-Match Request Example"
 Description: "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage."
 Usage: #example
 * id = "provider-member-match-request-001"
+* meta.profile[0] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
 
 // ------------------
 // Member 1: Successfully matched member

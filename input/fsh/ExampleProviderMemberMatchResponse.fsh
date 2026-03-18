@@ -8,6 +8,7 @@ Title: "Provider-Member-Match Response Example"
 Description: "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out."
 Usage: #example
 * id = "provider-member-match-response-001"
+* meta.profile[0] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"
 
 // ------------------
 // Matched Members - Members with confirmed treatment relationships
