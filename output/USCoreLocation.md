@@ -1,4 +1,4 @@
-# US Core Location - Da Vinci Payer Data Exchange v2.1.1
+# US Core Location - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -14,7 +14,7 @@
 [Previous Page - US Core Laboratory Result Observation](USCoreLaboratoryResultObservation.md)
 
 The
- [US Core 3.1.1 Location](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-location.html) or [US Core 6.1.0 Location](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-location.html) **SHALL** be used to record location/facility-specific information.
+ [US Core 3.1.1 Location](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-location.html) or [US Core 6.1.0 Location](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-location.html) §pdex-28: **SHALL** be used to record location/facility-specific information. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
  [US Core 3.1.1 Location](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-location.html) or [US Core 6.1.0 Location](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-location.html) resource are:

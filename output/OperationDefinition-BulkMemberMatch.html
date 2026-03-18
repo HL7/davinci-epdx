@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDex Bulk Member Match Operation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>PDex Bulk Member Match Operation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.6"}
-    h3,h4,h5,h6{--heading-prefix:"13.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.5"}
+    h3,h4,h5,h6{--heading-prefix:"14.5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -129,6 +129,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -231,7 +234,7 @@
 
           <span style="float:right;">
 
-            <a href="OperationDefinition-BulkMemberMatchDataExport.ttl.html">&lt;prev</a> | 
+            <a href="CapabilityStatement-pdex-server-6-1.ttl.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -250,7 +253,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -304,7 +307,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">2.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch|2.1.1"/></span>
+      <span class="copy-text">2.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch|2.2.0"/></span>
       </td>
     </tr>
 
@@ -344,7 +347,9 @@
 
 
 <p>
-<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format.</p>
+<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation <strong>SHALL</strong> be performed asynchronously following the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>. The kick-off request (HTTP POST with <code class="language-plaintext highlighter-rouge">Prefer: respond-async</code>) returns HTTP 202 Accepted with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.</p>
+
+<p>Input parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex Multi-Member Match Request</a> profile. Output parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex Multi-Member Match Response</a> profile.</p>
 
 </p>
 
@@ -361,7 +366,10 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="BulkMemberMatch"> </a><a name="hcBulkMemberMatch"> </a><p>Input parameters Profile:<a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex $multi-member-match request</a></p><p>Output parameters Profile:<a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex $multi-member-match response</a></p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MemberBundle</td><td/><td>1..*</td><td></td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.MemberPatient</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-patient-demographics.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics">HRex Member Match Patient</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.CoverageToMatch</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage">HRex Member Match Coverage Profile</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.CoverageToLink</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage">HRex Member Match Coverage Profile</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.Consent</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/consent.html">Consent</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-consent.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent">HRex Consent Profile</a>)</td><td/><td/></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-match-group">PDex Member Match Group</a>)</td><td/><td/></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-no-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group">PDex Member No Match Group</a>)</td><td/><td/></tr><tr><td>OUT</td><td>ConsentConstrainedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a> (<a href="StructureDefinition-pdex-member-no-match-group.html" title="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group">PDex Member No Match Group</a>)</td><td/><td/></tr></table><div><p>The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk data export and retrieve the associated member health history in ndjson format. See BulkMemberMatchDataExport operation for details on the bulk export manifest structure.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="BulkMemberMatch"> </a><a name="hcBulkMemberMatch"> </a><p>URL: [base]/Group/$bulk-member-match</p><p>Input parameters Profile:<a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex $multi-member-match request</a></p><p>Output parameters Profile:<a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex $multi-member-match response</a></p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MemberBundle</td><td/><td>1..*</td><td></td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.MemberPatient</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/patient.html">Patient</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-patient-demographics.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics">HRex Member Match Patient</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.CoverageToMatch</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage">HRex Member Match Coverage Profile</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.CoverageToLink</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/coverage.html">Coverage</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage">HRex Member Match Coverage Profile</a>)</td><td/><td/></tr><tr><td>IN</td><td>MemberBundle.Consent</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/consent.html">Consent</a> (<a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-consent.html" title="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent">HRex Consent Profile</a>)</td><td/><td/></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a></td><td/><td><div><p>Group of members successfully matched. Delivered asynchronously via the bulk data completion manifest.</p>
+</div></td></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a></td><td/><td><div><p>Group of members that could not be matched. Delivered asynchronously via the bulk data completion manifest.</p>
+</div></td></tr><tr><td>OUT</td><td>ConsentConstrainedMembers</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/group.html">Group</a></td><td/><td><div><p>Group of members matched but excluded due to consent constraints. Delivered asynchronously via the bulk data completion manifest.</p>
+</div></td></tr></table><div><p>The Group resources returned by this operation can be used as input to the $davinci-data-export operation (defined in the Da Vinci Member Attribution IG) to perform bulk data export and retrieve the associated member health history in ndjson format.</p>
 </div></div>
 
   <!-- insert notes if present -->
@@ -391,7 +399,7 @@
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="OperationDefinition-BulkMemberMatchDataExport.ttl.html">&lt;prev</a>
+                <a href="CapabilityStatement-pdex-server-6-1.ttl.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -409,7 +417,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

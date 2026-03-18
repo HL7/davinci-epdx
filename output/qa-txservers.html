@@ -12,7 +12,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Terminology Server Report for DaVinciPayerDataExchange</h1>
- <p>Generated Wed Dec 17 14:58:16 EST 2025, FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#2.1.1 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>))</p>
+ <p>Generated Tue Mar 17 22:54:21 EDT 2026, FHIR version 4.0.1 for hl7.fhir.us.davinci-pdex#2.2.0 (canonical = <a href="http://hl7.org/fhir/us/davinci-pdex">http://hl7.org/fhir/us/davinci-pdex</a> (<a href="http://hl7.org/fhir/us/davinci-pdex/history.html">history</a>))</p>
 <p>This page provides a report on which terminology servers were used while publishing this IG. Note that terminology caching reduces the server hit count - this page only reports content that wasn't cached</p>
 <h2>Terminology Parameters</h2>
 <ul>
@@ -48,60 +48,116 @@
     </td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/mimetypes|4.0.1</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
+    <td>http://hl7.org/fhir/sid/ndc</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://snomed.info/sct|http://snomed.info/sct/731000124108</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:iso:std:iso:3166</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
     <td>urn:iso:std:iso:3166</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://unstats.un.org/unsd/methods/m49/m49.htm</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/jurisdiction|4.0.1</td>
+    <td>[http://unstats.un.org/unsd/methods/m49/m49.htm, urn:iso:std:iso:3166, urn:iso:std:iso:3166:-2]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
   </tr>
   <tr>
     <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://hl7.org/fhir/sid/ndc|2.0.1</td>
-    <td>auth = http://tx.fhir.org/r4, candidates=</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
     <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://hl7.org/fhir/sid/ndc|2.0.0</td>
-    <td>auth = http://tx.fhir.org/r4, candidates=</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://hl7.org/fhir/sid/ndc</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://www.ama-assn.org/go/cpt|3.0.1</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://www.ama-assn.org/go/cpt|3.0.0</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://www.ama-assn.org/go/cpt</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -132,11 +188,18 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -153,11 +216,18 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -174,25 +244,32 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://x12.org/codes/service-type-codes</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found authoritative server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
-    <td>http://terminology.hl7.org/CodeSystem/provenance-participant-type|7.0.0</td>
-    <td>auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+    <td>https://x12.org/codes/service-type-codes</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://codesystem.x12.org/external/886</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://codesystem.x12.org/external/886</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -209,11 +286,18 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://x12.org/codes/claim-adjustment-reason-codes</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://x12.org/codes/claim-adjustment-reason-codes</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
@@ -244,93 +328,457 @@
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://x12.org/codes/remittance-advice-remark-codes</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://x12.org/codes/remittance-advice-remark-codes</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>urn:uuid:1f0f7366-6c65-4570-b827-626cfb173e7f</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/mimetypes|4.0.1</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:47</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/languages|4.0.1</td>
+    <td>urn:ietf:bcp:47</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://snomed.info/sct|http://snomed.info/sct/731000124108</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://snomed.info/sct|http://snomed.info/sct/731000124108</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type|7.0.0</td>
+    <td>[http://www.ama-assn.org/go/cpt, http://snomed.info/sct|http://snomed.info/sct/731000124108, http://snomed.info/sct]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://hl7.org/fhir/sid/ndc</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://snomed.info/sct</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://snomed.info/sct</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>urn:uuid:eb4ca827-93ad-451d-9fa7-dcb5116bd95c</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/mimetypes|4.0.1</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>http://loinc.org</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
+    <td>Found partially authoritative server http://tx.fhir.org/r4</td>
     <td>http://tx.fhir.org/r4</td>
-    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes--0|2.1.1</td>
+    <td>http://hl7.org/fhir/ValueSet/consent-category|4.0.1</td>
+    <td>[http://terminology.hl7.org/CodeSystem/v3-ActCode, http://loinc.org, http://terminology.hl7.org/CodeSystem/consentcategorycodes]</td>
+    <td>[auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/device-kind|4.0.1</td>
+    <td>[http://snomed.info/sct|http://snomed.info/sct/731000124108, http://snomed.info/sct]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>Found partially authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|7.0.0</td>
+    <td>[http://loinc.org, http://terminology.hl7.org/CodeSystem/v3-NullFlavor]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>urn:uuid:2f76ddbf-16ff-45e0-9956-69a08ec5a4d3</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/mimetypes|4.0.1</td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/formatcodes|4.0.1</td>
+    <td>http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type|7.0.0</td>
+    <td>[http://www.ama-assn.org/go/cpt, http://snomed.info/sct|http://snomed.info/sct/731000124108, http://snomed.info/sct]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://codesystem.x12.org/005010/1338</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://codesystem.x12.org/005010/1338</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
     <td>https://x12.org/codes/service-type-codes</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
-    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.1.1</td>
-    <td>[http://www.ama-assn.org/go/cpt, https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets, https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes, http://terminology.hl7.org/CodeSystem/data-absent-reason]</td>
-    <td>[auth = , candidates=http://tx.fhir.org/r4, auth = , candidates=http://tx.fhir.org/r4, auth = , candidates=http://tx.fhir.org/r4, auth = , candidates=http://tx.fhir.org/r4]</td>
+    <td>Fallback: primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>https://x12.org/codes/service-type-codes</td>
+    <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Found candidate server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes--0|2.2.0</td>
+    <td>https://x12.org/codes/service-type-codes</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.2.0</td>
+    <td>[http://www.ama-assn.org/go/cpt, http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0, https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets, https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=, auth = , candidates=]</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
     <td>null</td>
     <td>https://codesystem.x12.org/005010/306</td>
-    <td>auth = , candidates=http://tx.fhir.org/r4</td>
-  </tr>
-  <tr>
-    <td>Found authoritative server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS</td>
-    <td>auth = http://tx.fhir.org/r4, candidates=</td>
-  </tr>
-  <tr>
-    <td>Found authoritative server http://tx.fhir.org/r4</td>
-    <td>http://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS</td>
-    <td>auth = http://tx.fhir.org/r4, candidates=</td>
-  </tr>
-  <tr>
-    <td>System not handled by any servers. Using primary server</td>
-    <td>https://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://hl7.org/fhir/CodeSystem/medicationdispense-status</td>
     <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>Fallback: primary server</td>
     <td>https://tx.fhir.org/r4</td>
     <td>null</td>
+    <td>https://codesystem.x12.org/005010/306</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:iso:std:iso:4217</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>urn:uuid:9583be1d-87a2-4feb-9288-bb32486ced23</td>
+    <td>urn:iso:std:iso:4217</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:iso:std:iso:4217</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/ValueSet/currencies|4.0.1</td>
+    <td>urn:iso:std:iso:4217</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode|2.2.0</td>
+    <td>http://hl7.org/fhir/sid/ndc</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Found partially authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4|20240606</td>
+    <td>[http://hl7.org/fhir/sid/ndc, http://www.nlm.nih.gov/research/umls/rxnorm|11042024]</td>
+    <td>[auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
     <td>http://hl7.org/fhir/CodeSystem/medicationdispense-status</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>null</td>
+    <td>http://hl7.org/fhir/CodeSystem/medicationdispense-status</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://hl7.org/fhir/sid/ndc</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://www.ama-assn.org/go/cpt</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodes|2.2.0</td>
+    <td>[http://www.ama-assn.org/go/cpt, http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0, https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets, https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=, auth = , candidates=]</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.2.0</td>
+    <td>[http://www.ama-assn.org/go/cpt, http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0, https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets, https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes]</td>
+    <td>[auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=, auth = , candidates=]</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>https://x12.org/codes/service-type-codes</td>
     <td>auth = , candidates=</td>
   </tr>
   <tr>
     <td>System not handled by any servers. Using primary server</td>
     <td>https://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://hl7.org/fhir/CodeSystem/medicationdispense-status</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.2.0</td>
+    <td>https://x12.org/codes/service-type-codes</td>
     <td>auth = , candidates=</td>
   </tr>
   <tr>
-    <td>Fallback: primary server</td>
+    <td>System not handled by any servers. Using primary server</td>
     <td>https://tx.fhir.org/r4</td>
-    <td>null</td>
-    <td>http://hl7.org/fhir/CodeSystem/medicationdispense-status</td>
+    <td></td>
+    <td>https://codesystem.x12.org/external/886</td>
     <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode|2.2.0</td>
+    <td>https://codesystem.x12.org/external/886</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>https://x12.org/codes/claim-adjustment-reason-codes</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes|2.2.0</td>
+    <td>[https://x12.org/codes/remittance-advice-remark-codes, https://x12.org/codes/claim-adjustment-reason-codes]</td>
+    <td>[auth = , candidates=, auth = , candidates=]</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://loinc.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://loinc.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://snomed.info/sct</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://snomed.info/sct</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|https://smt.esante.gouv.fr/fhir|https://apps.health.belgium.be/ontoserver/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://unitsofmeasure.org</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://unitsofmeasure.org</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://terminology.hl7.org/CodeSystem/provenance-participant-type|4.0.1|4.0.1</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://hl7.org/fhir/sid/ndc|2.0.1</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Found authoritative server http://tx.fhir.org/r4</td>
+    <td>http://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/FDANationalDrugCode|2.2.0</td>
+    <td>http://hl7.org/fhir/sid/ndc|2.0.1</td>
+    <td>auth = http://tx.fhir.org/r4, candidates=https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>http://www.ama-assn.org/go/cpt|3.0.1</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4</td>
+  </tr>
+  <tr>
+    <td>Use primary server for http://www.ama-assn.org/go/cpt</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.2.0</td>
+    <td>[https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|1.0.1, https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes|1.0.0, http://terminology.hl7.org/CodeSystem/data-absent-reason|1.0.0, http://www.ama-assn.org/go/cpt|3.0.1]</td>
+    <td>[auth = , candidates=, auth = , candidates=, auth = http://tx.fhir.org/r4, candidates=https://tx.hl7.org.au/fhir|https://tx.ontoserver.csiro.au/fhir|https://terminologystandardsservice.ca/tx/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4|https://tx-nordics.fhir.org/fhir/r4, auth = , candidates=http://tx.fhir.org/r4|https://tx-nordics.fhir.org/fhir/r4]</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>https://x12.org/codes/service-type-codes|1.0.0</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/PriorAuthServiceTypeCodes|2.2.0</td>
+    <td>https://x12.org/codes/service-type-codes|1.0.0</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>https://codesystem.x12.org/external/886</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12278ReviewDecisionReasonCode|2.2.0</td>
+    <td>https://codesystem.x12.org/external/886</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>System not handled by any servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>https://x12.org/codes/claim-adjustment-reason-codes|1.0.0</td>
+    <td>auth = , candidates=</td>
+  </tr>
+  <tr>
+    <td>Systems handled by multiple servers. Using primary server</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td>http://hl7.org/fhir/us/davinci-pdex/ValueSet/X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes|2.2.0</td>
+    <td>[https://x12.org/codes/remittance-advice-remark-codes|1.0.1, https://x12.org/codes/claim-adjustment-reason-codes|1.0.0]</td>
+    <td>[auth = , candidates=, auth = , candidates=]</td>
+  </tr>
+  <tr>
+    <td>Use primary server for urn:ietf:bcp:13</td>
+    <td>https://tx.fhir.org/r4</td>
+    <td></td>
+    <td>urn:ietf:bcp:13</td>
+    <td>auth = , candidates=http://tx.fhir.org/r4|https://tx.hl7.org.au/fhir|http://tx.hl7europe.eu/r4|https://tx.fhir.ch/r4|https://tx.hl7chile.cl/r4</td>
   </tr>
 </table>
 <h2>Primary Server: https://tx.fhir.org/r4</h2>
 <a href="https://tx.fhir.org/r4"></a>
-<p>Use Count: 8. Code Systems used: </p>
+<p>Use Count: 65. Code Systems used: </p>
 <table class="grid">
   <tr>
     <th>
@@ -354,8 +802,8 @@
   </tr>
   <tr>
     <td>http://hl7.org/fhir/sid/ndc</td>
-    <td>0</td>
     <td>1</td>
+    <td>5</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-ndc.html">National drug codes</a>
     </td>
@@ -370,81 +818,67 @@
   </tr>
   <tr>
     <td>http://hl7.org/fhir/sid/ndc|2.0.1</td>
-    <td>0</td>
+    <td>2</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-ndc.html">National drug codes</a>
     </td>
   </tr>
   <tr>
-    <td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS</td>
-    <td>0</td>
-    <td>1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS</td>
-    <td>0</td>
-    <td>1</td>
-    <td></td>
-  </tr>
-  <tr>
     <td>http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td></td>
   </tr>
   <tr>
     <td>http://loinc.org</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a>
     </td>
   </tr>
   <tr>
-    <td>http://snomed.info/sct|http://snomed.info/sct/731000124108</td>
+    <td>http://terminology.hl7.org/CodeSystem/consentcategorycodes</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="http://terminology.hl7.org/7.1.0/CodeSystem-consentcategorycodes.html">Consent Category Codes</a>
+    </td>
+  </tr>
+  <tr>
+    <td>http://terminology.hl7.org/CodeSystem/provenance-participant-type|4.0.1|4.0.1</td>
+    <td>1</td>
+    <td>0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActCode.html">ActCode</a>
+    </td>
+  </tr>
+  <tr>
+    <td>http://terminology.hl7.org/CodeSystem/v3-NullFlavor</td>
+    <td>0</td>
+    <td>1</td>
+    <td>
+      <a href="http://terminology.hl7.org/7.1.0/CodeSystem-v3-NullFlavor.html">NullFlavor</a>
+    </td>
+  </tr>
+  <tr>
+    <td>http://www.nlm.nih.gov/research/umls/rxnorm|11042024</td>
     <td>0</td>
     <td>1</td>
     <td></td>
   </tr>
   <tr>
-    <td>http://terminology.hl7.org/CodeSystem/data-absent-reason</td>
-    <td>0</td>
-    <td>1</td>
-    <td>
-      <a href="http://terminology.hl7.org/6.3.0/CodeSystem-data-absent-reason.html">DataAbsentReason</a>
-    </td>
-  </tr>
-  <tr>
-    <td>http://terminology.hl7.org/CodeSystem/provenance-participant-type|7.0.0</td>
+    <td>https://codesystem.x12.org/005010/1338</td>
     <td>0</td>
     <td>1</td>
     <td></td>
-  </tr>
-  <tr>
-    <td>http://www.ama-assn.org/go/cpt</td>
-    <td>0</td>
-    <td>2</td>
-    <td>
-      <a href="http://terminology.hl7.org/6.3.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT&reg;)</a>
-    </td>
-  </tr>
-  <tr>
-    <td>http://www.ama-assn.org/go/cpt|3.0.0</td>
-    <td>0</td>
-    <td>1</td>
-    <td>
-      <a href="http://terminology.hl7.org/3.1.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT&reg;)</a>
-    </td>
-  </tr>
-  <tr>
-    <td>http://www.ama-assn.org/go/cpt|3.0.1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>
-      <a href="http://terminology.hl7.org/6.3.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT&reg;)</a>
-    </td>
   </tr>
   <tr>
     <td>https://codesystem.x12.org/005010/306</td>
@@ -454,14 +888,14 @@
   </tr>
   <tr>
     <td>https://codesystem.x12.org/external/886</td>
-    <td>0</td>
+    <td>4</td>
     <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/5.3.0/CodeSystem-hcpcs-Level-II.html">Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes</a>
     </td>
@@ -485,7 +919,7 @@
   <tr>
     <td>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</td>
     <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html">Health Insurance Prospective Payment System (HIPPS)</a>
     </td>
@@ -500,7 +934,7 @@
   </tr>
   <tr>
     <td>https://x12.org/codes/claim-adjustment-reason-codes</td>
-    <td>0</td>
+    <td>2</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html">X12 Claim Adjustment Reason Codes</a>
@@ -508,7 +942,7 @@
   </tr>
   <tr>
     <td>https://x12.org/codes/claim-adjustment-reason-codes|1.0.0</td>
-    <td>0</td>
+    <td>2</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html">X12 Claim Adjustment Reason Codes</a>
@@ -516,7 +950,7 @@
   </tr>
   <tr>
     <td>https://x12.org/codes/remittance-advice-remark-codes</td>
-    <td>0</td>
+    <td>1</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-RARC.html">X12 Remittance Advice Remark Codes</a>
@@ -532,7 +966,7 @@
   </tr>
   <tr>
     <td>https://x12.org/codes/remittance-advice-remark-codes|1.0.1</td>
-    <td>0</td>
+    <td>1</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-RARC.html">X12 Remittance Advice Remark Codes</a>
@@ -540,26 +974,18 @@
   </tr>
   <tr>
     <td>https://x12.org/codes/service-type-codes</td>
-    <td>0</td>
     <td>2</td>
+    <td>3</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ServiceTypeCodes.html">X12 Service Type Codes</a>
     </td>
   </tr>
   <tr>
     <td>https://x12.org/codes/service-type-codes|1.0.0</td>
-    <td>0</td>
+    <td>2</td>
     <td>1</td>
     <td>
       <a href="http://terminology.hl7.org/6.3.0/CodeSystem-X12ServiceTypeCodes.html">X12 Service Type Codes</a>
-    </td>
-  </tr>
-  <tr>
-    <td>urn:iso:std:iso:3166</td>
-    <td>0</td>
-    <td>1</td>
-    <td>
-      <a href="http://terminology.hl7.org/6.3.0/CodeSystem-ISO3166Part1.html">ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code</a>
     </td>
   </tr>
 </table>

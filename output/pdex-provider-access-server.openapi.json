@@ -7,7 +7,7 @@
       "name": "Creative Commons Zero v1.0 Universal",
       "url": "http://spdx.org/licenses/CC0-1.0.html"
     },
-    "version": "2.1.1",
+    "version": "2.2.0",
     "contact": {
       "name": "HL7 International / Financial Management",
       "email": "fm@lists.HL7.org",
@@ -116,6 +116,14 @@
             "name": "characteristic",
             "in": "query",
             "description": "Kind of characteristic",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "characteristic-value-reference",
+            "in": "query",
+            "description": "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference).",
             "schema": {
               "type": "string"
             }
@@ -383,6 +391,42 @@
             }
           }
         ]
+      }
+    },
+    "/Group/{rid}/$davinci-data-export": {
+      "summary": "Operation $davinci-data-export on instance of Group",
+      "description": "Operation $davinci-data-export on an instance of Group",
+      "get": {
+        "summary": "$davinci-data-export on Group instance",
+        "description": "Exports data about members of the Group",
+        "operationId": "op-davinci-data-export-Group-instance",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              }
+            }
+          }
+        }
       }
     }
   },

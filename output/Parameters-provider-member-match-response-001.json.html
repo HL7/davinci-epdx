@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Provider-Member-Match Response Example - JSON Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>Provider-Member-Match Response Example - JSON Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.169"}
-    h3,h4,h5,h6{--heading-prefix:"13.169"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.182"}
+    h3,h4,h5,h6{--heading-prefix:"14.182"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -311,6 +314,11 @@
   <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">resourceType</a>" : "Parameters",
   "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a>" : "provider-member-match-response-001",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"
+    ]
+  },
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "MatchedMembers",
@@ -343,7 +351,7 @@
         "<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
             {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "match",
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Matched"
             }
@@ -362,7 +370,7 @@
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "match",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Matched"
                 }
@@ -384,14 +392,14 @@
         "<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/payer-member-001",
+              <a href="Patient-payer-member-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/payer-member-001",
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Robert Michael Johnson - Payer Member"
             },
             "<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a>" : false
           },
           {
             "<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/payer-member-002",
+              <a href="Patient-payer-member-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/payer-member-002",
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Sarah Elizabeth Williams - Payer Member"
             },
             "<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a>" : false
@@ -430,13 +438,13 @@
         "<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
             {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
             }
           ]
         },
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a>" : 0,
+        "<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a>" : 1,
         "<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>" : {
           "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
@@ -449,33 +457,43 @@
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
                 }
               ]
             },
+            "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.value_x_">valueBoolean</a>" : true,
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.exclude">exclude</a>" : false,
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2024-12-16"
             }
           }
+        ],
+        "<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>" : {
+              <a href="Patient-patient-prov-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002",
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Jane Smith (submitted demographics - no match found)"
+            },
+            "<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a>" : false
+          }
         ]
       }
     },
     {
-      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "TreatmentAttestationConstrainedMembers",
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "ConsentConstrainedMembers",
       "<a href="http://hl7.org/fhir/R4/group.html#Group">resource</a>" : {
         "<a href="http://hl7.org/fhir/R4/group.html">resourceType</a>" : "Group",
-        "<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a>" : "attestation-constrained-group-001",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a>" : "consent-constrained-group-001",
         "<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Treatment Attestation Constrained&lt;/h2&gt;&lt;p&gt;Members for whom treatment attestation could not be verified or does not meet payer requirements&lt;/p&gt;&lt;/div&gt;"
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Consent-Constrained Members&lt;/h2&gt;&lt;p&gt;Members found but who have exercised their right to opt out of Provider Access data sharing&lt;/p&gt;&lt;/div&gt;"
         },
         "<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/payer/match-groups",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "ACG-2024-12-16-001",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "CCG-2024-12-16-001",
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Example Payer"
             }
@@ -494,13 +512,13 @@
         "<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>" : {
           "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
             {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "consentconstraint",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Consent Constraint"
             }
           ]
         },
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a>" : 0,
+        "<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a>" : 1,
         "<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>" : {
           "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
@@ -513,80 +531,16 @@
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
-                }
-              ]
-            },
-            "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.exclude">exclude</a>" : false,
-            "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2024-12-16"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "OptOutConstrainedMembers",
-      "<a href="http://hl7.org/fhir/R4/group.html#Group">resource</a>" : {
-        "<a href="http://hl7.org/fhir/R4/group.html">resourceType</a>" : "Group",
-        "<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a>" : "optout-constrained-group-001",
-        "<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;Members who have Opted-Out&lt;/h2&gt;&lt;p&gt;Members found but who have exercised opt-out rights&lt;/p&gt;&lt;/div&gt;"
-        },
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/payer/match-groups",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "OOG-2024-12-16-001",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Example Payer"
-            }
-          },
-          {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "1982947230",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Provider Organization"
-            }
-          }
-        ],
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.active">active</a>" : true,
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.type">type</a>" : "person",
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.actual">actual</a>" : true,
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>" : {
-          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-            {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
-            }
-          ]
-        },
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a>" : 0,
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>" : {
-          "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "5555555555"
-          },
-          "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Current Payer"
-        },
-        "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>" : [
-          {
-            "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "nomatch",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Not Matched"
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "consentconstraint",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Consent Constraint"
                 }
               ]
             },
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.value_x_">valueCodeableConcept</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "provider-specific",
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Provider-Specific Opt-Out"
                 }
@@ -596,6 +550,15 @@
             "<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2024-12-16"
             }
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>" : {
+              <a href="Patient-payer-member-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/payer-member-002",
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Sarah Elizabeth Williams (matched but opted out of Provider Access)"
+            },
+            "<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a>" : false
           }
         ]
       }
@@ -647,7 +610,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

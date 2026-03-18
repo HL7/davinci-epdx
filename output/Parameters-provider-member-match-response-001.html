@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Provider-Member-Match Response Example - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>Provider-Member-Match Response Example - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.169"}
-    h3,h4,h5,h6{--heading-prefix:"13.169"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.182"}
+    h3,h4,h5,h6{--heading-prefix:"14.182"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -129,6 +129,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -250,7 +253,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -307,7 +310,7 @@
 
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="provider-member-match-response-001"> </a><a name="hcprovider-member-match-response-001"> </a><h2>Parameters</h2><table class="grid" data-fhir="generated"><tr><td>MatchedMembers</td><td><p>Group/matched-treatment-relationship-group-001<a name="Group_matched-treatment-relationship-group-001">  </a><a name="Group_provider-member-match-response-001/matched-treatment-relationship-group-001">  </a><a name="hcGroup_matched-treatment-relationship-group-001">  </a><a name="hcGroup_provider-member-match-response-001/matched-treatment-relationship-group-001">  </a></p><h2>Matched Members with Treatment Relationships</h2><p>Members with confirmed treatment relationships who are authorized for provider data access</p></td></tr><tr><td>NonMatchedMembers</td><td><p>Group/nomatch-group-001<a name="Group_nomatch-group-001">  </a><a name="Group_provider-member-match-response-001/nomatch-group-001">  </a><a name="hcGroup_nomatch-group-001">  </a><a name="hcGroup_provider-member-match-response-001/nomatch-group-001">  </a></p><h2>Non-Matched Members</h2><p>Members submitted by provider that were not found in payer system</p></td></tr><tr><td>TreatmentAttestationConstrainedMembers</td><td><p>Group/attestation-constrained-group-001<a name="Group_attestation-constrained-group-001">  </a><a name="Group_provider-member-match-response-001/attestation-constrained-group-001">  </a><a name="hcGroup_attestation-constrained-group-001">  </a><a name="hcGroup_provider-member-match-response-001/attestation-constrained-group-001">  </a></p><h2>Treatment Attestation Constrained</h2><p>Members for whom treatment attestation could not be verified or does not meet payer requirements</p></td></tr><tr><td>OptOutConstrainedMembers</td><td><p>Group/optout-constrained-group-001<a name="Group_optout-constrained-group-001">  </a><a name="Group_provider-member-match-response-001/optout-constrained-group-001">  </a><a name="hcGroup_optout-constrained-group-001">  </a><a name="hcGroup_provider-member-match-response-001/optout-constrained-group-001">  </a></p><h2>Members who have Opted-Out</h2><p>Members found but who have exercised opt-out rights</p></td></tr></table></div>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="provider-member-match-response-001"> </a><a name="hcprovider-member-match-response-001"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html">Provider $multi-member-match Response</a></p></div><h2>Parameters</h2><table class="grid" data-fhir="generated"><tr><td>MatchedMembers</td><td><p>Group/matched-treatment-relationship-group-001<a name="Group_matched-treatment-relationship-group-001">  </a><a name="Group_provider-member-match-response-001/matched-treatment-relationship-group-001">  </a><a name="hcGroup_matched-treatment-relationship-group-001">  </a><a name="hcGroup_provider-member-match-response-001/matched-treatment-relationship-group-001">  </a></p><h2>Matched Members with Treatment Relationships</h2><p>Members with confirmed treatment relationships who are authorized for provider data access</p></td></tr><tr><td>NonMatchedMembers</td><td><p>Group/nomatch-group-001<a name="Group_nomatch-group-001">  </a><a name="Group_provider-member-match-response-001/nomatch-group-001">  </a><a name="hcGroup_nomatch-group-001">  </a><a name="hcGroup_provider-member-match-response-001/nomatch-group-001">  </a></p><h2>Non-Matched Members</h2><p>Members submitted by provider that were not found in payer system</p></td></tr><tr><td>ConsentConstrainedMembers</td><td><p>Group/consent-constrained-group-001<a name="Group_consent-constrained-group-001">  </a><a name="Group_provider-member-match-response-001/consent-constrained-group-001">  </a><a name="hcGroup_consent-constrained-group-001">  </a><a name="hcGroup_provider-member-match-response-001/consent-constrained-group-001">  </a></p><h2>Consent-Constrained Members</h2><p>Members found but who have exercised their right to opt out of Provider Access data sharing</p></td></tr></table></div>
 
   
 
@@ -354,7 +357,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -38,4 +38,12 @@
       <sch:assert test="count(f:end) &lt;= 1">end: maximum cardinality of 'end' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Consent/f:provision/f:action</sch:title>
+    <sch:rule context="f:Consent/f:provision/f:action">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

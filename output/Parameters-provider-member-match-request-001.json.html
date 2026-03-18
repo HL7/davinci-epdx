@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Provider-Member-Match Request Example - JSON Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>Provider-Member-Match Request Example - JSON Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.168"}
-    h3,h4,h5,h6{--heading-prefix:"13.168"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.181"}
+    h3,h4,h5,h6{--heading-prefix:"14.181"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -311,6 +314,11 @@
   <pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">resourceType</a>" : "Parameters",
   "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a>" : "provider-member-match-request-001",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
+    ]
+  },
   "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "MembersToMatch",
@@ -320,6 +328,10 @@
           "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resource</a>" : {
             "<a href="http://hl7.org/fhir/R4/patient.html">resourceType</a>" : "Patient",
             "<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a>" : "patient-prov-001",
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Patient.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Robert Michael Johnson - DOB: 1965-08-15, Male&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
               {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
@@ -378,21 +390,26 @@
                 <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
               ]
             },
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Coverage.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Coverage for Robert Johnson - Subscriber ID: 12345678, Previous Health Plan, PPO-GOLD&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.status">status</a>" : "draft",
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.type">type</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "EHPLANS"
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "HIP",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "health insurance plan policy"
                 }
               ]
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriber">subscriber</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
+              <a href="Patient-patient-prov-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriberId">subscriberId</a>" : "12345678",
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.beneficiary">beneficiary</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
+              <a href="Patient-patient-prov-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.relationship">relationship</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -451,6 +468,10 @@
                 <a href="StructureDefinition-provider-treatment-relationship-consent.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"
               ]
             },
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Consent.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relationship since 2024-01-15&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.status">status</a>" : "active",
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.scope">scope</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -464,9 +485,9 @@
               {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                   {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "treat",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Treatment"
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IDSCL",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Information Disclosure"
                   }
                 ]
               },
@@ -481,23 +502,23 @@
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.patient">patient</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
+              <a href="Patient-patient-prov-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
             },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.dateTime">dateTime</a>" : "2024-12-10T14:30:00Z",
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.performer">performer</a>" : [
               {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-001",
+                <a href="Practitioner-provider-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-001",
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. Susan Smith, MD"
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.organization">organization</a>" : [
               {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/provider-org-001",
+                <a href="Organization-provider-org-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/provider-org-001",
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Springfield Medical Center"
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.source_x_">sourceReference</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "DocumentReference/treatment-attestation-form-001",
+              <a href="DocumentReference-treatment-attestation-form-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "DocumentReference/treatment-attestation-form-001",
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Provider Attestation Form"
             },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.policy">policy</a>" : [
@@ -523,7 +544,7 @@
                     ]
                   },
                   "<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.reference">reference</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-001",
+                    <a href="Practitioner-provider-001.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-001",
                     "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. Susan Smith"
                   }
                 }
@@ -531,84 +552,11 @@
               "<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.purpose">purpose</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "TREATMENT",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Treatment"
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "TREAT",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "treatment"
                 }
               ]
             }
-          }
-        },
-        {
-          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "CoverageToLink",
-          "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage">resource</a>" : {
-            "<a href="http://hl7.org/fhir/R4/coverage.html">resourceType</a>" : "Coverage",
-            "<a href="http://hl7.org/fhir/R4/resource.html#Coverage.id">id</a>" : "coverage-link-001",
-            "<a href="http://hl7.org/fhir/R4/resource.html#Coverage.meta">meta</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-                <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
-              ]
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.status">status</a>" : "draft",
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.type">type</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "EHPLANS"
-                }
-              ]
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriber">subscriber</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriberId">subscriberId</a>" : "NEW-12345678",
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.beneficiary">beneficiary</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-001"
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.relationship">relationship</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "self"
-                }
-              ]
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.period">period</a>" : {
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a>" : "2024-01-01",
-              "<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">end</a>" : "2024-12-31"
-            },
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.payor">payor</a>" : [
-              {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "5555555555"
-                },
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Current Payer"
-              }
-            ],
-            "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class">class</a>" : [
-              {
-                "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.type">type</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                    {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "group"
-                    }
-                  ]
-                },
-                "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.value">value</a>" : "EMPLOY-NEW"
-              },
-              {
-                "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.type">type</a>" : {
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
-                    {
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/coverage-class",
-                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "plan"
-                    }
-                  ]
-                },
-                "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.class.value">value</a>" : "PPO-PREMIUM"
-              }
-            ]
           }
         }
       ]
@@ -621,6 +569,10 @@
           "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resource</a>" : {
             "<a href="http://hl7.org/fhir/R4/patient.html">resourceType</a>" : "Patient",
             "<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a>" : "patient-prov-002",
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Patient.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Sarah Elizabeth Williams - DOB: 1978-03-22, Female&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
               {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
@@ -679,21 +631,26 @@
                 <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
               ]
             },
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Coverage.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Coverage for Sarah Williams - Subscriber ID: 87654321, Another Health Plan, HMO-BASIC&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.status">status</a>" : "draft",
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.type">type</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "EHPLANS"
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "HIP",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "health insurance plan policy"
                 }
               ]
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriber">subscriber</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
+              <a href="Patient-patient-prov-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.subscriberId">subscriberId</a>" : "87654321",
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.beneficiary">beneficiary</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
+              <a href="Patient-patient-prov-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
             },
             "<a href="http://hl7.org/fhir/R4/coverage.html#Coverage.relationship">relationship</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -752,6 +709,10 @@
                 <a href="StructureDefinition-provider-treatment-relationship-consent.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"
               ]
             },
+            "<a href="http://hl7.org/fhir/R4/domainresource.html#Consent.text">text</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01&lt;/p&gt;&lt;/div&gt;"
+            },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.status">status</a>" : "active",
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.scope">scope</a>" : {
               "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -765,9 +726,9 @@
               {
                 "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
                   {
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "treat",
-                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Treatment"
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "IDSCL",
+                    "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Information Disclosure"
                   }
                 ]
               },
@@ -782,23 +743,23 @@
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.patient">patient</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
+              <a href="Patient-patient-prov-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/patient-prov-002"
             },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.dateTime">dateTime</a>" : "2024-12-09T10:15:00Z",
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.performer">performer</a>" : [
               {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-002",
+                <a href="Practitioner-provider-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-002",
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. James Brown, MD"
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.organization">organization</a>" : [
               {
-                "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/provider-org-002",
+                <a href="Organization-provider-org-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/provider-org-002",
                 "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Columbus Clinic"
               }
             ],
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.source_x_">sourceReference</a>" : {
-              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "DocumentReference/treatment-attestation-form-002",
+              <a href="DocumentReference-treatment-attestation-form-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "DocumentReference/treatment-attestation-form-002",
               "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Provider Attestation Form"
             },
             "<a href="http://hl7.org/fhir/R4/consent.html#Consent.policy">policy</a>" : [
@@ -823,7 +784,7 @@
                     ]
                   },
                   "<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.reference">reference</a>" : {
-                    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-002",
+                    <a href="Practitioner-provider-002.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/provider-002",
                     "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dr. James Brown"
                   }
                 }
@@ -831,8 +792,8 @@
               "<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.purpose">purpose</a>" : [
                 {
                   "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "TREATMENT",
-                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Treatment"
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "TREAT",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "treatment"
                 }
               ]
             }
@@ -887,7 +848,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

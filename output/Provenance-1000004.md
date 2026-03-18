@@ -1,4 +1,4 @@
-# ExampleProvenanceSoloPractitioner - Da Vinci Payer Data Exchange v2.1.1
+# ExampleProvenanceSoloPractitioner - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -25,7 +25,7 @@ Summary
 **Agents**
 
 * **Type**: Author
-  * **who**: [Practitioner Susan Smith](Practitioner-4.md)
+  * **who**: [Practitioner Susan Smith ](Practitioner-4.md)
   * **On Behalf Of**: [Organization Provider 1](Organization-ProviderOrg1.md)
 
 
@@ -39,57 +39,43 @@ Summary
   "meta" : {
     "versionId" : "1",
     "lastUpdated" : "2020-07-11T17:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"]
   },
-  "target" : [
-    {
-      "reference" : "Encounter/7"
-    }
-  ],
+  "target" : [{
+    "reference" : "Encounter/7"
+  }],
   "recorded" : "2020-07-11T17:26:23.217+00:00",
-  "agent" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
-            "code" : "author",
-            "display" : "Author"
-          }
-        ]
-      },
-      "who" : {
-        "reference" : "Practitioner/4"
-      },
-      "onBehalfOf" : {
-        "reference" : "Organization/ProviderOrg1"
-      }
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+        "code" : "author",
+        "display" : "Author"
+      }]
+    },
+    "who" : {
+      "reference" : "Practitioner/4"
+    },
+    "onBehalfOf" : {
+      "reference" : "Organization/ProviderOrg1"
     }
-  ],
-  "entity" : [
-    {
-      "extension" : [
-        {
-          "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
-          "valueCodeableConcept" : {
-            "coding" : [
-              {
-                "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
-                "code" : "x12837",
-                "display" : "837 claim"
-              }
-            ]
-          }
-        }
-      ],
-      "role" : "source",
-      "what" : {
-        "display" : "No reference available"
+  }],
+  "entity" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/ProvenanceSourceFrom",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+          "code" : "x12837",
+          "display" : "837 claim"
+        }]
       }
+    }],
+    "role" : "source",
+    "what" : {
+      "display" : "No reference available"
     }
-  ]
+  }]
 }
 
 ```

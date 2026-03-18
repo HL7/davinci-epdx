@@ -1,4 +1,4 @@
-# PDex Provenance - Da Vinci Payer Data Exchange v2.1.1
+# PDex Provenance - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,24 +13,24 @@
 
 [Previous Page - US Core Procedure](USCoreProcedure.md)
 
-When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related Provenance record(s) to reflect the original source.
+§pdex-02: When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related Provenance record(s) to reflect the original source. §
 
-A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API.
+§pdex-03: A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. §
 
-This **SHOULD** be used to:
+§pdex-04: This **SHOULD** be used to:
 
 * identify the source of the information.
-* whether the data came via a clinical record, or a claim record.
+* whether the data came via a clinical record, or a claim record. §
 
 The PDex-Provenance resource is based on the [US Core Provenance Profile](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-provenance.html) and is documented here: [StructureDefinition-pdex-provenance.html](StructureDefinition-pdex-provenance.md)
 
 PDex Provenance adds an extension that uses the ProvenanceSourceFrom ValueSet to the entity element. In the PDex Provenance Profile the extension is included in the Provenance.entity base element.
 
-Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer.
+§pdex-05: Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer. §
 
 The purpose of the extension is to identify the source format that the data in the provenance.target resource is taken from.
 
-The [Pdex Provenance](StructureDefinition-pdex-provenance.md) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:
+§pdex-06: The [Pdex Provenance](StructureDefinition-pdex-provenance.md) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows: §
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -69,7 +69,7 @@ Four examples are provided to deal with four different scenarios:
 
 #### Payer Receives a bundle from another Payer
 
-If the payer is storing the content of the bundle rather than retaining the bundle intact then the content received SHOULD be written to a FHIR server and the records assigned new FHIR IDs with references being re-written to maintain referential integrity.
+If the payer is storing the content of the bundle rather than retaining the bundle intact then the content received §pdex-07: **SHOULD** be written to a FHIR server and the records assigned new FHIR IDs with references being re-written to maintain referential integrity. §
 
 Provenance records received need to have their target references re-written to maintain the link to the received records. If the bundle include a Transmitter Provenance record the receiving payer would re-write the target reference(s) in the Transmitter record to link to the records received in the bundle that were written to the receiving payer's FHIR server.
 
@@ -126,29 +126,29 @@ extension.sourceFormat = "custom" to identify that the record was transformed fr
 
 ```
 
-The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities. The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide.
+§pdex-08: The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities. § §pdex-09: The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information. § §pdex-10: Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide. §
 
-This guide shall define extensions to the provenance value sets as required to document the provenance of the information exchange.
+This guide **SHALL** define extensions to the provenance value sets as required to document the provenance of the information exchange.
 
 #### Clinical Information without Provenance
 
-The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.
+§pdex-11: The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data. §
 
-The updated Provenance record **SHOULD** be passed on to any downstream entity that requests Provenance information for the records they request.
+§pdex-12: The updated Provenance record **SHOULD** be passed on to any downstream entity that requests Provenance information for the records they request. §
 
 #### FHIR Resource from prior Health Plan
 
-The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.
+§pdex-13: The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting. §
 
-The Health Plan **SHOULD** update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data.
+§pdex-14: The Health Plan **SHOULD** update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data. §
 
-The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.
+§pdex-15: The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records. §
 
 #### Claim Information from Provider
 
-The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.
+§pdex-16: The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources. §
 
-The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.
+§pdex-17: The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records. §
 
 ### Example Provenance Record
 

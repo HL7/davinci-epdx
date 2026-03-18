@@ -1,4 +1,4 @@
-# Provider Attestation Document Reference - Da Vinci Payer Data Exchange v2.1.1
+# Provider Attestation Document Reference - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -16,7 +16,7 @@
 
 **type**: Release of information consent
 
-**category**: Treatment
+**category**: Information Disclosure
 
 **subject**: [Patricia Ann Person](Patient-1.md)
 
@@ -57,36 +57,28 @@
   "status" : "current",
   "docStatus" : "final",
   "type" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "64292-6",
-        "display" : "Release of information consent"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "64292-6",
+      "display" : "Release of information consent"
+    }]
   },
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
-          "code" : "treat",
-          "display" : "Treatment"
-        }
-      ]
-    }
-  ],
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "IDSCL",
+      "display" : "Information Disclosure"
+    }]
+  }],
   "subject" : {
     "reference" : "Patient/1",
     "display" : "Patricia Ann Person"
   },
   "date" : "2024-11-14T10:30:00Z",
-  "author" : [
-    {
-      "reference" : "Practitioner/4",
-      "display" : "Dr. Susan Smith"
-    }
-  ],
+  "author" : [{
+    "reference" : "Practitioner/4",
+    "display" : "Dr. Susan Smith"
+  }],
   "authenticator" : {
     "reference" : "Organization/ProviderOrg1",
     "display" : "Provider 1"
@@ -95,29 +87,25 @@
     "reference" : "Organization/ProviderOrg1",
     "display" : "Provider 1"
   },
-  "content" : [
-    {
-      "attachment" : {
-        "contentType" : "application/pdf",
-        "url" : "https://example.org/provider1/attestations/2024/attestation-001.pdf",
-        "title" : "Provider Treatment Relationship Attestation Form",
-        "creation" : "2024-11-14T10:30:00Z"
-      },
-      "format" : {
-        "system" : "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
-        "code" : "urn:ihe:iti:xds:2017:mimeTypeSufficient"
-      }
+  "content" : [{
+    "attachment" : {
+      "contentType" : "application/pdf",
+      "url" : "https://example.org/provider1/attestations/2024/attestation-001.pdf",
+      "title" : "Provider Treatment Relationship Attestation Form",
+      "creation" : "2024-11-14T10:30:00Z"
+    },
+    "format" : {
+      "system" : "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem",
+      "code" : "urn:ihe:iti:xds:2017:mimeTypeSufficient"
     }
-  ],
+  }],
   "context" : {
     "period" : {
       "start" : "2024-01-15"
     },
-    "related" : [
-      {
-        "reference" : "Encounter/6"
-      }
-    ]
+    "related" : [{
+      "reference" : "Encounter/6"
+    }]
   }
 }
 

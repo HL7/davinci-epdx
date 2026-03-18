@@ -1,0 +1,91 @@
+{
+  "resourceType" : "Group",
+  "id" : "example-provider-matched-group",
+  "meta" : {
+    "lastUpdated" : "2024-12-16T10:00:00Z",
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Provider Matched Members Group</h2><p>Members with confirmed treatment relationships authorized for provider data access.</p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Patient",
+    "id" : "prov-patient-1",
+    "meta" : {
+      "profile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"]
+    },
+    "name" : [{
+      "use" : "official",
+      "family" : "Johnson",
+      "given" : ["Robert"]
+    }],
+    "gender" : "male",
+    "birthDate" : "1965-03-15"
+  }],
+  "identifier" : [{
+    "system" : "http://example.org/payer/match-groups",
+    "value" : "MTG-2024-12-16-001",
+    "assigner" : {
+      "display" : "Example Payer"
+    }
+  },
+  {
+    "system" : "http://hl7.org/fhir/sid/us-npi",
+    "value" : "1982947230",
+    "assigner" : {
+      "display" : "Provider Organization"
+    }
+  }],
+  "active" : true,
+  "type" : "person",
+  "actual" : true,
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+      "code" : "match",
+      "display" : "Matched"
+    }]
+  },
+  "quantity" : 1,
+  "managingEntity" : {
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "5555555555"
+    },
+    "display" : "Example Payer Organization"
+  },
+  "characteristic" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+        "code" : "match",
+        "display" : "Matched"
+      }]
+    },
+    "valueReference" : {
+      "identifier" : {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1982947230"
+      },
+      "display" : "Provider Organization"
+    },
+    "exclude" : false,
+    "period" : {
+      "start" : "2024-12-16"
+    }
+  }],
+  "member" : [{
+    "entity" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters",
+        "valueReference" : {
+          "reference" : "#prov-patient-1"
+        }
+      }],
+      "reference" : "Patient/payer-member-001",
+      "display" : "Robert Michael Johnson"
+    },
+    "inactive" : false
+  }]
+}

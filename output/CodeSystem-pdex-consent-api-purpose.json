@@ -1,0 +1,92 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "pdex-consent-api-purpose",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem pdex-consent-api-purpose</b></p><a name=\"pdex-consent-api-purpose\"> </a><a name=\"hcpdex-consent-api-purpose\"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">provider-access<a name=\"pdex-consent-api-purpose-provider-access\"> </a></td><td>Provider Access API</td><td>Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)</td></tr><tr><td style=\"white-space:nowrap\">payer-to-payer<a name=\"pdex-consent-api-purpose-payer-to-payer\"> </a></td><td>Payer-to-Payer API</td><td>Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)</td></tr><tr><td style=\"white-space:nowrap\">patient-access<a name=\"pdex-consent-api-purpose-patient-access\"> </a></td><td>Patient Access API</td><td>Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 2,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
+    }
+  }],
+  "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose",
+  "version" : "2.2.0",
+  "name" : "PDexConsentApiPurposeCS",
+  "title" : "PDex Consent API Purpose",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-03-17T22:49:33-04:00",
+  "publisher" : "HL7 International / Financial Management",
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    },
+    {
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
+  "description" : "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "provider-access",
+    "display" : "Provider Access API",
+    "definition" : "Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)"
+  },
+  {
+    "code" : "payer-to-payer",
+    "display" : "Payer-to-Payer API",
+    "definition" : "Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)"
+  },
+  {
+    "code" : "patient-access",
+    "display" : "Patient Access API",
+    "definition" : "Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)"
+  }]
+}

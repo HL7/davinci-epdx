@@ -1,4 +1,4 @@
-# example-mtls-endpoint-bundle - Da Vinci Payer Data Exchange v2.1.1
+# example-mtls-endpoint-bundle - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -16,98 +16,80 @@
   "id" : "example-mtls-endpoint-bundle",
   "meta" : {
     "lastUpdated" : "2022-07-04T15:00:00.000Z",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-bundle"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-bundle"]
   },
   "type" : "collection",
   "timestamp" : "2022-07-04T15:00:00.000Z",
-  "link" : [
-    {
-      "relation" : "self",
-      "url" : "https://example.com/base/fhir/Bundle?ct=W3sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://example.com/base/fhir/Bundle?ct=W3sidG9rZW4iOiIrUklEOn53MThjQUk5RlVPZ0lEQUFBQUFBQU"
+  }],
+  "entry" : [{
+    "fullUrl" : "https://example.com/base/fhir/Organization/DiamondOnyxHealth2",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "DiamondOnyxHealth2",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_DiamondOnyxHealth2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization DiamondOnyxHealth2</b></p><a name=\"DiamondOnyxHealth2\"> </a><a name=\"hcDiamondOnyxHealth2\"> </a><p><b>identifier</b>: DiamondOnyxHealth2</p></div>"
+      },
+      "identifier" : [{
+        "value" : "DiamondOnyxHealth2"
+      }]
     }
-  ],
-  "entry" : [
-    {
-      "fullUrl" : "https://example.com/base/fhir/Organization/DiamondOnyxHealth2",
-      "resource" : {
-        "resourceType" : "Organization",
-        "id" : "DiamondOnyxHealth2",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_DiamondOnyxHealth2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization DiamondOnyxHealth2</b></p><a name=\"DiamondOnyxHealth2\"> </a><a name=\"hcDiamondOnyxHealth2\"> </a><p><b>identifier</b>: DiamondOnyxHealth2</p></div>"
-        },
-        "identifier" : [
-          {
-            "value" : "DiamondOnyxHealth2"
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl" : "https://example.com/base/fhir/Endpoint/Diamond-mtls-endpoint2",
-      "resource" : {
-        "resourceType" : "Endpoint",
-        "id" : "Diamond-mtls-endpoint2",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Endpoint_Diamond-mtls-endpoint2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Endpoint Diamond-mtls-endpoint2</b></p><a name=\"Diamond-mtls-endpoint2\"> </a><a name=\"hcDiamond-mtls-endpoint2\"> </a><p><b>identifier</b>: Diamond-mtls-endpoint2</p><p><b>status</b>: Active</p><p><b>connectionType</b>: <a href=\"http://terminology.hl7.org/6.3.0/CodeSystem-endpoint-connection-type.html#endpoint-connection-type-hl7-fhir-rest\">Endpoint Connection Type: hl7-fhir-rest</a> (HL7 FHIR)</p><p><b>name</b>: Payer-Payer Exchange</p><p><b>managingOrganization</b>: <a href=\"Organization-DiamondOnyxHealth1.html\">Organization DiamondOnyxHealth</a></p><p><b>payloadType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/data-absent-reason not-applicable}\">Not Applicable</span></p><p><b>address</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://mtls-dev-dmdh.safhir.io/mtlsendpoint\">https://mtls-dev-dmdh.safhir.io/mtlsendpoint</a></p></div>"
-        },
-        "identifier" : [
-          {
-            "value" : "Diamond-mtls-endpoint2"
-          }
-        ],
-        "status" : "active",
-        "connectionType" : {
-          "system" : "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-          "code" : "hl7-fhir-rest",
-          "display" : "HL7 FHIR"
-        },
-        "name" : "Payer-Payer Exchange",
-        "managingOrganization" : {
-          "reference" : "Organization/DiamondOnyxHealth1"
-        },
-        "payloadType" : [
-          {
-            "coding" : [
-              {
-                "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-                "code" : "not-applicable",
-                "display" : "Not Applicable"
-              }
-            ]
-          }
-        ],
-        "address" : "https://mtls-dev-dmdh.safhir.io/mtlsendpoint"
-      }
-    },
-    {
-      "fullUrl" : "https://example.com/base/fhir/Organization/DiamondOnyxHealth3",
-      "resource" : {
-        "resourceType" : "Organization",
-        "id" : "DiamondOnyxHealth3",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_DiamondOnyxHealth3\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization DiamondOnyxHealth3</b></p><a name=\"DiamondOnyxHealth3\"> </a><a name=\"hcDiamondOnyxHealth3\"> </a><p><b>identifier</b>: DiamondOnyxHealth3</p></div>"
-        },
-        "identifier" : [
-          {
-            "value" : "DiamondOnyxHealth3"
-          }
-        ]
-      }
+  },
+  {
+    "fullUrl" : "https://example.com/base/fhir/Endpoint/Diamond-mtls-endpoint2",
+    "resource" : {
+      "resourceType" : "Endpoint",
+      "id" : "Diamond-mtls-endpoint2",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Endpoint_Diamond-mtls-endpoint2\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Endpoint Diamond-mtls-endpoint2</b></p><a name=\"Diamond-mtls-endpoint2\"> </a><a name=\"hcDiamond-mtls-endpoint2\"> </a><p><b>identifier</b>: Diamond-mtls-endpoint2</p><p><b>status</b>: Active</p><p><b>connectionType</b>: <a href=\"http://terminology.hl7.org/7.1.0/CodeSystem-endpoint-connection-type.html#endpoint-connection-type-hl7-fhir-rest\">Endpoint Connection Type: hl7-fhir-rest</a> (HL7 FHIR)</p><p><b>name</b>: Payer-Payer Exchange</p><p><b>managingOrganization</b>: <a href=\"Organization-DiamondOnyxHealth1.html\">Organization DiamondOnyxHealth</a></p><p><b>payloadType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/data-absent-reason not-applicable}\">Not Applicable</span></p><p><b>address</b>: <a href=\"https://simplifier.net/resolve?scope=hl7.fhir.us.core.3.1.1@3.1.1&amp;canonical=https://mtls-dev-dmdh.safhir.io/mtlsendpoint\">https://mtls-dev-dmdh.safhir.io/mtlsendpoint</a></p></div>"
+      },
+      "identifier" : [{
+        "value" : "Diamond-mtls-endpoint2"
+      }],
+      "status" : "active",
+      "connectionType" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+        "code" : "hl7-fhir-rest",
+        "display" : "HL7 FHIR"
+      },
+      "name" : "Payer-Payer Exchange",
+      "managingOrganization" : {
+        "reference" : "Organization/DiamondOnyxHealth1"
+      },
+      "payloadType" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+          "code" : "not-applicable",
+          "display" : "Not Applicable"
+        }]
+      }],
+      "address" : "https://mtls-dev-dmdh.safhir.io/mtlsendpoint"
     }
-  ],
+  },
+  {
+    "fullUrl" : "https://example.com/base/fhir/Organization/DiamondOnyxHealth3",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "DiamondOnyxHealth3",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_DiamondOnyxHealth3\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization DiamondOnyxHealth3</b></p><a name=\"DiamondOnyxHealth3\"> </a><a name=\"hcDiamondOnyxHealth3\"> </a><p><b>identifier</b>: DiamondOnyxHealth3</p></div>"
+      },
+      "identifier" : [{
+        "value" : "DiamondOnyxHealth3"
+      }]
+    }
+  }],
   "signature" : {
-    "type" : [
-      {
-        "system" : "urn:iso-astm:E1762-95:2013",
-        "code" : "1.2.840.10065.1.12.1.1",
-        "display" : "Author's Signature"
-      }
-    ],
+    "type" : [{
+      "system" : "urn:iso-astm:E1762-95:2013",
+      "code" : "1.2.840.10065.1.12.1.1",
+      "display" : "Author's Signature"
+    }],
     "when" : "2022-07-04T15:00:00.000Z",
     "who" : {
       "reference" : "Organization/DiamondOnyxHealth2"

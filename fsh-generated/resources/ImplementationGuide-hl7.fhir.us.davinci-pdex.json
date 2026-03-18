@@ -16,7 +16,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "name": "DaVinciPayerDataExchange",
   "title": "Da Vinci Payer Data Exchange",
   "status": "active",
@@ -172,7 +172,7 @@
     {
       "packageId": "hl7.terminology.r4",
       "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
-      "version": "6.3.0",
+      "version": "7.1.0",
       "id": "hl7_terminology_r4",
       "extension": [
         {
@@ -234,14 +234,6 @@
       },
       {
         "reference": {
-          "reference": "OperationDefinition/BulkMemberMatchDataExport"
-        },
-        "name": "Bulk Member Match Data Export",
-        "description": "When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Bundle/3000003"
         },
         "name": "BundleConditionWithProvenance",
@@ -286,14 +278,6 @@
         },
         "name": "consentin2",
         "description": "Example Consent record for member match submission",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Coverage/CoverageLinkExample1"
-        },
-        "name": "Coverage to Link Example 1",
-        "description": "New coverage information to link for the member",
         "exampleBoolean": true
       },
       {
@@ -359,6 +343,46 @@
         "name": "Endpoint Payload Types Code System",
         "description": "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG",
         "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Group/member-opt-out-group-001"
+        },
+        "name": "Example Member Opt-Out Group",
+        "description": "Example of a Group containing members who have opted out of data sharing with providers",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"
+      },
+      {
+        "reference": {
+          "reference": "Group/example-pdex-treatment-relationship-group"
+        },
+        "name": "Example Member-Provider Treatment Relationship Group",
+        "description": "Example of a Group resource representing the treatment relationship between a member and their providers",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"
+      },
+      {
+        "reference": {
+          "reference": "Group/example-provider-consent-constrained-group"
+        },
+        "name": "Example Provider Consent Constrained Group",
+        "description": "Example Group of members matched but excluded because they have opted out of the Provider Access API. Members in this group were found in the payer's system but have exercised their right to deny provider access.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"
+      },
+      {
+        "reference": {
+          "reference": "Group/example-provider-matched-group"
+        },
+        "name": "Example Provider Matched Members Group",
+        "description": "Example Group of members successfully matched by the payer in response to a provider $bulk-member-match request. Members in this group have confirmed treatment relationships and are authorized for Provider Access API data retrieval.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"
+      },
+      {
+        "reference": {
+          "reference": "Group/example-provider-nomatch-group"
+        },
+        "name": "Example Provider No Match Group",
+        "description": "Example Group of members that could not be matched by the payer in response to a provider $bulk-member-match request. Members in this group were not found in the payer's system.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"
       },
       {
         "reference": {
@@ -618,34 +642,18 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/base-ext-last-typefilter"
-        },
-        "name": "Member Last Resource Filters",
-        "description": "Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/base-ext-last-types"
-        },
-        "name": "Member Last Resource Types",
-        "description": "Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/base-ext-last-transmission"
-        },
-        "name": "Member Last Transmission",
-        "description": "Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/member-opt-out-group"
+          "reference": "StructureDefinition/pdex-member-opt-out"
         },
         "name": "Member Opt-Out Group",
         "description": "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/base-ext-match-coverage"
+        },
+        "name": "Member-Match Input Coverage Parameter",
+        "description": "Input Coverage Parameter supplied for the individual member match. When the same patient is submitted with multiple different coverage plans, this optional extension allows the responder to include the submitted Coverage resource alongside the submitted Patient resource, enabling the requester to unambiguously identify which (patient + coverage) pair each Group member entry corresponds to.",
         "exampleBoolean": false
       },
       {
@@ -658,7 +666,7 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/member-provider-treatment-relationship-group"
+          "reference": "StructureDefinition/pdex-treatment-relationship"
         },
         "name": "Member-Provider Treatment Relationship Group",
         "description": "A Group resource representing the treatment relationship between a specific member/patient and one or more healthcare providers. The Payer is the managing organization. The member is identified through a characteristic containing the Patient ID. The group members are the providers that have an active or confirmed treatment relationship with the member.",
@@ -1050,22 +1058,6 @@
       },
       {
         "reference": {
-          "reference": "Patient/payer-patient-1001"
-        },
-        "name": "Payer's Patient Record for Member 1001",
-        "description": "The payer's internal patient record that was matched to provider-submitted-patient-1",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Patient/payer-patient-2002"
-        },
-        "name": "Payer's Patient Record for Member 2002",
-        "description": "The payer's internal patient record that was matched to provider-submitted-patient-2",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/pdex-parameters-multi-member-match-bundle-in"
         },
         "name": "PDex $multi-member-match request",
@@ -1109,7 +1101,7 @@
           "reference": "OperationDefinition/BulkMemberMatch"
         },
         "name": "PDex Bulk Member Match Operation",
-        "description": "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format.",
+        "description": "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.\n\nInput parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile.",
         "exampleBoolean": false
       },
       {
@@ -1118,6 +1110,22 @@
         },
         "name": "PDex Consent Action Search Parameter",
         "description": "Search for Consent resources by the action code in the provision. Use provision-action=disclose combined with provision-type=deny to find members who have opted out of Provider Access data sharing.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/pdex-consent-api-purpose"
+        },
+        "name": "PDex Consent API Purpose",
+        "description": "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pdex-consent-api-purpose-vs"
+        },
+        "name": "PDex Consent API Purpose Value Set",
+        "description": "Value set of codes identifying which CMS-mandated API a Consent resource applies to.",
         "exampleBoolean": false
       },
       {
@@ -1142,6 +1150,14 @@
         },
         "name": "PDex Device",
         "description": "The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. \nFHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/pdex-group-characteristic-value-reference"
+        },
+        "name": "PDex Group Characteristic Value Reference Search Parameter",
+        "description": "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference).",
         "exampleBoolean": false
       },
       {
@@ -1269,7 +1285,7 @@
           "reference": "StructureDefinition/pdex-provider-consent"
         },
         "name": "PDex Provider Access Consent Profile",
-        "description": "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data.",
+        "description": "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA.",
         "exampleBoolean": false
       },
       {
@@ -1277,7 +1293,7 @@
           "reference": "StructureDefinition/pdex-provider-group"
         },
         "name": "PDex Provider Group",
-        "description": "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters.",
+        "description": "The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile. The member element represents the patients attributed to the provider for data access purposes.",
         "exampleBoolean": false
       },
       {
@@ -1293,7 +1309,7 @@
           "reference": "OperationDefinition/ProviderMemberMatch"
         },
         "name": "PDex Provider-Member-Match Operation",
-        "description": "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.",
+        "description": "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.\n\nInput parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile.",
         "exampleBoolean": false
       },
       {
@@ -1482,23 +1498,7 @@
       },
       {
         "reference": {
-          "reference": "Parameters/provider-bulk-member-match-in"
-        },
-        "name": "Provider Bulk Member Match Request Example",
-        "description": "Example of a Bulk Member Match request for Provider Access, including provider treatment attestation consent. This differs from Payer-to-Payer member match by including current member demographics, current coverage, and provider attestation instead of old payer data and patient consent for data sharing between payers.",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
-      },
-      {
-        "reference": {
-          "reference": "Parameters/provider-bulk-member-match-out"
-        },
-        "name": "Provider Bulk Member Match Response Example",
-        "description": "Example response to a Provider Bulk Member Match request showing matched members (authorized for provider access), non-matched members (not found in payer system), and consent-constrained members (opted out of Provider Access API).",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/provider-member-match-group"
+          "reference": "StructureDefinition/pdex-provider-member-match"
         },
         "name": "Provider Member Match Group",
         "description": "A Group List created by the Payer to enable Provider Access API access by providers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters from the provider's match request.",
@@ -1506,7 +1506,7 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/provider-member-no-match-group"
+          "reference": "StructureDefinition/pdex-provider-member-no-match"
         },
         "name": "Provider Member No Match Group",
         "description": "A Group List created by the Payer to provide information back to a requesting provider about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics from the provider's request. The match may have failed for one of two reasons: a) No match on member (member not found in payer's system), or b) Matched but unable to comply due to member's opt-out of Provider Access API.",
@@ -1525,16 +1525,16 @@
           "reference": "Parameters/provider-member-match-request-001"
         },
         "name": "Provider-Member-Match Request Example",
-        "description": "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, coverage information, and treatment attestation to match against a payer's member records.",
-        "exampleBoolean": true
+        "description": "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
       },
       {
         "reference": {
           "reference": "Parameters/provider-member-match-response-001"
         },
         "name": "Provider-Member-Match Response Example",
-        "description": "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members, treatment attestation constraints, and opt-out constraints.",
-        "exampleBoolean": true
+        "description": "Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out.",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"
       },
       {
         "reference": {
@@ -2311,7 +2311,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU 2.1"
+        "value": "STU 2.2"
       },
       {
         "code": "show-inherited-invariants",

@@ -166,6 +166,18 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Group-characteristic",
               "type": "token",
               "documentation": "A common characteristic of all members of a group."
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "characteristic-value-reference",
+              "definition": "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference",
+              "type": "reference",
+              "documentation": "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization."
             }
           ],
           "operation": [

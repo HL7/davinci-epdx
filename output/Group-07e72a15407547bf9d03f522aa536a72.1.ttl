@@ -34,12 +34,12 @@
          ] )
        ] ;
        fhir:system [
-         fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
-         fhir:l <http://example.org/old-payer/identifiers/member>
+         fhir:v "http://example.org/new-payer/identifiers/member"^^xsd:anyURI ;
+         fhir:l <http://example.org/new-payer/identifiers/member>
        ] ;
        fhir:value [ fhir:v "55678" ] ;
        fhir:assigner [
-         fhir:display [ fhir:v "Old Payer" ]
+         fhir:display [ fhir:v "New Payer" ]
        ]
      ] ) ;
      fhir:name ( [
@@ -63,12 +63,12 @@
          ] )
        ] ;
        fhir:system [
-         fhir:v "http://example.org/old-payer/identifiers/member"^^xsd:anyURI ;
-         fhir:l <http://example.org/old-payer/identifiers/member>
+         fhir:v "http://example.org/new-payer/identifiers/member"^^xsd:anyURI ;
+         fhir:l <http://example.org/new-payer/identifiers/member>
        ] ;
        fhir:value [ fhir:v "45567" ] ;
        fhir:assigner [
-         fhir:display [ fhir:v "Old Payer" ]
+         fhir:display [ fhir:v "New Payer" ]
        ]
      ] ) ;
      fhir:name ( [
@@ -78,6 +78,38 @@
      ] ) ;
      fhir:gender [ fhir:v "male" ] ;
      fhir:birthDate [ fhir:v "1958-12-25"^^xsd:date ]
+  ] [
+     a fhir:Coverage ;
+     fhir:id [ fhir:v "coverage-1" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:subscriberId [ fhir:v "EMP-123456" ] ;
+     fhir:beneficiary [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/1001> ;
+       fhir:reference [ fhir:v "Patient/1001" ]
+     ] ;
+     fhir:payor ( [
+       fhir:identifier [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/sid/us-npi>
+         ] ;
+         fhir:value [ fhir:v "0123456789" ]
+       ] ;
+       fhir:display [ fhir:v "Old Health Plan" ]
+     ] ) ;
+     fhir:class ( [
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
+             fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
+           ] ;
+           fhir:code [ fhir:v "plan" ]
+         ] )
+       ] ;
+       fhir:value [ fhir:v "EMP-PLAN-123" ] ;
+       fhir:name [ fhir:v "Employer Plan 123" ]
+     ] )
   ] ) ; # 
   fhir:identifier ( [
      fhir:system [
@@ -147,6 +179,16 @@
            a fhir:Reference ;
            fhir:l <#1> ;
            fhir:reference [ fhir:v "#1" ]
+         ]
+       ] [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage>
+         ] ;
+         fhir:value [
+           a fhir:Reference ;
+           fhir:l <#coverage-1> ;
+           fhir:reference [ fhir:v "#coverage-1" ]
          ]
        ] ) ;
        fhir:reference [ fhir:v "Patient/1001" ]

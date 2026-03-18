@@ -1,4 +1,4 @@
-# Data Mapping - Da Vinci Payer Data Exchange v2.1.1
+# Data Mapping - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -12,11 +12,13 @@
 
 [Previous Page - Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md)
 
-Health Plans **SHOULD** map claims and clinical information for a member to [US Core v3.1.1](http://hl7.org/fhir/us/core/3.1.1), [US Core v6.1.0](http://hl7.org/fhir/us/core/STU6.1) or [US Core v7.0.0](http://hl7.org/fhir/us/core/STU7)FHIR Resources based on R4. This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this was not defined in US Core 3.1.1.
+§pdex-69: Health Plans **SHALL** map clinical information for a member to [US Core v3.1.1](http://hl7.org/fhir/us/core/3.1.1), [US Core v6.1.0](http://hl7.org/fhir/us/core/STU6.1) or [US Core v7.0.0](http://hl7.org/fhir/us/core/STU7) FHIR Resources based on R4. § This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this was not defined in US Core 3.1.1.
 
-US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core.
+§pdex-69a: Health Plans **SHALL** map claims and encounter data to the non-financial ExplanationOfBenefit BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.1). § §pdex-69b: Health Plans **SHALL** map prior authorization information to the [PDex Prior Authorization](PDexPriorAuthorization.md) profile. §
 
-Where a [US Core 3.1.1. FHIR R4](http://hl7.org/fhir/us/core/3.1.1), [US Core 6.1.0. FHIR R4](http://hl7.org/fhir/us/core/STU6.1) or [US Core 7.0.0. FHIR R4](http://hl7.org/fhir/us/core/STU7) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1).
+US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. §pdex-70: As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core. §
+
+Where a [US Core 3.1.1. FHIR R4](http://hl7.org/fhir/us/core/3.1.1), [US Core 6.1.0. FHIR R4](http://hl7.org/fhir/us/core/STU6.1) or [US Core 7.0.0. §pdex-71: FHIR R4](http://hl7.org/fhir/us/core/STU7) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1). §
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
@@ -24,7 +26,7 @@ The mapping of a patient's coverage and claims information to the relevant FHIR 
 
 [PDex Server CapabilityStatement with US Core 6.1. support](CapabilityStatement-pdex-server-6-1.md)
 
-This Section describes the expected capabilities of the PDex with US Core 6.1 Support Server actor which is responsible for providing responses to the queries submitted by the PDex Requesters. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex and US Core Servers are defined. Systems implementing this capability statement should meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and the ONC [U.S. Core Data for Interoperability (USCDI) Version 3 July 2022](https://www.healthit.gov/isa/sites/isa/files/2022-07/USCDI-Version-3-July-2022-Final.pdf). PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.
+This Section describes the expected capabilities of the PDex with US Core 6.1 Support Server actor which is responsible for providing responses to the queries submitted by the PDex Requesters. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex and US Core Servers are defined. Systems implementing this capability statement **SHOULD** meet the ONC 2015 Common Clinical Data Set (CCDS) access requirement for Patient Selection 170.315(g)(7) and Application Access - Data Category Request 170.315(g)(8) and the ONC [U.S. Core Data for Interoperability (USCDI) Version 3 July 2022](https://www.healthit.gov/isa/sites/isa/files/2022-07/USCDI-Version-3-July-2022-Final.pdf). PDex Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.
 
 [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.md)
 
@@ -40,7 +42,7 @@ The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data t
 * [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
 * [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
-Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/).
+§pdex-72: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
 
 ## Ingesting Exchanged Data
 
@@ -58,9 +60,9 @@ It is recommended that the Identifier field in a resource be used to record the 
 
 ## Providing data in sub-element fields
 
-In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element.
+In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. §pdex-73: If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. § §pdex-74: For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. § §pdex-75: Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element. §
 
-If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error.
+§pdex-76: If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error. §
 
 ## Mapping Adjudicated Claims and Encounter Information to Clinical Resources
 
@@ -85,7 +87,7 @@ The column definitions are provided in the table below. Look for this style of t
 | :--- | :--- | :--- | :--- | :--- |
 | The Element name in the target Profile. e.g., Coverage.meta.lastUpdated | S indicates a Must Support Element | Defines the cardinality of the target element | The CARIN-BB source element name | The Mapping Element Id from the CARIN-BB CPCDS mapping document and the associated mapping element name [{"163":"Coverage Last Updated Date"}] |
 
-*Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided.*
+*Note: Fields with a cardinality of 1..1 or 1..* are only considered mandatory fields when they are a top-level element in a resource. If they are contained within a parent element that is optional the child element is also optional, unless data for the parent element is provided. *
 
 *Note: In the CPCDS Element Mapping column the element ["{163]":"…."}] or ["Ref(x,xx,xxx)":"…"] refers to the CPCDS element Id: Element name in the CPCDS tables.*
 
@@ -95,7 +97,7 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 
 This IG supports the use of multiple US Core versions. The profiles supported by the respective versions are linked below:
 
-* [US Core 3.1.1 Profiles and Extensions](http://hl7.org/fhir/us/core/3.1.1/profiles.html)
+* [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/profiles.html)
 * [US Core 6.1.0 Profiles and Extensions](http://hl7.org/fhir/us/core/STU6.1/profiles-and-extensions.html)
 
 [Next Page - US Core Allergy Intolerance](USCoreAllergyIntolerance.md)

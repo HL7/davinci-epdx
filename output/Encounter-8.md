@@ -1,4 +1,4 @@
-# ExampleEncounter3 - Da Vinci Payer Data Exchange v2.1.1
+# ExampleEncounter3 - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -16,7 +16,7 @@ Profile: [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU7/StructureD
 
 **status**: Finished
 
-**class**: [ActCode: AMB](http://terminology.hl7.org/6.3.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (Ambulatory)
+**class**: [ActCode: AMB](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (Ambulatory)
 
 **type**: Patient encounter procedure
 
@@ -32,9 +32,7 @@ Profile: [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU7/StructureD
   "id" : "8",
   "meta" : {
     "lastUpdated" : "2020-07-15T20:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"]
   },
   "status" : "finished",
   "class" : {
@@ -42,18 +40,14 @@ Profile: [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU7/StructureD
     "code" : "AMB",
     "display" : "Ambulatory"
   },
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://snomed.info/sct",
-          "version" : "http://snomed.info/sct/731000124108",
-          "code" : "308335008",
-          "display" : "Patient encounter procedure"
-        }
-      ]
-    }
-  ],
+  "type" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/731000124108",
+      "code" : "308335008",
+      "display" : "Patient encounter procedure"
+    }]
+  }],
   "subject" : {
     "reference" : "Patient/100"
   }

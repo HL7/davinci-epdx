@@ -1,0 +1,97 @@
+{
+  "resourceType": "Group",
+  "id": "member-opt-out-group-001",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"
+    ]
+  },
+  "type": "person",
+  "actual": true,
+  "active": true,
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "consentconstraint",
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+            "display": "Consent Constraint"
+          }
+        ]
+      },
+      "exclude": false,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "privacy-concern",
+                "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason",
+                "display": "Privacy Concern"
+              }
+            ]
+          }
+        }
+      ],
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "provider-specific",
+            "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope",
+            "display": "Provider-Specific Opt-Out"
+          }
+        ]
+      },
+      "period": {
+        "start": "2024-06-01"
+      }
+    }
+  ],
+  "member": [
+    {
+      "entity": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-details",
+            "valueString": "Member requested opt-out on 2024-06-01 citing privacy concerns. Opt-out applies to all named providers."
+          }
+        ],
+        "reference": "Patient/1",
+        "display": "Jane Doe - Opted out of provider data sharing"
+      },
+      "inactive": false
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Member Opt-Out Group</h2><p>Members who have opted out of Provider Access data sharing</p></div>"
+  },
+  "identifier": [
+    {
+      "system": "http://example.org/payer/opt-out-groups",
+      "value": "OPT-OUT-2024-001",
+      "assigner": {
+        "display": "Example Payer"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "consentconstraint",
+        "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+        "display": "Consent Constraint"
+      }
+    ]
+  },
+  "managingEntity": {
+    "identifier": {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "5555555555"
+    },
+    "display": "Example Payer Organization"
+  },
+  "quantity": 1
+}

@@ -1,0 +1,120 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Group/example-pdex-treatment-relationship-group> a fhir:Group ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-pdex-treatment-relationship-group"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Member-Provider Treatment Relationship Group</h2><p>Providers with an active treatment relationship with the member</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [
+       fhir:v "http://example.org/payer/treatment-relationship-groups"^^xsd:anyURI ;
+       fhir:l <http://example.org/payer/treatment-relationship-groups>
+     ] ;
+     fhir:value [ fhir:v "TRL-2024-001" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Example Payer Organization" ]
+     ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:type [ fhir:v "device"] ; # 
+  fhir:actual [ fhir:v true] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS>
+       ] ;
+       fhir:code [ fhir:v "match" ] ;
+       fhir:display [ fhir:v "Matched" ]
+     ] )
+  ] ; # 
+  fhir:quantity [ fhir:v "2"^^xsd:nonNegativeInteger] ; # 
+  fhir:managingEntity [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "5555555555" ]
+     ] ;
+     fhir:display [ fhir:v "Example Payer Organization" ]
+  ] ; # 
+  fhir:characteristic ( [
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS>
+         ] ;
+         fhir:code [ fhir:v "pdex-member" ] ;
+         fhir:display [ fhir:v "PDex Member" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-001> ;
+       fhir:reference [ fhir:v "Patient/payer-member-001" ]
+     ] ;
+     fhir:exclude [ fhir:v false ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2024-01-01"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:member ( [
+     fhir:entity [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-001> ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Primary care physician. Treatment relationship established 2024-01-15 based on office visit."
+         ]
+       ] ) ;
+       fhir:reference [ fhir:v "Practitioner/provider-001" ] ;
+       fhir:display [ fhir:v "Dr. John Smith, MD" ]
+     ] ;
+     fhir:inactive [ fhir:v false ]
+  ] [
+     fhir:entity [
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> ;
+       fhir:extension ( [
+         fhir:url [
+           fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details"^^xsd:anyURI ;
+           fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details>
+         ] ;
+         fhir:value [
+           a fhir:String ;
+           fhir:v "Specialist referral. Treatment relationship established 2024-03-01 based on specialist referral from primary care."
+         ]
+       ] ) ;
+       fhir:reference [ fhir:v "Practitioner/provider-002" ] ;
+       fhir:display [ fhir:v "Dr. Mary Jones, MD" ]
+     ] ;
+     fhir:inactive [ fhir:v false ]
+  ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-001> a fhir:Us .
+
+<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> a fhir:Us .
+
+# -------------------------------------------------------------------------------------
+

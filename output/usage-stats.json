@@ -1,6 +1,6 @@
 {
   "package": "hl7.fhir.us.davinci-pdex",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -341,24 +341,10 @@
       ]
     },
     {
-      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission",
-      "title": "Member Last Transmission",
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage",
+      "title": "Member-Match Input Coverage Parameter",
       "types": [
-        "dateTime"
-      ]
-    },
-    {
-      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter",
-      "title": "Member Last Resource Filters",
-      "types": [
-        "string"
-      ]
-    },
-    {
-      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types",
-      "title": "Member Last Resource Types",
-      "types": [
-        "string"
+        "Reference"
       ]
     },
     {
@@ -654,6 +640,13 @@
       ]
     },
     {
+      "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case",
+      "title": "Provider Access Use Case",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
       "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details",
       "title": "Treatment Relationship Details",
       "types": [
@@ -662,20 +655,6 @@
     }
   ],
   "profiles": {
-    "Group": [
-      {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group",
-        "title": "PDex Provider Group"
-      },
-      {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-match-group",
-        "title": "Provider Member Match Group"
-      },
-      {
-        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-member-no-match-group",
-        "title": "Provider Member No Match Group"
-      }
-    ],
     "Bundle": [
       {
         "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/mtls-bundle",
@@ -704,6 +683,24 @@
       {
         "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-medicationdispense",
         "title": "PDex MedicationDispense"
+      }
+    ],
+    "Group": [
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-group",
+        "title": "PDex Provider Group"
+      },
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match",
+        "title": "Provider Member Match Group"
+      },
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match",
+        "title": "Provider Member No Match Group"
+      },
+      {
+        "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship",
+        "title": "Member-Provider Treatment Relationship Group"
       }
     ],
     "Parameters": [
@@ -918,14 +915,8 @@
       "Endpoint.identifier",
       "Organization.identifier"
     ],
-    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-transmission": [
-      "Group.member"
-    ],
-    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-typefilter": [
-      "Group.member"
-    ],
-    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-last-types": [
-      "Group.member"
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage": [
+      "Group.member.entity"
     ],
     "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters": [
       "Group.member.entity",
@@ -965,6 +956,9 @@
     ],
     "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-mtls-signedobject-extension": [
       "Endpoint"
+    ],
+    "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-access-use-case": [
+      "Consent.provision.action"
     ],
     "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details": [
       "Group.member.entity"

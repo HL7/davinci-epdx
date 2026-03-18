@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>FHIR Artifacts - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>FHIR Artifacts - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13"}
-    h3,h4,h5,h6{--heading-prefix:"13.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"14"}
+    h3,h4,h5,h6{--heading-prefix:"14.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -129,6 +129,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -257,7 +260,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>FHIR Artifacts</h2>
   
   
@@ -362,20 +365,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="OperationDefinition-BulkMemberMatchDataExport.html"
-                  title="OperationDefinition/BulkMemberMatchDataExport">Bulk Member Match Data Export</a>
-            </td>
-            <td>
-<p>When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="OperationDefinition-BulkMemberMatch.html"
                   title="OperationDefinition/BulkMemberMatch">PDex Bulk Member Match Operation</a>
             </td>
             <td>
-<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format.</p>
+<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation <strong>SHALL</strong> be performed asynchronously following the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>. The kick-off request (HTTP POST with <code class="language-plaintext highlighter-rouge">Prefer: respond-async</code>) returns HTTP 202 Accepted with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.</p>
+
+<p>Input parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex Multi-Member Match Request</a> profile. Output parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex Multi-Member Match Response</a> profile.</p>
 </td>
          </tr>
          <tr>
@@ -387,6 +383,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.</p>
 
 <p>The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.</p>
+
+<p>Input parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html">Provider $multi-member-match Request</a> profile. Output parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html">Provider $multi-member-match Response</a> profile.</p>
 </td>
          </tr>
       </tbody>
@@ -453,6 +451,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="SearchParameter-pdex-consent-action.html"
+                  title="SearchParameter/pdex-consent-action">PDex Consent Action Search Parameter</a>
+            </td>
+            <td>
+<p>Search for Consent resources by the action code in the provision. Use provision-action=disclose combined with provision-type=deny to find members who have opted out of Provider Access data sharing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-pdex-consent-provider-access.html"
+                  title="SearchParameter/pdex-consent-provider-access">PDex Consent Provider Access Use Case Search Parameter</a>
+            </td>
+            <td>
+<p>Search for Consent resources that have the Provider Access Use Case extension set to true. This identifies consent records specific to the Provider Access API.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-pdex-consent-provision-type.html"
+                  title="SearchParameter/pdex-consent-provision-type">PDex Consent Provision Type Search Parameter</a>
+            </td>
+            <td>
+<p>Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-pdex-group-characteristic-value-reference.html"
+                  title="SearchParameter/pdex-group-characteristic-value-reference">PDex Group Characteristic Value Reference Search Parameter</a>
+            </td>
+            <td>
+<p>Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="SearchParameter-pdex-medicationdispense-patient.html"
                   title="SearchParameter/pdex-medicationdispense-patient">PdexMedicationDispensePatient</a>
             </td>
@@ -499,8 +533,8 @@ NOTE: This SearchParameter definition extends the usage context of
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-member-opt-out-group.html"
-                  title="StructureDefinition/member-opt-out-group">Member Opt-Out Group</a>
+               <a href="StructureDefinition-pdex-member-opt-out.html"
+                  title="StructureDefinition/pdex-member-opt-out">Member Opt-Out Group</a>
             </td>
             <td>
 <p>A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios.</p>
@@ -508,8 +542,8 @@ NOTE: This SearchParameter definition extends the usage context of
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-member-provider-treatment-relationship-group.html"
-                  title="StructureDefinition/member-provider-treatment-relationship-group">Member-Provider Treatment Relationship Group</a>
+               <a href="StructureDefinition-pdex-treatment-relationship.html"
+                  title="StructureDefinition/pdex-treatment-relationship">Member-Provider Treatment Relationship Group</a>
             </td>
             <td>
 <p>A Group resource representing the treatment relationship between a specific member/patient and one or more healthcare providers. The Payer is the managing organization. The member is identified through a characteristic containing the Patient ID. The group members are the providers that have an active or confirmed treatment relationship with the member.</p>
@@ -594,7 +628,7 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
                   title="StructureDefinition/pdex-provider-consent">PDex Provider Access Consent Profile</a>
             </td>
             <td>
-<p>The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data.</p>
+<p>The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA.</p>
 </td>
          </tr>
          <tr>
@@ -603,7 +637,7 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
                   title="StructureDefinition/pdex-provider-group">PDex Provider Group</a>
             </td>
             <td>
-<p>The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters.</p>
+<p>The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile. The member element represents the patients attributed to the provider for data access purposes.</p>
 </td>
          </tr>
          <tr>
@@ -635,8 +669,8 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-provider-member-match-group.html"
-                  title="StructureDefinition/provider-member-match-group">Provider Member Match Group</a>
+               <a href="StructureDefinition-pdex-provider-member-match.html"
+                  title="StructureDefinition/pdex-provider-member-match">Provider Member Match Group</a>
             </td>
             <td>
 <p>A Group List created by the Payer to enable Provider Access API access by providers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters from the provider's match request.</p>
@@ -644,8 +678,8 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-provider-member-no-match-group.html"
-                  title="StructureDefinition/provider-member-no-match-group">Provider Member No Match Group</a>
+               <a href="StructureDefinition-pdex-provider-member-no-match.html"
+                  title="StructureDefinition/pdex-provider-member-no-match">Provider Member No Match Group</a>
             </td>
             <td>
 <p>A Group List created by the Payer to provide information back to a requesting provider about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics from the provider's request. The match may have failed for one of two reasons: a) No match on member (member not found in payer's system), or b) Matched but unable to comply due to member's opt-out of Provider Access API.</p>
@@ -724,29 +758,11 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-base-ext-last-typefilter.html"
-                  title="StructureDefinition/base-ext-last-typefilter">Member Last Resource Filters</a>
+               <a href="StructureDefinition-base-ext-match-coverage.html"
+                  title="StructureDefinition/base-ext-match-coverage">Member-Match Input Coverage Parameter</a>
             </td>
             <td>
-<p>Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-base-ext-last-types.html"
-                  title="StructureDefinition/base-ext-last-types">Member Last Resource Types</a>
-            </td>
-            <td>
-<p>Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-base-ext-last-transmission.html"
-                  title="StructureDefinition/base-ext-last-transmission">Member Last Transmission</a>
-            </td>
-            <td>
-<p>Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request.</p>
+<p>Input Coverage Parameter supplied for the individual member match. When the same patient is submitted with multiple different coverage plans, this optional extension allows the responder to include the submitted Coverage resource alongside the submitted Patient resource, enabling the requester to unambiguously identify which (patient + coverage) pair each Group member entry corresponds to.</p>
 </td>
          </tr>
          <tr>
@@ -886,6 +902,15 @@ FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-pdex-provider-access-use-case.html"
+                  title="StructureDefinition/pdex-provider-access-use-case">Provider Access Use Case</a>
+            </td>
+            <td>
+<p>Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-extension-reviewAction.html"
                   title="StructureDefinition/extension-reviewAction">ReviewAction</a>
             </td>
@@ -1013,6 +1038,15 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
             </td>
             <td>
 <p>Used as the discriminator for adjudication.category and item.adjudication.category for the PDex Prior Authorization.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-pdex-consent-api-purpose-vs.html"
+                  title="ValueSet/pdex-consent-api-purpose-vs">PDex Consent API Purpose Value Set</a>
+            </td>
+            <td>
+<p>Value set of codes identifying which CMS-mandated API a Consent resource applies to.</p>
 </td>
          </tr>
          <tr>
@@ -1327,6 +1361,15 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-pdex-consent-api-purpose.html"
+                  title="CodeSystem/pdex-consent-api-purpose">PDex Consent API Purpose</a>
+            </td>
+            <td>
+<p>Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-PDexIdentifierType.html"
                   title="CodeSystem/PDexIdentifierType">PDex Identifier Type</a>
             </td>
@@ -1517,15 +1560,6 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Coverage-CoverageLinkExample1.html"
-                  title="Coverage/CoverageLinkExample1">Coverage to Link Example 1</a>
-            </td>
-            <td>
-<p>New coverage information to link for the member</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Coverage-CoverageMatchExample1.html"
                   title="Coverage/CoverageMatchExample1">Coverage to Match Example 1</a>
             </td>
@@ -1540,6 +1574,51 @@ group information may also vary by payment systems.</p>
             </td>
             <td>
 <p>Second member's previous coverage information</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-member-opt-out-group-001.html"
+                  title="Group/member-opt-out-group-001">Example Member Opt-Out Group</a>
+            </td>
+            <td>
+<p>Example of a Group containing members who have opted out of data sharing with providers</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-example-pdex-treatment-relationship-group.html"
+                  title="Group/example-pdex-treatment-relationship-group">Example Member-Provider Treatment Relationship Group</a>
+            </td>
+            <td>
+<p>Example of a Group resource representing the treatment relationship between a member and their providers</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-example-provider-consent-constrained-group.html"
+                  title="Group/example-provider-consent-constrained-group">Example Provider Consent Constrained Group</a>
+            </td>
+            <td>
+<p>Example Group of members matched but excluded because they have opted out of the Provider Access API. Members in this group were found in the payer's system but have exercised their right to deny provider access.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-example-provider-matched-group.html"
+                  title="Group/example-provider-matched-group">Example Provider Matched Members Group</a>
+            </td>
+            <td>
+<p>Example Group of members successfully matched by the payer in response to a provider $bulk-member-match request. Members in this group have confirmed treatment relationships and are authorized for Provider Access API data retrieval.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Group-example-provider-nomatch-group.html"
+                  title="Group/example-provider-nomatch-group">Example Provider No Match Group</a>
+            </td>
+            <td>
+<p>Example Group of members that could not be matched by the payer in response to a provider $bulk-member-match request. Members in this group were not found in the payer's system.</p>
 </td>
          </tr>
          <tr>
@@ -1706,6 +1785,24 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Organization-provider-org-001.html"
+                  title="Organization/provider-org-001">Organization Provider Example 1</a>
+            </td>
+            <td>
+<p>Example provider organization for Provider-Member-Match operation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Organization-provider-org-002.html"
+                  title="Organization/provider-org-002">Organization Provider Example 2</a>
+            </td>
+            <td>
+<p>Example provider organization for Provider-Member-Match operation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Organization-Payer1.html" title="Organization/Payer1">OrganizationPayer1</a>
             </td>
             <td>
@@ -1754,10 +1851,18 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Consent-no-consent-1.html" title="Consent/no-consent-1">PDex Provider Access Consent Example</a>
+               <a href="Consent-no-consent-1.html" title="Consent/no-consent-1">PDex Provider Access Consent Opt-Out Example</a>
             </td>
             <td>
-<p>An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API.</p>
+<p>An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API. Opt-out is expressed using provision.type='deny' with provision.action='disclose' and the ProviderAccessUseCase extension.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Consent-consent-permit-1.html" title="Consent/consent-permit-1">PDex Provider Access Consent Permit Example</a>
+            </td>
+            <td>
+<p>An example of a PDex Provider Access Consent where a member permits sharing of their data via the Provider Access API. Permit is expressed using provision.type='permit' with provision.action='disclose' and the ProviderAccessUseCase extension.</p>
 </td>
          </tr>
          <tr>
@@ -1766,6 +1871,22 @@ group information may also vary by payment systems.</p>
             </td>
             <td>
 <p>Health Plan Coverage for Prior Authorization</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-patient-prov-001.html" title="Patient/patient-prov-001">Patient Provider Example 1 - Robert Johnson</a>
+            </td>
+            <td>
+<p>Example patient as known to the provider for Provider-Member-Match operation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-patient-prov-002.html" title="Patient/patient-prov-002">Patient Provider Example 2 - Sarah Williams</a>
+            </td>
+            <td>
+<p>Example patient as known to the provider for Provider-Member-Match operation</p>
 </td>
          </tr>
          <tr>
@@ -1828,20 +1949,18 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Patient-payer-patient-1001.html"
-                  title="Patient/payer-patient-1001">Payer's Patient Record for Member 1001</a>
+               <a href="Patient-payer-member-001.html" title="Patient/payer-member-001">Payer Member Example 1 - Robert Johnson</a>
             </td>
             <td>
-<p>The payer's internal patient record that was matched to provider-submitted-patient-1</p>
+<p>Example patient as known to the payer after successful member match</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Patient-payer-patient-2002.html"
-                  title="Patient/payer-patient-2002">Payer's Patient Record for Member 2002</a>
+               <a href="Patient-payer-member-002.html" title="Patient/payer-member-002">Payer Member Example 2 - Sarah Williams</a>
             </td>
             <td>
-<p>The payer's internal patient record that was matched to provider-submitted-patient-2</p>
+<p>Example patient as known to the payer after successful member match</p>
 </td>
          </tr>
          <tr>
@@ -1855,29 +1974,27 @@ group information may also vary by payment systems.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Practitioner-provider-001.html" title="Practitioner/provider-001">Practitioner Provider Example 1 - Dr. Smith</a>
+            </td>
+            <td>
+<p>Example practitioner attesting to treatment relationship for Provider-Member-Match</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-provider-002.html" title="Practitioner/provider-002">Practitioner Provider Example 2 - Dr. Jones</a>
+            </td>
+            <td>
+<p>Example practitioner attesting to treatment relationship for Provider-Member-Match</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="DocumentReference-provider-attestation-doc-1.html"
                   title="DocumentReference/provider-attestation-doc-1">Provider Attestation Document Reference</a>
             </td>
             <td>
 <p>Example DocumentReference representing a signed provider attestation form documenting the treatment relationship.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Parameters-provider-bulk-member-match-in.html"
-                  title="Parameters/provider-bulk-member-match-in">Provider Bulk Member Match Request Example</a>
-            </td>
-            <td>
-<p>Example of a Bulk Member Match request for Provider Access, including provider treatment attestation consent. This differs from Payer-to-Payer member match by including current member demographics, current coverage, and provider attestation instead of old payer data and patient consent for data sharing between payers.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Parameters-provider-bulk-member-match-out.html"
-                  title="Parameters/provider-bulk-member-match-out">Provider Bulk Member Match Response Example</a>
-            </td>
-            <td>
-<p>Example response to a Provider Bulk Member Match request showing matched members (authorized for provider access), non-matched members (not found in payer system), and consent-constrained members (opted out of Provider Access API).</p>
 </td>
          </tr>
          <tr>
@@ -1895,7 +2012,7 @@ group information may also vary by payment systems.</p>
                   title="Parameters/provider-member-match-request-001">Provider-Member-Match Request Example</a>
             </td>
             <td>
-<p>Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, coverage information, and treatment attestation to match against a payer's member records.</p>
+<p>Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage.</p>
 </td>
          </tr>
          <tr>
@@ -1904,7 +2021,7 @@ group information may also vary by payment systems.</p>
                   title="Parameters/provider-member-match-response-001">Provider-Member-Match Response Example</a>
             </td>
             <td>
-<p>Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members, treatment attestation constraints, and opt-out constraints.</p>
+<p>Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out.</p>
 </td>
          </tr>
          <tr>
@@ -1923,6 +2040,24 @@ group information may also vary by payment systems.</p>
             </td>
             <td>
 <p>Second provider's attestation to treatment relationship</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-treatment-attestation-form-001.html"
+                  title="DocumentReference/treatment-attestation-form-001">Treatment Attestation Form Example 1</a>
+            </td>
+            <td>
+<p>Example signed attestation document for treatment relationship</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-treatment-attestation-form-002.html"
+                  title="DocumentReference/treatment-attestation-form-002">Treatment Attestation Form Example 2</a>
+            </td>
+            <td>
+<p>Example signed attestation document for treatment relationship</p>
 </td>
          </tr>
          <tr>
@@ -2062,7 +2197,7 @@ group information may also vary by payment systems.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

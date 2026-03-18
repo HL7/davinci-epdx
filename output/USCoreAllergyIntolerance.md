@@ -1,4 +1,4 @@
-# US Core AllergyIntolerance - Da Vinci Payer Data Exchange v2.1.1
+# US Core AllergyIntolerance - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - Data Mapping](datamapping.md)
 
-Where a Health Plan has information about a member's allergies the US Core AllergyIntolerance profile **SHALL** be used to record them.
+Where a Health Plan has information about a member's allergies the US Core AllergyIntolerance profile §pdex-18: **SHALL** be used to record them. §
 
 The US Core AllergyIntolerance profile is found here:
 

@@ -1,4 +1,4 @@
-# ExampleProvenanceBundleTransmitter - Da Vinci Payer Data Exchange v2.1.1
+# ExampleProvenanceBundleTransmitter - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -39,42 +39,30 @@ Summary
   "meta" : {
     "versionId" : "1",
     "lastUpdated" : "2020-07-09T15:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"]
   },
-  "target" : [
-    {
-      "reference" : "Bundle/3000002"
-    }
-  ],
+  "target" : [{
+    "reference" : "Bundle/3000002"
+  }],
   "recorded" : "2020-07-09T15:26:23.217+00:00",
-  "agent" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
-            "code" : "transmitter",
-            "display" : "Transmitter"
-          }
-        ]
-      },
-      "role" : [
-        {
-          "coding" : [
-            {
-              "system" : "http://terminology.hl7.org/CodeSystem/contractsignertypecodes",
-              "code" : "TRANS"
-            }
-          ]
-        }
-      ],
-      "who" : {
-        "reference" : "Organization/Payer1"
-      }
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
+        "code" : "transmitter",
+        "display" : "Transmitter"
+      }]
+    },
+    "role" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/contractsignertypecodes",
+        "code" : "TRANS"
+      }]
+    }],
+    "who" : {
+      "reference" : "Organization/Payer1"
     }
-  ]
+  }]
 }
 
 ```

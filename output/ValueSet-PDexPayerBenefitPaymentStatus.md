@@ -1,4 +1,4 @@
-# PDex Payer Benefit Payment Status - Da Vinci Payer Data Exchange v2.1.1
+# PDex Payer Benefit Payment Status - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus | *Version*:2.1.1 |
-| *Standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PDexPayerBenefitPaymentStatus |
+| *Official URL*:http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus | *Version*:2.2.0 |
+| * Standards status: *[Informative](http://hl7.org/fhir/R4/versions.html#std-process) | *Computable Name*:PDexPayerBenefitPaymentStatus |
 | **Copyright/Legal**: This Valueset is not copyrighted. | |
 
  
@@ -46,98 +46,78 @@ Indicates the in network or out of network payment status of the claim.
 {
   "resourceType" : "ValueSet",
   "id" : "PDexPayerBenefitPaymentStatus",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-      "valueCode" : "fm"
-    },
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-      "valueCode" : "informative",
-      "_valueCode" : {
-        "extension" : [
-          {
-            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-            "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
-          }
-        ]
-      }
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "fm"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "informative",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"
+      }]
     }
-  ],
+  }],
   "url" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPayerBenefitPaymentStatus",
-  "version" : "2.1.1",
+  "version" : "2.2.0",
   "name" : "PDexPayerBenefitPaymentStatus",
   "title" : "PDex Payer Benefit Payment Status",
   "status" : "active",
   "experimental" : true,
-  "date" : "2025-12-17T14:48:28-05:00",
+  "date" : "2026-03-17T22:49:33-04:00",
   "publisher" : "HL7 International / Financial Management",
-  "contact" : [
-    {
-      "name" : "HL7 International / Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        },
-        {
-          "system" : "email",
-          "value" : "fm@lists.HL7.org"
-        }
-      ]
+  "contact" : [{
+    "name" : "HL7 International / Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
     },
     {
-      "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:mark.scrimshire@onyxhealth.io"
-        }
-      ]
-    },
-    {
-      "name" : "HL7 International - Financial Management",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://www.hl7.org/Special/committees/fm"
-        }
-      ]
-    }
-  ],
+      "system" : "email",
+      "value" : "fm@lists.HL7.org"
+    }]
+  },
+  {
+    "name" : "Mark Scrimshire (mark.scrimshire@onyxhealth.io)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:mark.scrimshire@onyxhealth.io"
+    }]
+  },
+  {
+    "name" : "HL7 International - Financial Management",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/fm"
+    }]
+  }],
   "description" : "Indicates the in network or out of network payment status of the claim.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "US",
-          "display" : "United States of America"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
   "copyright" : "This Valueset is not copyrighted.",
   "compose" : {
-    "include" : [
+    "include" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus",
+      "concept" : [{
+        "code" : "innetwork",
+        "display" : "In Network"
+      },
       {
-        "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus",
-        "concept" : [
-          {
-            "code" : "innetwork",
-            "display" : "In Network"
-          },
-          {
-            "code" : "outofnetwork",
-            "display" : "Out Of Network"
-          },
-          {
-            "code" : "other",
-            "display" : "Other"
-          }
-        ]
-      }
-    ]
+        "code" : "outofnetwork",
+        "display" : "Out Of Network"
+      },
+      {
+        "code" : "other",
+        "display" : "Other"
+      }]
+    }]
   }
 }
 

@@ -1,4 +1,4 @@
-# US Core MedicationRequest - Da Vinci Payer Data Exchange v2.1.1
+# US Core MedicationRequest - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - PDex MedicationDispense](PDexMedicationDispense.md)
 
-Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the [US Core 3.1.1 MedicationRequest](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medicationrequest.html) or [US Core 6.1.0 MedicationRequest](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medicationrequest.html) resource.
+§pdex-30: Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the § [US Core 3.1.1 MedicationRequest](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medicationrequest.html) or [US Core 6.1.0 MedicationRequest](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medicationrequest.html) resource.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 MedicationRequest](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medicationrequest.html) or [US Core 6.1.0 MedicationRequest](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medicationrequest.html) resource are:
 

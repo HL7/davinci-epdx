@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.org/fhir/us/davinci-pdex/Patient/payer-member-001> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "payer-member-001"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2024-12-16T10:30:00Z"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Robert Michael Johnson - Payer Member</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ;
+           fhir:l <http://terminology.hl7.org/CodeSystem/v2-0203>
+         ] ;
+         fhir:code [ fhir:v "MB" ] ;
+         fhir:display [ fhir:v "Member Number" ]
+       ] )
+     ] ;
+     fhir:system [
+       fhir:v "http://example.org/payer/member-ids"^^xsd:anyURI ;
+       fhir:l <http://example.org/payer/member-ids>
+     ] ;
+     fhir:value [ fhir:v "MBR-A12345678" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Example Payer" ]
+     ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Johnson" ] ;
+     fhir:given ( [ fhir:v "Robert" ] [ fhir:v "Michael" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "male"] ; # 
+  fhir:birthDate [ fhir:v "1965-03-15"^^xsd:date] ; # 
+  fhir:address ( [
+     fhir:line ( [ fhir:v "123 Main Street" ] ) ;
+     fhir:city [ fhir:v "Anytown" ] ;
+     fhir:state [ fhir:v "MA" ] ;
+     fhir:postalCode [ fhir:v "02101" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

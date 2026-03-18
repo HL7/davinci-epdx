@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="member-opt-out-group-001"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Member Opt-Out Group</h2><p>Members who have opted out of Provider Access data sharing</p></div>
+  </text>
+  <identifier>
+    <system value="http://example.org/payer/opt-out-groups"/>
+    <value value="OPT-OUT-2024-001"/>
+    <assigner>
+      <display value="Example Payer"/>
+    </assigner>
+  </identifier>
+  <active value="true"/>
+  <type value="person"/>
+  <actual value="true"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+      <code value="consentconstraint"/>
+      <display value="Consent Constraint"/>
+    </coding>
+  </code>
+  <quantity value="1"/>
+  <managingEntity>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="5555555555"/>
+    </identifier>
+    <display value="Example Payer Organization"/>
+  </managingEntity>
+  <characteristic>
+    <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-reason">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason"/>
+          <code value="privacy-concern"/>
+          <display value="Privacy Concern"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <code>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+        <code value="consentconstraint"/>
+        <display value="Consent Constraint"/>
+      </coding>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope"/>
+        <code value="provider-specific"/>
+        <display value="Provider-Specific Opt-Out"/>
+      </coding>
+    </valueCodeableConcept>
+    <exclude value="false"/>
+    <period>
+      <start value="2024-06-01"/>
+    </period>
+  </characteristic>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/opt-out-details">
+        <valueString value="Member requested opt-out on 2024-06-01 citing privacy concerns. Opt-out applies to all named providers."/>
+      </extension>
+      <reference value="Patient/1"/>
+      <display value="Jane Doe - Opted out of provider data sharing"/>
+    </entity>
+    <inactive value="false"/>
+  </member>
+</Group>

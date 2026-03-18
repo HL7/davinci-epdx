@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "bfdf8e79-c90d-4258-82b7-955fd996cf87-134",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/bfdf8e79-c90d-4258-82b7-955fd996cf87-134",
+  "id" : "ef0b5996-e1bd-41f6-9881-7411f49eb71e-125",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/ef0b5996-e1bd-41f6-9881-7411f49eb71e-125",
   "name" : "UnionPDexMemberMatchGroupAndPDexMemberMatchGroup",
   "title" : "Union of PDex Member Match Group And PDex Member Match Group",
   "status" : "active",
-  "date" : "2025-12-17T14:55:18-05:00",
+  "date" : "2026-03-17T22:52:36-04:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -201,7 +201,7 @@
       "binding" : {
         "strength" : "preferred",
         "description" : "A human language.",
-        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/bfdf8e79-c90d-4258-82b7-955fd996cf87-116"
+        "valueSet" : "http://hl7.org/fhir/comparison/ValueSet/ef0b5996-e1bd-41f6-9881-7411f49eb71e-107"
       }
     },
     {
@@ -241,7 +241,7 @@
       "path" : "Group.contained",
       "short" : "Contained, inline Resources",
       "definition" : "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-      "comment" : "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.",
+      "comment" : "left: This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.; right: Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to.",
       "alias" : ["inline resources",
       "anonymous resources",
       "contained resources"],
@@ -1466,8 +1466,8 @@
     },
     {
       "path" : "Group.member.entity.extension",
-      "short" : "Additional content defined by implementations",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+      "short" : "left: Additional content defined by implementations; right: Extension",
+      "definition" : "left: May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.; right: An Extension",
       "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
       "alias" : ["extensions",
       "user content"],

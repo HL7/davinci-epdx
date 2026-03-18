@@ -3,7 +3,7 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="attestation-provision-type-valueset"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet attestation-provision-type-valueset</b></p><a name="attestation-provision-type-valueset"> </a><a name="hcattestation-provision-type-valueset"> </a><ul><li>Include codes from<a href="http://hl7.org/fhir/R4/codesystem-consent-provision-type.html"><code>http://hl7.org/fhir/consent-provision-type</code></a><span title="Version is not explicitly stated, which means it is fixed to 4.0.1, the version found through the package references"> version &#x1F4E6;4.0.1</span> where code  = <a href="http://hl7.org/fhir/R4/codesystem-consent-provision-type.html#consent-provision-type-permit">permit</a></li></ul></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet attestation-provision-type-valueset</b></p><a name="attestation-provision-type-valueset"> </a><a name="hcattestation-provision-type-valueset"> </a><ul><li>Include these codes as defined in <a href="http://hl7.org/fhir/R4/codesystem-consent-provision-type.html"><code>http://hl7.org/fhir/consent-provision-type</code></a><span title="Version is not explicitly stated, which means it is fixed to 4.0.1, the version found through the package references"> version &#x1F4E6;4.0.1</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://hl7.org/fhir/R4/codesystem-consent-provision-type.html#consent-provision-type-permit">permit</a></td><td>Permit</td><td>Consent is provided for actions meeting these rules.</td></tr></table></li></ul></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="fm"/>
@@ -23,11 +23,12 @@
     </valueCode>
   </extension>
   <url value="http://hl7.org/fhir/us/davinci-pdex/ValueSet/attestation-provision-type-valueset"/>
-  <version value="2.1.1"/>
+  <version value="2.2.0"/>
   <name value="AttestationProvisionTypeValueSet"/>
   <title value="Treatment Attestation Provision Type"/>
   <status value="active"/>
-  <date value="2025-12-17T14:48:28-05:00"/>
+  <experimental value="false"/>
+  <date value="2026-03-17T22:49:33-04:00"/>
   <publisher value="HL7 International / Financial Management"/>
   <contact>
     <name value="HL7 International / Financial Management"/>
@@ -66,11 +67,10 @@
   <compose>
     <include>
       <system value="http://hl7.org/fhir/consent-provision-type"/>
-      <filter>
-        <property value="code"/>
-        <op value="="/>
-        <value value="permit"/>
-      </filter>
+      <concept>
+        <code value="permit"/>
+        <display value="Permit"/>
+      </concept>
     </include>
   </compose>
 </ValueSet>

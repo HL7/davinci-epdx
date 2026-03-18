@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="pdex-consent-api-purpose"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem pdex-consent-api-purpose</b></p><a name="pdex-consent-api-purpose"> </a><a name="hcpdex-consent-api-purpose"> </a><p>This case-sensitive code system <code>http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">provider-access<a name="pdex-consent-api-purpose-provider-access"> </a></td><td>Provider Access API</td><td>Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)</td></tr><tr><td style="white-space:nowrap">payer-to-payer<a name="pdex-consent-api-purpose-payer-to-payer"> </a></td><td>Payer-to-Payer API</td><td>Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)</td></tr><tr><td style="white-space:nowrap">patient-access<a name="pdex-consent-api-purpose-patient-access"> </a></td><td>Patient Access API</td><td>Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fm"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose"/>
+  <version value="2.2.0"/>
+  <name value="PDexConsentApiPurposeCS"/>
+  <title value="PDex Consent API Purpose"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-03-17T22:49:33-04:00"/>
+  <publisher value="HL7 International / Financial Management"/>
+  <contact>
+    <name value="HL7 International / Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fm@lists.HL7.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Mark Scrimshire (mark.scrimshire@onyxhealth.io)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:mark.scrimshire@onyxhealth.io"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="HL7 International - Financial Management"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/fm"/>
+    </telecom>
+  </contact>
+  <description value="Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Used by permission of HL7 International, all rights reserved Creative Commons License"/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="provider-access"/>
+    <display value="Provider Access API"/>
+    <definition value="Consent record applies to the CMS-mandated Provider Access API (member opt-out of sharing with providers)"/>
+  </concept>
+  <concept>
+    <code value="payer-to-payer"/>
+    <display value="Payer-to-Payer API"/>
+    <definition value="Consent record applies to the CMS-mandated Payer-to-Payer API (member authorization for data retrieval by requesting payer)"/>
+  </concept>
+  <concept>
+    <code value="patient-access"/>
+    <display value="Patient Access API"/>
+    <definition value="Consent record applies to the CMS-mandated Patient Access API (member authorization for third-party application access)"/>
+  </concept>
+</CodeSystem>

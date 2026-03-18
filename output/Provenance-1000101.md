@@ -1,4 +1,4 @@
-# ExampleProvenanceCustodian - Da Vinci Payer Data Exchange v2.1.1
+# ExampleProvenanceCustodian - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -42,57 +42,43 @@ Summary
   "meta" : {
     "versionId" : "1",
     "lastUpdated" : "2020-08-09T15:26:23.217+00:00",
-    "profile" : [
-      "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"
-    ]
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provenance"]
   },
-  "target" : [
-    {
-      "reference" : "Encounter/6"
-    },
-    {
-      "reference" : "Encounter/7"
-    }
-  ],
+  "target" : [{
+    "reference" : "Encounter/6"
+  },
+  {
+    "reference" : "Encounter/7"
+  }],
   "recorded" : "2020-08-09T15:26:23.217+00:00",
-  "reason" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-          "code" : "RECORDMGT"
-        }
-      ]
-    }
-  ],
+  "reason" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "RECORDMGT"
+    }]
+  }],
   "activity" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
-        "code" : "APPEND"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+      "code" : "APPEND"
+    }]
   },
-  "agent" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
-            "code" : "transmitter"
-          },
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
-            "code" : "custodian",
-            "display" : "Custodian"
-          }
-        ]
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
+        "code" : "transmitter"
       },
-      "who" : {
-        "reference" : "Organization/Payer1"
-      }
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+        "code" : "custodian",
+        "display" : "Custodian"
+      }]
+    },
+    "who" : {
+      "reference" : "Organization/Payer1"
     }
-  ]
+  }]
 }
 
 ```

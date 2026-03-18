@@ -1,105 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Payer-to-Payer Exchange (single member) - Da Vinci Payer Data Exchange v2.1.1</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Payer-to-Payer Exchange (single member) - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
-    <link href="fhir.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="fhir.css"/>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
 
-    <!-- Project extras -->
-    <link href="assets/css/project.css" rel="stylesheet"/>
-    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
-  	<link href="assets/css/prism.css" rel="stylesheet" />
-  	<link href="assets/css/cqf.css" rel="stylesheet" />
-    <!-- Placeholder for child template CSS declarations -->
-    <link href="assets/css/hl7.css" rel="stylesheet"/>
-    <link href="assets/css/fhir-ig.css" rel="stylesheet"/>
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir-ig.css"/>
 
-    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+    <![endif] -->
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
     <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid.js"></script>
-    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"6.4"}
-    h3,h4,h5,h6{--heading-prefix:"6.4"}</style>
-    <div id="segment-header" class="segment">  <!-- segment-header -->
-      <div class="container">  <!-- container -->
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"7.4"}
+    h3,h4,h5,h6{--heading-prefix:"7.4"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
 
-        <!-- Placeholder for child template header declarations -->
+          <!-- Placeholder for child template header declarations -->
 
         <div id="hl7-nav">
-          <a id="hl7-logo" data-no-external="true" href="http://hl7.org">
-            <img height="50" alt="Visit the HL7 website" src="assets/images/hl7-logo-header.png"/>
+          <a id="hl7-logo" href="http://hl7.org" data-no-external="true">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
           </a>
         </div>
         <div id="family-nav">
-          <a id="family-logo" data-no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+          <a id="family-logo" href="http://hl7.org/fhir" data-no-external="true"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
         <div id="hl7-search">
-          <a id="hl7-search-lnk" data-no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+          <a id="hl7-search-lnk" href="searchform.html" data-no-external="true"><img src="assets/images/search.png" alt="Search FHIR"/></a>
         </div>
 
         <div id="project-nav">
-          <a id="project-logo" data-no-external="true" href="http://hl7.org/about/davinci"><img height="55" alt="Visit the Da Vinci website" src="assets/images/da-vinci_logo.jpg"/> </a>
+          <a id="project-logo" href="http://hl7.org/about/davinci" data-no-external="true"><img src="assets/images/da-vinci_logo.jpg" alt="Visit the Da Vinci website" height="55"/> </a>
         </div>
 
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
-  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+  <img src="assets/images/usa.svg" alt="United States of America flag" title="United States of America" height="16"/>
 
 
             </span>
           </p>
         </div>
-      </div> <!-- /container -->
-    </div>  <!-- /segment-header -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
 
-    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
-      <div class="container">  <!-- container -->
-        <!-- HEADER CONTENT -->
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
 
         <nav class="navbar navbar-inverse">
-          <!--status-bar-->
+            <!-- status-bar -->
           <div class="container">
-            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <!-- menu.xml  -->
+                <!-- menu.xml -->
 
-<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+<ul class="nav navbar-nav">
   <li>
     <a href="index.html">IG Home</a>
   </li>
@@ -129,6 +129,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -165,19 +168,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/R4/">FHIR R4 Spec</a>
+        <a href="http://hl7.org/fhir/R4/" target="_blank">FHIR R4 Spec</a>
       </li>
       <li>
-        <a target="_blank" href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/">HRex 1.1.0</a>
+        <a href="https://hl7.org/fhir/us/davinci-hrex/STU1.1/" target="_blank">HRex 1.1.0</a>
       </li>
       <li>
-        <a target="_blank" href="https://www.hl7.org/fhir/us/core/STU3.1.1/">US Core 3.1.1</a>
+        <a href="https://www.hl7.org/fhir/us/core/STU3.1.1/" target="_blank">US Core 3.1.1</a>
       </li>
       <li>
-        <a target="_blank" href="https://hl7.org/fhir/us/core/STU6.1/">US Core 6.1.0</a>
+        <a href="https://hl7.org/fhir/us/core/STU6.1/" target="_blank">US Core 6.1.0</a>
       </li>
       <li>
-        <a target="_blank" href="https://hl7.org/fhir/us/core/STU7/">US Core 7.0.0</a>
+        <a href="https://hl7.org/fhir/us/core/STU7/" target="_blank">US Core 7.0.0</a>
       </li>
       <li>
         <a href="other-igs.html">Other IGs</a>
@@ -190,19 +193,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704">Project Page</a>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=116462704" target="_blank">Project Page</a>
       </li>
       <li>
-        <a target="_blank" href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support">Implementer Support</a>
+        <a href="https://confluence.hl7.org/display/DVP/PDex+Implementer+Support" target="_blank">Implementer Support</a>
       </li>
       <li>
-        <a target="_blank" href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314">Specification Dashboard</a>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=17314" target="_blank">Specification Dashboard</a>
       </li>
       <li>
-        <a target="_blank" href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex">Discussion Forum</a>
+        <a href="https://chat.fhir.org/#narrow/stream/235286-Da-Vinci-PDex" target="_blank">Discussion Forum</a>
       </li>
       <li>
-        <a target="_blank" href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex">Propose a Change</a>
+        <a href="https%3A%2F%2Fjira.hl7.org%2Fsecure%2FCreateIssueDetails%21init.jspa%3Fpid%3D10405%26issuetype%3D10600%26customfield_11302%3DFHIR-us-davinci-pdex" target="_blank">Propose a Change</a>
       </li>
       <li>
         <a href="PDexDownloads.html">Downloads</a>
@@ -216,18 +219,18 @@
     <a href="changehistory.html">Change Log</a>
   </li>
 </ul>
-            </div>  <!-- /.nav-collapse -->
-          </div>  <!-- /.container -->
-        </nav>  <!-- /.navbar -->
-      <!-- /HEADER CONTENT -->
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-navbar -->
-    <!--status-bar-->
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
 
-    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
-      <div class="container">  <!-- container -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='pdeximplementationactorsinteractionsdatapayloadsandmethods.html'><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Payer-to-Payer Exchange (single member)</b></li>
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html"><b>PDex Implementation, Actors, Interactions, Data Payloads and Methods</b></a></li><li><b>Payer-to-Payer Exchange (single member)</b></li>
 
           <span style="float:right;">
 
@@ -240,12 +243,12 @@
           </span>
 
         </ul>
-      </div>  <!-- /container -->
-    </div>  <!-- /segment-breadcrumb -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
 
     <a name="top"> </a>
-    <div id="segment-content" class="segment">  <!-- segment-content -->
-      <div class="container">  <!-- container -->
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
 
@@ -257,7 +260,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!-- ReleaseHeader --><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://hl7.org/fhir/us/davinci-pdex/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Payer-to-Payer Exchange (single member)</h2>
   
 
@@ -284,7 +287,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-    <p><!-- white space is critical inside of capture --></p>
+    <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#member-match-with-consent" id="markdown-toc-member-match-with-consent">Member Match with Consent</a></li>
@@ -326,40 +329,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 The changes have been made to stay in sync with the bulk transfer requirements of the rule. </i></b>
 </div>
 
-<p>The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by 
-US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of
-USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with ASTP's HTI-1 Rule.</p>
+<p>The Exchange of all of a member's clinical data, as scoped by USCDI version 1 and represented in FHIR by US Core 3.1.1, is a requirement of the CMS Interoperability Rule. This IG also supports the exchange of USCDI version 3 as represented in FHIR by US Core 6.1.0, to support compliance with ASTP's HTI-1 Rule.</p>
 
 <p>The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.</p>
 
-<p>Payers <strong>MAY</strong> choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.</p>
+<p><span id="pdex-176" class="fhir-conformance"> Payers <strong>SHALL</strong> implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. <a name="ci-c-pdex-176">  </a><a href="narrative-conformance.html#ci-c-pdex-176"><sup>&sect;pdex-176</sup></a></span></p>
 
-<p>Payers <strong>SHALL</strong> implement the Bulk Payer-to-Payer Exchange detailed in this IG on the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk Exchange</a> page to exchange information for multiple members. Bulk Payer-to-Payer Exchange
-<strong>MAY</strong> be used to exchange data for a SINGLE member.</p>
+<p><span id="pdex-177" class="fhir-conformance"> Payers <strong>SHALL</strong> implement the Bulk Payer-to-Payer Exchange detailed in this IG on the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk Exchange</a> page to exchange information for multiple members. <a name="ci-c-pdex-177">  </a><a href="narrative-conformance.html#ci-c-pdex-177"><sup>&sect;pdex-177</sup></a></span> Bulk Payer-to-Payer Exchange
+<span id="pdex-178" class="fhir-conformance"> <strong>MAY</strong> be used to exchange data for a SINGLE member. <a name="ci-c-pdex-178">  </a><a href="narrative-conformance.html#ci-c-pdex-178"><sup>&sect;pdex-178</sup></a></span></p>
 
-<p>Payer-to-Payer exchange for a single member <strong>MAY</strong> be accomplished by three methods. Clients wishing to retrieve data <strong>SHOULD</strong> consult 
+<p><span id="pdex-179" class="fhir-conformance"> Payer-to-Payer exchange for a single member <strong>MAY</strong> be accomplished by three methods. <a name="ci-c-pdex-179">  </a><a href="narrative-conformance.html#ci-c-pdex-179"><sup>&sect;pdex-179</sup></a></span> <span id="pdex-180" class="fhir-conformance"> Clients wishing to retrieve data <strong>SHOULD</strong> consult <a name="ci-c-pdex-180">  </a><a href="narrative-conformance.html#ci-c-pdex-180"><sup>&sect;pdex-180</sup></a></span>
 the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. 
-Each retrieval method for a single member <strong>SHALL</strong> be preceded by the use of the following interaction to match a member and provide consent:</p>
+<span id="pdex-181" class="fhir-conformance"> Each retrieval method for a single member <strong>SHALL</strong> be preceded by the use of the following interaction to match a member and provide consent: <a name="ci-c-pdex-181">  </a><a href="narrative-conformance.html#ci-c-pdex-181"><sup>&sect;pdex-181</sup></a></span></p>
 
 <h3 id="member-match-with-consent">Member Match with Consent</h3>
 
 <div style="height=auto;width=90%;">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" preserveAspectRatio="none" version="1.1" viewBox="0 0 1289 1623" zoomAndPan="magnify"><defs /><g><rect fill="#90EE90" height="291.1055" style="stroke:#000000;stroke-width:1.5;" width="1008.5684" x="26" y="96.7988" /><rect fill="#90EE90" height="97.2422" style="stroke:#000000;stroke-width:1.5;" width="705.8364" x="9" y="401.9043" /><rect fill="none" height="112.5527" style="stroke:#000000;stroke-width:1.5;" width="814.7192" x="69" y="599.7676" /><rect fill="none" height="465.7637" style="stroke:#000000;stroke-width:1.5;" width="1203.3525" x="69" y="726.3203" /><rect fill="none" height="179.7949" style="stroke:#000000;stroke-width:1.5;" width="1087.9668" x="69" y="1206.084" /><rect fill="#ADD8E6" height="127.8633" style="stroke:#000000;stroke-width:1.5;" width="950.0259" x="69" y="1443.1895" /><g><title>Payer2 | New Payer | Requesting Payer</title><rect fill="#000000" fill-opacity="0.00000" height="1551.5645" width="8" x="211.7734" y="36.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="215" x2="215" y1="36.4883" y2="1588.0527" /></g><g><title>Payer1 | Old Payer | Receiving Payer</title><rect fill="#000000" fill-opacity="0.00000" height="1551.5645" width="8" x="572.3652" y="36.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="575.894" x2="575.894" y1="36.4883" y2="1588.0527" /></g><g><title>Payer Directory | Certificate Authority</title><rect fill="#000000" fill-opacity="0.00000" height="1551.5645" width="8" x="844.937" y="36.4883" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="848.8364" x2="848.8364" y1="36.4883" y2="1588.0527" /></g><g class="participant participant-head" data-participant="Payer2"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="273.5469" x="79" y="5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="259.5469" x="86" y="25.5352">Payer2 | New Payer | Requesting Payer</text></g><g class="participant participant-tail" data-participant="Payer2"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="273.5469" x="79" y="1587.0527" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="259.5469" x="86" y="1607.5879">Payer2 | New Payer | Requesting Payer</text></g><g class="participant participant-head" data-participant="Payer1"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="256.9424" x="447.894" y="5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242.9424" x="454.894" y="25.5352">Payer1 | Old Payer | Receiving Payer</text></g><g class="participant participant-tail" data-participant="Payer1"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="256.9424" x="447.894" y="1587.0527" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242.9424" x="454.894" y="1607.5879">Payer1 | Old Payer | Receiving Payer</text></g><g class="participant participant-head" data-participant="PayerDirectory"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="268.2012" x="714.8364" y="5" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254.2012" x="721.8364" y="25.5352">Payer Directory | Certificate Authority</text></g><g class="participant participant-tail" data-participant="PayerDirectory"><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="268.2012" x="714.8364" y="1587.0527" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254.2012" x="721.8364" y="1607.5879">Payer Directory | Certificate Authority</text></g><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1282.3525" x="0" y="67.1436" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="67.1436" y2="67.1436" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="70.1436" y2="70.1436" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="187.6782" x="547.3372" y="56.4883" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="169.3936" x="553.3372" y="73.0566">Connection Intitialization</text><path d="M26,96.7988 L497.8545,96.7988 L497.8545,104.1094 L487.8545,114.1094 L26,114.1094 L26,96.7988" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="291.1055" style="stroke:#000000;stroke-width:1.5;" width="1008.5684" x="26" y="96.7988" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="426.8545" x="41" y="110.3672">Step 1a: Verify Exchange, establish mutual TLS, and verify trust.</text><g class="message" data-participant-1="Payer2" data-participant-2="PayerDirectory"><polygon fill="#181818" points="836.937,142.0752,846.937,146.0752,836.937,150.0752,840.937,146.0752" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="842.937" y1="146.0752" y2="146.0752" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="222.7734" y="141.333">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="37.521" x="235.3491" y="141.333">Query</text></g><path d="M36,119.1094 L36,159.1094 L210,159.1094 L210,129.1094 L200,119.1094 L36,119.1094" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M200,119.1094 L200,129.1094 L210,129.1094 L200,119.1094" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153.1563" x="42" y="136.6777">Payer2 searches registry</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109.8589" x="46.1133" y="151.9883">for Payer1 details</text><g class="message" data-participant-1="PayerDirectory" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,182.041,216.7734,186.041,226.7734,190.041,222.7734,186.041" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="847.937" y1="186.041" y2="186.041" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="232.7734" y="181.2988">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="255.8359" x="245.3491" y="181.2988">Return endpoint, mutual TLS public cert,</text></g><g class="message" data-participant-1="Payer2" data-participant-2="Payer2"><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="257.7734" y1="215.3516" y2="215.3516" /><line style="stroke:#181818;stroke-width:1;" x1="257.7734" x2="257.7734" y1="215.3516" y2="228.3516" /><line style="stroke:#181818;stroke-width:1;" x1="216.7734" x2="257.7734" y1="228.3516" y2="228.3516" /><polygon fill="#181818" points="226.7734,224.3516,216.7734,228.3516,226.7734,232.3516,222.7734,228.3516" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="222.7734" y="210.6094">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66.9233" x="235.3491" y="210.6094">Verify Cert</text></g><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,253.6621,574.3652,257.6621,564.3652,261.6621,568.3652,257.6621" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="257.6621" y2="257.6621" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="222.7734" y="252.9199">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="129.6191" x="235.3491" y="252.9199">Establish Mutual TLS</text></g><g class="message" data-participant-1="Payer1" data-participant-2="PayerDirectory"><polygon fill="#181818" points="836.937,293.6279,846.937,297.6279,836.937,301.6279,840.937,297.6279" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="576.3652" x2="842.937" y1="297.6279" y2="297.6279" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="583.3652" y="292.8857">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184.228" x="595.9409" y="292.8857">Query mutual TLS Public Cert</text></g><path d="M853,270.6621 L853,310.6621 L1018,310.6621 L1018,280.6621 L1008,270.6621 L853,270.6621" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1008,270.6621 L1008,280.6621 L1018,280.6621 L1008,270.6621" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144.6313" x="859" y="288.2305">Payer1 queries registry</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109.8589" x="863.1133" y="303.541">for Payer2 details</text><g class="message" data-participant-1="PayerDirectory" data-participant-2="Payer1"><line style="stroke:#181818;stroke-width:1;" x1="577.3652" x2="587.3652" y1="337.5938" y2="333.5938" /><line style="stroke:#181818;stroke-width:1;" x1="577.3652" x2="587.3652" y1="337.5938" y2="341.5938" /><line style="stroke:#181818;stroke-width:1;" x1="576.3652" x2="847.937" y1="337.5938" y2="337.5938" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="593.3652" y="332.8516">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151.0996" x="605.9409" y="332.8516">Return mTLS public cert</text></g><g class="message" data-participant-1="Payer1" data-participant-2="Payer1"><line style="stroke:#181818;stroke-width:1;" x1="576.3652" x2="618.3652" y1="366.9043" y2="366.9043" /><line style="stroke:#181818;stroke-width:1;" x1="618.3652" x2="618.3652" y1="366.9043" y2="379.9043" /><line style="stroke:#181818;stroke-width:1;" x1="577.3652" x2="618.3652" y1="379.9043" y2="379.9043" /><polygon fill="#181818" points="587.3652,375.9043,577.3652,379.9043,587.3652,383.9043,583.3652,379.9043" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="583.3652" y="362.1621">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66.9233" x="595.9409" y="362.1621">Verify Cert</text></g><path d="M9,401.9043 L469.6191,401.9043 L469.6191,409.2148 L459.6191,419.2148 L9,419.2148 L9,401.9043" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="97.2422" style="stroke:#000000;stroke-width:1.5;" width="705.8364" x="9" y="401.9043" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="415.6191" x="24" y="415.4727">Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection</text><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,447.1807,574.3652,451.1807,564.3652,455.1807,568.3652,451.1807" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="451.1807" y2="451.1807" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="222.7734" y="446.4385">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="317.3384" x="235.3491" y="446.4385">Request registration (JWT with registration details)</text></g><path d="M19,424.2148 L19,464.2148 L210,464.2148 L210,434.2148 L200,424.2148 L19,424.2148" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M200,424.2148 L200,434.2148 L210,434.2148 L200,424.2148" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154.6289" x="25" y="441.7832">Payer2 submits JWT with</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166.499" x="29.1133" y="457.0938">service registration details</text><g class="message" data-participant-1="Payer1" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,487.1465,216.7734,491.1465,226.7734,495.1465,222.7734,491.1465" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="575.3652" y1="491.1465" y2="491.1465" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="8.5757" x="232.7734" y="486.4043">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="302.4849" x="245.3491" y="486.4043">Return Client Credentials (ClientID/ClientSecret)</text></g><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1282.3525" x="0" y="526.8018" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="526.8018" y2="526.8018" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="529.8018" y2="529.8018" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="299.0352" x="491.6587" y="516.1465" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="280.7505" x="497.6587" y="532.7148">Secure Transaction Capability Established</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1282.3525" x="0" y="570.1123" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="570.1123" y2="570.1123" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="573.1123" y2="573.1123" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="152.2456" x="565.0535" y="559.457" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="133.9609" x="571.0535" y="576.0254">Member Connection</text><path d="M69,599.7676 L417.7417,599.7676 L417.7417,607.0781 L407.7417,617.0781 L69,617.0781 L69,599.7676" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="112.5527" style="stroke:#000000;stroke-width:1.5;" width="814.7192" x="69" y="599.7676" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="303.7417" x="84" y="613.3359">Step 2a: Get $MemberMatch Operation Token</text><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,649.6992,574.3652,653.6992,564.3652,657.6992,568.3652,653.6992" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="653.6992" y2="653.6992" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="222.7734" y="641.3018">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="301.666" x="243.9248" y="633.6465">Use OAuth2.0 token endpoint to request access</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="209.8789" x="243.9248" y="648.957">to $MemberMatch operation only</text></g><g class="message" data-participant-1="Payer1" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,689.665,216.7734,693.665,226.7734,697.665,222.7734,693.665" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="575.3652" y1="693.665" y2="693.665" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="232.7734" y="688.9229">11</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126.7563" x="253.9248" y="688.9229">Return access token</text></g><path d="M581,666.6992 L581,706.6992 L868,706.6992 L868,676.6992 L858,666.6992 L581,666.6992" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M858,666.6992 L858,676.6992 L868,676.6992 L858,666.6992" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="266.354" x="587" y="684.2676">Token endpoint issues access token using</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161.4653" x="591.1133" y="699.5781">Payer2 OAuth Credentials</text><path d="M69,726.3203 L494.4531,726.3203 L494.4531,733.6309 L484.4531,743.6309 L69,743.6309 L69,726.3203" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="465.7637" style="stroke:#000000;stroke-width:1.5;" width="1203.3525" x="69" y="726.3203" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="380.4531" x="84" y="739.8887">Step 2b: Establish common member - secure transaction</text><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,776.252,574.3652,780.252,564.3652,784.252,568.3652,780.252" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="780.252" y2="780.252" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="222.7734" y="767.8545">12</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="228.833" x="243.9248" y="760.1992">Send bundle (Patient Demographics,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="315.4404" x="243.9248" y="775.5098">Coverage &amp; Consent) to $MemberMatch operation</text></g><g class="message" data-participant-1="Payer1" data-participant-2="Payer1"><line style="stroke:#181818;stroke-width:1;" x1="576.3652" x2="618.3652" y1="809.5625" y2="809.5625" /><line style="stroke:#181818;stroke-width:1;" x1="618.3652" x2="618.3652" y1="809.5625" y2="822.5625" /><line style="stroke:#181818;stroke-width:1;" x1="577.3652" x2="618.3652" y1="822.5625" y2="822.5625" /><polygon fill="#181818" points="587.3652,818.5625,577.3652,822.5625,587.3652,826.5625,583.3652,822.5625" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="583.3652" y="804.8203">13</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92.7646" x="604.5166" y="804.8203">Verify member</text></g><g class="message" data-participant-1="Payer1" data-participant-2="Payer1"><line style="stroke:#181818;stroke-width:1;" x1="576.3652" x2="618.3652" y1="917.2705" y2="917.2705" /><line style="stroke:#181818;stroke-width:1;" x1="618.3652" x2="618.3652" y1="917.2705" y2="930.2705" /><line style="stroke:#181818;stroke-width:1;" x1="577.3652" x2="618.3652" y1="930.2705" y2="930.2705" /><polygon fill="#181818" points="587.3652,926.2705,577.3652,930.2705,587.3652,934.2705,583.3652,930.2705" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="583.3652" y="904.873">14</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167.375" x="604.5166" y="897.2178">Store or Compute Consent</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="202.3823" x="604.5166" y="912.5283">(all / non-sensitive) for Member</text></g><path d="M818.5337,835.5625 L818.5337,982.5625 L1256.5337,982.5625 L1256.5337,845.5625 L1246.5337,835.5625 L818.5337,835.5625" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1246.5337,835.5625 L1246.5337,845.5625 L1256.5337,845.5625 L1246.5337,835.5625" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="73.0298" x="824.5337" y="853.1309">Member: ID</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="173.3989" x="824.5337" y="868.4414">Payer: ID (Client Credential)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158.6978" x="824.5337" y="883.752">Policy: all | non-sensitive</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164.4297" x="824.5337" y="899.0625">Consent Period: start, end</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="276.7388" x="824.5337" y="914.373">This information will be need to be checked</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="246.4224" x="824.5337" y="929.6836">when Access Token is issued in Step 3.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="386.3945" x="824.5337" y="944.9941">An active consent information will only be stored if the Policy</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="417.4536" x="824.5337" y="960.3047">Scope can be complied with. An inability to comply with the scope</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="415.7334" x="824.5337" y="975.6152">will lead to a 422 error being returned from the $member-match.</text><g class="message" data-participant-1="Payer1" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,1092.876,216.7734,1096.876,226.7734,1100.876,222.7734,1096.876" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="575.3652" y1="1096.876" y2="1096.876" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="232.7734" y="1092.1338">15</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239.77" x="253.9248" y="1092.1338">Return Member Identifier (Member ID)</text></g><path d="M581,993.3574 L581,1186.3574 L1030,1186.3574 L1030,1003.3574 L1020,993.3574 L581,993.3574" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1020,993.3574 L1020,1003.3574 L1030,1003.3574 L1020,993.3574" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="340.8247" x="591.1133" y="1010.9258">This process assumes Payer1 provides a unique ID for</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="230.1533" x="591.1133" y="1026.2363">the member that crosses all relevant</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="147.1704" x="591.1133" y="1041.5469">contract arrangements.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1133" x="587" y="1056.8574">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="343.3828" x="591.1133" y="1072.168">Payer1 may determine concurrent coverage is in effect</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="335.9497" x="591.1133" y="1087.4785">and covered by member consent to trigger reciprocal</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="281.563" x="591.1133" y="1102.7891">app registration and $MemberMatch request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4.1133" x="587" y="1118.0996">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="428.0859" x="587" y="1133.4102">Payer2 receives the Member Identifier (Patient FHIR ID) from Payer1.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="418.6152" x="591.1133" y="1148.7207">The Member Identifier (Patient FHIR ID) is only returned if member</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="293.2681" x="591.1133" y="1164.0313">is matched AND consent can be complied with</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="199.3545" x="591.1133" y="1179.3418">per date and policy constraints.</text><path d="M69,1206.084 L441.8564,1206.084 L441.8564,1213.3945 L431.8564,1223.3945 L69,1223.3945 L69,1206.084" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="179.7949" style="stroke:#000000;stroke-width:1.5;" width="1087.9668" x="69" y="1206.084" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="327.8564" x="84" y="1219.6523">Step 3: Request Access token for Member Access</text><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,1297.292,574.3652,1301.292,564.3652,1305.292,568.3652,1301.292" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="1301.292" y2="1301.292" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="222.7734" y="1288.8945">16</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204.9023" x="243.9248" y="1281.2393">Use OAuth2.0 token endpoint to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="247.895" x="243.9248" y="1296.5498">request access using Member Identifier</text></g><path d="M581,1228.3945 L581,1345.3945 L1141,1345.3945 L1141,1238.3945 L1131,1228.3945 L581,1228.3945" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M1131,1228.3945 L1131,1238.3945 L1141,1238.3945 L1131,1228.3945" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="268.5376" x="587" y="1245.9629">Token endpoint matches to member using</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="341.4214" x="591.1133" y="1261.2734">Member Identifier and queries consent records to find</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="451.7437" x="591.1133" y="1276.584">the latest active consent that matches on Member and Payer Identifiers.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="396.5825" x="591.1133" y="1291.8945">The Access Token process then confirms current date is within</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="535.4883" x="591.1133" y="1307.2051">the consent period and the policy scope can be complied with. Checking the consent</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="504.7148" x="591.1133" y="1322.5156">record is active provides for the receiving payer to invalidate the consent record</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="404.2886" x="591.1133" y="1337.8262">if a request is recieved via other channels to cancel the consent.</text><g class="message" data-participant-1="Payer1" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,1370.8789,216.7734,1374.8789,226.7734,1378.8789,222.7734,1374.8789" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="575.3652" y1="1374.8789" y2="1374.8789" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="232.7734" y="1370.1367">17</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126.7563" x="253.9248" y="1370.1367">Return access token</text></g><path d="M581,1355.5684 L581,1380.5684 L807,1380.5684 L807,1365.5684 L797,1355.5684 L581,1355.5684" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M797,1355.5684 L797,1365.5684 L807,1365.5684 L797,1355.5684" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="205.1499" x="587" y="1373.1367">token is scoped to single Patient</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1;" width="1282.3525" x="0" y="1413.5342" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="1413.5342" y2="1413.5342" /><line style="stroke:#000000;stroke-width:1;" x1="0" x2="1282.3525" y1="1416.5342" y2="1416.5342" /><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2;" width="114.7563" x="583.7981" y="1402.8789" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="96.4717" x="589.7981" y="1419.4473">Data Requests</text><path d="M69,1443.1895 L452.5903,1443.1895 L452.5903,1450.5 L442.5903,1460.5 L69,1460.5 L69,1443.1895" fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="127.8633" style="stroke:#000000;stroke-width:1.5;" width="950.0259" x="69" y="1443.1895" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="338.5903" x="84" y="1456.7578">Step 4: Exchange PDex (USCDI) Information via API</text><g class="message" data-participant-1="Payer2" data-participant-2="Payer1"><polygon fill="#181818" points="564.3652,1477.8105,574.3652,1481.8105,564.3652,1485.8105,568.3652,1481.8105" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="215.7734" x2="570.3652" y1="1481.8105" y2="1481.8105" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="222.7734" y="1477.0684">18</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="293.6045" x="243.9248" y="1477.0684">Use Patient-scoped access token to access API</text></g><g class="message" data-participant-1="Payer1" data-participant-2="Payer2"><polygon fill="#181818" points="226.7734,1548.3975,216.7734,1552.3975,226.7734,1556.3975,222.7734,1552.3975" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="220.7734" x2="575.3652" y1="1552.3975" y2="1552.3975" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="17.1514" x="232.7734" y="1532.3447">19</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137.7188" x="253.9248" y="1517.0342">Return $everything or</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="272.7017" x="253.9248" y="1532.3447">incremental data as appropriate/supported</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="195.3555" x="253.9248" y="1547.6553">by Payer1 Capability Statement</text></g><path d="M581,1494.8105 L581,1565.8105 L1003,1565.8105 L1003,1504.8105 L993,1494.8105 L581,1494.8105" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M993,1494.8105 L993,1504.8105 L1003,1504.8105 L993,1494.8105" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="401.6606" x="587" y="1512.3789">Use retrieval method, as defined in use case scenarios, such as:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="311.6382" x="599.3398" y="1527.6895">1.) Individual search against each USCDI resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159.7769" x="599.3398" y="1543">2.) $everything operation</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="235.0664" x="599.3398" y="1558.3105">3.) asynchronous Bulk FHIR methods.</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1289 1623" zoomAndPan="magnify" data-diagram-type="SEQUENCE" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><rect width="1008.5684" x="26" y="96.7988" style="stroke:#000000;stroke-width:1.5;" fill="#90EE90" height="291.1055"></rect><rect width="705.8364" x="9" y="401.9043" style="stroke:#000000;stroke-width:1.5;" fill="#90EE90" height="97.2422"></rect><rect width="814.7192" x="69" y="599.7676" style="stroke:#000000;stroke-width:1.5;" fill="none" height="112.5527"></rect><rect width="1203.3525" x="69" y="726.3203" style="stroke:#000000;stroke-width:1.5;" fill="none" height="465.7637"></rect><rect width="1087.9668" x="69" y="1206.084" style="stroke:#000000;stroke-width:1.5;" fill="none" height="179.7949"></rect><rect width="950.0259" x="69" y="1443.1895" style="stroke:#000000;stroke-width:1.5;" fill="#ADD8E6" height="127.8633"></rect><g><title>Payer2 | New Payer | Requesting Payer</title><rect width="8" x="211.7734" y="36.4883" fill="#000000" fill-opacity="0.00000" height="1551.5645"></rect><line y1="36.4883" x1="215" y2="1588.0527" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="215"></line></g><g><title>Payer1 | Old Payer | Receiving Payer</title><rect width="8" x="572.3652" y="36.4883" fill="#000000" fill-opacity="0.00000" height="1551.5645"></rect><line y1="36.4883" x1="575.894" y2="1588.0527" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="575.894"></line></g><g><title>Payer Directory | Certificate Authority</title><rect width="8" x="844.937" y="36.4883" fill="#000000" fill-opacity="0.00000" height="1551.5645"></rect><line y1="36.4883" x1="848.8364" y2="1588.0527" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="848.8364"></line></g><g data-participant="Payer2" class="participant participant-head"><rect rx="2.5" ry="2.5" width="273.5469" x="79" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="86" font-size="14" textLength="259.5469" y="25.5352" font-family="sans-serif" fill="#000000">Payer2 | New Payer | Requesting Payer</text></g><g data-participant="Payer2" class="participant participant-tail"><rect rx="2.5" ry="2.5" width="273.5469" x="79" y="1587.0527" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="86" font-size="14" textLength="259.5469" y="1607.5879" font-family="sans-serif" fill="#000000">Payer2 | New Payer | Requesting Payer</text></g><g data-participant="Payer1" class="participant participant-head"><rect rx="2.5" ry="2.5" width="256.9424" x="447.894" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="454.894" font-size="14" textLength="242.9424" y="25.5352" font-family="sans-serif" fill="#000000">Payer1 | Old Payer | Receiving Payer</text></g><g data-participant="Payer1" class="participant participant-tail"><rect rx="2.5" ry="2.5" width="256.9424" x="447.894" y="1587.0527" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="454.894" font-size="14" textLength="242.9424" y="1607.5879" font-family="sans-serif" fill="#000000">Payer1 | Old Payer | Receiving Payer</text></g><g data-participant="PayerDirectory" class="participant participant-head"><rect rx="2.5" ry="2.5" width="268.2012" x="714.8364" y="5" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="721.8364" font-size="14" textLength="254.2012" y="25.5352" font-family="sans-serif" fill="#000000">Payer Directory | Certificate Authority</text></g><g data-participant="PayerDirectory" class="participant participant-tail"><rect rx="2.5" ry="2.5" width="268.2012" x="714.8364" y="1587.0527" style="stroke:#181818;stroke-width:0.5;" fill="#E2E2F0" height="30.4883"></rect><text lengthAdjust="spacing" x="721.8364" font-size="14" textLength="254.2012" y="1607.5879" font-family="sans-serif" fill="#000000">Payer Directory | Certificate Authority</text></g><rect width="1282.3525" x="0" y="67.1436" style="stroke:#EEEEEE;stroke-width:1;" fill="#EEEEEE" height="3"></rect><line y1="67.1436" x1="0" y2="67.1436" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><line y1="70.1436" x1="0" y2="70.1436" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><rect width="187.6782" x="547.3372" y="56.4883" style="stroke:#000000;stroke-width:2;" fill="#EEEEEE" height="23.3105"></rect><text font-weight="bold" lengthAdjust="spacing" x="553.3372" font-size="13" textLength="169.3936" y="73.0566" font-family="sans-serif" fill="#000000">Connection Intitialization</text><path d="M26,96.7988 L497.8545,96.7988 L497.8545,104.1094 L487.8545,114.1094 L26,114.1094 L26,96.7988" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="1008.5684" x="26" y="96.7988" style="stroke:#000000;stroke-width:1.5;" fill="none" height="291.1055"></rect><text font-weight="bold" lengthAdjust="spacing" x="41" font-size="13" textLength="426.8545" y="110.3672" font-family="sans-serif" fill="#000000">Step 1a: Verify Exchange, establish mutual TLS, and verify trust.</text><g data-participant-1="Payer2" data-participant-2="PayerDirectory" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="836.937,142.0752,846.937,146.0752,836.937,150.0752,840.937,146.0752"></polygon><line y1="146.0752" x1="215.7734" y2="146.0752" style="stroke:#181818;stroke-width:1;" x2="842.937"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="8.5757" y="141.333" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="235.3491" font-size="13" textLength="37.521" y="141.333" font-family="sans-serif" fill="#000000">Query</text></g><path d="M36,119.1094 L36,159.1094 L210,159.1094 L210,129.1094 L200,119.1094 L36,119.1094" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M200,119.1094 L200,129.1094 L210,129.1094 L200,119.1094" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="42" font-size="13" textLength="153.1563" y="136.6777" font-family="sans-serif" fill="#000000">Payer2 searches registry</text><text lengthAdjust="spacing" x="46.1133" font-size="13" textLength="109.8589" y="151.9883" font-family="sans-serif" fill="#000000">for Payer1 details</text><g data-participant-1="PayerDirectory" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,182.041,216.7734,186.041,226.7734,190.041,222.7734,186.041"></polygon><line y1="186.041" x1="220.7734" y2="186.041" style="stroke:#181818;stroke-width:1;" x2="847.937"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="8.5757" y="181.2988" font-family="sans-serif" fill="#000000">2</text><text lengthAdjust="spacing" x="245.3491" font-size="13" textLength="255.8359" y="181.2988" font-family="sans-serif" fill="#000000">Return endpoint, mutual TLS public cert,</text></g><g data-participant-1="Payer2" data-participant-2="Payer2" class="message"><line y1="215.3516" x1="215.7734" y2="215.3516" style="stroke:#181818;stroke-width:1;" x2="257.7734"></line><line y1="215.3516" x1="257.7734" y2="228.3516" style="stroke:#181818;stroke-width:1;" x2="257.7734"></line><line y1="228.3516" x1="216.7734" y2="228.3516" style="stroke:#181818;stroke-width:1;" x2="257.7734"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,224.3516,216.7734,228.3516,226.7734,232.3516,222.7734,228.3516"></polygon><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="8.5757" y="210.6094" font-family="sans-serif" fill="#000000">3</text><text lengthAdjust="spacing" x="235.3491" font-size="13" textLength="66.9233" y="210.6094" font-family="sans-serif" fill="#000000">Verify Cert</text></g><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,253.6621,574.3652,257.6621,564.3652,261.6621,568.3652,257.6621"></polygon><line y1="257.6621" x1="215.7734" y2="257.6621" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="8.5757" y="252.9199" font-family="sans-serif" fill="#000000">4</text><text lengthAdjust="spacing" x="235.3491" font-size="13" textLength="129.6191" y="252.9199" font-family="sans-serif" fill="#000000">Establish Mutual TLS</text></g><g data-participant-1="Payer1" data-participant-2="PayerDirectory" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="836.937,293.6279,846.937,297.6279,836.937,301.6279,840.937,297.6279"></polygon><line y1="297.6279" x1="576.3652" y2="297.6279" style="stroke:#181818;stroke-width:1;" x2="842.937"></line><text font-weight="bold" lengthAdjust="spacing" x="583.3652" font-size="13" textLength="8.5757" y="292.8857" font-family="sans-serif" fill="#000000">5</text><text lengthAdjust="spacing" x="595.9409" font-size="13" textLength="184.228" y="292.8857" font-family="sans-serif" fill="#000000">Query mutual TLS Public Cert</text></g><path d="M853,270.6621 L853,310.6621 L1018,310.6621 L1018,280.6621 L1008,270.6621 L853,270.6621" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M1008,270.6621 L1008,280.6621 L1018,280.6621 L1008,270.6621" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="859" font-size="13" textLength="144.6313" y="288.2305" font-family="sans-serif" fill="#000000">Payer1 queries registry</text><text lengthAdjust="spacing" x="863.1133" font-size="13" textLength="109.8589" y="303.541" font-family="sans-serif" fill="#000000">for Payer2 details</text><g data-participant-1="PayerDirectory" data-participant-2="Payer1" class="message"><line y1="337.5938" x1="577.3652" y2="333.5938" style="stroke:#181818;stroke-width:1;" x2="587.3652"></line><line y1="337.5938" x1="577.3652" y2="341.5938" style="stroke:#181818;stroke-width:1;" x2="587.3652"></line><line y1="337.5938" x1="576.3652" y2="337.5938" style="stroke:#181818;stroke-width:1;" x2="847.937"></line><text font-weight="bold" lengthAdjust="spacing" x="593.3652" font-size="13" textLength="8.5757" y="332.8516" font-family="sans-serif" fill="#000000">6</text><text lengthAdjust="spacing" x="605.9409" font-size="13" textLength="151.0996" y="332.8516" font-family="sans-serif" fill="#000000">Return mTLS public cert</text></g><g data-participant-1="Payer1" data-participant-2="Payer1" class="message"><line y1="366.9043" x1="576.3652" y2="366.9043" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="366.9043" x1="618.3652" y2="379.9043" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="379.9043" x1="577.3652" y2="379.9043" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="587.3652,375.9043,577.3652,379.9043,587.3652,383.9043,583.3652,379.9043"></polygon><text font-weight="bold" lengthAdjust="spacing" x="583.3652" font-size="13" textLength="8.5757" y="362.1621" font-family="sans-serif" fill="#000000">7</text><text lengthAdjust="spacing" x="595.9409" font-size="13" textLength="66.9233" y="362.1621" font-family="sans-serif" fill="#000000">Verify Cert</text></g><path d="M9,401.9043 L469.6191,401.9043 L469.6191,409.2148 L459.6191,419.2148 L9,419.2148 L9,401.9043" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="705.8364" x="9" y="401.9043" style="stroke:#000000;stroke-width:1.5;" fill="none" height="97.2422"></rect><text font-weight="bold" lengthAdjust="spacing" x="24" font-size="13" textLength="415.6191" y="415.4727" font-family="sans-serif" fill="#000000">Step 1b: OAuth 2.0 Dynamic Registration via mTLS connection</text><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,447.1807,574.3652,451.1807,564.3652,455.1807,568.3652,451.1807"></polygon><line y1="451.1807" x1="215.7734" y2="451.1807" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="8.5757" y="446.4385" font-family="sans-serif" fill="#000000">8</text><text lengthAdjust="spacing" x="235.3491" font-size="13" textLength="317.3384" y="446.4385" font-family="sans-serif" fill="#000000">Request registration (JWT with registration details)</text></g><path d="M19,424.2148 L19,464.2148 L210,464.2148 L210,434.2148 L200,424.2148 L19,424.2148" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M200,424.2148 L200,434.2148 L210,434.2148 L200,424.2148" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="25" font-size="13" textLength="154.6289" y="441.7832" font-family="sans-serif" fill="#000000">Payer2 submits JWT with</text><text lengthAdjust="spacing" x="29.1133" font-size="13" textLength="166.499" y="457.0938" font-family="sans-serif" fill="#000000">service registration details</text><g data-participant-1="Payer1" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,487.1465,216.7734,491.1465,226.7734,495.1465,222.7734,491.1465"></polygon><line y1="491.1465" x1="220.7734" y2="491.1465" style="stroke:#181818;stroke-width:1;" x2="575.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="8.5757" y="486.4043" font-family="sans-serif" fill="#000000">9</text><text lengthAdjust="spacing" x="245.3491" font-size="13" textLength="302.4849" y="486.4043" font-family="sans-serif" fill="#000000">Return Client Credentials (ClientID/ClientSecret)</text></g><rect width="1282.3525" x="0" y="526.8018" style="stroke:#EEEEEE;stroke-width:1;" fill="#EEEEEE" height="3"></rect><line y1="526.8018" x1="0" y2="526.8018" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><line y1="529.8018" x1="0" y2="529.8018" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><rect width="299.0352" x="491.6587" y="516.1465" style="stroke:#000000;stroke-width:2;" fill="#EEEEEE" height="23.3105"></rect><text font-weight="bold" lengthAdjust="spacing" x="497.6587" font-size="13" textLength="280.7505" y="532.7148" font-family="sans-serif" fill="#000000">Secure Transaction Capability Established</text><rect width="1282.3525" x="0" y="570.1123" style="stroke:#EEEEEE;stroke-width:1;" fill="#EEEEEE" height="3"></rect><line y1="570.1123" x1="0" y2="570.1123" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><line y1="573.1123" x1="0" y2="573.1123" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><rect width="152.2456" x="565.0535" y="559.457" style="stroke:#000000;stroke-width:2;" fill="#EEEEEE" height="23.3105"></rect><text font-weight="bold" lengthAdjust="spacing" x="571.0535" font-size="13" textLength="133.9609" y="576.0254" font-family="sans-serif" fill="#000000">Member Connection</text><path d="M69,599.7676 L417.7417,599.7676 L417.7417,607.0781 L407.7417,617.0781 L69,617.0781 L69,599.7676" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="814.7192" x="69" y="599.7676" style="stroke:#000000;stroke-width:1.5;" fill="none" height="112.5527"></rect><text font-weight="bold" lengthAdjust="spacing" x="84" font-size="13" textLength="303.7417" y="613.3359" font-family="sans-serif" fill="#000000">Step 2a: Get $MemberMatch Operation Token</text><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,649.6992,574.3652,653.6992,564.3652,657.6992,568.3652,653.6992"></polygon><line y1="653.6992" x1="215.7734" y2="653.6992" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="17.1514" y="641.3018" font-family="sans-serif" fill="#000000">10</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="301.666" y="633.6465" font-family="sans-serif" fill="#000000">Use OAuth2.0 token endpoint to request access</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="209.8789" y="648.957" font-family="sans-serif" fill="#000000">to $MemberMatch operation only</text></g><g data-participant-1="Payer1" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,689.665,216.7734,693.665,226.7734,697.665,222.7734,693.665"></polygon><line y1="693.665" x1="220.7734" y2="693.665" style="stroke:#181818;stroke-width:1;" x2="575.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="17.1514" y="688.9229" font-family="sans-serif" fill="#000000">11</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="126.7563" y="688.9229" font-family="sans-serif" fill="#000000">Return access token</text></g><path d="M581,666.6992 L581,706.6992 L868,706.6992 L868,676.6992 L858,666.6992 L581,666.6992" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M858,666.6992 L858,676.6992 L868,676.6992 L858,666.6992" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="587" font-size="13" textLength="266.354" y="684.2676" font-family="sans-serif" fill="#000000">Token endpoint issues access token using</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="161.4653" y="699.5781" font-family="sans-serif" fill="#000000">Payer2 OAuth Credentials</text><path d="M69,726.3203 L494.4531,726.3203 L494.4531,733.6309 L484.4531,743.6309 L69,743.6309 L69,726.3203" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="1203.3525" x="69" y="726.3203" style="stroke:#000000;stroke-width:1.5;" fill="none" height="465.7637"></rect><text font-weight="bold" lengthAdjust="spacing" x="84" font-size="13" textLength="380.4531" y="739.8887" font-family="sans-serif" fill="#000000">Step 2b: Establish common member - secure transaction</text><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,776.252,574.3652,780.252,564.3652,784.252,568.3652,780.252"></polygon><line y1="780.252" x1="215.7734" y2="780.252" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="17.1514" y="767.8545" font-family="sans-serif" fill="#000000">12</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="228.833" y="760.1992" font-family="sans-serif" fill="#000000">Send bundle (Patient Demographics,</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="315.4404" y="775.5098" font-family="sans-serif" fill="#000000">Coverage &amp; Consent) to $MemberMatch operation</text></g><g data-participant-1="Payer1" data-participant-2="Payer1" class="message"><line y1="809.5625" x1="576.3652" y2="809.5625" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="809.5625" x1="618.3652" y2="822.5625" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="822.5625" x1="577.3652" y2="822.5625" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="587.3652,818.5625,577.3652,822.5625,587.3652,826.5625,583.3652,822.5625"></polygon><text font-weight="bold" lengthAdjust="spacing" x="583.3652" font-size="13" textLength="17.1514" y="804.8203" font-family="sans-serif" fill="#000000">13</text><text lengthAdjust="spacing" x="604.5166" font-size="13" textLength="92.7646" y="804.8203" font-family="sans-serif" fill="#000000">Verify member</text></g><g data-participant-1="Payer1" data-participant-2="Payer1" class="message"><line y1="917.2705" x1="576.3652" y2="917.2705" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="917.2705" x1="618.3652" y2="930.2705" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><line y1="930.2705" x1="577.3652" y2="930.2705" style="stroke:#181818;stroke-width:1;" x2="618.3652"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="587.3652,926.2705,577.3652,930.2705,587.3652,934.2705,583.3652,930.2705"></polygon><text font-weight="bold" lengthAdjust="spacing" x="583.3652" font-size="13" textLength="17.1514" y="904.873" font-family="sans-serif" fill="#000000">14</text><text lengthAdjust="spacing" x="604.5166" font-size="13" textLength="167.375" y="897.2178" font-family="sans-serif" fill="#000000">Store or Compute Consent</text><text lengthAdjust="spacing" x="604.5166" font-size="13" textLength="202.3823" y="912.5283" font-family="sans-serif" fill="#000000">(all / non-sensitive) for Member</text></g><path d="M818.5337,835.5625 L818.5337,982.5625 L1256.5337,982.5625 L1256.5337,845.5625 L1246.5337,835.5625 L818.5337,835.5625" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M1246.5337,835.5625 L1246.5337,845.5625 L1256.5337,845.5625 L1246.5337,835.5625" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="73.0298" y="853.1309" font-family="sans-serif" fill="#000000">Member: ID</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="173.3989" y="868.4414" font-family="sans-serif" fill="#000000">Payer: ID (Client Credential)</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="158.6978" y="883.752" font-family="sans-serif" fill="#000000">Policy: all | non-sensitive</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="164.4297" y="899.0625" font-family="sans-serif" fill="#000000">Consent Period: start, end</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="276.7388" y="914.373" font-family="sans-serif" fill="#000000">This information will be need to be checked</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="246.4224" y="929.6836" font-family="sans-serif" fill="#000000">when Access Token is issued in Step 3.</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="386.3945" y="944.9941" font-family="sans-serif" fill="#000000">An active consent information will only be stored if the Policy</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="417.4536" y="960.3047" font-family="sans-serif" fill="#000000">Scope can be complied with. An inability to comply with the scope</text><text lengthAdjust="spacing" x="824.5337" font-size="13" textLength="415.7334" y="975.6152" font-family="sans-serif" fill="#000000">will lead to a 422 error being returned from the $member-match.</text><g data-participant-1="Payer1" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,1092.876,216.7734,1096.876,226.7734,1100.876,222.7734,1096.876"></polygon><line y1="1096.876" x1="220.7734" y2="1096.876" style="stroke:#181818;stroke-width:1;" x2="575.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="17.1514" y="1092.1338" font-family="sans-serif" fill="#000000">15</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="239.77" y="1092.1338" font-family="sans-serif" fill="#000000">Return Member Identifier (Member ID)</text></g><path d="M581,993.3574 L581,1186.3574 L1030,1186.3574 L1030,1003.3574 L1020,993.3574 L581,993.3574" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M1020,993.3574 L1020,1003.3574 L1030,1003.3574 L1020,993.3574" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="340.8247" y="1010.9258" font-family="sans-serif" fill="#000000">This process assumes Payer1 provides a unique ID for</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="230.1533" y="1026.2363" font-family="sans-serif" fill="#000000">the member that crosses all relevant</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="147.1704" y="1041.5469" font-family="sans-serif" fill="#000000">contract arrangements.</text><text lengthAdjust="spacing" x="587" font-size="13" textLength="4.1133" y="1056.8574" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="343.3828" y="1072.168" font-family="sans-serif" fill="#000000">Payer1 may determine concurrent coverage is in effect</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="335.9497" y="1087.4785" font-family="sans-serif" fill="#000000">and covered by member consent to trigger reciprocal</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="281.563" y="1102.7891" font-family="sans-serif" fill="#000000">app registration and $MemberMatch request</text><text lengthAdjust="spacing" x="587" font-size="13" textLength="4.1133" y="1118.0996" font-family="sans-serif" fill="#000000">&nbsp;</text><text lengthAdjust="spacing" x="587" font-size="13" textLength="428.0859" y="1133.4102" font-family="sans-serif" fill="#000000">Payer2 receives the Member Identifier (Patient FHIR ID) from Payer1.</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="418.6152" y="1148.7207" font-family="sans-serif" fill="#000000">The Member Identifier (Patient FHIR ID) is only returned if member</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="293.2681" y="1164.0313" font-family="sans-serif" fill="#000000">is matched AND consent can be complied with</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="199.3545" y="1179.3418" font-family="sans-serif" fill="#000000">per date and policy constraints.</text><path d="M69,1206.084 L441.8564,1206.084 L441.8564,1213.3945 L431.8564,1223.3945 L69,1223.3945 L69,1206.084" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="1087.9668" x="69" y="1206.084" style="stroke:#000000;stroke-width:1.5;" fill="none" height="179.7949"></rect><text font-weight="bold" lengthAdjust="spacing" x="84" font-size="13" textLength="327.8564" y="1219.6523" font-family="sans-serif" fill="#000000">Step 3: Request Access token for Member Access</text><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,1297.292,574.3652,1301.292,564.3652,1305.292,568.3652,1301.292"></polygon><line y1="1301.292" x1="215.7734" y2="1301.292" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="17.1514" y="1288.8945" font-family="sans-serif" fill="#000000">16</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="204.9023" y="1281.2393" font-family="sans-serif" fill="#000000">Use OAuth2.0 token endpoint to</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="247.895" y="1296.5498" font-family="sans-serif" fill="#000000">request access using Member Identifier</text></g><path d="M581,1228.3945 L581,1345.3945 L1141,1345.3945 L1141,1238.3945 L1131,1228.3945 L581,1228.3945" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M1131,1228.3945 L1131,1238.3945 L1141,1238.3945 L1131,1228.3945" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="587" font-size="13" textLength="268.5376" y="1245.9629" font-family="sans-serif" fill="#000000">Token endpoint matches to member using</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="341.4214" y="1261.2734" font-family="sans-serif" fill="#000000">Member Identifier and queries consent records to find</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="451.7437" y="1276.584" font-family="sans-serif" fill="#000000">the latest active consent that matches on Member and Payer Identifiers.</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="396.5825" y="1291.8945" font-family="sans-serif" fill="#000000">The Access Token process then confirms current date is within</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="535.4883" y="1307.2051" font-family="sans-serif" fill="#000000">the consent period and the policy scope can be complied with. Checking the consent</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="504.7148" y="1322.5156" font-family="sans-serif" fill="#000000">record is active provides for the receiving payer to invalidate the consent record</text><text lengthAdjust="spacing" x="591.1133" font-size="13" textLength="404.2886" y="1337.8262" font-family="sans-serif" fill="#000000">if a request is recieved via other channels to cancel the consent.</text><g data-participant-1="Payer1" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,1370.8789,216.7734,1374.8789,226.7734,1378.8789,222.7734,1374.8789"></polygon><line y1="1374.8789" x1="220.7734" y2="1374.8789" style="stroke:#181818;stroke-width:1;" x2="575.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="17.1514" y="1370.1367" font-family="sans-serif" fill="#000000">17</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="126.7563" y="1370.1367" font-family="sans-serif" fill="#000000">Return access token</text></g><path d="M581,1355.5684 L581,1380.5684 L807,1380.5684 L807,1365.5684 L797,1355.5684 L581,1355.5684" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M797,1355.5684 L797,1365.5684 L807,1365.5684 L797,1355.5684" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="587" font-size="13" textLength="205.1499" y="1373.1367" font-family="sans-serif" fill="#000000">token is scoped to single Patient</text><rect width="1282.3525" x="0" y="1413.5342" style="stroke:#EEEEEE;stroke-width:1;" fill="#EEEEEE" height="3"></rect><line y1="1413.5342" x1="0" y2="1413.5342" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><line y1="1416.5342" x1="0" y2="1416.5342" style="stroke:#000000;stroke-width:1;" x2="1282.3525"></line><rect width="114.7563" x="583.7981" y="1402.8789" style="stroke:#000000;stroke-width:2;" fill="#EEEEEE" height="23.3105"></rect><text font-weight="bold" lengthAdjust="spacing" x="589.7981" font-size="13" textLength="96.4717" y="1419.4473" font-family="sans-serif" fill="#000000">Data Requests</text><path d="M69,1443.1895 L452.5903,1443.1895 L452.5903,1450.5 L442.5903,1460.5 L69,1460.5 L69,1443.1895" style="stroke:#000000;stroke-width:1.5;" fill="#EEEEEE"></path><rect width="950.0259" x="69" y="1443.1895" style="stroke:#000000;stroke-width:1.5;" fill="none" height="127.8633"></rect><text font-weight="bold" lengthAdjust="spacing" x="84" font-size="13" textLength="338.5903" y="1456.7578" font-family="sans-serif" fill="#000000">Step 4: Exchange PDex (USCDI) Information via API</text><g data-participant-1="Payer2" data-participant-2="Payer1" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="564.3652,1477.8105,574.3652,1481.8105,564.3652,1485.8105,568.3652,1481.8105"></polygon><line y1="1481.8105" x1="215.7734" y2="1481.8105" style="stroke:#181818;stroke-width:1;" x2="570.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="222.7734" font-size="13" textLength="17.1514" y="1477.0684" font-family="sans-serif" fill="#000000">18</text><text lengthAdjust="spacing" x="243.9248" font-size="13" textLength="293.6045" y="1477.0684" font-family="sans-serif" fill="#000000">Use Patient-scoped access token to access API</text></g><g data-participant-1="Payer1" data-participant-2="Payer2" class="message"><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="226.7734,1548.3975,216.7734,1552.3975,226.7734,1556.3975,222.7734,1552.3975"></polygon><line y1="1552.3975" x1="220.7734" y2="1552.3975" style="stroke:#181818;stroke-width:1;" x2="575.3652"></line><text font-weight="bold" lengthAdjust="spacing" x="232.7734" font-size="13" textLength="17.1514" y="1532.3447" font-family="sans-serif" fill="#000000">19</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="137.7188" y="1517.0342" font-family="sans-serif" fill="#000000">Return $everything or</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="272.7017" y="1532.3447" font-family="sans-serif" fill="#000000">incremental data as appropriate/supported</text><text lengthAdjust="spacing" x="253.9248" font-size="13" textLength="195.3555" y="1547.6553" font-family="sans-serif" fill="#000000">by Payer1 Capability Statement</text></g><path d="M581,1494.8105 L581,1565.8105 L1003,1565.8105 L1003,1504.8105 L993,1494.8105 L581,1494.8105" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M993,1494.8105 L993,1504.8105 L1003,1504.8105 L993,1494.8105" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="587" font-size="13" textLength="401.6606" y="1512.3789" font-family="sans-serif" fill="#000000">Use retrieval method, as defined in use case scenarios, such as:</text><text lengthAdjust="spacing" x="599.3398" font-size="13" textLength="311.6382" y="1527.6895" font-family="sans-serif" fill="#000000">1.) Individual search against each USCDI resource</text><text lengthAdjust="spacing" x="599.3398" font-size="13" textLength="159.7769" y="1543" font-family="sans-serif" fill="#000000">2.) $everything operation</text><text lengthAdjust="spacing" x="599.3398" font-size="13" textLength="235.0664" y="1558.3105" font-family="sans-serif" fill="#000000">3.) asynchronous Bulk FHIR methods.</text></g></svg>
 </div>
 
-<p>Health Plans <strong>SHALL</strong> support the $member-match operation.</p>
+<p><span id="pdex-182" class="fhir-conformance"> Health Plans <strong>SHALL</strong> support the $member-match operation. <a name="ci-c-pdex-182">  </a><a href="narrative-conformance.html#ci-c-pdex-182"><sup>&sect;pdex-182</sup></a></span></p>
+
+<div class="stu-note">
+The use of mTLS to secure a connection is deprecated in favor of alternate methods that are emerging, such as [FAST HL7 UDAP Security for Scalable Registration, Authentication, and Authorization IG](https://hl7.org/fhir/us/udap-security) . New implementations are encouraged to adopt these other mechanisms, as defined in [Health Record Exchange IG](https://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html#exchange-security) (with the exception of mTLS authentication).
+</div>
 
 <p>The steps in the Member Match with Consent process are:</p>
 
 <ul>
-  <li>Establish a secure connection via mTLS</li>
-  <li>Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials</li>
-  <li>Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation</li>
-  <li>The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found</li>
-  <li>The $member-match operation evaluates the Consent resource for a matched member</li>
-  <li>If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a unique Member ID is provided to the requesting Payer (Payer2)</li>
-  <li>If a Member ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member</li>
+  <li>Establish a secure connection via mTLS.</li>
+  <li>Use mTLS secure connection to perform OAuth2.0 Dynamic Client Registration to acquire OAuth2.0 client credentials.</li>
+  <li>Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation.</li>
+  <li>The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found.</li>
+  <li>The $member-match operation evaluates the Consent resource for a matched member.</li>
+  <li>If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> (unique member business identifier) is returned to the requesting Payer (Payer2). A <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID) <strong>SHOULD</strong> also be returned where available.</li>
+  <li>If a Member ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member.</li>
   <li>If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.</li>
 </ul>
 
@@ -371,7 +376,7 @@ in the bulk Payer-to-Payer Exchange. However, the outcome in the Single Member M
 <p>The decision flow is shown below:</p>
 
 <div style="height=auto;width=90%;">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" preserveAspectRatio="none" version="1.1" viewBox="0 0 1128 431" zoomAndPan="magnify"><defs /><g><path d="M85.7452,10 L85.7452,35.3105 A0,0 0 0 0 85.7452,35.3105 L393.2911,35.3105 A0,0 0 0 0 393.2911,35.3105 L393.2911,28 L413.2911,22.6553 L393.2911,20 L393.2911,20 L383.2911,10 L85.7452,10 A0,0 0 0 0 85.7452,10" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><path d="M383.2911,10 L383.2911,20 L393.2911,20 L383.2911,10" fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="286.5459" x="91.7452" y="27.5684">Single Member-match Consent Decision Flow</text><ellipse cx="423.2911" cy="22.6553" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;" /><polygon fill="#F1F1F1" points="364.8671,55.3105,481.7152,55.3105,493.7152,67.3105,481.7152,79.3105,364.8671,79.3105,352.8671,67.3105,364.8671,55.3105" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="116.8481" x="364.8671" y="71.4678">is bundle format valid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="13.5835" x="339.2836" y="64.9902">no</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="17.4829" x="493.7152" y="64.9902">yes</text><rect fill="#FFC0CB" height="48.2656" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="256.7129" x="11" y="89.3105" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="202.418" x="21" y="110.9121">return 422 Unprocessable Entity in</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="236.7129" x="21" y="125.0449">Operation Outcome - Bad bundle format</text><ellipse cx="139.3564" cy="183.5762" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" /><ellipse cx="139.3564" cy="183.5762" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" /><polygon fill="#F1F1F1" points="642.7361,124.3105,751.7156,124.3105,763.7156,136.3105,751.7156,148.3105,642.7361,148.3105,630.7361,136.3105,642.7361,124.3105" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="108.9795" x="642.7361" y="140.4678">Is Member Matched?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="18.5894" x="612.1467" y="133.9902">Yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41.3896" x="763.7156" y="133.9902">nothing</text><rect fill="#F1F1F1" height="34.1328" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="102.9395" x="554.4167" y="158.3105" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82.9395" x="564.4167" y="179.9121">check consent</text><rect fill="#FFC0CB" height="48.2656" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="222.418" x="677.3562" y="158.3105" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="202.418" x="687.3562" y="179.9121">return 422 Unprocessable Entity in</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="183.9492" x="687.3562" y="194.0449">Operation Outcome - No Match</text><polygon fill="#F1F1F1" points="586.8633,226.5762,807.5884,226.5762,819.5884,238.5762,807.5884,250.5762,586.8633,250.5762,574.8633,238.5762,586.8633,226.5762" style="stroke:#181818;stroke-width:0.5;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="220.7251" x="586.8633" y="242.7334">Can Payer Comply with Consent Request?</text><rect fill="#98FB98" height="48.2656" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="234.8164" x="287.7129" y="286.4863" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="101.4668" x="297.7129" y="308.0879">Capture Consent.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="214.8164" x="297.7129" y="322.2207">Return Matched Member Information</text><rect fill="#98FB98" height="48.2656" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="234.8164" x="554.125" y="286.4863" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="101.4668" x="564.125" y="308.0879">Capture Consent.</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="214.8164" x="564.125" y="322.2207">Return Matched Member Information</text><rect fill="#FFC0CB" height="48.2656" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="291.5703" x="817.6895" y="286.4863" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="202.418" x="827.6895" y="308.0879">return 422 Unprocessable Entity in</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="241.1953" x="858.0645" y="322.2207">Operation Outcome - Consent Constraint</text><polygon fill="#F1F1F1" points="697.2258,354.752,697.2258,354.752,709.2258,366.752,697.2258,378.752,697.2258,378.752,685.2258,366.752,697.2258,354.752" style="stroke:#181818;stroke-width:0.5;" /><ellipse cx="697.2258" cy="409.752" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" /><ellipse cx="697.2258" cy="409.752" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="139.3564" x2="139.3564" y1="137.5762" y2="172.5762" /><polygon fill="#181818" points="135.3564,162.5762,139.3564,172.5762,143.3564,162.5762,139.3564,166.5762" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="630.7361" x2="605.8865" y1="136.3105" y2="136.3105" /><line style="stroke:#181818;stroke-width:1;" x1="605.8865" x2="605.8865" y1="136.3105" y2="158.3105" /><polygon fill="#181818" points="601.8865,148.3105,605.8865,158.3105,609.8865,148.3105,605.8865,152.3105" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="763.7156" x2="788.5652" y1="136.3105" y2="136.3105" /><line style="stroke:#181818;stroke-width:1;" x1="788.5652" x2="788.5652" y1="136.3105" y2="158.3105" /><polygon fill="#181818" points="784.5652,148.3105,788.5652,158.3105,792.5652,148.3105,788.5652,152.3105" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="605.8865" x2="605.8865" y1="192.4434" y2="211.5762" /><line style="stroke:#181818;stroke-width:1;" x1="605.8865" x2="697.2258" y1="211.5762" y2="211.5762" /><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="697.2258" y1="211.5762" y2="226.5762" /><polygon fill="#181818" points="693.2258,216.5762,697.2258,226.5762,701.2258,216.5762,697.2258,220.5762" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="493.7152" x2="697.2258" y1="67.3105" y2="67.3105" /><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="697.2258" y1="67.3105" y2="124.3105" /><polygon fill="#181818" points="693.2258,114.3105,697.2258,124.3105,701.2258,114.3105,697.2258,118.3105" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="574.8633" x2="405.1211" y1="238.5762" y2="238.5762" /><line style="stroke:#181818;stroke-width:1;" x1="405.1211" x2="405.1211" y1="238.5762" y2="286.4863" /><polygon fill="#181818" points="401.1211,276.4863,405.1211,286.4863,409.1211,276.4863,405.1211,280.4863" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="139.0039" x="405.1211" y="266.6885">Sensitive Data is excluded</text><line style="stroke:#181818;stroke-width:1;" x1="819.5884" x2="963.4746" y1="238.5762" y2="238.5762" /><line style="stroke:#181818;stroke-width:1;" x1="963.4746" x2="963.4746" y1="238.5762" y2="286.4863" /><polygon fill="#181818" points="959.4746,276.4863,963.4746,286.4863,967.4746,276.4863,963.4746,280.4863" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="153.2642" x="963.4746" y="266.6885">Sensitive data is NOT tagged</text><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="697.2258" y1="250.5762" y2="262.5462" /><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="671.5332" y1="262.5462" y2="262.5462" /><line style="stroke:#181818;stroke-width:1;" x1="671.5332" x2="671.5332" y1="262.5462" y2="286.4863" /><polygon fill="#181818" points="667.5332,276.4863,671.5332,286.4863,675.5332,276.4863,671.5332,280.4863" style="stroke:#181818;stroke-width:1;" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126.1563" x="671.5332" y="267.6885">Sensitive data is tagged</text><line style="stroke:#181818;stroke-width:1;" x1="405.1211" x2="405.1211" y1="334.752" y2="366.752" /><line style="stroke:#181818;stroke-width:1;" x1="405.1211" x2="685.2258" y1="366.752" y2="366.752" /><polygon fill="#181818" points="675.2258,362.752,685.2258,366.752,675.2258,370.752,679.2258,366.752" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="963.4746" x2="963.4746" y1="334.752" y2="366.752" /><line style="stroke:#181818;stroke-width:1;" x1="963.4746" x2="709.2258" y1="366.752" y2="366.752" /><polygon fill="#181818" points="719.2258,362.752,709.2258,366.752,719.2258,370.752,715.2258,366.752" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="671.5332" x2="671.5332" y1="334.752" y2="339.752" /><line style="stroke:#181818;stroke-width:1;" x1="671.5332" x2="697.2258" y1="339.752" y2="339.752" /><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="697.2258" y1="339.752" y2="354.752" /><polygon fill="#181818" points="693.2258,344.752,697.2258,354.752,701.2258,344.752,697.2258,348.752" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="697.2258" x2="697.2258" y1="378.752" y2="398.752" /><polygon fill="#181818" points="693.2258,388.752,697.2258,398.752,701.2258,388.752,697.2258,392.752" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="352.8671" x2="139.3564" y1="67.3105" y2="67.3105" /><line style="stroke:#181818;stroke-width:1;" x1="139.3564" x2="139.3564" y1="67.3105" y2="89.3105" /><polygon fill="#181818" points="135.3564,79.3105,139.3564,89.3105,143.3564,79.3105,139.3564,83.3105" style="stroke:#181818;stroke-width:1;" /><line style="stroke:#181818;stroke-width:1;" x1="423.2911" x2="423.2911" y1="32.6553" y2="55.3105" /><polygon fill="#181818" points="419.2911,45.3105,423.2911,55.3105,427.2911,45.3105,423.2911,49.3105" style="stroke:#181818;stroke-width:1;" /></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 1128 431" zoomAndPan="magnify" data-diagram-type="ACTIVITY" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><defs></defs><g><path d="M85.7452,10 L85.7452,35.3105 A0,0 0 0 0 85.7452,35.3105 L393.2911,35.3105 A0,0 0 0 0 393.2911,35.3105 L393.2911,28 L413.2911,22.6553 L393.2911,20 L393.2911,20 L383.2911,10 L85.7452,10 A0,0 0 0 0 85.7452,10" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><path d="M383.2911,10 L383.2911,20 L393.2911,20 L383.2911,10" style="stroke:#181818;stroke-width:0.5;" fill="#FEFFDD"></path><text lengthAdjust="spacing" x="91.7452" font-size="13" textLength="286.5459" y="27.5684" font-family="sans-serif" fill="#000000">Single Member-match Consent Decision Flow</text><ellipse cx="423.2911" cy="22.6553" rx="10" ry="10" style="stroke:#222222;stroke-width:1;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="364.8671,55.3105,481.7152,55.3105,493.7152,67.3105,481.7152,79.3105,364.8671,79.3105,352.8671,67.3105,364.8671,55.3105"></polygon><text lengthAdjust="spacing" x="364.8671" font-size="11" textLength="116.8481" y="71.4678" font-family="sans-serif" fill="#000000">is bundle format valid</text><text lengthAdjust="spacing" x="339.2836" font-size="11" textLength="13.5835" y="64.9902" font-family="sans-serif" fill="#000000">no</text><text lengthAdjust="spacing" x="493.7152" font-size="11" textLength="17.4829" y="64.9902" font-family="sans-serif" fill="#000000">yes</text><rect rx="12.5" ry="12.5" width="256.7129" x="11" y="89.3105" style="stroke:#181818;stroke-width:0.5;" fill="#FFC0CB" height="48.2656"></rect><text lengthAdjust="spacing" x="21" font-size="12" textLength="202.418" y="110.9121" font-family="sans-serif" fill="#000000">return 422 Unprocessable Entity in</text><text lengthAdjust="spacing" x="21" font-size="12" textLength="236.7129" y="125.0449" font-family="sans-serif" fill="#000000">Operation Outcome - Bad bundle format</text><ellipse cx="139.3564" cy="183.5762" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" fill="none"></ellipse><ellipse cx="139.3564" cy="183.5762" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" fill="#222222"></ellipse><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="642.7361,124.3105,751.7156,124.3105,763.7156,136.3105,751.7156,148.3105,642.7361,148.3105,630.7361,136.3105,642.7361,124.3105"></polygon><text lengthAdjust="spacing" x="642.7361" font-size="11" textLength="108.9795" y="140.4678" font-family="sans-serif" fill="#000000">Is Member Matched?</text><text lengthAdjust="spacing" x="612.1467" font-size="11" textLength="18.5894" y="133.9902" font-family="sans-serif" fill="#000000">Yes</text><text lengthAdjust="spacing" x="763.7156" font-size="11" textLength="41.3896" y="133.9902" font-family="sans-serif" fill="#000000">nothing</text><rect rx="12.5" ry="12.5" width="102.9395" x="554.4167" y="158.3105" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="564.4167" font-size="12" textLength="82.9395" y="179.9121" font-family="sans-serif" fill="#000000">check consent</text><rect rx="12.5" ry="12.5" width="222.418" x="677.3562" y="158.3105" style="stroke:#181818;stroke-width:0.5;" fill="#FFC0CB" height="48.2656"></rect><text lengthAdjust="spacing" x="687.3562" font-size="12" textLength="202.418" y="179.9121" font-family="sans-serif" fill="#000000">return 422 Unprocessable Entity in</text><text lengthAdjust="spacing" x="687.3562" font-size="12" textLength="183.9492" y="194.0449" font-family="sans-serif" fill="#000000">Operation Outcome - No Match</text><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="586.8633,226.5762,807.5884,226.5762,819.5884,238.5762,807.5884,250.5762,586.8633,250.5762,574.8633,238.5762,586.8633,226.5762"></polygon><text lengthAdjust="spacing" x="586.8633" font-size="11" textLength="220.7251" y="242.7334" font-family="sans-serif" fill="#000000">Can Payer Comply with Consent Request?</text><rect rx="12.5" ry="12.5" width="234.8164" x="287.7129" y="286.4863" style="stroke:#181818;stroke-width:0.5;" fill="#98FB98" height="48.2656"></rect><text lengthAdjust="spacing" x="297.7129" font-size="12" textLength="101.4668" y="308.0879" font-family="sans-serif" fill="#000000">Capture Consent.</text><text lengthAdjust="spacing" x="297.7129" font-size="12" textLength="214.8164" y="322.2207" font-family="sans-serif" fill="#000000">Return Matched Member Information</text><rect rx="12.5" ry="12.5" width="234.8164" x="554.125" y="286.4863" style="stroke:#181818;stroke-width:0.5;" fill="#98FB98" height="48.2656"></rect><text lengthAdjust="spacing" x="564.125" font-size="12" textLength="101.4668" y="308.0879" font-family="sans-serif" fill="#000000">Capture Consent.</text><text lengthAdjust="spacing" x="564.125" font-size="12" textLength="214.8164" y="322.2207" font-family="sans-serif" fill="#000000">Return Matched Member Information</text><rect rx="12.5" ry="12.5" width="291.5703" x="817.6895" y="286.4863" style="stroke:#181818;stroke-width:0.5;" fill="#FFC0CB" height="48.2656"></rect><text lengthAdjust="spacing" x="827.6895" font-size="12" textLength="202.418" y="308.0879" font-family="sans-serif" fill="#000000">return 422 Unprocessable Entity in</text><text lengthAdjust="spacing" x="858.0645" font-size="12" textLength="241.1953" y="322.2207" font-family="sans-serif" fill="#000000">Operation Outcome - Consent Constraint</text><polygon style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" points="697.2258,354.752,697.2258,354.752,709.2258,366.752,697.2258,378.752,697.2258,378.752,685.2258,366.752,697.2258,354.752"></polygon><ellipse cx="697.2258" cy="409.752" rx="11" ry="11" style="stroke:#222222;stroke-width:1;" fill="none"></ellipse><ellipse cx="697.2258" cy="409.752" rx="6" ry="6" style="stroke:#222222;stroke-width:1;" fill="#222222"></ellipse><line y1="137.5762" x1="139.3564" y2="172.5762" style="stroke:#181818;stroke-width:1;" x2="139.3564"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="135.3564,162.5762,139.3564,172.5762,143.3564,162.5762,139.3564,166.5762"></polygon><line y1="136.3105" x1="630.7361" y2="136.3105" style="stroke:#181818;stroke-width:1;" x2="605.8865"></line><line y1="136.3105" x1="605.8865" y2="158.3105" style="stroke:#181818;stroke-width:1;" x2="605.8865"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="601.8865,148.3105,605.8865,158.3105,609.8865,148.3105,605.8865,152.3105"></polygon><line y1="136.3105" x1="763.7156" y2="136.3105" style="stroke:#181818;stroke-width:1;" x2="788.5652"></line><line y1="136.3105" x1="788.5652" y2="158.3105" style="stroke:#181818;stroke-width:1;" x2="788.5652"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="784.5652,148.3105,788.5652,158.3105,792.5652,148.3105,788.5652,152.3105"></polygon><line y1="192.4434" x1="605.8865" y2="211.5762" style="stroke:#181818;stroke-width:1;" x2="605.8865"></line><line y1="211.5762" x1="605.8865" y2="211.5762" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><line y1="211.5762" x1="697.2258" y2="226.5762" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="693.2258,216.5762,697.2258,226.5762,701.2258,216.5762,697.2258,220.5762"></polygon><line y1="67.3105" x1="493.7152" y2="67.3105" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><line y1="67.3105" x1="697.2258" y2="124.3105" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="693.2258,114.3105,697.2258,124.3105,701.2258,114.3105,697.2258,118.3105"></polygon><line y1="238.5762" x1="574.8633" y2="238.5762" style="stroke:#181818;stroke-width:1;" x2="405.1211"></line><line y1="238.5762" x1="405.1211" y2="286.4863" style="stroke:#181818;stroke-width:1;" x2="405.1211"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="401.1211,276.4863,405.1211,286.4863,409.1211,276.4863,405.1211,280.4863"></polygon><text lengthAdjust="spacing" x="405.1211" font-size="11" textLength="139.0039" y="266.6885" font-family="sans-serif" fill="#000000">Sensitive Data is excluded</text><line y1="238.5762" x1="819.5884" y2="238.5762" style="stroke:#181818;stroke-width:1;" x2="963.4746"></line><line y1="238.5762" x1="963.4746" y2="286.4863" style="stroke:#181818;stroke-width:1;" x2="963.4746"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="959.4746,276.4863,963.4746,286.4863,967.4746,276.4863,963.4746,280.4863"></polygon><text lengthAdjust="spacing" x="963.4746" font-size="11" textLength="153.2642" y="266.6885" font-family="sans-serif" fill="#000000">Sensitive data is NOT tagged</text><line y1="250.5762" x1="697.2258" y2="262.5462" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><line y1="262.5462" x1="697.2258" y2="262.5462" style="stroke:#181818;stroke-width:1;" x2="671.5332"></line><line y1="262.5462" x1="671.5332" y2="286.4863" style="stroke:#181818;stroke-width:1;" x2="671.5332"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="667.5332,276.4863,671.5332,286.4863,675.5332,276.4863,671.5332,280.4863"></polygon><text lengthAdjust="spacing" x="671.5332" font-size="11" textLength="126.1563" y="267.6885" font-family="sans-serif" fill="#000000">Sensitive data is tagged</text><line y1="334.752" x1="405.1211" y2="366.752" style="stroke:#181818;stroke-width:1;" x2="405.1211"></line><line y1="366.752" x1="405.1211" y2="366.752" style="stroke:#181818;stroke-width:1;" x2="685.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="675.2258,362.752,685.2258,366.752,675.2258,370.752,679.2258,366.752"></polygon><line y1="334.752" x1="963.4746" y2="366.752" style="stroke:#181818;stroke-width:1;" x2="963.4746"></line><line y1="366.752" x1="963.4746" y2="366.752" style="stroke:#181818;stroke-width:1;" x2="709.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="719.2258,362.752,709.2258,366.752,719.2258,370.752,715.2258,366.752"></polygon><line y1="334.752" x1="671.5332" y2="339.752" style="stroke:#181818;stroke-width:1;" x2="671.5332"></line><line y1="339.752" x1="671.5332" y2="339.752" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><line y1="339.752" x1="697.2258" y2="354.752" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="693.2258,344.752,697.2258,354.752,701.2258,344.752,697.2258,348.752"></polygon><line y1="378.752" x1="697.2258" y2="398.752" style="stroke:#181818;stroke-width:1;" x2="697.2258"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="693.2258,388.752,697.2258,398.752,701.2258,388.752,697.2258,392.752"></polygon><line y1="67.3105" x1="352.8671" y2="67.3105" style="stroke:#181818;stroke-width:1;" x2="139.3564"></line><line y1="67.3105" x1="139.3564" y2="89.3105" style="stroke:#181818;stroke-width:1;" x2="139.3564"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="135.3564,79.3105,139.3564,89.3105,143.3564,79.3105,139.3564,83.3105"></polygon><line y1="32.6553" x1="423.2911" y2="55.3105" style="stroke:#181818;stroke-width:1;" x2="423.2911"></line><polygon style="stroke:#181818;stroke-width:1;" fill="#181818" points="419.2911,45.3105,423.2911,55.3105,427.2911,45.3105,423.2911,49.3105"></polygon></g></svg>
 </div>
 
 <h4 id="the-member-match-operation">The $member-match operation</h4>
@@ -389,15 +394,28 @@ $member-match Operation are also defined in the <a href="http://hl7.org/fhir/us/
 $member-match operation. The CoverageToMatch is the information about the prior coverage. The CoverageToLink
 is the current coverage for the member at the new/requesting payer.</p>
 
+<h4 id="member-match-response-parameters">$member-match Response Parameters</h4>
+
+<p>The <a href="http://hl7.org/fhir/us/davinci-hrex/OperationDefinition-member-match.html">HRex $member-match response</a> defines two possible return parameters:</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">MemberIdentifier</code></strong> (Identifier): A unique member business identifier (e.g., a Unique Member Identifier/UMB) assigned by the responding payer. This parameter is <strong>required</strong> and <strong>Must Support</strong> per the HRex profile. Note: this is a FHIR business <em>Identifier</em> (system + value), not a Patient FHIR resource ID.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">MemberId</code></strong> (Reference(Patient)): A reference to the Patient resource — the Patient FHIR ID — on the responding payer's system. This parameter is optional per the HRex profile.</li>
+</ul>
+
+<p><span id="pdex-197a" class="fhir-conformance"> When a member is successfully matched and consent can be complied with, the responding payer <strong>SHALL</strong> return a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> and <strong>SHOULD</strong> also return a <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID) in the $member-match response. <a name="ci-c-pdex-197a">  </a><a href="narrative-conformance.html#ci-c-pdex-197a"><sup>&sect;pdex-197a</sup></a></span></p>
+
+<p><span id="pdex-197b" class="fhir-conformance"> Implementers <strong>SHALL</strong> be prepared to handle $member-match responses that contain only a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code>, or both a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> and a <code class="language-plaintext highlighter-rouge">MemberId</code>. <a name="ci-c-pdex-197b">  </a><a href="narrative-conformance.html#ci-c-pdex-197b"><sup>&sect;pdex-197b</sup></a></span> When a <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID) is present in the response it <strong>SHOULD</strong> be used as the subject for the subsequent OAuth2.0 access token request. Where only a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> is returned, the Authorization Server <strong>SHOULD</strong> resolve the business identifier to a Patient FHIR ID to scope the access token.</p>
+
 <p>When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.</p>
 
 <p>If the receiving payer matches to a unique member but is unable to comply with the consent request, a
-Patient ID <strong>SHALL</strong> NOT be returned in the $member-match response and a 422 status code <strong>SHALL</strong> be
+<span id="pdex-183" class="fhir-conformance"> Patient ID <strong>SHALL NOT</strong> be returned in the $member-match response and a 422 status code <strong>SHALL</strong> be <a name="ci-c-pdex-183">  </a><a href="narrative-conformance.html#ci-c-pdex-183"><sup>&sect;pdex-183</sup></a></span>
 returned with an Operation Outcome which indicates that the consent request could not be complied with.</p>
 
 <h3 id="evaluation-of-consent">Evaluation of Consent</h3>
 
-<p>The receiving payer <strong>MAY</strong> store the Consent record for the member.
+<p><span id="pdex-184" class="fhir-conformance"> The receiving payer <strong>MAY</strong> store the Consent record for the member. <a name="ci-c-pdex-184">  </a><a href="narrative-conformance.html#ci-c-pdex-184"><sup>&sect;pdex-184</sup></a></span>
 The following minimal content from the Consent record is used to validate a data request:</p>
 
 <ul>
@@ -407,23 +425,17 @@ The following minimal content from the Consent record is used to validate a data
   <li>Payer requesting retrieval of data is matched.</li>
 </ul>
 
-<p>If a Consent is provided by an Authorized Representative, the person's demographic details should be included as
+<p>If a Consent is provided by an Authorized Representative, the person's demographic details <strong>SHOULD</strong> be included as
 a <strong>contained</strong> resource (such as Patient or RelatedPerson) within the consent record. The Authorized
-Representative should be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT",
+Representative <strong>SHOULD</strong> be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT",
 "HPOWATT" or similar value.</p>
 
-<p>The exchange of Consent is being carried out between two covered entities and the content and conditions for an
-exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document
-reference link would be to a document maintained by the requesting payer. The content of the referenced document
-would NOT be used for any determination as part of the automated $member-match operation. The referenced document's
-only purpose is to provide evidence of an appropriate signature of the consenting member/patient.</p>
+<p>The exchange of Consent is being carried out between two covered entities and the content and conditions for an exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document reference link would be to a document maintained by the requesting payer. The content of the referenced document
+would NOT be used for any determination as part of the automated $member-match operation. The referenced document's only purpose is to provide evidence of an appropriate signature of the consenting member/patient.</p>
 
-<p>It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the
-validity of a consent request. This would be part of the Trust Framework agreed by the covered entities who
-are party to the framework rules.</p>
+<p>It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the validity of a consent request. This would be part of the Trust Framework agreed by the covered entities who are party to the framework rules.</p>
 
-<p>If the receiving payer matches to a unique member but is unable to comply with the consent request, a
-Patient ID <strong>SHALL</strong> NOT be returned in the $member-match response and a 422 status code <strong>SHALL</strong> be
+<p>If the receiving payer matches to a unique member but is unable to comply with the consent request, a <span id="pdex-185" class="fhir-conformance"> Patient ID <strong>SHALL NOT</strong> be returned in the $member-match response and a 422 status code <strong>SHALL</strong> be <a name="ci-c-pdex-185">  </a><a href="narrative-conformance.html#ci-c-pdex-185"><sup>&sect;pdex-185</sup></a></span>
 returned with an Operation Outcome which indicates that the consent request could not be complied with.</p>
 
 <h4 id="period-of-consent-validity">Period of Consent Validity</h4>
@@ -434,10 +446,10 @@ exchange health information:</p>
 <ul>
   <li>Medicare has an annual enrollment. This can result in beneficiaries signing up for a new health plan up to 3 months before their new health plan goes into effect.</li>
   <li>When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period after the plan terminates.</li>
-  <li>Some plan beneficiaries may have concurrent coverage. For example, a Medicare and a Medicaid plan may be in effect for a beneficiary for the duration of coverage period. In this scenario health plans may need to exchange information about the beneficiary throughout the period of dual plan coverage to coordinate treatment.</li>
+  <li>Some plan beneficiaries might have concurrent coverage. For example, a Medicare and a Medicaid plan might be in effect for a beneficiary for the duration of coverage period. In this scenario health plans might need to exchange information about the beneficiary throughout the period of dual plan coverage to coordinate treatment.</li>
 </ul>
 
-<p>It is a member's option to share their health information with their new health plan. When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be:</p>
+<p>It is a member's option to share their health information with their new health plan. <span id="pdex-186" class="fhir-conformance"> When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent <strong>MAY</strong> be: <a name="ci-c-pdex-186">  </a><a href="narrative-conformance.html#ci-c-pdex-186"><sup>&sect;pdex-186</sup></a></span></p>
 
 <table>
   <thead>
@@ -470,34 +482,29 @@ exchange health information:</p>
 
 <ul>
   <li>Utilize the consent record to evaluate the request from the requesting payer (Payer2) for data about the matched member. For example, is the old payer able to respond to a request for only non-sensitive data.</li>
-  <li>Return a Unique Patient Identifier (Patient FHIR ID) in the $member-match Operation Response.</li>
+  <li>Return a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> (unique member business identifier) in the $member-match Operation Response and, where available, a <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID).</li>
 </ul>
 
 <h4 id="consent-revocation">Consent Revocation</h4>
 
-<p>The following guidance is provided for a situation where a member wishes to revoke consent for a previously 
-granted Payer-to-Payer exchange.</p>
+<p>The following guidance is provided for a situation where a member wishes to revoke consent for a previously granted Payer-to-Payer exchange.</p>
 
 <p>As part of Payer-to-Payer Exchange Consent is gathered by the New Payer.
-Since the New Payer has the current relationship with the member it is proposed that the New Payer manages 
-the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the 
-old payer for new information for the member.</p>
+Since the New Payer has the current relationship with the member it is proposed that the New Payer manages the Consent Revocation process. This would involve the New Payer cancelling any recurring request to the old payer for new information for the member.</p>
 
-<p>This approach does not preclude the member contacting their old payer and issuing a consent directive to 
-block the release of data to the new payer. However, this is anticipated to be a rare occurrence.</p>
+<p>This approach does not preclude the member contacting their old payer and issuing a consent directive to block the release of data to the new payer. However, this is anticipated to be a rare occurrence.</p>
 
 <h4 id="consent-request-language">Consent Request Language</h4>
 
-<p>It is recommended that consistent language is used by Payers to present the information to a member when they 
-are being asked to grant consent for a Payer-to-Payer exchange of their health information.</p>
+<p>It is recommended that consistent language is used by Payers to present the information to a member when they are being asked to grant consent for a Payer-to-Payer exchange of their health information.</p>
 
 <p>You [the Member] are:</p>
 
 <ul>
-  <li>Instructing [New Payer] to retrieve your health information from [Old Payer]</li>
-  <li>Instructing the Old Payer to release your health information to [New Payer]</li>
+  <li>Instructing [New Payer] to retrieve your health information from [Old Payer].</li>
+  <li>Instructing the Old Payer to release your health information to [New Payer].</li>
   <li>Requesting all information is to be retrieved, or sensitive data (such as mental health data) should be excluded from the retrieved health information.</li>
-  <li>Granting consent for [New Payer] to request data from [Old Payer] for a period of up to 90 days after the activation of your health coverage with [New Payer]</li>
+  <li>Granting consent for [New Payer] to request data from [Old Payer] for a period of up to 90 days after the activation of your health coverage with [New Payer].</li>
 </ul>
 
 <p>Please note that:</p>
@@ -510,7 +517,7 @@ are being asked to grant consent for a Payer-to-Payer exchange of their health i
 <h3 id="data-retrieval-methods">Data Retrieval Methods</h3>
 
 <p>Once Health Plans have completed the Member Access stage of the Exchange the requesting 
-Health Plan <strong>SHALL</strong> utilize the access token returned from the Member Access step to 
+<span id="pdex-187" class="fhir-conformance"> Health Plan <strong>SHALL</strong> utilize the access token returned from the Member Access step to <a name="ci-c-pdex-187">  </a><a href="narrative-conformance.html#ci-c-pdex-187"><sup>&sect;pdex-187</sup></a></span>
 request/retrieve data using one of the following three methods:</p>
 
 <ol>
@@ -519,7 +526,7 @@ request/retrieve data using one of the following three methods:</p>
   <li>Bulk FHIR Asynchronous protocols.</li>
 </ol>
 
-<p>Each of the above data retrieval methods <strong>SHALL</strong> support the retrieval of the profiles and resources identified in the table below.</p>
+<p><span id="pdex-188" class="fhir-conformance"> Each of the above data retrieval methods <strong>SHALL</strong> support the retrieval of the profiles and resources identified in the table below. <a name="ci-c-pdex-188">  </a><a href="narrative-conformance.html#ci-c-pdex-188"><sup>&sect;pdex-188</sup></a></span></p>
 
 <table>
   <thead>
@@ -546,11 +553,11 @@ request/retrieve data using one of the following three methods:</p>
       <td>Condition</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device">PDex Device</a> <br /> <a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-device">US Core ImplantableDevice</a></td>
+      <td><a href="https://hl7.org/fhir/us/davinci-pdex/STU1/StructureDefinition-pdex-device">PDex Device</a> <br/> <a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-device">US Core ImplantableDevice</a></td>
       <td>Device</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab">US Core DiagnosticReport for Laboratory Results Reporting</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note">US Core DiagnosticReport for Report and Note Exchange</a></td>
+      <td><a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab">US Core DiagnosticReport for Laboratory Results Reporting</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note">US Core DiagnosticReport for Report and Note Exchange</a></td>
       <td>DiagnosticReport</td>
     </tr>
     <tr>
@@ -586,7 +593,7 @@ request/retrieve data using one of the following three methods:</p>
       <td>MedicationRequest</td>
     </tr>
     <tr>
-      <td><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab">US Core Laboratory Result Observation</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age">US Core Pediatric BMI for Age Observation</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile">US Core Pediatric Head Occipital-frontal Circumference Observation</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height">US Core Pediatric Weight for Height Observation</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry">US Core Pulse Oximetry</a><br /><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus">US Core Smoking Status Observation</a><br /><a href="https://hl7.org/fhir/StructureDefinition/vitalspanel">VitalSigns</a></td>
+      <td><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab">US Core Laboratory Result Observation</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age">US Core Pediatric BMI for Age Observation</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile">US Core Pediatric Head Occipital-frontal Circumference Observation</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height">US Core Pediatric Weight for Height Observation</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-pulse-oximetry">US Core Pulse Oximetry</a><br/><a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus">US Core Smoking Status Observation</a><br/><a href="https://hl7.org/fhir/StructureDefinition/vitalspanel">VitalSigns</a></td>
       <td>Observation</td>
     </tr>
     <tr>
@@ -618,16 +625,14 @@ request/retrieve data using one of the following three methods:</p>
       <td>Prior Authorization</td>
     </tr>
     <tr>
-      <td><a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a><br /><a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html">US Core Provenance</a></td>
+      <td><a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a><br/><a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html">US Core Provenance</a></td>
       <td>Provenance</td>
     </tr>
   </tbody>
 </table>
 
-<p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
-Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
-The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
-the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
+<p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
 non-financial profiles:</p>
 
 <ul>
@@ -640,19 +645,15 @@ non-financial profiles:</p>
 
 <h3 id="query-all-clinical-resources-individually">Query all clinical resources individually</h3>
 
-<p>Health Plans <strong>SHALL</strong> support search of a member's clinical data to each USCDI/US Core clinical resource, 
-as identified in the table above. Using the search capability of each resource enables the _revInclude 
-and _include parameters to be used to retrieve the associated Provenance and supporting records.</p>
+<p><span id="pdex-189" class="fhir-conformance"> Health Plans <strong>SHALL</strong> support search of a member's clinical data to each USCDI/US Core clinical resource, <a name="ci-c-pdex-189">  </a><a href="narrative-conformance.html#ci-c-pdex-189"><sup>&sect;pdex-189</sup></a></span>
+as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.</p>
 
 <h3 id="everything-operation">$everything operation</h3>
 
-<p>Health Plans <strong>SHALL</strong> support the use of the $everything operation. The Patient/{id}/$everything 
-operation is defined in the FHIR R4 specification here:
+<p><span id="pdex-190" class="fhir-conformance"> Health Plans <strong>SHALL</strong> support the use of the $everything operation. <a name="ci-c-pdex-190">  </a><a href="narrative-conformance.html#ci-c-pdex-190"><sup>&sect;pdex-190</sup></a></span> The Patient/{id}/$everything operation is defined in the FHIR R4 specification here:
 <a href="https://www.hl7.org/fhir/operation-patient-everything.html">https://www.hl7.org/fhir/operation-patient-everything.html</a>.</p>
 
-<p>As noted in the previous section, $everything <strong>SHALL</strong> limit the data retrieved to that which the
-requester is permitted to access. This might require an implementer to filter records at a more 
-granular level than the resource.</p>
+<p><span id="pdex-191" class="fhir-conformance"> As noted in the previous section, $everything <strong>SHALL</strong> limit the data retrieved to that which the <a name="ci-c-pdex-191">  </a><a href="narrative-conformance.html#ci-c-pdex-191"><sup>&sect;pdex-191</sup></a></span> requester is permitted to access. This might require an implementer to filter records at a more granular level than the resource.</p>
 
 <p>The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:</p>
 
@@ -662,7 +663,7 @@ granular level than the resource.</p>
        Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
 </code></pre></div></div>
 
-<p>The server <strong>SHOULD</strong> filter the ExplanationOfBenefit resource to include only PDex Prior Authorization 
+<p><span id="pdex-192" class="fhir-conformance"> The server <strong>SHOULD</strong> filter the ExplanationOfBenefit resource to include only PDex Prior Authorization <a name="ci-c-pdex-192">  </a><a href="narrative-conformance.html#ci-c-pdex-192"><sup>&sect;pdex-192</sup></a></span>
 profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".</p>
 
 <h3 id="bulk-fhir-asynchronous-protocols">Bulk FHIR Asynchronous protocols</h3>
@@ -670,45 +671,32 @@ profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Patient/$export
 </code></pre></div></div>
 
-<p>Payer-to-Payer Data Exchange <strong>SHOULD</strong> support the use of Bulk FHIR methods, as defined in the HL7 FHIR
+<p><span id="pdex-193" class="fhir-conformance"> Payer-to-Payer Data Exchange <strong>SHOULD</strong> support the use of Bulk FHIR methods, as defined in the HL7 FHIR <a name="ci-c-pdex-193">  </a><a href="narrative-conformance.html#ci-c-pdex-193"><sup>&sect;pdex-193</sup></a></span>
 <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">Bulk Data Access Implementation Guide</a>. The
-request/retrieval of data <strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html">FHIR Bulk Data Patient Level
+&sect;pdex-194: request/retrieval of data <strong>SHOULD</strong> use the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html">FHIR Bulk Data Patient Level &sect;
 Export</a> and the<a href="http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow">Bulk Data Export Operation Request Flow</a>.</p>
 
-<p>The Patient Export Operation for Payer-to-Payer exchange should be constrained to the resources and
-profiles that the requester is permitted to access, such as the profiles identified in the table in 
-the <a href="payertopayerexchange.html#data-retrieval-methods">Data Retrieval Methods</a> section of this page.</p>
+<p>The Patient Export Operation for Payer-to-Payer exchange <strong>SHOULD</strong> be constrained to the resources and profiles that the requester is permitted to access, such as the profiles identified in the table in the <a href="payertopayerexchange.html#data-retrieval-methods">Data Retrieval Methods</a> section of this page.</p>
 
-<p>The _typeFilter parameter can be used to scope resources using search parameters to exclude resources 
-that are not required, such as non-clinical resources.</p>
+<p>The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.</p>
 
 <h3 id="constraining-data-based-upon-permissions-of-the-requestor">Constraining Data Based Upon Permissions of the Requestor</h3>
 
-<p>The FHIR Server <strong>SHALL</strong> constrain the data returned from the server to a requester based upon the access
-permissions of the requester.</p>
+<p><span id="pdex-195" class="fhir-conformance"> The FHIR Server <strong>SHALL</strong> constrain the data returned from the server to a requester based upon the access <a name="ci-c-pdex-195">  </a><a href="narrative-conformance.html#ci-c-pdex-195"><sup>&sect;pdex-195</sup></a></span> permissions of the requester.</p>
 
-<p>For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see
-Prior Authorization records, and not EOB Claims, the FHIR Server <strong>SHALL</strong> filter the data accordingly.</p>
+<p>For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see <span id="pdex-196" class="fhir-conformance"> Prior Authorization records, and not EOB Claims, the FHIR Server <strong>SHALL</strong> filter the data accordingly. <a name="ci-c-pdex-196">  </a><a href="narrative-conformance.html#ci-c-pdex-196"><sup>&sect;pdex-196</sup></a></span></p>
 
-<p>This Constraining condition may be required in implementations where multiple types of data are being
-served up by a single FHIR Server. The condition is particularly relevant when implementing Operations
-such as $everything or $export. See the sections below.</p>
+<p>This Constraining condition may be required in implementations where multiple types of data are being served up by a single FHIR Server. The condition is particularly relevant when implementing Operations such as $everything or $export. See the sections below.</p>
 
 <h3 id="authorization-and-trust-framework">Authorization and Trust Framework</h3>
 
 <h4 id="future-direction-for-discovery-and-registration">Future Direction for Discovery and Registration</h4>
 
-<p>Future versions of this IG are expected to transition from the current discovery and registration process.  The
-current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to
-create a secure mTLS connection. That connection is then used to access an OAuth2.0 Dynamic Client Registration (DCRP)
-endpoint to register for a set of client credentials. Those credentials provide access to the $member-match operation.</p>
+<p>Future versions of this IG are expected to transition from the current discovery and registration process.  The current process, outlined on this page, utilizes a git repository of mTLS endpoint bundles that are used to create a secure mTLS connection. That connection is then used to access an OAuth2.0 Dynamic Client Registration (DCRP) endpoint to register for a set of client credentials. Those credentials provide access to the $member-match operation.</p>
 
-<p>A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust
-framework. The endpoint information for those payers would point to a Unified Data Access Profiles service,
+<p>A future workflow is likely to use the FAST National Directory to find other payers that are in a common trust framework. The endpoint information for those payers would point to a Unified Data Access Profiles service,
 as defined in the FHIR At Scale Taskforce (FAST)
-<a href="https://build.fhir.org/ig/HL7/fhir-udap-security-ig/">Security for Scalable Registration, Authentication, and Authorization IG</a>. UDAP would be used to
-request a client credential that can be used to perform a $member-match and subsequently to request an
-OAuth2.0 token that is scoped to the member/patient returned from a successful match operation.</p>
+<a href="https://build.fhir.org/ig/HL7/fhir-udap-security-ig/">Security for Scalable Registration, Authentication, and Authorization IG</a>. UDAP would be used to request a client credential that can be used to perform a $member-match and subsequently to request an OAuth2.0 token that is scoped to the member/patient returned from a successful match operation.</p>
 
 <h4 id="mtls-endpoint-discovery">mTLS Endpoint Discovery</h4>
 
@@ -719,12 +707,9 @@ OAuth2.0 token that is scoped to the member/patient returned from a successful m
   <li>A Trust Framework in which both parties are members.</li>
 </ol>
 
-<p>In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory
-service for Payers an interim solution is required. For this purpose, a public git repository will be
-established that will be used to store signed mTLS endpoint bundles.</p>
+<p>In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose, a public git repository will be established that will be used to store signed mTLS endpoint bundles.</p>
 
-<p>Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using
-public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate.
+<p>Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The Endpoint will also be "endorsed" by a Trust Framework Manager using a certificate.
 The Trust Framework endorsement process is detailed below in the Trust Framework section of this page.</p>
 
 <p>The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And two Organization profiles:
@@ -732,24 +717,15 @@ One for the Health Plan and One for the Managing Organization that operates the 
 These profiles use the National Directory (NDH) IG Profiles.</p>
 
 <p>For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service.
-In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory
-service for Payers an interim solution is required. For this purpose, a public git repository will be
-established that will be used to store signed mTLS endpoint bundles. A test version of that repository
-has been established here: <a href="https://github.com/HL7-DaVinci/pdex-payer-payer">https://github.com/HL7-DaVinci/pdex-payer-payer</a>. The repository
+In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose, a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: <a href="https://github.com/HL7-DaVinci/pdex-payer-payer">https://github.com/HL7-DaVinci/pdex-payer-payer</a>. The repository
 includes some supporting tools and documentation relating to mTLS discovery.</p>
 
-<p>Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using p
-ublic/private keys. The public key is included in the Endpoint record that is provided in the bundle.
-A public key should also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange
-process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic
-Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata.
+<p>Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle.
+A public key <strong>SHOULD</strong> also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata.
 The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens.
-The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint
-information in the bundle.</p>
+The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.</p>
 
-<p>The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint and two Organization profiles
-(One for the Health Plan, the other for the Operating entity that manages the Endpoint). These profiles
-use the National Directory (NDH) IG Profiles.</p>
+<p>The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint and two Organization profiles (One for the Health Plan, the other for the Operating entity that manages the Endpoint). These profiles use the National Directory (NDH) IG Profiles.</p>
 
 <p>The profiles are:</p>
 
@@ -759,16 +735,16 @@ use the National Directory (NDH) IG Profiles.</p>
   <li><a href="https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-ndh-Organization.html">National Directory NDH Base Organization</a>.</li>
 </ul>
 
-<p>The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The
-National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search
-methods into the National Directory. In the interim payers will need to download the Git repository and
-perform searches against the bundles to identify other payers and extract the relevant data.</p>
+<p>The profiles in the mTLS bundle are modeled after the profiles in the National Directory (NDH) IG. The National Directory is not yet operational. Therefore, it is outside the scope of this IG to define search methods into the National Directory. In the interim payers will need to download the Git repository and perform searches against the bundles to identify other payers and extract the relevant data.</p>
 
 <h5 id="trust-framework">Trust Framework</h5>
 
+<div class="stu-note">
+This IG is not defining how a Trust Framework operates. It is expected that the industry will adopt mechanisms such as TEFCA, or CMS-Aligned Networks as trust communities that control the rules by which data is exchanged for specific purposes. This section is therefore provided as informational guidance and not conformance requirements.
+</div>
+
 <p>A Trust Framework is a construct where the parties to the framework agree to a common set of operating rules.
-A manager of the Trust Framework would be appointed to administer the framework: the Trust Manager. This would
-involve the issuing and revocation of certificates that validate an organization's membership of the framework.</p>
+A manager of the Trust Framework would be appointed to administer the framework: the Trust Manager. This would involve the issuing and revocation of certificates that validate an organization's membership of the framework.</p>
 
 <p>The Trust Manager responsibilities include:</p>
 
@@ -786,16 +762,12 @@ involve the issuing and revocation of certificates that validate an organization
   <li>Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.</li>
 </ol>
 
-<p>Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public
-identity certificate and the public Trust Framework signing certificate into an Endpoint resource.
-This is incorporated into a bundle that includes the Payer's organization record and the organization record
-for the organization that manages the endpoint. Where the organization is both the payer and the managing
-organization there should still be two Organization records created.</p>
+<p>Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate into an Endpoint resource.
+This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there <strong>SHOULD</strong> still be two Organization records created.</p>
 
 <p>The completed bundle would be posted to a new branch of the public GitHub Repository.</p>
 
-<p>The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the
-GitHub repository into the main branch of the Repository.</p>
+<p>The Trust Manager would be responsible for reviewing and merging bundles submitted via a new branch of the GitHub repository into the main branch of the Repository.</p>
 
 <p>Trust Framework members are responsible for refreshing their copy of the main branch of the GitHub repository
 which would be used to refresh and update their list of mTLS and Authentication Endpoints for current
@@ -803,25 +775,18 @@ validated members of the Trust Framework.</p>
 
 <h4 id="oauth20-dynamic-client-registration">OAuth2.0 Dynamic Client Registration</h4>
 
-<p>Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol
-(DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be
-made to the $member-match operation endpoint.</p>
+<p>Once payers have setup a secure mTLS connection, the new Payer will query the Dynamic Client Registration Protocol (DCRP) endpoint of the target (old) payer to obtain a client credential with scopes that enable queries to be made to the $member-match operation endpoint.</p>
 
 <h3 id="request-access-token-for-member-access">Request Access Token for Member Access</h3>
 
-<p>In step 3 of the Member-match process, the requesting Payer will have received a FHIR ID for the matched member
-(the MemberMatch ID). This Id should be submitted to the Access Token Endpoint with a JWT where the subject Id
-is the MemberMatch ID. The Authorization Server <strong>SHOULD</strong> use the Subject ID, confirms that consent for the
-Requesting Payer to access the Matched Member is still valid and therefore issue an access token that is scoped
-to the FHIR ID of the matched member, consequently bounding any subsequent FHIR API request to that specific
-Patient FHIR ID.</p>
+<p>In step 3 of the Member-match process, the requesting Payer will have received a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> (member business identifier) and, where returned, a <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID) for the matched member. <span id="pdex-197" class="fhir-conformance"> Where a <code class="language-plaintext highlighter-rouge">MemberId</code> (Patient FHIR ID) is returned from $member-match, it <strong>SHOULD</strong> be submitted to the Access Token Endpoint in the JWT <code class="language-plaintext highlighter-rouge">sub</code> claim. <a name="ci-c-pdex-197">  </a><a href="narrative-conformance.html#ci-c-pdex-197"><sup>&sect;pdex-197</sup></a></span> The Authorization Server <strong>SHOULD</strong> use the Subject ID, confirm that consent for the Requesting Payer to access the Matched Member is still valid, and issue an access token scoped to that specific Patient FHIR ID, bounding any subsequent FHIR API request accordingly. Where only a <code class="language-plaintext highlighter-rouge">MemberIdentifier</code> is returned, the Authorization Server <strong>SHOULD</strong> resolve the business identifier to a Patient FHIR ID to scope the access token appropriately.</p>
 
 <h3 id="scopes-for-operations">Scopes for Operations</h3>
 
 <p><a href="http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch">SMART App Launch STU 2.1</a>
 defines granular scopes for resources. Following the model proposed in the section on
 <a href="https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-context-data">FHIR Resource Scope Syntax</a>
-the following scope is proposed to control access to the member-match<br />
+the following scope is proposed to control access to the member-match<br/>
 Operations for Payer-to-Payer single-member exchange:</p>
 
 <ul>
@@ -838,24 +803,24 @@ to the Patient <em>id(s)</em> that the user is authorized to access.</p>
 
 
 </div>
-        </div>  <!-- /inner-wrapper -->
-      </div>  <!-- /row -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-content -->
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
 
-  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
-  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
-  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
   <a name="bottom"> </a>
-  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
-    <div class="container">  <!-- container -->
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
 
       <div style="background-color:var(--footer-nav-bg-color)">
         <table style="width:100%">
           <tbody>
             <tr>
-              <td style="text-align:left">&#xA0;
+              <td style="text-align:left">&nbsp;
 
                 <a href="provider-access-api-v2.html">&lt;prev</a>
 
@@ -863,7 +828,7 @@ to the Patient <em>id(s)</em> that the user is authorized to access.</p>
               <td style="text-align:center">
                 <a href="#top">top</a>
               </td>
-              <td style="text-align:right">&#xA0;
+              <td style="text-align:right">&nbsp;
 
                 <a href="payertopayerbulkexchange.html">next&gt;</a>
 
@@ -875,39 +840,38 @@ to the Patient <em>id(s)</em> that the user is authorized to access.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                  
                 
-                 | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir/us/davinci-pdex/history.html">Version History</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC0" src="cc0.png"/></a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="http://hl7.org/fhir-issues">Propose a change</a>
+                 | <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/us/davinci-pdex/history.html" target="_blank">Version History</a> |
+                 <a rel="license" style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir-issues" target="_blank">Propose a change</a>
           </span>
         </p>
-      </div>  <!-- /inner-wrapper -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-footer -->
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
   
-  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
-    <div class="container">  <!-- container -->
-    </div>  <!-- /container -->
-  </div>  <!-- /segment-post-footer -->
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
 
-  <!-- JS and analytics only. -->
-  <!-- Bootstrap core JavaScript
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
-  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
-  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
-  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
-  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  <!-- Analytics Below
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
   ================================================== -->
   </body>
 </html>
-

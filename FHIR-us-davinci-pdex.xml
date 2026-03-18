@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2024SEP" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="2.1.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-pdex/2024SEP" ciUrl="http://build.fhir.org/ig/HL7/davinci-epdx" defaultVersion="2.2.0" defaultWorkgroup="fm" gitUrl="https://github.com/HL7/davinci-epdx" url="http://hl7.org/fhir/us/davinci-pdex">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-epdx"/>
+<version code="2.2.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2.1"/>
 <version code="2.1.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2.1"/>
 <version code="2.1.0-ballot" deprecated="true" url="http://hl7.org/fhir/us/davinci-pdex/2024SEP"/>
 <version code="2.0.0" url="http://hl7.org/fhir/us/davinci-pdex/STU2"/>
@@ -25,7 +26,6 @@
 <artifact id="Bundle/1000000-2" key="Bundle-1000000-2" name="BundleExamplePayer2"/>
 <artifact id="Bundle/1000000-3" key="Bundle-1000000-3" name="BundleExamplePayer3"/>
 <artifact id="Bundle/3000002" key="Bundle-3000002" name="BundleWithProvenance"/>
-<artifact id="Coverage/CoverageLinkExample1" key="Coverage-CoverageLinkExample1" name="Coverage to Link Example 1"/>
 <artifact id="Coverage/CoverageMatchExample1" key="Coverage-CoverageMatchExample1" name="Coverage to Match Example 1"/>
 <artifact id="Coverage/CoverageMatchExample2" key="Coverage-CoverageMatchExample2" name="Coverage to Match Example 2"/>
 <artifact deprecated="true" id="CodeSystem/CredentialStatusCS" key="CodeSystem-CredentialStatusCS" name="Credential Status Code System"/>
@@ -42,6 +42,9 @@
 <artifact deprecated="true" id="CodeSystem/EndpointPayloadTypeCS" key="CodeSystem-EndpointPayloadTypeCS" name="Endpoint Payload Types Code System"/>
 <artifact id="Group/member-opt-out-group-001" key="Group-member-opt-out-group-001" name="Example Member Opt-Out Group"/>
 <artifact id="Group/example-pdex-treatment-relationship-group" key="Group-example-pdex-treatment-relationship-group" name="Example Member-Provider Treatment Relationship Group"/>
+<artifact id="Group/example-provider-consent-constrained-group" key="Group-example-provider-consent-constrained-group" name="Example Provider Consent Constrained Group"/>
+<artifact id="Group/example-provider-matched-group" key="Group-example-provider-matched-group" name="Example Provider Matched Members Group"/>
+<artifact id="Group/example-provider-nomatch-group" key="Group-example-provider-nomatch-group" name="Example Provider No Match Group"/>
 <artifact id="Group/Example-PDex-Provider-Group" key="Group-Example-PDex-Provider-Group" name="Example-PDex-Provider-Group"/>
 <artifact id="Bundle/2000002" key="Bundle-2000002" name="ExampleBundle1"/>
 <artifact id="Coverage/883210" key="Coverage-883210" name="ExampleCoverage"/>
@@ -75,10 +78,11 @@
 <artifact deprecated="true" id="ValueSet/IdentifierStatusVS" key="ValueSet-IdentifierStatusVS" name="Identifier Status Value Set"/>
 <artifact deprecated="true" id="CodeSystem/IdentifierTypeCS" key="CodeSystem-IdentifierTypeCS" name="Identifier Type"/>
 <artifact id="StructureDefinition/extension-levelOfServiceCode" key="StructureDefinition-extension-levelOfServiceCode" name="LevelOfServiceCode"/>
-<artifact id="StructureDefinition/base-ext-last-typefilter" key="StructureDefinition-base-ext-last-typefilter" name="Member Last Resource Filters"/>
-<artifact id="StructureDefinition/base-ext-last-types" key="StructureDefinition-base-ext-last-types" name="Member Last Resource Types"/>
-<artifact id="StructureDefinition/base-ext-last-transmission" key="StructureDefinition-base-ext-last-transmission" name="Member Last Transmission"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-last-typefilter" key="StructureDefinition-base-ext-last-typefilter" name="Member Last Resource Filters"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-last-types" key="StructureDefinition-base-ext-last-types" name="Member Last Resource Types"/>
+<artifact deprecated="true" id="StructureDefinition/base-ext-last-transmission" key="StructureDefinition-base-ext-last-transmission" name="Member Last Transmission"/>
 <artifact id="StructureDefinition/pdex-member-opt-out" key="StructureDefinition-pdex-member-opt-out" name="Member Opt-Out Group"/>
+<artifact id="StructureDefinition/base-ext-match-coverage" key="StructureDefinition-base-ext-match-coverage" name="Member-Match Input Coverage Parameter"/>
 <artifact id="StructureDefinition/base-ext-match-parameters" key="StructureDefinition-base-ext-match-parameters" name="Member-Match Input Patient Parameter"/>
 <artifact id="StructureDefinition/pdex-treatment-relationship" key="StructureDefinition-pdex-treatment-relationship" name="Member-Provider Treatment Relationship Group"/>
 <artifact id="StructureDefinition/base-ext-members-opted-out" key="StructureDefinition-base-ext-members-opted-out" name="Members Opted-out"/>
@@ -124,10 +128,13 @@
 <artifact deprecated="true" id="CodeSystem/PDexAdjudicationCS" key="CodeSystem-PDexAdjudicationCS" name="PDex Adjudication Codes"/>
 <artifact id="CodeSystem/PDexAdjudicationDiscriminator" key="CodeSystem-PDexAdjudicationDiscriminator" name="PDex Adjudication Discriminator"/>
 <artifact id="OperationDefinition/BulkMemberMatch" key="OperationDefinition-bulk-member-match" name="PDex Bulk Member Match Operation"/>
+<artifact id="CodeSystem/pdex-consent-api-purpose" key="CodeSystem-pdex-consent-api-purpose" name="PDex Consent API Purpose"/>
+<artifact id="ValueSet/pdex-consent-api-purpose-vs" key="ValueSet-pdex-consent-api-purpose-vs" name="PDex Consent API Purpose Value Set"/>
 <artifact id="SearchParameter/pdex-consent-action" key="SearchParameter-pdex-consent-action" name="PDex Consent Action Search Parameter"/>
 <artifact id="SearchParameter/pdex-consent-provider-access" key="SearchParameter-pdex-consent-provider-access" name="PDex Consent Provider Access Use Case Search Parameter"/>
 <artifact id="SearchParameter/pdex-consent-provision-type" key="SearchParameter-pdex-consent-provision-type" name="PDex Consent Provision Type Search Parameter"/>
 <artifact id="StructureDefinition/pdex-device" key="StructureDefinition-pdex-device" name="PDex Device"/>
+<artifact id="SearchParameter/pdex-group-characteristic-value-reference" key="SearchParameter-pdex-group-characteristic-value-reference" name="PDex Group Characteristic Value Reference Search Parameter"/>
 <artifact id="CodeSystem/PDexIdentifierType" key="CodeSystem-PDexIdentifierType" name="PDex Identifier Type"/>
 <artifact id="StructureDefinition/pdex-medicationdispense" key="StructureDefinition-pdex-medicationdispense" name="PDex MedicationDispense"/>
 <artifact id="CodeSystem/pdex-member-characteristic-code" key="CodeSystem-pdex-member-characteristic-code" name="PDex Member Characteristic Code"/>
@@ -166,8 +173,6 @@
 <artifact id="Patient/payer-member-001" key="Patient-payer-member-001" name="Payer Member Example 1 - Robert Johnson"/>
 <artifact id="Patient/payer-member-002" key="Patient-payer-member-002" name="Payer Member Example 2 - Sarah Williams"/>
 <artifact id="ValueSet/ProvenancePayerSourceFormat" key="ValueSet-ProvenancePayerSourceFormat" name="Payer source of data"/>
-<artifact id="Patient/payer-patient-1001" key="Patient-payer-patient-1001" name="Payer's Patient Record for Member 1001"/>
-<artifact id="Patient/payer-patient-2002" key="Patient-payer-patient-2002" name="Payer's Patient Record for Member 2002"/>
 <artifact id="SearchParameter/pdex-medicationdispense-patient" key="SearchParameter-pdex-medicationdispense-patient" name="PdexMedicationDispensePatient"/>
 <artifact id="SearchParameter/pdex-medicationdispense-status" key="SearchParameter-pdex-medicationdispense-status" name="PdexMedicationDispenseStatus"/>
 <artifact id="ExplanationOfBenefit/PDexPriorAuth1" key="ExplanationOfBenefit-PDexPriorAuth1" name="PdexPriorAuth"/>
@@ -187,8 +192,6 @@
 <artifact id="StructureDefinition/pdex-provider-access-use-case" key="StructureDefinition-pdex-provider-access-use-case" name="Provider Access Use Case"/>
 <artifact id="DocumentReference/provider-attestation-doc-1" key="DocumentReference-provider-attestation-doc-1" name="Provider Attestation Document Reference"/>
 <artifact id="StructureDefinition/provider-treatment-relationship-consent" key="StructureDefinition-provider-treatment-relationship-consent" name="Provider Attestation to Treatment Relationship"/>
-<artifact id="Parameters/provider-bulk-member-match-in" key="Parameters-provider-bulk-member-match-in" name="Provider Bulk Member Match Request Example"/>
-<artifact id="Parameters/provider-bulk-member-match-out" key="Parameters-provider-bulk-member-match-out" name="Provider Bulk Member Match Response Example"/>
 <artifact id="StructureDefinition/pdex-provider-member-match" key="StructureDefinition-pdex-provider-member-match" name="Provider Member Match Group"/>
 <artifact id="StructureDefinition/pdex-provider-member-no-match" key="StructureDefinition-pdex-provider-member-no-match" name="Provider Member No Match Group"/>
 <artifact id="Consent/provider-treatment-attestation-1" key="Consent-provider-treatment-attestation-1" name="Provider Treatment Attestation Consent Example for Bulk Member Match"/>

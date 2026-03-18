@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PDEX Server CapabilityStatement - XML Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>PDEX Server CapabilityStatement - XML Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.3"}
-    h3,h4,h5,h6{--heading-prefix:"13.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.3"}
+    h3,h4,h5,h6{--heading-prefix:"14.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -331,7 +334,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#CapabilityStatement.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;pdex-server&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement pdex-server&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;pdex-server&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcpdex-server&quot;&gt; &lt;/a&gt;&lt;h2 id=&quot;title&quot;&gt;PDEX Server CapabilityStatement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 2.1.1 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;json&lt;/code&gt;, &lt;strong&gt;SHOULD&lt;/strong&gt; support &lt;code&gt;xml&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Supported Patch Formats: &lt;strong&gt;SHOULD&lt;/strong&gt; support &lt;code&gt;application/json-patch+json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Published on: 2024-10-20 &lt;/li&gt;&lt;li&gt;Published by: HL7 International / Financial Management &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&quot;shouldIGs&quot;&gt;SHOULD Support the Following Implementation Guides&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://hl7.org/fhir/smart-app-launch/STU2.1/ImplementationGuide-hl7.fhir.uv.smart-app-launch.html&quot;&gt;http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.1.0&lt;/a&gt;&lt;/li&gt;&lt;li/&gt;&lt;/ul&gt;&lt;h2 id=&quot;rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div&gt;&lt;p&gt;The PDex Server &lt;strong&gt;SHALL&lt;/strong&gt;:&lt;/p&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CapabilityStatement pdex-server&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;pdex-server&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcpdex-server&quot;&gt; &lt;/a&gt;&lt;h2 id=&quot;title&quot;&gt;PDEX Server CapabilityStatement&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;Implementation Guide Version: 2.2.0 &lt;/li&gt;&lt;li&gt;FHIR Version: 4.0.1 &lt;/li&gt;&lt;li&gt;Supported Formats: &lt;strong&gt;SHALL&lt;/strong&gt; support &lt;code&gt;json&lt;/code&gt;, &lt;strong&gt;SHOULD&lt;/strong&gt; support &lt;code&gt;xml&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Supported Patch Formats: &lt;strong&gt;SHOULD&lt;/strong&gt; support &lt;code&gt;application/json-patch+json&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Published on: 2024-10-20 &lt;/li&gt;&lt;li&gt;Published by: HL7 International / Financial Management &lt;/li&gt;&lt;/ul&gt;&lt;blockquote class=&quot;impl-note&quot;&gt;&lt;p&gt;&lt;strong&gt;Note to Implementers: FHIR Capabilities&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.&lt;/p&gt;&lt;/blockquote&gt;&lt;h3 id=&quot;shouldIGs&quot;&gt;SHOULD Support the Following Implementation Guides&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://hl7.org/fhir/smart-app-launch/STU2.1/ImplementationGuide-hl7.fhir.uv.smart-app-launch.html&quot;&gt;http://hl7.org/fhir/smart-app-launch/ImplementationGuide/hl7.fhir.uv.smart-app-launch|2.1.0&lt;/a&gt;&lt;/li&gt;&lt;li/&gt;&lt;/ul&gt;&lt;h2 id=&quot;rest&quot;&gt;FHIR RESTful Capabilities&lt;/h2&gt;&lt;div class=&quot;panel panel-default&quot;&gt;&lt;div class=&quot;panel-heading&quot;&gt;&lt;h3 id=&quot;mode1&quot; class=&quot;panel-title&quot;&gt;Mode: &lt;code&gt;server&lt;/code&gt;&lt;/h3&gt;&lt;/div&gt;&lt;div class=&quot;panel-body&quot;&gt;&lt;div&gt;&lt;p&gt;The PDex Server &lt;strong&gt;SHALL&lt;/strong&gt;:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Support the US Core 3.1.1 Patient resource profile.&lt;/li&gt;
 &lt;li&gt;Support at least one additional resource profile from the list of US Core and PDex Profiles.&lt;/li&gt;
@@ -654,7 +657,7 @@ model -&amp;gt; &lt;code&gt;Device.model&lt;/code&gt;&lt;/p&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#CapabilityStatement.extension">extension</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CapabilityStatement/pdex-server&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.1.1&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;2.2.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PdexServerCapabilityStatement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PDEX Server CapabilityStatement&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/capabilitystatement.html#CapabilityStatement.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
@@ -4366,7 +4369,7 @@ The server **SHALL** support both.&quot;/&gt;
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

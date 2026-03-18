@@ -1,4 +1,4 @@
-# US Core Patient - Da Vinci Payer Data Exchange v2.1.1
+# US Core Patient - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Organization](USCoreOrganization.md)
 
-The [US Core 3.1.1 Patient](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-patient.html) or [US Core 6.1.0 Patient](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html) resource *SHALL** be used to express a member's demographic information.
+The [US Core 3.1.1 Patient](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-patient.html) or [US Core 6.1.0 Patient](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html) resource §pdex-32: *SHALL** be used to express a member's demographic information. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Patient](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-patient.html) or [US Core 6.1.0 Patient](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html) resource are:
 
@@ -80,7 +80,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 *[Table Definition](index.md#mapping-adjudicated-claims-encounter-and-prior-authorization-information)*
 
-The Member Number will be entered in the **identifier** field. The code **MB** **SHALL** be used to identify the member identifier. See the example below:
+The Member Number will be entered in the **identifier** field. §pdex-33: The code **MB** **SHALL** be used to identify the member identifier. § See the example below:
 
 ```
 

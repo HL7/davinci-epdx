@@ -1,4 +1,4 @@
-# Provider-Member-Match Response Example - Da Vinci Payer Data Exchange v2.1.1
+# Provider-Member-Match Response Example - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -14,296 +14,220 @@
 {
   "resourceType" : "Parameters",
   "id" : "provider-member-match-response-001",
-  "parameter" : [
-    {
-      "name" : "MatchedMembers",
-      "resource" : {
-        "resourceType" : "Group",
-        "id" : "matched-treatment-relationship-group-001",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Matched Members with Treatment Relationships</h2><p>Members with confirmed treatment relationships who are authorized for provider data access</p></div>"
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"]
+  },
+  "parameter" : [{
+    "name" : "MatchedMembers",
+    "resource" : {
+      "resourceType" : "Group",
+      "id" : "matched-treatment-relationship-group-001",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Matched Members with Treatment Relationships</h2><p>Members with confirmed treatment relationships who are authorized for provider data access</p></div>"
+      },
+      "identifier" : [{
+        "system" : "http://example.org/payer/match-groups",
+        "value" : "MTG-2024-12-16-001",
+        "assigner" : {
+          "display" : "Example Payer"
+        }
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1982947230",
+        "assigner" : {
+          "display" : "Provider Organization"
+        }
+      }],
+      "active" : true,
+      "type" : "person",
+      "actual" : true,
+      "code" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+          "code" : "match",
+          "display" : "Matched"
+        }]
+      },
+      "quantity" : 2,
+      "managingEntity" : {
+        "identifier" : {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "5555555555"
         },
-        "identifier" : [
-          {
-            "system" : "http://example.org/payer/match-groups",
-            "value" : "MTG-2024-12-16-001",
-            "assigner" : {
-              "display" : "Example Payer"
-            }
-          },
-          {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "1982947230",
-            "assigner" : {
-              "display" : "Provider Organization"
-            }
-          }
-        ],
-        "active" : true,
-        "type" : "person",
-        "actual" : true,
+        "display" : "Current Payer"
+      },
+      "characteristic" : [{
         "code" : {
-          "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "code" : "match",
-              "display" : "Matched"
-            }
-          ]
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+            "code" : "match",
+            "display" : "Matched"
+          }]
         },
-        "quantity" : 2,
-        "managingEntity" : {
+        "valueReference" : {
           "identifier" : {
             "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "5555555555"
+            "value" : "1982947230"
           },
-          "display" : "Current Payer"
+          "display" : "Provider Organization"
         },
-        "characteristic" : [
-          {
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "code" : "match",
-                  "display" : "Matched"
-                }
-              ]
-            },
-            "valueReference" : {
-              "identifier" : {
-                "system" : "http://hl7.org/fhir/sid/us-npi",
-                "value" : "1982947230"
-              },
-              "display" : "Provider Organization"
-            },
-            "exclude" : false,
-            "period" : {
-              "start" : "2024-12-16"
-            }
-          }
-        ],
-        "member" : [
-          {
-            "entity" : {
-              "reference" : "Patient/payer-member-001",
-              "display" : "Robert Michael Johnson - Payer Member"
-            },
-            "inactive" : false
-          },
-          {
-            "entity" : {
-              "reference" : "Patient/payer-member-002",
-              "display" : "Sarah Elizabeth Williams - Payer Member"
-            },
-            "inactive" : false
-          }
-        ]
-      }
-    },
-    {
-      "name" : "NonMatchedMembers",
-      "resource" : {
-        "resourceType" : "Group",
-        "id" : "nomatch-group-001",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Non-Matched Members</h2><p>Members submitted by provider that were not found in payer system</p></div>"
+        "exclude" : false,
+        "period" : {
+          "start" : "2024-12-16"
+        }
+      }],
+      "member" : [{
+        "entity" : {
+          "reference" : "Patient/payer-member-001",
+          "display" : "Robert Michael Johnson - Payer Member"
         },
-        "identifier" : [
-          {
-            "system" : "http://example.org/payer/match-groups",
-            "value" : "NMG-2024-12-16-001",
-            "assigner" : {
-              "display" : "Example Payer"
-            }
-          },
-          {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "1982947230",
-            "assigner" : {
-              "display" : "Provider Organization"
-            }
-          }
-        ],
-        "active" : true,
-        "type" : "person",
-        "actual" : true,
-        "code" : {
-          "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "code" : "nomatch",
-              "display" : "Not Matched"
-            }
-          ]
+        "inactive" : false
+      },
+      {
+        "entity" : {
+          "reference" : "Patient/payer-member-002",
+          "display" : "Sarah Elizabeth Williams - Payer Member"
         },
-        "quantity" : 0,
-        "managingEntity" : {
-          "identifier" : {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "5555555555"
-          },
-          "display" : "Current Payer"
-        },
-        "characteristic" : [
-          {
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "code" : "nomatch",
-                  "display" : "Not Matched"
-                }
-              ]
-            },
-            "exclude" : false,
-            "period" : {
-              "start" : "2024-12-16"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name" : "TreatmentAttestationConstrainedMembers",
-      "resource" : {
-        "resourceType" : "Group",
-        "id" : "attestation-constrained-group-001",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Treatment Attestation Constrained</h2><p>Members for whom treatment attestation could not be verified or does not meet payer requirements</p></div>"
-        },
-        "identifier" : [
-          {
-            "system" : "http://example.org/payer/match-groups",
-            "value" : "ACG-2024-12-16-001",
-            "assigner" : {
-              "display" : "Example Payer"
-            }
-          },
-          {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "1982947230",
-            "assigner" : {
-              "display" : "Provider Organization"
-            }
-          }
-        ],
-        "active" : true,
-        "type" : "person",
-        "actual" : true,
-        "code" : {
-          "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "code" : "nomatch",
-              "display" : "Not Matched"
-            }
-          ]
-        },
-        "quantity" : 0,
-        "managingEntity" : {
-          "identifier" : {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "5555555555"
-          },
-          "display" : "Current Payer"
-        },
-        "characteristic" : [
-          {
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "code" : "nomatch",
-                  "display" : "Not Matched"
-                }
-              ]
-            },
-            "exclude" : false,
-            "period" : {
-              "start" : "2024-12-16"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name" : "OptOutConstrainedMembers",
-      "resource" : {
-        "resourceType" : "Group",
-        "id" : "optout-constrained-group-001",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Members who have Opted-Out</h2><p>Members found but who have exercised opt-out rights</p></div>"
-        },
-        "identifier" : [
-          {
-            "system" : "http://example.org/payer/match-groups",
-            "value" : "OOG-2024-12-16-001",
-            "assigner" : {
-              "display" : "Example Payer"
-            }
-          },
-          {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "1982947230",
-            "assigner" : {
-              "display" : "Provider Organization"
-            }
-          }
-        ],
-        "active" : true,
-        "type" : "person",
-        "actual" : true,
-        "code" : {
-          "coding" : [
-            {
-              "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-              "code" : "nomatch",
-              "display" : "Not Matched"
-            }
-          ]
-        },
-        "quantity" : 0,
-        "managingEntity" : {
-          "identifier" : {
-            "system" : "http://hl7.org/fhir/sid/us-npi",
-            "value" : "5555555555"
-          },
-          "display" : "Current Payer"
-        },
-        "characteristic" : [
-          {
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS",
-                  "code" : "nomatch",
-                  "display" : "Not Matched"
-                }
-              ]
-            },
-            "valueCodeableConcept" : {
-              "coding" : [
-                {
-                  "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS",
-                  "code" : "provider-specific",
-                  "display" : "Provider-Specific Opt-Out"
-                }
-              ]
-            },
-            "exclude" : false,
-            "period" : {
-              "start" : "2024-12-16"
-            }
-          }
-        ]
-      }
+        "inactive" : false
+      }]
     }
-  ]
+  },
+  {
+    "name" : "NonMatchedMembers",
+    "resource" : {
+      "resourceType" : "Group",
+      "id" : "nomatch-group-001",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Non-Matched Members</h2><p>Members submitted by provider that were not found in payer system</p></div>"
+      },
+      "identifier" : [{
+        "system" : "http://example.org/payer/match-groups",
+        "value" : "NMG-2024-12-16-001",
+        "assigner" : {
+          "display" : "Example Payer"
+        }
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1982947230",
+        "assigner" : {
+          "display" : "Provider Organization"
+        }
+      }],
+      "active" : true,
+      "type" : "person",
+      "actual" : true,
+      "code" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+          "code" : "nomatch",
+          "display" : "Not Matched"
+        }]
+      },
+      "quantity" : 1,
+      "managingEntity" : {
+        "identifier" : {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "5555555555"
+        },
+        "display" : "Current Payer"
+      },
+      "characteristic" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+            "code" : "nomatch",
+            "display" : "Not Matched"
+          }]
+        },
+        "valueBoolean" : true,
+        "exclude" : false,
+        "period" : {
+          "start" : "2024-12-16"
+        }
+      }],
+      "member" : [{
+        "entity" : {
+          "reference" : "Patient/patient-prov-002",
+          "display" : "Jane Smith (submitted demographics - no match found)"
+        },
+        "inactive" : false
+      }]
+    }
+  },
+  {
+    "name" : "ConsentConstrainedMembers",
+    "resource" : {
+      "resourceType" : "Group",
+      "id" : "consent-constrained-group-001",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Consent-Constrained Members</h2><p>Members found but who have exercised their right to opt out of Provider Access data sharing</p></div>"
+      },
+      "identifier" : [{
+        "system" : "http://example.org/payer/match-groups",
+        "value" : "CCG-2024-12-16-001",
+        "assigner" : {
+          "display" : "Example Payer"
+        }
+      },
+      {
+        "system" : "http://hl7.org/fhir/sid/us-npi",
+        "value" : "1982947230",
+        "assigner" : {
+          "display" : "Provider Organization"
+        }
+      }],
+      "active" : true,
+      "type" : "person",
+      "actual" : true,
+      "code" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+          "code" : "consentconstraint",
+          "display" : "Consent Constraint"
+        }]
+      },
+      "quantity" : 1,
+      "managingEntity" : {
+        "identifier" : {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "5555555555"
+        },
+        "display" : "Current Payer"
+      },
+      "characteristic" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+            "code" : "consentconstraint",
+            "display" : "Consent Constraint"
+          }]
+        },
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope",
+            "code" : "provider-specific",
+            "display" : "Provider-Specific Opt-Out"
+          }]
+        },
+        "exclude" : false,
+        "period" : {
+          "start" : "2024-12-16"
+        }
+      }],
+      "member" : [{
+        "entity" : {
+          "reference" : "Patient/payer-member-002",
+          "display" : "Sarah Elizabeth Williams (matched but opted out of Provider Access)"
+        },
+        "inactive" : false
+      }]
+    }
+  }]
 }
 
 ```

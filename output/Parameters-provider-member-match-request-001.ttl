@@ -10,6 +10,12 @@
 <http://hl7.org/fhir/us/davinci-pdex/Parameters/provider-member-match-request-001> a fhir:Parameters ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "provider-member-match-request-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in>
+     ] )
+  ] ; # 
   fhir:parameter ( [
      fhir:name [ fhir:v "MembersToMatch" ] ;
      fhir:part ( [
@@ -17,6 +23,10 @@
        fhir:Parameters.parameter.resource ( [
          a fhir:Patient ;
          fhir:id [ fhir:v "patient-prov-001" ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Robert Michael Johnson - DOB: 1965-08-15, Male</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:identifier ( [
            fhir:type [
              fhir:coding ( [
@@ -66,6 +76,10 @@
              fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
            ] )
          ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Coverage for Robert Johnson - Subscriber ID: 12345678, Previous Health Plan, PPO-GOLD</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:status [ fhir:v "draft" ] ;
          fhir:type [
            fhir:coding ( [
@@ -73,7 +87,8 @@
                fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
                fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
              ] ;
-             fhir:code [ fhir:v "EHPLANS" ]
+             fhir:code [ fhir:v "HIP" ] ;
+             fhir:display [ fhir:v "health insurance plan policy" ]
            ] )
          ] ;
          fhir:subscriber [
@@ -143,6 +158,10 @@
              fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent>
            ] )
          ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relationship since 2024-01-15</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:status [ fhir:v "active" ] ;
          fhir:scope [
            fhir:coding ( [
@@ -156,11 +175,11 @@
          fhir:category ( [
            fhir:coding ( [
              fhir:system [
-               fhir:v "http://terminology.hl7.org/CodeSystem/consentcategorycodes"^^xsd:anyURI ;
-               fhir:l <http://terminology.hl7.org/CodeSystem/consentcategorycodes>
+               fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+               fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
              ] ;
-             fhir:code [ fhir:v "treat" ] ;
-             fhir:display [ fhir:v "Treatment" ]
+             fhir:code [ fhir:v "IDSCL" ] ;
+             fhir:display [ fhir:v "Information Disclosure" ]
            ] )
          ] [
            fhir:coding ( [
@@ -231,87 +250,10 @@
                fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
                fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
              ] ;
-             fhir:code [ fhir:v "TREATMENT" ] ;
-             fhir:display [ fhir:v "Treatment" ]
+             fhir:code [ fhir:v "TREAT" ] ;
+             fhir:display [ fhir:v "treatment" ]
            ] )
          ]
-       ] )
-     ] [
-       fhir:name [ fhir:v "CoverageToLink" ] ;
-       fhir:Parameters.parameter.resource ( [
-         a fhir:Coverage ;
-         fhir:id [ fhir:v "coverage-link-001" ] ;
-         fhir:meta [
-           fhir:profile ( [
-             fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"^^xsd:anyURI ;
-             fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
-           ] )
-         ] ;
-         fhir:status [ fhir:v "draft" ] ;
-         fhir:type [
-           fhir:coding ( [
-             fhir:system [
-               fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
-               fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
-             ] ;
-             fhir:code [ fhir:v "EHPLANS" ]
-           ] )
-         ] ;
-         fhir:subscriber [
-           fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> ;
-           fhir:reference [ fhir:v "Patient/patient-prov-001" ]
-         ] ;
-         fhir:subscriberId [ fhir:v "NEW-12345678" ] ;
-         fhir:beneficiary [
-           fhir:l <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-001> ;
-           fhir:reference [ fhir:v "Patient/patient-prov-001" ]
-         ] ;
-         fhir:relationship [
-           fhir:coding ( [
-             fhir:system [
-               fhir:v "http://terminology.hl7.org/CodeSystem/subscriber-relationship"^^xsd:anyURI ;
-               fhir:l <http://terminology.hl7.org/CodeSystem/subscriber-relationship>
-             ] ;
-             fhir:code [ fhir:v "self" ]
-           ] )
-         ] ;
-         fhir:period [
-           fhir:start [ fhir:v "2024-01-01"^^xsd:date ] ;
-           fhir:end [ fhir:v "2024-12-31"^^xsd:date ]
-         ] ;
-         fhir:payor ( [
-           fhir:identifier [
-             fhir:system [
-               fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
-               fhir:l <http://hl7.org/fhir/sid/us-npi>
-             ] ;
-             fhir:value [ fhir:v "5555555555" ]
-           ] ;
-           fhir:display [ fhir:v "Current Payer" ]
-         ] ) ;
-         fhir:class ( [
-           fhir:type [
-             fhir:coding ( [
-               fhir:system [
-                 fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
-                 fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
-               ] ;
-               fhir:code [ fhir:v "group" ]
-             ] )
-           ] ;
-           fhir:value [ fhir:v "EMPLOY-NEW" ]
-         ] [
-           fhir:type [
-             fhir:coding ( [
-               fhir:system [
-                 fhir:v "http://terminology.hl7.org/CodeSystem/coverage-class"^^xsd:anyURI ;
-                 fhir:l <http://terminology.hl7.org/CodeSystem/coverage-class>
-               ] ;
-               fhir:code [ fhir:v "plan" ]
-             ] )
-           ] ;
-           fhir:value [ fhir:v "PPO-PREMIUM" ]
-         ] )
        ] )
      ] )
   ] [
@@ -321,6 +263,10 @@
        fhir:Parameters.parameter.resource ( [
          a fhir:Patient ;
          fhir:id [ fhir:v "patient-prov-002" ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sarah Elizabeth Williams - DOB: 1978-03-22, Female</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:identifier ( [
            fhir:type [
              fhir:coding ( [
@@ -370,6 +316,10 @@
              fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
            ] )
          ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Coverage for Sarah Williams - Subscriber ID: 87654321, Another Health Plan, HMO-BASIC</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:status [ fhir:v "draft" ] ;
          fhir:type [
            fhir:coding ( [
@@ -377,7 +327,8 @@
                fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
                fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
              ] ;
-             fhir:code [ fhir:v "EHPLANS" ]
+             fhir:code [ fhir:v "HIP" ] ;
+             fhir:display [ fhir:v "health insurance plan policy" ]
            ] )
          ] ;
          fhir:subscriber [
@@ -447,6 +398,10 @@
              fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent>
            ] )
          ] ;
+         fhir:text [
+           fhir:status [ fhir:v "generated" ] ;
+           fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01</p></div>"^^rdf:XMLLiteral ]
+         ] ;
          fhir:status [ fhir:v "active" ] ;
          fhir:scope [
            fhir:coding ( [
@@ -460,11 +415,11 @@
          fhir:category ( [
            fhir:coding ( [
              fhir:system [
-               fhir:v "http://terminology.hl7.org/CodeSystem/consentcategorycodes"^^xsd:anyURI ;
-               fhir:l <http://terminology.hl7.org/CodeSystem/consentcategorycodes>
+               fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ;
+               fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActCode>
              ] ;
-             fhir:code [ fhir:v "treat" ] ;
-             fhir:display [ fhir:v "Treatment" ]
+             fhir:code [ fhir:v "IDSCL" ] ;
+             fhir:display [ fhir:v "Information Disclosure" ]
            ] )
          ] [
            fhir:coding ( [
@@ -531,8 +486,8 @@
                fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ;
                fhir:l <http://terminology.hl7.org/CodeSystem/v3-ActReason>
              ] ;
-             fhir:code [ fhir:v "TREATMENT" ] ;
-             fhir:display [ fhir:v "Treatment" ]
+             fhir:code [ fhir:v "TREAT" ] ;
+             fhir:display [ fhir:v "treatment" ]
            ] )
          ]
        ] )

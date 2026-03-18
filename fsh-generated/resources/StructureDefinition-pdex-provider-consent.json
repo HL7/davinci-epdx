@@ -16,7 +16,7 @@
   "title": "PDex Provider Access Consent Profile",
   "status": "draft",
   "experimental": true,
-  "description": "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data.",
+  "description": "The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA.",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
@@ -60,7 +60,8 @@
             }
           ],
           "rules": "open"
-        }
+        },
+        "min": 2
       },
       {
         "id": "Consent.category:disclosure",
@@ -73,6 +74,24 @@
             {
               "code": "IDSCL",
               "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Consent.category:apiPurpose",
+        "path": "Consent.category",
+        "sliceName": "apiPurpose",
+        "short": "Identifies this Consent as applying to the Provider Access API",
+        "comment": "Fixed to 'provider-access'. Enables systems to locate Provider Access API Consent records for a member using a standard category search (GET /Consent?patient=X&category=provider-access) without relying on actor cross-referencing or custom extension searches.",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "provider-access",
+              "system": "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose"
             }
           ]
         },
@@ -95,13 +114,15 @@
       {
         "id": "Consent.performer",
         "path": "Consent.performer",
+        "comment": "The individual who performed the opt-out. This SHALL be either the patient themselves (US Core Patient Profile) or the patient's legally recognized personal representative acting on their behalf (US Core RelatedPerson Profile), such as a parent, guardian, or healthcare proxy, consistent with CMS-0057-F and HIPAA.",
         "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson"
             ]
           }
         ],

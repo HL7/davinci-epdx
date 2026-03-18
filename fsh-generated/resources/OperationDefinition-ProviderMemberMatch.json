@@ -3,13 +3,16 @@
   "id": "ProviderMemberMatch",
   "url": "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/ProviderMemberMatch",
   "title": "PDex Provider-Member-Match Operation",
-  "description": "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.",
+  "description": "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.\n\nInput parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile.",
   "experimental": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "name": "ProviderMemberMatch",
   "status": "active",
   "kind": "operation",
   "code": "provider-member-match",
+  "resource": [
+    "Group"
+  ],
   "system": false,
   "type": true,
   "instance": false,
@@ -23,7 +26,7 @@
       "type": "Parameters",
       "min": 1,
       "max": "*",
-      "documentation": "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records.",
+      "documentation": "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.",
       "part": [
         {
           "name": "MemberPatient",
@@ -67,7 +70,7 @@
           "targetProfile": [
             "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"
           ],
-          "documentation": "Provider's attestation to an active treatment relationship with the patient. This replaces the general consent with a specific treatment relationship attestation."
+          "documentation": "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
         }
       ]
     },
@@ -78,7 +81,7 @@
       "min": 0,
       "max": "1",
       "targetProfile": [
-        "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-provider-treatment-relationship-group"
+        "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"
       ],
       "documentation": "A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data."
     },
@@ -91,27 +94,16 @@
       "targetProfile": [
         "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"
       ],
-      "documentation": "A Group resource containing members for whom no match could be found in the payer's member records."
+      "documentation": "A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements."
     },
     {
-      "name": "TreatmentAttestationConstrainedMembers",
+      "name": "ConsentConstrainedMembers",
       "use": "out",
       "type": "Group",
       "min": 0,
       "max": "1",
       "targetProfile": [
-        "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"
-      ],
-      "documentation": "A Group resource containing members for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements."
-    },
-    {
-      "name": "OptOutConstrainedMembers",
-      "use": "out",
-      "type": "Group",
-      "min": 0,
-      "max": "1",
-      "targetProfile": [
-        "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/member-opt-out-group"
+        "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"
       ],
       "documentation": "A Group resource containing members who have opted out of data sharing with providers or this specific provider."
     }

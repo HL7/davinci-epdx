@@ -1,4 +1,4 @@
-# patientin2 - Da Vinci Payer Data Exchange v2.1.1
+# patientin2 - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**FHIR Artifacts**](artifacts.md)
@@ -22,30 +22,24 @@ William John Smith (official) Male, DoB: 1959-12-25 ( Member Number)
 {
   "resourceType" : "Patient",
   "id" : "patient-2",
-  "identifier" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "MB"
-          }
-        ]
-      },
-      "system" : "http://example.org/old-payer/identifiers/member",
-      "value" : "55678",
-      "assigner" : {
-        "display" : "Old Payer"
-      }
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MB"
+      }]
+    },
+    "system" : "http://example.org/old-payer/identifiers/member",
+    "value" : "55678",
+    "assigner" : {
+      "display" : "Old Payer"
     }
-  ],
-  "name" : [
-    {
-      "use" : "official",
-      "family" : "Smith",
-      "given" : ["William", "John"]
-    }
-  ],
+  }],
+  "name" : [{
+    "use" : "official",
+    "family" : "Smith",
+    "given" : ["William", "John"]
+  }],
   "gender" : "male",
   "birthDate" : "1959-12-25"
 }

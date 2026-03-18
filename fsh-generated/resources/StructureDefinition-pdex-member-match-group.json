@@ -52,6 +52,11 @@
   "differential": {
     "element": [
       {
+        "id": "Group.contained",
+        "path": "Group.contained",
+        "comment": "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+      },
+      {
         "id": "Group.code",
         "path": "Group.code",
         "min": 1,
@@ -120,17 +125,39 @@
         "mustSupport": true
       },
       {
+        "id": "Group.member.entity.extension",
+        "path": "Group.member.entity.extension",
+        "min": 1
+      },
+      {
         "id": "Group.member.entity.extension:matchedMember",
         "path": "Group.member.entity.extension",
         "sliceName": "matchedMember",
-        "comment": "Add the patient record from the successful MemberMatch for an individual member in the Member-Match Request MemberBundle (Patient Demographics).",
-        "min": 0,
+        "comment": "SHALL reference the contained Patient resource that was submitted by the requester for this member in the MemberBundle input parameter. This enables the requester to cross-reference each matched result back to their original submitted demographics.",
+        "min": 1,
         "max": "1",
         "type": [
           {
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-parameters"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Group.member.entity.extension:matchedCoverage",
+        "path": "Group.member.entity.extension",
+        "sliceName": "matchedCoverage",
+        "comment": "MAY reference a contained Coverage resource that was submitted alongside the Patient in the MemberBundle input parameter. SHALL be populated when the same patient was submitted with multiple different Coverage plans, to allow the requester to distinguish which (patient + coverage) pair this member entry corresponds to.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage"
             ]
           }
         ],

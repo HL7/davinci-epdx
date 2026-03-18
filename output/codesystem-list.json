@@ -1,148 +1,154 @@
 {
-  "codeSystems" : [
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "EndpointPayloadTypeCS",
-      "title" : "Endpoint Payload Types Code System",
-      "description" : "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/MtlsObjectCodeCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "MtlsObjectCodeCS",
-      "title" : "mTLS Object Type Code",
-      "description" : "Codes for the Signed Object Types"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "OrgTypeCS",
-      "title" : "Organization Type",
-      "description" : "Categories of organizations based on criteria in provider directories."
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PDexAdjudicationDiscriminator",
-      "title" : "PDex Adjudication Discriminator",
-      "description" : "Used as the discriminator for the data elements in adjudication and item.adjudication"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PDexIdentifierType",
-      "title" : "PDex Identifier Type",
-      "description" : "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PDexPayerAdjudicationStatus",
-      "title" : "PDex Payer Adjudication Status",
-      "description" : "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoTypeCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PDexSupportingInfoTypeCS",
-      "title" : "PDex Supporting Info Type",
-      "description" : "Claim Information Category - Used as the discriminator for supportingInfo"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PdexMemberAttributionCS",
-      "title" : "PDex Provider Access API Attribution Code System",
-      "description" : "Code set to identify group resources from a Member Attribution Process that is used by Provider Access API."
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PdexMultiMemberMatchResultCS",
-      "title" : "PDex Multi-Member Match Result Code System",
-      "description" : "Code set to describe the results group from a multi-member Match operation"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PriorAuthorizationValueCodes",
-      "title" : "Prior Authorization Values",
-      "description" : "Codes used to define Prior Authorization categories"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "ProvenanceAgentRoleType",
-      "title" : "Provenance Roles",
-      "description" : "CodeSystem for types of role relating to the creation or communication of referenced resources"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "ProvenancePayerDataSource",
-      "title" : "Provenance Payer Data Source Format",
-      "description" : "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "TrustFrameworkTypeCS",
-      "title" : "Trust FrameworkType Code System",
-      "description" : "Trust Framework Type"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "TrustProfileCS",
-      "title" : "Trust Profile Code System",
-      "description" : "Trust Profile"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "OptOutReasonCodeSystem",
-      "title" : "Opt-Out Reason",
-      "description" : "Reasons for opting out of data sharing"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "OptOutScopeCodeSystem",
-      "title" : "Opt-Out Scope",
-      "description" : "The scope of a member's opt-out election"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-member-characteristic-code",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "PDexMemberCharacteristicCode",
-      "title" : "PDex Member Characteristic Code",
-      "description" : "Codes for member characteristics in PDex groups"
-    },
-    {
-      "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/treatment-relationship-type",
-      "version" : "2.1.1",
-      "status" : "active",
-      "name" : "TreatmentRelationshipTypeCodeSystem",
-      "title" : "Treatment Relationship Type",
-      "description" : "Types of treatment relationships between members and providers"
-    }
-  ]
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/EndpointPayloadTypeCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "EndpointPayloadTypeCS",
+    "title" : "Endpoint Payload Types Code System",
+    "description" : "Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/MtlsObjectCodeCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "MtlsObjectCodeCS",
+    "title" : "mTLS Object Type Code",
+    "description" : "Codes for the Signed Object Types"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OrgTypeCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "OrgTypeCS",
+    "title" : "Organization Type",
+    "description" : "Categories of organizations based on criteria in provider directories."
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexAdjudicationDiscriminator",
+    "title" : "PDex Adjudication Discriminator",
+    "description" : "Used as the discriminator for the data elements in adjudication and item.adjudication"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexIdentifierType",
+    "title" : "PDex Identifier Type",
+    "description" : "Identifier Type codes that extend those defined in http://terminology.hl7.org/CodeSystem/v2-0203 to define the type of identifier payers and providers assign to claims and patients"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexPayerAdjudicationStatus",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexPayerAdjudicationStatus",
+    "title" : "PDex Payer Adjudication Status",
+    "description" : "Describes the various status fields used when payers adjudicate a claim, such as whether the claim was adjudicated in or out of network, if the provider was contracted or non-contracted for the service"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexSupportingInfoTypeCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexSupportingInfoTypeCS",
+    "title" : "PDex Supporting Info Type",
+    "description" : "Claim Information Category - Used as the discriminator for supportingInfo"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PdexMemberAttributionCS",
+    "title" : "PDex Provider Access API Attribution Code System",
+    "description" : "Code set to identify group resources from a Member Attribution Process that is used by Provider Access API."
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PdexMultiMemberMatchResultCS",
+    "title" : "PDex Multi-Member Match Result Code System",
+    "description" : "Code set to describe the results group from a multi-member Match operation"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PriorAuthorizationValueCodes",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PriorAuthorizationValueCodes",
+    "title" : "Prior Authorization Values",
+    "description" : "Codes used to define Prior Authorization categories"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenanceAgentRoleType",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "ProvenanceAgentRoleType",
+    "title" : "Provenance Roles",
+    "description" : "CodeSystem for types of role relating to the creation or communication of referenced resources"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/ProvenancePayerDataSource",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "ProvenancePayerDataSource",
+    "title" : "Provenance Payer Data Source Format",
+    "description" : "CodeSystem for source formats that identify what non-FHIR source was used to create FHIR record(s)"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustFrameworkTypeCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "TrustFrameworkTypeCS",
+    "title" : "Trust FrameworkType Code System",
+    "description" : "Trust Framework Type"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/TrustProfileCS",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "TrustProfileCS",
+    "title" : "Trust Profile Code System",
+    "description" : "Trust Profile"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-reason",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "OptOutReasonCodeSystem",
+    "title" : "Opt-Out Reason",
+    "description" : "Reasons for opting out of data sharing"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "OptOutScopeCodeSystem",
+    "title" : "Opt-Out Scope",
+    "description" : "The scope of a member's opt-out election"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-consent-api-purpose",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexConsentApiPurposeCS",
+    "title" : "PDex Consent API Purpose",
+    "description" : "Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member."
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/pdex-member-characteristic-code",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "PDexMemberCharacteristicCode",
+    "title" : "PDex Member Characteristic Code",
+    "description" : "Codes for member characteristics in PDex groups"
+  },
+  {
+    "url" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/treatment-relationship-type",
+    "version" : "2.2.0",
+    "status" : "active",
+    "name" : "TreatmentRelationshipTypeCodeSystem",
+    "title" : "Treatment Relationship Type",
+    "description" : "Types of treatment relationships between members and providers"
+  }]
 }

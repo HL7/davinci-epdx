@@ -61,11 +61,11 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       <valueInteger value="2"/>
    </extension>
    <url value="http://hl7.org/fhir/us/davinci-pdex/ImplementationGuide/hl7.fhir.us.davinci-pdex"/>
-   <version value="2.1.1"/>
+   <version value="2.2.0"/>
    <name value="DaVinciPayerDataExchange"/>
    <title value="Da Vinci Payer Data Exchange"/>
    <status value="active"/>
-   <date value="2025-12-17T14:48:28-05:00"/>
+   <date value="2026-03-17T22:49:33-04:00"/>
    <publisher value="HL7 International / Financial Management"/>
    <contact>
       <name value="HL7 International / Financial Management"/>
@@ -182,7 +182,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </extension>
       <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
       <packageId value="hl7.terminology.r4"/>
-      <version value="6.3.0"/>
+      <version value="7.1.0"/>
    </dependsOn>
    <definition>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -198,7 +198,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="releaselabel"/>
          </extension>
          <extension url="value">
-            <valueString value="STU 2.1"/>
+            <valueString value="STU 2.2"/>
          </extension>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -423,7 +423,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          </valueReference>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-         <valueCode value="hl7.fhir.uv.tools.r4#0.9.0"/>
+         <valueCode value="hl7.fhir.uv.tools.r4#1.1.0"/>
       </extension>
       <grouping id="-req-actordefinition">
          <name value="Requirements: Actor Definitions"/>
@@ -650,24 +650,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="OperationDefinition"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="OperationDefinition-BulkMemberMatchDataExport.html"/>
-         </extension>
-         <reference>
-            <reference value="OperationDefinition/BulkMemberMatchDataExport"/>
-         </reference>
-         <name value="Bulk Member Match Data Export"/>
-         <description value="When invoked on a Group resource returned from the Provider-Member-Match or Payer-to-Payer Bulk Member Match operations, this operation exports all member health data for the members in the Group. The response includes a manifest file with references to ndjson files containing FHIR resources for each member in the group."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-dyn-operationdefinition"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="Bundle"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -768,24 +750,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          </reference>
          <name value="consentin2"/>
          <description value="Example Consent record for member match submission"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Coverage"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Coverage-CoverageLinkExample1.html"/>
-         </extension>
-         <reference>
-            <reference value="Coverage/CoverageLinkExample1"/>
-         </reference>
-         <name value="Coverage to Link Example 1"/>
-         <description value="New coverage information to link for the member"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -932,6 +896,96 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <description value="Endpoint Payload Types are constrained to NA (Not Applicable) as part of this IG"/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Group"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Group-member-opt-out-group-001.html"/>
+         </extension>
+         <reference>
+            <reference value="Group/member-opt-out-group-001"/>
+         </reference>
+         <name value="Example Member Opt-Out Group"/>
+         <description value="Example of a Group containing members who have opted out of data sharing with providers"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Group"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Group-example-pdex-treatment-relationship-group.html"/>
+         </extension>
+         <reference>
+            <reference value="Group/example-pdex-treatment-relationship-group"/>
+         </reference>
+         <name value="Example Member-Provider Treatment Relationship Group"/>
+         <description value="Example of a Group resource representing the treatment relationship between a member and their providers"/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Group"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Group-example-provider-consent-constrained-group.html"/>
+         </extension>
+         <reference>
+            <reference value="Group/example-provider-consent-constrained-group"/>
+         </reference>
+         <name value="Example Provider Consent Constrained Group"/>
+         <description value="Example Group of members matched but excluded because they have opted out of the Provider Access API. Members in this group were found in the payer's system but have exercised their right to deny provider access."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Group"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Group-example-provider-matched-group.html"/>
+         </extension>
+         <reference>
+            <reference value="Group/example-provider-matched-group"/>
+         </reference>
+         <name value="Example Provider Matched Members Group"/>
+         <description value="Example Group of members successfully matched by the payer in response to a provider $bulk-member-match request. Members in this group have confirmed treatment relationships and are authorized for Provider Access API data retrieval."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Group"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Group-example-provider-nomatch-group.html"/>
+         </extension>
+         <reference>
+            <reference value="Group/example-provider-nomatch-group"/>
+         </reference>
+         <name value="Example Provider No Match Group"/>
+         <description value="Example Group of members that could not be matched by the payer in response to a provider $bulk-member-match request. Members in this group were not found in the payer's system."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"/>
+         <groupingId value="-ex-example"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -1514,72 +1568,36 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:extension"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-base-ext-last-typefilter.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/base-ext-last-typefilter"/>
-         </reference>
-         <name value="Member Last Resource Filters"/>
-         <description value="Indicates the filters applied to the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _typeFilter Parameter."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-str-extension"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:extension"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-base-ext-last-types.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/base-ext-last-types"/>
-         </reference>
-         <name value="Member Last Resource Types"/>
-         <description value="Indicates the resources exported in the last export operation. This string can be taken from the DaVinci Data Export Request _type Parameter."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-str-extension"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:extension"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-base-ext-last-transmission.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/base-ext-last-transmission"/>
-         </reference>
-         <name value="Member Last Transmission"/>
-         <description value="Indicates the last date/time that data ware requested and transmitted for a member as part of a data delta access request."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="-str-extension"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-member-opt-out-group.html"/>
+            <valueUri value="StructureDefinition-pdex-member-opt-out.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/member-opt-out-group"/>
+            <reference value="StructureDefinition/pdex-member-opt-out"/>
          </reference>
          <name value="Member Opt-Out Group"/>
          <description value="A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-base-ext-match-coverage.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/base-ext-match-coverage"/>
+         </reference>
+         <name value="Member-Match Input Coverage Parameter"/>
+         <description value="Input Coverage Parameter supplied for the individual member match. When the same patient is submitted with multiple different coverage plans, this optional extension allows the responder to include the submitted Coverage resource alongside the submitted Patient resource, enabling the requester to unambiguously identify which (patient + coverage) pair each Group member entry corresponds to."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-extension"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -1607,10 +1625,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-member-provider-treatment-relationship-group.html"/>
+            <valueUri value="StructureDefinition-pdex-treatment-relationship.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/member-provider-treatment-relationship-group"/>
+            <reference value="StructureDefinition/pdex-treatment-relationship"/>
          </reference>
          <name value="Member-Provider Treatment Relationship Group"/>
          <description value="A Group resource representing the treatment relationship between a specific member/patient and one or more healthcare providers. The Payer is the managing organization. The member is identified through a characteristic containing the Patient ID. The group members are the providers that have an active or confirmed treatment relationship with the member."/>
@@ -2072,6 +2090,42 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Organization"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Organization-provider-org-001.html"/>
+         </extension>
+         <reference>
+            <reference value="Organization/provider-org-001"/>
+         </reference>
+         <name value="Organization Provider Example 1"/>
+         <description value="Example provider organization for Provider-Member-Match operation"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Organization"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Organization-provider-org-002.html"/>
+         </extension>
+         <reference>
+            <reference value="Organization/provider-org-002"/>
+         </reference>
+         <name value="Organization Provider Example 2"/>
+         <description value="Example provider organization for Provider-Member-Match operation"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2255,6 +2309,42 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="Patient"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-patient-prov-001.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/patient-prov-001"/>
+         </reference>
+         <name value="Patient Provider Example 1 - Robert Johnson"/>
+         <description value="Example patient as known to the provider for Provider-Member-Match operation"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-patient-prov-002.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/patient-prov-002"/>
+         </reference>
+         <name value="Patient Provider Example 2 - Sarah Williams"/>
+         <description value="Example patient as known to the provider for Provider-Member-Match operation"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="Patient-1.html"/>
          </extension>
          <reference>
@@ -2360,6 +2450,42 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-payer-member-001.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/payer-member-001"/>
+         </reference>
+         <name value="Payer Member Example 1 - Robert Johnson"/>
+         <description value="Example patient as known to the payer after successful member match"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Patient"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Patient-payer-member-002.html"/>
+         </extension>
+         <reference>
+            <reference value="Patient/payer-member-002"/>
+         </reference>
+         <name value="Payer Member Example 2 - Sarah Williams"/>
+         <description value="Example patient as known to the payer after successful member match"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2372,42 +2498,6 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <description value="Source Data formats used as the source for FHIR referenced record by the Payer."/>
          <exampleBoolean value="false"/>
          <groupingId value="-term-valueset"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Patient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Patient-payer-patient-1001.html"/>
-         </extension>
-         <reference>
-            <reference value="Patient/payer-patient-1001"/>
-         </reference>
-         <name value="Payer's Patient Record for Member 1001"/>
-         <description value="The payer's internal patient record that was matched to provider-submitted-patient-1"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Patient"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Patient-payer-patient-2002.html"/>
-         </extension>
-         <reference>
-            <reference value="Patient/payer-patient-2002"/>
-         </reference>
-         <name value="Payer's Patient Record for Member 2002"/>
-         <description value="The payer's internal patient record that was matched to provider-submitted-patient-2"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -2513,9 +2603,99 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="OperationDefinition/BulkMemberMatch"/>
          </reference>
          <name value="PDex Bulk Member Match Operation"/>
-         <description value="Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. The operation returns Group resources containing matched, non-matched, and constrained members. The matched members Group can be used with the $davinci-data-export operation to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation returns a manifest file referencing bulk data files in ndjson format."/>
+         <description value="Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.&#xA;&#xA;Input parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile."/>
          <exampleBoolean value="false"/>
          <groupingId value="-dyn-operationdefinition"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SearchParameter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SearchParameter-pdex-consent-action.html"/>
+         </extension>
+         <reference>
+            <reference value="SearchParameter/pdex-consent-action"/>
+         </reference>
+         <name value="PDex Consent Action Search Parameter"/>
+         <description value="Search for Consent resources by the action code in the provision. Use provision-action=disclose combined with provision-type=deny to find members who have opted out of Provider Access data sharing."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-dyn-searchparameter"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-pdex-consent-api-purpose.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/pdex-consent-api-purpose"/>
+         </reference>
+         <name value="PDex Consent API Purpose"/>
+         <description value="Codes identifying which CMS-mandated API a Consent resource applies to. Used as a category discriminator to allow systems to locate and distinguish Consent records for Provider Access, Payer-to-Payer, and Patient Access APIs for a given member."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-codesystem"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-pdex-consent-api-purpose-vs.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/pdex-consent-api-purpose-vs"/>
+         </reference>
+         <name value="PDex Consent API Purpose Value Set"/>
+         <description value="Value set of codes identifying which CMS-mandated API a Consent resource applies to."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-term-valueset"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SearchParameter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SearchParameter-pdex-consent-provider-access.html"/>
+         </extension>
+         <reference>
+            <reference value="SearchParameter/pdex-consent-provider-access"/>
+         </reference>
+         <name value="PDex Consent Provider Access Use Case Search Parameter"/>
+         <description value="Search for Consent resources that have the Provider Access Use Case extension set to true. This identifies consent records specific to the Provider Access API."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-dyn-searchparameter"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SearchParameter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SearchParameter-pdex-consent-provision-type.html"/>
+         </extension>
+         <reference>
+            <reference value="SearchParameter/pdex-consent-provision-type"/>
+         </reference>
+         <name value="PDex Consent Provision Type Search Parameter"/>
+         <description value="Search for Consent resources by the provision type (deny or permit). Use provision-type=deny combined with provision-action=disclose to find members who have opted out of Provider Access data sharing."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-dyn-searchparameter"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -2534,6 +2714,24 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <description value="The PDex Device profile is provided to enable payers to record information about devices used by a member that may not have a UDI number. &#xA;FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0"/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="SearchParameter"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="SearchParameter-pdex-group-characteristic-value-reference.html"/>
+         </extension>
+         <reference>
+            <reference value="SearchParameter/pdex-group-characteristic-value-reference"/>
+         </reference>
+         <name value="PDex Group Characteristic Value Reference Search Parameter"/>
+         <description value="Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization (stored in characteristic.valueReference)."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-dyn-searchparameter"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
@@ -2782,8 +2980,26 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <reference>
             <reference value="Consent/no-consent-1"/>
          </reference>
-         <name value="PDex Provider Access Consent Example"/>
-         <description value="An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API."/>
+         <name value="PDex Provider Access Consent Opt-Out Example"/>
+         <description value="An example of a PDex Provider Access Consent where a member expresses their desire to opt-out of sharing their data via the Provider Access API. Opt-out is expressed using provision.type='deny' with provision.action='disclose' and the ProviderAccessUseCase extension."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Consent"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Consent-consent-permit-1.html"/>
+         </extension>
+         <reference>
+            <reference value="Consent/consent-permit-1"/>
+         </reference>
+         <name value="PDex Provider Access Consent Permit Example"/>
+         <description value="An example of a PDex Provider Access Consent where a member permits sharing of their data via the Provider Access API. Permit is expressed using provision.type='permit' with provision.action='disclose' and the ProviderAccessUseCase extension."/>
          <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-consent"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -2801,7 +3017,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="StructureDefinition/pdex-provider-consent"/>
          </reference>
          <name value="PDex Provider Access Consent Profile"/>
-         <description value="The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data."/>
+         <description value="The PDex Provider Access Consent Profile enables a member to express their preference for the sharing of their healthcare information to providers through the Provider Access API. A member has to actively choose to opt-out of sharing their data. The opt-out may be exercised by the patient or by the patient's legally recognized personal representative (e.g., parent, guardian, or healthcare proxy), consistent with CMS-0057-F and HIPAA."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -2819,7 +3035,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="StructureDefinition/pdex-provider-group"/>
          </reference>
          <name value="PDex Provider Group"/>
-         <description value="The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile with the addition of extensions to track latest download for a member. Each member element in the Group record, that is processed by the export operation, should be updated with the execution date/time in lastTransmitted, list of resources (resourceTypes) in lastResources and query filters (filterQueries) in lastFilters."/>
+         <description value="The Provider Attribution Group List. Based on the Da Vinci Attribution Group (ATRGroup) Profile. The member element represents the patients attributed to the provider for data access purposes."/>
          <exampleBoolean value="false"/>
          <groupingId value="-str-profile"/>
       </resource>
@@ -2855,7 +3071,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="OperationDefinition/ProviderMemberMatch"/>
          </reference>
          <name value="PDex Provider-Member-Match Operation"/>
-         <description value="Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.&#xA;&#xA;The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format."/>
+         <description value="Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.&#xA;&#xA;The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.&#xA;&#xA;Input parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile."/>
          <exampleBoolean value="false"/>
          <groupingId value="-dyn-operationdefinition"/>
       </resource>
@@ -3001,6 +3217,42 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <name value="PdexPriorAuth"/>
          <description value="PDex Prior Authorization based on EOB Inpatient Example"/>
          <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-priorauthorization"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Practitioner"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Practitioner-provider-001.html"/>
+         </extension>
+         <reference>
+            <reference value="Practitioner/provider-001"/>
+         </reference>
+         <name value="Practitioner Provider Example 1 - Dr. Smith"/>
+         <description value="Example practitioner attesting to treatment relationship for Provider-Member-Match"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="Practitioner"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="Practitioner-provider-002.html"/>
+         </extension>
+         <reference>
+            <reference value="Practitioner/provider-002"/>
+         </reference>
+         <name value="Practitioner Provider Example 2 - Dr. Jones"/>
+         <description value="Example practitioner attesting to treatment relationship for Provider-Member-Match"/>
+         <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -3188,6 +3440,24 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-pdex-provider-access-use-case.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/pdex-provider-access-use-case"/>
+         </reference>
+         <name value="Provider Access Use Case"/>
+         <description value="Indicates that the consent action is specifically related to the Provider Access API use case for sharing or withholding member data with providers."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="-str-extension"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="DocumentReference"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -3224,49 +3494,13 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueInteger value="999999999"/>
          </extension>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Parameters"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Parameters-provider-bulk-member-match-in.html"/>
-         </extension>
-         <reference>
-            <reference value="Parameters/provider-bulk-member-match-in"/>
-         </reference>
-         <name value="Provider Bulk Member Match Request Example"/>
-         <description value="Example of a Bulk Member Match request for Provider Access, including provider treatment attestation consent. This differs from Payer-to-Payer member match by including current member demographics, current coverage, and provider attestation instead of old payer data and patient consent for data sharing between payers."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="Parameters"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="Parameters-provider-bulk-member-match-out.html"/>
-         </extension>
-         <reference>
-            <reference value="Parameters/provider-bulk-member-match-out"/>
-         </reference>
-         <name value="Provider Bulk Member Match Response Example"/>
-         <description value="Example response to a Provider Bulk Member Match request showing matched members (authorized for provider access), non-matched members (not found in payer system), and consent-constrained members (opted out of Provider Access API)."/>
-         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"/>
-         <groupingId value="-ex-example"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
-            <valueInteger value="999999999"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-provider-member-match-group.html"/>
+            <valueUri value="StructureDefinition-pdex-provider-member-match.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/provider-member-match-group"/>
+            <reference value="StructureDefinition/pdex-provider-member-match"/>
          </reference>
          <name value="Provider Member Match Group"/>
          <description value="A Group List created by the Payer to enable Provider Access API access by providers to retrieve member information. Based on the Group resource. An Extension is added to capture the submitted parameters from the provider's match request."/>
@@ -3281,10 +3515,10 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-provider-member-no-match-group.html"/>
+            <valueUri value="StructureDefinition-pdex-provider-member-no-match.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/provider-member-no-match-group"/>
+            <reference value="StructureDefinition/pdex-provider-member-no-match"/>
          </reference>
          <name value="Provider Member No Match Group"/>
          <description value="A Group List created by the Payer to provide information back to a requesting provider about failed matches. Based on the Group resource. An Extension is added to capture the submitted patient demographics from the provider's request. The match may have failed for one of two reasons: a) No match on member (member not found in payer's system), or b) Matched but unable to comply due to member's opt-out of Provider Access API."/>
@@ -3323,8 +3557,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Parameters/provider-member-match-request-001"/>
          </reference>
          <name value="Provider-Member-Match Request Example"/>
-         <description value="Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, coverage information, and treatment attestation to match against a payer's member records."/>
-         <exampleBoolean value="true"/>
+         <description value="Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -3341,8 +3575,8 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             <reference value="Parameters/provider-member-match-response-001"/>
          </reference>
          <name value="Provider-Member-Match Response Example"/>
-         <description value="Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members, treatment attestation constraints, and opt-out constraints."/>
-         <exampleBoolean value="true"/>
+         <description value="Example response to a Provider-Member-Match operation showing matched members with treatment relationships confirmed, non-matched members (including those with treatment attestation issues), and consent-constrained members who have opted out."/>
+         <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -3415,6 +3649,42 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
          <name value="Treatment Attestation Example 2"/>
          <description value="Second provider's attestation to treatment relationship"/>
          <exampleCanonical value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="DocumentReference"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="DocumentReference-treatment-attestation-form-001.html"/>
+         </extension>
+         <reference>
+            <reference value="DocumentReference/treatment-attestation-form-001"/>
+         </reference>
+         <name value="Treatment Attestation Form Example 1"/>
+         <description value="Example signed attestation document for treatment relationship"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-sort">
+            <valueInteger value="999999999"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="DocumentReference"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="DocumentReference-treatment-attestation-form-002.html"/>
+         </extension>
+         <reference>
+            <reference value="DocumentReference/treatment-attestation-form-002"/>
+         </reference>
+         <name value="Treatment Attestation Form Example 2"/>
+         <description value="Example signed attestation document for treatment relationship"/>
+         <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
       <resource>
@@ -3656,6 +3926,17 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
             </extension>
             <nameUrl value="introduction.html"/>
             <title value="Introduction"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+               <valueCode value="informative"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="narrative-conformance.html"/>
+            </extension>
+            <nameUrl value="narrative-conformance.html"/>
+            <title value="Narrative Conformance"/>
             <generation value="markdown"/>
          </page>
          <page>
@@ -4305,7 +4586,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
       </parameter>
       <parameter>
          <code value="releaselabel"/>
-         <value value="STU 2.1"/>
+         <value value="STU 2.2"/>
       </parameter>
       <parameter>
          <code value="show-inherited-invariants"/>

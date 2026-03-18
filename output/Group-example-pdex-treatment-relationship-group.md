@@ -1,0 +1,93 @@
+# Example Member-Provider Treatment Relationship Group - Da Vinci Payer Data Exchange v2.2.0
+
+* [**Table of Contents**](toc.md)
+* [**FHIR Artifacts**](artifacts.md)
+* **Example Member-Provider Treatment Relationship Group**
+
+## Example Group: Example Member-Provider Treatment Relationship Group
+
+| |
+| :--- |
+| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+
+## Member-Provider Treatment Relationship Group
+
+Providers with an active treatment relationship with the member
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Group",
+  "id" : "example-pdex-treatment-relationship-group",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"]
+  },
+  "identifier" : [{
+    "system" : "http://example.org/payer/treatment-relationship-groups",
+    "value" : "TRL-2024-001",
+    "assigner" : {
+      "display" : "Example Payer Organization"
+    }
+  }],
+  "active" : true,
+  "type" : "device",
+  "actual" : true,
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS",
+      "code" : "match",
+      "display" : "Matched"
+    }]
+  },
+  "quantity" : 2,
+  "managingEntity" : {
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "5555555555"
+    },
+    "display" : "Example Payer Organization"
+  },
+  "characteristic" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS",
+        "code" : "pdex-member",
+        "display" : "PDex Member"
+      }]
+    },
+    "valueReference" : {
+      "reference" : "Patient/payer-member-001"
+    },
+    "exclude" : false,
+    "period" : {
+      "start" : "2024-01-01"
+    }
+  }],
+  "member" : [{
+    "entity" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details",
+        "valueString" : "Primary care physician. Treatment relationship established 2024-01-15 based on office visit."
+      }],
+      "reference" : "Practitioner/provider-001",
+      "display" : "Dr. John Smith, MD"
+    },
+    "inactive" : false
+  },
+  {
+    "entity" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details",
+        "valueString" : "Specialist referral. Treatment relationship established 2024-03-01 based on specialist referral from primary care."
+      }],
+      "reference" : "Practitioner/provider-002",
+      "display" : "Dr. Mary Jones, MD"
+    },
+    "inactive" : false
+  }]
+}
+
+```

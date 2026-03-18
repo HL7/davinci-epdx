@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group xmlns="http://hl7.org/fhir">
+  <id value="example-pdex-treatment-relationship-group"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Member-Provider Treatment Relationship Group</h2><p>Providers with an active treatment relationship with the member</p></div>
+  </text>
+  <identifier>
+    <system value="http://example.org/payer/treatment-relationship-groups"/>
+    <value value="TRL-2024-001"/>
+    <assigner>
+      <display value="Example Payer Organization"/>
+    </assigner>
+  </identifier>
+  <active value="true"/>
+  <type value="device"/>
+  <actual value="true"/>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS"/>
+      <code value="match"/>
+      <display value="Matched"/>
+    </coding>
+  </code>
+  <quantity value="2"/>
+  <managingEntity>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="5555555555"/>
+    </identifier>
+    <display value="Example Payer Organization"/>
+  </managingEntity>
+  <characteristic>
+    <code>
+      <coding>
+        <system value="http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMemberAttributionCS"/>
+        <code value="pdex-member"/>
+        <display value="PDex Member"/>
+      </coding>
+    </code>
+    <valueReference>
+      <reference value="Patient/payer-member-001"/>
+    </valueReference>
+    <exclude value="false"/>
+    <period>
+      <start value="2024-01-01"/>
+    </period>
+  </characteristic>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details">
+        <valueString value="Primary care physician. Treatment relationship established 2024-01-15 based on office visit."/>
+      </extension>
+      <reference value="Practitioner/provider-001"/>
+      <display value="Dr. John Smith, MD"/>
+    </entity>
+    <inactive value="false"/>
+  </member>
+  <member>
+    <entity>
+      <extension url="http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/treatment-relationship-details">
+        <valueString value="Specialist referral. Treatment relationship established 2024-03-01 based on specialist referral from primary care."/>
+      </extension>
+      <reference value="Practitioner/provider-002"/>
+      <display value="Dr. Mary Jones, MD"/>
+    </entity>
+    <inactive value="false"/>
+  </member>
+</Group>

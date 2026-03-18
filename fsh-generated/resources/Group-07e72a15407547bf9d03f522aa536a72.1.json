@@ -39,6 +39,12 @@
             "valueReference": {
               "reference": "#1"
             }
+          },
+          {
+            "url": "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/base-ext-match-coverage",
+            "valueReference": {
+              "reference": "#coverage-1"
+            }
           }
         ],
         "reference": "Patient/1001"
@@ -76,10 +82,10 @@
               }
             ]
           },
-          "system": "http://example.org/old-payer/identifiers/member",
+          "system": "http://example.org/new-payer/identifiers/member",
           "value": "55678",
           "assigner": {
-            "display": "Old Payer"
+            "display": "New Payer"
           }
         }
       ],
@@ -109,10 +115,10 @@
               }
             ]
           },
-          "system": "http://example.org/old-payer/identifiers/member",
+          "system": "http://example.org/new-payer/identifiers/member",
           "value": "45567",
           "assigner": {
-            "display": "Old Payer"
+            "display": "New Payer"
           }
         }
       ],
@@ -128,6 +134,38 @@
       ],
       "gender": "male",
       "birthDate": "1958-12-25"
+    },
+    {
+      "resourceType": "Coverage",
+      "id": "coverage-1",
+      "status": "active",
+      "subscriberId": "EMP-123456",
+      "beneficiary": {
+        "reference": "Patient/1001"
+      },
+      "payor": [
+        {
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "0123456789"
+          },
+          "display": "Old Health Plan"
+        }
+      ],
+      "class": [
+        {
+          "type": {
+            "coding": [
+              {
+                "code": "plan",
+                "system": "http://terminology.hl7.org/CodeSystem/coverage-class"
+              }
+            ]
+          },
+          "value": "EMP-PLAN-123",
+          "name": "Employer Plan 123"
+        }
+      ]
     }
   ],
   "type": "person",

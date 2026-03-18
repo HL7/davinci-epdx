@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Provider-Member-Match Response Example - XML Representation - Da Vinci Payer Data Exchange v2.1.1</title>
+    <title>Provider-Member-Match Response Example - XML Representation - Da Vinci Payer Data Exchange v2.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.169"}
-    h3,h4,h5,h6{--heading-prefix:"13.169"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.182"}
+    h3,h4,h5,h6{--heading-prefix:"14.182"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -71,7 +71,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">Da Vinci Payer Data Exchange</span>
             <br/>
-            <span style="display:inline-block;">2.1.1 - STU 2.1
+            <span style="display:inline-block;">2.2.0 - STU 2.2
 
 
 
@@ -131,6 +131,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="introduction.html">Conformance Expectations</a>
+      </li>
+      <li>
+        <a href="narrative-conformance.html">Narrative Conformance</a>
       </li>
       <li>
         <a href="pdeximplementationactorsinteractionsdatapayloadsandmethods.html">Actors, Interactions and Payloads</a>
@@ -252,7 +255,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Da Vinci Payer Data Exchange - Local Development build (v2.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.org/fhir/us/davinci-pdex/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -311,6 +314,10 @@
   <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">Parameters</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
   &lt;<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;provider-member-match-response-001&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Parameters.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-out&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Parameters.meta">meta</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;MatchedMembers&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/group.html#Group">resource</a>&gt;
@@ -340,7 +347,7 @@
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;match&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Matched&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
@@ -357,7 +364,7 @@
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
+                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;match&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Matched&quot;/&gt;
             &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
@@ -375,14 +382,14 @@
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;<a href="Patient-payer-member-001.html" style="color: Maroon">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/payer-member-001&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Robert Michael Johnson - Payer Member&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;<a href="Patient-payer-member-002.html" style="color: Maroon">&#x1F517;</a> 
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/payer-member-002&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Sarah Elizabeth Williams - Payer Member&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
@@ -420,12 +427,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/sid/us-npi&quot;/&gt;
@@ -437,31 +444,40 @@
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
+                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
             &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.value_x_">valueBoolean</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.exclude">exclude</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2024-12-16&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;<a href="Patient-patient-prov-002.html" style="color: Maroon">&#x1F517;</a> 
+            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/patient-prov-002&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Jane Smith (submitted demographics - no match found)&quot;/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group">Group</a>&gt;
     &lt;/resource&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TreatmentAttestationConstrainedMembers&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ConsentConstrainedMembers&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/group.html#Group">resource</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/group.html#Group">Group</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;attestation-constrained-group-001&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;consent-constrained-group-001&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-          &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Treatment Attestation Constrained&lt;/h2&gt;&lt;p&gt;Members for whom treatment attestation could not be verified or does not meet payer requirements&lt;/p&gt;&lt;/div&gt;
+          &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Consent-Constrained Members&lt;/h2&gt;&lt;p&gt;Members found but who have exercised their right to opt out of Provider Access data sharing&lt;/p&gt;&lt;/div&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://example.org/payer/match-groups&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ACG-2024-12-16-001&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;CCG-2024-12-16-001&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example Payer&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
@@ -479,12 +495,12 @@
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
+                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;consentconstraint&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Consent Constraint&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;0&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;1&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/sid/us-npi&quot;/&gt;
@@ -496,74 +512,15 @@
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
-            &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.exclude">exclude</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2024-12-16&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>&gt;
-      &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group">Group</a>&gt;
-    &lt;/resource&gt;
-  &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;OptOutConstrainedMembers&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/group.html#Group">resource</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/group.html#Group">Group</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/resource.html#Group.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;optout-constrained-group-001&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-          &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;h2&gt;Members who have Opted-Out&lt;/h2&gt;&lt;p&gt;Members found but who have exercised opt-out rights&lt;/p&gt;&lt;/div&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Group.text">text</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://example.org/payer/match-groups&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;OOG-2024-12-16-001&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Example Payer&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/sid/us-npi&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1982947230&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Provider Organization&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.identifier">identifier</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.active">active</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;person&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.actual">actual</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                    <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.code">code</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.quantity">quantity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>=&quot;0&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/sid/us-npi&quot;/&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;5555555555&quot;/&gt;
-          &lt;/<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Current Payer&quot;/&gt;
-        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
-            &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexMultiMemberMatchResultCS&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;nomatch&quot;/&gt;
-              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Not Matched&quot;/&gt;
+                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS&quot;/&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;consentconstraint&quot;/&gt;
+              &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Consent Constraint&quot;/&gt;
             &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.code">code</a>&gt;
           &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.value_x_">valueCodeableConcept</a>&gt;
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
-                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/OptOutScopeCS&quot;/&gt;
+                      <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/davinci-pdex/CodeSystem/opt-out-scope&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;provider-specific&quot;/&gt;
               &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Provider-Specific Opt-Out&quot;/&gt;
             &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
@@ -573,6 +530,14 @@
             &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">start</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2024-12-16&quot;/&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic.period">period</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.characteristic">characteristic</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;<a href="Patient-payer-member-002.html" style="color: Maroon">&#x1F517;</a> 
+            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/payer-member-002&quot;/&gt;
+            &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Sarah Elizabeth Williams (matched but opted out of Provider Access)&quot;/&gt;
+          &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member.entity">entity</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/group.html#Group.member.inactive">inactive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group.member">member</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/group.html#Group">Group</a>&gt;
     &lt;/resource&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>&gt;
@@ -622,7 +587,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 17, 2025 14:48-0500">2025-12-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

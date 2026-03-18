@@ -1,4 +1,4 @@
-# US Core CarePlan - Da Vinci Payer Data Exchange v2.1.1
+# US Core CarePlan - Da Vinci Payer Data Exchange v2.2.0
 
 * [**Table of Contents**](toc.md)
 * [**PDex Implementation, Actors, Interactions, Data Payloads and Methods**](pdeximplementationactorsinteractionsdatapayloadsandmethods.md)
@@ -13,7 +13,7 @@
 
 [Previous Page - US Core AllergyIntolerance](USCoreAllergyIntolerance.md)
 
-Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.
+§pdex-19: Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 CarePlan](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-careplan.html) or [US Core 6.1.0 CarePlan](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-careplan.html)resource are:
 
