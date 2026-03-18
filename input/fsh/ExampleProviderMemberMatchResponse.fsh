@@ -95,8 +95,12 @@ Usage: #example
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
-  // Note: This group would be empty if all members matched successfully
-  * quantity = 0
+  // Member whose submitted demographics could not be matched in the payer system
+  * member[0].entity.reference = "Patient/patient-prov-002"
+  * member[0].entity.display = "Jane Smith (submitted demographics - no match found)"
+  * member[0].inactive = false
+
+  * quantity = 1
 
 
 // ------------------
@@ -131,4 +135,9 @@ Usage: #example
   * characteristic.exclude = false
   * characteristic.period.start = "2024-12-16"
 
-  * quantity = 0
+  // Member who was matched but has opted out of Provider Access API data sharing
+  * member[0].entity.reference = "Patient/payer-member-002"
+  * member[0].entity.display = "Sarah Elizabeth Williams (matched but opted out of Provider Access)"
+  * member[0].inactive = false
+
+  * quantity = 1
