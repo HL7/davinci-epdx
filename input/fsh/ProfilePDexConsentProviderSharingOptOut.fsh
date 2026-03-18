@@ -26,7 +26,7 @@ Description: "The PDex Provider Access Consent Profile enables a member to expre
 * patient only Reference(USCorePatientProfile|7.0.0)
 
 * performer 1..1 MS
-* performer only Reference(USCorePatientProfile | $USCoreRelatedPerson)
+* performer only Reference(USCorePatientProfile or $USCoreRelatedPerson)
 * performer ^comment = "The individual who performed the opt-out. This SHALL be either the patient themselves (US Core Patient Profile) or the patient's legally recognized personal representative acting on their behalf (US Core RelatedPerson Profile), such as a parent, guardian, or healthcare proxy, consistent with CMS-0057-F and HIPAA."
 * organization 1..1 MS
 * organization only Reference(HRexOrganization)

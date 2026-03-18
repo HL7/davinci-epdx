@@ -83,9 +83,6 @@ Description: "Bulk Member Match Operation enables Payers to match multiple membe
 //   - MatchedMembers      (PDexMemberMatchGroup)
 //   - NonMatchedMembers   (PDexMemberNoMatchGroup)
 //   - ConsentConstrainedMembers (PDexMemberNoMatchGroup)
-* parameter[+].name = #return
-* parameter[=].use = #out
-* parameter[=].min = 1
-* parameter[=].max = “1”
-* parameter[=].type = #string
-* parameter[=].documentation = “The operation is asynchronous. Upon kick-off the server returns HTTP 202 Accepted with a Content-Location header pointing to the bulk data status endpoint. Clients SHALL poll that endpoint until the operation completes. The final output, conforming to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile, contains Group resources for MatchedMembers, NonMatchedMembers, and ConsentConstrainedMembers. The MatchedMembers Group Id is used with the subsequent $davinci-data-export operation.”
+// No inline out parameters are declared because output is delivered via the async
+// completion manifest (ndjson), not in a synchronous response body — consistent
+// with how $davinci-data-export handles its output. See outputProfile above.
