@@ -11,6 +11,7 @@
 %URL value 'https://codesystem.x12.org/005010/%
 %Error from https://tx.fhir.org/r4: Unable to provide support for code system https://x12.org/codes/service-type-codes%
 %No definition could be found for URL value 'https://codesystem.x12.org/external/886%
+%A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded%
 %https://valueset.x12.org/x217/005010%
 
 # FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
@@ -86,6 +87,10 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # References to Experimental CodeSystem
 %Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|1.0.1%
 
+# CPT codes are proprietary AMA codes and cannot be enumerated by the public terminology server
+%The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly%
+%Error from https://tx.fhir.org/r4: Error: The code System "http://www.ama-assn.org/go/cpt" has a grammar%
+
 # Unable to Check HIPPS Codes
 %Unable to check whether the code is in the value set 'http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexPAInstitutionalProcedureCodesVS|2.1.0' because the code system https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes| was not found%
 %A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found, so the code cannot be validated%
@@ -120,6 +125,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 # HL7 Terminology version warnings
 %The ImplementationGuide uses package hl7.terminology.r4#6.3.0 released on 2025-04-30, but the most recent appropriate version is 7.0.1. This reference is getting old and the more recent version should be considered%
+%The ImplementationGuide uses package hl7.terminology.r4#7.1.0 released on%
 
 # Example resources for Provider-Member-Match examples are now included in the IG
 # See input/fsh/ExampleProviderMemberMatchResources.fsh
