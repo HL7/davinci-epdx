@@ -1,0 +1,3 @@
+The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.
+
+§pdex-400: Input parameters **SHALL** conform to the Provider $multi-member-match Request profile. § §pdex-401: Output parameters **SHALL** conform to the Provider $multi-member-match Response profile. §
