@@ -1,357 +1,397 @@
 reference,statement,sourcefile
-§pdex-01,The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims when sharing data using,PDexMedicationDispense.md
-§pdex-02,When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related,PDexProvenance.md
-§pdex-03,A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API.,PDexProvenance.md
-§pdex-04,This **SHOULD** be used to:,PDexProvenance.md
-§pdex-05,Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer.,PDexProvenance.md
-§pdex-06,The [Pdex Provenance](StructureDefinition-pdex-provenance.html) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:,PDexProvenance.md
-§pdex-07,SHOULD be written to a FHIR server and the records assigned new FHIR IDs with references being re-written to maintain,PDexProvenance.md
-§pdex-08,The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities.,PDexProvenance.md
-§pdex-09,The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information.,PDexProvenance.md
-§pdex-10,Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide.,PDexProvenance.md
-§pdex-11,"The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.",PDexProvenance.md
-§pdex-12,The updated Provenance record **SHOULD** be passed on to any downstream entity that requests Provenance information for the records they request.,PDexProvenance.md
-§pdex-13,The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.,PDexProvenance.md
-§pdex-14,The Health Plan **SHOULD** update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data.,PDexProvenance.md
-§pdex-15,The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.,PDexProvenance.md
-§pdex-16,"The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.",PDexProvenance.md
-§pdex-17,The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.,PDexProvenance.md
-§pdex-18,**SHALL** be used to record them.,USCoreAllergyIntolerance.md
-§pdex-19,"Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.",USCoreCarePlan.md
-§pdex-20,Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the,USCoreCareTeam.md
-§pdex-21,For discrete procedures or encounters it **MAY** not be appropriate to create a CareTeam record from the claims information.,USCoreCareTeam.md
-§pdex-22,"Where a Health Plan has access to Laboratory Results and other diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.",USCoreDiagnosticReportforLaboratoryResultsReporting.md
-§pdex-23,"Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.",USCoreDiagnosticReportforReportandNoteExchange.md
-§pdex-24,The Health Plan **SHALL** use the,USCoreDocumentReference.md
-§pdex-25,"Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the",USCoreImmunization.md
-§pdex-26,Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the,USCoreImplantableDevice.md
-§pdex-27,"It identifies which core elements, extensions, vocabularies and value sets **SHALL** be present in the resource when using this profile.",USCoreLaboratoryResultObservation.md
-§pdex-28,**SHALL** be used to record location/facility-specific information.,USCoreLocation.md
-§pdex-29,"Where a Health Plan has access to Medication information, they **SHALL** make the information available using the",USCoreMedication.md
-§pdex-30,"Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the",USCoreMedicationRequest.md
-§pdex-31,**SHOULD** use the,USCoreOrganization.md
-§pdex-32,*SHALL** be used to express a member's demographic information.,USCorePatient.md
-§pdex-33,The code **MB**  **SHALL** be used to identify the member identifier.,USCorePatient.md
-§pdex-34,**SHALL** be used to record information about Practitioners.,USCorePractitioner.md
-§pdex-35,**SHALL** be used to record information about the roles that practitioners take in providing services to their patients.,USCorePractitionerRole.md
-§pdex-36,**SHALL** be used to record a member's health events.,USCoreProcedure.md
-§pdex-37,"In all other cases a payer SHALL create a [PDex Provenance](PDexProvenance.html) profile that identifies their role as a ""Transmitter"" of the information.",USCoreProvenance.md
-§pdex-38,This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR.,cds-hooks.md
-§pdex-39,When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.,cds-hooks.md
-§pdex-40,"Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App **SHOULD** write the records that it is permitted to write to the API.",cds-hooks.md
-§pdex-41,The remaining selected records **SHOULD** be retained in the EMR in the most appropriate form to allow the provider access to the information when needed.,cds-hooks.md
-§pdex-42,"The Payer's CDS Hooks service **SHALL** handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources.",cds-hooks.md
-§pdex-43,"The health plan's CDS Hooks service **SHALL** provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs.",cds-hooks.md
-§pdex-44,The SMART-on-FHIR App that **MAY** be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR.,cds-hooks.md
-§pdex-45,When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.,cds-hooks.md
-§pdex-46,"The remaining selected records **SHALL** be compiled into a FHIR bundle, a PDF **SHALL** be created to provide a human-readable version of the bundle and both documents **SHALL** be attached as a DocumentReference and committed to the patient's record.",cds-hooks.md
-§pdex-47,Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP **SHALL** attempt to write the selected records based upon the options listed below for graceful write degradation.,cds-hooks.md
-§pdex-48,"When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.",cds-hooks.md
-§pdex-49,Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record.,cds-hooks.md
-§pdex-50,Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record.,cds-hooks.md
-§pdex-51,Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record.,cds-hooks.md
-§pdex-52,"Subscriber Id or Member Id, if available, **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.",cds-hooks.md
-§pdex-53,"If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element **SHOULD** be used to uniquely identify the member.",cds-hooks.md
-§pdex-54,Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification.,cds-hooks.md
-§pdex-55,Connection to health plan systems **SHALL** be supported via the following hook:,cds-hooks.md
-§pdex-56,"Any identifiers associated with the coverage for the patient (which may include patient demographics) **SHOULD** be obtained from the FHIR Coverage record for the patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App.",cds-hooks.md
-§pdex-57,PDex supports three common scenarios where CDS Hooks **SHOULD** be used:,cds-hooks.md
-§pdex-58,- The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system,cds-hooks.md
-§pdex-59,- The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API.,cds-hooks.md
-§pdex-60,"The SMART-on-FHIR App **MAY** be configured with default FHIR search queries that can be set by the Clinician, or their organization.",cds-hooks.md
-§pdex-61,"Examples of preset search query parameters **MAY** include, but are not limited to:",cds-hooks.md
-§pdex-62,Any valid FHIR search query for a Patient **MAY** be constructed by the Provider.,cds-hooks.md
-§pdex-63,"As a minimum, the Health Plan's FHIR API **SHALL** limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query.",cds-hooks.md
-§pdex-64,"As a minimum, search of FHIR Resources **SHOULD** support the following query parameters where appropriate for a Resource Type:",cds-hooks.md
-§pdex-65,"Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc.",cds-hooks.md
-§pdex-66,"While it is expected that health plans **MAY** implement their own processes and communication methods to track and act upon a member opting out of Provider Access AI data sharing, the following profile is provided as an example of a Consent resource that could be used to express a member opt-out.",consent.md
-§pdex-67,"This **MAY** be used by a member portal, or consumer app to communicate an opt-out from Provider Access sharing.",consent.md
-§pdex-68,Coverage.identifier **MAY** include a member identifier in the Coverage resource.,coverage.md
-§pdex-69,"Health Plans **SHOULD** map claims and clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}), [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) or [US Core v7.0.0]({{site.data.fhir.ver.uscore7}})FHIR Resources based on R4.",datamapping.md
-§pdex-70,"As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core.",datamapping.md
-§pdex-71,"FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined Health Plans **SHALL** map claims and clinical information to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}).",datamapping.md
-§pdex-72,"Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/).",datamapping.md
-§pdex-73,"If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field.",datamapping.md
-§pdex-74,"For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists.",datamapping.md
-§pdex-75,"Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element.",datamapping.md
-§pdex-76,If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error.,datamapping.md
-§pdex-77,Health Plans SHOULD accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange.,handlingdataprovenance.md
-§pdex-78,Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange.,handlingdataprovenance.md
-§pdex-79,When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data.,handlingdataprovenance.md
-§pdex-80,"A Provenance resource SHOULD be provided with each member-related resource provided by the Health Plan's FHIR API when requested, such as via the _RevInclude parameter.",handlingdataprovenance.md
-§pdex-81,Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following:,index.md
-§pdex-82,Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation.,index.md
-§pdex-83,Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used.,index.md
-§pdex-84,**SHALL** indicates requirements that must be met to be conformant with the specification.,index.md
-§pdex-85,"**SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance.",index.md
-§pdex-86,"**MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.",index.md
-§pdex-87,The CMS Interoperability and Patient Access Rule requires that a member new to a health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.,introduction.md
-§pdex-88,A Member **SHALL** also be able to use APIs to share information with Third Party Applications.,introduction.md
-§pdex-89,"Therefore, for profiles and APIs identified in this IG, the FHIR R4 version **SHALL** be used.",introduction.md
-§pdex-90,"The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the ""Member Health History"" **SHOULD** include the following profiles where payers have data to support the use of those profiles:",introduction.md
-§pdex-91,All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.,introduction.md
-§pdex-92,The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section.,introduction.md
-§pdex-93,The V-Read and History operations **MAY** be supported.,introduction.md
-§pdex-94,"This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide.",introduction.md
-§pdex-95,"For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows:",introduction.md
-§pdex-96,PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement.,introduction.md
-§pdex-97,PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail.,introduction.md
-§pdex-98,In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.,introduction.md
-§pdex-99,"In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results.",introduction.md
-§pdex-100,"When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system.",introduction.md
-§pdex-101,"In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension.",introduction.md
-§pdex-102,PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information.,introduction.md
-§pdex-103,A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory.,introduction.md
-§pdex-104,"When a Member is authorizing sharing of the Member Health History with another Health Plan, or a Third Party Application, via the OAuth 2.0 protocol the Health Plan that is operating the API **SHALL** offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations.",member-authorizedoauth2exchange.md
-§pdex-105,"The member **SHALL** authenticate using credentials they have been issued by, or accepted by the Health Plan.",member-authorizedoauth2exchange.md
-§pdex-106,"After authenticating the Member **SHALL** be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan.",member-authorizedoauth2exchange.md
-§pdex-107,The Authorization process **SHALL** provide the ability for the authorized representative to designate a third-party application that will have access to all information permitted by current state and federal regulations.,member-authorizedoauth2exchange.md
-§pdex-108,After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application.,member-authorizedoauth2exchange.md
-§pdex-109,The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access.,member-authorizedoauth2exchange.md
-§pdex-110,The application owner **MAY** be:,member-authorizedoauth2exchange.md
-§pdex-111,**NOTE:** exportType parameter **SHALL** be populated with a value for all PDex implementations of the $Davinci-data-export-operation.,other-igs.md
-§pdex-112,All data exchanged by Health Plans using the interactions covered in this IG **SHALL** be transformed to FHIR R4 resources.,overview.md
-§pdex-113,Health Plans **MAY** have both data from clinical and claims sources that they store in their Systems of Record.,overview.md
-§pdex-114,The member **SHALL** authenticate using credentials that have been issued by or are recognized and accepted by the Health Plan.,overview.md
-§pdex-115,"After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan Application that has client application credentials registered with the Health Plan.",overview.md
-§pdex-116,The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record.,overview.md
-§pdex-117,Health Plans **SHALL** incorporate provenance records that they receive as part of any exchange of FHIR data.,overview.md
-§pdex-118,"Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged.",overview.md
-§pdex-119,"Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange.",overview.md
-§pdex-120,"In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data.",overview.md
-§pdex-121,Bulk Payer-to-Payer exchange **SHALL** be accomplished by the use of the,payertopayerbulkexchange.md
-§pdex-122,health plans **SHALL** limit the data exchanged to data with a service date no,payertopayerbulkexchange.md
-§pdex-123,**SHALL** be limited to current/active Prior Authorizations in addition to Prior,payertopayerbulkexchange.md
-§pdex-124,**SHALL** be included in the API response.,payertopayerbulkexchange.md
-§pdex-125,Prior Authorizations exchanged via the Payer-to-Payer Exchange API **SHALL** include,payertopayerbulkexchange.md
-§pdex-126,The supporting data **SHALL** include unstructured data used in the prior,payertopayerbulkexchange.md
-§pdex-127,The data available to be returned by the Bulk Payer-to-Payer Exchange API **SHALL**,payertopayerbulkexchange.md
-§pdex-128,"(or New) health plan **SHALL** request permission (i.e., consent) from the Member",payertopayerbulkexchange.md
-§pdex-129,"[Payer-to-Payer (single Member) Exchange](payertopayerexchange.html)), **SHALL** exchange the same data.",payertopayerbulkexchange.md
-§pdex-130,The following data **SHALL** be exchanged with,payertopayerbulkexchange.md
-§pdex-131,The following information **MAY** be exchanged with the prior plan for a member:,payertopayerbulkexchange.md
-§pdex-132,The requesting Payer **SHALL** obtain an access token in accordance with the,payertopayerbulkexchange.md
-§pdex-133,**SHALL** be required to access the secured bulk-member-match operation endpoint.,payertopayerbulkexchange.md
-§pdex-134,**SHALL** be supplied as a **parameter.part** element in the,payertopayerbulkexchange.md
-§pdex-135,Optionally the new health plan **MAY** include the following element in the **parameter.part**,payertopayerbulkexchange.md
-§pdex-136,The PDex multi-member-match and the subsequent davinci-data-export operations **SHALL** be submitted using a HTTP POST.,payertopayerbulkexchange.md
-§pdex-137,The HTTP Header **SHALL** include:,payertopayerbulkexchange.md
-§pdex-138,The [PDex multi-member-match operation](OperationDefinition-BulkMemberMatch.html) SHALL be performed as an,payertopayerbulkexchange.md
-§pdex-139,Implementers SHALL follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4),payertopayerbulkexchange.md
-§pdex-140,"The Bulk Member Match Operation **SHALL** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with.",payertopayerbulkexchange.md
-§pdex-141,The following decision tree illustrates how the Consent determination **SHALL** be made.,payertopayerbulkexchange.md
-§pdex-142,Consent **SHALL** be evaluated at the time of the data request to ensure that the Member,payertopayerbulkexchange.md
-§pdex-143,Implementers **SHALL** support the standard search parameters for group that are specified in the base,payertopayerbulkexchange.md
-§pdex-144,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,payertopayerbulkexchange.md
-§pdex-145,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,payertopayerbulkexchange.md
-§pdex-146,- **SHALL** be permitted to SEARCH /Group.,payertopayerbulkexchange.md
-§pdex-147,The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with theRequesting/New Payer.,payertopayerbulkexchange.md
-§pdex-148,- **MAY** be associated with more than one PDex Member Match group list.,payertopayerbulkexchange.md
-§pdex-149,- **SHALL** be permitted to GET /Group/{id} for any PDex Member Match Group list they are associated with.,payertopayerbulkexchange.md
-§pdex-150,- **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.,payertopayerbulkexchange.md
-§pdex-151,- **SHALL** be permitted to retrieve data with a service date within 5 years of the date of the request for information.,payertopayerbulkexchange.md
-§pdex-152,enables granular resource requests the operation **SHOULD** be used with two scenarios:,payertopayerbulkexchange.md
-§pdex-153,The Data Export operation **SHALL** check the consent status for each member,payertopayerbulkexchange.md
-§pdex-154,Data that **SHALL** be available via the API includes:,payertopayerbulkexchange.md
-§pdex-155,Claims and clinical data **SHALL** be limited to records with a service date,payertopayerbulkexchange.md
-§pdex-156,Prior Authorizations **SHALL** be limited to Active/Current Prior Authorizations and,payertopayerbulkexchange.md
-§pdex-157,For Payer-to-Payer Bulk Exchange the exportType field **SHALL** have the following value:,payertopayerbulkexchange.md
-§pdex-158,request date **SHALL** be returned via the API.,payertopayerbulkexchange.md
-§pdex-159,The _since parameter **SHOULD** be used for resource,payertopayerbulkexchange.md
-§pdex-160,It is expected that Payers **MAY**,payertopayerbulkexchange.md
-§pdex-161,Subsequent requests **MAY** then use _since to limit data to information that is new.,payertopayerbulkexchange.md
-§pdex-162,the date/time **SHALL** be overridden and set to five years before the transaction,payertopayerbulkexchange.md
-§pdex-163,The _until parameter **MAY** be used less frequently.,payertopayerbulkexchange.md
-§pdex-164,The _type parameter **MAY** be used to restrict the resources retrieved by the,payertopayerbulkexchange.md
-§pdex-165,If this parameter is not used all available resources **SHALL** be returned,payertopayerbulkexchange.md
-§pdex-166,The _typeFilter parameter **MAY** be used to further restrict the resources,payertopayerbulkexchange.md
-§pdex-167,"The _typeFilter, if used, **SHALL** comprise one, or more, valid FHIR",payertopayerbulkexchange.md
-§pdex-168,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",payertopayerbulkexchange.md
-§pdex-169,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with,payertopayerbulkexchange.md
-§pdex-170,Requests with requiresAccessToken=true **SHALL** be protected the same way as,payertopayerbulkexchange.md
-§pdex-171,A server **MAY** additionally restrict Bulk Data,payertopayerbulkexchange.md
-§pdex-172,Health plans **SHALL** limit the data returned to,payertopayerbulkexchange.md
-§pdex-173,Clients **SHALL** require OAuth client credentials to enable secure access to read,payertopayerbulkexchange.md
-§pdex-174,**SHALL** be required to access the Group resources and the Bulk export operation.,payertopayerbulkexchange.md
-§pdex-175,Access and Refresh Tokens **SHALL** be issued to support the client requesting and,payertopayerbulkexchange.md
-§pdex-176,Payers **MAY** choose to implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.,payertopayerexchange.md
-§pdex-177,Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members.,payertopayerexchange.md
-§pdex-178,**MAY** be used to exchange data for a SINGLE member.,payertopayerexchange.md
-§pdex-179,Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods.,payertopayerexchange.md
-§pdex-180,Clients wishing to retrieve data **SHOULD** consult,payertopayerexchange.md
-§pdex-181,Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent:,payertopayerexchange.md
-§pdex-182,Health Plans **SHALL** support the $member-match operation.,payertopayerexchange.md
-§pdex-183,Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be,payertopayerexchange.md
-§pdex-184,The receiving payer **MAY** store the Consent record for the member.,payertopayerexchange.md
-§pdex-185,Patient ID **SHALL** NOT be returned in the $member-match response and a 422 status code **SHALL** be,payertopayerexchange.md
-§pdex-186,When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent MAY be:,payertopayerexchange.md
-§pdex-187,Health Plan **SHALL** utilize the access token returned from the Member Access step to,payertopayerexchange.md
-§pdex-188,Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below.,payertopayerexchange.md
-§pdex-189,"Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource,",payertopayerexchange.md
-§pdex-190,Health Plans **SHALL** support the use of the $everything operation.,payertopayerexchange.md
-§pdex-191,"As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the",payertopayerexchange.md
-§pdex-192,The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization,payertopayerexchange.md
-§pdex-193,"Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR",payertopayerexchange.md
-§pdex-194,request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level,payertopayerexchange.md
-§pdex-195,The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access,payertopayerexchange.md
-§pdex-196,"Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly.",payertopayerexchange.md
-§pdex-197,"The Authorization Server **SHOULD** use the Subject ID, confirms that consent for the",payertopayerexchange.md
-§pdex-198,All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-199,Support for this option by Health Plan systems **SHOULD** be provided.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-200,The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-201,"All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-202,The member **SHALL** authenticate using,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-203,"While authenticated to the application or service, the member **MAY** connect to the (source) Health Plan's",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-204,**SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-205,"The Authorization process, in accordance with applicable privacy policy, **SHALL** provide a mechanism to",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-206,After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-207,The scopes of the access token **SHALL** be restricted to the authorizing Member's information and the scopes approved.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-208,Any subsequent Access Token issued based on the Refresh Token **SHALL** be restricted (at least) to the same,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-209,The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-210,Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-211,Payers **SHOULD**:,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-212,"Payers **MAY** choose to exchange unstructured data with Patients and Providers, via their respective APIs,",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
-§pdex-213,"Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and",provider-access-api-v2.md
-§pdex-214,"These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations.",provider-access-api-v2.md
-§pdex-215,"The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-member-opt-out-group.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing.",provider-access-api-v2.md
-§pdex-216,If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List.,provider-access-api-v2.md
-§pdex-217,The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API.,provider-access-api-v2.md
-§pdex-218,"Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-member-provider-treatment-relationship-group.html) that has the member as the ""key"" to the list (via a characteristic containing the Patient ID).",provider-access-api-v2.md
-§pdex-219,"The providers **SHALL** be represented as the cohort, or subjects in the list (as group members).",provider-access-api-v2.md
-§pdex-220,This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member.,provider-access-api-v2.md
-§pdex-221,The payer **MAY** apply their own rules for determining a Treatment Relationship.,provider-access-api-v2.md
-§pdex-222,"The Member Opt-Out List and the Member-Provider TRLs **SHALL** be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html).",provider-access-api-v2.md
-§pdex-223,"- The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship.",provider-access-api-v2.md
-§pdex-224,- Each member request **SHALL** contain:,provider-access-api-v2.md
-§pdex-225,- The CoverageToMatch **SHALL** contain the Member's coverage information.,provider-access-api-v2.md
-§pdex-226,- The Treatment attestation **SHALL** be submitted as a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) in each member request.,provider-access-api-v2.md
-§pdex-227,- The health plan **SHALL** evaluate the request and determine:,provider-access-api-v2.md
-§pdex-228,"- When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) resource conforming to the matched members response.",provider-access-api-v2.md
-§pdex-229,The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation.,provider-access-api-v2.md
-§pdex-230,"- The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members.",provider-access-api-v2.md
-§pdex-231,"Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group.",provider-access-api-v2.md
-§pdex-232,- The matched group resource **MAY** be a short-lived group.,provider-access-api-v2.md
-§pdex-233,"- Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process.",provider-access-api-v2.md
-§pdex-234,- Providers **SHALL** be able to search and retrieve the contents of the Matched Member Group resource.,provider-access-api-v2.md
-§pdex-235,- Providers **SHALL** assume that the Matched Group is short-lived and subsequent requests for member data **SHALL** be initiated by performing a member match operation to retrieve an updated Matched Group List.,provider-access-api-v2.md
-§pdex-236,"It is recommended that, at a minimum, health plans **SHOULD** create Member-Provider TRLs using the NPI data for",provider-access-api-v2.md
-§pdex-237,Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL.,provider-access-api-v2.md
-§pdex-238,A health plan member **SHALL** be entitled to Opt-Out from their data being shared via the Provider Access API.,provider-access-api-v2.md
-§pdex-239,PDex defines a consent profile that **MAY** be used to enable a member to deny sharing via the Provider Access API.,provider-access-api-v2.md
-§pdex-240,A member **SHALL** be able to update their preference,provider-access-api-v2.md
-§pdex-241,"When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query.",provider-access-api-v2.md
-§pdex-242,If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List.,provider-access-api-v2.md
-§pdex-243,Health Plans **MAY** implement the pdex-provider-consent to enable a member to express their sharing preference.,provider-access-api-v2.md
-§pdex-244,"If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-member-provider-treatment-relationship-group.html) that is used to request a $davinci-data-export operation.",provider-access-api-v2.md
-§pdex-245,Members **SHALL** have the ability to opt-out of data sharing with providers.,provider-access-api-v2.md
-§pdex-246,- **MAY** use claims data as a source to identify existing Treatment Relationships.,provider-access-api-v2.md
-§pdex-247,- **MAY** utilize their own rules for determining a Treatment Relationship between members and Providers.,provider-access-api-v2.md
-§pdex-248,- **MAY** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.,provider-access-api-v2.md
-§pdex-249,**SHOULD** be supported:,provider-access-api-v2.md
-§pdex-250,Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.,provider-access-api-v2.md
-§pdex-251,Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.,provider-access-api-v2.md
-§pdex-252,The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTPS POST.,provider-access-api-v2.md
-§pdex-253,The HTTPS Header **SHALL** include:,provider-access-api-v2.md
-§pdex-254,The Payer **SHALL** be responsible for managing and maintaining the Treatment Relationship between,provider-access-api-v2.md
-§pdex-255,The payer **SHALL** take account of members that have chosen to Opt-Out of,provider-access-api-v2.md
-§pdex-256,Those Opted-Out members **SHALL** be included in a Member Opted-Out List.,provider-access-api-v2.md
-§pdex-257,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api-v2.md
-§pdex-258,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api-v2.md
-§pdex-259,- **SHALL** be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation.,provider-access-api-v2.md
-§pdex-260,- **SHALL** be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation.,provider-access-api-v2.md
-§pdex-261,Data **MAY** be constrained by:,provider-access-api-v2.md
-§pdex-262,The Data Export operation **SHALL** check the consent status for each member at the time of execution.,provider-access-api-v2.md
-§pdex-263,If the patient parameter is not provided data **SHALL** be retrieved for all members,provider-access-api-v2.md
-§pdex-264,If the patient parameter is provided the operation **SHALL** ignore references,provider-access-api-v2.md
-§pdex-265,The exportType parameter **SHALL** have one of the following values:,provider-access-api-v2.md
-§pdex-266,The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is,provider-access-api-v2.md
-§pdex-267,The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is,provider-access-api-v2.md
-§pdex-268,The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider,provider-access-api-v2.md
-§pdex-269,These values **SHALL**,provider-access-api-v2.md
-§pdex-270,The _since parameter **SHOULD** be used for resource requests when the full history is not,provider-access-api-v2.md
-§pdex-271,It is expected that providers **MAY** first request data for members without,provider-access-api-v2.md
-§pdex-272,Subsequent requests **MAY** then use _since,provider-access-api-v2.md
-§pdex-273,The _until parameter **MAY** be used less frequently.,provider-access-api-v2.md
-§pdex-274,The _type parameter **MAY** be used to restrict the resources retrieved by the Provider.,provider-access-api-v2.md
-§pdex-275,"parameter is not used all available resources **SHALL** be returned by the Payer, subject to",provider-access-api-v2.md
-§pdex-276,When _type is used the export operation **SHALL** record the content of the _type parameter in the,provider-access-api-v2.md
-§pdex-277,[lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction,provider-access-api-v2.md
-§pdex-278,The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the,provider-access-api-v2.md
-§pdex-279,"used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource",provider-access-api-v2.md
-§pdex-280,When _typeFilter is used the export operation **SHALL** record the content of the _typeFilter,provider-access-api-v2.md
-§pdex-281,[lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction,provider-access-api-v2.md
-§pdex-282,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",provider-access-api-v2.md
-§pdex-283,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services,provider-access-api-v2.md
-§pdex-284,"Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request,",provider-access-api-v2.md
-§pdex-285,A server **MAY**,provider-access-api-v2.md
-§pdex-286,Health plans **SHALL** limit the data returned to,provider-access-api-v2.md
-§pdex-287,Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group,provider-access-api-v2.md
-§pdex-288,Access Tokens **SHALL** be required to access the Group,provider-access-api-v2.md
-§pdex-289,Access and Refresh Tokens **SHOULD** be issued to support,provider-access-api-v2.md
-§pdex-290,"regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and",provider-access-api.md
-§pdex-291,Health plans **MAY** choose to construct alternative or additional Attribution,provider-access-api.md
-§pdex-292,Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference.,provider-access-api.md
-§pdex-293,Members **SHALL** have the ability to opt-out of data sharing with providers.,provider-access-api.md
-§pdex-294,Attribution Lists **SHOULD** be,provider-access-api.md
-§pdex-295,A health plan **MAY** adopt their own methodology for managing and maintaining,provider-access-api.md
-§pdex-296,- **MAY** use claims data as a source to identify existing treatment relationships.,provider-access-api.md
-§pdex-297,- **MAY** utilize their own rules for determining the attribution of members to Providers.,provider-access-api.md
-§pdex-298,- **SHOULD** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.,provider-access-api.md
-§pdex-299,Attribution lists **SHALL** be searchable via a secure RESTful API.,provider-access-api.md
-§pdex-300,**SHOULD** be supported:,provider-access-api.md
-§pdex-301,Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.,provider-access-api.md
-§pdex-302,Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.,provider-access-api.md
-§pdex-303,The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTP POST.,provider-access-api.md
-§pdex-304,The HTTP Header **SHALL** include:,provider-access-api.md
-§pdex-305,The Payer **SHALL** be responsible for managing and maintaining the attribution list that assigns,provider-access-api.md
-§pdex-306,The payer **SHALL** take account of members that have chosen to Opt-out of,provider-access-api.md
-§pdex-307,Those opted-out members **SHALL** be omitted from the Provider,provider-access-api.md
-§pdex-308,The Payer **MAY** choose to maintain a separate Group resource for a Provider,provider-access-api.md
-§pdex-309,A provider **MAY** have more than one list.,provider-access-api.md
-§pdex-310,The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the,provider-access-api.md
-§pdex-311,By recording this quantity it **MAY** help providers reconcile their attribution lists,provider-access-api.md
-§pdex-312,elements **SHOULD** consider implementing their own independent data tracking capabilities to,provider-access-api.md
-§pdex-313,These extensions **SHALL** be updated by the [$davinci-data-export]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) PDex Use Case Operation.,provider-access-api.md
-§pdex-314,Implementers **SHALL** support the standard search parameters for group that are specified in the base,provider-access-api.md
-§pdex-315,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api.md
-§pdex-316,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api.md
-§pdex-317,- **SHALL** be permitted to SEARCH /Group.,provider-access-api.md
-§pdex-318,The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with the Provider Representative's account.,provider-access-api.md
-§pdex-319,- **MAY** be associated with more than one attribution group list.,provider-access-api.md
-§pdex-320,- **SHALL** be permitted to GET /Group/{id} for any Attribution Group list they are associated with.,provider-access-api.md
-§pdex-321,- **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.,provider-access-api.md
-§pdex-322,The Data Export operation **SHALL** check the consent status for each member at the time,provider-access-api.md
-§pdex-323,If the patient parameter is not provided data **SHALL** be retrieved for all members,provider-access-api.md
-§pdex-324,If the patient parameter is provided the operation **SHALL** ignore references,provider-access-api.md
-§pdex-325,The exportType parameter **SHALL** have one of the following values:,provider-access-api.md
-§pdex-326,The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is,provider-access-api.md
-§pdex-327,The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is,provider-access-api.md
-§pdex-328,The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider,provider-access-api.md
-§pdex-329,These values **SHALL**,provider-access-api.md
-§pdex-330,The _since parameter **SHOULD** be used for resource requests when the full history is not,provider-access-api.md
-§pdex-331,It is expected that providers **MAY** first request data for members without,provider-access-api.md
-§pdex-332,Subsequent requests **MAY** then use _since,provider-access-api.md
-§pdex-333,The _until parameter **MAY** be used less frequently.,provider-access-api.md
-§pdex-334,The _type parameter **MAY** be used to restrict the resources retrieved by the Provider.,provider-access-api.md
-§pdex-335,"parameter is not used all available resources **SHALL** be returned by the Payer, subject to",provider-access-api.md
-§pdex-336,When _type is used the export operation **SHALL** record the content of the _type parameter in the,provider-access-api.md
-§pdex-337,[lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction,provider-access-api.md
-§pdex-338,The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the,provider-access-api.md
-§pdex-339,"used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource",provider-access-api.md
-§pdex-340,When _typeFilter is used the export operation **SHALL** record the content of the _typeFilter,provider-access-api.md
-§pdex-341,[lastTransmitted](StructureDefinition-base-ext-last-transmission.html) **SHALL** be recorded with either the Date/Time of the Export Transaction,provider-access-api.md
-§pdex-342,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",provider-access-api.md
-§pdex-343,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services,provider-access-api.md
-§pdex-344,"Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request,",provider-access-api.md
-§pdex-345,A server **MAY**,provider-access-api.md
-§pdex-346,Health plans **SHALL** limit the data returned to,provider-access-api.md
-§pdex-347,Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group,provider-access-api.md
-§pdex-348,Access Tokens **SHALL** be required to access the Group,provider-access-api.md
-§pdex-349,Access and Refresh Tokens **SHOULD** be issued to support,provider-access-api.md
-§pdex-350,When providers are building a health history for a new patient the information they are interested in **MAY** include:,usecasescenarios.md
-§pdex-351,"For example, as part of an event or episode of care the provider **MAY** be interested in the following types of data:",usecasescenarios.md
-§pdex-352,These types of data **SHALL** be mapped to FHIR clinical resources as follows:,usecasescenarios.md
-§pdex-353,"A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources.",usecasescenarios.md
-§pdex-354,"A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources.",usecasescenarios.md
-§pdex-355,"If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource **SHALL** use the [vread](https://www.hl7.org/fhir/http.html#vread) format of reference:",usecasescenarios.md
-§pdex-356,"In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system.",workflowexamples.md
+§pdex-01,perform this match operation multiple times and **SHOULD** only be granted access to data for the matched,FHIRAccessPermissions.md
+§pdex-02,The  [Da Vinci PDex MedicationDispense profile](StructureDefinition-pdex-medicationdispense.html)  **SHALL** be used to record a member's prescription drug claims when sharing data using,PDexMedicationDispense.md
+§pdex-03,to exchange data the [US Core MedicationDispense profile]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-medicationdispense.html) **SHOULD** be used.,PDexMedicationDispense.md
+§pdex-04,When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related Provenance record(s) to reflect the original source.,PDexProvenance.md
+§pdex-05,A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API.,PDexProvenance.md
+§pdex-06,This **SHOULD** be used to:,PDexProvenance.md
+§pdex-07,Provenance.recorded value **SHOULD** be the date/time when the data is received by the payer.,PDexProvenance.md
+§pdex-08,The [Pdex Provenance](StructureDefinition-pdex-provenance.html) record **SHOULD** be populated with the following essential fields (Must Support or Cardinality greater than 0..*) as follows:,PDexProvenance.md
+§pdex-09,**SHOULD** be written to a FHIR server and the records assigned new FHIR IDs with references being re-written to maintain referential integrity.,PDexProvenance.md
+§pdex-10,The Health Plan **SHALL** accept and maintain Provenance information associated with information received from contributing entities.,PDexProvenance.md
+§pdex-11,The Health Plan **SHALL** add Provenance record(s) as necessary to document relevant actions taken as the current custodian of the information.,PDexProvenance.md
+§pdex-12,Provenance information **SHALL** be available for any information requested by an external entity as part of exchanges conformant to this implementation guide.,PDexProvenance.md
+§pdex-13,This guide **SHALL** define extensions to the provenance value sets as required to document the provenance of the information exchange.,PDexProvenance.md
+§pdex-14,"The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to become the custodian of the data.",PDexProvenance.md
+§pdex-15,The updated Provenance record **SHOULD** be passed on to any downstream entity that requests Provenance information for the records they request.,PDexProvenance.md
+§pdex-16,The Health Plan **SHOULD** store the Provenance information and maintain the correlation or links to the records the Provenance Record is documenting.,PDexProvenance.md
+§pdex-17,The Health Plan **SHOULD** update the Provenance records to add information covering the identity of the health plan and the action taken to become the custodian of the data.,PDexProvenance.md
+§pdex-18,The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.,PDexProvenance.md
+§pdex-19,"The Health Plan **SHOULD** create a Provenance Record documenting the source of the records, the identity of the health plan and the action taken to transform the data to FHIR Clinical Resources.",PDexProvenance.md
+§pdex-20,The updated Provenance record **SHOULD** be passed on to any downstream entity requesting the associated records.,PDexProvenance.md
+§pdex-21,**SHALL** be used to record them.,USCoreAllergyIntolerance.md
+§pdex-22,"Where a Health Plan has access to Care Plan information for a member, they **SHALL** make the information available using the [US Core CarePlan](http://hl7.org/fhir/us/core/StructureDefinition-us-core-careplan.html) resource.",USCoreCarePlan.md
+§pdex-23,Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the,USCoreCareTeam.md
+§pdex-24,For discrete procedures or encounters it **MAY** not be appropriate to create a CareTeam record from the claims information.,USCoreCareTeam.md
+§pdex-25,"Where a Health Plan has access to Laboratory Results and other diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Laboratory Results Reporting](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) resource.",USCoreDiagnosticReportforLaboratoryResultsReporting.md
+§pdex-26,"Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource.",USCoreDiagnosticReportforReportandNoteExchange.md
+§pdex-27,The Health Plan **SHALL** use the,USCoreDocumentReference.md
+§pdex-28,"Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the",USCoreImmunization.md
+§pdex-29,Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the,USCoreImplantableDevice.md
+§pdex-30,"It identifies which core elements, extensions, vocabularies and value sets **SHALL** be present in the resource when using this profile.",USCoreLaboratoryResultObservation.md
+§pdex-31,**SHALL** be used to record location/facility-specific information.,USCoreLocation.md
+§pdex-32,"Where a Health Plan has access to Medication information, they **SHALL** make the information available using the",USCoreMedication.md
+§pdex-33,"Where a Health Plan has access to Prescription information, they **SHALL** make the information available using the",USCoreMedicationRequest.md
+§pdex-34,**SHOULD** use the,USCoreOrganization.md
+§pdex-35,*SHALL** be used to express a member's demographic information.,USCorePatient.md
+§pdex-36,The code **MB**  **SHALL** be used to identify the member identifier.,USCorePatient.md
+§pdex-37,**SHALL** be used to record information about Practitioners.,USCorePractitioner.md
+§pdex-38,**SHALL** be used to record information about the roles that practitioners take in providing services to their patients.,USCorePractitionerRole.md
+§pdex-39,**SHALL** be used to record a member's health events.,USCoreProcedure.md
+§pdex-40,Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures.,USCoreProcedure.md
+§pdex-41,"Medications, facility charges and supplies **SHOULD NOT** be created as procedure records.",USCoreProcedure.md
+§pdex-42,"In all other cases a payer **SHALL** create a [PDex Provenance](PDexProvenance.html) profile that identifies their role as a ""Transmitter"" of the information.",USCoreProvenance.md
+§pdex-43,This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR.,cds-hooks.md
+§pdex-44,When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.,cds-hooks.md
+§pdex-45,"Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App **SHOULD** write the records that it is permitted to write to the API.",cds-hooks.md
+§pdex-46,The remaining selected records **SHOULD** be retained in the EMR in the most appropriate form to allow the provider access to the information when needed.,cds-hooks.md
+§pdex-47,"The Payer's CDS Hooks service **SHALL** handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources.",cds-hooks.md
+§pdex-48,"The health plan's CDS Hooks service **SHALL** provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs.",cds-hooks.md
+§pdex-49,The SMART-on-FHIR App that **MAY** be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR.,cds-hooks.md
+§pdex-50,When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API.,cds-hooks.md
+§pdex-51,"The remaining selected records **SHALL** be compiled into a FHIR bundle, a PDF **SHALL** be created to provide a human-readable version of the bundle and both documents **SHALL** be attached as a DocumentReference and committed to the patient's record.",cds-hooks.md
+§pdex-52,Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP **SHALL** attempt to write the selected records based upon the options listed below for graceful write degradation.,cds-hooks.md
+§pdex-53,"When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record.",cds-hooks.md
+§pdex-54,Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record.,cds-hooks.md
+§pdex-55,Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record.,cds-hooks.md
+§pdex-56,Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record.,cds-hooks.md
+§pdex-57,"Subscriber Id or Member Id, if available, **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App.",cds-hooks.md
+§pdex-58,"If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element **SHOULD** be used to uniquely identify the member.",cds-hooks.md
+§pdex-59,Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification.,cds-hooks.md
+§pdex-60,Connection to health plan systems **SHALL** be supported via the following hook:,cds-hooks.md
+§pdex-61,"Any identifiers associated with the coverage for the patient (which may include patient demographics) **SHOULD** be obtained from the FHIR Coverage record for the patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App.",cds-hooks.md
+§pdex-62,PDex supports three common scenarios where CDS Hooks **SHOULD** be used:,cds-hooks.md
+§pdex-63,- The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system,cds-hooks.md
+§pdex-64,- The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API.,cds-hooks.md
+§pdex-65,"The SMART-on-FHIR App **MAY** be configured with default FHIR search queries that can be set by the Clinician, or their organization.",cds-hooks.md
+§pdex-66,"Examples of preset search query parameters **MAY** include, but are not limited to:",cds-hooks.md
+§pdex-67,Any valid FHIR search query for a Patient **MAY** be constructed by the Provider.,cds-hooks.md
+§pdex-68,"As a minimum, the Health Plan's FHIR API **SHALL** limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query.",cds-hooks.md
+§pdex-69,"As a minimum, search of FHIR Resources **SHOULD** support the following query parameters where appropriate for a Resource Type:",cds-hooks.md
+§pdex-70,"Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc.",cds-hooks.md
+§pdex-71,"While it is expected that health plans **MAY** implement their own processes and communication methods to track and act upon a member opting out of Provider Access API data sharing, the following profile is provided as an example of a Consent resource that could be used to express a member opt-out.",consent.md
+§pdex-72,"This **MAY** be used by a member portal, or consumer app to communicate an opt-out from Provider Access sharing.",consent.md
+§pdex-73,Coverage.identifier **MAY** include a member identifier in the Coverage resource.,coverage.md
+§pdex-74,"Health Plans **SHALL** map clinical information for a member to [US Core v3.1.1]({{site.data.fhir.ver.uscore3}}), [US Core v6.1.0]({{site.data.fhir.ver.uscore6}}) or [US Core v7.0.0]({{site.data.fhir.ver.uscore7}}) FHIR Resources based on R4.",datamapping.md
+§pdex-75,Health Plans **SHALL** map claims and encounter data to the non-financial ExplanationOfBenefit BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG]({{site.data.fhir.ver.carinbb}}).,datamapping.md
+§pdex-76,Health Plans **SHALL** map prior authorization information to the [PDex Prior Authorization](PDexPriorAuthorization.html) profile.,datamapping.md
+§pdex-77,"As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core.",datamapping.md
+§pdex-78,"FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}).",datamapping.md
+§pdex-79,"Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/).",datamapping.md
+§pdex-80,"If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field.",datamapping.md
+§pdex-81,"For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists.",datamapping.md
+§pdex-82,"Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element.",datamapping.md
+§pdex-83,If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error.,datamapping.md
+§pdex-84,Health Plans SHOULD accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange.,handlingdataprovenance.md
+§pdex-85,Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange.,handlingdataprovenance.md
+§pdex-86,When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data.,handlingdataprovenance.md
+§pdex-87,"A Provenance resource SHOULD be provided with each member-related resource provided by the Health Plan's FHIR API when requested, such as via the _RevInclude parameter.",handlingdataprovenance.md
+§pdex-88,Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following:,index.md
+§pdex-89,Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation.,index.md
+§pdex-90,Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used.,index.md
+§pdex-91,**SHALL** indicates requirements that must be met to be conformant with the specification.,index.md
+§pdex-92,"**SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance.",index.md
+§pdex-93,"**MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption.",index.md
+§pdex-94,The CMS Interoperability and Patient Access Rule requires that a member new to a health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan.,introduction.md
+§pdex-95,A Member **SHALL** also be able to use APIs to share information with Third Party Applications.,introduction.md
+§pdex-96,"Therefore, for profiles and APIs identified in this IG, the FHIR R4 version **SHALL** be used.",introduction.md
+§pdex-97,"The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the ""Member Health History"" **SHOULD** include the following profiles where payers have data to support the use of those profiles:",introduction.md
+§pdex-98,All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.,introduction.md
+§pdex-99,The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section.,introduction.md
+§pdex-100,The V-Read and History operations **MAY** be supported.,introduction.md
+§pdex-101,"This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide.",introduction.md
+§pdex-102,"For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows:",introduction.md
+§pdex-103,PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement.,introduction.md
+§pdex-104,PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail.,introduction.md
+§pdex-105,In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes.,introduction.md
+§pdex-106,"In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results.",introduction.md
+§pdex-107,"When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system.",introduction.md
+§pdex-108,"In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension.",introduction.md
+§pdex-109,PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information.,introduction.md
+§pdex-110,A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory.,introduction.md
+§pdex-111,"When a Member is authorizing sharing of the Member Health History with another Health Plan, or a Third Party Application, via the OAuth 2.0 protocol the Health Plan that is operating the API **SHALL** offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations.",member-authorizedoauth2exchange.md
+§pdex-112,"The member **SHALL** authenticate using credentials they have been issued by, or accepted by the Health Plan.",member-authorizedoauth2exchange.md
+§pdex-113,"After authenticating the Member **SHALL** be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan.",member-authorizedoauth2exchange.md
+§pdex-114,The Authorization process **SHALL** provide the ability for the authorized representative to designate a third-party application that will have access to all information permitted by current state and federal regulations.,member-authorizedoauth2exchange.md
+§pdex-115,After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be returned to the requesting application.,member-authorizedoauth2exchange.md
+§pdex-116,The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access.,member-authorizedoauth2exchange.md
+§pdex-117,The application owner **MAY** be:,member-authorizedoauth2exchange.md
+§pdex-118,**NOTE:** exportType parameter **SHALL** be populated with a value for all PDex implementations of the $Davinci-data-export-operation.,other-igs.md
+§pdex-119,All data exchanged by Health Plans using the interactions covered in this IG **SHALL** be transformed to FHIR R4 resources.,overview.md
+§pdex-120,Health Plans **MAY** have both data from clinical and claims sources that they store in their Systems of Record.,overview.md
+§pdex-121,"Payers **SHOULD** look at the data they maintain and ensure that information relevant to the member’s care and treatment over time is accurately represented – in this way, it may not be appropriate to include a single data element only once across multiple events.",overview.md
+§pdex-122,The member **SHALL** authenticate using credentials that have been issued by or are recognized and accepted by the Health Plan.,overview.md
+§pdex-123,"After authenticating the Member **SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with the Third Party, or new Health Plan Application that has client application credentials registered with the Health Plan.",overview.md
+§pdex-124,The use of the Bulk FHIR specification for transmission of member data **SHALL** honor jurisdictional and personal privacy restrictions that are relevant to a member's health record.,overview.md
+§pdex-125,Health Plans **SHOULD** accept and retain provenance records that they receive as part of any exchange of FHIR data.,overview.md
+§pdex-126,"Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged.",overview.md
+§pdex-127,"Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange.",overview.md
+§pdex-128,"In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data.",overview.md
+§pdex-129,Bulk Payer-to-Payer exchange **SHALL** be accomplished by the use of the,payertopayerbulkexchange.md
+§pdex-130,health plans **SHALL** limit the data exchanged to data with a service date no,payertopayerbulkexchange.md
+§pdex-131,**SHALL** be limited to current/active Prior Authorizations in addition to Prior,payertopayerbulkexchange.md
+§pdex-132,**SHALL** be included in the API response.,payertopayerbulkexchange.md
+§pdex-133,Prior Authorizations exchanged via the Payer-to-Payer Exchange API **SHALL** include,payertopayerbulkexchange.md
+§pdex-134,The supporting data **SHALL** include unstructured data used in the prior,payertopayerbulkexchange.md
+§pdex-135,The data available to be returned by the Bulk Payer-to-Payer Exchange API **SHALL**,payertopayerbulkexchange.md
+§pdex-136,"This operation **SHALL** run asynchronously and upon completion returns Group resources categorizing members as matched, non-matched, or consent-constrained.",payertopayerbulkexchange.md
+§pdex-137,Both operations follow the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html): each kick-off request returns an HTTP 202 Accepted response with a `Content-Location` header pointing to a status endpoint that clients **SHALL** poll to retrieve the completed result.,payertopayerbulkexchange.md
+§pdex-138,"(or New) health plan **SHALL** request permission (i.e., consent) from the Member",payertopayerbulkexchange.md
+§pdex-139,"[Payer-to-Payer (single Member) Exchange](payertopayerexchange.html)), **SHALL** exchange the same data.",payertopayerbulkexchange.md
+§pdex-140,The following data **SHALL** be exchanged with,payertopayerbulkexchange.md
+§pdex-141,The following information **MAY** be exchanged with the prior plan for a member:,payertopayerbulkexchange.md
+§pdex-142,The requesting Payer **SHALL** obtain an access token in accordance with the,payertopayerbulkexchange.md
+§pdex-143,**SHALL** be required to access the secured bulk-member-match operation endpoint.,payertopayerbulkexchange.md
+§pdex-144,**SHALL** be supplied as a **parameter.part** element in the,payertopayerbulkexchange.md
+§pdex-145,Optionally the new health plan **MAY** include the following element in the **parameter.part**,payertopayerbulkexchange.md
+§pdex-146,The PDex [$multi-member-match operation](OperationDefinition-BulkMemberMatch.html) **SHALL** be submitted using a HTTP POST.,payertopayerbulkexchange.md
+§pdex-147,The HTTP Header **SHALL** include:,payertopayerbulkexchange.md
+§pdex-148,"The $multi-member-match operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4.",payertopayerbulkexchange.md
+§pdex-149,"Implementers **SHALL** follow the guidance provided in the [Bulk Data Status Request section](https://hl7.org/fhir/R4/async.html#3.1.6.4) of the Async Request Pattern.pdex-139a: The subsequent [$davinci-data-export operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** also be submitted using a HTTP POST and **SHALL** be performed as an asynchronous Bulk Data export, per the [FHIR Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/STU2/).",payertopayerbulkexchange.md
+§pdex-150,"This contained Patient resource **SHALL** be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource `id` supplied by the requester.",payertopayerbulkexchange.md
+§pdex-151,"Responders **SHALL NOT** abridge, modify, or substitute the submitted Patient resource.",payertopayerbulkexchange.md
+§pdex-152,The contained Patient **SHALL** retain the original `id` and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted.,payertopayerbulkexchange.md
+§pdex-153,In this case the responder **SHALL** also include the submitted `CoverageToMatch` resource as a contained Coverage in the Group and populate the `matchedCoverage` (or `nonMatchedCoverage`) extension on `member.entity` to reference it.,payertopayerbulkexchange.md
+§pdex-154,"The Bulk Member Match Operation **SHALL** evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with.",payertopayerbulkexchange.md
+§pdex-155,The following decision tree illustrates how the Consent determination **SHALL** be made.,payertopayerbulkexchange.md
+§pdex-156,Consent **SHALL** be evaluated at the time of the data request to ensure that the Member,payertopayerbulkexchange.md
+§pdex-157,Implementers **SHALL** support the standard search parameters for group that are specified in the base,payertopayerbulkexchange.md
+§pdex-158,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,payertopayerbulkexchange.md
+§pdex-159,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,payertopayerbulkexchange.md
+§pdex-160,- **SHALL** be permitted to SEARCH /Group.,payertopayerbulkexchange.md
+§pdex-161,The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with theRequesting/New Payer.,payertopayerbulkexchange.md
+§pdex-162,- **MAY** be associated with more than one PDex Member Match group list.,payertopayerbulkexchange.md
+§pdex-163,- **SHALL** be permitted to GET /Group/{id} for any PDex Member Match Group list they are associated with.,payertopayerbulkexchange.md
+§pdex-164,- **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.,payertopayerbulkexchange.md
+§pdex-165,- **SHALL** be permitted to retrieve data with a service date within 5 years of the date of the request for information.,payertopayerbulkexchange.md
+§pdex-166,enables granular resource requests the operation **SHOULD** be used with two scenarios:,payertopayerbulkexchange.md
+§pdex-167,The Data Export operation **SHALL** check the consent status for each member,payertopayerbulkexchange.md
+§pdex-168,Data that **SHALL** be available via the API includes:,payertopayerbulkexchange.md
+§pdex-169,Claims and clinical data **SHALL** be limited to records with a service date,payertopayerbulkexchange.md
+§pdex-170,Prior Authorizations **SHALL** be limited to Active/Current Prior Authorizations and,payertopayerbulkexchange.md
+§pdex-171,For Payer-to-Payer Bulk Exchange the exportType field **SHALL** have the following value:,payertopayerbulkexchange.md
+§pdex-172,request date **SHALL** be returned via the API.,payertopayerbulkexchange.md
+§pdex-173,The _since parameter **SHOULD** be used for resource,payertopayerbulkexchange.md
+§pdex-174,It is expected that Payers **MAY**,payertopayerbulkexchange.md
+§pdex-175,Subsequent requests **MAY** then use _since to limit data to information that is new.,payertopayerbulkexchange.md
+§pdex-176,the date/time **SHALL** be overridden and set to five years before the transaction,payertopayerbulkexchange.md
+§pdex-177,The _until parameter **MAY** be used less frequently.,payertopayerbulkexchange.md
+§pdex-178,The _type parameter **MAY** be used to restrict the resources retrieved by the,payertopayerbulkexchange.md
+§pdex-179,If this parameter is not used all available resources **SHALL** be returned,payertopayerbulkexchange.md
+§pdex-180,The _typeFilter parameter **MAY** be used to further restrict the resources,payertopayerbulkexchange.md
+§pdex-181,"The _typeFilter, if used, **SHALL** comprise one, or more, valid FHIR",payertopayerbulkexchange.md
+§pdex-182,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",payertopayerbulkexchange.md
+§pdex-183,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with,payertopayerbulkexchange.md
+§pdex-184,Requests with requiresAccessToken=true **SHALL** be protected the same way as,payertopayerbulkexchange.md
+§pdex-185,A server **MAY** additionally restrict Bulk Data,payertopayerbulkexchange.md
+§pdex-186,Health plans **SHALL** limit the data returned to,payertopayerbulkexchange.md
+§pdex-187,Clients **SHALL** require OAuth client credentials to enable secure access to read,payertopayerbulkexchange.md
+§pdex-188,**SHALL** be required to access the Group resources and the Bulk export operation.,payertopayerbulkexchange.md
+§pdex-189,Access and Refresh Tokens **SHALL** be issued to support the client requesting and,payertopayerbulkexchange.md
+§pdex-190,Exchange **SHOULD** be registered in accordance with the approach defined in the,payertopayerbulkexchange.md
+§pdex-191,Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG.,payertopayerexchange.md
+§pdex-192,Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.html) page to exchange information for multiple members.,payertopayerexchange.md
+§pdex-193,**MAY** be used to exchange data for a SINGLE member.,payertopayerexchange.md
+§pdex-194,Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods.,payertopayerexchange.md
+§pdex-195,Clients wishing to retrieve data **SHOULD** consult,payertopayerexchange.md
+§pdex-196,Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent:,payertopayerexchange.md
+§pdex-197,Health Plans **SHALL** support the $member-match operation.,payertopayerexchange.md
+§pdex-198,A `MemberId` (Patient FHIR ID) **SHOULD** also be returned where available.,payertopayerexchange.md
+§pdex-199,"When a member is successfully matched and consent can be complied with, the responding payer **SHALL** return a `MemberIdentifier` and **SHOULD** also return a `MemberId` (Patient FHIR ID) in the $member-match response.",payertopayerexchange.md
+§pdex-200,"Implementers **SHALL** be prepared to handle $member-match responses that contain only a `MemberIdentifier`, or both a `MemberIdentifier` and a `MemberId`.",payertopayerexchange.md
+§pdex-201,When a `MemberId` (Patient FHIR ID) is present in the response it **SHOULD** be used as the subject for the subsequent OAuth2.0 access token request.,payertopayerexchange.md
+§pdex-202,"Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token.",payertopayerexchange.md
+§pdex-203,Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be,payertopayerexchange.md
+§pdex-204,The receiving payer **MAY** store the Consent record for the member.,payertopayerexchange.md
+§pdex-205,"If a Consent is provided by an Authorized Representative, the person's demographic details **SHOULD** be included as",payertopayerexchange.md
+§pdex-206,"Representative **SHOULD** be identified as an actor with an appropriate SecurityRoleType, such as ""DPOWATT"",",payertopayerexchange.md
+§pdex-207,"If the receiving payer matches to a unique member but is unable to comply with the consent request, a Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be",payertopayerexchange.md
+§pdex-208,When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent **MAY** be:,payertopayerexchange.md
+§pdex-209,Health Plan **SHALL** utilize the access token returned from the Member Access step to,payertopayerexchange.md
+§pdex-210,Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below.,payertopayerexchange.md
+§pdex-211,"Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource,",payertopayerexchange.md
+§pdex-212,Health Plans **SHALL** support the use of the $everything operation.,payertopayerexchange.md
+§pdex-213,"As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the requester is permitted to access.",payertopayerexchange.md
+§pdex-214,The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization,payertopayerexchange.md
+§pdex-215,"Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR",payertopayerexchange.md
+§pdex-216,request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level,payertopayerexchange.md
+§pdex-217,"The Patient Export Operation for Payer-to-Payer exchange **SHOULD** be constrained to the resources and profiles that the requester is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.html#data-retrieval-methods) section of this page.",payertopayerexchange.md
+§pdex-218,The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access permissions of the requester.,payertopayerexchange.md
+§pdex-219,"For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly.",payertopayerexchange.md
+§pdex-220,A public key **SHOULD** also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process.,payertopayerexchange.md
+§pdex-221,Where the organization is both the payer and the managing organization there **SHOULD** still be two Organization records created.,payertopayerexchange.md
+§pdex-222,"Where a `MemberId` (Patient FHIR ID) is returned from $member-match, it **SHOULD** be submitted to the Access Token Endpoint in the JWT `sub` claim.",payertopayerexchange.md
+§pdex-223,"The Authorization Server **SHOULD** use the Subject ID, confirm that consent for the Requesting Payer to access the Matched Member is still valid, and issue an access token scoped to that specific Patient FHIR ID, bounding any subsequent FHIR API request accordingly.",payertopayerexchange.md
+§pdex-224,"Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token appropriately.",payertopayerexchange.md
+§pdex-225,All resources and operations available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-226,"for another member of the health plan, they **SHOULD** provide appropriate credentials to enable the exchange",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-227,Support for this option by Health Plan systems **SHOULD** be provided.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-228,The SMART on FHIR app provided as a link from the returned CDS Hook **SHOULD** enable a clinician to,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-229,"All requesters (e.g., EHRs) **SHOULD** store provenance associated with any data exchanged as part of this IG if",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-230,The member **SHALL** authenticate using,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-231,"While authenticated to the application or service, the member **MAY** connect to the (source) Health Plan's",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-232,**SHALL** be presented with an Authorization screen that enables them to approve the sharing of information with,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-233,"The Authorization process, in accordance with applicable privacy policy, **SHALL** provide a mechanism to",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-234,After successfully authorizing an application an Access Token and Optional Refresh Token **SHALL** be,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-235,The scopes of the access token **SHALL** be restricted to the authorizing Member's information and the scopes approved.,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-236,Any subsequent Access Token issued based on the Refresh Token **SHALL** be restricted (at least) to the same,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-237,The requesting application **SHALL** use the access token to access the Health Plan's secure FHIR API to download,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-238,Clients wishing to retrieve data **SHOULD** consult the Data Provider's Server Capability Statement to,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-239,Payers **SHOULD**:,pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-240,"Payers **MAY** choose to exchange unstructured data with Patients and Providers, via their respective APIs,",pdeximplementationactorsinteractionsdatapayloadsandmethods.md
+§pdex-241,The Provider-Member-Match operation **SHOULD** be submitted as a first step.,provider-access-api-v2.md
+§pdex-242,"Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and",provider-access-api-v2.md
+§pdex-243,"Rather than creating large, dynamic lists of members associated with a provider the health plan **MAY** maintain two types of lists:",provider-access-api-v2.md
+§pdex-244,"These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations.",provider-access-api-v2.md
+§pdex-245,"The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing.",provider-access-api-v2.md
+§pdex-246,If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List.,provider-access-api-v2.md
+§pdex-247,The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API.,provider-access-api-v2.md
+§pdex-248,"Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-pdex-treatment-relationship.html) that has the member as the ""key"" to the list (via a characteristic containing the Patient ID).",provider-access-api-v2.md
+§pdex-249,"The providers **SHALL** be represented as the cohort, or subjects in the list (as group members).",provider-access-api-v2.md
+§pdex-250,This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member.,provider-access-api-v2.md
+§pdex-251,The payer **MAY** apply their own rules for determining a Treatment Relationship.,provider-access-api-v2.md
+§pdex-252,"The Member Opt-Out List and the Member-Provider TRLs **SHALL** be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html).",provider-access-api-v2.md
+§pdex-253,"- The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship.",provider-access-api-v2.md
+§pdex-254,- The payer **SHOULD** extract the rendering provider's NPI from the `subject_id` field of the UDAP B2B Authorization Extension Object (`hl7-b2b`) in the access token and verify it against the payer's provider directory before processing the $provider-member-match request.,provider-access-api-v2.md
+§pdex-255,- Each member request **SHALL** contain:,provider-access-api-v2.md
+§pdex-256,- The CoverageToMatch **SHALL** contain the Member's coverage information.,provider-access-api-v2.md
+§pdex-257,- The Treatment attestation **SHALL** be submitted as a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) in each member request.,provider-access-api-v2.md
+§pdex-258,- The health plan **SHALL** evaluate the request and determine:,provider-access-api-v2.md
+§pdex-259,"- When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response.",provider-access-api-v2.md
+§pdex-260,The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation.,provider-access-api-v2.md
+§pdex-261,- Members who fail any check **SHALL** be returned in separate Group resources:,provider-access-api-v2.md
+§pdex-262,"- The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members.",provider-access-api-v2.md
+§pdex-263,"Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group.",provider-access-api-v2.md
+§pdex-264,- The matched group resource **MAY** be a short-lived group.,provider-access-api-v2.md
+§pdex-265,"- Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process.",provider-access-api-v2.md
+§pdex-266,- Providers **SHALL** be able to search and retrieve the contents of the Matched Member Group resource.,provider-access-api-v2.md
+§pdex-267,- Providers **SHALL** assume that the Matched Group is short-lived and subsequent requests for member data **SHALL** be initiated by performing a member match operation to retrieve an updated Matched Group List.,provider-access-api-v2.md
+§pdex-268,When a health plan is using FHIR GRoups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider.,provider-access-api-v2.md
+§pdex-269,Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL.,provider-access-api-v2.md
+§pdex-270,A health plan member **SHALL** be entitled to Opt-Out from their data being shared via the Provider Access API.,provider-access-api-v2.md
+§pdex-271,PDex defines a consent profile that **MAY** be used to enable a member to deny sharing via the Provider Access API.,provider-access-api-v2.md
+§pdex-272,A member **SHALL** be able to update their preference,provider-access-api-v2.md
+§pdex-273,"When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query.",provider-access-api-v2.md
+§pdex-274,If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List or equivalent API response.,provider-access-api-v2.md
+§pdex-275,Health Plans **MAY** implement the pdex-provider-consent to enable a member to express their sharing preference.,provider-access-api-v2.md
+§pdex-276,"If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) that is used to request a $davinci-data-export operation.",provider-access-api-v2.md
+§pdex-277,Members **SHALL** have the ability to opt-out of data sharing with providers.,provider-access-api-v2.md
+§pdex-278,- **MAY** use claims data as a source to identify existing Treatment Relationships.,provider-access-api-v2.md
+§pdex-279,- **MAY** utilize their own rules for determining a Treatment Relationship between members and Providers.,provider-access-api-v2.md
+§pdex-280,- **MAY** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.,provider-access-api-v2.md
+§pdex-281,**SHOULD** be supported:,provider-access-api-v2.md
+§pdex-282,Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.,provider-access-api-v2.md
+§pdex-283,Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.,provider-access-api-v2.md
+§pdex-284,The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTPS POST.,provider-access-api-v2.md
+§pdex-285,The HTTPS Header **SHALL** include:,provider-access-api-v2.md
+§pdex-286,The Payer **SHALL** be responsible for managing and maintaining the Treatment Relationship between,provider-access-api-v2.md
+§pdex-287,The payer **SHALL** take account of members that have chosen to Opt-Out of,provider-access-api-v2.md
+§pdex-288,Those Opted-Out members **SHALL** be included in a Member Opted-Out List.,provider-access-api-v2.md
+§pdex-289,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api-v2.md
+§pdex-290,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api-v2.md
+§pdex-291,- **SHALL** be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation.,provider-access-api-v2.md
+§pdex-292,- **SHALL** be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation.,provider-access-api-v2.md
+§pdex-293,Data **MAY** be constrained by:,provider-access-api-v2.md
+§pdex-294,The Data Export operation **SHALL** check the consent status for each member at the time of execution.,provider-access-api-v2.md
+§pdex-295,If the patient parameter is not provided data **SHALL** be retrieved for all members,provider-access-api-v2.md
+§pdex-296,If the patient parameter is provided the operation **SHALL** ignore references,provider-access-api-v2.md
+§pdex-297,The exportType parameter **SHALL** have one of the following values:,provider-access-api-v2.md
+§pdex-298,The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is,provider-access-api-v2.md
+§pdex-299,When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval.,provider-access-api-v2.md
+§pdex-300,The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is,provider-access-api-v2.md
+§pdex-301,The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider,provider-access-api-v2.md
+§pdex-302,Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client.,provider-access-api-v2.md
+§pdex-303,The _since parameter **SHOULD** be used for resource requests when the full history is not,provider-access-api-v2.md
+§pdex-304,It is expected that providers **MAY** first request data for members without,provider-access-api-v2.md
+§pdex-305,Subsequent requests **MAY** then use _since,provider-access-api-v2.md
+§pdex-306,The _until parameter **MAY** be used less frequently.,provider-access-api-v2.md
+§pdex-307,The _type parameter **MAY** be used to restrict the resources retrieved by the Provider.,provider-access-api-v2.md
+§pdex-308,"parameter is not used all available resources **SHALL** be returned by the Payer, subject to",provider-access-api-v2.md
+§pdex-309,The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the,provider-access-api-v2.md
+§pdex-310,"used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource",provider-access-api-v2.md
+§pdex-311,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",provider-access-api-v2.md
+§pdex-312,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services,provider-access-api-v2.md
+§pdex-313,"Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request,",provider-access-api-v2.md
+§pdex-314,A server **MAY**,provider-access-api-v2.md
+§pdex-315,Health plans **SHALL** limit the data returned to,provider-access-api-v2.md
+§pdex-316,Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group,provider-access-api-v2.md
+§pdex-317,Access Tokens **SHALL** be required to access the Group,provider-access-api-v2.md
+§pdex-318,Access and Refresh Tokens **SHOULD** be issued to support,provider-access-api-v2.md
+§pdex-319,Exchange **SHOULD** be registered in accordance with the approach defined in the,provider-access-api-v2.md
+§pdex-320,"When the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html) section are used, the `subject_id` in the B2B Authorization Extension Object (Key Name: `""hl7-b2b""`) **SHOULD** contain the NPI of the rendering provider on whose behalf member data is being requested.",provider-access-api-v2.md
+§pdex-321,"For requests covering more than a single rendering provider (e.g., an organization-level request), the `subject_id` **MAY** be the FHIR Id of the Group being requested.",provider-access-api-v2.md
+§pdex-322,"The payer **SHOULD** validate the NPI supplied in the `subject_id` against their provider directory to confirm the provider is known, active, and has an in-network or contractual relationship before issuing an access token or processing a `$provider-member-match` request.",provider-access-api-v2.md
+§pdex-323,"regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and",provider-access-api.md
+§pdex-324,Health plans **MAY** choose to construct alternative or additional Attribution,provider-access-api.md
+§pdex-325,A member **SHOULD** also be able to update their preference,provider-access-api.md
+§pdex-326,Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference.,provider-access-api.md
+§pdex-327,Members **SHALL** have the ability to opt-out of data sharing with providers.,provider-access-api.md
+§pdex-328,Attribution Lists **SHOULD** be,provider-access-api.md
+§pdex-329,A health plan **MAY** adopt their own methodology for managing and maintaining,provider-access-api.md
+§pdex-330,- **MAY** use claims data as a source to identify existing treatment relationships.,provider-access-api.md
+§pdex-331,- **MAY** utilize their own rules for determining the attribution of members to Providers.,provider-access-api.md
+§pdex-332,- **SHOULD** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships.,provider-access-api.md
+§pdex-333,Attribution lists **SHALL** be searchable via a secure RESTful API.,provider-access-api.md
+§pdex-334,"attribution lists **SHOULD** be scoped to the appropriate Organization, Facility, Provider or their",provider-access-api.md
+§pdex-335,**SHOULD** be supported:,provider-access-api.md
+§pdex-336,Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR.,provider-access-api.md
+§pdex-337,Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer.,provider-access-api.md
+§pdex-338,The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTP POST.,provider-access-api.md
+§pdex-339,The HTTP Header **SHALL** include:,provider-access-api.md
+§pdex-340,"The $davinci-data-export operation **SHALL** be performed asynchronously, following the [Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html) defined in FHIR R4.",provider-access-api.md
+§pdex-341,Implementers **SHALL** follow the [Bulk Data Status Request](https://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-status-request) guidance for polling behavior.,provider-access-api.md
+§pdex-342,The Payer **SHALL** be responsible for managing and maintaining the attribution list that assigns,provider-access-api.md
+§pdex-343,The payer **SHALL** take account of members that have chosen to Opt-out of,provider-access-api.md
+§pdex-344,Those opted-out members **SHALL** be omitted from the Provider,provider-access-api.md
+§pdex-345,The Payer **MAY** choose to maintain a separate Group resource for a Provider,provider-access-api.md
+§pdex-346,A provider **MAY** have more than one list.,provider-access-api.md
+§pdex-347,The [PDexProviderGroup](StructureDefinition-pdex-provider-group.html) profile **SHALL** be used to record the,provider-access-api.md
+§pdex-348,By recording this quantity it **MAY** help providers reconcile their attribution lists,provider-access-api.md
+§pdex-349,"Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed, by which client, and for which members.",provider-access-api.md
+§pdex-350,Implementers **SHALL** support the standard search parameters for group that are specified in the base,provider-access-api.md
+§pdex-351,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api.md
+§pdex-352,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api.md
+§pdex-353,- **SHALL** be permitted to SEARCH /Group.,provider-access-api.md
+§pdex-354,The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with the Provider Representative's account.,provider-access-api.md
+§pdex-355,- **MAY** be associated with more than one attribution group list.,provider-access-api.md
+§pdex-356,- **SHALL** be permitted to GET /Group/{id} for any Attribution Group list they are associated with.,provider-access-api.md
+§pdex-357,- **SHALL** be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with.,provider-access-api.md
+§pdex-358,The Data Export operation **SHALL** check the consent status for each member at the time,provider-access-api.md
+§pdex-359,If the patient parameter is not provided data **SHALL** be retrieved for all members,provider-access-api.md
+§pdex-360,If the patient parameter is provided the operation **SHALL** ignore references,provider-access-api.md
+§pdex-361,The exportType parameter **SHALL** have one of the following values:,provider-access-api.md
+§pdex-362,The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is,provider-access-api.md
+§pdex-363,When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval.,provider-access-api.md
+§pdex-364,The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is,provider-access-api.md
+§pdex-365,The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider,provider-access-api.md
+§pdex-366,Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client.,provider-access-api.md
+§pdex-367,The _since parameter **SHOULD** be used for resource requests when the full history is not,provider-access-api.md
+§pdex-368,It is expected that providers **MAY** first request data for members without,provider-access-api.md
+§pdex-369,Subsequent requests **MAY** then use _since,provider-access-api.md
+§pdex-370,The _until parameter **MAY** be used less frequently.,provider-access-api.md
+§pdex-371,The _type parameter **MAY** be used to restrict the resources retrieved by the Provider.,provider-access-api.md
+§pdex-372,"parameter is not used all available resources **SHALL** be returned by the Payer, subject to",provider-access-api.md
+§pdex-373,The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the,provider-access-api.md
+§pdex-374,"used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource",provider-access-api.md
+§pdex-375,"supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL**",provider-access-api.md
+§pdex-376,Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services,provider-access-api.md
+§pdex-377,"Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request,",provider-access-api.md
+§pdex-378,A server **MAY**,provider-access-api.md
+§pdex-379,Health plans **SHALL** limit the data returned to,provider-access-api.md
+§pdex-380,Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group,provider-access-api.md
+§pdex-381,Access Tokens **SHALL** be required to access the Group,provider-access-api.md
+§pdex-382,Access and Refresh Tokens **SHOULD** be issued to support,provider-access-api.md
+§pdex-383,Exchange **SHOULD** be registered in accordance with the approach defined in the,provider-access-api.md
+§pdex-384,When providers are building a health history for a new patient the information they are interested in **MAY** include:,usecasescenarios.md
+§pdex-385,"For example, as part of an event or episode of care the provider **MAY** be interested in the following types of data:",usecasescenarios.md
+§pdex-386,These types of data **SHALL** be mapped to FHIR clinical resources as follows:,usecasescenarios.md
+§pdex-387,"A payer **SHOULD** provide the most recent version of the Patient, Practitioner, Organization and Location resources.",usecasescenarios.md
+§pdex-388,"A payer **MAY** choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources.",usecasescenarios.md
+§pdex-389,In such cases resources **SHOULD** follow the [vread](https://www.hl7.org/fhir/http.html#vread) guidance in the HTTP section of the FHIR specification.,usecasescenarios.md
+§pdex-390,"If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource **SHALL** use the [vread](https://www.hl7.org/fhir/http.html#vread) format of reference:",usecasescenarios.md
+§pdex-391,"In this scenario the Clinician that reviews the Member History is only interested in information in the Member record since their last visit and **MAY** want to exclude information from their own organization, since that information will already be recorded in their EMR system.",workflowexamples.md
+§pdex-392,"The server SHOULD return at least all resources that it has that are in the patient compartment for the identified patient(s), and any resource referenced from those, including binaries and attachments.",OperationDefinition-patient-everything-pdex-intro.md
+§pdex-393,"In the US Realm, at a minimum, the resources returned SHALL include all the data covered by the meaningful use common data elements as defined in the US Core [3.1.1]({{site.data.fhir.ver.uscore3}}) or [6.1.0]({{site.data.fhir.ver.uscore6}}) Implementation Guide.",OperationDefinition-patient-everything-pdex-intro.md
+§pdex-394,**SHALL** support searching for code for a Group.,StructureDefinition-pdex-member-match-group-notes.md
+§pdex-395,"Payers **SHALL** make available pending and active prior authorization decisions and related clinical documentation and forms for items and services, not including prescription drugs, including the date the prior authorization was approved, the date the authorization ends, as well as the units and services approved and those used to date, no later than one (1) business day after a provider initiates a prior authorization for the beneficiary or there is a change of status for the prior authorization.",StructureDefinition-pdex-priorauthorization-intro.md
+§pdex-396,**SHALL** support searching for code for a Group.,StructureDefinition-pdex-provider-group-notes.md

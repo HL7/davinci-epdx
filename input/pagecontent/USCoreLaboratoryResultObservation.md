@@ -1,6 +1,6 @@
 [Previous Page - US Core ImplantableDevice](USCoreImplantableDevice.html)
 
- The US Core Laboratory Result Observation profile sets minimum expectations for the Observation resource to record, search, and fetch laboratory test results associated with a patient/member. §pdex-27: It identifies which core elements, extensions, vocabularies and value sets **SHALL** be present in the resource when using this profile. §
+ The US Core Laboratory Result Observation profile sets minimum expectations for the Observation resource to record, search, and fetch laboratory test results associated with a patient/member. §pdex-30: It identifies which core elements, extensions, vocabularies and value sets **SHALL** be present in the resource when using this profile. §
 
 In [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) a number of new Observation profiles were created. Many of them replaced the 
 Vital Signs profiles from the base FHIR R4 base specification. The full list of [US Core 6.1.0 Observation profiles]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html#observation) in can be found [here]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html#observation):

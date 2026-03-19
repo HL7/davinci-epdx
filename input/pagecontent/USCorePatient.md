@@ -2,7 +2,7 @@
 
 The [US Core 3.1.1 Patient]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html) or
 [US Core 6.1.0 Patient]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html) resource 
-§pdex-32: *SHALL** be used to express a member's demographic information. §
+§pdex-35: *SHALL** be used to express a member's demographic information. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 Patient]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-patient.html) or
@@ -76,7 +76,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-The Member Number will be entered in the **identifier** field. §pdex-33: The code **MB**  **SHALL** be used to identify the member identifier. § See the example below:
+The Member Number will be entered in the **identifier** field. §pdex-36: The code **MB**  **SHALL** be used to identify the member identifier. § See the example below:
 
 <pre>
 {

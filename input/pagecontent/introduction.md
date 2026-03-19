@@ -100,11 +100,11 @@ Claims and Encounter data included in the data exchange is required to exclude f
 
 #### Member-mediated Information Exchange
 
-§pdex-87: The CMS Interoperability and Patient Access Rule requires that a member new to a health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan. §
+§pdex-94: The CMS Interoperability and Patient Access Rule requires that a member new to a health plan **SHALL** be able to request that their information be passed from their old health plan to their new health plan. §
 
 The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016, be available via API.
 
-§pdex-88: A Member **SHALL** also be able to use APIs to share information with Third Party Applications. § 
+§pdex-95: A Member **SHALL** also be able to use APIs to share information with Third Party Applications. § 
 
 The Member-mediated Information Exchange method will build upon established OAuth2.0 protocols for patient access to their health and claims information that enables the sharing of information with third-party applications. The process of Member Authentication, typically using the member's user credentials from the Health Plan's portal, and OAuth2.0 authorization to share will form the basis of the member Consent to share.
 
@@ -167,7 +167,7 @@ Prior to that date Implementers may choose to implement either version of US Cor
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.
 
-Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. §pdex-89: Therefore, for profiles and APIs identified in this IG, the FHIR R4 version **SHALL** be used. §
+Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. §pdex-96: Therefore, for profiles and APIs identified in this IG, the FHIR R4 version **SHALL** be used. §
 
 ### PDex Data Payloads
 
@@ -179,7 +179,7 @@ The PDex IG covers the following data types:
 
 #### Member Health History
 
-§pdex-90: The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History" **SHOULD** include the following profiles where payers have data to support the use of those profiles: §
+§pdex-97: The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History" **SHOULD** include the following profiles where payers have data to support the use of those profiles: §
 
 ##### US Core
 
@@ -345,12 +345,12 @@ health data for Five years prior to the date of the request. The data can includ
 - Unstructured clinical data used to determine a prior authorization decision
 - PDex Prior Authorization profile.
 
-§pdex-91: All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement. §
+§pdex-98: All resources available via a FHIR API endpoint **SHALL** be declared in a FHIR CapabilityStatement. §
 
 The FHIR CapabilityStatement defines the resources and operations supported by the resources exposed via the FHIR API.
 
-§pdex-92: The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. § 
-§pdex-93: The V-Read and History operations **MAY** be supported. §
+§pdex-99: The Read and Search Operations **SHALL** be supported for the FHIR Profiles covered in this payload section. § 
+§pdex-100: The V-Read and History operations **MAY** be supported. §
 
 The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.
 
@@ -365,18 +365,18 @@ The Capability Statements in this IG are:
 
 #### Conformance Expectations
 
-§pdex-94: This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide. § As well, profiles in this implementation guide make use of the [mustSupport](http://hl7.org/fhir/R4/profiling.html#mustsupport) element. Base expectations for the interpretations of these terms are set in the [FHIR core specification](http://hl7.org/fhir/R4/conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html).
+§pdex-101: This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide. § As well, profiles in this implementation guide make use of the [mustSupport](http://hl7.org/fhir/R4/profiling.html#mustsupport) element. Base expectations for the interpretations of these terms are set in the [FHIR core specification](http://hl7.org/fhir/R4/conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html).
 
 ### MustSupport
 
-§pdex-95: For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows: §
+§pdex-102: For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows: §
 
-§pdex-96: PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement. §
-§pdex-97: PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. § §pdex-98: In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes. §
-§pdex-99: In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results. §
-§pdex-100: When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system. §
-§pdex-101: In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension. §
-§pdex-102: PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information. §
+§pdex-103: PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement. §
+§pdex-104: PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. § §pdex-105: In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes. §
+§pdex-106: In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results. §
+§pdex-107: When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system. §
+§pdex-108: In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension. §
+§pdex-109: PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information. §
 
 Additional information about MustSupport can be found in the [Da Vinci HRex Conformance Page]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport) and the 
 [US Core Must Support page]({{site.data.fhir.ver.uscore7}}/must-support.html).
@@ -390,7 +390,7 @@ The provision of a Member-accessible Healthcare Network Directory API is detaile
 
 #### Pharmacy Network Directory
 
-The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG]({{site.data.fhir.ver.plannet}})). §pdex-103: A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory. §
+The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide ([PDex-plan-net IG]({{site.data.fhir.ver.plannet}})). §pdex-110: A Health Plan's Pharmacy Network **SHOULD** be expressed using the same FHIR profiles used for the Healthcare Network Directory. §
 
 #### Medication Formulary
 

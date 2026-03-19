@@ -3,7 +3,8 @@
 Process conformance statements in markdown files.
 
 This script:
-1. Iterates through markdown files in ./input/pagecontent (excluding changehistory.md)
+1. Iterates through markdown files in ./input/pagecontent and ./input/intro-notes
+   (excluding changehistory.md and narrative-conformance.md)
 2. Finds sentences containing conformance keywords (SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY)
 3. Adds markers (§pdex-XX: ... §) to each conformance statement in the source files
 4. Creates a CSV file (conformance_statements.csv) with reference, statement, and sourcefile columns
@@ -13,12 +14,15 @@ import os
 import re
 import csv
 
-# Directory containing markdown files
-PAGECONTENT_DIR = "./input/pagecontent"
+# Directories containing markdown files
+MARKDOWN_DIRS = [
+    "./input/pagecontent",
+    "./input/intro-notes",
+]
 CSV_FILE = "./conformance_statements.csv"
 
 # Files to exclude
-EXCLUDE_FILES = ["changehistory.md"]
+EXCLUDE_FILES = ["changehistory.md", "narrative-conformance.md"]
 
 # Conformance keywords pattern
 CONFORMANCE_PATTERN = r'\b(SHALL NOT|SHALL|SHOULD NOT|SHOULD|MAY)\b'
@@ -33,13 +37,16 @@ def process_conformance_statements():
     all_statements = []
     file_modifications = {}
 
-    # Get all markdown files
-    md_files = [f for f in os.listdir(PAGECONTENT_DIR)
-                if f.endswith('.md') and f not in EXCLUDE_FILES]
-    md_files.sort()
+    # Get all markdown files from all directories
+    md_file_paths = []
+    for md_dir in MARKDOWN_DIRS:
+        if os.path.isdir(md_dir):
+            for f in sorted(os.listdir(md_dir)):
+                if f.endswith('.md') and f not in EXCLUDE_FILES:
+                    md_file_paths.append((md_dir, f))
 
-    for md_file in md_files:
-        filepath = os.path.join(PAGECONTENT_DIR, md_file)
+    for md_dir, md_file in md_file_paths:
+        filepath = os.path.join(md_dir, md_file)
 
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -107,7 +114,7 @@ def process_conformance_statements():
         writer.writeheader()
         writer.writerows(all_statements)
 
-    print(f"Processed {len(md_files)} files")
+    print(f"Processed {len(md_file_paths)} files")
     print(f"Found {len(all_statements)} conformance statements")
     print(f"CSV written to {CSV_FILE}")
 

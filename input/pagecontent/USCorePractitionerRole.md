@@ -2,7 +2,7 @@
 
 The [US Core 3.1.1 PractitionerRole]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html) or
 [US Core 6.1.0 PractitionerRole]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-practitionerrole.html)
-§pdex-35: **SHALL** be used to record information about the roles that practitioners take in providing services to their patients. §
+§pdex-38: **SHALL** be used to record information about the roles that practitioners take in providing services to their patients. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 PractitionerRole]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-practitionerrole.html) or

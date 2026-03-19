@@ -54,7 +54,7 @@ The following operations are referenced:
 
 #### Da Vinci Member Attribution (ATR)
 
-§pdex-111: **NOTE:** exportType parameter **SHALL** be populated with a value for all PDex implementations of the $Davinci-data-export-operation. § 
+§pdex-118: **NOTE:** exportType parameter **SHALL** be populated with a value for all PDex implementations of the $Davinci-data-export-operation. § 
 i.e., [Provider Access API](provider-access-api.html) and [Payer-to-Payer Bulk API](payertopayerbulkexchange.html).
 
 - [$Davinci-data-export-operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html)

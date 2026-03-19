@@ -1,6 +1,6 @@
 [Previous Page - US Core CarePlan](USCoreCarePlan.html)
 
-§pdex-20: Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the §
+§pdex-23: Where a Health Plan has access to Information about the CareTeam for a member they **SHALL** make the information available using the §
 [US Core 3.1.1 CareTeam]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-careteam.html) or
 [US Core 6.1.0 CareTeam]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-careteam.html)resource are:
 
@@ -18,7 +18,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-Claims information typically represents a particular event, such as a procedure or encounter. The CareTeam resource is intended to represent the parties involved in supporting a subject/patient. Where a claim represents an Episode of Care it may be appropriate to record the parties involved in the claim as members of the CareTeam involved in that EpisodeOfCare. §pdex-21: For discrete procedures or encounters it **MAY** not be appropriate to create a CareTeam record from the claims information. §
+Claims information typically represents a particular event, such as a procedure or encounter. The CareTeam resource is intended to represent the parties involved in supporting a subject/patient. Where a claim represents an Episode of Care it may be appropriate to record the parties involved in the claim as members of the CareTeam involved in that EpisodeOfCare. §pdex-24: For discrete procedures or encounters it **MAY** not be appropriate to create a CareTeam record from the claims information. §
 
 The essential fields to be provided in the CareTeam resource from the CPCDS file, where appropriate, are:
 

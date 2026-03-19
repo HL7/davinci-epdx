@@ -2,7 +2,7 @@
 
 The [US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or
 [US Core 6.1.0 Procedure]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-procedure.html)
-§pdex-36: **SHALL** be used to record a member's health events. §
+§pdex-39: **SHALL** be used to record a member's health events. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
 [US Core 3.1.1 Procedure]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-procedure.html) or
@@ -39,7 +39,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. Medications, facility charges and supplies **SHOULD NOT** be created as procedure records.
+§pdex-40: Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. § §pdex-41: Medications, facility charges and supplies **SHOULD NOT** be created as procedure records. §
 
 #### Example Procedure Resource
 

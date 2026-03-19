@@ -10,7 +10,7 @@
 | [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | $provider-member-match OperationDefinition parameter names are inconsistent with the Parameters profile |
 | [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Remove requirements to record export operation details as extensions on Patient/Group resources |
 | [FHIR-55981](https://jira.hl7.org/browse/FHIR-55981) | Use R5 specifications for async operations |
-| [FHIR-55928](https://jira.hl7.org/browse/FHIR-55928) | $member-match listed as both SHALL and MAY support |
+| [FHIR-55928](https://jira.hl7.org/browse/FHIR-55928) | $member-match listed as both shall and may support |
 | [FHIR-55927](https://jira.hl7.org/browse/FHIR-55927) | Better handle multiple MemberBundles for the same member |
 | [FHIR-55640](https://jira.hl7.org/browse/FHIR-55640) | Two versions of provider member match? |
 | [FHIR-55620](https://jira.hl7.org/browse/FHIR-55620) | Why does the example show a CoverageToLink? |
@@ -75,12 +75,12 @@
 | [FHIR-48076](https://jira.hl7.org/browse/FHIR-48076)    | With Mod: Remove superseded CDS Hooks page                                                          |
 | [FHIR-48074](https://jira.hl7.org/browse/FHIR-48074)    | With Mod: provider-controlled information requests and filtering page not easily reachable          |
 | [FHIR-48056](https://jira.hl7.org/browse/FHIR-48056)    | With Mod: Multiple CapabilityStatement descriptions not in sync and should be collapsed             |
-| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794)    | Change SHOULD to SHALL                                                                              |
+| [FHIR-47794](https://jira.hl7.org/browse/FHIR-47794)    | Change should to shall                                                                              |
 | [FHIR-47792](https://jira.hl7.org/browse/FHIR-47792)    | rewrite for clarity and grammar                                                                     |
-| [FHIR-47789](https://jira.hl7.org/browse/FHIR-47789)    | Not Persuasive: Change SHOULD to SHALL                                                              |
+| [FHIR-47789](https://jira.hl7.org/browse/FHIR-47789)    | Not Persuasive: Change should to shall                                                              |
 | [FHIR-47787](https://jira.hl7.org/browse/FHIR-47787)    | Clarify concept of changed status                                                                   |
-| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change SHOULD to SHALL                                                                              |
-| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change SHOULD to SHALL                                                                              |
+| [FHIR-47786](https://jira.hl7.org/browse/FHIR-47786)    | Change should to shall                                                                              |
+| [FHIR-47785](https://jira.hl7.org/browse/FHIR-47785)    | Change should to shall                                                                              |
 | [FHIR-47784](https://jira.hl7.org/browse/FHIR-47784)    | Confusing Phrase                                                                                    |
 | [FHIR-47783](https://jira.hl7.org/browse/FHIR-47783)    | Clarify the Regulatory requirements                                                                 |
 | [FHIR-46681](https://jira.hl7.org/browse/FHIR-46681)    | Add US Core 7.0.0 support to the IG                                                                 |
@@ -195,7 +195,7 @@
 | [FHIR-37576](https://jira.hl7.org/browse/FHIR-37576)     | Duplicate to FHIR-37577                                                                                                                                     |
 | [FHIR-37546](https://jira.hl7.org/browse/FHIR-37546)     | Consent expiration for P2P Data Exchange                                                                                                                    |
 | [FHIR-36767](https://jira.hl7.org/browse/FHIR-36767)     | $member-match operation conformance not defined                                                                                                             |
-| [FHIR-36629](https://jira.hl7.org/browse/FHIR-36629)     | change from are expected to SHALL                                                                                                                           |
+| [FHIR-36629](https://jira.hl7.org/browse/FHIR-36629)     | change from are expected to shall                                                                                                                           |
 | [FHIR-36601](https://jira.hl7.org/browse/FHIR-36601)     | Review all mappings for DiagnosticReport (MedicationDispense).                                                                                              |
 | [FHIR-36462](https://jira.hl7.org/browse/FHIR-36462)     | Incorrect Diagram, Consent considerations, everything operation                                                                                             |
 | BallotRec-Vote2                                          |                                                                                                                                                             |

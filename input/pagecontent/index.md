@@ -104,7 +104,7 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 
 ### Endpoint Discovery
 
-§pdex-81: Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
+§pdex-88: Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
 
 - Patient Access API.
 - Provider Access API.
@@ -112,7 +112,7 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 
 ### Intellectual Property Considerations
 
-This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP"). §pdex-82: Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. § §pdex-83: Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. § It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
+This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP"). §pdex-89: Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. § §pdex-90: Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. § It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
 
 {% include ip-statements.xhtml %}
 
@@ -120,11 +120,11 @@ This HL7 specification contains and references intellectual property owned by th
 
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
-§pdex-84: **SHALL** indicates requirements that must be met to be conformant with the specification. §
+§pdex-91: **SHALL** indicates requirements that must be met to be conformant with the specification. §
 
-§pdex-85: **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance. §
+§pdex-92: **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance. §
 
-§pdex-86: **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption. §
+§pdex-93: **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption. §
 
 #### MustSupport
 

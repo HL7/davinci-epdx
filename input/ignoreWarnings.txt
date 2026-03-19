@@ -40,6 +40,13 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %URL value 'https://www.exampleplan.com%
 
 
+# SearchParameter conformance expectation extensions render as "(Conformance Expectation = MAY/SHALL)"
+# in auto-generated HTML. These are coded values, not narrative conformance clauses.
+%The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' multipleOr%
+%The html source contains the word 'MAY' but it is not in a text phrase marked as a conformance clause: ' multipleAnd%
+%The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' multipleOr%
+%The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: ' multipleAnd%
+
 # NDC code 54458-872-10 is inactive in the FDA database. This is an example code used to
 # illustrate MedicationDispense coding. The tx.fhir.org 2021-11-01 NDC snapshot recognises
 # the code but flags it as inactive. Reviewed and accepted for use in examples.

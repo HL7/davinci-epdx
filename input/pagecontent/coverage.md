@@ -46,7 +46,7 @@ If beneficiary is subscriber, also set .relationship to "self".
 
 It may, for example, identify the parent who obtains coverage for a child. Therefore, the Coverage resource may provide a combination of identifiers and point to demographic information to uniquely identify a patient/member.
 
-§pdex-68: Coverage.identifier **MAY** include a member identifier in the Coverage resource. §
+§pdex-73: Coverage.identifier **MAY** include a member identifier in the Coverage resource. §
 
 #### Example Coverage Resource
 

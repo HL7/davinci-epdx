@@ -11,7 +11,7 @@ The Provider-Member-Match is provided to support the requirements of the CMS pri
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
-The Provider-Member-Match operation **SHOULD** be submitted as a first step. This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
+§pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. § This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
 </div>
 
 This version of the API uses a variation of the Bulk Member Match, from the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). This is formalized as the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). The $davinci-data-export operation specified in the original [Provider Access v1](provider-access-api.html) is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.
@@ -35,7 +35,7 @@ One of the requirements of the rule is for Impacted Payers to implement a Provid
 This is an API that conforms to the [HL7 FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/) but follows the query parameters required by the $davinci-data-export operation defined in the [Da Vinci Member Attribution Implementation Guide]({{site.data.fhir.ver.atr}}).
 The purpose of the Provider Access API (v2) is to enable Providers to query a Payer API for information about the members of the health plan where they have a current, or upcoming treatment relationship. This version of the API is designed to support health plans that need to create large Treatment Relationship Lists for in-network providers or organizations. The API will enable a provider to ask a Payer "What do you know about my Patients?"
 
-§pdex-213: Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and §
+§pdex-242: Although the CMS Prior Authorization Rule (CMS-0057) requires regulated plans to provide a bulk API that releases Clinical, Prior Authorization and Claims and Encounter data (without the financial data), where permitted by regulation or other agreements, the data **MAY** be configured to include financial data (including Allowed and §
 Paid amounts and other information in the full CARIN Blue Button ExplanationOfBenefit resources) for other use cases, including:
 - Value-Based Care contracts and Risk-based Provider Programs where the provider partner organization is “At Risk” for those services.
 - Services that occur at a provider partner organization's facility even if those services are not associated with a Value-Based Care contract.
@@ -52,69 +52,69 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
 
 ### Key differences from version 1 of Provider Access
 
-§pdex-214a:Rather than creating large, dynamic lists of members associated with a provider the health plan **MAY** maintain two types of lists:§
+§pdex-243: Rather than creating large, dynamic lists of members associated with a provider the health plan **MAY** maintain two types of lists: §
 
 1. Member Opt-Out List
 2. Member-Provider TRL
 
-§pdex-214b: These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. § In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:
+§pdex-244: These lists **MAY** be created using a FHIR Group resource, or implementers **MAY** choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. § In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:
 
 - [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) - contains members who have opted out of data sharing
 - [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) - contains providers with treatment relationships to a specific member 
 
 #### Member Opt-Out List
 
-§pdex-215: The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing. § §pdex-216: If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List. § See the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) for details on opt-out scope, reasons, and member-specific details.
+§pdex-245: The member Opt-out list, if not determined by a response from a legacy system or API, **SHALL** be a Group resource conforming to the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) and managed by the Health Plan that **SHALL** contain all members that have chosen to opt-out of Provider Access API Data Sharing. § §pdex-246: If a member revokes their opt-out choice their Identifier(s) **SHALL** be removed from the Member Opt-Out List. § See the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html) for details on opt-out scope, reasons, and member-specific details.
 
 #### Member-Provider TRL
 
-§pdex-217: The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API. § §pdex-218: Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-pdex-treatment-relationship.html) that has the member as the "key" to the list (via a characteristic containing the Patient ID). § §pdex-219: The providers **SHALL** be represented as the cohort, or subjects in the list (as group members). § The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. §pdex-220: This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member. § 
+§pdex-247: The Member-Provider TRL **MAY** be determined by referencing a legacy syystem or API. § §pdex-248: Where a payer chooses to use FHIR Group resources to manage the Treatment Relationship the Payer **SHALL** create a Member-Treatment Group conforming to the [Member-Provider Treatment Relationship Group Profile](StructureDefinition-pdex-treatment-relationship.html) that has the member as the "key" to the list (via a characteristic containing the Patient ID). § §pdex-249: The providers **SHALL** be represented as the cohort, or subjects in the list (as group members). § The profile supports detailed treatment relationship information including attestation date, treatment period, and relationship type. §pdex-250: This list **SHALL** then be used during a Provider-Member-Match operation to determine if the provider is permitted to retrieve data about the member. § 
 
-§pdex-221: The payer **MAY** apply their own rules for determining a Treatment Relationship. § 
+§pdex-251: The payer **MAY** apply their own rules for determining a Treatment Relationship. § 
 
 ### How does Provider Access Work?
 
-§pdex-222: The Member Opt-Out List and the Member-Provider TRLs **SHALL** be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). § 
+§pdex-252: The Member Opt-Out List and the Member-Provider TRLs **SHALL** be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). § 
 - The provider submits a bulk member-match request for one or more members using the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html).
-§pdex-223: - The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship. §
-§pdex-223a: - The payer **SHOULD** extract the rendering provider's NPI from the `subject_id` field of the UDAP B2B Authorization Extension Object (`hl7-b2b`) in the access token and verify it against the payer's provider directory before processing the $provider-member-match request. §
-§pdex-224: - Each member request **SHALL** contain: §
+§pdex-253: - The payer **SHOULD** determine whether the provider is in-network, or has an appropriate contractual relationship. §
+§pdex-254: - The payer **SHOULD** extract the rendering provider's NPI from the `subject_id` field of the UDAP B2B Authorization Extension Object (`hl7-b2b`) in the access token and verify it against the payer's provider directory before processing the $provider-member-match request. §
+§pdex-255: - Each member request **SHALL** contain: §
   - Patient demographics conforming to [HRex Patient Demographics]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-patient-demographics.html)
   - Health plan coverage information conforming to [HRex Coverage]({{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-coverage.html)
   - A treatment relationship attestation from the provider using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) (a Consent resource)
-§pdex-225: - The CoverageToMatch **SHALL** contain the Member's coverage information. §
-§pdex-226: - The Treatment attestation **SHALL** be submitted as a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) in each member request. §
-§pdex-227: - The health plan **SHALL** evaluate the request and determine: §
+§pdex-256: - The CoverageToMatch **SHALL** contain the Member's coverage information. §
+§pdex-257: - The Treatment attestation **SHALL** be submitted as a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html) in each member request. §
+§pdex-258: - The health plan **SHALL** evaluate the request and determine: §
   - If the member has Opted-Out of sharing (by checking the Member Opt-Out List)
   - If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member
   - If the treatment attestation can be verified and meets the payer's requirements
-§pdex-228: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response. § §pdex-229: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
-- Members who fail any check **SHALL** be returned in separate Group resources:
+§pdex-259: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response. § §pdex-260: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
+§pdex-261: - Members who fail any check **SHALL** be returned in separate Group resources: §
   - Non-matched members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Treatment attestation constrained members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) 
-§pdex-230: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. § §pdex-231: Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
-§pdex-232: - The matched group resource **MAY** be a short-lived group. § No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
-§pdex-233: - Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. § 
+§pdex-262: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. § §pdex-263: Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
+§pdex-264: - The matched group resource **MAY** be a short-lived group. § No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
+§pdex-265: - Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. § 
 - Implementer feedback is sought on whether an upper limit on the number of members in a Provider-Member-Match operation should be specified.
-§pdex-234: - Providers **SHALL** be able to search and retrieve the contents of the Matched Member Group resource. §
-§pdex-235: - Providers **SHALL** assume that the Matched Group is short-lived and subsequent requests for member data **SHALL** be initiated by performing a member match operation to retrieve an updated Matched Group List. §
+§pdex-266: - Providers **SHALL** be able to search and retrieve the contents of the Matched Member Group resource. §
+§pdex-267: - Providers **SHALL** assume that the Matched Group is short-lived and subsequent requests for member data **SHALL** be initiated by performing a member match operation to retrieve an updated Matched Group List. §
 
 The typical use case is expected to be one where an EMR retrieves data from a health plan for one or more 
 providers, or for an organization, using automated service functions. The retrieving system or service, such as an EMR, 
 is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
 personnel, or systems, have access to the retrieved data.
 
-§pdex-236: When a health plan is using FHIR GRoups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider. §
- §pdex-237: Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL. §
+§pdex-268: When a health plan is using FHIR GRoups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider. §
+§pdex-269: Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL. §
 
 
 ### Member Opt-out
 
-§pdex-238: A health plan member **SHALL** be entitled to Opt-Out from their data being shared via the Provider Access API. § §pdex-239: PDex defines a consent profile that **MAY** be used to enable a member to deny sharing via the Provider Access API. § §pdex-240: A member **SHALL** be able to update their preference §
-to revoke a previous denial. §pdex-241: When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. § The Member Opt-Out List is a dynamic Group resource. §pdex-242: If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List or equivalent API response. § 
+§pdex-270: A health plan member **SHALL** be entitled to Opt-Out from their data being shared via the Provider Access API. § §pdex-271: PDex defines a consent profile that **MAY** be used to enable a member to deny sharing via the Provider Access API. § §pdex-272: A member **SHALL** be able to update their preference §
+to revoke a previous denial. §pdex-273: When a member Opts-Out of sharing, their Member Id **SHALL** be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. § The Member Opt-Out List is a dynamic Group resource. §pdex-274: If a member revokes their Opt-Out their Member Id **SHALL** be removed from the Member Opt-Out List or equivalent API response. § 
 
-§pdex-243: Health Plans **MAY** implement the pdex-provider-consent to enable a member to express their sharing preference. §
+§pdex-275: Health Plans **MAY** implement the pdex-provider-consent to enable a member to express their sharing preference. §
 
 The [PDex Server Capability Statement](CapabilityStatement-pdex-server.html) enables the Consent record to be written to the Patient Access API.
 
@@ -122,9 +122,9 @@ See the [PDex Provider Consent here](StructureDefinition-pdex-provider-consent.h
 
 ### Treatment Relationship Driven Access 
 
-The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-244: If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) that is used to request a $davinci-data-export operation. §
+The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-276: If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) that is used to request a $davinci-data-export operation. §
 
-§pdex-245: Members **SHALL** have the ability to opt-out of data sharing with providers. § Opt-outs are managed using the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html), which supports multiple opt-out scopes:
+§pdex-277: Members **SHALL** have the ability to opt-out of data sharing with providers. § Opt-outs are managed using the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html), which supports multiple opt-out scopes:
 - **Global Opt-Out**: Member has opted out from all data sharing
 - **Provider-Specific Opt-Out**: Member has opted out for specific provider(s)
 - **Purpose-Specific Opt-Out**: Member has opted out for specific purpose(s)
@@ -134,13 +134,13 @@ The Provider Access API version 2 uses the [Provider-Member-Match Operation](Ope
 Each opt-out can include the member's stated reason (privacy concern, data security concern, unknown use, provider relationship, member choice, or other).
 
 Health plans:
-§pdex-246: - **MAY** use claims data as a source to identify existing Treatment Relationships. § 
-§pdex-247: - **MAY** utilize their own rules for determining a Treatment Relationship between members and Providers. §
-§pdex-248: - **MAY** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. §
+§pdex-278: - **MAY** use claims data as a source to identify existing Treatment Relationships. § 
+§pdex-279: - **MAY** utilize their own rules for determining a Treatment Relationship between members and Providers. §
+§pdex-280: - **MAY** use the [Coverage Requirements Discovery IG's]({{site.data.fhir.ver.crd}}/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. §
 
 The [Da Vinci Data Export Operation]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) in the [Member Attribution IG]({{site.data.fhir.ver.atr}}) supports the Bulk FHIR API specification.
 The operation uses a Group resource. For the PDex Provider Access API the following capabilities
-§pdex-249: **SHOULD** be supported: §
+§pdex-281: **SHOULD** be supported: §
 
 - Get Group record.
 - Request all information for members in the Group.
@@ -153,20 +153,20 @@ This combination of requests should cover all provider data requests, such as:
 - Send new data since I last requested for this set of patients.
 - Send just the lab results for this set of patients since this date.
 
-§pdex-250: Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR. §
-§pdex-251: Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer. §
+§pdex-282: Access **SHALL** be controlled using client credentials that are compliant with SMART-On-FHIR. §
+§pdex-283: Access **SHOULD** be restricted to Providers with a contractual relationship with a Payer. §
 
-§pdex-252: The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTPS POST. §
-§pdex-253: The HTTPS Header **SHALL** include: §
+§pdex-284: The [$davinci-data-export operations]({{site.data.fhir.ver.atr}}/OperationDefinition-davinci-data-export.html) **SHALL** be submitted using a HTTPS POST. §
+§pdex-285: The HTTPS Header **SHALL** include: §
 
     Prefer: respond-async
 
 
 ### Treatment Relationships
 
-§pdex-254: The Payer **SHALL** be responsible for managing and maintaining the Treatment Relationship between §
-Members and Providers. §pdex-255: The payer **SHALL** take account of members that have chosen to Opt-Out of §
-sharing data with providers. §pdex-256: Those Opted-Out members **SHALL** be included in a Member Opted-Out List. § 
+§pdex-286: The Payer **SHALL** be responsible for managing and maintaining the Treatment Relationship between §
+Members and Providers. §pdex-287: The payer **SHALL** take account of members that have chosen to Opt-Out of §
+sharing data with providers. §pdex-288: Those Opted-Out members **SHALL** be included in a Member Opted-Out List. § 
 
 The [Da Vinci Member Attribution (ATR) IG]({{site.data.fhir.ver.atr}}) 
 provides transactions to manage the Group resources through Add, change and delete member actions. PDex provides specific Group profiles for Provider Access use cases:
@@ -208,7 +208,7 @@ See the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/
 - ndjson format specification
 - Security requirements
 - Complete workflow from member-match through data retrieval
-§pdex-257: Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include: §
+§pdex-289: Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include: §
 
 - US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
 - [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
@@ -230,14 +230,14 @@ non-financial profiles:
 
 Provider Representative:
 
-§pdex-258: - **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. § Where {id} is the Matched Member Group created by a preceding Provider Member-Match operation.
-§pdex-259: - **SHALL** be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation. §
-§pdex-260: - **SHALL** be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation. §
+§pdex-290: - **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. § Where {id} is the Matched Member Group created by a preceding Provider Member-Match operation.
+§pdex-291: - **SHALL** be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation. §
+§pdex-292: - **SHALL** be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation. §
 
 The $davinci-data-export operation enables a Provider Representative to perform granular requests 
 for data. 
 
-§pdex-261: Data **MAY** be constrained by: §
+§pdex-293: Data **MAY** be constrained by: §
 
 - Patient subset
 - Date range
@@ -250,101 +250,101 @@ Data available via the API includes:
 - Prior Authorizations and supporting structured documentation
 - Non-Financial claims and encounters (CARIN Blue Button)
 
-§pdex-262: The Data Export operation **SHALL** check the consent status for each member at the time of execution. § This is necessary to identify members that may have changed their opt-out 
+§pdex-294: The Data Export operation **SHALL** check the consent status for each member at the time of execution. § This is necessary to identify members that may have changed their opt-out 
 status for sharing with providers.
 
 #### Da Vinci Data Export Parameter Handling
 
 ##### patient
 
-§pdex-263: If the patient parameter is not provided data **SHALL** be retrieved for all members §
-in the Group. §pdex-264: If the patient parameter is provided the operation **SHALL** ignore references §
+§pdex-295: If the patient parameter is not provided data **SHALL** be retrieved for all members §
+in the Group. §pdex-296: If the patient parameter is provided the operation **SHALL** ignore references §
 to patients that are invalid, or not a member of the group.
 
 ##### exportType
 
 This is an optional parameter in the Da Vinci Data Export Operation.
-§pdex-265: The exportType parameter **SHALL** have one of the following values: §
+§pdex-297: The exportType parameter **SHALL** have one of the following values: §
 
 -  hl7.fhir.us.davinci-pdex#provider-delta
 -  hl7.fhir.us.davinci-pdex#provider-download
 -  hl7.fhir.us.davinci-pdex#provider-snapshot
 
-§pdex-266: The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is §
+§pdex-298: The hl7.fhir.us.davinci-pdex#provider-delta option **SHALL** be used when the provider is §
 retrieving new, or updated data that will be stored as part of the patient record.
-§pdex-266a: When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval. § The client is responsible for tracking the date/time of their previous requests using an internal audit trail and using that value as the `_since` parameter in subsequent delta requests. The payer server has no obligation to infer a delta cutoff on the client's behalf.
+§pdex-299: When using provider-delta the provider client **SHALL** supply the `_since` parameter to scope the request to resources updated since their last retrieval. § The client is responsible for tracking the date/time of their previous requests using an internal audit trail and using that value as the `_since` parameter in subsequent delta requests. The payer server has no obligation to infer a delta cutoff on the client's behalf.
 
-§pdex-267: The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is §
+§pdex-300: The hl7.fhir.us.davinci-pdex#provider-download option **SHALL** be used when the provider is §
 retrieving data that will be stored as part of the patient record.
 
-§pdex-268: The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider §
+§pdex-301: The hl7.fhir.us.davinci-pdex#provider-snapshot value **SHOULD** be used when a provider §
 wants to download data for viewing.
 
-From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType parameter indicates that the retrieved data will be stored as part of the patient record. Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client.
+From the Data Provider's perspective the hl7.fhir.us.davinci-pdex#provider-download exportType parameter indicates that the retrieved data will be stored as part of the patient record. §pdex-302: Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed and by which client. §
 
 ##### _since
 
 Resources in the Patient Access and Provider Access API can extend back to January 1, 2016. 
-§pdex-270: The _since parameter **SHOULD** be used for resource requests when the full history is not §
-required. §pdex-271: It is expected that providers **MAY** first request data for members without §
-limiting the request using the _since parameter. §pdex-272: Subsequent requests **MAY** then use _since §
+§pdex-303: The _since parameter **SHOULD** be used for resource requests when the full history is not §
+required. §pdex-304: It is expected that providers **MAY** first request data for members without §
+limiting the request using the _since parameter. §pdex-305: Subsequent requests **MAY** then use _since §
 to limit data to information that is new.
 
 ##### _until
 
-§pdex-273: The _until parameter **MAY** be used less frequently. § It is most likely to be used with the  
+§pdex-306: The _until parameter **MAY** be used less frequently. § It is most likely to be used with the  
 hl7.fhir.us.davinci-pdex#provider-snapshot exportType to retrieve member data for a specific 
 period.
 
 ##### _type
 
-§pdex-274: The _type parameter **MAY** be used to restrict the resources retrieved by the Provider. § This 
+§pdex-307: The _type parameter **MAY** be used to restrict the resources retrieved by the Provider. § This 
 enables providers to only retrieve the resource types they are interested in seeing. If this 
-§pdex-275: parameter is not used all available resources **SHALL** be returned by the Payer, subject to §
+§pdex-308: parameter is not used all available resources **SHALL** be returned by the Payer, subject to §
 the constraints applied by other input parameters.
 
 
 ##### _typeFilter
 
-§pdex-278: The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the §
+§pdex-309: The _typeFilter parameter **MAY** be used to further restrict the resources retrieved by the §
 Provider. For example, to only retrieve Observations of a certain type. The _typeFilter, if 
-§pdex-279: used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource §
+§pdex-310: used, **SHALL** comprise one, or more, valid FHIR search queries for the respective resource §
 being filtered.
 
 
 NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters
-§pdex-282: supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL** §
+§pdex-311: supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs **SHALL** §
 be followed.
 
 
 ### Access and Refresh Tokens
 
-§pdex-283: Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services §
+§pdex-312: Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services §
 Authorization Profile. When SMART Backend Services Authorization is used, Bulk Data Status Request and Bulk Data 
-§pdex-284: Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request, §
-including an access token with scopes that cover all resources being exported. §pdex-285: A server **MAY** §
+§pdex-313: Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request, §
+including an access token with scopes that cover all resources being exported. §pdex-314: A server **MAY** §
 additionally restrict Bulk Data Status Request and Bulk Data Output File Requests by limiting 
-them to the client that originated the export. §pdex-286: Health plans **SHALL** limit the data returned to §
+them to the client that originated the export. §pdex-315: Health plans **SHALL** limit the data returned to §
 only those FHIR resources for which the client is authorized. 
 
-§pdex-287: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group §
-resources and perform Bulk export operations. §pdex-288: Access Tokens **SHALL** be required to access the Group §
-resources and and the Bulk export operation. §pdex-289: Access and Refresh Tokens **SHOULD** be issued to support §
+§pdex-316: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group §
+resources and perform Bulk export operations. §pdex-317: Access Tokens **SHALL** be required to access the Group §
+resources and and the Bulk export operation. §pdex-318: Access and Refresh Tokens **SHOULD** be issued to support §
 the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer
-Exchange **SHOULD** be registered in accordance with the approach defined in the
+§pdex-319: Exchange **SHOULD** be registered in accordance with the approach defined in the §
 [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys).
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is
 to use the B2B protocols detailed in the 
 [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) IG.
 
-§pdex-290: When the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html) section are used, the `subject_id` in the B2B Authorization Extension Object (Key Name: `"hl7-b2b"`) **SHOULD** contain the NPI of the rendering provider on whose behalf member data is being requested. § The rendering provider NPI enables the payer to verify the requesting provider's identity and contractual status before issuing an access token.
+§pdex-320: When the protocols detailed in the above UDAP Security IG's [Business to Business](https://hl7.org/fhir/us/udap-security/b2b.html) section are used, the `subject_id` in the B2B Authorization Extension Object (Key Name: `"hl7-b2b"`) **SHOULD** contain the NPI of the rendering provider on whose behalf member data is being requested. § The rendering provider NPI enables the payer to verify the requesting provider's identity and contractual status before issuing an access token.
 
-§pdex-291: For requests covering more than a single rendering provider (e.g., an organization-level request), the `subject_id` **MAY** be the FHIR Id of the Group being requested. § The use of the Group FHIR Id as the `subject_id` is based upon the assumption that health plans have access controls in place to restrict the requestor to only those Group records they are authorized to access.
+§pdex-321: For requests covering more than a single rendering provider (e.g., an organization-level request), the `subject_id` **MAY** be the FHIR Id of the Group being requested. § The use of the Group FHIR Id as the `subject_id` is based upon the assumption that health plans have access controls in place to restrict the requestor to only those Group records they are authorized to access.
 
-§pdex-292: The payer **SHOULD** validate the NPI supplied in the `subject_id` against their provider directory to confirm the provider is known, active, and has an in-network or contractual relationship before issuing an access token or processing a `$provider-member-match` request. §
+§pdex-322: The payer **SHOULD** validate the NPI supplied in the `subject_id` against their provider directory to confirm the provider is known, active, and has an in-network or contractual relationship before issuing an access token or processing a `$provider-member-match` request. §
 
 ### Scopes for Operations
 

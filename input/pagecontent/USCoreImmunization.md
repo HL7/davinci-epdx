@@ -1,6 +1,6 @@
 [Previous Page - US Core Goal](USCoreGoal.html)
 
-§pdex-25: Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the §
+§pdex-28: Where a Health Plan has access to structured and coded Immunization information for a member, the health plan **SHALL** present the information using the §
 [US Core 3.1.1 Immunization]({{site.data.fhir.ver.uscore3}}/StructureDefinition-us-core-immunization.html) or
 [US Core 6.1.0 Immunization]({{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-immunization.html)
 resource when information is available in a structured and coded form.
