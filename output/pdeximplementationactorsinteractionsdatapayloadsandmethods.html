@@ -366,7 +366,7 @@ Support (PAS).</p>
   <li>Coverage (HealthPlan Membership data).</li>
 </ol>
 
-<p><span id="pdex-198" class="fhir-conformance"> All resources and operations available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement. <a name="ci-c-pdex-198">  </a><a href="narrative-conformance.html#ci-c-pdex-198"><sup>&sect;pdex-198</sup></a></span></p>
+<p><span id="pdex-225" class="fhir-conformance"> All resources and operations available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement. <a name="ci-c-pdex-225">  </a><a href="narrative-conformance.html#ci-c-pdex-225"><sup>&sect;pdex-225</sup></a></span></p>
 
 <p>See <a href="datamapping.html">Data Mapping</a> for details of the Data Payloads and operations.</p>
 
@@ -375,7 +375,7 @@ Support (PAS).</p>
 <p>The PDex IG is focused on provider, member, or plan directed exchange of a member's data.</p>
 
 <p>All exchanges in this IG are for an individual. Where one member has permission to access the information 
-for another member of the health plan, they <strong>SHOULD</strong> provide appropriate credentials to enable the exchange 
+<span id="pdex-226" class="fhir-conformance"> for another member of the health plan, they <strong>SHOULD</strong> provide appropriate credentials to enable the exchange <a name="ci-c-pdex-226">  </a><a href="narrative-conformance.html#ci-c-pdex-226"><sup>&sect;pdex-226</sup></a></span>
 for that individual.</p>
 
 <p>The PDex IG specifies three interaction methods. Their use depends upon the Actors involved and the Data 
@@ -463,8 +463,8 @@ that IG for the latest guidance, examples and links to code samples.</p>
 <h5 id="hook-actions">Hook Actions</h5>
 
 <p>When a Health Plan server responds to a CDS Hook, one of the possible actions is to allow the user to 
-<a href="https://cds-hooks.hl7.org/1.0/#link">invoke a SMART App</a>. <span id="pdex-199" class="fhir-conformance"> Support for this option by Health Plan systems <strong>SHOULD</strong> be provided. <a name="ci-c-pdex-199">  </a><a href="narrative-conformance.html#ci-c-pdex-199"><sup>&sect;pdex-199</sup></a></span> 
-<span id="pdex-200" class="fhir-conformance"> The SMART on FHIR app provided as a link from the returned CDS Hook <strong>SHOULD</strong> enable a clinician to <a name="ci-c-pdex-200">  </a><a href="narrative-conformance.html#ci-c-pdex-200"><sup>&sect;pdex-200</sup></a></span>
+<a href="https://cds-hooks.hl7.org/1.0/#link">invoke a SMART App</a>. <span id="pdex-227" class="fhir-conformance"> Support for this option by Health Plan systems <strong>SHOULD</strong> be provided. <a name="ci-c-pdex-227">  </a><a href="narrative-conformance.html#ci-c-pdex-227"><sup>&sect;pdex-227</sup></a></span> 
+<span id="pdex-228" class="fhir-conformance"> The SMART on FHIR app provided as a link from the returned CDS Hook <strong>SHOULD</strong> enable a clinician to <a name="ci-c-pdex-228">  </a><a href="narrative-conformance.html#ci-c-pdex-228"><sup>&sect;pdex-228</sup></a></span>
 review the available Health Plan's data for their patient, select the data they want to commit to their EMR 
 system and upon confirming their selection, enable the selected data to be written to the clinician's EMR system.</p>
 
@@ -478,7 +478,7 @@ selection method was used to illustrate the record import capability.</p>
 provides additional guidance and expectations on the use of CDS Hook cards to launch SMART Apps and how payer-provided 
 SMART Apps should function.</p>
 
-<p><span id="pdex-201" class="fhir-conformance"> All requesters (e.g., EHRs) <strong>SHOULD</strong> store provenance associated with any data exchanged as part of this IG if <a name="ci-c-pdex-201">  </a><a href="narrative-conformance.html#ci-c-pdex-201"><sup>&sect;pdex-201</sup></a></span>
+<p><span id="pdex-229" class="fhir-conformance"> All requesters (e.g., EHRs) <strong>SHOULD</strong> store provenance associated with any data exchanged as part of this IG if <a name="ci-c-pdex-229">  </a><a href="narrative-conformance.html#ci-c-pdex-229"><sup>&sect;pdex-229</sup></a></span>
 it is committed to their system.</p>
 
 <h4 id="oauth20-and-fhir-api-for-member-mediated-exchange">OAuth2.0 and FHIR API for Member-Mediated Exchange</h4>
@@ -496,32 +496,32 @@ direction of the member, or to enable exchange with a Provider (<a href="provide
 unless a member has actively opted-out of data sharing with Providers.</p>
 
 <p>The well-defined mechanism for enabling Member/Patient authorization to share information with an application using 
-the FHIR API is to use OAuth2.0 as the Authorization protocol. <span id="pdex-202" class="fhir-conformance"> The member <strong>SHALL</strong> authenticate using <a name="ci-c-pdex-202">  </a><a href="narrative-conformance.html#ci-c-pdex-202"><sup>&sect;pdex-202</sup></a></span>
+the FHIR API is to use OAuth2.0 as the Authorization protocol. <span id="pdex-230" class="fhir-conformance"> The member <strong>SHALL</strong> authenticate using <a name="ci-c-pdex-230">  </a><a href="narrative-conformance.html#ci-c-pdex-230"><sup>&sect;pdex-230</sup></a></span>
 credentials they have been issued by the Health Plan. This is typically the member's customer portal credentials.</p>
 
 <p>The member will typically select a third-party application, service or new (target) Health Plan with whom 
 they wish to share data. The member should review and agree with the Terms of Service and a Privacy Policy 
 that details how the application or service will use the member's data from the (source) Health Plan. 
-<span id="pdex-203" class="fhir-conformance"> While authenticated to the application or service, the member <strong>MAY</strong> connect to the (source) Health Plan's <a name="ci-c-pdex-203">  </a><a href="narrative-conformance.html#ci-c-pdex-203"><sup>&sect;pdex-203</sup></a></span>
+<span id="pdex-231" class="fhir-conformance"> While authenticated to the application or service, the member <strong>MAY</strong> connect to the (source) Health Plan's <a name="ci-c-pdex-231">  </a><a href="narrative-conformance.html#ci-c-pdex-231"><sup>&sect;pdex-231</sup></a></span>
 authorization server. After authenticating to the (source) Health Plan's authorization server, the Member 
-<span id="pdex-204" class="fhir-conformance"> <strong>SHALL</strong> be presented with an Authorization screen that enables them to approve the sharing of information with <a name="ci-c-pdex-204">  </a><a href="narrative-conformance.html#ci-c-pdex-204"><sup>&sect;pdex-204</sup></a></span>
+<span id="pdex-232" class="fhir-conformance"> <strong>SHALL</strong> be presented with an Authorization screen that enables them to approve the sharing of information with <a name="ci-c-pdex-232">  </a><a href="narrative-conformance.html#ci-c-pdex-232"><sup>&sect;pdex-232</sup></a></span>
 their intended application, service or (target) Health Plan. For this authorization to occur the Application, 
 service or (target) Health Plan will require OAuth 2.0 client application credentials that are issued by the 
 (source) Health Plan in order to register an authorization request.</p>
 
-<p><span id="pdex-205" class="fhir-conformance"> The Authorization process, in accordance with applicable privacy policy, <strong>SHALL</strong> provide a mechanism to <a name="ci-c-pdex-205">  </a><a href="narrative-conformance.html#ci-c-pdex-205"><sup>&sect;pdex-205</sup></a></span>
+<p><span id="pdex-233" class="fhir-conformance"> The Authorization process, in accordance with applicable privacy policy, <strong>SHALL</strong> provide a mechanism to <a name="ci-c-pdex-233">  </a><a href="narrative-conformance.html#ci-c-pdex-233"><sup>&sect;pdex-233</sup></a></span>
 support current regulations allowing members the right to decide what information is permitted to be exchanged.<br/>
 Examples of member authorized restrictions/permissions are 42CFR, State and Federal requirements for sensitive data.</p>
 
-<p><span id="pdex-206" class="fhir-conformance"> After successfully authorizing an application an Access Token and Optional Refresh Token <strong>SHALL</strong> be <a name="ci-c-pdex-206">  </a><a href="narrative-conformance.html#ci-c-pdex-206"><sup>&sect;pdex-206</sup></a></span>
+<p><span id="pdex-234" class="fhir-conformance"> After successfully authorizing an application an Access Token and Optional Refresh Token <strong>SHALL</strong> be <a name="ci-c-pdex-234">  </a><a href="narrative-conformance.html#ci-c-pdex-234"><sup>&sect;pdex-234</sup></a></span>
 returned to the requesting application.</p>
 
-<p><span id="pdex-207" class="fhir-conformance"> The scopes of the access token <strong>SHALL</strong> be restricted to the authorizing Member's information and the scopes approved. <a name="ci-c-pdex-207">  </a><a href="narrative-conformance.html#ci-c-pdex-207"><sup>&sect;pdex-207</sup></a></span></p>
+<p><span id="pdex-235" class="fhir-conformance"> The scopes of the access token <strong>SHALL</strong> be restricted to the authorizing Member's information and the scopes approved. <a name="ci-c-pdex-235">  </a><a href="narrative-conformance.html#ci-c-pdex-235"><sup>&sect;pdex-235</sup></a></span></p>
 
-<p><span id="pdex-208" class="fhir-conformance"> Any subsequent Access Token issued based on the Refresh Token <strong>SHALL</strong> be restricted (at least) to the same <a name="ci-c-pdex-208">  </a><a href="narrative-conformance.html#ci-c-pdex-208"><sup>&sect;pdex-208</sup></a></span>
+<p><span id="pdex-236" class="fhir-conformance"> Any subsequent Access Token issued based on the Refresh Token <strong>SHALL</strong> be restricted (at least) to the same <a name="ci-c-pdex-236">  </a><a href="narrative-conformance.html#ci-c-pdex-236"><sup>&sect;pdex-236</sup></a></span>
 restrictions.</p>
 
-<p><span id="pdex-209" class="fhir-conformance"> The requesting application <strong>SHALL</strong> use the access token to access the Health Plan's secure FHIR API to download <a name="ci-c-pdex-209">  </a><a href="narrative-conformance.html#ci-c-pdex-209"><sup>&sect;pdex-209</sup></a></span>
+<p><span id="pdex-237" class="fhir-conformance"> The requesting application <strong>SHALL</strong> use the access token to access the Health Plan's secure FHIR API to download <a name="ci-c-pdex-237">  </a><a href="narrative-conformance.html#ci-c-pdex-237"><sup>&sect;pdex-237</sup></a></span>
 the information that the Application is allowed to access.</p>
 
 <p>The OAuth2.0 Member-authorized exchange is detailed in <a href="member-authorizedoauth2exchange.html">Section: Member-Authorized OAuth2.0 Exchange</a>.</p>
@@ -557,13 +557,13 @@ Authorization decision to be exchanged.</p>
   <li><a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk Exchange for multiple members</a></li>
 </ol>
 
-<p><span id="pdex-210" class="fhir-conformance"> Clients wishing to retrieve data <strong>SHOULD</strong> consult the Data Provider's Server Capability Statement to <a name="ci-c-pdex-210">  </a><a href="narrative-conformance.html#ci-c-pdex-210"><sup>&sect;pdex-210</sup></a></span>
+<p><span id="pdex-238" class="fhir-conformance"> Clients wishing to retrieve data <strong>SHOULD</strong> consult the Data Provider's Server Capability Statement to <a name="ci-c-pdex-238">  </a><a href="narrative-conformance.html#ci-c-pdex-238"><sup>&sect;pdex-238</sup></a></span>
 determine which methods are made available by the data holder.</p>
 
 <p>The exchange of Unstructured data does not require a Payer to translate the unstructured content into structured
 FHIR resources such as Observations or Conditions, etc.</p>
 
-<p><span id="pdex-211" class="fhir-conformance"> Payers <strong>SHOULD</strong>: <a name="ci-c-pdex-211">  </a><a href="narrative-conformance.html#ci-c-pdex-211"><sup>&sect;pdex-211</sup></a></span></p>
+<p><span id="pdex-239" class="fhir-conformance"> Payers <strong>SHOULD</strong>: <a name="ci-c-pdex-239">  </a><a href="narrative-conformance.html#ci-c-pdex-239"><sup>&sect;pdex-239</sup></a></span></p>
 <ul>
   <li>base 64 encode as an attachment (e.g. images, digitized clinical notes or fax content) and create a binary record, as per the <a href="http://hl7.org/fhir/R4/binary.html">FHIR R4 Binary resource</a></li>
   <li>Create a DocumentReference using <a href="http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-documentreference.html">US Core 3.1.1 Document Reference</a> or <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-documentreference.html">US Core 6.1.0 Document Reference</a></li>
@@ -571,7 +571,7 @@ FHIR resources such as Observations or Conditions, etc.</p>
 
 <p>Payers are required to exchange Unstructured data with other Payers via the Payer-to-Payer API.</p>
 
-<p><span id="pdex-212" class="fhir-conformance"> Payers <strong>MAY</strong> choose to exchange unstructured data with Patients and Providers, via their respective APIs, <a name="ci-c-pdex-212">  </a><a href="narrative-conformance.html#ci-c-pdex-212"><sup>&sect;pdex-212</sup></a></span>
+<p><span id="pdex-240" class="fhir-conformance"> Payers <strong>MAY</strong> choose to exchange unstructured data with Patients and Providers, via their respective APIs, <a name="ci-c-pdex-240">  </a><a href="narrative-conformance.html#ci-c-pdex-240"><sup>&sect;pdex-240</sup></a></span>
 using the same content provided to Payers. i,e. Attaching as a binary resource and referenced in a DocumentReference.</p>
 
 <p><a href="handlingdataprovenance.html">Next Page - Handling Data Provenance</a></p>
@@ -617,7 +617,7 @@ using the same content provided to Payers. i,e. Attaching as a binary resource a
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

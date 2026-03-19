@@ -34,7 +34,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-group.
 
 #### Mandatory Search Parameters
 
-1. **SHALL** support searching for code for a Group. [Group_Code Search Parameter](SearchParameter-group-code.md)`GET [base]/Group?code={code}`Example:GET [base]/Group?code="pdexprovidergroup"NOTE:Server should limit responses to records that requesting user or service is permitted to access. For example, Attributed Group lists for Practitioners working in a Facility where the system accessing is accessing on behalf of the facility.
+1. §pdex-396: **SHALL** support searching for code for a Group. § [Group_Code Search Parameter](SearchParameter-group-code.md)`GET [base]/Group?code={code}`Example:GET [base]/Group?code="pdexprovidergroup"NOTE:Server should limit responses to records that requesting user or service is permitted to access. For example, Attributed Group lists for Practitioners working in a Facility where the system accessing is accessing on behalf of the facility.
 
 [Back to Artifacts](artifacts.md)
 
@@ -66,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-group.
   "title" : "PDex Provider Group",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-17T22:49:33-04:00",
+  "date" : "2026-03-19T09:51:30-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

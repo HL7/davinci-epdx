@@ -302,7 +302,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The authorization method uses the <a href="https://oauth.net/2/">OAuth 2.0</a> protocol to issue a token to an authorized application or service. The authorized application can then use the token to enable interaction with the FHIR REST API.</p>
 
-<p><span id="pdex-104" class="fhir-conformance"> When a Member is authorizing sharing of the Member Health History with another Health Plan, or a Third Party Application, via the OAuth 2.0 protocol the Health Plan that is operating the API <strong>SHALL</strong> offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations. <a name="ci-c-pdex-104">  </a><a href="narrative-conformance.html#ci-c-pdex-104"><sup>&sect;pdex-104</sup></a></span> However, under the HIPAA Right of Access the Member is at liberty to share that information if they so wish.</p>
+<p><span id="pdex-111" class="fhir-conformance"> When a Member is authorizing sharing of the Member Health History with another Health Plan, or a Third Party Application, via the OAuth 2.0 protocol the Health Plan that is operating the API <strong>SHALL</strong> offer the Member an option to allow the sharing of sensitive information, such as behavioral health data, resulting in the data being shared excluding sensitive data that is covered by state and/or federal regulations. <a name="ci-c-pdex-111">  </a><a href="narrative-conformance.html#ci-c-pdex-111"><sup>&sect;pdex-111</sup></a></span> However, under the HIPAA Right of Access the Member is at liberty to share that information if they so wish.</p>
 
 <table>
 	<tr>
@@ -312,17 +312,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 	</tr>	
 </table>
 
-<p>The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. <span id="pdex-105" class="fhir-conformance"> The member <strong>SHALL</strong> authenticate using credentials they have been issued by, or accepted by the Health Plan. <a name="ci-c-pdex-105">  </a><a href="narrative-conformance.html#ci-c-pdex-105"><sup>&sect;pdex-105</sup></a></span> This is typically the member's customer portal credentials.</p>
+<p>The well-defined mechanism for enabling Member/Patient authorization to share information with an application using the FHIR API is to use OAuth2.0 as the Authorization protocol. <span id="pdex-112" class="fhir-conformance"> The member <strong>SHALL</strong> authenticate using credentials they have been issued by, or accepted by the Health Plan. <a name="ci-c-pdex-112">  </a><a href="narrative-conformance.html#ci-c-pdex-112"><sup>&sect;pdex-112</sup></a></span> This is typically the member's customer portal credentials.</p>
 
-<p><span id="pdex-106" class="fhir-conformance"> After authenticating the Member <strong>SHALL</strong> be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan. <a name="ci-c-pdex-106">  </a><a href="narrative-conformance.html#ci-c-pdex-106"><sup>&sect;pdex-106</sup></a></span></p>
+<p><span id="pdex-113" class="fhir-conformance"> After authenticating the Member <strong>SHALL</strong> be presented with an Authorization process that enables them to approve the sharing of information with the Third Party, or new Health Plan, Application that has client application credentials registered with the Health Plan. <a name="ci-c-pdex-113">  </a><a href="narrative-conformance.html#ci-c-pdex-113"><sup>&sect;pdex-113</sup></a></span></p>
 
-<p><span id="pdex-107" class="fhir-conformance"> The Authorization process <strong>SHALL</strong> provide the ability for the authorized representative to designate a third-party application that will have access to all information permitted by current state and federal regulations. <a name="ci-c-pdex-107">  </a><a href="narrative-conformance.html#ci-c-pdex-107"><sup>&sect;pdex-107</sup></a></span></p>
+<p><span id="pdex-114" class="fhir-conformance"> The Authorization process <strong>SHALL</strong> provide the ability for the authorized representative to designate a third-party application that will have access to all information permitted by current state and federal regulations. <a name="ci-c-pdex-114">  </a><a href="narrative-conformance.html#ci-c-pdex-114"><sup>&sect;pdex-114</sup></a></span></p>
 
-<p><span id="pdex-108" class="fhir-conformance"> After successfully authorizing an application an Access Token and Optional Refresh Token <strong>SHALL</strong> be returned to the requesting application. <a name="ci-c-pdex-108">  </a><a href="narrative-conformance.html#ci-c-pdex-108"><sup>&sect;pdex-108</sup></a></span></p>
+<p><span id="pdex-115" class="fhir-conformance"> After successfully authorizing an application an Access Token and Optional Refresh Token <strong>SHALL</strong> be returned to the requesting application. <a name="ci-c-pdex-115">  </a><a href="narrative-conformance.html#ci-c-pdex-115"><sup>&sect;pdex-115</sup></a></span></p>
 
-<p><span id="pdex-109" class="fhir-conformance"> The requesting application <strong>SHALL</strong> use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. <a name="ci-c-pdex-109">  </a><a href="narrative-conformance.html#ci-c-pdex-109"><sup>&sect;pdex-109</sup></a></span></p>
+<p><span id="pdex-116" class="fhir-conformance"> The requesting application <strong>SHALL</strong> use the access token to access the Health Plan's secure FHIR API to download the information that the Member is allowed to access. <a name="ci-c-pdex-116">  </a><a href="narrative-conformance.html#ci-c-pdex-116"><sup>&sect;pdex-116</sup></a></span></p>
 
-<p>Applications are registered with the API Endpoint. <span id="pdex-110" class="fhir-conformance"> The application owner <strong>MAY</strong> be: <a name="ci-c-pdex-110">  </a><a href="narrative-conformance.html#ci-c-pdex-110"><sup>&sect;pdex-110</sup></a></span></p>
+<p>Applications are registered with the API Endpoint. <span id="pdex-117" class="fhir-conformance"> The application owner <strong>MAY</strong> be: <a name="ci-c-pdex-117">  </a><a href="narrative-conformance.html#ci-c-pdex-117"><sup>&sect;pdex-117</sup></a></span></p>
 <ul>
   <li>Another Health Plan</li>
   <li>An Independent developer, such as a Personal Health Record application developer</li>
@@ -372,7 +372,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

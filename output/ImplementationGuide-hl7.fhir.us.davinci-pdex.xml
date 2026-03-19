@@ -49,7 +49,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
   <name value="DaVinciPayerDataExchange"/>
   <title value="Da Vinci Payer Data Exchange"/>
   <status value="active"/>
-  <date value="2026-03-17T22:49:33-04:00"/>
+  <date value="2026-03-19T09:51:30-04:00"/>
   <publisher value="HL7 International / Financial Management"/>
   <contact>
     <name value="HL7 International / Financial Management"/>
@@ -1903,7 +1903,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="OperationDefinition/BulkMemberMatch"/>
       </reference>
       <name value="PDex Bulk Member Match Operation"/>
-      <description value="Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.&#xA;&#xA;Input parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile."/>
+      <description value="Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2189,7 +2189,7 @@ Feedback is welcome and may be submitted through the FHIR JIRA tracker indicatin
         <reference value="OperationDefinition/ProviderMemberMatch"/>
       </reference>
       <name value="PDex Provider-Member-Match Operation"/>
-      <description value="Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.&#xA;&#xA;The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.&#xA;&#xA;Input parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile."/>
+      <description value="Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

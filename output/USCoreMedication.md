@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Location](USCoreLocation.md)
 
-§pdex-29: Where a Health Plan has access to Medication information, they **SHALL** make the information available using the § [US Core 3.1.1 Medication](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medication.html) or [US Core 6.1.0 Medication](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medication.html) resource.
+§pdex-32: Where a Health Plan has access to Medication information, they **SHALL** make the information available using the § [US Core 3.1.1 Medication](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medication.html) or [US Core 6.1.0 Medication](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medication.html) resource.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Medication](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-medication.html) or [US Core 6.1.0 Medication](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-medication.html) resource are:
 

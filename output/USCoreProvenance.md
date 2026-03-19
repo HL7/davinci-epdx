@@ -15,7 +15,7 @@
 
 [US Core 3.1.1 Procvenance](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html) or [US Core 6.1.0 Provenance](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html) is provided as a reference for situations where payers receive detailed clinical data via formats such as C-CDA and in converting to a FHIR format are able to identify the detailed information about the originating event and can therefore create an appropriate Provenance record.
 
-§pdex-37: In all other cases a payer **SHALL** create a [PDex Provenance](PDexProvenance.md) profile that identifies their role as a "Transmitter" of the information. §
+§pdex-42: In all other cases a payer **SHALL** create a [PDex Provenance](PDexProvenance.md) profile that identifies their role as a "Transmitter" of the information. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Procvenance](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html) or [US Core 6.1.0 Provenance](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html) are:
 

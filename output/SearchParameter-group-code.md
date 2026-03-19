@@ -24,7 +24,7 @@ This search parameter enables a query against the Group resource to identify the
 * nomatch
 * consentconstraint
 
-The FHIR Store **MAY** only have records for **pdexprovidergroup**, as used by the [Provider Access API](provider-access-api.md), and **match**, as used by the [Payer-to-Payer Bulk API](payertopayerbulkexchange.md) for members that successfully matched.
+The FHIR Store may only have records for **pdexprovidergroup**, as used by the [Provider Access API](provider-access-api.md), and **match**, as used by the [Payer-to-Payer Bulk API](payertopayerbulkexchange.md) for members that successfully matched.
 
 These codes relate to the following Group Profiles:
 

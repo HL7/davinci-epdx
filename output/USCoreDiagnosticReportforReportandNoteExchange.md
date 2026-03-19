@@ -13,7 +13,7 @@
 
 [Previous Page - US Core DiagnosticReport for Laboratory Results Reporting](USCoreDiagnosticReportforLaboratoryResultsReporting.md)
 
-§pdex-23: Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource. §
+§pdex-26: Where a Health Plan has access to clinical notes and associated diagnostic information, they **SHALL** make the information available using the [US Core DiagnosticReport for Report and Note Exchange](http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-note.html) resource. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the US Core DiagnosticReport for Report and Note Exchange resource are:
 

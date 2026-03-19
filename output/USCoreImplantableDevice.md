@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Immunization](USCoreImmunization.md)
 
-§pdex-26: Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the § [US Core 3.1.1 Implantable Device](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-implantable-device.html) or [US Core 6.1.0 Implantable Device](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
+§pdex-29: Where a Health Plan has information about devices used by the Member that information **SHALL** be published using the § [US Core 3.1.1 Implantable Device](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-implantable-device.html) or [US Core 6.1.0 Implantable Device](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-implantable-device.html) resource when the information is structured and coded.
 
 In future versions of this IG there is a desire to ensure that all Implantable Device identification information is exchanged using the Implantable Device resource.
 

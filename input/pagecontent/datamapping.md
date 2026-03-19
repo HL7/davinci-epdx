@@ -6,7 +6,7 @@
 
 US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. §pdex-77: As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core. §
 
-Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) or [US Core 7.0.0. §pdex-78: FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}). §
+ §pdex-78: Where a [US Core 3.1.1. FHIR R4]({{site.data.fhir.ver.uscore3}}),  [US Core 6.1.0. FHIR R4]({{site.data.fhir.ver.uscore6}}) or [US Core 7.0.0. FHIR R4]({{site.data.fhir.ver.uscore7}}) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG]({{site.data.fhir.ver.hrex}}). §
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
@@ -59,7 +59,7 @@ It is recommended that the Identifier field in a resource be used to record the 
 
 ## Providing data in sub-element fields
 
-In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. §pdex-80: If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. § §pdex-81: For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. § §pdex-82: Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element. §
+In this data mapping section, each profile has a listing of the minimum essential fields that are required to enable a US Core profile to be successfully validated. §pdex-80: If a field is marked as required (cardinality n.., where n>0) the Health Plan **SHALL** populate the field. § §pdex-81: For a field specified as MUST SUPPORT and the cardinality is 0.., the Health Plan **SHALL** be capable of populating the field and do so if the relevant data exists. §  §pdex-82: Where a field contains sub-field elements that are marked as MUST SUPPORT but the parent element has a cardinality of 0..n, where n is 1 or greater, the health plan **SHALL** provide data for the MUST SUPPORT sub-elements, only if it is providing data for the parent element. §
 
 §pdex-83: If a field is marked as MUST SUPPORT the receiver **SHALL** be able to consume it without generating an error. §
 

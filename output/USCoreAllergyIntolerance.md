@@ -13,7 +13,7 @@
 
 [Previous Page - Data Mapping](datamapping.md)
 
-Where a Health Plan has information about a member's allergies the US Core AllergyIntolerance profile §pdex-18: **SHALL** be used to record them. §
+Where a Health Plan has information about a member's allergies the US Core AllergyIntolerance profile §pdex-21: **SHALL** be used to record them. §
 
 The US Core AllergyIntolerance profile is found here:
 

@@ -320,7 +320,7 @@ Payers to support the bulk exchange of data for multiple members.</p>
 the IG supports the exchange of data for a single member, or 
 multiple members.</p>
 
-<p><span id="pdex-121" class="fhir-conformance"> Bulk Payer-to-Payer exchange <strong>SHALL</strong> be accomplished by the use of the <a name="ci-c-pdex-121">  </a><a href="narrative-conformance.html#ci-c-pdex-121"><sup>&sect;pdex-121</sup></a></span>
+<p><span id="pdex-129" class="fhir-conformance"> Bulk Payer-to-Payer exchange <strong>SHALL</strong> be accomplished by the use of the <a name="ci-c-pdex-129">  </a><a href="narrative-conformance.html#ci-c-pdex-129"><sup>&sect;pdex-129</sup></a></span>
 Bulk FHIR API specification.</p>
 
 <p>The Advancing Interoperability and Prior Authorization Final Rule requires 
@@ -328,9 +328,9 @@ that the Member consent to the retrieval of their data from their prior
 health plan.</p>
 
 <p>The Advancing Interoperability and Prior Authorization Final Rule requires that 
-<span id="pdex-122" class="fhir-conformance"> health plans <strong>SHALL</strong> limit the data exchanged to data with a service date no <a name="ci-c-pdex-122">  </a><a href="narrative-conformance.html#ci-c-pdex-122"><sup>&sect;pdex-122</sup></a></span>
+<span id="pdex-130" class="fhir-conformance"> health plans <strong>SHALL</strong> limit the data exchanged to data with a service date no <a name="ci-c-pdex-130">  </a><a href="narrative-conformance.html#ci-c-pdex-130"><sup>&sect;pdex-130</sup></a></span>
 earlier than 5 years prior to the date of the data request. Prior Authorizations 
-<span id="pdex-123" class="fhir-conformance"> <strong>SHALL</strong> be limited to current/active Prior Authorizations in addition to Prior <a name="ci-c-pdex-123">  </a><a href="narrative-conformance.html#ci-c-pdex-123"><sup>&sect;pdex-123</sup></a></span>
+<span id="pdex-131" class="fhir-conformance"> <strong>SHALL</strong> be limited to current/active Prior Authorizations in addition to Prior <a name="ci-c-pdex-131">  </a><a href="narrative-conformance.html#ci-c-pdex-131"><sup>&sect;pdex-131</sup></a></span>
 Authorizations that have changed status within the last year, as of the date of 
 request for information.</p>
 
@@ -342,15 +342,15 @@ subsequently approved or denied.</p>
 <p>If the Prior Authorization processor changes the status of the Prior Authorization then the
 date of change will be recorded, In the Provider and Payer-to-Payer APIs and Prior 
 Authorization that has changed status in the previous 12 months (from the date of enquiry)
-<span id="pdex-124" class="fhir-conformance"> <strong>SHALL</strong> be included in the API response. <a name="ci-c-pdex-124">  </a><a href="narrative-conformance.html#ci-c-pdex-124"><sup>&sect;pdex-124</sup></a></span></p>
+<span id="pdex-132" class="fhir-conformance"> <strong>SHALL</strong> be included in the API response. <a name="ci-c-pdex-132">  </a><a href="narrative-conformance.html#ci-c-pdex-132"><sup>&sect;pdex-132</sup></a></span></p>
 
 <p>The Advancing Interoperability and Prior Authorization Final Rule requires that 
-<span id="pdex-125" class="fhir-conformance"> Prior Authorizations exchanged via the Payer-to-Payer Exchange API <strong>SHALL</strong> include <a name="ci-c-pdex-125">  </a><a href="narrative-conformance.html#ci-c-pdex-125"><sup>&sect;pdex-125</sup></a></span>
+<span id="pdex-133" class="fhir-conformance"> Prior Authorizations exchanged via the Payer-to-Payer Exchange API <strong>SHALL</strong> include <a name="ci-c-pdex-133">  </a><a href="narrative-conformance.html#ci-c-pdex-133"><sup>&sect;pdex-133</sup></a></span>
 the supporting clinical data used to make the prior authorization determination. 
-<span id="pdex-126" class="fhir-conformance"> The supporting data <strong>SHALL</strong> include unstructured data used in the prior <a name="ci-c-pdex-126">  </a><a href="narrative-conformance.html#ci-c-pdex-126"><sup>&sect;pdex-126</sup></a></span>
+<span id="pdex-134" class="fhir-conformance"> The supporting data <strong>SHALL</strong> include unstructured data used in the prior <a name="ci-c-pdex-134">  </a><a href="narrative-conformance.html#ci-c-pdex-134"><sup>&sect;pdex-134</sup></a></span>
 authorization determination.</p>
 
-<p><span id="pdex-127" class="fhir-conformance"> The data available to be returned by the Bulk Payer-to-Payer Exchange API <strong>SHALL</strong> <a name="ci-c-pdex-127">  </a><a href="narrative-conformance.html#ci-c-pdex-127"><sup>&sect;pdex-127</sup></a></span>
+<p><span id="pdex-135" class="fhir-conformance"> The data available to be returned by the Bulk Payer-to-Payer Exchange API <strong>SHALL</strong> <a name="ci-c-pdex-135">  </a><a href="narrative-conformance.html#ci-c-pdex-135"><sup>&sect;pdex-135</sup></a></span>
 include the following types of data:</p>
 
 <ul>
@@ -379,22 +379,22 @@ non-financial profiles:</p>
 <p>The Payer-to-Payer bulk data exchange consists of two sequential asynchronous operations:</p>
 
 <ol>
-  <li><strong><a href="OperationDefinition-BulkMemberMatch.html">$bulk-member-match</a></strong>: The requesting payer submits member demographics and consent for one or more members. This operation <strong>SHALL</strong> run asynchronously and upon completion returns Group resources categorizing members as matched, non-matched, or consent-constrained. The Group Id for matched members is used in the next step.</li>
+  <li><strong><a href="OperationDefinition-BulkMemberMatch.html">$bulk-member-match</a></strong>: The requesting payer submits member demographics and consent for one or more members. <span id="pdex-136" class="fhir-conformance"> This operation <strong>SHALL</strong> run asynchronously and upon completion returns Group resources categorizing members as matched, non-matched, or consent-constrained. <a name="ci-c-pdex-136">  </a><a href="narrative-conformance.html#ci-c-pdex-136"><sup>&sect;pdex-136</sup></a></span> The Group Id for matched members is used in the next step.</li>
   <li><strong><a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export</a></strong>: Using the matched members Group Id, the requesting payer initiates a bulk data export. This also runs asynchronously and upon completion returns a manifest of NDJSON files containing the member health data.</li>
 </ol>
 
-<p>Both operations follow the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>: each kick-off request returns an HTTP 202 Accepted response with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint that clients <strong>SHALL</strong> poll to retrieve the completed result.</p>
+<p><span id="pdex-137" class="fhir-conformance"> Both operations follow the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>: each kick-off request returns an HTTP 202 Accepted response with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint that clients <strong>SHALL</strong> poll to retrieve the completed result. <a name="ci-c-pdex-137">  </a><a href="narrative-conformance.html#ci-c-pdex-137"><sup>&sect;pdex-137</sup></a></span></p>
 
 <div class="stu-note">
 The R4 asynchronous request pattern was designed for bulk data export and delivers results as a JSON manifest pointing to NDJSON files. For an operation like $bulk-member-match that returns a bounded set of Group resources, this requires wrapping those resources in NDJSON files — an artificial fit. FHIR R5 introduced an <a href="https://hl7.org/fhir/R5/async-bundle.html">async-bundle pattern</a> that is a more natural match: upon completion the server returns a FHIR Bundle directly rather than a custom manifest. This IG targets FHIR R4 and adopts the R4 async pattern accordingly. When PDex moves to support FHIR R6, the async interaction pattern for $bulk-member-match will be reconsidered in light of the R6 async specification.
 </div>
 
 <p>Payer-to-Payer Exchange is an <strong>"opt-in"</strong> choice for Members. The requesting 
-<span id="pdex-128" class="fhir-conformance"> (or New) health plan <strong>SHALL</strong> request permission (i.e., consent) from the Member <a name="ci-c-pdex-128">  </a><a href="narrative-conformance.html#ci-c-pdex-128"><sup>&sect;pdex-128</sup></a></span>
+<span id="pdex-138" class="fhir-conformance"> (or New) health plan <strong>SHALL</strong> request permission (i.e., consent) from the Member <a name="ci-c-pdex-138">  </a><a href="narrative-conformance.html#ci-c-pdex-138"><sup>&sect;pdex-138</sup></a></span>
 to retrieve the data from their prior plan. 
-<span id="pdex-129" class="fhir-conformance"> <a href="payertopayerexchange.html">Payer-to-Payer (single Member) Exchange</a>), <strong>SHALL</strong> exchange the same data. <a name="ci-c-pdex-129">  </a><a href="narrative-conformance.html#ci-c-pdex-129"><sup>&sect;pdex-129</sup></a></span></p>
+<span id="pdex-139" class="fhir-conformance"> <a href="payertopayerexchange.html">Payer-to-Payer (single Member) Exchange</a>), <strong>SHALL</strong> exchange the same data. <a name="ci-c-pdex-139">  </a><a href="narrative-conformance.html#ci-c-pdex-139"><sup>&sect;pdex-139</sup></a></span></p>
 
-<p><span id="pdex-130" class="fhir-conformance"> The following data <strong>SHALL</strong> be exchanged with <a name="ci-c-pdex-130">  </a><a href="narrative-conformance.html#ci-c-pdex-130"><sup>&sect;pdex-130</sup></a></span>
+<p><span id="pdex-140" class="fhir-conformance"> The following data <strong>SHALL</strong> be exchanged with <a name="ci-c-pdex-140">  </a><a href="narrative-conformance.html#ci-c-pdex-140"><sup>&sect;pdex-140</sup></a></span>
 the prior plan for each Member that provides their consent in order for the 
 prior plan to attempt to match the Member:</p>
 
@@ -404,7 +404,7 @@ prior plan to attempt to match the Member:</p>
   <li><a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-consent.html">HRex Consent Profile</a>.</li>
 </ul>
 
-<p><span id="pdex-131" class="fhir-conformance"> The following information <strong>MAY</strong> be exchanged with the prior plan for a member: <a name="ci-c-pdex-131">  </a><a href="narrative-conformance.html#ci-c-pdex-131"><sup>&sect;pdex-131</sup></a></span></p>
+<p><span id="pdex-141" class="fhir-conformance"> The following information <strong>MAY</strong> be exchanged with the prior plan for a member: <a name="ci-c-pdex-141">  </a><a href="narrative-conformance.html#ci-c-pdex-141"><sup>&sect;pdex-141</sup></a></span></p>
 
 <ul>
   <li>(optional) Current, or future, coverage provided by the Requesting Plan</li>
@@ -414,17 +414,17 @@ prior plan to attempt to match the Member:</p>
 Payer-to-Payer (Single Member) exchange. The variations to support bulk 
 exchange are documented in this section of the IG.</p>
 
-<p><span id="pdex-132" class="fhir-conformance"> The requesting Payer <strong>SHALL</strong> obtain an access token in accordance with the <a name="ci-c-pdex-132">  </a><a href="narrative-conformance.html#ci-c-pdex-132"><sup>&sect;pdex-132</sup></a></span>
+<p><span id="pdex-142" class="fhir-conformance"> The requesting Payer <strong>SHALL</strong> obtain an access token in accordance with the <a name="ci-c-pdex-142">  </a><a href="narrative-conformance.html#ci-c-pdex-142"><sup>&sect;pdex-142</sup></a></span>
 <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">SMART Backend Services Authorization</a> 
 process, as documented in the 
 <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">FHIR Bulk Data Access IG (2.0.0 STU2)</a>.</p>
 
 <p>The bulk Payer-to-Payer exchange is initiated by supplying a Parameter bundle to the 
 <a href="OperationDefinition-BulkMemberMatch.html">$bulk-member-match operation</a>. A set of OAuth2.0/SMART-on-FHIR Client Credentials 
-<span id="pdex-133" class="fhir-conformance"> <strong>SHALL</strong> be required to access the secured bulk-member-match operation endpoint. <a name="ci-c-pdex-133">  </a><a href="narrative-conformance.html#ci-c-pdex-133"><sup>&sect;pdex-133</sup></a></span></p>
+<span id="pdex-143" class="fhir-conformance"> <strong>SHALL</strong> be required to access the secured bulk-member-match operation endpoint. <a name="ci-c-pdex-143">  </a><a href="narrative-conformance.html#ci-c-pdex-143"><sup>&sect;pdex-143</sup></a></span></p>
 
 <p>For each member submitted to the bulk-member-match operation the following parameters 
-<span id="pdex-134" class="fhir-conformance"> <strong>SHALL</strong> be supplied as a <strong>parameter.part</strong> element in the <a name="ci-c-pdex-134">  </a><a href="narrative-conformance.html#ci-c-pdex-134"><sup>&sect;pdex-134</sup></a></span>
+<span id="pdex-144" class="fhir-conformance"> <strong>SHALL</strong> be supplied as a <strong>parameter.part</strong> element in the <a name="ci-c-pdex-144">  </a><a href="narrative-conformance.html#ci-c-pdex-144"><sup>&sect;pdex-144</sup></a></span>
 <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">multi-member-match-bundle-in</a> parameter bundle.</p>
 
 <ul>
@@ -433,7 +433,7 @@ process, as documented in the
   <li>Consent - Record of consent received by requesting payer from Member to retrieve their records from the prior payer. This is an opt-in. Uses the <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-consent.html">HRex Consent Profile</a></li>
 </ul>
 
-<p><span id="pdex-135" class="fhir-conformance"> Optionally the new health plan <strong>MAY</strong> include the following element in the <strong>parameter.part</strong> <a name="ci-c-pdex-135">  </a><a href="narrative-conformance.html#ci-c-pdex-135"><sup>&sect;pdex-135</sup></a></span>
+<p><span id="pdex-145" class="fhir-conformance"> Optionally the new health plan <strong>MAY</strong> include the following element in the <strong>parameter.part</strong> <a name="ci-c-pdex-145">  </a><a href="narrative-conformance.html#ci-c-pdex-145"><sup>&sect;pdex-145</sup></a></span>
 element for a member:</p>
 
 <ul>
@@ -442,15 +442,13 @@ element for a member:</p>
 
 <p>An example request bundle can be found here: <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex $multi-member-match request</a></p>
 
-<p><span id="pdex-136" class="fhir-conformance"> The PDex <a href="OperationDefinition-BulkMemberMatch.html">$multi-member-match operation</a> <strong>SHALL</strong> be submitted using a HTTP POST. <a name="ci-c-pdex-136">  </a><a href="narrative-conformance.html#ci-c-pdex-136"><sup>&sect;pdex-136</sup></a></span>
-<span id="pdex-137" class="fhir-conformance"> The HTTP Header <strong>SHALL</strong> include: <a name="ci-c-pdex-137">  </a><a href="narrative-conformance.html#ci-c-pdex-137"><sup>&sect;pdex-137</sup></a></span></p>
+<p><span id="pdex-146" class="fhir-conformance"> The PDex <a href="OperationDefinition-BulkMemberMatch.html">$multi-member-match operation</a> <strong>SHALL</strong> be submitted using a HTTP POST. <a name="ci-c-pdex-146">  </a><a href="narrative-conformance.html#ci-c-pdex-146"><sup>&sect;pdex-146</sup></a></span>
+<span id="pdex-147" class="fhir-conformance"> The HTTP Header <strong>SHALL</strong> include: <a name="ci-c-pdex-147">  </a><a href="narrative-conformance.html#ci-c-pdex-147"><sup>&sect;pdex-147</sup></a></span></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prefer: respond-async
 </code></pre></div></div>
 
-<p><span id="pdex-138" class="fhir-conformance"> The $multi-member-match operation <strong>SHALL</strong> be performed asynchronously, following the <a href="https://hl7.org/fhir/R4/async.html">Asynchronous Request Pattern</a> defined in FHIR R4. <a name="ci-c-pdex-138">  </a><a href="narrative-conformance.html#ci-c-pdex-138"><sup>&sect;pdex-138</sup></a></span> &sect;pdex-139: Implementers <strong>SHALL</strong> follow the guidance provided in the <a href="https://hl7.org/fhir/R4/async.html#3.1.6.4">Bulk Data Status Request section</a> of the Async Request Pattern.</p>
-
-<p><span id="pdex-139a" class="fhir-conformance"> The subsequent <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export operation</a> <strong>SHALL</strong> also be submitted using a HTTP POST and <strong>SHALL</strong> be performed as an asynchronous Bulk Data export, per the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">FHIR Bulk Data Access IG</a>. <a name="ci-c-pdex-139a">  </a><a href="narrative-conformance.html#ci-c-pdex-139a"><sup>&sect;pdex-139a</sup></a></span></p>
+<p><span id="pdex-148" class="fhir-conformance"> The $multi-member-match operation <strong>SHALL</strong> be performed asynchronously, following the <a href="https://hl7.org/fhir/R4/async.html">Asynchronous Request Pattern</a> defined in FHIR R4. <a name="ci-c-pdex-148">  </a><a href="narrative-conformance.html#ci-c-pdex-148"><sup>&sect;pdex-148</sup></a></span> <span id="pdex-149" class="fhir-conformance"> Implementers <strong>SHALL</strong> follow the guidance provided in the <a href="https://hl7.org/fhir/R4/async.html#3.1.6.4">Bulk Data Status Request section</a> of the Async Request Pattern.pdex-139a: The subsequent <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">$davinci-data-export operation</a> <strong>SHALL</strong> also be submitted using a HTTP POST and <strong>SHALL</strong> be performed as an asynchronous Bulk Data export, per the <a href="http://hl7.org/fhir/uv/bulkdata/STU2/">FHIR Bulk Data Access IG</a>. <a name="ci-c-pdex-149">  </a><a href="narrative-conformance.html#ci-c-pdex-149"><sup>&sect;pdex-149</sup></a></span></p>
 
 <h3 id="bulk-member-match-with-consent">Bulk Member Match with Consent</h3>
 
@@ -465,9 +463,9 @@ element for a member:</p>
 
 <h4 id="cross-referencing-match-results-with-submitted-members">Cross-Referencing Match Results with Submitted Members</h4>
 
-<p>Each Group member entry in the $bulk-member-match response (matched, non-matched, and consent-constrained) includes a <code class="language-plaintext highlighter-rouge">matchedMember</code> or <code class="language-plaintext highlighter-rouge">nonMatchedMember</code> extension that references a contained Patient resource. <span id="pdex-139b" class="fhir-conformance"> This contained Patient resource <strong>SHALL</strong> be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource <code class="language-plaintext highlighter-rouge">id</code> supplied by the requester. <a name="ci-c-pdex-139b">  </a><a href="narrative-conformance.html#ci-c-pdex-139b"><sup>&sect;pdex-139b</sup></a></span> Responders <strong>SHALL NOT</strong> abridge, modify, or substitute the submitted Patient resource. <span id="pdex-139c" class="fhir-conformance"> The contained Patient <strong>SHALL</strong> retain the original <code class="language-plaintext highlighter-rouge">id</code> and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted. <a name="ci-c-pdex-139c">  </a><a href="narrative-conformance.html#ci-c-pdex-139c"><sup>&sect;pdex-139c</sup></a></span></p>
+<p>Each Group member entry in the $bulk-member-match response (matched, non-matched, and consent-constrained) includes a <code class="language-plaintext highlighter-rouge">matchedMember</code> or <code class="language-plaintext highlighter-rouge">nonMatchedMember</code> extension that references a contained Patient resource. <span id="pdex-150" class="fhir-conformance"> This contained Patient resource <strong>SHALL</strong> be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, including all identifiers, demographics, and the original resource <code class="language-plaintext highlighter-rouge">id</code> supplied by the requester. <a name="ci-c-pdex-150">  </a><a href="narrative-conformance.html#ci-c-pdex-150"><sup>&sect;pdex-150</sup></a></span> <span id="pdex-151" class="fhir-conformance"> Responders <strong>SHALL NOT</strong> abridge, modify, or substitute the submitted Patient resource. <a name="ci-c-pdex-151">  </a><a href="narrative-conformance.html#ci-c-pdex-151"><sup>&sect;pdex-151</sup></a></span> <span id="pdex-152" class="fhir-conformance"> The contained Patient <strong>SHALL</strong> retain the original <code class="language-plaintext highlighter-rouge">id</code> and all identifiers supplied by the requester so that the requester can unambiguously correlate each match result back to the member they submitted. <a name="ci-c-pdex-152">  </a><a href="narrative-conformance.html#ci-c-pdex-152"><sup>&sect;pdex-152</sup></a></span></p>
 
-<p>When the same patient is submitted across multiple MemberBundles with different Coverage plans (e.g., an employer plan and a secondary plan), the patient may appear in both MatchedMembers and NonMatchedMembers Groups. <span id="pdex-139d" class="fhir-conformance"> In this case the responder <strong>SHALL</strong> also include the submitted <code class="language-plaintext highlighter-rouge">CoverageToMatch</code> resource as a contained Coverage in the Group and populate the <code class="language-plaintext highlighter-rouge">matchedCoverage</code> (or <code class="language-plaintext highlighter-rouge">nonMatchedCoverage</code>) extension on <code class="language-plaintext highlighter-rouge">member.entity</code> to reference it. <a name="ci-c-pdex-139d">  </a><a href="narrative-conformance.html#ci-c-pdex-139d"><sup>&sect;pdex-139d</sup></a></span> This allows the requester to distinguish which (patient + coverage) pair each Group member entry corresponds to, and avoids user confusion when results are reviewed.</p>
+<p>When the same patient is submitted across multiple MemberBundles with different Coverage plans (e.g., an employer plan and a secondary plan), the patient may appear in both MatchedMembers and NonMatchedMembers Groups. <span id="pdex-153" class="fhir-conformance"> In this case the responder <strong>SHALL</strong> also include the submitted <code class="language-plaintext highlighter-rouge">CoverageToMatch</code> resource as a contained Coverage in the Group and populate the <code class="language-plaintext highlighter-rouge">matchedCoverage</code> (or <code class="language-plaintext highlighter-rouge">nonMatchedCoverage</code>) extension on <code class="language-plaintext highlighter-rouge">member.entity</code> to reference it. <a name="ci-c-pdex-153">  </a><a href="narrative-conformance.html#ci-c-pdex-153"><sup>&sect;pdex-153</sup></a></span> This allows the requester to distinguish which (patient + coverage) pair each Group member entry corresponds to, and avoids user confusion when results are reviewed.</p>
 
 <p>The Operation Definition for Bulk Member Match is:</p>
 
@@ -475,9 +473,9 @@ element for a member:</p>
 
 <p>The $bulk-member-match operation follows the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>. The kick-off HTTP POST returns HTTP 202 Accepted with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint. When processing is complete, the status endpoint returns a manifest of ndjson file URLs — each ndjson file contains serialized Group resources (<a href="StructureDefinition-pdex-member-match-group.html">MatchedMembers</a>, <a href="StructureDefinition-pdex-member-no-match-group.html">NonMatchedMembers</a>, and/or ConsentConstrainedMembers) conforming to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex Multi-Member Match Response profile</a>. The OperationDefinition does not declare inline out parameters for these Groups because the output is delivered via the async manifest, not in a synchronous HTTP response body — consistent with how $davinci-data-export handles its output.</p>
 
-<p><span id="pdex-140" class="fhir-conformance"> The Bulk Member Match Operation <strong>SHALL</strong> evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. <a name="ci-c-pdex-140">  </a><a href="narrative-conformance.html#ci-c-pdex-140"><sup>&sect;pdex-140</sup></a></span> <span id="pdex-141" class="fhir-conformance"> The following decision tree illustrates how the Consent determination <strong>SHALL</strong> be made. <a name="ci-c-pdex-141">  </a><a href="narrative-conformance.html#ci-c-pdex-141"><sup>&sect;pdex-141</sup></a></span></p>
+<p><span id="pdex-154" class="fhir-conformance"> The Bulk Member Match Operation <strong>SHALL</strong> evaluate the consent request for each member and determine whether the request for only Non-Sensitive data, as determined by federal and state regulations that apply to the data holder, can be complied with. <a name="ci-c-pdex-154">  </a><a href="narrative-conformance.html#ci-c-pdex-154"><sup>&sect;pdex-154</sup></a></span> <span id="pdex-155" class="fhir-conformance"> The following decision tree illustrates how the Consent determination <strong>SHALL</strong> be made. <a name="ci-c-pdex-155">  </a><a href="narrative-conformance.html#ci-c-pdex-155"><sup>&sect;pdex-155</sup></a></span></p>
 
-<p><span id="pdex-142" class="fhir-conformance"> Consent <strong>SHALL</strong> be evaluated at the time of the data request to ensure that the Member <a name="ci-c-pdex-142">  </a><a href="narrative-conformance.html#ci-c-pdex-142"><sup>&sect;pdex-142</sup></a></span>
+<p><span id="pdex-156" class="fhir-conformance"> Consent <strong>SHALL</strong> be evaluated at the time of the data request to ensure that the Member <a name="ci-c-pdex-156">  </a><a href="narrative-conformance.html#ci-c-pdex-156"><sup>&sect;pdex-156</sup></a></span>
 has not contacted their previous payer to override sharing consent.</p>
 
 <p>The consent decision logic is the same for Single Member Match and Bulk Member Match. 
@@ -501,13 +499,13 @@ To enable searching the <a href="StructureDefinition-pdex-member-match-group.htm
 sets the characteristic element to include the "match" code, the identifier of the requesting payer
 in (characteristic.valueReference), sets characteristic.exclude to false and characteristic.period.start to the date of the match request.</p>
 
-<p><span id="pdex-143" class="fhir-conformance"> Implementers <strong>SHALL</strong> support the standard search parameters for group that are specified in the base <a name="ci-c-pdex-143">  </a><a href="narrative-conformance.html#ci-c-pdex-143"><sup>&sect;pdex-143</sup></a></span>
+<p><span id="pdex-157" class="fhir-conformance"> Implementers <strong>SHALL</strong> support the standard search parameters for group that are specified in the base <a name="ci-c-pdex-157">  </a><a href="narrative-conformance.html#ci-c-pdex-157"><sup>&sect;pdex-157</sup></a></span>
 Group resource in FHIR R4 specification: <a href="StructureDefinition-pdex-member-match-group.html">Group Search Parameters</a>.</p>
 
 <h3 id="da-vinci-data-export-payload">Da Vinci Data Export Payload</h3>
 
 <p>The Payer-to-Payer data export operation is meant to retrieve the information requested by the member when they join a new payer. The payer rtrieves their information using Payer-to-Payer exchange. Under the requirements of the CMS
-<span id="pdex-144" class="fhir-conformance"> Prior Authorization Rule (CMS-0057) the data available through the API <strong>SHOULD</strong> include: <a name="ci-c-pdex-144">  </a><a href="narrative-conformance.html#ci-c-pdex-144"><sup>&sect;pdex-144</sup></a></span></p>
+<span id="pdex-158" class="fhir-conformance"> Prior Authorization Rule (CMS-0057) the data available through the API <strong>SHOULD</strong> include: <a name="ci-c-pdex-158">  </a><a href="narrative-conformance.html#ci-c-pdex-158"><sup>&sect;pdex-158</sup></a></span></p>
 
 <ul>
   <li>US Core Clinical data (<a href="http://hl7.org/fhir/us/core/3.1.1">US core 3.1.1</a> or <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1</a></li>
@@ -522,15 +520,15 @@ Group resource in FHIR R4 specification: <a href="StructureDefinition-pdex-membe
 
 <p>Requesting/New Payer:</p>
 
-<p><span id="pdex-145" class="fhir-conformance"> - <strong>SHALL</strong> be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. <a name="ci-c-pdex-145">  </a><a href="narrative-conformance.html#ci-c-pdex-145"><sup>&sect;pdex-145</sup></a></span> Where {id} is the PDex Member Match Group(s) resulting from the Bulk Member Match Operation.
-<span id="pdex-146" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to SEARCH /Group. <a name="ci-c-pdex-146">  </a><a href="narrative-conformance.html#ci-c-pdex-146"><sup>&sect;pdex-146</sup></a></span> <span id="pdex-147" class="fhir-conformance"> The search function and the bundle contents returned <strong>SHALL</strong> be restricted to the {ids} that are associated with theRequesting/New Payer. <a name="ci-c-pdex-147">  </a><a href="narrative-conformance.html#ci-c-pdex-147"><sup>&sect;pdex-147</sup></a></span>
-<span id="pdex-148" class="fhir-conformance"> - <strong>MAY</strong> be associated with more than one PDex Member Match group list. <a name="ci-c-pdex-148">  </a><a href="narrative-conformance.html#ci-c-pdex-148"><sup>&sect;pdex-148</sup></a></span>
-<span id="pdex-149" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to GET /Group/{id} for any PDex Member Match Group list they are associated with. <a name="ci-c-pdex-149">  </a><a href="narrative-conformance.html#ci-c-pdex-149"><sup>&sect;pdex-149</sup></a></span>
-<span id="pdex-150" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with. <a name="ci-c-pdex-150">  </a><a href="narrative-conformance.html#ci-c-pdex-150"><sup>&sect;pdex-150</sup></a></span>
-<span id="pdex-151" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to retrieve data with a service date within 5 years of the date of the request for information. <a name="ci-c-pdex-151">  </a><a href="narrative-conformance.html#ci-c-pdex-151"><sup>&sect;pdex-151</sup></a></span></p>
+<p><span id="pdex-159" class="fhir-conformance"> - <strong>SHALL</strong> be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}. <a name="ci-c-pdex-159">  </a><a href="narrative-conformance.html#ci-c-pdex-159"><sup>&sect;pdex-159</sup></a></span> Where {id} is the PDex Member Match Group(s) resulting from the Bulk Member Match Operation.
+<span id="pdex-160" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to SEARCH /Group. <a name="ci-c-pdex-160">  </a><a href="narrative-conformance.html#ci-c-pdex-160"><sup>&sect;pdex-160</sup></a></span> <span id="pdex-161" class="fhir-conformance"> The search function and the bundle contents returned <strong>SHALL</strong> be restricted to the {ids} that are associated with theRequesting/New Payer. <a name="ci-c-pdex-161">  </a><a href="narrative-conformance.html#ci-c-pdex-161"><sup>&sect;pdex-161</sup></a></span>
+<span id="pdex-162" class="fhir-conformance"> - <strong>MAY</strong> be associated with more than one PDex Member Match group list. <a name="ci-c-pdex-162">  </a><a href="narrative-conformance.html#ci-c-pdex-162"><sup>&sect;pdex-162</sup></a></span>
+<span id="pdex-163" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to GET /Group/{id} for any PDex Member Match Group list they are associated with. <a name="ci-c-pdex-163">  </a><a href="narrative-conformance.html#ci-c-pdex-163"><sup>&sect;pdex-163</sup></a></span>
+<span id="pdex-164" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to call $davinci-data-export operation for any /Group/{id} they are associated with. <a name="ci-c-pdex-164">  </a><a href="narrative-conformance.html#ci-c-pdex-164"><sup>&sect;pdex-164</sup></a></span>
+<span id="pdex-165" class="fhir-conformance"> - <strong>SHALL</strong> be permitted to retrieve data with a service date within 5 years of the date of the request for information. <a name="ci-c-pdex-165">  </a><a href="narrative-conformance.html#ci-c-pdex-165"><sup>&sect;pdex-165</sup></a></span></p>
 
 <p>While the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">davinci-data-export-operation</a> 
-<span id="pdex-152" class="fhir-conformance"> enables granular resource requests the operation <strong>SHOULD</strong> be used with two scenarios: <a name="ci-c-pdex-152">  </a><a href="narrative-conformance.html#ci-c-pdex-152"><sup>&sect;pdex-152</sup></a></span></p>
+<span id="pdex-166" class="fhir-conformance"> enables granular resource requests the operation <strong>SHOULD</strong> be used with two scenarios: <a name="ci-c-pdex-166">  </a><a href="narrative-conformance.html#ci-c-pdex-166"><sup>&sect;pdex-166</sup></a></span></p>
 
 <ul>
   <li>Requesting all data within the previous 5 years for all members in the list.</li>
@@ -547,11 +545,11 @@ Group resource in FHIR R4 specification: <a href="StructureDefinition-pdex-membe
 <p>For members with concurrent coverage this will enable data to be requested at 
 least quarterly.</p>
 
-<p><span id="pdex-153" class="fhir-conformance"> The Data Export operation <strong>SHALL</strong> check the consent status for each member <a name="ci-c-pdex-153">  </a><a href="narrative-conformance.html#ci-c-pdex-153"><sup>&sect;pdex-153</sup></a></span>
+<p><span id="pdex-167" class="fhir-conformance"> The Data Export operation <strong>SHALL</strong> check the consent status for each member <a name="ci-c-pdex-167">  </a><a href="narrative-conformance.html#ci-c-pdex-167"><sup>&sect;pdex-167</sup></a></span>
 at the time of execution. This is necessary to identify members that may have 
 changed their opt-in/opt-out status for sharing with health plans.</p>
 
-<p><span id="pdex-154" class="fhir-conformance"> Data that <strong>SHALL</strong> be available via the API includes: <a name="ci-c-pdex-154">  </a><a href="narrative-conformance.html#ci-c-pdex-154"><sup>&sect;pdex-154</sup></a></span></p>
+<p><span id="pdex-168" class="fhir-conformance"> Data that <strong>SHALL</strong> be available via the API includes: <a name="ci-c-pdex-168">  </a><a href="narrative-conformance.html#ci-c-pdex-168"><sup>&sect;pdex-168</sup></a></span></p>
 
 <ul>
   <li><a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1</a> Clinical Data with additional PDex defined Profiles.</li>
@@ -559,16 +557,16 @@ changed their opt-in/opt-out status for sharing with health plans.</p>
   <li><a href="StructureDefinition-pdex-priorauthorization.html">Prior Authorizations</a> and supporting clinical data as defined by this guide.</li>
 </ul>
 
-<p><span id="pdex-155" class="fhir-conformance"> Claims and clinical data <strong>SHALL</strong> be limited to records with a service date <a name="ci-c-pdex-155">  </a><a href="narrative-conformance.html#ci-c-pdex-155"><sup>&sect;pdex-155</sup></a></span>
+<p><span id="pdex-169" class="fhir-conformance"> Claims and clinical data <strong>SHALL</strong> be limited to records with a service date <a name="ci-c-pdex-169">  </a><a href="narrative-conformance.html#ci-c-pdex-169"><sup>&sect;pdex-169</sup></a></span>
 within 5 years of the date of request for data.
-<span id="pdex-156" class="fhir-conformance"> Prior Authorizations <strong>SHALL</strong> be limited to Active/Current Prior Authorizations and <a name="ci-c-pdex-156">  </a><a href="narrative-conformance.html#ci-c-pdex-156"><sup>&sect;pdex-156</sup></a></span>
+<span id="pdex-170" class="fhir-conformance"> Prior Authorizations <strong>SHALL</strong> be limited to Active/Current Prior Authorizations and <a name="ci-c-pdex-170">  </a><a href="narrative-conformance.html#ci-c-pdex-170"><sup>&sect;pdex-170</sup></a></span>
 Prior Authorizations that have changed status within the last year, as of the date 
 of the information request.</p>
 
 <h4 id="exporttype">ExportType</h4>
 
 <p>This is an optional parameter in the Da Vinci Data Export Operation.
-<span id="pdex-157" class="fhir-conformance"> For Payer-to-Payer Bulk Exchange the exportType field <strong>SHALL</strong> have the following value: <a name="ci-c-pdex-157">  </a><a href="narrative-conformance.html#ci-c-pdex-157"><sup>&sect;pdex-157</sup></a></span></p>
+<span id="pdex-171" class="fhir-conformance"> For Payer-to-Payer Bulk Exchange the exportType field <strong>SHALL</strong> have the following value: <a name="ci-c-pdex-171">  </a><a href="narrative-conformance.html#ci-c-pdex-171"><sup>&sect;pdex-171</sup></a></span></p>
 
 <ul>
   <li>hl7.fhir.us.davinci-pdex#payertopayer</li>
@@ -578,39 +576,39 @@ of the information request.</p>
 
 <p>Resources in the Patient Access API can extend back to January 1, 2016.
 For Payer-to-Payer Exchange only data updated within five years of the transaction 
-<span id="pdex-158" class="fhir-conformance"> request date <strong>SHALL</strong> be returned via the API. <a name="ci-c-pdex-158">  </a><a href="narrative-conformance.html#ci-c-pdex-158"><sup>&sect;pdex-158</sup></a></span> <span id="pdex-159" class="fhir-conformance"> The _since parameter <strong>SHOULD</strong> be used for resource <a name="ci-c-pdex-159">  </a><a href="narrative-conformance.html#ci-c-pdex-159"><sup>&sect;pdex-159</sup></a></span>
-requests when the full history is not required. <span id="pdex-160" class="fhir-conformance"> It is expected that Payers <strong>MAY</strong> <a name="ci-c-pdex-160">  </a><a href="narrative-conformance.html#ci-c-pdex-160"><sup>&sect;pdex-160</sup></a></span>
+<span id="pdex-172" class="fhir-conformance"> request date <strong>SHALL</strong> be returned via the API. <a name="ci-c-pdex-172">  </a><a href="narrative-conformance.html#ci-c-pdex-172"><sup>&sect;pdex-172</sup></a></span> <span id="pdex-173" class="fhir-conformance"> The _since parameter <strong>SHOULD</strong> be used for resource <a name="ci-c-pdex-173">  </a><a href="narrative-conformance.html#ci-c-pdex-173"><sup>&sect;pdex-173</sup></a></span>
+requests when the full history is not required. <span id="pdex-174" class="fhir-conformance"> It is expected that Payers <strong>MAY</strong> <a name="ci-c-pdex-174">  </a><a href="narrative-conformance.html#ci-c-pdex-174"><sup>&sect;pdex-174</sup></a></span>
 first request data for members without limiting the request using the _since parameter. 
-<span id="pdex-161" class="fhir-conformance"> Subsequent requests <strong>MAY</strong> then use _since to limit data to information that is new. <a name="ci-c-pdex-161">  </a><a href="narrative-conformance.html#ci-c-pdex-161"><sup>&sect;pdex-161</sup></a></span> 
+<span id="pdex-175" class="fhir-conformance"> Subsequent requests <strong>MAY</strong> then use _since to limit data to information that is new. <a name="ci-c-pdex-175">  </a><a href="narrative-conformance.html#ci-c-pdex-175"><sup>&sect;pdex-175</sup></a></span> 
 This would enable the Payer to request "Run-off" data that the prior plan 
 received after the initial enrollment by the member in the new plan.</p>
 
 <p>If the _since parameter is earlier than five years before the transaction request 
-<span id="pdex-162" class="fhir-conformance"> the date/time <strong>SHALL</strong> be overridden and set to five years before the transaction <a name="ci-c-pdex-162">  </a><a href="narrative-conformance.html#ci-c-pdex-162"><sup>&sect;pdex-162</sup></a></span>
+<span id="pdex-176" class="fhir-conformance"> the date/time <strong>SHALL</strong> be overridden and set to five years before the transaction <a name="ci-c-pdex-176">  </a><a href="narrative-conformance.html#ci-c-pdex-176"><sup>&sect;pdex-176</sup></a></span>
 request date.</p>
 
 <h5 id="_until">_until</h5>
 
-<p><span id="pdex-163" class="fhir-conformance"> The _until parameter <strong>MAY</strong> be used less frequently. <a name="ci-c-pdex-163">  </a><a href="narrative-conformance.html#ci-c-pdex-163"><sup>&sect;pdex-163</sup></a></span> It is most likely to be 
+<p><span id="pdex-177" class="fhir-conformance"> The _until parameter <strong>MAY</strong> be used less frequently. <a name="ci-c-pdex-177">  </a><a href="narrative-conformance.html#ci-c-pdex-177"><sup>&sect;pdex-177</sup></a></span> It is most likely to be 
 used by the Payer to retrieve member data for a specific period. This may be the 
 case where two Payers both share a Member that has concurrent coverage with 
 multiple Payers. For example when requesting data for a particular quarterly period.</p>
 
 <h5 id="_type">_type</h5>
 
-<p><span id="pdex-164" class="fhir-conformance"> The _type parameter <strong>MAY</strong> be used to restrict the resources retrieved by the <a name="ci-c-pdex-164">  </a><a href="narrative-conformance.html#ci-c-pdex-164"><sup>&sect;pdex-164</sup></a></span>
-Payer. <span id="pdex-165" class="fhir-conformance"> If this parameter is not used all available resources <strong>SHALL</strong> be returned <a name="ci-c-pdex-165">  </a><a href="narrative-conformance.html#ci-c-pdex-165"><sup>&sect;pdex-165</sup></a></span>
+<p><span id="pdex-178" class="fhir-conformance"> The _type parameter <strong>MAY</strong> be used to restrict the resources retrieved by the <a name="ci-c-pdex-178">  </a><a href="narrative-conformance.html#ci-c-pdex-178"><sup>&sect;pdex-178</sup></a></span>
+Payer. <span id="pdex-179" class="fhir-conformance"> If this parameter is not used all available resources <strong>SHALL</strong> be returned <a name="ci-c-pdex-179">  </a><a href="narrative-conformance.html#ci-c-pdex-179"><sup>&sect;pdex-179</sup></a></span>
 by the Payer, subject to the constraints applied by other input parameters.</p>
 
 <h5 id="_typefilter">_typeFilter</h5>
 
-<p><span id="pdex-166" class="fhir-conformance"> The _typeFilter parameter <strong>MAY</strong> be used to further restrict the resources <a name="ci-c-pdex-166">  </a><a href="narrative-conformance.html#ci-c-pdex-166"><sup>&sect;pdex-166</sup></a></span>
+<p><span id="pdex-180" class="fhir-conformance"> The _typeFilter parameter <strong>MAY</strong> be used to further restrict the resources <a name="ci-c-pdex-180">  </a><a href="narrative-conformance.html#ci-c-pdex-180"><sup>&sect;pdex-180</sup></a></span>
 retrieved by the Payer. For example, to only retrieve Observations of a certain 
-type. <span id="pdex-167" class="fhir-conformance"> The _typeFilter, if used, <strong>SHALL</strong> comprise one, or more, valid FHIR <a name="ci-c-pdex-167">  </a><a href="narrative-conformance.html#ci-c-pdex-167"><sup>&sect;pdex-167</sup></a></span>
+type. <span id="pdex-181" class="fhir-conformance"> The _typeFilter, if used, <strong>SHALL</strong> comprise one, or more, valid FHIR <a name="ci-c-pdex-181">  </a><a href="narrative-conformance.html#ci-c-pdex-181"><sup>&sect;pdex-181</sup></a></span>
 search queries for the respective resource being filtered.</p>
 
 <p>NOTE: When constructing search queries to incorporate into a _typeFilter, Search parameters 
-<span id="pdex-168" class="fhir-conformance"> supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs <strong>SHALL</strong> <a name="ci-c-pdex-168">  </a><a href="narrative-conformance.html#ci-c-pdex-168"><sup>&sect;pdex-168</sup></a></span>
+<span id="pdex-182" class="fhir-conformance"> supported by the relevant profiles from the PDex, US Core or CARIN Blue Button IGs <strong>SHALL</strong> <a name="ci-c-pdex-182">  </a><a href="narrative-conformance.html#ci-c-pdex-182"><sup>&sect;pdex-182</sup></a></span>
 be followed.</p>
 
 <p>The overall workflow for Bulk Payer-to-Payer Exchange is shown in the diagram below:</p>
@@ -621,24 +619,24 @@ be followed.</p>
 
 <h3 id="access-and-refresh-tokens">Access and Refresh Tokens</h3>
 
-<p><span id="pdex-169" class="fhir-conformance"> Implementers <strong>SHOULD</strong> implement OAuth 2.0 access management in accordance with <a name="ci-c-pdex-169">  </a><a href="narrative-conformance.html#ci-c-pdex-169"><sup>&sect;pdex-169</sup></a></span>
+<p><span id="pdex-183" class="fhir-conformance"> Implementers <strong>SHOULD</strong> implement OAuth 2.0 access management in accordance with <a name="ci-c-pdex-183">  </a><a href="narrative-conformance.html#ci-c-pdex-183"><sup>&sect;pdex-183</sup></a></span>
 the SMART Backend Services Authorization Profile. When SMART Backend Services 
 Authorization is used, Bulk Data Status Request and Bulk Data Output File 
-<span id="pdex-170" class="fhir-conformance"> Requests with requiresAccessToken=true <strong>SHALL</strong> be protected the same way as <a name="ci-c-pdex-170">  </a><a href="narrative-conformance.html#ci-c-pdex-170"><sup>&sect;pdex-170</sup></a></span>
+<span id="pdex-184" class="fhir-conformance"> Requests with requiresAccessToken=true <strong>SHALL</strong> be protected the same way as <a name="ci-c-pdex-184">  </a><a href="narrative-conformance.html#ci-c-pdex-184"><sup>&sect;pdex-184</sup></a></span>
 the Bulk Data Kick-off Request, including an access token with scopes that cover 
-all resources being exported. <span id="pdex-171" class="fhir-conformance"> A server <strong>MAY</strong> additionally restrict Bulk Data <a name="ci-c-pdex-171">  </a><a href="narrative-conformance.html#ci-c-pdex-171"><sup>&sect;pdex-171</sup></a></span>
+all resources being exported. <span id="pdex-185" class="fhir-conformance"> A server <strong>MAY</strong> additionally restrict Bulk Data <a name="ci-c-pdex-185">  </a><a href="narrative-conformance.html#ci-c-pdex-185"><sup>&sect;pdex-185</sup></a></span>
 Status Request and Bulk Data Output File Requests by limiting them to the client 
-that originated the export. <span id="pdex-172" class="fhir-conformance"> Health plans <strong>SHALL</strong> limit the data returned to <a name="ci-c-pdex-172">  </a><a href="narrative-conformance.html#ci-c-pdex-172"><sup>&sect;pdex-172</sup></a></span>
+that originated the export. <span id="pdex-186" class="fhir-conformance"> Health plans <strong>SHALL</strong> limit the data returned to <a name="ci-c-pdex-186">  </a><a href="narrative-conformance.html#ci-c-pdex-186"><sup>&sect;pdex-186</sup></a></span>
 only those FHIR resources for which the client is authorized.</p>
 
-<p><span id="pdex-173" class="fhir-conformance"> Clients <strong>SHALL</strong> require OAuth client credentials to enable secure access to read <a name="ci-c-pdex-173">  </a><a href="narrative-conformance.html#ci-c-pdex-173"><sup>&sect;pdex-173</sup></a></span>
+<p><span id="pdex-187" class="fhir-conformance"> Clients <strong>SHALL</strong> require OAuth client credentials to enable secure access to read <a name="ci-c-pdex-187">  </a><a href="narrative-conformance.html#ci-c-pdex-187"><sup>&sect;pdex-187</sup></a></span>
 and search the Group resources and perform Bulk export operations. Access Tokens 
-<span id="pdex-174" class="fhir-conformance"> <strong>SHALL</strong> be required to access the Group resources and the Bulk export operation. <a name="ci-c-pdex-174">  </a><a href="narrative-conformance.html#ci-c-pdex-174"><sup>&sect;pdex-174</sup></a></span> 
-<span id="pdex-175" class="fhir-conformance"> Access and Refresh Tokens <strong>SHALL</strong> be issued to support the client requesting and <a name="ci-c-pdex-175">  </a><a href="narrative-conformance.html#ci-c-pdex-175"><sup>&sect;pdex-175</sup></a></span>
+<span id="pdex-188" class="fhir-conformance"> <strong>SHALL</strong> be required to access the Group resources and the Bulk export operation. <a name="ci-c-pdex-188">  </a><a href="narrative-conformance.html#ci-c-pdex-188"><sup>&sect;pdex-188</sup></a></span> 
+<span id="pdex-189" class="fhir-conformance"> Access and Refresh Tokens <strong>SHALL</strong> be issued to support the client requesting and <a name="ci-c-pdex-189">  </a><a href="narrative-conformance.html#ci-c-pdex-189"><sup>&sect;pdex-189</sup></a></span>
 subsequently retrieving the bulk data response to their request.</p>
 
 <p>Registering of a client application or service to perform the bulk Payer-to-Payer 
-Exchange <strong>SHOULD</strong> be registered in accordance with the approach defined in the
+<span id="pdex-190" class="fhir-conformance"> Exchange <strong>SHOULD</strong> be registered in accordance with the approach defined in the <a name="ci-c-pdex-190">  </a><a href="narrative-conformance.html#ci-c-pdex-190"><sup>&sect;pdex-190</sup></a></span>
 <a href="https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys">SMART App Launch IG</a>.
 That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol 
 (DCRP). An alternative approach that is closely aligned with the DCRP protocol is 
@@ -714,7 +712,7 @@ to the Group <em>id(s)</em> that the user is authorized to access.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

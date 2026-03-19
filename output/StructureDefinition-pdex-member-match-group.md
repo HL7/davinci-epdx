@@ -35,7 +35,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-member-match-gr
 
 #### Mandatory Search Parameters
 
-1. **SHALL** support searching for code for a Group. [Group_Code Search Parameter](SearchParameter-group-code.md)`GET [base]/Group?code={code}`Example:GET [base]/Group?code="match"NOTE:Server should limit responses to records that requesting user or service (i.e. Payer in case of Member-Match) is permitted to access. For example, Matched Group lists for a Payer.
+1. §pdex-394: **SHALL** support searching for code for a Group. § [Group_Code Search Parameter](SearchParameter-group-code.md)`GET [base]/Group?code={code}`Example:GET [base]/Group?code="match"NOTE:Server should limit responses to records that requesting user or service (i.e. Payer in case of Member-Match) is permitted to access. For example, Matched Group lists for a Payer.
 
 [Back to Artifacts](artifacts.md)
 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-member-match-gr
   "title" : "PDex Member Match Group",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-17T22:49:33-04:00",
+  "date" : "2026-03-19T09:51:30-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

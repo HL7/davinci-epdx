@@ -66,7 +66,7 @@ Indicates the in network or out of network payment status of the claim.
   "title" : "PDex Payer Benefit Payment Status",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-17T22:49:33-04:00",
+  "date" : "2026-03-19T09:51:30-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

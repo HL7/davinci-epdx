@@ -18,15 +18,15 @@ The Exchange of all of a member's clinical data, as scoped by USCDI version 1 an
 
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five years prior to the date of the request.
 
-§pdex-176: Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
+§pdex-191: Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
 
-§pdex-177: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange §pdex-178: **MAY** be used to exchange data for a SINGLE member. §
+§pdex-192: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange §pdex-193: **MAY** be used to exchange data for a SINGLE member. §
 
-§pdex-179: Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods. § §pdex-180: Clients wishing to retrieve data **SHOULD** consult § the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. §pdex-181: Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent: §
+§pdex-194: Payer-to-Payer exchange for a single member **MAY** be accomplished by three methods. § §pdex-195: Clients wishing to retrieve data **SHOULD** consult § the Data Provider's Server Capability Statement to determine which methods are made available by the data holder. §pdex-196: Each retrieval method for a single member **SHALL** be preceded by the use of the following interaction to match a member and provide consent: §
 
 ### Member Match with Consent
 
-§pdex-182: Health Plans **SHALL** support the $member-match operation. §
+§pdex-197: Health Plans **SHALL** support the $member-match operation. §
 
 The use of mTLS to secure a connection is deprecated in favor of alternate methods that are emerging, such as [FAST HL7 UDAP Security for Scalable Registration, Authentication, and Authorization IG](https://hl7.org/fhir/us/udap-security) . New implementations are encouraged to adopt these other mechanisms, as defined in [Health Record Exchange IG](https://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html#exchange-security) (with the exception of mTLS authentication).
 
@@ -37,7 +37,7 @@ The steps in the Member Match with Consent process are:
 * Use Client Credentials to acquire OAuth2.0 token to perform $member-match operation.
 * The $member-match operation uses Patient Demographics and Coverage records to determine if a member is found.
 * The $member-match operation evaluates the Consent resource for a matched member.
-* If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a `MemberIdentifier` (unique member business identifier) is returned to the requesting Payer (Payer2). A `MemberId` (Patient FHIR ID) **SHOULD** also be returned where available.
+* If a member is matched and the Consent request can be complied with (Per Policy request and Date range) a `MemberIdentifier` (unique member business identifier) is returned to the requesting Payer (Payer2). §pdex-198: A `MemberId` (Patient FHIR ID) **SHOULD** also be returned where available. §
 * If a Member ID is returned from $member-match, a request is made to the OAuth2.0 Token endpoint for an OAuth2.0 Access Token which is scoped to the identified shared member.
 * If a Token is granted the requesting payer performs data retrieval steps using appropriate methods, defined below.
 
@@ -64,30 +64,30 @@ The [HRex $member-match response](http://hl7.org/fhir/us/davinci-hrex/OperationD
 * **`MemberIdentifier`** (Identifier): A unique member business identifier (e.g., a Unique Member Identifier/UMB) assigned by the responding payer. This parameter is **required** and **Must Support** per the HRex profile. Note: this is a FHIR business **Identifier** (system + value), not a Patient FHIR resource ID.
 * **`MemberId`** (Reference(Patient)): A reference to the Patient resource — the Patient FHIR ID — on the responding payer's system. This parameter is optional per the HRex profile.
 
-§pdex-197a: When a member is successfully matched and consent can be complied with, the responding payer **SHALL** return a `MemberIdentifier` and **SHOULD** also return a `MemberId` (Patient FHIR ID) in the $member-match response. §
+§pdex-199: When a member is successfully matched and consent can be complied with, the responding payer **SHALL** return a `MemberIdentifier` and **SHOULD** also return a `MemberId` (Patient FHIR ID) in the $member-match response. §
 
-§pdex-197b: Implementers **SHALL** be prepared to handle $member-match responses that contain only a `MemberIdentifier`, or both a `MemberIdentifier` and a `MemberId`. § When a `MemberId` (Patient FHIR ID) is present in the response it **SHOULD** be used as the subject for the subsequent OAuth2.0 access token request. Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token.
+§pdex-200: Implementers **SHALL** be prepared to handle $member-match responses that contain only a `MemberIdentifier`, or both a `MemberIdentifier` and a `MemberId`. § §pdex-201: When a `MemberId` (Patient FHIR ID) is present in the response it **SHOULD** be used as the subject for the subsequent OAuth2.0 access token request. § §pdex-202: Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token. §
 
 When no match is found, or if multiple matches are found, a 422 Unprocessable entity status code will be returned.
 
-If the receiving payer matches to a unique member but is unable to comply with the consent request, a §pdex-183: Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be § returned with an Operation Outcome which indicates that the consent request could not be complied with.
+If the receiving payer matches to a unique member but is unable to comply with the consent request, a §pdex-203: Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be § returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 ### Evaluation of Consent
 
-§pdex-184: The receiving payer **MAY** store the Consent record for the member. § The following minimal content from the Consent record is used to validate a data request:
+§pdex-204: The receiving payer **MAY** store the Consent record for the member. § The following minimal content from the Consent record is used to validate a data request:
 
 * Member Identity is matched
 * Consent Policy (Everything or only Non-Sensitive data) matches the data release segmentation capabilities of the receiving payer
 * Date period for consent is valid
 * Payer requesting retrieval of data is matched.
 
-If a Consent is provided by an Authorized Representative, the person's demographic details **SHOULD** be included as a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized Representative **SHOULD** be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", "HPOWATT" or similar value.
+§pdex-205: If a Consent is provided by an Authorized Representative, the person's demographic details **SHOULD** be included as § a **contained** resource (such as Patient or RelatedPerson) within the consent record. The Authorized §pdex-206: Representative **SHOULD** be identified as an actor with an appropriate SecurityRoleType, such as "DPOWATT", § "HPOWATT" or similar value.
 
 The exchange of Consent is being carried out between two covered entities and the content and conditions for an exchange of consent will be governed by a mutually agreed Trust Framework. The Consent resource's document reference link would be to a document maintained by the requesting payer. The content of the referenced document would NOT be used for any determination as part of the automated $member-match operation. The referenced document's only purpose is to provide evidence of an appropriate signature of the consenting member/patient.
 
 It is expected that the referenced document url/identifier could be used in an out-of-band audit to determine the validity of a consent request. This would be part of the Trust Framework agreed by the covered entities who are party to the framework rules.
 
-If the receiving payer matches to a unique member but is unable to comply with the consent request, a §pdex-185: Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be § returned with an Operation Outcome which indicates that the consent request could not be complied with.
+§pdex-207: If the receiving payer matches to a unique member but is unable to comply with the consent request, a Patient ID **SHALL NOT** be returned in the $member-match response and a 422 status code **SHALL** be § returned with an Operation Outcome which indicates that the consent request could not be complied with.
 
 #### Period of Consent Validity
 
@@ -97,7 +97,7 @@ Here are some scenarios that could inform the decision about an appropriate peri
 * When a member's health plan is terminated it is not uncommon for claims and supporting information to be received by the health plan for a period after the plan terminates.
 * Some plan beneficiaries might have concurrent coverage. For example, a Medicare and a Medicaid plan might be in effect for a beneficiary for the duration of coverage period. In this scenario health plans might need to exchange information about the beneficiary throughout the period of dual plan coverage to coordinate treatment.
 
-It is a member's option to share their health information with their new health plan. §pdex-186: When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent **MAY** be: §
+It is a member's option to share their health information with their new health plan. §pdex-208: When a member chooses to grant consent for a health plan to retrieve their health data from a prior health plan the proposed period of consent **MAY** be: §
 
 | | | |
 | :--- | :--- | :--- |
@@ -137,13 +137,13 @@ Please note that:
 
 ### Data Retrieval Methods
 
-Once Health Plans have completed the Member Access stage of the Exchange the requesting §pdex-187: Health Plan **SHALL** utilize the access token returned from the Member Access step to § request/retrieve data using one of the following three methods:
+Once Health Plans have completed the Member Access stage of the Exchange the requesting §pdex-209: Health Plan **SHALL** utilize the access token returned from the Member Access step to § request/retrieve data using one of the following three methods:
 
 1. Query all clinical resource individually
 1. [$patient-everything](https://www.hl7.org/fhir/operation-patient-everything.html)operation
 1. Bulk FHIR Asynchronous protocols.
 
-§pdex-188: Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below. §
+§pdex-210: Each of the above data retrieval methods **SHALL** support the retrieval of the profiles and resources identified in the table below. §
 
 | | |
 | :--- | :--- |
@@ -181,13 +181,13 @@ The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data t
 
 ### Query all clinical resources individually
 
-§pdex-189: Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, § as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.
+§pdex-211: Health Plans **SHALL** support search of a member's clinical data to each USCDI/US Core clinical resource, § as identified in the table above. Using the search capability of each resource enables the _revInclude and _include parameters to be used to retrieve the associated Provenance and supporting records.
 
 ### $everything operation
 
-§pdex-190: Health Plans **SHALL** support the use of the $everything operation. § The Patient/{id}/$everything operation is defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
+§pdex-212: Health Plans **SHALL** support the use of the $everything operation. § The Patient/{id}/$everything operation is defined in the FHIR R4 specification here: [https://www.hl7.org/fhir/operation-patient-everything.html](https://www.hl7.org/fhir/operation-patient-everything.html).
 
-§pdex-191: As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the § requester is permitted to access. This might require an implementer to filter records at a more granular level than the resource.
+§pdex-213: As noted in the previous section, $everything **SHALL** limit the data retrieved to that which the requester is permitted to access. § This might require an implementer to filter records at a more granular level than the resource.
 
 The following resource/profiles relevant to the PDex IG are retrievable using the $everything operation:
 
@@ -199,7 +199,7 @@ _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,Do
 
 ```
 
-§pdex-192: The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization § profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".
+§pdex-214: The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization § profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".
 
 ### Bulk FHIR Asynchronous protocols
 
@@ -208,17 +208,17 @@ _type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,Do
 
 ```
 
-§pdex-193: Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR § [Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/STU2/). The §pdex-194: request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level § Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the[Bulk Data Export Operation Request Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow).
+§pdex-215: Payer-to-Payer Data Exchange **SHOULD** support the use of Bulk FHIR methods, as defined in the HL7 FHIR § [Bulk Data Access Implementation Guide](http://hl7.org/fhir/uv/bulkdata/STU2/). §pdex-216: The request/retrieval of data **SHOULD** use the [FHIR Bulk Data Patient Level Export](http://hl7.org/fhir/uv/bulkdata/STU2/OperationDefinition-patient-export.html) and the[Bulk Data Export Operation Request Flow](http://hl7.org/fhir/uv/bulkdata/STU2/export.html#bulk-data-export-operation-request-flow). §
 
-The Patient Export Operation for Payer-to-Payer exchange **SHOULD** be constrained to the resources and profiles that the requester is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.md#data-retrieval-methods) section of this page.
+§pdex-217: The Patient Export Operation for Payer-to-Payer exchange **SHOULD** be constrained to the resources and profiles that the requester is permitted to access, such as the profiles identified in the table in the [Data Retrieval Methods](payertopayerexchange.md#data-retrieval-methods) section of this page. §
 
 The _typeFilter parameter can be used to scope resources using search parameters to exclude resources that are not required, such as non-clinical resources.
 
 ### Constraining Data Based Upon Permissions of the Requestor
 
-§pdex-195: The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access § permissions of the requester.
+§pdex-218: The FHIR Server **SHALL** constrain the data returned from the server to a requester based upon the access permissions of the requester. §
 
-For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see §pdex-196: Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly. §
+§pdex-219: For example, if a requester queries for ExplanationOfBenefit resources but they are only allowed to see Prior Authorization records, and not EOB Claims, the FHIR Server **SHALL** filter the data accordingly. §
 
 This Constraining condition may be required in implementations where multiple types of data are being served up by a single FHIR Server. The condition is particularly relevant when implementing Operations such as $everything or $export. See the sections below.
 
@@ -245,7 +245,7 @@ The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint And 
 
 For Payers to establish a secure mTLS connection with another Payer there needs to be a discovery service. In the absence of a Trusted Exchange Framework and Common Agreement (TEFCA) or National Endpoint Directory service for Payers an interim solution is required. For this purpose, a public git repository will be established that will be used to store signed mTLS endpoint bundles. A test version of that repository has been established here: [https://github.com/HL7-DaVinci/pdex-payer-payer](https://github.com/HL7-DaVinci/pdex-payer-payer). The repository includes some supporting tools and documentation relating to mTLS discovery.
 
-Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. A public key **SHOULD** also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
+Each Payer will create an mTLS bundle. The bundle will be signed by a Certificate Authority (CA) using public/private keys. The public key is included in the Endpoint record that is provided in the bundle. §pdex-220: A public key **SHOULD** also be provided by the Trust Framework that is overseeing the Payer-to-Payer exchange process. § The Associated Servers Extension will identify the PDex IG Base URI and the OAuth2.0 Dynamic Client Registration Protocol Endpoint. The PDex Capability Statement can be retrieved from [BASE URI]/metadata. The security section within the Capability Statement will define the SMART-on-FHIR endpoints for Access Tokens. The Registration Endpoint will only be accessible via the mTLS connection established using the mTLS endpoint information in the bundle.
 
 The mTLS Endpoint Bundle is profiled in this IG. It consists of an Endpoint and two Organization profiles (One for the Health Plan, the other for the Operating entity that manages the Endpoint). These profiles use the National Directory (NDH) IG Profiles.
 
@@ -275,7 +275,7 @@ The management of payer submissions involves the following steps:
 1. Signing the payer's public identity certificate with a digital signature.
 1. Returning the signed payer's public identity certificate and the public Trust Framework signing certificate to the payer.
 
-Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate into an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. Where the organization is both the payer and the managing organization there **SHOULD** still be two Organization records created.
+Upon completion of the submission process the Payer creates the endpoint and includes the signed payer public identity certificate and the public Trust Framework signing certificate into an Endpoint resource. This is incorporated into a bundle that includes the Payer's organization record and the organization record for the organization that manages the endpoint. §pdex-221: Where the organization is both the payer and the managing organization there **SHOULD** still be two Organization records created. §
 
 The completed bundle would be posted to a new branch of the public GitHub Repository.
 
@@ -289,7 +289,7 @@ Once payers have setup a secure mTLS connection, the new Payer will query the Dy
 
 ### Request Access Token for Member Access
 
-In step 3 of the Member-match process, the requesting Payer will have received a `MemberIdentifier` (member business identifier) and, where returned, a `MemberId` (Patient FHIR ID) for the matched member. §pdex-197: Where a `MemberId` (Patient FHIR ID) is returned from $member-match, it **SHOULD** be submitted to the Access Token Endpoint in the JWT `sub` claim. § The Authorization Server **SHOULD** use the Subject ID, confirm that consent for the Requesting Payer to access the Matched Member is still valid, and issue an access token scoped to that specific Patient FHIR ID, bounding any subsequent FHIR API request accordingly. Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token appropriately.
+In step 3 of the Member-match process, the requesting Payer will have received a `MemberIdentifier` (member business identifier) and, where returned, a `MemberId` (Patient FHIR ID) for the matched member. §pdex-222: Where a `MemberId` (Patient FHIR ID) is returned from $member-match, it **SHOULD** be submitted to the Access Token Endpoint in the JWT `sub` claim. § §pdex-223: The Authorization Server **SHOULD** use the Subject ID, confirm that consent for the Requesting Payer to access the Matched Member is still valid, and issue an access token scoped to that specific Patient FHIR ID, bounding any subsequent FHIR API request accordingly. § §pdex-224: Where only a `MemberIdentifier` is returned, the Authorization Server **SHOULD** resolve the business identifier to a Patient FHIR ID to scope the access token appropriately. §
 
 ### Scopes for Operations
 

@@ -11,7 +11,7 @@
 
 [Previous Page - Introduction](introduction.md)
 
-The PDex IG adopts the Security and Privacy approach detailed in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html). Implementers **SHOULD** also take note of the guidance in the FHIR R4 specification on the [HL7 core security page](http://hl7.org/fhir/R4/security.html). The Security and Privacy section of the HRex IG addresses:
+The PDex IG adopts the Security and Privacy approach detailed in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html). Implementers should also take note of the guidance in the FHIR R4 specification on the [HL7 core security page](http://hl7.org/fhir/R4/security.html). The Security and Privacy section of the HRex IG addresses:
 
 * [Statutes, Regulations, and Guiding Principles](https://hl7.org/fhir/us/davinci-hrex/2024Sep/security.html#statutes-regulations-and-guiding-principles)
 * [FHIR Clinical Safety, Security and Implementation Guidance](https://hl7.org/fhir/us/davinci-hrex/2024Sep/security.html#fhir-clinical-safety-security-and-implementation-guidance)

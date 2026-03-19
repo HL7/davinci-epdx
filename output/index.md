@@ -100,7 +100,7 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 
 ### Endpoint Discovery
 
-§pdex-81: Implementers of this IG **SHOULD** support the [endpoint discovery](http://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
+§pdex-88: Implementers of this IG **SHOULD** support the [endpoint discovery](http://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
 
 * Patient Access API.
 * Provider Access API.
@@ -108,7 +108,7 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 
 ### Intellectual Property Considerations
 
-This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP"). §pdex-82: Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. § §pdex-83: Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. § It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
+This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP"). §pdex-89: Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. § §pdex-90: Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. § It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
 
 This publication includes IP covered under the following statements.
 
@@ -213,11 +213,11 @@ This publication includes IP covered under the following statements.
 
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
-§pdex-84: **SHALL** indicates requirements that must be met to be conformant with the specification. §
+§pdex-91: **SHALL** indicates requirements that must be met to be conformant with the specification. §
 
-§pdex-85: **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance. §
+§pdex-92: **SHOULD** indicates behaviors that are strongly recommended (and which may result in interoperability issues or sub-optimal behavior if not adhered to) but which do not, for this version of the specification, affect the determination of specification conformance. §
 
-§pdex-86: **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption. §
+§pdex-93: **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption. §
 
 #### MustSupport
 
@@ -320,7 +320,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
   "name" : "DaVinciPayerDataExchange",
   "title" : "Da Vinci Payer Data Exchange",
   "status" : "active",
-  "date" : "2026-03-17T22:49:33-04:00",
+  "date" : "2026-03-19T09:51:30-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -2483,7 +2483,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "OperationDefinition/BulkMemberMatch"
       },
       "name" : "PDex Bulk Member Match Operation",
-      "description" : "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation **SHALL** be performed asynchronously following the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). The kick-off request (HTTP POST with `Prefer: respond-async`) returns HTTP 202 Accepted with a `Content-Location` header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.\n\nInput parameters SHALL conform to the [PDex Multi-Member Match Request](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html) profile. Output parameters SHALL conform to the [PDex Multi-Member Match Response](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html) profile.",
+      "description" : "Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange.",
       "exampleBoolean" : false
     },
     {
@@ -2795,7 +2795,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "OperationDefinition/ProviderMemberMatch"
       },
       "name" : "PDex Provider-Member-Match Operation",
-      "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.\n\nThe matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.\n\nInput parameters **SHALL** conform to the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile. Output parameters **SHALL** conform to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) profile.",
+      "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.",
       "exampleBoolean" : false
     },
     {

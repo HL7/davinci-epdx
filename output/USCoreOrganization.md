@@ -13,7 +13,7 @@
 
 [Previous Page - US Core MedicationRequest](USCoreMedicationRequest.md)
 
-When a Health Plan is documenting information about organizations in relation to the Member's Health History, they §pdex-31: **SHOULD** use the § [US Core 3.1.1 Organization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-organization.html) or [US Core 6.1.0 Organization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html) resource.
+When a Health Plan is documenting information about organizations in relation to the Member's Health History, they §pdex-34: **SHOULD** use the § [US Core 3.1.1 Organization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-organization.html) or [US Core 6.1.0 Organization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html) resource.
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Organization](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-organization.html) or [US Core 6.1.0 Organization](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html) resource are:
 

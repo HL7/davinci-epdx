@@ -14,7 +14,7 @@ Last updated: 2020-07-07 13:26:22+0000; Language: en-US
 
 Profile: [mTLS Organization](StructureDefinition-mtls-organization.md)
 
-**identifier**: [United States National Provider Identifier](http://terminology.hl7.org/6.1.0/NamingSystem-npi.html)/1356362586
+**identifier**: [United States National Provider Identifier](http://terminology.hl7.org/6.3.0/NamingSystem-npi.html)/1356362586
 
 **active**: true
 

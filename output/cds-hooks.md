@@ -15,7 +15,7 @@
 
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 
-§pdex-38: This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR. §
+§pdex-43: This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they **MAY** review and choose to commit to the patient record in their EMR. §
 
 CDS Hooks enables the Health Plan to be queried either via an on-demand transaction triggered from a SMART-on-FHIR app, or from a workflow event in the EMR that triggers the hook, such as when an appointment is booked for a patient.
 
@@ -25,9 +25,9 @@ CDS Hooks is a relatively new technology. It is considered a Standard for Trial 
 
 To meet requirements identified by Da Vinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification. This section of the PDex implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them. The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.
 
-§pdex-39: When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. §
+§pdex-44: When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. §
 
-§pdex-40: Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App **SHOULD** write the records that it is permitted to write to the API. § §pdex-41: The remaining selected records **SHOULD** be retained in the EMR in the most appropriate form to allow the provider access to the information when needed. § Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification, either in the initial release, or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.
+§pdex-45: Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App **SHOULD** write the records that it is permitted to write to the API. § §pdex-46: The remaining selected records **SHOULD** be retained in the EMR in the most appropriate form to allow the provider access to the information when needed. § Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification, either in the initial release, or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.
 
 This implementation guide extends/customizes CDS Hooks in 4 ways:
 
@@ -44,25 +44,25 @@ The hooks published in the CDS Hooks specification provide a list of context res
 
 It is possible that the actual list of R4 resources provided for the hooks will differ from that proposed in this IG. Future versions of the Implementation Guide will adjust accordingly.
 
-The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. §pdex-42: The Payer's CDS Hooks service **SHALL** handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources. §
+The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. §pdex-47: The Payer's CDS Hooks service **SHALL** handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources. §
 
-§pdex-43: The health plan's CDS Hooks service **SHALL** provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs. §
+§pdex-48: The health plan's CDS Hooks service **SHALL** provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs. §
 
-§pdex-44: The SMART-on-FHIR App that **MAY** be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. §
+§pdex-49: The SMART-on-FHIR App that **MAY** be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. §
 
-§pdex-45: When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. § Where the EMR's FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. §pdex-46: The remaining selected records **SHALL** be compiled into a FHIR bundle, a PDF **SHALL** be created to provide a human-readable version of the bundle and both documents **SHALL** be attached as a DocumentReference and committed to the patient's record. §
+§pdex-50: When interacting with EMR systems that support FHIR R4 the SMART App **SHALL** evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. § Where the EMR's FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. §pdex-51: The remaining selected records **SHALL** be compiled into a FHIR bundle, a PDF **SHALL** be created to provide a human-readable version of the bundle and both documents **SHALL** be attached as a DocumentReference and committed to the patient's record. §
 
-§pdex-47: Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP **SHALL** attempt to write the selected records based upon the options listed below for graceful write degradation. §
+§pdex-52: Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP **SHALL** attempt to write the selected records based upon the options listed below for graceful write degradation. §
 
 #### Graceful Write Degradation
 
-§pdex-48: When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record. §
+§pdex-53: When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App **SHALL**, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record. §
 
-§pdex-49: Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record. §
+§pdex-54: Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App **SHALL** create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record. §
 
-§pdex-50: Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record. §
+§pdex-55: Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App **SHALL** create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record. §
 
-§pdex-51: Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record. §
+§pdex-56: Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App **SHALL** create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record. §
 
 To summarize this graceful degradation in functionality the priority for writing information to a target EMR should be:
 
@@ -95,13 +95,13 @@ Defining new hooks is an expected part of the CDS Hooks specification and there 
 
 This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field.
 
-§pdex-52: Subscriber Id or Member Id, if available, **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App. §
+§pdex-57: Subscriber Id or Member Id, if available, **SHOULD** be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App. §
 
-§pdex-53: If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element **SHOULD** be used to uniquely identify the member. §
+§pdex-58: If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element **SHOULD** be used to uniquely identify the member. §
 
 ### PDex Hooks
 
-§pdex-54: Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification. § §pdex-55: Connection to health plan systems **SHALL** be supported via the following hook: §
+§pdex-59: Sharing of Member health information via PDex **SHALL** use the CDS Hooks specification. § §pdex-60: Connection to health plan systems **SHALL** be supported via the following hook: §
 
 * appointment-book.
 
@@ -151,11 +151,11 @@ A sample of the CDS Hook for appointment-book is included below:
 
 If a Health Plan does not provide a Member Id on a coverage card the extension can reference a Coverage resource that contains the Subscriber Id, plan details and the beneficiary information (i.e., the member demographic information).
 
-§pdex-56: Any identifiers associated with the coverage for the patient (which may include patient demographics) **SHOULD** be obtained from the FHIR Coverage record for the patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App. §
+§pdex-61: Any identifiers associated with the coverage for the patient (which may include patient demographics) **SHOULD** be obtained from the FHIR Coverage record for the patient, or **MAY** be entered manually by the provider via the SMART-on-FHIR App. §
 
 #### Hook Configuration
 
-§pdex-57: PDex supports three common scenarios where CDS Hooks **SHOULD** be used: §
+§pdex-62: PDex supports three common scenarios where CDS Hooks **SHOULD** be used: §
 
 * New Patient presents at Provider
 * Patient returns to Provider
@@ -168,23 +168,23 @@ The hook interaction for these scenarios is:
 When a Card is returned from the CDS Hooks appointment-book service by a Health Plan it will provide the following elements:
 
 * An AppContext that enables the launch of a (pre-registered and credentialed) SMART-on-FHIR to perform the next steps. The URL for the Health Plan’s FHIR API
-* A result code indicating the result of a Member Search §pdex-58: - The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system §
-* An information card with a human-readable interpretation of the Member Search Result §pdex-59: - The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API. §
+* A result code indicating the result of a Member Search §pdex-63: - The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system §
+* An information card with a human-readable interpretation of the Member Search Result §pdex-64: - The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API. §
 
-§pdex-60: The SMART-on-FHIR App **MAY** be configured with default FHIR search queries that can be set by the Clinician, or their organization. §
+§pdex-65: The SMART-on-FHIR App **MAY** be configured with default FHIR search queries that can be set by the Clinician, or their organization. §
 
-§pdex-61: Examples of preset search query parameters **MAY** include, but are not limited to: §
+§pdex-66: Examples of preset search query parameters **MAY** include, but are not limited to: §
 
 * Period (Start and, optionally, End date)
 * Excluded Practitioner(s)
 * Excluded Organization(s)
 * Excluded Location(s)
 
-The latter three items are used to enable the Provider to exclude information that they may already have in their system. These query parameters are examples of FHIR API queries. §pdex-62: Any valid FHIR search query for a Patient **MAY** be constructed by the Provider. § The potentially valid search query parameters will be limited by the options provided in the Health Plan's FHIR API CapabilityStatement.
+The latter three items are used to enable the Provider to exclude information that they may already have in their system. These query parameters are examples of FHIR API queries. §pdex-67: Any valid FHIR search query for a Patient **MAY** be constructed by the Provider. § The potentially valid search query parameters will be limited by the options provided in the Health Plan's FHIR API CapabilityStatement.
 
-§pdex-63: As a minimum, the Health Plan's FHIR API **SHALL** limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query. §
+§pdex-68: As a minimum, the Health Plan's FHIR API **SHALL** limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query. §
 
-§pdex-64: As a minimum, search of FHIR Resources **SHOULD** support the following query parameters where appropriate for a Resource Type: §
+§pdex-69: As a minimum, search of FHIR Resources **SHOULD** support the following query parameters where appropriate for a Resource Type: §
 
 * _lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss
 * Period (i.e., Date / Time filters)
@@ -233,7 +233,7 @@ Client systems are electronic medical records, Pharmacy systems and other clinic
 
 Payer systems are systems run by health plans/insurers that provide insurance coverage to the patient and can provide claims history clinical information and benefits information about the patient.
 
-The requirements and expectations described here are not intended to be exhaustive. §pdex-65: Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. § The purpose of this Implementation Guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
+The requirements and expectations described here are not intended to be exhaustive. §pdex-70: Health plans and clients **MAY** support additional hooks, additional card patterns, additional resources, additional extensions, etc. § The purpose of this Implementation Guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.
 
 [Next Page - Workflow Examples](workflowexamples.md)
 

@@ -13,7 +13,7 @@
 
 [Previous Page - US Core Pediatric Weight for Height Observation](USCorePediatricWeightforHeightObservation.md)
 
-The [US Core 3.1.1 Practitioner](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-practitioner.html) or [US Core 6.1.0 Practitioner](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html) §pdex-34: **SHALL** be used to record information about Practitioners. §
+The [US Core 3.1.1 Practitioner](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-practitioner.html) or [US Core 6.1.0 Practitioner](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html) §pdex-37: **SHALL** be used to record information about Practitioners. §
 
 The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the [US Core 3.1.1 Practitioner](http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-practitioner.html) or [US Core 6.1.0 Practitioner](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html) resource are:
 

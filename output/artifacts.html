@@ -369,9 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="OperationDefinition/BulkMemberMatch">PDex Bulk Member Match Operation</a>
             </td>
             <td>
-<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange. This operation <strong>SHALL</strong> be performed asynchronously following the <a href="https://hl7.org/fhir/R4/async.html">FHIR Asynchronous Request Pattern</a>. The kick-off request (HTTP POST with <code class="language-plaintext highlighter-rouge">Prefer: respond-async</code>) returns HTTP 202 Accepted with a <code class="language-plaintext highlighter-rouge">Content-Location</code> header pointing to a status endpoint. Clients poll that endpoint until the operation completes, at which point the response contains Group resources categorizing members as matched, non-matched, or consent-constrained. The matched members Group Id is then used with the $davinci-data-export operation — also an async bulk export — to retrieve member health data in ndjson format.</p>
-
-<p>Input parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-in.html">PDex Multi-Member Match Request</a> profile. Output parameters SHALL conform to the <a href="StructureDefinition-pdex-parameters-multi-member-match-bundle-out.html">PDex Multi-Member Match Response</a> profile.</p>
+<p>Bulk Member Match Operation enables Payers to match multiple members against another Payer's records for bulk data exchange.</p>
 </td>
          </tr>
          <tr>
@@ -381,10 +379,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.</p>
-
-<p>The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.</p>
-
-<p>Input parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-in.html">Provider $multi-member-match Request</a> profile. Output parameters <strong>SHALL</strong> conform to the <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html">Provider $multi-member-match Response</a> profile.</p>
 </td>
          </tr>
       </tbody>
@@ -2197,7 +2191,7 @@ group information may also vary by payment systems.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 17, 2026 22:49-0400">2026-03-17</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
