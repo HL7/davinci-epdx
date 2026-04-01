@@ -90,11 +90,11 @@ The matched members returned in the MatchedMembers Group can be used directly wi
   "type" : true,
   "instance" : false,
   "parameter" : [{
-    "name" : "MembersToMatch",
+    "name" : "MemberBundle",
     "use" : "in",
     "min" : 1,
     "max" : "*",
-    "documentation" : "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.",
+    "documentation" : "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MemberBundle slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.",
     "type" : "Parameters",
     "part" : [{
       "name" : "MemberPatient",
@@ -124,11 +124,11 @@ The matched members returned in the MatchedMembers Group can be used directly wi
       "targetProfile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"]
     },
     {
-      "name" : "TreatmentAttestation",
+      "name" : "Consent",
       "use" : "in",
       "min" : 1,
       "max" : "1",
-      "documentation" : "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions.",
+      "documentation" : "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). The Consent parameter represents the provider's certification of a treatment relationship under HIPAA TPO provisions.",
       "type" : "Consent",
       "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"]
     }]

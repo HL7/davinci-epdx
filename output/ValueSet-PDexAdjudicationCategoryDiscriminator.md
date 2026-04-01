@@ -18,7 +18,6 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
  **References** 
 
 * [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
-* [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
 
 ### Logical Definition (CLD)
 
@@ -67,7 +66,7 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
   "title" : "PDex Adjudication Category Discriminator",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

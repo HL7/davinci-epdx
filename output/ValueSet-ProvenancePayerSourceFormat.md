@@ -18,8 +18,6 @@ Source Data formats used as the source for FHIR referenced record by the Payer.
  **References** 
 
 * [An attribute to describe the data source a resource was constructed from](StructureDefinition-ProvenanceSourceFrom.md)
-* [An attribute to describe the data source a resource was constructed from](StructureDefinition-ProvenanceSourceFrom.md)
-* [PDex Provenance](StructureDefinition-pdex-provenance.md)
 * [PDex Provenance](StructureDefinition-pdex-provenance.md)
 
 ### Logical Definition (CLD)
@@ -69,7 +67,7 @@ Source Data formats used as the source for FHIR referenced record by the Payer.
   "title" : "Payer source of data",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

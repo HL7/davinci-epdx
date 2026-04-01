@@ -18,18 +18,11 @@ Codes to describe the results group from a multi-member Match operation or Membe
  **References** 
 
 * [PDex Member Match Group](StructureDefinition-pdex-member-match-group.md)
-* [PDex Member Match Group](StructureDefinition-pdex-member-match-group.md)
-* [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.md)
 * [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.md)
 * [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.md)
-* [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.md)
-* [PDex Provider Group](StructureDefinition-pdex-provider-group.md)
 * [PDex Provider Group](StructureDefinition-pdex-provider-group.md)
 * [Provider Member Match Group](StructureDefinition-pdex-provider-member-match.md)
-* [Provider Member Match Group](StructureDefinition-pdex-provider-member-match.md)
 * [Provider Member No Match Group](StructureDefinition-pdex-provider-member-no-match.md)
-* [Provider Member No Match Group](StructureDefinition-pdex-provider-member-no-match.md)
-* [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.md)
 * [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.md)
 
 ### Logical Definition (CLD)
@@ -89,7 +82,7 @@ Codes to describe the results group from a multi-member Match operation or Membe
   "title" : "PDex Multi-Member Match Result Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

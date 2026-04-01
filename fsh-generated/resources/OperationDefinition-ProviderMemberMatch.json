@@ -21,12 +21,12 @@
   "comment": "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.",
   "parameter": [
     {
-      "name": "MembersToMatch",
+      "name": "MemberBundle",
       "use": "in",
       "type": "Parameters",
       "min": 1,
       "max": "*",
-      "documentation": "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.",
+      "documentation": "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MemberBundle slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile.",
       "part": [
         {
           "name": "MemberPatient",
@@ -62,7 +62,7 @@
           "documentation": "Optional: The member's new coverage information to link to (e.g., during plan transitions)."
         },
         {
-          "name": "TreatmentAttestation",
+          "name": "Consent",
           "use": "in",
           "type": "Consent",
           "min": 1,
@@ -70,7 +70,7 @@
           "targetProfile": [
             "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"
           ],
-          "documentation": "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
+          "documentation": "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). The Consent parameter represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
         }
       ]
     },

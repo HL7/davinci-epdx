@@ -18,7 +18,6 @@ Indicates the Type of Service that a Prior Authorization is covering
  **References** 
 
 * [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
-* [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
 
 ### Logical Definition (CLD)
 
@@ -69,7 +68,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "Prior Authorization Service Type Codes (X12)",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

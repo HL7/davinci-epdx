@@ -310,7 +310,7 @@ This section on CDS Hooks will be removed in the next version of this IG.
 
 <p>This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.</p>
 
-<p><span id="pdex-43" class="fhir-conformance"> This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they <strong>MAY</strong> review and choose to commit to the patient record in their EMR. <a name="ci-c-pdex-43">  </a><a href="narrative-conformance.html#ci-c-pdex-43"><sup>&sect;pdex-43</sup></a></span></p>
+<p><span id="pdex-43" class="fhir-conformance"><a name="ci-c-pdex-43"> </a> This IG uses a combination of CDS-Hooks and SMART-on-FHIR to enable Providers to issue a query to a Health Plan and to retrieve information about their patient (the Health Plan member) that they <strong>MAY</strong> review and choose to commit to the patient record in their EMR. <a href="narrative-conformance.html#ci-c-pdex-43"><sup>&sect;pdex-43</sup></a></span></p>
 
 <p>CDS Hooks enables the Health Plan to be queried either via an on-demand transaction triggered from a SMART-on-FHIR app, or from a workflow event in the EMR that triggers the hook, such as when an appointment is booked for a patient.</p>
 
@@ -320,9 +320,9 @@ This section on CDS Hooks will be removed in the next version of this IG.
 
 <p>To meet requirements identified by Da Vinci project participants, it is necessary to introduce some additional capabilities above and beyond what is currently found in the CDS Hooks specification. This section of the PDex implementation guide describes those additional capabilities and the mechanism the implementation guide proposes to implement them. The purpose of these customizations is to enable testing at connectathons and to support feedback into the CDS Hooks design process.</p>
 
-<p><span id="pdex-44" class="fhir-conformance"> When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. <a name="ci-c-pdex-44">  </a><a href="narrative-conformance.html#ci-c-pdex-44"><sup>&sect;pdex-44</sup></a></span></p>
+<p><span id="pdex-44" class="fhir-conformance"><a name="ci-c-pdex-44"> </a> When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System's CapabilityStatement that the implementation has deemed relevant to this SMART-on-FHIR application to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. <a href="narrative-conformance.html#ci-c-pdex-44"><sup>&sect;pdex-44</sup></a></span></p>
 
-<p><span id="pdex-45" class="fhir-conformance"> Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App <strong>SHOULD</strong> write the records that it is permitted to write to the API. <a name="ci-c-pdex-45">  </a><a href="narrative-conformance.html#ci-c-pdex-45"><sup>&sect;pdex-45</sup></a></span> <span id="pdex-46" class="fhir-conformance"> The remaining selected records <strong>SHOULD</strong> be retained in the EMR in the most appropriate form to allow the provider access to the information when needed. <a name="ci-c-pdex-46">  </a><a href="narrative-conformance.html#ci-c-pdex-46"><sup>&sect;pdex-46</sup></a></span>
+<p><span id="pdex-45" class="fhir-conformance"><a name="ci-c-pdex-45"> </a> Where the EMR's FHIR API does not enable the SMART App to write a resource via the API, the SMART App <strong>SHOULD</strong> write the records that it is permitted to write to the API. <a href="narrative-conformance.html#ci-c-pdex-45"><sup>&sect;pdex-45</sup></a></span> <span id="pdex-46" class="fhir-conformance"><a name="ci-c-pdex-46"> </a> The remaining selected records <strong>SHOULD</strong> be retained in the EMR in the most appropriate form to allow the provider access to the information when needed. <a href="narrative-conformance.html#ci-c-pdex-46"><sup>&sect;pdex-46</sup></a></span>
 Each capability listed here has been proposed to the CDS Hooks community and may well become part of the official specification, either in the initial release, or in some future release. However, there is a significant likelihood that the manner in which the requirements are met may vary somewhat from a syntax or even an architectural approach. Future versions of this implementation guide will be updated to align with how these requirements are addressed in future versions of the CDS Hook specification. This implementation guide will not be able to be Normative (locked into backward compatibility mode) until the underlying CDS Hooks content is also normative.</p>
 
 <p>This implementation guide extends/customizes CDS Hooks in 4 ways:</p>
@@ -341,25 +341,25 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>It is possible that the actual list of R4 resources provided for the hooks will differ from that proposed in this IG. Future versions of the Implementation Guide will adjust accordingly.</p>
 
-<p>The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. <span id="pdex-47" class="fhir-conformance"> The Payer's CDS Hooks service <strong>SHALL</strong> handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources. <a name="ci-c-pdex-47">  </a><a href="narrative-conformance.html#ci-c-pdex-47"><sup>&sect;pdex-47</sup></a></span></p>
+<p>The CDS Hooks payload received from an EMR can include DSTU2, STU3 or R4 resources. <span id="pdex-47" class="fhir-conformance"><a name="ci-c-pdex-47"> </a> The Payer's CDS Hooks service <strong>SHALL</strong> handle the content in the JSON hooks payload, regardless of version of FHIR used for incorporated resources. <a href="narrative-conformance.html#ci-c-pdex-47"><sup>&sect;pdex-47</sup></a></span></p>
 
-<p><span id="pdex-48" class="fhir-conformance"> The health plan's CDS Hooks service <strong>SHALL</strong> provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs. <a name="ci-c-pdex-48">  </a><a href="narrative-conformance.html#ci-c-pdex-48"><sup>&sect;pdex-48</sup></a></span></p>
+<p><span id="pdex-48" class="fhir-conformance"><a name="ci-c-pdex-48"> </a> The health plan's CDS Hooks service <strong>SHALL</strong> provide access to FHIR R4 resources based on Profiles identified in the US Core, Da Vinci PDex and HRex IGs. <a href="narrative-conformance.html#ci-c-pdex-48"><sup>&sect;pdex-48</sup></a></span></p>
 
-<p><span id="pdex-49" class="fhir-conformance"> The SMART-on-FHIR App that <strong>MAY</strong> be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. <a name="ci-c-pdex-49">  </a><a href="narrative-conformance.html#ci-c-pdex-49"><sup>&sect;pdex-49</sup></a></span></p>
+<p><span id="pdex-49" class="fhir-conformance"><a name="ci-c-pdex-49"> </a> The SMART-on-FHIR App that <strong>MAY</strong> be called from the returned CDS Hooks card will not translate R4 profiles to earlier versions of FHIR. <a href="narrative-conformance.html#ci-c-pdex-49"><sup>&sect;pdex-49</sup></a></span></p>
 
-<p><span id="pdex-50" class="fhir-conformance"> When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. <a name="ci-c-pdex-50">  </a><a href="narrative-conformance.html#ci-c-pdex-50"><sup>&sect;pdex-50</sup></a></span> Where the EMR's FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. <span id="pdex-51" class="fhir-conformance"> The remaining selected records <strong>SHALL</strong> be compiled into a FHIR bundle, a PDF <strong>SHALL</strong> be created to provide a human-readable version of the bundle and both documents <strong>SHALL</strong> be attached as a DocumentReference and committed to the patient's record. <a name="ci-c-pdex-51">  </a><a href="narrative-conformance.html#ci-c-pdex-51"><sup>&sect;pdex-51</sup></a></span></p>
+<p><span id="pdex-50" class="fhir-conformance"><a name="ci-c-pdex-50"> </a> When interacting with EMR systems that support FHIR R4 the SMART App <strong>SHALL</strong> evaluate the EMR System's CapabilityStatement to determine which of the records selected by the Provider can be written to the EMR via the FHIR API. <a href="narrative-conformance.html#ci-c-pdex-50"><sup>&sect;pdex-50</sup></a></span> Where the EMR's FHIR API does not enable the SMART App to write a resource via the API the SMART App shall write the records that it is permitted to write to the API. <span id="pdex-51" class="fhir-conformance"><a name="ci-c-pdex-51"> </a> The remaining selected records <strong>SHALL</strong> be compiled into a FHIR bundle, a PDF <strong>SHALL</strong> be created to provide a human-readable version of the bundle and both documents <strong>SHALL</strong> be attached as a DocumentReference and committed to the patient's record. <a href="narrative-conformance.html#ci-c-pdex-51"><sup>&sect;pdex-51</sup></a></span></p>
 
-<p><span id="pdex-52" class="fhir-conformance"> Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP <strong>SHALL</strong> attempt to write the selected records based upon the options listed below for graceful write degradation. <a name="ci-c-pdex-52">  </a><a href="narrative-conformance.html#ci-c-pdex-52"><sup>&sect;pdex-52</sup></a></span></p>
+<p><span id="pdex-52" class="fhir-conformance"><a name="ci-c-pdex-52"> </a> Where an EMR providing an R4 API prevents the attaching of a FHIR bundle to a DocumentReference the SMART APP <strong>SHALL</strong> attempt to write the selected records based upon the options listed below for graceful write degradation. <a href="narrative-conformance.html#ci-c-pdex-52"><sup>&sect;pdex-52</sup></a></span></p>
 
 <h4 id="graceful-write-degradation">Graceful Write Degradation</h4>
 
-<p><span id="pdex-53" class="fhir-conformance"> When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App <strong>SHALL</strong>, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record. <a name="ci-c-pdex-53">  </a><a href="narrative-conformance.html#ci-c-pdex-53"><sup>&sect;pdex-53</sup></a></span></p>
+<p><span id="pdex-53" class="fhir-conformance"><a name="ci-c-pdex-53"> </a> When interacting with EMR systems that support FHIR versions prior to FHIR R4 the SMART App <strong>SHALL</strong>, where permitted by the target EMR, create a DocumentReference and encapsulate a PDF, human-readable version of the records being committed, together with a document bundle that encapsulates the FHIR resources from the health plan that the provider has selected to commit to the patient's record. <a href="narrative-conformance.html#ci-c-pdex-53"><sup>&sect;pdex-53</sup></a></span></p>
 
-<p><span id="pdex-54" class="fhir-conformance"> Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App <strong>SHALL</strong> create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record. <a name="ci-c-pdex-54">  </a><a href="narrative-conformance.html#ci-c-pdex-54"><sup>&sect;pdex-54</sup></a></span></p>
+<p><span id="pdex-54" class="fhir-conformance"><a name="ci-c-pdex-54"> </a> Where the EMR does not support the attachment of FHIR Bundles to a DocumentReference record the SMART App <strong>SHALL</strong> create a human-readable PDF version of the selected resources then attach this document to the DocumentReference and commit to the patient's record. <a href="narrative-conformance.html#ci-c-pdex-54"><sup>&sect;pdex-54</sup></a></span></p>
 
-<p><span id="pdex-55" class="fhir-conformance"> Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App <strong>SHALL</strong> create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record. <a name="ci-c-pdex-55">  </a><a href="narrative-conformance.html#ci-c-pdex-55"><sup>&sect;pdex-55</sup></a></span></p>
+<p><span id="pdex-55" class="fhir-conformance"><a name="ci-c-pdex-55"> </a> Where the EMR does not support the attachment of PDF Documents to a DocumentReference record the SMART App <strong>SHALL</strong> create an HTML or XHTML document that contains the selected resources then attach this document to the DocumentReference and commit to the patient's record. <a href="narrative-conformance.html#ci-c-pdex-55"><sup>&sect;pdex-55</sup></a></span></p>
 
-<p><span id="pdex-56" class="fhir-conformance"> Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App <strong>SHALL</strong> create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record. <a name="ci-c-pdex-56">  </a><a href="narrative-conformance.html#ci-c-pdex-56"><sup>&sect;pdex-56</sup></a></span></p>
+<p><span id="pdex-56" class="fhir-conformance"><a name="ci-c-pdex-56"> </a> Where the EMR does not support the attachment of HTML/XHTML documents to a DocumentReference record the SMART App <strong>SHALL</strong> create a human-readable ASCII text version of the selected resources then attach this to the DocumentReference and commit to the patient's record. <a href="narrative-conformance.html#ci-c-pdex-56"><sup>&sect;pdex-56</sup></a></span></p>
 
 <p>To summarize this graceful degradation in functionality the priority for writing information to a target EMR should be:</p>
 
@@ -396,13 +396,13 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>This IG uses a modified appointment-book hook. Subscriber Id is declared as an OPTIONAL context field.</p>
 
-<p><span id="pdex-57" class="fhir-conformance"> Subscriber Id or Member Id, if available, <strong>SHOULD</strong> be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App. <a name="ci-c-pdex-57">  </a><a href="narrative-conformance.html#ci-c-pdex-57"><sup>&sect;pdex-57</sup></a></span></p>
+<p><span id="pdex-57" class="fhir-conformance"><a name="ci-c-pdex-57"> </a> Subscriber Id or Member Id, if available, <strong>SHOULD</strong> be taken from the Patient's Coverage record, or be manually entered by the Provider via the SMART-on-FHIR App. <a href="narrative-conformance.html#ci-c-pdex-57"><sup>&sect;pdex-57</sup></a></span></p>
 
-<p><span id="pdex-58" class="fhir-conformance"> If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element <strong>SHOULD</strong> be used to uniquely identify the member. <a name="ci-c-pdex-58">  </a><a href="narrative-conformance.html#ci-c-pdex-58"><sup>&sect;pdex-58</sup></a></span></p>
+<p><span id="pdex-58" class="fhir-conformance"><a name="ci-c-pdex-58"> </a> If the Member Id is not available, the Subscriber ID and the patient information from the Coverage.beneficiary element <strong>SHOULD</strong> be used to uniquely identify the member. <a href="narrative-conformance.html#ci-c-pdex-58"><sup>&sect;pdex-58</sup></a></span></p>
 
 <h3 id="pdex-hooks">PDex Hooks</h3>
 
-<p><span id="pdex-59" class="fhir-conformance"> Sharing of Member health information via PDex <strong>SHALL</strong> use the CDS Hooks specification. <a name="ci-c-pdex-59">  </a><a href="narrative-conformance.html#ci-c-pdex-59"><sup>&sect;pdex-59</sup></a></span> <span id="pdex-60" class="fhir-conformance"> Connection to health plan systems <strong>SHALL</strong> be supported via the following hook: <a name="ci-c-pdex-60">  </a><a href="narrative-conformance.html#ci-c-pdex-60"><sup>&sect;pdex-60</sup></a></span></p>
+<p><span id="pdex-59" class="fhir-conformance"><a name="ci-c-pdex-59"> </a> Sharing of Member health information via PDex <strong>SHALL</strong> use the CDS Hooks specification. <a href="narrative-conformance.html#ci-c-pdex-59"><sup>&sect;pdex-59</sup></a></span> <span id="pdex-60" class="fhir-conformance"><a name="ci-c-pdex-60"> </a> Connection to health plan systems <strong>SHALL</strong> be supported via the following hook: <a href="narrative-conformance.html#ci-c-pdex-60"><sup>&sect;pdex-60</sup></a></span></p>
 
 <ul>
   <li>appointment-book.</li>
@@ -458,11 +458,11 @@ Each capability listed here has been proposed to the CDS Hooks community and may
 
 <p>If a Health Plan does not provide a Member Id on a coverage card the extension can reference a Coverage resource that contains the Subscriber Id, plan details and the beneficiary information (i.e., the member demographic information).</p>
 
-<p><span id="pdex-61" class="fhir-conformance"> Any identifiers associated with the coverage for the patient (which may include patient demographics) <strong>SHOULD</strong> be obtained from the FHIR Coverage record for the patient, or <strong>MAY</strong> be entered manually by the provider via the SMART-on-FHIR App. <a name="ci-c-pdex-61">  </a><a href="narrative-conformance.html#ci-c-pdex-61"><sup>&sect;pdex-61</sup></a></span></p>
+<p><span id="pdex-61" class="fhir-conformance"><a name="ci-c-pdex-61"> </a> Any identifiers associated with the coverage for the patient (which may include patient demographics) <strong>SHOULD</strong> be obtained from the FHIR Coverage record for the patient, or <strong>MAY</strong> be entered manually by the provider via the SMART-on-FHIR App. <a href="narrative-conformance.html#ci-c-pdex-61"><sup>&sect;pdex-61</sup></a></span></p>
 
 <h4 id="hook-configuration">Hook Configuration</h4>
 
-<p><span id="pdex-62" class="fhir-conformance"> PDex supports three common scenarios where CDS Hooks <strong>SHOULD</strong> be used: <a name="ci-c-pdex-62">  </a><a href="narrative-conformance.html#ci-c-pdex-62"><sup>&sect;pdex-62</sup></a></span></p>
+<p><span id="pdex-62" class="fhir-conformance"><a name="ci-c-pdex-62"> </a> PDex supports three common scenarios where CDS Hooks <strong>SHOULD</strong> be used: <a href="narrative-conformance.html#ci-c-pdex-62"><sup>&sect;pdex-62</sup></a></span></p>
 
 <ul>
   <li>New Patient presents at Provider</li>
@@ -481,14 +481,14 @@ Each capability listed here has been proposed to the CDS Hooks community and may
   <li>An AppContext that enables the launch of a (pre-registered and credentialed) SMART-on-FHIR to perform the next steps.
 The URL for the Health Plan’s FHIR API</li>
   <li>A result code indicating the result of a Member Search
-<span class="fhir-conformance">pdex-63: - The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system <a name="ci-c-2">  </a><a href="narrative-conformance.html#ci-c-2"><sup>&sect;2</sup></a></span></li>
+<span class="fhir-conformance"><a name="ci-c-2"> </a>pdex-63: - The returned information MAY include a link to a SMART-on-FHIR App to enable selection of resources by the Clinician that will be written to the Clinician’s EMR system <a href="narrative-conformance.html#ci-c-2"><sup>&sect;2</sup></a></span></li>
   <li>An information card with a human-readable interpretation of the Member Search Result
-<span class="fhir-conformance">pdex-64: - The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API. <a name="ci-c-3">  </a><a href="narrative-conformance.html#ci-c-3"><sup>&sect;3</sup></a></span></li>
+<span class="fhir-conformance"><a name="ci-c-3"> </a>pdex-64: - The information card MAY include a link to launch the SMART-on-FHIR App using the appContext to enable the Clinician to query information about their patient using the Health Plan’s FHIR API. <a href="narrative-conformance.html#ci-c-3"><sup>&sect;3</sup></a></span></li>
 </ul>
 
-<p><span id="pdex-65" class="fhir-conformance"> The SMART-on-FHIR App <strong>MAY</strong> be configured with default FHIR search queries that can be set by the Clinician, or their organization. <a name="ci-c-pdex-65">  </a><a href="narrative-conformance.html#ci-c-pdex-65"><sup>&sect;pdex-65</sup></a></span></p>
+<p><span id="pdex-65" class="fhir-conformance"><a name="ci-c-pdex-65"> </a> The SMART-on-FHIR App <strong>MAY</strong> be configured with default FHIR search queries that can be set by the Clinician, or their organization. <a href="narrative-conformance.html#ci-c-pdex-65"><sup>&sect;pdex-65</sup></a></span></p>
 
-<p><span id="pdex-66" class="fhir-conformance"> Examples of preset search query parameters <strong>MAY</strong> include, but are not limited to: <a name="ci-c-pdex-66">  </a><a href="narrative-conformance.html#ci-c-pdex-66"><sup>&sect;pdex-66</sup></a></span></p>
+<p><span id="pdex-66" class="fhir-conformance"><a name="ci-c-pdex-66"> </a> Examples of preset search query parameters <strong>MAY</strong> include, but are not limited to: <a href="narrative-conformance.html#ci-c-pdex-66"><sup>&sect;pdex-66</sup></a></span></p>
 <ul>
   <li>Period (Start and, optionally, End date)</li>
   <li>Excluded Practitioner(s)</li>
@@ -497,11 +497,11 @@ The URL for the Health Plan’s FHIR API</li>
 </ul>
 
 <p>The latter three items are used to enable the Provider to exclude information that they may already have in their system.
-These query parameters are examples of FHIR API queries. <span id="pdex-67" class="fhir-conformance"> Any valid FHIR search query for a Patient <strong>MAY</strong> be constructed by the Provider. <a name="ci-c-pdex-67">  </a><a href="narrative-conformance.html#ci-c-pdex-67"><sup>&sect;pdex-67</sup></a></span> The potentially valid search query parameters will be limited by the options provided in the Health Plan's FHIR API CapabilityStatement.</p>
+These query parameters are examples of FHIR API queries. <span id="pdex-67" class="fhir-conformance"><a name="ci-c-pdex-67"> </a> Any valid FHIR search query for a Patient <strong>MAY</strong> be constructed by the Provider. <a href="narrative-conformance.html#ci-c-pdex-67"><sup>&sect;pdex-67</sup></a></span> The potentially valid search query parameters will be limited by the options provided in the Health Plan's FHIR API CapabilityStatement.</p>
 
-<p><span id="pdex-68" class="fhir-conformance"> As a minimum, the Health Plan's FHIR API <strong>SHALL</strong> limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query. <a name="ci-c-pdex-68">  </a><a href="narrative-conformance.html#ci-c-pdex-68"><sup>&sect;pdex-68</sup></a></span></p>
+<p><span id="pdex-68" class="fhir-conformance"><a name="ci-c-pdex-68"> </a> As a minimum, the Health Plan's FHIR API <strong>SHALL</strong> limit returned results to the records that are related to the Patient/Member that is the subject of the Provider query. <a href="narrative-conformance.html#ci-c-pdex-68"><sup>&sect;pdex-68</sup></a></span></p>
 
-<p><span id="pdex-69" class="fhir-conformance"> As a minimum, search of FHIR Resources <strong>SHOULD</strong> support the following query parameters where appropriate for a Resource Type: <a name="ci-c-pdex-69">  </a><a href="narrative-conformance.html#ci-c-pdex-69"><sup>&sect;pdex-69</sup></a></span></p>
+<p><span id="pdex-69" class="fhir-conformance"><a name="ci-c-pdex-69"> </a> As a minimum, search of FHIR Resources <strong>SHOULD</strong> support the following query parameters where appropriate for a Resource Type: <a href="narrative-conformance.html#ci-c-pdex-69"><sup>&sect;pdex-69</sup></a></span></p>
 
 <ul>
   <li>_lastUpdated (e.g. Last Updated after yyyy-mm-dd.HH:MM:ss</li>
@@ -550,7 +550,7 @@ These query parameters are examples of FHIR API queries. <span id="pdex-67" clas
 <h4 id="payer-systems">Payer Systems</h4>
 <p>Payer systems are systems run by health plans/insurers that provide insurance coverage to the patient and can provide claims history clinical information and benefits information about the patient.</p>
 
-<p>The requirements and expectations described here are not intended to be exhaustive. <span id="pdex-70" class="fhir-conformance"> Health plans and clients <strong>MAY</strong> support additional hooks, additional card patterns, additional resources, additional extensions, etc. <a name="ci-c-pdex-70">  </a><a href="narrative-conformance.html#ci-c-pdex-70"><sup>&sect;pdex-70</sup></a></span> The purpose of this Implementation Guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.</p>
+<p>The requirements and expectations described here are not intended to be exhaustive. <span id="pdex-70" class="fhir-conformance"><a name="ci-c-pdex-70"> </a> Health plans and clients <strong>MAY</strong> support additional hooks, additional card patterns, additional resources, additional extensions, etc. <a href="narrative-conformance.html#ci-c-pdex-70"><sup>&sect;pdex-70</sup></a></span> The purpose of this Implementation Guide is to establish a baseline of expected behavior that communication partners can rely on and then build from. Future versions of this specification will evolve based on implementer feedback.</p>
 
 <p><a href="workflowexamples.html">Next Page - Workflow Examples</a></p>
 
@@ -595,7 +595,7 @@ These query parameters are examples of FHIR API queries. <span id="pdex-67" clas
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

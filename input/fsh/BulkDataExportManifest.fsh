@@ -86,10 +86,10 @@ Step 1: Provider invokes Provider-Member-Match operation
    POST /OperationDefinition/ProviderMemberMatch/$provider-member-match
    
    Request Body: Parameters resource with:
-   - MembersToMatch[0].MemberPatient
-   - MembersToMatch[0].CoverageToMatch
-   - MembersToMatch[0].TreatmentAttestation
-   - MembersToMatch[1]...
+   - MemberBundle[0].MemberPatient
+   - MemberBundle[0].CoverageToMatch
+   - MemberBundle[0].Consent
+   - MemberBundle[1]...
 
 Step 2: Payer returns Group resources
    Response: Parameters resource with:

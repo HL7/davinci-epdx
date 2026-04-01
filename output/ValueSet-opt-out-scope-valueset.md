@@ -18,7 +18,6 @@ The scope of a member's opt-out election
  **References** 
 
 * [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.md)
-* [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.md)
 
 ### Logical Definition (CLD)
 
@@ -77,7 +76,7 @@ The scope of a member's opt-out election
   "title" : "Opt-Out Scope",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

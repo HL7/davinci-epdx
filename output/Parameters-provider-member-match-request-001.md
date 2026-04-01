@@ -18,7 +18,7 @@
     "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"]
   },
   "parameter" : [{
-    "name" : "MembersToMatch",
+    "name" : "MemberBundle",
     "part" : [{
       "name" : "MemberPatient",
       "resource" : {
@@ -126,7 +126,7 @@
       }
     },
     {
-      "name" : "TreatmentAttestation",
+      "name" : "Consent",
       "resource" : {
         "resourceType" : "Consent",
         "id" : "treatment-attestation-001",
@@ -206,7 +206,7 @@
     }]
   },
   {
-    "name" : "MembersToMatch",
+    "name" : "MemberBundle",
     "part" : [{
       "name" : "MemberPatient",
       "resource" : {
@@ -314,7 +314,7 @@
       }
     },
     {
-      "name" : "TreatmentAttestation",
+      "name" : "Consent",
       "resource" : {
         "resourceType" : "Consent",
         "id" : "treatment-attestation-002",

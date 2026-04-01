@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-base-ext-endpoint-us
   "name" : "EndpointUsecase",
   "title" : "NDH Endpoint Usecase",
   "status" : "active",
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

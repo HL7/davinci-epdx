@@ -23,15 +23,15 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 
 // ─── Input Parameters ────────────────────────────────────────────────────────
 
-// MembersToMatch - Contains patient demographics and coverage information
-* parameter[+].name = #MembersToMatch
+// MemberBundle - Contains patient demographics and coverage information
+* parameter[+].name = #MemberBundle
 * parameter[=].use = #in
 * parameter[=].type = #Parameters
 * parameter[=].min = 1
 * parameter[=].max = "*"
-* parameter[=].documentation = "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MembersToMatch slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile."
+* parameter[=].documentation = "Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition **SHALL** conform to the MemberBundle slice defined in the [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.html) profile."
 
-// MembersToMatch.MemberPatient - The patient demographics for the member
+// MemberBundle.MemberPatient - The patient demographics for the member
 * parameter[=].part[+].name = #MemberPatient
 * parameter[=].part[=].use = #in
 * parameter[=].part[=].type = #Patient
@@ -40,7 +40,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].part[=].targetProfile = Canonical($HRexPatientDemographics)
 * parameter[=].part[=].documentation = "The patient demographics for a member to be matched."
 
-// MembersToMatch.CoverageToMatch - The member's coverage information to match
+// MemberBundle.CoverageToMatch - The member's coverage information to match
 * parameter[=].part[+].name = #CoverageToMatch
 * parameter[=].part[=].use = #in
 * parameter[=].part[=].type = #Coverage
@@ -49,7 +49,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].part[=].targetProfile = Canonical($HRexCoverage)
 * parameter[=].part[=].documentation = "The member's existing or previous coverage information to match against."
 
-// MembersToMatch.CoverageToLink - Optional coverage to link (for enrollment transitions)
+// MemberBundle.CoverageToLink - Optional coverage to link (for enrollment transitions)
 * parameter[=].part[+].name = #CoverageToLink
 * parameter[=].part[=].use = #in
 * parameter[=].part[=].type = #Coverage
@@ -58,14 +58,14 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * parameter[=].part[=].targetProfile = Canonical($HRexCoverage)
 * parameter[=].part[=].documentation = "Optional: The member's new coverage information to link to (e.g., during plan transitions)."
 
-// MembersToMatch.TreatmentAttestation - Provider attestation to treatment relationship
-* parameter[=].part[+].name = #TreatmentAttestation
+// MemberBundle.Consent - Provider attestation to treatment relationship
+* parameter[=].part[+].name = #Consent
 * parameter[=].part[=].use = #in
 * parameter[=].part[=].type = #Consent
 * parameter[=].part[=].min = 1
 * parameter[=].part[=].max = "1"
 * parameter[=].part[=].targetProfile = Canonical(ProviderTreatmentAttestation)
-* parameter[=].part[=].documentation = "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). Note: this parameter is named TreatmentAttestation (not Consent) to distinguish it from a patient consent for payer-to-payer exchange — it represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
+* parameter[=].part[=].documentation = "Provider's attestation of an active treatment relationship with the patient. Uses a Consent resource conforming to the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). The Consent parameter represents the provider's certification of a treatment relationship under HIPAA TPO provisions."
 
 // ─── Output Parameters ────────────────────────────────────────────────────────
 

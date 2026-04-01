@@ -356,7 +356,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="useful-patient-history-for-providers">Useful Patient History for Providers</h3>
 
-<p><span id="pdex-384" class="fhir-conformance"> When providers are building a health history for a new patient the information they are interested in <strong>MAY</strong> include: <a name="ci-c-pdex-384">  </a><a href="narrative-conformance.html#ci-c-pdex-384"><sup>&sect;pdex-384</sup></a></span></p>
+<p><span id="pdex-384" class="fhir-conformance"><a name="ci-c-pdex-384"> </a> When providers are building a health history for a new patient the information they are interested in <strong>MAY</strong> include: <a href="narrative-conformance.html#ci-c-pdex-384"><sup>&sect;pdex-384</sup></a></span></p>
 
 <ul>
   <li>Ambulatory events</li>
@@ -367,7 +367,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>This Guide will focus on a method to enable a provider to query the health record of a health plan member they are treating for information that is of interest to them in relation to the care of the member. The CDS-Hooks method that is described in a later section enables a provider to query for information in the member's health record at the health plan using US Core profiles and search parameters and subsequently select, either manually or by pre-defined automated tools, the records they want to commit to the patient's health record in the provider's EMR.</p>
 
-<p><span id="pdex-385" class="fhir-conformance"> For example, as part of an event or episode of care the provider <strong>MAY</strong> be interested in the following types of data: <a name="ci-c-pdex-385">  </a><a href="narrative-conformance.html#ci-c-pdex-385"><sup>&sect;pdex-385</sup></a></span></p>
+<p><span id="pdex-385" class="fhir-conformance"><a name="ci-c-pdex-385"> </a> For example, as part of an event or episode of care the provider <strong>MAY</strong> be interested in the following types of data: <a href="narrative-conformance.html#ci-c-pdex-385"><sup>&sect;pdex-385</sup></a></span></p>
 
 <ul>
   <li>Consultations/Encounters</li>
@@ -386,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Family History.</li>
 </ul>
 
-<p><span id="pdex-386" class="fhir-conformance"> These types of data <strong>SHALL</strong> be mapped to FHIR clinical resources as follows: <a name="ci-c-pdex-386">  </a><a href="narrative-conformance.html#ci-c-pdex-386"><sup>&sect;pdex-386</sup></a></span></p>
+<p><span id="pdex-386" class="fhir-conformance"><a name="ci-c-pdex-386"> </a> These types of data <strong>SHALL</strong> be mapped to FHIR clinical resources as follows: <a href="narrative-conformance.html#ci-c-pdex-386"><sup>&sect;pdex-386</sup></a></span></p>
 
 <style>
     table{
@@ -478,11 +478,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="versioning-of-fhir-data">Versioning of FHIR Data</h3>
 
-<p><span id="pdex-387" class="fhir-conformance"> A payer <strong>SHOULD</strong> provide the most recent version of the Patient, Practitioner, Organization and Location resources. <a name="ci-c-pdex-387">  </a><a href="narrative-conformance.html#ci-c-pdex-387"><sup>&sect;pdex-387</sup></a></span></p>
+<p><span id="pdex-387" class="fhir-conformance"><a name="ci-c-pdex-387"> </a> A payer <strong>SHOULD</strong> provide the most recent version of the Patient, Practitioner, Organization and Location resources. <a href="narrative-conformance.html#ci-c-pdex-387"><sup>&sect;pdex-387</sup></a></span></p>
 
-<p><span id="pdex-388" class="fhir-conformance"> A payer <strong>MAY</strong> choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. <a name="ci-c-pdex-388">  </a><a href="narrative-conformance.html#ci-c-pdex-388"><sup>&sect;pdex-388</sup></a></span> <span id="pdex-389" class="fhir-conformance"> In such cases resources <strong>SHOULD</strong> follow the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> guidance in the HTTP section of the FHIR specification. <a name="ci-c-pdex-389">  </a><a href="narrative-conformance.html#ci-c-pdex-389"><sup>&sect;pdex-389</sup></a></span></p>
+<p><span id="pdex-388" class="fhir-conformance"><a name="ci-c-pdex-388"> </a> A payer <strong>MAY</strong> choose to support FHIR resource data versioning in their API including Patient, Practitioner, Organization and Location resources. <a href="narrative-conformance.html#ci-c-pdex-388"><sup>&sect;pdex-388</sup></a></span> <span id="pdex-389" class="fhir-conformance"><a name="ci-c-pdex-389"> </a> In such cases resources <strong>SHOULD</strong> follow the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> guidance in the HTTP section of the FHIR specification. <a href="narrative-conformance.html#ci-c-pdex-389"><sup>&sect;pdex-389</sup></a></span></p>
 
-<p><span id="pdex-390" class="fhir-conformance"> If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource <strong>SHALL</strong> use the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> format of reference: <a name="ci-c-pdex-390">  </a><a href="narrative-conformance.html#ci-c-pdex-390"><sup>&sect;pdex-390</sup></a></span></p>
+<p><span id="pdex-390" class="fhir-conformance"><a name="ci-c-pdex-390"> </a> If a payer chooses to support FHIR resource data versioning of related resource references, the referring resource <strong>SHALL</strong> use the <a href="https://www.hl7.org/fhir/http.html#vread">vread</a> format of reference: <a href="narrative-conformance.html#ci-c-pdex-390"><sup>&sect;pdex-390</sup></a></span></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[type]/[id]/_history/[vid]
 </code></pre></div></div>
@@ -532,7 +532,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

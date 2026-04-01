@@ -18,7 +18,6 @@ Agent role performed relating to referenced resource
  **References** 
 
 * [PDex Provenance](StructureDefinition-pdex-provenance.md)
-* [PDex Provenance](StructureDefinition-pdex-provenance.md)
 
 ### Logical Definition (CLD)
 
@@ -67,7 +66,7 @@ Agent role performed relating to referenced resource
   "title" : "Provenance Agent Type",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

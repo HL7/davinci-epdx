@@ -19,7 +19,6 @@ Describes the various amount fields used when payers receive and adjudicate a cl
 
 * Included into [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md)
 * [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
-* [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md)
 
 ### Logical Definition (CLD)
 
@@ -68,7 +67,7 @@ Describes the various amount fields used when payers receive and adjudicate a cl
   "title" : "PDex Adjudication",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

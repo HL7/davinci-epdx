@@ -67,5 +67,5 @@ Usage: #example
 // used the old MemberBundle/Consent parameter names and has been removed.
 // The canonical example is ProviderMemberMatchRequestExample
 // (id=provider-member-match-request-001) in ExampleProviderMemberMatchRequest.fsh,
-// using the current MembersToMatch/TreatmentAttestation names aligned with
-// the ProviderMemberMatch OperationDefinition (resolved FHIR-55640).
+// using the current MemberBundle/Consent names aligned with
+// the ProviderMemberMatch OperationDefinition and BulkMemberMatch.
