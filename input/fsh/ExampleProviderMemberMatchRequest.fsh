@@ -16,7 +16,7 @@ Usage: #example
 // ------------------
 // Member 1: Successfully matched member
 // ------------------
-* parameter[+].name = "MembersToMatch"
+* parameter[+].name = "MemberBundle"
 
 // Patient Demographics for Member 1
 * parameter[=].part[+].name = "MemberPatient"
@@ -29,14 +29,14 @@ Usage: #example
 * parameter[=].part[=].resource.id = "coverage-to-match-001"
 
 // Treatment Attestation from provider
-* parameter[=].part[+].name = "TreatmentAttestation"
+* parameter[=].part[+].name = "Consent"
 * parameter[=].part[=].resource = TreatmentAttestationExample1
 * parameter[=].part[=].resource.id = "treatment-attestation-001"
 
 // ------------------
 // Member 2: Another member to match
 // ------------------
-* parameter[+].name = "MembersToMatch"
+* parameter[+].name = "MemberBundle"
 
 // Patient Demographics for Member 2
 * parameter[=].part[+].name = "MemberPatient"
@@ -49,7 +49,7 @@ Usage: #example
 * parameter[=].part[=].resource.id = "coverage-to-match-002"
 
 // Treatment Attestation
-* parameter[=].part[+].name = "TreatmentAttestation"
+* parameter[=].part[+].name = "Consent"
 * parameter[=].part[=].resource = TreatmentAttestationExample2
 * parameter[=].part[=].resource.id = "treatment-attestation-002"
 

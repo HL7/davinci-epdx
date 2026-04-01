@@ -320,7 +320,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
   "name" : "DaVinciPayerDataExchange",
   "title" : "Da Vinci Payer Data Exchange",
   "status" : "active",
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -785,7 +785,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
     },
     {
       "extension" : [{

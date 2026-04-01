@@ -7,6 +7,7 @@
 
 | JIRA Ticket | Change                                                |
 |-------------|-------------------------------------------------------|
+| [FHIR-56242](https://jira.hl7.org/browse/FHIR-56242) | Change Bundle name in Provider Member Match |
 | [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | $provider-member-match OperationDefinition parameter names are inconsistent with the Parameters profile |
 | [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Remove requirements to record export operation details as extensions on Patient/Group resources |
 | [FHIR-55981](https://jira.hl7.org/browse/FHIR-55981) | Use R5 specifications for async operations |

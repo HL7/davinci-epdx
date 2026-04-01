@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
   "title" : "Provider $multi-member-match Request",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -129,21 +129,21 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       "min" : 1
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch",
+      "id" : "Parameters.parameter:MemberBundle",
       "path" : "Parameters.parameter",
-      "sliceName" : "MembersToMatch",
+      "sliceName" : "MemberBundle",
       "min" : 1,
       "max" : "*"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.name",
+      "id" : "Parameters.parameter:MemberBundle.name",
       "path" : "Parameters.parameter.name",
       "short" : "Member elements to match for provider access",
       "definition" : "A repeating parameter containing current member demographics, current coverage information, and provider treatment attestation for a single member. The name aligns with the ProviderMemberMatch OperationDefinition.",
-      "patternString" : "MembersToMatch"
+      "patternString" : "MemberBundle"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part",
+      "id" : "Parameters.parameter:MemberBundle.part",
       "path" : "Parameters.parameter.part",
       "slicing" : {
         "discriminator" : [{
@@ -157,7 +157,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       "min" : 3
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:MemberPatient",
+      "id" : "Parameters.parameter:MemberBundle.part:MemberPatient",
       "path" : "Parameters.parameter.part",
       "sliceName" : "MemberPatient",
       "min" : 1,
@@ -167,14 +167,14 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:MemberPatient.name",
+      "id" : "Parameters.parameter:MemberBundle.part:MemberPatient.name",
       "path" : "Parameters.parameter.part.name",
       "short" : "Current member demographics",
       "definition" : "Current patient demographic information as known by the provider (from provider's EMR or patient-provided information).",
       "patternString" : "MemberPatient"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:MemberPatient.resource",
+      "id" : "Parameters.parameter:MemberBundle.part:MemberPatient.resource",
       "path" : "Parameters.parameter.part.resource",
       "short" : "Patient demographic details",
       "definition" : "The patient's current demographic information including name, date of birth, gender, and identifiers from the provider's system.",
@@ -185,7 +185,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToMatch",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToMatch",
       "path" : "Parameters.parameter.part",
       "sliceName" : "CoverageToMatch",
       "min" : 1,
@@ -195,14 +195,14 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToMatch.name",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToMatch.name",
       "path" : "Parameters.parameter.part.name",
       "short" : "Current member coverage",
       "definition" : "The member's current active coverage with the payer (typically from insurance card or eligibility verification).",
       "patternString" : "CoverageToMatch"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToMatch.resource",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToMatch.resource",
       "path" : "Parameters.parameter.part.resource",
       "short" : "Current coverage details",
       "definition" : "The member's active coverage information including member ID, subscriber ID, group number, plan details, and payer identifier.",
@@ -213,9 +213,9 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:TreatmentAttestation",
+      "id" : "Parameters.parameter:MemberBundle.part:Consent",
       "path" : "Parameters.parameter.part",
-      "sliceName" : "TreatmentAttestation",
+      "sliceName" : "Consent",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -223,14 +223,14 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:TreatmentAttestation.name",
+      "id" : "Parameters.parameter:MemberBundle.part:Consent.name",
       "path" : "Parameters.parameter.part.name",
       "short" : "Provider treatment attestation",
       "definition" : "Provider's attestation of an active treatment relationship with the member. This is NOT patient consent for payer-to-payer data exchange, but rather the provider's certification that they have a treatment relationship justifying access to the member's data.",
-      "patternString" : "TreatmentAttestation"
+      "patternString" : "Consent"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:TreatmentAttestation.resource",
+      "id" : "Parameters.parameter:MemberBundle.part:Consent.resource",
       "path" : "Parameters.parameter.part.resource",
       "short" : "Provider attestation to treatment relationship",
       "definition" : "A Consent resource conforming to the ProviderTreatmentAttestation profile, documenting that the provider has an active treatment relationship with the member and the purposes for which they are requesting access to the member's data.",
@@ -242,7 +242,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToLink",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink",
       "path" : "Parameters.parameter.part",
       "sliceName" : "CoverageToLink",
       "min" : 0,
@@ -252,14 +252,14 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       }]
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToLink.name",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink.name",
       "path" : "Parameters.parameter.part.name",
       "short" : "Optional coverage to link (typically not used)",
       "definition" : "CoverageToLink is typically not used in provider-initiated member match requests as providers are not linking historical coverage to new coverage. This element is only relevant for payer-to-payer member match operations.",
       "patternString" : "CoverageToLink"
     },
     {
-      "id" : "Parameters.parameter:MembersToMatch.part:CoverageToLink.resource",
+      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink.resource",
       "path" : "Parameters.parameter.part.resource",
       "type" : [{
         "code" : "Coverage",

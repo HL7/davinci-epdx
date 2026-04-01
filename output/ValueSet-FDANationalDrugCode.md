@@ -27,7 +27,6 @@ Users should note a few important items
  **References** 
 
 * [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.md)
-* [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.md)
 
 ### Logical Definition (CLD)
 
@@ -76,7 +75,7 @@ Users should note a few important items
   "title" : "FDA National Drug Code (NDC)",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-19T09:51:30-04:00",
+  "date" : "2026-03-31T21:00:10-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

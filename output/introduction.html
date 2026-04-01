@@ -436,11 +436,11 @@ opt-out of sharing with any providers.</p>
 
 <h4 id="member-mediated-information-exchange">Member-mediated Information Exchange</h4>
 
-<p><span id="pdex-94" class="fhir-conformance"> The CMS Interoperability and Patient Access Rule requires that a member new to a health plan <strong>SHALL</strong> be able to request that their information be passed from their old health plan to their new health plan. <a name="ci-c-pdex-94">  </a><a href="narrative-conformance.html#ci-c-pdex-94"><sup>&sect;pdex-94</sup></a></span></p>
+<p><span id="pdex-94" class="fhir-conformance"><a name="ci-c-pdex-94"> </a> The CMS Interoperability and Patient Access Rule requires that a member new to a health plan <strong>SHALL</strong> be able to request that their information be passed from their old health plan to their new health plan. <a href="narrative-conformance.html#ci-c-pdex-94"><sup>&sect;pdex-94</sup></a></span></p>
 
 <p>The CMS rule also specifies that all data from the member's health record that is held by the health plan since January 1, 2016, be available via API.</p>
 
-<p><span id="pdex-95" class="fhir-conformance"> A Member <strong>SHALL</strong> also be able to use APIs to share information with Third Party Applications. <a name="ci-c-pdex-95">  </a><a href="narrative-conformance.html#ci-c-pdex-95"><sup>&sect;pdex-95</sup></a></span></p>
+<p><span id="pdex-95" class="fhir-conformance"><a name="ci-c-pdex-95"> </a> A Member <strong>SHALL</strong> also be able to use APIs to share information with Third Party Applications. <a href="narrative-conformance.html#ci-c-pdex-95"><sup>&sect;pdex-95</sup></a></span></p>
 
 <p>The Member-mediated Information Exchange method will build upon established OAuth2.0 protocols for patient access to their health and claims information that enables the sharing of information with third-party applications. The process of Member Authentication, typically using the member's user credentials from the Health Plan's portal, and OAuth2.0 authorization to share will form the basis of the member Consent to share.</p>
 
@@ -513,7 +513,7 @@ Prior to that date Implementers may choose to implement either version of US Cor
 
 <p>This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.</p>
 
-<p>Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. <span id="pdex-96" class="fhir-conformance"> Therefore, for profiles and APIs identified in this IG, the FHIR R4 version <strong>SHALL</strong> be used. <a name="ci-c-pdex-96">  </a><a href="narrative-conformance.html#ci-c-pdex-96"><sup>&sect;pdex-96</sup></a></span></p>
+<p>Amongst Health Plans there has been limited adoption of FHIR specifications and FHIR APIs. <span id="pdex-96" class="fhir-conformance"><a name="ci-c-pdex-96"> </a> Therefore, for profiles and APIs identified in this IG, the FHIR R4 version <strong>SHALL</strong> be used. <a href="narrative-conformance.html#ci-c-pdex-96"><sup>&sect;pdex-96</sup></a></span></p>
 
 <h3 id="pdex-data-payloads">PDex Data Payloads</h3>
 
@@ -527,7 +527,7 @@ Prior to that date Implementers may choose to implement either version of US Cor
 
 <h4 id="member-health-history">Member Health History</h4>
 
-<p><span id="pdex-97" class="fhir-conformance"> The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History" <strong>SHOULD</strong> include the following profiles where payers have data to support the use of those profiles: <a name="ci-c-pdex-97">  </a><a href="narrative-conformance.html#ci-c-pdex-97"><sup>&sect;pdex-97</sup></a></span></p>
+<p><span id="pdex-97" class="fhir-conformance"><a name="ci-c-pdex-97"> </a> The FHIR Resources that comprise the Member Clinical and Claims-derived history, otherwise referred to as the "Member Health History" <strong>SHOULD</strong> include the following profiles where payers have data to support the use of those profiles: <a href="narrative-conformance.html#ci-c-pdex-97"><sup>&sect;pdex-97</sup></a></span></p>
 
 <h5 id="us-core">US Core</h5>
 
@@ -705,12 +705,12 @@ health data for Five years prior to the date of the request. The data can includ
   <li>PDex Prior Authorization profile.</li>
 </ul>
 
-<p><span id="pdex-98" class="fhir-conformance"> All resources available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement. <a name="ci-c-pdex-98">  </a><a href="narrative-conformance.html#ci-c-pdex-98"><sup>&sect;pdex-98</sup></a></span></p>
+<p><span id="pdex-98" class="fhir-conformance"><a name="ci-c-pdex-98"> </a> All resources available via a FHIR API endpoint <strong>SHALL</strong> be declared in a FHIR CapabilityStatement. <a href="narrative-conformance.html#ci-c-pdex-98"><sup>&sect;pdex-98</sup></a></span></p>
 
 <p>The FHIR CapabilityStatement defines the resources and operations supported by the resources exposed via the FHIR API.</p>
 
-<p><span id="pdex-99" class="fhir-conformance"> The Read and Search Operations <strong>SHALL</strong> be supported for the FHIR Profiles covered in this payload section. <a name="ci-c-pdex-99">  </a><a href="narrative-conformance.html#ci-c-pdex-99"><sup>&sect;pdex-99</sup></a></span> 
-<span id="pdex-100" class="fhir-conformance"> The V-Read and History operations <strong>MAY</strong> be supported. <a name="ci-c-pdex-100">  </a><a href="narrative-conformance.html#ci-c-pdex-100"><sup>&sect;pdex-100</sup></a></span></p>
+<p><span id="pdex-99" class="fhir-conformance"><a name="ci-c-pdex-99"> </a> The Read and Search Operations <strong>SHALL</strong> be supported for the FHIR Profiles covered in this payload section. <a href="narrative-conformance.html#ci-c-pdex-99"><sup>&sect;pdex-99</sup></a></span> 
+<span id="pdex-100" class="fhir-conformance"><a name="ci-c-pdex-100"> </a> The V-Read and History operations <strong>MAY</strong> be supported. <a href="narrative-conformance.html#ci-c-pdex-100"><sup>&sect;pdex-100</sup></a></span></p>
 
 <p>The FHIR CapabilityStatement defines the resources and operations permitted on the resources exposed via the FHIR API.</p>
 
@@ -727,18 +727,18 @@ health data for Five years prior to the date of the request. The data can includ
 
 <h4 id="conformance-expectations">Conformance Expectations</h4>
 
-<p><span id="pdex-101" class="fhir-conformance"> This implementation guide uses specific terminology such as <strong>SHALL</strong>, <strong>SHOULD</strong>, <strong>MAY</strong> to flag statements that have relevance for the evaluation of conformance with the guide. <a name="ci-c-pdex-101">  </a><a href="narrative-conformance.html#ci-c-pdex-101"><sup>&sect;pdex-101</sup></a></span> As well, profiles in this implementation guide make use of the <a href="http://hl7.org/fhir/R4/profiling.html#mustsupport">mustSupport</a> element. Base expectations for the interpretations of these terms are set in the <a href="http://hl7.org/fhir/R4/conformance-rules.html#conflang">FHIR core specification</a> and general Da Vinci-wide expectations are <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html">defined in HRex</a>.</p>
+<p><span id="pdex-101" class="fhir-conformance"><a name="ci-c-pdex-101"> </a> This implementation guide uses specific terminology such as <strong>SHALL</strong>, <strong>SHOULD</strong>, <strong>MAY</strong> to flag statements that have relevance for the evaluation of conformance with the guide. <a href="narrative-conformance.html#ci-c-pdex-101"><sup>&sect;pdex-101</sup></a></span> As well, profiles in this implementation guide make use of the <a href="http://hl7.org/fhir/R4/profiling.html#mustsupport">mustSupport</a> element. Base expectations for the interpretations of these terms are set in the <a href="http://hl7.org/fhir/R4/conformance-rules.html#conflang">FHIR core specification</a> and general Da Vinci-wide expectations are <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html">defined in HRex</a>.</p>
 
 <h3 id="mustsupport">MustSupport</h3>
 
-<p><span class="fhir-conformance">pdex-102: For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows: <a name="ci-c-8">  </a><a href="narrative-conformance.html#ci-c-8"><sup>&sect;8</sup></a></span></p>
+<p><span class="fhir-conformance"><a name="ci-c-8"> </a>pdex-102: For querying and reading PDex and US Core Profiles, Must Support on any profile data element SHALL be interpreted as follows: <a href="narrative-conformance.html#ci-c-8"><sup>&sect;8</sup></a></span></p>
 
-<p><span id="pdex-103" class="fhir-conformance"> PDex Responders <strong>SHALL</strong> be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement. <a name="ci-c-pdex-103">  </a><a href="narrative-conformance.html#ci-c-pdex-103"><sup>&sect;pdex-103</sup></a></span>
-<span id="pdex-104" class="fhir-conformance"> PDex Requestors <strong>SHALL</strong> be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. <a name="ci-c-pdex-104">  </a><a href="narrative-conformance.html#ci-c-pdex-104"><sup>&sect;pdex-104</sup></a></span> <span id="pdex-105" class="fhir-conformance"> In other words PDex Requestors <strong>SHOULD</strong> be capable of displaying the data elements for human use or storing it for other purposes. <a name="ci-c-pdex-105">  </a><a href="narrative-conformance.html#ci-c-pdex-105"><sup>&sect;pdex-105</sup></a></span>
-<span id="pdex-106" class="fhir-conformance"> In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders <strong>SHALL NOT</strong> include the data elements in the resource instance returned as part of the query results. <a name="ci-c-pdex-106">  </a><a href="narrative-conformance.html#ci-c-pdex-106"><sup>&sect;pdex-106</sup></a></span>
-<span id="pdex-107" class="fhir-conformance"> When querying PDex Responders, PDex Requestors <strong>SHALL</strong> interpret missing data elements within resource instances as data not present in the PDex Responder’s system. <a name="ci-c-pdex-107">  </a><a href="narrative-conformance.html#ci-c-pdex-107"><sup>&sect;pdex-107</sup></a></span>
-<span id="pdex-108" class="fhir-conformance"> In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders <strong>SHALL</strong> send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension. <a name="ci-c-pdex-108">  </a><a href="narrative-conformance.html#ci-c-pdex-108"><sup>&sect;pdex-108</sup></a></span>
-<span id="pdex-109" class="fhir-conformance"> PDex Requestors <strong>SHALL</strong> be able to process resource instances containing data elements asserting missing information. <a name="ci-c-pdex-109">  </a><a href="narrative-conformance.html#ci-c-pdex-109"><sup>&sect;pdex-109</sup></a></span></p>
+<p><span id="pdex-103" class="fhir-conformance"><a name="ci-c-pdex-103"> </a> PDex Responders <strong>SHALL</strong> be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement. <a href="narrative-conformance.html#ci-c-pdex-103"><sup>&sect;pdex-103</sup></a></span>
+<span id="pdex-104" class="fhir-conformance"><a name="ci-c-pdex-104"> </a> PDex Requestors <strong>SHALL</strong> be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. <a href="narrative-conformance.html#ci-c-pdex-104"><sup>&sect;pdex-104</sup></a></span> <span id="pdex-105" class="fhir-conformance"><a name="ci-c-pdex-105"> </a> In other words PDex Requestors <strong>SHOULD</strong> be capable of displaying the data elements for human use or storing it for other purposes. <a href="narrative-conformance.html#ci-c-pdex-105"><sup>&sect;pdex-105</sup></a></span>
+<span id="pdex-106" class="fhir-conformance"><a name="ci-c-pdex-106"> </a> In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders <strong>SHALL NOT</strong> include the data elements in the resource instance returned as part of the query results. <a href="narrative-conformance.html#ci-c-pdex-106"><sup>&sect;pdex-106</sup></a></span>
+<span id="pdex-107" class="fhir-conformance"><a name="ci-c-pdex-107"> </a> When querying PDex Responders, PDex Requestors <strong>SHALL</strong> interpret missing data elements within resource instances as data not present in the PDex Responder’s system. <a href="narrative-conformance.html#ci-c-pdex-107"><sup>&sect;pdex-107</sup></a></span>
+<span id="pdex-108" class="fhir-conformance"><a name="ci-c-pdex-108"> </a> In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders <strong>SHALL</strong> send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension. <a href="narrative-conformance.html#ci-c-pdex-108"><sup>&sect;pdex-108</sup></a></span>
+<span id="pdex-109" class="fhir-conformance"><a name="ci-c-pdex-109"> </a> PDex Requestors <strong>SHALL</strong> be able to process resource instances containing data elements asserting missing information. <a href="narrative-conformance.html#ci-c-pdex-109"><sup>&sect;pdex-109</sup></a></span></p>
 
 <p>Additional information about MustSupport can be found in the <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html#mustsupport">Da Vinci HRex Conformance Page</a> and the 
 <a href="http://hl7.org/fhir/us/core/STU7/must-support.html">US Core Must Support page</a>.</p>
@@ -752,7 +752,7 @@ NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR REST
 
 <h4 id="pharmacy-network-directory">Pharmacy Network Directory</h4>
 
-<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.2">PDex-plan-net IG</a>). <span id="pdex-110" class="fhir-conformance"> A Health Plan's Pharmacy Network <strong>SHOULD</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory. <a name="ci-c-pdex-110">  </a><a href="narrative-conformance.html#ci-c-pdex-110"><sup>&sect;pdex-110</sup></a></span></p>
+<p>The provision of a Member-accessible Pharmacy Network Directory API is detailed in the companion, subsidiary Payer Data Exchange Plan Network Implementation Guide (<a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.2">PDex-plan-net IG</a>). <span id="pdex-110" class="fhir-conformance"><a name="ci-c-pdex-110"> </a> A Health Plan's Pharmacy Network <strong>SHOULD</strong> be expressed using the same FHIR profiles used for the Healthcare Network Directory. <a href="narrative-conformance.html#ci-c-pdex-110"><sup>&sect;pdex-110</sup></a></span></p>
 
 <h4 id="medication-formulary">Medication Formulary</h4>
 
@@ -801,7 +801,7 @@ NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR REST
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 19, 2026 09:51-0400">2026-03-19</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
