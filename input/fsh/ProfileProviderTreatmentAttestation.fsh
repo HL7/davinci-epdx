@@ -48,8 +48,13 @@ Description: "Enables a practitioner, facility, or organization to attest to a t
 // Performer - the practitioner, organization, or facility attesting to the relationship
 * performer 1..* MS
 * performer ^short = "Practitioner, facility, or organization attesting to treatment relationship"
-* performer ^definition = "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient"
+* performer ^definition = "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient. The performer element SHOULD be populated using performer.identifier with the provider's NPI (National Provider Identifier) so that the attesting provider can be identified without requiring a FHIR resource reference on the receiving system."
 * performer only Reference(Practitioner or Organization or PractitionerRole)
+* performer.identifier 0..1 MS
+* performer.identifier ^short = "NPI or other identifier of the performing provider"
+* performer.identifier ^definition = "The National Provider Identifier (NPI) or other business identifier of the practitioner, facility, or organization attesting to the treatment relationship. Using an identifier allows the provider to be identified without requiring a resolvable FHIR resource reference."
+* performer.display MS
+* performer.display ^short = "Display name of the performing provider"
 
 // Organization - the organization under which the treatment relationship exists
 * organization 0..1 MS

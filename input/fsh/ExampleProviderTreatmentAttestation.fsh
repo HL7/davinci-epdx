@@ -20,8 +20,9 @@ Usage: #example
 // DateTime when attestation was made
 * dateTime = "2024-11-14T10:30:00Z"
 
-// Performer - the practitioner attesting to the treatment relationship
-* performer[0].reference = "Practitioner/4"
+// Performer - the practitioner attesting to the treatment relationship, identified by NPI
+* performer[0].identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* performer[0].identifier.value = "1234567893"
 * performer[0].display = "Dr. Susan Smith"
 
 // Organization under which treatment relationship exists
