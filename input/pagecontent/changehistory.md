@@ -3,6 +3,13 @@
 
 {% include style_insert_table_blue.html %}
 
+### STU2.2.0 Peer Review Reconciliation
+
+| JIRA Ticket | Change                                                |
+|-------------|-------------------------------------------------------|
+| [FHIR-56511](https://jira.hl7.org/browse/FHIR-56511) | Fix formatting of the "how does provider access work" section |
+| [FHIR-56546](https://jira.hl7.org/browse/FHIR-56546) | Link to output parameters profile from operation definition profile |
+
 ### STU 2.2.0 Update
 
 | JIRA Ticket | Change                                                |

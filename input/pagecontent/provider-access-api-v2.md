@@ -87,13 +87,14 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
 §pdex-258: - The health plan **SHALL** evaluate the request and determine: §
   - If the member has Opted-Out of sharing (by checking the Member Opt-Out List)
   - If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member
-  - If the treatment attestation can be verified and meets the payer's requirements
+- If the treatment attestation can be verified and meets the payer's requirements
 §pdex-259: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response. § §pdex-260: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
 §pdex-261: - Members who fail any check **SHALL** be returned in separate Group resources: §
   - Non-matched members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Treatment attestation constrained members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
   - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) 
-§pdex-262: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. § §pdex-263: Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
+§pdex-262: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. §
+§pdex-263: - Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
 §pdex-264: - The matched group resource **MAY** be a short-lived group. § No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
 §pdex-265: - Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. § 
 - Implementer feedback is sought on whether an upper limit on the number of members in a Provider-Member-Match operation should be specified.
