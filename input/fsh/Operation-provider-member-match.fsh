@@ -19,7 +19,7 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 * instance = false
 * date = "2024-12-16T00:00:00Z"
 * publisher = "HL7 International / Financial Management"
-* comment = "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data."
+* comment = "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data. The complete output structure conforms to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) Parameters profile, which defines slices for MatchedMembers, NonMatchedMembers, and ConsentConstrainedMembers."
 
 // ─── Input Parameters ────────────────────────────────────────────────────────
 
