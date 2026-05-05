@@ -69,29 +69,29 @@ Description: "Provider-Member-Match Operation enables providers to match patient
 
 // ─── Output Parameters ────────────────────────────────────────────────────────
 
-// MatchedMembers - Group of successfully matched members
+// MatchedMembers - Group of successfully matched members authorized for provider access
 * parameter[+].name = #MatchedMembers
 * parameter[=].use = #out
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(MemberProviderTreatmentRelationship)
-* parameter[=].documentation = "A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data."
+* parameter[=].targetProfile = Canonical(ProviderMemberMatchGroup)
+* parameter[=].documentation = "A Group resource containing members successfully matched in the payer's records, for whom the provider's treatment attestation has been verified, and who have not opted out of Provider Access API data sharing. The Group Id returned in this parameter is the input to the $davinci-data-export operation for bulk data retrieval. This Group is the response artifact and is distinct from the long-lived Member-Provider Treatment Relationship Group (pdex-treatment-relationship) the payer maintains for governance and audit purposes."
 
-// NonMatchedMembers - Group of members that could not be matched or failed treatment attestation
+// NonMatchedMembers - Group of members that could not be matched or whose treatment attestation could not be verified
 * parameter[+].name = #NonMatchedMembers
 * parameter[=].use = #out
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].targetProfile = Canonical(PDexMemberNoMatchGroup)
-* parameter[=].documentation = "A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements."
+* parameter[=].targetProfile = Canonical(ProviderMemberNoMatchGroup)
+* parameter[=].documentation = "A Group resource containing members for whom no match could be found in the payer's records OR for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements. Both failure types are reported in this single Group; consumers can distinguish the specific reason via the Group's characteristic code or the per-member context if required by the payer."
 
-// ConsentConstrainedMembers - Group of members excluded due to member opt-out
+// ConsentConstrainedMembers - Group of members excluded due to opt-out from Provider Access API
 * parameter[+].name = #ConsentConstrainedMembers
 * parameter[=].use = #out
 * parameter[=].type = #Group
 * parameter[=].min = 0
 * parameter[=].max = "1"
 * parameter[=].targetProfile = Canonical(MemberOptOut)
-* parameter[=].documentation = "A Group resource containing members who have opted out of data sharing with providers or this specific provider."
+* parameter[=].documentation = "A Group resource containing members who were successfully matched in the payer's records but who have opted out of data sharing via the Provider Access API. Returned via the [Member Opt-Out Group profile](StructureDefinition-pdex-member-opt-out.html), which preserves the type-level distinction between opt-out and no-match outcomes."

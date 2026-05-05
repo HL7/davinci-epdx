@@ -7,7 +7,7 @@
 Data guidance in this version of the IG is based on feedback from payers that need to create large Treatment Relationship Lists (TRL) for in-network/contracted practitioners and organizations. 
 This version of the API adds a Provider-Member-Match operation that is built on the Payer-to-Payer Bulk Member Match that has been ballotted and extensively tested at Connectathons. 
 
-The Provider-Member-Match is provided to support the requirements of the CMS prior Authorization Rule (CMS-0057) for payers that need to create large group lists that represent treatment relationships between in-network providers and health plan members.
+The Provider-Member-Match is provided to support the requirements of the CMS Prior Authorization Rule (CMS-0057) for payers that need to create large group lists that represent treatment relationships between in-network providers and health plan members.
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
@@ -88,13 +88,12 @@ This IG recognizes that the healthcare industry is rapidly evolving methods, suc
   - If the member has Opted-Out of sharing (by checking the Member Opt-Out List)
   - If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member
 - If the treatment attestation can be verified and meets the payer's requirements
-§pdex-259: - When the member data passes these checks, the member **SHALL** be added to a [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) resource conforming to the matched members response. § §pdex-260: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. §
-§pdex-261: - Members who fail any check **SHALL** be returned in separate Group resources: §
-  - Non-matched members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
-  - Treatment attestation constrained members in a [PDex Member No Match Group](StructureDefinition-pdex-member-no-match-group.html)
-  - Opt-out constrained members in a [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) 
+§pdex-259: - When the member data passes these checks, the member **SHALL** be returned in the matched members response Group, which conforms to the [Provider Member Match Group profile](StructureDefinition-pdex-provider-member-match.html). § §pdex-260: The Group Id of the matched group **SHALL** be returned to the Provider upon completion of the operation. § The matched response Group is the response artifact used as input to the subsequent `$davinci-data-export` operation, and is distinct from the long-lived [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) the payer maintains for governance and audit.
+§pdex-261: - Members who fail any check **SHALL** be returned in one of the following two Group resources, distinguished by Group profile: §
+  - Members who could not be matched in the payer's records, OR whose treatment attestation could not be verified or does not meet the payer's requirements, are returned in a [Provider Member No Match Group](StructureDefinition-pdex-provider-member-no-match.html). Both failure reasons share this profile; the payer may distinguish them via the Group's characteristic code or per-member context if needed.
+  - Members who were matched but who have opted out of Provider Access API data sharing are returned in a [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html). 
 §pdex-262: - The provider **SHALL** use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. §
-§pdex-263: - Alternatively, the provider **MAY** perform a new Provider-mMember-Match operation to receive a new Matched Member Group. §
+§pdex-263: - Alternatively, the provider **MAY** perform a new Provider-Member-Match operation to receive a new Matched Member Group. §
 §pdex-264: - The matched group resource **MAY** be a short-lived group. § No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
 §pdex-265: - Implementer feedback is sought on whether requests for less than 10 members **SHOULD** be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. § 
 - Implementer feedback is sought on whether an upper limit on the number of members in a Provider-Member-Match operation should be specified.
@@ -106,8 +105,8 @@ providers, or for an organization, using automated service functions. The retrie
 is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
 personnel, or systems, have access to the retrieved data.
 
-§pdex-268: When a health plan is using FHIR GRoups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider. §
-§pdex-269: Health plans **MAY** choose to include organizations or locations in a Member-Proider TRL. §
+§pdex-268: When a health plan is using FHIR Groups to manage Treatment relationships they **SHOULD** create Member-Provider TRLs using the NPI data for the Rendering Provider. §
+§pdex-269: Health plans **MAY** choose to include organizations or locations in a Member-Provider TRL. §
 
 
 ### Member Opt-out
@@ -123,7 +122,7 @@ See the [PDex Provider Consent here](StructureDefinition-pdex-provider-consent.h
 
 ### Treatment Relationship Driven Access 
 
-The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-276: If a Treatment Relationship is established, the member's data **SHALL** be available to a Provider through the member's inclusion in the [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) that is used to request a $davinci-data-export operation. §
+The Provider Access API version 2 uses the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html) to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules, which are evaluated against the long-lived [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) maintained by the payer for governance and audit. Provider attestations are submitted using the [Provider Treatment Attestation Profile](StructureDefinition-provider-treatment-relationship-consent.html). §pdex-276: If a Treatment Relationship is established and the member has not opted out, the member **SHALL** be returned in the matched members response Group, which conforms to the [Provider Member Match Group profile](StructureDefinition-pdex-provider-member-match.html). § The Group Id of that matched response Group is the input the provider uses to request a subsequent `$davinci-data-export` operation. The long-lived Member-Provider Treatment Relationship Group is the authoritative governance record the payer maintains; the matched response Group is the short-lived response artifact returned to the provider for data export.
 
 §pdex-277: Members **SHALL** have the ability to opt-out of data sharing with providers. § Opt-outs are managed using the [Member Opt-Out Group Profile](StructureDefinition-pdex-member-opt-out.html), which supports multiple opt-out scopes:
 - **Global Opt-Out**: Member has opted out from all data sharing
@@ -189,9 +188,9 @@ The [Provider-Member-Match Request Example](Parameters-provider-member-match-req
 
 **Example Response:**
 The [Provider-Member-Match Response Example](Parameters-provider-member-match-response-001.html) demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:
-- **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html) profile)
-- **NonMatchedMembers Group**: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements
-- **ConsentConstrainedMembers Group**: Patients who have opted out of data sharing with providers
+- **MatchedMembers Group**: Patients successfully matched with confirmed treatment relationships (using [Provider Member Match Group](StructureDefinition-pdex-provider-member-match.html) profile)
+- **NonMatchedMembers Group**: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements (using [Provider Member No Match Group](StructureDefinition-pdex-provider-member-no-match.html) profile)
+- **ConsentConstrainedMembers Group**: Patients who have opted out of data sharing with providers (using [Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html) profile)
 
 The provider retrieves the detailed Member-Match Response by polling the status endpoint and retrieving the files referenced in the manifest, consistent with the FHIR Bulk Data API specification.
 
@@ -330,7 +329,7 @@ only those FHIR resources for which the client is authorized.
 
 §pdex-316: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group §
 resources and perform Bulk export operations. §pdex-317: Access Tokens **SHALL** be required to access the Group §
-resources and and the Bulk export operation. §pdex-318: Access and Refresh Tokens **SHOULD** be issued to support §
+resources and the Bulk export operation. §pdex-318: Access and Refresh Tokens **SHOULD** be issued to support §
 the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer
