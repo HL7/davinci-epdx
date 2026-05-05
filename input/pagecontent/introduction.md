@@ -30,7 +30,7 @@ The STU 2.1 Version of the PDex IG introduces two important new Interactions:
 2. Payer-Provider Bulk Exchange.
 	
 Payer-Provider Bulk Exchange is a bulk exchange of data for Members that have not chosen to opt-out
-of data sharing with providers. This exchange effectively supercedes the original Payer Provider 
+of data sharing with providers. This exchange effectively supersedes the original Payer Provider 
 exchange that used CDS Hooks.
 
 Payer-to-Payer Bulk Exchange is a bulk exchange of data for Members that have opted in to enable a 
@@ -80,7 +80,7 @@ Member/Patient Consent for scenarios covered in this Implementation Guide fall i
 
 #### Payer-to-Payer Exchange
 
-Under the CMS Prior Authorization Rule (CMS-0057) the Payer-to-Payer API is an op-in API. A member must
+Under the CMS Prior Authorization Rule (CMS-0057) the Payer-to-Payer API is an opt-in API. A member must
 actively opt-in to have their payer retrieve data from their prior payer. The member must provide the 
 necessary coverage and demographics information to their health plan to enable them to be matched by their
 prior payer.
@@ -162,7 +162,7 @@ The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in th
 2. HL7 FHIR US Core STU6 v6.1.0 (based on FHIR R4 - [{{site.data.fhir.ver.uscore}}/STU6.1]({{site.data.fhir.ver.uscore6}}))
 3. Da Vinci HRex IG profiles (based on FHIR R4 - [http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/) ).
 
-Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superceding US Core 3.1.1. 
+Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superseding US Core 3.1.1. 
 Prior to that date Implementers may choose to implement either version of US Core.
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.
@@ -331,7 +331,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 - [PDex Provider Consent](StructureDefinition-pdex-provider-consent.html)
 - [PDex Device](StructureDefinition-pdex-device.html)
 - [PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.html)
-- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0
+- [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.html) - USCore 3.1.1 implementations only. Superseded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0.
 - [PDex Provenance](StructureDefinition-pdex-provenance.html).
 
 ### CapabilityStatement (STU3 - US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0)

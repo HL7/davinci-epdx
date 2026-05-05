@@ -3,7 +3,7 @@
 <div class="stu-note">
 
 <b><i>Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. 
-It has been frrequently tested at Connectathons. It is supports the requirements of the CMS prior Authorization Rule (CMS-0057).
+It has been frequently tested at Connectathons. It supports the requirements of the CMS Prior Authorization Rule (CMS-0057).
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
 </i></b>
 </div>
@@ -302,7 +302,7 @@ only those FHIR resources for which the client is authorized.
 
 §pdex-380: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group §
 resources and perform Bulk export operations. §pdex-381: Access Tokens **SHALL** be required to access the Group §
-resources and and the Bulk export operation. §pdex-382: Access and Refresh Tokens **SHOULD** be issued to support §
+resources and the Bulk export operation. §pdex-382: Access and Refresh Tokens **SHOULD** be issued to support §
 the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer

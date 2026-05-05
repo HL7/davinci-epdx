@@ -52,7 +52,7 @@ authorization determination.
 §pdex-135: The data available to be returned by the Bulk Payer-to-Payer Exchange API **SHALL** §
 include the following types of data:
 
-- [US Core 3.1.1]({{uscore3}}) oe [US Core 6,1,0]({{uscore6}})Clinical Data with additional PDex defined Profiles.
+- [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Clinical Data with additional PDex defined Profiles.
 - Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the
 - [Prior Authorizations](StructureDefinition-pdex-priorauthorization.html) and supporting clinical data as defined by this guide.
 - [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
@@ -188,7 +188,7 @@ Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefi
 
 ### Da Vinci Data Export Payload
 
-The Payer-to-Payer data export operation is meant to retrieve the information requested by the member when they join a new payer. The payer rtrieves their information using Payer-to-Payer exchange. Under the requirements of the CMS
+The Payer-to-Payer data export operation is meant to retrieve the information requested by the member when they join a new payer. The payer retrieves their information using Payer-to-Payer exchange. Under the requirements of the CMS
 §pdex-158: Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include: §
 
 - US Core Clinical data ([US core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
