@@ -9,6 +9,9 @@
 |-------------|-------------------------------------------------------|
 | [FHIR-56546](https://jira.hl7.org/browse/FHIR-56546) | Link to output parameters profile from operation definition profile |
 | [FHIR-56511](https://jira.hl7.org/browse/FHIR-56511) | Fix formatting of the "how does provider access work" section |
+| TC: [FHIR-56504](https://jira.hl7.org/browse/FHIR-56504) | Various typo and minor wording corrections across narrative pages |
+| [FHIR-56545](https://jira.hl7.org/browse/FHIR-56545) | Reconcile Provider-Member-Match OperationDefinition, response Parameters profile, and "How does Provider Access Work?" narrative on outcome groups: 3-bucket response (Matched / NonMatched / ConsentConstrained) using ProviderMemberMatchGroup, ProviderMemberNoMatchGroup, and MemberOptOut profiles respectively. Narrative §pdex-276 also updated to distinguish the matched response Group used for `$davinci-data-export` from the long-lived Member-Provider Treatment Relationship Group the payer maintains for governance |
+
 
 ### STU 2.2.0 Update
 
