@@ -130,7 +130,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # §pdex-NNN ids, the IG Publisher's "no conformance term found in the text" check
 # fires on every such citation because changehistory entries are descriptive prose,
 # not normative §pdex-NNN: ... § markers.
-#
+
 # These are INFORMATION-level findings (non-blocking). The patterns below suppress
 # them on the changehistory page only — they target text fragments that are
 # characteristic of changehistory entries (disposition keywords, JIRA ticket IDs,
@@ -141,6 +141,8 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # a section number or §pdex-NNN id without an accompanying conformance verb (because
 # the changehistory is descriptive, not normative). Patterns below match the typical
 # section-number prefixes that appear in changehistory entries.
+
+# Excluding changehistory conformance language - documenting changes
 %No conformance term found in the text: pdex-%
 %No conformance term found in the text: 14.%
 %No conformance term found in the text: 8.2 ("Useful%
@@ -161,9 +163,3 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # The quoted text in each finding begins with a changehistory-distinctive phrase
 # (disposition lead, section/page reference, stock opener). The patterns below cover
 # all currently-observed cases.
-%it is not in a text phrase marked as a conformance clause: 'Persuasive%
-%it is not in a text phrase marked as a conformance clause: 'Payer-to-Payer Exchange%
-%it is not in a text phrase marked as a conformance clause: 'Two parallel narrative%
-%it is not in a text phrase marked as a conformance clause: 'Overview %
-%it is not in a text phrase marked as a conformance clause: 'Use Case Scenarios%
-%it is not in a text phrase marked as a conformance clause: 'The submitter%
