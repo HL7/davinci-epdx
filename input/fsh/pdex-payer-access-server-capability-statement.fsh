@@ -79,6 +79,16 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization."
+// Group.code search parameter — server SHALL support. Conformance expectation
+// is expressed here on the CapabilityStatement.rest.resource.searchParam (where the
+// `capabilitystatement-expectation` extension is sanctioned by its Context declaration),
+// not on the SearchParameter resource itself (where the extension is not allowed).
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "code"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Group-code"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
 * rest.resource[=].operation[0].name = "bulk-member-match"
 * rest.resource[=].operation[=].definition = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"
 * rest.resource[=].operation[=].documentation = "Client will submit multi-member-match-request bundle. Server will respond with a multi-member-match-response and instantiate a Group resource conforming to the PDexMemberMatchGroup that contains a set of matched members that the Server identified."

@@ -35,7 +35,7 @@ non-financial profiles:
 - [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 
-§pdex-79: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
+§pdex-79: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-to-Payer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
 
 ## Ingesting Exchanged Data
 
@@ -53,7 +53,7 @@ In the steps below "Received" refers to the information requested from a Health 
 2. Update the Target Patient Resource to add the Received Patient Ids from the Received Patient Resource.
 3. Identify Received Practitioner resources in the bundle and use NPI, where available, to map to the Target Practitioner Resources. If the Practitioner is not found in the Target system, create a record. Use the Target Practitioner Resource ID for any references to this Practitioner in the received bundle.
 4. Identify Received Organization resources in the bundle and use NPI, where available, to map to the Target Organization Resources. If the Organization is not found in the Target system, create a record. Use the Target Organization Resource ID for any references to this Organization in the received bundle.
-5. Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system, create a record. Use the Target Organization Resource ID for any references to this Location in the received bundle.
+5. Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system, create a record. Use the Target Location Resource ID for any references to this Location in the received bundle.
 
 It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
 
@@ -99,7 +99,7 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 This IG supports the use of multiple US Core versions. The profiles supported by the respective versions are 
 linked below:
 
-- [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/profiles.html)
+- [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/)
 - [US Core 6.1.0 Profiles and Extensions]({{site.data.fhir.ver.uscore6}}/profiles-and-extensions.html)
 
 

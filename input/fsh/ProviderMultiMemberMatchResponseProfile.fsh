@@ -57,10 +57,10 @@ Description: "A Parameters profile defining the result of a $bulk-member-match o
 * parameter[ConsentConstrainedMembers].name ^definition = "Group of members who were successfully matched but have exercised their right to opt out of Provider Access API data sharing. These members have explicitly denied permission for providers to access their data through this API."
 * parameter[ConsentConstrainedMembers].value[x] 0..0
 * parameter[ConsentConstrainedMembers].resource 0..1
-* parameter[ConsentConstrainedMembers].resource only ProviderMemberNoMatchGroup
+* parameter[ConsentConstrainedMembers].resource only MemberOptOut
 * parameter[ConsentConstrainedMembers].resource ^short = "Group of members who opted out"
-* parameter[ConsentConstrainedMembers].resource ^definition = "A Group resource containing references to members who have opted out of Provider Access API. The payer has successfully matched these members but cannot provide access due to the member's consent preferences."
-* parameter[ConsentConstrainedMembers].resource ^comment = "Members in this group have affirmatively opted out of sharing their data with providers through the Provider Access API. This is distinct from non-matched members - these members exist in the payer's system and were matched, but have exercised their privacy rights to prevent data sharing. Providers should not attempt to access data for these members through the Provider Access API and should use traditional methods (e.g., requesting records directly from the patient or other providers) if access to this information is needed for treatment."
+* parameter[ConsentConstrainedMembers].resource ^definition = "A Group resource conforming to the [Member Opt-Out Group profile](StructureDefinition-pdex-member-opt-out.html) containing references to members who have opted out of Provider Access API data sharing. The payer has successfully matched these members but cannot provide access due to the member's consent preferences."
+* parameter[ConsentConstrainedMembers].resource ^comment = "Members in this group have affirmatively opted out of sharing their data with providers through the Provider Access API. This is distinct from non-matched members - these members exist in the payer's system and were matched, but have exercised their privacy rights to prevent data sharing. The Member Opt-Out Group profile preserves the type-level distinction between opt-out and no-match outcomes (which use the separate Provider Member No Match Group profile). Providers should not attempt to access data for these members through the Provider Access API and should use traditional methods (e.g., requesting records directly from the patient or other providers) if access to this information is needed for treatment.\n\n**Privacy default — SHOULD suppress when opt-out status is sensitive.** A member who opts out of data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. Where the payer determines that disclosing opt-out status to the requesting provider — i.e., distinguishing 'opted out' from 'not matched' — would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress this `ConsentConstrainedMembers` parameter and instead include the affected members in the `NonMatchedMembers` Group, making the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The cardinality on this slice is `0..1`, so suppression is conformant. Payers that determine no such concern applies **MAY** continue to populate this slice."
 
 
 // Supporting Group Profiles for Provider Responses
@@ -94,8 +94,9 @@ Description: "A Group List created by the Payer to enable Provider Access API ac
 * code ^definition = "Code indicating this is a successful match group"
 
 * managingEntity 1..1 MS
+* managingEntity only Reference(Organization)
 * managingEntity ^short = "Payer managing this group"
-* managingEntity ^definition = "Reference to the payer organization that performed the member match and is managing access"
+* managingEntity ^definition = "Reference to the payer organization that performed the member match and is managing access. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 
 * identifier 0..* MS
 * identifier ^short = "Provider organization identifier"
@@ -155,8 +156,9 @@ Description: "A Group List created by the Payer to provide information back to a
 * code ^definition = "Code indicating the type of match failure: nomatch or consentconstraint"
 
 * managingEntity 1..1 MS
+* managingEntity only Reference(Organization)
 * managingEntity ^short = "Payer managing this group"
-* managingEntity ^definition = "Reference to the payer organization that performed the member match"
+* managingEntity ^definition = "Reference to the payer organization that performed the member match. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 
 * identifier 0..* MS
 * identifier ^short = "Provider organization identifier"

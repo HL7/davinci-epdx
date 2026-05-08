@@ -36,11 +36,11 @@ Description: "A Group resource representing the treatment relationship between a
 * active ^short = "Treatment relationship group is active"
 * active ^definition = "Indicates whether this treatment relationship group is active and current"
 
-// Type - fixed to "provider" for provider treatment relationships
+// Type - fixed to "practitioner" because Group.member entities are providers (Practitioner / PractitionerRole)
 * type MS
-* type = #device
-* type ^short = "Type of group (provider treatment relationship)"
-* type ^definition = "Fixed to 'device' to represent a collection of providers with treatment relationships"
+* type = #practitioner
+* type ^short = "Type of group (practitioners with treatment relationship)"
+* type ^definition = "Fixed to 'practitioner'. The Group's members are healthcare providers (Practitioner or PractitionerRole references) who have a treatment relationship with the member identified in Group.characteristic. Group.type SHALL reflect the type of entities in Group.member[]; per FHIR R4 the appropriate code for a group whose members are healthcare providers is 'practitioner'."
 
 // Actual must be true - represents actual treatment relationships
 * actual MS
@@ -56,8 +56,9 @@ Description: "A Group resource representing the treatment relationship between a
 
 // Managing organization - the Payer
 * managingEntity MS
+* managingEntity only Reference(Organization)
 * managingEntity ^short = "The Payer managing this treatment relationship"
-* managingEntity ^definition = "Reference to the Payer organization that is managing and maintaining this treatment relationship group"
+* managingEntity ^definition = "Reference to the Payer organization that is managing and maintaining this treatment relationship group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 
 // Member as a characteristic - the Patient ID is key
 * characteristic MS
@@ -168,15 +169,19 @@ Usage: #example
 
 // Required elements
 * active = true
-* type = #device
+* type = #practitioner
 * actual = true
 
 // Code - match result for this group
 * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#match "Matched"
 
 // Managing entity - the Payer
-* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* managingEntity.identifier.value = "5555555555"
+// Managing entity (Payer) — health plans do not typically have an NPI; identified here
+// via NAIC company code with a literal reference to the Organization resource.
+* managingEntity.reference = "Organization/Payer1"
+* managingEntity.identifier.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType#naiccode "NAIC Code"
+* managingEntity.identifier.system = "urn:oid:2.16.840.1.113883.6.300"
+* managingEntity.identifier.value = "12345"
 * managingEntity.display = "Example Payer Organization"
 
 // Characteristic - the member/patient key

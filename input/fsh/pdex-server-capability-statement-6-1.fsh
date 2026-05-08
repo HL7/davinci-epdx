@@ -29,8 +29,15 @@ Usage: #definition
 * copyright = "Used by permission of HL7 International, all rights reserved Creative Commons License"
 * kind = #requirements
 * instantiates = "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
-* instantiates.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* instantiates.extension.valueCode = #SHALL
+// Note: the FHIR `capabilitystatement-expectation` extension is intentionally NOT applied to
+// `CapabilityStatement.instantiates`. The extension's `Context` declaration does not list
+// `instantiates` as an allowed context (the allowed contexts are document, format,
+// implementationGuide, imports, patchFormat, rest.interaction, rest.operation,
+// rest.resource, rest.resource.*, rest.searchParam, rest.security and its sub-elements,
+// per http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation), so applying
+// it here produced a base-FHIR validation error. The implication that this CapabilityStatement
+// SHALL implement the US Core Server CapabilityStatement is conveyed by the `instantiates`
+// reference itself.
 * fhirVersion = #4.0.1
 * format[0] = #json
 * format[+] = #xml
@@ -1064,6 +1071,16 @@ Usage: #definition
 // * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-atr/SearchParameter/Group-characteristic-value-reference"
 // * rest.resource[=].searchParam[=].type = #composite
 * rest.resource[=].searchParam[=].documentation = "multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true. multipleOr: The parameter may only have one value (no comma separators)."
+// Group.code search parameter — server SHALL support. Conformance expectation
+// is expressed here on the CapabilityStatement.rest.resource.searchParam (where the
+// `capabilitystatement-expectation` extension is sanctioned by its Context declaration),
+// not on the SearchParameter resource itself (where the extension is not allowed).
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "code"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Group-code"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
 * rest.resource[=].operation[0].name = "bulk-member-match"
 * rest.resource[=].operation[=].definition = "http://hl7.org/fhir/us/davinci-pdex/OperationDefinition/BulkMemberMatch"
 * rest.resource[=].operation[=].documentation = "Client will submit multi-member-match-request bundle. Server will respond with a multi-member-match-response and instantiate a Group resource conforming to the PDexMemberMatchGroup that contains a set of matched members that the Server identified."
@@ -1874,7 +1891,11 @@ Usage: #definition
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
 * rest.resource[=].type = #Questionnaire
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+// Version-pinned canonical reference — both SDC 3.0.0 and 4.0.0 are resolvable in this
+// build environment, so the canonical is pinned to 4.0.0 (the version aligned with
+// US Core 6.1.0's SDC consumption) to remove ambiguity. Per IG Publisher guidance:
+// https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html
+* rest.resource[=].supportedProfile = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|4.0.0"
 * rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].supportedProfile.extension.valueCode = #SHALL
 * rest.resource[=].documentation = "US Core defines two ways to represent the questions and responses to screening and assessment instruments:\n\n- Observation: US Core Observation Screening Assessment Profile\n- Questionnaire/QuestionnaireResponse: SDC Base Questionnaire/US Core QuestionnaireResponse Profile\n\nUS Core Servers **SHALL** support US Core Observation Screening Assessment Profile and **SHOULD** support the  SDC Base Questionnaire Profile/US Core QuestionnaireResponse Profile"

@@ -22,11 +22,13 @@ Description: "Enables a practitioner, facility, or organization to attest to a t
 * status ^short = "Status of the treatment relationship attestation"
 * status ^definition = "Indicates whether this treatment relationship attestation is active, inactive, or has been entered in error"
 
-// Scope - fixed to treatment for this use case
+// Scope - fixed to patient-privacy because this consent governs disclosure of information
+// (the provider's attestation enables access to the patient's data via the Provider Access API),
+// not a patient's agreement to undergo medical treatment.
 * scope MS
-* scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
-* scope ^short = "Treatment relationship scope"
-* scope ^definition = "Fixed to 'treatment' to indicate this consent represents a treatment relationship"
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* scope ^short = "Patient privacy / information disclosure scope"
+* scope ^definition = "Fixed to 'patient-privacy' (Agreement to collect, access, use or disclose information). The Consent here is the provider's attestation that supports access to the patient's data via the Provider Access API; it is not a 'treatment' consent (which would be a patient's agreement to undergo a specific medical treatment)."
 
 // Category - required to classify the type of consent
 * category 1..* MS
@@ -59,7 +61,7 @@ Description: "Enables a practitioner, facility, or organization to attest to a t
 // Organization - the organization under which the treatment relationship exists
 * organization 0..1 MS
 * organization ^short = "Organization responsible for the treatment relationship"
-* organization ^definition = "The healthcare organization under which this treatment relationship exists"
+* organization ^definition = "The healthcare organization under which this treatment relationship exists. Because the requester (provider/client) and the source/payer system maintain independent FHIR resource IDs, a literal `Reference.reference` value (e.g., `Organization/123`) is meaningful only inside the requester's system. To allow the source/payer to match the organization against its own records, the reference SHOULD be expressed as a *logical (identifier-based) reference* by populating `Reference.identifier` with a business identifier — typically the organization's NPI (`http://hl7.org/fhir/sid/us-npi`) — together with `Reference.display` for human readability. Alternatively, a `Reference.reference` MAY point to a `contained` Organization resource that itself carries the business identifier."
 
 // Source - reference to the attestation document or system
 * source[x] MS
@@ -95,6 +97,8 @@ Description: "Enables a practitioner, facility, or organization to attest to a t
 * provision.actor.role MS
 * provision.actor.reference MS
 * provision.actor.reference only Reference(Practitioner or Organization or PractitionerRole or CareTeam)
+* provision.actor.reference ^short = "Identifier-based reference to the actor"
+* provision.actor.reference ^definition = "Reference to the practitioner, organization, role, or care team involved in the treatment relationship. As with `Consent.organization`, a literal `Reference.reference` is meaningful only inside the requester's system. The reference SHOULD be expressed as a *logical (identifier-based) reference* by populating `Reference.identifier` with the actor's business identifier — typically the NPI (`http://hl7.org/fhir/sid/us-npi`) for Practitioner, PractitionerRole, or Organization actors — together with `Reference.display` for human readability, so that the source/payer system can match the actor against its own records without resolving a FHIR resource reference relative to the requester's system. Alternatively, the reference MAY point to a `contained` resource that itself carries the business identifier."
 
 // Provision.purpose - purpose codes for the treatment relationship
 * provision.purpose MS

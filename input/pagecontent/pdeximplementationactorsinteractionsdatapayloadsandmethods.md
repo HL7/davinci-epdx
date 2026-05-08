@@ -73,8 +73,8 @@ These APIs are:
 - [Provider Access API](provider-access-api.html).
 - [Payer-to-Payer Bulk API](payertopayerbulkexchange.html)
 
-Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That
-method has been superceded by the [Provider Access API](provider-access-api.html) that meets the requirements of
+Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to member data. That
+method has been superseded by the [Provider Access API](provider-access-api.html) that meets the requirements of
 the CMS Prior Authorization Rule (CMS-0057).
 
 

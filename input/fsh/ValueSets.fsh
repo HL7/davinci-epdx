@@ -82,7 +82,7 @@ defined in http://terminology.hl7.org/CodeSystem/adjudication, as well as those 
 * $HL7AdjudicationCS#eligible
 * $HL7AdjudicationCS#deductible
 * $HL7AdjudicationCS#benefit
-* $AdjudicationCS#coinsurance "Coinsurance"
+* $AdjudicationCS#coinsurance "Co-insurance"
 * $AdjudicationCS#noncovered "Noncovered"
 * $AdjudicationCS#priorpayerpaid "Prior payer paid"
 * $AdjudicationCS#paidbypatient "Paid by patient"
