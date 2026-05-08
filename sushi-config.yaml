@@ -45,6 +45,14 @@ dependencies:
     id: uscore6
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    # The npm package id `hl7.fhir.us.core.v610` is a multi-version-support package id used
+    # to allow this IG to depend simultaneously on US Core 6.1.0 alongside other US Core
+    # versions. The package's own internal canonical (`http://hl7.org/fhir/us/core/v610`)
+    # is a package-base URL, not the IG-resource canonical the FHIR IG Publisher requires
+    # at this point. Pointing `uri` at the un-versioned US Core IG-resource canonical
+    # produces a known/expected "uri does not match packageId" error class that is
+    # already suppressed in `input/ignoreWarnings.txt` (see "Implementation Guide Errors
+    # v610@npm" comment). This is the same trade-off used by other Da Vinci IGs.
     reason: |
       Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
   # hl7.fhir.us.core.v311:
@@ -52,24 +60,27 @@ dependencies:
     id: uscore3
     version: 3.1.1
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    # Same rationale as for hl7.fhir.us.core.v610 above — `uri` deliberately points at the
+    # un-versioned US Core IG-resource canonical so the resulting "uri does not match
+    # packageId" error class is covered by the existing suppression in ignoreWarnings.txt.
     reason: |
       Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.
 
 ######
   hl7.fhir.us.davinci-hrex:
-    version: 1.1.0
+    version: 1.2.0
     id: hrex
     reason: |
       Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core
   # hl7.fhir.us.davinci-hrex: 1.1.0
   # hl7.fhir.us.davinci-hrex: 1.1.0-preview
   hl7.fhir.us.carin-bb:
-    version: 2.1.0
+    version: 2.2.0
     # version: 2.1.0-snapshot1
     uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb
     id: carinbb
   hl7.fhir.us.davinci-crd:
-    version: 2.1.0
+    version: 2.2.1
     id: crd
   hl7.fhir.us.davinci-pas:
     version: 2.1.0
@@ -145,12 +156,12 @@ pages:
     title: Introduction
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
   narrative-conformance.md:
     title: Narrative Conformance
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
   ImplementationGuide-hl7.fhir.us.davinci-pdex.md:
     title: PDex Implementation Guide
     extension:
@@ -160,47 +171,47 @@ pages:
     title: Security and Privacy
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     FHIRAccessPermissions.md:
       title: FHIR Access Permissions
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
   pdeximplementationactorsinteractionsdatapayloadsandmethods.md:
     title: PDex Implementation, Actors, Interactions, Data Payloads and Methods
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     handlingdataprovenance.md:
       title: Handling Data Provenance
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
     provider-access-api.md:
       title: Provider Access API
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
     provider-access-api-v2.md:
       title: Provider Access API(v2)
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
     payertopayerexchange.md:
       title: Payer-to-Payer Exchange (single member)
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
     payertopayerbulkexchange.md:
       title: Payer-to-Payer Exchange (bulk)
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
     datamapping.md:
       title: Data Mapping
       extension:
         - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: informative
+          valueCode: trial-use
       USCoreAllergyIntolerance.md:
         title: US Core AllergyIntolerance
         extension:
@@ -225,7 +236,7 @@ pages:
         title: Consent
         extension:
           - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-            valueCode: informative
+            valueCode: trial-use
       coverage.md:
         title: Coverage
         extension:
@@ -290,7 +301,7 @@ pages:
         title: PDex MedicationDispense
         extension:
           - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-            valueCode: informative
+            valueCode: trial-use
       USCoreMedicationRequest.md:
         title: US Core MedicationRequest
         extension:
@@ -335,7 +346,7 @@ pages:
         title: PDex Prior Authorization
         extension:
           - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-            valueCode: informative
+            valueCode: trial-use
       USCoreProcedure.md:
         title: US Core Procedure
         extension:
@@ -345,7 +356,7 @@ pages:
         title: PDex Provenance
         extension:
           - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-            valueCode: informative
+            valueCode: trial-use
       USCoreProvenance.md:
         title: US Core Provenance
         extension:
@@ -375,7 +386,7 @@ pages:
     title: CDS Hooks
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
     workflowexamples.md:
       title: Workflow Examples
       extension:
@@ -385,7 +396,7 @@ pages:
     title: Member-Authorized OAuth2.0 Exchange
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+        valueCode: trial-use
   changehistory.md:
     title: Change History
     extension:
@@ -403,6 +414,11 @@ pages:
         valueCode: informative
   artifacts.html:
     title: FHIR Artifacts
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+  artifacts-by-api.md:
+    title: Artifacts by API
     extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
@@ -434,7 +450,9 @@ menu:
     Payer-to-Payer(single): payertopayerexchange.html
     Data Mapping: datamapping.html
     CDS Hooks: cds-hooks.html
-  FHIR Artifacts: artifacts.html
+  FHIR Artifacts:
+    All Artifacts (by type): artifacts.html
+    Artifacts by API: artifacts-by-api.html
   Base Specs:
     FHIR R4 Spec: new-tab http://hl7.org/fhir/R4/
     HRex 1.1.0: new-tab https://hl7.org/fhir/us/davinci-hrex/STU1.1/

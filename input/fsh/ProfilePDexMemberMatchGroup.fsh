@@ -10,7 +10,18 @@ Description: "A Group List created by the Payer to enable Bulk Payer-to-Payer AP
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 * contained 0..*
-* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+* contained ^comment = "Each contained Patient resource SHALL be the Patient resource submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifier elements, and all demographic elements (name, birthDate, gender, address, telecom, communication, and other Patient elements supplied by the requester) so that the requester can unambiguously correlate each match result back to the submitted member. Responders SHALL NOT modify, abridge, or substitute the submitted Patient resource's id, identifiers, or demographic elements. Per FHIR R4 References (http://hl7.org/fhir/R4/references.html#contained), contained resources SHALL NOT carry meta.versionId, meta.lastUpdated, or meta.security and SHALL NOT themselves contain nested contained resources; where the submitted Patient resource carries any of those base-FHIR-prohibited elements, the responder SHALL remove them when copying the resource into Group.contained[], and doing so is not considered a violation of the preservation requirement. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+* type MS
+* type = #person
+* type ^short = "Type of group (members)"
+* type ^definition = "Fixed to 'person'. Group.member entries reference Patient resources representing matched members."
+* actual MS
+* actual = true
+* actual ^short = "Actual group (not definitional)"
+* actual ^definition = "An actual list of matched members, not a conceptual/definitional group."
+* managingEntity only Reference(Organization)
+* managingEntity ^short = "Payer managing this group"
+* managingEntity ^definition = "Reference to the Payer organization that created and is managing this matched-member Group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 * code 1..1 MS
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * characteristic.code MS
@@ -41,7 +52,18 @@ Description: "A Group List created by the Payer to provide information back to a
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 * contained 0..*
-* contained ^comment = "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+* contained ^comment = "Each contained Patient resource SHALL be the Patient resource submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifier elements, and all demographic elements (name, birthDate, gender, address, telecom, communication, and other Patient elements supplied by the requester) so that the requester can unambiguously correlate each match result back to the submitted member. Responders SHALL NOT modify, abridge, or substitute the submitted Patient resource's id, identifiers, or demographic elements. Per FHIR R4 References (http://hl7.org/fhir/R4/references.html#contained), contained resources SHALL NOT carry meta.versionId, meta.lastUpdated, or meta.security and SHALL NOT themselves contain nested contained resources; where the submitted Patient resource carries any of those base-FHIR-prohibited elements, the responder SHALL remove them when copying the resource into Group.contained[], and doing so is not considered a violation of the preservation requirement. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+* type MS
+* type = #person
+* type ^short = "Type of group (submitted members)"
+* type ^definition = "Fixed to 'person'. Group.member entries reference (typically contained) Patient resources representing the submitted members that could not be matched or are consent-constrained."
+* actual MS
+* actual = true
+* actual ^short = "Actual group (not definitional)"
+* actual ^definition = "An actual list of submitted members for whom the match failed, not a conceptual/definitional group."
+* managingEntity only Reference(Organization)
+* managingEntity ^short = "Payer managing this group"
+* managingEntity ^definition = "Reference to the Payer organization that created and is managing this no-match Group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 * code 1..1 MS
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * member.entity ^comment = "Enter using a relative reference to the failed patient record."

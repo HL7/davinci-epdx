@@ -1,8 +1,13 @@
 [Previous Page - US Core Procedure](USCoreProcedure.html)
 
+**Two distinct Provenance obligations.** This IG places Provenance requirements at two different scopes, which it is important to keep separate. The exact conformance strength for each scope is expressed only in its own `§pdex-NNN` markers (cited below) — this introductory paragraph is descriptive only and does not itself create new conformance.
+
+1. **Per-exchange Transmitter Provenance** — required by [§pdex-127 on the Overview page](overview.html). For *any* PDex information exchange, the Health Plan provides a Provenance record that, at a minimum, identifies the Health Plan as the Transmitter of the data in that exchange. This is a per-exchange / per-bundle obligation and is not optional. The exact strength of this requirement is recorded at §pdex-127.
+2. **Per-resource Author/Source Provenance** — recommended by §pdex-04 and §pdex-05 (on this page) and §pdex-87 ([Handling Data Provenance](handlingdataprovenance.html)). In addition to the per-exchange Transmitter Provenance, where the Health Plan can identify the upstream *origin* of a member-related resource (e.g., the contributing organization or practitioner as Author, or the Health Plan itself as Source when the record was generated internally or transformed from a non-FHIR format), the Health Plan is recommended to provide a Provenance resource describing that origin alongside the resource. This per-resource Provenance is *in addition to* the per-exchange Transmitter Provenance required by §pdex-127, not a substitute for it. The exact strength of these recommendations is recorded at §pdex-04 / §pdex-05 / §pdex-87.
+
 §pdex-04: When a Health Plan forwards information as a FHIR Resource it **SHOULD** create related Provenance record(s) to reflect the original source. §
 
-§pdex-05: A Provenance resource **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. § 
+§pdex-05: A Provenance resource describing the upstream origin (Author or Source) **SHOULD** be provided with each member-related resource provided by the Health Plan's FHIR API. § This is the per-resource recommendation described above; it is in addition to the per-exchange Transmitter Provenance required by §pdex-127.
 
 §pdex-06: This **SHOULD** be used to: §
 - identify the source of the information. 

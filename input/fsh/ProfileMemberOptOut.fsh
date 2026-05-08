@@ -1,15 +1,27 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Member Opt-Out Group Profile
 // ─────────────────────────────────────────────────────────────────────────────
-// This profile represents a group of members that have opted out of data sharing.
-// The Group is managed by the Payer and contains all members who have exercised
-// their right to opt-out, either globally or for specific providers/purposes.
+// Intended use: a payer-internal FHIR-based scaffolding pattern for tracking
+// members who have opted out of Provider Access API data sharing, for use by
+// implementers whose existing platforms (legacy systems, vendor products,
+// internal APIs) cannot serve as the authoritative reference source for
+// opt-out determinations. Where an implementer already has such a system or
+// API, that system remains the authoritative source and use of this profile
+// is not required.
+//
+// Secondary use: this profile is also the wire-format target profile for the
+// ConsentConstrainedMembers output of the $provider-member-match operation
+// (see Provider-Member-Match OperationDefinition and the Provider
+// $multi-member-match Response Parameters profile). When the operation
+// returns a ConsentConstrainedMembers Group, that Group conforms to this
+// profile regardless of the payer-internal mechanism used to determine
+// opt-out status.
 
 Profile: MemberOptOut
 Parent: Group
 Id: pdex-member-opt-out
 Title: "Member Opt-Out Group"
-Description: "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios."
+Description: "A Group resource representing members who have opted out of Provider Access API data sharing. **Intended use:** this profile is offered as a payer-internal FHIR-based scaffolding pattern that implementers MAY adopt when their existing platform (legacy system, vendor product, internal API) cannot itself act as the authoritative reference source for opt-out determinations. Implementers whose existing systems can answer opt-out queries authoritatively are not required to use this profile. **Secondary use:** the same profile serves as the wire-format target profile for the `ConsentConstrainedMembers` output of the `$provider-member-match` operation; a ConsentConstrainedMembers Group returned by that operation conforms to this profile regardless of the mechanism the payer uses internally to determine opt-out status. **Privacy default — SHOULD suppress when opt-out status is sensitive.** Where a payer determines that disclosing opt-out status to a requesting provider would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress the `ConsentConstrainedMembers` output of `$provider-member-match` and instead include the affected members in the `NonMatchedMembers` Group; this makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The internal-tracking use of this profile is unaffected by that choice. **Distinguishing master-list instances from operation-emitted response instances.** Both the payer-internal master opt-out list and the response Group emitted by `$provider-member-match` conform to this profile, so a payer storing both must distinguish them at query time. The recommended discriminator is `Group.identifier`: the payer SHOULD assign master-list instances a `Group.identifier` with a payer-defined `system` URI such as `https://{payer}/fhir/identifier/master-opt-out-list` (and a stable `value`), while operation-emitted response instances either omit `Group.identifier` or use a distinct system URI such as `https://{payer}/fhir/identifier/match-result`. Payers that prefer a tag-based discriminator MAY instead use `Group.meta.tag` with a payer-defined coding. `Group.code` is **not** a reliable discriminator here because it is fixed-pattern to `PdexMultiMemberMatchResultCS#consentconstraint` on every conformant instance (see FHIR-56493). The Payer is the managing organization, and Group.member entries reference the patients who have exercised their right to opt-out, either broadly or for specific purposes or providers."
 
 * ^version = "2.1.0"
 * ^status = #active
@@ -50,13 +62,15 @@ Description: "A Group resource representing members who have opted out of data s
 // Code - classification of the group as opt-out
 * code MS
 * code ^short = "Kind of group (opt-out)"
-* code ^definition = "Classification for this opt-out group"
+* code ^definition = "Classification for this opt-out group. Fixed to `consentconstraint` because this profile represents only the consent-constrained / opt-out outcome from a multi-member match; the other codes in `PDexMultiMemberMatchResultVS` (`match`, `nomatch`) are not semantically applicable to instances of this profile."
 * code from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
+* code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
 
 // Managing organization - the Payer
 * managingEntity MS
+* managingEntity only Reference(Organization)
 * managingEntity ^short = "The Payer managing this opt-out group"
-* managingEntity ^definition = "Reference to the Payer organization that is managing and maintaining this opt-out group"
+* managingEntity ^definition = "Reference to the Payer organization that is managing and maintaining this opt-out group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson."
 
 // Characteristics - opt-out specifics
 * characteristic MS
@@ -65,6 +79,7 @@ Description: "A Group resource representing members who have opted out of data s
 
 // Opt-out scope characteristic
 * characteristic.code 1..1 MS
+* characteristic.code.coding from http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS
 * characteristic.code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
 * characteristic.code ^short = "Identifies this as a consent constraint group"
 * characteristic.code ^definition = "Fixed code indicating this group contains members with consent constraints (opt-outs)"
@@ -202,9 +217,16 @@ Usage: #example
 // Code identifying this as a consent constraint group
 * code = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PdexMultiMemberMatchResultCS#consentconstraint "Consent Constraint"
 
-// Managing entity - the Payer
-* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* managingEntity.identifier.value = "5555555555"
+// Managing entity - the Payer.
+// Health plans do not typically have an NPI; this example uses the NAIC company code
+// (urn:oid:2.16.840.1.113883.6.300) as the business identifier, and supplies a literal
+// Reference.reference to the corresponding Organization resource so that consumers may
+// resolve the managing entity by either a logical identifier-based lookup or a direct
+// FHIR reference.
+* managingEntity.reference = "Organization/Payer1"
+* managingEntity.identifier.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType#naiccode "NAIC Code"
+* managingEntity.identifier.system = "urn:oid:2.16.840.1.113883.6.300"
+* managingEntity.identifier.value = "12345"
 * managingEntity.display = "Example Payer Organization"
 
 // Characteristic - opt-out scope

@@ -5,6 +5,8 @@
 <b><i>Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. 
 It has been frequently tested at Connectathons. It supports the requirements of the CMS Prior Authorization Rule (CMS-0057).
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG.
+
+**v1 vs v2 — when to use which.** This page describes the **v1 (Attribution)** workflow, which uses payer-maintained attribution lists. The current recommendation for CMS-0057 Provider Access API conformance is the **v2 (Attestation)** workflow described on the [Provider Access API (v2)](provider-access-api-v2.html#when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation) page. v1 remains supported for Value-Based Care (VBC) / risk-based provider program data flows where a payer's attribution-list-driven model is the appropriate pattern. A provider/EHR that operates under both an in-network arrangement and a VBC contract with the same payer **SHOULD** use v2 for the CMS-0057-mandated Provider Access exchange and **MAY** use v1 for VBC-specific data flows alongside it. See [Provider Access API (v2) — When to use Provider Access v1 vs v2](provider-access-api-v2.html#when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation) for the full guidance.
 </i></b>
 </div>
 
@@ -66,7 +68,7 @@ A health plan member is entitled to opt-out of data sharing via the Provider Acc
 that enables a member to deny sharing via the Provider Access API. §pdex-325: A member **SHOULD** also be able to update their preference §
 to revoke a previous denial. 
 
-§pdex-326: Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference. §
+§pdex-326: Health Plans **MAY** implement the [pdex-provider-consent](StructureDefinition-pdex-provider-consent.html) profile to enable a member to express their data-sharing preference for the Provider Access API. § In this context, "implement the pdex-provider-consent" means: (a) accept `Consent.create` requests against the Patient Access API for a `Consent` resource conforming to the [PDex Provider Consent profile](StructureDefinition-pdex-provider-consent.html), and (b) honor the resulting Consent decision when subsequently evaluating the member's opt-out / opt-in status during a Provider-Member-Match or related operation. The conformance level recorded above is permissive (rather than required) because, consistent with the IG's overall scope (see [Provider Access API(v2) — Scope of this section](provider-access-api-v2.html)), the IG does not prescribe how a payer tracks member opt-out / sharing preferences internally; the FHIR Consent profile is offered as one valid pattern that payers may adopt, not as the only mechanism. Payers that capture sharing preferences via legacy systems, internal APIs, or other channels remain fully conformant. (Earlier drafts of this v1 page used a stronger conformance level for this expectation; that was inconsistent with the equivalent statement on the [Provider Access API (v2) page](provider-access-api-v2.html#member-opt-out) at §pdex-275 and has been aligned to the permissive level here.)
 
 The [PDex Server Capability Statement](CapabilityStatement-pdex-server.html) enables the Consent record to be written to the Patient Access API.
 
@@ -170,8 +172,7 @@ sets the characteristic element to include the "pdexprovidergroup" code, the ide
 provider in (characteristic.valueReference), sets characteristic.exclude to false and 
 characteristic.period.start to the date attribution list creation or update.
 
-§pdex-350: Implementers **SHALL** support the standard search parameters for group that are specified in the base §
-Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefinition-pdex-member-match-group.html).
+§pdex-350: Implementers **SHALL** support the `Group` search parameters enumerated in the [PDex Server CapabilityStatement](CapabilityStatement-pdex-server.html) (and its US Core 6.1.0 variant, [pdex-server-6-1](CapabilityStatement-pdex-server-6-1.html)) for the `Group` resource — at minimum `identifier` and `characteristic` — both of which are declared with **SHALL** support expectations there. § The CapabilityStatement is the authoritative source for which search parameters a conformant PDex server must support; the prior wording of "the standard search parameters" was ambiguous between "all 10 base R4 `Group` search parameters" and "the parameters enumerated in this IG's CapabilityStatement". Implementers **MAY** support additional `Group` search parameters from the [base FHIR R4 specification](http://hl7.org/fhir/R4/group.html#search) (`actual`, `characteristic-value`, `code`, `exclude`, `managing-entity`, `member`, `type`, `value`) as appropriate to their environment.
 
 
 ### Da Vinci Data Export Payload

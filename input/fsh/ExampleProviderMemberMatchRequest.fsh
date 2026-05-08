@@ -8,7 +8,7 @@ Alias: $coverage-class = http://terminology.hl7.org/CodeSystem/coverage-class
 Instance: ProviderMemberMatchRequestExample
 InstanceOf: Parameters
 Title: "Provider-Member-Match Request Example"
-Description: "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage."
+Description: "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records."
 Usage: #example
 * id = "provider-member-match-request-001"
 * meta.profile[0] = "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
@@ -183,7 +183,7 @@ Usage: #example
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relationship since 2024-01-15</p></div>"
 * status = #active
-* scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 * category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * category[1] = http://loinc.org#64292-6 "Release of information consent"
 * patient.reference = "Patient/patient-prov-001"
@@ -191,7 +191,10 @@ Usage: #example
 * performer[0].identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * performer[0].identifier.value = "1234567893"
 * performer[0].display = "Dr. Susan Smith, MD"
-* organization.reference = "Organization/provider-org-001"
+// Organization identified via NPI logical reference (matches provider-org-001 NPI 1982947230);
+// allows the source/payer system to match the organization against its own records.
+* organization.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* organization.identifier.value = "1982947230"
 * organization.display = "Springfield Medical Center"
 * sourceReference.reference = "DocumentReference/treatment-attestation-form-001"
 * sourceReference.display = "Provider Attestation Form"
@@ -199,8 +202,10 @@ Usage: #example
 * policy[0].authority = "https://example.org/compliance"
 * provision.type = #permit
 * provision.period.start = "2024-01-15"
+// Actor identified via NPI logical reference (matches Dr. Susan Smith NPI 1234567893).
 * provision.actor[0].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
-* provision.actor[0].reference.reference = "Practitioner/provider-001"
+* provision.actor[0].reference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* provision.actor[0].reference.identifier.value = "1234567893"
 * provision.actor[0].reference.display = "Dr. Susan Smith"
 * provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT "treatment"
 
@@ -214,7 +219,7 @@ Usage: #example
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relationship since 2024-02-01</p></div>"
 * status = #active
-* scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 * category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
 * category[1] = http://loinc.org#64292-6 "Release of information consent"
 * patient.reference = "Patient/patient-prov-002"
@@ -222,14 +227,18 @@ Usage: #example
 * performer[0].identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * performer[0].identifier.value = "9876543210"
 * performer[0].display = "Dr. James Brown, MD"
-* organization.reference = "Organization/provider-org-002"
+// Organization identified via NPI logical reference (matches provider-org-002 NPI 1122334455).
+* organization.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* organization.identifier.value = "1122334455"
 * organization.display = "Columbus Clinic"
 * sourceReference.reference = "DocumentReference/treatment-attestation-form-002"
 * sourceReference.display = "Provider Attestation Form"
 * policy[0].uri = "https://example.org/provider-attestation-policy"
 * provision.type = #permit
 * provision.period.start = "2024-02-01"
+// Actor identified via NPI logical reference (matches Dr. James Brown NPI 9876543210).
 * provision.actor[0].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
-* provision.actor[0].reference.reference = "Practitioner/provider-002"
+* provision.actor[0].reference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* provision.actor[0].reference.identifier.value = "9876543210"
 * provision.actor[0].reference.display = "Dr. James Brown"
 * provision.purpose[0] = http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT "treatment"

@@ -3,7 +3,7 @@
 // 1. Including current member demographics (not old payer data)
 // 2. Including current coverage information
 // 3. Using Provider Treatment Attestation instead of patient consent for payer-to-payer exchange
-// 4. Not requiring CoverageToLink (providers are not linking to new coverage)
+// 4. Not defining CoverageToLink at all (providers are not linking coverage between payers; CoverageToLink is meaningful only in the Payer-to-Payer member-match case)
 
 Profile: ProviderMultiMemberMatchRequestParameters
 Parent: Parameters
@@ -69,11 +69,11 @@ Description: "A Parameters profile defining the inputs to a $bulk-member-match o
 * parameter[MemberBundle].part[Consent].resource ^definition = "A Consent resource conforming to the ProviderTreatmentAttestation profile, documenting that the provider has an active treatment relationship with the member and the purposes for which they are requesting access to the member's data."
 * parameter[MemberBundle].part[Consent].resource ^comment = "Unlike the payer-to-payer multi-member-match which includes patient consent for data exchange between payers, the provider version includes the provider's attestation to a treatment relationship. This attestation serves as the legal basis for the payer to release data to the provider under HIPAA treatment, payment, and operations (TPO) provisions."
 
-// CoverageToLink is optional for provider requests (typically not used)
-// Providers are not linking coverage between payers, they are requesting access based on current coverage
-* parameter[MemberBundle].part contains CoverageToLink 0..1
-* parameter[MemberBundle].part[CoverageToLink].name = "CoverageToLink"
-* parameter[MemberBundle].part[CoverageToLink].name ^short = "Optional coverage to link (typically not used)"
-* parameter[MemberBundle].part[CoverageToLink].name ^definition = "CoverageToLink is typically not used in provider-initiated member match requests as providers are not linking historical coverage to new coverage. This element is only relevant for payer-to-payer member match operations."
-* parameter[MemberBundle].part[CoverageToLink].resource 0..1
-* parameter[MemberBundle].part[CoverageToLink].resource only $HRexCoverage
+// CoverageToLink is intentionally NOT defined on this profile. Linking a member's
+// previous coverage to a new coverage is meaningful only in the Payer-to-Payer
+// member-match scenario, where the requesting payer holds the new coverage. In
+// Provider Access the requester is a provider — not a payer issuing new coverage —
+// so a CoverageToLink slice has no use case here and is omitted. Implementers
+// migrating from the PDex Payer-to-Payer $multi-member-match request profile
+// should drop CoverageToLink when constructing a Provider $multi-member-match
+// request.

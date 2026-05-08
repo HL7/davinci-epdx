@@ -12,7 +12,7 @@ Provenance requirements for the Payer Community may be a super-set of those of t
 
 §pdex-86: When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data. §
 
-§pdex-87: A Provenance resource SHOULD be provided with each member-related resource provided by the Health Plan's FHIR API when requested, such as via the _RevInclude parameter. §
+§pdex-87: A Provenance resource describing the upstream origin (Author or Source) of each member-related resource **SHOULD** be provided with that resource when the Health Plan's FHIR API serves it — particularly when the requester adds the `_revinclude=Provenance:target` parameter to a search query. § This per-resource Provenance is in addition to the per-exchange Transmitter Provenance required by §pdex-127 (see [Overview](overview.html) and [PDex Provenance](PDexProvenance.html) for the full distinction); it is not a substitute for §pdex-127.
 
 This guide provides a pdex-provenance resource that is customized to the needs of the payer by focusing on their role as a transmitter and not originator of data.
 

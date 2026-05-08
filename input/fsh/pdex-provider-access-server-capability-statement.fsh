@@ -1,7 +1,7 @@
 Instance: pdex-provider-access-server
 InstanceOf: CapabilityStatement
 Title: "PDex provider-access Server CapabilityStatement"
-Description: "This Section describes the expected capabilities of the PDex Payer-to-Payer API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Payer-to-Payer Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."
+Description: "This Section describes the expected capabilities of the PDex Provider Access API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Provider Access Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements."
 Usage: #definition
 * extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension.valueCode = #fm
@@ -80,6 +80,16 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization."
+// Group.code search parameter — server SHALL support. Conformance expectation
+// is expressed here on the CapabilityStatement.rest.resource.searchParam (where the
+// `capabilitystatement-expectation` extension is sanctioned by its Context declaration),
+// not on the SearchParameter resource itself (where the extension is not allowed).
+* rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "code"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Group-code"
+* rest.resource[=].searchParam[=].type = #token
+* rest.resource[=].searchParam[=].documentation = "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
 * rest.resource[=].operation[+].name = "davinci-data-export"
 * rest.resource[=].operation[=].definition = "http://hl7.org/fhir/us/davinci-atr/OperationDefinition/davinci-data-export"
 * rest.resource[=].operation[=].documentation = "Each DaVinci use case as part of its implementation guide can define the exportType parameter and the behavior expected."

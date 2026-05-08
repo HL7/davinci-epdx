@@ -30,8 +30,12 @@ Usage: #example
 
 * code = $MemberMatchResult#match "Matched"
 
-* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* managingEntity.identifier.value = "5555555555"
+// Managing entity (Payer) — health plans do not typically have an NPI; identified here
+// via NAIC company code with a literal reference to the Organization resource.
+* managingEntity.reference = "Organization/Payer1"
+* managingEntity.identifier.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType#naiccode "NAIC Code"
+* managingEntity.identifier.system = "urn:oid:2.16.840.1.113883.6.300"
+* managingEntity.identifier.value = "12345"
 * managingEntity.display = "Example Payer Organization"
 
 * characteristic.code.coding = $MemberMatchResult#match "Matched"
@@ -82,8 +86,12 @@ Usage: #example
 
 * code = $MemberMatchResult#nomatch "Not Matched"
 
-* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* managingEntity.identifier.value = "5555555555"
+// Managing entity (Payer) — health plans do not typically have an NPI; identified here
+// via NAIC company code with a literal reference to the Organization resource.
+* managingEntity.reference = "Organization/Payer1"
+* managingEntity.identifier.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType#naiccode "NAIC Code"
+* managingEntity.identifier.system = "urn:oid:2.16.840.1.113883.6.300"
+* managingEntity.identifier.value = "12345"
 * managingEntity.display = "Example Payer Organization"
 
 * member[0].entity.reference = "#prov-patient-2"
@@ -123,8 +131,12 @@ Usage: #example
 
 * code = $MemberMatchResult#consentconstraint "Consent Constraint"
 
-* managingEntity.identifier.system = "http://hl7.org/fhir/sid/us-npi"
-* managingEntity.identifier.value = "5555555555"
+// Managing entity (Payer) — health plans do not typically have an NPI; identified here
+// via NAIC company code with a literal reference to the Organization resource.
+* managingEntity.reference = "Organization/Payer1"
+* managingEntity.identifier.type = http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType#naiccode "NAIC Code"
+* managingEntity.identifier.system = "urn:oid:2.16.840.1.113883.6.300"
+* managingEntity.identifier.value = "12345"
 * managingEntity.display = "Example Payer Organization"
 
 * member[0].entity.reference = "#prov-patient-3"

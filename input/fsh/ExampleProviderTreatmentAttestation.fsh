@@ -7,8 +7,8 @@ Usage: #example
 * id = "provider-treatment-attestation-1"
 * status = #active
 
-// Fixed to treatment scope per profile
-* scope = http://terminology.hl7.org/CodeSystem/consentscope#treatment
+// Fixed to patient-privacy scope per profile (information disclosure, not treatment consent)
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 
 // Category includes both treatment relationship and attestation
 * category[0] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "Information Disclosure"
@@ -26,7 +26,10 @@ Usage: #example
 * performer[0].display = "Dr. Susan Smith"
 
 // Organization under which treatment relationship exists
-* organization.reference = "Organization/ProviderOrg1"
+// Identified via NPI (logical reference) so the source/payer can match against its own records,
+// rather than via a literal Organization/{id} reference that is local to the requester's system.
+* organization.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* organization.identifier.value = "1982947230"
 * organization.display = "Provider 1"
 
 // Source of attestation - could reference a signed attestation document
@@ -43,13 +46,17 @@ Usage: #example
 // No end date indicates ongoing treatment relationship
 
 // Actor - the provider attesting to treatment relationship
+// Practitioner identified via NPI (logical reference) so the source/payer system can match
+// the actor against its own records.
 * provision.actor[0].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP "information recipient"
-* provision.actor[0].reference.reference = "Practitioner/4"
+* provision.actor[0].reference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* provision.actor[0].reference.identifier.value = "1234567893"
 * provision.actor[0].reference.display = "Dr. Susan Smith"
 
-// Organization actor
+// Organization actor — identified via NPI logical reference (same rationale as performer/organization).
 * provision.actor[1].role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV "healthcare provider"
-* provision.actor[1].reference.reference = "Organization/ProviderOrg1"
+* provision.actor[1].reference.identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* provision.actor[1].reference.identifier.value = "1982947230"
 * provision.actor[1].reference.display = "Provider 1"
 
 // Purpose of use - treatment and related activities
