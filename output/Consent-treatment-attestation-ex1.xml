@@ -12,7 +12,7 @@
   <scope>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
-      <code value="treatment"/>
+      <code value="patient-privacy"/>
     </coding>
   </scope>
   <category>
@@ -34,11 +34,17 @@
   </patient>
   <dateTime value="2024-12-10T14:30:00Z"/>
   <performer>
-    <reference value="Practitioner/provider-001"/>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="1234567893"/>
+    </identifier>
     <display value="Dr. Susan Smith, MD"/>
   </performer>
   <organization>
-    <reference value="Organization/provider-org-001"/>
+    <identifier>
+      <system value="http://hl7.org/fhir/sid/us-npi"/>
+      <value value="1982947230"/>
+    </identifier>
     <display value="Springfield Medical Center"/>
   </organization>
   <sourceReference>
@@ -63,7 +69,10 @@
         </coding>
       </role>
       <reference>
-        <reference value="Practitioner/provider-001"/>
+        <identifier>
+          <system value="http://hl7.org/fhir/sid/us-npi"/>
+          <value value="1234567893"/>
+        </identifier>
         <display value="Dr. Susan Smith"/>
       </reference>
     </actor>

@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -268,11 +278,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsi">
+  <table class="colstu">
     <tr>
   
       <td>
-        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
         
       </td>
   
@@ -299,13 +309,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Provenance requirements for the Payer Community may be a super-set of those of the Provider-focused Argonaut community.</p>
 
-<p><span class="fhir-conformance"><a name="ci-c-4"> </a>pdex-84: Health Plans SHOULD accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange. <a href="narrative-conformance.html#ci-c-4"><sup>&sect;4</sup></a></span></p>
+<p><span class="fhir-conformance"><a name="ci-c-22"> </a>pdex-84: Health Plans SHOULD accept and retain Provenance records received with data based on Member-authorized Payer-to-Payer exchange. <a href="narrative-conformance.html#ci-c-22"><sup>&sect;22</sup></a></span></p>
 
-<p><span class="fhir-conformance"><a name="ci-c-5"> </a>pdex-85: Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange. <a href="narrative-conformance.html#ci-c-5"><sup>&sect;5</sup></a></span></p>
+<p><span class="fhir-conformance"><a name="ci-c-23"> </a>pdex-85: Health Plans SHOULD accept and retain Provenance records received with data from  sources other than Member-authorized Payer-to-Payer exchange. <a href="narrative-conformance.html#ci-c-23"><sup>&sect;23</sup></a></span></p>
 
-<p><span class="fhir-conformance"><a name="ci-c-6"> </a>pdex-86: When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data. <a href="narrative-conformance.html#ci-c-6"><sup>&sect;6</sup></a></span></p>
+<p><span class="fhir-conformance"><a name="ci-c-24"> </a>pdex-86: When a Health Plan forwards information as a FHIR Resource it SHOULD create related Provenance record(s) to reflect the original source of the data. <a href="narrative-conformance.html#ci-c-24"><sup>&sect;24</sup></a></span></p>
 
-<p><span class="fhir-conformance"><a name="ci-c-7"> </a>pdex-87: A Provenance resource SHOULD be provided with each member-related resource provided by the Health Plan's FHIR API when requested, such as via the _RevInclude parameter. <a href="narrative-conformance.html#ci-c-7"><sup>&sect;7</sup></a></span></p>
+<p><span id="pdex-87" class="fhir-conformance"><a name="ci-c-pdex-87"> </a> A Provenance resource describing the upstream origin (Author or Source) of each member-related resource <strong>SHOULD</strong> be provided with that resource when the Health Plan's FHIR API serves it — particularly when the requester adds the <code class="language-plaintext highlighter-rouge">_revinclude=Provenance:target</code> parameter to a search query. <a href="narrative-conformance.html#ci-c-pdex-87"><sup>&sect;pdex-87</sup></a></span> This per-resource Provenance is in addition to the per-exchange Transmitter Provenance required by <span class="fhir-conformance">pdex-127 (see <a href="overview.html">Overview</a> and <a href="PDexProvenance.html">PDex Provenance</a> for the full distinction); it is not a substitute for </span>pdex-127.</p>
 
 <p>This guide provides a pdex-provenance resource that is customized to the needs of the payer by focusing on their role as a transmitter and not originator of data.</p>
 
@@ -352,7 +362,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

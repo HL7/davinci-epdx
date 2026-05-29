@@ -8,17 +8,17 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md)
 
 §pdex-74: Health Plans **SHALL** map clinical information for a member to [US Core v3.1.1](http://hl7.org/fhir/us/core/3.1.1), [US Core v6.1.0](http://hl7.org/fhir/us/core/STU6.1) or [US Core v7.0.0](http://hl7.org/fhir/us/core/STU7) FHIR Resources based on R4. § This IG defers to the supporting specifications to map data to FHIR resources and avoids creating new profiles unless necessary, such as in the case of MedicationDispense when this was not defined in US Core 3.1.1.
 
-§pdex-75: Health Plans **SHALL** map claims and encounter data to the non-financial ExplanationOfBenefit BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.1). § §pdex-76: Health Plans **SHALL** map prior authorization information to the [PDex Prior Authorization](PDexPriorAuthorization.md) profile. §
+§pdex-75: Health Plans **SHALL** map claims and encounter data to the non-financial ExplanationOfBenefit BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.2). § §pdex-76: Health Plans **SHALL** map prior authorization information to the [PDex Prior Authorization](PDexPriorAuthorization.md) profile. §
 
 US Core has expanded upon the original Argonaut profiles as the FHIR specification has also matured. As the Da Vinci project tackles more use cases and creates further Implementation Guides additional profiles that are used across multiple IGs will be implemented in the HRex IG. §pdex-77: As those profiles mature and achieve adoption, they **MAY** be offered up to US Realm for incorporation into a future version of US Core. §
 
-§pdex-78: Where a [US Core 3.1.1. FHIR R4](http://hl7.org/fhir/us/core/3.1.1), [US Core 6.1.0. FHIR R4](http://hl7.org/fhir/us/core/STU6.1) or [US Core 7.0.0. FHIR R4](http://hl7.org/fhir/us/core/STU7) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1). §
+§pdex-78: Where a [US Core 3.1.1. FHIR R4](http://hl7.org/fhir/us/core/3.1.1), [US Core 6.1.0. FHIR R4](http://hl7.org/fhir/us/core/STU6.1) or [US Core 7.0.0. FHIR R4](http://hl7.org/fhir/us/core/STU7) Resource is not defined for clinical data, Health Plans **SHALL** map to FHIR Profiles defined in this IG, or the [Da Vinci HRex IG](http://hl7.org/fhir/us/davinci-hrex/1.2.0). §
 
 The mapping of a patient's coverage and claims information to the relevant FHIR US Core and Da Vinci PDex/HRex profiles is covered in this section.
 
@@ -34,15 +34,15 @@ This Section describes the expected capabilities of the PDex Server actor which 
 
 The profiles referenced in the Data Mapping Section are included in the above Server Capability Statements.
 
-The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.1) which defines the following non-financial profiles:
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.2) which defines the following non-financial profiles:
 
-* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
-* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
-* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
-* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
-* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
-§pdex-79: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-toPayer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
+§pdex-79: Oral and vision information are considered part of the Health Plan record for a specific member and, when it is available, **SHOULD** be included in the Payer-to-Payer and Provider Access exchanges described in this IG, using the BASIS profiles defined in the [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2/). §
 
 ## Ingesting Exchanged Data
 
@@ -54,7 +54,7 @@ In the steps below "Received" refers to the information requested from a Health 
 1. Update the Target Patient Resource to add the Received Patient Ids from the Received Patient Resource.
 1. Identify Received Practitioner resources in the bundle and use NPI, where available, to map to the Target Practitioner Resources. If the Practitioner is not found in the Target system, create a record. Use the Target Practitioner Resource ID for any references to this Practitioner in the received bundle.
 1. Identify Received Organization resources in the bundle and use NPI, where available, to map to the Target Organization Resources. If the Organization is not found in the Target system, create a record. Use the Target Organization Resource ID for any references to this Organization in the received bundle.
-1. Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system, create a record. Use the Target Organization Resource ID for any references to this Location in the received bundle.
+1. Identify Received Location resources in the bundle and map to Target Location resources. If the Location is not found in the Target system, create a record. Use the Target Location Resource ID for any references to this Location in the received bundle.
 
 It is recommended that the Identifier field in a resource be used to record the ID of the corresponding resource imported from a received bundle. This should simplify mapping for subsequent bundles received from the sending FHIR API.
 
@@ -97,7 +97,7 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 
 This IG supports the use of multiple US Core versions. The profiles supported by the respective versions are linked below:
 
-* [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/profiles.html)
+* [US Core 3.1.1 Profiles and Extensions](https://hl7.org/fhir/us/core/STU3.1.1/)
 * [US Core 6.1.0 Profiles and Extensions](http://hl7.org/fhir/us/core/STU6.1/profiles-and-extensions.html)
 
 [Next Page - US Core Allergy Intolerance](USCoreAllergyIntolerance.md)

@@ -63,8 +63,16 @@
         "id": "Group.managingEntity",
         "path": "Group.managingEntity",
         "short": "Payer managing this group",
-        "definition": "Reference to the payer organization that performed the member match",
+        "definition": "Reference to the payer organization that performed the member match. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson.",
         "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

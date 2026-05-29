@@ -44,12 +44,24 @@
   ] ; # 
   fhir:quantity [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
   fhir:managingEntity [
+     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> ;
+     fhir:reference [ fhir:v "Organization/Payer1" ] ;
      fhir:identifier [
-       fhir:system [
-         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       fhir:type [
+         fhir:coding ( [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType>
+           ] ;
+           fhir:code [ fhir:v "naiccode" ] ;
+           fhir:display [ fhir:v "NAIC Code" ]
+         ] )
        ] ;
-       fhir:value [ fhir:v "5555555555" ]
+       fhir:system [
+         fhir:v "urn:oid:2.16.840.1.113883.6.300"^^xsd:anyURI ;
+         fhir:l <urn:oid:2.16.840.1.113883.6.300>
+       ] ;
+       fhir:value [ fhir:v "12345" ]
      ] ;
      fhir:display [ fhir:v "Example Payer Organization" ]
   ] ; # 
@@ -115,6 +127,8 @@
      ] ;
      fhir:inactive [ fhir:v false ]
   ] ) . # 
+
+<http://hl7.org/fhir/us/davinci-pdex/Organization/Payer1> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/Patient/1> a fhir:Us .
 

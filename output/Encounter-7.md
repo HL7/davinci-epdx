@@ -16,7 +16,7 @@ Profile: [US Core Encounter Profile](http://hl7.org/fhir/us/core/STU7/StructureD
 
 **status**: Finished
 
-**class**: [ActCode: AMB](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB) (Ambulatory)
+**class**: [v3 Code System ActCode: AMB](http://hl7.org/fhir/R4/v3/ActCode/cs.html#v3-ActCode-AMB) (Ambulatory)
 
 **type**: Patient encounter procedure
 

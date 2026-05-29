@@ -11,7 +11,7 @@
   fhir:id [ fhir:v "ProviderMemberMatch"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ProviderMemberMatch</b></p><a name=\"ProviderMemberMatch\"> </a><a name=\"hcProviderMemberMatch\"> </a><p>URL: [base]/Group/$provider-member-match</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MemberBundle</td><td/><td>1..*</td><td><a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></td><td/><td><div><p>Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition <strong>SHALL</strong> conform to the MemberBundle slice defined in the <a href=\"StructureDefinition-provider-parameters-multi-member-match-bundle-in.html\">Provider $multi-member-match Request</a> profile.</p>\n</div></td></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-treatment-relationship.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship\">Member-Provider Treatment Relationship Group</a>)</td><td/><td><div><p>A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.</p>\n</div></td></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-member-no-match-group.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group\">PDex Member No Match Group</a>)</td><td/><td><div><p>A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.</p>\n</div></td></tr><tr><td>OUT</td><td>ConsentConstrainedMembers</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-member-opt-out.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out\">Member Opt-Out Group</a>)</td><td/><td><div><p>A Group resource containing members who have opted out of data sharing with providers or this specific provider.</p>\n</div></td></tr></table><div><p>The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.</p>\n</div></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ProviderMemberMatch</b></p><a name=\"ProviderMemberMatch\"> </a><a name=\"hcProviderMemberMatch\"> </a><p>URL: [base]/Group/$provider-member-match</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>MemberBundle</td><td/><td>1..*</td><td><a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></td><td/><td><div><p>Contains one or more members with patient demographics and coverage information to be matched against the payer's member records. Each repetition <strong>SHALL</strong> conform to the MemberBundle slice defined in the <a href=\"StructureDefinition-provider-parameters-multi-member-match-bundle-in.html\">Provider $multi-member-match Request</a> profile.</p>\n</div></td></tr><tr><td>OUT</td><td>MatchedMembers</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-provider-member-match.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match\">Provider Member Match Group</a>)</td><td/><td><div><p>A Group resource containing members successfully matched in the payer's records, for whom the provider's treatment attestation has been verified, and who have not opted out of Provider Access API data sharing. The Group Id returned in this parameter is the input to the $davinci-data-export operation for bulk data retrieval. This Group is the response artifact and is distinct from the long-lived Member-Provider Treatment Relationship Group (pdex-treatment-relationship) the payer maintains for governance and audit purposes. <strong>Cardinality 1..1</strong> — emitted even when <code>Group.member[]</code> is empty, so the matched-Group identifier is always available for the subsequent <code>$davinci-data-export</code> step.</p>\n</div></td></tr><tr><td>OUT</td><td>NonMatchedMembers</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-provider-member-no-match.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match\">Provider Member No Match Group</a>)</td><td/><td><div><p>A Group resource containing members for whom no match could be found in the payer's records OR for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements. Both failure types are reported in this single Group; consumers can distinguish the specific reason via the Group's characteristic code or the per-member context if required by the payer.</p>\n</div></td></tr><tr><td>OUT</td><td>ConsentConstrainedMembers</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/group.html\">Group</a> (<a href=\"StructureDefinition-pdex-member-opt-out.html\" title=\"http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out\">Member Opt-Out Group</a>)</td><td/><td><div><p>A Group resource containing members who were successfully matched in the payer's records but who have opted out of data sharing via the Provider Access API. Returned via the <a href=\"StructureDefinition-pdex-member-opt-out.html\">Member Opt-Out Group profile</a>. <strong>Privacy default — SHOULD suppress when opt-out status is sensitive.</strong> A member who opts out of data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. Where the payer determines that disclosing opt-out status to the requesting provider — i.e., distinguishing 'opted out' from 'not matched' — would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer <strong>SHOULD</strong> suppress this <code>ConsentConstrainedMembers</code> parameter and instead include the affected members in the <code>NonMatchedMembers</code> Group. This makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome, protecting opt-out status from disclosure. Payers that determine no such concern applies (for example, in jurisdictions where opt-out disclosure is permitted, or where the member has not requested suppression) <strong>MAY</strong> continue to return this Group, which preserves the type-level distinction between opt-out and no-match outcomes for operational use by the requester.</p>\n</div></td></tr></table><div><p>The complete output structure conforms to the <a href=\"StructureDefinition-provider-parameters-multi-member-match-bundle-out.html\">Provider $multi-member-match Response</a> Parameters profile, which defines slices for MatchedMembers, NonMatchedMembers, and ConsentConstrainedMembers.</p>\n</div></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:extension ( [
      fhir:url [
@@ -77,7 +77,7 @@
        fhir:value [ fhir:v "http://www.hl7.org/Special/committees/fm" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests."] ; # 
+  fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [
@@ -89,7 +89,7 @@
      ] )
   ] ) ; # 
   fhir:code [ fhir:v "provider-member-match"] ; # 
-  fhir:comment [ fhir:v "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data."] ; # 
+  fhir:comment [ fhir:v "The complete output structure conforms to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) Parameters profile, which defines slices for MatchedMembers, NonMatchedMembers, and ConsentConstrainedMembers."] ; # 
   fhir:resource ( [ fhir:v "Group"] ) ; # 
   fhir:system [ fhir:v false] ; # 
   fhir:type [ fhir:v true] ; # 
@@ -124,17 +124,6 @@
          fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
        ] )
      ] [
-       fhir:name [ fhir:v "CoverageToLink" ] ;
-       fhir:use [ fhir:v "in" ] ;
-       fhir:min [ fhir:v 0 ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:documentation [ fhir:v "Optional: The member's new coverage information to link to (e.g., during plan transitions)." ] ;
-       fhir:type [ fhir:v "Coverage" ] ;
-       fhir:targetProfile ( [
-         fhir:v "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage>
-       ] )
-     ] [
        fhir:name [ fhir:v "Consent" ] ;
        fhir:use [ fhir:v "in" ] ;
        fhir:min [ fhir:v 1 ] ;
@@ -149,31 +138,31 @@
   ] [
      fhir:name [ fhir:v "MatchedMembers" ] ;
      fhir:use [ fhir:v "out" ] ;
-     fhir:min [ fhir:v 0 ] ;
+     fhir:min [ fhir:v 1 ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data." ] ;
+     fhir:documentation [ fhir:v "A Group resource containing members successfully matched in the payer's records, for whom the provider's treatment attestation has been verified, and who have not opted out of Provider Access API data sharing. The Group Id returned in this parameter is the input to the $davinci-data-export operation for bulk data retrieval. This Group is the response artifact and is distinct from the long-lived Member-Provider Treatment Relationship Group (pdex-treatment-relationship) the payer maintains for governance and audit purposes. **Cardinality 1..1** — emitted even when `Group.member[]` is empty, so the matched-Group identifier is always available for the subsequent `$davinci-data-export` step." ] ;
      fhir:type [ fhir:v "Group" ] ;
      fhir:targetProfile ( [
-       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship>
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match>
      ] )
   ] [
      fhir:name [ fhir:v "NonMatchedMembers" ] ;
      fhir:use [ fhir:v "out" ] ;
      fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements." ] ;
+     fhir:documentation [ fhir:v "A Group resource containing members for whom no match could be found in the payer's records OR for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements. Both failure types are reported in this single Group; consumers can distinguish the specific reason via the Group's characteristic code or the per-member context if required by the payer." ] ;
      fhir:type [ fhir:v "Group" ] ;
      fhir:targetProfile ( [
-       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group>
+       fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"^^xsd:anyURI ;
+       fhir:l <http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match>
      ] )
   ] [
      fhir:name [ fhir:v "ConsentConstrainedMembers" ] ;
      fhir:use [ fhir:v "out" ] ;
      fhir:min [ fhir:v 0 ] ;
      fhir:max [ fhir:v "1" ] ;
-     fhir:documentation [ fhir:v "A Group resource containing members who have opted out of data sharing with providers or this specific provider." ] ;
+     fhir:documentation [ fhir:v "A Group resource containing members who were successfully matched in the payer's records but who have opted out of data sharing via the Provider Access API. Returned via the [Member Opt-Out Group profile](StructureDefinition-pdex-member-opt-out.html). **Privacy default — SHOULD suppress when opt-out status is sensitive.** A member who opts out of data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. Where the payer determines that disclosing opt-out status to the requesting provider — i.e., distinguishing 'opted out' from 'not matched' — would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress this `ConsentConstrainedMembers` parameter and instead include the affected members in the `NonMatchedMembers` Group. This makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome, protecting opt-out status from disclosure. Payers that determine no such concern applies (for example, in jurisdictions where opt-out disclosure is permitted, or where the member has not requested suppression) **MAY** continue to return this Group, which preserves the type-level distinction between opt-out and no-match outcomes for operational use by the requester." ] ;
      fhir:type [ fhir:v "Group" ] ;
      fhir:targetProfile ( [
        fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"^^xsd:anyURI ;

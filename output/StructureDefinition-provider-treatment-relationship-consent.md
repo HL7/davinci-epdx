@@ -20,7 +20,7 @@ Enables a practitioner, facility, or organization to attest to a treatment relat
 * Use this Profile: [Provider $multi-member-match Request](StructureDefinition-provider-parameters-multi-member-match-bundle-in.md)
 * Examples for this Profile: [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md) and [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/provider-treatment-relationship-consent)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-provider-treatment-relationship-consent.json)
 
 ### Formal Views of Profile Content
 
@@ -145,12 +145,12 @@ Other representations of profile: [CSV](StructureDefinition-provider-treatment-r
     {
       "id" : "Consent.scope",
       "path" : "Consent.scope",
-      "short" : "Treatment relationship scope",
-      "definition" : "Fixed to 'treatment' to indicate this consent represents a treatment relationship",
+      "short" : "Patient privacy / information disclosure scope",
+      "definition" : "Fixed to 'patient-privacy' (Agreement to collect, access, use or disclose information). The Consent here is the provider's attestation that supports access to the patient's data via the Provider Access API; it is not a 'treatment' consent (which would be a patient's agreement to undergo a specific medical treatment).",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
-          "code" : "treatment"
+          "code" : "patient-privacy"
         }]
       },
       "mustSupport" : true
@@ -186,7 +186,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-treatment-r
       "id" : "Consent.performer",
       "path" : "Consent.performer",
       "short" : "Practitioner, facility, or organization attesting to treatment relationship",
-      "definition" : "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient",
+      "definition" : "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient. The performer element SHOULD be populated using performer.identifier with the provider's NPI (National Provider Identifier) so that the attesting provider can be identified without requiring a FHIR resource reference on the receiving system.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -197,10 +197,23 @@ Other representations of profile: [CSV](StructureDefinition-provider-treatment-r
       "mustSupport" : true
     },
     {
+      "id" : "Consent.performer.identifier",
+      "path" : "Consent.performer.identifier",
+      "short" : "NPI or other identifier of the performing provider",
+      "definition" : "The National Provider Identifier (NPI) or other business identifier of the practitioner, facility, or organization attesting to the treatment relationship. Using an identifier allows the provider to be identified without requiring a resolvable FHIR resource reference.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Consent.performer.display",
+      "path" : "Consent.performer.display",
+      "short" : "Display name of the performing provider",
+      "mustSupport" : true
+    },
+    {
       "id" : "Consent.organization",
       "path" : "Consent.organization",
       "short" : "Organization responsible for the treatment relationship",
-      "definition" : "The healthcare organization under which this treatment relationship exists",
+      "definition" : "The healthcare organization under which this treatment relationship exists. Because the requester (provider/client) and the source/payer system maintain independent FHIR resource IDs, a literal `Reference.reference` value (e.g., `Organization/123`) is meaningful only inside the requester's system. To allow the source/payer to match the organization against its own records, the reference SHOULD be expressed as a *logical (identifier-based) reference* by populating `Reference.identifier` with a business identifier — typically the organization's NPI (`http://hl7.org/fhir/sid/us-npi`) — together with `Reference.display` for human readability. Alternatively, a `Reference.reference` MAY point to a `contained` Organization resource that itself carries the business identifier.",
       "max" : "1",
       "mustSupport" : true
     },
@@ -289,6 +302,8 @@ Other representations of profile: [CSV](StructureDefinition-provider-treatment-r
     {
       "id" : "Consent.provision.actor.reference",
       "path" : "Consent.provision.actor.reference",
+      "short" : "Identifier-based reference to the actor",
+      "definition" : "Reference to the practitioner, organization, role, or care team involved in the treatment relationship. As with `Consent.organization`, a literal `Reference.reference` is meaningful only inside the requester's system. The reference SHOULD be expressed as a *logical (identifier-based) reference* by populating `Reference.identifier` with the actor's business identifier — typically the NPI (`http://hl7.org/fhir/sid/us-npi`) for Practitioner, PractitionerRole, or Organization actors — together with `Reference.display` for human readability, so that the source/payer system can match the actor against its own records without resolving a FHIR resource reference relative to the requester's system. Alternatively, the reference MAY point to a `contained` resource that itself carries the business identifier.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Practitioner",

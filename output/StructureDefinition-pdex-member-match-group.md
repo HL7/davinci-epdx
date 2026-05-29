@@ -21,7 +21,7 @@ A Group List created by the Payer to enable Bulk Payer-to-Payer API access by Ot
 * Examples for this Profile: [Matched Members](Group-07e72a15407547bf9d03f522aa536a72.1.md)
 * CapabilityStatements using this Profile: [PDex Payer Access Server CapabilityStatement](CapabilityStatement-pdex-payer-access-server.md), [PDex Server CapabilityStatement with US core 6.1 support](CapabilityStatement-pdex-server-6-1.md) and [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-member-match-group)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-member-match-group.json)
 
 ### Formal Views of Profile Content
 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-member-match-gr
   "title" : "PDex Member Match Group",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -127,7 +127,23 @@ Other representations of profile: [CSV](StructureDefinition-pdex-member-match-gr
     {
       "id" : "Group.contained",
       "path" : "Group.contained",
-      "comment" : "Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+      "comment" : "Each contained Patient resource SHALL be the Patient resource submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifier elements, and all demographic elements (name, birthDate, gender, address, telecom, communication, and other Patient elements supplied by the requester) so that the requester can unambiguously correlate each match result back to the submitted member. Responders SHALL NOT modify, abridge, or substitute the submitted Patient resource's id, identifiers, or demographic elements. Per FHIR R4 References (http://hl7.org/fhir/R4/references.html#contained), contained resources SHALL NOT carry meta.versionId, meta.lastUpdated, or meta.security and SHALL NOT themselves contain nested contained resources; where the submitted Patient resource carries any of those base-FHIR-prohibited elements, the responder SHALL remove them when copying the resource into Group.contained[], and doing so is not considered a violation of the preservation requirement. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to."
+    },
+    {
+      "id" : "Group.type",
+      "path" : "Group.type",
+      "short" : "Type of group (members)",
+      "definition" : "Fixed to 'person'. Group.member entries reference Patient resources representing matched members.",
+      "patternCode" : "person",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Group.actual",
+      "path" : "Group.actual",
+      "short" : "Actual group (not definitional)",
+      "definition" : "An actual list of matched members, not a conceptual/definitional group.",
+      "patternBoolean" : true,
+      "mustSupport" : true
     },
     {
       "id" : "Group.code",
@@ -138,6 +154,16 @@ Other representations of profile: [CSV](StructureDefinition-pdex-member-match-gr
         "strength" : "required",
         "valueSet" : "http://hl7.org/fhir/us/davinci-pdex/ValueSet/PDexMultiMemberMatchResultVS"
       }
+    },
+    {
+      "id" : "Group.managingEntity",
+      "path" : "Group.managingEntity",
+      "short" : "Payer managing this group",
+      "definition" : "Reference to the Payer organization that created and is managing this matched-member Group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson.",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
+      }]
     },
     {
       "id" : "Group.characteristic.code",

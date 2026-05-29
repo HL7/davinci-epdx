@@ -73,15 +73,15 @@
   },
   {
     "url" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
-    "version" : "2.1.0",
+    "version" : "2.2.0",
     "status" : "active",
     "name" : "C4BBAdjudication",
     "title" : "C4BB Adjudication Code System",
     "description" : "Describes the various amount fields used when payers receive and adjudicate a claim.  It complements the values defined in http://terminology.hl7.org/CodeSystem/adjudication.\n\nThis is a code system defined locally by the CARIN BlueButton IG. As this IG matures, it is expected that this CodeSystem will be migrated to THO (terminology.hl7.org). The current CodeSystem url should be considered temporary and subject to change in a future version.",
     "uses" : {
     },
-    "ValueSet-PDexAdjudicationCategoryDiscriminator.html" : "PDex Adjudication Category Discriminator",
-    "ValueSet-PDexAdjudication.html" : "PDex Adjudication"
+    "ValueSet-PDexAdjudication.html" : "PDex Adjudication",
+    "ValueSet-PDexAdjudicationCategoryDiscriminator.html" : "PDex Adjudication Category Discriminator"
   },
   {
     "url" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type",
@@ -374,43 +374,43 @@
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/adjudication",
-    "version" : "1.0.1",
-    "status" : "active",
+    "version" : "4.0.1",
+    "status" : "draft",
     "name" : "AdjudicationValueCodes",
     "title" : "Adjudication Value Codes",
     "description" : "This value set includes a smattering of Adjudication Value codes which includes codes to indicate the amounts eligible under the plan, the amount of benefit, copays etc.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1171"],
+    "oids" : ["2.16.840.1.113883.4.642.4.1171"],
     "uses" : {
     },
     "ValueSet-PDexAdjudication.html" : "PDex Adjudication"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/consentaction",
-    "version" : "1.0.1",
-    "status" : "active",
+    "version" : "4.0.1",
+    "status" : "draft",
     "name" : "ConsentActionCodes",
     "title" : "Consent Action Codes",
     "description" : "This value set includes sample Consent Action codes.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1227"],
+    "oids" : ["2.16.840.1.113883.4.642.4.1227"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-consent-action.html" : "Consent Action Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
-    "version" : "1.0.1",
-    "status" : "active",
+    "version" : "4.0.1",
+    "status" : "draft",
     "name" : "ConsentCategoryCodes",
     "title" : "Consent Category Codes",
     "description" : "This value set includes sample Consent Directive Type codes, including several consent directive related LOINC codes; HL7 VALUE SET: ActConsentType(2.16.840.1.113883.1.11.19897); examples of US realm consent directive legal descriptions and references to online and/or downloadable forms such as the SSA-827 Authorization to Disclose Information to the Social Security Administration; and other anticipated consent directives related to participation in a clinical trial, medical procedures, reproductive procedures; health care directive (Living Will); advance directive, do not resuscitate (DNR); Physician Orders for Life-Sustaining Treatment (POLST)",
-    "oids" : ["2.16.840.1.113883.4.642.1.1226"],
+    "oids" : ["2.16.840.1.113883.4.642.4.1226"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-consent-category.html" : "Consent Category Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-    "version" : "1.0.0",
+    "version" : "4.0.1",
     "status" : "active",
     "name" : "DataAbsentReason",
     "title" : "DataAbsentReason",
@@ -418,18 +418,18 @@
     "oids" : ["2.16.840.1.113883.4.642.4.1048"],
     "uses" : {
     },
-    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
     "http://hl7.org/fhir/us/ndh/STU1/ValueSet-EndpointPayloadTypeVS.html" : "Endpoint Payload Type Value Set",
-    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
+    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
-    "version" : "2.1.1",
-    "status" : "active",
+    "version" : "4.0.1",
+    "status" : "draft",
     "name" : "EndpointConnectionType",
     "title" : "Endpoint Connection Type",
     "description" : "This is an example value set defined by the FHIR project, that could be used to represent possible connection type profile values.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1140"],
+    "oids" : ["2.16.840.1.113883.4.642.4.1140"],
     "uses" : {
     },
     "http://hl7.org/fhir/us/ndh/STU1/ValueSet-EndpointConnectionTypeVS.html" : "Endpoint Connection Types Value Set"
@@ -448,12 +448,12 @@
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/processpriority",
-    "version" : "1.0.1",
-    "status" : "active",
+    "version" : "4.0.1",
+    "status" : "draft",
     "name" : "ProcessPriorityCodes",
     "title" : "Process Priority Codes",
     "description" : "This value set includes the financial processing priority codes.",
-    "oids" : ["2.16.840.1.113883.4.642.1.1155"],
+    "oids" : ["2.16.840.1.113883.4.642.4.1155"],
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-process-priority.html" : "Process Priority Codes"
@@ -483,27 +483,27 @@
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-    "version" : "10.0.0",
+    "version" : "2018-08-12",
     "status" : "active",
-    "name" : "ActCode",
-    "title" : "ActCode",
-    "description" : "A code specifying the particular kind of Act that the Act-instance represents within its class.\r\n\r\n*Constraints:* The kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems. The coding system will depend on the class of Act, such as LOINC for observations, etc.\r\n\r\nConceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure.\r\n\r\nAct.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
+    "name" : "v3.ActCode",
+    "title" : "v3 Code System ActCode",
+    "description" : " A code specifying the particular kind of Act that the Act-instance represents within its class.  Constraints:\r\nThe kind of Act (e.g. physical examination, serum potassium, inpatient encounter, charge financial transaction, etc.) is specified with a code from one of several, typically external, coding systems.  The coding system will depend on the class of Act, such as LOINC for observations, etc. Conceptually, the Act.code must be a specialization of the Act.classCode. This is why the structure of ActClass domain should be reflected in the superstructure of the ActCode domain and then individual codes or externally referenced vocabularies subordinated under these domains that reflect the ActClass structure. Act.classCode and Act.code are not modifiers of each other but the Act.code concept should really imply the Act.classCode concept. For a negative example, it is not appropriate to use an Act.code \"potassium\" together with and Act.classCode for \"laboratory observation\" to somehow mean \"potassium laboratory observation\" and then use the same Act.code for \"potassium\" together with Act.classCode for \"medication\" to mean \"substitution of potassium\". This mutually modifying use of Act.code and Act.classCode is not permitted.",
     "oids" : ["2.16.840.1.113883.5.4"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.1.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType"
+    "http://hl7.org/fhir/R4/v3/ActPharmacySupplyType/vs.html" : "V3 Value SetActPharmacySupplyType"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-    "version" : "4.0.0",
+    "version" : "2018-08-12",
     "status" : "active",
-    "name" : "ActReason",
-    "title" : "ActReason",
-    "description" : "A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type \"has reason\" linking to another Act.\r\n\r\n*Examples:* Example reasons that might qualify for being coded in this field might be: \"routine requirement\", \"infectious disease reporting requirement\", \"on patient request\", \"required by law\".",
+    "name" : "v3.ActReason",
+    "title" : "v3 Code System ActReason",
+    "description" : " A set of codes specifying the motivation, cause, or rationale of an Act, when such rationale is not reasonably represented as an ActRelationship of type \"has reason\" linking to another Act.  Examples:\r\nExample reasons that might qualify for being coded in this field might be: \"routine requirement\", \"infectious disease reporting requirement\", \"on patient request\", \"required by law\".",
     "oids" : ["2.16.840.1.113883.5.8"],
     "uses" : {
     },
-    "http://terminology.hl7.org/7.1.0/ValueSet-v3-PurposeOfUse.html" : "PurposeOfUse"
+    "http://hl7.org/fhir/R4/v3/PurposeOfUse/vs.html" : "V3 Value SetPurposeOfUse"
   },
   {
     "url" : "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category",
@@ -527,8 +527,8 @@
     "oids" : ["2.16.840.1.113883.6.12"],
     "uses" : {
     },
-    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
-    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
+    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
   },
   {
     "url" : "https://profiles.ihe.net/ITI/mCSD/CodeSystem/MCSDEndpointTypes",
@@ -551,8 +551,8 @@
     "oids" : ["2.16.840.1.113883.6.285"],
     "uses" : {
     },
-    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
-    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
+    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
   },
   {
     "url" : "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes",
@@ -563,8 +563,8 @@
     "description" : "\"Health Insurance Prospective Payment System (HIPPS) rate codes represent specific sets of patient characteristics (or case-mix groups) health insurers use to make payment determinations under several prospective payment systems. Case-mix groups are developed based on research into utilization patterns among various provider types. For the payment systems that use HIPPS codes, clinical assessment data is the basic input. A standard patient assessment instrument is interpreted by case-mix grouping software algorithms, which assign the case mix group. For payment purposes, at least one HIPPS code is defined to represent each case-mix group. These HIPPS codes are reported on claims to insurers.\r\n\r\nInstitutional providers use HIPPS codes on claims in association with special revenue codes. One revenue code is defined for each prospective payment system that requires HIPPS codes. HIPPS codes are placed in data element SV202 on the electronic 837 institutional claims transaction, using an HP qualifier, or in Form Locator (FL) 44 (\"HCPCS/rate\") on a paper UB-04 claims form. The associated revenue code is placed in data element SV201 or in FL 42. In certain circumstances, multiple HIPPS codes may appear on separate lines of a single claim.\"\r\n\r\n\"HIPPS codes are alpha-numeric codes of five digits. Each code contains intelligence, with certain positions of the code indicating the case mix group itself, and other positions providing additional information. The additional information varies among HIPPS codes pertaining to different payment systems, but often provides information about the clinical assessment used to arrive at the code. Which positions of the code carry the case mix group information may also vary by payment systems.\"\r\n\r\n\"Under the Health Insurance Portability and Accountability Act (HIPAA) rules for transactions and code sets, HIPPS codes are defined as a non-medical code set. Therefore, these codes are effective by transaction date.\r\n\r\nEffective From Dates: HIPPS codes are valid under HIPAA on transactions on or after this date. Since all HIPPS codes to date have been initially created for Original Medicare payment systems, this is also date of service the codes begin to be payable by Medicare. While it is valid under HIPAA rules that a claim for dates of service before this date could be submitted on a transaction after this date, CMS is not aware of a business need for a provider to do so. The code would not be payable by any insurer and no Grouper software would be available to produce a code for those dates.\r\n\r\nEffective Through Dates: HIPPS codes are no longer valid under HIPAA on transactions on or after this date. This date may vary from the date a code ceases to be payable by Medicare, since other payers may continue to use older HIPPS codes after Medicare transitions to a new payment system. Since CMS, as the HIPPS code set maintainer, may not have complete information about other payers’ uses of these codes, codes may remain effective under HIPAA long after they cease to be payable on Medicare claims. To reflect this, a separate column on the HIPPS Code Master List indicates the Medicare Payment Though Date.\"",
     "uses" : {
     },
-    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
-    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
+    "ValueSet-PDexPAInstitutionalProcedureCodes.html" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
+    "ValueSet-PDexPAInstitutionalProcedureCodesVS.html" : "Prior Authorization Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS"
   },
   {
     "url" : "https://x12.org/codes/claim-adjustment-reason-codes",

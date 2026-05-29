@@ -9,7 +9,7 @@
   "scope": {
     "coding": [
       {
-        "code": "treatment",
+        "code": "patient-privacy",
         "system": "http://terminology.hl7.org/CodeSystem/consentscope"
       }
     ]
@@ -41,13 +41,19 @@
   "dateTime": "2024-11-14T10:30:00Z",
   "performer": [
     {
-      "reference": "Practitioner/4",
+      "identifier": {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1234567893"
+      },
       "display": "Dr. Susan Smith"
     }
   ],
   "organization": [
     {
-      "reference": "Organization/ProviderOrg1",
+      "identifier": {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1982947230"
+      },
       "display": "Provider 1"
     }
   ],
@@ -78,7 +84,10 @@
           ]
         },
         "reference": {
-          "reference": "Practitioner/4",
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1234567893"
+          },
           "display": "Dr. Susan Smith"
         }
       },
@@ -93,7 +102,10 @@
           ]
         },
         "reference": {
-          "reference": "Organization/ProviderOrg1",
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1982947230"
+          },
           "display": "Provider 1"
         }
       }

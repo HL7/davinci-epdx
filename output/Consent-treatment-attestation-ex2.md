@@ -27,7 +27,7 @@ Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relation
   "scope" : {
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
-      "code" : "treatment"
+      "code" : "patient-privacy"
     }]
   },
   "category" : [{
@@ -49,11 +49,17 @@ Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relation
   },
   "dateTime" : "2024-12-09T10:15:00Z",
   "performer" : [{
-    "reference" : "Practitioner/provider-002",
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "9876543210"
+    },
     "display" : "Dr. James Brown, MD"
   }],
   "organization" : [{
-    "reference" : "Organization/provider-org-002",
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1122334455"
+    },
     "display" : "Columbus Clinic"
   }],
   "sourceReference" : {
@@ -77,7 +83,10 @@ Treatment Attestation by Dr. James Brown for Sarah Williams - Treatment relation
         }]
       },
       "reference" : {
-        "reference" : "Practitioner/provider-002",
+        "identifier" : {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "9876543210"
+        },
         "display" : "Dr. James Brown"
       }
     }],

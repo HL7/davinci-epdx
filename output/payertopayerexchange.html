@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -268,11 +278,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsi">
+  <table class="colstu">
     <tr>
   
       <td>
-        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
         
       </td>
   
@@ -334,7 +344,7 @@ The changes have been made to stay in sync with the bulk transfer requirements o
 <p>The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five
 years prior to the date of the request.</p>
 
-<p><span id="pdex-191" class="fhir-conformance"><a name="ci-c-pdex-191"> </a> Payers <strong>SHALL</strong> implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. <a href="narrative-conformance.html#ci-c-pdex-191"><sup>&sect;pdex-191</sup></a></span></p>
+<p><span id="pdex-191" class="fhir-conformance"><a name="ci-c-pdex-191"> </a> A Payer that implements Payer-to-Payer Exchange for a single member — for example, to support legacy CMS-9115-style member-initiated payer-to-payer requests or any other use case for which single-member exchange is more appropriate than multi-member bulk exchange — <strong>SHALL</strong> do so by following the content provided in this section of the IG. <a href="narrative-conformance.html#ci-c-pdex-191"><sup>&sect;pdex-191</sup></a></span> Single-member Payer-to-Payer Exchange is <strong>not</strong> itself required by CMS-0057; the Bulk Payer-to-Payer Exchange (see &sect;pdex-192 below) is the method required by that rule. A Payer that implements only the Bulk Payer-to-Payer Exchange remains conformant with this IG.</p>
 
 <p><span id="pdex-192" class="fhir-conformance"><a name="ci-c-pdex-192"> </a> Payers <strong>SHALL</strong> implement the Bulk Payer-to-Payer Exchange detailed in this IG on the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk Exchange</a> page to exchange information for multiple members. <a href="narrative-conformance.html#ci-c-pdex-192"><sup>&sect;pdex-192</sup></a></span> Bulk Payer-to-Payer Exchange
 <span id="pdex-193" class="fhir-conformance"><a name="ci-c-pdex-193"> </a> <strong>MAY</strong> be used to exchange data for a SINGLE member. <a href="narrative-conformance.html#ci-c-pdex-193"><sup>&sect;pdex-193</sup></a></span></p>
@@ -622,7 +632,7 @@ request/retrieve data using one of the following three methods:</p>
     </tr>
     <tr>
       <td><a href="StructureDefinition-pdex-priorauthorization.html">PDex Prior Authorization</a></td>
-      <td>Prior Authorization</td>
+      <td>ExplanationOfBenefit</td>
     </tr>
     <tr>
       <td><a href="StructureDefinition-pdex-provenance.html">PDex Provenance</a><br/><a href="http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html">US Core Provenance</a></td>
@@ -632,15 +642,15 @@ request/retrieve data using one of the following three methods:</p>
 </table>
 
 <p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
-The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
+The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.2">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
 non-financial profiles:</p>
 
 <ul>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
 </ul>
 
 <h3 id="query-all-clinical-resources-individually">Query all clinical resources individually</h3>
@@ -659,12 +669,12 @@ as identified in the table above. Using the search capability of each resource e
 
 <p>Example of _type parameter:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
-       Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_type= AllergyIntolerance,CarePlan,CareTeam,Condition,Coverage,Device,DiagnosticReport,DocumentReference,Encounter,
+       ExplanationOfBenefit,Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,
+       Patient,Practitioner,PractitionerRole,Procedure,Provenance
 </code></pre></div></div>
 
-<p><span id="pdex-214" class="fhir-conformance"><a name="ci-c-pdex-214"> </a> The server <strong>SHOULD</strong> filter the ExplanationOfBenefit resource to include only PDex Prior Authorization <a href="narrative-conformance.html#ci-c-pdex-214"><sup>&sect;pdex-214</sup></a></span>
-profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".</p>
+<p><span id="pdex-214" class="fhir-conformance"><a name="ci-c-pdex-214"> </a> The data returned by <code class="language-plaintext highlighter-rouge">$everything</code> for the requesting payer <strong>SHALL</strong> include the same set of resources and profiles as any other in-scope retrieval method (see <a href="narrative-conformance.html#ci-c-pdex-214"><sup>&sect;pdex-214</sup></a></span>pdex-210 and the <a href="#data-retrieval-methods">Data Retrieval Methods table</a>) — including both Prior Authorization <code class="language-plaintext highlighter-rouge">ExplanationOfBenefit</code> records (PDex Prior Authorization profile) and Claims / Encounter <code class="language-plaintext highlighter-rouge">ExplanationOfBenefit</code> records (CARIN BB Non-Financial Basis profiles), per the regulatory data-exchange obligation. <span class="fhir-conformance"><a name="ci-c-27"> </a> A client that wishes to retrieve only a subset (for example, only Prior Authorization records, or only claims) <strong>MAY</strong> narrow the response by supplying the <code class="language-plaintext highlighter-rouge">_type</code> parameter or by filtering client-side after retrieval. The server <strong>SHALL NOT</strong> silently exclude claim <code class="language-plaintext highlighter-rouge">ExplanationOfBenefit</code> records from the response unless the requester is not permitted to access them under <a href="narrative-conformance.html#ci-c-27"><sup>&sect;27</sup></a></span>pdex-218 / &sect;pdex-219 (in which case the server filters per the access-control rule, not per this section).</p>
 
 <h3 id="bulk-fhir-asynchronous-protocols">Bulk FHIR Asynchronous protocols</h3>
 
@@ -840,7 +850,7 @@ to the Patient <em>id(s)</em> that the user is authorized to access.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

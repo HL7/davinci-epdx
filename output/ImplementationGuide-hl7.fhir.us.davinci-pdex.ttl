@@ -49,7 +49,7 @@
   fhir:name [ fhir:v "DaVinciPayerDataExchange"] ; # 
   fhir:title [ fhir:v "Da Vinci Payer Data Exchange"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2026-03-31T21:00:10-04:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-05-29T12:37:47-04:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7 International / Financial Management"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "HL7 International / Financial Management" ] ;
@@ -159,7 +159,7 @@
        fhir:l <http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.us.davinci-hrex" ] ;
-     fhir:version [ fhir:v "1.1.0" ]
+     fhir:version [ fhir:v "1.2.0" ]
   ] [
      fhir:id [ fhir:v "carinbb" ] ;
      fhir:uri [
@@ -167,7 +167,7 @@
        fhir:l <http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.us.carin-bb" ] ;
-     fhir:version [ fhir:v "2.1.0" ]
+     fhir:version [ fhir:v "2.2.0" ]
   ] [
      fhir:id [ fhir:v "crd" ] ;
      fhir:uri [
@@ -175,7 +175,7 @@
        fhir:l <http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/hl7.fhir.us.davinci-crd>
      ] ;
      fhir:packageId [ fhir:v "hl7.fhir.us.davinci-crd" ] ;
-     fhir:version [ fhir:v "2.1.0" ]
+     fhir:version [ fhir:v "2.2.1" ]
   ] [
      fhir:id [ fhir:v "pas" ] ;
      fhir:uri [
@@ -2895,7 +2895,7 @@
          fhir:reference [ fhir:v "StructureDefinition/pdex-member-opt-out" ]
        ] ;
        fhir:name [ fhir:v "Member Opt-Out Group" ] ;
-       fhir:description [ fhir:v "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios." ] ;
+       fhir:description [ fhir:v "A Group resource representing members who have opted out of Provider Access API data sharing. **Intended use:** this profile is offered as a payer-internal FHIR-based scaffolding pattern that implementers MAY adopt when their existing platform (legacy system, vendor product, internal API) cannot itself act as the authoritative reference source for opt-out determinations. Implementers whose existing systems can answer opt-out queries authoritatively are not required to use this profile. **Secondary use:** the same profile serves as the wire-format target profile for the `ConsentConstrainedMembers` output of the `$provider-member-match` operation; a ConsentConstrainedMembers Group returned by that operation conforms to this profile regardless of the mechanism the payer uses internally to determine opt-out status. **Privacy default — SHOULD suppress when opt-out status is sensitive.** Where a payer determines that disclosing opt-out status to a requesting provider would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress the `ConsentConstrainedMembers` output of `$provider-member-match` and instead include the affected members in the `NonMatchedMembers` Group; this makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The internal-tracking use of this profile is unaffected by that choice. **Distinguishing master-list instances from operation-emitted response instances.** Both the payer-internal master opt-out list and the response Group emitted by `$provider-member-match` conform to this profile, so a payer storing both must distinguish them at query time. The recommended discriminator is `Group.identifier`: the payer SHOULD assign master-list instances a `Group.identifier` with a payer-defined `system` URI such as `https://{payer}/fhir/identifier/master-opt-out-list` (and a stable `value`), while operation-emitted response instances either omit `Group.identifier` or use a distinct system URI such as `https://{payer}/fhir/identifier/match-result`. Payers that prefer a tag-based discriminator MAY instead use `Group.meta.tag` with a payer-defined coding. `Group.code` is **not** a reliable discriminator here because it is fixed-pattern to `PdexMultiMemberMatchResultCS#consentconstraint` on every conformant instance (see FHIR-56493). The Payer is the managing organization, and Group.member entries reference the patients who have exercised their right to opt-out, either broadly or for specific purposes or providers." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4620,7 +4620,7 @@
          fhir:reference [ fhir:v "CapabilityStatement/pdex-provider-access-server" ]
        ] ;
        fhir:name [ fhir:v "PDex provider-access Server CapabilityStatement" ] ;
-       fhir:description [ fhir:v "This Section describes the expected capabilities of the PDex Payer-to-Payer API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Payer-to-Payer Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements." ] ;
+       fhir:description [ fhir:v "This Section describes the expected capabilities of the PDex Provider Access API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Provider Access Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4641,7 +4641,7 @@
          fhir:reference [ fhir:v "OperationDefinition/ProviderMemberMatch" ]
        ] ;
        fhir:name [ fhir:v "PDex Provider-Member-Match Operation" ] ;
-       fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests." ] ;
+       fhir:description [ fhir:v "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4767,7 +4767,7 @@
          fhir:reference [ fhir:v "SearchParameter/pdex-medicationdispense-patient" ]
        ] ;
        fhir:name [ fhir:v "PdexMedicationDispensePatient" ] ;
-       fhir:description [ fhir:v "Returns dispensed prescriptions for a specific patient.\nNOTE: This Pdex SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain." ] ;
+       fhir:description [ fhir:v "Returns dispensed prescriptions for a specific patient." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -4788,7 +4788,7 @@
          fhir:reference [ fhir:v "SearchParameter/pdex-medicationdispense-status" ]
        ] ;
        fhir:name [ fhir:v "PdexMedicationDispenseStatus" ] ;
-       fhir:description [ fhir:v "Status of the prescription dispense.\nNOTE: This SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain." ] ;
+       fhir:description [ fhir:v "Status of the prescription dispense." ] ;
        fhir:example [
          a fhir:Boolean ;
          fhir:v false
@@ -5210,7 +5210,7 @@
          fhir:reference [ fhir:v "Parameters/provider-member-match-request-001" ]
        ] ;
        fhir:name [ fhir:v "Provider-Member-Match Request Example" ] ;
-       fhir:description [ fhir:v "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage." ] ;
+       fhir:description [ fhir:v "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records." ] ;
        fhir:example [
          a fhir:Canonical ;
          fhir:v "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"^^xsd:anyURI ;
@@ -5690,7 +5690,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -5718,7 +5718,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -5774,7 +5774,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -5802,7 +5802,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5831,7 +5831,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -5859,7 +5859,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5887,7 +5887,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5915,7 +5915,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5943,7 +5943,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5971,7 +5971,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -5999,7 +5999,7 @@
              ] ;
              fhir:value [
                a fhir:Code ;
-               fhir:v "informative"
+               fhir:v "trial-use"
              ]
            ] [
              fhir:url [
@@ -6139,7 +6139,7 @@
                ] ;
                fhir:value [
                  a fhir:Code ;
-                 fhir:v "informative"
+                 fhir:v "trial-use"
                ]
              ] [
                fhir:url [
@@ -6503,7 +6503,7 @@
                ] ;
                fhir:value [
                  a fhir:Code ;
-                 fhir:v "informative"
+                 fhir:v "trial-use"
                ]
              ] [
                fhir:url [
@@ -6755,7 +6755,7 @@
                ] ;
                fhir:value [
                  a fhir:Code ;
-                 fhir:v "informative"
+                 fhir:v "trial-use"
                ]
              ] [
                fhir:url [
@@ -6811,7 +6811,7 @@
                ] ;
                fhir:value [
                  a fhir:Code ;
-                 fhir:v "informative"
+                 fhir:v "trial-use"
                ]
              ] [
                fhir:url [
@@ -6981,7 +6981,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -7038,7 +7038,7 @@
            ] ;
            fhir:value [
              a fhir:Code ;
-             fhir:v "informative"
+             fhir:v "trial-use"
            ]
          ] [
            fhir:url [
@@ -7170,6 +7170,34 @@
          ] ;
          fhir:title [ fhir:v "FHIR Artifacts" ] ;
          fhir:generation [ fhir:v "html" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status>
+           ] ;
+           fhir:value [
+             a fhir:Code ;
+             fhir:v "informative"
+           ]
+         ] [
+           fhir:url [
+             fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/tools/StructureDefinition/ig-page-name>
+           ] ;
+           fhir:value [
+             a fhir:Url ;
+             fhir:v "artifacts-by-api.html"^^xsd:anyURI ;
+             fhir:l fhir:artifacts-by-api.html
+           ]
+         ] ) ;
+         fhir:name [
+           a fhir:Url ;
+           fhir:v "artifacts-by-api.html"^^xsd:anyURI ;
+           fhir:l fhir:artifacts-by-api.html
+         ] ;
+         fhir:title [ fhir:v "Artifacts by API" ] ;
+         fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [

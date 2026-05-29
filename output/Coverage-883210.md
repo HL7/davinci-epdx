@@ -12,7 +12,7 @@
 
 version: 1; Last updated: 2020-10-28 09:26:23+0000
 
-Profile: [HRex Member Match Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html)
+Profile: [HRex Member Match Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/1.2.0/StructureDefinition-hrex-coverage.html)
 
 **identifier**: Member Number/1039399818
 

@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -352,17 +362,7 @@
 
 
 <p>
-<p>Returns dispensed prescriptions for a specific patient.
-NOTE: This Pdex SearchParameter definition extends the usage context of
-<a href="http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">capabilitystatement-expectation</a>
- extension to formally express implementer conformance expectations for these elements:</p>
-<ul>
-  <li>multipleAnd</li>
-  <li>multipleOr</li>
-  <li>comparator</li>
-  <li>modifier</li>
-  <li>chain.</li>
-</ul>
+<p>Returns dispensed prescriptions for a specific patient.</p>
 
 </p>
 
@@ -379,26 +379,7 @@ NOTE: This Pdex SearchParameter definition extends the usage context of
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><h2>SearchParameter: PdexMedicationDispensePatient</h2><p><b> description</b> : Returns prescriptions for a specific patient<br/>
-<em>NOTE</em>: This Pdex SearchParameter definition extends the usage context of
-<a href="http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">capabilitystatement-expectation</a>
- extension to formally express implementer conformance expectations for these elements:
- - multipleAnd
- - multipleOr
- - comparator
- - modifier
- - chain
-
- </p><br/><p><b> id</b> pdex-medicationdispense-patient</p><p><b> url</b> : <b> http://hl7.org/fhir/us/core/SearchParameter/pdex-medicationdispense-patient</b>
-			</p><p><b> version</b> : 4.0.1</p><p><b> name</b> : PdexMedicationDispensePatient</p><p><b> derivedFrom</b> : http://hl7.org/fhir/SearchParameter/clinical-patient
-			</p><p><b> status</b> : active</p><p><b> experimental</b>  False</p><p><b> date</b> : 2020-07-01</p><p><b> publisher</b> : HL7 International - Financial Management</p><p><b> contact</b> : http://www.hl7.org/Special/committees/fm.cfm</p><p><b> useContext</b> : </p><p><b> jurisdiction</b> : United States of America (the) <span> (Details : {urn:iso:std:iso:3166 code 'US' = 'United States of America', given as 'United
-           States of America (the)'})</span>
-			</p>    <!-- <p>
-		<b> purpose</b> : Need to search by identifier for various infrastructural cases - mainly retrieving packages,
-         and matching as part of a chain</p> --><p><b> code</b> : <code>patient</code>
-			</p><p><b> base</b> :MedicationDispense</p><p><b> type</b> : reference</p><p><b> expression</b> : <code>MedicationDispense.subject.where(resolve() is Patient)</code>
-			</p><p><b> xpath</b> : <code>f:MedicationDispense/f:subject</code>
-			</p><p><b> xpathUsage</b> : normal</p><p><b> multipleOr</b> : True   (Conformance Expectation = MAY)</p><p><b> multipleAnd</b> : True  ( Conformance Expectation = MAY)</p></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>SearchParameter: PdexMedicationDispensePatient — Returns dispensed prescriptions for a specific patient.</p></div>
 
   <!-- insert notes if present -->
   
@@ -445,7 +426,7 @@ NOTE: This Pdex SearchParameter definition extends the usage context of
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

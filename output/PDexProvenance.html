@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -268,11 +278,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsi">
+  <table class="colstu">
     <tr>
   
       <td>
-        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
         
       </td>
   
@@ -298,9 +308,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p><a href="USCoreProcedure.html">Previous Page - US Core Procedure</a></p>
 
+<p><strong>Two distinct Provenance obligations.</strong> This IG places Provenance requirements at two different scopes, which it is important to keep separate. The exact conformance strength for each scope is expressed only in its own <code class="language-plaintext highlighter-rouge">&sect;pdex-NNN</code> markers (cited below) — this introductory paragraph is descriptive only and does not itself create new conformance.</p>
+
+<ol>
+  <li><strong>Per-exchange Transmitter Provenance</strong> — required by <a href="overview.html">&sect;pdex-127 on the Overview page</a>. For <em>any</em> PDex information exchange, the Health Plan provides a Provenance record that, at a minimum, identifies the Health Plan as the Transmitter of the data in that exchange. This is a per-exchange / per-bundle obligation and is not optional. The exact strength of this requirement is recorded at &sect;pdex-127.</li>
+  <li><strong>Per-resource Author/Source Provenance</strong> — recommended by <span class="fhir-conformance">pdex-04 and </span><span class="fhir-conformance">pdex-04 and </span><a href="handlingdataprovenance.html">Handling Data Provenance</a>). In addition to the per-exchange Transmitter Provenance, where the Health Plan can identify the upstream <em>origin</em> of a member-related resource (e.g., the contributing organization or practitioner as Author, or the Health Plan itself as Source when the record was generated internally or transformed from a non-FHIR format), the Health Plan is recommended to provide a Provenance resource describing that origin alongside the resource. This per-resource Provenance is <em>in addition to</em> the per-exchange Transmitter Provenance required by <span class="fhir-conformance">pdex-127, not a substitute for it. The exact strength of these recommendations is recorded at </span><span class="fhir-conformance">pdex-127, not a substitute for it. The exact strength of these recommendations is recorded at </span></li>
+</ol>
+
 <p><span id="pdex-04" class="fhir-conformance"><a name="ci-c-pdex-04"> </a> When a Health Plan forwards information as a FHIR Resource it <strong>SHOULD</strong> create related Provenance record(s) to reflect the original source. <a href="narrative-conformance.html#ci-c-pdex-04"><sup>&sect;pdex-04</sup></a></span></p>
 
-<p><span id="pdex-05" class="fhir-conformance"><a name="ci-c-pdex-05"> </a> A Provenance resource <strong>SHOULD</strong> be provided with each member-related resource provided by the Health Plan's FHIR API. <a href="narrative-conformance.html#ci-c-pdex-05"><sup>&sect;pdex-05</sup></a></span></p>
+<p><span id="pdex-05" class="fhir-conformance"><a name="ci-c-pdex-05"> </a> A Provenance resource describing the upstream origin (Author or Source) <strong>SHOULD</strong> be provided with each member-related resource provided by the Health Plan's FHIR API. <a href="narrative-conformance.html#ci-c-pdex-05"><sup>&sect;pdex-05</sup></a></span> This is the per-resource recommendation described above; it is in addition to the per-exchange Transmitter Provenance required by &sect;pdex-127.</p>
 
 <p><span id="pdex-06" class="fhir-conformance"><a name="ci-c-pdex-06"> </a> This <strong>SHOULD</strong> be used to: <a href="narrative-conformance.html#ci-c-pdex-06"><sup>&sect;pdex-06</sup></a></span></p>
 <ul>
@@ -680,7 +697,7 @@ the resources returned by the search query.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -104,32 +104,8 @@
   fhir:type [ fhir:v "token"] ; # 
   fhir:expression [ fhir:v "Group.code"] ; # 
   fhir:xpathUsage [ fhir:v "normal"] ; # 
-  fhir:multipleOr [
-     fhir:v true ;
-     fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
-       ] ;
-       fhir:value [
-         a fhir:Code ;
-         fhir:v "MAY"
-       ]
-     ] )
-  ] ; # 
-  fhir:multipleAnd [
-     fhir:v true ;
-     fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation>
-       ] ;
-       fhir:value [
-         a fhir:Code ;
-         fhir:v "MAY"
-       ]
-     ] )
-  ] . # 
+  fhir:multipleOr [ fhir:v true] ; # 
+  fhir:multipleAnd [ fhir:v true] . # 
 
 # -------------------------------------------------------------------------------------
 

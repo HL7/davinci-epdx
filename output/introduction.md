@@ -7,7 +7,7 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Overview](overview.md)
 
@@ -34,7 +34,7 @@ The STU 2.1 Version of the PDex IG introduces two important new Interactions:
 1. Payer-to-Payer Bulk Exchange.
 1. Payer-Provider Bulk Exchange.
 
-Payer-Provider Bulk Exchange is a bulk exchange of data for Members that have not chosen to opt-out of data sharing with providers. This exchange effectively supercedes the original Payer Provider exchange that used CDS Hooks.
+Payer-Provider Bulk Exchange is a bulk exchange of data for Members that have not chosen to opt-out of data sharing with providers. This exchange effectively supersedes the original Payer Provider exchange that used CDS Hooks.
 
 Payer-to-Payer Bulk Exchange is a bulk exchange of data for Members that have opted in to enable a payer to retrieve data from a prior plan.
 
@@ -81,7 +81,7 @@ Member/Patient Consent for scenarios covered in this Implementation Guide fall i
 
 #### Payer-to-Payer Exchange
 
-Under the CMS Prior Authorization Rule (CMS-0057) the Payer-to-Payer API is an op-in API. A member must actively opt-in to have their payer retrieve data from their prior payer. The member must provide the necessary coverage and demographics information to their health plan to enable them to be matched by their prior payer.
+Under the CMS Prior Authorization Rule (CMS-0057) the Payer-to-Payer API is an opt-in API. A member must actively opt-in to have their payer retrieve data from their prior payer. The member must provide the necessary coverage and demographics information to their health plan to enable them to be matched by their prior payer.
 
 Claims and Encounter data included in the data exchange is required to exclude financial data.
 
@@ -153,7 +153,7 @@ The PDex Implementation Guide (IG) will utilize existing HL7 FHIR Profiles in th
 1. HL7 FHIR US Core STU6 v6.1.0 (based on FHIR R4 -[/STU6.1](http://hl7.org/fhir/us/core/STU6.1))
 1. Da Vinci HRex IG profiles (based on FHIR R4 -[http://hl7.org/fhir/us/davinci-hrex/](http://hl7.org/fhir/us/davinci-hrex/)).
 
-Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superceding US Core 3.1.1. Prior to that date Implementers may choose to implement either version of US Core.
+Note: The ONC HTI-1 rule has set a date for January 1, 2026 when US Core 6.1.0 becomes the base standard, superseding US Core 3.1.1. Prior to that date Implementers may choose to implement either version of US Core.
 
 This Implementation Guide recognizes that Electronic Medical Record systems used by providers may have existing FHIR APIs that are based on versions of FHIR prior to FHIR R4, with DSTU2 (Argonaut) being the most popular implementation.
 
@@ -217,7 +217,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 * [USCore CarePlan Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-careplan.html)
 * [USCore CareTeam Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-careteam.html)
 * [USCore Condition Encounter Diagnosis Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-encounter-diagnosis.html)
-* [USCore Condition Problems and Health Concerns Profile](http://hl7.org/fhir/us/core/STU6.1StructureDefinition-us-core-condition-problems-health-concerns.html)
+* [USCore Condition Problems and Health Concerns Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-problems-health-concerns.html)
 * [USCore Coverage Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-coverage.html)
 * [USCore Implantable Device Profile](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-implantable-device.html)
 * [USCore DiagnosticReport Profile for Laboratory Results Reporting](http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-diagnosticreport-lab.html)
@@ -269,7 +269,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 * [USCore CarePlan Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-careplan.html)
 * [USCore CareTeam Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-careteam.html)
 * [USCore Condition Encounter Diagnosis Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-condition-encounter-diagnosis.html)
-* [USCore Condition Problems and Health Concerns Profile](http://hl7.org/fhir/us/core/STU7StructureDefinition-us-core-condition-problems-health-concerns.html)
+* [USCore Condition Problems and Health Concerns Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-condition-problems-health-concerns.html)
 * [USCore Coverage Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-coverage.html)
 * [USCore Implantable Device Profile](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-implantable-device.html)
 * [USCore DiagnosticReport Profile for Laboratory Results Reporting](http://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-diagnosticreport-lab.html)
@@ -321,7 +321,7 @@ In addition, US Core 3.1.1 uses the [Vital Signs Profile](http://hl7.org/fhir/R4
 * [PDex Provider Consent](StructureDefinition-pdex-provider-consent.md)
 * [PDex Device](StructureDefinition-pdex-device.md)
 * [PDex PriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
-* [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.md) - USCore 3.1.1 implementations only. Superceded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0
+* [PDex MedicationDispense](StructureDefinition-pdex-medicationdispense.md) - USCore 3.1.1 implementations only. Superseded by MedicationDispense profile in US Core 6.1.0 and US Core 7.0.0.
 * [PDex Provenance](StructureDefinition-pdex-provenance.md).
 
 ### CapabilityStatement (STU3 - US Core 3.1.1, US Core 6.1.0 and US Core 7.0.0)
@@ -352,7 +352,7 @@ The Capability Statements in this IG are:
 
 #### Conformance Expectations
 
-§pdex-101: This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide. § As well, profiles in this implementation guide make use of the [mustSupport](http://hl7.org/fhir/R4/profiling.html#mustsupport) element. Base expectations for the interpretations of these terms are set in the [FHIR core specification](http://hl7.org/fhir/R4/conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex](http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html).
+§pdex-101: This implementation guide uses specific terminology such as **SHALL**, **SHOULD**, **MAY** to flag statements that have relevance for the evaluation of conformance with the guide. § As well, profiles in this implementation guide make use of the [mustSupport](http://hl7.org/fhir/R4/profiling.html#mustsupport) element. Base expectations for the interpretations of these terms are set in the [FHIR core specification](http://hl7.org/fhir/R4/conformance-rules.html#conflang) and general Da Vinci-wide expectations are [defined in HRex](http://hl7.org/fhir/us/davinci-hrex/1.2.0/conformance.html).
 
 ### MustSupport
 
@@ -360,7 +360,7 @@ The Capability Statements in this IG are:
 
 §pdex-103: PDex Responders **SHALL** be capable of populating all data elements as part of the query results as specified by the PDex and US Core Server Capability Statement. § §pdex-104: PDex Requestors **SHALL** be capable of processing resource instances containing the data elements without generating an error or causing the application to fail. § §pdex-105: In other words PDex Requestors **SHOULD** be capable of displaying the data elements for human use or storing it for other purposes. § §pdex-106: In situations where information on a particular data element is not present and the reason for absence is unknown, PDex Responders **SHALL NOT** include the data elements in the resource instance returned as part of the query results. § §pdex-107: When querying PDex Responders, PDex Requestors **SHALL** interpret missing data elements within resource instances as data not present in the PDex Responder’s system. § §pdex-108: In situations where information on a particular data element is missing and the PDex Responder knows the precise reason for the absence of data, PDex Responders **SHALL** send the reason for the missing information using values (such as nullFlavors) from the value set where they exist or using the dataAbsentReason extension. § §pdex-109: PDex Requestors **SHALL** be able to process resource instances containing data elements asserting missing information. §
 
-Additional information about MustSupport can be found in the [Da Vinci HRex Conformance Page](http://hl7.org/fhir/us/davinci-hrex/STU1.1/conformance.html#mustsupport) and the [US Core Must Support page](http://hl7.org/fhir/us/core/STU7/must-support.html).
+Additional information about MustSupport can be found in the [Da Vinci HRex Conformance Page](http://hl7.org/fhir/us/davinci-hrex/1.2.0/conformance.html#mustsupport) and the [US Core Must Support page](http://hl7.org/fhir/us/core/STU7/must-support.html).
 
 NOTE: Typically PDex Responder Actor = Server and PDex Requestor Actor = Client NOTE: Readers are advised to understand FHIR Terminology requirements, FHIR RESTful API based on the HTTP protocol, along with FHIR Data Types, FHIR Search and FHIR Resource formats before implementing PDex requirements.
 

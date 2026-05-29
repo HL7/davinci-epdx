@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -386,7 +396,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Family History.</li>
 </ul>
 
-<p><span id="pdex-386" class="fhir-conformance"><a name="ci-c-pdex-386"> </a> These types of data <strong>SHALL</strong> be mapped to FHIR clinical resources as follows: <a href="narrative-conformance.html#ci-c-pdex-386"><sup>&sect;pdex-386</sup></a></span></p>
+<p><span id="pdex-386" class="fhir-conformance"><a name="ci-c-pdex-386"> </a> Where a payer elects to exchange any of the data types listed above, the table below identifies the FHIR R4 / US Core profile that the payer <strong>MAY</strong> use for each. <a href="narrative-conformance.html#ci-c-pdex-386"><sup>&sect;pdex-386</sup></a></span> The list is illustrative for the use case described on this page; this Use Case Scenarios page is informative, and nothing in the table should be read as adding a normative obligation beyond what is required by the relevant regulation or by the conformance statements on the operation-specific pages of this IG. In particular, data types that are not within the scope of the applicable regulatory data-exchange obligation (for example, Family History, or non-Implantable Devices) are listed here only to illustrate possible mapping choices for payers that voluntarily exchange them; this IG does not require payers to support those data types.</p>
 
 <style>
     table{
@@ -532,7 +542,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -65,9 +65,9 @@
       {
         "id": "Group.type",
         "path": "Group.type",
-        "short": "Type of group (provider treatment relationship)",
-        "definition": "Fixed to 'device' to represent a collection of providers with treatment relationships",
-        "patternCode": "device",
+        "short": "Type of group (practitioners with treatment relationship)",
+        "definition": "Fixed to 'practitioner'. The Group's members are healthcare providers (Practitioner or PractitionerRole references) who have a treatment relationship with the member identified in Group.characteristic. Group.type SHALL reflect the type of entities in Group.member[]; per FHIR R4 the appropriate code for a group whose members are healthcare providers is 'practitioner'.",
+        "patternCode": "practitioner",
         "mustSupport": true
       },
       {
@@ -100,7 +100,15 @@
         "id": "Group.managingEntity",
         "path": "Group.managingEntity",
         "short": "The Payer managing this treatment relationship",
-        "definition": "Reference to the Payer organization that is managing and maintaining this treatment relationship group",
+        "definition": "Reference to the Payer organization that is managing and maintaining this treatment relationship group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
         "mustSupport": true
       },
       {

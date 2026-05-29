@@ -10,7 +10,7 @@
 | :--- |
 | *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
 
-Profile: [HRex Member Match Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html)
+Profile: [HRex Member Match Coverage Profile](http://hl7.org/fhir/us/davinci-hrex/1.2.0/StructureDefinition-hrex-coverage.html)
 
 **identifier**: Member Number/234567
 

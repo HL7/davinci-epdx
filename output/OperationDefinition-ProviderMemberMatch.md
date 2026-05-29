@@ -13,7 +13,7 @@
 | **Copyright/Legal**: Used by permission of HL7 International, all rights reserved Creative Commons License | |
 
  
-Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests. 
+Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests. 
 
 The matched members returned in the MatchedMembers Group can be used directly with the $davinci-data-export operation on the Group resource to retrieve bulk FHIR data for all matched members. The $davinci-data-export operation will return a manifest file referencing the bulk data files containing the member health information in ndjson format.
 
@@ -75,7 +75,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
       "value" : "http://www.hl7.org/Special/committees/fm"
     }]
   }],
-  "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.",
+  "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -84,7 +84,7 @@ The matched members returned in the MatchedMembers Group can be used directly wi
     }]
   }],
   "code" : "provider-member-match",
-  "comment" : "The Group resources returned by this operation can be used as input to the $davinci-data-export operation to perform bulk member matching and retrieve the associated bulk member health history data.",
+  "comment" : "The complete output structure conforms to the [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.html) Parameters profile, which defines slices for MatchedMembers, NonMatchedMembers, and ConsentConstrainedMembers.",
   "resource" : ["Group"],
   "system" : false,
   "type" : true,
@@ -115,15 +115,6 @@ The matched members returned in the MatchedMembers Group can be used directly wi
       "targetProfile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"]
     },
     {
-      "name" : "CoverageToLink",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "documentation" : "Optional: The member's new coverage information to link to (e.g., during plan transitions).",
-      "type" : "Coverage",
-      "targetProfile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"]
-    },
-    {
       "name" : "Consent",
       "use" : "in",
       "min" : 1,
@@ -136,27 +127,27 @@ The matched members returned in the MatchedMembers Group can be used directly wi
   {
     "name" : "MatchedMembers",
     "use" : "out",
-    "min" : 0,
+    "min" : 1,
     "max" : "1",
-    "documentation" : "A Group resource containing members successfully matched and for whom a treatment relationship has been confirmed. This Group can be used with the $davinci-data-export operation to retrieve bulk data.",
+    "documentation" : "A Group resource containing members successfully matched in the payer's records, for whom the provider's treatment attestation has been verified, and who have not opted out of Provider Access API data sharing. The Group Id returned in this parameter is the input to the $davinci-data-export operation for bulk data retrieval. This Group is the response artifact and is distinct from the long-lived Member-Provider Treatment Relationship Group (pdex-treatment-relationship) the payer maintains for governance and audit purposes. **Cardinality 1..1** — emitted even when `Group.member[]` is empty, so the matched-Group identifier is always available for the subsequent `$davinci-data-export` step.",
     "type" : "Group",
-    "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-treatment-relationship"]
+    "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-match"]
   },
   {
     "name" : "NonMatchedMembers",
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "A Group resource containing members for whom no match could be found in the payer's member records, or for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements.",
+    "documentation" : "A Group resource containing members for whom no match could be found in the payer's records OR for whom the provider's treatment attestation could not be verified or does not meet the payer's requirements. Both failure types are reported in this single Group; consumers can distinguish the specific reason via the Group's characteristic code or the per-member context if required by the payer.",
     "type" : "Group",
-    "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-no-match-group"]
+    "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"]
   },
   {
     "name" : "ConsentConstrainedMembers",
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "A Group resource containing members who have opted out of data sharing with providers or this specific provider.",
+    "documentation" : "A Group resource containing members who were successfully matched in the payer's records but who have opted out of data sharing via the Provider Access API. Returned via the [Member Opt-Out Group profile](StructureDefinition-pdex-member-opt-out.html). **Privacy default — SHOULD suppress when opt-out status is sensitive.** A member who opts out of data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. Where the payer determines that disclosing opt-out status to the requesting provider — i.e., distinguishing 'opted out' from 'not matched' — would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress this `ConsentConstrainedMembers` parameter and instead include the affected members in the `NonMatchedMembers` Group. This makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome, protecting opt-out status from disclosure. Payers that determine no such concern applies (for example, in jurisdictions where opt-out disclosure is permitted, or where the member has not requested suppression) **MAY** continue to return this Group, which preserves the type-level distinction between opt-out and no-match outcomes for operational use by the requester.",
     "type" : "Group",
     "targetProfile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"]
   }]

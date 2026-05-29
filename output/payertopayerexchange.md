@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Provider Access (v2)](provider-access-api-v2.md)
 
@@ -18,7 +18,7 @@ The Exchange of all of a member's clinical data, as scoped by USCDI version 1 an
 
 The CMS Prior Authorization Rule (CMS-0057) limits the data to be exchanged via Payer-to-Payer APIs to Five years prior to the date of the request.
 
-§pdex-191: Payers **SHALL** implement Payer-to-Payer Exchange for a single member by following the content provided in this section of the IG. §
+§pdex-191: A Payer that implements Payer-to-Payer Exchange for a single member — for example, to support legacy CMS-9115-style member-initiated payer-to-payer requests or any other use case for which single-member exchange is more appropriate than multi-member bulk exchange — **SHALL** do so by following the content provided in this section of the IG. § Single-member Payer-to-Payer Exchange is **not** itself required by CMS-0057; the Bulk Payer-to-Payer Exchange (see §pdex-192 below) is the method required by that rule. A Payer that implements only the Bulk Payer-to-Payer Exchange remains conformant with this IG.
 
 §pdex-192: Payers **SHALL** implement the Bulk Payer-to-Payer Exchange detailed in this IG on the [Payer-to-Payer Bulk Exchange](payertopayerbulkexchange.md) page to exchange information for multiple members. § Bulk Payer-to-Payer Exchange §pdex-193: **MAY** be used to exchange data for a SINGLE member. §
 
@@ -168,16 +168,16 @@ Once Health Plans have completed the Member Access stage of the Exchange the req
 | [US Core PractitionerRole](https://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole) | PractitionerRole |
 | [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure) | Procedure |
 | [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html) | Coverage |
-| [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md) | Prior Authorization |
+| [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.md) | ExplanationOfBenefit |
 | [PDex Provenance](StructureDefinition-pdex-provenance.md)[US Core Provenance](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html) | Provenance |
 
-The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.1) which defines the following non-financial profiles:
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.2) which defines the following non-financial profiles:
 
-* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
-* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
-* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
-* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
-* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 ### Query all clinical resources individually
 
@@ -194,12 +194,13 @@ The following resource/profiles relevant to the PDex IG are retrievable using th
 Example of _type parameter:
 
 ```
-_type= AllergyIntolerance,CarePlan,CareTeam,Condition,Device,DiagnosticReport,DocumentReference,Encounter,
-       Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,Patient,Procedure,Provenance
+_type= AllergyIntolerance,CarePlan,CareTeam,Condition,Coverage,Device,DiagnosticReport,DocumentReference,Encounter,
+       ExplanationOfBenefit,Goal,Immunization,Medication,MedicationDispense,MedicationRequest,Observation,
+       Patient,Practitioner,PractitionerRole,Procedure,Provenance
 
 ```
 
-§pdex-214: The server **SHOULD** filter the ExplanationOfBenefit resource to include only PDex Prior Authorization § profiled records. e.g., ExplanationOfBenefit.use does not equal "claim".
+§pdex-214: The data returned by `$everything` for the requesting payer **SHALL** include the same set of resources and profiles as any other in-scope retrieval method (see §pdex-210 and the [Data Retrieval Methods table](#data-retrieval-methods)) — including both Prior Authorization `ExplanationOfBenefit` records (PDex Prior Authorization profile) and Claims / Encounter `ExplanationOfBenefit` records (CARIN BB Non-Financial Basis profiles), per the regulatory data-exchange obligation. § A client that wishes to retrieve only a subset (for example, only Prior Authorization records, or only claims) **MAY** narrow the response by supplying the `_type` parameter or by filtering client-side after retrieval. The server **SHALL NOT** silently exclude claim `ExplanationOfBenefit` records from the response unless the requester is not permitted to access them under §pdex-218 / §pdex-219 (in which case the server filters per the access-control rule, not per this section).
 
 ### Bulk FHIR Asynchronous protocols
 

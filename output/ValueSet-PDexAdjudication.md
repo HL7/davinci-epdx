@@ -67,7 +67,7 @@ Describes the various amount fields used when payers receive and adjudicate a cl
   "title" : "PDex Adjudication",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -106,7 +106,7 @@ Describes the various amount fields used when payers receive and adjudicate a cl
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/adjudication",
-      "version" : "1.0.1",
+      "version" : "4.0.1",
       "concept" : [{
         "code" : "submitted"
       },
@@ -125,10 +125,10 @@ Describes the various amount fields used when payers receive and adjudicate a cl
     },
     {
       "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
-      "version" : "2.1.0",
+      "version" : "2.2.0",
       "concept" : [{
         "code" : "coinsurance",
-        "display" : "Coinsurance"
+        "display" : "Co-insurance"
       },
       {
         "code" : "noncovered",

@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -424,12 +434,12 @@ group information may also vary by payment systems.</p>
 <!-- Content Logical Definition heading in the fragment -->
   <h3>Logical Definition (CLD)</h3>
 <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="PDexPAInstitutionalProcedureCodesVS"> </a><a name="hcPDexPAInstitutionalProcedureCodesVS"> </a><p>This value set includes codes based on the following rules:</p>
-<ul><li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-CPT.html"><code>http://www.ama-assn.org/go/cpt</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li>
+<ul><li>Include all codes defined in <a href="http://terminology.hl7.org/6.5.0/CodeSystem-CPT.html"><code>http://www.ama-assn.org/go/cpt</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li>
 <li>Include all codes defined in <a href="http://terminology.hl7.org/5.3.0/CodeSystem-hcpcs-Level-II.html"><code>https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li>
-<li>Include all codes defined in <a href="http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html"><code>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li>
-<li>Include these codes as defined in <a href="http://terminology.hl7.org/7.1.0/CodeSystem-data-absent-reason.html"><code>http://terminology.hl7.org/CodeSystem/data-absent-reason</code></a><span title="Version is explicitly stated to be 1.0.0"> version &#x1F4CD;1.0.0</span>
+<li>Include all codes defined in <a href="http://terminology.hl7.org/6.5.0/CodeSystem-HIPPS.html"><code>https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes</code></a><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span></li>
+<li>Include these codes as defined in <a href="http://tx.fhir.org/r4"><code>http://terminology.hl7.org/CodeSystem/data-absent-reason</code></a><span title="Version is explicitly stated to be 4.0.1"> version &#x1F4CD;4.0.1</span>
 <table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr>
-<tr><td><a href="http://terminology.hl7.org/7.1.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-applicable">not-applicable</a></td>
+<tr><td><a href="http://tx.fhir.org/r4/ValueSet/data-absent-reason#data-absent-reason-not-applicable">not-applicable</a></td>
 <td>Not Applicable</td>
 <td>There is no proper value for this element (e.g. last menstrual period for a male).</td></tr></table></li></ul></div>
 
@@ -437,7 +447,7 @@ group information may also vary by payment systems.</p>
   <a name="expansion"> </a>
   <h3 id="expansion">Expansion</h3>
 
-  <p style="border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px" title="No Expansion for this valueset (Unknown Code System&lt;!-- [Unable to expand imported value set: Error from https://tx.fhir.org/r4: Error: The code System &amp;quot;http://www.ama-assn.org/go/cpt&amp;quot; has a grammar, and cannot be enumerated directly, Error from https://tx.fhir.org/r4: Error: The code System &amp;quot;http://www.ama-assn.org/go/cpt&amp;quot; has a grammar, and cannot be enumerated directly] --&gt;)">No Expansion for this valueset (Unknown Code System<!-- [Unable to expand imported value set: Error from https://tx.fhir.org/r4: Error: The code System &quot;http://www.ama-assn.org/go/cpt&quot; has a grammar, and cannot be enumerated directly, Error from https://tx.fhir.org/r4: Error: The code System &quot;http://www.ama-assn.org/go/cpt&quot; has a grammar, and cannot be enumerated directly] -->)</p>
+  <p style="border: maroon 1px solid; background-color: #FFCCCC; font-weight: bold; padding: 8px" title="This value set cannot be expanded because of the way it is defined - it has an infinite number of members&lt;!-- [Error from https://tx.fhir.org/r4: Error: The code System &amp;quot;http://www.ama-assn.org/go/cpt&amp;quot; has a grammar, and cannot be enumerated directly] --&gt;">This value set cannot be expanded because of the way it is defined - it has an infinite number of members<!-- [Error from https://tx.fhir.org/r4: Error: The code System &quot;http://www.ama-assn.org/go/cpt&quot; has a grammar, and cannot be enumerated directly] --></p>
 
 
   <hr/>
@@ -519,7 +529,7 @@ group information may also vary by payment systems.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

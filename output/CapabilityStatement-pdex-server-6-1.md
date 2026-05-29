@@ -93,12 +93,6 @@ This Section describes the expected capabilities of the PDex with US Core 6.1 Su
   "copyright" : "Used by permission of HL7 International, all rights reserved Creative Commons License",
   "kind" : "requirements",
   "instantiates" : ["http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"],
-  "_instantiates" : [{
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-      "valueCode" : "SHALL"
-    }]
-  }],
   "fhirVersion" : "4.0.1",
   "format" : ["json", "xml"],
   "_format" : [{
@@ -2162,6 +2156,16 @@ This Section describes the expected capabilities of the PDex with US Core 6.1 Su
         "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic",
         "type" : "token",
         "documentation" : "multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true. multipleOr: The parameter may only have one value (no comma separators)."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-code",
+        "type" : "token",
+        "documentation" : "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
       }],
       "operation" : [{
         "name" : "bulk-member-match",
@@ -3822,7 +3826,7 @@ This Section describes the expected capabilities of the PDex with US Core 6.1 Su
         "valueCode" : "SHOULD"
       }],
       "type" : "Questionnaire",
-      "supportedProfile" : ["http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"],
+      "supportedProfile" : ["http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|4.0.0"],
       "_supportedProfile" : [{
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",

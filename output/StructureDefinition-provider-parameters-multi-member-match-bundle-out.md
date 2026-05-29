@@ -19,7 +19,7 @@ A Parameters profile defining the result of a $bulk-member-match operation perfo
 
 * Examples for this Profile: [Parameters/provider-member-match-response-001](Parameters-provider-member-match-response-001.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/provider-parameters-multi-member-match-bundle-out)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-provider-parameters-multi-member-match-bundle-out.json)
 
 ### Formal Views of Profile Content
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
   "title" : "Provider $multi-member-match Response",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -213,11 +213,11 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       "id" : "Parameters.parameter:ConsentConstrainedMembers.resource",
       "path" : "Parameters.parameter.resource",
       "short" : "Group of members who opted out",
-      "definition" : "A Group resource containing references to members who have opted out of Provider Access API. The payer has successfully matched these members but cannot provide access due to the member's consent preferences.",
-      "comment" : "Members in this group have affirmatively opted out of sharing their data with providers through the Provider Access API. This is distinct from non-matched members - these members exist in the payer's system and were matched, but have exercised their privacy rights to prevent data sharing. Providers should not attempt to access data for these members through the Provider Access API and should use traditional methods (e.g., requesting records directly from the patient or other providers) if access to this information is needed for treatment.",
+      "definition" : "A Group resource conforming to the [Member Opt-Out Group profile](StructureDefinition-pdex-member-opt-out.html) containing references to members who have opted out of Provider Access API data sharing. The payer has successfully matched these members but cannot provide access due to the member's consent preferences.",
+      "comment" : "Members in this group have affirmatively opted out of sharing their data with providers through the Provider Access API. This is distinct from non-matched members - these members exist in the payer's system and were matched, but have exercised their privacy rights to prevent data sharing. The Member Opt-Out Group profile preserves the type-level distinction between opt-out and no-match outcomes (which use the separate Provider Member No Match Group profile). Providers should not attempt to access data for these members through the Provider Access API and should use traditional methods (e.g., requesting records directly from the patient or other providers) if access to this information is needed for treatment.\n\n**Privacy default — SHOULD suppress when opt-out status is sensitive.** A member who opts out of data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. Where the payer determines that disclosing opt-out status to the requesting provider — i.e., distinguishing 'opted out' from 'not matched' — would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress this `ConsentConstrainedMembers` parameter and instead include the affected members in the `NonMatchedMembers` Group, making the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The cardinality on this slice is `0..1`, so suppression is conformant. Payers that determine no such concern applies **MAY** continue to populate this slice.",
       "type" : [{
         "code" : "Group",
-        "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-provider-member-no-match"]
+        "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-member-opt-out"]
       }]
     }]
   }

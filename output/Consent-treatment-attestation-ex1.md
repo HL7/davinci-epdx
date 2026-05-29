@@ -27,7 +27,7 @@ Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relation
   "scope" : {
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
-      "code" : "treatment"
+      "code" : "patient-privacy"
     }]
   },
   "category" : [{
@@ -49,11 +49,17 @@ Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relation
   },
   "dateTime" : "2024-12-10T14:30:00Z",
   "performer" : [{
-    "reference" : "Practitioner/provider-001",
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1234567893"
+    },
     "display" : "Dr. Susan Smith, MD"
   }],
   "organization" : [{
-    "reference" : "Organization/provider-org-001",
+    "identifier" : {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1982947230"
+    },
     "display" : "Springfield Medical Center"
   }],
   "sourceReference" : {
@@ -78,7 +84,10 @@ Treatment Attestation by Dr. Susan Smith for Robert Johnson - Treatment relation
         }]
       },
       "reference" : {
-        "reference" : "Practitioner/provider-001",
+        "identifier" : {
+          "system" : "http://hl7.org/fhir/sid/us-npi",
+          "value" : "1234567893"
+        },
         "display" : "Dr. Susan Smith"
       }
     }],

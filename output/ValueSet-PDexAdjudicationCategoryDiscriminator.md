@@ -66,7 +66,7 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
   "title" : "PDex Adjudication Category Discriminator",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -111,7 +111,7 @@ Used as the discriminator for adjudication.category and item.adjudication.catego
     },
     {
       "system" : "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication",
-      "version" : "2.1.0"
+      "version" : "2.2.0"
     },
     {
       "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexAdjudicationDiscriminator"
