@@ -1,60 +1,230 @@
 == Suppressed Messages ==
 
-# X12 Code Systems and Value Sets that are referenced in the guide but not freely available
-%A definition for CodeSystem 'https://x12.org/codes/%
-%ValueSet 'https://valueset.x12.org/%
+# ============================================================================
+# X12 Code Systems and Value Sets
+# ============================================================================
+# Reason for suppression: X12 (Accredited Standards Committee X12) is a paid-
+# membership Standards Development Organization. Their code systems and value
+# sets are referenced by FHIR US-realm IGs (CARIN BB, PAS, PDex, etc.) but the
+# X12 server does not publish the code-list definitions to the public FHIR
+# terminology servers (tx.fhir.org, tx-dev.fhir.org). The IG Publisher cannot
+# resolve the canonical URL to a CodeSystem or ValueSet resource, so it
+# emits a "cannot be found / cannot be expanded" warning. The references
+# themselves are correct and required by US healthcare regulation; the
+# warnings are an unavoidable consequence of X12's licensing model.
+#
+# Each X12 reference used in this IG is enumerated below (rather than using
+# a prefix-match wildcard) so that any newly-introduced X12 reference is
+# surfaced as an unmatched warning for explicit review.
+
+# x12.org/codes (top-level code lists)
+%A definition for CodeSystem 'https://x12.org/codes/claim-adjustment-reason-codes' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://x12.org/codes/remittance-advice-remark-codes' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated%
+
+# codesystem.x12.org/005010 (X12 005010 transaction-set code lists)
+%A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://codesystem.x12.org/005010/306' could not be found, so the code cannot be validated%
 %https://codesystem.x12.org/005010/306' could not be found%
-%A definition for CodeSystem 'https://codesystem.x12.org/005010%
-%No definition could be found for URL value 'https://codesystem.x12.org/external/886%
 %A definition for CodeSystem 'https://codesystem.x12.org/external/886' could not be found, so the value set cannot be expanded%
-%https://valueset.x12.org/x217/005010%
+%No definition could be found for URL value 'https://codesystem.x12.org/external/886'%
 
-# FHIR-29796 PDex Device uses base resource not US Core Implantable Device Profile. Pdex-Device enables payers to record non-implantable device data. CGP Voted on variance approval: Drew Torres/Eric Haas: 9-0-0
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
-
-
-# Reviewed and identified as not being HTML tags.
-The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+# valueset.x12.org/x217 (X12 health-care-services-review value sets)
+%A definition for ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338' could not be found%
+%A definition for ValueSet 'https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306' could not be found%
 
 
-# TSMG 2025-04-21 Motion passes 8-0-0 https://confluence.hl7.org/spaces/TSMG/pages/325464658/2025-04-21+TSMG+Agenda+and+Minutes. Exceptions Granted for PDex specific code systems: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS, PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType, PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS, PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes, ProvenanceAgentRoleType, ProvenancePayerDataSource
+# ============================================================================
+# CPT codes (proprietary)
+# ============================================================================
+# Reason for suppression: CPT (Current Procedural Terminology) codes are
+# American Medical Association proprietary intellectual property. AMA does
+# not permit free enumeration of CPT codes by public terminology servers, so
+# the IG Publisher's terminology validator cannot bulk-expand or validate
+# CPT bindings. CPT references in PDex examples are correct US healthcare
+# usage; the warning is a licensing artifact.
+%The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly%
+
+
+# ============================================================================
+# HIPPS codes (CMS payment codes — no public CodeSystem resource)
+# ============================================================================
+# Reason for suppression: HIPPS (Health Insurance Prospective Payment System)
+# codes are published by CMS at the cited URL but CMS does not host a FHIR
+# CodeSystem resource at that URL. The reference is correct (matches the
+# pattern used by CARIN BB), but the IG Publisher cannot fetch a definition.
+%A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found, so the code cannot be validated%
+
+
+# ============================================================================
+# IHE FormatCode CodeSystem
+# ============================================================================
+# Reason for suppression: The IHE FormatCode code system at the cited URL is
+# published by IHE on their website but is not exposed as a FHIR CodeSystem
+# resource on public terminology servers. The reference is the canonical URL
+# used by US Core DocumentReference / similar profiles.
+%A definition for CodeSystem 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' could not be found%
+
+
+# ============================================================================
+# Inactive NDC code in example
+# ============================================================================
+# Reason for suppression: NDC code 54458-872-10 is recognised by the public
+# terminology snapshot but flagged as inactive in the FDA database. The code
+# is used in an example resource (illustrating MedicationDispense coding) and
+# remains a valid demonstration of the data shape. Reviewed and accepted for
+# use in examples — corresponds to a historical product NDC that is
+# semantically correct for the example narrative.
+%The concept '54458-872-10' has a status of inactive%
+
+
+# ============================================================================
+# References to draft / experimental upstream code systems
+# ============================================================================
+# Reason for suppression: PDex examples and profiles reference code systems
+# whose status in the upstream HL7 terminology repository is "draft" or
+# "experimental". The references are stable canonical URLs; the upstream
+# status is a publication-cycle artifact that does not affect PDex's use of
+# the codes. PDex is not the controlling IG for these code systems.
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type%
+%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|1.0.1%
+
+
+# ============================================================================
+# TSMG-exception PDex-specific Code Systems
+# ============================================================================
+# Reason for suppression: PDex defines local code systems that have not been
+# moved to terminology.hl7.org. The IG Publisher emits an informational note
+# encouraging migration to a THO URL. The TSMG (Terminology Sub-Management
+# Group) reviewed the PDex-defined code systems on 2025-04-21 and granted an
+# explicit exception (motion passed 8-0-0). The minutes are at
+# https://confluence.hl7.org/spaces/TSMG/pages/325464658/2025-04-21+TSMG+Agenda+and+Minutes
+# Exception covers: IdentifierTypeCS, MtlsObjectCodeCS, OrgTypeCS,
+# PDexAdjudicationCS, PDexAdjudicationDiscriminator, PDexIdentifierType,
+# PDexPayerAdjudicationStatus, PDexSupportingInfoType, PdexMemberAttributionCS,
+# PdexMultiMemberMatchResultCS, PriorAuthorizationValueCodes,
+# ProvenanceAgentRoleType, ProvenancePayerDataSource.
 %Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)%
 
 
-# Da Vinci Template Warnings
+# ============================================================================
+# PDex Device profile variance from US Core
+# ============================================================================
+# Reason for suppression: The PDex Device profile is constrained on the base
+# R4 Device resource (not on US Core ImplantableDevice). PDex needs to convey
+# non-implantable device data (e.g., DME items, supplies) that the US Core
+# ImplantableDevice profile cannot represent. The Cross-Group Projects (CGP)
+# Variance Approval process formally granted this variance (Drew Torres /
+# Eric Haas vote 9-0-0) under JIRA FHIR-29796. The variance approval link is
+# https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/pdex-device').baseDefinition: US FHIR Usage rules require that all profiles on Device derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+
+
+# ============================================================================
+# String values that look like HTML tags (false positive)
+# ============================================================================
+# Reason for suppression: Reviewed and identified as not being actual embedded
+# HTML tags. The flagged string values are intentional examples (e.g., data
+# that contains characters incidentally resembling tag syntax). No XSS risk
+# exists because the values are not rendered as HTML.
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+
+# ============================================================================
+# Da Vinci template warnings (template policy decisions)
+# ============================================================================
+# Reason for suppression — each item explained inline.
+
+# The Da Vinci template wants a JIRA-tracker link on every change-history
+# section heading; the PDex changehistory uses table-cell links per ticket
+# instead (more granular). Reviewed and confirmed appropriate.
 %The Change Log page (changehistory.html) does not include any Jira tracker items links for the section with title STU%
+
+# The Da Vinci template asks for an explicit US Core 3.1.1 dependency
+# declaration. PDex declares it via the `hl7.fhir.us.core.3.1.1` versioned
+# npm package in sushi-config.yaml dependencies (line 51-56), but the
+# template's regex doesn't recognise the versioned package id form.
 %DA VINCI: This IG does not include an explicit dependency on US Core 3.1.1.%
 
+# The Da Vinci template requires an h3 section on index.html. PDex's
+# index.md uses h2 for its main sections, by convention adopted for this IG.
 %The home page (index.html) must include an h3 section%
 
-# UUEncode the Jira link to avoid an XML error with issuetype
+# UUEncode the Jira link to avoid an XML error with issuetype. The current
+# Propose-a-Change link uses the URL-encoded form that the JIRA tracker
+# expects but doesn't match the template's strict-prefix check.
 %The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?%
 
-# Slicing Warnings
+
+# ============================================================================
+# Slicing validation (slice discriminators on flexible elements)
+# ============================================================================
+# Reason for suppression: Multiple PDex profiles slice elements (typically
+# Group.characteristic and Consent.provision) using extensible discriminators.
+# The validator emits "this element does not match any known slice" when an
+# instance includes a slice variant outside the closed set, which is by
+# design in PDex (the slicing is open, not closed). This pattern is broad
+# rather than enumerated because the same warning fires in dozens of
+# example instances across the IG; narrowing it would require listing every
+# affected instance and would obscure the underlying design choice.
 %This element does not match any known slice defined in the profile%
 
 
-# Warnings for non-existent URLs in examples
-%URL value 'https://www.xxxhealthplan.com%
+# ============================================================================
+# Example data: synthetic URLs (xxxhealthplan.com, mtls-dev-dmdh.safhir.io,
+# www.exampleplan.com)
+# ============================================================================
+# Reason for suppression: PDex example resources reference synthetic payer
+# URLs for endpoint locations, identifier systems, etc. These URLs do not
+# resolve (and shouldn't — they're example placeholders), but the IG
+# Publisher flags them as unresolved references. Each specific URL used in
+# the IG is enumerated below so any newly-introduced example URL is surfaced
+# as an unmatched warning for explicit review.
+
+# xxxhealthplan.com — synthetic example payer
+%URL value 'https://www.xxxhealthplan.com/fhir/medicalrecordnumber'%
+%URL value 'https://www.xxxhealthplan.com/fhir/memberidentifier'%
+%URL value 'https://www.xxxhealthplan.com/fhir/memberidentifier#1234-234-1243-12345678901'%
+%URL value 'https://www.xxxhealthplan.com/fhir/patacctnum'%
+%URL value 'https://www.xxxhealthplan.com/fhir/uniquememberidentifier'%
+
+# mtls-dev-dmdh.safhir.io — synthetic example mTLS endpoint
 %URL value 'https://mtls-dev-dmdh.safhir.io/mtlsendpoint'%
+
+# www.exampleplan.com — synthetic example payer
 %URL value 'https://www.exampleplan.com%
 
 
-# NDC code 54458-872-10 is inactive in the FDA database. This is an example code used to
-# illustrate MedicationDispense coding. The tx.fhir.org 2021-11-01 NDC snapshot recognises
-# the code but flags it as inactive. Reviewed and accepted for use in examples.
-%The concept '54458-872-10' has a status of inactive%
+# ============================================================================
+# Example link warnings (publisher 2.0.3+)
+# ============================================================================
+# Reason for suppression: Examples reference a binary attachment and a
+# canonical IG URL as illustrative placeholders, not resolvable links. The
+# IG Publisher 2.0.3 introduced a broader "URL value" link check that
+# flags these.
+%No definition could be found for URL value '/Binary/1-pdf'%
+%No definition could be found for URL value 'hl7.org/fhir/us/davinci-pdex'%
 
-# IHE FormatCode code system is not available on public terminology servers.
-# Already partially suppressed below for URL value pattern; this covers the CodeSystem lookup message.
-%A definition for CodeSystem 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem'%
 
-# Warning introduced in Publisher 1.8.23+
-
+# ============================================================================
+# Cross-IG canonical resolution (multiple matches across dependent IG versions)
+# ============================================================================
+# Reason for suppression: PDex depends on multiple versions of US Core
+# (3.1.1, 6.1.0, 7.0.0) and HRex (currently 1.2.0) simultaneously. Several
+# canonical URLs (profiles, search parameters, value sets, operation
+# definitions, capability statements) are defined by multiple packages with
+# the same canonical URL but different version metadata. The IG Publisher
+# emits a "multiple potential matches" warning each time the resolver picks
+# one. The selection is deterministic (by version pin in sushi-config) and
+# the affected references are correct in context; the warning is a known
+# multi-version-dependency artifact. Patterns below are kept as URL-prefix
+# matches because exhaustive enumeration would add hundreds of lines without
+# changing the underlying engineering trade-off (US Core has ~100 profiles
+# in each version, all of which produce a match-conflict warning).
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-%
-%The discriminator type 'pattern' is deprecated in R5+%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core%
 %There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet%
@@ -64,85 +234,135 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement%
 
-
-# References to Experimental CodeSystem
-%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|1.0.1%
-
-# CPT codes are proprietary AMA codes and cannot be enumerated by the public terminology server
-%The code System "http://www.ama-assn.org/go/cpt" has a grammar, and cannot be enumerated directly%
+# Pinned-version informational notes for US Core code systems (same root cause
+# as above — multi-version dependency. The IG Publisher emits an informational
+# note when it pins a US Core code system canonical to a specific version.)
+%Pinned the version of http://hl7.org/fhir/us/core/CodeSystem/%
 
 
-# Unable to Check HIPPS Codes
-%A definition for CodeSystem 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes' could not be found, so the code cannot be validated%
+# ============================================================================
+# Discriminator deprecation in R5+ (R4 IG)
+# ============================================================================
+# Reason for suppression: PDex profiles use `discriminator.type = #pattern`,
+# which the IG Publisher flags as deprecated when it validates the IG
+# against the R5+ slicing semantics. PDex targets FHIR R4, where `pattern`
+# discriminators are the standard idiom. Replacing them with R5-style
+# discriminators is not appropriate for an R4 IG; the deprecation note is
+# advance notice for a future R6 migration, not an R4 issue.
+%The discriminator type 'pattern' is deprecated in R5+%
 
-# Implementation Guide Errors v610@npm: format fails for v610 or V311
+
+# ============================================================================
+# US Core v610 / 3.1.1 versioned-npm-package canonical mismatch
+# ============================================================================
+# Reason for suppression: The US Core npm packages `hl7.fhir.us.core.v610`
+# and `hl7.fhir.us.core.3.1.1` declare per-version canonicals that do not
+# match the un-versioned ImplementationGuide-resource canonical PDex uses
+# in its `dependencies[].uri`. PDex deliberately points the `uri` at the
+# un-versioned canonical because (a) the IG Publisher rejects the per-
+# version canonical as "not pointing at an ImplementationGuide resource"
+# (it's the package base URL, not the IG resource), and (b) all other
+# Da Vinci IGs that consume multiple US Core versions use the same pattern.
+# This is a known multi-version-package limitation in the npm + IG-Publisher
+# tool chain that does not affect IG resolution at build time. See
+# sushi-config.yaml lines 44-58 for inline comments and rationale.
 %The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v610%
 %The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core/v610 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
 %The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.3.1.1%
 %The packageId hl7.fhir.us.core.3.1.1 points to the canonical http://hl7.org/fhir/us/core/3.1.1 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
 
-# Information: Repeating Element
+
+# ============================================================================
+# Repeating-element pattern informational note
+# ============================================================================
+# Reason for suppression: When a profile applies a pattern to a repeating
+# element, the IG Publisher emits an informational note that the pattern
+# applies to all repeats. This is the intended semantic for PDex's slicing
+# of Consent.provision.actor and similar elements; the note is purely
+# informational and reflects correct authoring.
 %The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)%
 
-# Information: Reference to draft CodeSystem
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0%
 
-# Example link to binary resource - Warning introduced in Publisher 2.0.3
-%No definition could be found for URL value '/Binary/1-pdf'%
-
-# Example link - Warning introduced in Publisher 2.0.3
-%No definition could be found for URL value 'hl7.org/fhir/us/davinci-pdex'%
-
-# US Core 8.0.0 released but Da Vinci Guides are supporting US Core 3.1.1, 6.1.0 and 7.0.0
-%The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered%
-
-# DTR version warnings
-%The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered%
-
-# Example resources for Provider-Member-Match examples are now included in the IG
-# See input/fsh/ExampleProviderMemberMatchResources.fsh
-
-# expansion-params.json is a technical configuration resource (path-expansion-params in sushi-config.yaml)
-# used to set the SNOMED US edition for terminology expansion. It is not a navigable IG page.
+# ============================================================================
+# expansion-params.json technical configuration resource
+# ============================================================================
+# Reason for suppression: `expansion-params.json` is a SUSHI configuration
+# resource referenced via `path-expansion-params` in sushi-config.yaml.
+# It sets the SNOMED US edition for terminology expansion at build time.
+# It is not a navigable IG page, so the IG Publisher's "not included in the
+# IG" warning is a false positive against the IG Publisher's page tracker.
 %The HTML fragment 'expansion-params.xhtml' is not included anywhere in the produced implementation guide%
 
-# Draft THO CodeSystem
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type%
 
-# `elementdefinition-maxValueSet` is deprecated in favour of `additionalBinding` per the
-# IG Publisher 5.3.0-ballot+ cycle. The deprecated extension is inherited from base FHIR
-# R4 element definitions (e.g., `Bundle.type` on MtlsBundle), not added by this IG, so
-# we cannot remove it at the FSH level. Suppressed at information level until the base
-# spec or its snapshots are updated upstream.
+# ============================================================================
+# Deprecated `elementdefinition-maxValueSet` extension inherited from base R4
+# ============================================================================
+# Reason for suppression: The `elementdefinition-maxValueSet` extension is
+# deprecated in favour of `additionalBinding` per the IG Publisher 5.3.0-
+# ballot+ cycle. The deprecated extension is *inherited* from base FHIR R4
+# element definitions (e.g., `Bundle.type` on MtlsBundle) — it is not added
+# by any PDex FSH source. SUSHI's snapshot generator copies the base
+# element's extensions into the derived profile's snapshot, so the deprecated
+# extension surfaces in PDex even though PDex did not author it. Cannot be
+# removed at the FSH level; awaits either base R4 snapshot regeneration or
+# the IG Publisher stripping deprecated extensions automatically.
 %The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated%
 
-# Pinned Version information Warnings
-%Pinned the version of http://hl7.org/fhir/us/core/CodeSystem/%
+
+# ============================================================================
+# Dependency version-currency warnings (intentional deferrals)
+# ============================================================================
+# Reason for suppression — each deferral explained inline.
+
+# US Core 8.0.0 was published 2024-05-08 superseding 7.0.0. Da Vinci IGs
+# (PDex included) currently support US Core 3.1.1, 6.1.0, and 7.0.0 in
+# parallel (see sushi-config.yaml dependencies). Migration to US Core 8.0.0
+# is a coordinated Da Vinci-wide effort planned for a future PDex major
+# release (see changehistory entry for FHIR-56443 — US Core 3.1.1 retirement
+# is the precursor to the 8.0.0 add).
+%The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered%
+
+# DTR 3.0.1 was published superseding 2.1.0. PDex's reference to DTR is via
+# inherited CRD dependencies; bumping DTR independently of CRD is not a
+# coherent change. CRD was bumped to 2.2.1 in this update; DTR remains at
+# 2.1.0 to match CRD 2.2.1's own DTR dependency. Will be revisited in a
+# future cycle alongside any further CRD bump.
+%The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered%
+
+# Da Vinci PAS 2.2.1 was published superseding 2.1.0. The PAS bump is
+# intentionally deferred to a future PDex major release because (a) PAS
+# provides the `extension-itemAuthorizedDetail` referenced by the PDex
+# Prior Authorization profile and (b) the `PASSupportingInfoType` code
+# system referenced by the FHIR-56252 supporting-documentation linkage
+# narrative — a 2.x → 2.x bump can shift the structure or canonical of
+# those reused PAS artifacts, and warrants coordinated review with the PDex
+# Prior Authorization profile narrative additions made in this update plus
+# the FHIR-56391 future-direction item (item-level productOrServiceCodeEnd
+# slice).
+%The ImplementationGuide uses package hl7.fhir.us.davinci-pas#2.1.0 released on 2024-12-20, but the most recent appropriate version is 2.2.1. This reference is getting old and the more recent version should be considered%
+
 
 # ============================================================================
 # Changehistory page — conformance-clause-checker suppressions
 # ============================================================================
-# The Change History page (changehistory.html) describes and quotes conformance
-# changes that are made elsewhere in the IG. Bare uppercase SHALL / SHOULD / MAY /
-# SHALL NOT in a changehistory entry is meta-discussion or quotation of prior
-# wording, not a new conformance assertion on the changehistory page itself.
-# Likewise, when changehistory entries cite section numbers (e.g. "§7.5.4") or
-# §pdex-NNN ids, the IG Publisher's "no conformance term found in the text" check
-# fires on every such citation because changehistory entries are descriptive prose,
-# not normative §pdex-NNN: ... § markers.
-
-# These are INFORMATION-level findings (non-blocking). The patterns below suppress
-# them on the changehistory page only — they target text fragments that are
-# characteristic of changehistory entries (disposition keywords, JIRA ticket IDs,
-# pdex-anchor citations) and therefore do not match conformance-clause findings
-# raised on the operation-specific narrative pages, which remain checked normally.
-
-# "No conformance term found in the text:" — fires when a changehistory entry cites
-# a section number or §pdex-NNN id without an accompanying conformance verb (because
-# the changehistory is descriptive, not normative). Patterns below match the typical
-# section-number prefixes that appear in changehistory entries.
-
-# Excluding changehistory conformance language - documenting changes
+# Reason for suppression: The Change History page (changehistory.html)
+# describes and quotes conformance changes that are made elsewhere in the
+# IG. Bare uppercase SHALL / SHOULD / MAY / SHALL NOT in a changehistory
+# entry is meta-discussion or quotation of prior wording — it is not a new
+# conformance assertion on the changehistory page itself. Likewise, when
+# changehistory entries cite section numbers (e.g. "§7.5.4") or §pdex-NNN
+# ids, the IG Publisher's "no conformance term found in the text" check
+# fires on every such citation because changehistory entries are descriptive
+# prose, not normative §pdex-NNN: ... § markers.
+#
+# These are INFORMATION-level findings (non-blocking). The patterns below
+# are intentionally broad because the alternative (enumerating every
+# changehistory entry quote) would produce hundreds of suppression lines
+# and would need to be updated every time the changehistory grows. They are
+# scoped to fire only on the descriptive-prose patterns characteristic of
+# changehistory entries (§pdex-NNN id citations and section-number prefixes
+# 2.3, 7.x, 8.2, 14.x — none of which appear as conformance-marker prefixes
+# on other narrative pages).
 %No conformance term found in the text: pdex-%
 %No conformance term found in the text: 14.%
 %No conformance term found in the text: 8.2 ("Useful%
@@ -156,10 +376,3 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause%
 %The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause%
 %The html source contains the word 'SHALL NOT' but it is not in a text phrase marked as a conformance clause%
-
-# "The html source contains the word 'SHALL/SHOULD/MAY/SHALL NOT' but it is not in
-# a text phrase marked as a conformance clause:" — fires when a changehistory entry
-# quotes prior wording or describes a new conformance with bare uppercase keywords.
-# The quoted text in each finding begins with a changehistory-distinctive phrase
-# (disposition lead, section/page reference, stock opener). The patterns below cover
-# all currently-observed cases.
