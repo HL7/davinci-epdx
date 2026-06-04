@@ -18,9 +18,15 @@
 # surfaced as an unmatched warning for explicit review.
 
 # x12.org/codes (top-level code lists)
+# Two message variants per code system: "code cannot be validated" fires during
+# instance validation; "value set cannot be expanded" fires when the terminology
+# server (tx.fhir.org) attempts to expand a ValueSet that includes the code system.
 %A definition for CodeSystem 'https://x12.org/codes/claim-adjustment-reason-codes' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://x12.org/codes/claim-adjustment-reason-codes' could not be found, so the value set cannot be expanded%
 %A definition for CodeSystem 'https://x12.org/codes/remittance-advice-remark-codes' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://x12.org/codes/remittance-advice-remark-codes' could not be found, so the value set cannot be expanded%
 %A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the code cannot be validated%
+%A definition for CodeSystem 'https://x12.org/codes/service-type-codes' could not be found, so the value set cannot be expanded%
 
 # codesystem.x12.org/005010 (X12 005010 transaction-set code lists)
 %A definition for CodeSystem 'https://codesystem.x12.org/005010/1338' could not be found, so the code cannot be validated%
@@ -30,8 +36,49 @@
 %No definition could be found for URL value 'https://codesystem.x12.org/external/886'%
 
 # valueset.x12.org/x217 (X12 health-care-services-review value sets)
+# The IG Publisher emits several distinct message formats for the same missing
+# X12 valueset.x12.org URL depending on whether the validator is checking an
+# instance, a StructureDefinition snapshot, or a differential binding.  All
+# formats refer to the same two licensed value sets and are suppressed for the
+# same reason as the codesystem.x12.org entries above.
 %A definition for ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338' could not be found%
 %A definition for ValueSet 'https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306' could not be found%
+%ValueSet 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338' not found%
+%ValueSet 'https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306' not found%
+%A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338'%
+%A definition could not be found for Canonical URL 'https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306'%
+%The valueSet reference https://valueset.x12.org/x217/005010/request/2000E/UM/1/06/00/1338 on element Extension.value[x] could not be resolved%
+%The valueSet reference https://valueset.x12.org/x217/005010/response/2000F/HCR/1/01/00/306 on element Extension.value[x] could not be resolved%
+
+
+# ============================================================================
+# mTLS Endpoint MIME type binding (IANA registry too large to expand)
+# ============================================================================
+# Reason for suppression: The mTLS Endpoint profile binds
+# Endpoint.payloadMimeType to the FHIR R4 MIME types value set
+# (http://hl7.org/fhir/ValueSet/mimetypes|4.0.1).  That value set is backed
+# by the full IANA media-type registry, which is too large for the public
+# terminology server (tx.fhir.org) to expand within the validator's timeout.
+# The binding is correct and intentional; the expansion failure is a tooling
+# limitation, not a profile defect.
+%Binding http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 could not be expanded%
+
+
+# ============================================================================
+# mTLS Endpoint X.509 CA certificate signature format (validator limitation)
+# ============================================================================
+# Reason for suppression: PDex's mTLS Endpoint example uses
+# `application/x-x509-ca-cert` as the MIME type identifying the X.509 CA
+# certificate exchanged during mTLS trust establishment. The FHIR validator's
+# signature-format check has built-in knowledge of only two signature
+# formats — `application/jose` (JWS / JWT) and `application/pkcs7-signature`
+# — and emits an information-level note when it encounters any other
+# signature-format value. `application/x-x509-ca-cert` is the IANA-registered
+# media type for X.509 CA certificates and is correct for the mTLS trust
+# anchor exchange described in the mTLS Endpoint profile. The validator's
+# inability to verify the format is a tooling limitation, not a profile
+# defect; cert validation is performed by TLS infrastructure outside FHIR.
+%The signature format 'application/x-x509-ca-cert' is not checked (known formats: application/jose and application/pkcs7-signature)%
 
 
 # ============================================================================
@@ -59,11 +106,20 @@
 # ============================================================================
 # IHE FormatCode CodeSystem
 # ============================================================================
-# Reason for suppression: The IHE FormatCode code system at the cited URL is
-# published by IHE on their website but is not exposed as a FHIR CodeSystem
-# resource on public terminology servers. The reference is the canonical URL
-# used by US Core DocumentReference / similar profiles.
+# Reason for suppression: The IHE FormatCode code system identified by URL
+# `http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem` is the system
+# referenced by the FHIR R4 base ValueSet `formatcodes` (the binding for
+# DocumentReference.content.format). The URL has "ValueSet" in its path as a
+# FHIR R4 base-spec artifact, but it IS the official identifier the FHIR R4
+# binding expects — see the `compose.include[0].system` element of the R4
+# `formatcodes` ValueSet. IHE does not publish a resolvable FHIR CodeSystem
+# resource at this URL, so the IG Publisher's terminology validator cannot
+# expand it or confirm code membership, and emits both a "CodeSystem could
+# not be found" warning AND a "code is not in the value set" recommendation-
+# level info on every use. Both are suppressed; the references in PDex
+# examples are correct US Core / FHIR R4 usage.
 %A definition for CodeSystem 'http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem' could not be found%
+%The code provided (http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds:2017:mimeTypeSufficient) is not in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set%
 
 
 # ============================================================================
@@ -86,10 +142,42 @@
 # "experimental". The references are stable canonical URLs; the upstream
 # status is a publication-cycle artifact that does not affect PDex's use of
 # the codes. PDex is not the controlling IG for these code systems.
+#
+# The entries below fall into three groups, all sharing the same suppression
+# rationale:
+#   1. HL7 v3 vocabularies (v3-ActCode, v3-ActReason) — foundational code
+#      systems mandated by HIPAA / X12 / EDI and reused by FHIR R4 base
+#      bindings (Consent.purpose, security labels, treatment categories).
+#      Status "draft" in terminology.hl7.org is an HL7 publication-process
+#      artifact; the vocabularies are in widespread regulatory production use.
+#   2. FHIR R4 base / Claims-foundation bindings (consent-provision-type,
+#      consent-state-codes, consentscope, consentpolicycodes, consentaction,
+#      ex-relatedclaimrelationship, ex-diagnosistype, adjudication,
+#      fundsreserve, contractsignertypecodes, organization-type). These are
+#      inherited from base R4 ElementDefinition bindings on Consent, Claim,
+#      EOB, Contract, Organization — PDex cannot remove or alter the
+#      binding; the draft status is governed upstream.
+#   3. PDex-author-controlled references (professional-credential-status,
+#      provenance-participant-type). PDex chose to reference these because
+#      no alternative coding existed at authoring time; promotion to active
+#      status is awaited upstream.
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/professional-credential-status|1.0.0%
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type%
 %Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|1.0.1%
-
+%Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/fundsreserve|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|2018-08-12%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActReason|2018-08-12%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/contractsignertypecodes|4.0.1%
+%Reference to draft CodeSystem http://hl7.org/fhir/consent-provision-type|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/ex-diagnosistype|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/adjudication|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/consentscope|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/consentpolicycodes|4.0.1%
+%Reference to draft CodeSystem http://hl7.org/fhir/consent-state-codes|4.0.1%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/consentaction|4.0.1%
+%Reference to experimental CodeSystem http://hl7.org/fhir/us/davinci-atr/CodeSystem/atr-attribution-list-status|2.1.0%
 
 # ============================================================================
 # TSMG-exception PDex-specific Code Systems
@@ -122,6 +210,40 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-pdex/St
 
 
 # ============================================================================
+# PAS 2.2.1 extensions applied on ExplanationOfBenefit (FHIR-57521)
+# ============================================================================
+# Reason for suppression: Three Da Vinci PAS 2.2.1 extensions —
+# extension-admissionDates, extension-dischargeDate, and
+# extension-claimResponseReviewer — are adopted by the PDex Prior
+# Authorization profile (which is constrained on ExplanationOfBenefit) under
+# JIRA FHIR-57521. Their PAS-published `context` lists name only
+# ClaimResponse / ClaimResponse.item / ClaimResponse.addItem, omitting
+# ExplanationOfBenefit. This is an upstream-PAS oversight: the precedent set
+# by PAS 2.1.0 (extension-itemTraceNumber, extension-itemPreAuthIssueDate,
+# extension-itemPreAuthPeriod, extension-authorizationNumber,
+# extension-administrationReferenceNumber, extension-itemAuthorizedDetail,
+# extension-itemAuthorizedProvider) was to include `ExplanationOfBenefit` in
+# the context for every PAS extension PDex re-uses on its PA EOB profile, so
+# that PDex's adoption is validator-clean. The PAS 2.2.1 extensions appear
+# to have been authored without that broader context. PAS Technical
+# Correction ticket FHIR-57522 (https://jira.hl7.org/browse/FHIR-57522) has
+# been filed to add ExplanationOfBenefit to the contexts of admissionDates,
+# dischargeDate, and claimResponseReviewer in a future PAS patch, matching
+# the 2.1.0 precedent. The suppressions below will be removed once that
+# corrected PAS package is published and PDex consumes it.
+#
+# The PDex usage is correct and semantically aligned with PAS authoring
+# intent — adopting the PAS canonical URLs (rather than minting PDex-local
+# shim extensions) keeps the semantic surface consistent between PAS and
+# PDex implementations. The context-mismatch info messages below are the
+# residual cost of the temporary mismatch; they will clear once PAS
+# publishes the corrected contexts.
+%The extension http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-admissionDates is not allowed at this point (allowed = e:ClaimResponse.addItem, e:ClaimResponse.item; this element is [ExplanationOfBenefit.item])%
+%The extension http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-dischargeDate is not allowed at this point (allowed = e:ClaimResponse.addItem, e:ClaimResponse.item; this element is [ExplanationOfBenefit.item])%
+%The extension http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-claimResponseReviewer is not allowed at this point (allowed = e:ClaimResponse; this element is [ExplanationOfBenefit])%
+
+
+# ============================================================================
 # String values that look like HTML tags (false positive)
 # ============================================================================
 # Reason for suppression: Reviewed and identified as not being actual embedded
@@ -142,9 +264,10 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %The Change Log page (changehistory.html) does not include any Jira tracker items links for the section with title STU%
 
 # The Da Vinci template asks for an explicit US Core 3.1.1 dependency
-# declaration. PDex declares it via the `hl7.fhir.us.core.3.1.1` versioned
-# npm package in sushi-config.yaml dependencies (line 51-56), but the
-# template's regex doesn't recognise the versioned package id form.
+# declaration. PDex declares it via the `hl7.fhir.us.core.v311` multi-version
+# wrapper npm package in sushi-config.yaml dependencies, but the template's
+# regex doesn't recognise the versioned wrapper-package id form. Same pattern
+# as Da Vinci CRD (https://github.com/HL7/davinci-crd/blob/master/sushi-config.yaml).
 %DA VINCI: This IG does not include an explicit dependency on US Core 3.1.1.%
 
 # The Da Vinci template requires an h3 section on index.html. PDex's
@@ -208,39 +331,6 @@ The string value contains text that looks like embedded HTML tags. If this conte
 
 
 # ============================================================================
-# Cross-IG canonical resolution (multiple matches across dependent IG versions)
-# ============================================================================
-# Reason for suppression: PDex depends on multiple versions of US Core
-# (3.1.1, 6.1.0, 7.0.0) and HRex (currently 1.2.0) simultaneously. Several
-# canonical URLs (profiles, search parameters, value sets, operation
-# definitions, capability statements) are defined by multiple packages with
-# the same canonical URL but different version metadata. The IG Publisher
-# emits a "multiple potential matches" warning each time the resolver picks
-# one. The selection is deterministic (by version pin in sushi-config) and
-# the affected references are correct in context; the warning is a known
-# multi-version-dependency artifact. Patterns below are kept as URL-prefix
-# matches because exhaustive enumeration would add hundreds of lines without
-# changing the underlying engineering trade-off (US Core has ~100 profiles
-# in each version, all of which produce a match-conflict warning).
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core%
-%There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet%
-%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/OperationDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement%
-
-# Pinned-version informational notes for US Core code systems (same root cause
-# as above — multi-version dependency. The IG Publisher emits an informational
-# note when it pins a US Core code system canonical to a specific version.)
-%Pinned the version of http://hl7.org/fhir/us/core/CodeSystem/%
-
-
-# ============================================================================
 # Discriminator deprecation in R5+ (R4 IG)
 # ============================================================================
 # Reason for suppression: PDex profiles use `discriminator.type = #pattern`,
@@ -250,26 +340,6 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # discriminators is not appropriate for an R4 IG; the deprecation note is
 # advance notice for a future R6 migration, not an R4 issue.
 %The discriminator type 'pattern' is deprecated in R5+%
-
-
-# ============================================================================
-# US Core v610 / 3.1.1 versioned-npm-package canonical mismatch
-# ============================================================================
-# Reason for suppression: The US Core npm packages `hl7.fhir.us.core.v610`
-# and `hl7.fhir.us.core.3.1.1` declare per-version canonicals that do not
-# match the un-versioned ImplementationGuide-resource canonical PDex uses
-# in its `dependencies[].uri`. PDex deliberately points the `uri` at the
-# un-versioned canonical because (a) the IG Publisher rejects the per-
-# version canonical as "not pointing at an ImplementationGuide resource"
-# (it's the package base URL, not the IG resource), and (b) all other
-# Da Vinci IGs that consume multiple US Core versions use the same pattern.
-# This is a known multi-version-package limitation in the npm + IG-Publisher
-# tool chain that does not affect IG resolution at build time. See
-# sushi-config.yaml lines 44-58 for inline comments and rationale.
-%The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v610%
-%The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core/v610 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
-%The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.3.1.1%
-%The packageId hl7.fhir.us.core.3.1.1 points to the canonical http://hl7.org/fhir/us/core/3.1.1 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core%
 
 
 # ============================================================================
@@ -307,6 +377,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # removed at the FSH level; awaits either base R4 snapshot regeneration or
 # the IG Publisher stripping deprecated extensions automatically.
 %The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0-ballot-tc1 is deprecated%
+%The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'%
 
 
 # ============================================================================
@@ -314,13 +385,17 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # ============================================================================
 # Reason for suppression — each deferral explained inline.
 
-# US Core 8.0.0 was published 2024-05-08 superseding 7.0.0. Da Vinci IGs
+# US Core 8.x and 9.0.0 were published superseding 7.0.0. Da Vinci IGs
 # (PDex included) currently support US Core 3.1.1, 6.1.0, and 7.0.0 in
-# parallel (see sushi-config.yaml dependencies). Migration to US Core 8.0.0
-# is a coordinated Da Vinci-wide effort planned for a future PDex major
-# release (see changehistory entry for FHIR-56443 — US Core 3.1.1 retirement
-# is the precursor to the 8.0.0 add).
+# parallel (see sushi-config.yaml dependencies). Migration to a post-7.0.0
+# US Core baseline is a coordinated Da Vinci-wide effort planned for a
+# future PDex major release (see changehistory entry for FHIR-56443 —
+# US Core 3.1.1 retirement is the precursor to the new-baseline add).
+# Both the 8.0.1 and 9.0.0 forms of the "most recent appropriate version"
+# message are enumerated below so the suppression survives a publisher
+# refresh that picks up either tx-server snapshot.
 %The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 8.0.1. This reference is getting old and the more recent version should be considered%
+%The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered%
 
 # DTR 3.0.1 was published superseding 2.1.0. PDex's reference to DTR is via
 # inherited CRD dependencies; bumping DTR independently of CRD is not a
@@ -329,17 +404,6 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # future cycle alongside any further CRD bump.
 %The ImplementationGuide uses package hl7.fhir.us.davinci-dtr#2.1.0 released on 2024-12-21, but the most recent appropriate version is 3.0.1. This reference is getting old and the more recent version should be considered%
 
-# Da Vinci PAS 2.2.1 was published superseding 2.1.0. The PAS bump is
-# intentionally deferred to a future PDex major release because (a) PAS
-# provides the `extension-itemAuthorizedDetail` referenced by the PDex
-# Prior Authorization profile and (b) the `PASSupportingInfoType` code
-# system referenced by the FHIR-56252 supporting-documentation linkage
-# narrative — a 2.x → 2.x bump can shift the structure or canonical of
-# those reused PAS artifacts, and warrants coordinated review with the PDex
-# Prior Authorization profile narrative additions made in this update plus
-# the FHIR-56391 future-direction item (item-level productOrServiceCodeEnd
-# slice).
-%The ImplementationGuide uses package hl7.fhir.us.davinci-pas#2.1.0 released on 2024-12-20, but the most recent appropriate version is 2.2.1. This reference is getting old and the more recent version should be considered%
 
 
 # ============================================================================
@@ -376,3 +440,254 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause%
 %The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause%
 %The html source contains the word 'SHALL NOT' but it is not in a text phrase marked as a conformance clause%
+
+# Conformance-expectation CodeSystem (capabilitystatement-expectation extension values)
+# Shipped as status=draft in hl7.terminology. Reason for suppression: the CodeSystem
+# is the canonical, HL7-maintained mechanism for SHALL/SHOULD/MAY markers in
+# CapabilityStatements; its "draft" status is an upstream HL7 publishing-process
+# artefact and not a defect in this IG.
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/conformance-expectation|4.0.1%
+
+
+# ============================================================================
+# Cross-IG canonical resolution (multiple matches across dependent IG versions)
+# ============================================================================
+# Reason for suppression: PDex depends on multiple versions of US Core
+# (3.1.1, 6.1.0, 7.0.0) and HRex (currently 1.2.0) simultaneously. Several
+# canonical URLs (profiles, search parameters, value sets, operation
+# definitions, capability statements) are defined by multiple packages with
+# the same canonical URL but different version metadata. The IG Publisher
+# emits a "multiple potential matches" warning each time the resolver picks
+# one. The selection is deterministic (by version pin in sushi-config) and
+# the affected references are correct in context; the warning is a known
+# multi-version-dependency artifact. Patterns below are kept as URL-prefix
+# matches because exhaustive enumeration would add hundreds of lines without
+# changing the underlying engineering trade-off (US Core has ~100 profiles
+# in each version, all of which produce a match-conflict warning).
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core%
+%There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/OperationDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement%
+
+# ----------------------------------------------------------------------------
+# Pinned-version informational notes (pin-canonicals: pin-multiples)
+# ----------------------------------------------------------------------------
+# Reason for suppression: PDex declares multiple versions of US Core (3.1.1,
+# 6.1.0, 7.0.0) and Da Vinci HRex (1.0.0, 1.1.0, 1.2.0) simultaneously to
+# support payers exchanging data with providers on different US Core
+# baselines. A small number of additional package collisions exist for CARIN
+# BB (2.0.0/2.2.0), HL7 R4 core consent code systems (xver-r5 cross-version
+# pack), HL7 Terminology (multiple bundled releases), and VSAC (versioned
+# releases of the same OID). The sushi-config parameter
+# `pin-canonicals: pin-multiples` is set so the IG Publisher disambiguates
+# unversioned canonical references at build time by rewriting them to the
+# version in scope for the referencing resource. The information messages
+# below are the publisher reporting that automatic disambiguation working
+# as configured — expected publisher behaviour, not a defect in the IG.
+# Each canonical is enumerated explicitly (no internal wildcards) per FMG
+# guidance. Any newly-introduced pin will surface as an unmatched info
+# message for explicit review.
+
+# US Core — pinned to 7.0.0 (from 3.1.1 / 6.1.0 / 7.0.0)
+%Pinned the version of http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/OperationDefinition/docref to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-allergyintolerance-clinical-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-allergyintolerance-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-category to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-role to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-abatement-date to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-asserted-date to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-category to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-clinical-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-encounter to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-onset-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-recorded-date to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-coverage-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-device-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-device-status to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-device-type to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-category to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-category to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-period to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-type to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-class to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-discharge-disposition to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-id to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-identifier to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-location to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-type to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-description to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-lifecycle-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-target-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-city to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-postalcode to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-location-name to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-status to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-type to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-authoredon to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-encounter to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-intent to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-category to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-address to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-name to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-birthdate to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-death-date to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-family to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-gender to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-given to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-id to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-identifier to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-name to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-id to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-identifier to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-name to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-practitionerrole-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-practitionerrole-specialty to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-code to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-date to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-status to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-authored to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-id to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-questionnaire to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-status to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-id to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-name to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-authored to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-category to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-code to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-id to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-status to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-id to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-patient to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-location to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationdispense to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-sexual-orientation to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-specimen to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs to 7.0.0 from choices of 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+%Pinned the version of http://hl7.org/fhir/us/core/CodeSystem/us-core-provenance-participant-type to 7.0.0 from choices of 3.1.1 (hl7.fhir.us.core#3.1.1), 6.1.0 (hl7.fhir.us.core#6.1.0), 7.0.0 (hl7.fhir.us.core#7.0.0)%
+
+# Da Vinci HRex — pinned to 1.2.0 (from 1.0.0 / 1.1.0 / 1.2.0)
+%Pinned the version of http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match to 1.2.0 from choices of 1.0.0 (hl7.fhir.us.davinci-hrex#1.0.0), 1.1.0 (hl7.fhir.us.davinci-hrex#1.1.0), 1.2.0 (hl7.fhir.us.davinci-hrex#1.2.0)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent to 1.2.0 from choices of 1.0.0 (hl7.fhir.us.davinci-hrex#1.0.0), 1.1.0 (hl7.fhir.us.davinci-hrex#1.1.0), 1.2.0 (hl7.fhir.us.davinci-hrex#1.2.0)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage to 1.2.0 from choices of 1.0.0 (hl7.fhir.us.davinci-hrex#1.0.0), 1.1.0 (hl7.fhir.us.davinci-hrex#1.1.0), 1.2.0 (hl7.fhir.us.davinci-hrex#1.2.0)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization to 1.2.0 from choices of 1.0.0 (hl7.fhir.us.davinci-hrex#1.0.0), 1.1.0 (hl7.fhir.us.davinci-hrex#1.1.0), 1.2.0 (hl7.fhir.us.davinci-hrex#1.2.0)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics to 1.2.0 from choices of 1.0.0 (hl7.fhir.us.davinci-hrex#1.0.0), 1.1.0 (hl7.fhir.us.davinci-hrex#1.1.0), 1.2.0 (hl7.fhir.us.davinci-hrex#1.2.0)%
+
+# CARIN BB / R4 core / HL7 Terminology / VSAC — multi-version collisions
+%Pinned the version of http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4 to 20240606 from choices of 20170601 (us.nlm.vsac#0.7.0), 20240606 (us.nlm.vsac#0.24.0)%
+%Pinned the version of http://hl7.org/fhir/consent-provision-type to 4.0.1 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.0.0 (hl7.fhir.uv.xver-r5.r4#0.1.0)%
+%Pinned the version of http://hl7.org/fhir/consent-state-codes to 4.0.1 from choices of 4.0.1 (hl7.fhir.r4.core#4.0.1), 5.0.0 (hl7.fhir.uv.xver-r5.r4#0.1.0)%
+%Pinned the version of http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBAdjudication to 2.2.0 from choices of 2.0.0 (hl7.fhir.us.carin-bb#2.0.0), 2.2.0 (hl7.fhir.us.carin-bb#2.2.0)%
+%Pinned the version of http://terminology.hl7.org/CodeSystem/adjudication to 4.0.1 from choices of 0.1.0 (hl7.terminology.r4#3.1.0), 1.0.0 (hl7.terminology.r4#5.5.0), 1.0.1 (hl7.terminology.r4#6.3.0)%
+%Pinned the version of http://terminology.hl7.org/CodeSystem/data-absent-reason to 4.0.1 from choices of 0.1.0 (hl7.terminology.r4#3.1.0), 1.0.0 (hl7.terminology.r4#6.3.0)%
+
+# Terminology — pinned to  2014-03-26  (from 2.0.0 / 3.0.0 / 3.1.0)
+%Pinned the version of http://terminology.hl7.org/ValueSet/v3-PurposeOfUse to 2014-03-26 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#5.5.0), 3.1.0 (hl7.terminology.r4#6.3.0)%
+
+# Terminology — pinned to 2014-03-26 (from 2.0.0 / 3.0.0 only — narrower
+# version set; emitted when the dependency graph offers terminology.r4#3.1.0
+# and terminology.r4#6.3.0 but not 5.5.0)
+%Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType to 2014-03-26 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.3.0)%
+%Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode to 2014-03-26 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.3.0)%
+%Pinned the version of http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason to 2014-03-26 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.3.0)%
+%Pinned the version of http://terminology.hl7.org/ValueSet/v3-ActIncidentCode to 2014-03-26 from choices of 2.0.0 (hl7.terminology.r4#3.1.0), 3.0.0 (hl7.terminology.r4#6.3.0)%
+
+# Da Vinci PAS — pinned to 2.2.1 (from 2.1.0 / 2.2.1). The PAS 2.1.0
+# package remains reachable in the dependency graph via Da Vinci CRD 2.2.1's
+# own PAS dependency declaration; PDex declares PAS 2.2.1 directly under
+# FHIR-57521. pin-multiples disambiguates each PAS-extension canonical to
+# 2.2.1. Enumerated explicitly per FMG guidance.
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%
+%Pinned the version of http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider to 2.2.1 from choices of 2.1.0 (hl7.fhir.us.davinci-pas#2.1.0), 2.2.1 (hl7.fhir.us.davinci-pas#2.2.1)%

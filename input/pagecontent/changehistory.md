@@ -3,6 +3,25 @@
 
 {% include style_insert_table_blue.html %}
 
+
+### Da Vinci PAS 2.2.1 Conformance
+
+#### Summarizing the changes between STU 2.1.0 and STU 2.2.0
+
+The PDex IG has been the subject of significant industry feedback. The latest Peer review generated over 50 tickets. As a result the IG has benefited from contributions from industry. indeed the primary driver for creation of this STU 2.2.0 version of the PDex IG was the request from the industry to create a Provider Access API that more closely matched Provide rworkflows, and was significantly easier for Payers to maintain the Treatment Relationships lists that the CMS-0057 regulation required.
+. 
+The focus for the post STU2.1.0 changes to the PDex IG can therefore be summarized as follows:
+- The addition of a new Provider-member-match operation, enabling Providers to submit a list of patients they wanted to receive information about. This is the Provider Access V2 additon to the IG. It does not change the operation of the original Provider Access API (now named V1). The Provider Access V2 match operation simply creates a dynamic group, that is evaluated and agreed by the payer, before returning the group identifier to enable the davinci-data-export operation. Without this refinement a unparameterized request by a provider to the davinci-data-export operation could result in all information for all attributed members to be returned to the provider. This is a dramatically bigger API request that could result in entire histories for thousands of members to be compiled and returned to the requesting provider. Provider Access V2 therefore enables a provider to request information for the members they are actively treating in the immediate/near future.
+
+- Provider Access V1 has not been removed. It is still planning to be used by Payers to enable information about a fixed group of members to be communicated to a Provider. This use case is well-suited to the sharing of informaiton with providers enagaged in Value-based Care contracts.
+
+- The other change implemented in PDex STU 2.2.0 is intended to simplift alignemnt with federal regulation. PDex initially supported Da Vinci PAS STU 2.1.0. However, CMS-0062-F is proposing that IG's STU 2.2.1 version be come a required version. This latest version of the PDex IG therefore implements support for Da Vinci PAS STU 2.2.1. This required the addition of new PAS ClaimeResponse extensions, introduced in PAS STU 2.2.1. This is being done to simplify the conversion of resources from Da Vinci PAS ClaimResponse to PDex Prior Authorization ExplanationOfBenefit profile. This change may however require a minor technical correction in Da Vinci PAs to expand the contecxt for use of the newly added extensions. Currently those extensions are limited to use in a Claim Response. A similar change had to be accommodated in a previous version of the Da Vinci PAS IG. 
+
+| JIRA Ticket | Disposition |
+|---|---|
+| [FHIR-57521](https://jira.hl7.org/browse/FHIR-57521) | Bump PAS dependency to 2.2.1 and adopt new ClaimResponse-side extensions on the PDex Prior Authorization profile (`extension-admissionDates`, `extension-dischargeDate`, `extension-claimResponseReviewer`). Pairs with PAS Technical Correction [FHIR-57522](https://jira.hl7.org/browse/FHIR-57522) to broaden the three extensions' context to include `ExplanationOfBenefit`. |
+
+
 ### STU2.2.0 Peer Review Reconciliation
 
 All items in this section were reconciled and approved as Block Vote 2 at the HL7 Financial Management Working Group meeting (FM WGM) on 2026-05-18. Motion: Mark Scrimshire / Rick Geimer. Vote: 5-0-0 (Affirmative-Negative-Abstain).

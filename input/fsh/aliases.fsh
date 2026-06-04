@@ -146,7 +146,7 @@ Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias: $CMSHIPPSCodes = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias: $CMSRemittanceAdviceRemarkCodes = https://x12.org/codes/remittance-advice-remark-codes
 
-// Da Vinci Prior Authorization Support 1.2.0-ballot
+// Da Vinci Prior Authorization Support (PAS) 2.2.1
 Alias: $ExtensionItemTraceNumber = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber
 Alias: $ExtensionItemPreAuthIssueDate = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthIssueDate
 Alias: $ExtensionItemPreAuthPeriod = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemPreAuthPeriod
@@ -156,6 +156,14 @@ Alias: $ExtensionItemAuthorizedDate = http://hl7.org/fhir/us/davinci-pas/Structu
 Alias: $ExtensionItemAuthorizedDetail = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedDetail
 Alias: $ExtensionItemAuthorizedProvider = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemAuthorizedProvider
 Alias: $ExtensionCommunicatedDiagnosis = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis
+// PAS 2.2.1 additions adopted under FHIR-57521 — applied on EOB context
+// (PAS extension contexts list ClaimResponse only; PDex relies on the
+// FHIR-57522 coordination ticket against PAS to add ExplanationOfBenefit
+// to these extensions' contexts in a future PAS patch, matching the
+// 2.1.0 precedent for itemTraceNumber / itemPreAuthIssueDate / etc.).
+Alias: $ExtensionAdmissionDates = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-admissionDates
+Alias: $ExtensionDischargeDate = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-dischargeDate
+Alias: $ExtensionClaimResponseReviewer = http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-claimResponseReviewer
 
 
 //Other Aliases
