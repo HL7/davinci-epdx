@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -396,7 +406,7 @@ These APIs are:</p>
   <li><a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a></li>
 </ul>
 
-<p>Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That 
+<p>Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to member data. That 
 method has been superseded by the <a href="provider-access-api.html">Provider Access API</a> that meets the requirements of
 the CMS Prior Authorization Rule (CMS-0057).</p>
 
@@ -429,7 +439,9 @@ data payloads covered by this IG.</p>
 
 <p>Since Health Plans compile information from many sources to create a Member's Health History, it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.</p>
 
-<p><span id="pdex-125" class="fhir-conformance"><a name="ci-c-pdex-125"> </a> Health Plans <strong>SHOULD</strong> accept and retain provenance records that they receive as part of any exchange of FHIR data. <a href="narrative-conformance.html#ci-c-pdex-125"><sup>&sect;pdex-125</sup></a></span> <span id="pdex-126" class="fhir-conformance"><a name="ci-c-pdex-126"> </a> Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan <strong>SHOULD</strong> create FHIR Provenance record(s) to identify the source of the information being exchanged. <a href="narrative-conformance.html#ci-c-pdex-126"><sup>&sect;pdex-126</sup></a></span> <span id="pdex-127" class="fhir-conformance"><a name="ci-c-pdex-127"> </a> Health Plans <strong>SHALL</strong> provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange. <a href="narrative-conformance.html#ci-c-pdex-127"><sup>&sect;pdex-127</sup></a></span></p>
+<p><span id="pdex-125" class="fhir-conformance"><a name="ci-c-pdex-125"> </a> Health Plans <strong>SHOULD</strong> accept and retain provenance records that they receive as part of any exchange of FHIR data. <a href="narrative-conformance.html#ci-c-pdex-125"><sup>&sect;pdex-125</sup></a></span> <span id="pdex-126" class="fhir-conformance"><a name="ci-c-pdex-126"> </a> Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan <strong>SHOULD</strong> create FHIR Provenance record(s) to identify the source of the information being exchanged. <a href="narrative-conformance.html#ci-c-pdex-126"><sup>&sect;pdex-126</sup></a></span></p>
+
+<p><span id="pdex-127" class="fhir-conformance"><a name="ci-c-pdex-127"> </a> For each PDex information exchange, the Health Plan <strong>SHALL</strong> provide at least one <code class="language-plaintext highlighter-rouge">Provenance</code> resource naming the Health Plan as the Transmitter of the data — i.e., a <code class="language-plaintext highlighter-rouge">Provenance</code> whose <code class="language-plaintext highlighter-rouge">agent[].type</code> includes a <code class="language-plaintext highlighter-rouge">Transmitter</code> entry and whose <code class="language-plaintext highlighter-rouge">agent.who</code> references the Health Plan's <code class="language-plaintext highlighter-rouge">Organization</code>, with <code class="language-plaintext highlighter-rouge">target[]</code> referencing the resources transmitted in the exchange. <a href="narrative-conformance.html#ci-c-pdex-127"><sup>&sect;pdex-127</sup></a></span> This is an <strong>exchange-level (per-bundle)</strong> obligation: a single Transmitter Provenance per exchange satisfies <span class="fhir-conformance">pdex-127. The Health Plan is <strong>not</strong> required to add a Transmitter <code class="language-plaintext highlighter-rouge">agent</code> entry to every per-resource Provenance that the exchange may also carry; per-resource Author/Source Provenance records (see </span>pdex-05 / &sect;pdex-04 on the <a href="PDexProvenance.html">PDex Provenance</a> page) are retained as-is alongside the exchange-level Transmitter Provenance. The Transmitter Provenance is <strong>in addition to</strong> any per-resource Author/Source Provenance returned with the data, not a substitute for it. See <a href="PDexProvenance.html">PDex Provenance — Two distinct Provenance obligations</a> for the full distinction between the per-exchange Transmitter requirement and the per-resource Author/Source recommendation.</p>
 
 <p><span id="pdex-128" class="fhir-conformance"><a name="ci-c-pdex-128"> </a> In the case of historical data, the Health Plan <strong>SHOULD</strong> identify the author, source and source format of the data. <a href="narrative-conformance.html#ci-c-pdex-128"><sup>&sect;pdex-128</sup></a></span></p>
 
@@ -480,7 +492,7 @@ data payloads covered by this IG.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

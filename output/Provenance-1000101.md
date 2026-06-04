@@ -16,8 +16,8 @@ Profile: [PDex Provenance](StructureDefinition-pdex-provenance.md)
 
 Provenance for: 
 
-* [Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation](Encounter-6.md)
-* [Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Patient encounter procedure](Encounter-7.md)
+* [Encounter: status = finished; class = Ambulatory (v3 Code System ActCode#AMB); type = Consultation](Encounter-6.md)
+* [Encounter: status = finished; class = Ambulatory (v3 Code System ActCode#AMB); type = Patient encounter procedure](Encounter-7.md)
 
 Summary
 

@@ -7,11 +7,11 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Use Case Scenarios](usecasescenarios.md)
 
-***This page was published in STU1.0. It has been superceded by the Provider Access API requirements in the CMS Prior Authorization Rule (CMS-0057). There has been limited, if any implementation of the CDS Hooks capability defined in this guide. This section on CDS Hooks will be removed in the next version of this IG. ***
+***This page was published in STU1.0. It has been superseded by the Provider Access API requirements in the CMS Prior Authorization Rule (CMS-0057). There has been limited, if any implementation of the CDS Hooks capability defined in this guide. This section on CDS Hooks will be removed in the next version of this IG. ***
 
 This section of the implementation guide defines the specific conformance requirements for systems wishing to conform to this Payer Data Exchange (PDex) Implementation Guide. The bulk of it focuses on the implementation of the CDS Hooks Specification to meet PDex use-cases. It also describes the use of SMART on FHIR and provides guidance on privacy, security and other implementation requirements.
 

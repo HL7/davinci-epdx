@@ -19,7 +19,7 @@ A Parameters profile defining the inputs to a $bulk-member-match operation perfo
 
 * Examples for this Profile: [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/provider-parameters-multi-member-match-bundle-in)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-provider-parameters-multi-member-match-bundle-in.json)
 
 ### Formal Views of Profile Content
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
   "title" : "Provider $multi-member-match Request",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -239,31 +239,6 @@ Other representations of profile: [CSV](StructureDefinition-provider-parameters-
       "type" : [{
         "code" : "Consent",
         "profile" : ["http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-treatment-relationship-consent"]
-      }]
-    },
-    {
-      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink",
-      "path" : "Parameters.parameter.part",
-      "sliceName" : "CoverageToLink",
-      "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "BackboneElement"
-      }]
-    },
-    {
-      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink.name",
-      "path" : "Parameters.parameter.part.name",
-      "short" : "Optional coverage to link (typically not used)",
-      "definition" : "CoverageToLink is typically not used in provider-initiated member match requests as providers are not linking historical coverage to new coverage. This element is only relevant for payer-to-payer member match operations.",
-      "patternString" : "CoverageToLink"
-    },
-    {
-      "id" : "Parameters.parameter:MemberBundle.part:CoverageToLink.resource",
-      "path" : "Parameters.parameter.part.resource",
-      "type" : [{
-        "code" : "Coverage",
-        "profile" : ["http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"]
       }]
     }]
   }

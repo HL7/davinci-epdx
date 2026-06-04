@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -268,11 +278,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsi">
+  <table class="colstu">
     <tr>
   
       <td>
-        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
         
       </td>
   
@@ -290,6 +300,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation" id="markdown-toc-when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation">When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)</a></li>
   <li><a href="#provider-access-api" id="markdown-toc-provider-access-api">Provider Access API</a>    <ul>
       <li><a href="#key-differences-from-version-1-of-provider-access" id="markdown-toc-key-differences-from-version-1-of-provider-access">Key differences from version 1 of Provider Access</a></li>
       <li><a href="#how-does-provider-access-work" id="markdown-toc-how-does-provider-access-work">How does Provider Access Work?</a></li>
@@ -310,16 +321,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="stu-note">
 
+<b><i>Scope of this section — what is and isn't prescribed</i></b>
+
+This Implementation Guide specifies the **Provider Access API contract** — the operations, inputs, outputs, and conformance expectations that allow a Provider Representative and a Payer to interoperate. It does **not** prescribe the payer's internal systems or processes for tracking treatment relationships or member opt-out preferences. A payer **MAY** use any mechanism appropriate to its business — a legacy attribution system, a vendor product, a relational database, an internally maintained service or API, or FHIR resources — to determine whether a member has opted out of Provider Access API data sharing and whether a provider has a treatment relationship with a member.
+
+The FHIR Group profiles defined in this section ([Member Opt-Out Group](StructureDefinition-pdex-member-opt-out.html), [Member-Provider Treatment Relationship Group](StructureDefinition-pdex-treatment-relationship.html)) are provided as **one** valid implementation pattern for payers that wish to manage opt-out and treatment-relationship data using FHIR. They are **not required**. A payer that determines opt-out and treatment relationships via legacy systems or APIs is fully conformant with this IG provided the answers those systems return are honoured by the Provider-Member-Match operation in the same way as the FHIR-based equivalents.
+
+</div>
+
+<div class="stu-note">
+
 <b><i>Provider Access API bulk (v2)</i></b>
 
 Data guidance in this version of the IG is based on feedback from payers that need to create large Treatment Relationship Lists (TRL) for in-network/contracted practitioners and organizations. 
 This version of the API adds a Provider-Member-Match operation that is built on the Payer-to-Payer Bulk Member Match that has been ballotted and extensively tested at Connectathons. 
 
-The Provider-Member-Match is provided to support the requirements of the CMS prior Authorization Rule (CMS-0057) for payers that need to create large group lists that represent treatment relationships between in-network providers and health plan members.
+The Provider-Member-Match is provided to support the requirements of the CMS Prior Authorization Rule (CMS-0057) for payers that need to create large group lists that represent treatment relationships between in-network providers and health plan members.
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
-<span class="fhir-conformance"><a name="ci-c-10"> </a><a name="ci-c-9"> </a>pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. <a href="narrative-conformance.html#ci-c-9"><sup>&sect;9</sup></a><a href="narrative-conformance.html#ci-c-10"><sup>&sect;10</sup></a></span><span class="fhir-conformance"><a name="ci-c-10"> </a><a name="ci-c-9"> </a>pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. <a href="narrative-conformance.html#ci-c-9"><sup>&sect;9</sup></a><a href="narrative-conformance.html#ci-c-10"><sup>&sect;10</sup></a></span></div>
+<span class="fhir-conformance"><a name="ci-c-29"> </a><a name="ci-c-28"> </a>pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. <a href="narrative-conformance.html#ci-c-28"><sup>&sect;28</sup></a><a href="narrative-conformance.html#ci-c-29"><sup>&sect;29</sup></a></span><span class="fhir-conformance"><a name="ci-c-29"> </a><a name="ci-c-28"> </a>pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. <a href="narrative-conformance.html#ci-c-28"><sup>&sect;28</sup></a><a href="narrative-conformance.html#ci-c-29"><sup>&sect;29</sup></a></span></div>
 
 <p>This version of the API uses a variation of the Bulk Member Match, from the <a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a>. This is formalized as the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>. The $davinci-data-export operation specified in the original <a href="provider-access-api.html">Provider Access v1</a> is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.</p>
 
@@ -336,6 +357,37 @@ All providers and payers are encouraged to adopt the Provider Access (v2) API fo
 </ul>
 
 <p>The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG and operates as per the original version of the <a href="provider-access-api.html">Provider Access API</a>.</p>
+
+<h3 id="when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation">When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)</h3>
+
+<p>The two versions of the Provider Access API in this IG serve different deployment scenarios. The decision between them is made at the request-construction step — a provider/EHR system chooses which workflow to invoke against a given payer based on the use case driving the request:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario the provider/EHR is operating under</th>
+      <th>Recommended Provider Access workflow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>In-network provider supporting the CMS-mandated Provider Access API</strong> (regulated CMS-0057 use case — non-financial Clinical, Prior Authorization, and Claims/Encounter data exchange)</td>
+      <td><strong>v2 (Attestation)</strong> — the provider/EHR submits a <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a> with a <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation</a> Consent for each member and uses the resulting matched-Group identifier with <code class="language-plaintext highlighter-rouge">$davinci-data-export</code>. The payer is <strong>expected</strong> to support v2 for this use case.</td>
+    </tr>
+    <tr>
+      <td><strong>Provider operating under a Value-Based Care (VBC) contract or risk-based provider program with a payer</strong>, where the payer maintains an attribution list of members assigned to the provider organization</td>
+      <td><strong>v1 (Attribution)</strong> <em>may</em> be used for the data flows that depend on the payer's attribution-list-driven model (in particular when financial / "at-risk" data is exchanged per &sect;pdex-242). v1 remains in this IG to support these deployments.</td>
+    </tr>
+    <tr>
+      <td><strong>Provider that is both in-network and under a VBC contract with the same payer</strong></td>
+      <td>For the <strong>CMS-0057 Provider Access API obligation specifically — v2 (Attestation)</strong>. The CMS-mandated regulated exchange follows v2 regardless of whether a parallel VBC arrangement also exists. v1 may be used <em>additionally</em> to support VBC-specific data flows (for example, exchange of financial data per &sect;pdex-242 for at-risk member services) but does not replace the v2 obligation for the regulated Provider Access exchange.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span id="pdex-241a" class="fhir-conformance"><a name="ci-c-pdex-241a"> </a> For the CMS-0057 Provider Access API obligation, payers <strong>SHALL</strong> support the v2 (Attestation) workflow described in the rest of this page, and providers/EHRs supporting in-network access to a payer's CMS-mandated Provider Access API <strong>SHOULD</strong> use the v2 workflow. <a href="narrative-conformance.html#ci-c-pdex-241a"><sup>&sect;pdex-241a</sup></a></span> <span id="pdex-241b" class="fhir-conformance"><a name="ci-c-pdex-241b"> </a> A provider/EHR that operates under both an in-network arrangement and a VBC contract with the same payer <strong>SHOULD</strong> use v2 (Attestation) for the CMS-mandated Provider Access exchange and <strong>MAY</strong> use v1 (Attribution) for VBC-driven data flows (for example, the financial-data exchanges described under <a href="narrative-conformance.html#ci-c-pdex-241b"><sup>&sect;pdex-241b</sup></a></span>pdex-242), based on the data-flow's purpose, not on the underlying contractual relationship. &sect; The choice between v1 and v2 is therefore a <strong>per-request, per-purpose</strong> decision rather than a per-payer or per-contract decision.</p>
+
+<p>This section codifies guidance previously discussed informally on PDex work group calls. The recorded conformance levels — including the per-scenario expectations in <span class="fhir-conformance">pdex-241a / </span><span class="fhir-conformance">pdex-241a / </span></p>
 
 <h2 id="provider-access-api">Provider Access API</h2>
 
@@ -370,16 +422,18 @@ utilizing the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefini
   <li>Member-Provider TRL</li>
 </ol>
 
-<p><span id="pdex-244" class="fhir-conformance"><a name="ci-c-pdex-244"> </a> These lists <strong>MAY</strong> be created using a FHIR Group resource, or implementers <strong>MAY</strong> choose to use a legacy application and API to provide Member Opt-Out decisions or Treatment Relationship determinations. <a href="narrative-conformance.html#ci-c-pdex-244"><sup>&sect;pdex-244</sup></a></span> In this IG we will present Group profiles to support a FHIR-based method of determing Member Opt-out and Member-Provider Treatment Relationships:</p>
+<p><span class="fhir-conformance">pdex-244: Whether opt-out and treatment-relationship determinations are tracked using FHIR Group resources or by some other mechanism is at the implementer's discretion. </span><span class="fhir-conformance">pdex-244: Whether opt-out and treatment-relationship determinations are tracked using FHIR Group resources or by some other mechanism is at the implementer's discretion. </span><strong>MAY</strong> use a legacy application, vendor product, internal API, relational database, or any other appropriate mechanism. To assist implementers whose existing platforms cannot themselves serve as the authoritative reference source for opt-out determinations or treatment-relationship determinations, this IG offers two FHIR-based scaffolding profiles that <strong>MAY</strong> be adopted internally for that purpose:</p>
 
 <ul>
-  <li><a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> - contains members who have opted out of data sharing</li>
-  <li><a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> - contains providers with treatment relationships to a specific member</li>
+  <li><a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> — a payer-internal Group profile for tracking members who have opted out of Provider Access API data sharing.</li>
+  <li><a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> — a payer-internal Group profile for tracking providers with a treatment relationship to a specific member.</li>
 </ul>
+
+<p>These two profiles are intended for <strong>internal use by the implementer</strong> when an existing platform cannot answer the relevant query authoritatively. They are <strong>not</strong> required by the Provider Access API contract; payers using non-FHIR mechanisms remain fully conformant. (The <code class="language-plaintext highlighter-rouge">Member Opt-Out Group</code> profile is also reused as the wire-format profile for the <code class="language-plaintext highlighter-rouge">ConsentConstrainedMembers</code> output of the <code class="language-plaintext highlighter-rouge">$provider-member-match</code> operation — see <a href="#how-does-provider-access-work">How does Provider Access Work?</a> below — but its primary intent is the internal-tracking pattern described here.)</p>
 
 <h4 id="member-opt-out-list">Member Opt-Out List</h4>
 
-<p><span id="pdex-245" class="fhir-conformance"><a name="ci-c-pdex-245"> </a> The member Opt-out list, if not determined by a response from a legacy system or API, <strong>SHALL</strong> be a Group resource conforming to the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a> and managed by the Health Plan that <strong>SHALL</strong> contain all members that have chosen to opt-out of Provider Access API Data Sharing. <a href="narrative-conformance.html#ci-c-pdex-245"><sup>&sect;pdex-245</sup></a></span> <span id="pdex-246" class="fhir-conformance"><a name="ci-c-pdex-246"> </a> If a member revokes their opt-out choice their Identifier(s) <strong>SHALL</strong> be removed from the Member Opt-Out List. <a href="narrative-conformance.html#ci-c-pdex-246"><sup>&sect;pdex-246</sup></a></span> See the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a> for details on opt-out scope, reasons, and member-specific details.</p>
+<p><span id="pdex-245" class="fhir-conformance"><a name="ci-c-pdex-245"> </a> A payer <strong>SHALL</strong> be able to determine, at the time a <code class="language-plaintext highlighter-rouge">$provider-member-match</code> request is processed, whether each candidate member has opted out of Provider Access API data sharing. <a href="narrative-conformance.html#ci-c-pdex-245"><sup>&sect;pdex-245</sup></a></span> The mechanism by which the payer maintains that determination is at the payer's discretion. Payers that elect to track opt-outs internally using FHIR resources <strong>MAY</strong> maintain a Group resource conforming to the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a>; <span id="pdex-246" class="fhir-conformance"><a name="ci-c-pdex-246"> </a> when an opt-out is revoked, the corresponding member entry <strong>SHALL</strong> be removed from whatever opt-out tracking mechanism the payer maintains (for payers using the FHIR Group pattern, that means removing the member's entry from the Group resource). <a href="narrative-conformance.html#ci-c-pdex-246"><sup>&sect;pdex-246</sup></a></span> See the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a> for details on opt-out scope, reasons, and member-specific details that the FHIR pattern supports.</p>
 
 <h4 id="member-provider-trl">Member-Provider TRL</h4>
 
@@ -389,32 +443,40 @@ utilizing the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefini
 
 <h3 id="how-does-provider-access-work">How does Provider Access Work?</h3>
 
-<p><span id="pdex-252" class="fhir-conformance"><a name="ci-c-pdex-252"> </a> The Member Opt-Out List and the Member-Provider TRLs <strong>SHALL</strong> be used, unless the payer is utilizing existing systems or APIs to determine Opt-Out or Treatment Relationship, as part of a <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>. <a href="narrative-conformance.html#ci-c-pdex-252"><sup>&sect;pdex-252</sup></a></span></p>
+<p><span id="pdex-252" class="fhir-conformance"><a name="ci-c-pdex-252"> </a> The payer <strong>SHALL</strong> apply opt-out and treatment-relationship determinations during a <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>, using whatever mechanism is appropriate to the payer's environment (legacy system, vendor product, internal API, FHIR Group resources, or any combination). <a href="narrative-conformance.html#ci-c-pdex-252"><sup>&sect;pdex-252</sup></a></span> The Member Opt-Out and Member-Provider Treatment Relationship Group profiles defined in this IG are offered as one optional FHIR-based pattern that payers may adopt internally; they are not required and a payer using non-FHIR mechanisms remains fully conformant.</p>
 <ul>
   <li>The provider submits a bulk member-match request for one or more members using the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a>.
 <span id="pdex-253" class="fhir-conformance"><a name="ci-c-pdex-253"> </a> - The payer <strong>SHOULD</strong> determine whether the provider is in-network, or has an appropriate contractual relationship. <a href="narrative-conformance.html#ci-c-pdex-253"><sup>&sect;pdex-253</sup></a></span>
 <span id="pdex-254" class="fhir-conformance"><a name="ci-c-pdex-254"> </a> - The payer <strong>SHOULD</strong> extract the rendering provider's NPI from the <code class="language-plaintext highlighter-rouge">subject_id</code> field of the UDAP B2B Authorization Extension Object (<code class="language-plaintext highlighter-rouge">hl7-b2b</code>) in the access token and verify it against the payer's provider directory before processing the $provider-member-match request. <a href="narrative-conformance.html#ci-c-pdex-254"><sup>&sect;pdex-254</sup></a></span>
 <span id="pdex-255" class="fhir-conformance"><a name="ci-c-pdex-255"> </a> - Each member request <strong>SHALL</strong> contain: <a href="narrative-conformance.html#ci-c-pdex-255"><sup>&sect;pdex-255</sup></a></span>
     <ul>
-      <li>Patient demographics conforming to <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-patient-demographics.html">HRex Patient Demographics</a></li>
-      <li>Health plan coverage information conforming to <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-coverage.html">HRex Coverage</a></li>
+      <li>Patient demographics conforming to <a href="http://hl7.org/fhir/us/davinci-hrex/1.2.0/StructureDefinition-hrex-patient-demographics.html">HRex Patient Demographics</a></li>
+      <li>Health plan coverage information conforming to <a href="http://hl7.org/fhir/us/davinci-hrex/1.2.0/StructureDefinition-hrex-coverage.html">HRex Coverage</a></li>
       <li>A treatment relationship attestation from the provider using the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a> (a Consent resource)
 <span id="pdex-256" class="fhir-conformance"><a name="ci-c-pdex-256"> </a> - The CoverageToMatch <strong>SHALL</strong> contain the Member's coverage information. <a href="narrative-conformance.html#ci-c-pdex-256"><sup>&sect;pdex-256</sup></a></span>
 <span id="pdex-257" class="fhir-conformance"><a name="ci-c-pdex-257"> </a> - The Treatment attestation <strong>SHALL</strong> be submitted as a Consent resource conforming to the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a> in each member request. <a href="narrative-conformance.html#ci-c-pdex-257"><sup>&sect;pdex-257</sup></a></span>
 <span id="pdex-258" class="fhir-conformance"><a name="ci-c-pdex-258"> </a> - The health plan <strong>SHALL</strong> evaluate the request and determine: <a href="narrative-conformance.html#ci-c-pdex-258"><sup>&sect;pdex-258</sup></a></span></li>
       <li>If the member has Opted-Out of sharing (by checking the Member Opt-Out List)</li>
       <li>If not opted-out, whether the provider, organization or location is included in the Member-Provider TRL (Treatment Relationship List) for the member</li>
-      <li>If the treatment attestation can be verified and meets the payer's requirements
-<span id="pdex-259" class="fhir-conformance"><a name="ci-c-pdex-259"> </a> - When the member data passes these checks, the member <strong>SHALL</strong> be added to a <a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> resource conforming to the matched members response. <a href="narrative-conformance.html#ci-c-pdex-259"><sup>&sect;pdex-259</sup></a></span> <span id="pdex-260" class="fhir-conformance"><a name="ci-c-pdex-260"> </a> The Group Id of the matched group <strong>SHALL</strong> be returned to the Provider upon completion of the operation. <a href="narrative-conformance.html#ci-c-pdex-260"><sup>&sect;pdex-260</sup></a></span>
-<span id="pdex-261" class="fhir-conformance"><a name="ci-c-pdex-261"> </a> - Members who fail any check <strong>SHALL</strong> be returned in separate Group resources: <a href="narrative-conformance.html#ci-c-pdex-261"><sup>&sect;pdex-261</sup></a></span></li>
-      <li>Non-matched members in a <a href="StructureDefinition-pdex-member-no-match-group.html">PDex Member No Match Group</a></li>
-      <li>Treatment attestation constrained members in a <a href="StructureDefinition-pdex-member-no-match-group.html">PDex Member No Match Group</a></li>
-      <li>Opt-out constrained members in a <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> 
-<span id="pdex-262" class="fhir-conformance"><a name="ci-c-pdex-262"> </a> - The provider <strong>SHALL</strong> use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. <a href="narrative-conformance.html#ci-c-pdex-262"><sup>&sect;pdex-262</sup></a></span> <span id="pdex-263" class="fhir-conformance"><a name="ci-c-pdex-263"> </a> Alternatively, the provider <strong>MAY</strong> perform a new Provider-mMember-Match operation to receive a new Matched Member Group. <a href="narrative-conformance.html#ci-c-pdex-263"><sup>&sect;pdex-263</sup></a></span>
-<span id="pdex-264" class="fhir-conformance"><a name="ci-c-pdex-264"> </a> - The matched group resource <strong>MAY</strong> be a short-lived group. <a href="narrative-conformance.html#ci-c-pdex-264"><sup>&sect;pdex-264</sup></a></span> No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
-<span id="pdex-265" class="fhir-conformance"><a name="ci-c-pdex-265"> </a> - Implementer feedback is sought on whether requests for less than 10 members <strong>SHOULD</strong> be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. <a href="narrative-conformance.html#ci-c-pdex-265"><sup>&sect;pdex-265</sup></a></span></li>
     </ul>
   </li>
+  <li>If the treatment attestation can be verified and meets the payer's requirements
+<span id="pdex-259" class="fhir-conformance"><a name="ci-c-pdex-259"> </a> - When the member data passes these checks, the member <strong>SHALL</strong> be returned in the matched members response Group, which conforms to the <a href="StructureDefinition-pdex-provider-member-match.html">Provider Member Match Group profile</a>. <a href="narrative-conformance.html#ci-c-pdex-259"><sup>&sect;pdex-259</sup></a></span> <span id="pdex-260" class="fhir-conformance"><a name="ci-c-pdex-260"> </a> The Group Id of the matched group <strong>SHALL</strong> be returned to the Provider upon completion of the operation. <a href="narrative-conformance.html#ci-c-pdex-260"><sup>&sect;pdex-260</sup></a></span> The matched response Group is the response artifact used as input to the subsequent <code class="language-plaintext highlighter-rouge">$davinci-data-export</code> operation, and is distinct from the long-lived <a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> the payer maintains for governance and audit.
+<span id="pdex-261" class="fhir-conformance"><a name="ci-c-pdex-261"> </a> - Members who fail any check <strong>SHALL</strong> be returned in one of the response Group resources, distinguished by Group profile, subject to the privacy default below: <a href="narrative-conformance.html#ci-c-pdex-261"><sup>&sect;pdex-261</sup></a></span>
+    <ul>
+      <li>Members who could not be matched in the payer's records, OR whose treatment attestation could not be verified or does not meet the payer's requirements, are returned in a <a href="StructureDefinition-pdex-provider-member-no-match.html">Provider Member No Match Group</a>. Both failure reasons share this profile; the payer may distinguish them via the Group's characteristic code or per-member context if needed.</li>
+      <li>Members who were matched but who have opted out of Provider Access API data sharing are, by default, returned in a <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> — <strong>but</strong> see the privacy default that follows.</li>
+    </ul>
+
+    <p><strong>Privacy default — opt-out status is itself sensitive.</strong> A member who opts out of Provider Access data sharing has, by definition, indicated that they do not want their data disclosed to the requesting provider via this API; the fact of opting out is itself information about that member. <span id="pdex-261a" class="fhir-conformance"><a name="ci-c-pdex-261a"> </a> Where the payer determines that distinguishing 'opted out' from 'not matched' in the response would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer <strong>SHOULD</strong> suppress the <code class="language-plaintext highlighter-rouge">ConsentConstrainedMembers</code> Group and instead include the affected members in the <code class="language-plaintext highlighter-rouge">NonMatchedMembers</code> Group. <a href="narrative-conformance.html#ci-c-pdex-261a"><sup>&sect;pdex-261a</sup></a></span> The response is then indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome, protecting opt-out status from disclosure. Payers that determine no such concern applies may continue to return the <code class="language-plaintext highlighter-rouge">ConsentConstrainedMembers</code> Group, which preserves the type-level distinction for operational use by the requester (no separate conformance is asserted for the non-suppression case beyond the cardinality on the response Parameters profile, which already permits omission).</p>
+  </li>
+</ul>
+
+<p><span id="pdex-262" class="fhir-conformance"><a name="ci-c-pdex-262"> </a> - The provider <strong>SHALL</strong> use the Matched Group Id to make subsequent $davinci-data-export operation requests to retrieve data for all, or a subset, of members. <a href="narrative-conformance.html#ci-c-pdex-262"><sup>&sect;pdex-262</sup></a></span>
+<span id="pdex-263" class="fhir-conformance"><a name="ci-c-pdex-263"> </a> - Alternatively, the provider <strong>MAY</strong> perform a new Provider-Member-Match operation to receive a new Matched Member Group. <a href="narrative-conformance.html#ci-c-pdex-263"><sup>&sect;pdex-263</sup></a></span>
+<span id="pdex-264" class="fhir-conformance"><a name="ci-c-pdex-264"> </a> - The matched group resource <strong>MAY</strong> be a short-lived group. <a href="narrative-conformance.html#ci-c-pdex-264"><sup>&sect;pdex-264</sup></a></span> No specific time limit is defined in this IG. An initial recommendation, subject to implementer feedback, is to make the group valid for 30 days.
+<span id="pdex-265" class="fhir-conformance"><a name="ci-c-pdex-265"> </a> - Implementer feedback is sought on whether requests for less than 10 members <strong>SHOULD</strong> be handled as an interactive request, with larger bulk requests being processed as an asynchronous process. <a href="narrative-conformance.html#ci-c-pdex-265"><sup>&sect;pdex-265</sup></a></span></p>
+<ul>
   <li>Implementer feedback is sought on whether an upper limit on the number of members in a Provider-Member-Match operation should be specified.
 <span id="pdex-266" class="fhir-conformance"><a name="ci-c-pdex-266"> </a> - Providers <strong>SHALL</strong> be able to search and retrieve the contents of the Matched Member Group resource. <a href="narrative-conformance.html#ci-c-pdex-266"><sup>&sect;pdex-266</sup></a></span>
 <span id="pdex-267" class="fhir-conformance"><a name="ci-c-pdex-267"> </a> - Providers <strong>SHALL</strong> assume that the Matched Group is short-lived and subsequent requests for member data <strong>SHALL</strong> be initiated by performing a member match operation to retrieve an updated Matched Group List. <a href="narrative-conformance.html#ci-c-pdex-267"><sup>&sect;pdex-267</sup></a></span></li>
@@ -425,15 +487,15 @@ providers, or for an organization, using automated service functions. The retrie
 is presumed to have implemented Role-based access to ensure that only authenticated and authorized 
 personnel, or systems, have access to the retrieved data.</p>
 
-<p><span id="pdex-268" class="fhir-conformance"><a name="ci-c-pdex-268"> </a> When a health plan is using FHIR GRoups to manage Treatment relationships they <strong>SHOULD</strong> create Member-Provider TRLs using the NPI data for the Rendering Provider. <a href="narrative-conformance.html#ci-c-pdex-268"><sup>&sect;pdex-268</sup></a></span>
-<span id="pdex-269" class="fhir-conformance"><a name="ci-c-pdex-269"> </a> Health plans <strong>MAY</strong> choose to include organizations or locations in a Member-Proider TRL. <a href="narrative-conformance.html#ci-c-pdex-269"><sup>&sect;pdex-269</sup></a></span></p>
+<p><span id="pdex-268" class="fhir-conformance"><a name="ci-c-pdex-268"> </a> When a health plan is using FHIR Groups to manage Treatment relationships they <strong>SHOULD</strong> create Member-Provider TRLs using the NPI data for the Rendering Provider. <a href="narrative-conformance.html#ci-c-pdex-268"><sup>&sect;pdex-268</sup></a></span>
+<span id="pdex-269" class="fhir-conformance"><a name="ci-c-pdex-269"> </a> Health plans <strong>MAY</strong> choose to include organizations or locations in a Member-Provider TRL. <a href="narrative-conformance.html#ci-c-pdex-269"><sup>&sect;pdex-269</sup></a></span></p>
 
 <h3 id="member-opt-out">Member Opt-out</h3>
 
 <p><span id="pdex-270" class="fhir-conformance"><a name="ci-c-pdex-270"> </a> A health plan member <strong>SHALL</strong> be entitled to Opt-Out from their data being shared via the Provider Access API. <a href="narrative-conformance.html#ci-c-pdex-270"><sup>&sect;pdex-270</sup></a></span> <span id="pdex-271" class="fhir-conformance"><a name="ci-c-pdex-271"> </a> PDex defines a consent profile that <strong>MAY</strong> be used to enable a member to deny sharing via the Provider Access API. <a href="narrative-conformance.html#ci-c-pdex-271"><sup>&sect;pdex-271</sup></a></span> <span id="pdex-272" class="fhir-conformance"><a name="ci-c-pdex-272"> </a> A member <strong>SHALL</strong> be able to update their preference <a href="narrative-conformance.html#ci-c-pdex-272"><sup>&sect;pdex-272</sup></a></span>
-to revoke a previous denial. <span id="pdex-273" class="fhir-conformance"><a name="ci-c-pdex-273"> </a> When a member Opts-Out of sharing, their Member Id <strong>SHALL</strong> be added to the Member Opt-Out List Group resource, or the API that answers the Opted-Out member query. <a href="narrative-conformance.html#ci-c-pdex-273"><sup>&sect;pdex-273</sup></a></span> The Member Opt-Out List is a dynamic Group resource. <span id="pdex-274" class="fhir-conformance"><a name="ci-c-pdex-274"> </a> If a member revokes their Opt-Out their Member Id <strong>SHALL</strong> be removed from the Member Opt-Out List or equivalent API response. <a href="narrative-conformance.html#ci-c-pdex-274"><sup>&sect;pdex-274</sup></a></span></p>
+to revoke a previous denial. <span id="pdex-273" class="fhir-conformance"><a name="ci-c-pdex-273"> </a> When a member Opts-Out of sharing, the payer's opt-out tracking mechanism <strong>SHALL</strong> be updated so that subsequent <code class="language-plaintext highlighter-rouge">$provider-member-match</code> evaluations recognize the opt-out. <a href="narrative-conformance.html#ci-c-pdex-273"><sup>&sect;pdex-273</sup></a></span> For payers that have adopted the FHIR-based scaffolding pattern, that means adding the member's identifier to the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> resource (the Member Opt-Out Group is a dynamic Group resource); for payers that maintain opt-outs via a legacy system or internal API, the corresponding update is made in that system. <span id="pdex-274" class="fhir-conformance"><a name="ci-c-pdex-274"> </a> If a member revokes their Opt-Out, the same mechanism <strong>SHALL</strong> be updated to remove the opt-out — i.e., the member's identifier is removed from the Member Opt-Out Group, or the legacy/internal API ceases to report the member as opted out. <a href="narrative-conformance.html#ci-c-pdex-274"><sup>&sect;pdex-274</sup></a></span></p>
 
-<p><span id="pdex-275" class="fhir-conformance"><a name="ci-c-pdex-275"> </a> Health Plans <strong>MAY</strong> implement the pdex-provider-consent to enable a member to express their sharing preference. <a href="narrative-conformance.html#ci-c-pdex-275"><sup>&sect;pdex-275</sup></a></span></p>
+<p><span id="pdex-275" class="fhir-conformance"><a name="ci-c-pdex-275"> </a> Health Plans <strong>MAY</strong> implement the <a href="StructureDefinition-pdex-provider-consent.html">pdex-provider-consent</a> profile to enable a member to express their data-sharing preference for the Provider Access API. <a href="narrative-conformance.html#ci-c-pdex-275"><sup>&sect;pdex-275</sup></a></span> In this context, "implement the pdex-provider-consent" means: (a) accept <code class="language-plaintext highlighter-rouge">Consent.create</code> requests against the Patient Access API for a <code class="language-plaintext highlighter-rouge">Consent</code> resource conforming to the <a href="StructureDefinition-pdex-provider-consent.html">PDex Provider Consent profile</a>, and (b) honor the resulting Consent decision when subsequently evaluating the member's opt-out / opt-in status during a <code class="language-plaintext highlighter-rouge">$provider-member-match</code> request. The strength is <strong>MAY</strong> because, consistent with the <a href="#">Scope of this section</a> callout at the top of this page, the IG does not prescribe how a payer tracks member opt-out / sharing preferences internally; the FHIR Consent profile is offered as one valid pattern, not as the only mechanism. Payers that capture sharing preferences via legacy systems, internal APIs, or other channels remain fully conformant.</p>
 
 <p>The <a href="CapabilityStatement-pdex-server.html">PDex Server Capability Statement</a> enables the Consent record to be written to the Patient Access API.</p>
 
@@ -441,9 +503,9 @@ to revoke a previous denial. <span id="pdex-273" class="fhir-conformance"><a nam
 
 <h3 id="treatment-relationship-driven-access">Treatment Relationship Driven Access</h3>
 
-<p>The Provider Access API version 2 uses the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a> to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules. Provider attestations are submitted using the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a>. <span id="pdex-276" class="fhir-conformance"><a name="ci-c-pdex-276"> </a> If a Treatment Relationship is established, the member's data <strong>SHALL</strong> be available to a Provider through the member's inclusion in the <a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> that is used to request a $davinci-data-export operation. <a href="narrative-conformance.html#ci-c-pdex-276"><sup>&sect;pdex-276</sup></a></span></p>
+<p>The Provider Access API version 2 uses the <a href="OperationDefinition-ProviderMemberMatch.html">Provider-Member-Match Operation</a> to determine if a member has opted out of sharing data via the Provider Access API. The Provider Member-Match is then tested against a payer's Treatment Relationship business rules, which are evaluated against the long-lived <a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> maintained by the payer for governance and audit. Provider attestations are submitted using the <a href="StructureDefinition-provider-treatment-relationship-consent.html">Provider Treatment Attestation Profile</a>. <span id="pdex-276" class="fhir-conformance"><a name="ci-c-pdex-276"> </a> If a Treatment Relationship is established and the member has not opted out, the member <strong>SHALL</strong> be returned in the matched members response Group, which conforms to the <a href="StructureDefinition-pdex-provider-member-match.html">Provider Member Match Group profile</a>. <a href="narrative-conformance.html#ci-c-pdex-276"><sup>&sect;pdex-276</sup></a></span> The Group Id of that matched response Group is the input the provider uses to request a subsequent <code class="language-plaintext highlighter-rouge">$davinci-data-export</code> operation. The long-lived Member-Provider Treatment Relationship Group is the authoritative governance record the payer maintains; the matched response Group is the short-lived response artifact returned to the provider for data export.</p>
 
-<p><span id="pdex-277" class="fhir-conformance"><a name="ci-c-pdex-277"> </a> Members <strong>SHALL</strong> have the ability to opt-out of data sharing with providers. <a href="narrative-conformance.html#ci-c-pdex-277"><sup>&sect;pdex-277</sup></a></span> Opt-outs are managed using the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a>, which supports multiple opt-out scopes:</p>
+<p><span id="pdex-277" class="fhir-conformance"><a name="ci-c-pdex-277"> </a> Members <strong>SHALL</strong> have the ability to opt-out of data sharing with providers. <a href="narrative-conformance.html#ci-c-pdex-277"><sup>&sect;pdex-277</sup></a></span> How the payer tracks opt-outs internally is at the payer's discretion. Where a payer adopts the IG's FHIR-based scaffolding pattern for opt-out tracking, the <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group Profile</a> supports the following opt-out scopes (the same conceptual scopes apply to non-FHIR mechanisms):</p>
 <ul>
   <li><strong>Global Opt-Out</strong>: Member has opted out from all data sharing</li>
   <li><strong>Provider-Specific Opt-Out</strong>: Member has opted out for specific provider(s)</li>
@@ -457,7 +519,7 @@ to revoke a previous denial. <span id="pdex-273" class="fhir-conformance"><a nam
 <p>Health plans:
 <span id="pdex-278" class="fhir-conformance"><a name="ci-c-pdex-278"> </a> - <strong>MAY</strong> use claims data as a source to identify existing Treatment Relationships. <a href="narrative-conformance.html#ci-c-pdex-278"><sup>&sect;pdex-278</sup></a></span> 
 <span id="pdex-279" class="fhir-conformance"><a name="ci-c-pdex-279"> </a> - <strong>MAY</strong> utilize their own rules for determining a Treatment Relationship between members and Providers. <a href="narrative-conformance.html#ci-c-pdex-279"><sup>&sect;pdex-279</sup></a></span>
-<span id="pdex-280" class="fhir-conformance"><a name="ci-c-pdex-280"> </a> - <strong>MAY</strong> use the <a href="http://hl7.org/fhir/us/davinci-crd/STU2.1/hooks.html">Coverage Requirements Discovery IG's</a> appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. <a href="narrative-conformance.html#ci-c-pdex-280"><sup>&sect;pdex-280</sup></a></span></p>
+<span id="pdex-280" class="fhir-conformance"><a name="ci-c-pdex-280"> </a> - <strong>MAY</strong> use the <a href="http://hl7.org/fhir/us/davinci-crd/2.2.1/hooks.html">Coverage Requirements Discovery IG's</a> appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. <a href="narrative-conformance.html#ci-c-pdex-280"><sup>&sect;pdex-280</sup></a></span></p>
 
 <p>The <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1/OperationDefinition-davinci-data-export.html">Da Vinci Data Export Operation</a> in the <a href="http://hl7.org/fhir/us/davinci-atr/STU2.1">Member Attribution IG</a> supports the Bulk FHIR API specification.
 The operation uses a Group resource. For the PDex Provider Access API the following capabilities
@@ -517,12 +579,66 @@ The <a href="Parameters-provider-member-match-request-001.html">Provider-Member-
 <p><strong>Example Response:</strong>
 The <a href="Parameters-provider-member-match-response-001.html">Provider-Member-Match Response Example</a> demonstrates a payer's response following the FHIR Bulk Data manifest format, containing:</p>
 <ul>
-  <li><strong>MatchedMembers Group</strong>: Patients successfully matched with confirmed treatment relationships (using <a href="StructureDefinition-pdex-treatment-relationship.html">Member-Provider Treatment Relationship Group</a> profile)</li>
-  <li><strong>NonMatchedMembers Group</strong>: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements</li>
-  <li><strong>ConsentConstrainedMembers Group</strong>: Patients who have opted out of data sharing with providers</li>
+  <li><strong>MatchedMembers Group</strong>: Patients successfully matched with confirmed treatment relationships (using <a href="StructureDefinition-pdex-provider-member-match.html">Provider Member Match Group</a> profile)</li>
+  <li><strong>NonMatchedMembers Group</strong>: Patients not found in the payer system, or patients whose treatment attestation could not be verified or does not meet the payer's requirements (using <a href="StructureDefinition-pdex-provider-member-no-match.html">Provider Member No Match Group</a> profile)</li>
+  <li><strong>ConsentConstrainedMembers Group</strong>: Patients who have opted out of data sharing with providers (using <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> profile)</li>
 </ul>
 
 <p>The provider retrieves the detailed Member-Match Response by polling the status endpoint and retrieving the files referenced in the manifest, consistent with the FHIR Bulk Data API specification.</p>
+
+<h4 id="async-response-delivery-format-aligned-with-bulk-member-match">Async response delivery format (aligned with <code class="language-plaintext highlighter-rouge">$bulk-member-match</code>)</h4>
+
+<p>The async-response delivery format for the Provider-Member-Match operation is intentionally aligned with the <a href="payertopayerbulkexchange.html#bulk-member-match-with-consent">Payer-to-Payer Bulk Member Match operation</a> so that an implementer who has already built one operation can reuse the same delivery code paths for the other. The two operations share: the FHIR R4 Asynchronous Request Pattern (kick-off via HTTP POST → <code class="language-plaintext highlighter-rouge">Content-Location</code> status endpoint → completion manifest of ndjson file URLs); the categorical 3-bucket outcome model (Matched / NonMatched / ConsentConstrained) reconciled under <a href="https://jira.hl7.org/browse/FHIR-56545">FHIR-56545</a>; and an <code class="language-plaintext highlighter-rouge">OperationDefinition</code> that does not declare inline out parameters (output is delivered via the manifest).</p>
+
+<p><span id="pdex-288a" class="fhir-conformance"><a name="ci-c-pdex-288a"> </a> A responder <strong>SHALL</strong> include one or more <code class="language-plaintext highlighter-rouge">Group</code> ndjson files in the async completion manifest containing the matched / non-matched / consent-constrained Group resources (per the <a href="StructureDefinition-pdex-provider-member-match.html">Provider Member Match Group</a>, <a href="StructureDefinition-pdex-provider-member-no-match.html">Provider Member No Match Group</a>, and <a href="StructureDefinition-pdex-member-opt-out.html">Member Opt-Out Group</a> profiles), subject to the privacy default in <a href="narrative-conformance.html#ci-c-pdex-288a"><sup>&sect;pdex-288a</sup></a></span>pdex-261a. <span class="fhir-conformance"> </span><span class="fhir-conformance"> </span><strong>MAY</strong> additionally include a <code class="language-plaintext highlighter-rouge">Parameters</code> ndjson file in the manifest (with manifest <code class="language-plaintext highlighter-rouge">output[]</code> <code class="language-plaintext highlighter-rouge">"type": "Parameters"</code>) containing a <a href="StructureDefinition-provider-parameters-multi-member-match-bundle-out.html"><code class="language-plaintext highlighter-rouge">ProviderMultiMemberMatchResponseParameters</code></a>-conformant Parameters resource that wraps the same Group resources, mirroring the optional Parameters envelope offered for <code class="language-plaintext highlighter-rouge">$bulk-member-match</code>. &sect; This is provided to ease the burden on implementers who are converging Payer-to-Payer and Provider Access onto a single response-handling code path; when both ndjson formats are present in the same manifest, requesters <strong>SHOULD</strong> prefer the Group ndjson files. The Parameters envelope is provided strictly as an alignment / convenience option and conveys no data not already present in the Group ndjson files.</p>
+
+<blockquote>
+  <p><em>Future direction.</em> The PDex work group is tracking convergence between the <code class="language-plaintext highlighter-rouge">$bulk-member-match</code> and <code class="language-plaintext highlighter-rouge">$provider-member-match</code> operations as implementers migrate Payer-to-Payer foundations into Provider Access deployments. Future updates to this IG (or to the underlying HRex / Da Vinci shared profiles) may shorten the structural distance between the two — for example by having <code class="language-plaintext highlighter-rouge">ProviderMemberMatchGroup</code> inherit from <code class="language-plaintext highlighter-rouge">PDexMemberMatchGroup</code> (and similarly for the no-match Group), or by consolidating the two operations into a single canonical <code class="language-plaintext highlighter-rouge">$multi-member-match</code> parameterized by whether a Provider Treatment Attestation is included on input. Implementers building one of the two operations today are therefore encouraged to design their delivery and parsing code paths to accommodate both, since the wire-format alignment described in this section is intended to support that pattern.</p>
+</blockquote>
+
+<h4 id="why-the-response-group-profiles-differ-from-bulk-member-match">Why the response Group profiles differ from <code class="language-plaintext highlighter-rouge">$bulk-member-match</code></h4>
+
+<p>Both <code class="language-plaintext highlighter-rouge">$provider-member-match</code> and <code class="language-plaintext highlighter-rouge">$bulk-member-match</code> use the same <strong>3-bucket</strong> outcome model (Matched / NonMatched / ConsentConstrained — reconciled across the two operations under <a href="https://jira.hl7.org/browse/FHIR-56545">FHIR-56545</a>) and the same async-delivery format described above. They <strong>differ in which Group profiles are bound to each bucket</strong>, particularly for the consent-constrained bucket — implementers migrating one onto the other should be aware:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bucket</th>
+      <th><code class="language-plaintext highlighter-rouge">$provider-member-match</code> (Provider Access v2)</th>
+      <th><code class="language-plaintext highlighter-rouge">$bulk-member-match</code> (Payer-to-Payer Bulk)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MatchedMembers</td>
+      <td><a href="StructureDefinition-pdex-provider-member-match.html"><code class="language-plaintext highlighter-rouge">ProviderMemberMatchGroup</code></a></td>
+      <td><a href="StructureDefinition-pdex-member-match-group.html"><code class="language-plaintext highlighter-rouge">PDexMemberMatchGroup</code></a></td>
+    </tr>
+    <tr>
+      <td>NonMatchedMembers</td>
+      <td><a href="StructureDefinition-pdex-provider-member-no-match.html"><code class="language-plaintext highlighter-rouge">ProviderMemberNoMatchGroup</code></a></td>
+      <td><a href="StructureDefinition-pdex-member-no-match-group.html"><code class="language-plaintext highlighter-rouge">PDexMemberNoMatchGroup</code></a></td>
+    </tr>
+    <tr>
+      <td>ConsentConstrainedMembers</td>
+      <td><a href="StructureDefinition-pdex-member-opt-out.html"><code class="language-plaintext highlighter-rouge">MemberOptOut</code></a> — distinct profile from the no-match bucket; subject to the privacy-favoring SHOULD default at &sect;pdex-261a</td>
+      <td><a href="StructureDefinition-pdex-member-no-match-group.html"><code class="language-plaintext highlighter-rouge">PDexMemberNoMatchGroup</code></a> — same profile reused for the no-match bucket; the bucket itself remains distinct on the response Parameters profile</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Provider Access side uses a <strong>distinct profile</strong> (<code class="language-plaintext highlighter-rouge">MemberOptOut</code>) for the consent-constrained bucket for two reasons: (a) to give the requesting provider a type-level distinction between members the payer could not match and members the payer matched but who have opted out, when the payer chooses to expose that distinction (see &sect;pdex-261a privacy-favoring default), and (b) to reuse the <code class="language-plaintext highlighter-rouge">MemberOptOut</code> profile that also serves the payer-internal opt-out tracking pattern described under <a href="https://jira.hl7.org/browse/FHIR-56509">FHIR-56509</a>. The Bulk PDex side reuses <code class="language-plaintext highlighter-rouge">PDexMemberNoMatchGroup</code> for the consent-constrained bucket; the bucket itself is still separately enumerated on the response Parameters profile so requesters can distinguish consent-constrained from no-match outcomes by parameter slice. Aligning the two operations onto a single Group-profile family is recognized as a future-direction item (see the <em>Future direction</em> note above and <a href="https://jira.hl7.org/browse/FHIR-56480">FHIR-56480</a> Level B).</p>
+
+<h4 id="provider-member-match-does-not-emit-memberprovidertreatmentrelationship-groups"><code class="language-plaintext highlighter-rouge">$provider-member-match</code> does not emit <code class="language-plaintext highlighter-rouge">MemberProviderTreatmentRelationship</code> Groups</h4>
+
+<p>A common source of confusion: the <strong>matched-members response Group</strong> returned by <code class="language-plaintext highlighter-rouge">$provider-member-match</code> conforms to <a href="StructureDefinition-pdex-provider-member-match.html"><code class="language-plaintext highlighter-rouge">ProviderMemberMatchGroup</code></a> — <em>not</em> to <a href="StructureDefinition-pdex-treatment-relationship.html"><code class="language-plaintext highlighter-rouge">MemberProviderTreatmentRelationship</code></a>. The two profiles are distinct artifacts with different lifecycles:</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">ProviderMemberMatchGroup</code></strong> is the <strong>short-lived response artifact</strong> the operation emits for the requesting provider, used as input to the subsequent <code class="language-plaintext highlighter-rouge">$davinci-data-export</code> step. It conforms to <code class="language-plaintext highlighter-rouge">pdex-provider-member-match</code>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">MemberProviderTreatmentRelationship</code></strong> is the <strong>long-lived governance artifact</strong> that the payer maintains internally to track member-provider treatment relationships. It conforms to <code class="language-plaintext highlighter-rouge">pdex-treatment-relationship</code>. It is not emitted by <code class="language-plaintext highlighter-rouge">$provider-member-match</code>; the operation consults it (or any equivalent payer-internal mechanism, per <a href="#"><span class="fhir-conformance">pdex-191 / </span><span class="fhir-conformance">pdex-191 / </span></a> and <a href="https://jira.hl7.org/browse/FHIR-56509">FHIR-56509</a>) when evaluating whether a treatment relationship is in place.</li>
+</ul>
+
+<p>When distinguishing instances of these two Group types in storage or query, the discriminator is <strong><code class="language-plaintext highlighter-rouge">Group.meta.profile</code></strong> (the canonical URL of the profile each instance conforms to), not <code class="language-plaintext highlighter-rouge">Group.code</code>. <code class="language-plaintext highlighter-rouge">Group.code</code> is bound to the same <code class="language-plaintext highlighter-rouge">PDexMultiMemberMatchResultVS</code> value set on both profiles for legacy reasons; the profile assertion is the authoritative discriminator.</p>
 
 <h3 id="bulk-data-export-with-manifest">Bulk Data Export with Manifest</h3>
 
@@ -546,21 +662,21 @@ The <a href="Parameters-provider-member-match-response-001.html">Provider-Member
   </li>
   <li>US Core Clinical data (<a href="http://hl7.org/fhir/us/core/3.1.1">US Core 3.1.1</a> or <a href="http://hl7.org/fhir/us/core/STU6.1">US Core 6.1</a></li>
   <li><a href="StructureDefinition-pdex-priorauthorization.html">PDex Prior Authorization Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles </a>, as detailed below.</li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2">CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles </a>, as detailed below.</li>
 </ul>
 
 <p>The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
 Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
 The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes
-the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.1">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
+the work of the <a href="http://hl7.org/fhir/us/carin-bb/STU2.2">CARIN Consumer Directed Payer Data Exchange IG</a> which defines the following
 non-financial profiles:</p>
 
 <ul>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
-  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html">Inpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html">Outpatient Institutional Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html">Professional NonClinician Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html">Oral Basis Profile</a></li>
+  <li><a href="http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html">Pharmacy Basis Profile</a></li>
 </ul>
 
 <h3 id="da-vinci-data-export-operation---pdex-provider-use-case">Da Vinci Data Export Operation - PDex Provider Use Case</h3>
@@ -669,7 +785,7 @@ only those FHIR resources for which the client is authorized.</p>
 
 <p><span id="pdex-316" class="fhir-conformance"><a name="ci-c-pdex-316"> </a> Clients <strong>SHALL</strong> require OAuth client credentials to enable secure access to read and search the Group <a href="narrative-conformance.html#ci-c-pdex-316"><sup>&sect;pdex-316</sup></a></span>
 resources and perform Bulk export operations. <span id="pdex-317" class="fhir-conformance"><a name="ci-c-pdex-317"> </a> Access Tokens <strong>SHALL</strong> be required to access the Group <a href="narrative-conformance.html#ci-c-pdex-317"><sup>&sect;pdex-317</sup></a></span>
-resources and and the Bulk export operation. <span id="pdex-318" class="fhir-conformance"><a name="ci-c-pdex-318"> </a> Access and Refresh Tokens <strong>SHOULD</strong> be issued to support <a href="narrative-conformance.html#ci-c-pdex-318"><sup>&sect;pdex-318</sup></a></span>
+resources and the Bulk export operation. <span id="pdex-318" class="fhir-conformance"><a name="ci-c-pdex-318"> </a> Access and Refresh Tokens <strong>SHOULD</strong> be issued to support <a href="narrative-conformance.html#ci-c-pdex-318"><sup>&sect;pdex-318</sup></a></span>
 the client requesting and subsequently retrieving the bulk data response to their request.</p>
 
 <p>Registering of a client application or service to perform the bulk Payer-to-Payer
@@ -755,7 +871,7 @@ with it being restricted to the Group <em>id(s)</em> that the user is authorized
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

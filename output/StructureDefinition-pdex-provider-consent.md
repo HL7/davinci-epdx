@@ -24,7 +24,7 @@ The CMS Prior Authorization Rule (CMS-0057) requires that a health plan enables 
 * Examples for this Profile: [Consent/consent-permit-1](Consent-consent-permit-1.md) and [Consent/no-consent-1](Consent-no-consent-1.md)
 * CapabilityStatements using this Profile: [PDex Server CapabilityStatement with US core 6.1 support](CapabilityStatement-pdex-server-6-1.md) and [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-provider-consent)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-provider-consent.json)
 
 ### Formal Views of Profile Content
 
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-consen
   "title" : "PDex Provider Access Consent Profile",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -137,6 +137,8 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-consen
     {
       "id" : "Consent.scope",
       "path" : "Consent.scope",
+      "short" : "Information-disclosure scope (fixed to patient-privacy)",
+      "definition" : "Fixed to `http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy` (\"Agreement to collect, access, use or disclose (share) information\"). `Consent.scope` is structurally a \"what kind of consent is this?\" element bound by FHIR R4 to the [ConsentScope](http://terminology.hl7.org/CodeSystem/consentscope) code system (`treatment` / `patient-privacy` / `research` / `adr`); it is **not** a Purpose-of-Use field. The [v3 PurposeOfUse ValueSet](http://terminology.hl7.org/ValueSet/v3-PurposeOfUse) used by TEFCA applies to `Consent.provision.purpose`, not to `Consent.scope`. This profile does not redefine `provision.purpose`, so implementers retain the base R4 Consent profile's `extensible` binding to v3 PurposeOfUse on that element and may use TEFCA-style purpose codes there as appropriate.",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "http://terminology.hl7.org/CodeSystem/consentscope",

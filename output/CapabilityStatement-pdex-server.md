@@ -1878,6 +1878,16 @@ This Section describes the expected capabilities of the PDex Server actor which 
         "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic",
         "type" : "token",
         "documentation" : "A common characteristic of all members of a group."
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode" : "SHALL"
+        }],
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-code",
+        "type" : "token",
+        "documentation" : "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
       }],
       "operation" : [{
         "name" : "bulk-member-match",

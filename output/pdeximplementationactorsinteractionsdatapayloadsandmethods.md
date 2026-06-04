@@ -7,7 +7,7 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Security and Privacy](securityandprivacy.md)
 
@@ -66,7 +66,7 @@ This version of the IG adds new APIs that support the requirements of the CMS Pr
 * [Provider Access API](provider-access-api.md).
 * [Payer-to-Payer Bulk API](payertopayerbulkexchange.md)
 
-Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That method has been superceded by the [Provider Access API](provider-access-api.md) that meets the requirements of the CMS Prior Authorization Rule (CMS-0057).
+Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to member data. That method has been superseded by the [Provider Access API](provider-access-api.md) that meets the requirements of the CMS Prior Authorization Rule (CMS-0057).
 
 #### CDS Hooks with SMART-on-FHIR
 

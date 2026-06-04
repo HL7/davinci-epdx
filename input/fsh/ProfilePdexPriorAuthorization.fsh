@@ -10,8 +10,11 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 * insert Metaprofile-supportedProfile-slice
 // * meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization|2.0.0)
 * meta.profile[supportedProfile] = Canonical(PdexPriorAuthorization)
-* extension contains LevelOfServiceCode named levelOfServiceType 0..1 MS
+* extension contains
+    LevelOfServiceCode named levelOfServiceType 0..1 MS and
+    $ExtensionClaimResponseReviewer named claimResponseReviewer 0..1 MS
 * extension[levelOfServiceType] ^short = "A code specifying the level of service being requested (UM06)"
+* extension[claimResponseReviewer] ^short = "Reviewer practitioner who acted on the prior authorization request (PAS 2.2.1, FHIR-57521)"
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
@@ -48,7 +51,9 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 	$ExtensionAuthorizationNumber named previousAuthorizationNumber 0..1 MS and
 	$ExtensionAdministrationReferenceNumber named administrationReferenceNumber 0..1 MS and
 	$ExtensionItemAuthorizedDetail named authorizedItemDetail 0..1 MS and
-	$ExtensionItemAuthorizedProvider named authorizedProvider 0..* MS
+	$ExtensionItemAuthorizedProvider named authorizedProvider 0..* MS and
+	$ExtensionAdmissionDates named admissionDates 0..1 MS and
+	$ExtensionDischargeDate named dischargeDate 0..1 MS
 * item.extension[itemTraceNumber] ^short = "Uniquely identifies this claim item. (2000F-TRN)"
 * item.extension[preAuthIssueDate] ^short = "The date when this item's preauthorization was issued."
 * item.extension[preAuthPeriod] ^short = "The date/period when this item's preauthorization is valid."
@@ -56,6 +61,8 @@ Description: "The PDex Prior Authorization (PPA) profile is based on the Explana
 * item.extension[administrationReferenceNumber] ^short = "A string assigned by the UMO to the original disallowed review outcome associated with this service item."
 * item.extension[authorizedItemDetail] ^short = "The details of what has been authorized for this item if different from what was requested."
 * item.extension[authorizedProvider] ^short = "The specific provider who has been authorized to provide this item."
+* item.extension[admissionDates] ^short = "Authorized admission dates for inpatient prior authorization (PAS 2.2.1, FHIR-57521)."
+* item.extension[dischargeDate] ^short = "Authorized discharge date for inpatient prior authorization (PAS 2.2.1, FHIR-57521)."
 
 * item.category 0..1 MS
 //* item.category from https://x12.org/codes/service-type-codes

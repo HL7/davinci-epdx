@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -296,7 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p><a href="PDexProvenance.html">Previous Page - PDex Provenance</a></p>
 
-<p><a href="http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html">US Core 3.1.1 Procvenance</a> or
+<p><a href="http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html">US Core 3.1.1 Provenance</a> or
 <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html">US Core 6.1.0 Provenance</a>
 is provided as a reference for situations where payers receive detailed clinical data 
 via formats such as C-CDA and in converting to a FHIR format are able to identify the detailed information about the 
@@ -305,7 +315,7 @@ originating event and can therefore create an appropriate Provenance record.</p>
 <p><span id="pdex-42" class="fhir-conformance"><a name="ci-c-pdex-42"> </a> In all other cases a payer <strong>SHALL</strong> create a <a href="PDexProvenance.html">PDex Provenance</a> profile that identifies their role as a "Transmitter" of the information. <a href="narrative-conformance.html#ci-c-pdex-42"><sup>&sect;pdex-42</sup></a></span></p>
 
 <p>The essential fields (Must Support or Cardinality greater than 0..*) to be provided in the
-<a href="http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html">US Core 3.1.1 Procvenance</a> or
+<a href="http://hl7.org/fhir/us/core/3.1.1/StructureDefinition-us-core-provenance.html">US Core 3.1.1 Provenance</a> or
 <a href="http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-provenance.html">US Core 6.1.0 Provenance</a>
 are:</p>
 
@@ -644,7 +654,7 @@ are:</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

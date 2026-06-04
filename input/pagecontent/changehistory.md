@@ -3,7 +3,48 @@
 
 {% include style_insert_table_blue.html %}
 
+
+### Da Vinci PAS 2.2.1 Conformance
+
+#### Summarizing the changes between STU 2.1.0 and STU 2.2.0
+
+The PDex IG has been the subject of significant industry feedback. The latest Peer review generated over 50 tickets. As a result the IG has benefited from contributions from industry. indeed the primary driver for creation of this STU 2.2.0 version of the PDex IG was the request from the industry to create a Provider Access API that more closely matched Provide rworkflows, and was significantly easier for Payers to maintain the Treatment Relationships lists that the CMS-0057 regulation required.
+. 
+The focus for the post STU2.1.0 changes to the PDex IG can therefore be summarized as follows:
+- The addition of a new Provider-member-match operation, enabling Providers to submit a list of patients they wanted to receive information about. This is the Provider Access V2 additon to the IG. It does not change the operation of the original Provider Access API (now named V1). The Provider Access V2 match operation simply creates a dynamic group, that is evaluated and agreed by the payer, before returning the group identifier to enable the davinci-data-export operation. Without this refinement a unparameterized request by a provider to the davinci-data-export operation could result in all information for all attributed members to be returned to the provider. This is a dramatically bigger API request that could result in entire histories for thousands of members to be compiled and returned to the requesting provider. Provider Access V2 therefore enables a provider to request information for the members they are actively treating in the immediate/near future.
+
+- Provider Access V1 has not been removed. It is still planning to be used by Payers to enable information about a fixed group of members to be communicated to a Provider. This use case is well-suited to the sharing of informaiton with providers enagaged in Value-based Care contracts.
+
+- The other change implemented in PDex STU 2.2.0 is intended to simplift alignemnt with federal regulation. PDex initially supported Da Vinci PAS STU 2.1.0. However, CMS-0062-F is proposing that IG's STU 2.2.1 version be come a required version. This latest version of the PDex IG therefore implements support for Da Vinci PAS STU 2.2.1. This required the addition of new PAS ClaimeResponse extensions, introduced in PAS STU 2.2.1. This is being done to simplify the conversion of resources from Da Vinci PAS ClaimResponse to PDex Prior Authorization ExplanationOfBenefit profile. This change may however require a minor technical correction in Da Vinci PAs to expand the contecxt for use of the newly added extensions. Currently those extensions are limited to use in a Claim Response. A similar change had to be accommodated in a previous version of the Da Vinci PAS IG. 
+
+| JIRA Ticket | Disposition |
+|---|---|
+| [FHIR-57521](https://jira.hl7.org/browse/FHIR-57521) | Bump PAS dependency to 2.2.1 and adopt new ClaimResponse-side extensions on the PDex Prior Authorization profile (`extension-admissionDates`, `extension-dischargeDate`, `extension-claimResponseReviewer`). Pairs with PAS Technical Correction [FHIR-57522](https://jira.hl7.org/browse/FHIR-57522) to broaden the three extensions' context to include `ExplanationOfBenefit`. |
+
+
 ### STU2.2.0 Peer Review Reconciliation
+
+All items in this section were reconciled and approved as Block Vote 2 at the HL7 Financial Management Working Group meeting (FM WGM) on 2026-05-18. Motion: Mark Scrimshire / Rick Geimer. Vote: 5-0-0 (Affirmative-Negative-Abstain).
+
+> **Note:** Changes to Provider Access v2, `$provider-member-match`, and all associated profiles (ProviderMemberMatchGroup, ProviderMemberNoMatchGroup, MemberProviderTreatmentRelationship, ProviderTreatmentAttestation, MemberOptOut Group) are **not** breaking changes — Provider Access v2 is entirely new in STU 2.2.0 and has no STU 2.1.0 installed base to affect.
+
+#### Breaking and Non-Backwards-Compatible Changes
+
+*The following items affect features that existed in STU 2.1.0. Implementers with existing Payer-to-Payer or Patient Access deployments should review these before upgrading.*
+
+| JIRA Ticket | Change |
+|---|---|
+| [FHIR-56480](https://jira.hl7.org/browse/FHIR-56480) | **`$bulk-member-match` response wire format (Payer-to-Payer).** STU 2.1.0 returned a Parameters envelope; STU 2.2.0 mandates Group ndjson as the primary format. *Mitigation:* responders **MAY** additionally include the legacy Parameters ndjson file, allowing a single endpoint to serve both STU 2.1.0 and STU 2.2.0 requesters. |
+| [FHIR-56437](https://jira.hl7.org/browse/FHIR-56437) | **`$everything` must return claims EOBs.** Prior IG said the server **SHOULD** filter to Prior Authorization-only records; revised IG says the server **SHALL** return the full in-scope data set including claims EOBs. |
+| [FHIR-56505](https://jira.hl7.org/browse/FHIR-56505) | **Payer-to-Payer data payload: SHOULD → SHALL.** The full data payload requirement (US Core clinical data, CARIN BB claims, PDex Prior Authorization records) is now mandatory rather than recommended. |
+| [FHIR-56496](https://jira.hl7.org/browse/FHIR-56496) | **5-year data window reframed.** Previous IG required responders to cap returned data at 5 years; revised IG establishes 5 years as a floor on the requestor's obligation — responders must be capable of returning at least 5 years and may return more. |
+| [FHIR-56441](https://jira.hl7.org/browse/FHIR-56441) | **Contained Patient handling in `$bulk-member-match` response.** Responders **SHALL** now actively remove base-FHIR-prohibited elements (`meta.versionId`, `meta.lastUpdated`, `meta.security`, nested contained resources) from the submitted Patient before placing it in the response Group's `contained[]`. The previous rule was passive ("SHALL NOT modify"). Removal is explicitly not a violation of the preservation requirement. |
+| [FHIR-56185](https://jira.hl7.org/browse/FHIR-56185) | **OAuth scope URL for `$bulk-member-match` corrected.** The documented scope was `…/OperationDefinition/bulk-member-match` (lower-case); the correct canonical URL is `…/OperationDefinition/BulkMemberMatch` (CamelCase). Authorization servers configured with the old URL must be updated. |
+| [FHIR-56456](https://jira.hl7.org/browse/FHIR-56456) | **17 narrative pages promoted from `informative` to `trial-use`.** Conformance language (SHALL / SHOULD / MAY) on the main specification pages is now normative. See the full ticket entry below for the list of affected pages. |
+| [FHIR-56540](https://jira.hl7.org/browse/FHIR-56540) *(partial)* | **`PDexMemberMatchGroup` and `PDexMemberNoMatchGroup` (Payer-to-Payer profiles) tightened.** `* type = #person` and `* actual = true` added where previously unconstrained. Low practical impact — conformant instances already use these values. |
+| [FHIR-56497](https://jira.hl7.org/browse/FHIR-56497) *(partial)* | **`Group.managingEntity` restricted to `Reference(Organization)` on `PDexMemberMatchGroup` and `PDexMemberNoMatchGroup`.** Low practical impact — the managing entity is always a payer Organization in these profiles. |
+
+#### All Changes
 
 | JIRA Ticket | Change                                                |
 |-------------|-------------------------------------------------------|
@@ -66,35 +107,56 @@
 
 ### STU 2.2.0 Update
 
-| JIRA Ticket | Change                                                |
-|-------------|-------------------------------------------------------|
-| [FHIR-56259](https://jira.hl7.org/browse/FHIR-56259) | Provider Access Consent.performer to use Identifier |
-| [FHIR-56242](https://jira.hl7.org/browse/FHIR-56242) | Change Bundle name in Provider Member Match |
-| [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | $provider-member-match OperationDefinition parameter names are inconsistent with the Parameters profile |
-| [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Remove requirements to record export operation details as extensions on Patient/Group resources |
-| [FHIR-55981](https://jira.hl7.org/browse/FHIR-55981) | Use R5 specifications for async operations |
-| [FHIR-55928](https://jira.hl7.org/browse/FHIR-55928) | $member-match listed as both shall and may support |
-| [FHIR-55927](https://jira.hl7.org/browse/FHIR-55927) | Better handle multiple MemberBundles for the same member |
-| [FHIR-55640](https://jira.hl7.org/browse/FHIR-55640) | Two versions of provider member match? |
-| [FHIR-55620](https://jira.hl7.org/browse/FHIR-55620) | Why does the example show a CoverageToLink? |
-| [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Add search parameter and extension to enable easier retrieval of Provider Access Opt-Out |
-| [FHIR-53793](https://jira.hl7.org/browse/FHIR-53793) | Create a listing of all Conformance Requirements in the Narrative of the IG |
-| [FHIR-53655](https://jira.hl7.org/browse/FHIR-53655) | Allow performers of type RelatedPerson for Provider Access Opt-Outs |
-| [FHIR-53616](https://jira.hl7.org/browse/FHIR-53616) | Add more details to the Bulk Provider Request for Data showing the Asynchronous Response Pattern |
-| [FHIR-53311](https://jira.hl7.org/browse/FHIR-53311) | Change Provider Access to use Bulk Member Match |
-| [FHIR-53256](https://jira.hl7.org/browse/FHIR-53256) | Multi-member-match response spec does not fit with async pattern |
-| [FHIR-53087](https://jira.hl7.org/browse/FHIR-53087) | Clarify intent of Group.managingEntity |
-| [FHIR-52871](https://jira.hl7.org/browse/FHIR-52871) | Require input parameter in $bulk-member-match response |
-| [FHIR-52066](https://jira.hl7.org/browse/FHIR-52066) | Clarify data mapping requirements |
-| [FHIR-52056](https://jira.hl7.org/browse/FHIR-52056) | Provenance description on overview page is incorrect |
-| [FHIR-51845](https://jira.hl7.org/browse/FHIR-51845) | Add characteristic-value-reference SearchParameter for Group |
-| [FHIR-51571](https://jira.hl7.org/browse/FHIR-51571) | Clarify delta query responsibility after removal of export tracking extensions |
-| [FHIR-51377](https://jira.hl7.org/browse/FHIR-51377) | Differentiating between Consent resources |
-| [FHIR-50458](https://jira.hl7.org/browse/FHIR-50458) | NPI identifier type code is incorrect in examples |
-| [FHIR-50227](https://jira.hl7.org/browse/FHIR-50227) | Reconcile PDex single $member-match with HRex response profile |
-| [FHIR-50184](https://jira.hl7.org/browse/FHIR-50184) | Details related to notifications for bulk response missing for Provider access API and Payer to Payer API |
-| [FHIR-50183](https://jira.hl7.org/browse/FHIR-50183) | Provider access details in the payer-payer section of the IG at 6.4.4 |
-| [FHIR-49943](https://jira.hl7.org/browse/FHIR-49943) | Clarify async usage of $multi-member-match |
+All items in this section were reconciled and approved as part of PDex-Vote-1 (block vote).
+
+#### Significant Design and Behavioral Changes
+
+*Implementers with STU 2.1.0 deployments should review these items.*
+
+| JIRA Ticket | Disposition |
+|---|---|
+| [FHIR-53311](https://jira.hl7.org/browse/FHIR-53311) | Persuasive (applied). Redesigned Provider Access API to use `$provider-member-match` as the first step, replacing static Attribution List Group resources. |
+| [FHIR-55987](https://jira.hl7.org/browse/FHIR-55987) | Persuasive (applied). Removed requirements to record bulk export tracking details (`lastTransmitted`, `lastResources`, `lastFilters`) as extensions on Patient and Group resources. |
+| [FHIR-53256](https://jira.hl7.org/browse/FHIR-53256) | Persuasive with Modification (applied). Clarified that `$bulk-member-match` is asynchronous per the FHIR R4 Async Request Pattern; the OperationDefinition declares no inline `out` parameters. |
+| [FHIR-56242](https://jira.hl7.org/browse/FHIR-56242) | Persuasive (applied). Renamed Provider Member Match v2 input parameter from `MembersToMatch` to `MemberBundle` and `Consent` to `TreatmentAttestation` to align with Payer-to-Payer naming. |
+| [FHIR-56075](https://jira.hl7.org/browse/FHIR-56075) | Persuasive (applied). Reconciled `$provider-member-match` OperationDefinition IN parameters with the Parameters profiles; added links to IN and OUT profiles from the OperationDefinition page. |
+| [FHIR-55927](https://jira.hl7.org/browse/FHIR-55927) | Persuasive with Modification (applied). Added provision for (patient + coverage) pairs to be returned in all three Bulk Member Match response Group resources to support cross-referencing when multiple MemberBundles are submitted for the same member. |
+
+#### New Capabilities
+
+| JIRA Ticket | Disposition |
+|---|---|
+| [FHIR-53815](https://jira.hl7.org/browse/FHIR-53815) | Persuasive (applied). Added `SearchParameter-pdex-consent-action` and a supporting extension to enable direct retrieval of a member's Provider Access opt-out Consent by `provision.type`. |
+| [FHIR-53793](https://jira.hl7.org/browse/FHIR-53793) | Persuasive (applied). Added a navigable index of all SHALL / SHALL NOT / SHOULD / SHOULD NOT / MAY conformance requirements from the narrative pages. |
+| [FHIR-51845](https://jira.hl7.org/browse/FHIR-51845) | Persuasive with Modification (applied). Added `SearchParameter-pdex-group-characteristic-value-reference` to enable Group searches by `characteristic.valueReference`. |
+| [FHIR-51377](https://jira.hl7.org/browse/FHIR-51377) | Persuasive (applied). Added `pdex-consent-api-purpose` CodeSystem and ValueSet bound to `Consent.category` to distinguish Consent resources across Provider Access, Payer-to-Payer, and Patient Access APIs. |
+| [FHIR-53655](https://jira.hl7.org/browse/FHIR-53655) | Persuasive (applied). Expanded `Consent.performer` in the Provider Access Consent profile to allow `RelatedPerson` for opt-outs exercised by a legally recognized personal representative. |
+
+#### Clarifications and Non-Breaking Updates
+
+| JIRA Ticket | Disposition |
+|---|---|
+| [FHIR-49943](https://jira.hl7.org/browse/FHIR-49943) | Persuasive with Modification (applied). Clarified that `$multi-member-match` is synchronous; `$davinci-data-export` is the async step. Made the sync/async boundary explicit in the narrative. |
+| [FHIR-50183](https://jira.hl7.org/browse/FHIR-50183) | Persuasive with Modification (applied). Corrected §6.4.4 to describe the Payer-to-Payer workflow; removed Provider Access content that had been incorrectly placed there. |
+| [FHIR-50184](https://jira.hl7.org/browse/FHIR-50184) | Persuasive with Modification (applied). Added async polling guidance for Provider Access and Payer-to-Payer bulk APIs; corrected workflow diagrams to show poll-until-complete / retrieve NDJSON. |
+| [FHIR-50227](https://jira.hl7.org/browse/FHIR-50227) | Persuasive (applied). Reconciled PDex single `$member-match` with the HRex response profile; clarified must-support vs. should-support for `MemberIdentifier` and `MemberID`. |
+| [FHIR-51571](https://jira.hl7.org/browse/FHIR-51571) | Persuasive with Modification (applied). Clarified #delta exportType responsibility following removal of tracking extensions (FHIR-55987); providers supply `_since`; added guidance for edge cases. |
+| [FHIR-52056](https://jira.hl7.org/browse/FHIR-52056) | Persuasive (applied). Corrected §2.3 Provenance from `SHALL incorporate` to `SHOULD accept and retain`, aligning with §6.1 and the outcome of FHIR-47054. |
+| [FHIR-52066](https://jira.hl7.org/browse/FHIR-52066) | Persuasive (applied). Restructured Data Mapping to provide explicit SHALL/SHOULD obligations separately for clinical data (US Core), claims data (CARIN BB), and prior authorization data (PDex Prior Auth). |
+| [FHIR-52871](https://jira.hl7.org/browse/FHIR-52871) | Persuasive (applied). Tightened `matchedMember` contained-Patient extension cardinality from `0..1` to `1..1` in response Group profiles. Updated response example to use New Payer identifiers. |
+| [FHIR-53087](https://jira.hl7.org/browse/FHIR-53087) | Considered — Question answered (no change applied). Clarified that `Group.managingEntity` references the Payer, not the Provider. Provider references use `Group.characteristic.valueReference`. |
+| [FHIR-53616](https://jira.hl7.org/browse/FHIR-53616) | Persuasive (applied). Updated §6.2.1 diagram to show the correct async pattern: HTTP POST → poll content-location → retrieve NDJSON. |
+| [FHIR-55928](https://jira.hl7.org/browse/FHIR-55928) | Persuasive (applied). Removed conflicting `§pdex-182` SHALL for `$member-match`; single-member Payer-to-Payer `$member-match` is optional (MAY at §pdex-176). |
+| [FHIR-55981](https://jira.hl7.org/browse/FHIR-55981) | Considered for Future Use. Adopting the FHIR R5 Async Bundle pattern for `$bulk-member-match` is deferred to a future major release; PDex targets FHIR R4. |
+
+#### Technical Corrections
+
+| JIRA Ticket | Disposition |
+|---|---|
+| TC:[FHIR-50458](https://jira.hl7.org/browse/FHIR-50458) | Persuasive (applied — Technical Correction). Corrected Provider examples to replace non-conformant v2-0203 `NPI` code with the correct `PRN` code from the FHIR identifier-type ValueSet. |
+| TC:[FHIR-55620](https://jira.hl7.org/browse/FHIR-55620) | Persuasive (applied — Technical Correction). Removed `CoverageToLink` from the Provider Member Match example; providers are not a new payer. |
+| TC:[FHIR-55640](https://jira.hl7.org/browse/FHIR-55640) | Persuasive (applied — Technical Correction). Consolidated Provider Member Match examples to use `MemberBundle` consistently; removed the conflicting `Parameters-provider-bulk-member-match-in` example. |
+| TC:[FHIR-56259](https://jira.hl7.org/browse/FHIR-56259) | Persuasive (applied — Technical Correction). Updated Provider Access Consent examples so `Consent.performer` references the Practitioner by identifier (NPI) rather than by resource reference. |
 
 
 ### STU 2.1.0-ballot Reconciliation

@@ -1,11 +1,11 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "fd147fa0-89a3-4fdc-8bce-5a4c3961b17b-126",
-  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/fd147fa0-89a3-4fdc-8bce-5a4c3961b17b-126",
+  "id" : "2531e708-16cb-413d-8108-26c175e03438-126",
+  "url" : "http://hl7.org/fhir/comparison/StructureDefinition/2531e708-16cb-413d-8108-26c175e03438-126",
   "name" : "IntersectionPDexMemberMatchGroupAndPDexMemberMatchGroup",
   "title" : "Intersection of PDex Member Match Group And PDex Member Match Group",
   "status" : "active",
-  "date" : "2026-03-31T21:04:02-04:00",
+  "date" : "2026-05-29T12:42:06-04:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -249,7 +249,7 @@
       "path" : "Group.contained",
       "short" : "Contained, inline Resources",
       "definition" : "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
-      "comment" : "left: This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.; right: Each contained Patient resource SHALL be the exact Patient resource as submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifiers, and all demographics supplied by the requester. Responders SHALL NOT abridge or modify the submitted Patient resource. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to.",
+      "comment" : "left: This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.; right: Each contained Patient resource SHALL be the Patient resource submitted by the requester in the MemberBundle input parameter, preserving the original resource id, all identifier elements, and all demographic elements (name, birthDate, gender, address, telecom, communication, and other Patient elements supplied by the requester) so that the requester can unambiguously correlate each match result back to the submitted member. Responders SHALL NOT modify, abridge, or substitute the submitted Patient resource's id, identifiers, or demographic elements. Per FHIR R4 References (http://hl7.org/fhir/R4/references.html#contained), contained resources SHALL NOT carry meta.versionId, meta.lastUpdated, or meta.security and SHALL NOT themselves contain nested contained resources; where the submitted Patient resource carries any of those base-FHIR-prohibited elements, the responder SHALL remove them when copying the resource into Group.contained[], and doing so is not considered a violation of the preservation requirement. Where the same patient was submitted with multiple different Coverage plans, a contained Coverage resource MAY also be included to identify which (patient + coverage) pair this member entry corresponds to.",
       "alias" : ["inline resources",
       "anonymous resources",
       "contained resources"],
@@ -420,8 +420,8 @@
     },
     {
       "path" : "Group.type",
-      "short" : "person | animal | practitioner | device | medication | substance",
-      "definition" : "Identifies the broad classification of the kind of resources the group includes.",
+      "short" : "left: person | animal | practitioner | device | medication | substance; right: Type of group (members)",
+      "definition" : "left: Identifies the broad classification of the kind of resources the group includes.; right: Fixed to 'person'. Group.member entries reference Patient resources representing matched members.",
       "comment" : "Group members SHALL be of the appropriate resource type (Patient for person or animal; or Practitioner, Device, Medication or Substance for the other types.).",
       "requirements" : "Identifies what type of resources the group is made up of.",
       "min" : 1,
@@ -440,7 +440,7 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "binding" : {
@@ -459,8 +459,8 @@
     },
     {
       "path" : "Group.actual",
-      "short" : "Descriptive or actual",
-      "definition" : "If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.",
+      "short" : "left: Descriptive or actual; right: Actual group (not definitional)",
+      "definition" : "left: If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.; right: An actual list of matched members, not a conceptual/definitional group.",
       "requirements" : "There are use-cases for groups that define specific collections of individuals, and other groups that define \"types\" of intended individuals.  The requirements for both kinds of groups are similar, so we use a single resource, distinguished by this flag.",
       "min" : 1,
       "max" : "1",
@@ -478,7 +478,7 @@
         "expression" : "hasValue() or (children().count() > id.count())",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : false,
+      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
@@ -588,8 +588,8 @@
     },
     {
       "path" : "Group.managingEntity",
-      "short" : "Entity that is the custodian of the Group's definition",
-      "definition" : "Entity responsible for defining and maintaining Group characteristics and/or registered members.",
+      "short" : "left: Entity that is the custodian of the Group's definition; right: Payer managing this group",
+      "definition" : "left: Entity responsible for defining and maintaining Group characteristics and/or registered members.; right: Reference to the Payer organization that created and is managing this matched-member Group. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson.",
       "comment" : "This does not strictly align with ownership of a herd or flock, but may suffice to represent that relationship in simple cases. More complex cases will require an extension.",
       "min" : 0,
       "max" : "1",

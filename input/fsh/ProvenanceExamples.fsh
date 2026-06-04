@@ -24,9 +24,7 @@ Description: "Example of a Custodian Provenance record for the contents of a bun
 * reason = http://terminology.hl7.org/CodeSystem/v3-ActReason#RECORDMGT
 * activity = http://terminology.hl7.org/CodeSystem/v3-DataOperation#APPEND
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian "Custodian"
-// * agent[ProvenanceAuthor][0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian "Custodian"
-// * agent[ProvenanceAuthor][0].type = ProvenanceAgentRoleType#custodian "Custodian"
-// Fails with error Cannot Assign
+* agent[0].who.reference = "Organization/Payer1"
 * agent[ProvenanceTransmitter][0].who.reference = "Organization/Payer1"
 
 

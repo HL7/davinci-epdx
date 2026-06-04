@@ -27,7 +27,7 @@
          fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
          fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
        ] ;
-       fhir:code [ fhir:v "treatment" ]
+       fhir:code [ fhir:v "patient-privacy" ]
      ] )
   ] ; # 
   fhir:category ( [
@@ -56,13 +56,23 @@
   ] ; # 
   fhir:dateTime [ fhir:v "2024-12-09T10:15:00Z"^^xsd:dateTime] ; # 
   fhir:performer ( [
-     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> ;
-     fhir:reference [ fhir:v "Practitioner/provider-002" ] ;
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "9876543210" ]
+     ] ;
      fhir:display [ fhir:v "Dr. James Brown, MD" ]
   ] ) ; # 
   fhir:organization ( [
-     fhir:l <http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> ;
-     fhir:reference [ fhir:v "Organization/provider-org-002" ] ;
+     fhir:identifier [
+       fhir:system [
+         fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+         fhir:l <http://hl7.org/fhir/sid/us-npi>
+       ] ;
+       fhir:value [ fhir:v "1122334455" ]
+     ] ;
      fhir:display [ fhir:v "Columbus Clinic" ]
   ] ) ; # 
   fhir:source [
@@ -94,8 +104,13 @@
          ] )
        ] ;
        fhir:reference [
-         fhir:l <http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> ;
-         fhir:reference [ fhir:v "Practitioner/provider-002" ] ;
+         fhir:identifier [
+           fhir:system [
+             fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ;
+             fhir:l <http://hl7.org/fhir/sid/us-npi>
+           ] ;
+           fhir:value [ fhir:v "9876543210" ]
+         ] ;
          fhir:display [ fhir:v "Dr. James Brown" ]
        ]
      ] ) ;
@@ -110,10 +125,6 @@
   ] . # 
 
 <http://hl7.org/fhir/us/davinci-pdex/Patient/patient-prov-002> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Practitioner/provider-002> a fhir:Us .
-
-<http://hl7.org/fhir/us/davinci-pdex/Organization/provider-org-002> a fhir:Us .
 
 <http://hl7.org/fhir/us/davinci-pdex/DocumentReference/treatment-attestation-form-002> a fhir:Us .
 

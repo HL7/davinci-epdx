@@ -23,7 +23,7 @@ Describes the status of an identifier
 * Use this Extension: [mTLS Endpoint](StructureDefinition-mtls-endpoint.md) and [mTLS Organization](StructureDefinition-mtls-organization.md)
 * Examples for this Extension: [Acme of CT](Organization-Acme.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/base-ext-identifier-status)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-base-ext-identifier-status.json)
 
 ### Formal Views of Extension Content
 

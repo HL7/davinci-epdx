@@ -14,9 +14,7 @@ Usage: #example
 * date = "2020-10-09T15:26:23.217+00:00"
 * author.reference = "Organization/ProviderOrg1"
 * custodian.reference = "Organization/Payer1"
-// * content[0].format = http://hl7.org/fhir/ValueSet/formatcodes#urn:ihe:iti:xds:2017:mimeTypeSufficient
-* content[0].format.system =  "http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem"
-* content[0].format.display = "urn:ihe:iti:xds:2017:mimeTypeSufficient"
+* content[0].format = http://ihe.net/fhir/ValueSet/IHE.FormatCode.codesystem#urn:ihe:iti:xds:2017:mimeTypeSufficient
 * content[0].attachment.contentType = #application/pdf
 * content[0].attachment.url = "/Binary/1-pdf"
 * content[0].attachment.title = """

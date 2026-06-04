@@ -7,6 +7,13 @@
 # │  supported properties, see:                                                                    │
 # │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+instanceOptions:
+  # Don't auto-stamp `meta.profile` onto Instance examples — keeps examples from
+  # being implicitly bound to a profile they weren't explicitly authored against.
+  setMetaProfile: never
+  # Preserve authored slice order in generated snapshots (matches Da Vinci CRD).
+  manualSliceOrdering: true
+
 id: hl7.fhir.us.davinci-pdex
 canonical: http://hl7.org/fhir/us/davinci-pdex
 version: 2.2.0
@@ -44,25 +51,25 @@ dependencies:
   hl7.fhir.us.core.v610:
     id: uscore6
     version: 6.1.0
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    # The npm package id `hl7.fhir.us.core.v610` is a multi-version-support package id used
-    # to allow this IG to depend simultaneously on US Core 6.1.0 alongside other US Core
-    # versions. The package's own internal canonical (`http://hl7.org/fhir/us/core/v610`)
-    # is a package-base URL, not the IG-resource canonical the FHIR IG Publisher requires
-    # at this point. Pointing `uri` at the un-versioned US Core IG-resource canonical
-    # produces a known/expected "uri does not match packageId" error class that is
-    # already suppressed in `input/ignoreWarnings.txt` (see "Implementation Guide Errors
-    # v610@npm" comment). This is the same trade-off used by other Da Vinci IGs.
+    uri: http://hl7.org/fhir/us/core/v610/ImplementationGuide/hl7.fhir.us.core.v610
+    # The npm package `hl7.fhir.us.core.v610` is a multi-version-support wrapper that lets
+    # PDex depend on US Core 6.1.0 alongside other US Core versions. The wrapper's
+    # package-level canonical is `http://hl7.org/fhir/us/core/v610`; the FHIR convention
+    # for an IG resource URI is `{package-canonical}/ImplementationGuide/{packageId}`,
+    # which is what we use here. This mirrors the pattern in the Da Vinci CRD IG (see
+    # https://github.com/HL7/davinci-crd/blob/master/sushi-config.yaml) and produces zero
+    # canonical / packageId mismatch warnings on the QA report.
     reason: |
       Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers
-  # hl7.fhir.us.core.v311:
-  hl7.fhir.us.core.3.1.1:
+  hl7.fhir.us.core.v311:
     id: uscore3
     version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    # Same rationale as for hl7.fhir.us.core.v610 above — `uri` deliberately points at the
-    # un-versioned US Core IG-resource canonical so the resulting "uri does not match
-    # packageId" error class is covered by the existing suppression in ignoreWarnings.txt.
+    uri: http://hl7.org/fhir/us/core/v311/ImplementationGuide/hl7.fhir.us.core.v311
+    # Same rationale as for hl7.fhir.us.core.v610 above. Switched from the equivalent
+    # `hl7.fhir.us.core.3.1.1` wrapper packageId to `hl7.fhir.us.core.v311` so the URI
+    # composition `{package-canonical}/ImplementationGuide/{packageId}` works cleanly
+    # (the wrapper's canonical is `http://hl7.org/fhir/us/core/v311`). Both wrapper
+    # packages resolve to the same underlying US Core 3.1.1 IG resource.
     reason: |
       Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers.
 
@@ -83,8 +90,11 @@ dependencies:
     version: 2.2.1
     id: crd
   hl7.fhir.us.davinci-pas:
-    version: 2.1.0
+    version: 2.2.1
     id: pas
+    # Bumped from 2.1.0 to 2.2.1 under FHIR-57521 to adopt three new
+    # ClaimResponse-side extensions on the PDex Prior Authorization profile
+    # (admissionDates, dischargeDate, claimResponseReviewer).
   hl7.fhir.us.davinci-atr:
     version: 2.1.0
     id: atr
@@ -103,7 +113,8 @@ dependencies:
     id: dtr
   # hl7.fhir.us.directory-query: 1.0.0-ballot
   hl7.fhir.uv.extensions.r4:
-    version: 5.2.0
+    version: 5.3.0
+    # version: 5.2.0
     # version: 1.0.0
   # hl7.fhir.uv.extensions:
     # version: 5.1.0-ballot1
@@ -122,6 +133,7 @@ parameters:
   path-expansion-params: ../../input/expansion-params.json
   apply-jurisdiction: true
   apply-publisher: true
+  apply-contact: true
   # auto-oid-root: 2.16.840.1.113883.4.642.40.8
   # needs hl7.fhir.uv.tools: 0.2.0-snapshot
   generate: example-narratives
@@ -130,6 +142,11 @@ parameters:
     - input/pagecontent
     - input/intro-notes
   shownav: 'true'
+  pin-canonicals: pin-multiples
+  # Generates the "Compare with previous version" diff view against STU 2.1.0
+  # (FMG STU Update review aid).
+  version-comparison:
+    - 2.1.0
 copyrightYear: 2024+
 releaseLabel: STU 2.2 # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html

@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -352,7 +362,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="CapabilityStatement/pdex-provider-access-server">PDex provider-access Server CapabilityStatement</a>
             </td>
             <td>
-<p>This Section describes the expected capabilities of the PDex Payer-to-Payer API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Payer-to-Payer Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p>
+<p>This Section describes the expected capabilities of the PDex Provider Access API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Provider Access Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.</p>
 </td>
          </tr>
       </tbody>
@@ -378,7 +388,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="OperationDefinition/ProviderMemberMatch">PDex Provider-Member-Match Operation</a>
             </td>
             <td>
-<p>Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.</p>
+<p>Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests.</p>
 </td>
          </tr>
       </tbody>
@@ -485,17 +495,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="SearchParameter/pdex-medicationdispense-patient">PdexMedicationDispensePatient</a>
             </td>
             <td>
-<p>Returns dispensed prescriptions for a specific patient.
-NOTE: This Pdex SearchParameter definition extends the usage context of
-<a href="http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">capabilitystatement-expectation</a>
- extension to formally express implementer conformance expectations for these elements:</p>
-<ul>
-  <li>multipleAnd</li>
-  <li>multipleOr</li>
-  <li>comparator</li>
-  <li>modifier</li>
-  <li>chain.</li>
-</ul>
+<p>Returns dispensed prescriptions for a specific patient.</p>
 </td>
          </tr>
          <tr>
@@ -504,17 +504,7 @@ NOTE: This Pdex SearchParameter definition extends the usage context of
                   title="SearchParameter/pdex-medicationdispense-status">PdexMedicationDispenseStatus</a>
             </td>
             <td>
-<p>Status of the prescription dispense.
-NOTE: This SearchParameter definition extends the usage context of
-<a href="http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html">capabilitystatement-expectation</a>
- extension to formally express implementer conformance expectations for these elements:</p>
-<ul>
-  <li>multipleAnd</li>
-  <li>multipleOr</li>
-  <li>comparator</li>
-  <li>modifier</li>
-  <li>chain.</li>
-</ul>
+<p>Status of the prescription dispense.</p>
 </td>
          </tr>
       </tbody>
@@ -531,7 +521,7 @@ NOTE: This SearchParameter definition extends the usage context of
                   title="StructureDefinition/pdex-member-opt-out">Member Opt-Out Group</a>
             </td>
             <td>
-<p>A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios.</p>
+<p>A Group resource representing members who have opted out of Provider Access API data sharing. <strong>Intended use:</strong> this profile is offered as a payer-internal FHIR-based scaffolding pattern that implementers MAY adopt when their existing platform (legacy system, vendor product, internal API) cannot itself act as the authoritative reference source for opt-out determinations. Implementers whose existing systems can answer opt-out queries authoritatively are not required to use this profile. <strong>Secondary use:</strong> the same profile serves as the wire-format target profile for the <code class="language-plaintext highlighter-rouge">ConsentConstrainedMembers</code> output of the <code class="language-plaintext highlighter-rouge">$provider-member-match</code> operation; a ConsentConstrainedMembers Group returned by that operation conforms to this profile regardless of the mechanism the payer uses internally to determine opt-out status. <strong>Privacy default — SHOULD suppress when opt-out status is sensitive.</strong> Where a payer determines that disclosing opt-out status to a requesting provider would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer <strong>SHOULD</strong> suppress the <code class="language-plaintext highlighter-rouge">ConsentConstrainedMembers</code> output of <code class="language-plaintext highlighter-rouge">$provider-member-match</code> and instead include the affected members in the <code class="language-plaintext highlighter-rouge">NonMatchedMembers</code> Group; this makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The internal-tracking use of this profile is unaffected by that choice. <strong>Distinguishing master-list instances from operation-emitted response instances.</strong> Both the payer-internal master opt-out list and the response Group emitted by <code class="language-plaintext highlighter-rouge">$provider-member-match</code> conform to this profile, so a payer storing both must distinguish them at query time. The recommended discriminator is <code class="language-plaintext highlighter-rouge">Group.identifier</code>: the payer SHOULD assign master-list instances a <code class="language-plaintext highlighter-rouge">Group.identifier</code> with a payer-defined <code class="language-plaintext highlighter-rouge">system</code> URI such as <code class="language-plaintext highlighter-rouge">https://{payer}/fhir/identifier/master-opt-out-list</code> (and a stable <code class="language-plaintext highlighter-rouge">value</code>), while operation-emitted response instances either omit <code class="language-plaintext highlighter-rouge">Group.identifier</code> or use a distinct system URI such as <code class="language-plaintext highlighter-rouge">https://{payer}/fhir/identifier/match-result</code>. Payers that prefer a tag-based discriminator MAY instead use <code class="language-plaintext highlighter-rouge">Group.meta.tag</code> with a payer-defined coding. <code class="language-plaintext highlighter-rouge">Group.code</code> is <strong>not</strong> a reliable discriminator here because it is fixed-pattern to <code class="language-plaintext highlighter-rouge">PdexMultiMemberMatchResultCS#consentconstraint</code> on every conformant instance (see FHIR-56493). The Payer is the managing organization, and Group.member entries reference the patients who have exercised their right to opt-out, either broadly or for specific purposes or providers.</p>
 </td>
          </tr>
          <tr>
@@ -2006,7 +1996,7 @@ group information may also vary by payment systems.</p>
                   title="Parameters/provider-member-match-request-001">Provider-Member-Match Request Example</a>
             </td>
             <td>
-<p>Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage.</p>
+<p>Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records.</p>
 </td>
          </tr>
          <tr>
@@ -2191,7 +2181,7 @@ group information may also vary by payment systems.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

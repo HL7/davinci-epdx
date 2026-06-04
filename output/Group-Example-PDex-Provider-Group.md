@@ -18,7 +18,7 @@ Profile: [PDex Provider Group](StructureDefinition-pdex-provider-group.md)
 
 **Members Opted-out**: 5
 
-**identifier**: [United States National Provider Identifier](http://terminology.hl7.org/6.3.0/NamingSystem-npi.html)/1122334455, [USEIN](http://terminology.hl7.org/4.0.0/NamingSystem-USEIN.html)/99-12345
+**identifier**: [NPI](http://terminology.hl7.org/3.1.0/NamingSystem-npi.html)/1122334455, [United States Employer Identification Number](http://terminology.hl7.org/7.1.0/NamingSystem-USEIN.html)/99-12345
 
 **active**: true
 
@@ -37,7 +37,7 @@ Profile: [PDex Provider Group](StructureDefinition-pdex-provider-group.md)
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
 | - | **Code** | **Value[x]** | **Exclude** | **Period** |
-| * | PDex Provider Group | Identifier:[United States National Provider Identifier](http://terminology.hl7.org/6.3.0/NamingSystem-npi.html)/0123456789 | false | 2024-03-21 --> (ongoing) |
+| * | PDex Provider Group | Identifier:[NPI](http://terminology.hl7.org/3.1.0/NamingSystem-npi.html)/0123456789 | false | 2024-03-21 --> (ongoing) |
 
 > **member**
 > **id**0

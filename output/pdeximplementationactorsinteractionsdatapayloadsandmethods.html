@@ -159,8 +159,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -268,11 +278,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
 
-  <table class="colsi">
+  <table class="colstu">
     <tr>
   
       <td>
-        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+        <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
         
       </td>
   
@@ -396,8 +406,8 @@ These APIs are:</p>
   <li><a href="payertopayerbulkexchange.html">Payer-to-Payer Bulk API</a></li>
 </ul>
 
-<p>Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That
-method has been superceded by the <a href="provider-access-api.html">Provider Access API</a> that meets the requirements of
+<p>Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to member data. That
+method has been superseded by the <a href="provider-access-api.html">Provider Access API</a> that meets the requirements of
 the CMS Prior Authorization Rule (CMS-0057).</p>
 
 <h4 id="cds-hooks-with-smart-on-fhir">CDS Hooks with SMART-on-FHIR</h4>
@@ -617,7 +627,7 @@ using the same content provided to Payers. i,e. Attaching as a binary resource a
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

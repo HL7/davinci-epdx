@@ -20,7 +20,7 @@ The Provider Attribution Group List. Based on the Da Vinci Attribution Group (AT
 * Examples for this Profile: [Attributed List of Health Plan Members for Practitioner 1122334455.](Group-Example-PDex-Provider-Group.md)
 * CapabilityStatements using this Profile: [PDex Provider Access Server CapabilityStatement](CapabilityStatement-pdex-provider-access-server.md), [PDex Server CapabilityStatement with US core 6.1 support](CapabilityStatement-pdex-server-6-1.md) and [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-provider-group)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-provider-group.json)
 
 ### Formal Views of Profile Content
 
@@ -66,7 +66,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-group.
   "title" : "PDex Provider Group",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

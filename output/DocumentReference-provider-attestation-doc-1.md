@@ -44,7 +44,7 @@
 | | | |
 | :--- | :--- | :--- |
 | - | **Period** | **Related** |
-| * | 2024-01-15 --> (ongoing) | [Encounter: status = finished; class = Ambulatory (ActCode#AMB); type = Consultation](Encounter-6.md) |
+| * | 2024-01-15 --> (ongoing) | [Encounter: status = finished; class = Ambulatory (v3 Code System ActCode#AMB); type = Consultation](Encounter-6.md) |
 
 
 

@@ -21,7 +21,7 @@ The STU 2.1 version of the IG incorporates changes to support the sharing of Pri
 
 CMS Guidance defines two sets of data to be made available by payers in the Patient Access API: Claims and Encounter Data and Clinical data. They provide links to specific implementations guides for the Patient Access API to provide guidance. Use of these implementation guides is not required but is recommended. If used these guides will provide information payers can employ to meet the requirements of the policies being finalized. The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)]() defines how Claims and Encounter Data are to be provided; This Da Vinci Payer Data Exchange IG (PDex) and the [US Core 3.1.1 IG](http://hl7.org/fhir/us/core/3.1.1), [US Core 6.1.0 IG](http://hl7.org/fhir/us/core/STU6.1) or [US Core 7.0.0 IG](http://hl7.org/fhir/us/core/STU7) define how Clinical Data is to be provided.
 
-This version of the Implementation Guide introduces support for [US Core 7.0.0 IG](http://hl7.org/fhir/us/core/STU7). Since the IG embraces US Core the support for [US Core 7.0.0](http://hl7.org/fhir/us/core/STU7) is similar to the support for [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) which required minimal changes to the PDex IG. Throughout this IG references to [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) can also be interpreted as supporting [US Core 7.0.0](http://hl7.org/fhir/us/core/STU7) which is expected to supercede [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) in 2028.
+This version of the Implementation Guide introduces support for [US Core 7.0.0 IG](http://hl7.org/fhir/us/core/STU7). Since the IG embraces US Core the support for [US Core 7.0.0](http://hl7.org/fhir/us/core/STU7) is similar to the support for [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) which required minimal changes to the PDex IG. Throughout this IG references to [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) can also be interpreted as supporting [US Core 7.0.0](http://hl7.org/fhir/us/core/STU7) which is expected to supersede [US Core 6.1.0](http://hl7.org/fhir/us/core/STU6.1) in 2028.
 
 ### Continuing Standards Evolution
 
@@ -100,7 +100,7 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 
 ### Endpoint Discovery
 
-§pdex-88: Implementers of this IG **SHOULD** support the [endpoint discovery](http://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
+§pdex-88: Implementers of this IG **SHOULD** support the [endpoint discovery](http://hl7.org/fhir/us/davinci-hrex/1.2.0/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
 
 * Patient Access API.
 * Provider Access API.
@@ -114,22 +114,33 @@ This publication includes IP covered under the following statements.
 
 * All X12 products are subject to this IP policy, including published and draft works.X12 is the only organization authorized to grant permission for use of X12 products. Users of all X12 products should make sure that they understand the permissible uses, as well as the limitations on such usage, as outlined below.Additional IP information can be found [here](https://x12.org/products/ip-use) Send an email to ip@x12.org to request permission to reproduce X12 IP. Include your name, organization, title, address, city, state, zip, email, a detailed description of the Submitted Artifact, including the underlying or cited X12 Product, and a detailed description of the intended audience and planned distribution method for the Artifact.Additional information on X12 licensing program can be found [here](https://x12.org/products/licensing-program) To purchase code list subscriptions call (425) 562-2245 or email admin@wpc-edi.com.
 
-* [X12 Claim Adjustment Reason Codes](http://terminology.hl7.org/6.3.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html): [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md) and [X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes](ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.md)
+* [X12 Claim Adjustment Reason Codes](http://terminology.hl7.org/6.5.0/CodeSystem-X12ClaimAdjustmentReasonCodes.html): [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md) and [X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes](ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.md)
 
 
 * All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.Please see [[https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)](https://x12.org/products/licensing-program) 
 
-* [X12 Service Type Codes](http://terminology.hl7.org/6.3.0/CodeSystem-X12ServiceTypeCodes.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md) and [PriorAuthServiceTypeCodes](ValueSet-PriorAuthServiceTypeCodes.md)
+* [X12 Service Type Codes](http://terminology.hl7.org/6.5.0/CodeSystem-X12ServiceTypeCodes.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md) and [PriorAuthServiceTypeCodes](ValueSet-PriorAuthServiceTypeCodes.md)
 
 
 * CMS maintains HIPPS. There are no known constraints on the use of HIPPS.
 
-* [Health Insurance Prospective Payment System (HIPPS)](http://terminology.hl7.org/6.3.0/CodeSystem-HIPPS.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PDexPAInstitutionalProcedureCodes](ValueSet-PDexPAInstitutionalProcedureCodes.md), [PDexPAInstitutionalProcedureCodesVS](ValueSet-PDexPAInstitutionalProcedureCodesVS.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+* [Health Insurance Prospective Payment System (HIPPS)](http://terminology.hl7.org/6.5.0/CodeSystem-HIPPS.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PDexPAInstitutionalProcedureCodes](ValueSet-PDexPAInstitutionalProcedureCodes.md), [PDexPAInstitutionalProcedureCodesVS](ValueSet-PDexPAInstitutionalProcedureCodesVS.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+
+
+* HL7 Inc.
+
+* [Claim Type Codes](http://hl7.org/fhir/R4/codesystem-claim-type.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
+* [Coverage Class Codes](http://hl7.org/fhir/R4/codesystem-coverage-class.html): [Coverage/CoverageMatchExample1](Coverage-CoverageMatchExample1.md), [Coverage/CoverageMatchExample2](Coverage-CoverageMatchExample2.md)... Show 4 more, [Coverage/coverage-2](Coverage-coverage-2.md), [Matched Members](Group-07e72a15407547bf9d03f522aa536a72.1.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md) and [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
 
 
 * ISO maintains the copyright on the country codes, and controls its use carefully. For further details see the ISO 3166 web page: [https://www.iso.org/iso-3166-country-codes.html](https://www.iso.org/iso-3166-country-codes.html)
 
-* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.3.0/CodeSystem-ISO3166Part1.html): [AssociatedServers](StructureDefinition-base-ext-associatedServers.md), [AttestationProvisionTypeValueSet](ValueSet-attestation-provision-type-valueset.md)... Show 106 more, [AttestationStatusValueSet](ValueSet-attestation-status-valueset.md), [BulkMemberMatch](OperationDefinition-BulkMemberMatch.md), [ContactPointAvailableTime](StructureDefinition-base-ext-contactpoint-availabletime.md), [DaVinciPayerDataExchange](index.md), [DispenseRefill](StructureDefinition-DispenseRefill.md), [DynamicRegistration](StructureDefinition-base-ext-dynamicRegistration.md), [EndpointAccessControlMechanism](StructureDefinition-base-ext-endpointAccessControlMechanism.md), [EndpointPayloadTypeCS](CodeSystem-EndpointPayloadTypeCS.md), [EndpointPayloadTypeVS](ValueSet-EndpointPayloadTypeVS.md), [EndpointRank](StructureDefinition-base-ext-endpoint-rank.md), [EndpointUsecase](StructureDefinition-base-ext-endpoint-usecase.md), [ExplanationOfBenefit_Identifier](SearchParameter-explanationofbenefit-identifier.md), [ExplanationOfBenefit_Patient](SearchParameter-explanationofbenefit-patient.md), [ExplanationOfBenefit_ServiceDate](SearchParameter-explanationofbenefit-service-date.md), [ExplanationOfBenefit_Type](SearchParameter-explanationofbenefit-type.md), [ExplanationOfBenefit_Use](SearchParameter-explanationofbenefit-use.md), [FDANationalDrugCode](ValueSet-FDANationalDrugCode.md), [FhirIg](StructureDefinition-base-ext-fhir-ig.md), [Group_Code](SearchParameter-group-code.md), [IdentifierStatus](StructureDefinition-base-ext-identifier-status.md), [LevelOfServiceCode](StructureDefinition-extension-levelOfServiceCode.md), [MatchCoverage](StructureDefinition-base-ext-match-coverage.md), [MatchParameters](StructureDefinition-base-ext-match-parameters.md), [MemberOptOut](StructureDefinition-pdex-member-opt-out.md), [MemberProviderTreatmentRelationship](StructureDefinition-pdex-treatment-relationship.md), [MembersOptedOut](StructureDefinition-base-ext-members-opted-out.md), [MtlsBundle](StructureDefinition-mtls-bundle.md), [MtlsEndpoint](StructureDefinition-mtls-endpoint.md), [MtlsObjectCodeCS](CodeSystem-MtlsObjectCodeCS.md), [MtlsObjectTypeVS](ValueSet-MtlsObjectTypeVS.md), [MtlsOrganization](StructureDefinition-mtls-organization.md), [MtlsSignedObject](StructureDefinition-pdex-mtls-signedobject-extension.md), [OptOutDetails](StructureDefinition-opt-out-details.md), [OptOutReason](StructureDefinition-opt-out-reason.md), [OptOutReasonCodeSystem](CodeSystem-opt-out-reason.md), [OptOutReasonValueSet](ValueSet-opt-out-reason-valueset.md), [OptOutScopeCodeSystem](CodeSystem-opt-out-scope.md), [OptOutScopeValueSet](ValueSet-opt-out-scope-valueset.md), [OrgTypeCS](CodeSystem-OrgTypeCS.md), [OrgTypeVS](ValueSet-OrgTypeVS.md), [PDexAdjudication](ValueSet-PDexAdjudication.md), [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md), [PDexAdjudicationDiscriminator](CodeSystem-PDexAdjudicationDiscriminator.md), [PDexConsentAction](SearchParameter-pdex-consent-action.md), [PDexConsentApiPurposeCS](CodeSystem-pdex-consent-api-purpose.md), [PDexConsentApiPurposeVS](ValueSet-pdex-consent-api-purpose-vs.md), [PDexConsentProviderAccess](SearchParameter-pdex-consent-provider-access.md), [PDexConsentProvisionType](SearchParameter-pdex-consent-provision-type.md), [PDexGroupCharacteristicValueReference](SearchParameter-pdex-group-characteristic-value-reference.md), [PDexIdentifierType](CodeSystem-PDexIdentifierType.md), [PDexMemberCharacteristicCode](CodeSystem-pdex-member-characteristic-code.md), [PDexMemberMatchGroup](StructureDefinition-pdex-member-match-group.md), [PDexMemberNoMatchGroup](StructureDefinition-pdex-member-no-match-group.md), [PDexMultiMemberMatchRequestParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.md), [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.md), [PDexMultiMemberMatchResultVS](ValueSet-PDexMultiMemberMatchResultVS.md), [PDexPAInstitutionalProcedureCodes](ValueSet-PDexPAInstitutionalProcedureCodes.md), [PDexPAInstitutionalProcedureCodesVS](ValueSet-PDexPAInstitutionalProcedureCodesVS.md), [PDexPayerAdjudicationStatus](CodeSystem-PDexPayerAdjudicationStatus.md), [PDexPayerBenefitPaymentStatus](ValueSet-PDexPayerBenefitPaymentStatus.md), [PDexProviderGroup](StructureDefinition-pdex-provider-group.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md), [PDexServerCapabilityStatement61](CapabilityStatement-pdex-server-6-1.md), [PDexSupportingInfoType](ValueSet-PDexSupportingInfoType.md), [PDexSupportingInfoTypeCS](CodeSystem-PDexSupportingInfoTypeCS.md), [PdexDevice](StructureDefinition-pdex-device.md), [PdexMedicationDispense](StructureDefinition-pdex-medicationdispense.md), [PdexMedicationDispensePatient](SearchParameter-pdex-medicationdispense-patient.md), [PdexMedicationDispenseStatus](SearchParameter-pdex-medicationdispense-status.md), [PdexMemberAttributionCS](CodeSystem-PdexMemberAttributionCS.md), [PdexMultiMemberMatchResultCS](CodeSystem-PdexMultiMemberMatchResultCS.md), [PdexPayerAccessServerCapabilityStatement](CapabilityStatement-pdex-payer-access-server.md), [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md), [PdexProviderAccessServerCapabilityStatement](CapabilityStatement-pdex-provider-access-server.md), [PdexServerCapabilityStatement](CapabilityStatement-pdex-server.md), [PriorAuthServiceTypeCodes](ValueSet-PriorAuthServiceTypeCodes.md), [PriorAuthorizationAmounts](ValueSet-PriorAuthorizationAmounts.md), [PriorAuthorizationUtilization](StructureDefinition-PriorAuthorizationUtilization.md), [PriorAuthorizationValueCodes](CodeSystem-PriorAuthorizationValueCodes.md), [Provenance](StructureDefinition-pdex-provenance.md), [ProvenanceAgentRoleType](CodeSystem-ProvenanceAgentRoleType.md), [ProvenanceAgentType](ValueSet-ProvenanceAgentType.md), [ProvenancePayerDataSource](CodeSystem-ProvenancePayerDataSource.md), [ProvenancePayerSourceFormat](ValueSet-ProvenancePayerSourceFormat.md), [ProvenanceSourceFrom](StructureDefinition-ProvenanceSourceFrom.md), [ProviderAccessUseCase](StructureDefinition-pdex-provider-access-use-case.md), [ProviderMemberMatch](OperationDefinition-ProviderMemberMatch.md), [ProviderMemberMatchGroup](StructureDefinition-pdex-provider-member-match.md), [ProviderMemberNoMatchGroup](StructureDefinition-pdex-provider-member-no-match.md), [ProviderMultiMemberMatchRequestParameters](StructureDefinition-provider-parameters-multi-member-match-bundle-in.md), [ProviderMultiMemberMatchResponseParameters](StructureDefinition-provider-parameters-multi-member-match-bundle-out.md), [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md), [ReviewAction](StructureDefinition-extension-reviewAction.md), [ReviewActionCode](StructureDefinition-extension-reviewActionCode.md), [SecureExchangeArtifacts](StructureDefinition-base-ext-secureExchangeArtifacts.md), [TreatmentRelationshipDetails](StructureDefinition-treatment-relationship-details.md), [TreatmentRelationshipTypeCodeSystem](CodeSystem-treatment-relationship-type.md), [TreatmentRelationshipTypeValueSet](ValueSet-treatment-relationship-type-valueset.md), [TrustFramework](StructureDefinition-base-ext-trustFramework.md), [TrustFrameworkTypeCS](CodeSystem-TrustFrameworkTypeCS.md), [TrustFrameworkTypeVS](ValueSet-TrustFrameworkTypeVS.md), [TrustProfileCS](CodeSystem-TrustProfileCS.md), [VerificationStatus](StructureDefinition-base-ext-verification-status.md), [WhenAdjudicated](StructureDefinition-base-ext-when-adjudicated.md), [X12278ReviewDecisionReasonCode](ValueSet-X12278ReviewDecisionReasonCode.md) and [X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes](ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.md)
+* [ISO 3166-1 Codes for the representation of names of countries and their subdivisions — Part 1: Country code](http://terminology.hl7.org/6.5.0/CodeSystem-ISO3166Part1.html): [AssociatedServers](StructureDefinition-base-ext-associatedServers.md), [AttestationProvisionTypeValueSet](ValueSet-attestation-provision-type-valueset.md)... Show 106 more, [AttestationStatusValueSet](ValueSet-attestation-status-valueset.md), [BulkMemberMatch](OperationDefinition-BulkMemberMatch.md), [ContactPointAvailableTime](StructureDefinition-base-ext-contactpoint-availabletime.md), [DaVinciPayerDataExchange](index.md), [DispenseRefill](StructureDefinition-DispenseRefill.md), [DynamicRegistration](StructureDefinition-base-ext-dynamicRegistration.md), [EndpointAccessControlMechanism](StructureDefinition-base-ext-endpointAccessControlMechanism.md), [EndpointPayloadTypeCS](CodeSystem-EndpointPayloadTypeCS.md), [EndpointPayloadTypeVS](ValueSet-EndpointPayloadTypeVS.md), [EndpointRank](StructureDefinition-base-ext-endpoint-rank.md), [EndpointUsecase](StructureDefinition-base-ext-endpoint-usecase.md), [ExplanationOfBenefit_Identifier](SearchParameter-explanationofbenefit-identifier.md), [ExplanationOfBenefit_Patient](SearchParameter-explanationofbenefit-patient.md), [ExplanationOfBenefit_ServiceDate](SearchParameter-explanationofbenefit-service-date.md), [ExplanationOfBenefit_Type](SearchParameter-explanationofbenefit-type.md), [ExplanationOfBenefit_Use](SearchParameter-explanationofbenefit-use.md), [FDANationalDrugCode](ValueSet-FDANationalDrugCode.md), [FhirIg](StructureDefinition-base-ext-fhir-ig.md), [Group_Code](SearchParameter-group-code.md), [IdentifierStatus](StructureDefinition-base-ext-identifier-status.md), [LevelOfServiceCode](StructureDefinition-extension-levelOfServiceCode.md), [MatchCoverage](StructureDefinition-base-ext-match-coverage.md), [MatchParameters](StructureDefinition-base-ext-match-parameters.md), [MemberOptOut](StructureDefinition-pdex-member-opt-out.md), [MemberProviderTreatmentRelationship](StructureDefinition-pdex-treatment-relationship.md), [MembersOptedOut](StructureDefinition-base-ext-members-opted-out.md), [MtlsBundle](StructureDefinition-mtls-bundle.md), [MtlsEndpoint](StructureDefinition-mtls-endpoint.md), [MtlsObjectCodeCS](CodeSystem-MtlsObjectCodeCS.md), [MtlsObjectTypeVS](ValueSet-MtlsObjectTypeVS.md), [MtlsOrganization](StructureDefinition-mtls-organization.md), [MtlsSignedObject](StructureDefinition-pdex-mtls-signedobject-extension.md), [OptOutDetails](StructureDefinition-opt-out-details.md), [OptOutReason](StructureDefinition-opt-out-reason.md), [OptOutReasonCodeSystem](CodeSystem-opt-out-reason.md), [OptOutReasonValueSet](ValueSet-opt-out-reason-valueset.md), [OptOutScopeCodeSystem](CodeSystem-opt-out-scope.md), [OptOutScopeValueSet](ValueSet-opt-out-scope-valueset.md), [OrgTypeCS](CodeSystem-OrgTypeCS.md), [OrgTypeVS](ValueSet-OrgTypeVS.md), [PDexAdjudication](ValueSet-PDexAdjudication.md), [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md), [PDexAdjudicationDiscriminator](CodeSystem-PDexAdjudicationDiscriminator.md), [PDexConsentAction](SearchParameter-pdex-consent-action.md), [PDexConsentApiPurposeCS](CodeSystem-pdex-consent-api-purpose.md), [PDexConsentApiPurposeVS](ValueSet-pdex-consent-api-purpose-vs.md), [PDexConsentProviderAccess](SearchParameter-pdex-consent-provider-access.md), [PDexConsentProvisionType](SearchParameter-pdex-consent-provision-type.md), [PDexGroupCharacteristicValueReference](SearchParameter-pdex-group-characteristic-value-reference.md), [PDexIdentifierType](CodeSystem-PDexIdentifierType.md), [PDexMemberCharacteristicCode](CodeSystem-pdex-member-characteristic-code.md), [PDexMemberMatchGroup](StructureDefinition-pdex-member-match-group.md), [PDexMemberNoMatchGroup](StructureDefinition-pdex-member-no-match-group.md), [PDexMultiMemberMatchRequestParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-in.md), [PDexMultiMemberMatchResponseParameters](StructureDefinition-pdex-parameters-multi-member-match-bundle-out.md), [PDexMultiMemberMatchResultVS](ValueSet-PDexMultiMemberMatchResultVS.md), [PDexPAInstitutionalProcedureCodes](ValueSet-PDexPAInstitutionalProcedureCodes.md), [PDexPAInstitutionalProcedureCodesVS](ValueSet-PDexPAInstitutionalProcedureCodesVS.md), [PDexPayerAdjudicationStatus](CodeSystem-PDexPayerAdjudicationStatus.md), [PDexPayerBenefitPaymentStatus](ValueSet-PDexPayerBenefitPaymentStatus.md), [PDexProviderGroup](StructureDefinition-pdex-provider-group.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md), [PDexServerCapabilityStatement61](CapabilityStatement-pdex-server-6-1.md), [PDexSupportingInfoType](ValueSet-PDexSupportingInfoType.md), [PDexSupportingInfoTypeCS](CodeSystem-PDexSupportingInfoTypeCS.md), [PdexDevice](StructureDefinition-pdex-device.md), [PdexMedicationDispense](StructureDefinition-pdex-medicationdispense.md), [PdexMedicationDispensePatient](SearchParameter-pdex-medicationdispense-patient.md), [PdexMedicationDispenseStatus](SearchParameter-pdex-medicationdispense-status.md), [PdexMemberAttributionCS](CodeSystem-PdexMemberAttributionCS.md), [PdexMultiMemberMatchResultCS](CodeSystem-PdexMultiMemberMatchResultCS.md), [PdexPayerAccessServerCapabilityStatement](CapabilityStatement-pdex-payer-access-server.md), [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md), [PdexProviderAccessServerCapabilityStatement](CapabilityStatement-pdex-provider-access-server.md), [PdexServerCapabilityStatement](CapabilityStatement-pdex-server.md), [PriorAuthServiceTypeCodes](ValueSet-PriorAuthServiceTypeCodes.md), [PriorAuthorizationAmounts](ValueSet-PriorAuthorizationAmounts.md), [PriorAuthorizationUtilization](StructureDefinition-PriorAuthorizationUtilization.md), [PriorAuthorizationValueCodes](CodeSystem-PriorAuthorizationValueCodes.md), [Provenance](StructureDefinition-pdex-provenance.md), [ProvenanceAgentRoleType](CodeSystem-ProvenanceAgentRoleType.md), [ProvenanceAgentType](ValueSet-ProvenanceAgentType.md), [ProvenancePayerDataSource](CodeSystem-ProvenancePayerDataSource.md), [ProvenancePayerSourceFormat](ValueSet-ProvenancePayerSourceFormat.md), [ProvenanceSourceFrom](StructureDefinition-ProvenanceSourceFrom.md), [ProviderAccessUseCase](StructureDefinition-pdex-provider-access-use-case.md), [ProviderMemberMatch](OperationDefinition-ProviderMemberMatch.md), [ProviderMemberMatchGroup](StructureDefinition-pdex-provider-member-match.md), [ProviderMemberNoMatchGroup](StructureDefinition-pdex-provider-member-no-match.md), [ProviderMultiMemberMatchRequestParameters](StructureDefinition-provider-parameters-multi-member-match-bundle-in.md), [ProviderMultiMemberMatchResponseParameters](StructureDefinition-provider-parameters-multi-member-match-bundle-out.md), [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md), [ReviewAction](StructureDefinition-extension-reviewAction.md), [ReviewActionCode](StructureDefinition-extension-reviewActionCode.md), [SecureExchangeArtifacts](StructureDefinition-base-ext-secureExchangeArtifacts.md), [TreatmentRelationshipDetails](StructureDefinition-treatment-relationship-details.md), [TreatmentRelationshipTypeCodeSystem](CodeSystem-treatment-relationship-type.md), [TreatmentRelationshipTypeValueSet](ValueSet-treatment-relationship-type-valueset.md), [TrustFramework](StructureDefinition-base-ext-trustFramework.md), [TrustFrameworkTypeCS](CodeSystem-TrustFrameworkTypeCS.md), [TrustFrameworkTypeVS](ValueSet-TrustFrameworkTypeVS.md), [TrustProfileCS](CodeSystem-TrustProfileCS.md), [VerificationStatus](StructureDefinition-base-ext-verification-status.md), [WhenAdjudicated](StructureDefinition-base-ext-when-adjudicated.md), [X12278ReviewDecisionReasonCode](ValueSet-X12278ReviewDecisionReasonCode.md) and [X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes](ValueSet-X12ClaimAdjustmentReasonCodesCMSRemittanceAdviceRemarkCodes.md)
+
+
+* Some content from IHE® Copyright © 2015 IHE International, Inc. This content is from the IHE Technical Frameworks and Supplements, available for free download and use at [http://www.ihe.net/Technical_Frameworks/](http://www.ihe.net/Technical_Frameworks/)
+
+* [Endpoint Connection Type](http://hl7.org/fhir/R4/codesystem-endpoint-connection-type.html): [Bundle/example-mtls-endpoint-bundle](Bundle-example-mtls-endpoint-bundle.md), [MtlsEndpoint](StructureDefinition-mtls-endpoint.md) and [Payer-Payer Exchange](Endpoint-diamond-mtls-endpoint2.md)
 
 
 * These codes are excerpted from ASTM Standard, E1762-95(2013) - Standard Guide for Electronic Authentication of Health Care Information, Copyright by ASTM International, 100 Barr Harbor Drive, West Conshohocken, PA 19428. Copies of this standard are available through the ASTM Web Site at www.astm.org.
@@ -139,20 +150,37 @@ This publication includes IP covered under the following statements.
 
 * This CodeSystem is not copyrighted.
 
-* [C4BB Adjudication Code System](http://hl7.org/fhir/us/carin-bb/STU2.1/CodeSystem-C4BBAdjudication.html): [PDexAdjudication](ValueSet-PDexAdjudication.md), [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+* [C4BB Adjudication Code System](http://hl7.org/fhir/us/carin-bb/STU2.2/CodeSystem-C4BBAdjudication.html): [PDexAdjudication](ValueSet-PDexAdjudication.md), [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
 * [PDex Adjudication Discriminator](CodeSystem-PDexAdjudicationDiscriminator.md): [PDexAdjudicationCategoryDiscriminator](ValueSet-PDexAdjudicationCategoryDiscriminator.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+* [PDex Identifier Type](CodeSystem-PDexIdentifierType.md): [Group/example-pdex-treatment-relationship-group](Group-example-pdex-treatment-relationship-group.md), [Group/example-provider-consent-constrained-group](Group-example-provider-consent-constrained-group.md), [Group/example-provider-matched-group](Group-example-provider-matched-group.md), [Group/example-provider-nomatch-group](Group-example-provider-nomatch-group.md) and [Group/member-opt-out-group-001](Group-member-opt-out-group-001.md)
 * [PDex Payer Adjudication Status](CodeSystem-PDexPayerAdjudicationStatus.md): [PDexPayerBenefitPaymentStatus](ValueSet-PDexPayerBenefitPaymentStatus.md)
 * [PDex Supporting Info Type](CodeSystem-PDexSupportingInfoTypeCS.md): [PDexSupportingInfoType](ValueSet-PDexSupportingInfoType.md)
 
 
 * This is an example set based on ASTM Standard, E1762-95 (2013) HL7 RoleClass OID 2.16.840.1.113883.5.110, HL7 Role Code 2.16.840.1.113883.5.111, HL7 ParticipationType OID: 2.16.840.1.113883.5.90, HL7 ParticipationFunction codes at OID: 2.16.840.1.113883.5.88, and HL7 Security and Privacy Domain Analysis Model roles classes.
 
-* [Contract Signer Type Codes](http://terminology.hl7.org/7.1.0/CodeSystem-contractsignertypecodes.html): [Bundle/1000000-1](Bundle-1000000-1.md), [Bundle/1000000-2](Bundle-1000000-2.md), [Bundle/1000000-3](Bundle-1000000-3.md) and [Provenance/1000017](Provenance-1000017.md)
+* [Contract Signer Type Codes](http://hl7.org/fhir/R4/codesystem-contract-signer-type.html): [Bundle/1000000-1](Bundle-1000000-1.md), [Bundle/1000000-2](Bundle-1000000-2.md), [Bundle/1000000-3](Bundle-1000000-3.md) and [Provenance/1000017](Provenance-1000017.md)
+
+
+* This is an example set.
+
+* [Adjudication Value Codes](http://hl7.org/fhir/R4/codesystem-adjudication.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PDexAdjudication](ValueSet-PDexAdjudication.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+* [Consent Action Codes](http://hl7.org/fhir/R4/codesystem-consent-action.html): [Consent/consent-2](Consent-consent-2.md), [Consent/consent-permit-1](Consent-consent-permit-1.md), [Consent/no-consent-1](Consent-no-consent-1.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md) and [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md)
+* [Consent Scope Codes](http://hl7.org/fhir/R4/codesystem-consent-scope.html): [Consent/consent-2](Consent-consent-2.md), [Consent/consent-permit-1](Consent-consent-permit-1.md)... Show 8 more, [Consent/no-consent-1](Consent-no-consent-1.md), [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md), [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md) and [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
+* [Example Diagnosis Type Codes](http://hl7.org/fhir/R4/codesystem-ex-diagnosistype.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
+* [Example Related Claim Relationship Codes](http://hl7.org/fhir/R4/codesystem-related-claim-relationship.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
+* [Funds Reservation Codes](http://hl7.org/fhir/R4/codesystem-fundsreserve.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
+* [Process Priority Codes](http://hl7.org/fhir/R4/codesystem-process-priority.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
+
+
+* This is an extensible set.
+
+* [SubscriberPolicyholder Relationship Codes](http://hl7.org/fhir/R4/codesystem-subscriber-relationship.html): [Coverage/883210](Coverage-883210.md), [Coverage/Coverage1](Coverage-Coverage1.md)... Show 6 more, [Coverage/CoverageMatchExample1](Coverage-CoverageMatchExample1.md), [Coverage/CoverageMatchExample2](Coverage-CoverageMatchExample2.md), [Coverage/coverage-2](Coverage-coverage-2.md), [Coverage/coverage-link-2](Coverage-coverage-link-2.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md) and [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
 
 
 * This material contains content from [LOINC](http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the [license](http://loinc.org/license). LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
 
-* [LOINC](http://terminology.hl7.org/6.3.0/CodeSystem-v3-loinc.html): [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md)... Show 7 more, [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [DocumentReference/123456](DocumentReference-123456.md), [DocumentReference/provider-attestation-doc-1](DocumentReference-provider-attestation-doc-1.md), [DocumentReference/treatment-attestation-form-001](DocumentReference-treatment-attestation-form-001.md), [DocumentReference/treatment-attestation-form-002](DocumentReference-treatment-attestation-form-002.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md) and [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
+* [LOINC](http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html): [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md)... Show 7 more, [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [DocumentReference/123456](DocumentReference-123456.md), [DocumentReference/provider-attestation-doc-1](DocumentReference-provider-attestation-doc-1.md), [DocumentReference/treatment-attestation-form-001](DocumentReference-treatment-attestation-form-001.md), [DocumentReference/treatment-attestation-form-002](DocumentReference-treatment-attestation-form-002.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md) and [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
 
 
 * This material contains content that is copyright of SNOMED International. Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact [https://www.snomed.org/get-snomed](https://www.snomed.org/get-snomed) or [info@snomed.org](mailto:info@snomed.org).
@@ -162,32 +190,12 @@ This publication includes IP covered under the following statements.
 
 * This material derives from the HL7 Terminology (THO). THO is copyright ©1989+ Health Level Seven International and is made available under the CC0 designation. For more licensing information see: [https://terminology.hl7.org/license.html](https://terminology.hl7.org/license.html)
 
-* [Adjudication Value Codes](http://terminology.hl7.org/7.1.0/CodeSystem-adjudication.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md), [PDexAdjudication](ValueSet-PDexAdjudication.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
-* [Claim Type Codes](http://terminology.hl7.org/7.1.0/CodeSystem-claim-type.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
-* [Condition Category Codes](http://terminology.hl7.org/7.1.0/CodeSystem-condition-category.html): [Bundle/3000003](Bundle-3000003.md)
-* [Condition Clinical Status Codes](http://terminology.hl7.org/7.1.0/CodeSystem-condition-clinical.html): [Bundle/3000003](Bundle-3000003.md)
-* [ConditionVerificationStatus](http://terminology.hl7.org/7.1.0/CodeSystem-condition-ver-status.html): [Bundle/3000003](Bundle-3000003.md)
-* [Consent Action Codes](http://terminology.hl7.org/7.1.0/CodeSystem-consentaction.html): [Consent/consent-2](Consent-consent-2.md), [Consent/consent-permit-1](Consent-consent-permit-1.md), [Consent/no-consent-1](Consent-no-consent-1.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md) and [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md)
-* [Consent Category Codes](http://terminology.hl7.org/7.1.0/CodeSystem-consentcategorycodes.html): [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
-* [Consent PolicyRule Codes](http://terminology.hl7.org/7.1.0/CodeSystem-consentpolicycodes.html): [Consent/consent-permit-1](Consent-consent-permit-1.md), [Consent/no-consent-1](Consent-no-consent-1.md) and [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md)
-* [Consent Scope Codes](http://terminology.hl7.org/7.1.0/CodeSystem-consentscope.html): [Consent/consent-2](Consent-consent-2.md), [Consent/consent-permit-1](Consent-consent-permit-1.md)... Show 8 more, [Consent/no-consent-1](Consent-no-consent-1.md), [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md), [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md) and [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
-* [Coverage Class Codes](http://terminology.hl7.org/7.1.0/CodeSystem-coverage-class.html): [Coverage/CoverageMatchExample1](Coverage-CoverageMatchExample1.md), [Coverage/CoverageMatchExample2](Coverage-CoverageMatchExample2.md)... Show 4 more, [Coverage/coverage-2](Coverage-coverage-2.md), [Matched Members](Group-07e72a15407547bf9d03f522aa536a72.1.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md) and [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
-* [DataAbsentReason](http://terminology.hl7.org/7.1.0/CodeSystem-data-absent-reason.html): [Bundle/example-mtls-endpoint-bundle](Bundle-example-mtls-endpoint-bundle.md), [MtlsEndpoint](StructureDefinition-mtls-endpoint.md)... Show 4 more, [PDexPAInstitutionalProcedureCodes](ValueSet-PDexPAInstitutionalProcedureCodes.md), [PDexPAInstitutionalProcedureCodesVS](ValueSet-PDexPAInstitutionalProcedureCodesVS.md), [Payer-Payer Exchange](Endpoint-diamond-mtls-endpoint2.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
-* [Endpoint Connection Type](http://terminology.hl7.org/7.1.0/CodeSystem-endpoint-connection-type.html): [Bundle/example-mtls-endpoint-bundle](Bundle-example-mtls-endpoint-bundle.md), [MtlsEndpoint](StructureDefinition-mtls-endpoint.md) and [Payer-Payer Exchange](Endpoint-diamond-mtls-endpoint2.md)
-* [Example Diagnosis Type Codes](http://terminology.hl7.org/7.1.0/CodeSystem-ex-diagnosistype.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
-* [Example Related Claim Relationship Codes](http://terminology.hl7.org/7.1.0/CodeSystem-ex-relatedclaimrelationship.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
-* [Funds Reservation Codes](http://terminology.hl7.org/7.1.0/CodeSystem-fundsreserve.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md)
-* [Organization type](http://terminology.hl7.org/7.1.0/CodeSystem-organization-type.html): [DiamondOnyxHealth](Organization-DiamondOnyxHealth1.md), [Example Provider Organization](Organization-provider-org-001.md) and [Second Example Provider Organization](Organization-provider-org-002.md)
-* [Process Priority Codes](http://terminology.hl7.org/7.1.0/CodeSystem-processpriority.html): [ExplanationOfBenefit/PDexPriorAuth1](ExplanationOfBenefit-PDexPriorAuth1.md) and [PdexPriorAuthorization](StructureDefinition-pdex-priorauthorization.md)
 * [Professional Credential Status](http://terminology.hl7.org/7.1.0/CodeSystem-professional-credential-status.html): [IdentifierStatus](StructureDefinition-base-ext-identifier-status.md)
-* [SubscriberPolicyholder Relationship Codes](http://terminology.hl7.org/7.1.0/CodeSystem-subscriber-relationship.html): [Coverage/883210](Coverage-883210.md), [Coverage/Coverage1](Coverage-Coverage1.md)... Show 6 more, [Coverage/CoverageMatchExample1](Coverage-CoverageMatchExample1.md), [Coverage/CoverageMatchExample2](Coverage-CoverageMatchExample2.md), [Coverage/coverage-2](Coverage-coverage-2.md), [Coverage/coverage-link-2](Coverage-coverage-link-2.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md) and [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
-* [identifierType](http://terminology.hl7.org/7.1.0/CodeSystem-v2-0203.html): [Bundle/1000000-1](Bundle-1000000-1.md), [Bundle/1000000-2](Bundle-1000000-2.md)... Show 28 more, [Bundle/1000000-3](Bundle-1000000-3.md), [Coverage/883210](Coverage-883210.md), [Coverage/Coverage1](Coverage-Coverage1.md), [Coverage/coverage-2](Coverage-coverage-2.md), [Coverage/coverage-link-2](Coverage-coverage-link-2.md), [Group/example-pdex-member-consent-constraint-group](Group-example-pdex-member-consent-constraint-group.md), [Group/example-pdex-member-no-match-group](Group-example-pdex-member-no-match-group.md), [Matched Members](Group-07e72a15407547bf9d03f522aa536a72.1.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md), [Parameters/payer-multi-member-match-out](Parameters-payer-multi-member-match-out.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md), [Patient/1](Patient-1.md), [Patient/1-2](Patient-1-2.md), [Patient/100](Patient-100.md), [Patient/1001](Patient-1001.md), [Patient/2002](Patient-2002.md), [Patient/PatientMemberMatchExample1](Patient-PatientMemberMatchExample1.md), [Patient/PatientMemberMatchExample2](Patient-PatientMemberMatchExample2.md), [Patient/patient-2](Patient-patient-2.md), [Patient/patient-prov-001](Patient-patient-prov-001.md), [Patient/patient-prov-002](Patient-patient-prov-002.md), [Patient/payer-member-001](Patient-payer-member-001.md), [Patient/payer-member-002](Patient-payer-member-002.md), [Payer 1](Organization-Payer1.md), [Payer 2](Organization-Payer2.md), [Practitioner/4](Practitioner-4.md), [Provider 1](Organization-ProviderOrg1.md) and [Provider 2](Organization-ProviderOrg2.md)
-* [ActCode](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActCode.html): [Bundle/1000000-1](Bundle-1000000-1.md), [Bundle/1000000-2](Bundle-1000000-2.md)... Show 20 more, [Bundle/1000000-3](Bundle-1000000-3.md), [Bundle/2000002](Bundle-2000002.md), [Bundle/3000002](Bundle-3000002.md), [Consent/consent-2](Consent-consent-2.md), [Consent/consent-permit-1](Consent-consent-permit-1.md), [Consent/no-consent-1](Consent-no-consent-1.md), [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md), [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [Coverage/CoverageMatchExample1](Coverage-CoverageMatchExample1.md), [Coverage/CoverageMatchExample2](Coverage-CoverageMatchExample2.md), [DocumentReference/provider-attestation-doc-1](DocumentReference-provider-attestation-doc-1.md), [Encounter/6](Encounter-6.md), [Encounter/7](Encounter-7.md), [Encounter/8](Encounter-8.md), [MedicationDispense/1000001](MedicationDispense-1000001.md), [PDexProviderSharingConsent](StructureDefinition-pdex-provider-consent.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md) and [PdexMedicationDispense](StructureDefinition-pdex-medicationdispense.md)
-* [ActReason](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ActReason.html): [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md), [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md)... Show 4 more, [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md), [Provenance/1000101](Provenance-1000101.md) and [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
-* [DataOperation](http://terminology.hl7.org/7.1.0/CodeSystem-v3-DataOperation.html): [Provenance/1000101](Provenance-1000101.md)
-* [NullFlavor](http://terminology.hl7.org/7.1.0/CodeSystem-v3-NullFlavor.html): [Bundle/1000000-1](Bundle-1000000-1.md), [Bundle/1000000-2](Bundle-1000000-2.md)... Show 4 more, [Bundle/1000000-3](Bundle-1000000-3.md), [Patient/1](Patient-1.md), [Patient/1-2](Patient-1-2.md) and [Patient/100](Patient-100.md)
-* [ParticipationType](http://terminology.hl7.org/7.1.0/CodeSystem-v3-ParticipationType.html): [Consent/consent-2](Consent-consent-2.md), [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md)... Show 4 more, [Consent/treatment-attestation-ex1](Consent-treatment-attestation-ex1.md), [Consent/treatment-attestation-ex2](Consent-treatment-attestation-ex2.md), [Parameters/payer-multi-member-match-in](Parameters-payer-multi-member-match-in.md) and [Parameters/provider-member-match-request-001](Parameters-provider-member-match-request-001.md)
-* [RoleClass](http://terminology.hl7.org/7.1.0/CodeSystem-v3-RoleClass.html): [Consent/provider-treatment-attestation-1](Consent-provider-treatment-attestation-1.md)
+
+
+* This value set includes content from LOINC® which is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at [http://loinc.org/terms-of-use](http://loinc.org/terms-of-use)
+
+* [Consent Category Codes](http://hl7.org/fhir/R4/codesystem-consent-category.html): [ProviderTreatmentAttestation](StructureDefinition-provider-treatment-relationship-consent.md)
 
 
 * Used by permission of HL7 International, all rights reserved Creative Commons License
@@ -225,7 +233,7 @@ For profiles defined in other IGs, the meaning of Must Support is established in
 
 #### Security and Privacy
 
-Security and Privacy are critically important when exchanging information. Please refer to the [Security and Privacy](securityandprivacy.md) page in this IG and the guidance it references in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/STU1.1/security.html).
+Security and Privacy are critically important when exchanging information. Please refer to the [Security and Privacy](securityandprivacy.md) page in this IG and the guidance it references in the [Health Record Exchange (HRex) IG](http://hl7.org/fhir/us/davinci-hrex/1.2.0/security.html).
 
 #### Patient/Subject Terminology
 
@@ -241,25 +249,34 @@ For the purposes of this IG we will use the following terms:
 | | | |
 | :--- | :--- | :--- |
 | [Bulk Data Access IG](http://hl7.org/fhir/uv/bulkdata/STU2) | [2.0.0](https://simplifier.net/packages/hl7.fhir.uv.bulkdata/2.0.0) | Imported by Da Vinci - Member Attribution (ATR) List (and potentially others) |
-| [CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.carin-bb/2.1.0) |  |
+| [CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®)](http://hl7.org/fhir/us/carin-bb/STU2.2) | [2.2.0](https://simplifier.net/packages/hl7.fhir.us.carin-bb/2.2.0) |  |
 | [2.0.0](https://simplifier.net/packages/hl7.fhir.us.carin-bb/2.0.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) | |
-| [Da Vinci - Coverage Requirements Discovery](http://hl7.org/fhir/us/davinci-crd/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.1.0) |  |
+| [CDS Hooks](http://cds-hooks.hl7.org/2026Jan) | [3.0.0-ballot](https://simplifier.net/packages/hl7.fhir.uv.cds-hooks/3.0.0-ballot) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) |
+| [CDS Hooks Library](http://cds-hooks.hl7.org/hooks/STU1) | [1.0.1](https://simplifier.net/packages/hl7.fhir.uv.cds-hooks-library/1.0.1) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) |
+| [Da Vinci - Coverage Requirements Discovery](http://hl7.org/fhir/us/davinci-crd/2.2.1) | [2.2.1](https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.2.1) |  |
+| [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.1.0) | Imported by Da Vinci - Documentation Templates and Rules (and potentially others) | |
 | [2.0.0](https://simplifier.net/packages/hl7.fhir.us.davinci-crd/2.0.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) | |
 | [Da Vinci - Documentation Templates and Rules](http://hl7.org/fhir/us/davinci-dtr/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-dtr/2.1.0) | Imported by Da Vinci Clinical Data Exchange (CDex) (and potentially others) |
 | [Da Vinci - Member Attribution (ATR) List](http://hl7.org/fhir/us/davinci-atr/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-atr/2.1.0) |  |
 | [Da Vinci Clinical Data Exchange (CDex)](http://hl7.org/fhir/us/davinci-cdex/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-cdex/2.1.0) | Imported by Da Vinci - Member Attribution (ATR) List (and potentially others) |
-| [Da Vinci Health Record Exchange (HRex)](http://hl7.org/fhir/us/davinci-hrex/STU1.1) | [1.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.1.0) | Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core |
+| [Da Vinci Health Record Exchange (HRex)](http://hl7.org/fhir/us/davinci-hrex/1.2.0) | [1.2.0](https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.2.0) | Defines common conformance rules across all Da Vinci IGs, as well as additional constraints and profiles beyond U.S. Core |
+| [1.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.1.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) | |
 | [1.0.0](https://simplifier.net/packages/hl7.fhir.us.davinci-hrex/1.0.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) | |
 | [Da Vinci PDex Plan Net](http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.2) | [1.2.0](https://simplifier.net/packages/hl7.fhir.us.davinci-pdex-plan-net/1.2.0) | Imported by Da Vinci - Member Attribution (ATR) List (and potentially others) |
 | [Da Vinci Prior Authorization Support (PAS) FHIR IG](http://hl7.org/fhir/us/davinci-pas/STU2.1) | [2.1.0](https://simplifier.net/packages/hl7.fhir.us.davinci-pas/2.1.0) |  |
-| [FHIR Extensions Pack](http://hl7.org/fhir/extensions/5.1.0) | [5.2.0](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.2.0) | Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others) |
-| [5.1.0](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.1.0) | Imported by Da Vinci Health Record Exchange (HRex) (and potentially others) | |
+| [Extensions for Using Data Elements from FHIR R5 in FHIR R4](http://hl7.org/fhir/uv/xver-r5.r4/0.1.0) | [0.1.0](https://simplifier.net/packages/hl7.fhir.uv.xver-r5.r4/0.1.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) |
+| [FHIR Extensions Pack](http://hl7.org/fhir/extensions/5.2.0) | [5.3.0-ballot-tc1](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.3.0-ballot-tc1) | Imported by Structured Data Capture (and potentially others) |
+| [5.2.0](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.2.0) | Imported by HL7 Terminology (THO) (and potentially others) | |
+| [5.1.0](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/5.1.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) | |
 | [1.0.0](https://simplifier.net/packages/hl7.fhir.uv.extensions.r4/1.0.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) | |
 | [FHIR R4 package : Core](http://hl7.org/fhir/R4) | [4.0.1](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1) | Imported by US Core (and potentially others) |
+| [FHIR Tooling Extensions IG](http://hl7.org/fhir/tools/1.1.2) | [1.1.2](https://simplifier.net/packages/hl7.fhir.uv.tools.r4/1.1.2) | Imported by Da Vinci Health Record Exchange (HRex) (and potentially others) |
 | [HL7 Terminology (THO)](http://terminology.hl7.org/5.5.0) | [7.1.0](https://simplifier.net/packages/hl7.terminology.r4/7.1.0) | Defines terminologies and coddesystems used in HIR IGs |
+| [7.0.1](https://simplifier.net/packages/hl7.terminology.r4/7.0.1) | Imported by CDS Hooks (and potentially others) | |
+| [6.5.0](https://simplifier.net/packages/hl7.terminology.r4/6.5.0) | Imported by FHIR Extensions Pack (and potentially others) | |
 | [6.3.0](https://simplifier.net/packages/hl7.terminology.r4/6.3.0) | Imported by Da Vinci - Member Attribution (ATR) List (and potentially others) | |
-| [6.2.0](https://simplifier.net/packages/hl7.terminology.r4/6.2.0) | Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others) | |
-| [6.1.0](https://simplifier.net/packages/hl7.terminology.r4/6.1.0) | Imported by Da Vinci Health Record Exchange (HRex) (and potentially others) | |
+| [6.2.0](https://simplifier.net/packages/hl7.terminology.r4/6.2.0) | Imported by CDS Hooks Library (and potentially others) | |
+| [6.1.0](https://simplifier.net/packages/hl7.terminology.r4/6.1.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) | |
 | [5.5.0](https://simplifier.net/packages/hl7.terminology.r4/5.5.0) | Imported by US Core (and potentially others) | |
 | [5.3.0](https://simplifier.net/packages/hl7.terminology.r4/5.3.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) | |
 | [5.0.0](https://simplifier.net/packages/hl7.terminology.r4/5.0.0) | Imported by Subscriptions R5 Backport (and potentially others) | |
@@ -270,13 +287,14 @@ For the purposes of this IG we will use the following terms:
 | [2.0.0](https://simplifier.net/packages/hl7.fhir.uv.smart-app-launch/2.0.0) | Imported by US Core (and potentially others) | |
 | [Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/2021Sep) | [1.0.0](https://simplifier.net/packages/hl7.fhir.us.udap-security/1.0.0) | Imported by National Directory of Healthcare Providers & Services (NDH) (and potentially others) |
 | [0.1.0](https://simplifier.net/packages/hl7.fhir.us.udap-security/0.1.0) | Imported by Da Vinci Health Record Exchange (HRex) (and potentially others) | |
-| [Structured Data Capture](http://hl7.org/fhir/uv/sdc/STU3) | [3.0.0](https://simplifier.net/packages/hl7.fhir.uv.sdc/3.0.0) | Imported by US Core (and potentially others) |
+| [Structured Data Capture](http://hl7.org/fhir/uv/sdc/STU3) | [4.0.0](https://simplifier.net/packages/hl7.fhir.uv.sdc/4.0.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) |
+| [3.0.0](https://simplifier.net/packages/hl7.fhir.uv.sdc/3.0.0) | Imported by US Core (and potentially others) | |
 | [Subscriptions R5 Backport](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1) | [1.1.0](https://simplifier.net/packages/hl7.fhir.uv.subscriptions-backport.r4/1.1.0) | Imported by Da Vinci Prior Authorization Support (PAS) FHIR IG (and potentially others) |
 | [US Core](http://hl7.org/fhir/us/core/STU7) | [7.0.0](https://simplifier.net/packages/hl7.fhir.us.core/7.0.0) | Defines USCDI v4 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers. |
 | [6.1.0](https://simplifier.net/packages/hl7.fhir.us.core/6.1.0) | Defines USCDI v3 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers | |
 | [3.1.1](https://simplifier.net/packages/hl7.fhir.us.core/3.1.1) | Defines USCDI v1 EHR expectations on a range of resources that will be passed to and/or queried by CRD servers. | |
 | [Value Set Authority Center (VSAC)](http://fhir.org/packages/us.nlm.vsac) | [0.7.0](https://simplifier.net/packages/us.nlm.vsac/0.7.0) | Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others) |
-| [0.21.0](https://simplifier.net/packages/us.nlm.vsac/0.21.0) | Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others) | |
+| [0.24.0](https://simplifier.net/packages/us.nlm.vsac/0.24.0) | Imported by CARIN Consumer Directed Payer Data Exchange (CARIN IG for Blue Button®) (and potentially others) | |
 | [0.19.0](https://simplifier.net/packages/us.nlm.vsac/0.19.0) | Imported by Da Vinci Health Record Exchange (HRex) (and potentially others) | |
 | [0.18.0](https://simplifier.net/packages/us.nlm.vsac/0.18.0) | Imported by US Core (and potentially others) | |
 | [0.11.0](https://simplifier.net/packages/us.nlm.vsac/0.11.0) | Imported by Da Vinci - Coverage Requirements Discovery (and potentially others) | |
@@ -320,7 +338,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
   "name" : "DaVinciPayerDataExchange",
   "title" : "Da Vinci Payer Data Exchange",
   "status" : "active",
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -397,19 +415,19 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
     }],
     "uri" : "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
     "packageId" : "hl7.fhir.us.davinci-hrex",
-    "version" : "1.1.0"
+    "version" : "1.2.0"
   },
   {
     "id" : "carinbb",
     "uri" : "http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb",
     "packageId" : "hl7.fhir.us.carin-bb",
-    "version" : "2.1.0"
+    "version" : "2.2.0"
   },
   {
     "id" : "crd",
     "uri" : "http://hl7.org/fhir/us/davinci-crd/ImplementationGuide/hl7.fhir.us.davinci-crd",
     "packageId" : "hl7.fhir.us.davinci-crd",
-    "version" : "2.1.0"
+    "version" : "2.2.1"
   },
   {
     "id" : "pas",
@@ -1799,7 +1817,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "StructureDefinition/pdex-member-opt-out"
       },
       "name" : "Member Opt-Out Group",
-      "description" : "A Group resource representing members who have opted out of data sharing. The Payer is the managing organization. The group members are the patients who have exercised their right to opt-out of sharing their health information, either broadly or for specific purposes or providers. This group is used to identify members whose data should not be shared in payer-to-payer or provider access scenarios.",
+      "description" : "A Group resource representing members who have opted out of Provider Access API data sharing. **Intended use:** this profile is offered as a payer-internal FHIR-based scaffolding pattern that implementers MAY adopt when their existing platform (legacy system, vendor product, internal API) cannot itself act as the authoritative reference source for opt-out determinations. Implementers whose existing systems can answer opt-out queries authoritatively are not required to use this profile. **Secondary use:** the same profile serves as the wire-format target profile for the `ConsentConstrainedMembers` output of the `$provider-member-match` operation; a ConsentConstrainedMembers Group returned by that operation conforms to this profile regardless of the mechanism the payer uses internally to determine opt-out status. **Privacy default — SHOULD suppress when opt-out status is sensitive.** Where a payer determines that disclosing opt-out status to a requesting provider would itself constitute a disclosure the member did not authorize (whether under applicable state privacy law, the member's stated preference, or the payer's privacy policy), the payer **SHOULD** suppress the `ConsentConstrainedMembers` output of `$provider-member-match` and instead include the affected members in the `NonMatchedMembers` Group; this makes the response indistinguishable to the requester between a true no-match and a matched-but-opted-out outcome. The internal-tracking use of this profile is unaffected by that choice. **Distinguishing master-list instances from operation-emitted response instances.** Both the payer-internal master opt-out list and the response Group emitted by `$provider-member-match` conform to this profile, so a payer storing both must distinguish them at query time. The recommended discriminator is `Group.identifier`: the payer SHOULD assign master-list instances a `Group.identifier` with a payer-defined `system` URI such as `https://{payer}/fhir/identifier/master-opt-out-list` (and a stable `value`), while operation-emitted response instances either omit `Group.identifier` or use a distinct system URI such as `https://{payer}/fhir/identifier/match-result`. Payers that prefer a tag-based discriminator MAY instead use `Group.meta.tag` with a payer-defined coding. `Group.code` is **not** a reliable discriminator here because it is fixed-pattern to `PdexMultiMemberMatchResultCS#consentconstraint` on every conformant instance (see FHIR-56493). The Payer is the managing organization, and Group.member entries reference the patients who have exercised their right to opt-out, either broadly or for specific purposes or providers.",
       "exampleBoolean" : false
     },
     {
@@ -2783,7 +2801,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "CapabilityStatement/pdex-provider-access-server"
       },
       "name" : "PDex provider-access Server CapabilityStatement",
-      "description" : "This Section describes the expected capabilities of the PDex Payer-to-Payer API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Payer-to-Payer Requestors. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.",
+      "description" : "This Section describes the expected capabilities of the PDex Provider Access API Server actor which supports US Core 3.1.1 or US Core 6.1.0 and is responsible for providing responses to the queries submitted by PDex Provider Access Clients. The complete list of FHIR profiles, RESTful operations, and search parameters supported by PDex Provider Access Server for US Core 3.1.1 and US Core 6.1.0 are defined. PDex Provider Access Clients have the option of choosing from this list to access necessary data based on their local use cases and other contextual requirements.",
       "exampleBoolean" : false
     },
     {
@@ -2795,7 +2813,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "OperationDefinition/ProviderMemberMatch"
       },
       "name" : "PDex Provider-Member-Match Operation",
-      "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation aligns with the Payer-to-Payer Bulk Member Match but is designed for provider-initiated requests.",
+      "description" : "Provider-Member-Match Operation enables providers to match patient demographics and coverage information against a payer's member records. The operation returns matched members as a Group resource that can be used with the $davinci-data-export operation for bulk data retrieval. This operation is functionally similar to the Payer-to-Payer Bulk Member Match operation but is designed for provider-initiated requests.",
       "exampleBoolean" : false
     },
     {
@@ -2867,7 +2885,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "SearchParameter/pdex-medicationdispense-patient"
       },
       "name" : "PdexMedicationDispensePatient",
-      "description" : "Returns dispensed prescriptions for a specific patient.\nNOTE: This Pdex SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain.",
+      "description" : "Returns dispensed prescriptions for a specific patient.",
       "exampleBoolean" : false
     },
     {
@@ -2879,7 +2897,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "SearchParameter/pdex-medicationdispense-status"
       },
       "name" : "PdexMedicationDispenseStatus",
-      "description" : "Status of the prescription dispense.\nNOTE: This SearchParameter definition extends the usage context of\n[capabilitystatement-expectation](http://hl7.org/fhir/R4/extension-capabilitystatement-expectation.html)\n extension to formally express implementer conformance expectations for these elements:\n - multipleAnd\n - multipleOr\n - comparator\n - modifier\n - chain.",
+      "description" : "Status of the prescription dispense.",
       "exampleBoolean" : false
     },
     {
@@ -3119,7 +3137,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "reference" : "Parameters/provider-member-match-request-001"
       },
       "name" : "Provider-Member-Match Request Example",
-      "description" : "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records. CoverageToLink is not included as providers do not issue new coverage.",
+      "description" : "Example request to the Provider-Member-Match operation showing a provider submitting patient demographics, existing coverage information, and treatment attestation to match against a payer's member records.",
       "exampleCanonical" : "http://hl7.org/fhir/us/davinci-pdex/StructureDefinition/provider-parameters-multi-member-match-bundle-in"
     },
     {
@@ -3379,7 +3397,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3392,7 +3410,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3418,7 +3436,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3430,7 +3448,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3444,7 +3462,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3456,7 +3474,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3469,7 +3487,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3482,7 +3500,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3495,7 +3513,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3508,7 +3526,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3521,7 +3539,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode" : "informative"
+            "valueCode" : "trial-use"
           },
           {
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3585,7 +3603,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode" : "informative"
+              "valueCode" : "trial-use"
             },
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3754,7 +3772,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode" : "informative"
+              "valueCode" : "trial-use"
             },
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3871,7 +3889,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode" : "informative"
+              "valueCode" : "trial-use"
             },
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3897,7 +3915,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
           {
             "extension" : [{
               "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode" : "informative"
+              "valueCode" : "trial-use"
             },
             {
               "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -3977,7 +3995,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -4003,7 +4021,7 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
+          "valueCode" : "trial-use"
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
@@ -4064,6 +4082,19 @@ This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
         "nameUrl" : "artifacts.html",
         "title" : "FHIR Artifacts",
         "generation" : "html"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "informative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "artifacts-by-api.html"
+        }],
+        "nameUrl" : "artifacts-by-api.html",
+        "title" : "Artifacts by API",
+        "generation" : "markdown"
       },
       {
         "extension" : [{

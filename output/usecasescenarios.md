@@ -85,7 +85,7 @@ This Guide will focus on a method to enable a provider to query the health recor
 * Notes
 * Family History.
 
-§pdex-386: These types of data **SHALL** be mapped to FHIR clinical resources as follows: §
+§pdex-386: Where a payer elects to exchange any of the data types listed above, the table below identifies the FHIR R4 / US Core profile that the payer **MAY** use for each. § The list is illustrative for the use case described on this page; this Use Case Scenarios page is informative, and nothing in the table should be read as adding a normative obligation beyond what is required by the relevant regulation or by the conformance statements on the operation-specific pages of this IG. In particular, data types that are not within the scope of the applicable regulatory data-exchange obligation (for example, Family History, or non-Implantable Devices) are listed here only to illustrate possible mapping choices for payers that voluntarily exchange them; this IG does not require payers to support those data types.
 
 | | |
 | :--- | :--- |

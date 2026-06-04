@@ -65,16 +65,6 @@
   "instantiates": [
     "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server"
   ],
-  "_instantiates": [
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-          "valueCode": "SHALL"
-        }
-      ]
-    }
-  ],
   "fhirVersion": "4.0.1",
   "format": [
     "json",
@@ -2784,6 +2774,18 @@
               "definition": "http://hl7.org/fhir/SearchParameter/Group-characteristic",
               "type": "token",
               "documentation": "multipleAnd: It's up to the server whether the parameter may repeat in order to specify multiple values that must all be true. multipleOr: The parameter may only have one value (no comma separators)."
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "code",
+              "definition": "http://hl7.org/fhir/SearchParameter/Group-code",
+              "type": "token",
+              "documentation": "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
             }
           ],
           "operation": [
@@ -5003,7 +5005,7 @@
           ],
           "type": "Questionnaire",
           "supportedProfile": [
-            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|4.0.0"
           ],
           "_supportedProfile": [
             {

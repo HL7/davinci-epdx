@@ -8,7 +8,7 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Security and Privacy](securityandprivacy.md)
 

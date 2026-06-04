@@ -107,19 +107,7 @@ These codes relate to the following Group Profiles:
   "expression" : "Group.code",
   "xpathUsage" : "normal",
   "multipleOr" : true,
-  "_multipleOr" : {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-      "valueCode" : "MAY"
-    }]
-  },
-  "multipleAnd" : true,
-  "_multipleAnd" : {
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-      "valueCode" : "MAY"
-    }]
-  }
+  "multipleAnd" : true
 }
 
 ```

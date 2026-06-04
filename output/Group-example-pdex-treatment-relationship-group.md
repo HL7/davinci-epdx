@@ -33,7 +33,7 @@ Providers with an active treatment relationship with the member
     }
   }],
   "active" : true,
-  "type" : "device",
+  "type" : "practitioner",
   "actual" : true,
   "code" : {
     "coding" : [{
@@ -44,9 +44,17 @@ Providers with an active treatment relationship with the member
   },
   "quantity" : 2,
   "managingEntity" : {
+    "reference" : "Organization/Payer1",
     "identifier" : {
-      "system" : "http://hl7.org/fhir/sid/us-npi",
-      "value" : "5555555555"
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType",
+          "code" : "naiccode",
+          "display" : "NAIC Code"
+        }]
+      },
+      "system" : "urn:oid:2.16.840.1.113883.6.300",
+      "value" : "12345"
     },
     "display" : "Example Payer Organization"
   },

@@ -76,7 +76,7 @@ Allowed statuses for treatment relationship attestations
   "title" : "Treatment Attestation Status",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -115,6 +115,7 @@ Allowed statuses for treatment relationship attestations
   "compose" : {
     "include" : [{
       "system" : "http://hl7.org/fhir/consent-state-codes",
+      "version" : "4.0.1",
       "concept" : [{
         "code" : "active",
         "display" : "Active"

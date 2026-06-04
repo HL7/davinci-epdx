@@ -19,7 +19,7 @@ A Parameters profile defining the result of a $bulk-member-match operation perfo
 
 * Examples for this Profile: [Parameters/payer-multi-member-match-out](Parameters-payer-multi-member-match-out.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-parameters-multi-member-match-bundle-out)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-parameters-multi-member-match-bundle-out.json)
 
 ### Formal Views of Profile Content
 
@@ -57,7 +57,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-parameters-mult
   "title" : "PDex $multi-member-match response",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

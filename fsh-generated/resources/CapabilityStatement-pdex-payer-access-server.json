@@ -178,6 +178,18 @@
               "definition": "http://hl7.org/fhir/us/davinci-pdex/SearchParameter/pdex-group-characteristic-value-reference",
               "type": "reference",
               "documentation": "Search for Group resources by the Reference value of a characteristic. Used to find PDex Member Match Groups and Provider Groups associated with a specific requesting payer or provider Organization."
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ],
+              "name": "code",
+              "definition": "http://hl7.org/fhir/SearchParameter/Group-code",
+              "type": "token",
+              "documentation": "Search for Group resources by Group.code (kind of group). Servers **SHALL** support both `multipleOr` and `multipleAnd` semantics on this parameter."
             }
           ],
           "operation": [

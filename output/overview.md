@@ -104,7 +104,7 @@ This version of the IG adds new APIs that support the requirements of the CMS Pr
 * [Provider Access API](provider-access-api.md).
 * [Payer-to-Payer Bulk API](payertopayerbulkexchange.md)
 
-Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to ember data. That method has been superseded by the [Provider Access API](provider-access-api.md) that meets the requirements of the CMS Prior Authorization Rule (CMS-0057).
+Earlier versions of the PDex IG recommended the use of CDS Hooks to enable Provider Access to member data. That method has been superseded by the [Provider Access API](provider-access-api.md) that meets the requirements of the CMS Prior Authorization Rule (CMS-0057).
 
 #### CDS-Hooks and SMART-on-FHIR
 
@@ -134,7 +134,9 @@ Data Segmentation capabilities for Bulk Data Transfer are currently being develo
 
 Since Health Plans compile information from many sources to create a Member's Health History, it is important that data traceability is maintained. This guide defines a Provenance resource that is used for this purpose. This resource supplements the US Core Provenance profile which is typically not suited to payer's common use cases. The PDex Provenance profile is used to identify the source of information, and the fact that the payer is acting as the transmitting agent.
 
-§pdex-125: Health Plans **SHOULD** accept and retain provenance records that they receive as part of any exchange of FHIR data. § §pdex-126: Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. § §pdex-127: Health Plans **SHALL** provide Provenance records that, at a minimum, indicate that they are playing the role of Transmitter of the data in any PDex information exchange. §
+§pdex-125: Health Plans **SHOULD** accept and retain provenance records that they receive as part of any exchange of FHIR data. § §pdex-126: Where a FHIR Provenance resource is not provided, such as when data is received from other non-FHIR sources, the Health Plan **SHOULD** create FHIR Provenance record(s) to identify the source of the information being exchanged. §
+
+§pdex-127: For each PDex information exchange, the Health Plan **SHALL** provide at least one `Provenance` resource naming the Health Plan as the Transmitter of the data — i.e., a `Provenance` whose `agent[].type` includes a `Transmitter` entry and whose `agent.who` references the Health Plan's `Organization`, with `target[]` referencing the resources transmitted in the exchange. § This is an **exchange-level (per-bundle)** obligation: a single Transmitter Provenance per exchange satisfies §pdex-127. The Health Plan is **not** required to add a Transmitter `agent` entry to every per-resource Provenance that the exchange may also carry; per-resource Author/Source Provenance records (see §pdex-05 / §pdex-04 on the [PDex Provenance](PDexProvenance.md) page) are retained as-is alongside the exchange-level Transmitter Provenance. The Transmitter Provenance is **in addition to** any per-resource Author/Source Provenance returned with the data, not a substitute for it. See [PDex Provenance — Two distinct Provenance obligations](PDexProvenance.md) for the full distinction between the per-exchange Transmitter requirement and the per-resource Author/Source recommendation.
 
 §pdex-128: In the case of historical data, the Health Plan **SHOULD** identify the author, source and source format of the data. §
 

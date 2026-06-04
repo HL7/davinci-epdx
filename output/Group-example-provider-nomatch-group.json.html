@@ -161,8 +161,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="artifacts.html">FHIR Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts (by type)</a>
+      </li>
+      <li>
+        <a href="artifacts-by-api.html">Artifacts by API</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Base Specs
@@ -343,7 +353,7 @@
       "<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a>" : "prov-patient-2",
       "<a href="http://hl7.org/fhir/R4/resource.html#Patient.meta">meta</a>" : {
         "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
-          <a href="http://hl7.org/fhir/us/davinci-hrex/STU1.1/StructureDefinition-hrex-patient-demographics.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
+          <a href="http://hl7.org/fhir/us/davinci-hrex/1.2.0/StructureDefinition-hrex-patient-demographics.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics"
         ]
       },
       "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
@@ -381,9 +391,19 @@
     ]
   },
   "<a href="http://hl7.org/fhir/R4/group.html#Group.managingEntity">managingEntity</a>" : {
+    <a href="Organization-Payer1.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Organization/Payer1",
     "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://hl7.org/fhir/sid/us-npi",
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "5555555555"
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://hl7.org/fhir/us/davinci-pdex/CodeSystem/PDexIdentifierType",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "naiccode",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "NAIC Code"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:2.16.840.1.113883.6.300",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "12345"
     },
     "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Example Payer Organization"
   },
@@ -448,7 +468,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 31, 2026 21:00-0400">2026-03-31</span>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://www.hl7.org/Special/committees/fm">HL7 International / Financial Management</a>.  Package hl7.fhir.us.davinci-pdex#2.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 29, 2026 12:37-0400">2026-05-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

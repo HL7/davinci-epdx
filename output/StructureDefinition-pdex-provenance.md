@@ -20,7 +20,7 @@ Provenance is provided by the payer to identify the source of the information, w
 * Examples for this Profile: [Provenance/1000001](Provenance-1000001.md), [Provenance/1000002](Provenance-1000002.md), [Provenance/1000003](Provenance-1000003.md), [Provenance/1000004](Provenance-1000004.md)... Show 5 more, [Provenance/1000005](Provenance-1000005.md), [Provenance/1000006](Provenance-1000006.md), [Provenance/1000016](Provenance-1000016.md), [Provenance/1000017](Provenance-1000017.md) and [Provenance/1000101](Provenance-1000101.md)
 * CapabilityStatements using this Profile: [PDex Server CapabilityStatement with US core 6.1 support](CapabilityStatement-pdex-server-6-1.md) and [PDEX Server CapabilityStatement](CapabilityStatement-pdex-server.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-provenance)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-provenance.json)
 
 ### Formal Views of Profile Content
 
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provenance.csv)
   "title" : "PDex Provenance",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

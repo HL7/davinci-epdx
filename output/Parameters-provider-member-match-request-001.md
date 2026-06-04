@@ -141,7 +141,7 @@
         "scope" : {
           "coding" : [{
             "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
-            "code" : "treatment"
+            "code" : "patient-privacy"
           }]
         },
         "category" : [{
@@ -163,11 +163,17 @@
         },
         "dateTime" : "2024-12-10T14:30:00Z",
         "performer" : [{
-          "reference" : "Practitioner/provider-001",
+          "identifier" : {
+            "system" : "http://hl7.org/fhir/sid/us-npi",
+            "value" : "1234567893"
+          },
           "display" : "Dr. Susan Smith, MD"
         }],
         "organization" : [{
-          "reference" : "Organization/provider-org-001",
+          "identifier" : {
+            "system" : "http://hl7.org/fhir/sid/us-npi",
+            "value" : "1982947230"
+          },
           "display" : "Springfield Medical Center"
         }],
         "sourceReference" : {
@@ -192,7 +198,10 @@
               }]
             },
             "reference" : {
-              "reference" : "Practitioner/provider-001",
+              "identifier" : {
+                "system" : "http://hl7.org/fhir/sid/us-npi",
+                "value" : "1234567893"
+              },
               "display" : "Dr. Susan Smith"
             }
           }],
@@ -329,7 +338,7 @@
         "scope" : {
           "coding" : [{
             "system" : "http://terminology.hl7.org/CodeSystem/consentscope",
-            "code" : "treatment"
+            "code" : "patient-privacy"
           }]
         },
         "category" : [{
@@ -351,11 +360,17 @@
         },
         "dateTime" : "2024-12-09T10:15:00Z",
         "performer" : [{
-          "reference" : "Practitioner/provider-002",
+          "identifier" : {
+            "system" : "http://hl7.org/fhir/sid/us-npi",
+            "value" : "9876543210"
+          },
           "display" : "Dr. James Brown, MD"
         }],
         "organization" : [{
-          "reference" : "Organization/provider-org-002",
+          "identifier" : {
+            "system" : "http://hl7.org/fhir/sid/us-npi",
+            "value" : "1122334455"
+          },
           "display" : "Columbus Clinic"
         }],
         "sourceReference" : {
@@ -379,7 +394,10 @@
               }]
             },
             "reference" : {
-              "reference" : "Practitioner/provider-002",
+              "identifier" : {
+                "system" : "http://hl7.org/fhir/sid/us-npi",
+                "value" : "9876543210"
+              },
               "display" : "Dr. James Brown"
             }
           }],

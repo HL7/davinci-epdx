@@ -140,4 +140,4 @@ Title: "Treatment Attestation Provision Type"
 Description: "Allowed provision types for treatment relationship attestations"
 * ^status = #active
 * ^experimental = false
-* http://hl7.org/fhir/consent-provision-type#permit "Permit"
+* http://hl7.org/fhir/consent-provision-type#permit "Opt In"

@@ -41,7 +41,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 
 ### Expansion
 
-No Expansion for this valueset (Unknown Code System)
+This value set cannot be expanded because of the way it is defined - it has an infinite number of members
 
 -------
 
@@ -94,7 +94,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "Procedure Codes - AMA CPT - CMS HCPCS - CMS HIPPS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -142,7 +142,7 @@ No Expansion for this valueset (Unknown Code System)
     },
     {
       "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-      "version" : "1.0.0",
+      "version" : "4.0.1",
       "concept" : [{
         "code" : "not-applicable",
         "display" : "Not Applicable"

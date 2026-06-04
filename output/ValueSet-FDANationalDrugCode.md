@@ -75,7 +75,7 @@ Users should note a few important items
   "title" : "FDA National Drug Code (NDC)",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",

@@ -20,7 +20,7 @@ A Group List created by the Payer to enable Provider Access API access by provid
 * Use this Profile: [Provider $multi-member-match Response](StructureDefinition-provider-parameters-multi-member-match-bundle-out.md)
 * Examples for this Profile: [Group/example-provider-matched-group](Group-example-provider-matched-group.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.us.davinci-pdex|current/StructureDefinition/pdex-provider-member-match)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.fhir.us.davinci-pdex|current/StructureDefinition/StructureDefinition-pdex-provider-member-match.json)
 
 ### Formal Views of Profile Content
 
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-member
   "title" : "Provider Member Match Group",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-03-31T21:00:10-04:00",
+  "date" : "2026-05-29T12:37:47-04:00",
   "publisher" : "HL7 International / Financial Management",
   "contact" : [{
     "name" : "HL7 International / Financial Management",
@@ -156,8 +156,12 @@ Other representations of profile: [CSV](StructureDefinition-pdex-provider-member
       "id" : "Group.managingEntity",
       "path" : "Group.managingEntity",
       "short" : "Payer managing this group",
-      "definition" : "Reference to the payer organization that performed the member match and is managing access",
+      "definition" : "Reference to the payer organization that performed the member match and is managing access. Constrained to Organization since the managing entity is always a Payer (i.e., a healthcare organization), not a Practitioner, PractitionerRole, or RelatedPerson.",
       "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Organization"]
+      }],
       "mustSupport" : true
     },
     {

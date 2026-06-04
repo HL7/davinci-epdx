@@ -53,7 +53,7 @@ Profile: [mTLS Endpoint](StructureDefinition-mtls-endpoint.md)
 
 **status**: Active
 
-**connectionType**: [Endpoint Connection Type: hl7-fhir-rest](http://terminology.hl7.org/7.1.0/CodeSystem-endpoint-connection-type.html#endpoint-connection-type-hl7-fhir-rest) (HL7 FHIR)
+**connectionType**: [Endpoint Connection Type: hl7-fhir-rest](http://hl7.org/fhir/R4/codesystem-endpoint-connection-type.html#endpoint-connection-type-hl7-fhir-rest) (HL7 FHIR)
 
 **name**: Payer-Payer Exchange
 

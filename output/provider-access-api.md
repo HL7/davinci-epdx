@@ -8,11 +8,11 @@
 
 | |
 | :--- |
-| *Page standards status:*[Informative](http://hl7.org/fhir/R4/versions.html#std-process) |
+| *Page standards status:*[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) |
 
 [Previous Page - Handling Data Provenance](handlingdataprovenance.md)
 
-***Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. It has been frrequently tested at Connectathons. It is supports the requirements of the CMS prior Authorization Rule (CMS-0057). The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG. ***
+***Provider Access API bulk data guidance has been balloted in v2.1.0 of this IG. It has been frequently tested at Connectathons. It supports the requirements of the CMS Prior Authorization Rule (CMS-0057). The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG. **v1 vs v2 — when to use which.** This page describes the **v1 (Attribution)** workflow, which uses payer-maintained attribution lists. The current recommendation for CMS-0057 Provider Access API conformance is the **v2 (Attestation)** workflow described on the [Provider Access API (v2)](provider-access-api-v2.html#when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation) page. v1 remains supported for Value-Based Care (VBC) / risk-based provider program data flows where a payer's attribution-list-driven model is the appropriate pattern. A provider/EHR that operates under both an in-network arrangement and a VBC contract with the same payer **SHOULD** use v2 for the CMS-0057-mandated Provider Access exchange and **MAY** use v1 for VBC-specific data flows alongside it. See [Provider Access API (v2) — When to use Provider Access v1 vs v2](provider-access-api-v2.html#when-to-use-provider-access-v1-attribution-versus-provider-access-v2-attestation) for the full guidance. ***
 
 ## Provider Access API
 
@@ -43,7 +43,7 @@ It is recommended that, at a minimum, health plans create Member Attribution Lis
 
 A health plan member is entitled to opt-out of data sharing via the Provider Access API. PDex defines a consent profile that enables a member to deny sharing via the Provider Access API. §pdex-325: A member **SHOULD** also be able to update their preference § to revoke a previous denial.
 
-§pdex-326: Health Plans **SHALL** implement the pdex-provider-consent to enable a member to express their sharing preference. §
+§pdex-326: Health Plans **MAY** implement the [pdex-provider-consent](StructureDefinition-pdex-provider-consent.md) profile to enable a member to express their data-sharing preference for the Provider Access API. § In this context, "implement the pdex-provider-consent" means: (a) accept `Consent.create` requests against the Patient Access API for a `Consent` resource conforming to the [PDex Provider Consent profile](StructureDefinition-pdex-provider-consent.md), and (b) honor the resulting Consent decision when subsequently evaluating the member's opt-out / opt-in status during a Provider-Member-Match or related operation. The conformance level recorded above is permissive (rather than required) because, consistent with the IG's overall scope (see [Provider Access API(v2) — Scope of this section](provider-access-api-v2.md)), the IG does not prescribe how a payer tracks member opt-out / sharing preferences internally; the FHIR Consent profile is offered as one valid pattern that payers may adopt, not as the only mechanism. Payers that capture sharing preferences via legacy systems, internal APIs, or other channels remain fully conformant. (Earlier drafts of this v1 page used a stronger conformance level for this expectation; that was inconsistent with the equivalent statement on the [Provider Access API (v2) page](provider-access-api-v2.md#member-opt-out) at §pdex-275 and has been aligned to the permissive level here.)
 
 The [PDex Server Capability Statement](CapabilityStatement-pdex-server.md) enables the Consent record to be written to the Patient Access API.
 
@@ -57,7 +57,7 @@ The Provider Access API is centered around Attribution lists that enable a Provi
 
 The Health Plan is responsible for managing Attribution Lists. §pdex-328: Attribution Lists **SHOULD** be § discrete lists at the Organization + Facility + Provider level. This level of granularity is needed to account for Providers working across different organizations, or at different facilities that may use different EMRs. §pdex-329: A health plan **MAY** adopt their own methodology for managing and maintaining § provider attribution lists. Health plans are encouraged, for transparency purposes, to share their methodology for managing Member Attribution.
 
-Health plans: §pdex-330: - **MAY** use claims data as a source to identify existing treatment relationships. § §pdex-331: - **MAY** utilize their own rules for determining the attribution of members to Providers. § §pdex-332: - **SHOULD** use the [Coverage Requirements Discovery IG's](http://hl7.org/fhir/us/davinci-crd/STU2.1/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. §
+Health plans: §pdex-330: - **MAY** use claims data as a source to identify existing treatment relationships. § §pdex-331: - **MAY** utilize their own rules for determining the attribution of members to Providers. § §pdex-332: - **SHOULD** use the [Coverage Requirements Discovery IG's](http://hl7.org/fhir/us/davinci-crd/2.2.1/hooks.html) appointment-book and encounter-start CDS Hooks as a means to determine impending treatment relationships. §
 
 §pdex-333: Attribution lists **SHALL** be searchable via a secure RESTful API. § Access to the Group resource to READ §pdex-334: attribution lists **SHOULD** be scoped to the appropriate Organization, Facility, Provider or their § authorized representative that is acting on the behalf of the Provider.
 
@@ -116,7 +116,7 @@ The profile adds an extension at the root level. This is used to, optionally, re
 
 A Provider Representative may need to manage multiple attribution lists. The FHIR Group resource supports searching on characteristic. To enable searching the [PDexMemberMatchGroup Profile](StructureDefinition-pdex-member-match-group.md) sets the characteristic element to include the "pdexprovidergroup" code, the identifier of the provider in (characteristic.valueReference), sets characteristic.exclude to false and characteristic.period.start to the date attribution list creation or update.
 
-§pdex-350: Implementers **SHALL** support the standard search parameters for group that are specified in the base § Group resource in FHIR R4 specification: [Group Search Parameters](StructureDefinition-pdex-member-match-group.md).
+§pdex-350: Implementers **SHALL** support the `Group` search parameters enumerated in the [PDex Server CapabilityStatement](CapabilityStatement-pdex-server.md) (and its US Core 6.1.0 variant, [pdex-server-6-1](CapabilityStatement-pdex-server-6-1.md)) for the `Group` resource — at minimum `identifier` and `characteristic` — both of which are declared with **SHALL** support expectations there. § The CapabilityStatement is the authoritative source for which search parameters a conformant PDex server must support; the prior wording of "the standard search parameters" was ambiguous between "all 10 base R4 `Group` search parameters" and "the parameters enumerated in this IG's CapabilityStatement". Implementers **MAY** support additional `Group` search parameters from the [base FHIR R4 specification](http://hl7.org/fhir/R4/group.html#search) (`actual`, `characteristic-value`, `code`, `exclude`, `managing-entity`, `member`, `type`, `value`) as appropriate to their environment.
 
 ### Da Vinci Data Export Payload
 
@@ -124,15 +124,15 @@ The Provider Access is meant to enable in-network providers to retrieve the info
 
 * US Core Clinical data ([US Core 3.1.1](http://hl7.org/fhir/us/core/3.1.1) or [US Core 6.1](http://hl7.org/fhir/us/core/STU6.1)
 * [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.md)
-* [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ](http://hl7.org/fhir/us/carin-bb/STU2.1), as detailed below.
+* [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ](http://hl7.org/fhir/us/carin-bb/STU2.2), as detailed below.
 
-The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.1) which defines the following non-financial profiles:
+The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG. The Rule requires that a non-financial view of those claims and encounters are provided. This IG utilizes the work of the [CARIN Consumer Directed Payer Data Exchange IG](http://hl7.org/fhir/us/carin-bb/STU2.2) which defines the following non-financial profiles:
 
-* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
-* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
-* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
-* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
-* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.1/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+* [Inpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)
+* [Outpatient Institutional Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)
+* [Professional NonClinician Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
+* [Oral Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
+* [Pharmacy Basis Profile](http://hl7.org/fhir/us/carin-bb/STU2.2/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
@@ -202,7 +202,7 @@ NOTE: When constructing search queries to incorporate into a _typeFilter, Search
 
 §pdex-376: Implementers **SHOULD** implement OAuth 2.0 access management in accordance with the SMART Backend Services § Authorization Profile. When SMART Backend Services Authorization is used, Bulk Data Status Request and Bulk Data §pdex-377: Output File Requests with requiresAccessToken=true **SHALL** be protected the same way the Bulk Data Kick-off Request, § including an access token with scopes that cover all resources being exported. §pdex-378: A server **MAY** § additionally restrict Bulk Data Status Request and Bulk Data Output File Requests by limiting them to the client that originated the export. §pdex-379: Health plans **SHALL** limit the data returned to § only those FHIR resources for which the client is authorized.
 
-§pdex-380: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group § resources and perform Bulk export operations. §pdex-381: Access Tokens **SHALL** be required to access the Group § resources and and the Bulk export operation. §pdex-382: Access and Refresh Tokens **SHOULD** be issued to support § the client requesting and subsequently retrieving the bulk data response to their request.
+§pdex-380: Clients **SHALL** require OAuth client credentials to enable secure access to read and search the Group § resources and perform Bulk export operations. §pdex-381: Access Tokens **SHALL** be required to access the Group § resources and the Bulk export operation. §pdex-382: Access and Refresh Tokens **SHOULD** be issued to support § the client requesting and subsequently retrieving the bulk data response to their request.
 
 Registering of a client application or service to perform the bulk Payer-to-Payer §pdex-383: Exchange **SHOULD** be registered in accordance with the approach defined in the § [SMART App Launch IG](https://hl7.org/fhir/smart-app-launch/client-confidential-asymmetric.html#registering-a-client-communicating-public-keys). That IG also encourages the use of the OAuth2.0 Dynamic Client Registration Protocol (DCRP). An alternative approach that is closely aligned with the DCRP protocol is to use the B2B protocols detailed in the [HL7 Security for Scalable Registration, Authentication, and Authorization](http://hl7.org/fhir/us/udap-security/STU1/) IG.
 
