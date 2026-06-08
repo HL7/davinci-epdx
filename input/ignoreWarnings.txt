@@ -316,7 +316,7 @@ The string value contains text that looks like embedded HTML tags. If this conte
 %URL value 'https://mtls-dev-dmdh.safhir.io/mtlsendpoint'%
 
 # www.exampleplan.com — synthetic example payer
-%URL value 'https://www.exampleplan.com%
+%URL value 'https://www.exampleplan.com/fhir/EOBIdentifier'%
 
 
 # ============================================================================
@@ -460,21 +460,188 @@ The string value contains text that looks like embedded HTML tags. If this conte
 # emits a "multiple potential matches" warning each time the resolver picks
 # one. The selection is deterministic (by version pin in sushi-config) and
 # the affected references are correct in context; the warning is a known
-# multi-version-dependency artifact. Patterns below are kept as URL-prefix
-# matches because exhaustive enumeration would add hundreds of lines without
-# changing the underlying engineering trade-off (US Core has ~100 profiles
-# in each version, all of which produce a match-conflict warning).
+# multi-version-dependency artifact. Each colliding canonical is enumerated
+# explicitly below (no URL-prefix wildcards) per FMG guidance; any newly-
+# introduced multi-version collision will surface as an unmatched warning
+# for explicit review.
+
+# US Core 3.1.1 / 6.1.0 / 7.0.0 — StructureDefinition canonicals
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/pediatric-bmi-for-age'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-bmi'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-temperature'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careplan'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-careteam'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference'%
 %There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter'%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core%
-%There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet%
-%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/OperationDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition%
-%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-goal'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-location'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medication'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationdispense'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-clinical-result'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-occupation'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-screening-assessment'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-sexual-orientation'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-simple-observation'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-specimen'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs'%
+
+# US Core 3.1.1 / 6.1.0 / 7.0.0 — SearchParameter canonicals
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-allergyintolerance-clinical-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-allergyintolerance-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careplan-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-role'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-careteam-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-abatement-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-asserted-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-clinical-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-code'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-encounter'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-onset-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-condition-recorded-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-coverage-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-device-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-device-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-device-type'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-code'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-diagnosticreport-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-period'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-type'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-class'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-discharge-disposition'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-identifier'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-location'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-encounter-type'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-description'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-lifecycle-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-goal-target-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-immunization-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-city'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-postalcode'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-location-address-state'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-location-name'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationdispense-type'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-authoredon'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-encounter'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-intent'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-medicationrequest-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-code'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-observation-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-address'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-organization-name'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-birthdate'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-death-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-family'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-gender'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-given'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-identifier'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-patient-name'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-identifier'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-practitioner-name'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-practitionerrole-practitioner'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-practitionerrole-specialty'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-code'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-date'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-procedure-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-authored'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-questionnaire'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-questionnaireresponse-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-name'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-relatedperson-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-authored'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-category'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-code'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-patient'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-servicerequest-status'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-id'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-patient'%
+
+# US Core 3.1.1 / 6.1.0 / 7.0.0 — ValueSet / OperationDefinition / CapabilityStatement
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/CapabilityStatement/us-core-server'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/OperationDefinition/docref'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state'%
+
+# Da Vinci HRex 1.0.0 / 1.1.0 / 1.2.0 — StructureDefinition / OperationDefinition
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/OperationDefinition/member-match'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-consent'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization'%
+%There are multiple different potential matches for the url 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics'%
+
+# HL7 Terminology multi-version v3 ValueSets
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActIncidentCode'%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType'%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-ActSubstanceAdminSubstitutionCode'%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'%
+%There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-SubstanceAdminSubstitutionReason'%
+
+# VSAC versioned-release ValueSet
+%There are multiple different potential matches for the url 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4'%
 
 # ----------------------------------------------------------------------------
 # Pinned-version informational notes (pin-canonicals: pin-multiples)
