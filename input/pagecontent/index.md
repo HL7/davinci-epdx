@@ -126,6 +126,11 @@ This implementation guide (IG) uses specific terminology to flag statements that
 
 §pdex-93: **MAY** describes optional behaviors that are free to consider but where there is no recommendation for, or against, adoption. §
 
+In the event a need arises to communicate data structures or elements not covered as required or mustSupport in this specification, the organization identifying the requirement is expected to submit change requests proposing the addition of the relevant profiles and/or mustSupport elements to a future version of the PDex specification.
+
+§pdex-392: If a proposed change is adopted and published in the PDex continuous integration (CI) build, or in the CI build of one of its dependencies (e.g. [PAS](https://build.fhir.org/ig/HL7/davinci-pas/), [HRex](https://build.fhir.org/ig/HL7/davinci-hrex/), [CARIN BB](https://build.fhir.org/ig/HL7/carin-bb/), or [US Core](https://build.fhir.org/ig/HL7/US-Core/)), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional CI-build profiles and/or mustSupport data elements and not be considered in violation of §pdex-91 above. §
+
+
 #### MustSupport
 
 For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.html#mustsupport) section in the Introduction page.
