@@ -4,7 +4,7 @@
 
 CodeSystem: TreatmentRelationshipTypeCodeSystem
 Id: treatment-relationship-type
-Title: "Treatment Relationship Type"
+Title: "Treatment Relationship Type Code System"
 Description: "Types of treatment relationships between members and providers"
 * ^status = #active
 * ^experimental = false

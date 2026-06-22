@@ -31,7 +31,7 @@ Description: "Value set of codes identifying which CMS-mandated API a Consent re
 
 CodeSystem: OptOutScopeCodeSystem
 Id: opt-out-scope
-Title: "Opt-Out Scope"
+Title: "Opt-Out Scope Code System"
 Description: "The scope of a member's opt-out election"
 * ^status = #active
 * ^experimental = false
@@ -49,7 +49,7 @@ Description: "The scope of a member's opt-out election"
 
 CodeSystem: OptOutReasonCodeSystem
 Id: opt-out-reason
-Title: "Opt-Out Reason"
+Title: "Opt-Out Reason Code System"
 Description: "Reasons for opting out of data sharing"
 * ^status = #active
 * ^experimental = false
