@@ -142,7 +142,7 @@ Description: "Details about a specific treatment relationship between a member a
 
 ValueSet: TreatmentRelationshipTypeValueSet
 Id: treatment-relationship-type-valueset
-Title: "Treatment Relationship Type"
+Title: "Treatment Relationship Type Value Set"
 Description: "Types of treatment relationships between members and providers"
 * ^status = #active
 * ^experimental = false

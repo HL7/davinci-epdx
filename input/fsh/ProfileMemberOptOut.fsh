@@ -137,7 +137,7 @@ Description: "A Group resource representing members who have opted out of Provid
 
 ValueSet: OptOutScopeValueSet
 Id: opt-out-scope-valueset
-Title: "Opt-Out Scope"
+Title: "Opt-Out Scope Value Set"
 Description: "The scope of a member's opt-out election"
 * ^status = #active
 * ^experimental = false
@@ -168,7 +168,7 @@ Description: "The reason a member has chosen to opt out of data sharing"
 
 ValueSet: OptOutReasonValueSet
 Id: opt-out-reason-valueset
-Title: "Opt-Out Reason"
+Title: "Opt-Out Reason Value Set"
 Description: "Reasons for opting out of data sharing"
 * ^status = #active
 * ^experimental = false
