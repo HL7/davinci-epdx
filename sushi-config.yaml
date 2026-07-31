@@ -134,6 +134,11 @@ parameters:
   apply-jurisdiction: true
   apply-publisher: true
   apply-contact: true
+  # PDex's HL7-registered OID root (2.16.840.1.113883.4.642.40.8). Enabled
+  # under PR #420 to satisfy IG Publisher 2.2.11's OID-assignment check on
+  # CodeSystems (error-level) and other resource types (info-level). The
+  # publisher auto-mints per-resource OIDs from this root at build time and
+  # persists the mappings in oids.ini.
   auto-oid-root: 2.16.840.1.113883.4.642.40.8
   generate: example-narratives
   # for using US ed of SNOMED
