@@ -27,7 +27,7 @@ resource are:
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
 
-#### Example Location Resource
+### Example Location Resource
 
 An example mapping of a Location resource is shown here:
 

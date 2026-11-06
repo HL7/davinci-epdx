@@ -451,3 +451,36 @@ INFORMATION: StructureDefinition-pdex-member-opt-out.html: The html source conta
 
 # JSA-artifact regenerator publisher bug — tracked upstream at https://github.com/HL7/fhir-ig-publisher/issues/1354. The publisher deterministically corrupts FHIR-us-davinci-pdex.xml on every build: when two pages have keys in a prefix relationship (here, `provider-access-api` is a proper string prefix of `provider-access-api-v2`), the shorter-key entry gets overwritten with a duplicate of the longer-key entry. This makes template/jira-new.xml diverge from template/jira-current.xml (pulled fresh from HL7/JSA:master) even when JSA master is fully in sync with the IG. Verified impossible to route around from IG source: renaming to break the prefix leaves the same corruption, and hand-fixing the file gets re-corrupted on the next build. Remove this suppression once #1354 is fixed and the publisher is upgraded on the CI builder.
 %The jira specification file appears to be out of date%
+
+# ============================================================================
+# HL7 base template search page (searchform.html)
+# ============================================================================
+# Reason for suppression: output/searchform.html is generated from the HL7
+# base template package (inherited through hl7.davinci.template#1.0.0), not
+# from PDex content. Its FHIR logo <img> is not self-closed and the page has
+# unbalanced </div> tags, which IG Publisher 3.0.x now reports. The defect
+# must be fixed in the template package; the PDex IG cannot change it. The
+# patterns are pinned to the exact positions in that page so that any similar
+# problem in PDex-authored pages is still reported.
+%The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 177%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 10%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 9%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 109 column 8%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 111 column 12%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 112 column 20%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 113 column 16%
+%The html source is not well formed: Found "</div>" expecting "</body>" at line 115 column 12%
+
+# ============================================================================
+# Da Vinci template shownav check (template defect)
+# ============================================================================
+# Reason for suppression: shownav=true IS set. The Da Vinci template's onLoad
+# step adds it as an ig-parameter extension ({code: valueCode "shownav",
+# value: valueString "true"}), which is what the published IG resource
+# contains. The template's own onCheck rule (onCheck.ig.davinci.checkIg.xslt)
+# looks for the code as a valueString rather than a valueCode, so it never
+# matches and the warning fires for every Da Vinci IG built with IG Publisher
+# 3.0.x. The fix belongs in hl7.davinci.template. (PDex previously also set
+# shownav in sushi-config.yaml; that override was removed in 2.2.1 so the
+# template default applies.)
+%DA VINCI: Must have the IG parameter shownav=true%

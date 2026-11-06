@@ -35,7 +35,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example DocumentReference resource
+### Example DocumentReference resource
 
 An example mapping of a DocumentReference for an episode of care is shown below:
 
@@ -118,7 +118,7 @@ An example mapping of a DocumentReference for an episode of care is shown below:
 
 The following example of a DocumentReference and associated PDex Provenance resource demonstrates how an unstructured document, such as a Portable Document Format (PDF) document could be attached or embedded as base64 encoded content in a DocumentReference. The associated PDex Provenance resource identifies the source document as a PDF file. 
 
-#### Example: Unstructured Document with Provenance
+### Example: Unstructured Document with Provenance
 
 - The example US Core DocumentReference is here: [DocumentReference-123456.html](DocumentReference-123456.html)
 - The associated PDex Provenance resource is here: [Provenance-1000006.html](Provenance-1000006.html)

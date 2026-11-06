@@ -21,7 +21,7 @@ The Provider-Member-Match is provided to support the requirements of the CMS Pri
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
-§pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. § This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
+§pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. § This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operation is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
 </div>
 
 This version of the API uses a variation of the Bulk Member Match, from the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). This is formalized as the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). The $davinci-data-export operation specified in the original [Provider Access v1](provider-access-api.html) is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.
@@ -38,7 +38,7 @@ Providers and Payers are encouraged to support Provider Access (v2). It provides
 
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG and operates as per the original version of the [Provider Access API](provider-access-api.html).
 
-### When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)
+## When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)
 
 The two versions of the Provider Access API in this IG serve different deployment scenarios. The decision between them is made at the request-construction step — a provider/EHR system chooses which workflow to invoke against a given payer based on the use case driving the request:
 

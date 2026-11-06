@@ -97,7 +97,7 @@ consumedunits 0..1
 * item.adjudication.extension contains ReviewAction named reviewAction 0..1 MS
   and WhenAdjudicated named adjudicationActionDate 0..1 MS
 * item.adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization at the line level."
-* item.adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occured."
+* item.adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occurred."
 * insert AdjudicationInvariant
 * insert AdjudicationSlicing
 * adjudication MS
@@ -114,7 +114,7 @@ denialreason 0..* MS
 * adjudication.extension contains ReviewAction named reviewAction 0..1 MS
   and WhenAdjudicated named adjudicationActionDate 0..1 MS
 * adjudication.extension[reviewAction] ^short = "The details of the review action that is necessary for the authorization for the entire request."
-* adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occured."
+* adjudication.extension[adjudicationActionDate] ^short = "The date/time when an Adjudication Action occurred."
 
 // End of addition from EOBInpatientProfile.fsh
 

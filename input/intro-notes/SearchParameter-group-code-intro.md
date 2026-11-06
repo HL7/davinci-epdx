@@ -1,4 +1,4 @@
-#### Search By Group Code
+### Search By Group Code
 
 This search parameter enables a query against the Group resource to identify the following types of groups:
 

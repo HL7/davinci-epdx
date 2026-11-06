@@ -29,7 +29,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example Goal Resource
+### Example Goal Resource
 
 An example mapping of a Goal resource is shown here:
 

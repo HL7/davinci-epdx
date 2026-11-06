@@ -26,7 +26,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example MedicationRequest Resource
+### Example MedicationRequest Resource
 
 An example mapping of a MedicationRequest is shown below:
 

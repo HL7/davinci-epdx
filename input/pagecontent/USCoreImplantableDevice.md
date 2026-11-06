@@ -30,7 +30,7 @@ resource are:
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example Implantable Device Resource
+### Example Implantable Device Resource
 
 An example mapping of an implantable device resource is shown below:
 
