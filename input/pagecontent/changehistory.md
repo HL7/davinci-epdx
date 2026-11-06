@@ -4,6 +4,17 @@
 {% include style_insert_table_blue.html %}
 
 
+### STU 2.2.1 Technical Corrections
+
+STU 2.2.1 is a technical correction release of STU 2.2.0 (published 2026-08-21). It corrects typographical errors and broken links. It does not change any conformance requirement, profile constraint or operation definition.
+
+> **Status:** Proposed. The tickets below are pending disposition by the HL7 Financial Management Work Group.
+
+| JIRA Ticket | Change |
+|---|---|
+| [FHIR-59786](https://jira.hl7.org/browse/FHIR-59786) | **Typographical corrections.** "wih" → "with" (Home, Data Mapping); "operaiton" → "operation" (Provider Access API v2, §pdex-241); "avaiable" → "available" (US Core Patient); "deductable" → "deductible" (Coverage example); "superceded" → "superseded" (HRex Coverage introduction); "occured" → "occurred" (PDex Prior Authorization `adjudicationActionDate` short descriptions, and the When Adjudicated extension comment, which also corrects "date or data and time" to "date or date and time"); "tht" → "that" (mTLS Organization description). Dependency descriptions for US Core 3.1.1, 6.1.0 and 7.0.0 no longer say the profiles are "queried by CRD servers" (text copied from the Da Vinci CRD IG), and the HL7 Terminology dependency description is corrected ("coddesystems used in HIR IGs" → "code systems used in HL7 IGs"). |
+| [FHIR-59793](https://jira.hl7.org/browse/FHIR-59793) | **Broken links.** Two CARIN Blue Button links on the Home page rendered as `null` because of a misnamed Liquid variable (`carin-bb` → `carinbb`); the US Core 6.1.0 link text on the Introduction page rendered as "null/STU6.1" (`uscore` → `uscore6`). Links to PDex Device and PDex MedicationDispense on the Use Case Scenarios and Payer-to-Payer Exchange pages pointed to a non-existent `davinci-epdx` path, the HRex CI build or the STU1 release, and now point to the profiles in this IG. Unversioned US Core Condition links (no longer resolvable since US Core split the Condition profile) now point to US Core 3.1.1 Condition and the US Core 6.1.0 Condition Encounter Diagnosis and Problems and Health Concerns profiles. US Core Laboratory Result, Pulse Oximetry and Smoking Status links on the Payer-to-Payer Exchange page now point to the versioned US Core 6.1.0 pages. The NDH Exchange Endpoint link (CI build, 404) now points to the published NDH STU1 Endpoint profile. The urine specific gravity example link on the US Core Laboratory Result Observation page now points to the US Core 3.1.1 example. |
+
 ### STU 2.2.0 Release Overview
 
 #### Summary of changes between STU 2.1.0 and STU 2.2.0

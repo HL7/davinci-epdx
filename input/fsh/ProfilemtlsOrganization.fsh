@@ -2,7 +2,7 @@ Profile: MtlsOrganization
 Parent: $USCoreOrganization
 Id: mtls-organization
 Title: "mTLS Organization"
-Description: "The mTLS Organization record is used to identify the contact information for a Payer that owns a mTLS Endpoint, or is the managing organization tht administers the Endpoint."
+Description: "The mTLS Organization record is used to identify the contact information for a Payer that owns a mTLS Endpoint, or is the managing organization that administers the Endpoint."
 * insert PdexStructureDefinitionContent
 * identifier 0..* MS
 * identifier ^short = "Unique identifiers for Payer"

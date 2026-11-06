@@ -173,7 +173,7 @@ An example mapping of a Coverage resource is shown here:
         ]
       },
       "value": "Tier2",
-      "name": "Low deductable, max $20 copay"
+      "name": "Low deductible, max $20 copay"
     },
     {
       "type": {

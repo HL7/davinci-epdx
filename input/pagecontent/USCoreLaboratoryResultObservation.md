@@ -52,7 +52,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 ### Example Laboratory Results Profile
 
-Link to urine specific gravity laboratory result: [https://hl7.org/fhir/us/core/Observation-usg.html](https://hl7.org/fhir/us/core/Observation-usg.html)
+Link to urine specific gravity laboratory result: [US Core 3.1.1 Observation example: urine specific gravity]({{site.data.fhir.ver.uscore3}}/Observation-usg.html)
 
 
 [Next Page - US Core Location](USCoreLocation.html)

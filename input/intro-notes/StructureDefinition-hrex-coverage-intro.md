@@ -2,7 +2,7 @@
 
 Coverage is a resource that is used by a number of use cases and 
 Implementation Guides. The Coverage resource included in the PDex
-Implementation Guide will be superceded by the Coverage profile 
+Implementation Guide will be superseded by the Coverage profile 
 that is defined in the HRex Implementation Guide.
 
 <p id="publish-box">

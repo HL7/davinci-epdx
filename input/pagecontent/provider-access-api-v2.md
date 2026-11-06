@@ -21,7 +21,7 @@ The Provider-Member-Match is provided to support the requirements of the CMS Pri
 
 All providers and payers are encouraged to adopt the Provider Access (v2) API for efficiency reasons.
 
-§pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. § This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operaiton is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
+§pdex-241: The Provider-Member-Match operation **SHOULD** be submitted as a first step. § This is then followed by a call to the davinci-data-export operation. The functionality of the data-export operation is unchanged from version 1 of the Provider Access API. The change is the group resource that the export operates against.
 </div>
 
 This version of the API uses a variation of the Bulk Member Match, from the [Payer-to-Payer Bulk API](payertopayerbulkexchange.html). This is formalized as the [Provider-Member-Match Operation](OperationDefinition-ProviderMemberMatch.html). The $davinci-data-export operation specified in the original [Provider Access v1](provider-access-api.html) is unchanged. The Provider-member-match notifies the provider of the group to perform the export against.

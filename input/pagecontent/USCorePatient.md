@@ -56,7 +56,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 | Patient.name.family   |       S      |     0..1    |                            | Note: Split Member Name into Patient.name.family, Patient.name.given |
 | Patient.name.given    |       S      |     0..*    |                            | Note: Split Member Name into Patient.name.family, Patient.name.given |
 | Patient.telecom       |       S      |     0..*    |                            | Note: Provide contact information from member record, if available |
-| Patient.telecom.system |       S      |     1..1    |                            | Note: phone \| fax \| email \| pager \| url \| sms \| other - if avaiable  |
+| Patient.telecom.system |       S      |     1..1    |                            | Note: phone \| fax \| email \| pager \| url \| sms \| other - if available  |
 | Patient.telecom.value |       S      |     1..1    |                            | Note: provide contact information from member record, if available |
 | Patient.telecom.use   |       S      |     0..1    |                            | Note: provide home \| work \| temp \| old \| mobile if known  |
 | Patient.gender   |       S      |     1..1    | Patient.gender             | [{"71":"Gender code"}] |

@@ -444,7 +444,7 @@ Description: "Date and Time when Adjudication Action took place. NOTE: that this
 * ^context[=].expression = "ExplanationOfBenefit.item.adjudication"
 * value[x] 0..1
 * value[x] only dateTime
-* value[x] ^comment = "Date or data and time when the adjudication action occured."
+* value[x] ^comment = "Date or date and time when the adjudication action occurred."
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension.valueCode = #fm
 
