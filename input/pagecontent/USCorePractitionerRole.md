@@ -25,7 +25,7 @@ resource are:
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example PractitionerRole Resource
+### Example PractitionerRole Resource
 
 An example mapping of an PractitionerRole resource is shown here:
 

@@ -21,7 +21,7 @@ are:
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Health Plan Mapping Assistance
+### Health Plan Mapping Assistance
 A collaboration of Health Plan experts has performed an evaluation of claims information and developed a mapping of data for Members to the [US Core Procedure profile](http://hl7.org/fhir/us/core/StructureDefinition-us-core-procedure.html). This is shown below as an assistance to implementers:
 
 | US Core Element   | Must Support | Cardinality | CARIN-BB Element  | CPCDS Element Mapping or Implementer Note |
@@ -41,7 +41,7 @@ A collaboration of Health Plan experts has performed an evaluation of claims inf
 
 §pdex-40: Note: Procedure records **SHOULD** only be created from ExplanationOfBenefit or CPCDS resources for items that are clinical procedures. § §pdex-41: Medications, facility charges and supplies **SHOULD NOT** be created as procedure records. §
 
-#### Example Procedure Resource
+### Example Procedure Resource
 
 An example mapping of a Procedure resource for a medical implant 
 is presented below:

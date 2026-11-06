@@ -18,7 +18,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 The PDex Device profile is available here: [StructureDefinition-pdex-device.html](StructureDefinition-pdex-device.html)
 
-#### Example Device Resource
+### Example Device Resource
 
 An example mapping of a device resource is shown below:
 

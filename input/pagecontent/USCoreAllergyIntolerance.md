@@ -24,7 +24,7 @@ The essential fields (Must Support or Cardinality greater than 0..*) to be provi
 
 <i>[Table Definition](index.html#mapping-adjudicated-claims-encounter-and-prior-authorization-information)</i>
 
-#### Example AllergyIntolerance Resource
+### Example AllergyIntolerance Resource
 
 An example mapping of an AllergyIntolerance resource is shown below:
 <pre>

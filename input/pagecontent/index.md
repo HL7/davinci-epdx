@@ -17,7 +17,7 @@ The [CARIN Consumer Directed Payer Data Exchange IG (CARIN IG for Blue Button®)
 
 This version of the Implementation Guide introduces support for [US Core 7.0.0 IG]({{site.data.fhir.ver.uscore7}}). Since the IG embraces US Core the support for [US Core 7.0.0]({{site.data.fhir.ver.uscore7}}) is similar to the support for [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) which required minimal changes to the PDex IG. Throughout this IG references to [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) can also be interpreted as supporting [US Core 7.0.0]({{site.data.fhir.ver.uscore7}}) which is expected to supersede [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) in 2028. 
 
-### Continuing Standards Evolution
+## Continuing Standards Evolution
 
 This IG recognizes that the healthcare industry is rapidly evolving methods, such as TEFCA, to enable the
 secure exchange of information between Providers and Payers and between payers. 
@@ -27,7 +27,7 @@ enable secure exchange of data, at scale. Health Plans implementing the Da Vinci
 be aware of ongoing developments and emergent implementation approaches, as the industry works to evolve methods that will enable adoption of these Interoperability Standards at scale. Developments are to be expected in the area of automated registration and access to the secure APIs documented 
 in these IGs.
 
-### Background
+## Background
 There are two parallel paths pursued by the CARIN Alliance (**C**reating **A**ccess to **R**eal-time **In**formation) and the Da Vinci Project related to providing health plan data to various stakeholders.  CARIN Alliance approaches the issue primarily from a financial (claims) perspective, with some limited associated clinical data. The Da Vinci Project approaches the issue primarily from a clinical perspective and leaves financial data out of scope.
 
 The CARIN Alliance focused on replicating the CMS Blue Button 2.0 solution directed at providing beneficiaries access to claims information for Medicare Fee For Service (FFS) in the form of a FHIR based ExplanationOfBenefit (EOB). The CARIN Alliance Consumer-Directed Payer Data Exchange (CARIN IG for Blue Button®) solution was intended to provide the same information based on commercial payer databases, at least for Medicare Advantage products. The CMS Interoperability and Patient Access Final Rule expanded the scope of a Blue Button 2.0 equivalent to include not just Medicare Advantage but also Medicaid HMO, CHIP HMO and QHP's in the federal marketplace.
@@ -89,7 +89,7 @@ The latter two scenarios are provided to meet the requirements identified in the
 
 See the [Table of Contents](toc.html) for more information.
 
-### Mapping Adjudicated Claims, Encounter and Prior Authorization Information
+## Mapping Adjudicated Claims, Encounter and Prior Authorization Information
 
 The [Data Mapping](datamapping.html) section addresses the mapping of Claims and Encounter data to Clinical profiles. Some 
 US Core profiles correlate with data provided in the [Consumer-Directed Payer Data Exchange (Blue Button 2.0) IG]({{site.data.fhir.ver.carinbb}}). 
@@ -102,7 +102,7 @@ The IG will continue to be tested at connectathons and will continue to utilize 
 
 In addition, we are creating a supplemental guide to provide more examples of how to populate the resources that are being exchanged based on the nature of the source information (e.g., lab results via V2 transactions, CDA, or claims).
 
-### Endpoint Discovery
+## Endpoint Discovery
 
 §pdex-88: Implementers of this IG **SHOULD** support the [endpoint discovery]({{site.data.fhir.ver.hrex}}/endpoint-discovery.html) mechanism defined in the HRex specification to allow discovery of the endpoints used in this IG - specifically the following: §
 
@@ -110,13 +110,13 @@ In addition, we are creating a supplemental guide to provide more examples of ho
 - Provider Access API.
 - Payer-to-Payer API (single member and multiple members).
 
-### Intellectual Property Considerations
+## Intellectual Property Considerations
 
 This HL7 specification contains and references intellectual property owned by third parties ("Third Party IP"). §pdex-89: Implementers and testers of this specification **SHALL** abide by the license requirements for each terminology content artifact utilized within a functioning implementation. § §pdex-90: Terminology licenses **SHALL** be obtained from the Third-Party IP owner for each code system and/or other specified artifact used. § It is the sole responsibility of each organization deploying or testing this specification to ensure their implementations comply with licensing requirements of each Third-Party IP.
 
 {% include ip-statements.xhtml %}
 
-### Conventions
+## Conventions
 
 This implementation guide (IG) uses specific terminology to flag statements that have relevance for the evaluation of conformance with the guide:
 
@@ -131,16 +131,16 @@ In the event a need arises to communicate data structures or elements not covere
 §pdex-392: If a proposed change is adopted and published in the PDex continuous integration (CI) build, or in the CI build of one of its dependencies (e.g. [PAS](https://build.fhir.org/ig/HL7/davinci-pas/), [HRex](https://build.fhir.org/ig/HL7/davinci-hrex/), [CARIN BB](https://build.fhir.org/ig/HL7/carin-bb/), or [US Core](https://build.fhir.org/ig/HL7/US-Core/)), implementations **MAY**, by mutual agreement, pre-adopt the use of those additional CI-build profiles and/or mustSupport data elements and not be considered in violation of §pdex-91 above. §
 
 
-#### MustSupport
+### MustSupport
 
 For profiles defined in other IGs, the meaning of Must Support is established in the defining IG. Note that the Must Support requirements for this IG are modeled after the US Core Implementation Guide. For further information see the [Must Support](introduction.html#mustsupport) section in the Introduction page.
 
-#### Security and Privacy
+### Security and Privacy
 
 Security and Privacy are critically important when exchanging information. Please refer to the [Security and Privacy](securityandprivacy.html) page in this IG and
 the guidance it references in the [Health Record Exchange (HRex) IG]({{site.data.fhir.ver.hrex}}/security.html).
 
-#### Patient/Subject Terminology
+### Patient/Subject Terminology
 
 It is important to differentiate in the Implementation Guide between identifiers used by the Provider/EMR and those used by the Payer/Health Plan to identify the patient/subject/member.
 
@@ -159,19 +159,19 @@ For the purposes of this IG we will use the following terms:
     * Covered Party
     * Subject of Care.
 
-### Dependencies
+## Dependencies
 
 {% include dependency-table-nontech.xhtml %}
 
-### Change History
+## Change History
 
 A history of changes made since the publication of the STU1 version of the PDex IG is maintained in [ChangeHistory](changehistory.html).
 
-### Project and Participants
+## Project and Participants
 
 See the [Credits](credits.html) page for a list of contributors to the creation and maintenance of this Implementation Guide.
 
-### FHIR Publisher
+## FHIR Publisher
 
 This IG was built with Sushi and the FHIR Publisher (v1.6.5 or greater).
 

@@ -38,7 +38,7 @@ Providers and Payers are encouraged to support Provider Access (v2). It provides
 
 The bulk data transfer API is based upon published guidance in the Da Vinci Member Attribution (ATR) IG and operates as per the original version of the [Provider Access API](provider-access-api.html).
 
-### When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)
+## When to use Provider Access v1 (Attribution) versus Provider Access v2 (Attestation)
 
 The two versions of the Provider Access API in this IG serve different deployment scenarios. The decision between them is made at the request-construction step — a provider/EHR system chooses which workflow to invoke against a given payer based on the use case driving the request:
 

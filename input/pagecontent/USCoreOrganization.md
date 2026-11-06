@@ -29,7 +29,7 @@ are:
 |  Organization.address.postalCode           |  postalCode     |     0..1    | string             |
 |  Organization.address.country              |  country        |     0..1    | string             |
 
-#### Example Organization resource
+# Example Organization resource
 
 An example mapping of an Organization resource is shown below:
 
