@@ -50,11 +50,11 @@ Description: "Enables a practitioner, facility, or organization to attest to a t
 // Performer - the practitioner, organization, or facility attesting to the relationship
 * performer 1..* MS
 * performer ^short = "Practitioner, facility, or organization attesting to treatment relationship"
-* performer ^definition = "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient. The performer element SHOULD be populated using performer.identifier with the provider's NPI (National Provider Identifier) so that the attesting provider can be identified without requiring a FHIR resource reference on the receiving system."
+* performer ^definition = "The healthcare provider (practitioner, organization, or facility) attesting that they have a treatment relationship with the patient. Each performer SHALL be populated with performer.identifier, which SHOULD carry the provider's NPI (National Provider Identifier), so that the payer can validate the attesting provider against its in-network provider records without requiring a FHIR resource reference that is resolvable on the receiving system."
 * performer only Reference(Practitioner or Organization or PractitionerRole)
-* performer.identifier 0..1 MS
+* performer.identifier 1..1 MS
 * performer.identifier ^short = "NPI or other identifier of the performing provider"
-* performer.identifier ^definition = "The National Provider Identifier (NPI) or other business identifier of the practitioner, facility, or organization attesting to the treatment relationship. Using an identifier allows the provider to be identified without requiring a resolvable FHIR resource reference."
+* performer.identifier ^definition = "The National Provider Identifier (NPI) or other business identifier of the practitioner, facility, or organization attesting to the treatment relationship. Required so that the payer can validate the attesting provider against its in-network provider records (FHIR-58170). Using an identifier allows the provider to be identified without requiring a resolvable FHIR resource reference. The NPI system (`http://hl7.org/fhir/sid/us-npi`) SHOULD be used."
 * performer.display MS
 * performer.display ^short = "Display name of the performing provider"
 
