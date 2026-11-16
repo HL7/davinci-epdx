@@ -44,9 +44,8 @@ Per the Advancing Interoperability and Prior Authorization Final Rule (CMS-0057)
 include the following types of data:
 
 - [US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1.0]({{site.data.fhir.ver.uscore6}}) Clinical Data with additional PDex defined Profiles.
-- Claims and Encounters, with financial data excluded as defined by Non-Financial ExplanationOfBenefit profiles defined in the
 - [Prior Authorizations](StructureDefinition-pdex-priorauthorization.html) and the related clinical documentation and forms (structured and unstructured) used in support of the prior authorization decision, per [42 CFR 422.121(b)(4)(ii)(B)](https://www.ecfr.gov/current/title-42/part-422/section-422.121#p-422.121(b)(4)(ii)(B)) and as described above.
-- [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
+- Claims and Encounters, with financial data excluded, conforming to the [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
 
 The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
 Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.

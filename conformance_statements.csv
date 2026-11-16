@@ -287,7 +287,7 @@ reference,statement,sourcefile
 §pdex-286,The Payer **SHALL** be responsible for managing and maintaining the Treatment Relationship between,provider-access-api-v2.md
 §pdex-287,The payer **SHALL** take account of members that have chosen to Opt-Out of,provider-access-api-v2.md
 §pdex-288,Those Opted-Out members **SHALL** be included in a Member Opted-Out List.,provider-access-api-v2.md
-§pdex-289,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api-v2.md
+§pdex-289,Prior Authorization Rule (CMS-0057) the data available through the API **SHALL** include:,provider-access-api-v2.md
 §pdex-290,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api-v2.md
 §pdex-291,- **SHALL** be permitted to GET /Group/{id} for the Matched Member Group list created by the Provider Member-Match operation.,provider-access-api-v2.md
 §pdex-292,- **SHALL** be permitted to call $davinci-data-export operation for the /Group/{id} they received in the response to the Provider Member-Match operation.,provider-access-api-v2.md
@@ -349,7 +349,7 @@ reference,statement,sourcefile
 §pdex-348,By recording this quantity it **MAY** help providers reconcile their attribution lists,provider-access-api.md
 §pdex-349,"Implementers **SHOULD** maintain an internal audit trail to record which export operations were executed, by which client, and for which members.",provider-access-api.md
 §pdex-350,Implementers **SHALL** support the standard search parameters for group that are specified in the base,provider-access-api.md
-§pdex-351,Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include:,provider-access-api.md
+§pdex-351,Prior Authorization Rule (CMS-0057) the data available through the API **SHALL** include:,provider-access-api.md
 §pdex-352,- **SHALL** be issued with OAuth2.0/SMART-On-FHIR client credentials that enable access to /Group/{id}.,provider-access-api.md
 §pdex-353,- **SHALL** be permitted to SEARCH /Group.,provider-access-api.md
 §pdex-354,The search function and the bundle contents returned **SHALL** be restricted to the {ids} that are associated with the Provider Representative's account.,provider-access-api.md
@@ -400,3 +400,5 @@ reference,statement,sourcefile
 §pdex-399,"Output parameters **SHALL** conform to the PDex Multi-Member Match Response profile.",OperationDefinition-BulkMemberMatch-intro.md
 §pdex-400,"Input parameters **SHALL** conform to the Provider $multi-member-match Request profile.",OperationDefinition-ProviderMemberMatch-intro.md
 §pdex-401,"Output parameters **SHALL** conform to the Provider $multi-member-match Response profile.",OperationDefinition-ProviderMemberMatch-intro.md
+§pdex-402,"Where permitted by regulation, contract or other agreement — for example, a Value-Based Care contract or Risk-based Provider Program where the provider partner organization is ""At Risk"" for the member's services (see §pdex-323) — a payer **MAY** use this API to exchange additional data with the provider beyond the CMS-0057 requirement, including claims and encounters with financial data conforming to the full CARIN Blue Button ExplanationOfBenefit profiles.",provider-access-api.md
+§pdex-403,"Where permitted by regulation, contract or other agreement — for example, a Value-Based Care contract or Risk-based Provider Program where the provider partner organization is ""At Risk"" for the member's services (see §pdex-242) — a payer **MAY** use this API to exchange additional data with the provider beyond the CMS-0057 requirement, including claims and encounters with financial data conforming to the full CARIN Blue Button ExplanationOfBenefit profiles.",provider-access-api-v2.md

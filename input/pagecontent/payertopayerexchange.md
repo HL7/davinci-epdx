@@ -191,6 +191,7 @@ request/retrieve data using one of the following three methods:
 | [US Core Procedure](https://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure)  | Procedure    |
 | [HRex Coverage](http://hl7.org/fhir/us/davinci-hrex/STU1/StructureDefinition-hrex-coverage.html) | Coverage |
 | [PDex Prior Authorization](StructureDefinition-pdex-priorauthorization.html) | ExplanationOfBenefit |
+| [CARIN BB Inpatient Institutional Basis]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Inpatient-Institutional-Basis.html)<br/>[CARIN BB Outpatient Institutional Basis]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Outpatient-Institutional-Basis.html)<br/>[CARIN BB Professional NonClinician Basis]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)<br/>[CARIN BB Oral Basis]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)<br/>[CARIN BB Pharmacy Basis]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html) | ExplanationOfBenefit |
 | [PDex Provenance](StructureDefinition-pdex-provenance.html)<br/>[US Core Provenance](http://hl7.org/fhir/us/core/STU3.1.1/StructureDefinition-us-core-provenance.html)  | Provenance   |
 
 The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.

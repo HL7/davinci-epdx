@@ -266,11 +266,16 @@ See the [FHIR Bulk Data API specification](http://hl7.org/fhir/uv/bulkdata/STU2/
 - ndjson format specification
 - Security requirements
 - Complete workflow from member-match through data retrieval
-§pdex-289: Prior Authorization Rule (CMS-0057) the data available through the API **SHOULD** include: §
 
-- US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})
-- [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html)
-- [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
+#### Data Export Payload
+
+Provider Access (v2) enables in-network providers to retrieve information about the members for whom they have attested
+to an existing, or impending treatment relationship. Under the requirements of the CMS
+§pdex-289: Prior Authorization Rule (CMS-0057) the data available through the API **SHALL** include: §
+
+- US Core Clinical data ([US Core 3.1.1]({{site.data.fhir.ver.uscore3}}) or [US Core 6.1]({{site.data.fhir.ver.uscore6}})) with additional PDex defined Profiles.
+- [PDex Prior Authorization Profile](StructureDefinition-pdex-priorauthorization.html) records.
+- Claims and Encounters conforming to the [CARIN Consumer Directed Payer Data Exchange IG Non-Financial (Basis) Profiles ]({{site.data.fhir.ver.carinbb}}), as detailed below.
 
 The CMS Prior Authorization Rule (CMS-0057) requires Claims and Encounter data to be exchanged with
 Providers and Payers via the respective Provider Access API and Payer-to-Payer APIs, defined in this IG.
@@ -283,6 +288,9 @@ non-financial profiles:
 - [Professional NonClinician Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Professional-NonClinician-Basis.html)
 - [Oral Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Oral-Basis.html)
 - [Pharmacy Basis Profile]({{site.data.fhir.ver.carinbb}}/StructureDefinition-C4BB-ExplanationOfBenefit-Pharmacy-Basis.html)
+
+This list is the minimum data set for the regulated CMS-0057 Provider Access exchange; it is a floor, not a ceiling.
+§pdex-403: Where permitted by regulation, contract or other agreement — for example, a Value-Based Care contract or Risk-based Provider Program where the provider partner organization is "At Risk" for the member's services (see §pdex-242) — a payer **MAY** use this API to exchange additional data with the provider beyond the CMS-0057 requirement, including claims and encounters with financial data conforming to the full [CARIN Blue Button ExplanationOfBenefit profiles]({{site.data.fhir.ver.carinbb}}/artifacts.html). §
 
 ### Da Vinci Data Export Operation - PDex Provider Use Case
 
