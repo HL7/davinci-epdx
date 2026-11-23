@@ -141,8 +141,9 @@ Alias: $NPICS = http://hl7.org/fhir/sid/us-npi
 
 // Replaced NDH ValueSets defined in ValueSets-NDH.fsh
 
-// CMS HCPS Codes
-Alias: $CMSHCPCSCodes = https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
+// CMS HCPCS Codes
+// FHIR-59963: canonical is http:// (not https://) to match hl7.terminology CodeSystem/NamingSystem hcpcs-Level-II
+Alias: $CMSHCPCSCodes = http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets
 Alias: $CMSHIPPSCodes = https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/ProspMedicareFeeSvcPmtGen/HIPPSCodes
 Alias: $CMSRemittanceAdviceRemarkCodes = https://x12.org/codes/remittance-advice-remark-codes
 

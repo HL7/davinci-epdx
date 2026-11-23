@@ -55,7 +55,7 @@
 # HCPCS codes (CMS-managed procedure codes — no public FHIR CodeSystem)
 # ============================================================================
 # Reason for suppression: HCPCS (Healthcare Common Procedure Coding System) Release Code Sets are published by CMS at the cited URL as CSV/spreadsheet releases, but CMS does not host a FHIR CodeSystem resource at that URL. Two PDex Prior-Authorization ValueSets (PDexPAInstitutionalProcedureCodes and PDexPAInstitutionalProcedureCodesVS) compose codes from this URL. The IG Publisher's terminology server cannot expand the ValueSet since the CodeSystem resource cannot be fetched, so a per-ValueSet WARNING is emitted at build time. Same class of issue as the CPT / HIPPS / X12 suppressions above.
-%A definition for CodeSystem 'https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the value set cannot be expanded%
+%A definition for CodeSystem 'http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets' could not be found, so the value set cannot be expanded%
 
 
 # ============================================================================
